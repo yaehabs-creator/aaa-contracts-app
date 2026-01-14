@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Clause, TimeFrame, TimeFrameType, ObligationParty } from '../types';
-import { GoogleGenAI, Type } from "@google/genai";
+import Anthropic from "@anthropic-ai/sdk";
 
 interface AIAnalysisResult {
   clause_id: string;
@@ -61,17 +61,48 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({ baseClause, al
     setIsAnalyzing(true);
     setError(null);
 
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-    const model = 'gemini-3-pro-preview';
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      setError('Claude API key is not configured');
+      setIsAnalyzing(false);
+      return;
+    }
 
-    const systemInstruction = `
-You are the Contract Intelligence Engine for the AAA Contract Department.
+    const client = new Anthropic({ 
+      apiKey,
+      dangerouslyAllowBrowser: true 
+    });
+    const model = 'claude-sonnet-4-5-20250929';
+
+    const systemInstruction = `You are the Contract Intelligence Engine for the AAA Contract Department.
 Your ONLY job is to analyze construction contract clauses and return a STRICT JSON object.
 
 Rules:
 - Use ONLY the text provided.
 - Return ONLY valid JSON. No extra text.
-`;
+- Return JSON with this exact structure:
+{
+  "clause_id": "string",
+  "has_time_frames": boolean,
+  "time_frames": [{
+    "raw_text": "string",
+    "numeric_value": number,
+    "unit": "string",
+    "category": "string",
+    "trigger_event": "string",
+    "deadline_description": "string"
+  }],
+  "particular_vs_general": {
+    "has_particular": boolean,
+    "effect_type": "string",
+    "primary_risk_owner": "string",
+    "short_explanation": "string"
+  },
+  "dashboard_summary": {
+    "headline": "string",
+    "key_points": ["string"]
+  }
+}`;
 
     const promptInput = {
       clause_id: `C.${baseClause.clause_number}`,
@@ -81,54 +112,31 @@ Rules:
     };
 
     try {
-      const response = await ai.models.generateContent({
+      const message = await client.messages.create({
         model: model,
-        contents: [{ parts: [{ text: JSON.stringify(promptInput) }] }],
-        config: {
-          systemInstruction: systemInstruction,
-          temperature: 0.1,
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              clause_id: { type: Type.STRING },
-              has_time_frames: { type: Type.BOOLEAN },
-              time_frames: {
-                type: Type.ARRAY,
-                items: {
-                  type: Type.OBJECT,
-                  properties: {
-                    raw_text: { type: Type.STRING },
-                    numeric_value: { type: Type.NUMBER },
-                    unit: { type: Type.STRING },
-                    category: { type: Type.STRING },
-                    trigger_event: { type: Type.STRING },
-                    deadline_description: { type: Type.STRING }
-                  }
-                }
-              },
-              particular_vs_general: {
-                type: Type.OBJECT,
-                properties: {
-                  has_particular: { type: Type.BOOLEAN },
-                  effect_type: { type: Type.STRING },
-                  primary_risk_owner: { type: Type.STRING },
-                  short_explanation: { type: Type.STRING }
-                }
-              },
-              dashboard_summary: {
-                type: Type.OBJECT,
-                properties: {
-                  headline: { type: Type.STRING },
-                  key_points: { type: Type.ARRAY, items: { type: Type.STRING } }
-                }
-              }
-            }
+        max_tokens: 4096,
+        temperature: 0.1,
+        system: systemInstruction,
+        messages: [
+          {
+            role: 'user',
+            content: JSON.stringify(promptInput)
           }
-        }
+        ]
       });
 
-      const result: AIAnalysisResult = JSON.parse(response.text);
+      const content = message.content.find(c => c.type === 'text');
+      const resultText = content && 'text' in content ? content.text : '';
+      
+      // Extract JSON from response (might be wrapped in markdown)
+      let jsonText = resultText.trim();
+      if (jsonText.startsWith('```json')) {
+        jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+      } else if (jsonText.startsWith('```')) {
+        jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
+      }
+      
+      const result: AIAnalysisResult = JSON.parse(jsonText);
       setAnalysisResult(result);
 
       // Automatically add new analyzed timeframes to the clause's permanent state

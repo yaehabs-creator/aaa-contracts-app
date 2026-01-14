@@ -88,3 +88,11 @@ export enum AnalysisStatus {
   ERROR = 'ERROR',
   LIBRARY = 'LIBRARY'
 }
+
+export interface BotMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: number;
+  suggestions?: string[];
+}

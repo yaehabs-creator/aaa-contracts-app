@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { GoogleGenAI, Type } from "@google/genai";
-import { analyzeContract } from './services/geminiService';
+import { analyzeContract } from './services/claudeService';
+import Anthropic from '@anthropic-ai/sdk';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
 import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput } from './types';
 import { ClauseCard } from './components/ClauseCard';
@@ -10,6 +10,7 @@ import { Sidebar } from './components/Sidebar';
 import { ComparisonModal } from './components/ComparisonModal';
 import { AddClauseModal } from './components/AddClauseModal';
 import { AppWrapper } from './src/components/AppWrapper';
+import { AIBotSidebar } from './src/components/AIBotSidebar';
 
 const REASSURING_STAGES = [
   { progress: 10, label: "Scanning Pages...", sub: "Mapping document layers" },
@@ -110,6 +111,10 @@ const App: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
   const [searchError, setSearchError] = useState<string | null>(null);
+
+  // AI Bot States
+  const [isBotOpen, setIsBotOpen] = useState(false);
+  const [selectedClauseForBot, setSelectedClauseForBot] = useState<Clause | null>(null);
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const generalFileRef = useRef<HTMLInputElement>(null);
@@ -231,7 +236,18 @@ const App: React.FC = () => {
     if (!query.trim()) return;
     setIsSearching(true);
     setSearchError(null);
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      setSearchError('Claude API key is not configured');
+      setIsSearching(false);
+      return;
+    }
+
+    const client = new Anthropic({ 
+      apiKey,
+      dangerouslyAllowBrowser: true 
+    });
 
     const searchContext = clauses.map(c => ({
       clause_id: `C.${c.clause_number}`,
@@ -242,43 +258,34 @@ const App: React.FC = () => {
     }));
 
     try {
-      const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: [{
-          parts: [{
-            text: `USER QUERY: "${query}"\n\nCLAUSE DATA:\n${JSON.stringify(searchContext)}`
-          }]
-        }],
-        config: {
-          systemInstruction: `You are the Smart Search Engine for AAA Contract Department.
+      const message = await client.messages.create({
+        model: 'claude-sonnet-4-5-20250929',
+        max_tokens: 4096,
+        system: `You are the Smart Search Engine for AAA Contract Department.
 You receive a natural-language query and a list of clauses.
 Your job is to select and rank the top 5 clauses that best match the query by meaning and keywords.
 Focus on construction contract concepts: time frames, payment, insurance, liability, termination, etc.
-Return ONLY JSON. Do not add any extra text.`,
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              results: {
-                type: Type.ARRAY,
-                items: {
-                  type: Type.OBJECT,
-                  properties: {
-                    clause_id: { type: Type.STRING },
-                    clause_number: { type: Type.STRING },
-                    title: { type: Type.STRING },
-                    condition_type: { type: Type.STRING },
-                    relevance_score: { type: Type.NUMBER },
-                    reason: { type: Type.STRING }
-                  }
-                }
-              }
-            }
+Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "clause_number": "...", "title": "...", "condition_type": "...", "relevance_score": 0.0-1.0, "reason": "..."}]}. Do not add any extra text.`,
+        messages: [
+          {
+            role: 'user',
+            content: `USER QUERY: "${query}"\n\nCLAUSE DATA:\n${JSON.stringify(searchContext)}`
           }
-        }
+        ]
       });
 
-      const result = JSON.parse(response.text);
+      const content = message.content.find(c => c.type === 'text');
+      const resultText = content && 'text' in content ? content.text : '';
+      
+      // Extract JSON from response (might be wrapped in markdown)
+      let jsonText = resultText.trim();
+      if (jsonText.startsWith('```json')) {
+        jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+      } else if (jsonText.startsWith('```')) {
+        jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
+      }
+      
+      const result = JSON.parse(jsonText);
       setSearchResults(result.results);
     } catch (err) {
       console.error("Smart Search Error:", err);
@@ -629,7 +636,8 @@ Return ONLY JSON. Do not add any extra text.`,
   };
 
   return (
-    <AppWrapper>
+    <>
+    <AppWrapper onToggleBot={() => setIsBotOpen(!isBotOpen)} isBotOpen={isBotOpen}>
     <div className="min-h-screen flex flex-col">
       <input 
         type="file" 
@@ -1029,6 +1037,14 @@ Return ONLY JSON. Do not add any extra text.`,
       </footer>
     </div>
     </AppWrapper>
+
+    <AIBotSidebar
+      isOpen={isBotOpen}
+      onClose={() => setIsBotOpen(false)}
+      clauses={clauses}
+      selectedClause={selectedClauseForBot}
+    />
+    </>
   );
 };
 

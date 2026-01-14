@@ -4,9 +4,11 @@ import { useAuth } from '../contexts/AuthContext';
 interface AppHeaderProps {
   onShowUserManagement?: () => void;
   showingUserManagement?: boolean;
+  onToggleBot?: () => void;
+  isBotOpen?: boolean;
 }
 
-export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, showingUserManagement }) => {
+export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, showingUserManagement, onToggleBot, isBotOpen }) => {
   const { user, signOut, isAdmin } = useAuth();
 
   const getRoleBadge = () => {
@@ -51,6 +53,29 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, show
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {onToggleBot && (
+          <button
+            onClick={onToggleBot}
+            style={{
+              padding: '0.5rem 1rem',
+              background: isBotOpen ? '#0F2E6B' : '#e2e8f0',
+              color: isBotOpen ? 'white' : '#2d3748',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '0.875rem',
+              fontWeight: 'bold',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              transition: 'all 0.2s'
+            }}
+            title={isBotOpen ? 'Close Claude AI Assistant' : 'Open Claude AI Assistant'}
+          >
+            {isBotOpen ? '🧠' : '💬'} Claude AI
+          </button>
+        )}
+
         <span style={{ color: '#718096', fontSize: '0.875rem' }}>
           {user?.displayName || user?.email}
         </span>

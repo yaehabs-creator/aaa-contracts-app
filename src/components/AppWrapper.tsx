@@ -6,9 +6,11 @@ import { AppHeader } from './AppHeader';
 
 interface AppWrapperProps {
   children: React.ReactNode;
+  onToggleBot?: () => void;
+  isBotOpen?: boolean;
 }
 
-export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
+export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, isBotOpen }) => {
   const { user, loading, canEdit } = useAuth();
   const [showUserManagement, setShowUserManagement] = useState(false);
 
@@ -56,6 +58,8 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
         <AppHeader 
           onShowUserManagement={() => setShowUserManagement(!showUserManagement)}
           showingUserManagement={showUserManagement}
+          onToggleBot={onToggleBot}
+          isBotOpen={isBotOpen}
         />
         <div style={{
           minHeight: 'calc(100vh - 80px)',
@@ -105,6 +109,8 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
       <AppHeader 
         onShowUserManagement={() => setShowUserManagement(!showUserManagement)}
         showingUserManagement={showUserManagement}
+        onToggleBot={onToggleBot}
+        isBotOpen={isBotOpen}
       />
       {showUserManagement ? <UserManagement /> : children}
     </div>

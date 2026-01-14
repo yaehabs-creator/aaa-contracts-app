@@ -1,9 +1,7 @@
-
-import { GoogleGenAI, Type } from "@google/genai";
+import Anthropic from "@anthropic-ai/sdk";
 import { Clause, DualSourceInput, FileData } from "../types";
 
-const SYSTEM_INSTRUCTION = `
-You are the high-fidelity extraction engine for AAA Contract Department. 
+const SYSTEM_INSTRUCTION = `You are the high-fidelity extraction engine for AAA Contract Department. 
 Your SOLE PURPOSE is to extract contract clauses 100% VERBATIM.
 
 ### 🔴 MANDATORY RULES:
@@ -28,16 +26,23 @@ Return a JSON array of objects.
 - **particular_condition**: VERBATIM Revision text.
 - **has_time_frame**: Boolean.
 - **time_frames**: Array of temporal objects.
-- **comparison**: Array of diff objects.
-`;
+- **comparison**: Array of diff objects.`;
 
 async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 export async function analyzeContract(input: string | FileData | DualSourceInput, retryCount = 0): Promise<Clause[]> {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  const model = 'gemini-3-pro-preview';
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY is not configured');
+  }
+
+  const client = new Anthropic({ 
+    apiKey,
+    dangerouslyAllowBrowser: true 
+  });
+  const model = 'claude-sonnet-4-5-20250929';
   
   let promptText = "";
 
@@ -57,62 +62,34 @@ ${typeof dual.particular === 'string' ? dual.particular : '[PDF DATA]'}`;
   }
 
   try {
-    const response = await ai.models.generateContent({
+    const message = await client.messages.create({
       model: model,
-      contents: [{ parts: [{ text: promptText }] }],
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0,
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.ARRAY,
-          items: {
-            type: Type.OBJECT,
-            properties: {
-              clause_number: { type: Type.STRING },
-              clause_title: { type: Type.STRING },
-              condition_type: { type: Type.STRING, enum: ["General", "Particular"] },
-              clause_text: { type: Type.STRING },
-              general_condition: { type: Type.STRING },
-              particular_condition: { type: Type.STRING },
-              has_time_frame: { type: Type.BOOLEAN },
-              time_frames: {
-                type: Type.ARRAY,
-                items: {
-                  type: Type.OBJECT,
-                  properties: {
-                    original_phrase: { type: Type.STRING },
-                    type: { type: Type.STRING },
-                    applies_to: { type: Type.STRING },
-                    short_explanation: { type: Type.STRING }
-                  },
-                  required: ["original_phrase", "type", "applies_to", "short_explanation"]
-                }
-              },
-              comparison: {
-                type: Type.ARRAY,
-                items: {
-                  type: Type.OBJECT,
-                  properties: {
-                    type: { type: Type.STRING },
-                    color: { type: Type.STRING },
-                    excerpt_general: { type: Type.STRING },
-                    excerpt_particular: { type: Type.STRING },
-                    comment: { type: Type.STRING }
-                  }
-                }
-              }
-            },
-            required: ["clause_number", "clause_title", "clause_text", "condition_type"]
-          }
+      max_tokens: 16384,
+      system: SYSTEM_INSTRUCTION,
+      messages: [
+        {
+          role: 'user',
+          content: promptText
         }
-      }
+      ]
     });
 
-    const resultText = response.text;
+    const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')! 
+      ? (message.content.find(c => c.type === 'text') as any).text 
+      : '';
+    
     if (!resultText) return [];
     
-    return JSON.parse(resultText);
+    // Try to extract JSON from the response (Claude might wrap it in markdown)
+    let jsonText = resultText.trim();
+    // Remove markdown code blocks if present
+    if (jsonText.startsWith('```json')) {
+      jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+    } else if (jsonText.startsWith('```')) {
+      jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
+    }
+    
+    return JSON.parse(jsonText);
   } catch (error: any) {
     if (retryCount < 1) {
       await delay(2000);

@@ -53,6 +53,10 @@ Open `Desktop/aaa1.02/.env.local` and fill in your credentials:
 # Gemini API Key (get from https://aistudio.google.com/app/apikey)
 GEMINI_API_KEY=your_actual_gemini_api_key_here
 
+# Anthropic Claude API Key (optional, get from https://console.anthropic.com/)
+# Required for using Claude AI in the AI Assistant bot
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+
 # Firebase Configuration (from Step 1.4)
 VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
