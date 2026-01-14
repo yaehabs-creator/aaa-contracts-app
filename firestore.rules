@@ -1,0 +1,67 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if any admin exists
+    function adminExists() {
+      return exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+    
+    // Helper function to get user role
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+    
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && adminExists() && getUserRole() == 'admin';
+    }
+    
+    // Helper function to check if user is editor or admin
+    function canEdit() {
+      return isAuthenticated() && adminExists() && getUserRole() in ['admin', 'editor'];
+    }
+    
+    // Helper function to check if user can view
+    function canView() {
+      return isAuthenticated() && adminExists() && getUserRole() in ['admin', 'editor', 'viewer'];
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Allow creating first admin user (when authenticated but no user doc exists)
+      allow create: if isAuthenticated() && userId == request.auth.uid;
+      // Allow reading own profile or if admin
+      allow read: if isAuthenticated() && (userId == request.auth.uid || isAdmin());
+      // Allow users to update their own profile (for lastLogin) OR admins to update any profile
+      allow update: if isAuthenticated() && (userId == request.auth.uid || isAdmin());
+      // Only admins can delete users
+      allow delete: if isAdmin();
+    }
+    
+    // Contracts collection
+    match /contracts/{contractId} {
+      // Everyone authenticated can read
+      allow read: if isAuthenticated();
+      
+      // Allow any authenticated user to create/update (relaxed for backup import)
+      // TODO: Tighten this later to require canEdit() role check
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated();
+      
+      // Only admins can delete
+      allow delete: if isAdmin();
+    }
+    
+    // Activity logs (optional - for tracking changes)
+    match /activityLogs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAuthenticated();
+    }
+  }
+}
