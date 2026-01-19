@@ -264,14 +264,15 @@ const App: React.FC = () => {
       hasShownSelectorRef.current = true; // Mark as shown immediately to prevent duplicate calls
       
       try {
-        // Load all contracts from Firestore
+        // Load all contracts from Supabase
         await refreshLibrary();
         
-        // Show the contract selector modal
+        // Show the contract selector modal even if no contracts found
         setShowContractSelector(true);
       } catch (error) {
         console.error('Failed to load contracts:', error);
-        // If loading fails, just continue without showing selector
+        // Still show selector so user can create new contract
+        setShowContractSelector(true);
       }
     };
 
@@ -2892,6 +2893,21 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                   {library.length === 0 ? (
                     <div className="text-center py-12">
                       <p className="text-aaa-muted mb-6">No contracts found. Create a new one to get started.</p>
+                      <div className="mt-6 p-4 bg-aaa-bg/50 rounded-xl border border-aaa-border">
+                        <p className="text-xs text-aaa-muted mb-2">Troubleshooting:</p>
+                        <ul className="text-xs text-left text-aaa-muted space-y-1 max-w-md mx-auto">
+                          <li>• Check browser console (F12) for errors</li>
+                          <li>• Verify you're logged in</li>
+                          <li>• Check Supabase Dashboard → Table Editor → contracts</li>
+                          <li>• Ensure RLS policies are set up (run migrations)</li>
+                        </ul>
+                      </div>
+                      <button
+                        onClick={refreshLibrary}
+                        className="mt-4 px-6 py-2 bg-aaa-blue text-white rounded-xl text-sm font-bold hover:bg-aaa-hover transition-all"
+                      >
+                        Refresh Contracts
+                      </button>
                     </div>
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
