@@ -6,42 +6,45 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 // SECURITY CHECK: Detect if service role key is being used (CRITICAL ERROR)
 if (supabaseAnonKey) {
-  // Decode JWT payload to check the role field (most reliable method)
-  try {
-    const parts = supabaseAnonKey.split('.');
-    
-    if (parts.length === 3) {
-      // Decode the payload (second part of JWT) with proper base64 padding
-      let base64 = parts[1].replace(/-/g, '+').replace(/_/g, '/');
-      // Add padding if needed
-      while (base64.length % 4) {
-        base64 += '=';
-      }
+  // Check for explicit 'service_role' string in key (works for all key formats)
+  if (supabaseAnonKey.includes('service_role') || supabaseAnonKey.includes('service-role')) {
+    const errorMsg = 'SECURITY ERROR: Service role key detected in browser! Use VITE_SUPABASE_ANON_KEY (anon/public key) instead. Service role keys must NEVER be exposed in frontend code.';
+    console.error('🚨', errorMsg);
+    throw new Error(errorMsg);
+  }
+  
+  // For JWT format keys, decode and check role field
+  if (supabaseAnonKey.startsWith('eyJ')) {
+    try {
+      const parts = supabaseAnonKey.split('.');
       
-      const decoded = atob(base64);
-      const payload = JSON.parse(decoded);
-      
-      // Check if role is 'service_role' (CRITICAL SECURITY ISSUE)
-      if (payload.role === 'service_role') {
-        const errorMsg = 'SECURITY ERROR: Service role key detected in browser! Use VITE_SUPABASE_ANON_KEY (anon public key) instead. Service role keys must NEVER be exposed in frontend code.';
-        console.error('🚨', errorMsg);
-        throw new Error(errorMsg);
+      if (parts.length === 3) {
+        // Decode the payload (second part of JWT) with proper base64 padding
+        let base64 = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+        // Add padding if needed
+        while (base64.length % 4) {
+          base64 += '=';
+        }
+        
+        const decoded = atob(base64);
+        const payload = JSON.parse(decoded);
+        
+        // Check if role is 'service_role' (CRITICAL SECURITY ISSUE)
+        if (payload.role === 'service_role') {
+          const errorMsg = 'SECURITY ERROR: Service role key detected in browser! Use VITE_SUPABASE_ANON_KEY (anon public key) instead. Service role keys must NEVER be exposed in frontend code.';
+          console.error('🚨', errorMsg);
+          throw new Error(errorMsg);
+        }
       }
-    } else {
-      // Fallback: Check for explicit 'service_role' string in key
-      if (supabaseAnonKey.includes('service_role')) {
-        const errorMsg = 'SECURITY ERROR: Service role key detected in browser! Use VITE_SUPABASE_ANON_KEY (anon public key) instead. Service role keys must NEVER be exposed in frontend code.';
-        console.error('🚨', errorMsg);
-        throw new Error(errorMsg);
+    } catch (error: any) {
+      // If decoding fails, don't block - let Supabase SDK handle validation
+      // Only throw if we confirmed it's a service_role key
+      if (error.message && error.message.includes('SECURITY ERROR')) {
+        throw error;
       }
-    }
-  } catch (error: any) {
-    // If decoding fails, don't block - let Supabase SDK handle validation
-    // Only throw if we confirmed it's a service_role key
-    if (error.message && error.message.includes('SECURITY ERROR')) {
-      throw error;
     }
   }
+  // For other key formats (like sb_publishable__), trust that they're safe if they pass the service_role check
 }
 
 // Validate Supabase configuration
