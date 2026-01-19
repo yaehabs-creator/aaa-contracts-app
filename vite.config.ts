@@ -5,8 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     
+    // Check if we're in a CI environment (Vercel, GitHub Actions, etc.)
+    const isCI = process.env.CI === 'true' || process.env.VERCEL === '1' || process.env.VERCEL_ENV;
+    
     // Validate required environment variables in production build
-    if (mode === 'production') {
+    if (mode === 'production' && !isCI) {
       const requiredVars = [
         'VITE_FIREBASE_API_KEY',
         'VITE_FIREBASE_AUTH_DOMAIN',
@@ -27,6 +30,27 @@ export default defineConfig(({ mode }) => {
       }
       
       console.log('✅ All required environment variables are present');
+    } else if (mode === 'production' && isCI) {
+      // In CI, just warn but don't fail - env vars will be injected by the platform
+      const requiredVars = [
+        'VITE_FIREBASE_API_KEY',
+        'VITE_FIREBASE_AUTH_DOMAIN',
+        'VITE_FIREBASE_PROJECT_ID',
+        'VITE_FIREBASE_STORAGE_BUCKET',
+        'VITE_FIREBASE_MESSAGING_SENDER_ID',
+        'VITE_FIREBASE_APP_ID'
+      ];
+      
+      const missingVars = requiredVars.filter(varName => !env[varName]);
+      
+      if (missingVars.length > 0) {
+        console.warn('\n⚠️  Missing environment variables in CI environment:');
+        missingVars.forEach(varName => console.warn(`   - ${varName}`));
+        console.warn('\n💡 These should be set in your Vercel project settings.');
+        console.warn('   The build will continue, but the app may not work correctly until variables are added.\n');
+      } else {
+        console.log('✅ All required environment variables are present');
+      }
     }
     
     return {
