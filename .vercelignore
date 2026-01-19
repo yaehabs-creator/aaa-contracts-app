@@ -1,0 +1,11 @@
+node_modules
+.env.local
+.env
+.firebase
+.firebaserc
+firebase.json
+.git
+.gitignore
+*.log
+.DS_Store
+.cache

@@ -256,6 +256,193 @@ npm install
 npm run build
 ```
 
+### Issue: Blank/White Page After Deployment
+
+This is the most common deployment issue. The site loads but shows a blank page.
+
+**Symptoms**:
+- Site URL loads but shows blank/white page
+- No error messages visible
+- Browser console shows errors
+
+**Diagnosis Steps**:
+
+1. **Check Browser Console (F12)**:
+   - Open browser developer tools (F12)
+   - Look for red error messages
+   - Common errors:
+     - "Missing Firebase environment variables"
+     - "Failed to initialize Firebase"
+     - "Cannot read property of undefined"
+
+2. **Verify Environment Variables**:
+   ```powershell
+   # Check if .env.local exists
+   Test-Path .env.local
+   
+   # Verify build includes env vars (run this before deploying)
+   npm run build:check
+   ```
+
+3. **Test Build Locally**:
+   ```powershell
+   # Build and preview locally first
+   npm run build
+   npm run preview
+   # Open http://localhost:4173
+   # If this works, the issue is with deployment, not your code
+   ```
+
+**Solutions**:
+
+**Solution 1: Missing Environment Variables** (Most Common)
+
+Environment variables must be present **during build time**, not runtime. Firebase Hosting is static hosting.
+
+1. Ensure `.env.local` exists in project root with all variables:
+   ```bash
+   VITE_FIREBASE_API_KEY=your_actual_key
+   VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=your-project-id
+   VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
+
+2. Verify variables are loaded:
+   ```powershell
+   npm run build:check
+   ```
+
+3. Rebuild and redeploy:
+   ```powershell
+   npm run build
+   firebase deploy --only hosting
+   ```
+
+**Solution 2: Build Not Executed**
+
+The `dist` folder must exist and contain built files.
+
+1. Check if `dist` folder exists:
+   ```powershell
+   Test-Path dist
+   ```
+
+2. If missing or empty, rebuild:
+   ```powershell
+   npm run build
+   ```
+
+3. Verify `dist` contains files:
+   ```powershell
+   Get-ChildItem dist
+   ```
+
+4. Deploy again:
+   ```powershell
+   firebase deploy --only hosting
+   ```
+
+**Solution 3: Incorrect Firebase Configuration**
+
+1. Verify Firebase config values in Firebase Console:
+   - Go to Firebase Console → Project Settings → Your apps
+   - Copy the exact values from the config object
+   - Update `.env.local` with correct values
+
+2. Ensure no extra spaces or quotes in `.env.local`:
+   ```bash
+   # ✅ Correct
+   VITE_FIREBASE_API_KEY=AIzaSy...
+   
+   # ❌ Wrong (extra spaces or quotes)
+   VITE_FIREBASE_API_KEY = "AIzaSy..."
+   VITE_FIREBASE_API_KEY='AIzaSy...'
+   ```
+
+**Solution 4: Cache Issues**
+
+1. Clear browser cache:
+   - Hard refresh: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
+   - Or clear cache in browser settings
+
+2. Clear Firebase Hosting cache:
+   ```powershell
+   # Deploy with cache headers
+   firebase deploy --only hosting
+   ```
+
+**Solution 5: Check Firebase Hosting Configuration**
+
+Verify `firebase.json` is correct:
+
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
+
+**Pre-Deployment Checklist**:
+
+Before deploying, always:
+
+- [ ] `.env.local` exists and contains all `VITE_*` variables
+- [ ] Run `npm run build:check` - should pass without errors
+- [ ] Run `npm run build` - should complete successfully
+- [ ] Run `npm run preview` - test locally at http://localhost:4173
+- [ ] Verify `dist` folder exists and contains files
+- [ ] Check browser console for errors in preview
+- [ ] Only then deploy: `firebase deploy --only hosting`
+
+**Quick Fix Command Sequence**:
+
+If you're seeing a blank page, run this complete sequence:
+
+```powershell
+# 1. Verify environment variables
+npm run build:check
+
+# 2. Clean and rebuild
+Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue
+npm run build
+
+# 3. Test locally first
+npm run preview
+# Open http://localhost:4173 and verify it works
+
+# 4. Deploy
+firebase deploy --only hosting
+
+# 5. Clear browser cache and test deployed site
+```
+
+**Still Not Working?**
+
+1. Check Firebase Console → Hosting → Dashboard for deployment errors
+2. Check browser console (F12) on deployed site for specific error messages
+3. Verify Firebase project ID matches `.firebaserc`:
+   ```json
+   {
+     "projects": {
+       "default": "your-project-id"
+     }
+   }
+   ```
+4. Ensure you're logged into correct Firebase account:
+   ```powershell
+   firebase login
+   firebase projects:list
+   ```
+
 ---
 
 ## 📊 Monitoring
@@ -272,16 +459,34 @@ npm run build
 
 ### Deploy New Changes
 
+**Recommended Workflow**:
+
 ```powershell
 # 1. Make your code changes
-# 2. Build
+
+# 2. Verify environment variables (optional but recommended)
+npm run build:check
+
+# 3. Build
 npm run build
 
-# 3. Deploy
+# 4. Test locally before deploying
+npm run preview
+# Open http://localhost:4173 and verify everything works
+
+# 5. Deploy
 firebase deploy
 
 # Or deploy only hosting:
 firebase deploy --only hosting
+```
+
+**Quick Deploy Script**:
+
+You can also use the convenience script:
+```powershell
+npm run deploy
+# This runs: npm run build && firebase deploy
 ```
 
 ---

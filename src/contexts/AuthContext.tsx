@@ -27,10 +27,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     // Check if Firebase is configured
     if (!auth || !db) {
+      const firebaseError = typeof window !== 'undefined' ? (window as any).__FIREBASE_CONFIG_ERROR__ : null;
+      const errorMsg = firebaseError?.message || 'Firebase is not configured. Please check your environment variables.';
       console.warn('Firebase not configured. Showing login page but authentication will not work.');
+      console.error('Firebase Configuration Error:', errorMsg);
       setLoading(false);
       setUser(null);
-      setAuthError('Firebase is not configured. Please check your environment variables.');
+      setAuthError(errorMsg);
       return;
     }
 
@@ -52,23 +55,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setAuthError(null);
         
         if (firebaseUser) {
-          // #region agent log
-          fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:51',message:'Auth state changed - user signed in',data:{uid:firebaseUser.uid,email:firebaseUser.email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-          // #endregion
           try {
             // Fetch user profile from Firestore
-            // #region agent log
-            fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:57',message:'Fetching Firestore profile',data:{uid:firebaseUser.uid},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-            // #endregion
             const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
-            // #region agent log
-            fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:58',message:'Firestore profile fetch result',data:{uid:firebaseUser.uid,exists:userDoc.exists(),email:firebaseUser.email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-            // #endregion
             if (userDoc.exists()) {
               const userData = userDoc.data() as UserProfile;
-              // #region agent log
-              fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:60',message:'Profile found - setting user',data:{uid:firebaseUser.uid,role:userData.role},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-              // #endregion
               setUser(userData);
               
               // Update last login
@@ -78,9 +69,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               }, { merge: true });
             } else {
               // If no profile exists, sign out and show error
-              // #region agent log
-              fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:69',message:'Profile NOT found - signing out',data:{uid:firebaseUser.uid,email:firebaseUser.email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-              // #endregion
               console.error('User profile not found in Firestore for:', firebaseUser.uid, firebaseUser.email);
               // Store error message in sessionStorage so login page can show it
               sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator to create your user profile.');
@@ -88,17 +76,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               setUser(null);
             }
           } catch (error) {
-            // #region agent log
-            fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:76',message:'Error fetching profile',data:{uid:firebaseUser.uid,error:error instanceof Error ? error.message : String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-            // #endregion
             console.error('Error fetching user profile:', error);
             sessionStorage.setItem('loginError', 'Error loading your profile. Please try again or contact your administrator.');
             setUser(null);
           }
         } else {
-          // #region agent log
-          fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AuthContext.tsx:81',message:'No user signed in',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-          // #endregion
           setUser(null);
         }
         setLoading(false);

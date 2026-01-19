@@ -23,6 +23,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const claudeAvailable = isClaudeAvailable();
 
@@ -140,6 +141,26 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     sendMessage(suggestion);
   };
 
+  // Clean and sanitize AI response text
+  const sanitizeMessage = (content: string): string => {
+    return content
+      // Remove date notes like "Note: 06-27-2024..." or "06-27-2024 Note:..."
+      .replace(/\d{2}-\d{2}-\d{4}\s*Note:?[^\n]*/gi, '')
+      .replace(/Note:\s*\d{2}-\d{2}-\d{4}[^\n]*/gi, '')
+      // Remove standalone date patterns
+      .replace(/^\d{2}-\d{2}-\d{4}[^\n]*$/gm, '')
+      // Remove messy bullet points and dashes at line start
+      .replace(/^\s*[-•*]\s*/gm, '')
+      // Remove excessive whitespace
+      .replace(/\s{3,}/g, ' ')
+      // Normalize line breaks (max 2 consecutive)
+      .replace(/\n{3,}/g, '\n\n')
+      // Remove lines that are just dates or timestamps
+      .replace(/^\d{1,2}\/\d{1,2}\/\d{2,4}[^\n]*$/gm, '')
+      // Clean up the text
+      .trim();
+  };
+
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -154,170 +175,125 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(0, 0, 0, 0.3)',
-          zIndex: 999,
-          animation: 'fadeIn 0.2s ease-out'
-        }}
+        className="ai-bot-backdrop"
       />
 
       {/* Sidebar */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          width: '420px',
-          height: '100vh',
-          background: '#F4F7FA',
-          boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.1)',
-          zIndex: 1000,
-          display: 'flex',
-          flexDirection: 'column',
-          animation: 'slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-        }}
-      >
+      <div className="ai-bot-sidebar">
         {/* Header */}
-        <div
-          style={{
-            background: '#0F2E6B',
-            color: 'white',
-            padding: '1.25rem 1.5rem',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
-          }}
-        >
-          <div>
-            <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 'bold' }}>
-              🧠 Claude AI Assistant
-            </h2>
-            <p style={{ margin: '0.25rem 0 0', fontSize: '0.75rem', opacity: 0.9 }}>
-              {clauses.length} clauses available
-            </p>
+        <div className="ai-bot-header">
+          <div className="ai-bot-header-content">
+            <h2 className="ai-bot-title">Claude AI Assistant</h2>
+            <p className="ai-bot-subtitle">{clauses.length} clauses available</p>
           </div>
           <button
             onClick={onClose}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '1.5rem',
-              cursor: 'pointer',
-              padding: '0.25rem',
-              borderRadius: '4px',
-              transition: 'background 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+            className="ai-bot-close-btn"
+            aria-label="Close assistant"
           >
-            ×
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
         </div>
 
         {/* Status Indicator */}
         {!claudeAvailable && (
-          <div
-            style={{
-              padding: '1rem 1.5rem',
-              background: '#FEE2E2',
-              borderBottom: '1px solid #FECACA',
-              color: '#991B1B'
-            }}
-          >
-            <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: '600' }}>
-              ⚠️ Claude API key not configured. Please set ANTHROPIC_API_KEY in your .env.local file.
-            </p>
+          <div className="ai-bot-status-error">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p>Claude API key not configured. Please set ANTHROPIC_API_KEY in your .env.local file.</p>
           </div>
         )}
 
         {/* Quick Actions */}
         {selectedClause && claudeAvailable && (
-          <div
-            style={{
-              padding: '1rem 1.5rem',
-              background: 'white',
-              borderTop: '1px solid #D1D9E6',
-              borderBottom: '1px solid #D1D9E6'
-            }}
-          >
+          <div className="ai-bot-quick-actions">
             <button
               onClick={handleExplainClause}
               disabled={isLoading}
-              style={{
-                width: '100%',
-                padding: '0.75rem',
-                background: '#1E6CE8',
-                color: 'white',
-                border: 'none',
-                borderRadius: '8px',
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                cursor: isLoading ? 'not-allowed' : 'pointer',
-                opacity: isLoading ? 0.6 : 1,
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => {
-                if (!isLoading) e.currentTarget.style.background = '#0F2E6B';
-              }}
-              onMouseLeave={(e) => {
-                if (!isLoading) e.currentTarget.style.background = '#1E6CE8';
-              }}
+              className="ai-bot-explain-btn"
             >
-              📖 Explain Clause {selectedClause.clause_number}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Explain Clause {selectedClause.clause_number}
             </button>
           </div>
         )}
 
         {/* Suggestions */}
         {suggestions.length > 0 && messages.length === 0 && claudeAvailable && (
-          <div className="suggestions">
-            {suggestions.map((suggestion, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleSuggestionClick(suggestion)}
-                disabled={isLoading}
-              >
-                {suggestion}
-              </button>
-            ))}
+          <div className="ai-bot-suggestions-wrapper">
+            <div className="ai-bot-suggestions" ref={suggestionsRef}>
+              {suggestions.map((suggestion, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleSuggestionClick(suggestion)}
+                  disabled={isLoading}
+                  className="ai-bot-suggestion-card"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
-        {/* Chat Wrapper - Contains chat-window and input-area */}
-        <div className="chat-wrapper" style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-          <div className="chat-window" id="chat">
+        {/* Chat Wrapper */}
+        <div className="ai-bot-chat-wrapper">
+          <div className="ai-bot-chat-window">
             {messages.length === 0 && (
-              <div style={{ textAlign: 'center', color: '#5C6B82', marginTop: '2rem' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💬</div>
-                <p style={{ fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                  Ask me anything about your contract!
-                </p>
-                <p style={{ fontSize: '0.75rem', opacity: 0.8 }}>
-                  I can explain clauses, answer questions, and provide suggestions.
-                </p>
+              <div className="ai-bot-empty-state">
+                <div className="ai-bot-empty-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h3 className="ai-bot-empty-title">Ask me anything about your contract!</h3>
+                <p className="ai-bot-empty-text">I can explain clauses, answer questions, and provide suggestions.</p>
               </div>
             )}
 
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`message ${message.role}`}
-              >
-                <div className="bubble" dangerouslySetInnerHTML={{ __html: message.content }} />
-              </div>
-            ))}
+            {messages.map((message) => {
+              // Clean up the message content - remove unwanted formatting and messy text
+              const cleanContent = sanitizeMessage(message.content);
+              
+              // Convert plain text to simple formatted HTML
+              const formattedContent = cleanContent
+                .split('\n')
+                .map(line => {
+                  const trimmed = line.trim();
+                  if (!trimmed) return '<br/>';
+                  // Format emoji sections
+                  if (trimmed.startsWith('🔵')) {
+                    return `<p style="font-weight: 700; color: #0F2E6B; margin-top: 1rem; margin-bottom: 0.5rem;">${trimmed}</p>`;
+                  } else if (trimmed.startsWith('🔹')) {
+                    return `<p style="font-weight: 600; margin-bottom: 0.25rem;">${trimmed}</p>`;
+                  } else if (trimmed.startsWith('🔸')) {
+                    return `<p style="opacity: 0.8; margin-bottom: 0.5rem; padding-left: 1rem;">${trimmed}</p>`;
+                  } else if (trimmed.startsWith('🔷')) {
+                    return `<p style="font-weight: 600; color: #1E6CE8; margin-top: 1rem; margin-bottom: 0.5rem;">${trimmed}</p>`;
+                  }
+                  return `<p>${trimmed}</p>`;
+                })
+                .join('');
+              
+              return (
+                <div
+                  key={message.id}
+                  className={`ai-bot-message ai-bot-message-${message.role}`}
+                >
+                  <div className="ai-bot-bubble" dangerouslySetInnerHTML={{ __html: formattedContent }} />
+                </div>
+              );
+            })}
 
             {isLoading && (
-              <div className="message ai">
-                <div className="bubble">
-                  <div className="typing">
+              <div className="ai-bot-message ai-bot-message-ai">
+                <div className="ai-bot-bubble">
+                  <div className="ai-bot-typing">
                     <span></span><span></span><span></span>
                   </div>
                 </div>
@@ -325,153 +301,548 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
             )}
 
             {error && (
-              <div
-                style={{
-                  padding: '0.75rem 1rem',
-                  background: '#FEE2E2',
-                  color: '#991B1B',
-                  borderRadius: '8px',
-                  fontSize: '0.875rem',
-                  border: '1px solid #FECACA',
-                  marginBottom: '18px'
-                }}
-              >
-                ⚠️ {error}
+              <div className="ai-bot-error">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                {error}
               </div>
             )}
 
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="input-area">
+          <div className="ai-bot-input-area">
             <input
               ref={inputRef}
-              id="input"
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask anything…"
               disabled={isLoading || !claudeAvailable}
+              className="ai-bot-input"
             />
             <button
               onClick={() => sendMessage()}
               disabled={isLoading || !inputValue.trim() || !claudeAvailable}
-              style={{
-                opacity: (isLoading || !inputValue.trim() || !claudeAvailable) ? 0.6 : 1,
-                cursor: (isLoading || !inputValue.trim() || !claudeAvailable) ? 'not-allowed' : 'pointer'
-              }}
+              className="ai-bot-send-btn"
+              aria-label="Send message"
             >
-              Send
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
             </button>
           </div>
         </div>
       </div>
 
       <style>{`
-        .chat-wrapper {
+        .ai-bot-backdrop {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(15, 46, 107, 0.4);
+          backdrop-filter: blur(6px);
+          z-index: 999;
+          animation: ai-bot-fadeIn 0.2s ease-out;
+        }
+
+        .ai-bot-sidebar {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 480px;
+          height: 100vh;
+          background: #F4F7FA;
+          box-shadow: -8px 0 32px rgba(15, 46, 107, 0.15);
+          z-index: 1000;
           display: flex;
           flex-direction: column;
-          height: 100%;
-          background: #f5f7fb;
-          padding: 20px;
-          align-items: center;
+          animation: ai-bot-slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .chat-window {
+        /* Header */
+        .ai-bot-header {
+          background: #0F2E6B;
+          color: white;
+          padding: 1.5rem 1.75rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+        }
+
+        .ai-bot-header-content {
+          flex: 1;
+        }
+
+        .ai-bot-title {
+          margin: 0;
+          font-size: 1.375rem;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          line-height: 1.3;
+          color: white;
+        }
+
+        .ai-bot-subtitle {
+          margin: 0.5rem 0 0;
+          font-size: 0.8125rem;
+          font-weight: 500;
+          opacity: 0.85;
+          letter-spacing: 0.01em;
+        }
+
+        .ai-bot-close-btn {
+          background: transparent;
+          border: none;
+          color: white;
+          cursor: pointer;
+          padding: 0.5rem;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+          flex-shrink: 0;
+          margin-left: 1rem;
+        }
+
+        .ai-bot-close-btn:hover {
+          background: rgba(255, 255, 255, 0.15);
+          transform: rotate(90deg);
+        }
+
+        .ai-bot-close-btn svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+
+        /* Status Error */
+        .ai-bot-status-error {
+          padding: 1rem 1.75rem;
+          background: #FEE2E2;
+          border-bottom: 1px solid #FECACA;
+          color: #991B1B;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          flex-shrink: 0;
+        }
+
+        .ai-bot-status-error svg {
+          flex-shrink: 0;
+          margin-top: 0.125rem;
+        }
+
+        .ai-bot-status-error p {
+          margin: 0;
+          font-size: 0.8125rem;
+          font-weight: 600;
+          line-height: 1.5;
+        }
+
+        /* Quick Actions */
+        .ai-bot-quick-actions {
+          padding: 1rem 1.75rem;
+          background: white;
+          border-bottom: 1px solid #E2E8F0;
+          flex-shrink: 0;
+        }
+
+        .ai-bot-explain-btn {
           width: 100%;
-          max-width: 900px;
+          padding: 0.875rem 1.25rem;
+          background: #1E6CE8;
+          color: white;
+          border: none;
+          border-radius: 12px;
+          font-size: 0.875rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          letter-spacing: 0.01em;
+        }
+
+        .ai-bot-explain-btn:hover:not(:disabled) {
+          background: #0F2E6B;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(15, 46, 107, 0.2);
+        }
+
+        .ai-bot-explain-btn:active:not(:disabled) {
+          transform: translateY(0);
+        }
+
+        .ai-bot-explain-btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+
+        .ai-bot-explain-btn svg {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        /* Suggestions */
+        .ai-bot-suggestions-wrapper {
+          padding: 1.25rem 1.75rem;
+          background: white;
+          border-bottom: 1px solid #E2E8F0;
+          flex-shrink: 0;
+          overflow: hidden;
+        }
+
+        .ai-bot-suggestions {
+          display: flex;
+          gap: 0.75rem;
+          overflow-x: auto;
+          padding-bottom: 0.5rem;
+          scrollbar-width: thin;
+          scrollbar-color: #CBD5E0 transparent;
+        }
+
+        .ai-bot-suggestions::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .ai-bot-suggestions::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .ai-bot-suggestions::-webkit-scrollbar-thumb {
+          background: #CBD5E0;
+          border-radius: 3px;
+        }
+
+        .ai-bot-suggestions::-webkit-scrollbar-thumb:hover {
+          background: #A0AEC0;
+        }
+
+        .ai-bot-suggestion-card {
+          background: #F0F4FF;
+          border: 1.5px solid #D6E2FF;
+          padding: 0.875rem 1.25rem;
+          border-radius: 12px;
+          cursor: pointer;
+          color: #0F2E6B;
+          font-size: 0.8125rem;
+          font-weight: 600;
+          line-height: 1.5;
+          white-space: nowrap;
+          transition: all 0.2s ease;
+          flex-shrink: 0;
+          max-width: 280px;
+          text-align: left;
+        }
+
+        .ai-bot-suggestion-card:hover:not(:disabled) {
+          background: #E0EBFF;
+          border-color: #1E6CE8;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(15, 46, 107, 0.1);
+        }
+
+        .ai-bot-suggestion-card:active:not(:disabled) {
+          transform: translateY(0);
+        }
+
+        .ai-bot-suggestion-card:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        /* Chat Wrapper */
+        .ai-bot-chat-wrapper {
+          flex: 1;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          background: #F4F7FA;
+          padding: 1.5rem 1.75rem;
+          gap: 1rem;
+        }
+
+        .ai-bot-chat-window {
+          flex: 1;
           background: white;
           border-radius: 16px;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-          padding: 20px 30px;
+          box-shadow: 0 2px 12px rgba(15, 46, 107, 0.08);
+          padding: 1.5rem;
           overflow-y: auto;
-          flex: 1;
-          margin-bottom: 0;
+          scrollbar-width: thin;
+          scrollbar-color: #CBD5E0 transparent;
         }
 
-        .message {
+        .ai-bot-chat-window::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        .ai-bot-chat-window::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .ai-bot-chat-window::-webkit-scrollbar-thumb {
+          background: #CBD5E0;
+          border-radius: 4px;
+        }
+
+        .ai-bot-chat-window::-webkit-scrollbar-thumb:hover {
+          background: #A0AEC0;
+        }
+
+        /* Empty State */
+        .ai-bot-empty-state {
+          text-align: center;
+          color: #64748B;
+          padding: 3rem 1rem;
+        }
+
+        .ai-bot-empty-icon {
+          width: 4rem;
+          height: 4rem;
+          margin: 0 auto 1.5rem;
+          color: #CBD5E0;
+        }
+
+        .ai-bot-empty-title {
+          margin: 0 0 0.5rem;
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: #334155;
+          letter-spacing: -0.01em;
+        }
+
+        .ai-bot-empty-text {
+          margin: 0;
+          font-size: 0.875rem;
+          font-weight: 500;
+          opacity: 0.8;
+          line-height: 1.6;
+        }
+
+        /* Messages */
+        .ai-bot-message {
           width: 100%;
           display: flex;
-          margin-bottom: 18px;
+          margin-bottom: 1.25rem;
         }
 
-        .message.user {
+        .ai-bot-message-user {
           justify-content: flex-end;
         }
 
-        .message.ai {
+        .ai-bot-message-ai {
           justify-content: flex-start;
         }
 
-        .bubble {
-          max-width: 75%;
-          padding: 14px 18px;
-          border-radius: 14px;
-          line-height: 1.5;
-          font-size: 15px;
+        .ai-bot-bubble {
+          max-width: 80%;
+          padding: 1rem 1.25rem;
+          border-radius: 16px;
+          line-height: 1.7;
+          font-size: 0.9375rem;
+          font-weight: 500;
+          word-wrap: break-word;
+          word-break: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
+          text-align: left;
         }
 
-        .message.user .bubble {
-          background: #1a73e8;
+        .ai-bot-message-user .ai-bot-bubble {
+          background: #0F2E6B;
           color: white;
           border-bottom-right-radius: 4px;
+          font-weight: 500;
+          text-align: left;
         }
 
-        .message.ai .bubble {
-          background: #f0f4ff;
-          color: #222;
+        .ai-bot-message-ai .ai-bot-bubble {
+          background: #F0F4FF;
+          color: #1E293B;
           border-bottom-left-radius: 4px;
+          font-weight: 500;
+          text-align: left;
         }
 
-        .input-area {
-          width: 100%;
-          max-width: 900px;
-          display: flex;
-          margin-top: 20px;
+        .ai-bot-bubble p {
+          margin: 0 0 0.875rem;
+          text-align: left;
+          line-height: 1.7;
         }
 
-        .input-area input {
-          flex: 1;
-          padding: 14px 18px;
+        .ai-bot-bubble p:last-child {
+          margin-bottom: 0;
+        }
+
+        .ai-bot-bubble p:first-child {
+          margin-top: 0;
+        }
+
+        .ai-bot-bubble ul,
+        .ai-bot-bubble ol {
+          margin: 0.5rem 0;
+          padding-left: 1.5rem;
+          text-align: left;
+        }
+
+        .ai-bot-bubble li {
+          margin: 0.375rem 0;
+          line-height: 1.7;
+        }
+
+        .ai-bot-bubble code {
+          background: rgba(15, 46, 107, 0.1);
+          padding: 0.125rem 0.375rem;
+          border-radius: 4px;
+          font-size: 0.875em;
+          font-family: 'JetBrains Mono', monospace;
+        }
+
+        .ai-bot-bubble * {
+          text-align: left;
+        }
+
+        /* Typing Indicator */
+        .ai-bot-typing {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.375rem;
+        }
+
+        .ai-bot-typing span {
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          background: #1E6CE8;
+          border-radius: 50%;
+          animation: ai-bot-typing 1.4s infinite ease-in-out;
+        }
+
+        .ai-bot-typing span:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+
+        .ai-bot-typing span:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+
+        @keyframes ai-bot-typing {
+          0%, 60%, 100% {
+            opacity: 0.3;
+            transform: translateY(0);
+          }
+          30% {
+            opacity: 1;
+            transform: translateY(-6px);
+          }
+        }
+
+        /* Error Message */
+        .ai-bot-error {
+          padding: 1rem 1.25rem;
+          background: #FEE2E2;
+          color: #991B1B;
           border-radius: 12px;
-          border: 1px solid #c8d4f0;
-          font-size: 15px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          border: 1px solid #FECACA;
+          margin-bottom: 1.25rem;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          line-height: 1.5;
+        }
+
+        .ai-bot-error svg {
+          flex-shrink: 0;
+          margin-top: 0.125rem;
+        }
+
+        /* Input Area */
+        .ai-bot-input-area {
+          display: flex;
+          gap: 0.75rem;
+          flex-shrink: 0;
+        }
+
+        .ai-bot-input {
+          flex: 1;
+          padding: 1rem 1.25rem;
+          border-radius: 14px;
+          border: 2px solid #E2E8F0;
+          font-size: 0.9375rem;
+          font-weight: 500;
           background: white;
           outline: none;
+          transition: all 0.2s ease;
+          color: #1E293B;
         }
 
-        .input-area input:focus {
-          border-color: #1a73e8;
+        .ai-bot-input::placeholder {
+          color: #94A3B8;
+          font-weight: 500;
         }
 
-        .input-area input:disabled {
-          background: #f5f7fb;
+        .ai-bot-input:focus {
+          border-color: #1E6CE8;
+          box-shadow: 0 0 0 3px rgba(30, 108, 232, 0.1);
+        }
+
+        .ai-bot-input:disabled {
+          background: #F1F5F9;
           cursor: not-allowed;
+          color: #94A3B8;
         }
 
-        .input-area button {
-          margin-left: 10px;
-          padding: 14px 22px;
-          background: #1a73e8;
+        .ai-bot-send-btn {
+          padding: 1rem 1.5rem;
+          background: #1E6CE8;
           color: white;
-          border-radius: 12px;
+          border-radius: 14px;
           border: none;
-          font-size: 15px;
+          font-size: 0.9375rem;
+          font-weight: 700;
           cursor: pointer;
-          transition: opacity 0.2s;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
         }
 
-        .input-area button:hover:not(:disabled) {
-          background: #1557b0;
+        .ai-bot-send-btn:hover:not(:disabled) {
+          background: #0F2E6B;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(15, 46, 107, 0.2);
         }
 
-        .input-area button:disabled {
-          background: #c8d4f0;
+        .ai-bot-send-btn:active:not(:disabled) {
+          transform: translateY(0);
+        }
+
+        .ai-bot-send-btn:disabled {
+          background: #CBD5E0;
           cursor: not-allowed;
+          opacity: 0.6;
         }
 
-        @keyframes slideInRight {
+        .ai-bot-send-btn svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+
+        /* Animations */
+        @keyframes ai-bot-slideInRight {
           from {
             transform: translateX(100%);
           }
@@ -479,74 +850,14 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
             transform: translateX(0);
           }
         }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes slideInUp {
+
+        @keyframes ai-bot-fadeIn {
           from {
             opacity: 0;
-            transform: translateY(10px);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
           }
-        }
-        .typing {
-          display: inline-block;
-          width: 60px;
-          height: 12px;
-        }
-
-        .typing span {
-          display: inline-block;
-          width: 8px;
-          height: 8px;
-          margin: 0 3px;
-          background: #1a73e8;
-          border-radius: 50%;
-          animation: typing 1.2s infinite ease-in-out;
-        }
-
-        .typing span:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        .typing span:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes typing {
-          0% { opacity: .2; transform: translateY(0); }
-          50% { opacity: 1; transform: translateY(-4px); }
-          100% { opacity: .2; transform: translateY(0); }
-        }
-
-        .suggestions {
-          margin-top: 15px;
-          display: flex;
-          gap: 10px;
-        }
-
-        .suggestions button {
-          background: #f0f4ff;
-          border: 1px solid #d6e2ff;
-          padding: 8px 14px;
-          border-radius: 8px;
-          cursor: pointer;
-          color: #1a73e8;
-          font-size: 14px;
-        }
-
-        .suggestions button:hover:not(:disabled) {
-          background: #e0ebff;
-          border-color: #1a73e8;
-        }
-
-        .suggestions button:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
         }
       `}</style>
     </>

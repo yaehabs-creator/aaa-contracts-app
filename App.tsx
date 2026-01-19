@@ -3,14 +3,25 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { analyzeContract } from './services/claudeService';
 import Anthropic from '@anthropic-ai/sdk';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
-import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput } from './types';
-import { ClauseCard } from './components/ClauseCard';
+import { getContractFromFirestore } from './src/services/firestoreService';
+import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
+import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard';
 import { Dashboard } from './components/Dashboard';
 import { Sidebar } from './components/Sidebar';
 import { ComparisonModal } from './components/ComparisonModal';
 import { AddClauseModal } from './components/AddClauseModal';
+import { CategoryManager } from './components/CategoryManager';
+import { CategorySuggestionsModal } from './components/CategorySuggestionsModal';
+import { CategoryManagerService } from './services/categoryManagerService';
+import { ContractSectionsTabs } from './components/ContractSectionsTabs';
+import { ensureContractHasSections, getAllClausesFromContract, clauseToSectionItem, sectionItemToClause } from './services/contractMigrationService';
+import { ItemType } from './types';
 import { AppWrapper } from './src/components/AppWrapper';
 import { AIBotSidebar } from './src/components/AIBotSidebar';
+import { FloatingAIButton } from './src/components/FloatingAIButton';
+import { useAuth } from './src/contexts/AuthContext';
+import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from './src/services/textPreprocessor';
+import { suggestCategories, CategorySuggestion } from './services/categorySuggestionService';
 
 const REASSURING_STAGES = [
   { progress: 10, label: "Scanning Pages...", sub: "Mapping document layers" },
@@ -20,31 +31,55 @@ const REASSURING_STAGES = [
 ];
 
 const TEXT_STAGES = [
-  { progress: 20, label: "Direct Injection...", sub: "Bypassing extraction layers" },
-  { progress: 50, label: "Rapid Neural Mapping...", sub: "Analyzing verbatim strings" },
+  { progress: 10, label: "Cleaning Text...", sub: "Fixing PDF extraction errors" },
+  { progress: 25, label: "Detecting Clauses...", sub: "Identifying clause boundaries" },
+  { progress: 40, label: "AI Analysis...", sub: "Extracting verbatim clauses" },
   { progress: 85, label: "Validating Ledger...", sub: "Confirming condition types" },
   { progress: 100, label: "Ready", sub: "Finalizing" }
 ];
 
+// Normalize clause ID for consistent hyperlink matching
+const normalizeClauseId = (clauseNumber: string): string => {
+  if (!clauseNumber) return '';
+  return clauseNumber
+    .replace(/\s+/g, '')  // Remove all spaces
+    .replace(/[()]/g, ''); // Remove parentheses
+};
+
+// Estimate token count from text (rough approximation: ~4 characters per token)
+const estimateTokens = (text: string): number => {
+  if (!text) return 0;
+  // Rough estimate: 1 token ≈ 4 characters for English text
+  // Add system instruction overhead (~500 tokens)
+  return Math.ceil(text.length / 4) + 500;
+};
+
+// Claude Sonnet 4.5 token limits
+const CLAUDE_TOKEN_LIMITS = {
+  maxInputTokens: 200000,  // Context window
+  maxOutputTokens: 16384,   // Output limit (as set in analyzeContract)
+  totalBudget: 200000      // Total context window
+};
+
 const linkifyText = (text: string | undefined): string => {
   if (!text) return "";
-  // Updated pattern to handle alphanumeric clause numbers like "2A.1", "3B.2.1", "6 A.2 (b)", "2 A.6", etc.
-  // The key improvement: match longer patterns first to avoid partial matches
-  // Pattern breakdown:
-  // - (?<!href=["']#clause-) - negative lookbehind to avoid matching already linked text
-  // - (?:[Cc]lause|[Ss]ub-[Cc]lause|[Aa]rticle|[Pp]aragraph|[Ss]ub-[Pp]aragraph) - keyword matching
-  // - \s+ - one or more spaces after keyword
-  // - ([0-9]+(?:\s+[A-Za-z][0-9A-Za-z.]*)?(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?|[A-Za-z]+(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?) - clause number
-  //   First part: Number optionally followed by space+letter+more (e.g., "2 A.6", "6 A.2")
-  //   Second part: Letter first (e.g., "2A.1", "A.6")
-  const pattern = /(?<!href=["']#clause-)(?:[Cc]lause|[Ss]ub-[Cc]lause|[Aa]rticle|[Pp]aragraph|[Ss]ub-[Pp]aragraph)\s+([0-9]+(?:\s+[A-Za-z][0-9A-Za-z.]*)?(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?|[A-Za-z]+(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?)/gi;
+  
+  // Skip if text already contains hyperlinks to avoid double-processing
+  if (text.includes('<a href="#clause-')) {
+    return text;
+  }
+  
+  // Enhanced pattern to handle various clause reference formats:
+  // - "Clause 1.1", "clause 2A.1", "Sub-clause 1.6 (b)", "paragraph 2.1.3", "Article 5"
+  // - Handles spaces: "Clause 2 A.6", "Clause 6 A.2 (b)"
+  // - Handles alphanumeric: "2A.1", "3B.2.1", "A.6"
+  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause|[Aa]rticle|[Pp]aragraph|[Ss]ub-[Pp]aragraph)\s+([0-9]+(?:\s+[A-Za-z][0-9A-Za-z.]*)?(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?|[A-Za-z]+(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?)/gi;
+  
   return text.replace(pattern, (match, number) => {
-    // Clean the clause number: remove spaces and parentheses, but preserve alphanumeric characters and dots
-    // This converts "6 A.2 (b)" to "6A.2b", "2 A.6" to "2A.6" for the anchor ID
-    const cleanId = number
-      .replace(/\s+/g, '')  // Remove all spaces
-      .replace(/[()]/g, ''); // Remove parentheses
-    return `<a href="#clause-${cleanId}">${match}</a>`;
+    // Normalize the clause number to match the ID format used in ClauseCard
+    const cleanId = normalizeClauseId(number);
+    // Add class for styling and prevent default browser navigation
+    return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
   });
 };
 
@@ -72,6 +107,23 @@ const highlightKeywords = (text: string, keywords: string[]): string => {
   return highlightedText;
 };
 
+// Deduplicate clauses by clause_number and condition_type
+// Keeps the first occurrence of each unique clause_number+condition_type combination
+const deduplicateClauses = (clauses: Clause[]): Clause[] => {
+  const seen = new Map<string, Clause>();
+  const result: Clause[] = [];
+  
+  for (const clause of clauses) {
+    const key = `${clause.clause_number}|${clause.condition_type}`;
+    if (!seen.has(key)) {
+      seen.set(key, clause);
+      result.push(clause);
+    }
+  }
+  
+  return result;
+};
+
 interface SearchResult {
   clause_id: string;
   clause_number: string;
@@ -82,29 +134,60 @@ interface SearchResult {
 }
 
 const App: React.FC = () => {
+  const { isAdmin, user, loading: authLoading } = useAuth();
   const [status, setStatus] = useState<AnalysisStatus>(AnalysisStatus.IDLE);
   const [clauses, setClauses] = useState<Clause[]>([]);
+  const [contract, setContract] = useState<SavedContract | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const [activeStage, setActiveStage] = useState(REASSURING_STAGES[0]);
   const [batchInfo, setBatchInfo] = useState({ current: 0, total: 0 });
+  const [liveStatus, setLiveStatus] = useState<{
+    message: string;
+    detail: string;
+    isActive: boolean;
+  }>({ message: '', detail: '', isActive: false });
+  const [preprocessingInfo, setPreprocessingInfo] = useState<{
+    generalFixes: number;
+    particularFixes: number;
+    estimatedClauses: number;
+    fixes: Array<{ original: string; fixed: string; reason: string }>;
+    tokenInfo: {
+      inputTokens: number;
+      outputTokenLimit: number;
+      totalTokenBudget: number;
+      usagePercentage: number;
+    };
+  } | null>(null);
   
   const [generalFile, setGeneralFile] = useState<FileData | null>(null);
   const [particularFile, setParticularFile] = useState<FileData | null>(null);
   const [pastedGeneralText, setPastedGeneralText] = useState('');
   const [pastedParticularText, setPastedParticularText] = useState('');
-  const [inputMode, setInputMode] = useState<'single' | 'dual' | 'text'>('dual');
+  const [inputMode, setInputMode] = useState<'single' | 'dual' | 'text' | 'fixer'>('dual');
+  const [textToFix, setTextToFix] = useState('');
+  const [fixedText, setFixedText] = useState<{ cleaned: string; fixes: Array<{ original: string; fixed: string; reason: string }>; removedLines: number; corruptedLines?: Array<{ line: string; reason: string; index: number }> } | null>(null);
+  const [linesToRemove, setLinesToRemove] = useState<Set<number>>(new Set());
+  const [showCorruptionReview, setShowCorruptionReview] = useState(false);
+  const [currentCorruptionIndex, setCurrentCorruptionIndex] = useState(0);
+  const [useAICleaning, setUseAICleaning] = useState(false);
+  const [isAICleaning, setIsAICleaning] = useState(false);
+  const [aiCleanedText, setAiCleanedText] = useState<string | null>(null);
+  const [skipTextCleaning, setSkipTextCleaning] = useState(false);
 
   const [searchFilter, setSearchFilter] = useState<string>('');
   const [selectedTypes, setSelectedTypes] = useState<ConditionType[]>(['General', 'Particular']);
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
   const [compareClause, setCompareClause] = useState<Clause | null>(null);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [categorySuggestions, setCategorySuggestions] = useState<CategorySuggestion[]>([]);
+  const [showCategorySuggestions, setShowCategorySuggestions] = useState(false);
   
   const [library, setLibrary] = useState<SavedContract[]>([]);
   const [projectName, setProjectName] = useState('');
   const [activeContractId, setActiveContractId] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [showContractSelector, setShowContractSelector] = useState(false);
 
   // Smart Search States
   const [smartSearchQuery, setSmartSearchQuery] = useState('');
@@ -115,6 +198,12 @@ const App: React.FC = () => {
   // AI Bot States
   const [isBotOpen, setIsBotOpen] = useState(false);
   const [selectedClauseForBot, setSelectedClauseForBot] = useState<Clause | null>(null);
+  
+  // Chapter Display View
+  const [viewByChapter, setViewByChapter] = useState(false);
+  
+  // Sidebar visibility
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const generalFileRef = useRef<HTMLInputElement>(null);
@@ -135,6 +224,75 @@ const App: React.FC = () => {
       }
     };
   }, []);
+
+  // Persist activeContractId to localStorage whenever it changes
+  useEffect(() => {
+    if (activeContractId) {
+      localStorage.setItem('aaa_active_contract_id', activeContractId);
+    } else {
+      localStorage.removeItem('aaa_active_contract_id');
+    }
+  }, [activeContractId]);
+
+  // Track if we've shown the contract selector (to prevent multiple shows)
+  const hasShownSelectorRef = useRef(false);
+
+  // Show contract selector on startup (wait for authentication)
+  useEffect(() => {
+    // Don't show until authentication is ready
+    if (authLoading) {
+      return;
+    }
+
+    // Only show if user is authenticated
+    if (!user) {
+      return;
+    }
+
+    // Don't show if we've already shown it
+    if (hasShownSelectorRef.current) {
+      return;
+    }
+
+    // Don't show if clauses are already loaded (user may have manually loaded something)
+    if (clauses.length > 0) {
+      hasShownSelectorRef.current = true;
+      return;
+    }
+
+    const showContractSelector = async () => {
+      hasShownSelectorRef.current = true; // Mark as shown immediately to prevent duplicate calls
+      
+      try {
+        // Load all contracts from Firestore
+        await refreshLibrary();
+        
+        // Show the contract selector modal
+        setShowContractSelector(true);
+      } catch (error) {
+        console.error('Failed to load contracts:', error);
+        // If loading fails, just continue without showing selector
+      }
+    };
+
+    showContractSelector();
+  }, [authLoading, user]); // Run when auth state changes
+
+  // Handle escape key to close contract selector
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showContractSelector) {
+        setShowContractSelector(false);
+      }
+    };
+
+    if (showContractSelector) {
+      document.addEventListener('keydown', handleEscape);
+      return () => {
+        document.removeEventListener('keydown', handleEscape);
+      };
+    }
+  }, [showContractSelector]);
 
   const refreshLibrary = async () => {
     try {
@@ -184,12 +342,10 @@ const App: React.FC = () => {
   };
 
   const performSave = async (targetClauses: Clause[], targetName: string, targetId: string) => {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:performSave',message:'Saving contract',data:{contractId:targetId,name:targetName,clauseCount:targetClauses.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     setIsSaving(true);
     try {
-      const saved: SavedContract = {
+      // Create contract with sections
+      const contractWithSections = ensureContractHasSections({
         id: targetId,
         name: targetName,
         timestamp: Date.now(),
@@ -202,24 +358,103 @@ const App: React.FC = () => {
           conflictCount: targetClauses.filter(c => c.comparison && c.comparison.length > 0).length,
           timeSensitiveCount: targetClauses.filter(c => c.time_frames && c.time_frames.length > 0).length
         }
-      };
-      await saveContractToDB(saved);
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:performSave',message:'Contract saved successfully',data:{contractId:targetId},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
+      });
+      
+      await saveContractToDB(contractWithSections);
+      setContract(contractWithSections);
       if (!activeContractId) setActiveContractId(targetId);
       await refreshLibrary();
     } catch (err) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:performSave',message:'Save failed',data:{error:err instanceof Error ? err.message : String(err)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       console.error("Save failed:", err);
     } finally {
       setTimeout(() => setIsSaving(false), 800);
     }
   };
 
+  const performSaveContract = async (targetContract: SavedContract) => {
+    setIsSaving(true);
+    try {
+      // Ensure contract has sections, but preserve existing sections if they exist
+      let contractWithSections: SavedContract;
+      if (targetContract.sections && targetContract.sections.length > 0) {
+        // Contract already has sections - preserve them as-is
+        contractWithSections = ensureContractHasSections(targetContract);
+      } else {
+        // No sections - migrate/create them
+        contractWithSections = ensureContractHasSections(targetContract);
+      }
+      
+      // Ensure we have an ID
+      if (!contractWithSections.id) {
+        contractWithSections.id = activeContractId || crypto.randomUUID();
+      }
+      
+      // Save to database
+      await saveContractToDB(contractWithSections);
+      
+      // Update local state
+      setContract(contractWithSections);
+      setClauses(getAllClausesFromContract(contractWithSections));
+      if (!activeContractId) setActiveContractId(contractWithSections.id);
+      
+      // Refresh library to show updated contract
+      await refreshLibrary();
+      
+      console.log('Contract saved successfully:', {
+        id: contractWithSections.id,
+        name: contractWithSections.name,
+        sectionsCount: contractWithSections.sections?.length || 0,
+        agreementItems: contractWithSections.sections?.find(s => s.sectionType === SectionType.AGREEMENT)?.items.length || 0,
+        loaItems: contractWithSections.sections?.find(s => s.sectionType === SectionType.LOA)?.items.length || 0
+      });
+    } catch (err) {
+      console.error("Save failed:", err);
+      alert(`Failed to save contract: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    } finally {
+      setTimeout(() => setIsSaving(false), 800);
+    }
+  };
+
   const handleUpdateClause = (updatedClause: Clause) => {
+    if (contract) {
+      const contractWithSections = ensureContractHasSections(contract);
+      const sectionType = updatedClause.condition_type === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
+      const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
+      
+      if (section) {
+        const itemIndex = section.items.findIndex(item =>
+          item.itemType === ItemType.CLAUSE &&
+          item.clause_number === updatedClause.clause_number &&
+          item.condition_type === updatedClause.condition_type
+        );
+        
+        if (itemIndex >= 0) {
+          const updatedItem = clauseToSectionItem(updatedClause, section.items[itemIndex].orderIndex);
+          const updatedItems = [...section.items];
+          updatedItems[itemIndex] = updatedItem;
+          
+          const updatedSections = contractWithSections.sections!.map(s =>
+            s.sectionType === sectionType ? { ...s, items: updatedItems } : s
+          );
+          
+          const updatedContract: SavedContract = {
+            ...contractWithSections,
+            sections: updatedSections,
+            clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
+          };
+          
+          setContract(updatedContract);
+          setClauses(updatedContract.clauses || []);
+          if (compareClause && compareClause.clause_number === updatedClause.clause_number) {
+            setCompareClause(updatedClause);
+          }
+          performSaveContract(updatedContract);
+          return;
+        }
+      }
+    }
+    
+    // Fallback: update clauses array directly
     const updatedClauses = clauses.map(c => 
       c.clause_number === updatedClause.clause_number && c.condition_type === updatedClause.condition_type 
         ? updatedClause 
@@ -229,6 +464,11 @@ const App: React.FC = () => {
     if (compareClause && compareClause.clause_number === updatedClause.clause_number) {
       setCompareClause(updatedClause);
     }
+    persistCurrentProject(updatedClauses);
+  };
+
+  const handleClausesUpdateFromCategory = (updatedClauses: Clause[]) => {
+    setClauses(updatedClauses);
     persistCurrentProject(updatedClauses);
   };
 
@@ -302,6 +542,70 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     }
   };
 
+  const [editingClause, setEditingClause] = useState<Clause | null>(null);
+
+  const handleEditClause = (clause: Clause) => {
+    setEditingClause(clause);
+    setIsAddModalOpen(true);
+  };
+
+  const handleUpdateClauseFromModal = async (data: {
+    number: string;
+    title: string;
+    generalText: string;
+    particularText: string;
+    contractId: string;
+  }) => {
+    if (!editingClause || !contract) return;
+    
+    await new Promise(resolve => setTimeout(resolve, 600));
+    const conditionType: ConditionType = data.particularText.trim() ? 'Particular' : 'General';
+    const updatedClause: Clause = {
+      ...editingClause,
+      clause_number: data.number,
+      clause_title: data.title || "Untitled Clause",
+      clause_text: linkifyText(data.particularText || data.generalText),
+      condition_type: conditionType,
+      general_condition: data.generalText.trim() ? linkifyText(data.generalText) : undefined,
+      particular_condition: data.particularText.trim() ? linkifyText(data.particularText) : undefined,
+    };
+    
+    // Update in contract sections
+    const contractWithSections = ensureContractHasSections(contract);
+    const sectionType = conditionType === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
+    const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
+    
+    if (section) {
+      const itemIndex = section.items.findIndex(item => 
+        item.itemType === ItemType.CLAUSE &&
+        item.clause_number === editingClause.clause_number &&
+        item.condition_type === editingClause.condition_type
+      );
+      
+      if (itemIndex >= 0) {
+        const updatedItem = clauseToSectionItem(updatedClause, section.items[itemIndex].orderIndex);
+        const updatedItems = [...section.items];
+        updatedItems[itemIndex] = updatedItem;
+        
+        const updatedSections = contractWithSections.sections!.map(s =>
+          s.sectionType === sectionType ? { ...s, items: updatedItems } : s
+        );
+        
+        const updatedContract: SavedContract = {
+          ...contractWithSections,
+          sections: updatedSections,
+          clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
+        };
+        
+        setContract(updatedContract);
+        setClauses(updatedContract.clauses || []);
+        await performSaveContract(updatedContract);
+      }
+    }
+    
+    setEditingClause(null);
+  };
+
   const handleSaveManualClause = async (data: {
     number: string;
     title: string;
@@ -309,6 +613,27 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     particularText: string;
     contractId: string;
   }) => {
+    if (!contract) {
+      // Create new contract if none exists
+      const newId = crypto.randomUUID();
+      const newContract = ensureContractHasSections({
+        id: newId,
+        name: projectName || "Untitled Contract",
+        timestamp: Date.now(),
+        clauses: [],
+        metadata: {
+          totalClauses: 0,
+          generalCount: 0,
+          particularCount: 0,
+          highRiskCount: 0,
+          conflictCount: 0,
+          timeSensitiveCount: 0
+        }
+      });
+      setContract(newContract);
+      setActiveContractId(newId);
+    }
+    
     await new Promise(resolve => setTimeout(resolve, 600));
     const conditionType: ConditionType = data.particularText.trim() ? 'Particular' : 'General';
     const newClause: Clause = {
@@ -321,46 +646,74 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       comparison: [],
       time_frames: []
     };
-    const updatedClauses = [...clauses, newClause].sort((a, b) => {
-      // Enhanced parsing to handle alphanumeric clause numbers like "2A.1", "3B.2.1"
-      const parse = (s: string) => {
-        return s.split('.').map(x => {
-          // Try to parse as number first, if it contains letters, compare as string
-          const num = parseInt(x);
-          if (!isNaN(num) && x === num.toString()) {
-            return { type: 'number', value: num, str: x };
-          }
-          return { type: 'string', value: 0, str: x };
-        });
-      };
-      const aP = parse(a.clause_number);
-      const bP = parse(b.clause_number);
-      for(let i=0; i<Math.max(aP.length, bP.length); i++) {
-        const aPart = aP[i] || { type: 'number', value: 0, str: '' };
-        const bPart = bP[i] || { type: 'number', value: 0, str: '' };
+    
+    const currentContract = ensureContractHasSections(contract!);
+    const sectionType = conditionType === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
+    const section = currentContract.sections!.find(s => s.sectionType === sectionType);
+    
+    if (!section) return;
+    
+    // Check for existing clause with same number and condition type
+    const existingItemIndex = section.items.findIndex(item =>
+      item.itemType === ItemType.CLAUSE &&
+      item.clause_number === data.number &&
+      item.condition_type === conditionType
+    );
+    
+    if (existingItemIndex >= -1 && existingItemIndex < section.items.length) {
+      const existingItem = section.items[existingItemIndex];
+      const existingClause = sectionItemToClause(existingItem);
+      if (existingClause) {
+        const shouldUpdate = confirm(
+          `Clause ${data.number} (${conditionType}) already exists.\n\n` +
+          `Existing: "${existingClause.clause_title}"\n` +
+          `New: "${newClause.clause_title}"\n\n` +
+          `Click OK to replace the existing clause, or Cancel to abort.`
+        );
         
-        // If both are numbers, compare numerically
-        if (aPart.type === 'number' && bPart.type === 'number') {
-          if (aPart.value !== bPart.value) return aPart.value - bPart.value;
-        } else {
-          // Mixed or string comparison - compare as strings
-          const aStr = aPart.str.toLowerCase();
-          const bStr = bPart.str.toLowerCase();
-          if (aStr !== bStr) {
-            // If one starts with number and other doesn't, number comes first
-            const aNum = parseInt(aStr);
-            const bNum = parseInt(bStr);
-            if (!isNaN(aNum) && isNaN(bNum)) return -1;
-            if (isNaN(aNum) && !isNaN(bNum)) return 1;
-            // Otherwise compare alphabetically
-            return aStr.localeCompare(bStr);
-          }
+        if (!shouldUpdate) {
+          return; // User cancelled
         }
+        
+        // Replace existing clause
+        const updatedItem = clauseToSectionItem(newClause, section.items[existingItemIndex].orderIndex);
+        const updatedItems = [...section.items];
+        updatedItems[existingItemIndex] = updatedItem;
+        
+        const updatedSections = currentContract.sections!.map(s =>
+          s.sectionType === sectionType ? { ...s, items: updatedItems } : s
+        );
+        
+        const updatedContract: SavedContract = {
+          ...currentContract,
+          sections: updatedSections,
+          clauses: getAllClausesFromContract({ ...currentContract, sections: updatedSections })
+        };
+        
+        setContract(updatedContract);
+        setClauses(updatedContract.clauses || []);
+        await performSaveContract(updatedContract);
+        return;
       }
-      return 0;
-    });
-    setClauses(updatedClauses);
-    persistCurrentProject(updatedClauses);
+    }
+    
+    // No duplicate found, add new clause
+    const updatedItem = clauseToSectionItem(newClause, section.items.length);
+    const updatedItems = [...section.items, updatedItem];
+    
+    const updatedSections = currentContract.sections!.map(s =>
+      s.sectionType === sectionType ? { ...s, items: updatedItems } : s
+    );
+    
+    const updatedContract: SavedContract = {
+      ...currentContract,
+      sections: updatedSections,
+      clauses: getAllClausesFromContract({ ...currentContract, sections: updatedSections })
+    };
+    
+    setContract(updatedContract);
+    setClauses(updatedContract.clauses || []);
+    await performSaveContract(updatedContract);
   };
 
   const handleRenameArchive = async (e: React.MouseEvent, contract: SavedContract) => {
@@ -377,12 +730,24 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   const handleDeleteArchive = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     if (confirm("Permanently delete this project from archive?")) {
-      await deleteContractFromDB(id);
-      await refreshLibrary();
-      if (activeContractId === id) {
-        setStatus(AnalysisStatus.IDLE);
-        setActiveContractId(null);
-        setClauses([]);
+      try {
+        await deleteContractFromDB(id);
+        await refreshLibrary();
+        if (activeContractId === id) {
+          setStatus(AnalysisStatus.IDLE);
+          setPreprocessingInfo(null);
+          setLiveStatus({ message: '', detail: '', isActive: false });
+          setActiveContractId(null);
+          setClauses([]);
+          // Clear saved active contract ID from localStorage
+          localStorage.removeItem('aaa_active_contract_id');
+        }
+        // Show success message
+        alert("Project deleted successfully from archive.");
+      } catch (err: any) {
+        console.error("Delete failed:", err);
+        const errorMessage = err?.message || "Failed to delete project. Please check your connection and try again.";
+        alert(`Error: ${errorMessage}`);
       }
     }
   };
@@ -427,12 +792,14 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           timestamp: Date.now()
         };
 
-        await saveContractToDB(contractToSave);
+        const contractWithSections = ensureContractHasSections(contractToSave);
+        await saveContractToDB(contractWithSections);
         await refreshLibrary();
         
         // Automatically load it
-        setClauses(contractToSave.clauses);
-        setProjectName(contractToSave.name);
+        setContract(contractWithSections);
+        setClauses(getAllClausesFromContract(contractWithSections));
+        setProjectName(contractWithSections.name);
         setActiveContractId(newId);
         setStatus(AnalysisStatus.COMPLETED);
 
@@ -445,50 +812,624 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     reader.readAsText(file);
   };
 
-  const handleDeleteClause = (index: number) => {
+  const handleDeleteClause = async (index: number, sectionType?: SectionType) => {
+    if (!contract) return;
+    
     if (confirm("Permanently remove this clause node?")) {
-      const newClauses = clauses.filter((_, i) => i !== index);
-      setClauses(newClauses);
-      persistCurrentProject(newClauses);
+      const contractWithSections = ensureContractHasSections(contract);
+      
+      if (sectionType) {
+        // Delete from specific section
+        const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
+        if (section) {
+          const updatedItems = section.items.filter((_, i) => i !== index);
+          updatedItems.forEach((item, i) => {
+            item.orderIndex = i;
+          });
+          
+          const updatedSections = contractWithSections.sections!.map(s =>
+            s.sectionType === sectionType ? { ...s, items: updatedItems } : s
+          );
+          
+          const updatedContract: SavedContract = {
+            ...contractWithSections,
+            sections: updatedSections,
+            clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
+          };
+          
+          setContract(updatedContract);
+          setClauses(updatedContract.clauses || []);
+          await performSaveContract(updatedContract);
+        }
+      } else {
+        // Legacy: delete from clauses array
+        const clause = clauses[index];
+        if (clause) {
+          const targetSectionType = clause.condition_type === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
+          const section = contractWithSections.sections?.find(s => s.sectionType === targetSectionType);
+          if (section) {
+            const itemIndex = section.items.findIndex(item =>
+              item.itemType === ItemType.CLAUSE &&
+              item.clause_number === clause.clause_number &&
+              item.condition_type === clause.condition_type
+            );
+            
+            if (itemIndex >= 0) {
+              const updatedItems = section.items.filter((_, i) => i !== itemIndex);
+              updatedItems.forEach((item, i) => {
+                item.orderIndex = i;
+              });
+              
+              const updatedSections = contractWithSections.sections!.map(s =>
+                s.sectionType === targetSectionType ? { ...s, items: updatedItems } : s
+              );
+              
+              const updatedContract: SavedContract = {
+                ...contractWithSections,
+                sections: updatedSections,
+                clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
+              };
+              
+              setContract(updatedContract);
+              setClauses(updatedContract.clauses || []);
+              await performSaveContract(updatedContract);
+            }
+          }
+        }
+      }
     }
   };
 
+  // Helper function to extract text from a single page with improved accuracy
+  const extractTextFromPage = async (page: any, pageNumber: number, viewport: any): Promise<string> => {
+    const textContent = await page.getTextContent();
+    const items = textContent.items as any[];
+    
+    if (items.length === 0) {
+      return `--- PAGE ${pageNumber} ---\n`;
+    }
+
+    // Get page dimensions for multi-column detection
+    const pageWidth = viewport.width;
+    const columnGapThreshold = Math.max(100, pageWidth * 0.2); // 100px or 20% of page width
+
+    // Process items to calculate font sizes and line heights
+    const processedItems = items.map((item: any) => {
+      const transform = item.transform;
+      const x = transform[4];
+      const y = transform[5];
+      
+      // Calculate font size from transform matrix (scale in Y direction)
+      const fontSize = Math.abs(transform[3] || 12); // Default to 12 if not available
+      
+      // Estimate line height as 1.2x font size (common in documents)
+      const lineHeight = fontSize * 1.2;
+      
+      // Calculate character width estimate
+      const charWidth = fontSize * 0.6; // Rough estimate
+      
+      return {
+        text: item.str,
+        x,
+        y,
+        fontSize,
+        lineHeight,
+        charWidth,
+        transform
+      };
+    });
+
+    // Sort items: top to bottom (descending Y), then left to right (ascending X)
+    processedItems.sort((a, b) => {
+      // Primary sort: Y position (top to bottom) - higher Y comes first
+      const yDiff = Math.abs(b.y - a.y);
+      if (yDiff > Math.min(a.lineHeight * 0.5, b.lineHeight * 0.5)) {
+        return b.y - a.y; // Different lines - sort by Y
+      }
+      // Same line (or very close) - sort left to right
+      return a.x - b.x;
+    });
+
+    let pageText = `--- PAGE ${pageNumber} ---\n`;
+    let lastY = -1;
+    let lastX = -1;
+    let lastLineHeight = 0;
+
+    for (const item of processedItems) {
+      const currentY = item.y;
+      const currentX = item.x;
+      
+      // Detect paragraph breaks: vertical gap > 2x line height (moving down significantly)
+      const verticalGap = lastY !== -1 ? lastY - currentY : 0; // Positive when moving down
+      const isParagraphBreak = lastY !== -1 && verticalGap > Math.max(item.lineHeight * 2, lastLineHeight * 2);
+      
+      // Detect line breaks: vertical gap > 0.5x line height (moving down to new line)
+      const isLineBreak = lastY !== -1 && verticalGap > Math.min(item.lineHeight * 0.5, lastLineHeight * 0.5);
+      
+      // Detect multi-column: large X gap (new column)
+      const isNewColumn = lastX !== -1 && Math.abs(currentX - lastX) > columnGapThreshold && !isLineBreak && !isParagraphBreak;
+      
+      if (isParagraphBreak) {
+        pageText += "\n\n"; // Double newline for paragraph
+      } else if (isLineBreak || isNewColumn) {
+        pageText += "\n"; // Single newline for line break or column
+      }
+      
+      // Handle spacing between words on same line
+      if (!isLineBreak && !isParagraphBreak && !isNewColumn && lastX !== -1) {
+        const xGap = currentX - (lastX + (lastLineHeight * 0.6)); // Estimate end of last word
+        const expectedSpacing = item.charWidth; // Expected space between words
+        
+        // If gap is larger than expected spacing, add space
+        if (xGap > expectedSpacing * 1.5) {
+          pageText += " ";
+        } else if (xGap > expectedSpacing * 0.5) {
+          pageText += " "; // Still add space for smaller gaps
+        }
+      }
+      
+      pageText += item.text;
+      
+      lastY = currentY;
+      lastX = currentX + (item.text.length * item.charWidth); // Estimate end of current text
+      lastLineHeight = item.lineHeight;
+    }
+
+    return pageText;
+  };
+
+  // Remove headers and footers by detecting repeated text
+  const removeHeadersFooters = (pages: string[]): string[] => {
+    if (pages.length < 3) return pages; // Need at least 3 pages to detect patterns
+
+    // Extract top and bottom lines from each page
+    const headerLines: Map<string, number> = new Map();
+    const footerLines: Map<string, number> = new Map();
+
+    pages.forEach((pageText, index) => {
+      const lines = pageText.split('\n');
+      // Top 10% of lines (headers)
+      const headerCount = Math.max(1, Math.floor(lines.length * 0.1));
+      for (let i = 0; i < headerCount; i++) {
+        const line = lines[i]?.trim();
+        if (line && line !== `--- PAGE ${index + 1} ---`) {
+          headerLines.set(line, (headerLines.get(line) || 0) + 1);
+        }
+      }
+      
+      // Bottom 10% of lines (footers)
+      const footerCount = Math.max(1, Math.floor(lines.length * 0.1));
+      for (let i = lines.length - footerCount; i < lines.length; i++) {
+        const line = lines[i]?.trim();
+        if (line && line !== `--- PAGE ${index + 1} ---`) {
+          footerLines.set(line, (footerLines.get(line) || 0) + 1);
+        }
+      }
+    });
+
+    // Identify lines that appear on >70% of pages
+    const threshold = Math.ceil(pages.length * 0.7);
+    const headerPatterns = Array.from(headerLines.entries())
+      .filter(([_, count]) => count >= threshold)
+      .map(([line]) => line);
+    const footerPatterns = Array.from(footerLines.entries())
+      .filter(([_, count]) => count >= threshold)
+      .map(([line]) => line);
+
+    // Remove header/footer patterns from pages
+    return pages.map((pageText, index) => {
+      const lines = pageText.split('\n');
+      const filteredLines = lines.filter(line => {
+        const trimmed = line.trim();
+        // Keep page markers
+        if (trimmed.startsWith('--- PAGE')) return true;
+        // Remove common headers/footers
+        return !headerPatterns.includes(trimmed) && !footerPatterns.includes(trimmed);
+      });
+      return filteredLines.join('\n');
+    });
+  };
+
   const extractPagesFromPdf = async (fileData: FileData): Promise<string[]> => {
+    setLiveStatus({ message: 'Loading PDF...', detail: 'Initializing document', isActive: true });
+    
     const loadingTask = (window as any).pdfjsLib.getDocument({ data: atob(fileData.data) });
     const pdf = await loadingTask.promise;
-    const pages: string[] = [];
-    for (let i = 1; i <= pdf.numPages; i++) {
-      const page = await pdf.getPage(i);
-      const textContent = await page.getTextContent();
-      const items = textContent.items.sort((a: any, b: any) => {
-        if (Math.abs(b.transform[5] - a.transform[5]) > 5) return b.transform[5] - a.transform[5];
-        return a.transform[4] - b.transform[4];
+    const totalPages = pdf.numPages;
+    const batchSize = 6; // Process 4-8 pages at a time (using 6 as balanced)
+
+    setLiveStatus({ message: 'Extracting text...', detail: `Processing ${totalPages} pages`, isActive: true });
+
+    const allPages: string[] = [];
+    const failedPages: number[] = [];
+    const pageTimings: number[] = [];
+
+    // Process pages in batches
+    for (let batchStart = 1; batchStart <= totalPages; batchStart += batchSize) {
+      const batchEnd = Math.min(batchStart + batchSize - 1, totalPages);
+      const batchPageNumbers = Array.from({ length: batchEnd - batchStart + 1 }, (_, i) => batchStart + i);
+
+      // Process batch in parallel
+      const batchResults = await Promise.allSettled(
+        batchPageNumbers.map(async (pageNum) => {
+          const pageStartTime = Date.now();
+          try {
+            const page = await pdf.getPage(pageNum);
+            const viewport = page.getViewport({ scale: 1.0 });
+            const pageText = await extractTextFromPage(page, pageNum, viewport);
+            const pageTime = Date.now() - pageStartTime;
+            return { pageNum, pageText, pageTime };
+          } catch (error: any) {
+            failedPages.push(pageNum);
+            console.error(`Failed to extract page ${pageNum}:`, error);
+            // Return placeholder for failed page
+            return { pageNum, pageText: `--- PAGE ${pageNum} ---\n[Error extracting page content]`, pageTime: 0 };
+          }
+        })
+      );
+
+      // Collect successful pages and timings
+      batchResults.forEach((result) => {
+        if (result.status === 'fulfilled') {
+          const { pageText, pageTime } = result.value;
+          allPages.push(pageText);
+          if (pageTime > 0) {
+            pageTimings.push(pageTime);
+          }
+        } else {
+          console.error('Batch processing error:', result.reason);
+        }
       });
-      let lastY = -1;
-      let pageText = `--- PAGE ${i} ---\n`;
-      for (const item of items) {
-        if (lastY !== -1 && Math.abs(item.transform[5] - lastY) > 5) pageText += "\n";
-        pageText += item.str + " ";
-        lastY = item.transform[5];
-      }
-      pages.push(pageText);
+
+      // Update progress
+      const processed = Math.min(batchEnd, totalPages);
+      const avgTimePerPage = pageTimings.length > 0 
+        ? pageTimings.reduce((a, b) => a + b, 0) / pageTimings.length 
+        : 0;
+      const remainingPages = totalPages - processed;
+      const estimatedTimeRemaining = Math.ceil(remainingPages * avgTimePerPage / 1000);
+
+      setProgress(Math.floor((processed / totalPages) * 30 + 5)); // 5-35% for extraction
+      setLiveStatus({
+        message: 'Extracting text...',
+        detail: `Page ${processed} of ${totalPages}${estimatedTimeRemaining > 0 ? ` (~${estimatedTimeRemaining}s remaining)` : ''}`,
+        isActive: true
+      });
     }
-    return pages;
+
+    // Remove headers and footers
+    if (allPages.length > 0) {
+      setLiveStatus({ message: 'Cleaning text...', detail: 'Removing headers and footers', isActive: true });
+      setProgress(36);
+      const cleanedPages = removeHeadersFooters(allPages);
+      setProgress(40);
+      setLiveStatus({ message: 'Extraction complete', detail: `Processed ${cleanedPages.length} pages${failedPages.length > 0 ? ` (${failedPages.length} failed)` : ''}`, isActive: false });
+      return cleanedPages;
+    }
+
+    return allPages;
   };
 
   const handleTextAnalysis = async (general: string, particular: string) => {
     setStatus(AnalysisStatus.ANALYZING);
     setError(null);
-    setProgress(15);
-    setBatchInfo({ current: 1, total: 1 });
+    setProgress(10);
+    setPreprocessingInfo(null);
+    setLiveStatus({ message: 'Initializing...', detail: 'Preparing text for analysis', isActive: true });
+    
     try {
-      const input: DualSourceInput = { general, particular };
-      const result = await analyzeContract(input);
-      setProgress(100);
-      finalizeAnalysis(result);
+      let cleanedGeneral: string;
+      let cleanedParticular: string;
+      let allFixes: Array<{ original: string; fixed: string; reason: string }> = [];
+      let totalEstimatedClauses = 0;
+      
+      if (skipTextCleaning) {
+        // Skip preprocessing - use raw text directly
+        setProgress(15);
+        setLiveStatus({ message: 'Processing Text...', detail: 'Using clean text (skipping preprocessing)', isActive: true });
+        cleanedGeneral = general;
+        cleanedParticular = particular;
+        // Estimate clauses from raw text
+        const generalEstimate = Math.max(1, Math.floor(general.length / 500));
+        const particularEstimate = Math.max(1, Math.floor(particular.length / 500));
+        totalEstimatedClauses = generalEstimate + particularEstimate;
+        
+        setPreprocessingInfo({
+          generalFixes: 0,
+          particularFixes: 0,
+          estimatedClauses: totalEstimatedClauses,
+          fixes: [],
+          tokenInfo: {
+            inputTokens: estimateTokens(cleanedGeneral) + estimateTokens(cleanedParticular),
+            outputTokenLimit: CLAUDE_TOKEN_LIMITS.maxOutputTokens,
+            totalTokenBudget: CLAUDE_TOKEN_LIMITS.totalBudget,
+            usagePercentage: Math.min(100, Math.round(((estimateTokens(cleanedGeneral) + estimateTokens(cleanedParticular)) / CLAUDE_TOKEN_LIMITS.totalBudget) * 100))
+          }
+        });
+      } else {
+        // Preprocess both texts to fix PDF extraction errors
+        setProgress(10);
+        setLiveStatus({ message: 'Cleaning Text...', detail: 'Fixing PDF extraction errors', isActive: true });
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        setProgress(15);
+        setLiveStatus({ message: 'Processing Text...', detail: 'Analyzing General and Particular conditions', isActive: true });
+        const preprocessedGeneral = preprocessText(general);
+        const preprocessedParticular = preprocessText(particular);
+        
+        cleanedGeneral = preprocessedGeneral.cleaned;
+        cleanedParticular = preprocessedParticular.cleaned;
+        allFixes = [...preprocessedGeneral.fixes, ...preprocessedParticular.fixes];
+        totalEstimatedClauses = preprocessedGeneral.estimatedClauses + preprocessedParticular.estimatedClauses;
+        
+        setProgress(25);
+        setLiveStatus({ message: 'Detecting Clauses...', detail: 'Identifying clause boundaries', isActive: true });
+        
+        // Store preprocessing info for display
+        const generalTokens = estimateTokens(cleanedGeneral);
+        const particularTokens = estimateTokens(cleanedParticular);
+        const totalInputTokens = generalTokens + particularTokens;
+        const outputTokenLimit = CLAUDE_TOKEN_LIMITS.maxOutputTokens;
+        const totalTokenBudget = CLAUDE_TOKEN_LIMITS.totalBudget;
+        const usagePercentage = Math.min(100, Math.round((totalInputTokens / totalTokenBudget) * 100));
+        
+        setPreprocessingInfo({
+          generalFixes: preprocessedGeneral.fixes.length,
+          particularFixes: preprocessedParticular.fixes.length,
+          estimatedClauses: totalEstimatedClauses,
+          fixes: allFixes.slice(0, 10), // Show first 10 fixes as examples
+          tokenInfo: {
+            inputTokens: totalInputTokens,
+            outputTokenLimit: outputTokenLimit,
+            totalTokenBudget: totalTokenBudget,
+            usagePercentage: usagePercentage
+          }
+        });
+      }
+      
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Calculate token usage
+      const generalTokens = estimateTokens(cleanedGeneral);
+      const particularTokens = estimateTokens(cleanedParticular);
+      const totalInputTokens = generalTokens + particularTokens;
+      
+      // Check if text needs chunking
+      const MAX_CHARS_PER_CHUNK = 100000;
+      const MAX_TOKENS_PER_CHUNK = 50000; // Force chunking for large requests
+      const needsChunking = 
+        cleanedGeneral.length > MAX_CHARS_PER_CHUNK || 
+        cleanedParticular.length > MAX_CHARS_PER_CHUNK ||
+        totalInputTokens > MAX_TOKENS_PER_CHUNK;
+      
+      if (!needsChunking) {
+        // Process directly with cleaned text
+        setBatchInfo({ current: 1, total: 1 });
+        setProgress(40);
+        setLiveStatus({ message: 'Connecting to AI...', detail: 'Sending request to Claude API', isActive: true });
+        
+        const input: DualSourceInput = { 
+          general: cleanedGeneral, 
+          particular: cleanedParticular,
+          skipCleaning: skipTextCleaning
+        };
+        
+        // Start a heartbeat to show activity
+        let dotCount = 0;
+        const heartbeatInterval = setInterval(() => {
+          dotCount = (dotCount + 1) % 4;
+          const dots = '.'.repeat(dotCount);
+          setLiveStatus(prev => ({
+            message: prev.message,
+            detail: prev.detail.replace(/\.+$/, '') + dots,
+            isActive: true
+          }));
+        }, 2000);
+        
+        try {
+          setProgress(45);
+          setLiveStatus({ message: 'AI Processing...', detail: 'Claude is analyzing your contract', isActive: true });
+          
+          // Create timeout wrapper
+          const timeoutPromise = new Promise<never>((_, reject) => {
+            setTimeout(() => {
+              clearInterval(heartbeatInterval);
+              reject(new Error('Request timeout: API call took too long. The text might be too large.'));
+            }, 300000); // 5 minute timeout
+          });
+          
+          // Race between API call and timeout
+          const apiCall = analyzeContract(input);
+          
+          // More detailed status updates during API wait
+          const statusPhases = [
+            { message: 'AI Processing...', detail: 'Sending request to Claude API' },
+            { message: 'AI Processing...', detail: 'Claude is analyzing your contract' },
+            { message: 'AI Processing...', detail: 'Extracting clauses verbatim...' },
+            { message: 'AI Processing...', detail: 'Processing General and Particular conditions...' },
+            { message: 'AI Processing...', detail: 'Identifying clause boundaries...' },
+            { message: 'AI Processing...', detail: 'Validating text integrity...' }
+          ];
+          let phaseIndex = 0;
+          
+          const statusUpdateInterval = setInterval(() => {
+            phaseIndex = (phaseIndex + 1) % statusPhases.length;
+            setLiveStatus(statusPhases[phaseIndex]);
+          }, 2500); // Update every 2.5 seconds
+          
+          // Update progress periodically while waiting
+          const progressInterval = setInterval(() => {
+            setProgress(prev => {
+              if (prev < 85) return prev + 1;
+              return prev;
+            });
+          }, 3000); // Update every 3 seconds
+          
+          const result = await Promise.race([apiCall, timeoutPromise]);
+          
+          clearInterval(heartbeatInterval);
+          clearInterval(progressInterval);
+          clearInterval(statusUpdateInterval);
+          
+          // Receiving response
+          setProgress(87);
+          setLiveStatus({ message: 'Receiving Response...', detail: 'Processing Claude\'s response', isActive: true });
+          await new Promise(resolve => setTimeout(resolve, 300));
+          
+          // Parsing JSON
+          setProgress(90);
+          setLiveStatus({ message: 'Parsing Results...', detail: `Extracted ${result.length} clauses, validating structure...`, isActive: true });
+          await new Promise(resolve => setTimeout(resolve, 200));
+          
+          // Finalizing
+          setProgress(93);
+          setLiveStatus({ message: 'Finalizing...', detail: 'Processing extracted clauses', isActive: true });
+          
+          finalizeAnalysis(result);
+          setProgress(100);
+          setLiveStatus({ message: 'Complete!', detail: `✓ Successfully extracted ${result.length} clauses`, isActive: false });
+        } catch (err: any) {
+          clearInterval(heartbeatInterval);
+          if (err.message?.includes('timeout')) {
+            setError(`Request timed out. Your text is very large (${totalInputTokens.toLocaleString()} tokens). Consider splitting it into smaller sections.`);
+          } else if (err.message?.includes('429') || err.message?.includes('rate limit')) {
+            setError('Rate limit exceeded. Please wait a moment and try again.');
+          } else if (err.message?.includes('401') || err.message?.includes('authentication')) {
+            setError('API authentication failed. Please check your API key configuration.');
+          } else {
+            setError(`Analysis failed: ${err.message || 'Unknown error'}. Please try again.`);
+          }
+          setStatus(AnalysisStatus.ERROR);
+          setLiveStatus({ message: 'Error', detail: err.message || 'Unknown error', isActive: false });
+          throw err;
+        }
+      } else {
+        // Split into chunks and process
+        const gChunks = splitTextIntoChunks(cleanedGeneral, MAX_CHARS_PER_CHUNK);
+        const pChunks = splitTextIntoChunks(cleanedParticular, MAX_CHARS_PER_CHUNK);
+        const maxChunks = Math.max(gChunks.length, pChunks.length);
+        
+        setBatchInfo({ current: 0, total: maxChunks });
+        setProgress(40);
+        setLiveStatus({ message: `Processing ${maxChunks} chunks...`, detail: 'Splitting large text for analysis', isActive: true });
+        
+        const allResults: Clause[] = [];
+        
+        // Process chunks sequentially to maintain order
+        for (let i = 0; i < maxChunks; i++) {
+          const gChunk = gChunks[i] || '';
+          const pChunk = pChunks[i] || '';
+          
+          if (gChunk || pChunk) {
+            setBatchInfo({ current: i + 1, total: maxChunks });
+            setProgress(40 + Math.floor((i / maxChunks) * 50));
+            
+            // Step 1: Preparing chunk
+            setLiveStatus({ 
+              message: `Chunk ${i + 1}/${maxChunks}`, 
+              detail: 'Preparing chunk data for analysis', 
+              isActive: true 
+            });
+            await new Promise(resolve => setTimeout(resolve, 300));
+            
+            // Step 2: Sending to API
+            setLiveStatus({ 
+              message: `Chunk ${i + 1}/${maxChunks}`, 
+              detail: 'Sending request to Claude API...', 
+              isActive: true 
+            });
+            
+            // Step 3: Create API call with progress updates
+            const apiCallPromise = analyzeContract({
+              general: gChunk,
+              particular: pChunk,
+              skipCleaning: skipTextCleaning
+            });
+            
+            // Show waiting status with rotating messages
+            const statusMessages = [
+              'Waiting for Claude to process...',
+              'Claude is analyzing your text...',
+              'Extracting clauses from chunk...',
+              'Processing verbatim content...'
+            ];
+            let statusIndex = 0;
+            const statusInterval = setInterval(() => {
+              statusIndex = (statusIndex + 1) % statusMessages.length;
+              setLiveStatus({ 
+                message: `Chunk ${i + 1}/${maxChunks}`, 
+                detail: statusMessages[statusIndex], 
+                isActive: true 
+              });
+            }, 2000);
+            
+            try {
+              const result = await apiCallPromise;
+              clearInterval(statusInterval);
+              
+              // Step 4: Receiving response
+              setLiveStatus({ 
+                message: `Chunk ${i + 1}/${maxChunks}`, 
+                detail: 'Received response from Claude', 
+                isActive: true 
+              });
+              await new Promise(resolve => setTimeout(resolve, 200));
+              
+              // Step 5: Parsing results
+              setLiveStatus({ 
+                message: `Chunk ${i + 1}/${maxChunks}`, 
+                detail: `Parsing ${result.length} extracted clauses...`, 
+                isActive: true 
+              });
+              await new Promise(resolve => setTimeout(resolve, 200));
+              
+              // Step 6: Validating
+              setLiveStatus({ 
+                message: `Chunk ${i + 1}/${maxChunks}`, 
+                detail: 'Validating clause integrity...', 
+                isActive: true 
+              });
+              
+              allResults.push(...result);
+              
+              // Step 7: Complete
+              const generalCount = result.filter(c => c.condition_type === 'General').length;
+              const particularCount = result.filter(c => c.condition_type === 'Particular').length;
+              setLiveStatus({ 
+                message: `Chunk ${i + 1}/${maxChunks} complete`, 
+                detail: `✓ Extracted ${result.length} clauses (${generalCount} General, ${particularCount} Particular)`, 
+                isActive: true 
+              });
+              await new Promise(resolve => setTimeout(resolve, 500));
+            } catch (err) {
+              clearInterval(statusInterval);
+              throw err;
+            }
+          }
+        }
+        
+        // Enhanced finalization steps
+        setLiveStatus({ message: 'Finalizing...', detail: 'Merging all chunks together', isActive: true });
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        setLiveStatus({ message: 'Finalizing...', detail: 'Removing duplicate clauses', isActive: true });
+        const deduplicated = deduplicateClauses(allResults);
+        
+        setLiveStatus({ message: 'Finalizing...', detail: `Validating ${deduplicated.length} unique clauses`, isActive: true });
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        setProgress(95);
+        setLiveStatus({ message: 'Finalizing...', detail: 'Preparing final results', isActive: true });
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        finalizeAnalysis(deduplicated);
+        setProgress(100);
+        setLiveStatus({ message: 'Complete!', detail: `✓ Successfully extracted ${deduplicated.length} unique clauses`, isActive: false });
+      }
     } catch (err: any) {
       setError(err.message);
       setStatus(AnalysisStatus.ERROR);
+      setLiveStatus({ message: 'Error', detail: err.message || 'Unknown error', isActive: false });
     }
   };
 
@@ -499,32 +1440,78 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     let allExtractedClauses: Clause[] = [];
     try {
       if ('data' in input) {
+        // extractPagesFromPdf handles progress 5-40% internally
         const pages = await extractPagesFromPdf(input as FileData);
         setBatchInfo({ current: 0, total: pages.length });
+        setLiveStatus({ message: 'Analyzing clauses...', detail: `Processing ${pages.length} pages`, isActive: true });
+        
+        // Continue from 40% (extraction complete) to 95% (analysis)
+        const analysisStartProgress = 40;
+        const analysisEndProgress = 95;
+        
         for (let i = 0; i < pages.length; i++) {
           setBatchInfo({ current: i + 1, total: pages.length });
           const result = await analyzeContract(pages[i]);
           allExtractedClauses = [...allExtractedClauses, ...result];
-          setProgress(Math.floor(((i + 1) / pages.length) * 100));
+          // Deduplicate after each page to prevent accumulation of duplicates
+          allExtractedClauses = deduplicateClauses(allExtractedClauses);
+          
+          // Progress from 40% to 95% based on page analysis
+          const progressPercent = analysisStartProgress + Math.floor(((i + 1) / pages.length) * (analysisEndProgress - analysisStartProgress));
+          setProgress(progressPercent);
+          setLiveStatus({
+            message: 'Analyzing clauses...',
+            detail: `Processing page ${i + 1} of ${pages.length}`,
+            isActive: true
+          });
         }
       } else {
+        // Dual source PDFs
+        setLiveStatus({ message: 'Loading PDFs...', detail: 'Loading General and Particular PDFs', isActive: true });
+        
+        // extractPagesFromPdf handles progress 5-40% internally, but we have 2 PDFs
+        // Split progress: 5-22.5% for general, 22.5-40% for particular
+        setProgress(5);
         const gPages = await extractPagesFromPdf(input.general as FileData);
+        setProgress(22);
+        
+        setLiveStatus({ message: 'Loading PDFs...', detail: 'Loading Particular PDF', isActive: true });
         const pPages = await extractPagesFromPdf(input.particular as FileData);
+        setProgress(40);
+        
         const maxPages = Math.max(gPages.length, pPages.length);
         setBatchInfo({ current: 0, total: Math.ceil(maxPages / 2) });
-        for (let b = 0; b < Math.ceil(maxPages / 2); b++) {
-          setBatchInfo({ current: b + 1, total: Math.ceil(maxPages / 2) });
+        setLiveStatus({ message: 'Analyzing clauses...', detail: 'Comparing General and Particular conditions', isActive: true });
+        
+        // Continue from 40% to 95%
+        const analysisStartProgress = 40;
+        const analysisEndProgress = 95;
+        const batchCount = Math.ceil(maxPages / 2);
+        
+        for (let b = 0; b < batchCount; b++) {
+          setBatchInfo({ current: b + 1, total: batchCount });
           const gChunk = gPages.slice(b * 2, (b + 1) * 2).join("\n\n");
           const pChunk = pPages.slice(b * 2, (b + 1) * 2).join("\n\n");
           const result = await analyzeContract({ general: gChunk, particular: pChunk });
           allExtractedClauses = [...allExtractedClauses, ...result];
-          setProgress(Math.floor(((b + 1) / Math.ceil(maxPages / 2)) * 100));
+          // Deduplicate after each batch to prevent accumulation of duplicates
+          allExtractedClauses = deduplicateClauses(allExtractedClauses);
+          
+          const progressPercent = analysisStartProgress + Math.floor(((b + 1) / batchCount) * (analysisEndProgress - analysisStartProgress));
+          setProgress(progressPercent);
+          setLiveStatus({
+            message: 'Analyzing clauses...',
+            detail: `Processing batch ${b + 1} of ${batchCount}`,
+            isActive: true
+          });
         }
       }
+      setProgress(95);
       finalizeAnalysis(allExtractedClauses);
     } catch (err: any) {
       setError(err.message);
       setStatus(AnalysisStatus.ERROR);
+      setLiveStatus({ message: 'Error', detail: err.message || 'Unknown error', isActive: false });
     }
   };
 
@@ -535,7 +1522,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       general_condition: linkifyText(c.general_condition),
       particular_condition: linkifyText(c.particular_condition)
     }));
-    const sorted = processedClauses.sort((a, b) => {
+    // Deduplicate clauses before sorting
+    const deduplicated = deduplicateClauses(processedClauses);
+    const sorted = deduplicated.sort((a, b) => {
       // Enhanced parsing to handle alphanumeric clause numbers like "2A.1", "3B.2.1"
       const parse = (s: string) => {
         return s.split('.').map(x => {
@@ -579,7 +1568,41 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     setProjectName(detectedName);
     const newId = crypto.randomUUID();
     setActiveContractId(newId);
+    
+    // Create contract with sections
+    const contractWithSections = ensureContractHasSections({
+      id: newId,
+      name: detectedName,
+      timestamp: Date.now(),
+      clauses: sorted,
+      metadata: {
+        totalClauses: sorted.length,
+        generalCount: sorted.filter(c => c.condition_type === 'General').length,
+        particularCount: sorted.filter(c => c.condition_type === 'Particular').length,
+        highRiskCount: 0,
+        conflictCount: sorted.filter(c => c.comparison && c.comparison.length > 0).length,
+        timeSensitiveCount: sorted.filter(c => c.time_frames && c.time_frames.length > 0).length
+      }
+    });
+    setContract(contractWithSections);
+    
     await persistCurrentProject(sorted, detectedName, true); // Immediate save after analysis
+    
+    // Generate category suggestions
+    if (sorted.length > 0) {
+      setLiveStatus({ message: 'Generating Category Suggestions...', detail: 'Analyzing clauses for categorization', isActive: true });
+      try {
+        const suggestions = await suggestCategories(sorted);
+        if (suggestions.length > 0) {
+          setCategorySuggestions(suggestions);
+          setShowCategorySuggestions(true);
+        }
+      } catch (error) {
+        console.error('Failed to generate category suggestions:', error);
+        // Don't block completion if suggestions fail
+      }
+    }
+    
     setProgress(100);
     setTimeout(() => setStatus(AnalysisStatus.COMPLETED), 600);
   };
@@ -595,12 +1618,44 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     reader.readAsDataURL(file);
   };
 
-  const handleReorder = (fromIndex: number, toIndex: number) => {
-    const newClauses = [...clauses];
-    const [movedItem] = newClauses.splice(fromIndex, 1);
-    newClauses.splice(toIndex, 0, movedItem);
-    setClauses(newClauses);
-    persistCurrentProject(newClauses);
+  const handleReorder = async (fromIndex: number, toIndex: number, sectionType?: SectionType) => {
+    if (!contract) return;
+    
+    const contractWithSections = ensureContractHasSections(contract);
+    
+    if (sectionType) {
+      // Reorder within specific section
+      const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
+      if (section) {
+        const updatedItems = [...section.items];
+        const [moved] = updatedItems.splice(fromIndex, 1);
+        updatedItems.splice(toIndex, 0, moved);
+        updatedItems.forEach((item, i) => {
+          item.orderIndex = i;
+        });
+        
+        const updatedSections = contractWithSections.sections!.map(s =>
+          s.sectionType === sectionType ? { ...s, items: updatedItems } : s
+        );
+        
+        const updatedContract: SavedContract = {
+          ...contractWithSections,
+          sections: updatedSections,
+          clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
+        };
+        
+        setContract(updatedContract);
+        setClauses(updatedContract.clauses || []);
+        await performSaveContract(updatedContract);
+      }
+    } else {
+      // Legacy: reorder clauses array
+      const newClauses = [...clauses];
+      const [movedItem] = newClauses.splice(fromIndex, 1);
+      newClauses.splice(toIndex, 0, movedItem);
+      setClauses(newClauses);
+      persistCurrentProject(newClauses);
+    }
   };
 
   // Enhanced search function that supports multiple keywords and searches all text fields
@@ -633,6 +1688,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     setStatus(AnalysisStatus.IDLE);
     setClauses([]);
     setActiveContractId(null);
+    setLiveStatus({ message: '', detail: '', isActive: false });
   };
 
   return (
@@ -660,7 +1716,23 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         
         <div className="flex items-center gap-4">
           {status === AnalysisStatus.COMPLETED && (
-            <div className="flex items-center gap-6">
+            <>
+              <button
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className="p-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group"
+                title={isSidebarOpen ? "Hide sidebar" : "Show sidebar"}
+              >
+                {isSidebarOpen ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                  </svg>
+                )}
+              </button>
+              <div className="flex items-center gap-6">
               <div className="relative group flex items-center">
                 <input 
                   type="text" 
@@ -695,7 +1767,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
                 + Add Clause
               </button>
-            </div>
+              </div>
+            </>
           )}
 
           <button onClick={() => setStatus(AnalysisStatus.LIBRARY)} className="flex items-center gap-3 px-5 py-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group">
@@ -706,7 +1779,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       </header>
 
       <div className="flex-1 flex overflow-hidden">
-        {status === AnalysisStatus.COMPLETED && (
+        {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
           <Sidebar 
             clauses={clauses}
             selectedTypes={selectedTypes}
@@ -717,10 +1790,15 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             setSearchQuery={setSearchFilter}
             onReorder={handleReorder}
             onDelete={handleDeleteClause}
+            onClausesUpdate={handleClausesUpdateFromCategory}
+            onCloseOtherModals={() => {
+              setCompareClause(null);
+              setIsAddModalOpen(false);
+            }}
           />
         )}
 
-        <main className={`flex-1 overflow-y-auto px-10 py-12 custom-scrollbar ${status !== AnalysisStatus.COMPLETED ? 'max-w-7xl mx-auto' : ''}`}>
+        <main className={`flex-1 overflow-y-auto px-6 py-6 custom-scrollbar transition-all ${status !== AnalysisStatus.COMPLETED ? 'max-w-7xl mx-auto' : status === AnalysisStatus.COMPLETED && isSidebarOpen ? 'lg:ml-80' : ''}`}>
           {status === AnalysisStatus.IDLE && (
             <div className="space-y-16 animate-in fade-in duration-1000">
                <div className="text-center space-y-6">
@@ -745,15 +1823,18 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 </div>
               </div>
 
-              <div className="flex flex-col items-center gap-8">
-                <div className="flex bg-white border border-aaa-border p-1.5 rounded-2xl shadow-premium">
-                  <button onClick={() => setInputMode('dual')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'dual' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Dual Source PDF</button>
-                  <button onClick={() => setInputMode('single')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'single' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Single Document</button>
-                  <button onClick={() => setInputMode('text')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'text' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Injection</button>
-                </div>
-              </div>
+              {isAdmin() && (
+                <>
+                  <div className="flex flex-col items-center gap-8">
+                    <div className="flex bg-white border border-aaa-border p-1.5 rounded-2xl shadow-premium">
+                      <button onClick={() => setInputMode('dual')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'dual' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Dual Source PDF</button>
+                      <button onClick={() => setInputMode('single')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'single' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Single Document</button>
+                      <button onClick={() => setInputMode('text')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'text' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Injection</button>
+                      <button onClick={() => setInputMode('fixer')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'fixer' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Fixer</button>
+                    </div>
+                  </div>
 
-              {inputMode === 'dual' && (
+                  {inputMode === 'dual' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                    <div className="bg-white p-10 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-blue">
                       <h3 className="font-extrabold text-xl text-aaa-blue mb-8">General Baseline</h3>
@@ -816,6 +1897,19 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                   </div>
                   
                   <div className="flex flex-col items-center gap-6">
+                    <div className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-aaa-border shadow-premium">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={skipTextCleaning}
+                          onChange={(e) => setSkipTextCleaning(e.target.checked)}
+                          className="w-4 h-4 text-aaa-blue border-aaa-border rounded focus:ring-aaa-blue"
+                        />
+                        <span className="text-sm font-semibold text-aaa-text">
+                          Text is already clean (skip cleaning)
+                        </span>
+                      </label>
+                    </div>
                      <button 
                        onClick={() => (pastedGeneralText.trim() || pastedParticularText.trim()) && handleTextAnalysis(pastedGeneralText, pastedParticularText)} 
                        disabled={!pastedGeneralText.trim() && !pastedParticularText.trim()}
@@ -825,6 +1919,352 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                      </button>
                   </div>
                 </div>
+                  )}
+
+                  {inputMode === 'fixer' && (
+                    <div className="max-w-6xl mx-auto w-full space-y-8 animate-in slide-in-from-bottom-6">
+                      <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
+                        <div className="flex justify-between items-center mb-6">
+                          <h3 className="font-extrabold text-xl text-aaa-accent">Text Fixer</h3>
+                          <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{textToFix.length} Characters</span>
+                        </div>
+                        <textarea 
+                          value={textToFix}
+                          onChange={(e) => {
+                            setTextToFix(e.target.value);
+                            setFixedText(null);
+                            setShowCorruptionReview(false);
+                            setLinesToRemove(new Set());
+                            setCurrentCorruptionIndex(0);
+                          }}
+                          placeholder="Paste your text here to fix errors, punctuation, and formatting issues..."
+                          className="w-full h-64 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-accent outline-none custom-scrollbar"
+                        />
+                        <div className="mt-4 flex items-center gap-3">
+                          <label className="flex items-center gap-2 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={useAICleaning}
+                              onChange={(e) => {
+                                setUseAICleaning(e.target.checked);
+                                setFixedText(null);
+                                setAiCleanedText(null);
+                              }}
+                              className="w-4 h-4 text-aaa-accent border-aaa-border rounded focus:ring-aaa-accent"
+                            />
+                            <span className="text-sm font-semibold text-aaa-text">
+                              Use AI-powered cleaning (fixes broken words, line breaks, headers/footers, cross-references)
+                            </span>
+                          </label>
+                        </div>
+                        <div className="mt-6 flex justify-center">
+                          <button
+                            onClick={async () => {
+                              if (textToFix.trim()) {
+                                if (useAICleaning) {
+                                  // AI-powered cleaning
+                                  setIsAICleaning(true);
+                                  setProgress(0);
+                                  try {
+                                    const cleaned = await cleanTextWithAI(
+                                      textToFix,
+                                      undefined,
+                                      (current, total, currentLine, totalLines) => {
+                                        const chunkProgress = Math.round((current / total) * 100);
+                                        setProgress(chunkProgress);
+                                        
+                                        if (currentLine !== undefined && totalLines !== undefined && currentLine > 0) {
+                                          const lineProgress = Math.round((currentLine / totalLines) * 100);
+                                          setLiveStatus({
+                                            message: `Cleaning chunk ${current + 1} of ${total}...`,
+                                            detail: `Processing line ${currentLine.toLocaleString()} of ${totalLines.toLocaleString()} (${lineProgress}%)`,
+                                            isActive: true
+                                          });
+                                        } else {
+                                          setLiveStatus({
+                                            message: total > 1 ? `Preparing chunk ${current + 1} of ${total}...` : 'Processing with AI...',
+                                            detail: total > 1 ? 'Analyzing text structure' : 'Cleaning contract text',
+                                            isActive: true
+                                          });
+                                        }
+                                      }
+                                    );
+                                    setAiCleanedText(cleaned);
+                                    setFixedText({
+                                      cleaned: cleaned,
+                                      fixes: [],
+                                      removedLines: 0,
+                                      corruptedLines: []
+                                    });
+                                    setShowCorruptionReview(false);
+                                    setProgress(100);
+                                    setLiveStatus({
+                                      message: 'Complete!',
+                                      detail: 'All clauses processed successfully',
+                                      isActive: false
+                                    });
+                                  } catch (error: any) {
+                                    setError(error.message || 'AI cleaning failed');
+                                    setLiveStatus({
+                                      message: 'Error',
+                                      detail: error.message || 'Unknown error',
+                                      isActive: false
+                                    });
+                                  } finally {
+                                    setIsAICleaning(false);
+                                  }
+                                } else {
+                                  // Standard preprocessing
+                                  const corrupted = detectCorruptedLines(textToFix);
+                                  if (corrupted.length > 0) {
+                                    // Show review step
+                                    const result = preprocessText(textToFix, []);
+                                    setFixedText({
+                                      cleaned: result.cleaned,
+                                      fixes: result.fixes,
+                                      removedLines: 0,
+                                      corruptedLines: result.corruptedLines
+                                    });
+                                    setLinesToRemove(new Set());
+                                    setCurrentCorruptionIndex(0);
+                                    setShowCorruptionReview(true);
+                                  } else {
+                                    // No corrupted lines, process directly
+                                    const result = preprocessText(textToFix, []);
+                                    setFixedText({
+                                      cleaned: result.cleaned,
+                                      fixes: result.fixes,
+                                      removedLines: 0,
+                                      corruptedLines: []
+                                    });
+                                    setShowCorruptionReview(false);
+                                  }
+                                }
+                              }
+                            }}
+                            disabled={!textToFix.trim() || isAICleaning}
+                            className="px-16 py-4 bg-aaa-accent text-white rounded-2xl font-black shadow-xl disabled:opacity-50 hover:bg-aaa-blue transition-all active:scale-95 flex items-center gap-2"
+                          >
+                            {isAICleaning ? (
+                              <>
+                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                AI Cleaning... {progress > 0 && `${progress}%`}
+                              </>
+                            ) : (
+                              useAICleaning ? 'Clean with AI' : 'Fix Text'
+                            )}
+                          </button>
+                        </div>
+                        
+                        {/* Live Status Display for AI Cleaning */}
+                        {isAICleaning && liveStatus.message && (
+                          <div className="mt-6 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 shadow-md">
+                            <div className="flex items-center gap-3">
+                              {liveStatus.isActive && (
+                                <div className="relative">
+                                  <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                                  <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+                                </div>
+                              )}
+                              <div className="flex-1 text-left">
+                                <p className="text-sm font-bold text-cyan-700">{liveStatus.message}</p>
+                                <p className="text-xs text-cyan-600 mt-0.5">{liveStatus.detail}</p>
+                              </div>
+                            </div>
+                            
+                            {/* Progress Bar */}
+                            {progress > 0 && (
+                              <div className="mt-3 w-full h-2 bg-cyan-200 rounded-full overflow-hidden">
+                                <div 
+                                  className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-300"
+                                  style={{ width: `${progress}%` }}
+                                />
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Corruption Review Modal - List View */}
+                      {showCorruptionReview && fixedText?.corruptedLines && fixedText.corruptedLines.length > 0 && (
+                        <div className="bg-yellow-50 border-2 border-yellow-300 p-6 rounded-2xl shadow-lg">
+                          <div className="flex items-start gap-4 mb-6">
+                            <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-yellow-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-bold text-lg text-yellow-800 mb-1">Review Corrupted Lines</h4>
+                              <p className="text-sm text-yellow-700">
+                                Found {fixedText.corruptedLines.length} potentially corrupted line{fixedText.corruptedLines.length > 1 ? 's' : ''}. Select which ones to remove.
+                              </p>
+                            </div>
+                          </div>
+                          
+                          {/* Selection Summary */}
+                          <div className="mb-4 flex items-center justify-between p-3 bg-yellow-100 rounded-lg">
+                            <span className="text-sm font-semibold text-yellow-800">
+                              {linesToRemove.size} of {fixedText.corruptedLines.length} selected for removal
+                            </span>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => {
+                                  setLinesToRemove(new Set(fixedText.corruptedLines?.map(c => c.index) || []));
+                                }}
+                                className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 px-3 py-1 bg-white rounded hover:bg-yellow-50 transition-all"
+                              >
+                                Select All
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setLinesToRemove(new Set());
+                                }}
+                                className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 px-3 py-1 bg-white rounded hover:bg-yellow-50 transition-all"
+                              >
+                                Deselect All
+                              </button>
+                            </div>
+                          </div>
+                          
+                          {/* List of Corrupted Lines */}
+                          <div className="space-y-3 max-h-96 overflow-y-auto custom-scrollbar mb-6">
+                            {fixedText.corruptedLines.map((corrupted, idx) => (
+                              <div
+                                key={idx}
+                                className={`bg-white p-4 rounded-xl border-2 transition-all ${
+                                  linesToRemove.has(corrupted.index)
+                                    ? 'border-yellow-500 bg-yellow-50'
+                                    : 'border-yellow-200 hover:border-yellow-300'
+                                }`}
+                              >
+                                <label className="flex items-start gap-3 cursor-pointer">
+                                  <input
+                                    type="checkbox"
+                                    checked={linesToRemove.has(corrupted.index)}
+                                    onChange={(e) => {
+                                      const newSet = new Set(linesToRemove);
+                                      if (e.target.checked) {
+                                        newSet.add(corrupted.index);
+                                      } else {
+                                        newSet.delete(corrupted.index);
+                                      }
+                                      setLinesToRemove(newSet);
+                                    }}
+                                    className="mt-1 w-5 h-5 text-yellow-600 border-yellow-300 rounded focus:ring-yellow-500 flex-shrink-0"
+                                  />
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2 mb-2">
+                                      <span className="text-xs font-bold text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded">
+                                        Line {corrupted.index + 1}
+                                      </span>
+                                      <span className="text-xs text-yellow-600 font-medium">
+                                        {corrupted.reason}
+                                      </span>
+                                    </div>
+                                    <code className="block text-sm font-mono text-gray-800 break-words bg-gray-50 p-3 rounded-lg border border-gray-200 mt-2">
+                                      {corrupted.line.trim() || '(empty line)'}
+                                    </code>
+                                  </div>
+                                </label>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Action Buttons */}
+                          <div className="flex items-center justify-end gap-3">
+                            <button
+                              onClick={() => {
+                                setShowCorruptionReview(false);
+                                setLinesToRemove(new Set());
+                                setFixedText(null);
+                                setCurrentCorruptionIndex(0);
+                              }}
+                              className="px-6 py-2 bg-gray-200 text-gray-700 rounded-xl text-sm font-bold hover:bg-gray-300 transition-all"
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              onClick={() => {
+                                // Apply removal and finalize
+                                const result = preprocessText(textToFix, Array.from(linesToRemove));
+                                setFixedText({
+                                  cleaned: result.cleaned,
+                                  fixes: result.fixes,
+                                  removedLines: result.removedLines,
+                                  corruptedLines: []
+                                });
+                                setShowCorruptionReview(false);
+                                setCurrentCorruptionIndex(0);
+                              }}
+                              disabled={linesToRemove.size === 0}
+                              className="px-6 py-2 bg-yellow-600 text-white rounded-xl text-sm font-bold hover:bg-yellow-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                              Remove Selected ({linesToRemove.size})
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {fixedText && !showCorruptionReview && (
+                        <div className="space-y-6">
+                          {/* Fixed Text Output */}
+                          <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-green-500">
+                            <div className="flex justify-between items-center mb-6">
+                              <h3 className="font-extrabold text-xl text-green-600">Fixed Text</h3>
+                              <button
+                                onClick={(e) => {
+                                  navigator.clipboard.writeText(fixedText.cleaned);
+                                  // Show feedback
+                                  const btn = e.currentTarget;
+                                  const originalText = btn.textContent;
+                                  btn.textContent = 'Copied!';
+                                  setTimeout(() => {
+                                    btn.textContent = originalText;
+                                  }, 2000);
+                                }}
+                                className="px-6 py-2 bg-green-500 text-white rounded-xl text-xs font-black hover:bg-green-600 transition-all flex items-center gap-2"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                                Copy Fixed Text
+                              </button>
+                            </div>
+                            <textarea 
+                              value={fixedText.cleaned}
+                              readOnly
+                              className="w-full h-64 bg-green-50/50 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-green-200 outline-none custom-scrollbar"
+                            />
+                            <p className="text-xs text-gray-500 mt-3">
+                              ✓ Fixed {fixedText.fixes.length} issues{fixedText.removedLines > 0 ? ` and removed ${fixedText.removedLines} corrupted line${fixedText.removedLines > 1 ? 's' : ''}` : ''}. Copy the text above and paste it into the Text Injection tab to extract clauses.
+                            </p>
+                          </div>
+
+                          {/* Fixes Applied */}
+                          {fixedText.fixes.length > 0 && (
+                            <div className="bg-white p-6 rounded-3xl border border-aaa-border shadow-premium">
+                              <h4 className="font-bold text-lg text-aaa-blue mb-4">Fixes Applied ({fixedText.fixes.length})</h4>
+                              <div className="space-y-2 max-h-64 overflow-y-auto custom-scrollbar">
+                                {fixedText.fixes.map((fix, idx) => (
+                                  <div key={idx} className="text-xs p-3 bg-aaa-bg/50 rounded-lg border border-aaa-border">
+                                    <span className="font-mono text-red-600 line-through mr-2">{fix.original}</span>
+                                    <span className="text-gray-400">→</span>
+                                    <span className="font-mono text-green-600 ml-2">{fix.fixed}</span>
+                                    <span className="text-gray-500 ml-2 text-[10px]">({fix.reason})</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </>
               )}
             </div>
           )}
@@ -847,6 +2287,145 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                    </div>
                 </div>
                 <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{activeStage.sub}</p>
+                
+                {/* Live Status Indicator */}
+                {liveStatus.message && (
+                  <div className="mt-4 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 shadow-md">
+                    <div className="flex items-center gap-3">
+                      {liveStatus.isActive && (
+                        <div className="relative">
+                          <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                          <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+                        </div>
+                      )}
+                      <div className="flex-1 text-left">
+                        <p className="text-sm font-bold text-cyan-700">{liveStatus.message}</p>
+                        <p className="text-xs text-cyan-600 mt-0.5">{liveStatus.detail}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Process Timeline for Chunks */}
+                    {batchInfo.total > 1 && (
+                      <div className="mt-3 pt-3 border-t border-cyan-200">
+                        <div className="flex gap-2">
+                          {Array.from({ length: batchInfo.total }).map((_, idx) => (
+                            <div 
+                              key={idx}
+                              className={`flex-1 h-1.5 rounded-full transition-all ${
+                                idx < batchInfo.current 
+                                  ? 'bg-green-400' 
+                                  : idx === batchInfo.current - 1 
+                                  ? 'bg-cyan-500 animate-pulse' 
+                                  : 'bg-cyan-200'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <p className="text-[10px] text-cyan-600 mt-1.5 text-center">
+                          {batchInfo.current} of {batchInfo.total} chunks processed
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+                {/* Preprocessing Information Display */}
+                {preprocessingInfo && (
+                  <div className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200 shadow-lg">
+                    <div className="text-left space-y-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="text-lg font-bold text-aaa-blue">Text Preprocessing Complete</h4>
+                        <div className="flex items-center gap-4 text-sm">
+                          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
+                            {preprocessingInfo.generalFixes + preprocessingInfo.particularFixes} fixes applied
+                          </span>
+                          {preprocessingInfo.estimatedClauses > 0 && (
+                            <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full font-semibold">
+                              ~{preprocessingInfo.estimatedClauses} clauses detected
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="p-3 bg-white/60 rounded-lg">
+                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1">General Text</p>
+                          <p className="text-sm font-bold text-aaa-blue">{preprocessingInfo.generalFixes} issues fixed</p>
+                        </div>
+                        <div className="p-3 bg-white/60 rounded-lg">
+                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1">Particular Text</p>
+                          <p className="text-sm font-bold text-aaa-blue">{preprocessingInfo.particularFixes} issues fixed</p>
+                        </div>
+                      </div>
+                      
+                      {/* Token Usage Display */}
+                      <div className="mt-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                        <div className="flex items-center justify-between mb-3">
+                          <h5 className="text-sm font-bold text-purple-700">Token Usage</h5>
+                          <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                            preprocessingInfo.tokenInfo.usagePercentage < 50 
+                              ? 'bg-green-100 text-green-700' 
+                              : preprocessingInfo.tokenInfo.usagePercentage < 80 
+                              ? 'bg-yellow-100 text-yellow-700' 
+                              : 'bg-red-100 text-red-700'
+                          }`}>
+                            {preprocessingInfo.tokenInfo.usagePercentage}% of budget
+                          </span>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center text-xs">
+                            <span className="text-gray-600">Input Tokens (Estimated):</span>
+                            <span className="font-mono font-bold text-purple-700">
+                              {preprocessingInfo.tokenInfo.inputTokens.toLocaleString()} / {preprocessingInfo.tokenInfo.totalTokenBudget.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="w-full h-2 bg-purple-100 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full rounded-full transition-all ${
+                                preprocessingInfo.tokenInfo.usagePercentage < 50 
+                                  ? 'bg-gradient-to-r from-green-400 to-green-500' 
+                                  : preprocessingInfo.tokenInfo.usagePercentage < 80 
+                                  ? 'bg-gradient-to-r from-yellow-400 to-yellow-500' 
+                                  : 'bg-gradient-to-r from-red-400 to-red-500'
+                              }`}
+                              style={{ width: `${preprocessingInfo.tokenInfo.usagePercentage}%` }}
+                            />
+                          </div>
+                          <div className="flex justify-between items-center text-xs mt-2">
+                            <span className="text-gray-600">Output Token Limit:</span>
+                            <span className="font-mono font-bold text-indigo-700">
+                              {preprocessingInfo.tokenInfo.outputTokenLimit.toLocaleString()} tokens
+                            </span>
+                          </div>
+                          <div className="text-[10px] text-gray-500 mt-1">
+                            Model: Claude Sonnet 4.5 • Context Window: {preprocessingInfo.tokenInfo.totalTokenBudget.toLocaleString()} tokens
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {preprocessingInfo.fixes.length > 0 && (
+                        <div className="mt-4">
+                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2">Sample Fixes Applied:</p>
+                          <div className="space-y-2 max-h-32 overflow-y-auto">
+                            {preprocessingInfo.fixes.map((fix, idx) => (
+                              <div key={idx} className="text-xs p-2 bg-white/80 rounded border border-blue-100">
+                                <span className="font-mono text-red-600 line-through mr-2">{fix.original}</span>
+                                <span className="text-gray-400">→</span>
+                                <span className="font-mono text-green-600 ml-2">{fix.fixed}</span>
+                                <span className="text-gray-500 ml-2 text-[10px]">({fix.reason})</span>
+                              </div>
+                            ))}
+                          </div>
+                          {preprocessingInfo.generalFixes + preprocessingInfo.particularFixes > 10 && (
+                            <p className="text-xs text-gray-500 mt-2">
+                              +{preprocessingInfo.generalFixes + preprocessingInfo.particularFixes - 10} more fixes...
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -950,21 +2529,223 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 </div>
               )}
 
-              <div className="grid grid-cols-1 gap-12 max-w-[1400px] mx-auto">
-                {filteredClauses.map((clause, idx) => (
-                  <div 
-                    key={`${clause.clause_number}-${idx}`}
-                    className="stagger-item"
-                    style={{ animationDelay: `${idx * 0.05}s` }}
-                  >
-                    <ClauseCard 
-                      clause={clause} 
-                      onCompare={setCompareClause}
-                      searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
+              {/* Contract Documents Tabs */}
+              {contract ? (
+                <ContractSectionsTabs
+                  contract={contract}
+                  onUpdate={async (updatedContract) => {
+                    // Update local state immediately for responsive UI
+                    setContract(updatedContract);
+                    setClauses(getAllClausesFromContract(updatedContract));
+                    
+                    // Save immediately (no debounce for section updates)
+                    try {
+                      await performSaveContract(updatedContract);
+                    } catch (error) {
+                      console.error('Failed to save section update:', error);
+                      // Revert state on error? Or show error message?
+                    }
+                  }}
+                  onEditClause={handleEditClause}
+                  onCompareClause={setCompareClause}
+                  onDeleteClause={handleDeleteClause}
+                  onReorderClause={handleReorder}
+                />
+              ) : clauses.length > 0 ? (
+                // Fallback: if contract not set but clauses exist, create contract
+                (() => {
+                  const fallbackContract = ensureContractHasSections({
+                    id: activeContractId || crypto.randomUUID(),
+                    name: projectName || "Untitled Contract",
+                    timestamp: Date.now(),
+                    clauses,
+                    metadata: {
+                      totalClauses: clauses.length,
+                      generalCount: clauses.filter(c => c.condition_type === 'General').length,
+                      particularCount: clauses.filter(c => c.condition_type === 'Particular').length,
+                      highRiskCount: 0,
+                      conflictCount: clauses.filter(c => c.comparison && c.comparison.length > 0).length,
+                      timeSensitiveCount: clauses.filter(c => c.time_frames && c.time_frames.length > 0).length
+                    }
+                  });
+                  setContract(fallbackContract);
+                  return (
+                    <ContractSectionsTabs
+                      contract={fallbackContract}
+                      onUpdate={async (updatedContract) => {
+                        setContract(updatedContract);
+                        setClauses(getAllClausesFromContract(updatedContract));
+                        await performSaveContract(updatedContract);
+                      }}
+                      onEditClause={handleEditClause}
+                      onCompareClause={setCompareClause}
+                      onDeleteClause={handleDeleteClause}
+                      onReorderClause={handleReorder}
                     />
-                  </div>
-                ))}
-              </div>
+                  );
+                })()
+              ) : (
+                <div className="bg-white border border-aaa-border rounded-3xl p-16 text-center">
+                  <p className="text-aaa-muted font-semibold">No contract data available</p>
+                </div>
+              )}
+
+              {/* Legacy View Toggle - Removed, replaced by ContractSectionsTabs */}
+              {false && (
+                <div className="space-y-12 max-w-[1400px] mx-auto">
+                  {(() => {
+                    // Group clauses by chapter
+                    const chaptersMap = new Map<string, Clause[]>();
+                    const unassigned: Clause[] = [];
+                    
+                    filteredClauses.forEach(clause => {
+                      if (clause.chapter) {
+                        if (!chaptersMap.has(clause.chapter)) {
+                          chaptersMap.set(clause.chapter, []);
+                        }
+                        chaptersMap.get(clause.chapter)!.push(clause);
+                      } else {
+                        unassigned.push(clause);
+                      }
+                    });
+                    
+                    // Sort chapters
+                    const sortedChapters = Array.from(chaptersMap.entries()).sort((a, b) => {
+                      const aNum = parseInt(a[0]);
+                      const bNum = parseInt(b[0]);
+                      if (!isNaN(aNum) && !isNaN(bNum)) {
+                        return aNum - bNum;
+                      }
+                      if (!isNaN(aNum) && isNaN(bNum)) return -1;
+                      if (isNaN(aNum) && !isNaN(bNum)) return 1;
+                      return a[0].localeCompare(b[0], undefined, { numeric: true });
+                    });
+                    
+                    return (
+                      <>
+                        {sortedChapters.map(([chapterName, chapterClauses], chapterIdx) => (
+                          <div key={chapterName} className="stagger-item" style={{ animationDelay: `${chapterIdx * 0.1}s` }}>
+                            <div className="mb-6 pb-4 border-b-2 border-aaa-blue">
+                              <h3 className="text-3xl font-black text-aaa-blue tracking-tighter">Chapter {chapterName}</h3>
+                            </div>
+                            <div className="grid grid-cols-1 gap-12">
+                              {(() => {
+                                const grouped = groupClausesByParent(chapterClauses);
+                                const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
+                                  const parse = (s: string) => {
+                                    return s.split('.').map(x => {
+                                      const num = parseInt(x);
+                                      if (!isNaN(num) && x === num.toString()) {
+                                        return { type: 'number', value: num, str: x };
+                                      }
+                                      return { type: 'string', value: 0, str: x };
+                                    });
+                                  };
+                                  const aP = parse(a[1].parent.clause_number);
+                                  const bP = parse(b[1].parent.clause_number);
+                                  for(let i=0; i<Math.max(aP.length, bP.length); i++) {
+                                    const aPart = aP[i] || { type: 'number', value: 0, str: '' };
+                                    const bPart = bP[i] || { type: 'number', value: 0, str: '' };
+                                    if (aPart.type === 'number' && bPart.type === 'number') {
+                                      if (aPart.value !== bPart.value) return aPart.value - bPart.value;
+                                    } else {
+                                      const aStr = aPart.str.toLowerCase();
+                                      const bStr = bPart.str.toLowerCase();
+                                      if (aStr !== bStr) {
+                                        const aNum = parseInt(aStr);
+                                        const bNum = parseInt(bStr);
+                                        if (!isNaN(aNum) && isNaN(bNum)) return -1;
+                                        if (isNaN(aNum) && !isNaN(bNum)) return 1;
+                                        return aStr.localeCompare(bStr);
+                                      }
+                                    }
+                                  }
+                                  return 0;
+                                });
+                                
+                                return sortedGroups.map(([parentNumber, { parent, subClauses }], idx) => (
+                                  <div 
+                                    key={`group-${parentNumber}-${idx}`}
+                                    className="stagger-item"
+                                    style={{ animationDelay: `${idx * 0.05}s` }}
+                                  >
+                                    <GroupedClauseCard
+                                      parentClause={parent}
+                                      subClauses={subClauses}
+                                      onCompare={setCompareClause}
+                                      onEdit={handleEditClause}
+                                      searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
+                                    />
+                                  </div>
+                                ));
+                              })()}
+                            </div>
+                          </div>
+                        ))}
+                        {unassigned.length > 0 && (
+                          <div className="stagger-item">
+                            <div className="mb-6 pb-4 border-b-2 border-aaa-border">
+                              <h3 className="text-2xl font-black text-aaa-muted tracking-tighter">Unassigned Clauses</h3>
+                            </div>
+                            <div className="grid grid-cols-1 gap-12">
+                              {(() => {
+                                const grouped = groupClausesByParent(unassigned);
+                                const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
+                                  const parse = (s: string) => {
+                                    return s.split('.').map(x => {
+                                      const num = parseInt(x);
+                                      if (!isNaN(num) && x === num.toString()) {
+                                        return { type: 'number', value: num, str: x };
+                                      }
+                                      return { type: 'string', value: 0, str: x };
+                                    });
+                                  };
+                                  const aP = parse(a[1].parent.clause_number);
+                                  const bP = parse(b[1].parent.clause_number);
+                                  for(let i=0; i<Math.max(aP.length, bP.length); i++) {
+                                    const aPart = aP[i] || { type: 'number', value: 0, str: '' };
+                                    const bPart = bP[i] || { type: 'number', value: 0, str: '' };
+                                    if (aPart.type === 'number' && bPart.type === 'number') {
+                                      if (aPart.value !== bPart.value) return aPart.value - bPart.value;
+                                    } else {
+                                      const aStr = aPart.str.toLowerCase();
+                                      const bStr = bPart.str.toLowerCase();
+                                      if (aStr !== bStr) {
+                                        const aNum = parseInt(aStr);
+                                        const bNum = parseInt(bStr);
+                                        if (!isNaN(aNum) && isNaN(bNum)) return -1;
+                                        if (isNaN(aNum) && !isNaN(bNum)) return 1;
+                                        return aStr.localeCompare(bStr);
+                                      }
+                                    }
+                                  }
+                                  return 0;
+                                });
+                                
+                                return sortedGroups.map(([parentNumber, { parent, subClauses }], idx) => (
+                                  <div 
+                                    key={`group-${parentNumber}-${idx}`}
+                                    className="stagger-item"
+                                    style={{ animationDelay: `${idx * 0.05}s` }}
+                                  >
+                                    <GroupedClauseCard
+                                      parentClause={parent}
+                                      subClauses={subClauses}
+                                      onCompare={setCompareClause}
+                                      onEdit={handleEditClause}
+                                      searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
+                                    />
+                                  </div>
+                                ));
+                              })()}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    );
+                  })()}
+                </div>
+              )}
             </div>
           )}
 
@@ -981,11 +2762,54 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                     Import Archive
                   </button>
                   <button onClick={() => setStatus(AnalysisStatus.IDLE)} className="px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all">New Extraction</button>
+                  <button 
+                    onClick={async () => {
+                      const newContractId = `contract-${Date.now()}`;
+                      const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
+                      
+                      const emptyContract = ensureContractHasSections({
+                        id: newContractId,
+                        name: newContractName,
+                        timestamp: Date.now(),
+                        clauses: [],
+                        metadata: {
+                          totalClauses: 0,
+                          generalCount: 0,
+                          particularCount: 0,
+                          highRiskCount: 0,
+                          conflictCount: 0,
+                          timeSensitiveCount: 0
+                        }
+                      });
+                      setContract(emptyContract);
+                      setClauses([]);
+                      setProjectName(newContractName);
+                      setActiveContractId(newContractId);
+                      setStatus(AnalysisStatus.COMPLETED);
+                      
+                      // Save empty contract to database immediately
+                      try {
+                        await performSaveContract(emptyContract);
+                      } catch (err) {
+                        console.error("Failed to save new contract:", err);
+                      }
+                    }} 
+                    className="px-10 py-4 bg-emerald-500 text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-emerald-600 transition-all"
+                  >
+                    New Contract
+                  </button>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {library.map(c => (
-                  <div key={c.id} onClick={() => { setClauses(c.clauses); setProjectName(c.name); setActiveContractId(c.id); setStatus(AnalysisStatus.COMPLETED); }} className={`group bg-white p-10 rounded-3xl border shadow-premium cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${activeContractId === c.id ? 'border-aaa-blue ring-2 ring-aaa-blue/10' : 'border-aaa-border hover:border-aaa-blue'}`}>
+                  <div key={c.id} onClick={() => { 
+                    const contractWithSections = ensureContractHasSections(c);
+                    setContract(contractWithSections);
+                    setClauses(getAllClausesFromContract(contractWithSections));
+                    setProjectName(contractWithSections.name);
+                    setActiveContractId(contractWithSections.id);
+                    setStatus(AnalysisStatus.COMPLETED); 
+                  }} className={`group bg-white p-10 rounded-3xl border shadow-premium cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${activeContractId === c.id ? 'border-aaa-blue ring-2 ring-aaa-blue/10' : 'border-aaa-border hover:border-aaa-blue'}`}>
                     <div className="flex justify-between items-start mb-8">
                        <h4 className="text-3xl font-black text-aaa-text truncate tracking-tighter pr-16">{c.name}</h4>
                        <div className="flex gap-2 absolute top-8 right-8">
@@ -1009,6 +2833,109 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
               </div>
             </div>
           )}
+
+          {/* Contract Selector Modal - Shows on startup */}
+          {showContractSelector && (
+            <div 
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                  setShowContractSelector(false);
+                }
+              }}
+            >
+              <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+                <div className="p-8 border-b border-aaa-border flex justify-between items-start">
+                  <div>
+                    <h2 className="text-3xl font-black text-aaa-text mb-2">Select a Contract</h2>
+                    <p className="text-aaa-muted text-sm">Choose a contract to continue working, or create a new one</p>
+                  </div>
+                  <button
+                    onClick={() => setShowContractSelector(false)}
+                    className="p-2 text-aaa-muted hover:text-aaa-text hover:bg-aaa-bg rounded-lg transition-all"
+                    title="Close"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                
+                <div className="flex-1 overflow-y-auto p-8">
+                  {library.length === 0 ? (
+                    <div className="text-center py-12">
+                      <p className="text-aaa-muted mb-6">No contracts found. Create a new one to get started.</p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {library.map(c => {
+                        const savedContractId = localStorage.getItem('aaa_active_contract_id');
+                        const isLastActive = savedContractId === c.id;
+                        
+                        return (
+                          <div
+                            key={c.id}
+                            onClick={() => {
+                              const contractWithSections = ensureContractHasSections(c);
+                              setContract(contractWithSections);
+                              setClauses(getAllClausesFromContract(contractWithSections));
+                              setProjectName(contractWithSections.name);
+                              setActiveContractId(contractWithSections.id);
+                              setStatus(AnalysisStatus.COMPLETED);
+                              setShowContractSelector(false);
+                            }}
+                            className={`group bg-white p-6 rounded-2xl border shadow-lg cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${
+                              isLastActive 
+                                ? 'border-aaa-blue ring-2 ring-aaa-blue/20 bg-aaa-blue/5' 
+                                : 'border-aaa-border hover:border-aaa-blue'
+                            }`}
+                          >
+                            {isLastActive && (
+                              <div className="absolute top-4 right-4 px-3 py-1 bg-aaa-blue text-white text-[9px] font-black rounded-full uppercase tracking-widest">
+                                Last Active
+                              </div>
+                            )}
+                            <div className="flex justify-between items-start mb-4">
+                              <h4 className="text-2xl font-black text-aaa-text truncate tracking-tighter pr-16">{c.name}</h4>
+                            </div>
+                            <div className="mt-auto pt-4 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
+                              <span>{new Date(c.timestamp).toLocaleDateString()}</span>
+                              <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+                
+                <div className="p-8 border-t border-aaa-border flex gap-4 justify-end">
+                  <button
+                    onClick={async () => {
+                      const newContractId = `contract-${Date.now()}`;
+                      const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
+                      
+                      setClauses([]);
+                      setProjectName(newContractName);
+                      setActiveContractId(newContractId);
+                      setStatus(AnalysisStatus.COMPLETED);
+                      setShowContractSelector(false);
+                      
+                      // Save empty contract to database immediately
+                      try {
+                        await performSave([], newContractName, newContractId);
+                      } catch (err) {
+                        console.error("Failed to save new contract:", err);
+                      }
+                    }}
+                    className="px-8 py-3 bg-emerald-500 text-white rounded-xl text-sm font-black uppercase tracking-widest shadow-lg hover:bg-emerald-600 transition-all"
+                  >
+                    Create New Contract
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </main>
       </div>
 
@@ -1024,8 +2951,89 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       {isAddModalOpen && (
         <AddClauseModal 
           contractId={activeContractId || 'current-contract'} 
-          onClose={() => setIsAddModalOpen(false)} 
-          onSave={handleSaveManualClause} 
+          onClose={() => {
+            setIsAddModalOpen(false);
+            setEditingClause(null);
+          }} 
+          onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
+          editingClause={editingClause}
+        />
+      )}
+
+      {showCategorySuggestions && categorySuggestions.length > 0 && (
+        <CategorySuggestionsModal
+          suggestions={categorySuggestions}
+          clauses={clauses}
+          onAccept={(suggestion) => {
+            // Assign clauses to category using CategoryManagerService
+            const categoryService = new CategoryManagerService();
+            categoryService.initialize(clauses);
+            
+            // Create category if it doesn't exist (ignore error if already exists)
+            categoryService.processAction({
+              action: 'create_category',
+              category_name: suggestion.categoryName
+            });
+            
+            // Add clauses to category
+            const updatedClauses = [...clauses];
+            suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
+              const addResult = categoryService.processAction({
+                action: 'add_clause',
+                clause_number: clauseNumber,
+                category_name: suggestion.categoryName
+              });
+              if (addResult.success) {
+                const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
+                if (clause) {
+                  clause.category = suggestion.categoryName;
+                }
+              }
+            });
+            setClauses(updatedClauses);
+            persistCurrentProject(updatedClauses, projectName);
+          }}
+          onReject={(suggestion) => {
+            // Just remove from suggestions list
+            setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
+          }}
+          onAcceptAll={() => {
+            // Accept all remaining suggestions
+            const categoryService = new CategoryManagerService();
+            categoryService.initialize(clauses);
+            const updatedClauses = [...clauses];
+            
+            categorySuggestions.forEach(suggestion => {
+              // Create category if it doesn't exist (ignore error if already exists)
+              categoryService.processAction({
+                action: 'create_category',
+                category_name: suggestion.categoryName
+              });
+              
+              // Add clauses to category
+              suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
+                const addResult = categoryService.processAction({
+                  action: 'add_clause',
+                  clause_number: clauseNumber,
+                  category_name: suggestion.categoryName
+                });
+                if (addResult.success) {
+                  const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
+                  if (clause && !clause.category) {
+                    clause.category = suggestion.categoryName;
+                  }
+                }
+              });
+            });
+            
+            setClauses(updatedClauses);
+            persistCurrentProject(updatedClauses, projectName);
+            setShowCategorySuggestions(false);
+          }}
+          onDismiss={() => {
+            setShowCategorySuggestions(false);
+            setCategorySuggestions([]);
+          }}
         />
       )}
 
@@ -1043,6 +3051,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       onClose={() => setIsBotOpen(false)}
       clauses={clauses}
       selectedClause={selectedClauseForBot}
+    />
+    
+    <FloatingAIButton
+      onClick={() => setIsBotOpen(!isBotOpen)}
+      isOpen={isBotOpen}
     />
     </>
   );

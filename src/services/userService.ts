@@ -38,28 +38,16 @@ export const createUser = async (
   displayName: string,
   createdBy: string
 ): Promise<UserProfile> => {
-  // #region agent log
-  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:34',message:'createUser called',data:{email,role,displayName,createdBy},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-  // #endregion
   try {
     // Store current admin user before creating new user
     const currentUser = auth.currentUser;
     if (!currentUser) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:45',message:'No admin user signed in',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       throw new Error('Admin must be signed in to create users');
     }
     
     // Create authentication user (this will sign in as the new user)
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:49',message:'Creating Auth user',data:{email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const newUser = userCredential.user;
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:51',message:'Auth user created',data:{uid:newUser.uid,email:newUser.email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     
     // Create user profile in Firestore
     const userProfile: UserProfile = {
@@ -71,27 +59,15 @@ export const createUser = async (
       createdBy: createdBy
     };
     
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:62',message:'Writing Firestore profile',data:{uid:newUser.uid,profile:userProfile},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     await setDoc(doc(db, USERS_COLLECTION, newUser.uid), userProfile);
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:63',message:'Firestore profile written successfully',data:{uid:newUser.uid},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     
     // Sign out the newly created user so admin can continue working
     // Note: The admin will need to refresh or the auth state will update automatically
     await auth.signOut();
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:67',message:'User creation complete',data:{uid:newUser.uid,email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     
     // Return the created profile
     return userProfile;
   } catch (error: any) {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'userService.ts:71',message:'Error creating user',data:{error:error.message,code:error.code,email},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     console.error('Error creating user:', error);
     if (error.code === 'auth/email-already-in-use') {
       throw new Error('Email is already in use');
@@ -145,4 +121,41 @@ export const initializeAdminUser = async (email: string, password: string): Prom
     console.error('Error initializing admin:', error);
     throw error;
   }
+};
+
+/**
+ * Get count of active users (users who logged in within the last specified minutes)
+ * @param activeWindowMinutes - Time window in minutes (default: 30 minutes)
+ */
+export const getActiveUsersCount = async (activeWindowMinutes: number = 30): Promise<number> => {
+  try {
+    const querySnapshot = await getDocs(collection(db, USERS_COLLECTION));
+    const now = Date.now();
+    const activeThreshold = now - (activeWindowMinutes * 60 * 1000);
+    
+    let activeCount = 0;
+    querySnapshot.docs.forEach(doc => {
+      const userData = doc.data() as UserProfile;
+      if (userData.lastLogin && userData.lastLogin >= activeThreshold) {
+        activeCount++;
+      }
+    });
+    
+    return activeCount;
+  } catch (error) {
+    console.error('Error counting active users:', error);
+    throw new Error('Failed to count active users');
+  }
+};
+
+/**
+ * Check if a user is currently active (logged in within the last specified minutes)
+ * @param lastLogin - User's last login timestamp
+ * @param activeWindowMinutes - Time window in minutes (default: 30 minutes)
+ */
+export const isUserActive = (lastLogin: number | undefined, activeWindowMinutes: number = 30): boolean => {
+  if (!lastLogin) return false;
+  const now = Date.now();
+  const activeThreshold = now - (activeWindowMinutes * 60 * 1000);
+  return lastLogin >= activeThreshold;
 };

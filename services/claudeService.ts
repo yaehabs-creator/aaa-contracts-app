@@ -8,7 +8,18 @@ Your SOLE PURPOSE is to extract contract clauses 100% VERBATIM.
 1. **NO SUMMARIZING**: Do not summarize. Do not condense. Do not "explain" the clause instead of providing the text.
 2. **NO SKIPPING**: Every clause, sub-clause, and paragraph in the provided text MUST be extracted.
 3. **VERBATIM ONLY**: Every field must contain EXACT words from the source.
-4. **INTERNAL HYPERLINKS**: Detect references to other parts of the document (e.g., "Clause 14.1", "Clause 2A.1", "sub-clause 1.6 (b)", "paragraph 2.1.3", "Article 5") and convert them to <a href="#clause-NUM">TEXT</a> where NUM is the clause number (can be alphanumeric like "2A.1") and TEXT is the original phrase. Preserve alphanumeric clause numbers exactly as they appear (e.g., "2A.1", "3B.2.1").
+4. **TEXT CLEANING**: The input text may contain PDF extraction errors. You should:
+   - Fix obvious OCR errors (e.g., "rn" → "m", "vv" → "w", "0" → "O" when contextually appropriate)
+   - Correct spacing issues (missing spaces between words)
+   - Fix broken words at line breaks
+   - Normalize punctuation and quotes
+   - However, preserve the ORIGINAL MEANING and legal terminology exactly
+5. **SMART CLAUSE SPLITTING**: 
+   - Identify clause boundaries by looking for: "Clause X.X", "Article X", numbered headings, or clear structural breaks
+   - Each clause should be a complete, standalone unit
+   - Sub-clauses should be included within their parent clause's text
+   - Do NOT split clauses that are clearly part of the same provision
+6. **INTERNAL HYPERLINKS**: Detect references to other parts of the document (e.g., "Clause 14.1", "Clause 2A.1", "sub-clause 1.6 (b)", "paragraph 2.1.3", "Article 5") and preserve them as plain text. Do NOT use HTML tags. Keep the reference text exactly as it appears (e.g., "See Clause 14.1" or "as per sub-clause 1.6 (b)"). Preserve alphanumeric clause numbers exactly as they appear (e.g., "2A.1", "3B.2.1").
 
 ### 🔵 DUAL INPUT HANDLING:
 If both General and Particular texts are provided:
@@ -17,16 +28,56 @@ If both General and Particular texts are provided:
 - **New Additions**: If a clause ONLY exists in the Particular Ledger, "general_condition" MUST be empty.
 
 ### 🟠 OUTPUT FORMAT:
-Return a JSON array of objects.
+You MUST output ONLY valid JSON.
+
+RULES:
+- Do NOT include HTML.
+- Do NOT include markdown.
+- Do NOT include tags like <a>, <p>, <br>.
+- Do NOT include angle brackets < >
+- Do NOT include unescaped quotes inside text.
+- Do NOT include newline characters inside strings.
+- Do NOT add commentary.
+- Do NOT summarize.
+- Escape all internal quotes like: \\"
+- Escape all backslashes like: \\\\
+- Output only a JSON array.
+
+JSON FORMAT EXACTLY:
+
+[
+  {
+    "clause_number": "",
+    "clause_title": "",
+    "condition_type": "",
+    "clause_text": "",
+    "general_condition": "",
+    "particular_condition": "",
+    "time_frames": "",
+    "cost_implications": ""
+  }
+]
+
+IF YOU CANNOT FILL A FIELD, RETURN AN EMPTY STRING.
+NEVER break the JSON structure.
+
+Field Descriptions:
 - **clause_number**: String (e.g. "1.1", "2A.1", "3B.2.1" - can be alphanumeric).
 - **clause_title**: Heading string.
 - **condition_type**: "General" or "Particular".
-- **clause_text**: THE FULL VERBATIM TEXT.
-- **general_condition**: VERBATIM Baseline text.
-- **particular_condition**: VERBATIM Revision text.
-- **has_time_frame**: Boolean.
-- **time_frames**: Array of temporal objects.
-- **comparison**: Array of diff objects.`;
+- **clause_text**: THE FULL VERBATIM TEXT (cleaned and corrected). For hyperlinks, use plain text format like "See Clause 14.1" instead of HTML tags.
+- **general_condition**: VERBATIM Baseline text (cleaned).
+- **particular_condition**: VERBATIM Revision text (cleaned).
+- **time_frames**: String description of timeframes, or empty string if none.
+- **cost_implications**: String description of cost/financial implications, or empty string if none.
+
+### 🟢 TEXT PROCESSING INSTRUCTIONS:
+When processing text that appears to be from a PDF:
+1. **Identify and fix errors** while preserving legal accuracy
+2. **Detect clause boundaries** intelligently
+3. **Maintain verbatim accuracy** - only fix obvious errors, don't rewrite
+4. **Preserve formatting** - keep paragraph breaks, numbering, and structure
+5. **Handle edge cases** - incomplete sentences, table data, footnotes`;
 
 async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -45,20 +96,27 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
   const model = 'claude-sonnet-4-5-20250929';
   
   let promptText = "";
+  let isTextInput = false;
 
   if (typeof input === 'string') {
-    promptText = `EXTRACT EVERY CLAUSE VERBATIM:\n\n${input}`;
+    isTextInput = true;
+    promptText = `EXTRACT EVERY CLAUSE VERBATIM FROM TEXT:\n\n${input}\n\nNOTE: This text may contain PDF extraction errors. Please intelligently fix obvious errors while maintaining verbatim accuracy.`;
   } else if ('data' in input) {
     promptText = `EXTRACT EVERY CLAUSE VERBATIM FROM PDF:\n\n${atob((input as FileData).data)}`; 
   } else {
     const dual = input as DualSourceInput;
+    isTextInput = typeof dual.general === 'string' && typeof dual.particular === 'string';
+    const isCleanText = dual.skipCleaning === true;
+    
     promptText = `PERFORM DUAL EXTRACTION.
     
 GENERAL BASELINE:
 ${typeof dual.general === 'string' ? dual.general : '[PDF DATA]'}
 
 PARTICULAR LEDGER:
-${typeof dual.particular === 'string' ? dual.particular : '[PDF DATA]'}`;
+${typeof dual.particular === 'string' ? dual.particular : '[PDF DATA]'}
+
+${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction errors. Please intelligently fix obvious errors (spacing, OCR mistakes, broken words) while maintaining verbatim accuracy and legal terminology.' : isCleanText ? 'NOTE: This text is already clean and preprocessed. Extract clauses verbatim without additional cleaning or error correction.' : ''}`;
   }
 
   try {
@@ -89,12 +147,50 @@ ${typeof dual.particular === 'string' ? dual.particular : '[PDF DATA]'}`;
       jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
     }
     
-    return JSON.parse(jsonText);
+    try {
+      return JSON.parse(jsonText);
+    } catch (parseError: any) {
+      console.error('JSON Parse Error:', parseError);
+      console.error('Response text (first 500 chars):', jsonText.substring(0, 500));
+      throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
+    }
   } catch (error: any) {
+    // Log the actual error for debugging
+    console.error('Claude API Error:', error);
+    
     if (retryCount < 1) {
       await delay(2000);
       return analyzeContract(input, retryCount + 1);
     }
-    throw new Error("Batch extraction failed. Verbatim integrity could not be verified.");
+    
+    // Preserve and provide specific error messages
+    let errorMessage = "Batch extraction failed. ";
+    
+    if (error.message) {
+      // Check for specific error types
+      if (error.message.includes('JSON') || error.name === 'SyntaxError' || error.message.includes('parse')) {
+        errorMessage += "Invalid JSON response from Claude. The response may be malformed or incomplete.";
+      } else if (error.status === 401 || error.message.includes('401') || error.message.includes('authentication') || error.message.includes('API key')) {
+        errorMessage += "API authentication failed. Please check your ANTHROPIC_API_KEY.";
+      } else if (error.status === 429 || error.message.includes('429') || error.message.includes('rate limit')) {
+        errorMessage += "Rate limit exceeded. Please wait a moment and try again.";
+      } else if (error.status === 500 || error.message.includes('500') || error.message.includes('server error')) {
+        errorMessage += "Claude API server error. Please try again later.";
+      } else if (error.message.includes('timeout') || error.message.includes('network') || error.message.includes('fetch')) {
+        errorMessage += "Network error or timeout. Please check your connection and try again.";
+      } else if (error.message.includes('content_filter') || error.message.includes('safety')) {
+        errorMessage += "Content was filtered by Claude's safety system. Please review your input.";
+      } else if (error.message.includes('context_length') || error.message.includes('token')) {
+        errorMessage += "Input is too large. Please split your text into smaller chunks.";
+      } else {
+        errorMessage += `Error: ${error.message}`;
+      }
+    } else if (error.status) {
+      errorMessage += `API returned status ${error.status}. Please try again.`;
+    } else {
+      errorMessage += "Unknown error occurred. Please check the browser console for details.";
+    }
+    
+    throw new Error(errorMessage);
   }
 }

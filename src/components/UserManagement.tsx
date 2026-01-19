@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { getAllUsers, createUser, updateUserRole, deleteUser } from '../services/userService';
+import { getAllUsers, createUser, updateUserRole, deleteUser, getActiveUsersCount, isUserActive } from '../services/userService';
 import { UserProfile, UserRole } from '../types/user';
+import { BackupManager } from './BackupManager';
+import { ContractBuilder } from './ContractBuilder';
+
+type AdminTab = 'users' | 'backup' | 'contract-builder';
 
 export const UserManagement: React.FC = () => {
   const { user: currentUser, isAdmin } = useAuth();
+  const [activeTab, setActiveTab] = useState<AdminTab>('users');
   const [users, setUsers] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [activeUsersCount, setActiveUsersCount] = useState<number>(0);
 
   // Create user form state
   const [newEmail, setNewEmail] = useState('');
@@ -20,6 +26,17 @@ export const UserManagement: React.FC = () => {
   useEffect(() => {
     if (isAdmin()) {
       loadUsers();
+      
+      // Refresh active users count every 30 seconds
+      const interval = setInterval(() => {
+        getActiveUsersCount(30).then(count => {
+          setActiveUsersCount(count);
+        }).catch(err => {
+          console.error('Error refreshing active users count:', err);
+        });
+      }, 30000); // 30 seconds
+      
+      return () => clearInterval(interval);
     }
   }, []);
 
@@ -28,6 +45,10 @@ export const UserManagement: React.FC = () => {
       setLoading(true);
       const fetchedUsers = await getAllUsers();
       setUsers(fetchedUsers);
+      
+      // Load active users count
+      const activeCount = await getActiveUsersCount(30); // 30 minutes window
+      setActiveUsersCount(activeCount);
     } catch (err: any) {
       setError(err.message || 'Failed to load users');
     } finally {
@@ -108,9 +129,92 @@ export const UserManagement: React.FC = () => {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
-        <div>
-          <h2>👥 User Management</h2>
+      {/* Tabs */}
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', borderBottom: '2px solid #E2E8F0' }}>
+        <button
+          onClick={() => setActiveTab('users')}
+          style={{
+            padding: '0.75rem 1.5rem',
+            background: 'transparent',
+            border: 'none',
+            borderBottom: activeTab === 'users' ? '3px solid #0F2E6B' : '3px solid transparent',
+            color: activeTab === 'users' ? '#0F2E6B' : '#64748B',
+            fontSize: '0.9375rem',
+            fontWeight: activeTab === 'users' ? '700' : '500',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+        >
+          👥 User Management
+        </button>
+        <button
+          onClick={() => setActiveTab('backup')}
+          style={{
+            padding: '0.75rem 1.5rem',
+            background: 'transparent',
+            border: 'none',
+            borderBottom: activeTab === 'backup' ? '3px solid #0F2E6B' : '3px solid transparent',
+            color: activeTab === 'backup' ? '#0F2E6B' : '#64748B',
+            fontSize: '0.9375rem',
+            fontWeight: activeTab === 'backup' ? '700' : '500',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+        >
+          💾 Backup & Restore
+        </button>
+        <button
+          onClick={() => setActiveTab('contract-builder')}
+          style={{
+            padding: '0.75rem 1.5rem',
+            background: 'transparent',
+            border: 'none',
+            borderBottom: activeTab === 'contract-builder' ? '3px solid #0F2E6B' : '3px solid transparent',
+            color: activeTab === 'contract-builder' ? '#0F2E6B' : '#64748B',
+            fontSize: '0.9375rem',
+            fontWeight: activeTab === 'contract-builder' ? '700' : '500',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease'
+          }}
+        >
+          📄 Contract Builder
+        </button>
+      </div>
+
+      {activeTab === 'backup' ? (
+        <BackupManager />
+      ) : activeTab === 'contract-builder' ? (
+        <ContractBuilder />
+      ) : (
+        <>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                <h2 style={{ margin: 0 }}>👥 User Management</h2>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 1rem',
+              background: '#F0F4FF',
+              border: '1px solid #D6E2FF',
+              borderRadius: '12px',
+              fontSize: '0.875rem',
+              fontWeight: '600',
+              color: '#0F2E6B'
+            }}>
+              <div style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                background: '#10B981',
+                animation: 'pulse 2s infinite'
+              }}></div>
+              <span>{activeUsersCount} Active</span>
+              <span style={{ color: '#64748B', fontWeight: '400' }}>•</span>
+              <span style={{ color: '#64748B', fontWeight: '400' }}>{users.length} Total</span>
+            </div>
+          </div>
           <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.875rem', color: '#5C6B82', maxWidth: '600px' }}>
             Create and manage team member accounts. <strong>Users must be created here before they can login.</strong> Share the email and password with team members after creation.
           </p>
@@ -175,16 +279,45 @@ export const UserManagement: React.FC = () => {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ background: '#f7fafc', borderBottom: '2px solid #e2e8f0' }}>
+                <th style={{ padding: '1rem', textAlign: 'left' }}>Status</th>
                 <th style={{ padding: '1rem', textAlign: 'left' }}>User</th>
                 <th style={{ padding: '1rem', textAlign: 'left' }}>Email</th>
                 <th style={{ padding: '1rem', textAlign: 'left' }}>Role</th>
+                <th style={{ padding: '1rem', textAlign: 'left' }}>Last Active</th>
                 <th style={{ padding: '1rem', textAlign: 'left' }}>Created</th>
                 <th style={{ padding: '1rem', textAlign: 'center' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
+              {users.map((user) => {
+                const userIsActive = isUserActive(user.lastLogin, 30);
+                const lastActiveTime = user.lastLogin 
+                  ? new Date(user.lastLogin).toLocaleString()
+                  : 'Never';
+                
+                return (
                 <tr key={user.uid} style={{ borderBottom: '1px solid #e2e8f0' }}>
+                  <td style={{ padding: '1rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <div style={{
+                        width: '10px',
+                        height: '10px',
+                        borderRadius: '50%',
+                        background: userIsActive ? '#10B981' : '#94A3B8',
+                        boxShadow: userIsActive ? '0 0 8px rgba(16, 185, 129, 0.5)' : 'none',
+                        transition: 'all 0.3s ease'
+                      }}></div>
+                      <span style={{
+                        fontSize: '0.75rem',
+                        fontWeight: '600',
+                        color: userIsActive ? '#10B981' : '#94A3B8',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em'
+                      }}>
+                        {userIsActive ? 'Active' : 'Inactive'}
+                      </span>
+                    </div>
+                  </td>
                   <td style={{ padding: '1rem' }}>
                     <strong>{user.displayName || 'N/A'}</strong>
                   </td>
@@ -217,7 +350,10 @@ export const UserManagement: React.FC = () => {
                       </select>
                     )}
                   </td>
-                  <td style={{ padding: '1rem' }}>
+                  <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#64748B' }}>
+                    {lastActiveTime}
+                  </td>
+                  <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#64748B' }}>
                     {new Date(user.createdAt).toLocaleDateString()}
                   </td>
                   <td style={{ padding: '1rem', textAlign: 'center' }}>
@@ -238,7 +374,8 @@ export const UserManagement: React.FC = () => {
                     )}
                   </td>
                 </tr>
-              ))}
+              );
+              })}
             </tbody>
           </table>
         </div>
@@ -381,6 +518,19 @@ export const UserManagement: React.FC = () => {
             </form>
           </div>
         </div>
+      )}
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
+      `}</style>
+        </>
       )}
     </div>
   );

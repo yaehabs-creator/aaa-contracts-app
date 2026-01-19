@@ -87,7 +87,27 @@
       }
       
       /* Internal Clause Hyperlinks */
-      .verbatim-content a {
+      .verbatim-content a.clause-link,
+      .clause-link {
+        color: #0F2E6B;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        text-underline-offset: 4px;
+        padding: 0 2px;
+        border-radius: 4px;
+      }
+      .verbatim-content a.clause-link:hover,
+      .clause-link:hover {
+        color: #1E6CE8;
+        text-decoration: none;
+        background-color: rgba(15, 46, 107, 0.15);
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      /* Fallback for any legacy hyperlinks without clause-link class */
+      .verbatim-content a:not(.clause-link) {
         color: #1E6CE8;
         font-weight: 800;
         text-decoration: underline;
@@ -97,7 +117,7 @@
         border-radius: 4px;
         cursor: pointer;
       }
-      .verbatim-content a:hover {
+      .verbatim-content a:not(.clause-link):hover {
         background-color: rgba(30, 108, 232, 0.1);
         color: #0F2E6B;
       }
@@ -198,6 +218,21 @@
         100% {
           box-shadow: 0 0 0 0 rgba(30, 108, 232, 0);
         }
+      }
+      
+      @keyframes pulse-dot {
+        0%, 100% { 
+          opacity: 1; 
+          transform: scale(1);
+        }
+        50% { 
+          opacity: 0.5; 
+          transform: scale(0.8);
+        }
+      }
+      
+      .animate-pulse-dot {
+        animation: pulse-dot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
       
       /* Smooth entrance animations */
@@ -351,6 +386,24 @@
 </head>
   <body>
     <div id="root"></div>
+  <script>
+    // Track all failed resource loads with both console and fetch
+    window.addEventListener('error', function(e) {
+      if (e.target && e.target.src) {
+        const errorData = {src:e.target.src,type:e.target.tagName,status:e.target.status||'unknown'};
+        console.error('Resource load error:', errorData);
+      }
+    }, true);
+    // Track module import errors
+    window.addEventListener('unhandledrejection', function(e) {
+      if (e.reason && e.reason.message) {
+        const errorData = {error:e.reason.message,stack:e.reason.stack||''};
+        console.error('Module import error:', errorData);
+      }
+    });
+    // Track successful module load
+    console.log('HTML loaded, starting module import:', window.location.href);
+  </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

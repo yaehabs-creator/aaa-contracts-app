@@ -25,13 +25,23 @@ if (!firebaseConfig.appId) missingVars.push('VITE_FIREBASE_APP_ID');
 let app: any = null;
 let auth: any = null;
 let db: any = null;
+let configError: string | null = null;
 
 if (missingVars.length > 0) {
-  const errorMsg = `Missing Firebase environment variables: ${missingVars.join(', ')}\n\nPlease configure Firebase in your environment variables.\nSee DEPLOYMENT_GUIDE.md for instructions.`;
-  console.error(errorMsg);
-  // Don't throw - allow app to load but show error
+  const errorMsg = `Missing Firebase environment variables: ${missingVars.join(', ')}`;
+  configError = errorMsg;
+  console.error('❌ Firebase Configuration Error:', errorMsg);
+  console.error('📖 Please configure Firebase in your .env.local file.');
+  console.error('📚 See DEPLOYMENT_GUIDE.md for setup instructions.');
+  
+  // Store error in window for error boundary to access
   if (typeof window !== 'undefined') {
-    console.warn('Firebase not configured. Authentication will not work.');
+    (window as any).__FIREBASE_CONFIG_ERROR__ = {
+      message: errorMsg,
+      missingVars: missingVars,
+      instructions: 'Please check your .env.local file and ensure all VITE_FIREBASE_* variables are set correctly.'
+    };
+    console.warn('⚠️ Firebase not configured. Authentication will not work.');
   }
 } else {
   // Initialize Firebase
@@ -39,13 +49,25 @@ if (missingVars.length > 0) {
     app = initializeApp(firebaseConfig);
     auth = getAuth(app);
     db = getFirestore(app);
+    console.log('✅ Firebase initialized successfully');
+    console.log('📊 Firebase Project:', firebaseConfig.projectId);
   } catch (error) {
-    console.error('Failed to initialize Firebase:', error);
-    // Don't throw - allow app to load but show error
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    configError = `Failed to initialize Firebase: ${errorMessage}`;
+    console.error('❌ Firebase Initialization Error:', error);
+    
+    // Store error in window for error boundary to access
+    if (typeof window !== 'undefined') {
+      (window as any).__FIREBASE_CONFIG_ERROR__ = {
+        message: configError,
+        error: error,
+        instructions: 'Please verify your Firebase configuration values are correct.'
+      };
+    }
   }
 }
 
 // Export Firebase services (may be null if not configured)
-export { auth, db };
+export { auth, db, configError };
 
 export default app;

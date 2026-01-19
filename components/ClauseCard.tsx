@@ -5,6 +5,7 @@ import { Clause } from '../types';
 interface ClauseCardProps {
   clause: Clause;
   onCompare?: (clause: Clause) => void;
+  onEdit?: (clause: Clause) => void;
   isCompareTarget?: boolean;
   searchKeywords?: string[];
 }
@@ -50,7 +51,7 @@ const normalizeClauseId = (clauseNumber: string): string => {
     .replace(/[()]/g, ''); // Remove parentheses
 };
 
-export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, isCompareTarget, searchKeywords = [] }) => {
+export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdit, isCompareTarget, searchKeywords = [] }) => {
   const isDual = !!clause.general_condition || !!clause.particular_condition;
   const textLength = clause.clause_text?.length || 0;
   const [isCollapsed, setIsCollapsed] = useState(textLength > 1200);
@@ -63,17 +64,19 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, isCom
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#clause-')) {
+      // Check if clicked element is a link or inside a link
+      const link = target.closest('a.clause-link') as HTMLAnchorElement;
+      if (link && link.getAttribute('href')?.startsWith('#clause-')) {
         e.preventDefault();
-        const href = target.getAttribute('href');
-        if (href) {
-          const clauseId = href.replace('#clause-', '');
+        e.stopPropagation();
+        const clauseId = link.getAttribute('data-clause-id') || link.getAttribute('href')?.replace('#clause-', '');
+        if (clauseId) {
           const targetElement = document.getElementById(`clause-${clauseId}`);
           if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             // Highlight the target clause briefly
             targetElement.style.transition = 'box-shadow 0.3s ease';
-            targetElement.style.boxShadow = '0 0 0 4px rgba(30, 108, 232, 0.3)';
+            targetElement.style.boxShadow = '0 0 0 4px rgba(15, 46, 107, 0.3)';
             setTimeout(() => {
               targetElement.style.boxShadow = '';
             }, 2000);
@@ -82,15 +85,12 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, isCom
       }
     };
 
-    // Add event listener to the card element
-    const cardElement = document.getElementById(`clause-${normalizedClauseId}`);
-    if (cardElement) {
-      cardElement.addEventListener('click', handleLinkClick);
-      return () => {
-        cardElement.removeEventListener('click', handleLinkClick);
-      };
-    }
-  }, [normalizedClauseId]);
+    // Add event listener to document to catch all hyperlink clicks
+    document.addEventListener('click', handleLinkClick);
+    return () => {
+      document.removeEventListener('click', handleLinkClick);
+    };
+  }, []);
 
   const handleCopy = () => {
     const temp = document.createElement("div");
@@ -136,6 +136,11 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, isCom
             }`}>
               {clause.condition_type} Dataset
             </span>
+            {clause.section && (
+              <span className="px-3 py-1 bg-aaa-blue text-white text-[9px] font-black rounded-full uppercase tracking-widest shadow-lg">
+                Section {clause.section}
+              </span>
+            )}
             {modCount > 0 && (
               <span className="px-3 py-1 bg-aaa-text text-white text-[9px] font-black rounded-full uppercase tracking-widest shadow-lg">
                 {modCount} Modifications
@@ -144,6 +149,17 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, isCom
           </div>
         </div>
         <div className="flex items-center gap-3">
+          {onEdit && (
+            <button 
+              onClick={() => onEdit(clause)} 
+              className="p-3 bg-white border border-aaa-border text-aaa-muted hover:text-emerald-600 hover:border-emerald-600 rounded-xl transition-all shadow-sm"
+              title="Edit Clause"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </button>
+          )}
           <button onClick={handleCopy} className="p-3 bg-white border border-aaa-border text-aaa-muted hover:text-aaa-blue hover:border-aaa-blue rounded-xl transition-all shadow-sm group/copy relative">
             {copied ? <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg> : <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1" /></svg>}
           </button>
@@ -166,7 +182,7 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, isCom
             <div className={`font-mono text-[13px] leading-[1.8] text-aaa-text whitespace-pre-wrap transition-all duration-700 overflow-hidden ${isCollapsed ? 'max-h-[350px]' : 'max-h-none'}`}>
               <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">{clause.clause_number} {clause.clause_title}</div>
               {clause.general_condition ? (
-                <div dangerouslySetInnerHTML={{ __html: clause.general_condition }} className="verbatim-content" />
+                <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.general_condition, searchKeywords) : clause.general_condition }} className="verbatim-content" />
               ) : (
                 <div className="h-20 flex items-center justify-center border-2 border-dashed border-aaa-border/50 rounded-2xl bg-white/50 text-[10px] font-black uppercase text-aaa-muted opacity-40">Not Present in Baseline</div>
               )}
