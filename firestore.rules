@@ -56,6 +56,22 @@ service cloud.firestore {
       
       // Only admins can delete
       allow delete: if isAdmin();
+      
+      // Sections subcollection (for large contracts)
+      match /sections/{sectionId} {
+        allow read: if isAuthenticated();
+        allow create: if isAuthenticated();
+        allow update: if isAuthenticated();
+        allow delete: if isAuthenticated();
+        
+        // Items subcollection within sections
+        match /items/{itemId} {
+          allow read: if isAuthenticated();
+          allow create: if isAuthenticated();
+          allow update: if isAuthenticated();
+          allow delete: if isAuthenticated();
+        }
+      }
     }
     
     // Activity logs (optional - for tracking changes)

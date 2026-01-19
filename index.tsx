@@ -25,11 +25,13 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      // Check for Firebase configuration errors
+      // Check for Supabase configuration errors (preferred) or Firebase (legacy)
+      const supabaseError = typeof window !== 'undefined' ? (window as any).__SUPABASE_CONFIG_ERROR__ : null;
       const firebaseError = typeof window !== 'undefined' ? (window as any).__FIREBASE_CONFIG_ERROR__ : null;
-      const errorMessage = firebaseError?.message || this.state.error?.message || 'An error occurred while loading the application.';
-      const missingVars = firebaseError?.missingVars || [];
-      const instructions = firebaseError?.instructions || 'Please check your configuration and try again.';
+      const configError = supabaseError || firebaseError;
+      const errorMessage = configError?.message || this.state.error?.message || 'An error occurred while loading the application.';
+      const missingVars = configError?.missingVars || [];
+      const instructions = configError?.instructions || 'Please check your configuration and try again.';
 
       return (
         <div style={{

@@ -1,29 +1,30 @@
-import { 
-  collection, 
-  getDocs, 
-  doc, 
-  setDoc, 
-  deleteDoc,
-  query,
-  orderBy 
-} from 'firebase/firestore';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, db } from '../firebase/config';
+import { supabase } from '../supabase/config';
 import { UserProfile, UserRole } from '../types/user';
-
-const USERS_COLLECTION = 'users';
 
 export const getAllUsers = async (): Promise<UserProfile[]> => {
   try {
-    const q = query(
-      collection(db, USERS_COLLECTION),
-      orderBy('createdAt', 'desc')
-    );
-    const querySnapshot = await getDocs(q);
-    
-    return querySnapshot.docs.map(doc => ({
-      ...doc.data(),
-      uid: doc.id
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
+    const { data, error } = await supabase
+      .from('users')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching users:', error);
+      throw new Error('Failed to fetch users');
+    }
+
+    return (data || []).map(row => ({
+      uid: row.uid,
+      email: row.email,
+      displayName: row.display_name,
+      role: row.role,
+      createdAt: row.created_at,
+      lastLogin: row.last_login || undefined,
+      createdBy: row.created_by || undefined
     } as UserProfile));
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -39,46 +40,83 @@ export const createUser = async (
   createdBy: string
 ): Promise<UserProfile> => {
   try {
-    // Store current admin user before creating new user
-    const currentUser = auth.currentUser;
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
+    // Get current user to verify admin is signed in
+    const { data: { user: currentUser } } = await supabase.auth.getUser();
     if (!currentUser) {
       throw new Error('Admin must be signed in to create users');
     }
     
-    // Create authentication user (this will sign in as the new user)
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const newUser = userCredential.user;
+    // Note: Creating users requires Supabase Admin API
+    // For now, we'll use signUp which requires email confirmation
+    // In production, this should be done via a backend API with service role key
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          role: role,
+          display_name: displayName
+        }
+      }
+    });
+
+    if (authError) {
+      // Handle Supabase auth errors
+      if (authError.message.includes('already registered') || authError.message.includes('already exists') || authError.message.includes('User already registered')) {
+        throw new Error('Email is already in use');
+      }
+      if (authError.message.includes('password') || authError.message.includes('Password')) {
+        throw new Error('Password is too weak. Please use at least 6 characters');
+      }
+      if (authError.message.includes('email') || authError.message.includes('Email')) {
+        throw new Error('Invalid email address');
+      }
+      throw new Error(authError.message || 'Failed to create user');
+    }
+
+    if (!authData.user) {
+      throw new Error('Failed to create user account');
+    }
+
+    const newUserId = authData.user.id;
     
-    // Create user profile in Firestore
-    const userProfile: UserProfile = {
-      uid: newUser.uid,
+    // Create user profile in users table
+    const userProfile = {
+      uid: newUserId,
+      email: email,
+      display_name: displayName,
+      role: role,
+      created_at: Date.now(),
+      created_by: createdBy
+    };
+    
+    const { error: profileError } = await supabase
+      .from('users')
+      .insert(userProfile);
+
+    if (profileError) {
+      throw new Error(`Failed to create user profile: ${profileError.message}`);
+    }
+    
+    // Return the created profile
+    return {
+      uid: newUserId,
       email: email,
       displayName: displayName,
       role: role,
       createdAt: Date.now(),
       createdBy: createdBy
     };
-    
-    await setDoc(doc(db, USERS_COLLECTION, newUser.uid), userProfile);
-    
-    // Sign out the newly created user so admin can continue working
-    // Note: The admin will need to refresh or the auth state will update automatically
-    await auth.signOut();
-    
-    // Return the created profile
-    return userProfile;
   } catch (error: any) {
     console.error('Error creating user:', error);
-    if (error.code === 'auth/email-already-in-use') {
-      throw new Error('Email is already in use');
+    if (error.message) {
+      throw error;
     }
-    if (error.code === 'auth/weak-password') {
-      throw new Error('Password is too weak. Please use at least 6 characters');
-    }
-    if (error.code === 'auth/invalid-email') {
-      throw new Error('Invalid email address');
-    }
-    throw new Error(error.message || 'Failed to create user');
+    throw new Error('Failed to create user');
   }
 };
 
@@ -94,9 +132,24 @@ export const updateUserRole = async (uid: string, role: UserRole): Promise<void>
 
 export const deleteUser = async (uid: string): Promise<void> => {
   try {
-    // Note: This only deletes from Firestore. 
-    // Deleting from Firebase Auth requires Admin SDK on backend
-    await deleteDoc(doc(db, USERS_COLLECTION, uid));
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
+    // Delete user profile from users table
+    const { error: profileError } = await supabase
+      .from('users')
+      .delete()
+      .eq('uid', uid);
+
+    if (profileError) {
+      console.error('Error deleting user profile:', profileError);
+      throw new Error('Failed to delete user profile');
+    }
+
+    // Note: Deleting from Supabase Auth requires admin API
+    // This should ideally be done on the backend with service role key
+    // For now, we'll just delete the profile
   } catch (error) {
     console.error('Error deleting user:', error);
     throw new Error('Failed to delete user');
@@ -105,18 +158,50 @@ export const deleteUser = async (uid: string): Promise<void> => {
 
 export const initializeAdminUser = async (email: string, password: string): Promise<void> => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
+    // Create authentication user in Supabase Auth
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          role: 'admin',
+          display_name: 'Admin'
+        }
+      }
+    });
+
+    if (authError) {
+      throw authError;
+    }
+
+    if (!authData.user) {
+      throw new Error('Failed to create admin user account');
+    }
+
+    const userId = authData.user.id;
     
-    const adminProfile: UserProfile = {
-      uid: user.uid,
+    // Create admin profile in users table
+    const adminProfile = {
+      uid: userId,
       email: email,
-      displayName: 'Admin',
-      role: 'admin',
-      createdAt: Date.now()
+      display_name: 'Admin',
+      role: 'admin' as UserRole,
+      created_at: Date.now()
     };
     
-    await setDoc(doc(db, USERS_COLLECTION, user.uid), adminProfile);
+    const { error: profileError } = await supabase
+      .from('users')
+      .insert(adminProfile);
+
+    if (profileError) {
+      // Note: Deleting auth user requires admin API
+      // In production, handle this via backend
+      throw new Error(`Failed to create admin profile: ${profileError.message}`);
+    }
   } catch (error: any) {
     console.error('Error initializing admin:', error);
     throw error;
@@ -129,19 +214,24 @@ export const initializeAdminUser = async (email: string, password: string): Prom
  */
 export const getActiveUsersCount = async (activeWindowMinutes: number = 30): Promise<number> => {
   try {
-    const querySnapshot = await getDocs(collection(db, USERS_COLLECTION));
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
     const now = Date.now();
     const activeThreshold = now - (activeWindowMinutes * 60 * 1000);
-    
-    let activeCount = 0;
-    querySnapshot.docs.forEach(doc => {
-      const userData = doc.data() as UserProfile;
-      if (userData.lastLogin && userData.lastLogin >= activeThreshold) {
-        activeCount++;
-      }
-    });
-    
-    return activeCount;
+
+    const { data, error } = await supabase
+      .from('users')
+      .select('last_login')
+      .gte('last_login', activeThreshold);
+
+    if (error) {
+      console.error('Error counting active users:', error);
+      throw new Error('Failed to count active users');
+    }
+
+    return data?.length || 0;
   } catch (error) {
     console.error('Error counting active users:', error);
     throw new Error('Failed to count active users');

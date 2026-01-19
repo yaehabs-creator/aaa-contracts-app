@@ -28,19 +28,21 @@ export const LoginPage: React.FC = () => {
     } catch (err: any) {
       let errorMessage = 'Failed to sign in';
       
-      // Provide user-friendly error messages
-      if (err.code === 'auth/user-not-found') {
-        errorMessage = 'No account found with this email. Please contact your administrator to create an account.';
-      } else if (err.code === 'auth/wrong-password') {
-        errorMessage = 'Incorrect password. Please try again or contact your administrator.';
-      } else if (err.code === 'auth/invalid-email') {
-        errorMessage = 'Invalid email address. Please check and try again.';
-      } else if (err.code === 'auth/invalid-credential') {
+      // Provide user-friendly error messages (Supabase errors)
+      const errorMsg = err.message || err.toString();
+      
+      if (errorMsg.includes('Invalid login credentials') || errorMsg.includes('Invalid email or password')) {
         errorMessage = 'Invalid email or password. Please check your credentials and try again.';
-      } else if (err.code === 'auth/network-request-failed') {
+      } else if (errorMsg.includes('Email not confirmed')) {
+        errorMessage = 'Please verify your email address before signing in.';
+      } else if (errorMsg.includes('User not found') || errorMsg.includes('No account found')) {
+        errorMessage = 'No account found with this email. Please contact your administrator to create an account.';
+      } else if (errorMsg.includes('Invalid email')) {
+        errorMessage = 'Invalid email address. Please check and try again.';
+      } else if (errorMsg.includes('network') || errorMsg.includes('fetch')) {
         errorMessage = 'Network error. Please check your internet connection and try again.';
-      } else if (err.message) {
-        errorMessage = err.message;
+      } else if (errorMsg) {
+        errorMessage = errorMsg;
       }
       
       setError(errorMessage);

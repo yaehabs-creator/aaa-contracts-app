@@ -3,7 +3,7 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { analyzeContract } from './services/claudeService';
 import Anthropic from '@anthropic-ai/sdk';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
-import { getContractFromFirestore } from './src/services/firestoreService';
+import { getContractFromSupabase } from './src/services/supabaseService';
 import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
 import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard';
 import { Dashboard } from './components/Dashboard';
@@ -296,10 +296,17 @@ const App: React.FC = () => {
 
   const refreshLibrary = async () => {
     try {
+      console.log('Refreshing library...');
       const contracts = await getAllContracts();
+      console.log(`Loaded ${contracts?.length || 0} contracts into library`);
       setLibrary(contracts || []);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Library load failed:", err);
+      console.error("Error details:", {
+        message: err?.message,
+        code: err?.code,
+        stack: err?.stack
+      });
       setLibrary([]);
     }
   };
@@ -600,10 +607,14 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         setContract(updatedContract);
         setClauses(updatedContract.clauses || []);
         await performSaveContract(updatedContract);
+        
+        // Update editingClause to reflect saved changes (keeps modal open)
+        setEditingClause(updatedClause);
       }
     }
     
-    setEditingClause(null);
+    // Don't close modal - let user continue editing
+    // setEditingClause(null);
   };
 
   const handleSaveManualClause = async (data: {
@@ -2534,17 +2545,13 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 <ContractSectionsTabs
                   contract={contract}
                   onUpdate={async (updatedContract) => {
-                    // Update local state immediately for responsive UI
+                    // Update local state immediately for responsive UI (no auto-save)
                     setContract(updatedContract);
                     setClauses(getAllClausesFromContract(updatedContract));
-                    
-                    // Save immediately (no debounce for section updates)
-                    try {
-                      await performSaveContract(updatedContract);
-                    } catch (error) {
-                      console.error('Failed to save section update:', error);
-                      // Revert state on error? Or show error message?
-                    }
+                  }}
+                  onSave={async (updatedContract) => {
+                    // Explicit save when Save button is clicked
+                    await performSaveContract(updatedContract);
                   }}
                   onEditClause={handleEditClause}
                   onCompareClause={setCompareClause}
@@ -2575,6 +2582,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       onUpdate={async (updatedContract) => {
                         setContract(updatedContract);
                         setClauses(getAllClausesFromContract(updatedContract));
+                      }}
+                      onSave={async (updatedContract) => {
                         await performSaveContract(updatedContract);
                       }}
                       onEditClause={handleEditClause}

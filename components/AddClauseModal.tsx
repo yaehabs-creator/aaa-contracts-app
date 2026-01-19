@@ -48,8 +48,83 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
       });
       setMode('single');
       setStep('input');
+      setHasUnsavedChanges(false);
+      setSaveStatus('idle');
     }
   }, [editingClause]);
+
+  // Track initial form data to prevent auto-save on mount
+  const [initialFormData, setInitialFormData] = useState<ClauseData | null>(null);
+
+  // Update initial form data when editingClause changes
+  useEffect(() => {
+    if (editingClause) {
+      const initial = {
+        number: editingClause.clause_number,
+        title: editingClause.clause_title,
+        generalText: editingClause.general_condition || '',
+        particularText: editingClause.particular_condition || ''
+      };
+      setInitialFormData(initial);
+      setHasUnsavedChanges(false);
+    } else {
+      setInitialFormData(null);
+      setHasUnsavedChanges(false);
+    }
+  }, [editingClause]);
+
+  // Auto-save when editing clause (debounced)
+  useEffect(() => {
+    if (!editingClause || step !== 'input' || mode !== 'single' || !initialFormData) return;
+    
+    // Don't auto-save if form is invalid or empty
+    if (!formData.number.trim() || (!formData.generalText.trim() && !formData.particularText.trim())) {
+      return;
+    }
+
+    // Check if form data actually changed from initial
+    const hasChanged = 
+      formData.number !== initialFormData.number ||
+      formData.title !== initialFormData.title ||
+      formData.generalText !== initialFormData.generalText ||
+      formData.particularText !== initialFormData.particularText;
+
+    if (!hasChanged) {
+      setHasUnsavedChanges(false);
+      return;
+    }
+
+    // Mark as having unsaved changes
+    setHasUnsavedChanges(true);
+
+    // Clear existing timeout
+    if (autoSaveTimeout) {
+      clearTimeout(autoSaveTimeout);
+    }
+
+    // Set new timeout for auto-save (2 seconds after user stops typing)
+    const timeout = setTimeout(async () => {
+      await handleAutoSave();
+      // Update initial form data after successful save
+      setInitialFormData({ ...formData });
+    }, 2000);
+
+    setAutoSaveTimeout(timeout);
+
+    // Cleanup
+    return () => {
+      if (timeout) clearTimeout(timeout);
+    };
+  }, [formData, editingClause, step, mode, initialFormData]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (autoSaveTimeout) {
+        clearTimeout(autoSaveTimeout);
+      }
+    };
+  }, []);
   
   // Bulk mode state
   const [bulkGeneralText, setBulkGeneralText] = useState('');
@@ -60,6 +135,11 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDetecting, setIsDetecting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  
+  // Auto-save state
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
+  const [autoSaveTimeout, setAutoSaveTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
   const validateSingle = () => {
     const newErrors: Record<string, string> = {};
@@ -235,11 +315,80 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
     }
   };
 
+  // Auto-save function (doesn't close modal)
+  const handleAutoSave = async () => {
+    if (!editingClause || !validateSingle()) return;
+
+    setSaveStatus('saving');
+    try {
+      await onSave({
+        number: formData.number,
+        title: formData.title,
+        generalText: formData.generalText,
+        particularText: formData.particularText,
+        contractId: contractId
+      });
+      setSaveStatus('saved');
+      setHasUnsavedChanges(false);
+      
+      // Clear saved status after 2 seconds
+      setTimeout(() => {
+        setSaveStatus((prev) => prev === 'saved' ? 'idle' : prev);
+      }, 2000);
+    } catch (err) {
+      console.error("Auto-save failed:", err);
+      setSaveStatus('error');
+      
+      // Clear error status after 3 seconds
+      setTimeout(() => {
+        setSaveStatus((prev) => prev === 'error' ? 'idle' : prev);
+      }, 3000);
+    }
+  };
+
+  // Manual save function (explicit save button)
+  const handleManualSave = async () => {
+    if (!validateSingle()) return;
+
+    setIsSubmitting(true);
+    setSaveStatus('saving');
+    try {
+      await onSave({
+        number: formData.number,
+        title: formData.title,
+        generalText: formData.generalText,
+        particularText: formData.particularText,
+        contractId: contractId
+      });
+      setSaveStatus('saved');
+      setHasUnsavedChanges(false);
+      setIsSubmitting(false);
+      
+      // Update initial form data after successful save
+      setInitialFormData({ ...formData });
+      
+      // Clear saved status after 2 seconds
+      setTimeout(() => {
+        setSaveStatus((prev) => prev === 'saved' ? 'idle' : prev);
+      }, 2000);
+    } catch (err) {
+      console.error("Manual save failed:", err);
+      setSaveStatus('error');
+      setIsSubmitting(false);
+      
+      // Clear error status after 3 seconds
+      setTimeout(() => {
+        setSaveStatus((prev) => prev === 'error' ? 'idle' : prev);
+      }, 3000);
+    }
+  };
+
   const handleSingleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateSingle()) return;
 
     setIsSubmitting(true);
+    setSaveStatus('saving');
     try {
         await onSave({
           number: formData.number,
@@ -248,11 +397,26 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
           particularText: formData.particularText,
           contractId: contractId
         });
-      onClose();
+      setSaveStatus('saved');
+      setHasUnsavedChanges(false);
+      
+      // If editing, don't close modal - let user continue editing
+      if (editingClause) {
+        setIsSubmitting(false);
+        setTimeout(() => {
+          setSaveStatus('idle');
+        }, 2000);
+      } else {
+        // If creating new clause, close modal
+        onClose();
+      }
     } catch (err) {
       console.error("Manual Injection Failed:", err);
-    } finally {
+      setSaveStatus('error');
       setIsSubmitting(false);
+      setTimeout(() => {
+        setSaveStatus((prev) => prev === 'error' ? 'idle' : prev);
+      }, 3000);
     }
   };
 
@@ -276,7 +440,41 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
             </div>
             <div>
               <h3 className="text-2xl font-black text-aaa-blue tracking-tighter leading-tight">{editingClause ? 'Edit Clause' : 'Append Clause Node'}</h3>
-              <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-[0.2em] mt-1">{editingClause ? 'Modify Clause Content' : 'Dual Verbatim Injection'}</p>
+              <div className="flex items-center gap-3 mt-1">
+                <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-[0.2em]">{editingClause ? 'Modify Clause Content' : 'Dual Verbatim Injection'}</p>
+                {editingClause && (
+                  <div className="flex items-center gap-2">
+                    {saveStatus === 'saving' && (
+                      <span className="text-[9px] font-black text-aaa-blue uppercase flex items-center gap-1">
+                        <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Saving...
+                      </span>
+                    )}
+                    {saveStatus === 'saved' && (
+                      <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-1">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Saved
+                      </span>
+                    )}
+                    {saveStatus === 'error' && (
+                      <span className="text-[9px] font-black text-red-600 uppercase flex items-center gap-1">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        Error
+                      </span>
+                    )}
+                    {hasUnsavedChanges && saveStatus === 'idle' && (
+                      <span className="text-[9px] font-black text-amber-600 uppercase">Unsaved changes</span>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <button onClick={onClose} className="p-3 hover:bg-aaa-bg rounded-xl transition-all border border-aaa-border group">
@@ -552,18 +750,45 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
             )}
             
             {step === 'input' && mode === 'single' && (
-              <button 
-                onClick={handleSingleSubmit}
-                disabled={isSubmitting}
-                className="px-12 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-aaa-hover transition-all active:scale-95 disabled:opacity-50 flex items-center gap-3"
-              >
-                {isSubmitting ? (editingClause ? 'Updating...' : 'Syncing...') : (editingClause ? 'Update Clause' : 'Save Dual Clause')}
-                {!isSubmitting && (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
+              <>
+                {editingClause && (
+                  <button 
+                    onClick={handleManualSave}
+                    disabled={isSubmitting || saveStatus === 'saving'}
+                    className="px-8 py-4 bg-emerald-600 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-emerald-700 transition-all active:scale-95 disabled:opacity-50 flex items-center gap-2"
+                  >
+                    {saveStatus === 'saving' ? (
+                      <>
+                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Saving...
+                      </>
+                    ) : (
+                      <>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Save
+                      </>
+                    )}
+                  </button>
                 )}
-              </button>
+                <button 
+                  type={editingClause ? "button" : "submit"}
+                  onClick={editingClause ? undefined : handleSingleSubmit}
+                  disabled={isSubmitting || saveStatus === 'saving'}
+                  className="px-12 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-aaa-hover transition-all active:scale-95 disabled:opacity-50 flex items-center gap-3"
+                >
+                  {isSubmitting ? (editingClause ? 'Updating...' : 'Syncing...') : (editingClause ? 'Done' : 'Save Dual Clause')}
+                  {!isSubmitting && (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  )}
+                </button>
+              </>
             )}
           </div>
         </div>

@@ -11,12 +11,8 @@ export default defineConfig(({ mode }) => {
     // Validate required environment variables in production build
     if (mode === 'production' && !isCI) {
       const requiredVars = [
-        'VITE_FIREBASE_API_KEY',
-        'VITE_FIREBASE_AUTH_DOMAIN',
-        'VITE_FIREBASE_PROJECT_ID',
-        'VITE_FIREBASE_STORAGE_BUCKET',
-        'VITE_FIREBASE_MESSAGING_SENDER_ID',
-        'VITE_FIREBASE_APP_ID'
+        'VITE_SUPABASE_URL',
+        'VITE_SUPABASE_ANON_KEY'
       ];
       
       const missingVars = requiredVars.filter(varName => !env[varName]);
@@ -33,12 +29,8 @@ export default defineConfig(({ mode }) => {
     } else if (mode === 'production' && isCI) {
       // In CI, just warn but don't fail - env vars will be injected by the platform
       const requiredVars = [
-        'VITE_FIREBASE_API_KEY',
-        'VITE_FIREBASE_AUTH_DOMAIN',
-        'VITE_FIREBASE_PROJECT_ID',
-        'VITE_FIREBASE_STORAGE_BUCKET',
-        'VITE_FIREBASE_MESSAGING_SENDER_ID',
-        'VITE_FIREBASE_APP_ID'
+        'VITE_SUPABASE_URL',
+        'VITE_SUPABASE_ANON_KEY'
       ];
       
       const missingVars = requiredVars.filter(varName => !env[varName]);
@@ -75,7 +67,7 @@ export default defineConfig(({ mode }) => {
           output: {
             manualChunks: {
               'react-vendor': ['react', 'react-dom'],
-              'firebase-vendor': ['firebase/app', 'firebase/auth', 'firebase/firestore']
+              'supabase-vendor': ['@supabase/supabase-js']
             }
           }
         }

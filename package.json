@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
+    "@supabase/supabase-js": "^2.39.0",
     "firebase": "^12.7.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"

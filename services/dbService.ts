@@ -1,10 +1,10 @@
 
 import { SavedContract } from "../types";
 import { 
-  saveContractToFirestore, 
-  getAllContractsFromFirestore, 
-  deleteContractFromFirestore 
-} from "../src/services/firestoreService";
+  saveContractToSupabase, 
+  getAllContractsFromSupabase, 
+  deleteContractFromSupabase 
+} from "../src/services/supabaseService";
 
 // Legacy IndexedDB functions - kept for backward compatibility
 const DB_NAME = "AAA_Contract_DB";
@@ -27,17 +27,17 @@ export const openDB = (): Promise<IDBDatabase> => {
   });
 };
 
-// Main API - now uses Firestore
+// Main API - now uses Supabase
 export const saveContractToDB = async (contract: SavedContract): Promise<void> => {
-  return saveContractToFirestore(contract);
+  return saveContractToSupabase(contract);
 };
 
 export const getAllContracts = async (): Promise<SavedContract[]> => {
-  return getAllContractsFromFirestore();
+  return getAllContractsFromSupabase();
 };
 
 export const deleteContractFromDB = async (id: string): Promise<void> => {
-  return deleteContractFromFirestore(id);
+  return deleteContractFromSupabase(id);
 };
 
 // Migration utility - migrate from IndexedDB to Firestore
@@ -53,9 +53,9 @@ export const migrateLocalToFirestore = async (): Promise<number> => {
       request.onerror = () => reject(request.error);
     });
 
-    // Upload each contract to Firestore
+    // Upload each contract to Supabase
     for (const contract of localContracts) {
-      await saveContractToFirestore(contract);
+      await saveContractToSupabase(contract);
     }
 
     return localContracts.length;

@@ -77,13 +77,9 @@ export const UserManagement: React.FC = () => {
       setNewRole('viewer');
       await loadUsers();
       
-      // Note: Admin will be signed out after creating user due to Firebase behavior
-      // Show a clear message and redirect to login
-      setTimeout(() => {
-        if (window.confirm('User created successfully! You have been signed out. Click OK to go to the login page.')) {
-          window.location.href = '/';
-        }
-      }, 1500);
+      // Note: User creation with signUp may sign out current user
+      // In production, use backend API with admin privileges
+      // For now, user will need to sign in with the new account
     } catch (err: any) {
       setError(err.message || 'Failed to create user. Please check the email and password.');
     }

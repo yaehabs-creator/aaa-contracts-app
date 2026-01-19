@@ -1,13 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { 
-  signInWithEmailAndPassword, 
-  signOut as firebaseSignOut,
-  onAuthStateChanged,
-  User
-} from 'firebase/auth';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../firebase/config';
+import { supabase } from '../supabase/config';
 import { UserProfile, AuthContextType } from '../types/user';
+import type { User, Session } from '@supabase/supabase-js';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -25,97 +19,148 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [authError, setAuthError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Check if Firebase is configured
-    if (!auth || !db) {
-      const firebaseError = typeof window !== 'undefined' ? (window as any).__FIREBASE_CONFIG_ERROR__ : null;
-      const errorMsg = firebaseError?.message || 'Firebase is not configured. Please check your environment variables.';
-      console.warn('Firebase not configured. Showing login page but authentication will not work.');
-      console.error('Firebase Configuration Error:', errorMsg);
+    // Check if Supabase is configured
+    if (!supabase) {
+      const supabaseError = typeof window !== 'undefined' ? (window as any).__SUPABASE_CONFIG_ERROR__ : null;
+      const errorMsg = supabaseError?.message || 'Supabase is not configured. Please check your environment variables.';
+      console.warn('Supabase not configured. Showing login page but authentication will not work.');
+      console.error('Supabase Configuration Error:', errorMsg);
       setLoading(false);
       setUser(null);
       setAuthError(errorMsg);
       return;
     }
 
-    let unsubscribe: (() => void) | null = null;
     let timeoutId: NodeJS.Timeout;
 
-    try {
-      // Set a timeout to prevent infinite loading
-      timeoutId = setTimeout(() => {
-        if (loading) {
-          console.error('Auth initialization timeout - Firebase may not be configured correctly');
-          setAuthError('Firebase configuration error. Please check your environment variables.');
+    // Get initial session
+    const getInitialSession = async () => {
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        if (error) throw error;
+        
+        if (session?.user) {
+          await loadUserProfile(session.user);
+        } else {
           setLoading(false);
         }
-      }, 10000); // 10 second timeout
-
-      unsubscribe = onAuthStateChanged(auth, async (firebaseUser: User | null) => {
-        clearTimeout(timeoutId);
-        setAuthError(null);
-        
-        if (firebaseUser) {
-          try {
-            // Fetch user profile from Firestore
-            const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
-            if (userDoc.exists()) {
-              const userData = userDoc.data() as UserProfile;
-              setUser(userData);
-              
-              // Update last login
-              await setDoc(doc(db, 'users', firebaseUser.uid), {
-                ...userData,
-                lastLogin: Date.now()
-              }, { merge: true });
-            } else {
-              // If no profile exists, sign out and show error
-              console.error('User profile not found in Firestore for:', firebaseUser.uid, firebaseUser.email);
-              // Store error message in sessionStorage so login page can show it
-              sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator to create your user profile.');
-              await firebaseSignOut(auth);
-              setUser(null);
-            }
-          } catch (error) {
-            console.error('Error fetching user profile:', error);
-            sessionStorage.setItem('loginError', 'Error loading your profile. Please try again or contact your administrator.');
-            setUser(null);
-          }
-        } else {
-          setUser(null);
-        }
+      } catch (error) {
+        console.error('Error getting initial session:', error);
+        setAuthError('Failed to initialize authentication.');
         setLoading(false);
-      }, (error) => {
-        // Handle auth errors
-        clearTimeout(timeoutId);
-        console.error('Auth state change error:', error);
-        setAuthError('Authentication error. Please check your Firebase configuration.');
+      }
+    };
+
+    // Load user profile from Supabase
+    const loadUserProfile = async (supabaseUser: User) => {
+      try {
+        // Fetch user profile from users table
+        const { data: userData, error } = await supabase
+          .from('users')
+          .select('*')
+          .eq('uid', supabaseUser.id)
+          .single();
+
+        if (error) {
+          if (error.code === 'PGRST116') {
+            // Profile not found
+            console.error('User profile not found in Supabase for:', supabaseUser.id, supabaseUser.email);
+            sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator to create your user profile.');
+            await supabase.auth.signOut();
+            setUser(null);
+            setLoading(false);
+            return;
+          }
+          throw error;
+        }
+
+        if (userData) {
+          const profile: UserProfile = {
+            uid: userData.uid,
+            email: userData.email,
+            displayName: userData.display_name,
+            role: userData.role,
+            createdAt: userData.created_at,
+            lastLogin: userData.last_login || undefined,
+            createdBy: userData.created_by || undefined
+          };
+          
+          setUser(profile);
+          
+          // Update last login
+          await supabase
+            .from('users')
+            .update({ last_login: Date.now() })
+            .eq('uid', supabaseUser.id);
+        }
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+        sessionStorage.setItem('loginError', 'Error loading your profile. Please try again or contact your administrator.');
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Set timeout
+    timeoutId = setTimeout(() => {
+      if (loading) {
+        console.error('Auth initialization timeout - Supabase may not be configured correctly');
+        setAuthError('Supabase configuration error. Please check your environment variables.');
+        setLoading(false);
+      }
+    }, 10000);
+
+    // Get initial session
+    getInitialSession();
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      clearTimeout(timeoutId);
+      setAuthError(null);
+      
+      if (session?.user) {
+        await loadUserProfile(session.user);
+      } else {
         setUser(null);
         setLoading(false);
-      });
-    } catch (error) {
-      clearTimeout(timeoutId);
-      console.error('Failed to initialize auth:', error);
-      setAuthError('Failed to initialize authentication. Please check your Firebase configuration.');
-      setLoading(false);
-    }
+      }
+    });
 
     return () => {
       clearTimeout(timeoutId);
-      if (unsubscribe) {
-        unsubscribe();
-      }
+      subscription.unsubscribe();
     };
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    if (!auth) {
-      throw new Error('Firebase is not configured. Please check your environment variables.');
+    if (!supabase) {
+      throw new Error('Supabase is not configured. Please check your environment variables.');
     }
-    await signInWithEmailAndPassword(auth, email, password);
+    
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      // Map Supabase errors to user-friendly messages
+      if (error.message.includes('Invalid login credentials') || error.message.includes('email not confirmed')) {
+        throw new Error('Invalid email or password');
+      }
+      throw new Error(error.message || 'Failed to sign in');
+    }
+
+    if (!data.user) {
+      throw new Error('Failed to sign in');
+    }
   };
 
   const signOut = async () => {
-    await firebaseSignOut(auth);
+    if (!supabase) {
+      throw new Error('Supabase is not configured.');
+    }
+    await supabase.auth.signOut();
   };
 
   const isAdmin = () => user?.role === 'admin';
