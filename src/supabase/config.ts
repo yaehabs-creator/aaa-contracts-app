@@ -13,12 +13,28 @@ if (supabaseAnonKey) {
   // Decode JWT payload to check the role field (most reliable method)
   try {
     const parts = supabaseAnonKey.split('.');
+    
+    // #region agent log
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:14',message:'JWT parts split',data:{partsCount:parts.length,part1Length:parts[0]?.length,part2Length:parts[1]?.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
+    
     if (parts.length === 3) {
-      // Decode the payload (second part of JWT)
-      const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
+      // Decode the payload (second part of JWT) with proper base64 padding
+      let base64 = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+      // Add padding if needed
+      while (base64.length % 4) {
+        base64 += '=';
+      }
       
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:15',message:'Decoded JWT payload',data:{role:payload.role,iss:payload.iss,ref:payload.ref},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:22',message:'Attempting JWT decode',data:{base64Length:base64.length,base64Prefix:base64.substring(0,20)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
+      
+      const decoded = atob(base64);
+      const payload = JSON.parse(decoded);
+      
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:28',message:'Decoded JWT payload successfully',data:{role:payload.role,iss:payload.iss,ref:payload.ref},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
       
       // Check if role is 'service_role' (CRITICAL SECURITY ISSUE)
@@ -27,29 +43,41 @@ if (supabaseAnonKey) {
         console.error('🚨', errorMsg);
         
         // #region agent log
-        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:22',message:'Service role key detected - throwing error',data:{role:payload.role},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:35',message:'Service role key detected - throwing error',data:{role:payload.role},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
         // #endregion
         
         throw new Error(errorMsg);
       }
       
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:28',message:'Key validation passed',data:{role:payload.role},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:42',message:'Key validation passed - anon key confirmed',data:{role:payload.role},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
     } else {
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:46',message:'Invalid JWT format - checking for service_role string',data:{partsCount:parts.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
+      
       // Fallback: Check for explicit 'service_role' string in key
       if (supabaseAnonKey.includes('service_role')) {
         const errorMsg = 'SECURITY ERROR: Service role key detected in browser! Use VITE_SUPABASE_ANON_KEY (anon public key) instead. Service role keys must NEVER be exposed in frontend code.';
         console.error('🚨', errorMsg);
         
         // #region agent log
-        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:36',message:'Service role string found in key',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:52',message:'Service role string found in key',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
         // #endregion
         
         throw new Error(errorMsg);
       }
+      
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:59',message:'Invalid JWT but no service_role string - allowing through',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
     }
   } catch (error: any) {
+    // #region agent log
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:64',message:'Error during JWT validation',data:{errorMessage:error?.message,errorName:error?.name,isSecurityError:error?.message?.includes('SECURITY ERROR')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
+    
     // If decoding fails, don't block - let Supabase SDK handle validation
     // Only throw if we confirmed it's a service_role key
     if (error.message && error.message.includes('SECURITY ERROR')) {
@@ -57,7 +85,7 @@ if (supabaseAnonKey) {
     }
     
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:46',message:'JWT decode failed, allowing through',data:{error:error.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:72',message:'JWT decode failed but not a security error - allowing through',data:{error:error.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
     // #endregion
   }
 }
