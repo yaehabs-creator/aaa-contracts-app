@@ -121,25 +121,35 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = ({ item, onEdit, 
           {isImage && item.imageUrl && (
             <div className="bg-aaa-bg/30 p-6 rounded-2xl border border-aaa-border/50">
               <div className="space-y-4">
-                <div className="relative w-full">
+                <div className="relative w-full flex justify-center items-center bg-white rounded-xl p-4 border border-aaa-border/50">
                   <img
                     src={item.imageUrl}
                     alt={item.imageAlt || item.imageTitle || 'Image'}
                     title={item.imageTitle}
-                    className="max-w-full h-auto rounded-xl border border-aaa-border shadow-sm"
+                    className="max-w-full max-h-[600px] w-auto h-auto rounded-lg shadow-lg object-contain"
+                    style={{ imageRendering: 'high-quality' }}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
                       const errorDiv = document.createElement('div');
-                      errorDiv.className = 'text-red-500 text-sm p-4 bg-red-50 rounded-xl';
+                      errorDiv.className = 'text-red-500 text-sm p-4 bg-red-50 rounded-xl text-center w-full';
                       errorDiv.textContent = 'Failed to load image. Please check the URL.';
                       target.parentElement?.appendChild(errorDiv);
                     }}
                   />
                 </div>
-                {item.imageAlt && (
-                  <div className="text-xs text-aaa-muted italic">
-                    {item.imageAlt}
+                {(item.imageAlt || item.imageTitle) && (
+                  <div className="text-center space-y-1">
+                    {item.imageTitle && (
+                      <div className="text-sm font-semibold text-aaa-blue">
+                        {item.imageTitle}
+                      </div>
+                    )}
+                    {item.imageAlt && (
+                      <div className="text-xs text-aaa-muted italic">
+                        {item.imageAlt}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
