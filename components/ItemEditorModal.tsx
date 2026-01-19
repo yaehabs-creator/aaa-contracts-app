@@ -56,6 +56,10 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
       if (!fieldValue.trim()) {
         newErrors.fieldValue = 'Field value is required';
       }
+    } else if (itemType === ItemType.IMAGE) {
+      if (!imageUrl.trim()) {
+        newErrors.imageUrl = 'Image URL is required';
+      }
     }
 
     setErrors(newErrors);
@@ -120,13 +124,13 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
             <label className="block text-[10px] font-black text-aaa-blue uppercase tracking-widest mb-4">
               Item Type
             </label>
-            <div className="flex bg-white border border-aaa-border p-1.5 rounded-2xl shadow-sm">
+            <div className="flex bg-white border border-aaa-border p-1.5 rounded-2xl shadow-sm gap-1.5">
               <button
                 onClick={() => {
                   setItemType(ItemType.PARAGRAPH);
                   setErrors({});
                 }}
-                className={`flex-1 px-6 py-3 rounded-xl text-xs font-black transition-all ${
+                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${
                   itemType === ItemType.PARAGRAPH
                     ? 'bg-aaa-blue text-white shadow-lg'
                     : 'text-aaa-muted hover:text-aaa-blue'
@@ -139,13 +143,26 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   setItemType(ItemType.FIELD);
                   setErrors({});
                 }}
-                className={`flex-1 px-6 py-3 rounded-xl text-xs font-black transition-all ${
+                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${
                   itemType === ItemType.FIELD
                     ? 'bg-aaa-blue text-white shadow-lg'
                     : 'text-aaa-muted hover:text-aaa-blue'
                 }`}
               >
                 Field
+              </button>
+              <button
+                onClick={() => {
+                  setItemType(ItemType.IMAGE);
+                  setErrors({});
+                }}
+                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${
+                  itemType === ItemType.IMAGE
+                    ? 'bg-aaa-blue text-white shadow-lg'
+                    : 'text-aaa-muted hover:text-aaa-blue'
+                }`}
+              >
+                Image
               </button>
             </div>
           </div>
