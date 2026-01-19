@@ -14,6 +14,9 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
   const [text, setText] = useState('');
   const [fieldKey, setFieldKey] = useState('');
   const [fieldValue, setFieldValue] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+  const [imageAlt, setImageAlt] = useState('');
+  const [imageTitle, setImageTitle] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
@@ -23,6 +26,9 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
       setText(item.text || '');
       setFieldKey(item.fieldKey || '');
       setFieldValue(item.fieldValue || '');
+      setImageUrl(item.imageUrl || '');
+      setImageAlt(item.imageAlt || '');
+      setImageTitle(item.imageTitle || '');
     } else {
       // Reset for create mode
       setItemType(ItemType.PARAGRAPH);
@@ -30,6 +36,9 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
       setText('');
       setFieldKey('');
       setFieldValue('');
+      setImageUrl('');
+      setImageAlt('');
+      setImageTitle('');
     }
   }, [item, mode]);
 
@@ -66,10 +75,19 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
             heading: heading.trim() || undefined,
             text: text.trim()
           }
-        : {
+        : itemType === ItemType.FIELD
+        ? {
             fieldKey: fieldKey.trim(),
             fieldValue: fieldValue.trim()
-          })
+          }
+        : itemType === ItemType.IMAGE
+        ? {
+            imageUrl: imageUrl.trim(),
+            imageAlt: imageAlt.trim() || undefined,
+            imageTitle: imageTitle.trim() || undefined,
+            heading: imageTitle.trim() || undefined
+          }
+        : {})
     };
 
     onSave(newItem);
@@ -206,6 +224,81 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   <p className="mt-2 text-xs text-red-500 font-semibold">{errors.fieldValue}</p>
                 )}
               </div>
+            </div>
+          )}
+
+          {/* Image Mode */}
+          {itemType === ItemType.IMAGE && (
+            <div className="space-y-6">
+              <div>
+                <label className="block text-[10px] font-black text-aaa-blue uppercase tracking-widest mb-2">
+                  Image URL <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="url"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="https://example.com/image.jpg or data:image/..."
+                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-medium focus:ring-2 focus:ring-aaa-blue/5 outline-none ${
+                    errors.imageUrl ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
+                  }`}
+                />
+                {errors.imageUrl && (
+                  <p className="mt-2 text-xs text-red-500 font-semibold">{errors.imageUrl}</p>
+                )}
+                <p className="mt-2 text-xs text-aaa-muted">
+                  You can paste a URL or use a data URL (base64 encoded image)
+                </p>
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-black text-aaa-blue uppercase tracking-widest mb-2">
+                  Image Title (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={imageTitle}
+                  onChange={(e) => setImageTitle(e.target.value)}
+                  placeholder="e.g., Annex 1, Annex 2"
+                  className="w-full px-4 py-3 bg-white border border-aaa-border rounded-xl text-sm font-medium focus:border-aaa-blue focus:ring-2 focus:ring-aaa-blue/5 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-black text-aaa-blue uppercase tracking-widest mb-2">
+                  Alt Text (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={imageAlt}
+                  onChange={(e) => setImageAlt(e.target.value)}
+                  placeholder="Description of the image for accessibility"
+                  className="w-full px-4 py-3 bg-white border border-aaa-border rounded-xl text-sm font-medium focus:border-aaa-blue focus:ring-2 focus:ring-aaa-blue/5 outline-none"
+                />
+              </div>
+
+              {imageUrl && (
+                <div className="mt-6 p-4 bg-aaa-bg/30 rounded-2xl border border-aaa-border/50">
+                  <div className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-3">
+                    Preview
+                  </div>
+                  <div className="relative w-full">
+                    <img
+                      src={imageUrl}
+                      alt={imageAlt || imageTitle || 'Preview'}
+                      className="max-w-full h-auto rounded-xl border border-aaa-border"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'text-red-500 text-sm p-4';
+                        errorDiv.textContent = 'Failed to load image. Please check the URL.';
+                        target.parentElement?.appendChild(errorDiv);
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>

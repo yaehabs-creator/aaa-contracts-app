@@ -22,7 +22,8 @@ export enum SectionType {
 export enum ItemType {
   CLAUSE = 'CLAUSE',
   PARAGRAPH = 'PARAGRAPH',
-  FIELD = 'FIELD'
+  FIELD = 'FIELD',
+  IMAGE = 'IMAGE'
 }
 
 export type TimeFrameType = 
@@ -125,6 +126,10 @@ export interface SectionItem {
   fieldKey?: string;  // For fields
   fieldValue?: string;  // For fields
   orderIndex: number;
+  // Image-specific fields (for when itemType is IMAGE)
+  imageUrl?: string;
+  imageAlt?: string;
+  imageTitle?: string;
   // Clause-specific fields (for backward compatibility and when itemType is CLAUSE)
   clause_number?: string;
   clause_title?: string;

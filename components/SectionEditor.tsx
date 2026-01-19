@@ -78,6 +78,14 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
         ].join(' ').toLowerCase();
         
         return keywords.every(keyword => searchableText.includes(keyword));
+      } else if (item.itemType === ItemType.IMAGE) {
+        const searchableText = [
+          item.imageTitle || '',
+          item.imageAlt || '',
+          item.heading || ''
+        ].join(' ').toLowerCase();
+        
+        return keywords.every(keyword => searchableText.includes(keyword));
       }
       return false;
     });

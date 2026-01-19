@@ -25,6 +25,7 @@ const highlightKeywords = (text: string, keywords: string[]): string => {
 export const SectionItemCard: React.FC<SectionItemCardProps> = ({ item, onEdit, onDelete, searchKeywords = [] }) => {
   const isParagraph = item.itemType === ItemType.PARAGRAPH;
   const isField = item.itemType === ItemType.FIELD;
+  const isImage = item.itemType === ItemType.IMAGE;
 
   return (
     <div className="bg-white border border-aaa-border rounded-3xl shadow-premium overflow-hidden transition-all duration-300 hover:shadow-xl">
@@ -52,6 +53,16 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = ({ item, onEdit, 
                   ) : (
                     item.fieldKey
                   )}
+                </h3>
+              </div>
+            )}
+            {isImage && (
+              <div className="flex items-center gap-3 mb-3">
+                <span className="px-3 py-1 bg-purple-600 text-white text-[10px] font-black rounded-full uppercase tracking-widest">
+                  Image
+                </span>
+                <h3 className="text-lg font-black text-aaa-blue tracking-tight">
+                  {item.imageTitle || item.heading || 'Image'}
                 </h3>
               </div>
             )}
@@ -103,6 +114,34 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = ({ item, onEdit, 
                     item.fieldValue
                   )}
                 </div>
+              </div>
+            </div>
+          )}
+
+          {isImage && item.imageUrl && (
+            <div className="bg-aaa-bg/30 p-6 rounded-2xl border border-aaa-border/50">
+              <div className="space-y-4">
+                <div className="relative w-full">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.imageAlt || item.imageTitle || 'Image'}
+                    title={item.imageTitle}
+                    className="max-w-full h-auto rounded-xl border border-aaa-border shadow-sm"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const errorDiv = document.createElement('div');
+                      errorDiv.className = 'text-red-500 text-sm p-4 bg-red-50 rounded-xl';
+                      errorDiv.textContent = 'Failed to load image. Please check the URL.';
+                      target.parentElement?.appendChild(errorDiv);
+                    }}
+                  />
+                </div>
+                {item.imageAlt && (
+                  <div className="text-xs text-aaa-muted italic">
+                    {item.imageAlt}
+                  </div>
+                )}
               </div>
             </div>
           )}
