@@ -4,6 +4,20 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+// SECURITY CHECK: Detect if service role key is being used (CRITICAL ERROR)
+if (supabaseAnonKey) {
+  // Service role keys typically start with 'eyJ' but have different structure
+  // Anon keys are safe to use in browser, service role keys are NOT
+  // Check for common patterns that indicate service role key
+  if (supabaseAnonKey.includes('service_role') || 
+      supabaseAnonKey.length > 200 || // Service role keys are typically longer
+      supabaseAnonKey.startsWith('eyJ') && supabaseAnonKey.split('.').length > 3) {
+    const errorMsg = 'SECURITY ERROR: Service role key detected in browser! Use VITE_SUPABASE_ANON_KEY (anon public key) instead. Service role keys must NEVER be exposed in frontend code.';
+    console.error('🚨', errorMsg);
+    throw new Error(errorMsg);
+  }
+}
+
 // Validate Supabase configuration
 const missingVars: string[] = [];
 if (!supabaseUrl) missingVars.push('VITE_SUPABASE_URL');
