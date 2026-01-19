@@ -315,18 +315,27 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
     const { data: { session }, error: authError } = await supabase.auth.getSession();
     
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:312',message:'Auth session check',data:{hasSession:!!session,hasUser:!!session?.user,userId:session?.user?.id,hasAuthError:!!authError},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:315',message:'Auth session check',data:{hasSession:!!session,hasUser:!!session?.user,userId:session?.user?.id,userEmail:session?.user?.email,hasAuthError:!!authError,authError:authError?.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
     // #endregion
+    
+    if (!session || !session.user) {
+      console.warn('No active session when fetching contracts');
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:320',message:'No session - returning empty array',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      return [];
+    }
     
     // Fetch all contracts ordered by timestamp
     // RLS policies will handle authentication checks
+    console.log('Fetching contracts from Supabase...');
     const { data: contractsData, error } = await supabase
       .from('contracts')
       .select('*')
       .order('timestamp', { ascending: false });
     
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:318',message:'Contracts query result',data:{hasError:!!error,errorCode:error?.code,errorMessage:error?.message,contractsCount:contractsData?.length||0,contractIds:contractsData?.map(c=>c.id)||[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:329',message:'Contracts query result',data:{hasError:!!error,errorCode:error?.code,errorMessage:error?.message,errorDetails:error?.details,errorHint:error?.hint,contractsCount:contractsData?.length||0,contractIds:contractsData?.map(c=>c.id)||[],contractNames:contractsData?.map(c=>c.name)||[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
     // #endregion
 
     if (error) {
@@ -353,30 +362,53 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
     console.log(`Successfully fetched ${contractsData?.length || 0} contracts from database`);
     if (contractsData && contractsData.length > 0) {
       console.log('Contract IDs:', contractsData.map(c => c.id));
+      console.log('Contract names:', contractsData.map(c => c.name));
+    } else {
+      console.log('No contracts found in database. This could mean:');
+      console.log('1. No contracts have been created yet');
+      console.log('2. RLS policies are blocking access');
+      console.log('3. User is not authenticated');
     }
 
     // Load full contract data (including subcollections if needed)
     const contracts = await Promise.all(
       (contractsData || []).map(async (row) => {
-        // If contract uses subcollections, load full data
-        if (row.uses_subcollections) {
-          return await loadContractFromSubcollections(row.id, row);
+        try {
+          // If contract uses subcollections, load full data
+          if (row.uses_subcollections) {
+            return await loadContractFromSubcollections(row.id, row);
+          }
+          
+          // Single document format
+          const contract: SavedContract = {
+            id: row.id,
+            name: row.name,
+            timestamp: row.timestamp,
+            metadata: row.metadata,
+            clauses: row.clauses || null,
+            sections: row.sections || null
+          };
+          
+          // Auto-migrate on load
+          return ensureContractHasSections(contract);
+        } catch (err) {
+          console.error(`Error loading contract ${row.id}:`, err);
+          // Return a basic contract object even if loading fails
+          return {
+            id: row.id,
+            name: row.name,
+            timestamp: row.timestamp,
+            metadata: row.metadata,
+            clauses: null,
+            sections: null
+          } as SavedContract;
         }
-        
-        // Single document format
-        const contract: SavedContract = {
-          id: row.id,
-          name: row.name,
-          timestamp: row.timestamp,
-          metadata: row.metadata,
-          clauses: row.clauses || null,
-          sections: row.sections || null
-        };
-        
-        // Auto-migrate on load
-        return ensureContractHasSections(contract);
       })
     );
+    
+    // #region agent log
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:385',message:'Contracts processed and ready to return',data:{finalContractsCount:contracts.length,contractIds:contracts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     
     return contracts;
   } catch (error: any) {
