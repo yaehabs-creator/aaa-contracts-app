@@ -297,9 +297,22 @@ const App: React.FC = () => {
   const refreshLibrary = async () => {
     try {
       console.log('Refreshing library...');
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:297',message:'refreshLibrary called',data:{currentLibraryLength:library.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      
       const contracts = await getAllContracts();
+      
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:302',message:'Contracts fetched from getAllContracts',data:{contractsCount:contracts?.length||0,contractIds:contracts?.map(c=>c.id)||[],contractNames:contracts?.map(c=>c.name)||[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      
       console.log(`Loaded ${contracts?.length || 0} contracts into library`);
       setLibrary(contracts || []);
+      
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:308',message:'Library state updated',data:{newLibraryLength:contracts?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
     } catch (err: any) {
       console.error("Library load failed:", err);
       console.error("Error details:", {
@@ -307,6 +320,11 @@ const App: React.FC = () => {
         code: err?.code,
         stack: err?.stack
       });
+      
+      // #region agent log
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:315',message:'Library load error',data:{errorMessage:err?.message,errorCode:err?.code},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      
       setLibrary([]);
     }
   };
