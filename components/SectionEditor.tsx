@@ -35,7 +35,11 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   const [editingItemIndex, setEditingItemIndex] = useState<number>(-1);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  const isClauseSection = section.sectionType === SectionType.GENERAL || section.sectionType === SectionType.PARTICULAR;
+  // Check if this is a clause section (GENERAL, PARTICULAR, or combined Conditions)
+  // Combined Conditions section uses GENERAL type but has title "Conditions"
+  const isClauseSection = section.sectionType === SectionType.GENERAL || 
+                         section.sectionType === SectionType.PARTICULAR ||
+                         section.title === 'Conditions';
   const isItemSection = section.sectionType === SectionType.AGREEMENT || section.sectionType === SectionType.LOA;
 
   // Filter items based on search query

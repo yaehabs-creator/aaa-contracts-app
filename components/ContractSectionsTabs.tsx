@@ -25,12 +25,14 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
   
-  const [activeTab, setActiveTab] = useState<SectionType>(SectionType.AGREEMENT);
+  // Use 'CONDITIONS' as a special identifier for the combined tab
+  type TabType = SectionType | 'CONDITIONS';
+  const [activeTab, setActiveTab] = useState<TabType>('CONDITIONS');
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Get sections in order
-  const sections = useMemo(() => {
+  // Get all sections in order
+  const allSections = useMemo(() => {
     if (!contractWithSections.sections) {
       return [];
     }
@@ -42,10 +44,56 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     });
   }, [contractWithSections.sections]);
 
-  const activeSection = sections.find(s => s.sectionType === activeTab) || sections[0];
+  // Filter sections for tabs (exclude GENERAL and PARTICULAR, they'll be combined)
+  const tabSections = useMemo(() => {
+    return allSections.filter(s => 
+      s.sectionType !== SectionType.GENERAL && s.sectionType !== SectionType.PARTICULAR
+    );
+  }, [allSections]);
+
+  // Get GENERAL and PARTICULAR sections
+  const generalSection = useMemo(() => 
+    allSections.find(s => s.sectionType === SectionType.GENERAL),
+    [allSections]
+  );
+  const particularSection = useMemo(() => 
+    allSections.find(s => s.sectionType === SectionType.PARTICULAR),
+    [allSections]
+  );
+
+  // Create combined Conditions section when CONDITIONS tab is active
+  const combinedConditionsSection = useMemo((): ContractSection | null => {
+    if (activeTab !== 'CONDITIONS') return null;
+    
+    const generalItems = generalSection?.items || [];
+    const particularItems = particularSection?.items || [];
+    
+    // Combine items, marking their origin section
+    const combinedItems: (SectionItem & { _originSection?: SectionType })[] = [
+      ...generalItems.map(item => ({ ...item, _originSection: SectionType.GENERAL })),
+      ...particularItems.map(item => ({ ...item, _originSection: SectionType.PARTICULAR }))
+    ];
+    
+    // Sort by orderIndex to maintain order
+    combinedItems.sort((a, b) => (a.orderIndex || 0) - (b.orderIndex || 0));
+    
+    return {
+      sectionType: SectionType.GENERAL, // Use GENERAL as the type for compatibility
+      title: 'Conditions',
+      items: combinedItems as SectionItem[]
+    };
+  }, [activeTab, generalSection, particularSection]);
+
+  // Get active section based on tab
+  const activeSection = useMemo(() => {
+    if (activeTab === 'CONDITIONS') {
+      return combinedConditionsSection;
+    }
+    return allSections.find(s => s.sectionType === activeTab) || tabSections[0];
+  }, [activeTab, allSections, tabSections, combinedConditionsSection]);
 
   const handleSectionUpdate = (updatedSection: ContractSection) => {
-    const updatedSections = sections.map(s =>
+    const updatedSections = allSections.map(s =>
       s.sectionType === updatedSection.sectionType ? updatedSection : s
     );
 
@@ -57,8 +105,58 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     onUpdate(updatedContract);
   };
 
+  // Handle updates for combined Conditions section
+  const handleConditionsUpdate = (updatedSection: ContractSection) => {
+    const updatedItems = updatedSection.items;
+    
+    // Split items back into GENERAL and PARTICULAR based on their origin
+    const generalItems: SectionItem[] = [];
+    const particularItems: SectionItem[] = [];
+    
+    updatedItems.forEach((item, index) => {
+      const originSection = (item as any)._originSection;
+      const cleanItem = { ...item };
+      delete (cleanItem as any)._originSection;
+      cleanItem.orderIndex = index;
+      
+      if (originSection === SectionType.GENERAL) {
+        generalItems.push(cleanItem);
+      } else if (originSection === SectionType.PARTICULAR) {
+        particularItems.push(cleanItem);
+      } else {
+        // If no origin, determine based on condition_type
+        const conditionType = cleanItem.condition_type;
+        if (conditionType === 'General') {
+          generalItems.push(cleanItem);
+        } else if (conditionType === 'Particular') {
+          particularItems.push(cleanItem);
+        } else {
+          // Default to General if unclear
+          generalItems.push(cleanItem);
+        }
+      }
+    });
+
+    // Update both sections
+    const updatedSections = allSections.map(s => {
+      if (s.sectionType === SectionType.GENERAL) {
+        return { ...s, items: generalItems };
+      } else if (s.sectionType === SectionType.PARTICULAR) {
+        return { ...s, items: particularItems };
+      }
+      return s;
+    });
+
+    const updatedContract: SavedContract = {
+      ...contractWithSections,
+      sections: updatedSections
+    };
+
+    onUpdate(updatedContract);
+  };
+
   const handleAddItem = (item: SectionItem, sectionType: SectionType) => {
-    const section = sections.find(s => s.sectionType === sectionType);
+    const section = allSections.find(s => s.sectionType === sectionType);
     if (!section) return;
 
     const updatedSection: ContractSection = {
@@ -69,8 +167,23 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     handleSectionUpdate(updatedSection);
   };
 
-  const handleEditItem = (item: SectionItem, index: number, sectionType: SectionType) => {
-    const section = sections.find(s => s.sectionType === sectionType);
+  const handleEditItem = (item: SectionItem, index: number, sectionType: SectionType | 'CONDITIONS') => {
+    if (sectionType === 'CONDITIONS') {
+      // Handle edit in combined view
+      if (!activeSection) return;
+      const currentItems = activeSection.items || [];
+      const updatedItems = [...currentItems];
+      updatedItems[index] = item;
+      
+      const updatedSection: ContractSection = {
+        ...activeSection,
+        items: updatedItems
+      };
+      handleConditionsUpdate(updatedSection);
+      return;
+    }
+
+    const section = allSections.find(s => s.sectionType === sectionType);
     if (!section) return;
 
     const updatedItems = [...section.items];
@@ -84,8 +197,22 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     handleSectionUpdate(updatedSection);
   };
 
-  const handleDeleteItem = (index: number, sectionType: SectionType) => {
-    const section = sections.find(s => s.sectionType === sectionType);
+  const handleDeleteItem = (index: number, sectionType: SectionType | 'CONDITIONS') => {
+    if (sectionType === 'CONDITIONS') {
+      // Handle delete in combined view
+      if (!activeSection) return;
+      const currentItems = activeSection.items || [];
+      const updatedItems = currentItems.filter((_, i) => i !== index);
+      
+      const updatedSection: ContractSection = {
+        ...activeSection,
+        items: updatedItems
+      };
+      handleConditionsUpdate(updatedSection);
+      return;
+    }
+
+    const section = allSections.find(s => s.sectionType === sectionType);
     if (!section) return;
 
     const updatedItems = section.items.filter((_, i) => i !== index);
@@ -101,8 +228,24 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     handleSectionUpdate(updatedSection);
   };
 
-  const handleReorder = (fromIndex: number, toIndex: number, sectionType: SectionType) => {
-    const section = sections.find(s => s.sectionType === sectionType);
+  const handleReorder = (fromIndex: number, toIndex: number, sectionType: SectionType | 'CONDITIONS') => {
+    if (sectionType === 'CONDITIONS') {
+      // Handle reorder in combined view
+      if (!activeSection) return;
+      const currentItems = activeSection.items || [];
+      const updatedItems = [...currentItems];
+      const [moved] = updatedItems.splice(fromIndex, 1);
+      updatedItems.splice(toIndex, 0, moved);
+      
+      const updatedSection: ContractSection = {
+        ...activeSection,
+        items: updatedItems
+      };
+      handleConditionsUpdate(updatedSection);
+      return;
+    }
+
+    const section = allSections.find(s => s.sectionType === sectionType);
     if (!section) return;
 
     const updatedItems = [...section.items];
@@ -120,7 +263,32 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     handleSectionUpdate(updatedSection);
   };
 
-  const handleDeleteClause = (index: number, sectionType: SectionType) => {
+  const handleDeleteClause = (index: number, sectionType: SectionType | 'CONDITIONS') => {
+    if (sectionType === 'CONDITIONS') {
+      // Need to determine which section the clause belongs to
+      const item = activeSection?.items[index];
+      if (!item) return;
+      
+      const originSection = (item as any)._originSection || 
+        (item.condition_type === 'Particular' ? SectionType.PARTICULAR : SectionType.GENERAL);
+      
+      // Find the original index in the source section
+      const sourceSection = originSection === SectionType.GENERAL ? generalSection : particularSection;
+      if (!sourceSection) return;
+      
+      const sourceIndex = sourceSection.items.findIndex(i => 
+        i.clause_number === item.clause_number && 
+        i.clause_title === item.clause_title
+      );
+      
+      if (sourceIndex >= 0 && onDeleteClause) {
+        onDeleteClause(sourceIndex, originSection);
+      } else {
+        handleDeleteItem(index, 'CONDITIONS');
+      }
+      return;
+    }
+
     if (onDeleteClause) {
       onDeleteClause(index, sectionType);
     } else {
@@ -128,7 +296,13 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     }
   };
 
-  const handleReorderClause = (fromIndex: number, toIndex: number, sectionType: SectionType) => {
+  const handleReorderClause = (fromIndex: number, toIndex: number, sectionType: SectionType | 'CONDITIONS') => {
+    if (sectionType === 'CONDITIONS') {
+      // Handle reorder in combined view
+      handleReorder(fromIndex, toIndex, 'CONDITIONS');
+      return;
+    }
+
     if (onReorderClause) {
       onReorderClause(fromIndex, toIndex, sectionType);
     } else {
@@ -176,7 +350,29 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
         <div className="flex items-center justify-between">
           {/* Tabs */}
           <div className="flex overflow-x-auto custom-scrollbar flex-1">
-            {sections.map((section) => (
+            {/* Conditions Tab (Combined GENERAL + PARTICULAR) */}
+            <button
+              onClick={() => setActiveTab('CONDITIONS')}
+              className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${
+                activeTab === 'CONDITIONS'
+                  ? 'border-aaa-blue text-aaa-blue bg-white'
+                  : 'border-transparent text-aaa-muted hover:text-aaa-blue hover:bg-white/50'
+              }`}
+            >
+              Conditions
+              {((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0 && (
+                <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${
+                  activeTab === 'CONDITIONS'
+                    ? 'bg-aaa-blue/10 text-aaa-blue'
+                    : 'bg-aaa-bg text-aaa-muted'
+                }`}>
+                  {(generalSection?.items.length || 0) + (particularSection?.items.length || 0)}
+                </span>
+              )}
+            </button>
+            
+            {/* Other Tabs (AGREEMENT, LOA) */}
+            {tabSections.map((section) => (
               <button
                 key={section.sectionType}
                 onClick={() => setActiveTab(section.sectionType)}
@@ -237,18 +433,27 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
       {/* Tab Content */}
       <div className="p-8">
-        <SectionEditor
-          section={activeSection}
-          onUpdate={handleSectionUpdate}
-          onAddItem={(item) => handleAddItem(item, activeSection.sectionType)}
-          onEditItem={(item, index) => handleEditItem(item, index, activeSection.sectionType)}
-          onDeleteItem={(index) => handleDeleteItem(index, activeSection.sectionType)}
-          onReorder={(fromIndex, toIndex) => handleReorder(fromIndex, toIndex, activeSection.sectionType)}
-          onEditClause={onEditClause}
-          onCompareClause={onCompareClause}
-          onDeleteClause={(index) => handleDeleteClause(index, activeSection.sectionType)}
-          onReorderClause={(fromIndex, toIndex) => handleReorderClause(fromIndex, toIndex, activeSection.sectionType)}
-        />
+        {activeSection && (
+          <SectionEditor
+            section={activeSection}
+            onUpdate={activeTab === 'CONDITIONS' ? handleConditionsUpdate : handleSectionUpdate}
+            onAddItem={(item) => {
+              // For Conditions tab, default to General section
+              if (activeTab === 'CONDITIONS') {
+                handleAddItem(item, SectionType.GENERAL);
+              } else {
+                handleAddItem(item, activeSection.sectionType as SectionType);
+              }
+            }}
+            onEditItem={(item, index) => handleEditItem(item, index, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
+            onDeleteItem={(index) => handleDeleteItem(index, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
+            onReorder={(fromIndex, toIndex) => handleReorder(fromIndex, toIndex, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
+            onEditClause={onEditClause}
+            onCompareClause={onCompareClause}
+            onDeleteClause={(index) => handleDeleteClause(index, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
+            onReorderClause={(fromIndex, toIndex) => handleReorderClause(fromIndex, toIndex, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
+          />
+        )}
       </div>
     </div>
   );
