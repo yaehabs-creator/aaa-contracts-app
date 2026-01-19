@@ -90,16 +90,6 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
           sectionType: SectionType.PARTICULAR,
           title: 'Particular Conditions',
           items: []
-        },
-        {
-          sectionType: SectionType.ANNEX1,
-          title: 'Annex 1',
-          items: []
-        },
-        {
-          sectionType: SectionType.ANNEX2,
-          title: 'Annex 2',
-          items: []
         }
       ],
       clauses: []  // Keep empty array for backward compatibility
@@ -148,16 +138,6 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
       sectionType: SectionType.PARTICULAR,
       title: 'Particular Conditions',
       items: particularItems
-    },
-    {
-      sectionType: SectionType.ANNEX1,
-      title: 'Annex 1',
-      items: []
-    },
-    {
-      sectionType: SectionType.ANNEX2,
-      title: 'Annex 2',
-      items: []
     }
   ];
 
@@ -183,9 +163,7 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
       SectionType.AGREEMENT, 
       SectionType.LOA, 
       SectionType.GENERAL, 
-      SectionType.PARTICULAR,
-      SectionType.ANNEX1,
-      SectionType.ANNEX2
+      SectionType.PARTICULAR
     ];
     
     const missingTypes = requiredTypes.filter(type => !sectionTypes.includes(type));
@@ -215,9 +193,7 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
           SectionType.AGREEMENT, 
           SectionType.LOA, 
           SectionType.GENERAL, 
-          SectionType.PARTICULAR,
-          SectionType.ANNEX1,
-          SectionType.ANNEX2
+          SectionType.PARTICULAR
         ];
         return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
       });

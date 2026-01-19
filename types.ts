@@ -16,9 +16,7 @@ export enum SectionType {
   AGREEMENT = 'AGREEMENT',
   LOA = 'LOA',
   GENERAL = 'GENERAL',
-  PARTICULAR = 'PARTICULAR',
-  ANNEX1 = 'ANNEX1',
-  ANNEX2 = 'ANNEX2'
+  PARTICULAR = 'PARTICULAR'
 }
 
 export enum ItemType {

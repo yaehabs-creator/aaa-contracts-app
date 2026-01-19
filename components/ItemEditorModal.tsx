@@ -406,7 +406,7 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   type="text"
                   value={imageTitle}
                   onChange={(e) => setImageTitle(e.target.value)}
-                  placeholder="e.g., Annex 1, Annex 2"
+                  placeholder="e.g., Document Title"
                   className="w-full px-4 py-3 bg-white border border-aaa-border rounded-xl text-sm font-medium focus:border-aaa-blue focus:ring-2 focus:ring-aaa-blue/5 outline-none"
                 />
               </div>
