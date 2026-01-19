@@ -4,6 +4,10 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+// #region agent log
+fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:6',message:'Environment variables check',data:{hasUrl:!!supabaseUrl,hasKey:!!supabaseAnonKey,urlLength:supabaseUrl?.length||0,keyLength:supabaseAnonKey?.length||0,urlPrefix:supabaseUrl?.substring(0,30)||'undefined',keyPrefix:supabaseAnonKey?.substring(0,20)||'undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+// #endregion
+
 // SECURITY CHECK: Detect if service role key is being used (CRITICAL ERROR)
 if (supabaseAnonKey) {
   // #region agent log
@@ -95,6 +99,10 @@ const missingVars: string[] = [];
 if (!supabaseUrl) missingVars.push('VITE_SUPABASE_URL');
 if (!supabaseAnonKey) missingVars.push('VITE_SUPABASE_ANON_KEY');
 
+// #region agent log
+fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:99',message:'Missing vars check',data:{missingVarsCount:missingVars.length,missingVars:missingVars,urlExists:!!supabaseUrl,keyExists:!!supabaseAnonKey},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+// #endregion
+
 let supabase: any = null;
 let configError: string | null = null;
 
@@ -104,6 +112,10 @@ if (missingVars.length > 0) {
   console.error('❌ Supabase Configuration Error:', errorMsg);
   console.error('📖 Please configure Supabase in your .env.local file.');
   console.error('📚 Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to your environment variables.');
+  
+  // #region agent log
+  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:107',message:'Missing vars branch - setting configError',data:{errorMsg,missingVars},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
   
   // Store error in window for error boundary to access
   if (typeof window !== 'undefined') {
@@ -115,6 +127,9 @@ if (missingVars.length > 0) {
     console.warn('⚠️ Supabase not configured. Database operations will not work.');
   }
 } else {
+  // #region agent log
+  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:120',message:'All vars present - attempting Supabase initialization',data:{urlPrefix:supabaseUrl.substring(0,30)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
   // Initialize Supabase
   try {
     supabase = createClient(supabaseUrl, supabaseAnonKey, {
@@ -126,10 +141,18 @@ if (missingVars.length > 0) {
     });
     console.log('✅ Supabase initialized successfully');
     console.log('📊 Supabase URL:', supabaseUrl);
+    
+    // #region agent log
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:128',message:'Supabase client created successfully',data:{hasClient:!!supabase},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     configError = `Failed to initialize Supabase: ${errorMessage}`;
     console.error('❌ Supabase Initialization Error:', error);
+    
+    // #region agent log
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/supabase/config.ts:135',message:'Supabase initialization failed',data:{errorMessage,errorName:error?.name,errorStack:error?.stack?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
     
     // Store error in window for error boundary to access
     if (typeof window !== 'undefined') {
