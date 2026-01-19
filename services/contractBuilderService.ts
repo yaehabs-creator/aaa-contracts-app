@@ -158,6 +158,16 @@ export async function buildContractFromText(
       sectionType: SectionType.PARTICULAR,
       title: 'Particular Conditions',
       items: particularItems
+    },
+    {
+      sectionType: SectionType.ANNEX1,
+      title: 'Annex 1',
+      items: []
+    },
+    {
+      sectionType: SectionType.ANNEX2,
+      title: 'Annex 2',
+      items: []
     }
   ];
 

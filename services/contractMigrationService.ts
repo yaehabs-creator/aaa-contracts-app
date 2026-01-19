@@ -90,6 +90,16 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
           sectionType: SectionType.PARTICULAR,
           title: 'Particular Conditions',
           items: []
+        },
+        {
+          sectionType: SectionType.ANNEX1,
+          title: 'Annex 1',
+          items: []
+        },
+        {
+          sectionType: SectionType.ANNEX2,
+          title: 'Annex 2',
+          items: []
         }
       ],
       clauses: []  // Keep empty array for backward compatibility
@@ -138,6 +148,16 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
       sectionType: SectionType.PARTICULAR,
       title: 'Particular Conditions',
       items: particularItems
+    },
+    {
+      sectionType: SectionType.ANNEX1,
+      title: 'Annex 1',
+      items: []
+    },
+    {
+      sectionType: SectionType.ANNEX2,
+      title: 'Annex 2',
+      items: []
     }
   ];
 
@@ -156,10 +176,17 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
     return migrateContractToSections(contract);
   }
   
-  // If sections exist, ensure all 4 sections are present
+  // If sections exist, ensure all required sections are present
   if (contract.sections && contract.sections.length > 0) {
     const sectionTypes = contract.sections.map(s => s.sectionType);
-    const requiredTypes = [SectionType.AGREEMENT, SectionType.LOA, SectionType.GENERAL, SectionType.PARTICULAR];
+    const requiredTypes = [
+      SectionType.AGREEMENT, 
+      SectionType.LOA, 
+      SectionType.GENERAL, 
+      SectionType.PARTICULAR,
+      SectionType.ANNEX1,
+      SectionType.ANNEX2
+    ];
     
     const missingTypes = requiredTypes.filter(type => !sectionTypes.includes(type));
     
@@ -172,6 +199,8 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         else if (type === SectionType.LOA) title = 'Letter of Acceptance';
         else if (type === SectionType.GENERAL) title = 'General Conditions';
         else if (type === SectionType.PARTICULAR) title = 'Particular Conditions';
+        else if (type === SectionType.ANNEX1) title = 'Annex 1';
+        else if (type === SectionType.ANNEX2) title = 'Annex 2';
         
         newSections.push({
           sectionType: type,
@@ -180,9 +209,16 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         });
       });
       
-      // Sort sections to maintain order: AGREEMENT, LOA, GENERAL, PARTICULAR
+      // Sort sections to maintain order
       newSections.sort((a, b) => {
-        const order = [SectionType.AGREEMENT, SectionType.LOA, SectionType.GENERAL, SectionType.PARTICULAR];
+        const order = [
+          SectionType.AGREEMENT, 
+          SectionType.LOA, 
+          SectionType.GENERAL, 
+          SectionType.PARTICULAR,
+          SectionType.ANNEX1,
+          SectionType.ANNEX2
+        ];
         return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
       });
       

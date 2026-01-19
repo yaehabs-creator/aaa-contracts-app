@@ -37,9 +37,16 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       return [];
     }
     
-    // Sort sections to maintain order: AGREEMENT, LOA, GENERAL, PARTICULAR
+    // Sort sections to maintain order: AGREEMENT, LOA, GENERAL, PARTICULAR, ANNEX1, ANNEX2
     return [...contractWithSections.sections].sort((a, b) => {
-      const order = [SectionType.AGREEMENT, SectionType.LOA, SectionType.GENERAL, SectionType.PARTICULAR];
+      const order = [
+        SectionType.AGREEMENT, 
+        SectionType.LOA, 
+        SectionType.GENERAL, 
+        SectionType.PARTICULAR,
+        SectionType.ANNEX1,
+        SectionType.ANNEX2
+      ];
       return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
     });
   }, [contractWithSections.sections]);
