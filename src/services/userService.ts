@@ -122,8 +122,19 @@ export const createUser = async (
 
 export const updateUserRole = async (uid: string, role: UserRole): Promise<void> => {
   try {
-    const userRef = doc(db, USERS_COLLECTION, uid);
-    await setDoc(userRef, { role }, { merge: true });
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
+    const { error } = await supabase
+      .from('users')
+      .update({ role })
+      .eq('uid', uid);
+
+    if (error) {
+      console.error('Error updating user role:', error);
+      throw new Error('Failed to update user role');
+    }
   } catch (error) {
     console.error('Error updating user role:', error);
     throw new Error('Failed to update user role');

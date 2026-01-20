@@ -61,7 +61,7 @@ const CLAUDE_TOKEN_LIMITS = {
   totalBudget: 200000      // Total context window
 };
 
-const linkifyText = (text: string | undefined): string => {
+const linkifyText = (text: string | undefined, availableClauseIds?: Set<string>): string => {
   if (!text) return "";
   
   // Skip if text already contains hyperlinks to avoid double-processing
@@ -69,15 +69,25 @@ const linkifyText = (text: string | undefined): string => {
     return text;
   }
   
-  // Enhanced pattern to handle various clause reference formats:
-  // - "Clause 1.1", "clause 2A.1", "Sub-clause 1.6 (b)", "paragraph 2.1.3", "Article 5"
-  // - Handles spaces: "Clause 2 A.6", "Clause 6 A.2 (b)"
-  // - Handles alphanumeric: "2A.1", "3B.2.1", "A.6"
-  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause|[Aa]rticle|[Pp]aragraph|[Ss]ub-[Pp]aragraph)\s+([0-9]+(?:\s+[A-Za-z][0-9A-Za-z.]*)?(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?|[A-Za-z]+(?:\.[0-9A-Za-z]+)*(?:\s*\([a-z0-9]+\))?)/gi;
+  // Tightened pattern to handle clause reference formats:
+  // - Must start with a number: "Clause 1.1", "clause 2A.1", "Sub-clause 1.6", "Clause 2.1.3"
+  // - Handles alphanumeric after number: "2A.1", "3B.2.1"
+  // - Handles optional sub-parts in parentheses: "Clause 1.6 (b)"
+  // - Does NOT match letter-only references like "Clause A" or "paragraph B"
+  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause|[Aa]rticle)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/gi;
   
   return text.replace(pattern, (match, number) => {
     // Normalize the clause number to match the ID format used in ClauseCard
     const cleanId = normalizeClauseId(number);
+    
+    // If we have a list of available clause IDs, only create link if clause exists
+    if (availableClauseIds && availableClauseIds.size > 0) {
+      if (!availableClauseIds.has(cleanId)) {
+        // Clause doesn't exist, return original text without link
+        return match;
+      }
+    }
+    
     // Add class for styling and prevent default browser navigation
     return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
   });
@@ -584,16 +594,23 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   }) => {
     if (!editingClause || !contract) return;
     
+    // Build Set of available clause IDs from current clauses
+    const availableClauseIds = new Set<string>(
+      (clauses || []).map(c => normalizeClauseId(c.clause_number))
+    );
+    // Also add the new/updated clause number
+    availableClauseIds.add(normalizeClauseId(data.number));
+    
     await new Promise(resolve => setTimeout(resolve, 600));
     const conditionType: ConditionType = data.particularText.trim() ? 'Particular' : 'General';
     const updatedClause: Clause = {
       ...editingClause,
       clause_number: data.number,
       clause_title: data.title || "Untitled Clause",
-      clause_text: linkifyText(data.particularText || data.generalText),
+      clause_text: linkifyText(data.particularText || data.generalText, availableClauseIds),
       condition_type: conditionType,
-      general_condition: data.generalText.trim() ? linkifyText(data.generalText) : undefined,
-      particular_condition: data.particularText.trim() ? linkifyText(data.particularText) : undefined,
+      general_condition: data.generalText.trim() ? linkifyText(data.generalText, availableClauseIds) : undefined,
+      particular_condition: data.particularText.trim() ? linkifyText(data.particularText, availableClauseIds) : undefined,
     };
     
     // Update in contract sections
@@ -665,14 +682,22 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     }
     
     await new Promise(resolve => setTimeout(resolve, 600));
+    
+    // Build Set of available clause IDs from current clauses
+    const availableClauseIds = new Set<string>(
+      (clauses || []).map(c => normalizeClauseId(c.clause_number))
+    );
+    // Also add the new clause number
+    availableClauseIds.add(normalizeClauseId(data.number));
+    
     const conditionType: ConditionType = data.particularText.trim() ? 'Particular' : 'General';
     const newClause: Clause = {
       clause_number: data.number,
       clause_title: data.title || "Untitled Clause",
-      clause_text: linkifyText(data.particularText || data.generalText),
+      clause_text: linkifyText(data.particularText || data.generalText, availableClauseIds),
       condition_type: conditionType,
-      general_condition: data.generalText.trim() ? linkifyText(data.generalText) : undefined,
-      particular_condition: data.particularText.trim() ? linkifyText(data.particularText) : undefined,
+      general_condition: data.generalText.trim() ? linkifyText(data.generalText, availableClauseIds) : undefined,
+      particular_condition: data.particularText.trim() ? linkifyText(data.particularText, availableClauseIds) : undefined,
       comparison: [],
       time_frames: []
     };
@@ -1546,11 +1571,16 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   };
 
   const finalizeAnalysis = async (allExtractedClauses: Clause[]) => {
+    // Build a Set of all available clause IDs for link validation
+    const availableClauseIds = new Set<string>(
+      allExtractedClauses.map(c => normalizeClauseId(c.clause_number))
+    );
+    
     const processedClauses = allExtractedClauses.map(c => ({
       ...c,
-      clause_text: linkifyText(c.clause_text),
-      general_condition: linkifyText(c.general_condition),
-      particular_condition: linkifyText(c.particular_condition)
+      clause_text: linkifyText(c.clause_text, availableClauseIds),
+      general_condition: linkifyText(c.general_condition, availableClauseIds),
+      particular_condition: linkifyText(c.particular_condition, availableClauseIds)
     }));
     // Deduplicate clauses before sorting
     const deduplicated = deduplicateClauses(processedClauses);

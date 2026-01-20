@@ -145,14 +145,67 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     if (error) {
       // Map Supabase errors to user-friendly messages
-      if (error.message.includes('Invalid login credentials') || error.message.includes('email not confirmed')) {
+      if (error.message.includes('Invalid login credentials')) {
         throw new Error('Invalid email or password');
+      }
+      if (error.message.includes('Email not confirmed') || error.message.includes('email not confirmed')) {
+        throw new Error('Email not confirmed. Please check your inbox and verify your email address.');
       }
       throw new Error(error.message || 'Failed to sign in');
     }
 
     if (!data.user) {
       throw new Error('Failed to sign in');
+    }
+  };
+
+  const signUp = async (email: string, password: string, displayName: string) => {
+    if (!supabase) {
+      throw new Error('Supabase is not configured. Please check your environment variables.');
+    }
+
+    // Create auth user in Supabase
+    // Pass display_name in metadata so the database trigger can use it
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          display_name: displayName,
+          full_name: displayName,
+        }
+      }
+    });
+
+    if (error) {
+      // Map Supabase errors to user-friendly messages
+      if (error.message.includes('User already registered')) {
+        throw new Error('An account with this email already exists. Please sign in instead.');
+      }
+      if (error.message.includes('Password should be at least')) {
+        throw new Error('Password must be at least 6 characters long.');
+      }
+      if (error.message.includes('Invalid email')) {
+        throw new Error('Please enter a valid email address.');
+      }
+      throw new Error(error.message || 'Failed to create account');
+    }
+
+    if (!data.user) {
+      throw new Error('Failed to create account');
+    }
+
+    // Note: User profile is automatically created by database trigger (handle_new_user)
+    // The trigger uses the display_name from user metadata
+
+    // Check if email confirmation is required
+    if (data.user.identities && data.user.identities.length === 0) {
+      throw new Error('An account with this email already exists. Please sign in instead.');
+    }
+
+    // If email confirmation is enabled, user needs to verify
+    if (!data.session) {
+      throw new Error('SUCCESS_NEEDS_VERIFICATION');
     }
   };
 
@@ -171,6 +224,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     user,
     loading,
     signIn,
+    signUp,
     signOut,
     isAdmin,
     canEdit,
