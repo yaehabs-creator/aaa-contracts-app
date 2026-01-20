@@ -1,5 +1,5 @@
 import { createAIProvider } from './aiProvider';
-import { Clause } from '../../types';
+import { Clause, BotMessage } from '../../types';
 
 const CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION = `You are CLAUDE CONTRACT EXPERT — a specialized AI in construction contracts, FIDIC conditions, claims, delays, variations, payments, EOT, LDs, and contract administration.
 
@@ -83,17 +83,17 @@ When explaining a clause:
 Plain text only, no markdown formatting.`;
 
 export async function chatWithBot(
-  query: string,
+  messages: BotMessage[],
   context: Clause[]
 ): Promise<string> {
   const aiProvider = createAIProvider();
-  
+
   if (!aiProvider.isAvailable()) {
     throw new Error('Claude API key is not configured. Please check your ANTHROPIC_API_KEY environment variable.');
   }
 
   try {
-    return await aiProvider.chat(query, context, CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION);
+    return await aiProvider.chat(messages, context, CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION);
   } catch (error: any) {
     throw new Error(`Failed to get response from Claude: ${error.message}`);
   }
@@ -103,7 +103,7 @@ export async function getSuggestions(
   clauses: Clause[]
 ): Promise<string[]> {
   const aiProvider = createAIProvider();
-  
+
   if (!aiProvider.isAvailable()) {
     return [
       'Explain a clause',
@@ -116,8 +116,14 @@ export async function getSuggestions(
   const query = `Based on these ${clauses.length} contract clauses, suggest 3-5 helpful actions or questions the user might want to explore. Return only a JSON array of strings, no other text.`;
 
   try {
-    const response = await aiProvider.chat(query, clauses, SUGGESTIONS_SYSTEM_INSTRUCTION);
-    
+    const messages: BotMessage[] = [{
+      id: 'suggestions-query',
+      role: 'user',
+      content: query,
+      timestamp: Date.now()
+    }];
+    const response = await aiProvider.chat(messages, clauses, SUGGESTIONS_SYSTEM_INSTRUCTION);
+
     // Try to parse JSON array from response
     try {
       const parsed = JSON.parse(response);
@@ -129,7 +135,7 @@ export async function getSuggestions(
       const lines = response.split('\n').filter(line => line.trim().length > 0);
       return lines.slice(0, 5);
     }
-    
+
     return [
       'Explain a clause',
       'Find clauses about payment',
@@ -149,7 +155,7 @@ export async function explainClause(
   clause: Clause
 ): Promise<string> {
   const aiProvider = createAIProvider();
-  
+
   if (!aiProvider.isAvailable()) {
     throw new Error('Claude API key is not configured.');
   }
@@ -157,7 +163,13 @@ export async function explainClause(
   const query = `Explain this contract clause in detail:\n\nClause ${clause.clause_number}: ${clause.clause_title}\n\n${clause.clause_text}\n\n${clause.general_condition ? `General Condition: ${clause.general_condition}\n` : ''}${clause.particular_condition ? `Particular Condition: ${clause.particular_condition}` : ''}`;
 
   try {
-    return await aiProvider.chat(query, [], EXPLAIN_SYSTEM_INSTRUCTION);
+    const messages: BotMessage[] = [{
+      id: 'explain-query',
+      role: 'user',
+      content: query,
+      timestamp: Date.now()
+    }];
+    return await aiProvider.chat(messages, [], EXPLAIN_SYSTEM_INSTRUCTION);
   } catch (error: any) {
     throw new Error(`Failed to explain clause: ${error.message}`);
   }

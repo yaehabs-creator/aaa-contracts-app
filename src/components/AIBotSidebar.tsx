@@ -73,8 +73,10 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     setError(null);
 
     try {
-      const response = await chatWithBot(query, clauses);
-      
+      // Pass full conversation history including the new message
+      const conversationHistory = [...messages, userMessage];
+      const response = await chatWithBot(conversationHistory, clauses);
+
       const botMessage: BotMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -99,12 +101,12 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
   const handleExplainClause = async () => {
     if (!selectedClause || !claudeAvailable) return;
-    
+
     setIsLoading(true);
     setError(null);
 
     const query = `Explain Clause ${selectedClause.clause_number}: ${selectedClause.clause_title}`;
-    
+
     const userMessage: BotMessage = {
       id: Date.now().toString(),
       role: 'user',
@@ -259,7 +261,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
             {messages.map((message) => {
               // Clean up the message content - remove unwanted formatting and messy text
               const cleanContent = sanitizeMessage(message.content);
-              
+
               // Convert plain text to simple formatted HTML
               const formattedContent = cleanContent
                 .split('\n')
@@ -279,7 +281,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
                   return `<p>${trimmed}</p>`;
                 })
                 .join('');
-              
+
               return (
                 <div
                   key={message.id}

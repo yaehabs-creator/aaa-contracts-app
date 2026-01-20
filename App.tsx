@@ -61,36 +61,61 @@ const CLAUDE_TOKEN_LIMITS = {
   totalBudget: 200000      // Total context window
 };
 
+// Strip existing clause hyperlinks from text (to allow re-processing)
+const stripClauseLinks = (text: string | undefined): string => {
+  if (!text) return "";
+  // Remove <a href="#clause-..." class="clause-link" ...>...</a> and keep the inner text
+  return text.replace(/<a\s+href="#clause-[^"]*"[^>]*class="clause-link"[^>]*>([^<]*)<\/a>/gi, '$1');
+};
+
 const linkifyText = (text: string | undefined, availableClauseIds?: Set<string>): string => {
   if (!text) return "";
   
-  // Skip if text already contains hyperlinks to avoid double-processing
-  if (text.includes('<a href="#clause-')) {
-    return text;
+  // First, strip any existing clause links to allow re-processing
+  let cleanText = stripClauseLinks(text);
+  
+  // If no available clause IDs provided, return text without links
+  // This prevents broken links when we don't know what clauses exist
+  if (!availableClauseIds || availableClauseIds.size === 0) {
+    return cleanText;
   }
   
-  // Tightened pattern to handle clause reference formats:
-  // - Must start with a number: "Clause 1.1", "clause 2A.1", "Sub-clause 1.6", "Clause 2.1.3"
-  // - Handles alphanumeric after number: "2A.1", "3B.2.1"
-  // - Handles optional sub-parts in parentheses: "Clause 1.6 (b)"
-  // - Does NOT match letter-only references like "Clause A" or "paragraph B"
-  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause|[Aa]rticle)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/gi;
+  // Strict pattern for clause references:
+  // - Must have "Clause" or "Sub-clause" followed by a proper clause number
+  // - Number must have at least one digit, optionally followed by decimal parts
+  // - Must be followed by word boundary, punctuation, or end of string (not "of", "as", etc.)
+  // Examples: "Clause 1", "Clause 1.1", "Clause 2A", "Clause 2.1.3", "Sub-clause 1.6 (b)"
+  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)(?=[\s,;:.)\]"]|$)/g;
   
-  return text.replace(pattern, (match, number) => {
+  return cleanText.replace(pattern, (match, number) => {
     // Normalize the clause number to match the ID format used in ClauseCard
     const cleanId = normalizeClauseId(number);
     
-    // If we have a list of available clause IDs, only create link if clause exists
-    if (availableClauseIds && availableClauseIds.size > 0) {
-      if (!availableClauseIds.has(cleanId)) {
-        // Clause doesn't exist, return original text without link
-        return match;
-      }
+    // Only create link if clause exists in the document
+    if (!availableClauseIds.has(cleanId)) {
+      // Clause doesn't exist, return original text without link
+      return match;
     }
     
     // Add class for styling and prevent default browser navigation
     return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
   });
+};
+
+// Re-process all clause links in a contract's clauses
+const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
+  // Build Set of all available clause IDs
+  const availableClauseIds = new Set<string>(
+    clausesList.map(c => normalizeClauseId(c.clause_number))
+  );
+  
+  // Re-process each clause's text fields
+  return clausesList.map(c => ({
+    ...c,
+    clause_text: linkifyText(c.clause_text, availableClauseIds),
+    general_condition: linkifyText(c.general_condition, availableClauseIds),
+    particular_condition: linkifyText(c.particular_condition, availableClauseIds)
+  }));
 };
 
 // Highlight keywords in text for search results
@@ -851,9 +876,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         await saveContractToDB(contractWithSections);
         await refreshLibrary();
         
-        // Automatically load it
+        // Automatically load it with re-processed links
+        const allClauses = getAllClausesFromContract(contractWithSections);
+        const reprocessedClauses = reprocessClauseLinks(allClauses);
         setContract(contractWithSections);
-        setClauses(getAllClausesFromContract(contractWithSections));
+        setClauses(reprocessedClauses);
         setProjectName(contractWithSections.name);
         setActiveContractId(newId);
         setStatus(AnalysisStatus.COMPLETED);
@@ -2862,8 +2889,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 {library.map(c => (
                   <div key={c.id} onClick={() => { 
                     const contractWithSections = ensureContractHasSections(c);
+                    // Re-process clause links to fix any broken hyperlinks
+                    const allClauses = getAllClausesFromContract(contractWithSections);
+                    const reprocessedClauses = reprocessClauseLinks(allClauses);
                     setContract(contractWithSections);
-                    setClauses(getAllClausesFromContract(contractWithSections));
+                    setClauses(reprocessedClauses);
                     setProjectName(contractWithSections.name);
                     setActiveContractId(contractWithSections.id);
                     setStatus(AnalysisStatus.COMPLETED); 
@@ -2950,8 +2980,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                             key={c.id}
                             onClick={() => {
                               const contractWithSections = ensureContractHasSections(c);
+                              // Re-process clause links to fix any broken hyperlinks
+                              const allClauses = getAllClausesFromContract(contractWithSections);
+                              const reprocessedClauses = reprocessClauseLinks(allClauses);
                               setContract(contractWithSections);
-                              setClauses(getAllClausesFromContract(contractWithSections));
+                              setClauses(reprocessedClauses);
                               setProjectName(contractWithSections.name);
                               setActiveContractId(contractWithSections.id);
                               setStatus(AnalysisStatus.COMPLETED);

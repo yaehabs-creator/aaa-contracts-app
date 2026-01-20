@@ -1,8 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { Clause } from "../../types";
+import { Clause, BotMessage } from "../../types";
 
 export interface AIProvider {
-  chat(query: string, context: Clause[], systemInstruction: string): Promise<string>;
+  chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string>;
   getModel(): string;
   isAvailable(): boolean;
   getName(): string;
@@ -10,7 +10,7 @@ export interface AIProvider {
 
 export class ClaudeProvider implements AIProvider {
   private client: Anthropic | null = null;
-  private model: string = 'claude-sonnet-4-5-20250929';
+  private model: string = 'claude-3-5-sonnet-20241022';
 
   constructor() {
     const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -23,9 +23,9 @@ export class ClaudeProvider implements AIProvider {
     if (apiKey) {
       try {
         // Allow browser usage - API key is injected at build time via Vite, not exposed in client code
-        this.client = new Anthropic({ 
+        this.client = new Anthropic({
           apiKey,
-          dangerouslyAllowBrowser: true 
+          dangerouslyAllowBrowser: true
         });
         console.log('Claude client initialized successfully');
       } catch (error) {
@@ -52,31 +52,38 @@ export class ClaudeProvider implements AIProvider {
     return this.model;
   }
 
-  async chat(query: string, context: Clause[], systemInstruction: string): Promise<string> {
+  async chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string> {
     if (!this.client) {
       throw new Error('Anthropic API key is not configured');
     }
 
     // Build context from clauses
     const contextText = context.length > 0
-      ? `\n\nCURRENT CONTRACT CLAUSES:\n${context.map(c => 
-          `Clause ${c.clause_number}: ${c.clause_title}\n${c.clause_text.substring(0, 500)}...`
-        ).join('\n\n')}`
+      ? `\n\nCURRENT CONTRACT CLAUSES:\n${context.map(c =>
+        `Clause ${c.clause_number}: ${c.clause_title}\n${c.clause_text.substring(0, 500)}...`
+      ).join('\n\n')}`
       : '';
 
-    const fullPrompt = `${query}${contextText}`;
+    // Convert BotMessages to Anthropic format
+    const anthropicMessages = messages.map(msg => ({
+      role: msg.role === 'user' ? 'user' : 'assistant' as 'user' | 'assistant',
+      content: msg.content
+    }));
+
+    // If context is provided, append it to the LAST user message
+    if (contextText && anthropicMessages.length > 0) {
+      const lastMsg = anthropicMessages[anthropicMessages.length - 1];
+      if (lastMsg.role === 'user') {
+        lastMsg.content += contextText;
+      }
+    }
 
     try {
       const message = await this.client.messages.create({
         model: this.model,
         max_tokens: 4096,
         system: systemInstruction,
-        messages: [
-          {
-            role: 'user',
-            content: fullPrompt
-          }
-        ]
+        messages: anthropicMessages
       });
 
       // Extract text content from response

@@ -89,12 +89,12 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     throw new Error('ANTHROPIC_API_KEY is not configured');
   }
 
-  const client = new Anthropic({ 
+  const client = new Anthropic({
     apiKey,
-    dangerouslyAllowBrowser: true 
+    dangerouslyAllowBrowser: true
   });
-  const model = 'claude-sonnet-4-5-20250929';
-  
+  const model = 'claude-3-5-sonnet-20241022';
+
   let promptText = "";
   let isTextInput = false;
 
@@ -102,12 +102,12 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     isTextInput = true;
     promptText = `EXTRACT EVERY CLAUSE VERBATIM FROM TEXT:\n\n${input}\n\nNOTE: This text may contain PDF extraction errors. Please intelligently fix obvious errors while maintaining verbatim accuracy.`;
   } else if ('data' in input) {
-    promptText = `EXTRACT EVERY CLAUSE VERBATIM FROM PDF:\n\n${atob((input as FileData).data)}`; 
+    promptText = `EXTRACT EVERY CLAUSE VERBATIM FROM PDF:\n\n${atob((input as FileData).data)}`;
   } else {
     const dual = input as DualSourceInput;
     isTextInput = typeof dual.general === 'string' && typeof dual.particular === 'string';
     const isCleanText = dual.skipCleaning === true;
-    
+
     promptText = `PERFORM DUAL EXTRACTION.
     
 GENERAL BASELINE:
@@ -132,12 +132,12 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
       ]
     });
 
-    const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')! 
-      ? (message.content.find(c => c.type === 'text') as any).text 
+    const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
+      ? (message.content.find(c => c.type === 'text') as any).text
       : '';
-    
+
     if (!resultText) return [];
-    
+
     // Try to extract JSON from the response (Claude might wrap it in markdown)
     let jsonText = resultText.trim();
     // Remove markdown code blocks if present
@@ -146,7 +146,7 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
     } else if (jsonText.startsWith('```')) {
       jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
     }
-    
+
     try {
       return JSON.parse(jsonText);
     } catch (parseError: any) {
@@ -157,15 +157,15 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
   } catch (error: any) {
     // Log the actual error for debugging
     console.error('Claude API Error:', error);
-    
+
     if (retryCount < 1) {
       await delay(2000);
       return analyzeContract(input, retryCount + 1);
     }
-    
+
     // Preserve and provide specific error messages
     let errorMessage = "Batch extraction failed. ";
-    
+
     if (error.message) {
       // Check for specific error types
       if (error.message.includes('JSON') || error.name === 'SyntaxError' || error.message.includes('parse')) {
@@ -190,7 +190,7 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
     } else {
       errorMessage += "Unknown error occurred. Please check the browser console for details.";
     }
-    
+
     throw new Error(errorMessage);
   }
 }
