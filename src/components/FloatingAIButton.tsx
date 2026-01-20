@@ -11,7 +11,7 @@ export const FloatingAIButton: React.FC<FloatingAIButtonProps> = ({ onClick, isO
     <>
       <button
         onClick={onClick}
-        className={`floating-ai-button ${isOpen ? 'floating-ai-button-active' : ''} ${className}`}
+        className={`floating-ai-button ${isOpen ? 'floating-ai-button-active' : 'animate-float'} ${className}`}
         aria-label={isOpen ? 'Close Claude AI Assistant' : 'Open Claude AI Assistant'}
         title={isOpen ? 'Close Claude AI Assistant' : 'Open Claude AI Assistant'}
       >

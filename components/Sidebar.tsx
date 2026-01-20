@@ -16,11 +16,11 @@ interface SidebarProps {
   onClausesUpdate?: (updatedClauses: Clause[]) => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ 
-  clauses, 
-  selectedTypes, 
-  setSelectedTypes, 
-  selectedGroup, 
+export const Sidebar: React.FC<SidebarProps> = ({
+  clauses,
+  selectedTypes,
+  setSelectedTypes,
+  selectedGroup,
   setSelectedGroup,
   searchQuery,
   setSearchQuery,
@@ -125,7 +125,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const groupedClauses = (() => {
     const groups = new Map<string, Clause[]>();
     const unassigned: Clause[] = [];
-    
+
     clauses.forEach(clause => {
       if (clause.category) {
         if (!groups.has(clause.category)) {
@@ -136,7 +136,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         unassigned.push(clause);
       }
     });
-    
+
     return { groups, unassigned };
   })();
 
@@ -160,11 +160,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
     if (categoryOrder.length === 0) {
       return allCategories.sort((a, b) => a[0].localeCompare(b[0]));
     }
-    
+
     // Sort by custom order, then add any new categories at the end
     const ordered: [string, Clause[]][] = [];
     const used = new Set<string>();
-    
+
     categoryOrder.forEach(catName => {
       const found = allCategories.find(([name]) => name === catName);
       if (found) {
@@ -172,14 +172,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
         used.add(catName);
       }
     });
-    
+
     // Add any categories not in the order list
     allCategories.forEach(([name, clauses]) => {
       if (!used.has(name)) {
         ordered.push([name, clauses]);
       }
     });
-    
+
     return ordered;
   };
 
@@ -197,17 +197,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const handleCategoryDrop = (e: React.DragEvent, targetCategory: string) => {
     e.preventDefault();
     if (!draggedCategory || draggedCategory === targetCategory) return;
-    
+
     const newOrder = [...categoryOrder];
     const draggedIndex = newOrder.indexOf(draggedCategory);
     const targetIndex = newOrder.indexOf(targetCategory);
-    
+
     if (draggedIndex !== -1 && targetIndex !== -1) {
       newOrder.splice(draggedIndex, 1);
       newOrder.splice(targetIndex, 0, draggedCategory);
       setCategoryOrder(newOrder);
     }
-    
+
     setDraggedCategory(null);
     setDragOverCategory(null);
   };
@@ -220,14 +220,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const keywords = ["Time", "Payment", "Insurance", "Liability", "Termination", "Variation", "Dispute"];
 
   return (
-    <aside className="w-80 flex-shrink-0 space-y-8 bg-white border-r border-aaa-border h-[calc(100vh-4rem)] fixed top-16 left-0 overflow-y-auto hidden lg:block p-6 custom-scrollbar z-40">
+    <aside className="w-80 flex-shrink-0 space-y-8 bg-white border-r border-aaa-border h-[calc(100vh-4rem)] fixed top-16 left-0 overflow-y-auto hidden lg:block p-6 custom-scrollbar z-40 animate-slide-left">
       <div className="space-y-4">
         <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em] border-b border-aaa-border pb-2">Filter Source</h4>
         <div className="space-y-2">
           {(['General', 'Particular'] as ConditionType[]).map(type => (
             <label key={type} className="flex items-center gap-3 cursor-pointer group">
-              <input 
-                type="checkbox" 
+              <input
+                type="checkbox"
                 checked={selectedTypes.includes(type)}
                 onChange={() => toggleType(type)}
                 className="w-4 h-4 rounded border-aaa-border text-aaa-blue focus:ring-aaa-blue"
@@ -241,14 +241,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <div className="space-y-4">
         <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em] border-b border-aaa-border pb-2">Chapters</h4>
         <div className="grid grid-cols-4 gap-2">
-          <button 
+          <button
             onClick={() => setSelectedGroup(null)}
             className={`px-1 py-2 text-[10px] font-bold rounded-[8px] border transition-all ${!selectedGroup ? 'bg-aaa-blue text-white border-aaa-blue shadow-sm' : 'bg-white border-aaa-border text-aaa-muted hover:border-aaa-blue'}`}
           >
             ALL
           </button>
           {groups.map(g => (
-            <button 
+            <button
               key={g}
               onClick={() => setSelectedGroup(g)}
               className={`px-1 py-2 text-[10px] font-bold rounded-[8px] border transition-all ${selectedGroup === g ? 'bg-aaa-blue text-white border-aaa-blue shadow-sm' : 'bg-white border-aaa-border text-aaa-muted hover:border-aaa-blue'}`}
@@ -311,7 +311,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <h5 className="text-[9px] font-black text-aaa-muted uppercase tracking-wider">Quick Filters</h5>
           <div className="flex flex-wrap gap-2">
             {keywords.map(kw => (
-              <button 
+              <button
                 key={kw}
                 onClick={() => setSearchQuery(kw)}
                 className={`px-3 py-1.5 text-[9px] font-black rounded-full border uppercase tracking-wider transition-all ${searchQuery === kw ? 'bg-aaa-blue text-white border-aaa-blue shadow-sm' : 'bg-white border-aaa-border text-aaa-muted hover:text-aaa-blue hover:border-aaa-blue shadow-sm'}`}
@@ -327,14 +327,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex items-center justify-between border-b border-aaa-border pb-2">
           <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em]">Clause Ledger</h4>
           <div className="flex gap-2">
-            <button 
+            <button
               onClick={() => setIsGroupedView(!isGroupedView)}
               className={`text-[9px] font-black px-2 py-0.5 rounded border transition-all uppercase tracking-tighter ${isGroupedView ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-aaa-bg text-aaa-muted border-aaa-border hover:text-aaa-blue'}`}
               title={isGroupedView ? 'Switch to flat view' : 'Switch to grouped view'}
             >
               {isGroupedView ? 'Grouped' : 'Flat'}
             </button>
-            <button 
+            <button
               onClick={() => setIsEditMode(!isEditMode)}
               className={`text-[9px] font-black px-2 py-0.5 rounded border transition-all uppercase tracking-tighter ${isEditMode ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-aaa-bg text-aaa-muted border-aaa-border hover:text-aaa-blue'}`}
             >
@@ -351,8 +351,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 const isDragging = draggedCategory === categoryName;
                 const isDragOver = dragOverCategory === categoryName;
                 return (
-                  <div 
-                    key={categoryName} 
+                  <div
+                    key={categoryName}
                     className="space-y-1"
                     draggable={isEditMode}
                     onDragStart={() => handleCategoryDragStart(categoryName)}
@@ -363,13 +363,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {/* Category Header */}
                     <button
                       onClick={() => toggleCategoryCollapse(categoryName)}
-                      className={`w-full flex items-center justify-between px-3 py-2 border rounded-lg transition-all group ${
-                        isDragging 
-                          ? 'opacity-30 bg-aaa-bg border-aaa-border' 
+                      className={`w-full flex items-center justify-between px-3 py-2 border rounded-lg transition-all group ${isDragging
+                          ? 'opacity-30 bg-aaa-bg border-aaa-border'
                           : isDragOver
-                          ? 'bg-aaa-blue/30 border-aaa-blue border-2'
-                          : 'bg-aaa-blue/10 border-aaa-blue/20 hover:bg-aaa-blue/20'
-                      }`}
+                            ? 'bg-aaa-blue/30 border-aaa-blue border-2'
+                            : 'bg-aaa-blue/10 border-aaa-blue/20 hover:bg-aaa-blue/20'
+                        }`}
                     >
                       <div className="flex items-center gap-2">
                         {isEditMode && (
@@ -379,11 +378,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </svg>
                           </div>
                         )}
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className={`w-3 h-3 text-aaa-blue transition-transform ${isCollapsed ? '' : 'rotate-90'}`} 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`w-3 h-3 text-aaa-blue transition-transform ${isCollapsed ? '' : 'rotate-90'}`}
+                          fill="none"
+                          viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -398,18 +397,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {!isCollapsed && categoryClauses.map((c, idx) => {
                       const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
                       return (
-                        <div 
+                        <div
                           key={`${c.condition_type}-${c.clause_number}-${idx}`}
                           draggable={isEditMode}
                           onDragStart={() => handleDragStart(originalIndex)}
                           onDragOver={(e) => handleDragOver(e, originalIndex)}
                           onDrop={(e) => handleDrop(e, originalIndex)}
                           onDragEnd={handleDragEnd}
-                          className={`flex items-center group/ledger transition-all duration-300 ml-4 ${
-                            draggedIndex === originalIndex ? 'opacity-30' : ''
-                          } ${
-                            dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                          }`}
+                          className={`flex items-center group/ledger transition-all duration-300 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                            } ${dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
+                            }`}
                         >
                           {isEditMode && (
                             <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
@@ -418,19 +415,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                               </svg>
                             </div>
                           )}
-                          
-                          <button 
+
+                          <button
                             onClick={() => scrollToClause(c.clause_number)}
-                            className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${
-                              isEditMode ? 'rounded-none' : 'rounded-aaa'
-                            }`}
+                            className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
+                              }`}
                             title={c.clause_title}
                           >
                             <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
                           </button>
-                          
+
                           {isEditMode && onDelete && (
-                            <button 
+                            <button
                               onClick={() => onDelete(originalIndex)}
                               className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
                               title="Delete Clause Node"
@@ -468,18 +464,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   {groupedClauses.unassigned.map((c, idx) => {
                     const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
                     return (
-                      <div 
+                      <div
                         key={`${c.condition_type}-${c.clause_number}-${idx}`}
                         draggable={isEditMode}
                         onDragStart={() => handleDragStart(originalIndex)}
                         onDragOver={(e) => handleDragOver(e, originalIndex)}
                         onDrop={(e) => handleDrop(e, originalIndex)}
                         onDragEnd={handleDragEnd}
-                        className={`flex items-center group/ledger transition-all duration-300 ml-4 ${
-                          draggedIndex === originalIndex ? 'opacity-30' : ''
-                        } ${
-                          dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                        }`}
+                        className={`flex items-center group/ledger transition-all duration-300 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                          } ${dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
+                          }`}
                       >
                         {isEditMode && (
                           <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
@@ -488,19 +482,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </svg>
                           </div>
                         )}
-                        
-                        <button 
+
+                        <button
                           onClick={() => scrollToClause(c.clause_number)}
-                          className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${
-                            isEditMode ? 'rounded-none' : 'rounded-aaa'
-                          }`}
+                          className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
+                            }`}
                           title={c.clause_title}
                         >
                           <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
                         </button>
-                        
+
                         {isEditMode && onDelete && (
-                          <button 
+                          <button
                             onClick={() => onDelete(originalIndex)}
                             className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
                             title="Delete Clause Node"
@@ -517,18 +510,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
           ) : (
             /* Flat View */
             (clauses || []).map((c, i) => (
-              <div 
+              <div
                 key={`${c.condition_type}-${c.clause_number}-${i}`}
                 draggable={isEditMode}
                 onDragStart={() => handleDragStart(i)}
                 onDragOver={(e) => handleDragOver(e, i)}
                 onDrop={(e) => handleDrop(e, i)}
                 onDragEnd={handleDragEnd}
-                className={`flex items-center group/ledger transition-all duration-300 stagger-item ${
-                  draggedIndex === i ? 'opacity-30' : ''
-                } ${
-                  dragOverIndex === i ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                }`}
+                className={`flex items-center group/ledger transition-all duration-300 stagger-item ${draggedIndex === i ? 'opacity-30' : ''
+                  } ${dragOverIndex === i ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
+                  }`}
               >
                 {isEditMode && (
                   <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
@@ -537,12 +528,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     </svg>
                   </div>
                 )}
-                
-                <button 
+
+                <button
                   onClick={() => scrollToClause(c.clause_number)}
-                  className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${
-                    isEditMode ? 'rounded-none' : 'rounded-aaa'
-                  }`}
+                  className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
+                    }`}
                   title={c.clause_title}
                 >
                   <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
@@ -552,9 +542,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     </span>
                   )}
                 </button>
-                
+
                 {isEditMode && onDelete && (
-                  <button 
+                  <button
                     onClick={() => onDelete(i)}
                     className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
                     title="Delete Clause Node"
@@ -571,8 +561,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* Category Manager Section */}
       {onClausesUpdate && (
         <div className="pt-6 border-t border-aaa-border">
-          <CategoryManager 
-            clauses={clauses} 
+          <CategoryManager
+            clauses={clauses}
             onClausesUpdate={(updatedClauses) => {
               onClausesUpdate?.(updatedClauses);
               // Reset trigger after clauses are updated
