@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Clause, BotMessage } from '../../types';
 import { chatWithBot, getSuggestions, explainClause } from '../services/aiBotService';
 import { isClaudeAvailable } from '../services/aiProvider';
+import { scrollToClause } from '../utils/navigation';
 
 interface AIBotSidebarProps {
   isOpen: boolean;
@@ -259,35 +260,59 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
             )}
 
             {messages.map((message) => {
-              // Clean up the message content - remove unwanted formatting and messy text
+              // Clean up the message content
               const cleanContent = sanitizeMessage(message.content);
-
-              // Convert plain text to simple formatted HTML
-              const formattedContent = cleanContent
-                .split('\n')
-                .map(line => {
-                  const trimmed = line.trim();
-                  if (!trimmed) return '<br/>';
-                  // Format emoji sections
-                  if (trimmed.startsWith('🔵')) {
-                    return `<p style="font-weight: 700; color: #0F2E6B; margin-top: 1rem; margin-bottom: 0.5rem;">${trimmed}</p>`;
-                  } else if (trimmed.startsWith('🔹')) {
-                    return `<p style="font-weight: 600; margin-bottom: 0.25rem;">${trimmed}</p>`;
-                  } else if (trimmed.startsWith('🔸')) {
-                    return `<p style="opacity: 0.8; margin-bottom: 0.5rem; padding-left: 1rem;">${trimmed}</p>`;
-                  } else if (trimmed.startsWith('🔷')) {
-                    return `<p style="font-weight: 600; color: #1E6CE8; margin-top: 1rem; margin-bottom: 0.5rem;">${trimmed}</p>`;
-                  }
-                  return `<p>${trimmed}</p>`;
-                })
-                .join('');
 
               return (
                 <div
                   key={message.id}
                   className={`ai-bot-message ai-bot-message-${message.role}`}
                 >
-                  <div className="ai-bot-bubble" dangerouslySetInnerHTML={{ __html: formattedContent }} />
+                  <div className="ai-bot-bubble">
+                    {cleanContent.split('\n').map((line, i) => {
+                      const trimmed = line.trim();
+                      if (!trimmed) return <div key={i} className="h-2" />;
+
+                      let style: React.CSSProperties = {};
+                      let content = trimmed;
+
+                      // Style variants based on prefixes
+                      if (trimmed.startsWith('🔵')) {
+                        style = { fontWeight: 700, color: '#0F2E6B', marginTop: '1rem', marginBottom: '0.5rem' };
+                      } else if (trimmed.startsWith('🔹')) {
+                        style = { fontWeight: 600, marginBottom: '0.25rem' };
+                      } else if (trimmed.startsWith('🔸')) {
+                        style = { opacity: 0.8, marginBottom: '0.5rem', paddingLeft: '1rem' };
+                      } else if (trimmed.startsWith('🔷')) {
+                        style = { fontWeight: 600, color: '#1E6CE8', marginTop: '1rem', marginBottom: '0.5rem' };
+                      }
+
+                      // Split by Clause regex to create links
+                      // Matches: Clause 1, Clause 1.1, Clause 2A, etc.
+                      const parts = content.split(/(Clause\s+[0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*)/g);
+
+                      return (
+                        <p key={i} style={style}>
+                          {parts.map((part, j) => {
+                            if (part.match(/^Clause\s+[0-9]/)) {
+                              const clauseNum = part.replace(/^Clause\s+/, '');
+                              return (
+                                <button
+                                  key={j}
+                                  onClick={() => scrollToClause(clauseNum)}
+                                  className="text-aaa-accent hover:underline font-bold bg-blue-50 px-1 rounded cursor-pointer inline-block transition-colors hover:bg-blue-100"
+                                  title={`Scroll to ${part}`}
+                                >
+                                  {part}
+                                </button>
+                              );
+                            }
+                            return <span key={j}>{part}</span>;
+                          })}
+                        </p>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clause, ConditionType } from '../types';
 import { CategoryManager } from './CategoryManager';
+import { scrollToClause, normalizeClauseId } from '../src/utils/navigation';
 
 interface SidebarProps {
   clauses: Clause[];
@@ -61,28 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     }
   };
 
-  // Normalize clause ID for consistent matching
-  const normalizeClauseId = (clauseNumber: string): string => {
-    if (!clauseNumber) return '';
-    return clauseNumber
-      .replace(/\s+/g, '')  // Remove all spaces
-      .replace(/[()]/g, ''); // Remove parentheses
-  };
 
-  const scrollToClause = (no: string) => {
-    if (!no) return;
-    const normalizedId = normalizeClauseId(no);
-    const el = document.getElementById(`clause-${normalizedId}`);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Highlight the target clause briefly
-      el.style.transition = 'box-shadow 0.3s ease';
-      el.style.boxShadow = '0 0 0 4px rgba(15, 46, 107, 0.3)';
-      setTimeout(() => {
-        el.style.boxShadow = '';
-      }, 2000);
-    }
-  };
 
   const handleDragStart = (index: number) => {
     if (!isEditMode) return;
@@ -364,10 +344,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     <button
                       onClick={() => toggleCategoryCollapse(categoryName)}
                       className={`w-full flex items-center justify-between px-3 py-2 border rounded-lg transition-all group ${isDragging
-                          ? 'opacity-30 bg-aaa-bg border-aaa-border'
-                          : isDragOver
-                            ? 'bg-aaa-blue/30 border-aaa-blue border-2'
-                            : 'bg-aaa-blue/10 border-aaa-blue/20 hover:bg-aaa-blue/20'
+                        ? 'opacity-30 bg-aaa-bg border-aaa-border'
+                        : isDragOver
+                          ? 'bg-aaa-blue/30 border-aaa-blue border-2'
+                          : 'bg-aaa-blue/10 border-aaa-blue/20 hover:bg-aaa-blue/20'
                         }`}
                     >
                       <div className="flex items-center gap-2">
