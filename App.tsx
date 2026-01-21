@@ -1,5 +1,6 @@
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { analyzeContract } from './services/claudeService';
 import Anthropic from '@anthropic-ai/sdk';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
@@ -70,33 +71,33 @@ const stripClauseLinks = (text: string | undefined): string => {
 
 const linkifyText = (text: string | undefined, availableClauseIds?: Set<string>): string => {
   if (!text) return "";
-  
+
   // First, strip any existing clause links to allow re-processing
   let cleanText = stripClauseLinks(text);
-  
+
   // If no available clause IDs provided, return text without links
   // This prevents broken links when we don't know what clauses exist
   if (!availableClauseIds || availableClauseIds.size === 0) {
     return cleanText;
   }
-  
+
   // Strict pattern for clause references:
   // - Must have "Clause" or "Sub-clause" followed by a proper clause number
   // - Number must have at least one digit, optionally followed by decimal parts
   // - Must be followed by word boundary, punctuation, or end of string (not "of", "as", etc.)
   // Examples: "Clause 1", "Clause 1.1", "Clause 2A", "Clause 2.1.3", "Sub-clause 1.6 (b)"
   const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)(?=[\s,;:.)\]"]|$)/g;
-  
+
   return cleanText.replace(pattern, (match, number) => {
     // Normalize the clause number to match the ID format used in ClauseCard
     const cleanId = normalizeClauseId(number);
-    
+
     // Only create link if clause exists in the document
     if (!availableClauseIds.has(cleanId)) {
       // Clause doesn't exist, return original text without link
       return match;
     }
-    
+
     // Add class for styling and prevent default browser navigation
     return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
   });
@@ -108,7 +109,7 @@ const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
   const availableClauseIds = new Set<string>(
     clausesList.map(c => normalizeClauseId(c.clause_number))
   );
-  
+
   // Re-process each clause's text fields
   return clausesList.map(c => ({
     ...c,
@@ -121,7 +122,7 @@ const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
 // Highlight keywords in text for search results
 const highlightKeywords = (text: string, keywords: string[]): string => {
   if (!text || keywords.length === 0) return text;
-  
+
   let highlightedText = text;
   keywords.forEach(keyword => {
     if (keyword.trim().length > 0) {
@@ -138,7 +139,7 @@ const highlightKeywords = (text: string, keywords: string[]): string => {
       });
     }
   });
-  
+
   return highlightedText;
 };
 
@@ -147,7 +148,7 @@ const highlightKeywords = (text: string, keywords: string[]): string => {
 const deduplicateClauses = (clauses: Clause[]): Clause[] => {
   const seen = new Map<string, Clause>();
   const result: Clause[] = [];
-  
+
   for (const clause of clauses) {
     const key = `${clause.clause_number}|${clause.condition_type}`;
     if (!seen.has(key)) {
@@ -155,7 +156,7 @@ const deduplicateClauses = (clauses: Clause[]): Clause[] => {
       result.push(clause);
     }
   }
-  
+
   return result;
 };
 
@@ -194,7 +195,7 @@ const App: React.FC = () => {
       usagePercentage: number;
     };
   } | null>(null);
-  
+
   const [generalFile, setGeneralFile] = useState<FileData | null>(null);
   const [particularFile, setParticularFile] = useState<FileData | null>(null);
   const [pastedGeneralText, setPastedGeneralText] = useState('');
@@ -217,7 +218,7 @@ const App: React.FC = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [categorySuggestions, setCategorySuggestions] = useState<CategorySuggestion[]>([]);
   const [showCategorySuggestions, setShowCategorySuggestions] = useState(false);
-  
+
   const [library, setLibrary] = useState<SavedContract[]>([]);
   const [projectName, setProjectName] = useState('');
   const [activeContractId, setActiveContractId] = useState<string | null>(null);
@@ -233,13 +234,13 @@ const App: React.FC = () => {
   // AI Bot States
   const [isBotOpen, setIsBotOpen] = useState(false);
   const [selectedClauseForBot, setSelectedClauseForBot] = useState<Clause | null>(null);
-  
+
   // Chapter Display View
   const [viewByChapter, setViewByChapter] = useState(false);
-  
+
   // Sidebar visibility
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  
+
   const fileInputRef = useRef<HTMLInputElement>(null);
   const generalFileRef = useRef<HTMLInputElement>(null);
   const particularFileRef = useRef<HTMLInputElement>(null);
@@ -297,11 +298,11 @@ const App: React.FC = () => {
 
     const showContractSelector = async () => {
       hasShownSelectorRef.current = true; // Mark as shown immediately to prevent duplicate calls
-      
+
       try {
         // Load all contracts from Supabase
         await refreshLibrary();
-        
+
         // Show the contract selector modal even if no contracts found
         setShowContractSelector(true);
       } catch (error) {
@@ -334,20 +335,20 @@ const App: React.FC = () => {
     try {
       console.log('Refreshing library...');
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:297',message:'refreshLibrary called',data:{currentLibraryLength:library.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'App.tsx:297', message: 'refreshLibrary called', data: { currentLibraryLength: library.length }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
       // #endregion
-      
+
       const contracts = await getAllContracts();
-      
+
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:302',message:'Contracts fetched from getAllContracts',data:{contractsCount:contracts?.length||0,contractIds:contracts?.map(c=>c.id)||[],contractNames:contracts?.map(c=>c.name)||[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'App.tsx:302', message: 'Contracts fetched from getAllContracts', data: { contractsCount: contracts?.length || 0, contractIds: contracts?.map(c => c.id) || [], contractNames: contracts?.map(c => c.name) || [] }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
       // #endregion
-      
+
       console.log(`Loaded ${contracts?.length || 0} contracts into library`);
       setLibrary(contracts || []);
-      
+
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:308',message:'Library state updated',data:{newLibraryLength:contracts?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'App.tsx:308', message: 'Library state updated', data: { newLibraryLength: contracts?.length || 0 }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
       // #endregion
     } catch (err: any) {
       console.error("Library load failed:", err);
@@ -356,11 +357,11 @@ const App: React.FC = () => {
         code: err?.code,
         stack: err?.stack
       });
-      
+
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:315',message:'Library load error',data:{errorMessage:err?.message,errorCode:err?.code},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'App.tsx:315', message: 'Library load error', data: { errorMessage: err?.message, errorCode: err?.code }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
       // #endregion
-      
+
       setLibrary([]);
     }
   };
@@ -420,11 +421,12 @@ const App: React.FC = () => {
           timeSensitiveCount: targetClauses.filter(c => c.time_frames && c.time_frames.length > 0).length
         }
       });
-      
+
       await saveContractToDB(contractWithSections);
       setContract(contractWithSections);
       if (!activeContractId) setActiveContractId(targetId);
       await refreshLibrary();
+      toast.success('Contract saved successfully!');
     } catch (err) {
       console.error("Save failed:", err);
     } finally {
@@ -444,23 +446,23 @@ const App: React.FC = () => {
         // No sections - migrate/create them
         contractWithSections = ensureContractHasSections(targetContract);
       }
-      
+
       // Ensure we have an ID
       if (!contractWithSections.id) {
         contractWithSections.id = activeContractId || crypto.randomUUID();
       }
-      
+
       // Save to database
       await saveContractToDB(contractWithSections);
-      
+
       // Update local state
       setContract(contractWithSections);
       setClauses(getAllClausesFromContract(contractWithSections));
       if (!activeContractId) setActiveContractId(contractWithSections.id);
-      
+
       // Refresh library to show updated contract
       await refreshLibrary();
-      
+
       console.log('Contract saved successfully:', {
         id: contractWithSections.id,
         name: contractWithSections.name,
@@ -470,7 +472,7 @@ const App: React.FC = () => {
       });
     } catch (err) {
       console.error("Save failed:", err);
-      alert(`Failed to save contract: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      toast.error(`Failed to save contract: ${err instanceof Error ? err.message : 'Unknown error'}`);
     } finally {
       setTimeout(() => setIsSaving(false), 800);
     }
@@ -481,29 +483,29 @@ const App: React.FC = () => {
       const contractWithSections = ensureContractHasSections(contract);
       const sectionType = updatedClause.condition_type === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
       const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
-      
+
       if (section) {
         const itemIndex = section.items.findIndex(item =>
           item.itemType === ItemType.CLAUSE &&
           item.clause_number === updatedClause.clause_number &&
           item.condition_type === updatedClause.condition_type
         );
-        
+
         if (itemIndex >= 0) {
           const updatedItem = clauseToSectionItem(updatedClause, section.items[itemIndex].orderIndex);
           const updatedItems = [...section.items];
           updatedItems[itemIndex] = updatedItem;
-          
+
           const updatedSections = contractWithSections.sections!.map(s =>
             s.sectionType === sectionType ? { ...s, items: updatedItems } : s
           );
-          
+
           const updatedContract: SavedContract = {
             ...contractWithSections,
             sections: updatedSections,
             clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
           };
-          
+
           setContract(updatedContract);
           setClauses(updatedContract.clauses || []);
           if (compareClause && compareClause.clause_number === updatedClause.clause_number) {
@@ -514,11 +516,11 @@ const App: React.FC = () => {
         }
       }
     }
-    
+
     // Fallback: update clauses array directly
-    const updatedClauses = clauses.map(c => 
-      c.clause_number === updatedClause.clause_number && c.condition_type === updatedClause.condition_type 
-        ? updatedClause 
+    const updatedClauses = clauses.map(c =>
+      c.clause_number === updatedClause.clause_number && c.condition_type === updatedClause.condition_type
+        ? updatedClause
         : c
     );
     setClauses(updatedClauses);
@@ -537,7 +539,7 @@ const App: React.FC = () => {
     if (!query.trim()) return;
     setIsSearching(true);
     setSearchError(null);
-    
+
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
       setSearchError('Claude API key is not configured');
@@ -545,9 +547,9 @@ const App: React.FC = () => {
       return;
     }
 
-    const client = new Anthropic({ 
+    const client = new Anthropic({
       apiKey,
-      dangerouslyAllowBrowser: true 
+      dangerouslyAllowBrowser: true
     });
 
     const searchContext = clauses.map(c => ({
@@ -577,7 +579,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
       const content = message.content.find(c => c.type === 'text');
       const resultText = content && 'text' in content ? content.text : '';
-      
+
       // Extract JSON from response (might be wrapped in markdown)
       let jsonText = resultText.trim();
       if (jsonText.startsWith('```json')) {
@@ -585,7 +587,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       } else if (jsonText.startsWith('```')) {
         jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
       }
-      
+
       const result = JSON.parse(jsonText);
       setSearchResults(result.results);
     } catch (err) {
@@ -618,14 +620,14 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     contractId: string;
   }) => {
     if (!editingClause || !contract) return;
-    
+
     // Build Set of available clause IDs from current clauses
     const availableClauseIds = new Set<string>(
       (clauses || []).map(c => normalizeClauseId(c.clause_number))
     );
     // Also add the new/updated clause number
     availableClauseIds.add(normalizeClauseId(data.number));
-    
+
     await new Promise(resolve => setTimeout(resolve, 600));
     const conditionType: ConditionType = data.particularText.trim() ? 'Particular' : 'General';
     const updatedClause: Clause = {
@@ -637,43 +639,43 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       general_condition: data.generalText.trim() ? linkifyText(data.generalText, availableClauseIds) : undefined,
       particular_condition: data.particularText.trim() ? linkifyText(data.particularText, availableClauseIds) : undefined,
     };
-    
+
     // Update in contract sections
     const contractWithSections = ensureContractHasSections(contract);
     const sectionType = conditionType === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
     const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
-    
+
     if (section) {
-      const itemIndex = section.items.findIndex(item => 
+      const itemIndex = section.items.findIndex(item =>
         item.itemType === ItemType.CLAUSE &&
         item.clause_number === editingClause.clause_number &&
         item.condition_type === editingClause.condition_type
       );
-      
+
       if (itemIndex >= 0) {
         const updatedItem = clauseToSectionItem(updatedClause, section.items[itemIndex].orderIndex);
         const updatedItems = [...section.items];
         updatedItems[itemIndex] = updatedItem;
-        
+
         const updatedSections = contractWithSections.sections!.map(s =>
           s.sectionType === sectionType ? { ...s, items: updatedItems } : s
         );
-        
+
         const updatedContract: SavedContract = {
           ...contractWithSections,
           sections: updatedSections,
           clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
         };
-        
+
         setContract(updatedContract);
         setClauses(updatedContract.clauses || []);
         await performSaveContract(updatedContract);
-        
+
         // Update editingClause to reflect saved changes (keeps modal open)
         setEditingClause(updatedClause);
       }
     }
-    
+
     // Don't close modal - let user continue editing
     // setEditingClause(null);
   };
@@ -705,16 +707,16 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       setContract(newContract);
       setActiveContractId(newId);
     }
-    
+
     await new Promise(resolve => setTimeout(resolve, 600));
-    
+
     // Build Set of available clause IDs from current clauses
     const availableClauseIds = new Set<string>(
       (clauses || []).map(c => normalizeClauseId(c.clause_number))
     );
     // Also add the new clause number
     availableClauseIds.add(normalizeClauseId(data.number));
-    
+
     const conditionType: ConditionType = data.particularText.trim() ? 'Particular' : 'General';
     const newClause: Clause = {
       clause_number: data.number,
@@ -726,20 +728,20 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       comparison: [],
       time_frames: []
     };
-    
+
     const currentContract = ensureContractHasSections(contract!);
     const sectionType = conditionType === 'General' ? SectionType.GENERAL : SectionType.PARTICULAR;
     const section = currentContract.sections!.find(s => s.sectionType === sectionType);
-    
+
     if (!section) return;
-    
+
     // Check for existing clause with same number and condition type
     const existingItemIndex = section.items.findIndex(item =>
       item.itemType === ItemType.CLAUSE &&
       item.clause_number === data.number &&
       item.condition_type === conditionType
     );
-    
+
     if (existingItemIndex >= -1 && existingItemIndex < section.items.length) {
       const existingItem = section.items[existingItemIndex];
       const existingClause = sectionItemToClause(existingItem);
@@ -750,47 +752,47 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           `New: "${newClause.clause_title}"\n\n` +
           `Click OK to replace the existing clause, or Cancel to abort.`
         );
-        
+
         if (!shouldUpdate) {
           return; // User cancelled
         }
-        
+
         // Replace existing clause
         const updatedItem = clauseToSectionItem(newClause, section.items[existingItemIndex].orderIndex);
         const updatedItems = [...section.items];
         updatedItems[existingItemIndex] = updatedItem;
-        
+
         const updatedSections = currentContract.sections!.map(s =>
           s.sectionType === sectionType ? { ...s, items: updatedItems } : s
         );
-        
+
         const updatedContract: SavedContract = {
           ...currentContract,
           sections: updatedSections,
           clauses: getAllClausesFromContract({ ...currentContract, sections: updatedSections })
         };
-        
+
         setContract(updatedContract);
         setClauses(updatedContract.clauses || []);
         await performSaveContract(updatedContract);
         return;
       }
     }
-    
+
     // No duplicate found, add new clause
     const updatedItem = clauseToSectionItem(newClause, section.items.length);
     const updatedItems = [...section.items, updatedItem];
-    
+
     const updatedSections = currentContract.sections!.map(s =>
       s.sectionType === sectionType ? { ...s, items: updatedItems } : s
     );
-    
+
     const updatedContract: SavedContract = {
       ...currentContract,
       sections: updatedSections,
       clauses: getAllClausesFromContract({ ...currentContract, sections: updatedSections })
     };
-    
+
     setContract(updatedContract);
     setClauses(updatedContract.clauses || []);
     await performSaveContract(updatedContract);
@@ -823,11 +825,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           localStorage.removeItem('aaa_active_contract_id');
         }
         // Show success message
-        alert("Project deleted successfully from archive.");
+        toast.success("Contract deleted successfully!");
       } catch (err: any) {
         console.error("Delete failed:", err);
-        const errorMessage = err?.message || "Failed to delete project. Please check your connection and try again.";
-        alert(`Error: ${errorMessage}`);
+        const errorMessage = err?.message || "Failed to delete contract. Please check your connection and try again.";
+        toast.error(`Error: ${errorMessage}`);
       }
     }
   };
@@ -838,7 +840,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     const blob = new Blob([dataStr], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    const fileName = `${contract.name.replace(/[^a-z0-9]/gi, '_')}_Backup_${new Date().toISOString().slice(0,10)}.json`;
+    const fileName = `${contract.name.replace(/[^a-z0-9]/gi, '_')}_Backup_${new Date().toISOString().slice(0, 10)}.json`;
     link.href = url;
     link.download = fileName;
     document.body.appendChild(link);
@@ -856,9 +858,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       try {
         const content = event.target?.result;
         if (typeof content !== 'string') return;
-        
+
         const importedData = JSON.parse(content) as SavedContract;
-        
+
         // Basic validation
         if (!importedData.clauses || !Array.isArray(importedData.clauses)) {
           throw new Error("Invalid backup format: missing clauses ledger.");
@@ -875,7 +877,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         const contractWithSections = ensureContractHasSections(contractToSave);
         await saveContractToDB(contractWithSections);
         await refreshLibrary();
-        
+
         // Automatically load it with re-processed links
         const allClauses = getAllClausesFromContract(contractWithSections);
         const reprocessedClauses = reprocessClauseLinks(allClauses);
@@ -888,7 +890,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         // Reset the file input
         if (importBackupRef.current) importBackupRef.current.value = '';
       } catch (err: any) {
-        alert("Failed to import backup: " + err.message);
+        toast.error("Failed to import backup: " + err.message);
       }
     };
     reader.readAsText(file);
@@ -896,10 +898,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
   const handleDeleteClause = async (index: number, sectionType?: SectionType) => {
     if (!contract) return;
-    
+
     if (confirm("Permanently remove this clause node?")) {
       const contractWithSections = ensureContractHasSections(contract);
-      
+
       if (sectionType) {
         // Delete from specific section
         const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
@@ -908,17 +910,17 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           updatedItems.forEach((item, i) => {
             item.orderIndex = i;
           });
-          
+
           const updatedSections = contractWithSections.sections!.map(s =>
             s.sectionType === sectionType ? { ...s, items: updatedItems } : s
           );
-          
+
           const updatedContract: SavedContract = {
             ...contractWithSections,
             sections: updatedSections,
             clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
           };
-          
+
           setContract(updatedContract);
           setClauses(updatedContract.clauses || []);
           await performSaveContract(updatedContract);
@@ -935,23 +937,23 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
               item.clause_number === clause.clause_number &&
               item.condition_type === clause.condition_type
             );
-            
+
             if (itemIndex >= 0) {
               const updatedItems = section.items.filter((_, i) => i !== itemIndex);
               updatedItems.forEach((item, i) => {
                 item.orderIndex = i;
               });
-              
+
               const updatedSections = contractWithSections.sections!.map(s =>
                 s.sectionType === targetSectionType ? { ...s, items: updatedItems } : s
               );
-              
+
               const updatedContract: SavedContract = {
                 ...contractWithSections,
                 sections: updatedSections,
                 clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
               };
-              
+
               setContract(updatedContract);
               setClauses(updatedContract.clauses || []);
               await performSaveContract(updatedContract);
@@ -966,7 +968,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   const extractTextFromPage = async (page: any, pageNumber: number, viewport: any): Promise<string> => {
     const textContent = await page.getTextContent();
     const items = textContent.items as any[];
-    
+
     if (items.length === 0) {
       return `--- PAGE ${pageNumber} ---\n`;
     }
@@ -980,16 +982,16 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       const transform = item.transform;
       const x = transform[4];
       const y = transform[5];
-      
+
       // Calculate font size from transform matrix (scale in Y direction)
       const fontSize = Math.abs(transform[3] || 12); // Default to 12 if not available
-      
+
       // Estimate line height as 1.2x font size (common in documents)
       const lineHeight = fontSize * 1.2;
-      
+
       // Calculate character width estimate
       const charWidth = fontSize * 0.6; // Rough estimate
-      
+
       return {
         text: item.str,
         x,
@@ -1020,28 +1022,28 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     for (const item of processedItems) {
       const currentY = item.y;
       const currentX = item.x;
-      
+
       // Detect paragraph breaks: vertical gap > 2x line height (moving down significantly)
       const verticalGap = lastY !== -1 ? lastY - currentY : 0; // Positive when moving down
       const isParagraphBreak = lastY !== -1 && verticalGap > Math.max(item.lineHeight * 2, lastLineHeight * 2);
-      
+
       // Detect line breaks: vertical gap > 0.5x line height (moving down to new line)
       const isLineBreak = lastY !== -1 && verticalGap > Math.min(item.lineHeight * 0.5, lastLineHeight * 0.5);
-      
+
       // Detect multi-column: large X gap (new column)
       const isNewColumn = lastX !== -1 && Math.abs(currentX - lastX) > columnGapThreshold && !isLineBreak && !isParagraphBreak;
-      
+
       if (isParagraphBreak) {
         pageText += "\n\n"; // Double newline for paragraph
       } else if (isLineBreak || isNewColumn) {
         pageText += "\n"; // Single newline for line break or column
       }
-      
+
       // Handle spacing between words on same line
       if (!isLineBreak && !isParagraphBreak && !isNewColumn && lastX !== -1) {
         const xGap = currentX - (lastX + (lastLineHeight * 0.6)); // Estimate end of last word
         const expectedSpacing = item.charWidth; // Expected space between words
-        
+
         // If gap is larger than expected spacing, add space
         if (xGap > expectedSpacing * 1.5) {
           pageText += " ";
@@ -1049,9 +1051,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           pageText += " "; // Still add space for smaller gaps
         }
       }
-      
+
       pageText += item.text;
-      
+
       lastY = currentY;
       lastX = currentX + (item.text.length * item.charWidth); // Estimate end of current text
       lastLineHeight = item.lineHeight;
@@ -1078,7 +1080,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           headerLines.set(line, (headerLines.get(line) || 0) + 1);
         }
       }
-      
+
       // Bottom 10% of lines (footers)
       const footerCount = Math.max(1, Math.floor(lines.length * 0.1));
       for (let i = lines.length - footerCount; i < lines.length; i++) {
@@ -1114,7 +1116,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
   const extractPagesFromPdf = async (fileData: FileData): Promise<string[]> => {
     setLiveStatus({ message: 'Loading PDF...', detail: 'Initializing document', isActive: true });
-    
+
     const loadingTask = (window as any).pdfjsLib.getDocument({ data: atob(fileData.data) });
     const pdf = await loadingTask.promise;
     const totalPages = pdf.numPages;
@@ -1165,8 +1167,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
       // Update progress
       const processed = Math.min(batchEnd, totalPages);
-      const avgTimePerPage = pageTimings.length > 0 
-        ? pageTimings.reduce((a, b) => a + b, 0) / pageTimings.length 
+      const avgTimePerPage = pageTimings.length > 0
+        ? pageTimings.reduce((a, b) => a + b, 0) / pageTimings.length
         : 0;
       const remainingPages = totalPages - processed;
       const estimatedTimeRemaining = Math.ceil(remainingPages * avgTimePerPage / 1000);
@@ -1198,13 +1200,13 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     setProgress(10);
     setPreprocessingInfo(null);
     setLiveStatus({ message: 'Initializing...', detail: 'Preparing text for analysis', isActive: true });
-    
+
     try {
       let cleanedGeneral: string;
       let cleanedParticular: string;
       let allFixes: Array<{ original: string; fixed: string; reason: string }> = [];
       let totalEstimatedClauses = 0;
-      
+
       if (skipTextCleaning) {
         // Skip preprocessing - use raw text directly
         setProgress(15);
@@ -1215,7 +1217,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         const generalEstimate = Math.max(1, Math.floor(general.length / 500));
         const particularEstimate = Math.max(1, Math.floor(particular.length / 500));
         totalEstimatedClauses = generalEstimate + particularEstimate;
-        
+
         setPreprocessingInfo({
           generalFixes: 0,
           particularFixes: 0,
@@ -1233,20 +1235,20 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         setProgress(10);
         setLiveStatus({ message: 'Cleaning Text...', detail: 'Fixing PDF extraction errors', isActive: true });
         await new Promise(resolve => setTimeout(resolve, 300));
-        
+
         setProgress(15);
         setLiveStatus({ message: 'Processing Text...', detail: 'Analyzing General and Particular conditions', isActive: true });
         const preprocessedGeneral = preprocessText(general);
         const preprocessedParticular = preprocessText(particular);
-        
+
         cleanedGeneral = preprocessedGeneral.cleaned;
         cleanedParticular = preprocessedParticular.cleaned;
         allFixes = [...preprocessedGeneral.fixes, ...preprocessedParticular.fixes];
         totalEstimatedClauses = preprocessedGeneral.estimatedClauses + preprocessedParticular.estimatedClauses;
-        
+
         setProgress(25);
         setLiveStatus({ message: 'Detecting Clauses...', detail: 'Identifying clause boundaries', isActive: true });
-        
+
         // Store preprocessing info for display
         const generalTokens = estimateTokens(cleanedGeneral);
         const particularTokens = estimateTokens(cleanedParticular);
@@ -1254,7 +1256,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         const outputTokenLimit = CLAUDE_TOKEN_LIMITS.maxOutputTokens;
         const totalTokenBudget = CLAUDE_TOKEN_LIMITS.totalBudget;
         const usagePercentage = Math.min(100, Math.round((totalInputTokens / totalTokenBudget) * 100));
-        
+
         setPreprocessingInfo({
           generalFixes: preprocessedGeneral.fixes.length,
           particularFixes: preprocessedParticular.fixes.length,
@@ -1268,34 +1270,34 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           }
         });
       }
-      
+
       await new Promise(resolve => setTimeout(resolve, 500));
-      
+
       // Calculate token usage
       const generalTokens = estimateTokens(cleanedGeneral);
       const particularTokens = estimateTokens(cleanedParticular);
       const totalInputTokens = generalTokens + particularTokens;
-      
+
       // Check if text needs chunking
       const MAX_CHARS_PER_CHUNK = 100000;
       const MAX_TOKENS_PER_CHUNK = 50000; // Force chunking for large requests
-      const needsChunking = 
-        cleanedGeneral.length > MAX_CHARS_PER_CHUNK || 
+      const needsChunking =
+        cleanedGeneral.length > MAX_CHARS_PER_CHUNK ||
         cleanedParticular.length > MAX_CHARS_PER_CHUNK ||
         totalInputTokens > MAX_TOKENS_PER_CHUNK;
-      
+
       if (!needsChunking) {
         // Process directly with cleaned text
         setBatchInfo({ current: 1, total: 1 });
         setProgress(40);
         setLiveStatus({ message: 'Connecting to AI...', detail: 'Sending request to Claude API', isActive: true });
-        
-        const input: DualSourceInput = { 
-          general: cleanedGeneral, 
+
+        const input: DualSourceInput = {
+          general: cleanedGeneral,
           particular: cleanedParticular,
           skipCleaning: skipTextCleaning
         };
-        
+
         // Start a heartbeat to show activity
         let dotCount = 0;
         const heartbeatInterval = setInterval(() => {
@@ -1307,11 +1309,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             isActive: true
           }));
         }, 2000);
-        
+
         try {
           setProgress(45);
           setLiveStatus({ message: 'AI Processing...', detail: 'Claude is analyzing your contract', isActive: true });
-          
+
           // Create timeout wrapper
           const timeoutPromise = new Promise<never>((_, reject) => {
             setTimeout(() => {
@@ -1319,10 +1321,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
               reject(new Error('Request timeout: API call took too long. The text might be too large.'));
             }, 300000); // 5 minute timeout
           });
-          
+
           // Race between API call and timeout
           const apiCall = analyzeContract(input);
-          
+
           // More detailed status updates during API wait
           const statusPhases = [
             { message: 'AI Processing...', detail: 'Sending request to Claude API' },
@@ -1333,12 +1335,12 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             { message: 'AI Processing...', detail: 'Validating text integrity...' }
           ];
           let phaseIndex = 0;
-          
+
           const statusUpdateInterval = setInterval(() => {
             phaseIndex = (phaseIndex + 1) % statusPhases.length;
             setLiveStatus(statusPhases[phaseIndex]);
           }, 2500); // Update every 2.5 seconds
-          
+
           // Update progress periodically while waiting
           const progressInterval = setInterval(() => {
             setProgress(prev => {
@@ -1346,27 +1348,27 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
               return prev;
             });
           }, 3000); // Update every 3 seconds
-          
+
           const result = await Promise.race([apiCall, timeoutPromise]);
-          
+
           clearInterval(heartbeatInterval);
           clearInterval(progressInterval);
           clearInterval(statusUpdateInterval);
-          
+
           // Receiving response
           setProgress(87);
           setLiveStatus({ message: 'Receiving Response...', detail: 'Processing Claude\'s response', isActive: true });
           await new Promise(resolve => setTimeout(resolve, 300));
-          
+
           // Parsing JSON
           setProgress(90);
           setLiveStatus({ message: 'Parsing Results...', detail: `Extracted ${result.length} clauses, validating structure...`, isActive: true });
           await new Promise(resolve => setTimeout(resolve, 200));
-          
+
           // Finalizing
           setProgress(93);
           setLiveStatus({ message: 'Finalizing...', detail: 'Processing extracted clauses', isActive: true });
-          
+
           finalizeAnalysis(result);
           setProgress(100);
           setLiveStatus({ message: 'Complete!', detail: `✓ Successfully extracted ${result.length} clauses`, isActive: false });
@@ -1390,44 +1392,44 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         const gChunks = splitTextIntoChunks(cleanedGeneral, MAX_CHARS_PER_CHUNK);
         const pChunks = splitTextIntoChunks(cleanedParticular, MAX_CHARS_PER_CHUNK);
         const maxChunks = Math.max(gChunks.length, pChunks.length);
-        
+
         setBatchInfo({ current: 0, total: maxChunks });
         setProgress(40);
         setLiveStatus({ message: `Processing ${maxChunks} chunks...`, detail: 'Splitting large text for analysis', isActive: true });
-        
+
         const allResults: Clause[] = [];
-        
+
         // Process chunks sequentially to maintain order
         for (let i = 0; i < maxChunks; i++) {
           const gChunk = gChunks[i] || '';
           const pChunk = pChunks[i] || '';
-          
+
           if (gChunk || pChunk) {
             setBatchInfo({ current: i + 1, total: maxChunks });
             setProgress(40 + Math.floor((i / maxChunks) * 50));
-            
+
             // Step 1: Preparing chunk
-            setLiveStatus({ 
-              message: `Chunk ${i + 1}/${maxChunks}`, 
-              detail: 'Preparing chunk data for analysis', 
-              isActive: true 
+            setLiveStatus({
+              message: `Chunk ${i + 1}/${maxChunks}`,
+              detail: 'Preparing chunk data for analysis',
+              isActive: true
             });
             await new Promise(resolve => setTimeout(resolve, 300));
-            
+
             // Step 2: Sending to API
-            setLiveStatus({ 
-              message: `Chunk ${i + 1}/${maxChunks}`, 
-              detail: 'Sending request to Claude API...', 
-              isActive: true 
+            setLiveStatus({
+              message: `Chunk ${i + 1}/${maxChunks}`,
+              detail: 'Sending request to Claude API...',
+              isActive: true
             });
-            
+
             // Step 3: Create API call with progress updates
             const apiCallPromise = analyzeContract({
               general: gChunk,
               particular: pChunk,
               skipCleaning: skipTextCleaning
             });
-            
+
             // Show waiting status with rotating messages
             const statusMessages = [
               'Waiting for Claude to process...',
@@ -1438,49 +1440,49 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             let statusIndex = 0;
             const statusInterval = setInterval(() => {
               statusIndex = (statusIndex + 1) % statusMessages.length;
-              setLiveStatus({ 
-                message: `Chunk ${i + 1}/${maxChunks}`, 
-                detail: statusMessages[statusIndex], 
-                isActive: true 
+              setLiveStatus({
+                message: `Chunk ${i + 1}/${maxChunks}`,
+                detail: statusMessages[statusIndex],
+                isActive: true
               });
             }, 2000);
-            
+
             try {
               const result = await apiCallPromise;
               clearInterval(statusInterval);
-              
+
               // Step 4: Receiving response
-              setLiveStatus({ 
-                message: `Chunk ${i + 1}/${maxChunks}`, 
-                detail: 'Received response from Claude', 
-                isActive: true 
+              setLiveStatus({
+                message: `Chunk ${i + 1}/${maxChunks}`,
+                detail: 'Received response from Claude',
+                isActive: true
               });
               await new Promise(resolve => setTimeout(resolve, 200));
-              
+
               // Step 5: Parsing results
-              setLiveStatus({ 
-                message: `Chunk ${i + 1}/${maxChunks}`, 
-                detail: `Parsing ${result.length} extracted clauses...`, 
-                isActive: true 
+              setLiveStatus({
+                message: `Chunk ${i + 1}/${maxChunks}`,
+                detail: `Parsing ${result.length} extracted clauses...`,
+                isActive: true
               });
               await new Promise(resolve => setTimeout(resolve, 200));
-              
+
               // Step 6: Validating
-              setLiveStatus({ 
-                message: `Chunk ${i + 1}/${maxChunks}`, 
-                detail: 'Validating clause integrity...', 
-                isActive: true 
+              setLiveStatus({
+                message: `Chunk ${i + 1}/${maxChunks}`,
+                detail: 'Validating clause integrity...',
+                isActive: true
               });
-              
+
               allResults.push(...result);
-              
+
               // Step 7: Complete
               const generalCount = result.filter(c => c.condition_type === 'General').length;
               const particularCount = result.filter(c => c.condition_type === 'Particular').length;
-              setLiveStatus({ 
-                message: `Chunk ${i + 1}/${maxChunks} complete`, 
-                detail: `✓ Extracted ${result.length} clauses (${generalCount} General, ${particularCount} Particular)`, 
-                isActive: true 
+              setLiveStatus({
+                message: `Chunk ${i + 1}/${maxChunks} complete`,
+                detail: `✓ Extracted ${result.length} clauses (${generalCount} General, ${particularCount} Particular)`,
+                isActive: true
               });
               await new Promise(resolve => setTimeout(resolve, 500));
             } catch (err) {
@@ -1489,21 +1491,21 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             }
           }
         }
-        
+
         // Enhanced finalization steps
         setLiveStatus({ message: 'Finalizing...', detail: 'Merging all chunks together', isActive: true });
         await new Promise(resolve => setTimeout(resolve, 300));
-        
+
         setLiveStatus({ message: 'Finalizing...', detail: 'Removing duplicate clauses', isActive: true });
         const deduplicated = deduplicateClauses(allResults);
-        
+
         setLiveStatus({ message: 'Finalizing...', detail: `Validating ${deduplicated.length} unique clauses`, isActive: true });
         await new Promise(resolve => setTimeout(resolve, 300));
-        
+
         setProgress(95);
         setLiveStatus({ message: 'Finalizing...', detail: 'Preparing final results', isActive: true });
         await new Promise(resolve => setTimeout(resolve, 200));
-        
+
         finalizeAnalysis(deduplicated);
         setProgress(100);
         setLiveStatus({ message: 'Complete!', detail: `✓ Successfully extracted ${deduplicated.length} unique clauses`, isActive: false });
@@ -1526,18 +1528,18 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         const pages = await extractPagesFromPdf(input as FileData);
         setBatchInfo({ current: 0, total: pages.length });
         setLiveStatus({ message: 'Analyzing clauses...', detail: `Processing ${pages.length} pages`, isActive: true });
-        
+
         // Continue from 40% (extraction complete) to 95% (analysis)
         const analysisStartProgress = 40;
         const analysisEndProgress = 95;
-        
+
         for (let i = 0; i < pages.length; i++) {
           setBatchInfo({ current: i + 1, total: pages.length });
           const result = await analyzeContract(pages[i]);
           allExtractedClauses = [...allExtractedClauses, ...result];
           // Deduplicate after each page to prevent accumulation of duplicates
           allExtractedClauses = deduplicateClauses(allExtractedClauses);
-          
+
           // Progress from 40% to 95% based on page analysis
           const progressPercent = analysisStartProgress + Math.floor(((i + 1) / pages.length) * (analysisEndProgress - analysisStartProgress));
           setProgress(progressPercent);
@@ -1550,26 +1552,26 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       } else {
         // Dual source PDFs
         setLiveStatus({ message: 'Loading PDFs...', detail: 'Loading General and Particular PDFs', isActive: true });
-        
+
         // extractPagesFromPdf handles progress 5-40% internally, but we have 2 PDFs
         // Split progress: 5-22.5% for general, 22.5-40% for particular
         setProgress(5);
         const gPages = await extractPagesFromPdf(input.general as FileData);
         setProgress(22);
-        
+
         setLiveStatus({ message: 'Loading PDFs...', detail: 'Loading Particular PDF', isActive: true });
         const pPages = await extractPagesFromPdf(input.particular as FileData);
         setProgress(40);
-        
+
         const maxPages = Math.max(gPages.length, pPages.length);
         setBatchInfo({ current: 0, total: Math.ceil(maxPages / 2) });
         setLiveStatus({ message: 'Analyzing clauses...', detail: 'Comparing General and Particular conditions', isActive: true });
-        
+
         // Continue from 40% to 95%
         const analysisStartProgress = 40;
         const analysisEndProgress = 95;
         const batchCount = Math.ceil(maxPages / 2);
-        
+
         for (let b = 0; b < batchCount; b++) {
           setBatchInfo({ current: b + 1, total: batchCount });
           const gChunk = gPages.slice(b * 2, (b + 1) * 2).join("\n\n");
@@ -1578,7 +1580,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           allExtractedClauses = [...allExtractedClauses, ...result];
           // Deduplicate after each batch to prevent accumulation of duplicates
           allExtractedClauses = deduplicateClauses(allExtractedClauses);
-          
+
           const progressPercent = analysisStartProgress + Math.floor(((b + 1) / batchCount) * (analysisEndProgress - analysisStartProgress));
           setProgress(progressPercent);
           setLiveStatus({
@@ -1602,7 +1604,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     const availableClauseIds = new Set<string>(
       allExtractedClauses.map(c => normalizeClauseId(c.clause_number))
     );
-    
+
     const processedClauses = allExtractedClauses.map(c => ({
       ...c,
       clause_text: linkifyText(c.clause_text, availableClauseIds),
@@ -1625,10 +1627,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       };
       const aP = parse(a.clause_number);
       const bP = parse(b.clause_number);
-      for(let i=0; i<Math.max(aP.length, bP.length); i++) {
+      for (let i = 0; i < Math.max(aP.length, bP.length); i++) {
         const aPart = aP[i] || { type: 'number', value: 0, str: '' };
         const bPart = bP[i] || { type: 'number', value: 0, str: '' };
-        
+
         // If both are numbers, compare numerically
         if (aPart.type === 'number' && bPart.type === 'number') {
           if (aPart.value !== bPart.value) return aPart.value - bPart.value;
@@ -1655,7 +1657,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     setProjectName(detectedName);
     const newId = crypto.randomUUID();
     setActiveContractId(newId);
-    
+
     // Create contract with sections
     const contractWithSections = ensureContractHasSections({
       id: newId,
@@ -1672,9 +1674,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       }
     });
     setContract(contractWithSections);
-    
+
     await persistCurrentProject(sorted, detectedName, true); // Immediate save after analysis
-    
+
     // Generate category suggestions
     if (sorted.length > 0) {
       setLiveStatus({ message: 'Generating Category Suggestions...', detail: 'Analyzing clauses for categorization', isActive: true });
@@ -1689,7 +1691,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         // Don't block completion if suggestions fail
       }
     }
-    
+
     setProgress(100);
     setTimeout(() => setStatus(AnalysisStatus.COMPLETED), 600);
   };
@@ -1707,9 +1709,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
   const handleReorder = async (fromIndex: number, toIndex: number, sectionType?: SectionType) => {
     if (!contract) return;
-    
+
     const contractWithSections = ensureContractHasSections(contract);
-    
+
     if (sectionType) {
       // Reorder within specific section
       const section = contractWithSections.sections?.find(s => s.sectionType === sectionType);
@@ -1720,17 +1722,17 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         updatedItems.forEach((item, i) => {
           item.orderIndex = i;
         });
-        
+
         const updatedSections = contractWithSections.sections!.map(s =>
           s.sectionType === sectionType ? { ...s, items: updatedItems } : s
         );
-        
+
         const updatedContract: SavedContract = {
           ...contractWithSections,
           sections: updatedSections,
           clauses: getAllClausesFromContract({ ...contractWithSections, sections: updatedSections })
         };
-        
+
         setContract(updatedContract);
         setClauses(updatedContract.clauses || []);
         await performSaveContract(updatedContract);
@@ -1748,7 +1750,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   // Enhanced search function that supports multiple keywords and searches all text fields
   const matchesSearchKeywords = (clause: Clause, keywords: string[]): boolean => {
     if (keywords.length === 0) return true;
-    
+
     // Combine all searchable text fields
     const searchableText = [
       clause.clause_number,
@@ -1757,7 +1759,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       clause.general_condition || '',
       clause.particular_condition || ''
     ].join(' ').toLowerCase();
-    
+
     // Check if all keywords are found in the combined text
     return keywords.every(keyword => searchableText.includes(keyword.toLowerCase()));
   };
@@ -1780,564 +1782,745 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
   return (
     <>
-    <AppWrapper onToggleBot={() => setIsBotOpen(!isBotOpen)} isBotOpen={isBotOpen}>
-    <div className="min-h-screen flex flex-col">
-      <input 
-        type="file" 
-        ref={importBackupRef} 
-        onChange={handleImportBackup} 
-        accept=".json" 
-        className="hidden" 
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#fff',
+            color: '#1A2333',
+            border: '1px solid #D1D9E6',
+            borderRadius: '12px',
+            padding: '16px',
+            fontSize: '14px',
+            fontWeight: '500',
+          },
+          success: {
+            iconTheme: {
+              primary: '#10B981',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#EF4444',
+              secondary: '#fff',
+            },
+          },
+        }}
       />
-
-      <header className="sticky top-0 z-50 glass border-b border-aaa-border shadow-premium px-8 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-5 cursor-pointer" onClick={goBackToInput}>
-          <div className="w-12 h-12 bg-aaa-blue rounded-xl flex items-center justify-center shadow-xl">
-            <span className="text-white font-black text-sm">AAA</span>
-          </div>
-          <div>
-            <h1 className="text-xl font-extrabold text-aaa-blue tracking-tighter leading-none">Contract Department</h1>
-            <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-[0.3em] mt-1.5">High-Fidelity Analysis</p>
-          </div>
-        </div>
-        
-        <div className="flex items-center gap-4">
-          {status === AnalysisStatus.COMPLETED && (
-            <>
-              <button
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="p-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group"
-                title={isSidebarOpen ? "Hide sidebar" : "Show sidebar"}
-              >
-                {isSidebarOpen ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                  </svg>
-                )}
-              </button>
-              <div className="flex items-center gap-6">
-              <div className="relative group flex items-center">
-                <input 
-                  type="text" 
-                  value={smartSearchQuery}
-                  onChange={(e) => setSmartSearchQuery(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && smartSearchClauses(smartSearchQuery)}
-                  placeholder="Smart search matrix..."
-                  className="w-80 px-6 py-2.5 bg-white border border-aaa-border rounded-full text-sm font-medium focus:ring-4 focus:ring-aaa-blue/5 focus:border-aaa-blue outline-none shadow-sm transition-all"
-                />
-                <button 
-                  onClick={() => smartSearchClauses(smartSearchQuery)}
-                  disabled={isSearching}
-                  className="absolute right-2 p-2 bg-aaa-blue text-white rounded-full hover:bg-aaa-hover transition-colors disabled:bg-aaa-muted"
-                >
-                  {isSearching ? (
-                    <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  )}
-                </button>
-              </div>
-
-              <button 
-                onClick={() => setIsAddModalOpen(true)}
-                className="flex items-center gap-3 px-6 py-2.5 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all shadow-lg active:scale-95"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
-                + Add Clause
-              </button>
-              </div>
-            </>
-          )}
-
-          <button onClick={() => setStatus(AnalysisStatus.LIBRARY)} className="flex items-center gap-3 px-5 py-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group">
-            <span className="text-[10px] font-black uppercase tracking-widest text-aaa-muted group-hover:text-aaa-blue">Archive</span>
-            <span className="w-6 h-6 bg-aaa-bg rounded-lg flex items-center justify-center text-[10px] font-black text-aaa-blue border border-aaa-blue/10">{library.length}</span>
-          </button>
-        </div>
-      </header>
-
-      <div className="flex-1 flex overflow-hidden">
-        {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
-          <Sidebar 
-            clauses={clauses}
-            selectedTypes={selectedTypes}
-            setSelectedTypes={setSelectedTypes}
-            selectedGroup={selectedGroup}
-            setSelectedGroup={setSelectedGroup}
-            searchQuery={searchFilter}
-            setSearchQuery={setSearchFilter}
-            onReorder={handleReorder}
-            onDelete={handleDeleteClause}
-            onClausesUpdate={handleClausesUpdateFromCategory}
-            onCloseOtherModals={() => {
-              setCompareClause(null);
-              setIsAddModalOpen(false);
-            }}
+      <AppWrapper onToggleBot={() => setIsBotOpen(!isBotOpen)} isBotOpen={isBotOpen}>
+        <div className="min-h-screen flex flex-col">
+          <input
+            type="file"
+            ref={importBackupRef}
+            onChange={handleImportBackup}
+            accept=".json"
+            className="hidden"
           />
-        )}
 
-        <main className={`flex-1 overflow-y-auto px-6 py-6 custom-scrollbar transition-all ${status !== AnalysisStatus.COMPLETED ? 'max-w-7xl mx-auto' : status === AnalysisStatus.COMPLETED && isSidebarOpen ? 'lg:ml-80' : ''}`}>
-          {status === AnalysisStatus.IDLE && (
-            <div className="space-y-16 animate-in fade-in duration-1000">
-               <div className="text-center space-y-6">
-                <div className="inline-flex items-center gap-3 px-5 py-2 bg-white border border-aaa-blue/10 text-aaa-blue text-[10px] font-black uppercase tracking-[0.3em] rounded-full shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Cloud Neural Engine Active
-                </div>
-                <h2 className="text-7xl font-black text-aaa-blue leading-[1.05] tracking-tighter">
-                  Verbatim <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-aaa-blue to-aaa-accent">Precision Extraction.</span>
-                </h2>
-                <p className="text-aaa-muted text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-                  Direct text injection or multi-page PDF processing. Mapping temporal records and baseline conflicts in high-fidelity verbatim sequences.
-                </p>
-                <div className="flex justify-center pt-4">
-                  <button 
-                    onClick={() => importBackupRef.current?.click()}
-                    className="flex items-center gap-3 px-8 py-3.5 bg-white border border-aaa-blue text-aaa-blue rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-bg transition-all shadow-sm active:scale-95"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
-                    Restore Backup
-                  </button>
-                </div>
+          <header className="sticky top-0 z-50 glass border-b border-aaa-border shadow-premium px-8 h-20 flex items-center justify-between">
+            <div className="flex items-center gap-5 cursor-pointer" onClick={goBackToInput}>
+              <div className="w-12 h-12 bg-aaa-blue rounded-xl flex items-center justify-center shadow-xl">
+                <span className="text-white font-black text-sm">AAA</span>
               </div>
+              <div>
+                <h1 className="text-xl font-extrabold text-aaa-blue tracking-tighter leading-none">Contract Department</h1>
+                <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-[0.3em] mt-1.5">High-Fidelity Analysis</p>
+              </div>
+            </div>
 
-              {isAdmin() && (
+            <div className="flex items-center gap-4">
+              {status === AnalysisStatus.COMPLETED && (
                 <>
-                  <div className="flex flex-col items-center gap-8">
-                    <div className="flex bg-white border border-aaa-border p-1.5 rounded-2xl shadow-premium">
-                      <button onClick={() => setInputMode('dual')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'dual' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Dual Source PDF</button>
-                      <button onClick={() => setInputMode('single')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'single' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Single Document</button>
-                      <button onClick={() => setInputMode('text')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'text' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Injection</button>
-                      <button onClick={() => setInputMode('fixer')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'fixer' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Fixer</button>
-                    </div>
-                  </div>
-
-                  {inputMode === 'dual' && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-                   <div className="bg-white p-10 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-blue">
-                      <h3 className="font-extrabold text-xl text-aaa-blue mb-8">General Baseline</h3>
-                      <div onClick={() => generalFileRef.current?.click()} className={`border-2 border-dashed rounded-2xl p-14 flex flex-col items-center gap-4 cursor-pointer transition-all ${generalFile ? 'border-aaa-blue bg-aaa-bg/50' : 'border-aaa-border hover:border-aaa-blue bg-slate-50/30'}`}>
-                        <p className="font-black text-sm uppercase tracking-widest">{generalFile ? generalFile.name : 'Select General PDF'}</p>
-                        <input type="file" ref={generalFileRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], setGeneralFile)} />
-                      </div>
-                   </div>
-                   <div className="bg-white p-10 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
-                      <h3 className="font-extrabold text-xl text-aaa-accent mb-8">Particular Ledger</h3>
-                      <div onClick={() => particularFileRef.current?.click()} className={`border-2 border-dashed rounded-2xl p-14 flex flex-col items-center gap-4 cursor-pointer transition-all ${particularFile ? 'border-aaa-accent bg-aaa-bg/50' : 'border-aaa-border hover:border-aaa-accent bg-slate-50/30'}`}>
-                        <p className="font-black text-sm uppercase tracking-widest">{particularFile ? particularFile.name : 'Select Particular PDF'}</p>
-                        <input type="file" ref={particularFileRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], setParticularFile)} />
-                      </div>
-                   </div>
-                   <div className="md:col-span-2 text-center pt-8">
-                      <button onClick={() => generalFile && particularFile && handlePdfAnalysis({ general: generalFile, particular: particularFile })} disabled={!generalFile || !particularFile} className="px-20 py-6 bg-aaa-blue text-white rounded-2xl font-black shadow-2xl disabled:opacity-50 transition-all">START VERBATIM COMPARISON</button>
-                   </div>
-                </div>
-              )}
-
-              {inputMode === 'single' && (
-                <div onClick={() => fileInputRef.current?.click()} className="bg-white p-24 rounded-3xl border-2 border-dashed border-aaa-border flex flex-col items-center gap-8 hover:border-aaa-blue transition-all cursor-pointer shadow-premium max-w-4xl mx-auto w-full">
-                  <div className="w-32 h-32 bg-aaa-bg rounded-2xl flex items-center justify-center text-aaa-blue border border-aaa-blue/10">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
-                  </div>
-                  <h3 className="text-4xl font-black text-aaa-text">Source Injection</h3>
-                  <p className="text-aaa-muted -mt-4 text-sm font-bold uppercase tracking-widest">Enhanced Page-by-Page Scan</p>
-                  <input type="file" ref={fileInputRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], handlePdfAnalysis)} />
-                </div>
-              )}
-
-              {inputMode === 'text' && (
-                <div className="max-w-[1400px] mx-auto w-full space-y-12 animate-in slide-in-from-bottom-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-blue">
-                      <div className="flex justify-between items-center mb-6">
-                        <h3 className="font-extrabold text-xl text-aaa-blue">General Baseline</h3>
-                        <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{pastedGeneralText.length} Characters</span>
-                      </div>
-                      <textarea 
-                        value={pastedGeneralText}
-                        onChange={(e) => setPastedGeneralText(e.target.value)}
-                        placeholder="Paste baseline clauses..."
-                        className="w-full h-96 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-blue outline-none custom-scrollbar"
+                  <button
+                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    className="p-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group"
+                    title={isSidebarOpen ? "Hide sidebar" : "Show sidebar"}
+                  >
+                    {isSidebarOpen ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                      </svg>
+                    )}
+                  </button>
+                  <div className="flex items-center gap-6">
+                    <div className="relative group flex items-center">
+                      <input
+                        type="text"
+                        value={smartSearchQuery}
+                        onChange={(e) => setSmartSearchQuery(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && smartSearchClauses(smartSearchQuery)}
+                        placeholder="Smart search matrix..."
+                        className="w-80 px-6 py-2.5 bg-white border border-aaa-border rounded-full text-sm font-medium focus:ring-4 focus:ring-aaa-blue/5 focus:border-aaa-blue outline-none shadow-sm transition-all"
                       />
-                    </div>
-                    <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
-                      <div className="flex justify-between items-center mb-6">
-                        <h3 className="font-extrabold text-xl text-aaa-accent">Particular Ledger</h3>
-                        <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{pastedParticularText.length} Characters</span>
-                      </div>
-                      <textarea 
-                        value={pastedParticularText}
-                        onChange={(e) => setPastedParticularText(e.target.value)}
-                        placeholder="Paste project-specific modifications..."
-                        className="w-full h-96 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-accent outline-none custom-scrollbar"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col items-center gap-6">
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-aaa-border shadow-premium">
-                      <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={skipTextCleaning}
-                          onChange={(e) => setSkipTextCleaning(e.target.checked)}
-                          className="w-4 h-4 text-aaa-blue border-aaa-border rounded focus:ring-aaa-blue"
-                        />
-                        <span className="text-sm font-semibold text-aaa-text">
-                          Text is already clean (skip cleaning)
-                        </span>
-                      </label>
-                    </div>
-                     <button 
-                       onClick={() => (pastedGeneralText.trim() || pastedParticularText.trim()) && handleTextAnalysis(pastedGeneralText, pastedParticularText)} 
-                       disabled={!pastedGeneralText.trim() && !pastedParticularText.trim()}
-                       className="px-24 py-6 bg-aaa-blue text-white rounded-2xl font-black shadow-2xl disabled:opacity-50 hover:bg-aaa-hover transition-all active:scale-95"
-                     >
-                       RAPID SCAN (FAST)
-                     </button>
-                  </div>
-                </div>
-                  )}
-
-                  {inputMode === 'fixer' && (
-                    <div className="max-w-6xl mx-auto w-full space-y-8 animate-in slide-in-from-bottom-6">
-                      <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
-                        <div className="flex justify-between items-center mb-6">
-                          <h3 className="font-extrabold text-xl text-aaa-accent">Text Fixer</h3>
-                          <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{textToFix.length} Characters</span>
-                        </div>
-                        <textarea 
-                          value={textToFix}
-                          onChange={(e) => {
-                            setTextToFix(e.target.value);
-                            setFixedText(null);
-                            setShowCorruptionReview(false);
-                            setLinesToRemove(new Set());
-                            setCurrentCorruptionIndex(0);
-                          }}
-                          placeholder="Paste your text here to fix errors, punctuation, and formatting issues..."
-                          className="w-full h-64 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-accent outline-none custom-scrollbar"
-                        />
-                        <div className="mt-4 flex items-center gap-3">
-                          <label className="flex items-center gap-2 cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={useAICleaning}
-                              onChange={(e) => {
-                                setUseAICleaning(e.target.checked);
-                                setFixedText(null);
-                                setAiCleanedText(null);
-                              }}
-                              className="w-4 h-4 text-aaa-accent border-aaa-border rounded focus:ring-aaa-accent"
-                            />
-                            <span className="text-sm font-semibold text-aaa-text">
-                              Use AI-powered cleaning (fixes broken words, line breaks, headers/footers, cross-references)
-                            </span>
-                          </label>
-                        </div>
-                        <div className="mt-6 flex justify-center">
-                          <button
-                            onClick={async () => {
-                              if (textToFix.trim()) {
-                                if (useAICleaning) {
-                                  // AI-powered cleaning
-                                  setIsAICleaning(true);
-                                  setProgress(0);
-                                  try {
-                                    const cleaned = await cleanTextWithAI(
-                                      textToFix,
-                                      undefined,
-                                      (current, total, currentLine, totalLines) => {
-                                        const chunkProgress = Math.round((current / total) * 100);
-                                        setProgress(chunkProgress);
-                                        
-                                        if (currentLine !== undefined && totalLines !== undefined && currentLine > 0) {
-                                          const lineProgress = Math.round((currentLine / totalLines) * 100);
-                                          setLiveStatus({
-                                            message: `Cleaning chunk ${current + 1} of ${total}...`,
-                                            detail: `Processing line ${currentLine.toLocaleString()} of ${totalLines.toLocaleString()} (${lineProgress}%)`,
-                                            isActive: true
-                                          });
-                                        } else {
-                                          setLiveStatus({
-                                            message: total > 1 ? `Preparing chunk ${current + 1} of ${total}...` : 'Processing with AI...',
-                                            detail: total > 1 ? 'Analyzing text structure' : 'Cleaning contract text',
-                                            isActive: true
-                                          });
-                                        }
-                                      }
-                                    );
-                                    setAiCleanedText(cleaned);
-                                    setFixedText({
-                                      cleaned: cleaned,
-                                      fixes: [],
-                                      removedLines: 0,
-                                      corruptedLines: []
-                                    });
-                                    setShowCorruptionReview(false);
-                                    setProgress(100);
-                                    setLiveStatus({
-                                      message: 'Complete!',
-                                      detail: 'All clauses processed successfully',
-                                      isActive: false
-                                    });
-                                  } catch (error: any) {
-                                    setError(error.message || 'AI cleaning failed');
-                                    setLiveStatus({
-                                      message: 'Error',
-                                      detail: error.message || 'Unknown error',
-                                      isActive: false
-                                    });
-                                  } finally {
-                                    setIsAICleaning(false);
-                                  }
-                                } else {
-                                  // Standard preprocessing
-                                  const corrupted = detectCorruptedLines(textToFix);
-                                  if (corrupted.length > 0) {
-                                    // Show review step
-                                    const result = preprocessText(textToFix, []);
-                                    setFixedText({
-                                      cleaned: result.cleaned,
-                                      fixes: result.fixes,
-                                      removedLines: 0,
-                                      corruptedLines: result.corruptedLines
-                                    });
-                                    setLinesToRemove(new Set());
-                                    setCurrentCorruptionIndex(0);
-                                    setShowCorruptionReview(true);
-                                  } else {
-                                    // No corrupted lines, process directly
-                                    const result = preprocessText(textToFix, []);
-                                    setFixedText({
-                                      cleaned: result.cleaned,
-                                      fixes: result.fixes,
-                                      removedLines: 0,
-                                      corruptedLines: []
-                                    });
-                                    setShowCorruptionReview(false);
-                                  }
-                                }
-                              }
-                            }}
-                            disabled={!textToFix.trim() || isAICleaning}
-                            className="px-16 py-4 bg-aaa-accent text-white rounded-2xl font-black shadow-xl disabled:opacity-50 hover:bg-aaa-blue transition-all active:scale-95 flex items-center gap-2"
-                          >
-                            {isAICleaning ? (
-                              <>
-                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg>
-                                AI Cleaning... {progress > 0 && `${progress}%`}
-                              </>
-                            ) : (
-                              useAICleaning ? 'Clean with AI' : 'Fix Text'
-                            )}
-                          </button>
-                        </div>
-                        
-                        {/* Live Status Display for AI Cleaning */}
-                        {isAICleaning && liveStatus.message && (
-                          <div className="mt-6 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 shadow-md">
-                            <div className="flex items-center gap-3">
-                              {liveStatus.isActive && (
-                                <div className="relative">
-                                  <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
-                                  <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
-                                </div>
-                              )}
-                              <div className="flex-1 text-left">
-                                <p className="text-sm font-bold text-cyan-700">{liveStatus.message}</p>
-                                <p className="text-xs text-cyan-600 mt-0.5">{liveStatus.detail}</p>
-                              </div>
-                            </div>
-                            
-                            {/* Progress Bar */}
-                            {progress > 0 && (
-                              <div className="mt-3 w-full h-2 bg-cyan-200 rounded-full overflow-hidden">
-                                <div 
-                                  className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-300"
-                                  style={{ width: `${progress}%` }}
-                                />
-                              </div>
-                            )}
-                          </div>
+                      <button
+                        onClick={() => smartSearchClauses(smartSearchQuery)}
+                        disabled={isSearching}
+                        className="absolute right-2 p-2 bg-aaa-blue text-white rounded-full hover:bg-aaa-hover transition-colors disabled:bg-aaa-muted"
+                      >
+                        {isSearching ? (
+                          <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                        ) : (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          </svg>
                         )}
+                      </button>
+                    </div>
+
+                    <button
+                      onClick={() => setIsAddModalOpen(true)}
+                      className="flex items-center gap-3 px-6 py-2.5 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all shadow-lg active:scale-95"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
+                      + Add Clause
+                    </button>
+                  </div>
+                </>
+              )}
+
+              <button onClick={() => setStatus(AnalysisStatus.LIBRARY)} className="flex items-center gap-3 px-5 py-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group">
+                <span className="text-[10px] font-black uppercase tracking-widest text-aaa-muted group-hover:text-aaa-blue">Archive</span>
+                <span className="w-6 h-6 bg-aaa-bg rounded-lg flex items-center justify-center text-[10px] font-black text-aaa-blue border border-aaa-blue/10">{library.length}</span>
+              </button>
+            </div>
+          </header>
+
+          <div className="flex-1 flex overflow-hidden">
+            {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
+              <Sidebar
+                clauses={clauses}
+                selectedTypes={selectedTypes}
+                setSelectedTypes={setSelectedTypes}
+                selectedGroup={selectedGroup}
+                setSelectedGroup={setSelectedGroup}
+                searchQuery={searchFilter}
+                setSearchQuery={setSearchFilter}
+                onReorder={handleReorder}
+                onDelete={handleDeleteClause}
+                onClausesUpdate={handleClausesUpdateFromCategory}
+                onCloseOtherModals={() => {
+                  setCompareClause(null);
+                  setIsAddModalOpen(false);
+                }}
+              />
+            )}
+
+            <main className={`flex-1 overflow-y-auto px-6 py-6 custom-scrollbar transition-all ${status !== AnalysisStatus.COMPLETED ? 'max-w-7xl mx-auto' : status === AnalysisStatus.COMPLETED && isSidebarOpen ? 'lg:ml-80' : ''}`}>
+              {status === AnalysisStatus.IDLE && (
+                <div className="space-y-16 animate-in fade-in duration-1000">
+                  <div className="text-center space-y-6">
+                    <div className="inline-flex items-center gap-3 px-5 py-2 bg-white border border-aaa-blue/10 text-aaa-blue text-[10px] font-black uppercase tracking-[0.3em] rounded-full shadow-sm">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Cloud Neural Engine Active
+                    </div>
+                    <h2 className="text-7xl font-black text-aaa-blue leading-[1.05] tracking-tighter">
+                      Verbatim <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-aaa-blue to-aaa-accent">Precision Extraction.</span>
+                    </h2>
+                    <p className="text-aaa-muted text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                      Direct text injection or multi-page PDF processing. Mapping temporal records and baseline conflicts in high-fidelity verbatim sequences.
+                    </p>
+                    <div className="flex justify-center pt-4">
+                      <button
+                        onClick={() => importBackupRef.current?.click()}
+                        className="flex items-center gap-3 px-8 py-3.5 bg-white border border-aaa-blue text-aaa-blue rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-bg transition-all shadow-sm active:scale-95"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                        Restore Backup
+                      </button>
+                    </div>
+                  </div>
+
+                  {isAdmin() && (
+                    <>
+                      <div className="flex flex-col items-center gap-8">
+                        <div className="flex bg-white border border-aaa-border p-1.5 rounded-2xl shadow-premium">
+                          <button onClick={() => setInputMode('dual')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'dual' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Dual Source PDF</button>
+                          <button onClick={() => setInputMode('single')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'single' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Single Document</button>
+                          <button onClick={() => setInputMode('text')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'text' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Injection</button>
+                          <button onClick={() => setInputMode('fixer')} className={`px-10 py-3 rounded-xl text-xs font-black transition-all ${inputMode === 'fixer' ? 'bg-aaa-blue text-white shadow-xl' : 'text-aaa-muted hover:text-aaa-blue'}`}>Text Fixer</button>
+                        </div>
                       </div>
 
-                      {/* Corruption Review Modal - List View */}
-                      {showCorruptionReview && fixedText?.corruptedLines && fixedText.corruptedLines.length > 0 && (
-                        <div className="bg-yellow-50 border-2 border-yellow-300 p-6 rounded-2xl shadow-lg">
-                          <div className="flex items-start gap-4 mb-6">
-                            <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-yellow-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                              </svg>
-                            </div>
-                            <div className="flex-1">
-                              <h4 className="font-bold text-lg text-yellow-800 mb-1">Review Corrupted Lines</h4>
-                              <p className="text-sm text-yellow-700">
-                                Found {fixedText.corruptedLines.length} potentially corrupted line{fixedText.corruptedLines.length > 1 ? 's' : ''}. Select which ones to remove.
-                              </p>
+                      {inputMode === 'dual' && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                          <div className="bg-white p-10 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-blue">
+                            <h3 className="font-extrabold text-xl text-aaa-blue mb-8">General Baseline</h3>
+                            <div onClick={() => generalFileRef.current?.click()} className={`border-2 border-dashed rounded-2xl p-14 flex flex-col items-center gap-4 cursor-pointer transition-all ${generalFile ? 'border-aaa-blue bg-aaa-bg/50' : 'border-aaa-border hover:border-aaa-blue bg-slate-50/30'}`}>
+                              <p className="font-black text-sm uppercase tracking-widest">{generalFile ? generalFile.name : 'Select General PDF'}</p>
+                              <input type="file" ref={generalFileRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], setGeneralFile)} />
                             </div>
                           </div>
-                          
-                          {/* Selection Summary */}
-                          <div className="mb-4 flex items-center justify-between p-3 bg-yellow-100 rounded-lg">
-                            <span className="text-sm font-semibold text-yellow-800">
-                              {linesToRemove.size} of {fixedText.corruptedLines.length} selected for removal
-                            </span>
-                            <div className="flex gap-2">
-                              <button
-                                onClick={() => {
-                                  setLinesToRemove(new Set(fixedText.corruptedLines?.map(c => c.index) || []));
-                                }}
-                                className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 px-3 py-1 bg-white rounded hover:bg-yellow-50 transition-all"
-                              >
-                                Select All
-                              </button>
-                              <button
-                                onClick={() => {
-                                  setLinesToRemove(new Set());
-                                }}
-                                className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 px-3 py-1 bg-white rounded hover:bg-yellow-50 transition-all"
-                              >
-                                Deselect All
-                              </button>
+                          <div className="bg-white p-10 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
+                            <h3 className="font-extrabold text-xl text-aaa-accent mb-8">Particular Ledger</h3>
+                            <div onClick={() => particularFileRef.current?.click()} className={`border-2 border-dashed rounded-2xl p-14 flex flex-col items-center gap-4 cursor-pointer transition-all ${particularFile ? 'border-aaa-accent bg-aaa-bg/50' : 'border-aaa-border hover:border-aaa-accent bg-slate-50/30'}`}>
+                              <p className="font-black text-sm uppercase tracking-widest">{particularFile ? particularFile.name : 'Select Particular PDF'}</p>
+                              <input type="file" ref={particularFileRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], setParticularFile)} />
                             </div>
                           </div>
-                          
-                          {/* List of Corrupted Lines */}
-                          <div className="space-y-3 max-h-96 overflow-y-auto custom-scrollbar mb-6">
-                            {fixedText.corruptedLines.map((corrupted, idx) => (
-                              <div
-                                key={idx}
-                                className={`bg-white p-4 rounded-xl border-2 transition-all ${
-                                  linesToRemove.has(corrupted.index)
-                                    ? 'border-yellow-500 bg-yellow-50'
-                                    : 'border-yellow-200 hover:border-yellow-300'
-                                }`}
-                              >
-                                <label className="flex items-start gap-3 cursor-pointer">
-                                  <input
-                                    type="checkbox"
-                                    checked={linesToRemove.has(corrupted.index)}
-                                    onChange={(e) => {
-                                      const newSet = new Set(linesToRemove);
-                                      if (e.target.checked) {
-                                        newSet.add(corrupted.index);
-                                      } else {
-                                        newSet.delete(corrupted.index);
-                                      }
-                                      setLinesToRemove(newSet);
-                                    }}
-                                    className="mt-1 w-5 h-5 text-yellow-600 border-yellow-300 rounded focus:ring-yellow-500 flex-shrink-0"
-                                  />
-                                  <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2 mb-2">
-                                      <span className="text-xs font-bold text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded">
-                                        Line {corrupted.index + 1}
-                                      </span>
-                                      <span className="text-xs text-yellow-600 font-medium">
-                                        {corrupted.reason}
-                                      </span>
-                                    </div>
-                                    <code className="block text-sm font-mono text-gray-800 break-words bg-gray-50 p-3 rounded-lg border border-gray-200 mt-2">
-                                      {corrupted.line.trim() || '(empty line)'}
-                                    </code>
-                                  </div>
-                                </label>
+                          <div className="md:col-span-2 text-center pt-8">
+                            <button onClick={() => generalFile && particularFile && handlePdfAnalysis({ general: generalFile, particular: particularFile })} disabled={!generalFile || !particularFile} className="px-20 py-6 bg-aaa-blue text-white rounded-2xl font-black shadow-2xl disabled:opacity-50 transition-all">START VERBATIM COMPARISON</button>
+                          </div>
+                        </div>
+                      )}
+
+                      {inputMode === 'single' && (
+                        <div onClick={() => fileInputRef.current?.click()} className="bg-white p-24 rounded-3xl border-2 border-dashed border-aaa-border flex flex-col items-center gap-8 hover:border-aaa-blue transition-all cursor-pointer shadow-premium max-w-4xl mx-auto w-full">
+                          <div className="w-32 h-32 bg-aaa-bg rounded-2xl flex items-center justify-center text-aaa-blue border border-aaa-blue/10">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                          </div>
+                          <h3 className="text-4xl font-black text-aaa-text">Source Injection</h3>
+                          <p className="text-aaa-muted -mt-4 text-sm font-bold uppercase tracking-widest">Enhanced Page-by-Page Scan</p>
+                          <input type="file" ref={fileInputRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], handlePdfAnalysis)} />
+                        </div>
+                      )}
+
+                      {inputMode === 'text' && (
+                        <div className="max-w-[1400px] mx-auto w-full space-y-12 animate-in slide-in-from-bottom-6">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-blue">
+                              <div className="flex justify-between items-center mb-6">
+                                <h3 className="font-extrabold text-xl text-aaa-blue">General Baseline</h3>
+                                <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{pastedGeneralText.length} Characters</span>
                               </div>
-                            ))}
+                              <textarea
+                                value={pastedGeneralText}
+                                onChange={(e) => setPastedGeneralText(e.target.value)}
+                                placeholder="Paste baseline clauses..."
+                                className="w-full h-96 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-blue outline-none custom-scrollbar"
+                              />
+                            </div>
+                            <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
+                              <div className="flex justify-between items-center mb-6">
+                                <h3 className="font-extrabold text-xl text-aaa-accent">Particular Ledger</h3>
+                                <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{pastedParticularText.length} Characters</span>
+                              </div>
+                              <textarea
+                                value={pastedParticularText}
+                                onChange={(e) => setPastedParticularText(e.target.value)}
+                                placeholder="Paste project-specific modifications..."
+                                className="w-full h-96 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-accent outline-none custom-scrollbar"
+                              />
+                            </div>
                           </div>
-                          
-                          {/* Action Buttons */}
-                          <div className="flex items-center justify-end gap-3">
+
+                          <div className="flex flex-col items-center gap-6">
+                            <div className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-aaa-border shadow-premium">
+                              <label className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={skipTextCleaning}
+                                  onChange={(e) => setSkipTextCleaning(e.target.checked)}
+                                  className="w-4 h-4 text-aaa-blue border-aaa-border rounded focus:ring-aaa-blue"
+                                />
+                                <span className="text-sm font-semibold text-aaa-text">
+                                  Text is already clean (skip cleaning)
+                                </span>
+                              </label>
+                            </div>
                             <button
-                              onClick={() => {
-                                setShowCorruptionReview(false);
-                                setLinesToRemove(new Set());
-                                setFixedText(null);
-                                setCurrentCorruptionIndex(0);
-                              }}
-                              className="px-6 py-2 bg-gray-200 text-gray-700 rounded-xl text-sm font-bold hover:bg-gray-300 transition-all"
+                              onClick={() => (pastedGeneralText.trim() || pastedParticularText.trim()) && handleTextAnalysis(pastedGeneralText, pastedParticularText)}
+                              disabled={!pastedGeneralText.trim() && !pastedParticularText.trim()}
+                              className="px-24 py-6 bg-aaa-blue text-white rounded-2xl font-black shadow-2xl disabled:opacity-50 hover:bg-aaa-hover transition-all active:scale-95"
                             >
-                              Cancel
-                            </button>
-                            <button
-                              onClick={() => {
-                                // Apply removal and finalize
-                                const result = preprocessText(textToFix, Array.from(linesToRemove));
-                                setFixedText({
-                                  cleaned: result.cleaned,
-                                  fixes: result.fixes,
-                                  removedLines: result.removedLines,
-                                  corruptedLines: []
-                                });
-                                setShowCorruptionReview(false);
-                                setCurrentCorruptionIndex(0);
-                              }}
-                              disabled={linesToRemove.size === 0}
-                              className="px-6 py-2 bg-yellow-600 text-white rounded-xl text-sm font-bold hover:bg-yellow-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                              Remove Selected ({linesToRemove.size})
+                              RAPID SCAN (FAST)
                             </button>
                           </div>
                         </div>
                       )}
 
-                      {fixedText && !showCorruptionReview && (
-                        <div className="space-y-6">
-                          {/* Fixed Text Output */}
-                          <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-green-500">
+                      {inputMode === 'fixer' && (
+                        <div className="max-w-6xl mx-auto w-full space-y-8 animate-in slide-in-from-bottom-6">
+                          <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-aaa-accent">
                             <div className="flex justify-between items-center mb-6">
-                              <h3 className="font-extrabold text-xl text-green-600">Fixed Text</h3>
+                              <h3 className="font-extrabold text-xl text-aaa-accent">Text Fixer</h3>
+                              <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{textToFix.length} Characters</span>
+                            </div>
+                            <textarea
+                              value={textToFix}
+                              onChange={(e) => {
+                                setTextToFix(e.target.value);
+                                setFixedText(null);
+                                setShowCorruptionReview(false);
+                                setLinesToRemove(new Set());
+                                setCurrentCorruptionIndex(0);
+                              }}
+                              placeholder="Paste your text here to fix errors, punctuation, and formatting issues..."
+                              className="w-full h-64 bg-aaa-bg/30 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-aaa-border focus:border-aaa-accent outline-none custom-scrollbar"
+                            />
+                            <div className="mt-4 flex items-center gap-3">
+                              <label className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                  type="checkbox"
+                                  checked={useAICleaning}
+                                  onChange={(e) => {
+                                    setUseAICleaning(e.target.checked);
+                                    setFixedText(null);
+                                    setAiCleanedText(null);
+                                  }}
+                                  className="w-4 h-4 text-aaa-accent border-aaa-border rounded focus:ring-aaa-accent"
+                                />
+                                <span className="text-sm font-semibold text-aaa-text">
+                                  Use AI-powered cleaning (fixes broken words, line breaks, headers/footers, cross-references)
+                                </span>
+                              </label>
+                            </div>
+                            <div className="mt-6 flex justify-center">
                               <button
-                                onClick={(e) => {
-                                  navigator.clipboard.writeText(fixedText.cleaned);
-                                  // Show feedback
-                                  const btn = e.currentTarget;
-                                  const originalText = btn.textContent;
-                                  btn.textContent = 'Copied!';
-                                  setTimeout(() => {
-                                    btn.textContent = originalText;
-                                  }, 2000);
+                                onClick={async () => {
+                                  if (textToFix.trim()) {
+                                    if (useAICleaning) {
+                                      // AI-powered cleaning
+                                      setIsAICleaning(true);
+                                      setProgress(0);
+                                      try {
+                                        const cleaned = await cleanTextWithAI(
+                                          textToFix,
+                                          undefined,
+                                          (current, total, currentLine, totalLines) => {
+                                            const chunkProgress = Math.round((current / total) * 100);
+                                            setProgress(chunkProgress);
+
+                                            if (currentLine !== undefined && totalLines !== undefined && currentLine > 0) {
+                                              const lineProgress = Math.round((currentLine / totalLines) * 100);
+                                              setLiveStatus({
+                                                message: `Cleaning chunk ${current + 1} of ${total}...`,
+                                                detail: `Processing line ${currentLine.toLocaleString()} of ${totalLines.toLocaleString()} (${lineProgress}%)`,
+                                                isActive: true
+                                              });
+                                            } else {
+                                              setLiveStatus({
+                                                message: total > 1 ? `Preparing chunk ${current + 1} of ${total}...` : 'Processing with AI...',
+                                                detail: total > 1 ? 'Analyzing text structure' : 'Cleaning contract text',
+                                                isActive: true
+                                              });
+                                            }
+                                          }
+                                        );
+                                        setAiCleanedText(cleaned);
+                                        setFixedText({
+                                          cleaned: cleaned,
+                                          fixes: [],
+                                          removedLines: 0,
+                                          corruptedLines: []
+                                        });
+                                        setShowCorruptionReview(false);
+                                        setProgress(100);
+                                        setLiveStatus({
+                                          message: 'Complete!',
+                                          detail: 'All clauses processed successfully',
+                                          isActive: false
+                                        });
+                                      } catch (error: any) {
+                                        setError(error.message || 'AI cleaning failed');
+                                        setLiveStatus({
+                                          message: 'Error',
+                                          detail: error.message || 'Unknown error',
+                                          isActive: false
+                                        });
+                                      } finally {
+                                        setIsAICleaning(false);
+                                      }
+                                    } else {
+                                      // Standard preprocessing
+                                      const corrupted = detectCorruptedLines(textToFix);
+                                      if (corrupted.length > 0) {
+                                        // Show review step
+                                        const result = preprocessText(textToFix, []);
+                                        setFixedText({
+                                          cleaned: result.cleaned,
+                                          fixes: result.fixes,
+                                          removedLines: 0,
+                                          corruptedLines: result.corruptedLines
+                                        });
+                                        setLinesToRemove(new Set());
+                                        setCurrentCorruptionIndex(0);
+                                        setShowCorruptionReview(true);
+                                      } else {
+                                        // No corrupted lines, process directly
+                                        const result = preprocessText(textToFix, []);
+                                        setFixedText({
+                                          cleaned: result.cleaned,
+                                          fixes: result.fixes,
+                                          removedLines: 0,
+                                          corruptedLines: []
+                                        });
+                                        setShowCorruptionReview(false);
+                                      }
+                                    }
+                                  }
                                 }}
-                                className="px-6 py-2 bg-green-500 text-white rounded-xl text-xs font-black hover:bg-green-600 transition-all flex items-center gap-2"
+                                disabled={!textToFix.trim() || isAICleaning}
+                                className="px-16 py-4 bg-aaa-accent text-white rounded-2xl font-black shadow-xl disabled:opacity-50 hover:bg-aaa-blue transition-all active:scale-95 flex items-center gap-2"
                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                </svg>
-                                Copy Fixed Text
+                                {isAICleaning ? (
+                                  <>
+                                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    AI Cleaning... {progress > 0 && `${progress}%`}
+                                  </>
+                                ) : (
+                                  useAICleaning ? 'Clean with AI' : 'Fix Text'
+                                )}
                               </button>
                             </div>
-                            <textarea 
-                              value={fixedText.cleaned}
-                              readOnly
-                              className="w-full h-64 bg-green-50/50 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-green-200 outline-none custom-scrollbar"
-                            />
-                            <p className="text-xs text-gray-500 mt-3">
-                              ✓ Fixed {fixedText.fixes.length} issues{fixedText.removedLines > 0 ? ` and removed ${fixedText.removedLines} corrupted line${fixedText.removedLines > 1 ? 's' : ''}` : ''}. Copy the text above and paste it into the Text Injection tab to extract clauses.
-                            </p>
+
+                            {/* Live Status Display for AI Cleaning */}
+                            {isAICleaning && liveStatus.message && (
+                              <div className="mt-6 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 shadow-md">
+                                <div className="flex items-center gap-3">
+                                  {liveStatus.isActive && (
+                                    <div className="relative">
+                                      <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                                      <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+                                    </div>
+                                  )}
+                                  <div className="flex-1 text-left">
+                                    <p className="text-sm font-bold text-cyan-700">{liveStatus.message}</p>
+                                    <p className="text-xs text-cyan-600 mt-0.5">{liveStatus.detail}</p>
+                                  </div>
+                                </div>
+
+                                {/* Progress Bar */}
+                                {progress > 0 && (
+                                  <div className="mt-3 w-full h-2 bg-cyan-200 rounded-full overflow-hidden">
+                                    <div
+                                      className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-300"
+                                      style={{ width: `${progress}%` }}
+                                    />
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </div>
 
-                          {/* Fixes Applied */}
-                          {fixedText.fixes.length > 0 && (
-                            <div className="bg-white p-6 rounded-3xl border border-aaa-border shadow-premium">
-                              <h4 className="font-bold text-lg text-aaa-blue mb-4">Fixes Applied ({fixedText.fixes.length})</h4>
-                              <div className="space-y-2 max-h-64 overflow-y-auto custom-scrollbar">
-                                {fixedText.fixes.map((fix, idx) => (
-                                  <div key={idx} className="text-xs p-3 bg-aaa-bg/50 rounded-lg border border-aaa-border">
+                          {/* Corruption Review Modal - List View */}
+                          {showCorruptionReview && fixedText?.corruptedLines && fixedText.corruptedLines.length > 0 && (
+                            <div className="bg-yellow-50 border-2 border-yellow-300 p-6 rounded-2xl shadow-lg">
+                              <div className="flex items-start gap-4 mb-6">
+                                <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-yellow-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                  </svg>
+                                </div>
+                                <div className="flex-1">
+                                  <h4 className="font-bold text-lg text-yellow-800 mb-1">Review Corrupted Lines</h4>
+                                  <p className="text-sm text-yellow-700">
+                                    Found {fixedText.corruptedLines.length} potentially corrupted line{fixedText.corruptedLines.length > 1 ? 's' : ''}. Select which ones to remove.
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Selection Summary */}
+                              <div className="mb-4 flex items-center justify-between p-3 bg-yellow-100 rounded-lg">
+                                <span className="text-sm font-semibold text-yellow-800">
+                                  {linesToRemove.size} of {fixedText.corruptedLines.length} selected for removal
+                                </span>
+                                <div className="flex gap-2">
+                                  <button
+                                    onClick={() => {
+                                      setLinesToRemove(new Set(fixedText.corruptedLines?.map(c => c.index) || []));
+                                    }}
+                                    className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 px-3 py-1 bg-white rounded hover:bg-yellow-50 transition-all"
+                                  >
+                                    Select All
+                                  </button>
+                                  <button
+                                    onClick={() => {
+                                      setLinesToRemove(new Set());
+                                    }}
+                                    className="text-xs font-semibold text-yellow-700 hover:text-yellow-800 px-3 py-1 bg-white rounded hover:bg-yellow-50 transition-all"
+                                  >
+                                    Deselect All
+                                  </button>
+                                </div>
+                              </div>
+
+                              {/* List of Corrupted Lines */}
+                              <div className="space-y-3 max-h-96 overflow-y-auto custom-scrollbar mb-6">
+                                {fixedText.corruptedLines.map((corrupted, idx) => (
+                                  <div
+                                    key={idx}
+                                    className={`bg-white p-4 rounded-xl border-2 transition-all ${linesToRemove.has(corrupted.index)
+                                      ? 'border-yellow-500 bg-yellow-50'
+                                      : 'border-yellow-200 hover:border-yellow-300'
+                                      }`}
+                                  >
+                                    <label className="flex items-start gap-3 cursor-pointer">
+                                      <input
+                                        type="checkbox"
+                                        checked={linesToRemove.has(corrupted.index)}
+                                        onChange={(e) => {
+                                          const newSet = new Set(linesToRemove);
+                                          if (e.target.checked) {
+                                            newSet.add(corrupted.index);
+                                          } else {
+                                            newSet.delete(corrupted.index);
+                                          }
+                                          setLinesToRemove(newSet);
+                                        }}
+                                        className="mt-1 w-5 h-5 text-yellow-600 border-yellow-300 rounded focus:ring-yellow-500 flex-shrink-0"
+                                      />
+                                      <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-2 mb-2">
+                                          <span className="text-xs font-bold text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded">
+                                            Line {corrupted.index + 1}
+                                          </span>
+                                          <span className="text-xs text-yellow-600 font-medium">
+                                            {corrupted.reason}
+                                          </span>
+                                        </div>
+                                        <code className="block text-sm font-mono text-gray-800 break-words bg-gray-50 p-3 rounded-lg border border-gray-200 mt-2">
+                                          {corrupted.line.trim() || '(empty line)'}
+                                        </code>
+                                      </div>
+                                    </label>
+                                  </div>
+                                ))}
+                              </div>
+
+                              {/* Action Buttons */}
+                              <div className="flex items-center justify-end gap-3">
+                                <button
+                                  onClick={() => {
+                                    setShowCorruptionReview(false);
+                                    setLinesToRemove(new Set());
+                                    setFixedText(null);
+                                    setCurrentCorruptionIndex(0);
+                                  }}
+                                  className="px-6 py-2 bg-gray-200 text-gray-700 rounded-xl text-sm font-bold hover:bg-gray-300 transition-all"
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    // Apply removal and finalize
+                                    const result = preprocessText(textToFix, Array.from(linesToRemove));
+                                    setFixedText({
+                                      cleaned: result.cleaned,
+                                      fixes: result.fixes,
+                                      removedLines: result.removedLines,
+                                      corruptedLines: []
+                                    });
+                                    setShowCorruptionReview(false);
+                                    setCurrentCorruptionIndex(0);
+                                  }}
+                                  disabled={linesToRemove.size === 0}
+                                  className="px-6 py-2 bg-yellow-600 text-white rounded-xl text-sm font-bold hover:bg-yellow-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                  Remove Selected ({linesToRemove.size})
+                                </button>
+                              </div>
+                            </div>
+                          )}
+
+                          {fixedText && !showCorruptionReview && (
+                            <div className="space-y-6">
+                              {/* Fixed Text Output */}
+                              <div className="bg-white p-8 rounded-3xl border border-aaa-border shadow-premium border-t-4 border-t-green-500">
+                                <div className="flex justify-between items-center mb-6">
+                                  <h3 className="font-extrabold text-xl text-green-600">Fixed Text</h3>
+                                  <button
+                                    onClick={(e) => {
+                                      navigator.clipboard.writeText(fixedText.cleaned);
+                                      // Show feedback
+                                      const btn = e.currentTarget;
+                                      const originalText = btn.textContent;
+                                      btn.textContent = 'Copied!';
+                                      setTimeout(() => {
+                                        btn.textContent = originalText;
+                                      }, 2000);
+                                    }}
+                                    className="px-6 py-2 bg-green-500 text-white rounded-xl text-xs font-black hover:bg-green-600 transition-all flex items-center gap-2"
+                                  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                    Copy Fixed Text
+                                  </button>
+                                </div>
+                                <textarea
+                                  value={fixedText.cleaned}
+                                  readOnly
+                                  className="w-full h-64 bg-green-50/50 p-6 rounded-2xl font-mono text-[13px] leading-relaxed border border-green-200 outline-none custom-scrollbar"
+                                />
+                                <p className="text-xs text-gray-500 mt-3">
+                                  ✓ Fixed {fixedText.fixes.length} issues{fixedText.removedLines > 0 ? ` and removed ${fixedText.removedLines} corrupted line${fixedText.removedLines > 1 ? 's' : ''}` : ''}. Copy the text above and paste it into the Text Injection tab to extract clauses.
+                                </p>
+                              </div>
+
+                              {/* Fixes Applied */}
+                              {fixedText.fixes.length > 0 && (
+                                <div className="bg-white p-6 rounded-3xl border border-aaa-border shadow-premium">
+                                  <h4 className="font-bold text-lg text-aaa-blue mb-4">Fixes Applied ({fixedText.fixes.length})</h4>
+                                  <div className="space-y-2 max-h-64 overflow-y-auto custom-scrollbar">
+                                    {fixedText.fixes.map((fix, idx) => (
+                                      <div key={idx} className="text-xs p-3 bg-aaa-bg/50 rounded-lg border border-aaa-border">
+                                        <span className="font-mono text-red-600 line-through mr-2">{fix.original}</span>
+                                        <span className="text-gray-400">→</span>
+                                        <span className="font-mono text-green-600 ml-2">{fix.fixed}</span>
+                                        <span className="text-gray-500 ml-2 text-[10px]">({fix.reason})</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              )}
+
+              {status === AnalysisStatus.ANALYZING && (
+                <div className="flex flex-col items-center justify-center py-40 space-y-12 text-center max-w-2xl mx-auto">
+                  <div className="w-full space-y-6">
+                    <div className="flex justify-between items-end">
+                      <div className="text-left">
+                        {inputMode !== 'text' && (
+                          <p className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.4em] mb-1">Batch {batchInfo.current} / {batchInfo.total}</p>
+                        )}
+                        <h3 className="text-3xl font-black text-aaa-blue tracking-tighter">{activeStage.label}</h3>
+                      </div>
+                      <span className="text-4xl font-black text-aaa-blue mono">{progress}%</span>
+                    </div>
+                    <div className="w-full h-4 bg-aaa-bg rounded-full overflow-hidden p-1 border border-aaa-border shadow-inner">
+                      <div className="h-full bg-gradient-to-r from-aaa-blue to-aaa-accent rounded-full transition-all duration-300 shadow-lg relative" style={{ width: `${progress}%` }}>
+                        <div className="absolute inset-0 bg-white/20 shimmer" />
+                      </div>
+                    </div>
+                    <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{activeStage.sub}</p>
+
+                    {/* Live Status Indicator */}
+                    {liveStatus.message && (
+                      <div className="mt-4 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 shadow-md">
+                        <div className="flex items-center gap-3">
+                          {liveStatus.isActive && (
+                            <div className="relative">
+                              <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                              <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+                            </div>
+                          )}
+                          <div className="flex-1 text-left">
+                            <p className="text-sm font-bold text-cyan-700">{liveStatus.message}</p>
+                            <p className="text-xs text-cyan-600 mt-0.5">{liveStatus.detail}</p>
+                          </div>
+                        </div>
+
+                        {/* Process Timeline for Chunks */}
+                        {batchInfo.total > 1 && (
+                          <div className="mt-3 pt-3 border-t border-cyan-200">
+                            <div className="flex gap-2">
+                              {Array.from({ length: batchInfo.total }).map((_, idx) => (
+                                <div
+                                  key={idx}
+                                  className={`flex-1 h-1.5 rounded-full transition-all ${idx < batchInfo.current
+                                    ? 'bg-green-400'
+                                    : idx === batchInfo.current - 1
+                                      ? 'bg-cyan-500 animate-pulse'
+                                      : 'bg-cyan-200'
+                                    }`}
+                                />
+                              ))}
+                            </div>
+                            <p className="text-[10px] text-cyan-600 mt-1.5 text-center">
+                              {batchInfo.current} of {batchInfo.total} chunks processed
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Preprocessing Information Display */}
+                    {preprocessingInfo && (
+                      <div className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200 shadow-lg">
+                        <div className="text-left space-y-4">
+                          <div className="flex items-center justify-between mb-4">
+                            <h4 className="text-lg font-bold text-aaa-blue">Text Preprocessing Complete</h4>
+                            <div className="flex items-center gap-4 text-sm">
+                              <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
+                                {preprocessingInfo.generalFixes + preprocessingInfo.particularFixes} fixes applied
+                              </span>
+                              {preprocessingInfo.estimatedClauses > 0 && (
+                                <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full font-semibold">
+                                  ~{preprocessingInfo.estimatedClauses} clauses detected
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-4 mb-4">
+                            <div className="p-3 bg-white/60 rounded-lg">
+                              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1">General Text</p>
+                              <p className="text-sm font-bold text-aaa-blue">{preprocessingInfo.generalFixes} issues fixed</p>
+                            </div>
+                            <div className="p-3 bg-white/60 rounded-lg">
+                              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1">Particular Text</p>
+                              <p className="text-sm font-bold text-aaa-blue">{preprocessingInfo.particularFixes} issues fixed</p>
+                            </div>
+                          </div>
+
+                          {/* Token Usage Display */}
+                          <div className="mt-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                            <div className="flex items-center justify-between mb-3">
+                              <h5 className="text-sm font-bold text-purple-700">Token Usage</h5>
+                              <span className={`text-xs font-semibold px-2 py-1 rounded-full ${preprocessingInfo.tokenInfo.usagePercentage < 50
+                                ? 'bg-green-100 text-green-700'
+                                : preprocessingInfo.tokenInfo.usagePercentage < 80
+                                  ? 'bg-yellow-100 text-yellow-700'
+                                  : 'bg-red-100 text-red-700'
+                                }`}>
+                                {preprocessingInfo.tokenInfo.usagePercentage}% of budget
+                              </span>
+                            </div>
+                            <div className="space-y-2">
+                              <div className="flex justify-between items-center text-xs">
+                                <span className="text-gray-600">Input Tokens (Estimated):</span>
+                                <span className="font-mono font-bold text-purple-700">
+                                  {preprocessingInfo.tokenInfo.inputTokens.toLocaleString()} / {preprocessingInfo.tokenInfo.totalTokenBudget.toLocaleString()}
+                                </span>
+                              </div>
+                              <div className="w-full h-2 bg-purple-100 rounded-full overflow-hidden">
+                                <div
+                                  className={`h-full rounded-full transition-all ${preprocessingInfo.tokenInfo.usagePercentage < 50
+                                    ? 'bg-gradient-to-r from-green-400 to-green-500'
+                                    : preprocessingInfo.tokenInfo.usagePercentage < 80
+                                      ? 'bg-gradient-to-r from-yellow-400 to-yellow-500'
+                                      : 'bg-gradient-to-r from-red-400 to-red-500'
+                                    }`}
+                                  style={{ width: `${preprocessingInfo.tokenInfo.usagePercentage}%` }}
+                                />
+                              </div>
+                              <div className="flex justify-between items-center text-xs mt-2">
+                                <span className="text-gray-600">Output Token Limit:</span>
+                                <span className="font-mono font-bold text-indigo-700">
+                                  {preprocessingInfo.tokenInfo.outputTokenLimit.toLocaleString()} tokens
+                                </span>
+                              </div>
+                              <div className="text-[10px] text-gray-500 mt-1">
+                                Model: Claude Sonnet 4.5 • Context Window: {preprocessingInfo.tokenInfo.totalTokenBudget.toLocaleString()} tokens
+                              </div>
+                            </div>
+                          </div>
+
+                          {preprocessingInfo.fixes.length > 0 && (
+                            <div className="mt-4">
+                              <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2">Sample Fixes Applied:</p>
+                              <div className="space-y-2 max-h-32 overflow-y-auto">
+                                {preprocessingInfo.fixes.map((fix, idx) => (
+                                  <div key={idx} className="text-xs p-2 bg-white/80 rounded border border-blue-100">
                                     <span className="font-mono text-red-600 line-through mr-2">{fix.original}</span>
                                     <span className="text-gray-400">→</span>
                                     <span className="font-mono text-green-600 ml-2">{fix.fixed}</span>
@@ -2345,321 +2528,130 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                                   </div>
                                 ))}
                               </div>
+                              {preprocessingInfo.generalFixes + preprocessingInfo.particularFixes > 10 && (
+                                <p className="text-xs text-gray-500 mt-2">
+                                  +{preprocessingInfo.generalFixes + preprocessingInfo.particularFixes - 10} more fixes...
+                                </p>
+                              )}
                             </div>
                           )}
                         </div>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
-            </div>
-          )}
-
-          {status === AnalysisStatus.ANALYZING && (
-            <div className="flex flex-col items-center justify-center py-40 space-y-12 text-center max-w-2xl mx-auto">
-              <div className="w-full space-y-6">
-                <div className="flex justify-between items-end">
-                   <div className="text-left">
-                      {inputMode !== 'text' && (
-                        <p className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.4em] mb-1">Batch {batchInfo.current} / {batchInfo.total}</p>
-                      )}
-                      <h3 className="text-3xl font-black text-aaa-blue tracking-tighter">{activeStage.label}</h3>
-                   </div>
-                   <span className="text-4xl font-black text-aaa-blue mono">{progress}%</span>
-                </div>
-                <div className="w-full h-4 bg-aaa-bg rounded-full overflow-hidden p-1 border border-aaa-border shadow-inner">
-                   <div className="h-full bg-gradient-to-r from-aaa-blue to-aaa-accent rounded-full transition-all duration-300 shadow-lg relative" style={{ width: `${progress}%` }}>
-                     <div className="absolute inset-0 bg-white/20 shimmer" />
-                   </div>
-                </div>
-                <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{activeStage.sub}</p>
-                
-                {/* Live Status Indicator */}
-                {liveStatus.message && (
-                  <div className="mt-4 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 shadow-md">
-                    <div className="flex items-center gap-3">
-                      {liveStatus.isActive && (
-                        <div className="relative">
-                          <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
-                          <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
-                        </div>
-                      )}
-                      <div className="flex-1 text-left">
-                        <p className="text-sm font-bold text-cyan-700">{liveStatus.message}</p>
-                        <p className="text-xs text-cyan-600 mt-0.5">{liveStatus.detail}</p>
-                      </div>
-                    </div>
-                    
-                    {/* Process Timeline for Chunks */}
-                    {batchInfo.total > 1 && (
-                      <div className="mt-3 pt-3 border-t border-cyan-200">
-                        <div className="flex gap-2">
-                          {Array.from({ length: batchInfo.total }).map((_, idx) => (
-                            <div 
-                              key={idx}
-                              className={`flex-1 h-1.5 rounded-full transition-all ${
-                                idx < batchInfo.current 
-                                  ? 'bg-green-400' 
-                                  : idx === batchInfo.current - 1 
-                                  ? 'bg-cyan-500 animate-pulse' 
-                                  : 'bg-cyan-200'
-                              }`}
-                            />
-                          ))}
-                        </div>
-                        <p className="text-[10px] text-cyan-600 mt-1.5 text-center">
-                          {batchInfo.current} of {batchInfo.total} chunks processed
-                        </p>
                       </div>
                     )}
                   </div>
-                )}
-                
-                {/* Preprocessing Information Display */}
-                {preprocessingInfo && (
-                  <div className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-200 shadow-lg">
-                    <div className="text-left space-y-4">
-                      <div className="flex items-center justify-between mb-4">
-                        <h4 className="text-lg font-bold text-aaa-blue">Text Preprocessing Complete</h4>
-                        <div className="flex items-center gap-4 text-sm">
-                          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
-                            {preprocessingInfo.generalFixes + preprocessingInfo.particularFixes} fixes applied
-                          </span>
-                          {preprocessingInfo.estimatedClauses > 0 && (
-                            <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full font-semibold">
-                              ~{preprocessingInfo.estimatedClauses} clauses detected
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="p-3 bg-white/60 rounded-lg">
-                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1">General Text</p>
-                          <p className="text-sm font-bold text-aaa-blue">{preprocessingInfo.generalFixes} issues fixed</p>
-                        </div>
-                        <div className="p-3 bg-white/60 rounded-lg">
-                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1">Particular Text</p>
-                          <p className="text-sm font-bold text-aaa-blue">{preprocessingInfo.particularFixes} issues fixed</p>
-                        </div>
-                      </div>
-                      
-                      {/* Token Usage Display */}
-                      <div className="mt-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
-                        <div className="flex items-center justify-between mb-3">
-                          <h5 className="text-sm font-bold text-purple-700">Token Usage</h5>
-                          <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
-                            preprocessingInfo.tokenInfo.usagePercentage < 50 
-                              ? 'bg-green-100 text-green-700' 
-                              : preprocessingInfo.tokenInfo.usagePercentage < 80 
-                              ? 'bg-yellow-100 text-yellow-700' 
-                              : 'bg-red-100 text-red-700'
-                          }`}>
-                            {preprocessingInfo.tokenInfo.usagePercentage}% of budget
-                          </span>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex justify-between items-center text-xs">
-                            <span className="text-gray-600">Input Tokens (Estimated):</span>
-                            <span className="font-mono font-bold text-purple-700">
-                              {preprocessingInfo.tokenInfo.inputTokens.toLocaleString()} / {preprocessingInfo.tokenInfo.totalTokenBudget.toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="w-full h-2 bg-purple-100 rounded-full overflow-hidden">
-                            <div 
-                              className={`h-full rounded-full transition-all ${
-                                preprocessingInfo.tokenInfo.usagePercentage < 50 
-                                  ? 'bg-gradient-to-r from-green-400 to-green-500' 
-                                  : preprocessingInfo.tokenInfo.usagePercentage < 80 
-                                  ? 'bg-gradient-to-r from-yellow-400 to-yellow-500' 
-                                  : 'bg-gradient-to-r from-red-400 to-red-500'
-                              }`}
-                              style={{ width: `${preprocessingInfo.tokenInfo.usagePercentage}%` }}
-                            />
-                          </div>
-                          <div className="flex justify-between items-center text-xs mt-2">
-                            <span className="text-gray-600">Output Token Limit:</span>
-                            <span className="font-mono font-bold text-indigo-700">
-                              {preprocessingInfo.tokenInfo.outputTokenLimit.toLocaleString()} tokens
-                            </span>
-                          </div>
-                          <div className="text-[10px] text-gray-500 mt-1">
-                            Model: Claude Sonnet 4.5 • Context Window: {preprocessingInfo.tokenInfo.totalTokenBudget.toLocaleString()} tokens
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {preprocessingInfo.fixes.length > 0 && (
-                        <div className="mt-4">
-                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2">Sample Fixes Applied:</p>
-                          <div className="space-y-2 max-h-32 overflow-y-auto">
-                            {preprocessingInfo.fixes.map((fix, idx) => (
-                              <div key={idx} className="text-xs p-2 bg-white/80 rounded border border-blue-100">
-                                <span className="font-mono text-red-600 line-through mr-2">{fix.original}</span>
-                                <span className="text-gray-400">→</span>
-                                <span className="font-mono text-green-600 ml-2">{fix.fixed}</span>
-                                <span className="text-gray-500 ml-2 text-[10px]">({fix.reason})</span>
-                              </div>
-                            ))}
-                          </div>
-                          {preprocessingInfo.generalFixes + preprocessingInfo.particularFixes > 10 && (
-                            <p className="text-xs text-gray-500 mt-2">
-                              +{preprocessingInfo.generalFixes + preprocessingInfo.particularFixes - 10} more fixes...
-                            </p>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {status === AnalysisStatus.ERROR && (
-            <div className="flex flex-col items-center justify-center py-32 text-center space-y-8 animate-in fade-in">
-               <div className="w-24 h-24 bg-red-50 text-red-500 rounded-3xl flex items-center justify-center border border-red-100 shadow-xl">
-                 <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-               </div>
-               <h3 className="text-3xl font-black text-aaa-blue">Process Stalled</h3>
-               <p className="text-aaa-muted max-w-md mx-auto">{error}</p>
-               <div className="flex gap-4">
-                 <button onClick={goBackToInput} className="px-12 py-4 bg-aaa-blue text-white rounded-2xl font-black">Restart Extraction</button>
-               </div>
-            </div>
-          )}
-
-          {status === AnalysisStatus.COMPLETED && (
-            <div className="space-y-16 animate-in slide-in-from-bottom-12 pb-20">
-              <div className="flex flex-col gap-6 border-b border-aaa-border pb-12">
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <input 
-                      type="text" 
-                      value={projectName} 
-                      onChange={(e) => setProjectName(e.target.value)} 
-                      onBlur={() => persistCurrentProject()}
-                      className="text-7xl font-black text-aaa-blue bg-transparent border-none focus:ring-0 w-full tracking-tighter hover:bg-aaa-bg/50 rounded-2xl transition-all cursor-text outline-none"
-                      placeholder="Enter Project Name..."
-                    />
-                  </div>
-                  <div className="flex flex-col items-end gap-2">
-                     <div className="flex items-center gap-3">
-                        {isSaving && (
-                          <span className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest animate-pulse">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            Session Sync
-                          </span>
-                        )}
-                        <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest opacity-40">Matrix v2.6.0</span>
-                     </div>
-                     <p className="text-aaa-muted text-[10px] font-bold uppercase tracking-[0.2em]">{clauses.length} Verbatim Data Nodes</p>
-                  </div>
-                </div>
-              </div>
-
-              <Dashboard clauses={clauses} />
-
-              {(searchResults || searchError || isSearching) && (
-                <div className="bg-white p-10 rounded-[32px] border border-aaa-blue/10 shadow-premium animate-in slide-in-from-bottom-6">
-                  <div className="flex items-center justify-between mb-8 border-b border-aaa-border pb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-aaa-blue rounded-xl flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-2xl font-black text-aaa-blue tracking-tighter">Smart Search Results</h3>
-                    </div>
-                    <button 
-                      onClick={() => { setSearchResults(null); setSmartSearchQuery(''); }}
-                      className="text-[10px] font-black text-aaa-muted uppercase tracking-widest hover:text-red-500 transition-colors"
-                    >
-                      Clear Results
-                    </button>
-                  </div>
-
-                  {isSearching && (
-                    <div className="py-20 flex flex-col items-center justify-center gap-4 text-aaa-muted">
-                      <div className="w-8 h-8 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" />
-                      <p className="text-xs font-black uppercase tracking-[0.3em]">Querying Semantic Matrix...</p>
-                    </div>
-                  )}
-
-                  {!isSearching && searchResults && searchResults.length > 0 && (
-                    <div className="space-y-4">
-                      {searchResults.map((res) => (
-                        <div 
-                          key={res.clause_id}
-                          onClick={() => onOpenClause(res.clause_number)}
-                          className="group p-6 bg-aaa-bg/30 border border-aaa-border rounded-2xl hover:border-aaa-blue hover:bg-white hover:shadow-xl transition-all cursor-pointer relative overflow-hidden"
-                        >
-                          <div className="absolute right-0 top-0 h-full w-1 bg-aaa-blue transform translate-x-full group-hover:translate-x-0 transition-transform" />
-                          <div className="flex items-start justify-between gap-6">
-                            <div className="space-y-2 flex-1">
-                              <div className="flex items-center gap-3">
-                                <span className="text-sm font-black text-aaa-blue mono">C.{res.clause_number}</span>
-                                <h4 className="text-lg font-black text-aaa-text tracking-tight group-hover:text-aaa-blue transition-colors">{res.title}</h4>
-                              </div>
-                              <p className="text-[11px] font-bold text-aaa-muted leading-relaxed italic">" {res.reason} "</p>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-[10px] font-black text-aaa-blue opacity-30 uppercase tracking-widest mb-1">Relevance</div>
-                              <div className="text-2xl font-black text-aaa-blue tracking-tighter">{(res.relevance_score * 100).toFixed(0)}%</div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               )}
 
-              {/* Contract Documents Tabs */}
-              {contract ? (
-                <ContractSectionsTabs
-                  contract={contract}
-                  onUpdate={async (updatedContract) => {
-                    // Update local state immediately for responsive UI (no auto-save)
-                    setContract(updatedContract);
-                    setClauses(getAllClausesFromContract(updatedContract));
-                  }}
-                  onSave={async (updatedContract) => {
-                    // Explicit save when Save button is clicked
-                    await performSaveContract(updatedContract);
-                  }}
-                  onEditClause={handleEditClause}
-                  onCompareClause={setCompareClause}
-                  onDeleteClause={handleDeleteClause}
-                  onReorderClause={handleReorder}
-                />
-              ) : clauses.length > 0 ? (
-                // Fallback: if contract not set but clauses exist, create contract
-                (() => {
-                  const fallbackContract = ensureContractHasSections({
-                    id: activeContractId || crypto.randomUUID(),
-                    name: projectName || "Untitled Contract",
-                    timestamp: Date.now(),
-                    clauses,
-                    metadata: {
-                      totalClauses: clauses.length,
-                      generalCount: clauses.filter(c => c.condition_type === 'General').length,
-                      particularCount: clauses.filter(c => c.condition_type === 'Particular').length,
-                      highRiskCount: 0,
-                      conflictCount: clauses.filter(c => c.comparison && c.comparison.length > 0).length,
-                      timeSensitiveCount: clauses.filter(c => c.time_frames && c.time_frames.length > 0).length
-                    }
-                  });
-                  setContract(fallbackContract);
-                  return (
+              {status === AnalysisStatus.ERROR && (
+                <div className="flex flex-col items-center justify-center py-32 text-center space-y-8 animate-in fade-in">
+                  <div className="w-24 h-24 bg-red-50 text-red-500 rounded-3xl flex items-center justify-center border border-red-100 shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                  </div>
+                  <h3 className="text-3xl font-black text-aaa-blue">Process Stalled</h3>
+                  <p className="text-aaa-muted max-w-md mx-auto">{error}</p>
+                  <div className="flex gap-4">
+                    <button onClick={goBackToInput} className="px-12 py-4 bg-aaa-blue text-white rounded-2xl font-black">Restart Extraction</button>
+                  </div>
+                </div>
+              )}
+
+              {status === AnalysisStatus.COMPLETED && (
+                <div className="space-y-16 animate-in slide-in-from-bottom-12 pb-20">
+                  <div className="flex flex-col gap-6 border-b border-aaa-border pb-12">
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1">
+                        <input
+                          type="text"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                          onBlur={() => persistCurrentProject()}
+                          className="text-7xl font-black text-aaa-blue bg-transparent border-none focus:ring-0 w-full tracking-tighter hover:bg-aaa-bg/50 rounded-2xl transition-all cursor-text outline-none"
+                          placeholder="Enter Project Name..."
+                        />
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <div className="flex items-center gap-3">
+                          {isSaving && (
+                            <span className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest animate-pulse">
+                              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                              Session Sync
+                            </span>
+                          )}
+                          <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest opacity-40">Matrix v2.6.0</span>
+                        </div>
+                        <p className="text-aaa-muted text-[10px] font-bold uppercase tracking-[0.2em]">{clauses.length} Verbatim Data Nodes</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Dashboard clauses={clauses} />
+
+                  {(searchResults || searchError || isSearching) && (
+                    <div className="bg-white p-10 rounded-[32px] border border-aaa-blue/10 shadow-premium animate-in slide-in-from-bottom-6">
+                      <div className="flex items-center justify-between mb-8 border-b border-aaa-border pb-6">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-aaa-blue rounded-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                          </div>
+                          <h3 className="text-2xl font-black text-aaa-blue tracking-tighter">Smart Search Results</h3>
+                        </div>
+                        <button
+                          onClick={() => { setSearchResults(null); setSmartSearchQuery(''); }}
+                          className="text-[10px] font-black text-aaa-muted uppercase tracking-widest hover:text-red-500 transition-colors"
+                        >
+                          Clear Results
+                        </button>
+                      </div>
+
+                      {isSearching && (
+                        <div className="py-20 flex flex-col items-center justify-center gap-4 text-aaa-muted">
+                          <div className="w-8 h-8 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" />
+                          <p className="text-xs font-black uppercase tracking-[0.3em]">Querying Semantic Matrix...</p>
+                        </div>
+                      )}
+
+                      {!isSearching && searchResults && searchResults.length > 0 && (
+                        <div className="space-y-4">
+                          {searchResults.map((res) => (
+                            <div
+                              key={res.clause_id}
+                              onClick={() => onOpenClause(res.clause_number)}
+                              className="group p-6 bg-aaa-bg/30 border border-aaa-border rounded-2xl hover:border-aaa-blue hover:bg-white hover:shadow-xl transition-all cursor-pointer relative overflow-hidden"
+                            >
+                              <div className="absolute right-0 top-0 h-full w-1 bg-aaa-blue transform translate-x-full group-hover:translate-x-0 transition-transform" />
+                              <div className="flex items-start justify-between gap-6">
+                                <div className="space-y-2 flex-1">
+                                  <div className="flex items-center gap-3">
+                                    <span className="text-sm font-black text-aaa-blue mono">C.{res.clause_number}</span>
+                                    <h4 className="text-lg font-black text-aaa-text tracking-tight group-hover:text-aaa-blue transition-colors">{res.title}</h4>
+                                  </div>
+                                  <p className="text-[11px] font-bold text-aaa-muted leading-relaxed italic">" {res.reason} "</p>
+                                </div>
+                                <div className="text-right">
+                                  <div className="text-[10px] font-black text-aaa-blue opacity-30 uppercase tracking-widest mb-1">Relevance</div>
+                                  <div className="text-2xl font-black text-aaa-blue tracking-tighter">{(res.relevance_score * 100).toFixed(0)}%</div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Contract Documents Tabs */}
+                  {contract ? (
                     <ContractSectionsTabs
-                      contract={fallbackContract}
+                      contract={contract}
                       onUpdate={async (updatedContract) => {
+                        // Update local state immediately for responsive UI (no auto-save)
                         setContract(updatedContract);
                         setClauses(getAllClausesFromContract(updatedContract));
                       }}
                       onSave={async (updatedContract) => {
+                        // Explicit save when Save button is clicked
                         await performSaveContract(updatedContract);
                       }}
                       onEditClause={handleEditClause}
@@ -2667,502 +2659,534 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       onDeleteClause={handleDeleteClause}
                       onReorderClause={handleReorder}
                     />
-                  );
-                })()
-              ) : (
-                <div className="bg-white border border-aaa-border rounded-3xl p-16 text-center">
-                  <p className="text-aaa-muted font-semibold">No contract data available</p>
-                </div>
-              )}
-
-              {/* Legacy View Toggle - Removed, replaced by ContractSectionsTabs */}
-              {false && (
-                <div className="space-y-12 max-w-[1400px] mx-auto">
-                  {(() => {
-                    // Group clauses by chapter
-                    const chaptersMap = new Map<string, Clause[]>();
-                    const unassigned: Clause[] = [];
-                    
-                    filteredClauses.forEach(clause => {
-                      if (clause.chapter) {
-                        if (!chaptersMap.has(clause.chapter)) {
-                          chaptersMap.set(clause.chapter, []);
-                        }
-                        chaptersMap.get(clause.chapter)!.push(clause);
-                      } else {
-                        unassigned.push(clause);
-                      }
-                    });
-                    
-                    // Sort chapters
-                    const sortedChapters = Array.from(chaptersMap.entries()).sort((a, b) => {
-                      const aNum = parseInt(a[0]);
-                      const bNum = parseInt(b[0]);
-                      if (!isNaN(aNum) && !isNaN(bNum)) {
-                        return aNum - bNum;
-                      }
-                      if (!isNaN(aNum) && isNaN(bNum)) return -1;
-                      if (isNaN(aNum) && !isNaN(bNum)) return 1;
-                      return a[0].localeCompare(b[0], undefined, { numeric: true });
-                    });
-                    
-                    return (
-                      <>
-                        {sortedChapters.map(([chapterName, chapterClauses], chapterIdx) => (
-                          <div key={chapterName} className="stagger-item" style={{ animationDelay: `${chapterIdx * 0.1}s` }}>
-                            <div className="mb-6 pb-4 border-b-2 border-aaa-blue">
-                              <h3 className="text-3xl font-black text-aaa-blue tracking-tighter">Chapter {chapterName}</h3>
-                            </div>
-                            <div className="grid grid-cols-1 gap-12">
-                              {(() => {
-                                const grouped = groupClausesByParent(chapterClauses);
-                                const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
-                                  const parse = (s: string) => {
-                                    return s.split('.').map(x => {
-                                      const num = parseInt(x);
-                                      if (!isNaN(num) && x === num.toString()) {
-                                        return { type: 'number', value: num, str: x };
-                                      }
-                                      return { type: 'string', value: 0, str: x };
-                                    });
-                                  };
-                                  const aP = parse(a[1].parent.clause_number);
-                                  const bP = parse(b[1].parent.clause_number);
-                                  for(let i=0; i<Math.max(aP.length, bP.length); i++) {
-                                    const aPart = aP[i] || { type: 'number', value: 0, str: '' };
-                                    const bPart = bP[i] || { type: 'number', value: 0, str: '' };
-                                    if (aPart.type === 'number' && bPart.type === 'number') {
-                                      if (aPart.value !== bPart.value) return aPart.value - bPart.value;
-                                    } else {
-                                      const aStr = aPart.str.toLowerCase();
-                                      const bStr = bPart.str.toLowerCase();
-                                      if (aStr !== bStr) {
-                                        const aNum = parseInt(aStr);
-                                        const bNum = parseInt(bStr);
-                                        if (!isNaN(aNum) && isNaN(bNum)) return -1;
-                                        if (isNaN(aNum) && !isNaN(bNum)) return 1;
-                                        return aStr.localeCompare(bStr);
-                                      }
-                                    }
-                                  }
-                                  return 0;
-                                });
-                                
-                                return sortedGroups.map(([parentNumber, { parent, subClauses }], idx) => (
-                                  <div 
-                                    key={`group-${parentNumber}-${idx}`}
-                                    className="stagger-item"
-                                    style={{ animationDelay: `${idx * 0.05}s` }}
-                                  >
-                                    <GroupedClauseCard
-                                      parentClause={parent}
-                                      subClauses={subClauses}
-                                      onCompare={setCompareClause}
-                                      onEdit={handleEditClause}
-                                      searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
-                                    />
-                                  </div>
-                                ));
-                              })()}
-                            </div>
-                          </div>
-                        ))}
-                        {unassigned.length > 0 && (
-                          <div className="stagger-item">
-                            <div className="mb-6 pb-4 border-b-2 border-aaa-border">
-                              <h3 className="text-2xl font-black text-aaa-muted tracking-tighter">Unassigned Clauses</h3>
-                            </div>
-                            <div className="grid grid-cols-1 gap-12">
-                              {(() => {
-                                const grouped = groupClausesByParent(unassigned);
-                                const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
-                                  const parse = (s: string) => {
-                                    return s.split('.').map(x => {
-                                      const num = parseInt(x);
-                                      if (!isNaN(num) && x === num.toString()) {
-                                        return { type: 'number', value: num, str: x };
-                                      }
-                                      return { type: 'string', value: 0, str: x };
-                                    });
-                                  };
-                                  const aP = parse(a[1].parent.clause_number);
-                                  const bP = parse(b[1].parent.clause_number);
-                                  for(let i=0; i<Math.max(aP.length, bP.length); i++) {
-                                    const aPart = aP[i] || { type: 'number', value: 0, str: '' };
-                                    const bPart = bP[i] || { type: 'number', value: 0, str: '' };
-                                    if (aPart.type === 'number' && bPart.type === 'number') {
-                                      if (aPart.value !== bPart.value) return aPart.value - bPart.value;
-                                    } else {
-                                      const aStr = aPart.str.toLowerCase();
-                                      const bStr = bPart.str.toLowerCase();
-                                      if (aStr !== bStr) {
-                                        const aNum = parseInt(aStr);
-                                        const bNum = parseInt(bStr);
-                                        if (!isNaN(aNum) && isNaN(bNum)) return -1;
-                                        if (isNaN(aNum) && !isNaN(bNum)) return 1;
-                                        return aStr.localeCompare(bStr);
-                                      }
-                                    }
-                                  }
-                                  return 0;
-                                });
-                                
-                                return sortedGroups.map(([parentNumber, { parent, subClauses }], idx) => (
-                                  <div 
-                                    key={`group-${parentNumber}-${idx}`}
-                                    className="stagger-item"
-                                    style={{ animationDelay: `${idx * 0.05}s` }}
-                                  >
-                                    <GroupedClauseCard
-                                      parentClause={parent}
-                                      subClauses={subClauses}
-                                      onCompare={setCompareClause}
-                                      onEdit={handleEditClause}
-                                      searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
-                                    />
-                                  </div>
-                                ));
-                              })()}
-                            </div>
-                          </div>
-                        )}
-                      </>
-                    );
-                  })()}
-                </div>
-              )}
-            </div>
-          )}
-
-          {status === AnalysisStatus.LIBRARY && (
-            <div className="space-y-12 max-w-7xl mx-auto pb-20">
-              <div className="flex items-center justify-between border-b border-aaa-border pb-10">
-                <h2 className="text-5xl font-black text-aaa-blue tracking-tighter">Secured Archive</h2>
-                <div className="flex gap-4">
-                  <button 
-                    onClick={() => importBackupRef.current?.click()}
-                    className="flex items-center gap-3 px-8 py-4 bg-white border border-aaa-blue text-aaa-blue rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-bg transition-all shadow-sm active:scale-95"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
-                    Import Archive
-                  </button>
-                  <button onClick={() => setStatus(AnalysisStatus.IDLE)} className="px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all">New Extraction</button>
-                  <button 
-                    onClick={async () => {
-                      const newContractId = `contract-${Date.now()}`;
-                      const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
-                      
-                      const emptyContract = ensureContractHasSections({
-                        id: newContractId,
-                        name: newContractName,
+                  ) : clauses.length > 0 ? (
+                    // Fallback: if contract not set but clauses exist, create contract
+                    (() => {
+                      const fallbackContract = ensureContractHasSections({
+                        id: activeContractId || crypto.randomUUID(),
+                        name: projectName || "Untitled Contract",
                         timestamp: Date.now(),
-                        clauses: [],
+                        clauses,
                         metadata: {
-                          totalClauses: 0,
-                          generalCount: 0,
-                          particularCount: 0,
+                          totalClauses: clauses.length,
+                          generalCount: clauses.filter(c => c.condition_type === 'General').length,
+                          particularCount: clauses.filter(c => c.condition_type === 'Particular').length,
                           highRiskCount: 0,
-                          conflictCount: 0,
-                          timeSensitiveCount: 0
+                          conflictCount: clauses.filter(c => c.comparison && c.comparison.length > 0).length,
+                          timeSensitiveCount: clauses.filter(c => c.time_frames && c.time_frames.length > 0).length
                         }
                       });
-                      setContract(emptyContract);
-                      setClauses([]);
-                      setProjectName(newContractName);
-                      setActiveContractId(newContractId);
-                      setStatus(AnalysisStatus.COMPLETED);
-                      
-                      // Save empty contract to database immediately
-                      try {
-                        await performSaveContract(emptyContract);
-                      } catch (err) {
-                        console.error("Failed to save new contract:", err);
-                      }
-                    }} 
-                    className="px-10 py-4 bg-emerald-500 text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-emerald-600 transition-all"
-                  >
-                    New Contract
-                  </button>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {library.map(c => (
-                  <div key={c.id} onClick={() => { 
-                    const contractWithSections = ensureContractHasSections(c);
-                    // Re-process clause links to fix any broken hyperlinks
-                    const allClauses = getAllClausesFromContract(contractWithSections);
-                    const reprocessedClauses = reprocessClauseLinks(allClauses);
-                    setContract(contractWithSections);
-                    setClauses(reprocessedClauses);
-                    setProjectName(contractWithSections.name);
-                    setActiveContractId(contractWithSections.id);
-                    setStatus(AnalysisStatus.COMPLETED); 
-                  }} className={`group bg-white p-10 rounded-3xl border shadow-premium cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${activeContractId === c.id ? 'border-aaa-blue ring-2 ring-aaa-blue/10' : 'border-aaa-border hover:border-aaa-blue'}`}>
-                    <div className="flex justify-between items-start mb-8">
-                       <h4 className="text-3xl font-black text-aaa-text truncate tracking-tighter pr-16">{c.name}</h4>
-                       <div className="flex gap-2 absolute top-8 right-8">
-                          <button onClick={(e) => handleExportContract(e, c)} title="Export to PC" className="p-2.5 bg-emerald-50 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-100 rounded-xl transition-all shadow-sm opacity-0 group-hover:opacity-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                          </button>
-                          <button onClick={(e) => handleRenameArchive(e, c)} className="p-2.5 bg-aaa-bg text-aaa-muted hover:text-aaa-blue hover:bg-aaa-blue/10 rounded-xl transition-all shadow-sm opacity-0 group-hover:opacity-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-                          </button>
-                          <button onClick={(e) => handleDeleteArchive(e, c.id)} className="p-2.5 bg-red-50 text-red-400 hover:text-red-600 hover:bg-red-100 rounded-xl transition-all shadow-sm opacity-0 group-hover:opacity-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                          </button>
-                       </div>
-                    </div>
-                    <div className="mt-auto pt-8 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
-                      <span>{new Date(c.timestamp).toLocaleDateString()}</span>
-                      <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Contract Selector Modal - Shows on startup */}
-          {showContractSelector && (
-            <div 
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={(e) => {
-                if (e.target === e.currentTarget) {
-                  setShowContractSelector(false);
-                }
-              }}
-            >
-              <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
-                <div className="p-8 border-b border-aaa-border flex justify-between items-start">
-                  <div>
-                    <h2 className="text-3xl font-black text-aaa-text mb-2">Select a Contract</h2>
-                    <p className="text-aaa-muted text-sm">Choose a contract to continue working, or create a new one</p>
-                  </div>
-                  <button
-                    onClick={() => setShowContractSelector(false)}
-                    className="p-2 text-aaa-muted hover:text-aaa-text hover:bg-aaa-bg rounded-lg transition-all"
-                    title="Close"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                
-                <div className="flex-1 overflow-y-auto p-8">
-                  {library.length === 0 ? (
-                    <div className="text-center py-12">
-                      <p className="text-aaa-muted mb-6">No contracts found. Create a new one to get started.</p>
-                      <div className="mt-6 p-4 bg-aaa-bg/50 rounded-xl border border-aaa-border">
-                        <p className="text-xs text-aaa-muted mb-2">Troubleshooting:</p>
-                        <ul className="text-xs text-left text-aaa-muted space-y-1 max-w-md mx-auto">
-                          <li>• Check browser console (F12) for errors</li>
-                          <li>• Verify you're logged in</li>
-                          <li>• Check Supabase Dashboard → Table Editor → contracts</li>
-                          <li>• Ensure RLS policies are set up (run migrations)</li>
-                        </ul>
-                      </div>
-                      <button
-                        onClick={refreshLibrary}
-                        className="mt-4 px-6 py-2 bg-aaa-blue text-white rounded-xl text-sm font-bold hover:bg-aaa-hover transition-all"
-                      >
-                        Refresh Contracts
-                      </button>
-                    </div>
+                      setContract(fallbackContract);
+                      return (
+                        <ContractSectionsTabs
+                          contract={fallbackContract}
+                          onUpdate={async (updatedContract) => {
+                            setContract(updatedContract);
+                            setClauses(getAllClausesFromContract(updatedContract));
+                          }}
+                          onSave={async (updatedContract) => {
+                            await performSaveContract(updatedContract);
+                          }}
+                          onEditClause={handleEditClause}
+                          onCompareClause={setCompareClause}
+                          onDeleteClause={handleDeleteClause}
+                          onReorderClause={handleReorder}
+                        />
+                      );
+                    })()
                   ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {library.map(c => {
-                        const savedContractId = localStorage.getItem('aaa_active_contract_id');
-                        const isLastActive = savedContractId === c.id;
-                        
+                    <div className="bg-white border border-aaa-border rounded-3xl p-16 text-center">
+                      <p className="text-aaa-muted font-semibold">No contract data available</p>
+                    </div>
+                  )}
+
+                  {/* Legacy View Toggle - Removed, replaced by ContractSectionsTabs */}
+                  {false && (
+                    <div className="space-y-12 max-w-[1400px] mx-auto">
+                      {(() => {
+                        // Group clauses by chapter
+                        const chaptersMap = new Map<string, Clause[]>();
+                        const unassigned: Clause[] = [];
+
+                        filteredClauses.forEach(clause => {
+                          if (clause.chapter) {
+                            if (!chaptersMap.has(clause.chapter)) {
+                              chaptersMap.set(clause.chapter, []);
+                            }
+                            chaptersMap.get(clause.chapter)!.push(clause);
+                          } else {
+                            unassigned.push(clause);
+                          }
+                        });
+
+                        // Sort chapters
+                        const sortedChapters = Array.from(chaptersMap.entries()).sort((a, b) => {
+                          const aNum = parseInt(a[0]);
+                          const bNum = parseInt(b[0]);
+                          if (!isNaN(aNum) && !isNaN(bNum)) {
+                            return aNum - bNum;
+                          }
+                          if (!isNaN(aNum) && isNaN(bNum)) return -1;
+                          if (isNaN(aNum) && !isNaN(bNum)) return 1;
+                          return a[0].localeCompare(b[0], undefined, { numeric: true });
+                        });
+
                         return (
-                          <div
-                            key={c.id}
-                            onClick={() => {
-                              const contractWithSections = ensureContractHasSections(c);
-                              // Re-process clause links to fix any broken hyperlinks
-                              const allClauses = getAllClausesFromContract(contractWithSections);
-                              const reprocessedClauses = reprocessClauseLinks(allClauses);
-                              setContract(contractWithSections);
-                              setClauses(reprocessedClauses);
-                              setProjectName(contractWithSections.name);
-                              setActiveContractId(contractWithSections.id);
-                              setStatus(AnalysisStatus.COMPLETED);
-                              setShowContractSelector(false);
-                            }}
-                            className={`group bg-white p-6 rounded-2xl border shadow-lg cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${
-                              isLastActive 
-                                ? 'border-aaa-blue ring-2 ring-aaa-blue/20 bg-aaa-blue/5' 
-                                : 'border-aaa-border hover:border-aaa-blue'
-                            }`}
-                          >
-                            {isLastActive && (
-                              <div className="absolute top-4 right-4 px-3 py-1 bg-aaa-blue text-white text-[9px] font-black rounded-full uppercase tracking-widest">
-                                Last Active
+                          <>
+                            {sortedChapters.map(([chapterName, chapterClauses], chapterIdx) => (
+                              <div key={chapterName} className="stagger-item" style={{ animationDelay: `${chapterIdx * 0.1}s` }}>
+                                <div className="mb-6 pb-4 border-b-2 border-aaa-blue">
+                                  <h3 className="text-3xl font-black text-aaa-blue tracking-tighter">Chapter {chapterName}</h3>
+                                </div>
+                                <div className="grid grid-cols-1 gap-12">
+                                  {(() => {
+                                    const grouped = groupClausesByParent(chapterClauses);
+                                    const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
+                                      const parse = (s: string) => {
+                                        return s.split('.').map(x => {
+                                          const num = parseInt(x);
+                                          if (!isNaN(num) && x === num.toString()) {
+                                            return { type: 'number', value: num, str: x };
+                                          }
+                                          return { type: 'string', value: 0, str: x };
+                                        });
+                                      };
+                                      const aP = parse(a[1].parent.clause_number);
+                                      const bP = parse(b[1].parent.clause_number);
+                                      for (let i = 0; i < Math.max(aP.length, bP.length); i++) {
+                                        const aPart = aP[i] || { type: 'number', value: 0, str: '' };
+                                        const bPart = bP[i] || { type: 'number', value: 0, str: '' };
+                                        if (aPart.type === 'number' && bPart.type === 'number') {
+                                          if (aPart.value !== bPart.value) return aPart.value - bPart.value;
+                                        } else {
+                                          const aStr = aPart.str.toLowerCase();
+                                          const bStr = bPart.str.toLowerCase();
+                                          if (aStr !== bStr) {
+                                            const aNum = parseInt(aStr);
+                                            const bNum = parseInt(bStr);
+                                            if (!isNaN(aNum) && isNaN(bNum)) return -1;
+                                            if (isNaN(aNum) && !isNaN(bNum)) return 1;
+                                            return aStr.localeCompare(bStr);
+                                          }
+                                        }
+                                      }
+                                      return 0;
+                                    });
+
+                                    return sortedGroups.map(([parentNumber, { parent, subClauses }], idx) => (
+                                      <div
+                                        key={`group-${parentNumber}-${idx}`}
+                                        className="stagger-item"
+                                        style={{ animationDelay: `${idx * 0.05}s` }}
+                                      >
+                                        <GroupedClauseCard
+                                          parentClause={parent}
+                                          subClauses={subClauses}
+                                          onCompare={setCompareClause}
+                                          onEdit={handleEditClause}
+                                          searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
+                                        />
+                                      </div>
+                                    ));
+                                  })()}
+                                </div>
+                              </div>
+                            ))}
+                            {unassigned.length > 0 && (
+                              <div className="stagger-item">
+                                <div className="mb-6 pb-4 border-b-2 border-aaa-border">
+                                  <h3 className="text-2xl font-black text-aaa-muted tracking-tighter">Unassigned Clauses</h3>
+                                </div>
+                                <div className="grid grid-cols-1 gap-12">
+                                  {(() => {
+                                    const grouped = groupClausesByParent(unassigned);
+                                    const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
+                                      const parse = (s: string) => {
+                                        return s.split('.').map(x => {
+                                          const num = parseInt(x);
+                                          if (!isNaN(num) && x === num.toString()) {
+                                            return { type: 'number', value: num, str: x };
+                                          }
+                                          return { type: 'string', value: 0, str: x };
+                                        });
+                                      };
+                                      const aP = parse(a[1].parent.clause_number);
+                                      const bP = parse(b[1].parent.clause_number);
+                                      for (let i = 0; i < Math.max(aP.length, bP.length); i++) {
+                                        const aPart = aP[i] || { type: 'number', value: 0, str: '' };
+                                        const bPart = bP[i] || { type: 'number', value: 0, str: '' };
+                                        if (aPart.type === 'number' && bPart.type === 'number') {
+                                          if (aPart.value !== bPart.value) return aPart.value - bPart.value;
+                                        } else {
+                                          const aStr = aPart.str.toLowerCase();
+                                          const bStr = bPart.str.toLowerCase();
+                                          if (aStr !== bStr) {
+                                            const aNum = parseInt(aStr);
+                                            const bNum = parseInt(bStr);
+                                            if (!isNaN(aNum) && isNaN(bNum)) return -1;
+                                            if (isNaN(aNum) && !isNaN(bNum)) return 1;
+                                            return aStr.localeCompare(bStr);
+                                          }
+                                        }
+                                      }
+                                      return 0;
+                                    });
+
+                                    return sortedGroups.map(([parentNumber, { parent, subClauses }], idx) => (
+                                      <div
+                                        key={`group-${parentNumber}-${idx}`}
+                                        className="stagger-item"
+                                        style={{ animationDelay: `${idx * 0.05}s` }}
+                                      >
+                                        <GroupedClauseCard
+                                          parentClause={parent}
+                                          subClauses={subClauses}
+                                          onCompare={setCompareClause}
+                                          onEdit={handleEditClause}
+                                          searchKeywords={searchFilter.trim().split(/\s+/).filter(k => k.length > 0)}
+                                        />
+                                      </div>
+                                    ));
+                                  })()}
+                                </div>
                               </div>
                             )}
-                            <div className="flex justify-between items-start mb-4">
-                              <h4 className="text-2xl font-black text-aaa-text truncate tracking-tighter pr-16">{c.name}</h4>
-                            </div>
-                            <div className="mt-auto pt-4 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
-                              <span>{new Date(c.timestamp).toLocaleDateString()}</span>
-                              <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
-                            </div>
-                          </div>
+                          </>
                         );
-                      })}
+                      })()}
                     </div>
                   )}
                 </div>
-                
-                <div className="p-8 border-t border-aaa-border flex gap-4 justify-end">
-                  <button
-                    onClick={async () => {
-                      const newContractId = `contract-${Date.now()}`;
-                      const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
-                      
-                      setClauses([]);
-                      setProjectName(newContractName);
-                      setActiveContractId(newContractId);
-                      setStatus(AnalysisStatus.COMPLETED);
-                      setShowContractSelector(false);
-                      
-                      // Save empty contract to database immediately
-                      try {
-                        await performSave([], newContractName, newContractId);
-                      } catch (err) {
-                        console.error("Failed to save new contract:", err);
-                      }
-                    }}
-                    className="px-8 py-3 bg-emerald-500 text-white rounded-xl text-sm font-black uppercase tracking-widest shadow-lg hover:bg-emerald-600 transition-all"
-                  >
-                    Create New Contract
-                  </button>
+              )}
+
+              {status === AnalysisStatus.LIBRARY && (
+                <div className="space-y-12 max-w-7xl mx-auto pb-20">
+                  <div className="flex items-center justify-between border-b border-aaa-border pb-10">
+                    <h2 className="text-5xl font-black text-aaa-blue tracking-tighter">Secured Archive</h2>
+                    <div className="flex gap-4">
+                      <button
+                        onClick={() => importBackupRef.current?.click()}
+                        className="flex items-center gap-3 px-8 py-4 bg-white border border-aaa-blue text-aaa-blue rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-bg transition-all shadow-sm active:scale-95"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                        Import Archive
+                      </button>
+                      <button onClick={() => setStatus(AnalysisStatus.IDLE)} className="px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all">New Extraction</button>
+                      <button
+                        onClick={async () => {
+                          const newContractId = `contract-${Date.now()}`;
+                          const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
+
+                          const emptyContract = ensureContractHasSections({
+                            id: newContractId,
+                            name: newContractName,
+                            timestamp: Date.now(),
+                            clauses: [],
+                            metadata: {
+                              totalClauses: 0,
+                              generalCount: 0,
+                              particularCount: 0,
+                              highRiskCount: 0,
+                              conflictCount: 0,
+                              timeSensitiveCount: 0
+                            }
+                          });
+                          setContract(emptyContract);
+                          setClauses([]);
+                          setProjectName(newContractName);
+                          setActiveContractId(newContractId);
+                          setStatus(AnalysisStatus.COMPLETED);
+
+                          // Save empty contract to database immediately
+                          try {
+                            await performSaveContract(emptyContract);
+                          } catch (err) {
+                            console.error("Failed to save new contract:", err);
+                          }
+                        }}
+                        className="px-10 py-4 bg-emerald-500 text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-emerald-600 transition-all"
+                      >
+                        New Contract
+                      </button>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {library.map(c => (
+                      <div key={c.id} onClick={() => {
+                        const contractWithSections = ensureContractHasSections(c);
+                        // Re-process clause links to fix any broken hyperlinks
+                        const allClauses = getAllClausesFromContract(contractWithSections);
+                        const reprocessedClauses = reprocessClauseLinks(allClauses);
+                        setContract(contractWithSections);
+                        setClauses(reprocessedClauses);
+                        setProjectName(contractWithSections.name);
+                        setActiveContractId(contractWithSections.id);
+                        setStatus(AnalysisStatus.COMPLETED);
+                      }} className={`group bg-white p-10 rounded-3xl border shadow-premium cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${activeContractId === c.id ? 'border-aaa-blue ring-2 ring-aaa-blue/10' : 'border-aaa-border hover:border-aaa-blue'}`}>
+                        <div className="flex justify-between items-start mb-8">
+                          <h4 className="text-3xl font-black text-aaa-text truncate tracking-tighter pr-16">{c.name}</h4>
+                          <div className="flex gap-2 absolute top-8 right-8">
+                            <button onClick={(e) => handleExportContract(e, c)} title="Export to PC" className="p-2.5 bg-emerald-50 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-100 rounded-xl transition-all shadow-sm opacity-0 group-hover:opacity-100">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                            </button>
+                            <button onClick={(e) => handleRenameArchive(e, c)} className="p-2.5 bg-aaa-bg text-aaa-muted hover:text-aaa-blue hover:bg-aaa-blue/10 rounded-xl transition-all shadow-sm opacity-0 group-hover:opacity-100">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+                            </button>
+                            <button onClick={(e) => handleDeleteArchive(e, c.id)} className="p-2.5 bg-red-50 text-red-400 hover:text-red-600 hover:bg-red-100 rounded-xl transition-all shadow-sm opacity-0 group-hover:opacity-100">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div className="mt-auto pt-8 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
+                          <span>{new Date(c.timestamp).toLocaleDateString()}</span>
+                          <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              )}
+
+              {/* Contract Selector Modal - Shows on startup */}
+              {showContractSelector && (
+                <div
+                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                  onClick={(e) => {
+                    if (e.target === e.currentTarget) {
+                      setShowContractSelector(false);
+                    }
+                  }}
+                >
+                  <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+                    <div className="p-8 border-b border-aaa-border flex justify-between items-start">
+                      <div>
+                        <h2 className="text-3xl font-black text-aaa-text mb-2">Select a Contract</h2>
+                        <p className="text-aaa-muted text-sm">Choose a contract to continue working, or create a new one</p>
+                      </div>
+                      <button
+                        onClick={() => setShowContractSelector(false)}
+                        className="p-2 text-aaa-muted hover:text-aaa-text hover:bg-aaa-bg rounded-lg transition-all"
+                        title="Close"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto p-8">
+                      {library.length === 0 ? (
+                        <div className="text-center py-12">
+                          <p className="text-aaa-muted mb-6">No contracts found. Create a new one to get started.</p>
+                          <div className="mt-6 p-4 bg-aaa-bg/50 rounded-xl border border-aaa-border">
+                            <p className="text-xs text-aaa-muted mb-2">Troubleshooting:</p>
+                            <ul className="text-xs text-left text-aaa-muted space-y-1 max-w-md mx-auto">
+                              <li>• Check browser console (F12) for errors</li>
+                              <li>• Verify you're logged in</li>
+                              <li>• Check Supabase Dashboard → Table Editor → contracts</li>
+                              <li>• Ensure RLS policies are set up (run migrations)</li>
+                            </ul>
+                          </div>
+                          <button
+                            onClick={refreshLibrary}
+                            className="mt-4 px-6 py-2 bg-aaa-blue text-white rounded-xl text-sm font-bold hover:bg-aaa-hover transition-all"
+                          >
+                            Refresh Contracts
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {library.map(c => {
+                            const savedContractId = localStorage.getItem('aaa_active_contract_id');
+                            const isLastActive = savedContractId === c.id;
+
+                            return (
+                              <div
+                                key={c.id}
+                                onClick={() => {
+                                  const contractWithSections = ensureContractHasSections(c);
+                                  // Re-process clause links to fix any broken hyperlinks
+                                  const allClauses = getAllClausesFromContract(contractWithSections);
+                                  const reprocessedClauses = reprocessClauseLinks(allClauses);
+                                  setContract(contractWithSections);
+                                  setClauses(reprocessedClauses);
+                                  setProjectName(contractWithSections.name);
+                                  setActiveContractId(contractWithSections.id);
+                                  setStatus(AnalysisStatus.COMPLETED);
+                                  setShowContractSelector(false);
+                                }}
+                                className={`group bg-white p-6 rounded-2xl border shadow-lg cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${isLastActive
+                                  ? 'border-aaa-blue ring-2 ring-aaa-blue/20 bg-aaa-blue/5'
+                                  : 'border-aaa-border hover:border-aaa-blue'
+                                  }`}
+                              >
+                                {isLastActive && (
+                                  <div className="absolute top-4 right-4 px-3 py-1 bg-aaa-blue text-white text-[9px] font-black rounded-full uppercase tracking-widest">
+                                    Last Active
+                                  </div>
+                                )}
+                                <div className="flex justify-between items-start mb-4">
+                                  <h4 className="text-2xl font-black text-aaa-text truncate tracking-tighter pr-16">{c.name}</h4>
+                                </div>
+                                <div className="mt-auto pt-4 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
+                                  <span>{new Date(c.timestamp).toLocaleDateString()}</span>
+                                  <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="p-8 border-t border-aaa-border flex gap-4 justify-end">
+                      <button
+                        onClick={async () => {
+                          const newContractId = `contract-${Date.now()}`;
+                          const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
+
+                          setClauses([]);
+                          setProjectName(newContractName);
+                          setActiveContractId(newContractId);
+                          setStatus(AnalysisStatus.COMPLETED);
+                          setShowContractSelector(false);
+
+                          // Save empty contract to database immediately
+                          try {
+                            await performSave([], newContractName, newContractId);
+                          } catch (err) {
+                            console.error("Failed to save new contract:", err);
+                          }
+                        }}
+                        className="px-8 py-3 bg-emerald-500 text-white rounded-xl text-sm font-black uppercase tracking-widest shadow-lg hover:bg-emerald-600 transition-all"
+                      >
+                        Create New Contract
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </main>
+          </div>
+
+          {compareClause && (
+            <ComparisonModal
+              baseClause={compareClause}
+              allClauses={clauses}
+              onClose={() => setCompareClause(null)}
+              onUpdateClause={handleUpdateClause}
+            />
           )}
-        </main>
-      </div>
 
-      {compareClause && (
-        <ComparisonModal 
-          baseClause={compareClause} 
-          allClauses={clauses} 
-          onClose={() => setCompareClause(null)} 
-          onUpdateClause={handleUpdateClause}
-        />
-      )}
-      
-      {isAddModalOpen && (
-        <AddClauseModal 
-          contractId={activeContractId || 'current-contract'} 
-          onClose={() => {
-            setIsAddModalOpen(false);
-            setEditingClause(null);
-          }} 
-          onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
-          editingClause={editingClause}
-        />
-      )}
+          {isAddModalOpen && (
+            <AddClauseModal
+              contractId={activeContractId || 'current-contract'}
+              onClose={() => {
+                setIsAddModalOpen(false);
+                setEditingClause(null);
+              }}
+              onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
+              editingClause={editingClause}
+            />
+          )}
 
-      {showCategorySuggestions && categorySuggestions.length > 0 && (
-        <CategorySuggestionsModal
-          suggestions={categorySuggestions}
-          clauses={clauses}
-          onAccept={(suggestion) => {
-            // Assign clauses to category using CategoryManagerService
-            const categoryService = new CategoryManagerService();
-            categoryService.initialize(clauses);
-            
-            // Create category if it doesn't exist (ignore error if already exists)
-            categoryService.processAction({
-              action: 'create_category',
-              category_name: suggestion.categoryName
-            });
-            
-            // Add clauses to category
-            const updatedClauses = [...clauses];
-            suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
-              const addResult = categoryService.processAction({
-                action: 'add_clause',
-                clause_number: clauseNumber,
-                category_name: suggestion.categoryName
-              });
-              if (addResult.success) {
-                const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
-                if (clause) {
-                  clause.category = suggestion.categoryName;
-                }
-              }
-            });
-            setClauses(updatedClauses);
-            persistCurrentProject(updatedClauses, projectName);
-          }}
-          onReject={(suggestion) => {
-            // Just remove from suggestions list
-            setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
-          }}
-          onAcceptAll={() => {
-            // Accept all remaining suggestions
-            const categoryService = new CategoryManagerService();
-            categoryService.initialize(clauses);
-            const updatedClauses = [...clauses];
-            
-            categorySuggestions.forEach(suggestion => {
-              // Create category if it doesn't exist (ignore error if already exists)
-              categoryService.processAction({
-                action: 'create_category',
-                category_name: suggestion.categoryName
-              });
-              
-              // Add clauses to category
-              suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
-                const addResult = categoryService.processAction({
-                  action: 'add_clause',
-                  clause_number: clauseNumber,
+          {showCategorySuggestions && categorySuggestions.length > 0 && (
+            <CategorySuggestionsModal
+              suggestions={categorySuggestions}
+              clauses={clauses}
+              onAccept={(suggestion) => {
+                // Assign clauses to category using CategoryManagerService
+                const categoryService = new CategoryManagerService();
+                categoryService.initialize(clauses);
+
+                // Create category if it doesn't exist (ignore error if already exists)
+                categoryService.processAction({
+                  action: 'create_category',
                   category_name: suggestion.categoryName
                 });
-                if (addResult.success) {
-                  const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
-                  if (clause && !clause.category) {
-                    clause.category = suggestion.categoryName;
+
+                // Add clauses to category
+                const updatedClauses = [...clauses];
+                suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
+                  const addResult = categoryService.processAction({
+                    action: 'add_clause',
+                    clause_number: clauseNumber,
+                    category_name: suggestion.categoryName
+                  });
+                  if (addResult.success) {
+                    const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
+                    if (clause) {
+                      clause.category = suggestion.categoryName;
+                    }
                   }
-                }
-              });
-            });
-            
-            setClauses(updatedClauses);
-            persistCurrentProject(updatedClauses, projectName);
-            setShowCategorySuggestions(false);
-          }}
-          onDismiss={() => {
-            setShowCategorySuggestions(false);
-            setCategorySuggestions([]);
-          }}
-        />
-      )}
+                });
+                setClauses(updatedClauses);
+                persistCurrentProject(updatedClauses, projectName);
+              }}
+              onReject={(suggestion) => {
+                // Just remove from suggestions list
+                setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
+              }}
+              onAcceptAll={() => {
+                // Accept all remaining suggestions
+                const categoryService = new CategoryManagerService();
+                categoryService.initialize(clauses);
+                const updatedClauses = [...clauses];
 
-      <footer className="glass border-t border-aaa-border px-10 h-16 flex items-center justify-between z-10 shrink-0">
-         <div className="flex flex-col">
-            <p className="text-[9px] font-black text-aaa-muted uppercase tracking-[0.5em]">AAA CONTRACT DEPARTMENT © 2025</p>
-         </div>
-         <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Precision Engine Pro</span>
-      </footer>
-    </div>
-    </AppWrapper>
+                categorySuggestions.forEach(suggestion => {
+                  // Create category if it doesn't exist (ignore error if already exists)
+                  categoryService.processAction({
+                    action: 'create_category',
+                    category_name: suggestion.categoryName
+                  });
 
-    <AIBotSidebar
-      isOpen={isBotOpen}
-      onClose={() => setIsBotOpen(false)}
-      clauses={clauses}
-      selectedClause={selectedClauseForBot}
-    />
-    
-    <FloatingAIButton
-      onClick={() => setIsBotOpen(!isBotOpen)}
-      isOpen={isBotOpen}
-    />
+                  // Add clauses to category
+                  suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
+                    const addResult = categoryService.processAction({
+                      action: 'add_clause',
+                      clause_number: clauseNumber,
+                      category_name: suggestion.categoryName
+                    });
+                    if (addResult.success) {
+                      const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
+                      if (clause && !clause.category) {
+                        clause.category = suggestion.categoryName;
+                      }
+                    }
+                  });
+                });
+
+                setClauses(updatedClauses);
+                persistCurrentProject(updatedClauses, projectName);
+                setShowCategorySuggestions(false);
+              }}
+              onDismiss={() => {
+                setShowCategorySuggestions(false);
+                setCategorySuggestions([]);
+              }}
+            />
+          )}
+
+          <footer className="glass border-t border-aaa-border px-10 h-16 flex items-center justify-between z-10 shrink-0">
+            <div className="flex flex-col">
+              <p className="text-[9px] font-black text-aaa-muted uppercase tracking-[0.5em]">AAA CONTRACT DEPARTMENT © 2025</p>
+            </div>
+            <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Precision Engine Pro</span>
+          </footer>
+        </div>
+      </AppWrapper>
+
+      <AIBotSidebar
+        isOpen={isBotOpen}
+        onClose={() => setIsBotOpen(false)}
+        clauses={clauses}
+        selectedClause={selectedClauseForBot}
+      />
+
+      <FloatingAIButton
+        onClick={() => setIsBotOpen(!isBotOpen)}
+        isOpen={isBotOpen}
+      />
     </>
   );
 };
