@@ -1,5 +1,5 @@
 import { supabase } from '../supabase/config';
-import { SavedContract, ContractSection, SectionItem, SectionType } from '../types';
+import { SavedContract, ContractSection, SectionItem, SectionType } from '../../types';
 import { ensureContractHasSections } from '../../services/contractMigrationService';
 
 const MAX_DOCUMENT_SIZE = 1000000; // 1MB in bytes (with some buffer)
@@ -63,13 +63,12 @@ async function saveContractWithSubcollections(contract: SavedContract): Promise<
       onConflict: 'id'
     });
 
-  if (contractError) {
+if (contractError) {
     console.error('Supabase upsert error (subcollections):', {
       code: contractError.code,
       message: contractError.message,
       details: contractError.details,
-      hint: contractError.hint,
-      authUser: session?.user?.id
+      hint: contractError.hint
     });
     throw new Error(`Failed to save contract metadata: ${contractError.message}`);
   }
@@ -528,6 +527,93 @@ export const deleteContractFromSupabase = async (id: string): Promise<void> => {
   } catch (error) {
     console.error('Error deleting contract:', error);
     throw new Error('Failed to delete contract from server');
+  }
+};
+
+// ============================================
+// App Settings Functions
+// ============================================
+
+/**
+ * Get whether login is required
+ * Returns true by default if setting doesn't exist
+ */
+export const getLoginRequired = async (): Promise<boolean> => {
+  try {
+    if (!supabase) {
+      console.warn('Supabase not initialized, defaulting to login required');
+      return true;
+    }
+
+    const { data, error } = await supabase
+      .from('app_settings')
+      .select('value')
+      .eq('key', 'login_required')
+      .single();
+
+    if (error) {
+      // If table doesn't exist or setting not found, default to true
+      if (error.code === 'PGRST116' || error.code === '42P01') {
+        console.warn('app_settings table or login_required setting not found, defaulting to true');
+        return true;
+      }
+      console.error('Error fetching login_required setting:', error);
+      return true; // Default to requiring login on error
+    }
+
+    // The value is stored as JSONB, so it could be true, false, "true", or "false"
+    const value = data?.value;
+    if (typeof value === 'boolean') {
+      return value;
+    }
+    if (typeof value === 'string') {
+      return value === 'true';
+    }
+    return true; // Default
+  } catch (error) {
+    console.error('Error getting login_required setting:', error);
+    return true; // Default to requiring login on error
+  }
+};
+
+/**
+ * Set whether login is required (admin only)
+ */
+export const setLoginRequired = async (required: boolean): Promise<void> => {
+  try {
+    if (!supabase) {
+      throw new Error('Supabase is not initialized.');
+    }
+
+    // Verify user is authenticated and is admin
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user) {
+      throw new Error('You must be logged in to change settings.');
+    }
+
+    const { error } = await supabase
+      .from('app_settings')
+      .upsert({
+        key: 'login_required',
+        value: required,
+        updated_at: new Date().toISOString(),
+        updated_by: session.user.id
+      }, {
+        onConflict: 'key'
+      });
+
+    if (error) {
+      console.error('Error updating login_required setting:', error);
+      if (error.code === '42501' || error.message?.includes('permission denied')) {
+        throw new Error('Permission denied. Only admins can change this setting.');
+      }
+      throw new Error(`Failed to update setting: ${error.message}`);
+    }
+
+    console.log(`Login requirement set to: ${required}`);
+  } catch (error: any) {
+    console.error('Error setting login_required:', error);
+    throw error;
   }
 };
 

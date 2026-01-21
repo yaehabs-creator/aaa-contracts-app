@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '../supabase/config';
 import { UserProfile, AuthContextType } from '../types/user';
+import { getLoginRequired, setLoginRequired as setLoginRequiredApi } from '../services/supabaseService';
 import type { User, Session } from '@supabase/supabase-js';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -17,6 +18,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState<string | null>(null);
+  const [loginRequired, setLoginRequiredState] = useState<boolean>(true);
+
+  // Load login required setting on mount
+  useEffect(() => {
+    const loadLoginRequiredSetting = async () => {
+      try {
+        const required = await getLoginRequired();
+        setLoginRequiredState(required);
+        console.log('Login required setting:', required);
+      } catch (error) {
+        console.error('Error loading login required setting:', error);
+        // Default to true on error
+        setLoginRequiredState(true);
+      }
+    };
+    loadLoginRequiredSetting();
+  }, []);
 
   useEffect(() => {
     // Check if Supabase is configured
@@ -220,15 +238,39 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const canEdit = () => user?.role === 'admin' || user?.role === 'editor';
   const canView = () => user?.role === 'admin' || user?.role === 'editor' || user?.role === 'viewer';
 
+  // Function to update login required setting (admin only)
+  const setLoginRequired = async (required: boolean) => {
+    try {
+      await setLoginRequiredApi(required);
+      setLoginRequiredState(required);
+    } catch (error) {
+      console.error('Error updating login required setting:', error);
+      throw error;
+    }
+  };
+
+  // Function to refresh login required setting
+  const refreshLoginRequired = async () => {
+    try {
+      const required = await getLoginRequired();
+      setLoginRequiredState(required);
+    } catch (error) {
+      console.error('Error refreshing login required setting:', error);
+    }
+  };
+
   const value: AuthContextType = {
     user,
     loading,
+    loginRequired,
     signIn,
     signUp,
     signOut,
     isAdmin,
     canEdit,
-    canView
+    canView,
+    setLoginRequired,
+    refreshLoginRequired
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

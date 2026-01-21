@@ -177,8 +177,8 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         else if (type === SectionType.LOA) title = 'Letter of Acceptance';
         else if (type === SectionType.GENERAL) title = 'General Conditions';
         else if (type === SectionType.PARTICULAR) title = 'Particular Conditions';
-        else if (type === SectionType.ANNEX1) title = 'Annex 1';
-        else if (type === SectionType.ANNEX2) title = 'Annex 2';
+        else if (type === 'ANNEX1') title = 'Annex 1';
+        else if (type === 'ANNEX2') title = 'Annex 2';
         
         newSections.push({
           sectionType: type,

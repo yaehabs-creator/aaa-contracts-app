@@ -9,7 +9,7 @@ interface ProtectedAppProps {
 }
 
 export const ProtectedApp: React.FC<ProtectedAppProps> = ({ children, showUserManagement }) => {
-  const { user, loading } = useAuth();
+  const { user, loading, loginRequired } = useAuth();
 
   if (loading) {
     return (
@@ -42,7 +42,14 @@ export const ProtectedApp: React.FC<ProtectedAppProps> = ({ children, showUserMa
     );
   }
 
+  // If login is not required and user is not logged in, allow access
+  // But if showUserManagement is requested and user is not logged in, show login
   if (!user) {
+    if (!loginRequired && !showUserManagement) {
+      // Login is disabled - allow access to the app without authentication
+      return <>{children}</>;
+    }
+    // Login is required or trying to access admin area - show login page
     return <LoginPage />;
   }
 

@@ -8,7 +8,7 @@ import { ContractBuilder } from './ContractBuilder';
 type AdminTab = 'users' | 'backup' | 'contract-builder';
 
 export const UserManagement: React.FC = () => {
-  const { user: currentUser, isAdmin } = useAuth();
+  const { user: currentUser, isAdmin, loginRequired, setLoginRequired } = useAuth();
   const [activeTab, setActiveTab] = useState<AdminTab>('users');
   const [users, setUsers] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
@@ -16,6 +16,7 @@ export const UserManagement: React.FC = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [activeUsersCount, setActiveUsersCount] = useState<number>(0);
+  const [togglingLogin, setTogglingLogin] = useState(false);
 
   // Create user form state
   const [newEmail, setNewEmail] = useState('');
@@ -104,6 +105,31 @@ export const UserManagement: React.FC = () => {
       await loadUsers();
     } catch (err: any) {
       setError(err.message || 'Failed to delete user');
+    }
+  };
+
+  const handleToggleLoginRequired = async () => {
+    const newValue = !loginRequired;
+    const confirmMessage = newValue
+      ? 'Enable login requirement? Team members will need to enter their email and password to access the app.'
+      : 'Disable login requirement? Team members will be able to access the app without signing in. Note: Admin features will still require login.';
+    
+    if (!window.confirm(confirmMessage)) return;
+
+    setTogglingLogin(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      await setLoginRequired(newValue);
+      setSuccess(newValue 
+        ? 'Login requirement enabled. Team members now need to sign in.' 
+        : 'Login requirement disabled. Team members can access the app without signing in.'
+      );
+    } catch (err: any) {
+      setError(err.message || 'Failed to update login setting');
+    } finally {
+      setTogglingLogin(false);
     }
   };
 
@@ -215,30 +241,123 @@ export const UserManagement: React.FC = () => {
             Create and manage team member accounts. <strong>Users must be created here before they can login.</strong> Share the email and password with team members after creation.
           </p>
         </div>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <button
+            onClick={() => setShowCreateModal(true)}
+            style={{
+              padding: '0.75rem 1.5rem',
+              background: '#0F2E6B',
+              color: 'white',
+              border: 'none',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              boxShadow: '0 4px 12px rgba(15, 46, 107, 0.2)',
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#091B40';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#0F2E6B';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
+          >
+            + Add User
+          </button>
+        </div>
+      </div>
+
+      {/* Login Requirement Toggle Card */}
+      <div style={{
+        background: 'white',
+        borderRadius: '12px',
+        padding: '1.25rem 1.5rem',
+        marginBottom: '1.5rem',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+        border: '1px solid #E2E8F0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '1rem'
+      }}>
+        <div style={{ flex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.25rem' }}>
+            <span style={{ fontSize: '1.25rem' }}>{loginRequired ? '🔐' : '🔓'}</span>
+            <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: '700', color: '#1A2333' }}>
+              Login Requirement
+            </h3>
+            <span style={{
+              padding: '0.25rem 0.75rem',
+              borderRadius: '20px',
+              fontSize: '0.75rem',
+              fontWeight: '600',
+              background: loginRequired ? '#DEF7EC' : '#FEE2E2',
+              color: loginRequired ? '#03543F' : '#9B1C1C'
+            }}>
+              {loginRequired ? 'ENABLED' : 'DISABLED'}
+            </span>
+          </div>
+          <p style={{ margin: 0, fontSize: '0.875rem', color: '#5C6B82', lineHeight: '1.5' }}>
+            {loginRequired 
+              ? 'Team members must sign in with email and password to access the app.' 
+              : 'Team members can access the app without signing in. Admin features still require login.'}
+          </p>
+        </div>
+        
         <button
-          onClick={() => setShowCreateModal(true)}
+          onClick={handleToggleLoginRequired}
+          disabled={togglingLogin}
           style={{
-            padding: '0.75rem 1.5rem',
-            background: '#0F2E6B',
+            padding: '0.625rem 1.25rem',
+            background: togglingLogin ? '#D1D9E6' : (loginRequired ? '#DC2626' : '#10B981'),
             color: 'white',
             border: 'none',
-            borderRadius: '12px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            boxShadow: '0 4px 12px rgba(15, 46, 107, 0.2)',
+            borderRadius: '10px',
+            cursor: togglingLogin ? 'not-allowed' : 'pointer',
+            fontWeight: '600',
+            fontSize: '0.875rem',
             transition: 'all 0.2s ease',
-            whiteSpace: 'nowrap'
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            minWidth: '140px',
+            justifyContent: 'center',
+            boxShadow: togglingLogin ? 'none' : '0 2px 8px rgba(0,0,0,0.15)'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#091B40';
-            e.currentTarget.style.transform = 'translateY(-2px)';
+            if (!togglingLogin) {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+            }
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#0F2E6B';
-            e.currentTarget.style.transform = 'translateY(0)';
+            if (!togglingLogin) {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+            }
           }}
         >
-          + Add User
+          {togglingLogin ? (
+            <>
+              <span style={{
+                display: 'inline-block',
+                width: '14px',
+                height: '14px',
+                border: '2px solid rgba(255,255,255,0.3)',
+                borderTopColor: 'white',
+                borderRadius: '50%',
+                animation: 'spin 0.6s linear infinite'
+              }} />
+              Updating...
+            </>
+          ) : (
+            <>
+              {loginRequired ? '🔓 Disable Login' : '🔐 Enable Login'}
+            </>
+          )}
         </button>
       </div>
 

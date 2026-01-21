@@ -10,8 +10,12 @@ class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
   { hasError: boolean; error: Error | null }
 > {
+  state: { hasError: boolean; error: Error | null };
+  props: { children: React.ReactNode };
+
   constructor(props: { children: React.ReactNode }) {
     super(props);
+    this.props = props;
     this.state = { hasError: false, error: null };
   }
 

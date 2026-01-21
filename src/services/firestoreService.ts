@@ -13,7 +13,7 @@ import {
   where
 } from 'firebase/firestore';
 import { db, auth } from '../firebase/config';
-import { SavedContract, ContractSection, SectionItem, SectionType } from '../types';
+import { SavedContract, ContractSection, SectionItem, SectionType } from '../../types';
 import { ensureContractHasSections } from '../../services/contractMigrationService';
 
 const CONTRACTS_COLLECTION = 'contracts';

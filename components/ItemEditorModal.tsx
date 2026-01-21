@@ -127,7 +127,7 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
 
     if (itemType !== ItemType.IMAGE) return;
 
-    const files = Array.from(e.dataTransfer.files);
+    const files = Array.from(e.dataTransfer.files) as File[];
     if (files.length > 0) {
       handleFileUpload(files[0]);
     }
