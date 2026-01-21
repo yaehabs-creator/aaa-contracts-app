@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 
-type AuthMode = 'signin' | 'signup';
-
 export const LoginPage: React.FC = () => {
-  const [mode, setMode] = useState<AuthMode>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
-  const { signIn, signUp } = useAuth();
+  const { signIn } = useAuth();
 
   // Check for error messages from auth state changes
   useEffect(() => {
@@ -24,55 +18,17 @@ export const LoginPage: React.FC = () => {
     }
   }, []);
 
-  const switchMode = (newMode: AuthMode) => {
-    setMode(newMode);
-    setError('');
-    setSuccessMessage('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-    setDisplayName('');
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    setSuccessMessage('');
     setLoading(true);
 
     try {
-      if (mode === 'signup') {
-        // Validation for sign up
-        if (!displayName.trim()) {
-          throw new Error('Please enter your full name.');
-        }
-        if (password.length < 6) {
-          throw new Error('Password must be at least 6 characters long.');
-        }
-        if (password !== confirmPassword) {
-          throw new Error('Passwords do not match.');
-        }
-
-        await signUp(email, password, displayName.trim());
-        // If we get here without error, account was created and auto-signed in
-      } else {
-        await signIn(email, password);
-      }
+      await signIn(email, password);
     } catch (err: any) {
       const errorMsg = err.message || err.toString();
       
-      // Handle success case that requires email verification
-      if (errorMsg === 'SUCCESS_NEEDS_VERIFICATION') {
-        setSuccessMessage('Account created successfully! Please check your email to verify your account before signing in.');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
-        setDisplayName('');
-        setLoading(false);
-        return;
-      }
-      
-      let errorMessage = mode === 'signup' ? 'Failed to create account' : 'Failed to sign in';
+      let errorMessage = 'Failed to sign in';
       
       // Provide user-friendly error messages (Supabase errors)
       if (errorMsg.includes('Invalid login credentials') || errorMsg.includes('Invalid email or password')) {
@@ -80,7 +36,7 @@ export const LoginPage: React.FC = () => {
       } else if (errorMsg.includes('Email not confirmed') || errorMsg.includes('email not confirmed')) {
         errorMessage = 'Please verify your email address before signing in.';
       } else if (errorMsg.includes('User not found') || errorMsg.includes('No account found')) {
-        errorMessage = 'No account found with this email. Please sign up first.';
+        errorMessage = 'No account found with this email. Please contact your administrator.';
       } else if (errorMsg.includes('Invalid email')) {
         errorMessage = 'Invalid email address. Please check and try again.';
       } else if (errorMsg.includes('network') || errorMsg.includes('fetch')) {
@@ -182,58 +138,11 @@ export const LoginPage: React.FC = () => {
             color: '#5C6B82', // aaa-muted
             fontWeight: '400'
           }}>
-            {mode === 'signin' ? 'Sign in to your account' : 'Create a new account'}
+            Sign in to your account
           </p>
         </div>
         
         <form onSubmit={handleSubmit} style={{ display: 'block', width: '100%' }}>
-          {/* Display Name field - only for Sign Up */}
-          {mode === 'signup' && (
-            <div style={{ marginBottom: '1.5rem', display: 'block', width: '100%' }}>
-              <label style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                color: '#1A2333', // aaa-text
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                letterSpacing: '0.3px'
-              }}>
-                Full Name
-              </label>
-              <input
-                type="text"
-                value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
-                onFocus={() => setFocusedField('displayName')}
-                onBlur={() => setFocusedField(null)}
-                required
-                placeholder="Enter your full name"
-                className="login-name-input"
-                style={{
-                  width: '100%',
-                  padding: '0.875rem 1rem',
-                  border: `2px solid ${focusedField === 'displayName' ? '#1E6CE8' : '#D1D9E6'}`,
-                  borderRadius: '12px',
-                  fontSize: '1rem',
-                  color: '#1A2333',
-                  transition: 'all 0.2s ease',
-                  outline: 'none',
-                  background: focusedField === 'displayName' ? '#F4F7FA' : '#fff',
-                  boxShadow: focusedField === 'displayName' ? '0 0 0 3px rgba(30, 108, 232, 0.1)' : 'none',
-                  boxSizing: 'border-box',
-                  display: 'block',
-                  opacity: '1',
-                  visibility: 'visible',
-                  height: 'auto',
-                  minHeight: '44px',
-                  margin: '0',
-                  position: 'relative',
-                  zIndex: '10'
-                }}
-              />
-            </div>
-          )}
-
           <div style={{ marginBottom: '1.5rem', display: 'block', width: '100%' }}>
             <label style={{
               display: 'block',
@@ -296,7 +205,7 @@ export const LoginPage: React.FC = () => {
               onFocus={() => setFocusedField('password')}
               onBlur={() => setFocusedField(null)}
               required
-              placeholder={mode === 'signup' ? 'Create a password (min. 6 characters)' : 'Enter your password'}
+              placeholder="Enter your password"
               className="login-password-input"
               style={{
                 width: '100%',
@@ -321,73 +230,6 @@ export const LoginPage: React.FC = () => {
               }}
             />
           </div>
-
-          {/* Confirm Password field - only for Sign Up */}
-          {mode === 'signup' && (
-            <div style={{ marginBottom: '1.5rem', display: 'block', width: '100%' }}>
-              <label style={{
-                display: 'block',
-                marginBottom: '0.5rem',
-                color: '#1A2333',
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                letterSpacing: '0.3px'
-              }}>
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                onFocus={() => setFocusedField('confirmPassword')}
-                onBlur={() => setFocusedField(null)}
-                required
-                placeholder="Confirm your password"
-                className="login-password-input"
-                style={{
-                  width: '100%',
-                  padding: '0.875rem 1rem',
-                  border: `2px solid ${focusedField === 'confirmPassword' ? '#1E6CE8' : '#D1D9E6'}`,
-                  borderRadius: '12px',
-                  fontSize: '1rem',
-                  color: '#1A2333',
-                  transition: 'all 0.2s ease',
-                  outline: 'none',
-                  background: focusedField === 'confirmPassword' ? '#F4F7FA' : '#fff',
-                  boxShadow: focusedField === 'confirmPassword' ? '0 0 0 3px rgba(30, 108, 232, 0.1)' : 'none',
-                  boxSizing: 'border-box',
-                  display: 'block',
-                  opacity: '1',
-                  visibility: 'visible',
-                  height: 'auto',
-                  minHeight: '44px',
-                  margin: '0',
-                  position: 'relative',
-                  zIndex: '10'
-                }}
-              />
-            </div>
-          )}
-
-          {/* Success Message */}
-          {successMessage && (
-            <div style={{
-              padding: '0.875rem 1rem',
-              marginBottom: '1.5rem',
-              background: '#D1FAE5',
-              border: '2px solid #6EE7B7',
-              borderRadius: '12px',
-              color: '#047857',
-              fontSize: '0.875rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontWeight: '500'
-            }}>
-              <span style={{ fontSize: '1.2rem' }}>✅</span>
-              <span>{successMessage}</span>
-            </div>
-          )}
 
           {error && (
             <div style={{
@@ -456,10 +298,10 @@ export const LoginPage: React.FC = () => {
                   borderRadius: '50%',
                   animation: 'spin 0.6s linear infinite'
                 }} />
-                {mode === 'signup' ? 'Creating account...' : 'Signing in...'}
+                Signing in...
               </span>
             ) : (
-              mode === 'signup' ? 'Create Account' : 'Sign In'
+              'Sign In'
             )}
           </button>
         </form>
@@ -470,83 +312,23 @@ export const LoginPage: React.FC = () => {
           borderTop: '1px solid #D1D9E6', // aaa-border
           textAlign: 'center'
         }}>
-          {/* Toggle between Sign In and Sign Up */}
           <p style={{
             margin: 0,
             color: '#5C6B82', // aaa-muted
-            fontSize: '0.875rem',
+            fontSize: '0.75rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '0.5rem',
-            marginBottom: '1rem'
+            gap: '0.4rem',
+            fontStyle: 'italic'
           }}>
-            {mode === 'signin' ? (
-              <>
-                <span>Don't have an account?</span>
-                <button
-                  type="button"
-                  onClick={() => switchMode('signup')}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#1E6CE8',
-                    fontWeight: '600',
-                    cursor: 'pointer',
-                    padding: 0,
-                    fontSize: '0.875rem',
-                    textDecoration: 'underline'
-                  }}
-                >
-                  Sign Up
-                </button>
-              </>
-            ) : (
-              <>
-                <span>Already have an account?</span>
-                <button
-                  type="button"
-                  onClick={() => switchMode('signin')}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#1E6CE8',
-                    fontWeight: '600',
-                    cursor: 'pointer',
-                    padding: 0,
-                    fontSize: '0.875rem',
-                    textDecoration: 'underline'
-                  }}
-                >
-                  Sign In
-                </button>
-              </>
-            )}
+            <span style={{ opacity: 0.7 }}>Developed by</span>
+            <span style={{
+              color: '#1E6CE8', // aaa-accent
+              fontWeight: '600',
+              letterSpacing: '0.3px'
+            }}>Abdelrhman Ehab</span>
           </p>
-          
-          <div style={{
-            marginTop: '1.5rem',
-            paddingTop: '1rem',
-            borderTop: '1px solid #D1D9E6' // aaa-border
-          }}>
-            <p style={{
-              margin: 0,
-              color: '#5C6B82', // aaa-muted
-              fontSize: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.4rem',
-              fontStyle: 'italic'
-            }}>
-              <span style={{ opacity: 0.7 }}>Developed by</span>
-              <span style={{
-                color: '#1E6CE8', // aaa-accent
-                fontWeight: '600',
-                letterSpacing: '0.3px'
-              }}>Abdelrhman Ehab</span>
-            </p>
-          </div>
         </div>
       </div>
 
