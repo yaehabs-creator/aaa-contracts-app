@@ -16,9 +16,13 @@ export const useAuth = () => {
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<UserProfile | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [settingsLoading, setSettingsLoading] = useState(true);
   const [authError, setAuthError] = useState<string | null>(null);
   const [loginRequired, setLoginRequiredState] = useState<boolean>(true);
+
+  // Combined loading state - wait for both auth and settings
+  const loading = authLoading || settingsLoading;
 
   // Load login required setting on mount
   useEffect(() => {
@@ -31,6 +35,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         console.error('Error loading login required setting:', error);
         // Default to true on error
         setLoginRequiredState(true);
+      } finally {
+        setSettingsLoading(false);
       }
     };
     loadLoginRequiredSetting();
@@ -43,7 +49,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const errorMsg = supabaseError?.message || 'Supabase is not configured. Please check your environment variables.';
       console.warn('Supabase not configured. Showing login page but authentication will not work.');
       console.error('Supabase Configuration Error:', errorMsg);
-      setLoading(false);
+      setAuthLoading(false);
       setUser(null);
       setAuthError(errorMsg);
       return;
@@ -60,12 +66,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (session?.user) {
           await loadUserProfile(session.user);
         } else {
-          setLoading(false);
+          setAuthLoading(false);
         }
       } catch (error) {
         console.error('Error getting initial session:', error);
         setAuthError('Failed to initialize authentication.');
-        setLoading(false);
+        setAuthLoading(false);
       }
     };
 
@@ -116,16 +122,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         sessionStorage.setItem('loginError', 'Error loading your profile. Please try again or contact your administrator.');
         setUser(null);
       } finally {
-        setLoading(false);
+        setAuthLoading(false);
       }
     };
 
     // Set timeout
     timeoutId = setTimeout(() => {
-      if (loading) {
+      if (authLoading) {
         console.error('Auth initialization timeout - Supabase may not be configured correctly');
         setAuthError('Supabase configuration error. Please check your environment variables.');
-        setLoading(false);
+        setAuthLoading(false);
       }
     }, 10000);
 
@@ -141,7 +147,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         await loadUserProfile(session.user);
       } else {
         setUser(null);
-        setLoading(false);
+        setAuthLoading(false);
       }
     });
 
