@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { AuthProvider } from './src/contexts/AuthContext';
 import './index.css';
+import { getMissingConfig } from './src/config/validators';
+import Onboarding from './src/components/ConfigOnboarding';
 
 // Proper React Error Boundary class component
 class ErrorBoundary extends React.Component<
@@ -133,13 +135,24 @@ if (!rootElement) {
 
 const root = ReactDOM.createRoot(rootElement);
 
-// Wrap in error boundary and always render something
-root.render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </ErrorBoundary>
-  </React.StrictMode>
-);
+// Determine config state early and render onboarding if missing
+const missing = getMissingConfig();
+
+if (missing.length > 0) {
+  root.render(
+    <React.StrictMode>
+      <Onboarding missing={missing} />
+    </React.StrictMode>
+  );
+} else {
+  // Wrap in error boundary and render app as usual
+  root.render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </ErrorBoundary>
+    </React.StrictMode>
+  );
+}
