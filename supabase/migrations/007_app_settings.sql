@@ -19,6 +19,11 @@ CREATE INDEX IF NOT EXISTS idx_app_settings_key ON app_settings(key);
 -- RLS policies for app_settings
 ALTER TABLE app_settings ENABLE ROW LEVEL SECURITY;
 
+-- Drop existing policies if they exist (for idempotency)
+DROP POLICY IF EXISTS "Anyone can read app settings" ON app_settings;
+DROP POLICY IF EXISTS "Admins can update app settings" ON app_settings;
+DROP POLICY IF EXISTS "Admins can insert app settings" ON app_settings;
+
 -- Anyone can read app settings (needed for login page to check if login is required)
 CREATE POLICY "Anyone can read app settings"
   ON app_settings
