@@ -93,6 +93,7 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     apiKey,
     dangerouslyAllowBrowser: true
   });
+  // Try claude-3-5-sonnet first, fallback to claude-3-opus-20240229 if needed
   const model = 'claude-3-5-sonnet';
 
   let promptText = "";
