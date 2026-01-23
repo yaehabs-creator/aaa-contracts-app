@@ -93,8 +93,15 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     apiKey,
     dangerouslyAllowBrowser: true
   });
-  // Try claude-3-5-sonnet first, fallback to claude-3-opus-20240229 if needed
-  const model = 'claude-3-5-sonnet';
+  
+  // Try multiple model names in order of preference
+  const modelCandidates = [
+    'claude-3-5-sonnet',
+    'claude-3-5-sonnet-20240620',
+    'claude-3-opus-20240229',
+    'claude-3-sonnet-20240229',
+    'claude-3-haiku-20240307'
+  ];
 
   let promptText = "";
   let isTextInput = false;
@@ -120,78 +127,100 @@ ${typeof dual.particular === 'string' ? dual.particular : '[PDF DATA]'}
 ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction errors. Please intelligently fix obvious errors (spacing, OCR mistakes, broken words) while maintaining verbatim accuracy and legal terminology.' : isCleanText ? 'NOTE: This text is already clean and preprocessed. Extract clauses verbatim without additional cleaning or error correction.' : ''}`;
   }
 
-  try {
-    const message = await client.messages.create({
-      model: model,
-      max_tokens: 16384,
-      system: SYSTEM_INSTRUCTION,
-      messages: [
-        {
-          role: 'user',
-          content: promptText
-        }
-      ]
-    });
-
-    const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
-      ? (message.content.find(c => c.type === 'text') as any).text
-      : '';
-
-    if (!resultText) return [];
-
-    // Try to extract JSON from the response (Claude might wrap it in markdown)
-    let jsonText = resultText.trim();
-    // Remove markdown code blocks if present
-    if (jsonText.startsWith('```json')) {
-      jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
-    } else if (jsonText.startsWith('```')) {
-      jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
-    }
-
+  // Try each model candidate until one works
+  let lastError: any = null;
+  for (const model of modelCandidates) {
     try {
-      return JSON.parse(jsonText);
-    } catch (parseError: any) {
-      console.error('JSON Parse Error:', parseError);
-      console.error('Response text (first 500 chars):', jsonText.substring(0, 500));
-      throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
-    }
-  } catch (error: any) {
-    // Log the actual error for debugging
-    console.error('Claude API Error:', error);
+      const message = await client.messages.create({
+        model: model,
+        max_tokens: 16384,
+        system: SYSTEM_INSTRUCTION,
+        messages: [
+          {
+            role: 'user',
+            content: promptText
+          }
+        ]
+      });
 
-    if (retryCount < 1) {
-      await delay(2000);
-      return analyzeContract(input, retryCount + 1);
-    }
+      const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
+        ? (message.content.find(c => c.type === 'text') as any).text
+        : '';
 
-    // Preserve and provide specific error messages
-    let errorMessage = "Batch extraction failed. ";
+      if (!resultText) return [];
 
-    if (error.message) {
-      // Check for specific error types
-      if (error.message.includes('JSON') || error.name === 'SyntaxError' || error.message.includes('parse')) {
-        errorMessage += "Invalid JSON response from Claude. The response may be malformed or incomplete.";
-      } else if (error.status === 401 || error.message.includes('401') || error.message.includes('authentication') || error.message.includes('API key')) {
-        errorMessage += "API authentication failed. Please check your ANTHROPIC_API_KEY.";
-      } else if (error.status === 429 || error.message.includes('429') || error.message.includes('rate limit')) {
-        errorMessage += "Rate limit exceeded. Please wait a moment and try again.";
-      } else if (error.status === 500 || error.message.includes('500') || error.message.includes('server error')) {
-        errorMessage += "Claude API server error. Please try again later.";
-      } else if (error.message.includes('timeout') || error.message.includes('network') || error.message.includes('fetch')) {
-        errorMessage += "Network error or timeout. Please check your connection and try again.";
-      } else if (error.message.includes('content_filter') || error.message.includes('safety')) {
-        errorMessage += "Content was filtered by Claude's safety system. Please review your input.";
-      } else if (error.message.includes('context_length') || error.message.includes('token')) {
-        errorMessage += "Input is too large. Please split your text into smaller chunks.";
-      } else {
-        errorMessage += `Error: ${error.message}`;
+      // Try to extract JSON from the response (Claude might wrap it in markdown)
+      let jsonText = resultText.trim();
+      // Remove markdown code blocks if present
+      if (jsonText.startsWith('```json')) {
+        jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+      } else if (jsonText.startsWith('```')) {
+        jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
       }
-    } else if (error.status) {
-      errorMessage += `API returned status ${error.status}. Please try again.`;
-    } else {
-      errorMessage += "Unknown error occurred. Please check the browser console for details.";
-    }
 
-    throw new Error(errorMessage);
+      try {
+        return JSON.parse(jsonText);
+      } catch (parseError: any) {
+        console.error('JSON Parse Error:', parseError);
+        console.error('Response text (first 500 chars):', jsonText.substring(0, 500));
+        throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
+      }
+    } catch (error: any) {
+      // If this is a model not found error, try the next model
+      if (error.message && error.message.includes('not_found_error') && error.message.includes('model')) {
+        console.warn(`Model ${model} not found, trying next model...`);
+        lastError = error;
+        continue; // Try next model
+      }
+      // For other errors, break and handle below
+      lastError = error;
+      break;
+    }
   }
+
+  // If we get here, all models failed
+  const error = lastError;
+  if (!error) {
+    throw new Error('All Claude models failed and no error was captured');
+  }
+
+  // Log the actual error for debugging
+  console.error('Claude API Error:', error);
+
+  if (retryCount < 1) {
+    await delay(2000);
+    return analyzeContract(input, retryCount + 1);
+  }
+
+  // Preserve and provide specific error messages
+  let errorMessage = "Batch extraction failed. ";
+
+  if (error.message) {
+    // Check for specific error types
+    if (error.message.includes('JSON') || error.name === 'SyntaxError' || error.message.includes('parse')) {
+      errorMessage += "Invalid JSON response from Claude. The response may be malformed or incomplete.";
+    } else if (error.status === 401 || error.message.includes('401') || error.message.includes('authentication') || error.message.includes('API key')) {
+      errorMessage += "API authentication failed. Please check your ANTHROPIC_API_KEY.";
+    } else if (error.status === 429 || error.message.includes('429') || error.message.includes('rate limit')) {
+      errorMessage += "Rate limit exceeded. Please wait a moment and try again.";
+    } else if (error.status === 500 || error.message.includes('500') || error.message.includes('server error')) {
+      errorMessage += "Claude API server error. Please try again later.";
+    } else if (error.message.includes('timeout') || error.message.includes('network') || error.message.includes('fetch')) {
+      errorMessage += "Network error or timeout. Please check your connection and try again.";
+    } else if (error.message.includes('content_filter') || error.message.includes('safety')) {
+      errorMessage += "Content was filtered by Claude's safety system. Please review your input.";
+    } else if (error.message.includes('context_length') || error.message.includes('token')) {
+      errorMessage += "Input is too large. Please split your text into smaller chunks.";
+    } else if (error.message.includes('not_found_error') || error.message.includes('model')) {
+      errorMessage += `Model not found. Tried: ${modelCandidates.join(', ')}. Please check your API key has access to Claude models.`;
+    } else {
+      errorMessage += `Error: ${error.message}`;
+    }
+  } else if (error.status) {
+    errorMessage += `API returned status ${error.status}. Please try again.`;
+  } else {
+    errorMessage += "Unknown error occurred. Please check the browser console for details.";
+  }
+
+  throw new Error(errorMessage);
 }
