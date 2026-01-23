@@ -93,7 +93,7 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     apiKey,
     dangerouslyAllowBrowser: true
   });
-  const model = 'claude-3-5-sonnet-20241022';
+  const model = 'claude-3-5-sonnet';
 
   let promptText = "";
   let isTextInput = false;

@@ -10,7 +10,7 @@ export interface AIProvider {
 
 export class ClaudeProvider implements AIProvider {
   private client: Anthropic | null = null;
-  private model: string = 'claude-3-5-sonnet-20241022';
+  private model: string = 'claude-3-5-sonnet';
 
   constructor() {
     const apiKey = process.env.ANTHROPIC_API_KEY;
