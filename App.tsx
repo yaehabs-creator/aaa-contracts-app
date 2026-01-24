@@ -3242,6 +3242,21 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         onClose={() => setIsBotOpen(false)}
         clauses={clauses}
         selectedClause={selectedClauseForBot}
+        contracts={library}
+        activeContractId={activeContractId}
+        onContractChange={(contractId) => {
+          // Find and load the selected contract
+          const selectedContract = library.find(c => c.id === contractId);
+          if (selectedContract) {
+            const contractWithSections = ensureContractHasSections(selectedContract);
+            const allClauses = getAllClausesFromContract(contractWithSections);
+            setContract(contractWithSections);
+            setClauses(allClauses);
+            setProjectName(contractWithSections.name);
+            setActiveContractId(contractWithSections.id);
+            setStatus(AnalysisStatus.COMPLETED);
+          }
+        }}
       />
 
       <FloatingAIButton

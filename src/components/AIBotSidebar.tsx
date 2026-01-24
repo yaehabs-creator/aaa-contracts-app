@@ -1,39 +1,73 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Clause, BotMessage } from '../../types';
+import { Clause, BotMessage, SavedContract } from '../../types';
 import { chatWithBot, getSuggestions, explainClause } from '../services/aiBotService';
 import { isClaudeAvailable } from '../services/aiProvider';
 import { scrollToClause } from '../utils/navigation';
+import { getAllClausesFromContract } from '../../services/contractMigrationService';
 
 interface AIBotSidebarProps {
   isOpen: boolean;
   onClose: () => void;
   clauses: Clause[];
   selectedClause?: Clause | null;
+  contracts?: SavedContract[];
+  activeContractId?: string | null;
+  onContractChange?: (contractId: string) => void;
 }
 
 export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   isOpen,
   onClose,
   clauses,
-  selectedClause
+  selectedClause,
+  contracts = [],
+  activeContractId,
+  onContractChange
 }) => {
   const [messages, setMessages] = useState<BotMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [selectedContractId, setSelectedContractId] = useState<string | null>(activeContractId || null);
+  const [showContractSelector, setShowContractSelector] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const claudeAvailable = isClaudeAvailable();
 
+  // Get the currently selected contract and its clauses
+  const selectedContract = contracts.find(c => c.id === selectedContractId);
+  const activeClauses = selectedContract 
+    ? getAllClausesFromContract(selectedContract) 
+    : clauses;
+
+  // Update selected contract when activeContractId changes
+  useEffect(() => {
+    if (activeContractId && activeContractId !== selectedContractId) {
+      setSelectedContractId(activeContractId);
+    }
+  }, [activeContractId]);
+
+  const handleContractSelect = (contractId: string) => {
+    setSelectedContractId(contractId);
+    setShowContractSelector(false);
+    // Clear messages when switching contracts
+    setMessages([]);
+    setSuggestions([]);
+    // Notify parent if callback provided
+    if (onContractChange) {
+      onContractChange(contractId);
+    }
+  };
+
   useEffect(() => {
     // Load suggestions when clauses change
-    if (clauses.length > 0 && isOpen && claudeAvailable) {
+    if (activeClauses.length > 0 && isOpen && claudeAvailable) {
       loadSuggestions();
     }
-  }, [clauses, isOpen]);
+  }, [activeClauses, isOpen, selectedContractId]);
 
   useEffect(() => {
     // Auto-scroll to bottom when new messages arrive
@@ -50,7 +84,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const loadSuggestions = async () => {
     if (!claudeAvailable) return;
     try {
-      const suggs = await getSuggestions(clauses);
+      const suggs = await getSuggestions(activeClauses);
       setSuggestions(suggs);
     } catch (error) {
       console.error('Failed to load suggestions:', error);
@@ -76,7 +110,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     try {
       // Pass full conversation history including the new message
       const conversationHistory = [...messages, userMessage];
-      const response = await chatWithBot(conversationHistory, clauses);
+      const response = await chatWithBot(conversationHistory, activeClauses);
 
       const botMessage: BotMessage = {
         id: (Date.now() + 1).toString(),
@@ -187,7 +221,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         <div className="ai-bot-header">
           <div className="ai-bot-header-content">
             <h2 className="ai-bot-title">Claude AI Assistant</h2>
-            <p className="ai-bot-subtitle">{clauses.length} clauses available</p>
+            <p className="ai-bot-subtitle">{activeClauses.length} clauses available</p>
           </div>
           <button
             onClick={onClose}
@@ -199,6 +233,51 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
             </svg>
           </button>
         </div>
+
+        {/* Contract Selector */}
+        {contracts.length > 0 && (
+          <div className="ai-bot-contract-selector">
+            <div className="ai-bot-contract-toggle" onClick={() => setShowContractSelector(!showContractSelector)}>
+              <div className="ai-bot-contract-info">
+                <span className="ai-bot-contract-label">Contract:</span>
+                <span className="ai-bot-contract-name">
+                  {selectedContract?.name || 'Select a contract'}
+                </span>
+              </div>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className={`ai-bot-contract-chevron ${showContractSelector ? 'rotated' : ''}`}
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            
+            {showContractSelector && (
+              <div className="ai-bot-contract-dropdown">
+                {contracts.map((contract) => (
+                  <button
+                    key={contract.id}
+                    onClick={() => handleContractSelect(contract.id)}
+                    className={`ai-bot-contract-option ${contract.id === selectedContractId ? 'selected' : ''}`}
+                  >
+                    <span className="ai-bot-contract-option-name">{contract.name}</span>
+                    <span className="ai-bot-contract-option-count">
+                      {getAllClausesFromContract(contract).length} clauses
+                    </span>
+                    {contract.id === selectedContractId && (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="ai-bot-contract-check" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Status Indicator */}
         {!claudeAvailable && (
@@ -447,6 +526,125 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         .ai-bot-close-btn svg {
           width: 1.25rem;
           height: 1.25rem;
+        }
+
+        /* Contract Selector */
+        .ai-bot-contract-selector {
+          background: white;
+          border-bottom: 1px solid #E2E8F0;
+          flex-shrink: 0;
+          position: relative;
+        }
+
+        .ai-bot-contract-toggle {
+          padding: 1rem 1.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          transition: background 0.2s ease;
+        }
+
+        .ai-bot-contract-toggle:hover {
+          background: #F8FAFC;
+        }
+
+        .ai-bot-contract-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        .ai-bot-contract-label {
+          font-size: 0.6875rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: #64748B;
+        }
+
+        .ai-bot-contract-name {
+          font-size: 0.9375rem;
+          font-weight: 700;
+          color: #0F2E6B;
+          max-width: 320px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .ai-bot-contract-chevron {
+          width: 1.25rem;
+          height: 1.25rem;
+          color: #64748B;
+          transition: transform 0.2s ease;
+          flex-shrink: 0;
+        }
+
+        .ai-bot-contract-chevron.rotated {
+          transform: rotate(180deg);
+        }
+
+        .ai-bot-contract-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          border: 1px solid #E2E8F0;
+          border-top: none;
+          box-shadow: 0 8px 24px rgba(15, 46, 107, 0.12);
+          z-index: 10;
+          max-height: 300px;
+          overflow-y: auto;
+        }
+
+        .ai-bot-contract-option {
+          width: 100%;
+          padding: 1rem 1.75rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          text-align: left;
+          transition: background 0.2s ease;
+        }
+
+        .ai-bot-contract-option:hover {
+          background: #F0F4FF;
+        }
+
+        .ai-bot-contract-option.selected {
+          background: #E0EBFF;
+        }
+
+        .ai-bot-contract-option-name {
+          flex: 1;
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #1E293B;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .ai-bot-contract-option-count {
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: #64748B;
+          background: #F1F5F9;
+          padding: 0.25rem 0.5rem;
+          border-radius: 6px;
+          flex-shrink: 0;
+        }
+
+        .ai-bot-contract-check {
+          width: 1.25rem;
+          height: 1.25rem;
+          color: #1E6CE8;
+          flex-shrink: 0;
         }
 
         /* Status Error */
