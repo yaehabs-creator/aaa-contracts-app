@@ -120,11 +120,7 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
                 <span className="text-xl font-black text-white tracking-tighter mono">C.{clause.clause_number}</span>
               </div>
               <h3 className="text-2xl font-black text-aaa-text tracking-tight group-hover:text-aaa-blue transition-colors">
-                {searchKeywords.length > 0 ? (
-                  <span dangerouslySetInnerHTML={{ __html: highlightKeywordsInHTML(clause.clause_title, searchKeywords) }} />
-                ) : (
-                  <span>{clause.clause_title}</span>
-                )}
+                {clause.clause_number}
               </h3>
             </div>
           </div>
