@@ -7,6 +7,7 @@ interface CategoryManagerPanelProps {
   categories: EditorCategory[];
   selectedCategoryId: string | null;
   loading: EditorLoadingState;
+  totalClauseCount: number; // Total clauses in the contract (not just categorized)
   onSelectCategory: (categoryId: string | null) => void;
   onCreateCategory: (name: string) => Promise<EditorCategory | null>;
   onRenameCategory: (categoryId: string, newName: string) => Promise<boolean>;
@@ -23,6 +24,7 @@ export const CategoryManagerPanel: React.FC<CategoryManagerPanelProps> = ({
   categories,
   selectedCategoryId,
   loading,
+  totalClauseCount,
   onSelectCategory,
   onCreateCategory,
   onRenameCategory,
@@ -105,8 +107,9 @@ export const CategoryManagerPanel: React.FC<CategoryManagerPanelProps> = ({
     setDraggedId(null);
   };
 
-  // Calculate total clauses
-  const totalClauses = categories.reduce((sum, cat) => sum + (cat.clause_count || 0), 0);
+  // Calculate categorized clauses
+  const categorizedClauses = categories.reduce((sum, cat) => sum + (cat.clause_count || 0), 0);
+  const uncategorizedClauses = totalClauseCount - categorizedClauses;
 
   return (
     <div className="h-full flex flex-col bg-white border-r border-aaa-border">
@@ -125,7 +128,10 @@ export const CategoryManagerPanel: React.FC<CategoryManagerPanelProps> = ({
           </button>
         </div>
         <p className="text-xs text-aaa-muted">
-          {categories.length} categories, {totalClauses} clauses
+          {categories.length} categories, {totalClauseCount} clauses
+          {uncategorizedClauses > 0 && (
+            <span className="text-amber-600"> ({uncategorizedClauses} uncategorized)</span>
+          )}
         </p>
       </div>
 
@@ -155,15 +161,15 @@ export const CategoryManagerPanel: React.FC<CategoryManagerPanelProps> = ({
               className={`
                 w-full flex items-center gap-2 px-3 py-2.5 rounded-lg
                 transition-colors text-left
-                ${selectedCategoryId === null ? 'bg-slate-100 text-aaa-text' : 'hover:bg-slate-50 text-aaa-muted'}
+                ${selectedCategoryId === null ? 'bg-aaa-blue text-white' : 'hover:bg-slate-50 text-aaa-muted'}
               `}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
               </svg>
               <span className="text-sm font-medium">All Clauses</span>
-              <span className="ml-auto px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-200 text-aaa-muted">
-                {totalClauses}
+              <span className={`ml-auto px-2 py-0.5 rounded-full text-[10px] font-bold ${selectedCategoryId === null ? 'bg-white/20 text-white' : 'bg-slate-200 text-aaa-muted'}`}>
+                {totalClauseCount}
               </span>
             </button>
 

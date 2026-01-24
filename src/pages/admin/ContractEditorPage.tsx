@@ -127,6 +127,7 @@ const ContractEditorPageContent: React.FC = () => {
             categories={categories}
             selectedCategoryId={selectedCategoryId}
             loading={categoriesLoading}
+            totalClauseCount={clauses.filter(c => !c.item_data.is_deleted).length}
             onSelectCategory={selectCategory}
             onCreateCategory={createCategory}
             onRenameCategory={renameCategory}
