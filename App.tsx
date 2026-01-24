@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { analyzeContract } from './services/claudeService';
 import Anthropic from '@anthropic-ai/sdk';
@@ -45,6 +45,21 @@ const normalizeClauseId = (clauseNumber: string): string => {
   return clauseNumber
     .replace(/\s+/g, '')  // Remove all spaces
     .replace(/[()]/g, ''); // Remove parentheses
+};
+
+// Helper: Get clause status (added, modified, gc-only) for sorting/display
+const getClauseStatus = (clause: Clause): 'added' | 'modified' | 'gc-only' => {
+  const hasPC = clause.particular_condition && clause.particular_condition.length > 0;
+  const hasGC = clause.general_condition && clause.general_condition.length > 0;
+  
+  // For dual-source contracts (have both GC and PC fields populated)
+  if (hasPC && !hasGC) return 'added';
+  if (hasPC && hasGC) return 'modified';
+  if (hasGC) return 'gc-only';
+  
+  // Fallback for single-source contracts (only condition_type is set)
+  if (clause.condition_type === 'Particular') return 'added';
+  return 'gc-only';
 };
 
 // Estimate token count from text (rough approximation: ~4 characters per token)
@@ -237,6 +252,9 @@ const App: React.FC = () => {
 
   // Chapter Display View
   const [viewByChapter, setViewByChapter] = useState(false);
+
+  // Sort Mode for clause organization
+  const [sortMode, setSortMode] = useState<'default' | 'status' | 'chapter'>('default');
 
   // Sidebar visibility
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -1773,6 +1791,31 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     return matchesSearch && matchesType && matchesGroup;
   });
 
+  // Sort clauses based on sortMode
+  const sortedClauses = useMemo(() => {
+    if (sortMode === 'status') {
+      const statusOrder = { 'added': 0, 'modified': 1, 'gc-only': 2 };
+      return [...filteredClauses].sort((a, b) => {
+        const statusDiff = statusOrder[getClauseStatus(a)] - statusOrder[getClauseStatus(b)];
+        if (statusDiff !== 0) return statusDiff;
+        // Secondary sort by clause number within same status
+        const numA = parseFloat(a.clause_number) || 0;
+        const numB = parseFloat(b.clause_number) || 0;
+        return numA - numB;
+      });
+    }
+    if (sortMode === 'chapter') {
+      return [...filteredClauses].sort((a, b) => {
+        // Sort by clause number numerically/alphanumerically
+        const numA = parseFloat(a.clause_number) || 0;
+        const numB = parseFloat(b.clause_number) || 0;
+        if (numA !== numB) return numA - numB;
+        return a.clause_number.localeCompare(b.clause_number, undefined, { numeric: true });
+      });
+    }
+    return filteredClauses;
+  }, [filteredClauses, sortMode]);
+
   const goBackToInput = () => {
     setStatus(AnalysisStatus.IDLE);
     setClauses([]);
@@ -1891,6 +1934,21 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 <span className="text-[10px] font-black uppercase tracking-widest text-aaa-muted group-hover:text-aaa-blue">Archive</span>
                 <span className="w-6 h-6 bg-aaa-bg rounded-lg flex items-center justify-center text-[10px] font-black text-aaa-blue border border-aaa-blue/10">{library.length}</span>
               </button>
+
+              {/* Admin Editor Link - Only visible to admins */}
+              {isAdmin() && (
+                <a
+                  href="#/admin/contract-editor"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-amber-50 border border-amber-200 rounded-xl shadow-sm hover:shadow-md hover:bg-amber-100 transition-all group"
+                  title="Open Admin Contract Editor"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-amber-700">Admin</span>
+                </a>
+              )}
             </div>
           </header>
 
@@ -2658,6 +2716,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       onCompareClause={setCompareClause}
                       onDeleteClause={handleDeleteClause}
                       onReorderClause={handleReorder}
+                      onAddClause={() => setIsAddModalOpen(true)}
+                      sortMode={sortMode}
+                      onSortModeChange={setSortMode}
                     />
                   ) : clauses.length > 0 ? (
                     // Fallback: if contract not set but clauses exist, create contract
@@ -2691,6 +2752,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                           onCompareClause={setCompareClause}
                           onDeleteClause={handleDeleteClause}
                           onReorderClause={handleReorder}
+                          onAddClause={() => setIsAddModalOpen(true)}
+                          sortMode={sortMode}
+                          onSortModeChange={setSortMode}
                         />
                       );
                     })()

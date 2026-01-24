@@ -16,6 +16,7 @@ interface SectionEditorProps {
   onCompareClause?: (clause: Clause) => void;
   onDeleteClause?: (index: number) => void;
   onReorderClause?: (fromIndex: number, toIndex: number) => void;
+  onAddClause?: () => void;
 }
 
 export const SectionEditor: React.FC<SectionEditorProps> = ({
@@ -28,7 +29,8 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   onEditClause,
   onCompareClause,
   onDeleteClause,
-  onReorderClause
+  onReorderClause,
+  onAddClause
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [editingItem, setEditingItem] = useState<SectionItem | null>(null);
@@ -236,6 +238,17 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
             Add Item
           </button>
         )}
+        {isClauseSection && onAddClause && (
+          <button
+            onClick={onAddClause}
+            className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+            </svg>
+            Add Clause
+          </button>
+        )}
       </div>
 
       {/* Items List */}
@@ -265,6 +278,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                   <ClauseCard
                     clause={clause}
                     onEdit={() => handleEditClauseClick(index)}
+                    onDelete={() => handleDeleteClauseClick(index)}
                     onCompare={onCompareClause}
                     searchKeywords={searchKeywords}
                   />

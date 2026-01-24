@@ -6,6 +6,7 @@ interface ClauseCardProps {
   clause: Clause;
   onCompare?: (clause: Clause) => void;
   onEdit?: (clause: Clause) => void;
+  onDelete?: (clause: Clause) => void;
   isCompareTarget?: boolean;
   searchKeywords?: string[];
 }
@@ -51,7 +52,7 @@ const normalizeClauseId = (clauseNumber: string): string => {
     .replace(/[()]/g, ''); // Remove parentheses
 };
 
-export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdit, isCompareTarget, searchKeywords = [] }) => {
+export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdit, onDelete, isCompareTarget, searchKeywords = [] }) => {
   const isDual = !!clause.general_condition || !!clause.particular_condition;
   const textLength = clause.clause_text?.length || 0;
   const [isCollapsed, setIsCollapsed] = useState(textLength > 1200);
@@ -59,6 +60,10 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
 
   const modCount = clause.comparison?.length || 0;
   const normalizedClauseId = normalizeClauseId(clause.clause_number);
+  
+  // Check if this is an "added" clause (has PC content but no GC content)
+  const isAddedClause = !!(clause.particular_condition && clause.particular_condition.length > 0) && 
+                        (!clause.general_condition || clause.general_condition.length === 0);
 
   // Handle hyperlink clicks for smooth scrolling to clause references
   useEffect(() => {
@@ -130,6 +135,11 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
               }`}>
               {clause.condition_type} Dataset
             </span>
+            {isAddedClause && (
+              <span className="px-4 py-1 text-[9px] font-black rounded-full uppercase tracking-widest bg-emerald-500 text-white border-none shadow-lg">
+                Added Clause
+              </span>
+            )}
             {clause.section && (
               <span className="px-3 py-1 bg-aaa-blue text-white text-[9px] font-black rounded-full uppercase tracking-widest shadow-lg">
                 Section {clause.section}
@@ -151,6 +161,17 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </button>
+          )}
+          {onDelete && (
+            <button
+              onClick={() => onDelete(clause)}
+              className="p-3 bg-white border border-aaa-border text-aaa-muted hover:text-red-600 hover:border-red-600 rounded-xl transition-all shadow-sm"
+              title="Delete Clause"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
               </svg>
             </button>
           )}

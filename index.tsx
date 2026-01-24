@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { AuthProvider } from './src/contexts/AuthContext';
+import { AppRouter } from './src/components/AppRouter';
 import './index.css';
 import { getMissingConfig } from './src/config/validators';
 import Onboarding from './src/components/ConfigOnboarding';
@@ -150,7 +151,9 @@ if (missing.length > 0) {
     <React.StrictMode>
       <ErrorBoundary>
         <AuthProvider>
-          <App />
+          <AppRouter>
+            <App />
+          </AppRouter>
         </AuthProvider>
       </ErrorBoundary>
     </React.StrictMode>

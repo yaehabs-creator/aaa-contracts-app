@@ -3,6 +3,20 @@ import { SavedContract, ContractSection, SectionType, SectionItem, Clause } from
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '../services/contractMigrationService';
 
+// Helper: Get clause status (added, modified, gc-only) for sorting/display
+const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-only' => {
+  const hasPC = item.particular_condition && item.particular_condition.length > 0;
+  const hasGC = item.general_condition && item.general_condition.length > 0;
+  
+  if (hasPC && !hasGC) return 'added';
+  if (hasPC && hasGC) return 'modified';
+  if (hasGC) return 'gc-only';
+  
+  // Fallback for single-source contracts
+  if (item.condition_type === 'Particular') return 'added';
+  return 'gc-only';
+};
+
 interface ContractSectionsTabsProps {
   contract: SavedContract;
   onUpdate: (updatedContract: SavedContract) => void;
@@ -11,6 +25,9 @@ interface ContractSectionsTabsProps {
   onCompareClause?: (clause: Clause) => void;
   onDeleteClause?: (index: number, sectionType: SectionType) => void;
   onReorderClause?: (fromIndex: number, toIndex: number, sectionType: SectionType) => void;
+  onAddClause?: () => void;
+  sortMode?: 'default' | 'status' | 'chapter';
+  onSortModeChange?: (mode: 'default' | 'status' | 'chapter') => void;
 }
 
 export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
@@ -20,7 +37,10 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   onEditClause,
   onCompareClause,
   onDeleteClause,
-  onReorderClause
+  onReorderClause,
+  onAddClause,
+  sortMode = 'default',
+  onSortModeChange
 }) => {
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
@@ -79,15 +99,35 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       ...particularItems.map(item => ({ ...item, _originSection: SectionType.PARTICULAR }))
     ];
     
-    // Sort by orderIndex to maintain order
-    combinedItems.sort((a, b) => (a.orderIndex || 0) - (b.orderIndex || 0));
+    // Apply sorting based on sortMode
+    if (sortMode === 'status') {
+      const statusOrder = { 'added': 0, 'modified': 1, 'gc-only': 2 };
+      combinedItems.sort((a, b) => {
+        const statusDiff = statusOrder[getClauseStatusFromItem(a)] - statusOrder[getClauseStatusFromItem(b)];
+        if (statusDiff !== 0) return statusDiff;
+        // Secondary sort by clause number within same status
+        const numA = parseFloat(a.clause_number || '0') || 0;
+        const numB = parseFloat(b.clause_number || '0') || 0;
+        return numA - numB;
+      });
+    } else if (sortMode === 'chapter') {
+      combinedItems.sort((a, b) => {
+        const numA = parseFloat(a.clause_number || '0') || 0;
+        const numB = parseFloat(b.clause_number || '0') || 0;
+        if (numA !== numB) return numA - numB;
+        return (a.clause_number || '').localeCompare(b.clause_number || '', undefined, { numeric: true });
+      });
+    } else {
+      // Default: sort by orderIndex
+      combinedItems.sort((a, b) => (a.orderIndex || 0) - (b.orderIndex || 0));
+    }
     
     return {
       sectionType: SectionType.GENERAL, // Use GENERAL as the type for compatibility
       title: 'Conditions',
       items: combinedItems as SectionItem[]
     };
-  }, [activeTab, generalSection, particularSection]);
+  }, [activeTab, generalSection, particularSection, sortMode]);
 
   // Get active section based on tab
   const activeSection = useMemo(() => {
@@ -401,6 +441,45 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             ))}
           </div>
           
+          {/* Sort Controls (only show for Conditions tab) */}
+          {activeTab === 'CONDITIONS' && onSortModeChange && (
+            <div className="px-4 py-2 flex items-center gap-2 border-l border-aaa-border">
+              <span className="text-[9px] font-bold text-aaa-muted uppercase tracking-wider">Sort:</span>
+              <button
+                onClick={() => onSortModeChange('default')}
+                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
+                  sortMode === 'default'
+                    ? 'bg-aaa-blue text-white border-aaa-blue'
+                    : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
+                }`}
+              >
+                Default
+              </button>
+              <button
+                onClick={() => onSortModeChange('status')}
+                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
+                  sortMode === 'status'
+                    ? 'bg-aaa-blue text-white border-aaa-blue'
+                    : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
+                }`}
+                title="Group by: Added, Modified, GC-only"
+              >
+                By Status
+              </button>
+              <button
+                onClick={() => onSortModeChange('chapter')}
+                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
+                  sortMode === 'chapter'
+                    ? 'bg-aaa-blue text-white border-aaa-blue'
+                    : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
+                }`}
+                title="Sort by clause number"
+              >
+                By Chapter
+              </button>
+            </div>
+          )}
+          
           {/* Save Button */}
           <div className="px-6 py-2 flex items-center gap-3">
             {saveStatus === 'success' && (
@@ -457,6 +536,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             onCompareClause={onCompareClause}
             onDeleteClause={(index) => handleDeleteClause(index, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
             onReorderClause={(fromIndex, toIndex) => handleReorderClause(fromIndex, toIndex, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
+            onAddClause={onAddClause}
           />
         )}
       </div>

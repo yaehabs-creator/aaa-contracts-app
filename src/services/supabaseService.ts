@@ -93,20 +93,31 @@ if (contractError) {
       }
 
       // Delete existing items for this section
-      await supabase
+      const { error: deleteError } = await supabase
         .from('contract_items')
         .delete()
         .eq('contract_id', contract.id)
         .eq('section_type', section.sectionType);
 
+      if (deleteError) {
+        console.error(`Failed to delete existing items for section ${section.sectionType}:`, deleteError);
+        // Continue anyway - the insert might still work if items don't exist
+      }
+
       // Insert items
       if (section.items.length > 0) {
-        const itemsToInsert = section.items.map((item, index) => ({
-          contract_id: contract.id,
-          section_type: section.sectionType,
-          order_index: item.orderIndex ?? index,
-          item_data: removeUndefinedValues(item)
-        }));
+        // Always use array index for order_index to ensure uniqueness
+        // The unique constraint is on (contract_id, section_type, order_index)
+        const itemsToInsert = section.items.map((item, index) => {
+          // Update the item's orderIndex to match the array position
+          const updatedItem = { ...item, orderIndex: index };
+          return {
+            contract_id: contract.id,
+            section_type: section.sectionType,
+            order_index: index,
+            item_data: removeUndefinedValues(updatedItem)
+          };
+        });
 
         const { error: itemsError } = await supabase
           .from('contract_items')
