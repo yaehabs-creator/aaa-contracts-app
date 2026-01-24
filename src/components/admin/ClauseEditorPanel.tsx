@@ -12,6 +12,7 @@ interface ClauseEditorPanelProps {
   onAssignClauseToCategory: (itemId: string, categoryId: string) => Promise<boolean>;
   onRemoveClauseFromCategory: (itemId: string) => Promise<boolean>;
   onDeleteClause: (itemId: string) => Promise<boolean>;
+  onAddClause?: () => void;
 }
 
 type SortMode = 'default' | 'number' | 'status';
@@ -29,7 +30,8 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
   onUpdateClauseText,
   onAssignClauseToCategory,
   onRemoveClauseFromCategory,
-  onDeleteClause
+  onDeleteClause,
+  onAddClause
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortMode, setSortMode] = useState<SortMode>('default');
@@ -131,7 +133,7 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
             </p>
           </div>
 
-          {/* Stats */}
+          {/* Stats and Add Button */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -145,6 +147,19 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
               <span className="w-2 h-2 rounded-full bg-slate-400"></span>
               <span className="text-xs text-aaa-muted">{stats.gcOnly} GC Only</span>
             </div>
+            
+            {/* Add Clause Button */}
+            {onAddClause && (
+              <button
+                onClick={onAddClause}
+                className="ml-2 flex items-center gap-2 px-4 py-2 bg-aaa-blue text-white text-sm font-bold rounded-lg hover:bg-aaa-hover transition-colors shadow-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+                Add Clause
+              </button>
+            )}
           </div>
         </div>
 

@@ -6,3 +6,4 @@ export { CategoryItem } from './CategoryItem';
 export { ClauseEditorPanel } from './ClauseEditorPanel';
 export { ClauseEditorCard } from './ClauseEditorCard';
 export { SaveStatusIndicator, SaveStatusDot } from './SaveStatusIndicator';
+export { AddClauseModal } from './AddClauseModal';

@@ -4,6 +4,15 @@ import { useAuth } from '../contexts/AuthContext';
 
 export type EditorLoadingState = 'idle' | 'loading' | 'loaded' | 'error';
 
+// Parameters for creating a new clause
+export interface CreateClauseParams {
+  sectionType: 'GENERAL' | 'PARTICULAR';
+  categoryId?: string | null;
+  clauseNumber?: string;
+  clauseTitle?: string;
+  clauseText: string;
+}
+
 interface UseAdminEditorReturn {
   // Data
   contracts: ContractSummary[];
@@ -33,6 +42,7 @@ interface UseAdminEditorReturn {
   syncCategories: () => Promise<void>;
   
   // Clause operations
+  createClause: (params: CreateClauseParams) => Promise<EditorClause | null>;
   updateClauseText: (itemId: string, field: string, value: string) => Promise<boolean>;
   assignClauseToCategory: (itemId: string, categoryId: string) => Promise<boolean>;
   removeClauseFromCategory: (itemId: string) => Promise<boolean>;
@@ -224,6 +234,31 @@ export function useAdminEditor(): UseAdminEditorReturn {
     }
   }, [selectedContractId, user?.uid, refreshClauses]);
 
+  // Create a new clause
+  const createClause = useCallback(async (params: CreateClauseParams): Promise<EditorClause | null> => {
+    if (!selectedContractId) {
+      setError('No contract selected');
+      return null;
+    }
+
+    try {
+      const newClause = await adminEditorService.createClause({
+        contractId: selectedContractId,
+        ...params
+      });
+
+      // Refresh clauses and categories to update counts
+      await refreshClauses();
+      await refreshCategories();
+
+      return newClause;
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to create clause';
+      setError(message);
+      return null;
+    }
+  }, [selectedContractId, refreshClauses, refreshCategories]);
+
   // Update clause text
   const updateClauseText = useCallback(async (
     itemId: string,
@@ -353,6 +388,7 @@ export function useAdminEditor(): UseAdminEditorReturn {
     syncCategories,
     
     // Clause operations
+    createClause,
     updateClauseText,
     assignClauseToCategory,
     removeClauseFromCategory,

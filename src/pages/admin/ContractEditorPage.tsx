@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useAdminEditor } from '../../hooks/useAdminEditor';
+import { useAdminEditor, CreateClauseParams } from '../../hooks/useAdminEditor';
 import { AdminGuard } from '../../components/admin/AdminGuard';
 import { ContractPicker } from '../../components/admin/ContractPicker';
 import { CategoryManagerPanel } from '../../components/admin/CategoryManagerPanel';
 import { ClauseEditorPanel } from '../../components/admin/ClauseEditorPanel';
 import { SaveStatusIndicator } from '../../components/admin/SaveStatusIndicator';
+import { AddClauseModal } from '../../components/admin/AddClauseModal';
 import { useAuth } from '../../contexts/AuthContext';
 
 /**
@@ -41,6 +42,7 @@ const ContractEditorPageContent: React.FC = () => {
     syncCategories,
     
     // Clause operations
+    createClause,
     updateClauseText,
     assignClauseToCategory,
     removeClauseFromCategory,
@@ -48,12 +50,30 @@ const ContractEditorPageContent: React.FC = () => {
   } = useAdminEditor();
 
   const [globalSaveStatus, setGlobalSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
+  const [isAddClauseModalOpen, setIsAddClauseModalOpen] = useState(false);
 
   // Handle global error display
   const handleError = (message: string) => {
     console.error('Admin Editor Error:', message);
     setGlobalSaveStatus('error');
     setTimeout(() => setGlobalSaveStatus('idle'), 3000);
+  };
+
+  // Handle creating a new clause
+  const handleCreateClause = async (params: CreateClauseParams): Promise<boolean> => {
+    setGlobalSaveStatus('saving');
+    
+    const result = await createClause(params);
+    
+    if (result) {
+      setGlobalSaveStatus('saved');
+      setTimeout(() => setGlobalSaveStatus('idle'), 2000);
+      return true;
+    } else {
+      setGlobalSaveStatus('error');
+      setTimeout(() => setGlobalSaveStatus('idle'), 3000);
+      return false;
+    }
   };
 
   return (
@@ -149,6 +169,7 @@ const ContractEditorPageContent: React.FC = () => {
               onAssignClauseToCategory={assignClauseToCategory}
               onRemoveClauseFromCategory={removeClauseFromCategory}
               onDeleteClause={deleteClause}
+              onAddClause={() => setIsAddClauseModalOpen(true)}
             />
           ) : (
             <div className="h-full flex items-center justify-center bg-slate-50">
@@ -182,6 +203,15 @@ const ContractEditorPageContent: React.FC = () => {
           <span>Changes are saved automatically</span>
         </div>
       </footer>
+
+      {/* Add Clause Modal */}
+      <AddClauseModal
+        isOpen={isAddClauseModalOpen}
+        onClose={() => setIsAddClauseModalOpen(false)}
+        onSave={handleCreateClause}
+        categories={categories}
+        selectedCategoryId={selectedCategoryId}
+      />
     </div>
   );
 };

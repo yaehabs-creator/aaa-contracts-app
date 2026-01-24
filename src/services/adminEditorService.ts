@@ -616,6 +616,122 @@ class AdminEditorService {
 
     return this.fetchCategories(contractId);
   }
+
+  /**
+   * Create a new clause using the RPC function
+   * This adds the clause at the end of the specified section
+   */
+  async createClause(params: {
+    contractId: string;
+    sectionType: 'GENERAL' | 'PARTICULAR';
+    categoryId?: string | null;
+    clauseNumber?: string;
+    clauseTitle?: string;
+    clauseText: string;
+    conditionType?: 'General' | 'Particular';
+  }): Promise<EditorClause> {
+    if (!supabase) {
+      throw new Error('Supabase is not initialized');
+    }
+
+    const {
+      contractId,
+      sectionType,
+      categoryId,
+      clauseNumber,
+      clauseTitle,
+      clauseText,
+      conditionType = sectionType === 'GENERAL' ? 'General' : 'Particular'
+    } = params;
+
+    // Build item_data object matching existing structure
+    const itemData = {
+      itemType: 'clause',
+      clause_number: clauseNumber || null,
+      clause_title: clauseTitle || null,
+      clause_text: clauseText,
+      general_condition: sectionType === 'GENERAL' ? clauseText : null,
+      particular_condition: sectionType === 'PARTICULAR' ? clauseText : null,
+      condition_type: conditionType,
+      is_deleted: false
+    };
+
+    // Call the RPC function to add clause at end
+    const { data, error } = await supabase.rpc('add_contract_item_end', {
+      p_contract_id: contractId,
+      p_section_type: sectionType,
+      p_category_id: categoryId || null,
+      p_item_data: itemData
+    });
+
+    if (error) {
+      console.error('Error creating clause:', error);
+      if (error.code === '42501' || error.message.includes('permission')) {
+        throw new Error('Permission denied. Only admins can create clauses.');
+      }
+      throw new Error(`Failed to create clause: ${error.message}`);
+    }
+
+    return data as EditorClause;
+  }
+
+  /**
+   * Create a new clause at a specific position
+   */
+  async createClauseAtPosition(params: {
+    contractId: string;
+    sectionType: 'GENERAL' | 'PARTICULAR';
+    position: number;
+    categoryId?: string | null;
+    clauseNumber?: string;
+    clauseTitle?: string;
+    clauseText: string;
+    conditionType?: 'General' | 'Particular';
+  }): Promise<EditorClause> {
+    if (!supabase) {
+      throw new Error('Supabase is not initialized');
+    }
+
+    const {
+      contractId,
+      sectionType,
+      position,
+      categoryId,
+      clauseNumber,
+      clauseTitle,
+      clauseText,
+      conditionType = sectionType === 'GENERAL' ? 'General' : 'Particular'
+    } = params;
+
+    const itemData = {
+      itemType: 'clause',
+      clause_number: clauseNumber || null,
+      clause_title: clauseTitle || null,
+      clause_text: clauseText,
+      general_condition: sectionType === 'GENERAL' ? clauseText : null,
+      particular_condition: sectionType === 'PARTICULAR' ? clauseText : null,
+      condition_type: conditionType,
+      is_deleted: false
+    };
+
+    const { data, error } = await supabase.rpc('add_contract_item_at_position', {
+      p_contract_id: contractId,
+      p_section_type: sectionType,
+      p_position: position,
+      p_category_id: categoryId || null,
+      p_item_data: itemData
+    });
+
+    if (error) {
+      console.error('Error creating clause at position:', error);
+      if (error.code === '42501' || error.message.includes('permission')) {
+        throw new Error('Permission denied. Only admins can create clauses.');
+      }
+      throw new Error(`Failed to create clause: ${error.message}`);
+    }
+
+    return data as EditorClause;
+  }
 }
 
 // Export singleton instance
