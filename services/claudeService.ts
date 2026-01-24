@@ -94,9 +94,6 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     dangerouslyAllowBrowser: true
   });
   
-  // #region agent log
-  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'claudeService.ts:97',message:'claudeService analyzeContract called',data:{inputType:typeof input},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H1'})}).catch(()=>{});
-  // #endregion
   
   // Try multiple model names in order of preference
   const modelCandidates = [
@@ -107,9 +104,6 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
     'claude-3-haiku-20240307'
   ];
   
-  // #region agent log
-  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'claudeService.ts:107',message:'Model candidates prepared',data:{modelCandidates},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H1'})}).catch(()=>{});
-  // #endregion
 
   let promptText = "";
   let isTextInput = false;
@@ -138,9 +132,6 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
   // Try each model candidate until one works
   let lastError: any = null;
   for (const model of modelCandidates) {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'claudeService.ts:135',message:'Trying model',data:{model},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H1'})}).catch(()=>{});
-    // #endregion
     try {
       const message = await client.messages.create({
         model: model,
@@ -154,9 +145,6 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
         ]
       });
       
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'claudeService.ts:148',message:'Model succeeded',data:{model},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H1'})}).catch(()=>{});
-      // #endregion
 
       const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
         ? (message.content.find(c => c.type === 'text') as any).text
@@ -181,9 +169,6 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
         throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
       }
     } catch (error: any) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'claudeService.ts:171',message:'Model failed',data:{model,errorMsg:error.message,errorType:error.type},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H1'})}).catch(()=>{});
-      // #endregion
       // If this is a model not found error, try the next model
       if (error.message && error.message.includes('not_found_error') && error.message.includes('model')) {
         console.warn(`Model ${model} not found, trying next model...`);

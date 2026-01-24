@@ -25,9 +25,6 @@ export class ClaudeProvider implements AIProvider {
 
   constructor() {
     const apiKey = process.env.ANTHROPIC_API_KEY;
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:16',message:'ClaudeProvider constructor - API key check',data:{hasApiKey:!!apiKey,apiKeyLength:apiKey?.length||0,apiKeyPrefix:apiKey?.substring(0,15)||'none'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
     console.log('ClaudeProvider constructor - API key check:', {
       hasApiKey: !!apiKey,
       apiKeyLength: apiKey?.length || 0,
@@ -41,20 +38,11 @@ export class ClaudeProvider implements AIProvider {
           apiKey,
           dangerouslyAllowBrowser: true
         });
-        // #region agent log
-        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:30',message:'Claude client initialized',data:{hasClient:!!this.client},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-        // #endregion
         console.log('Claude client initialized successfully');
       } catch (error) {
-        // #region agent log
-        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:33',message:'Failed to initialize Claude client',data:{error:String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-        // #endregion
         console.error('Failed to initialize Claude client:', error);
       }
     } else {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:36',message:'ANTHROPIC_API_KEY not found',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-      // #endregion
       console.warn('ANTHROPIC_API_KEY not found in process.env');
     }
   }
@@ -76,9 +64,6 @@ export class ClaudeProvider implements AIProvider {
   }
 
   async chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string> {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:55',message:'chat method entry',data:{hasClient:!!this.client,model:this.model,messageCount:messages.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     if (!this.client) {
       throw new Error('Anthropic API key is not configured');
     }
@@ -107,9 +92,6 @@ export class ClaudeProvider implements AIProvider {
     // Try each model candidate until one works
     let lastError: any = null;
     for (const model of this.modelCandidates) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:88',message:'Trying model',data:{model,modelIndex:this.modelCandidates.indexOf(model)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       try {
         const message = await this.client.messages.create({
           model: model,
@@ -118,17 +100,11 @@ export class ClaudeProvider implements AIProvider {
           messages: anthropicMessages
         });
 
-        // #region agent log
-        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:99',message:'Model succeeded',data:{model,hasContent:!!message.content},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
 
         // Extract text content from response
         const content = message.content.find(c => c.type === 'text');
         return content && 'text' in content ? content.text : 'No response received';
       } catch (error: any) {
-        // #region agent log
-        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:106',message:'Model failed',data:{model,errorMessage:error?.message||String(error),isNotFound:error?.message?.includes('not_found_error')||false},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
         // If this is a model not found error, try the next model
         if (error?.message && (error.message.includes('not_found_error') || error.message.includes('model'))) {
           console.warn(`Model ${model} not found, trying next model...`);
@@ -142,9 +118,6 @@ export class ClaudeProvider implements AIProvider {
     }
 
     // If we get here, all models failed
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:120',message:'All models failed',data:{lastError:lastError?.message||String(lastError),triedModels:this.modelCandidates},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
     if (!lastError) {
       throw new Error('All Claude models failed and no error was captured');
     }
