@@ -174,7 +174,7 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
               <span className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em]">Baseline: General Conditions</span>
             </div>
             <div className={`font-mono text-[13px] leading-[1.8] text-aaa-text whitespace-pre-wrap transition-all duration-700 overflow-hidden ${isCollapsed ? 'max-h-[350px]' : 'max-h-none'}`}>
-              <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">{clause.clause_number}</div>
+              <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">{clause.clause_number} {clause.clause_title}</div>
               {clause.general_condition ? (
                 <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.general_condition, searchKeywords) : clause.general_condition }} className="verbatim-content" />
               ) : clause.condition_type === 'General' && clause.clause_text ? (
@@ -192,7 +192,11 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
             </div>
             <div className={`font-mono text-[13px] leading-[1.8] text-aaa-text whitespace-pre-wrap font-medium transition-all duration-700 overflow-hidden ${isCollapsed ? 'max-h-[350px]' : 'max-h-none'}`}>
               <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">
-                {clause.clause_number}
+                {searchKeywords.length > 0 ? (
+                  <span dangerouslySetInnerHTML={{ __html: highlightKeywordsInHTML(clause.clause_number + ' ' + clause.clause_title, searchKeywords) }} />
+                ) : (
+                  <span>{clause.clause_number} {clause.clause_title}</span>
+                )}
               </div>
               {clause.particular_condition ? (
                 <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.particular_condition, searchKeywords) : clause.particular_condition }} className="verbatim-content" />
