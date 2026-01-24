@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { SavedContract, ContractSection, SectionType, SectionItem, Clause } from '../types';
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '../services/contractMigrationService';
+import { getCategoriesForContract, ContractCategory } from '../src/services/supabaseService';
 
 // Helper: Get clause status (added, modified, gc-only) for sorting/display
 const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-only' => {
@@ -26,8 +27,8 @@ interface ContractSectionsTabsProps {
   onDeleteClause?: (index: number, sectionType: SectionType) => void;
   onReorderClause?: (fromIndex: number, toIndex: number, sectionType: SectionType) => void;
   onAddClause?: () => void;
-  sortMode?: 'default' | 'status' | 'chapter';
-  onSortModeChange?: (mode: 'default' | 'status' | 'chapter') => void;
+  sortMode?: 'default' | 'status' | 'chapter' | 'category';
+  onSortModeChange?: (mode: 'default' | 'status' | 'chapter' | 'category') => void;
 }
 
 export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
@@ -50,6 +51,29 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   const [activeTab, setActiveTab] = useState<TabType>('CONDITIONS');
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  
+  // Categories from Admin Editor
+  const [categories, setCategories] = useState<ContractCategory[]>([]);
+  const [categoriesLoading, setCategoriesLoading] = useState(false);
+  
+  // Fetch categories when contract changes
+  useEffect(() => {
+    const loadCategories = async () => {
+      if (!contract.id) return;
+      
+      setCategoriesLoading(true);
+      try {
+        const cats = await getCategoriesForContract(contract.id);
+        setCategories(cats);
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      } finally {
+        setCategoriesLoading(false);
+      }
+    };
+    
+    loadCategories();
+  }, [contract.id]);
 
   // Get all sections in order
   const allSections = useMemo(() => {
@@ -100,7 +124,30 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     ];
     
     // Apply sorting based on sortMode
-    if (sortMode === 'status') {
+    if (sortMode === 'category' && categories.length > 0) {
+      // Sort by category order, then by clause number within category
+      // Create a map of category_id -> order_index
+      const categoryOrderMap = new Map<string, number>();
+      categories.forEach((cat, idx) => {
+        categoryOrderMap.set(cat.id, idx);
+      });
+      
+      combinedItems.sort((a, b) => {
+        const catIdA = (a as any).category_id || '';
+        const catIdB = (b as any).category_id || '';
+        
+        // Items without category go to the end
+        const catOrderA = catIdA ? (categoryOrderMap.get(catIdA) ?? 999) : 1000;
+        const catOrderB = catIdB ? (categoryOrderMap.get(catIdB) ?? 999) : 1000;
+        
+        if (catOrderA !== catOrderB) return catOrderA - catOrderB;
+        
+        // Within same category, sort by clause number
+        const numA = parseFloat(a.clause_number || '0') || 0;
+        const numB = parseFloat(b.clause_number || '0') || 0;
+        return numA - numB;
+      });
+    } else if (sortMode === 'status') {
       const statusOrder = { 'added': 0, 'modified': 1, 'gc-only': 2 };
       combinedItems.sort((a, b) => {
         const statusDiff = statusOrder[getClauseStatusFromItem(a)] - statusOrder[getClauseStatusFromItem(b)];
@@ -127,7 +174,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       title: 'Conditions',
       items: combinedItems as SectionItem[]
     };
-  }, [activeTab, generalSection, particularSection, sortMode]);
+  }, [activeTab, generalSection, particularSection, sortMode, categories]);
 
   // Get active section based on tab
   const activeSection = useMemo(() => {
@@ -477,6 +524,19 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               >
                 By Chapter
               </button>
+              {categories.length > 0 && (
+                <button
+                  onClick={() => onSortModeChange('category')}
+                  className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
+                    sortMode === 'category'
+                      ? 'bg-amber-500 text-white border-amber-500'
+                      : 'bg-white text-aaa-muted border-aaa-border hover:border-amber-500 hover:text-amber-600'
+                  }`}
+                  title="Group by categories from Admin Editor"
+                >
+                  By Category
+                </button>
+              )}
             </div>
           )}
           

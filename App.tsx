@@ -254,7 +254,7 @@ const App: React.FC = () => {
   const [viewByChapter, setViewByChapter] = useState(false);
 
   // Sort Mode for clause organization
-  const [sortMode, setSortMode] = useState<'default' | 'status' | 'chapter'>('default');
+  const [sortMode, setSortMode] = useState<'default' | 'status' | 'chapter' | 'category'>('default');
 
   // Sidebar visibility
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

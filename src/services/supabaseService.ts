@@ -659,3 +659,84 @@ export const logActivity = async (
     // Don't throw - logging failures shouldn't break the app
   }
 };
+
+// ============================================
+// Category Functions (for Admin Editor integration)
+// ============================================
+
+export interface ContractCategory {
+  id: string;
+  contract_id: string;
+  name: string;
+  order_index: number;
+  created_at: string;
+  updated_at: string;
+}
+
+/**
+ * Fetch all categories for a contract (ordered by order_index)
+ */
+export const getCategoriesForContract = async (contractId: string): Promise<ContractCategory[]> => {
+  try {
+    if (!supabase) {
+      console.warn('Supabase not initialized');
+      return [];
+    }
+
+    const { data, error } = await supabase
+      .from('contract_categories')
+      .select('*')
+      .eq('contract_id', contractId)
+      .order('order_index', { ascending: true });
+
+    if (error) {
+      // Table might not exist yet
+      if (error.code === '42P01') {
+        console.warn('contract_categories table does not exist');
+        return [];
+      }
+      console.error('Error fetching categories:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    return [];
+  }
+};
+
+/**
+ * Fetch clauses with their category assignments for a contract
+ * Returns a map of clause_id -> category_id
+ */
+export const getClauseCategoryAssignments = async (contractId: string): Promise<Map<string, string>> => {
+  try {
+    if (!supabase) {
+      return new Map();
+    }
+
+    const { data, error } = await supabase
+      .from('contract_items')
+      .select('id, category_id')
+      .eq('contract_id', contractId)
+      .not('category_id', 'is', null);
+
+    if (error) {
+      console.error('Error fetching clause category assignments:', error);
+      return new Map();
+    }
+
+    const assignments = new Map<string, string>();
+    (data || []).forEach(item => {
+      if (item.category_id) {
+        assignments.set(item.id, item.category_id);
+      }
+    });
+
+    return assignments;
+  } catch (error) {
+    console.error('Error fetching clause category assignments:', error);
+    return new Map();
+  }
+};
