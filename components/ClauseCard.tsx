@@ -13,9 +13,9 @@ interface ClauseCardProps {
 // Helper function to highlight keywords in HTML text (simple regex approach)
 const highlightKeywordsInHTML = (htmlText: string, keywords: string[]): string => {
   if (!htmlText || !keywords || keywords.length === 0) return htmlText;
-  
+
   let highlightedText = htmlText;
-  
+
   keywords.forEach(keyword => {
     if (keyword.trim().length > 0) {
       // Escape special regex characters
@@ -23,23 +23,23 @@ const highlightKeywordsInHTML = (htmlText: string, keywords: string[]): string =
       // Match keyword but avoid matching inside HTML tags or existing mark tags
       // This regex matches the keyword only in text content, not in tag attributes
       const regex = new RegExp(`(?!<[^>]*>)(${escapedKeyword})(?![^<]*</mark>)`, 'gi');
-      
+
       highlightedText = highlightedText.replace(regex, (match) => {
         // Check if we're inside an HTML tag (simple check)
         const beforeMatch = highlightedText.substring(0, highlightedText.indexOf(match));
         const lastOpenTag = beforeMatch.lastIndexOf('<');
         const lastCloseTag = beforeMatch.lastIndexOf('>');
-        
+
         // If there's an unclosed tag before the match, skip highlighting
         if (lastOpenTag > lastCloseTag) {
           return match;
         }
-        
+
         return `<mark class="highlight-keyword" style="background-color: #FEF3C7; color: #92400E; padding: 2px 4px; border-radius: 3px; font-weight: 600;">${match}</mark>`;
       });
     }
   });
-  
+
   return highlightedText;
 };
 
@@ -56,7 +56,7 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
   const textLength = clause.clause_text?.length || 0;
   const [isCollapsed, setIsCollapsed] = useState(textLength > 1200);
   const [copied, setCopied] = useState(false);
-  
+
   const modCount = clause.comparison?.length || 0;
   const normalizedClauseId = normalizeClauseId(clause.clause_number);
 
@@ -102,11 +102,10 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
   };
 
   return (
-    <div 
+    <div
       id={`clause-${normalizedClauseId}`}
-      className={`relative group bg-white border rounded-3xl shadow-premium transition-all duration-500 hover:shadow-2xl overflow-hidden card-enter ${
-        isCompareTarget ? 'border-aaa-blue ring-4 ring-aaa-blue/10 scale-[1.01]' : 'border-aaa-border'
-      }`}
+      className={`relative group bg-white border rounded-3xl shadow-premium transition-all duration-500 hover:shadow-2xl overflow-hidden card-enter ${isCompareTarget ? 'border-aaa-blue ring-4 ring-aaa-blue/10 scale-[1.01]' : 'border-aaa-border'
+        }`}
       style={{
         animation: 'slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
         animationFillMode: 'both'
@@ -117,23 +116,22 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
           <div className="flex flex-col">
             <span className="text-[9px] font-black uppercase tracking-[0.4em] text-aaa-muted mb-2">Matrix Coordinate</span>
             <div className="flex items-center gap-4">
-               <div className="px-3 py-1 bg-aaa-blue rounded-lg shadow-lg">
-                  <span className="text-xl font-black text-white tracking-tighter mono">C.{clause.clause_number}</span>
-               </div>
-               <h3 className="text-2xl font-black text-aaa-text tracking-tight group-hover:text-aaa-blue transition-colors">
-                 {searchKeywords.length > 0 ? (
-                   <span dangerouslySetInnerHTML={{ __html: highlightKeywordsInHTML(clause.clause_title, searchKeywords) }} />
-                 ) : (
-                   <span>{clause.clause_title}</span>
-                 )}
-               </h3>
+              <div className="px-3 py-1 bg-aaa-blue rounded-lg shadow-lg">
+                <span className="text-xl font-black text-white tracking-tighter mono">C.{clause.clause_number}</span>
+              </div>
+              <h3 className="text-2xl font-black text-aaa-text tracking-tight group-hover:text-aaa-blue transition-colors">
+                {searchKeywords.length > 0 ? (
+                  <span dangerouslySetInnerHTML={{ __html: highlightKeywordsInHTML(clause.clause_title, searchKeywords) }} />
+                ) : (
+                  <span>{clause.clause_title}</span>
+                )}
+              </h3>
             </div>
           </div>
           <div className="hidden sm:block h-10 w-px bg-aaa-border mx-2" />
           <div className="flex flex-wrap gap-2">
-            <span className={`px-4 py-1 text-[9px] font-black rounded-full uppercase tracking-widest border ${
-              clause.condition_type === 'General' ? 'bg-white text-aaa-blue border-aaa-blue/30 shadow-sm' : 'bg-aaa-accent text-white border-none shadow-lg'
-            }`}>
+            <span className={`px-4 py-1 text-[9px] font-black rounded-full uppercase tracking-widest border ${clause.condition_type === 'General' ? 'bg-white text-aaa-blue border-aaa-blue/30 shadow-sm' : 'bg-aaa-accent text-white border-none shadow-lg'
+              }`}>
               {clause.condition_type} Dataset
             </span>
             {clause.section && (
@@ -150,8 +148,8 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
         </div>
         <div className="flex items-center gap-3">
           {onEdit && (
-            <button 
-              onClick={() => onEdit(clause)} 
+            <button
+              onClick={() => onEdit(clause)}
               className="p-3 bg-white border border-aaa-border text-aaa-muted hover:text-emerald-600 hover:border-emerald-600 rounded-xl transition-all shadow-sm"
               title="Edit Clause"
             >
@@ -177,12 +175,14 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
           {/* Baseline Side */}
           <div className="p-10 bg-aaa-bg/10">
             <div className="flex items-center justify-between mb-6">
-               <span className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em]">Baseline: General Conditions</span>
+              <span className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em]">Baseline: General Conditions</span>
             </div>
             <div className={`font-mono text-[13px] leading-[1.8] text-aaa-text whitespace-pre-wrap transition-all duration-700 overflow-hidden ${isCollapsed ? 'max-h-[350px]' : 'max-h-none'}`}>
               <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">{clause.clause_number} {clause.clause_title}</div>
               {clause.general_condition ? (
                 <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.general_condition, searchKeywords) : clause.general_condition }} className="verbatim-content" />
+              ) : clause.condition_type === 'General' && clause.clause_text ? (
+                <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.clause_text, searchKeywords) : clause.clause_text }} className="verbatim-content" />
               ) : (
                 <div className="h-20 flex items-center justify-center border-2 border-dashed border-aaa-border/50 rounded-2xl bg-white/50 text-[10px] font-black uppercase text-aaa-muted opacity-40">Not Present in Baseline</div>
               )}
@@ -192,7 +192,7 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
           {/* Modification Side */}
           <div className="p-10 bg-aaa-bg/40">
             <div className="flex items-center justify-between mb-6">
-               <span className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em]">Revision: Particular Conditions</span>
+              <span className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em]">Revision: Particular Conditions</span>
             </div>
             <div className={`font-mono text-[13px] leading-[1.8] text-aaa-text whitespace-pre-wrap font-medium transition-all duration-700 overflow-hidden ${isCollapsed ? 'max-h-[350px]' : 'max-h-none'}`}>
               <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">
