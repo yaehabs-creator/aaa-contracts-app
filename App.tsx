@@ -134,6 +134,13 @@ const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
   }));
 };
 
+// Helper: Get all clauses from contract AND reprocess links
+// Use this instead of getAllClausesFromContract when loading contracts for display
+const getClausesWithProcessedLinks = (contract: Contract): Clause[] => {
+  const allClauses = getAllClausesFromContract(contract);
+  return reprocessClauseLinks(allClauses);
+};
+
 // Highlight keywords in text for search results
 const highlightKeywords = (text: string, keywords: string[]): string => {
   if (!text || keywords.length === 0) return text;
@@ -473,9 +480,9 @@ const App: React.FC = () => {
       // Save to database
       await saveContractToDB(contractWithSections);
 
-      // Update local state
+      // Update local state with reprocessed clause links
       setContract(contractWithSections);
-      setClauses(getAllClausesFromContract(contractWithSections));
+      setClauses(getClausesWithProcessedLinks(contractWithSections));
       if (!activeContractId) setActiveContractId(contractWithSections.id);
 
       // Refresh library to show updated contract
@@ -525,7 +532,7 @@ const App: React.FC = () => {
           };
 
           setContract(updatedContract);
-          setClauses(updatedContract.clauses || []);
+          setClauses(reprocessClauseLinks(updatedContract.clauses || []));
           if (compareClause && compareClause.clause_number === updatedClause.clause_number) {
             setCompareClause(updatedClause);
           }
@@ -686,7 +693,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         };
 
         setContract(updatedContract);
-        setClauses(updatedContract.clauses || []);
+        setClauses(reprocessClauseLinks(updatedContract.clauses || []));
         await performSaveContract(updatedContract);
 
         // Update editingClause to reflect saved changes (keeps modal open)
@@ -791,7 +798,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         };
 
         setContract(updatedContract);
-        setClauses(updatedContract.clauses || []);
+        setClauses(reprocessClauseLinks(updatedContract.clauses || []));
         await performSaveContract(updatedContract);
         return;
       }
@@ -812,7 +819,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     };
 
     setContract(updatedContract);
-    setClauses(updatedContract.clauses || []);
+    setClauses(reprocessClauseLinks(updatedContract.clauses || []));
     await performSaveContract(updatedContract);
   };
 
@@ -940,7 +947,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           };
 
           setContract(updatedContract);
-          setClauses(updatedContract.clauses || []);
+          setClauses(reprocessClauseLinks(updatedContract.clauses || []));
           await performSaveContract(updatedContract);
         }
       } else {
@@ -973,7 +980,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
               };
 
               setContract(updatedContract);
-              setClauses(updatedContract.clauses || []);
+              setClauses(reprocessClauseLinks(updatedContract.clauses || []));
               await performSaveContract(updatedContract);
             }
           }
@@ -1752,7 +1759,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         };
 
         setContract(updatedContract);
-        setClauses(updatedContract.clauses || []);
+        setClauses(reprocessClauseLinks(updatedContract.clauses || []));
         await performSaveContract(updatedContract);
       }
     } else {
@@ -1760,7 +1767,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       const newClauses = [...clauses];
       const [movedItem] = newClauses.splice(fromIndex, 1);
       newClauses.splice(toIndex, 0, movedItem);
-      setClauses(newClauses);
+      setClauses(reprocessClauseLinks(newClauses));
       persistCurrentProject(newClauses);
     }
   };
@@ -2694,8 +2701,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       contract={contract}
                       onUpdate={async (updatedContract) => {
                         // Update local state immediately for responsive UI (no auto-save)
+                        // Reprocess clause links to ensure internal references work
                         setContract(updatedContract);
-                        setClauses(getAllClausesFromContract(updatedContract));
+                        setClauses(getClausesWithProcessedLinks(updatedContract));
                       }}
                       onSave={async (updatedContract) => {
                         // Explicit save when Save button is clicked
@@ -2732,7 +2740,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                           contract={fallbackContract}
                           onUpdate={async (updatedContract) => {
                             setContract(updatedContract);
-                            setClauses(getAllClausesFromContract(updatedContract));
+                            setClauses(getClausesWithProcessedLinks(updatedContract));
                           }}
                           onSave={async (updatedContract) => {
                             await performSaveContract(updatedContract);

@@ -66,25 +66,78 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
                         (!clause.general_condition || clause.general_condition.length === 0);
 
   // Handle hyperlink clicks for smooth scrolling to clause references
+  // Supports multiple link formats: .clause-link, href="#clause-X", href="clause-X", 
+  // and text containing clause references
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+      
       // Check if clicked element is a link or inside a link
-      const link = target.closest('a.clause-link') as HTMLAnchorElement;
-      if (link && link.getAttribute('href')?.startsWith('#clause-')) {
-        e.preventDefault();
-        e.stopPropagation();
-        const clauseId = link.getAttribute('data-clause-id') || link.getAttribute('href')?.replace('#clause-', '');
-        if (clauseId) {
-          const targetElement = document.getElementById(`clause-${clauseId}`);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Highlight the target clause briefly
-            targetElement.style.transition = 'box-shadow 0.3s ease';
-            targetElement.style.boxShadow = '0 0 0 4px rgba(15, 46, 107, 0.3)';
-            setTimeout(() => {
-              targetElement.style.boxShadow = '';
-            }, 2000);
+      const link = target.closest('a') as HTMLAnchorElement;
+      if (!link) return;
+      
+      const href = link.getAttribute('href') || '';
+      const dataClauseId = link.getAttribute('data-clause-id');
+      const linkText = link.textContent || '';
+      
+      // Extract clause ID from various formats
+      let clauseId: string | null = null;
+      
+      // Priority 1: data-clause-id attribute (most reliable)
+      if (dataClauseId) {
+        clauseId = normalizeClauseId(dataClauseId);
+      }
+      // Priority 2: href="#clause-X" format
+      else if (href.startsWith('#clause-')) {
+        clauseId = normalizeClauseId(href.replace('#clause-', ''));
+      }
+      // Priority 3: href="clause-X" format (without #)
+      else if (href.startsWith('clause-')) {
+        clauseId = normalizeClauseId(href.replace('clause-', ''));
+      }
+      // Priority 4: href="#X.X" format (direct clause number)
+      else if (href.match(/^#\d+(?:[A-Za-z])?(?:\.\d+[A-Za-z]?)*$/)) {
+        clauseId = normalizeClauseId(href.replace('#', ''));
+      }
+      // Priority 5: href="#" with clause reference in text
+      else if (href === '#' || href === '') {
+        // Try to extract clause number from link text
+        const clauseMatch = linkText.match(/(?:Clause|Sub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/i);
+        if (clauseMatch) {
+          clauseId = normalizeClauseId(clauseMatch[1]);
+        }
+      }
+      // Priority 6: Check if link text itself is a clause reference pattern
+      else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
+        const clauseMatch = linkText.match(/(?:Clause|Sub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/i);
+        if (clauseMatch) {
+          clauseId = normalizeClauseId(clauseMatch[1]);
+        }
+      }
+      
+      // If we found a clause ID, try to scroll to it
+      if (clauseId) {
+        const targetElement = document.getElementById(`clause-${clauseId}`);
+        if (targetElement) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Highlight the target clause briefly
+          targetElement.classList.add('clause-highlight');
+          targetElement.style.transition = 'box-shadow 0.3s ease';
+          targetElement.style.boxShadow = '0 0 0 4px rgba(15, 46, 107, 0.3)';
+          
+          setTimeout(() => {
+            targetElement.style.boxShadow = '';
+            targetElement.classList.remove('clause-highlight');
+          }, 2000);
+        } else {
+          // Clause element not found - prevent navigation to broken link
+          if (href === '#' || href.startsWith('#clause-') || href.startsWith('clause-')) {
+            e.preventDefault();
+            console.warn(`Clause element not found: clause-${clauseId}`);
           }
         }
       }
