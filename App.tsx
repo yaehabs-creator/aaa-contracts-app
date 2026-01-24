@@ -8,7 +8,7 @@ import { getContractFromSupabase } from './src/services/supabaseService';
 import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
 import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard';
 import { Dashboard } from './components/Dashboard';
-import { Sidebar } from './components/Sidebar';
+import { CategoryLedger } from './components/CategoryLedger';
 import { ComparisonModal } from './components/ComparisonModal';
 import { AddClauseModal } from './components/AddClauseModal';
 import { CategoryManager } from './components/CategoryManager';
@@ -1954,21 +1954,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
           <div className="flex-1 flex overflow-hidden">
             {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
-              <Sidebar
-                clauses={clauses}
-                selectedTypes={selectedTypes}
-                setSelectedTypes={setSelectedTypes}
-                selectedGroup={selectedGroup}
-                setSelectedGroup={setSelectedGroup}
+              <CategoryLedger
+                contractId={contract?.id || null}
                 searchQuery={searchFilter}
-                setSearchQuery={setSearchFilter}
-                onReorder={handleReorder}
-                onDelete={handleDeleteClause}
-                onClausesUpdate={handleClausesUpdateFromCategory}
-                onCloseOtherModals={() => {
-                  setCompareClause(null);
-                  setIsAddModalOpen(false);
-                }}
+                onSearchChange={setSearchFilter}
               />
             )}
 
