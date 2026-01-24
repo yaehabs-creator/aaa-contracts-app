@@ -2939,7 +2939,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                         </div>
                         <div className="mt-auto pt-8 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
                           <span>{new Date(c.timestamp).toLocaleDateString()}</span>
-                          <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
+                          <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses?.length || c.metadata?.totalClauses || 0} Nodes</span>
                         </div>
                       </div>
                     ))}
@@ -3030,7 +3030,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                                 </div>
                                 <div className="mt-auto pt-4 border-t border-aaa-border flex justify-between items-center text-[10px] font-black uppercase text-aaa-muted tracking-widest">
                                   <span>{new Date(c.timestamp).toLocaleDateString()}</span>
-                                  <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses.length} Nodes</span>
+                                  <span className="px-3 py-1 bg-aaa-bg rounded-lg text-aaa-blue">{c.clauses?.length || c.metadata?.totalClauses || 0} Nodes</span>
                                 </div>
                               </div>
                             );
