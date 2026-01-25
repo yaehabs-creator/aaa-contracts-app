@@ -39,8 +39,20 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
   // Get the currently selected contract and its clauses
   const selectedContract = contracts.find(c => c.id === selectedContractId);
+  
+  // Safely get clauses from contract with fallback
+  const getClausesSafe = (contract: SavedContract | null | undefined): Clause[] => {
+    if (!contract) return [];
+    try {
+      return getAllClausesFromContract(contract);
+    } catch (e) {
+      console.warn('Failed to get clauses from contract:', contract.name, e);
+      return [];
+    }
+  };
+  
   const activeClauses = selectedContract 
-    ? getAllClausesFromContract(selectedContract) 
+    ? getClausesSafe(selectedContract) 
     : clauses;
 
   // Update selected contract when activeContractId changes
@@ -265,7 +277,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
                   >
                     <span className="ai-bot-contract-option-name">{contract.name}</span>
                     <span className="ai-bot-contract-option-count">
-                      {getAllClausesFromContract(contract).length} clauses
+                      {getClausesSafe(contract).length} clauses
                     </span>
                     {contract.id === selectedContractId && (
                       <svg xmlns="http://www.w3.org/2000/svg" className="ai-bot-contract-check" fill="none" viewBox="0 0 24 24" stroke="currentColor">
