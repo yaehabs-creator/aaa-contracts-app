@@ -134,31 +134,6 @@ const ContractEditorPageContent: React.FC = () => {
               {/* Save Status */}
               <SaveStatusIndicator status={globalSaveStatus} />
 
-              {selectedContractId && (
-                <button
-                  onClick={handleUpdateHyperlinks}
-                  disabled={isUpdatingLinks}
-                  className={`
-                    flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold border transition-colors
-                    ${isUpdatingLinks
-                      ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-wait'
-                      : 'bg-white text-aaa-blue border-aaa-blue hover:bg-aaa-blue hover:text-white'
-                    }
-                  `}
-                >
-                  {isUpdatingLinks ? (
-                    <>
-                      <div className="w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                      Updating...
-                    </>
-                  ) : (
-                    <>
-                      <span>🔗</span> UPDATE HYPERLINKS
-                    </>
-                  )}
-                </button>
-              )}
-
               {/* User Info */}
               <div className="flex items-center gap-2 pl-4 border-l border-aaa-border">
                 <div className="w-8 h-8 bg-aaa-blue rounded-full flex items-center justify-center">
@@ -218,6 +193,8 @@ const ContractEditorPageContent: React.FC = () => {
               onRemoveClauseFromCategory={removeClauseFromCategory}
               onDeleteClause={deleteClause}
               onAddClause={() => setIsAddClauseModalOpen(true)}
+              onUpdateHyperlinks={handleUpdateHyperlinks}
+              isUpdatingLinks={isUpdatingLinks}
             />
           ) : (
             <div className="h-full flex items-center justify-center bg-slate-50">

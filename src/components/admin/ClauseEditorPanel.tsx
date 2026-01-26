@@ -13,6 +13,8 @@ interface ClauseEditorPanelProps {
   onRemoveClauseFromCategory: (itemId: string) => Promise<boolean>;
   onDeleteClause: (itemId: string) => Promise<boolean>;
   onAddClause?: () => void;
+  onUpdateHyperlinks?: () => void;
+  isUpdatingLinks?: boolean;
 }
 
 type SortMode = 'default' | 'number' | 'status';
@@ -31,7 +33,9 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
   onAssignClauseToCategory,
   onRemoveClauseFromCategory,
   onDeleteClause,
-  onAddClause
+  onAddClause,
+  onUpdateHyperlinks,
+  isUpdatingLinks
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortMode, setSortMode] = useState<SortMode>('default');
@@ -105,9 +109,9 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
     const categoryFiltered = selectedCategoryId
       ? clauses.filter(c => c.category_id === selectedCategoryId)
       : clauses;
-    
+
     const nonDeleted = categoryFiltered.filter(c => !c.item_data.is_deleted);
-    
+
     return {
       total: nonDeleted.length,
       added: nonDeleted.filter(c => getClauseStatus(c) === 'added').length,
@@ -147,7 +151,7 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
               <span className="w-2 h-2 rounded-full bg-slate-400"></span>
               <span className="text-xs text-aaa-muted">{stats.gcOnly} GC Only</span>
             </div>
-            
+
             {/* Add Clause Button */}
             {onAddClause && (
               <button
@@ -158,6 +162,30 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
                 Add Clause
+              </button>
+            )}
+
+            {/* Update Hyperlinks Button */}
+            {onUpdateHyperlinks && (
+              <button
+                onClick={onUpdateHyperlinks}
+                disabled={isUpdatingLinks}
+                className={`
+                    ml-2 flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-lg transition-colors shadow-sm
+                    ${isUpdatingLinks
+                    ? 'bg-slate-100 text-slate-400 cursor-wait'
+                    : 'bg-white text-aaa-blue border border-aaa-blue hover:bg-aaa-blue hover:text-white'
+                  }
+                  `}
+              >
+                {isUpdatingLinks ? (
+                  <>
+                    <div className="w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                  </>
+                ) : (
+                  <span>🔗</span>
+                )}
+                Hyperlinks
               </button>
             )}
           </div>
@@ -243,8 +271,8 @@ export const ClauseEditorPanel: React.FC<ClauseEditorPanelProps> = ({
                 {searchQuery
                   ? 'Try adjusting your search or filters'
                   : selectedCategoryId
-                  ? 'This category has no clauses yet'
-                  : 'Select a contract to view clauses'
+                    ? 'This category has no clauses yet'
+                    : 'Select a contract to view clauses'
                 }
               </p>
             </div>
