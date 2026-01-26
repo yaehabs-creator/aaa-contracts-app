@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { EditorClause, EditorCategory } from '../../services/adminEditorService';
 import { useDebouncedSave, SaveStatus } from '../../hooks/useDebouncedSave';
-import { LinkifyClauseReferences } from '../../utils/clauseLinker';
 import { normalizeClauseId } from '../../utils/navigation';
+import { TokenizedTextRenderer } from './TokenizedTextRenderer';
 
 interface ClauseEditorCardProps {
   clause: EditorClause;
@@ -317,7 +317,12 @@ export const ClauseEditorCard: React.FC<ClauseEditorCardProps> = ({
                   onClick={() => setViewMode('edit')}
                   title="Click to edit"
                 >
-                  <LinkifyClauseReferences text={localValues.general_condition} />
+                  <TokenizedTextRenderer
+                    tokens={(clause as any).gc_link_tokens}
+                    rawText={localValues.general_condition}
+                    className=""
+                    onClick={() => setViewMode('edit')}
+                  />
                 </div>
               ) : (
                 <textarea
@@ -342,7 +347,12 @@ export const ClauseEditorCard: React.FC<ClauseEditorCardProps> = ({
                   onClick={() => setViewMode('edit')}
                   title="Click to edit"
                 >
-                  <LinkifyClauseReferences text={localValues.particular_condition} />
+                  <TokenizedTextRenderer
+                    tokens={(clause as any).pc_link_tokens}
+                    rawText={localValues.particular_condition}
+                    className=""
+                    onClick={() => setViewMode('edit')}
+                  />
                 </div>
               ) : (
                 <textarea

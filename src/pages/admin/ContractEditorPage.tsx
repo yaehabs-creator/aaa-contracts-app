@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useAdminEditor, CreateClauseParams } from '../../hooks/useAdminEditor';
+import { adminEditorService } from '../../services/adminEditorService';
+import { toast } from 'react-hot-toast';
 import { AdminGuard } from '../../components/admin/AdminGuard';
 import { ContractPicker } from '../../components/admin/ContractPicker';
 import { CategoryManagerPanel } from '../../components/admin/CategoryManagerPanel';
@@ -21,26 +23,26 @@ const ContractEditorPageContent: React.FC = () => {
     categories,
     clauses,
     selectedCategoryId,
-    
+
     // Loading states
     contractsLoading,
     categoriesLoading,
     clausesLoading,
-    
+
     // Errors
     error,
-    
+
     // Actions
     selectContract,
     selectCategory,
-    
+
     // Category operations
     createCategory,
     renameCategory,
     reorderCategories,
     deleteCategory,
     syncCategories,
-    
+
     // Clause operations
     createClause,
     updateClauseText,
@@ -51,6 +53,27 @@ const ContractEditorPageContent: React.FC = () => {
 
   const [globalSaveStatus, setGlobalSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
   const [isAddClauseModalOpen, setIsAddClauseModalOpen] = useState(false);
+  const [isUpdatingLinks, setIsUpdatingLinks] = useState(false);
+
+  const handleUpdateHyperlinks = async () => {
+    if (!selectedContractId) return;
+
+    try {
+      setIsUpdatingLinks(true);
+      toast.loading('Updating hyperlinks...', { id: 'update-links' });
+
+      const count = await adminEditorService.updateClauseHyperlinks(selectedContractId);
+
+      toast.success(`Hyperlinks saved to Supabase (${count} clauses)`, { id: 'update-links' });
+      // Reload clauses to get new tokens
+      selectContract(selectedContractId);
+    } catch (err: any) {
+      console.error(err);
+      toast.error('Failed to update hyperlinks', { id: 'update-links' });
+    } finally {
+      setIsUpdatingLinks(false);
+    }
+  };
 
   // Handle global error display
   const handleError = (message: string) => {
@@ -62,9 +85,9 @@ const ContractEditorPageContent: React.FC = () => {
   // Handle creating a new clause
   const handleCreateClause = async (params: CreateClauseParams): Promise<boolean> => {
     setGlobalSaveStatus('saving');
-    
+
     const result = await createClause(params);
-    
+
     if (result) {
       setGlobalSaveStatus('saved');
       setTimeout(() => setGlobalSaveStatus('idle'), 2000);
@@ -88,7 +111,7 @@ const ContractEditorPageContent: React.FC = () => {
                 <h1 className="text-xl font-black text-aaa-text tracking-tight">Contract Editor</h1>
                 <p className="text-xs text-aaa-muted">Admin Panel</p>
               </div>
-              
+
               <div className="w-80">
                 <ContractPicker
                   contracts={contracts}
@@ -110,6 +133,31 @@ const ContractEditorPageContent: React.FC = () => {
 
               {/* Save Status */}
               <SaveStatusIndicator status={globalSaveStatus} />
+
+              {selectedContractId && (
+                <button
+                  onClick={handleUpdateHyperlinks}
+                  disabled={isUpdatingLinks}
+                  className={`
+                    flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold border transition-colors
+                    ${isUpdatingLinks
+                      ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-wait'
+                      : 'bg-white text-aaa-blue border-aaa-blue hover:bg-aaa-blue hover:text-white'
+                    }
+                  `}
+                >
+                  {isUpdatingLinks ? (
+                    <>
+                      <div className="w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                      Updating...
+                    </>
+                  ) : (
+                    <>
+                      <span>🔗</span> UPDATE HYPERLINKS
+                    </>
+                  )}
+                </button>
+              )}
 
               {/* User Info */}
               <div className="flex items-center gap-2 pl-4 border-l border-aaa-border">

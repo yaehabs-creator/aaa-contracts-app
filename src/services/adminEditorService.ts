@@ -216,7 +216,7 @@ class AdminEditorService {
     // Update each category with its new order_index
     // Using a temporary negative offset to avoid unique constraint violations
     const tempOffset = -1000;
-    
+
     // First, set all to temporary negative values
     for (let i = 0; i < orderedIds.length; i++) {
       const { error } = await supabase
@@ -731,6 +731,108 @@ class AdminEditorService {
     }
 
     return data as EditorClause;
+  }
+  /**
+   * Update clause hyperlinks tokens in Supabase
+   * - Tokenizes GC/PC text
+   * - Batch updates contract_items
+   */
+  async updateClauseHyperlinks(contractId: string): Promise<number> {
+    if (!supabase) throw new Error('Supabase not initialized');
+
+    // 1. Fetch all clauses
+    const clauses = await this.fetchClauses(contractId);
+    let updatedCount = 0;
+
+    // Importing here to avoid circular dependencies if any, or just used directly
+    const { buildLinkTokens } = await import('../utils/clauseTokenizer');
+
+    // 2. Process in chunks
+    const CHUNK_SIZE = 50;
+    for (let i = 0; i < clauses.length; i += CHUNK_SIZE) {
+      const chunk = clauses.slice(i, i + CHUNK_SIZE);
+
+      // Prepare updates
+      const updates = chunk.map(clause => {
+        const gcText = clause.item_data.general_condition || '';
+        const pcText = clause.item_data.particular_condition || '';
+
+        const gcTokens = buildLinkTokens(gcText);
+        const pcTokens = buildLinkTokens(pcText);
+
+        return {
+          id: clause.id,
+          gc_link_tokens: gcTokens.length > 0 ? gcTokens : null,
+          pc_link_tokens: pcTokens.length > 0 ? pcTokens : null,
+          links_updated_at: new Date().toISOString()
+        };
+      });
+
+      // 3. Perform upsert (update)
+      // Since specific columns are on contract_items table now (via migration),
+      // we can update them directly.
+      // note: upsert requires all unique key columns or primary key. 
+      // We are updating by ID, which is PK.
+
+      const { error } = await supabase
+        .from('contract_items')
+        .upsert(updates.map(u => ({
+          id: u.id,
+          gc_link_tokens: u.gc_link_tokens,
+          pc_link_tokens: u.pc_link_tokens,
+          links_updated_at: u.links_updated_at,
+          // We must preserve other required fields if using upsert on just ID? 
+          // Actually, standard UPDATE is better if we just want to patch columns.
+          // But supabase-js .upsert() acts as merged update if ID matches?
+          // No, upsert replaces the row if not partial? 
+          // Let's use .update() but we have to do it individually or try to construct a bulk case?
+          // Supabase-js doesn't support bulk UPDATE with different values easily in one query without RPC or upsert.
+          // If we use Upsert, we need to provide ALL NON-NULL columns OR use ignoreDuplicates (which prevents update).
+
+          // Strategy: We added columns to the table. We want to update JUST those columns.
+          // "contract_items" has "item_data" which is NOT NULL. If we upsert without item_data, it might fail or erase it?
+          // If we fetch item_data and include it, it's safer.
+          // But we already fetched clauses!
+          // `clause` has current data.
+        })), { onConflict: 'id', ignoreDuplicates: false });
+
+      // Wait, looping update is safer to avoid data loss if I minimize the payload.
+      // Actually, let's use a loop of individual updates for safety given the constraints, 
+      // OR include the necessary fields.
+      // `contract_items` has: id, contract_id, section_type, order_index, item_data. All required?
+      // section_type, order_index, item_data are NOT NULL.
+      // So I must include them.
+
+      if (updates.length > 0) {
+        // Construct bulk payload with existing data
+        const payload = updates.map(u => {
+          const original = chunk.find(c => c.id === u.id);
+          if (!original) return null;
+          return {
+            id: u.id,
+            contract_id: original.contract_id,
+            section_type: original.section_type,
+            order_index: original.order_index,
+            item_data: original.item_data, // Preserve existing data
+            gc_link_tokens: u.gc_link_tokens,
+            pc_link_tokens: u.pc_link_tokens,
+            links_updated_at: u.links_updated_at
+          };
+        }).filter(Boolean);
+
+        const { error } = await supabase
+          .from('contract_items')
+          .upsert(payload, { onConflict: 'id' });
+
+        if (error) {
+          console.error('Error updating hyperlink tokens:', error);
+          throw error;
+        }
+        updatedCount += updates.length;
+      }
+    }
+
+    return updatedCount;
   }
 }
 
