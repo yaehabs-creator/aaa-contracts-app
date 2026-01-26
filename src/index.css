@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .clause-ref {
+    @apply font-semibold text-aaa-blue hover:text-blue-700 hover:underline cursor-pointer;
+  }
+}

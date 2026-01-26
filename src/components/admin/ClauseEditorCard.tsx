@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { EditorClause, EditorCategory } from '../../services/adminEditorService';
 import { useDebouncedSave, SaveStatus } from '../../hooks/useDebouncedSave';
+import { LinkifyClauseReferences } from '../../utils/clauseLinker';
+import { normalizeClauseId } from '../../utils/navigation';
 
 interface ClauseEditorCardProps {
   clause: EditorClause;
@@ -33,6 +35,7 @@ export const ClauseEditorCard: React.FC<ClauseEditorCardProps> = ({
     particular_condition: clause.item_data.particular_condition || ''
   });
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
+  const [viewMode, setViewMode] = useState<'view' | 'edit'>('view');
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Update local values when clause changes
@@ -99,10 +102,14 @@ export const ClauseEditorCard: React.FC<ClauseEditorCardProps> = ({
   const status = getClauseStatus();
 
   return (
-    <div className={`
+    <div
+      id={`clause-${normalizeClauseId(localValues.clause_number)}`}
+      data-clause-number={localValues.clause_number}
+      className={`
       bg-white border border-aaa-border rounded-xl overflow-hidden
       transition-all duration-200
       ${isExpanded ? 'shadow-lg' : 'shadow-sm hover:shadow-md'}
+      scroll-mt-24
     `}>
       {/* Header */}
       <div
@@ -233,75 +240,133 @@ export const ClauseEditorCard: React.FC<ClauseEditorCardProps> = ({
       </div>
 
       {/* Expanded Content */}
-      {isExpanded && (
-        <div className="border-t border-aaa-border p-4 space-y-4">
-          {/* Clause Number & Title Row */}
-          <div className="grid grid-cols-2 gap-4">
+      {
+        isExpanded && (
+          <div className="border-t border-aaa-border p-4 space-y-4">
+            {/* View/Edit Toggle */}
+            <div className="flex justify-end mb-2">
+              <div className="bg-slate-100 p-1 rounded-lg inline-flex">
+                <button
+                  onClick={() => setViewMode('view')}
+                  className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${viewMode === 'view'
+                    ? 'bg-white text-aaa-blue shadow-sm'
+                    : 'text-aaa-muted hover:text-aaa-text'
+                    }`}
+                >
+                  View
+                </button>
+                <button
+                  onClick={() => setViewMode('edit')}
+                  className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${viewMode === 'edit'
+                    ? 'bg-white text-aaa-blue shadow-sm'
+                    : 'text-aaa-muted hover:text-aaa-text'
+                    }`}
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+
+            {/* Clause Number & Title Row */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[10px] font-bold text-aaa-muted uppercase tracking-wider mb-1">
+                  Clause Number
+                </label>
+                {viewMode === 'view' ? (
+                  <div className="px-3 py-2 text-sm border border-transparent font-medium">
+                    {localValues.clause_number}
+                  </div>
+                ) : (
+                  <input
+                    type="text"
+                    value={localValues.clause_number}
+                    onChange={(e) => handleTextChange('clause_number', e.target.value)}
+                    className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue"
+                  />
+                )}
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold text-aaa-muted uppercase tracking-wider mb-1">
+                  Clause Title
+                </label>
+                {viewMode === 'view' ? (
+                  <div className="px-3 py-2 text-sm border border-transparent font-medium">
+                    {localValues.clause_title}
+                  </div>
+                ) : (
+                  <input
+                    type="text"
+                    value={localValues.clause_title}
+                    onChange={(e) => handleTextChange('clause_title', e.target.value)}
+                    className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue"
+                  />
+                )}
+              </div>
+            </div>
+
+            {/* General Condition */}
             <div>
               <label className="block text-[10px] font-bold text-aaa-muted uppercase tracking-wider mb-1">
-                Clause Number
+                General Condition
+                {hasGC && <span className="ml-2 text-emerald-600">({localValues.general_condition.length} chars)</span>}
               </label>
-              <input
-                type="text"
-                value={localValues.clause_number}
-                onChange={(e) => handleTextChange('clause_number', e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue"
-              />
+              {viewMode === 'view' ? (
+                <div
+                  className="w-full px-3 py-2 text-sm border border-transparent bg-slate-50 rounded-lg font-mono whitespace-pre-wrap leading-relaxed"
+                  onClick={() => setViewMode('edit')}
+                  title="Click to edit"
+                >
+                  <LinkifyClauseReferences text={localValues.general_condition} />
+                </div>
+              ) : (
+                <textarea
+                  value={localValues.general_condition}
+                  onChange={(e) => handleTextChange('general_condition', e.target.value)}
+                  placeholder="Enter general condition text..."
+                  rows={4}
+                  className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue resize-y font-mono"
+                />
+              )}
             </div>
+
+            {/* Particular Condition */}
             <div>
               <label className="block text-[10px] font-bold text-aaa-muted uppercase tracking-wider mb-1">
-                Clause Title
+                Particular Condition
+                {hasPC && <span className="ml-2 text-amber-600">({localValues.particular_condition.length} chars)</span>}
               </label>
-              <input
-                type="text"
-                value={localValues.clause_title}
-                onChange={(e) => handleTextChange('clause_title', e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue"
-              />
+              {viewMode === 'view' ? (
+                <div
+                  className="w-full px-3 py-2 text-sm border border-transparent bg-amber-50 rounded-lg font-mono whitespace-pre-wrap leading-relaxed"
+                  onClick={() => setViewMode('edit')}
+                  title="Click to edit"
+                >
+                  <LinkifyClauseReferences text={localValues.particular_condition} />
+                </div>
+              ) : (
+                <textarea
+                  value={localValues.particular_condition}
+                  onChange={(e) => handleTextChange('particular_condition', e.target.value)}
+                  placeholder="Enter particular condition text..."
+                  rows={4}
+                  className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue resize-y font-mono"
+                />
+              )}
+            </div>
+
+            {/* Metadata */}
+            <div className="pt-2 border-t border-aaa-border">
+              <div className="flex items-center justify-between text-xs text-aaa-muted">
+                <span>Section: {clause.section_type}</span>
+                <span>Order: {clause.order_index}</span>
+                <span>ID: {clause.id.slice(0, 8)}...</span>
+              </div>
             </div>
           </div>
-
-          {/* General Condition */}
-          <div>
-            <label className="block text-[10px] font-bold text-aaa-muted uppercase tracking-wider mb-1">
-              General Condition
-              {hasGC && <span className="ml-2 text-emerald-600">({localValues.general_condition.length} chars)</span>}
-            </label>
-            <textarea
-              value={localValues.general_condition}
-              onChange={(e) => handleTextChange('general_condition', e.target.value)}
-              placeholder="Enter general condition text..."
-              rows={4}
-              className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue resize-y font-mono"
-            />
-          </div>
-
-          {/* Particular Condition */}
-          <div>
-            <label className="block text-[10px] font-bold text-aaa-muted uppercase tracking-wider mb-1">
-              Particular Condition
-              {hasPC && <span className="ml-2 text-amber-600">({localValues.particular_condition.length} chars)</span>}
-            </label>
-            <textarea
-              value={localValues.particular_condition}
-              onChange={(e) => handleTextChange('particular_condition', e.target.value)}
-              placeholder="Enter particular condition text..."
-              rows={4}
-              className="w-full px-3 py-2 text-sm border border-aaa-border rounded-lg focus:outline-none focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue resize-y font-mono"
-            />
-          </div>
-
-          {/* Metadata */}
-          <div className="pt-2 border-t border-aaa-border">
-            <div className="flex items-center justify-between text-xs text-aaa-muted">
-              <span>Section: {clause.section_type}</span>
-              <span>Order: {clause.order_index}</span>
-              <span>ID: {clause.id.slice(0, 8)}...</span>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+        )
+      }
+    </div >
   );
 };
 

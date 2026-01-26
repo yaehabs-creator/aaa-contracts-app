@@ -44,12 +44,12 @@ const TEXT_STAGES = [
 const getClauseStatus = (clause: Clause): 'added' | 'modified' | 'gc-only' => {
   const hasPC = clause.particular_condition && clause.particular_condition.length > 0;
   const hasGC = clause.general_condition && clause.general_condition.length > 0;
-  
+
   // For dual-source contracts (have both GC and PC fields populated)
   if (hasPC && !hasGC) return 'added';
   if (hasPC && hasGC) return 'modified';
   if (hasGC) return 'gc-only';
-  
+
   // Fallback for single-source contracts (only condition_type is set)
   if (clause.condition_type === 'Particular') return 'added';
   return 'gc-only';
@@ -120,26 +120,42 @@ const linkifyText = (text: string | undefined, availableClauseIds?: Set<string>)
 
 // Re-process all clause links in a contract's clauses
 const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
+  console.log('[App.tsx] LOCAL reprocessClauseLinks called with', clausesList.length, 'clauses');
+
   // Build Set of all available clause IDs including variants for fuzzy matching
   const availableClauseIds = new Set<string>();
-  
+
   clausesList.forEach(c => {
     // Add the normalized ID
     const normalizedId = normalizeClauseId(c.clause_number);
     availableClauseIds.add(normalizedId);
-    
+
     // Also add all variants for fuzzy matching
     const variants = generateClauseIdVariants(c.clause_number);
     variants.forEach(v => availableClauseIds.add(v));
   });
 
+  console.log('[App.tsx] Built availableClauseIds with', availableClauseIds.size, 'variants');
+
   // Re-process each clause's text fields
-  return clausesList.map(c => ({
+  const result = clausesList.map(c => ({
     ...c,
     clause_text: linkifyText(c.clause_text, availableClauseIds),
     general_condition: linkifyText(c.general_condition, availableClauseIds),
     particular_condition: linkifyText(c.particular_condition, availableClauseIds)
   }));
+
+  // Check if any links were created
+  let totalLinks = 0;
+  result.forEach(c => {
+    const allText = (c.clause_text || '') + (c.general_condition || '') + (c.particular_condition || '');
+    const linkMatches = allText.match(/class="clause-link"/g);
+    if (linkMatches) totalLinks += linkMatches.length;
+  });
+
+  console.log('[App.tsx] Total links created:', totalLinks);
+
+  return result;
 };
 
 // Helper: Get all clauses from contract AND reprocess links

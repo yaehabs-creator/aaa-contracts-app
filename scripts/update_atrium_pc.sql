@@ -1,0 +1,1081 @@
+-- Update Atrium GC clauses with Particular Conditions
+-- Contract ID: cfb1883c-bf70-410d-afe2-8273467ea099
+-- Generated: 2026-01-26T13:32:35.130Z
+-- Total PC clauses to match: 62
+
+-- Update clause 1.1: Definitions
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', '(a) "Advance Payment" means the percentage and or the amount stated in the Form of Agreement of this Contract.
+
+(p) "Local Currency" means Egyptian Pound.
+
+(q) "Nominated Sub-Contractor" Add to the definition of the Conditions of Contract "Subcontractor and or supplier".
+
+Please add the following to the list of Definitions:
+
+(jj) "Base Rate/Range" means the agreed price or price range (as the case may be) stated in the Contract Documents which the agreed corresponding adjustment formula is to be applied.
+
+(kk) "Basic Scope" means all works to be executed by the Contractor excluding the Optional Scope.
+
+(ll) "Commencement Date" means three (3) days from the Effective Date.
+
+(mm) "Contract Administrator" means the entity appointed by the Employer to act as the Contract Administrator as per the Contract which shall have the power and authorities assigned to it thereunder and advised to the Contractor by the Employer within fourteen (14) days from the Commencement Date, or any other entity appointed by the Employer from time to time and advised to the Contractor by the Employer within a reasonable time from the date of such appointment
+
+(nn) "Contract Sum" means the value as stated in the Form of Agreement.
+
+(oo) "Contract Value" means the accepted value as stated in the Form of Agreement, including continuous further adjustment based on the acceptance of the variations as per Clause 22 of Conditions of Contract and, where applicable, re-measurements.
+
+(pp) "Country" means the Arab Republic of Egypt
+
+
+(qq) "Effective Date" means the earliest event of the following:
+• The date of the signature of the Agreement by the Employer
+• Seven calendar days from the date of the official issuance of the Contract Documents by the Employer to the Contractor for signature
+• The date of signing the Letter of Acceptance (if any) by the Employer
+
+(rr) "Employer" means EMAAR MISR FOR DEVELOPMENT, H/Q at Emaar Misr Sales Center, P.O. Box 229, MOKATTAM 11585, CAIRO, EGYPT and includes the Employer''s successors and assigns.
+
+(ss) "Employer''s Requirements" means the documents entitled Employer''s Requirements as included in the Contract, and any additions and modifications to such document in accordance with the Contract. Such document describes the purpose(s) for which the Works are intended, and specify key personnel (if any), the scope, and/or design, and/or performance, technical and evaluation criteria for the Works.
+
+(tt) "Fixed fee for Overhead and Profit" means the fixed amount for the overheads and profit which include (but not limited to and without contradict and/or duplicate with what has been itemized through the BOQ) the under listed items as well as whatever necessary and required or deemed necessary to satisfy the completion of the Works:
+• Contractor''s Profit
+• Taxes, and Value Added Taxes (VAT)
+• Social insurance
+• Site supervision
+• Shop Drawings
+• Purchasing and Procurement
+• Finance Cost
+• Software
+• Safety tools, and Tools
+• Staff vacation
+• Site cleaning
+• First Aid
+• Site security and guards
+• Transportation
+• Engineering stamps and fees required by local regulations
+• Cranes and lifts
+• Labor camps, and Labor accommodations
+• Storage
+• Site offices and facilities
+• Mobilization and Demobilization costs
+• Hording including hording surrounding labor camp and the mobilization offices and Working Site.
+
+
+
+(uu) "Optional Scope" means works mentioned in the Form of Agreement or the Bills of Quantities as optional scope for which the prices are agreed between the Parties and the execution of which is subject to written instructions from the Employer at its sole discretion.
+
+
+(vv) "Ruling Language" means English language.
+
+(ww) "Section/Portion of Works" means the scope of work identified by a separate individual contractual milestone for handing over.
+
+(xx) "Supervision Consultant" means the entity appointed by the Employer to act as the Supervision Consultant as per the Contract which shall have the power and authorities assigned to it thereunder and advised to the Contractor by the Contract Administrator within fourteen (14) days from the Commencement Date, or any other entity appointed by the Employer from time to time and advised to the Contractor by the Contract Administrator within a reasonable time from the date of such appointment.
+
+(yy) "Addendum or Addenda" means the document/s titled Addendum/Addenda included in the Contract Documents which may incorporate any change or amendment to any other document of the Contract Documents.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '1.1';
+
+-- Update clause 1.6: Notices, Consents, Approvals and Agreements
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete paragraph (b) of Sub-Clause 1.6 and substitute by the following:
+
+1.6 (b) Wherever a provision of the Contract includes the word "agree", "agreed" or "agreement", then unless otherwise specified such provision requires the agreement to be in writing in form of signed & stamped hardcopy.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '1.6';
+
+-- Update clause 1.7: Communications
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Wherever in the Contract provision is made for a communication to be "written" or "in writing", then unless otherwise specified this means any hand-written, type-written, or printed communication including communications by telefax, electronic mail, and communications by modem.
+
+Unless otherwise instructed by the Employer / Contract Administrator, all information related to the scheduling, RFI, shop drawings, transmittals, submittals, cost, payment, field, document control, and any other related information shall be communicated between parties through an Automation Application (ex: Oracle or any other Automation application as may be instructed by the Employer).
+
+The Employer will purchase and supply an adequate number of licenses for use by himself, the Contract Administrator, consultants, and the Contractor.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '1.7';
+
+-- Update clause 4: Contract Documents
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Add new Sub-Clauses 4.3, 4.4, 4.5 & 4.6 as follows:
+
+4.3 The listed documents under Clause 2 of the Form of Agreement are to be considered as one indivisible whole and the various conditions and clauses are mutually complementary and explanatory. Any requirements not specifically referenced in the documents but necessary to meet the intent of the Contract and complete the Works as described therein shall be deemed a requirement of the Contract Document.
+
+
+
+4.4 Contract Sum is considered as based on the various Contract Documents being complimentary and interpreted on a collective basis. Unless otherwise is expressly stated in the Contract, no one part of the Contract Documents shall have priority over any other part.
+
+4.5 Any ambiguity or discrepancy shall be resolved by the Contract Administrator who shall then notify the Contractor thereon, with a copy to the Employer.
+
+4.6 In the Specification, all Drawings, all Contractors'' Drawings, and all other documents relating to the Works, the metric system shall be used throughout.
+
+5. DRAWINGS AND SPECIFICATIONS',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '4';
+
+-- Update clause 5.1: Submission and Approval
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'The periods referred to in Sub-Clause 5.1 of Conditions of Contract (Submission and Approval) are as follows:
+• The period for the review (approve / disapprove) of drawings and / or materials submissions is 14 days.
+• The period for the review (approve / disapprove) re-submission of drawings and / or materials is 7 days.
+• The period for inspection requests is 24 hours in advance.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '5.1';
+
+-- Update clause 5.7: As-built Drawings
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'The period referred to in Sub-Clause 5.7 of Conditions of Contract for As-built Drawings, Operations and Maintenance Manuals is fourteen days (14) days.
+
+The Contractor submittal to As Built drawings, Catalogues, Operation and Maintenance manuals must be in three hard copies and one Softcopy in its original Program format. Such submittal should be prior to the Contractor request for the Taking Over Certificate for each phase and/or part of the Works. Failure by the Contractor to fulfill this requirement, then the Employer shall have the right to withhold the issue of the Taking Over Certificate.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '5.7';
+
+-- Update clause 6.1: General Obligations
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In paragraph (a) of this Sub-Clause 6.1
+In the 7th line after "...they are intended" add "in accordance with the Contract requirements."
+
+Construction of Villas, Plot Fences, Rough Grading, Infrastructure and Landscape Works for Parcel 1 and Parcel 2
+Contract Particular Conditions
+Page 4 of 35
+
+Appendix A (Particular Conditions)
+
+(b) Should the Contractor disregard or fail to act within a reasonable or stipulated time frame upon receipt of such Instructions, the Employer upon recommendation from the Contract Administrator, shall have the right to implement remedies or measures deemed essential or necessary and the Contractor shall bear the cost of such remedies or measures. Said costs shall be substantiated by the Employer in advance of cost deductions. Said costs shall be deducted from monthly progress payment certificates.
+
+(c) The Contractor shall take full responsibility for the adequacy, stability and safety of all Site operations and methods of construction. Provided that, the Contractor shall not be responsible (except as stated hereunder or as may be otherwise agreed) for the design or specification of Permanent Works, or for the design or specification of any Temporary Works not prepared by the Contractor.
+
+Without prejudice to any other design obligations under the Contract Documents, the Contractor shall within fifty-six (56) days after the Commencement Date review the Specification and the Drawings (excluding Contractor''s Drawings approved by the Supervision Consultant in writing) and notify the Contract Administrator of any errors or omissions found therein. Should the Contractor fail to so notify the Contract Administrator of any error or omission in the Specifications or the Drawings which error or omission could have been discovered by an experienced contractor within the specified duration, the Contractor shall bear the cost of the consultancy services required to rectify such error or omission in addition to any other cost the Employer may incur as a result of any abortive works that could have been avoided should such error or omission been reported in a timely manner as per the provisions of this Sub-Clause.
+
+Cash Flow Estimate
+
+The period referred to is thirty (30) days from the Effective Date and any further Contract Value adjustment.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6.1';
+
+-- Update clause 6.8: Quality Assurance
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Add the following paragraph at the beginning of Sub-Clause 6.8.
+
+The Contractor shall submit for the Contract Administrator approval within thirty (30) days from Effective Date a Quality Control Program defining how it intends to establish and implement his proposed QC program.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6.8';
+
+-- Update clause 6A.2: Collection and Taking Delivery
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In paragraph (c)
+In the first line after "shall" add "visually".
+In the 10th line before "All additional" add "In respect of defects or damages that can be visually detected or any shortage in quantities,".
+Delete "All" and substitute with "all".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6A.2';
+
+-- Update clause 6A.5: Notification of Damage
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause entirely.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6A.5';
+
+-- Update clause 6A.6: Surplus Items
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Change the title of this Sub-Clause to read "Quantities of Free Issue Items".
+
+Delete paragraph (b) of this Sub-Clause and substitute by the following:
+
+(b) The Contractor shall calculate the actual quantities of all Free Issue Items required for the Works and place a written application to the Supervision Consultant with a copy to the Employer in a timely manner requesting the supply of required quantities of each Free Issue Item. The Employer shall make the requested quantities of the Free Issue Items as calculated and requested by the Contractor available for collection by the Contractor. The actual installed quantities shall be checked by the Supervision Consultant against the actual delivered quantities having regards to the approved percent for wastage exclusively for MV cables item only; any surplus quantities shall be the Contractor''s responsibility and at his own cost. In case the quantities delivered by the Employer based on the calculations provided by the Contractor are found to be insufficient for the execution and completion of the Works as per the Contract Documents, then the Contractor shall be obliged to procure and supply the required missing material at its own cost and under its responsibility. Failure by the Contractor to procure and supply the missing quantities in a timely manner as may be determined by the Contract Administrator shall give the Employer the right to procure and supply, or cause to be procured and supplied such missing quantities, and all additional Costs to the Employer as determined by the Contract Administrator arising from any failure by the Contractor to so procure and supply the required missing material shall be borne by the Contractor and may be deducted by the Employer from any monies due or to become due to the Contractor. Any delays in the carrying out and completion of the Works arising from any of the aforesaid events under this Sub-Clause shall be the Contractor''s responsibility.
+
+Add New Sub-Clause 6A.8 as follows:',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6A.6';
+
+-- Update clause 6A.8: Contractor's Confirmation Procedures
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'For the Items provided by the Employer "Free Issue Items" or among the "Items that May Be Supplied By the Employer, the Contractor shall:
+
+a. Within three (3) days from the receipt of the item, submit to the Supervision Consultant a material inspection request (MIR) to obtain its approval.
+
+b. Within seven (7) days of the Supervision Consultant''s approval of the material inspection request, submit a declaration letter to the Supervision Consultant confirming the receipt of such material.
+
+
+Failure on the Contractor''s part to comply with the provisions of paragraphs (a) and (b) above shall be construed as a confirmation by the Contractor of the receipt of the respective Free Issue Item with no concern whatsoever.
+
+Add New Clause 6B as follows:',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6A.8';
+
+-- Update clause 6B: Early Procured Materials
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Where applicable to the Scope of Works, the Employer will support the funding of purchasing the below listed Items "Early Procured Materials", within the first 120 days following the Commencement Date or any extension thereto as may be instructed by the Employer, through payment of an on-account payments to cover the amount of the advance payment agreed between the Contractor and supplier(s)/subcontractor(s) subject to Contractor''s submission of the placed orders / executed subcontracts.
+
+The Early Procured Materials are:
+a. Aluminum works.
+b. Steel reinforcement.
+c. Aluminum & Copper Cables.
+d. Porcelain
+e. Engineered Wood.
+f. Marble.
+g. Refrigerant pipes.
+
+Provided that:
+
+a. Within ten (10) working days from Contractor''s submission of the request to release the on account payment, along with the placed orders/ executed subcontracts, the payments will be made by the Employer to the Contractor who shall be responsible, within three (3) days from receiving the payment, to submit all needed documentary evidence showing that the said on-account payments have been paid to the approved suppliers / subcontractors in accordance with the submitted POs/ subcontracts (e.g. cheques, bank transfer or any other proof accepted to the Employer).
+
+b. Whenever requested by the Employer, the Contractor hereby acknowledges its acceptance to facilitate all required communication between the Employer and the bank to follow up and review the payment to the suppliers / subcontractors.
+
+c. For the Early Procured Materials: The period for review and or approve vendors / materials submissions by the Contract Administrator / Consultant shall be made within seven (7) working days from receipt of the Contractor''s submission. While the period for review and or approve any re-submission shall be made within three (3) days.
+
+d. Upon its sole discretion, the Employer may request the Contractor to submit a bank letter of guarantee with the same amount of the on-account payment and in this case the Contractor shall immediately abide by such request. If the Employer elects to so do, the bank letter of guarantee shall be valid until full recovery of the on-account payment. The said bank letter of guarantee may be replaced by increasing the amount of the Advance Payment bank letter of guarantee with the sum amount of the on-account payments. Upon the Employer recovery of the on-account payments or any part thereof, the amount of the bank letter of guarantee shall be reduced by the recovered amount by the Employer. The Cost of issue of the bank LG''s or increase the Advance Payment LG is deemed included in the Contract Sum.
+
+
+e. Based on the delivered quantities of the materials, the on-account payment shall be recovered in whole (in case of delivery to the Site of the entire approved quantity) or in parts (in case of approved partial delivery to the Site) by the Employer from the first Interim Payment Certificate following the satisfactory delivery and approval of the Early Procured Materials or any part thereof to the Site.
+
+f. In all cases, the on-account payment for any of the Early Procured Materials shall not exceed 70% of the agreed BOQ price for the said Item.
+
+g. The Contractor acknowledges that:
+1. The Contractor shall not use the Early Procured Materials for any purpose other than the use for the Works.
+2. The Employer''s responsibility in this regard shall be limited to payment of the on-account payment of the Early Procured Materials, while the Contractor shall remain fully and solely responsible to fulfil all other requirements and obligations under the Contract.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '6B';
+
+-- Update clause 7.1: Provision of Bonds
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the first paragraph, replace the "fourteen (14) days after the Commencement Date" with "fourteen (14) days after the Effective Date".
+
+7.1 (a) The Performance Bond guarantee amount: The value shall be the same value of the Performance Bond as stated in the Agreement Form of this Contract and shall be subject to further increase during the contract period based on the adjusted Contract Value.
+
+7.1 (b) The Advance Payment Bond guarantee amount: The value shall be the same value of the Advance Payment as stated in the Agreement Form of this Contract.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '7.1';
+
+-- Update clause 9.1: Information and Inspection
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete the second paragraph of Sub-Clause 9.1 and substitute by the following:
+
+The Contractor is obliged to perform additional exploratory pits and/or boreholes by numbers and depths in full compliance with the requirements of Egyptian Codes and standard schedule 1-13 & 1-14. Time and Cost associated shall be the sole responsibility of the Contractor.
+
+At the end of the last paragraph add "except for reasons stipulated in article 9.1A (Unforeseeable Physical Conditions)
+
+Add New Sub-Clause 9.1A as follows:',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.1';
+
+-- Update clause 9.1A: Unforeseeable Physical Conditions
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, "physical conditions" or "physical obstructions" means sub-surface and hydrological conditions only.
+
+Notwithstanding the provisions of Sub-Clause 9.1, if during the execution of the Works the Contractor encounters physical obstructions or physical conditions, which obstructions or conditions were, in his opinion, not foreseeable by an experienced contractor, the Contractor shall forthwith give notice thereof to the Contract Administrator with a copy to the Employer. On receipt of such notice, the Contract Administrator shall, if in his opinion such obstructions or conditions could not have been reasonably foreseen by an experienced contractor, after due consultation with the Employer and the Contractor, determine:
+
+(i) any extension of time to which the Contractor is entitled under Clause 19.2, and/or
+
+(ii) The amount of the cost which may have been incurred by the Contractor by reason of such obstructions or conditions having been encountered, which shall be added to the Contract Sum, and shall notify the Contractor accordingly, with a copy to the Employer.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.1A';
+
+-- Update clause 9.4: Opportunities for Other Contractors
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the 1st line after "requirements of" add "and in coordination with"
+
+At the end of this Sub-Clause add "If the works carried out by such other contractors employed by the Employer caused the Contractor to incur additional cost or time and provided that it is not attributable partially or wholly to the Contractor, the Contractor will have the right to claim for such additional cost or time in accordance with the procedures set out in the Contract.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.4';
+
+-- Update clause 9.6: Notices, Permits, and Fees
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the 3rd line after the word, "permits" add "except for building permits".
+
+At the end of this Sub-Clause add the following:
+
+For any part designed by the Contractor, the Contractor shall be responsible for preparing, submitting to the meant authorities for, and obtaining all permits required for the Works whether of permanent or temporary nature including, without limitation Building Permits, excavation licenses, utilities, no objection certificates and the like.
+
+The Employer shall pay the fees of the building permits only after being collected by the Contractor against Contractor submission of the official Invoices.
+
+The Employer shall (where he is in a position to do so) provide reasonable assistance to the Contractor at the request of the Contractor, provided that any assistance provided, or required to be provided by the Employer to the Contractor under this Sub-Clause shall not release the Contractor from any of its obligations or duties under the Contract.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.6';
+
+-- Update clause 9.13: Fossils
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Change the title of the Sub-Clause to be "Fossils, Remnant of Wars" and substitute by the following:
+
+All fossils, coins, articles of value or antiquity, and structures and other remains or things of geological or archaeological interest discovered on the Site shall, as between the Employer and the Contractor, be deemed to be the absolute property of the Employer. If the Contractor, during the course of Work, discovers any of the aforesaid items, in addition to any remnant of wars such as ammunition, weapons, firearms, explosive, or any other dangerous items of the same nature, the Contractor shall take reasonable precautions to prevent its workmen or any other persons from removing or damaging any such article or thing and shall immediately upon discovery thereof and, before removal, acquaint the Contract Administrator of such discovery and carry out the Contract Administrator''s instructions for dealing with the same. If by reason of such instructions, the Contractor suffers delays and incurs additional Costs the Contract Administrator shall determine such delays and Costs, and such costs will be paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)
+
+Add new Sub-Clauses 9.18 & 9.19 as follows:',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.13';
+
+-- Update clause 9.18: Mobilization
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Mobilization period as stipulated in Appendix (D) (if exist) commences from the contract''s Commencement Date. Mobilization is the making available and/or delivery and installation on-site and/or reallocation, if necessary, of all temporary equipment, systems, services, facilities, resources, and all the preparatory works including but not limited to shop drawings time schedule, etc., necessary to enable construction to start and be maintained at the stipulated rates of progress according to terms and conditions governing the execution of the Works.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.18';
+
+-- Update clause 9.19: Independent Site Survey
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Contractor shall allow for the provision of modern "Total Station" surveying equipment, properly calibrated, checked, and certified on a programmed basis. Copies of calibration certificates shall be provided. Survey team members shall be properly trained in the use of the said equipment. Verification of the initial site survey and every other month checks of progressive surveys by the Employer. Reports on said survey verification shall be submitted every other month',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '9.19';
+
+-- Update clause 10.1: Contractor's Representative
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the first line replace "Immediately following the Commencement Date,..." with "Immediately following the Effective Date,..."',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '10.1';
+
+-- Update clause 10.3: Employees
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Rename the existing paragraph as (a).
+
+Add new paragraph (b) as follows:
+
+(b) For the purpose of maintaining and controlling the supervision and quality of Works. The Contractor shall provide the relevant supervision staff for each respective discipline. The same shall be applied to the subcontractors or specialists that the Contractor may consider designating to carry out any part of the Works.
+
+Failure of the Contractor to provide the required level of staff after 72 hours'' notice shall subject Contractor to a daily fine to be calculated based on the following monthly rates:
+
+Position                     Penalty per month (EGP)
+Project Manager              250,000
+Construction Manager         125,000
+Q/C Engineer                 100,000
+Site Engineer                50,000
+Senior Planning Engineer     80,000
+Senior Specialist Engineer   80,000
+Technical Office Manager     125,000
+Forman                       30,000
+
+Contractor shall assemble required staff within fourteen (14) days maximum from Contract Administrator written request.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '10.3';
+
+-- Update clause 11.1: General
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Rename the existing paragraph as (a)
+
+Add new paragraphs (b) to (d) as follows:
+
+(b) The Contractor shall place the Employer name sign on all his equipment and facilities at the Site.
+
+(c) The Contractor shall allow for the use of mechanical concrete placement methods as dictated by good modern practice. The Contractor may propose as an alternative, on-site batch plant facilities.
+
+(d) The Contractor shall plan and allow for concrete placement on a monolithic basis minimizing construction joints. All slabs, walls and columns shall be placed monolithically, at each level. Foundation footings and grade beams shall similarly be placed monolithically. Construction joints shall be minimized. Joint locations desired are to be submitted and subject to approval as part of the shop drawing and technical submittal process.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '11.1';
+
+-- Update clause 11.2: Inspection and Testing
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Rename the existing paragraph as (a)
+
+Add new paragraphs (b) & (c) as follows:
+
+(b) Testing and commissioning for all disciplines shall be carried out using temporary power and water services provided by the Contractor. No temporary power or water services will be available from the Employer for the Scope of Works defined under this Contract.
+
+(c) The Contractor shall allow for the supply, installation and removal of all temporary equipment and services, including but not limited to cabling, wiring, conduit, piping, fittings, valves, supports, etc. as may be required to complete the testing and commissioning of the various installations where applicable for each of the construction disciplines.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '11.2';
+
+-- Update clause 11.3: Covering and Uncovering
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the second paragraph delete "paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)" and substitute "added to the Contract Value".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '11.3';
+
+-- Update clause 11.4: Cost of Testing
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the first line delete the word "any test" and replace with "specified in the Contract or required by the codes and/or industry standards".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '11.4';
+
+-- Update clause 12.5: Risk and Care
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the fifth line of Sub-Clause b (i) after the word "war" add ", terrorisms".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '12.5';
+
+-- Update clause 12.6: General Indemnity
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In paragraph (b) of this Sub-Clause 12.6, 2nd line delete "(whether direct or indirect actual or consequential).',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '12.6';
+
+-- Update clause 12.9: Insurance
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause 12.9 entirely and substitute by the following:
+
+The Contractor at its own Cost shall take out and maintain all insurances referred to in this Clause 12.9 with insurers acceptable to the Employer and under one or more policies in such form and with only such exclusions and restrictions as the Employer may approve.
+
+The Contractor shall procure that the policy, or each of the policies, of insurance referred to in this Clause 12.9 contains a waiver by the insurers of any and all rights of subrogation they might otherwise be able to exercise against the Employer or any of its consultants, servants, employees or agents.
+
+The Contractor shall procure that each of the policies of insurance referred to in this Clause 12.9 contains a clause indemnifying the Employer or any of its consultants, servants, employees or agents as though they are the Insured.
+
+
+
+The Employer and the Contract Administrator shall each be entitled to a copy of the said policy or policies of insurance together with copies of either the premium receipts and certificates from the insurers confirming receipt of premiums as appropriate and from time to time upon demand to inspect the originals of the said policy or policies of insurance and to have produced to them satisfactory evidence that the same are in full force and effect. The said policy or policies shall provide that the Employer and the Contract Administrator are each entitled to not less than thirty (30) days'' notice from the insurers prior to cancellation, termination or alteration of cover. The Contractor shall not do or omit to do any act or thing whereby the said policy or policies may be or become void or voidable. If the Contractor shall fail to effect and keep in force any of the insurances referred to in this Clause 12.9, or any other insurance which the Contractor may be required to effect under the terms of the Contract, then and in any such case the Employer may (without prejudice to any other remedy) effect and keep in force such insurance and pay such premium or premiums as may be necessary for that purpose and from time to time deduct the amount so paid by the Employer from any monies due or which may become due to the Contractor, or recover the same as a debt due from the Contractor.
+
+The Contractor shall notify the insurers of any changes in the nature, extent or Programme for the carrying out of the Works with a copy to the Employer and to the Contract Administrator and ensure the adequacy of the insurances at all times in accordance with the terms of the Contract.
+
+Notwithstanding the foregoing provisions it shall be a condition of each of the policies of insurance required to be taken out under the Contract that the insurer will not exercise its right to avoid the insurance cover on the grounds of any non-disclosure, miss-description, or misrepresentation in any information relevant to the risks insured under such policy. If the Contractor considers that additional insurance is required either by way of wider cover or higher sums insured or higher limits of indemnity, then this shall be taken out by the Contractor at its Cost.
+
+The Contractor shall indemnify the Employer against any amount which would otherwise be claimable by the Employer under any of the insurances required to be affected under this Clause 12.9 but which the Employer is unable to claim by virtue of the amount concerned falling within any deductible (Insured''s Retained Liability) applicable to the relevant insurance cover.
+
+ATRIUM
+QUALITY CONTRACTORS
+
+All Insurance Policies shall be submitted in both Arabic and English including the paragraph mentioned below as follows:
+
+"This policy is issued in favor of the Employer, and no cancelation, amendments, or changes shall be allowed unless receiving written stamped and signed letter from the Employer".
+
+Each of the insurances outlined below shall indemnify the Employer or any of its consultants, servants, employees or agents as though they are the Insured and contain a waiver of subrogation clause.
+
+a) Plant and Contractor''s Equipment - being coverage in respect of all risks of physical loss or damage which may occur:
+
+i. To any Plant prior to its delivery to and during its unloading at the Site; and
+
+ii. To any Contractor''s Equipment.
+
+The said Plant and Contractor''s Equipment shall be covered wherever in the world the same may, for the time being, be situated and even if the same be in storage or in transit except that Plant shall cease to be so covered under this policy upon its delivery to and it having been unloaded at the Site.
+
+Such coverage shall have a limit of liability of not less than the current replacement value of all relevant Plant and Contractor''s Equipment, and shall include all labor charges, transportation charges, professional fees, debris removal, and demolition Costs, and other Costs.
+
+In the case of physical loss or damage occurring to any Plant prior to its delivery to and during its unloading at the Site, the policy of insurance shall be an all-risks marine insurance policy in accordance with the Institute Cargo Clauses "A".
+
+The insurance on Plant shall be in the joint names of the Employer and the Contractor and with the Employer named as "First Loss Payee".
+
+Following the delivery to and unloading at the Site of any Plant, the Contractor shall promptly inspect such Plant to determine whether any physical loss or damage has occurred thereto and shall immediately notify the Contract Administrator in writing with a copy to the Employer of any such loss or damage that has so occurred. Such notification shall be accompanied by full details of the said loss or damage.
+
+• Plant and Contractor''s Equipment - Particular Requirements:
+
+Insured: Contractor, Employer and Subcontractor (where applicable).
+
+Period: Effective Date including Plant prior to its delivery to and during its unloading at the Site and shall maintain this insurance to provide cover until the issue of the Taking Over Certificate.
+
+Covering: Physical loss or damage to all Plant and Contractor''s Equipment owned or rented including any items hired in by the Contractor. The Contractor shall also procure that its Subcontractors obtain and maintain such Plant and Contractor''s Equipment insurance in respect of their Plant.
+
+The Contractor shall insure the Plant, Construction Documents, and Contractor''s Equipment for not less than the current replacement value, including Plant prior to its delivery to and unloading at the Site.
+
+Sum Insured: Current replacement value of Plant, Construction Documents, and Contractor''s Equipment including all labor charges, transportation charges, professional fees, cost of removal of debris, cost of demolition, and other costs.
+
+Conditions:
+1. "First Loss Payee" for the Employer for Plant
+2. Cross Liability Clause
+3. Inland transit Clause including Loading & Unloading
+4. Waiver of subrogation against Employer and/or and any affiliated companies, whether constituted at inception or subsequently and/or Main Contractor and or all contractors and or all the tenants and or all subcontractors and or all engineers and or all Suppliers and or all consultants and or all employees, managers, and all other parties involved in the work each for their respective rights and interest in the Project.
+
+Location: Mivida Gardens, East Cairo, Cairo, Egypt.
+
+
+b) Workmen''s Compensation - being coverage as required by the laws and regulations in the Country in respect of personal injuries (including death and including claimant''s and defense costs) to employees of the Contractor and its Subcontractors resulting from or occurring in connection with the carrying out of the Works and/or the remedying of defects therein and/or the Contractor''s observance or performance of or failure to observe or perform its other obligations under the Contract including its Extended Warranty obligations. Such coverage shall be extended to include Employer''s Liability of not less than the statutory amount for each accident or (if no such statutory amount) not less than the amount stated in the Particular Conditions for each accident. The obligations of this paragraph (b) shall with respect to any employees of a Subcontractor be satisfied by a policy otherwise complying with this sub-paragraph but being in the name of the Subcontractor rather than of the Contractor, provided that the Employer is indemnified under the policy; but the Contractor shall be liable for procuring the compliance by the Subcontractor with the provisions of the three paragraphs immediately following paragraph (e) of this Clause 12.9.
+
+• Workmen''s Compensation Insurance (including temp. labor) - Particular Requirements:
+
+Insured: Contractor, Employer, and Subcontractors (where applicable)
+
+Period: This insurance shall be maintained in full force and effect during the whole-time personnel are engaged in the execution of the Works including any other obligations under the Contract.
+
+Coverage: Statutory worker''s compensation coverage to include all activities to comply fully with all applicable laws and with contracts made with employees.
+
+Sum Insured: The limit required by applicable laws, if no statutory amount stated, not less than 500,000 EGP for each person and 5,000,000 EGP per accident or occurrence of an event and in aggregate.
+
+Conditions:
+1. The obligations shall also extend to any employees of a Subcontractor but being in the name of the Subcontractor and extends to indemnify the Employer. The Contractor is liable for procuring compliance by the Subcontractor.
+2. Cross Liability Clause
+3. Waiver of subrogation against Employer and/or and any affiliated companies, whether constituted at inception or subsequently and/or Main Contractor and or all contractors and or all the tenants and or all subcontractors and or all engineers and or all Suppliers and or all consultants and or all employees, managers, and all other parties involved in the work each for their respective rights and interest in the Project.
+
+Location: Mivida Gardens, East Cairo, Cairo, Egypt.
+
+c) Auto Liability Insurance - being coverage in respect of death of or injury to persons and/or loss of or damage within the Project/Development Site to property in respect of motor vehicles used by the Contractor in connection with the carrying out of the Works or the remedying of defects therein. The Contractor shall ensure that Subcontractors maintain such insurance in respect of motor vehicles used by them. Such insurance shall provide an unlimited indemnity for death of or injury to persons and the equivalent of not less than the amount stated in the Particular Conditions for loss of or damage to property which shall be extended as may be necessary to cover any additional cover required by statutory requirements in the Country.
+
+• Auto Liability Insurance - Particular Requirements:
+
+Insured: Contractor and Employer.
+
+Period: This insurance shall be maintained in full force and effect from the Effective Date and during the whole period of executing the Works including any other obligations under the Contract.
+
+Coverage: Covering liability for damage to property or bodily injury to third parties arising out of the ownership, the use and maintenance of motor vehicles owned, hired, leased or otherwise used by the Contractor, for limit of liability not less than 20,000,000 EGP as a limit in the aggregate and any one accident/occurrence. The Contractor shall also ensure that its Subcontractors obtain and maintain such insurance for vehicles used by them.
+
+Sum Insured: not less than 500,000 EGP for each death of or injury to persons and full amount of indemnity for each loss of or damage to property.
+
+
+
+Conditions:
+1. Cross Liability Clause
+2. Passenger''s liability
+3. Waiver of subrogation against Employer and/or and any affiliated companies, whether constituted at inception or subsequently and/or Main Contractor and or all contractors and or all the tenants and or all subcontractors and or all engineers and or all Suppliers and or all consultants and or all employees, managers, and all other parties involved in the work each for their respective rights and interest in the Project.
+
+Location: Mivida Gardens, East Cairo, Cairo, Egypt.
+
+
+
+d) Contractors and/or Erection All Risk insurance - Contractor should take out and maintain at his own Cost and liability Contractors and/or Erection All Risks insurance and Public Liability insurance from the commencement of the Works on Site till the end date of the project and issuance of the Taking Over Certificate for the Works including any variation orders and time delay and/or approved extension of time.
+
+• Contractors and /or Erection All Risks Insurance - Particular Requirements:
+
+Insured:
+1. The Principal (the Employer) and any subsidiary or affiliated companies, whether constituted at inception or subsequently.
+2. Contract Administrator
+3. Contractors and/or Subcontractors and/or Construction Managers of each and every tire.
+4. All other parties with an insurable interest in the Project for their activities at the Project Site.
+5. Lenders and their technical advisors (if applicable)
+6. Policy must be issued in favor of Emaar Misr for Development.
+7. The Contractor shall ensure issuing the insurance policy with the Employer named as "First Loss Payee".
+
+Period: From the Effective Date and during construction and erection at the Site and to be extended based on any changes in project duration (Extension of Time or time delay).
+
+Sum Insured: Contract Sum for Construction Works + 15%, plus 2.5% with minimum 5M representing any additional items to the Contract Value (i.e. scaffoldings, tools, equipment, anything supplied to the Contractor by the principal and not included in the Contract Value, etc.)
+
+Coverage: Construction and/or Erection Insurance cover for the contract full value including 12-month maintenance and covering testing/commissioning scope.
+
+Contractor shall consider insuring any Variation Orders issued by the Employer/Contract Administrator to the Contractor on the same package and ensure adding an endorsement covering such Variation Order to the same contract and location.
+
+The Employer has a valid insurance policy (open cover policy) covering the Contractors All Risk Insurance "CAR" issued through GIG & AXA with an approved terms & conditions as annexed to the Conditions of Contract under Appendix G "Emaar CAR open insurance cover".
+• AXA policy No.: Refer to appendix G
+• GIG policy No.: Refer to appendix G
+
+Contractor shall issue a certificate under any of the two above listed policies (or jointly) with package details and pay its relevant fee that shall be deemed included in the Contract Sum.
+
+Note: The same policies listed above shall be applied on SOUL project which is developed under the ownership of "Albea North Coast for Development".
+
+Both "Emaar Misr" and "Albea North Coast for Development" shall be named under the Insured in the endorsement.
+
+Note: The same policies listed above shall be applied on Marassi Red project which is developed under the ownership of "Skytower for Real Estate Development".
+
+Both "Emaar Misr" and "Skytower for Real Estate Development" shall be named under the Insured in the endorsement.
+
+Such cover (CAR or EAR) shall include but not limited to the following as a minimum required covers and limits:
+
+• Whenever the Contract Value Exceeding 1.00 BN to 2.5 BN, the following limits shall be applied:
+
+Natural Hazards 100%
+Third party liability 25% of the project Value with Max 500M EGP
+Cover for Loss or Damage due SRCC sub limited to 250M EGP
+Cross liability
+Extended Maintenance period 12 months
+Offsite Storage sub limited to 250 M EGP per storage unit per storage unit and in the aggregate
+Testing of machinery and installations - 3 months
+Underground cables, pipes and other facilities - within TPL limit
+Camps and Stores limited to 25% from the contract value Maximum EGP 500 M
+Removal of Debris sub limited 150M per occurrence & 300M in the aggregate
+Firefighting facility and fire safety on construction sites (value per storage unit 15% of project value per storage unit and in the aggregate.
+Inland Transits sub limited to 100 M EGP per shipment and in the aggregate.
+Contract works taken over or put into service.
+Fire-fighting expenses sub limited to 25% of project value
+Existing property or property belonging to or held in care, custody, control of the insured sub limited to 150 M EGP
+
+
+
+Vibration, removal or weakening of support within TPL Limit
+LEG 3/06 London Engineering Group Model Improvement Defects Exclusion with sub limited to 15% with max 250 M EGP of project value per occurrence and in the aggregate.
+Third party liability during the maintenance period limited to 25% with max 500 M EGP of Project Value per occurrence and in the aggregate.
+50/50 Marine Concealed Damage Loss Sharing
+Escalation clause - 130% of the contract value.
+Loss of Drawings sub limited to 50 M EGP.
+Extra expenses sub limited to 100 M EGP any one occurrence.
+Public Authorities sub limited to 100 M EGP any one occurrence.
+Loss minimization sub limited to 100 M EGP any one occurrence.
+Claims preparation costs sub limited to 50 M EGP any one occurrence.
+Reinstatement of sum insured.
+Repeat tests 50M any one occurrence.
+Pair and set.
+Search and locate costs.
+Involuntary betterment
+Reinstatement to match - 25% of loss.
+Public Relations
+Cessation of work with maximum 3 months
+Waiver of Subrogation against name insured
+Automatic extension up to 6 months from original period expiry.
+Cover of extra charges for overtime, night work, work in public holiday & express freight sub limited to 15% of project value
+Sue & Labor sub limited to 10% of project value any one occurrence and in the aggregate.
+Fuels and Consumables
+Dewatering clause - 100 M EGP any one occurrence
+Errors and omissions
+Variation order
+Max Deductible.
+
+Section 1: Material Damage
+• EGP 150,000 each and every loss in respect of storm, tempest, flood, water damage, earthquake, subsidence and collapse, testing and commissioning, defective materials workmanship design plan or specification and during the Maintenance Period
+• EGP 100,000 each and every other loss.
+
+ATRIUM
+QUALITY CONTRACTORS
+
+Section 2: Third Party liability
+• EGP 25,000 each and every other loss for Property Damage only.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '12.9';
+
+-- Update clause 12.10: Inherent Defects
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'At the beginning of the Sub-Clause add "Without prejudice to any provision of any warranty required under the Contract," replace "The" with "the".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '12.10';
+
+-- Update clause 17.1: Commencement
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause entirely and substitute by the following:
+
+The Contractor shall commence the Works not later than seven (7) days after the Commencement Date and thereafter shall proceed with the same with due expedition and without delay, Commencement of Section or Portion of the Works must be in accordance with the construction schedule milestones and phases of work in accordance with Appendix D.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '17.1';
+
+-- Update clause 17.3: Programme
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Rename the existing paragraph as (a), and amend as follows:
+
+In paragraph (a) of this Sub-Clause; the period referred to in Conditions of Contract is twenty-eight (28) days following the Effective Date. This defined period supersedes the stipulated period in the General requirements.
+
+Add the following paragraphs (b) & (c):
+
+(b) The Programme must represent and fully respect the milestones of the schedule issued under Appendix D (if exists) forming part of the Contract documents and all the requirements of Division I (General requirements) of Technical Specifications.
+
+(c) Unless the Contract Administrator, within twenty-eight (28) days after receiving the Programme, gives notice to the Contractor stating the extent to which it doesn''t comply with the Contract, the Contractor shall proceed in accordance with the Programme, subject to his other obligations under the Contract. The Contract Administrator personnel shall be entitled to rely upon the Programme when planning their activities.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '17.3';
+
+-- Update clause 17.6: Progress Reports
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'The period referred to in Conditions of Contract is five (5) days after the end of each month.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '17.6';
+
+-- Update clause 17.7: Rate of Progress
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Insert "based on the approved Programme critical path" after "The Contract Administrator" in the fourth line of Sub Clause 17.7',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '17.7';
+
+-- Update clause 17.8: Site Working Hours
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'None of the Works shall be carried out on Site during the night or on locally recognized days of rest or on declared public holidays in the Country without the prior approval of the Contract Administrator, except when work is unavoidable or absolutely necessary for the protection of life or property or for the safety of the Works, in which case the Contractor shall immediately advise the Contract Administrator.
+
+In case the work requires the presence of the Consultant beyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear Egyptian Pounds two hundred and seventy-five (EGP 275/hour / engineer).
+
+The normal working hours shall be 8 hours/day, 6 days/week.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '17.8';
+
+-- Update clause 18.1: Suspension Order
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the second paragraph delete "paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)" and substitute "added to the Contract Sum".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '18.1';
+
+-- Update clause 19.1: Time for Completion
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Rename the existing paragraph as (a)
+Add new paragraphs (b) & (c) as follows:
+
+(b) The Time for Completion (contract period) shall be as stated in the Form of Agreement and in accordance with the Master Construction Schedule Appendix D of Conditions of Contract. Such contract period shall supersede any other periods stipulated elsewhere in the Contract Documents.
+
+(c) Both parties have agreed that the Works shall be carried out and handed over to the Employer in phases. Other contractors shall be allowed to carry out other work within the contract period. The contractual milestones for Taking Over in Appendix D (if exists) of the Conditions of Contract designate phases.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '19.1';
+
+-- Update clause 19.2: Extension of Time
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Replace "as may in his opinion be reasonable" in the 5th line of Sub-Clause 19.2 with "based on the critical path of the updated approved Programme".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '19.2';
+
+-- Update clause 19.3: Liquidated Damages
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'The amount of Liquidated Damages for delay beyond the Time for Completion of the Works or of any Contractual Milestone for each Section of the Works is equal to ten per cent (10%) of the Contract Value of the Works or of such Section as the case may be.
+
+Such Liquidated Damages shall be applied on a weekly basis as follows: The Liquidated Damages (LDs) to be applied at 0.5% for the 1st week, 1% for the 2nd week, 1.5% for the 3rd week, 2% for the 4th week, 2.5% for the 5th week and 2.5% for the 6th week to reach maximum LDs of 10% after 6 weeks.
+
+In addition, should the Contractor fail to meet any other intermediate milestones for any given phase as shown in Appendix (D) due to his own default, then the Employer is entitled to apply a penalty with a value of 25,000 EGP/Day to be deducted from any amounts that are or to be due to the Contractor. This penalty is recoverable by the Contractor, in the event a delay that may occur in respect of one particular milestone is recovered upon reaching a subsequent milestone.
+
+The total amount of Liquidated Damages and the Penalties together shall not exceed 10% of the Contract Value.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '19.3';
+
+-- Update clause 20.1: Taking-Over Certificate
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete paragraph (a) of this Sub-Clause 20.1 entirely and substitute by the following:
+
+(a) any Section or Portion of the Works (as per the Construction Schedule Contractual milestones and phases of Works in accordance with Appendix D) has been completed in accordance with the Contract, except for any minor outstanding work and defects which will not affect the use of that Section or Portion of the Works for its intended purpose (either until or whilst such work is completed and such defects are remedied); and',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '20.1';
+
+-- Update clause 20.2: Use Before Taking Over
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause 20.2 entirely and substitute by the following: It may be necessary for the Employer to use a part or parts of any Section or Portion of the Works before issuance of the applicable Taking-Over Certificate as a temporary measure but not for its intended purpose (where a joint work done status report shall be duly signed by Contractor, Contract Administrator, and Supervision Consultant prior such use by Employer). In such instance the Contractor shall, for all purposes, continue to have the full responsibility for the Works and all outstanding work to be done in respect of the Works prior to the issue of the relevant Taking-Over Certificate. Nevertheless, the use by the Employer of any part of the Works as a temporary measure shall in no way be construed as taking over of such part by the Employer.
+
+However, should the Contractor incurs additional costs as a result of any damage that may occur to such part of any Section or Portion of the Works due to the usage of the Employer of such part, which the Contractor is not directly or indirectly responsible for, the Contractor shall in such case have the right to raise a claim to the Contract Administrator for reimbursement of such costs in accordance with the Conditions of Contract.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '20.2';
+
+-- Update clause 21.1: Completion of Outstanding Work
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.1';
+
+-- Update clause 21.2: Defects after Taking Over
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.2';
+
+-- Update clause 21.3: Cost of Remedying Defects
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".
+Delete "the Contractor shall be paid such value in accordance with Clause 26 (Interim and Final Certificates)" and substitute "such value shall be added to the Contract Sum".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.3';
+
+-- Update clause 21.4: Further Tests on Completion
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.4';
+
+-- Update clause 21.5: Access after Taking Over
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.5';
+
+-- Update clause 21.6: Delay in Remedying Defects
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.6';
+
+-- Update clause 21.7: Contractor to Search
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In this Sub-Clause, replace the "Supervision Consultant" with "Employer, Contract Administrator or the Supervision Consultant".
+Delete "the Contractor shall be paid such Cost in accordance with Clause 26 (Interim and Final Certificates)" and substitute "added to the Contract Sum".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '21.7';
+
+-- Update clause 22.2: Effect on Programme
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the second paragraph delete "the value" and substitute "any addition to or deduction from the Contract Sum as a result".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '22.2';
+
+-- Update clause 22.3: Valuation of Variation Orders
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'In the 1st line delete "the value" and substitute "any addition to or deduction from the Contract Sum to be made as a result"
+Delete paragraphs (a) to (c) and substitute by paragraphs (a) and (d) as follows:
+
+(a) the Variation Order shall be valued at rates and prices contained in the Contract insofar as such rates and prices shall, in the opinion of the Employer be appropriate and applicable;
+
+(b) insofar as applicable and appropriate in the opinion of the Employer the rates and prices contained in the Contract shall be used as the basis of valuation;
+
+(c) insofar as the Variation Order cannot be valued in accordance with Clause 22.3 (a) & (b) above the Employer and the Contractor shall endeavour to agree a suitable valuation; or
+
+(d) in the event of failure to agree as aforesaid, the Employer shall fix a valuation which, in its opinion, is appropriate and shall notify the Contractor accordingly with a copy to the Contract Administrator.
+
+Replace the last paragraph of this Sub-Clause 22.3 with the following:
+
+Pending determination in accordance with this Clause 22.3 (Valuation of Variation Orders) of any addition to or deduction from the Contract Sum as a result of the Variation Order, and if the Employer or the Contract Administrator considers it to be appropriate, the Contractor shall keep records of the Direct Cost of carrying out the Variation Order and of time expended thereon. Such records shall be open to inspection by the Contract Administrator and the Employer at all reasonable times. A percentage addition of twenty-five per cent (25%) as a Fixed Fee for Overhead and Profit shall be used in the valuation of such parts of the Works.
+
+Add the following paragraph at the end of this Sub-Clause. The unit rates determined by the Employer / Contract Administrator under this Clause 22 shall be valid and stand the same within the full duration of Contract including Extension of Time for Completion unless otherwise stated specifically in such variations.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '22.3';
+
+-- Update clause 22.5: Value Engineering
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Add the following paragraph at the end of this sub-clause.
+
+Should the Contractor''s proposal for the Works, Programme, and valuation be approved by the Employer, and the approved proposal set out clearly the amount of reduction in the cost to the Employer as per point (c) above, then the Contractor shall be entitled to an amount equal to 40% of the cost reduction so achieved.
+
+Add new Sub-Clause 22.6 as follows:
+
+22.6 If, on the issue of the Taking Over Certificate for the whole of the Works, it is found that as a result of all Variation Orders valued under Sub-Clause 22.3, but not from any other cause, there have been addition to or deduction from the Contract Sum which taken together are in excess of 25 per cent of the Contract Sum excluding all Provisional Sums, optional scope and allowance for dayworks, if any, then and in such event, after due consultation by the Contract Administrator with the Employer and the Contractor, there shall be added to or deducted from the Contract Sum such further sum as may be agreed between the Employer and the Contractor or, failing agreement, determined by the Contract Administrator. The Contract Administrator shall notify the Contractor of any determination made under this Sub-Clause with a copy to the Employer. Such sum shall be based only on the amount by which such addition or deduction shall be in excess of 25 percent of the Contract Sum. The amount related to the activation of any Optional Scope shall not be calculated within the said 25 percent.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '22.5';
+
+-- Update clause 22A.3: Nomination
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'At the end of this Sub-Clause add "The Contractor may object on Nominated Subcontractor by submitting reasonable justifications with detailed particulars of objection to the Employer."',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '22A.3';
+
+-- Update clause 23.1: Notice of Claims
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'At the end of this Sub-Clause add the following:
+
+The Contractor shall send to the Contract Administrator''s Representative once in every month a separate account giving particulars of all claims for any additional expense to which the Contractor may consider himself entitled and of all extra and additional work ordered by the Employer which he has executed during the preceding month and no claim for payment for any such work or expense will be considered unless it has been included in such monthly particulars.
+
+The particulars shall include the contractual justification for the claims in addition to details of the actual events and costs and shall be supplemented by further information, substantiation and copies of Contractor''s records as may be required by the Contract Administrator.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '23.1';
+
+-- Update clause 23.7: Determination of Claims
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete "the Contractor shall be paid that amount in accordance with Clause 26 (Interim and Final Certificates)" and substitute "such amount shall be added to the Contract Sum".',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '23.7';
+
+-- Update clause 23.8: Exclusion of Small Claims
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete paragraph (c) entirely.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '23.8';
+
+-- Update clause 25.1: Quantities
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete "or for the purposes of Clause 25.2 (Works to be Measured)"',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '25.1';
+
+-- Update clause 25.2: Works to be Measured
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause for the Lump Sum Scope only.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '25.2';
+
+-- Update clause 25.3: Method of Measurement
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause for the Lump Sum Scope only.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '25.3';
+
+-- Update clause 25.4: Valuation
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Delete this Sub-Clause for the Lump Sum Scope only.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '25.4';
+
+-- Update clause 26.1: Application of Interim Certificates
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'Add the following paragraph to Sub-Clause 26.1 (a):
+The Advance Payment Bond shall be reduced in amount according to the refunded values through progress payments.
+
+Replace 26.1 (b) (ii) with the following "ninety percent (90%) of the estimated net direct cost" in item 26.1 (b) (ii) by "seventy five percent (75%) of the estimated net direct cost or sixty percent (60%) of the BOQ item rate for architectural works and fifty percent (50%) of the BOQ item rate for electromechanical works in case of combined items where direct cost could not be presented based on the Contract Administrator approval."
+
+The combined items are:
+1. GRC
+2. Metal work
+3. Wooden pergola
+4. Wooden doors
+5. Aluminum Windows
+6. Aluminum doors
+7. Marble.
+
+Add a new paragraph at the end of item 26.1 (b):
+The Contractor shall not be entitled to submit such Interim Certificate application unless the amounts within paragraphs (i), (ii), and (iii) of this Sub-Clause which relate to work done and/or Plant provided by (or other entitlements of the Contractor) shall be equal to or greater than 90% (ninety percent) of the amount identified by the approved Work In Place histogram in accordance with sub-clause 26-2 (J).
+
+The Employer may allow the submittal and accordingly, the related payment for any of the interim payment does not satisfy the above conditions at his own desire, such allowance/rejection shall not relieve the Contractor from his obligations and does not waive the Employer right to perform the appropriate action towards such default in accordance with Conditions of Contract.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '26.1';
+
+-- Update clause 26.2: Issue of Interim Certificates
+UPDATE contract_items 
+SET item_data = item_data || jsonb_build_object(
+    'particular_condition', 'The percentage referred to in Sub-Clause 26.2 (b) of Conditions of Contract for retention is the percent stated in the Form of Agreement.
+
+Modify percentage shown in paragraph sub-clause 26.2 (b) (ii) to be as stated in Sub-Clause 26.1 (b) (ii).
+
+In Sub-Clause 26.2 (h), replace the 30 days with 15 days.
+
+Add new paragraph (J) as follows:
+
+(J) The Employer retains his right to withhold (15%) fifteen percent of the monthly payment in the event the Contractor failed to deliver the following documentation:
+1. Material submissions scheduled through the month based on the approved log for the Contract Administrator approval.
+2. Shop drawings scheduled through the month based on the approved log for the Contract Administrator approval.
+3. As built drawings scheduled through the month based on the approved log to be provided for the Contract Administrator approval.
+4. Progress update throughout the month based on the approved construction schedule.
+5. Removal of faulty executed works.
+
+The Employer, in addition to the above, retains his right to withhold the monthly payment certificate in the event the Contractor failed to submit and obtain approval for the following documentation:
+• Submission and approval of the complete construction base line schedule in accordance with section 01310 of Division I of General requirements including but not limited to Man-Power histogram, staff mobilization chart, and Work in Place histogram.
+• Submission and approval of Safety and Security Plan.
+• Submission and approval of Quality Control and Quality Assurance program.
+• Submission and approval of Insurance Policies as per the requirements of Sub-Clause 12.9.
+
+Suspension of the monthly payment shall be lifted upon the submission of the said document by the Contractor and approval by the Employer. Any delay that may arise from the suspension of the payment due to the Contractor failure to meet this requirement will be the sole responsibility of the Contractor.',
+    'condition_type', CASE WHEN item_data->>'general_condition' != '' THEN 'Both' ELSE 'Particular' END
+)
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND item_data->>'clause_number' = '26.2';
+
+-- Verification
+SELECT item_data->>'clause_number' as num, 
+       item_data->>'clause_title' as title,
+       LENGTH(item_data->>'particular_condition') as pc_length,
+       item_data->>'condition_type' as type
+FROM contract_items 
+WHERE contract_id = 'cfb1883c-bf70-410d-afe2-8273467ea099'
+  AND LENGTH(item_data->>'particular_condition') > 0
+ORDER BY item_data->>'clause_number';

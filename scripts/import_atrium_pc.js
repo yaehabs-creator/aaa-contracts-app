@@ -21,8 +21,8 @@ if (!supabaseUrl || !supabaseKey) {
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Contract ID for Atrium
-const ATRIUM_CONTRACT_ID = 'f8edad2c-e752-440a-bf84-0627eedb69fd';
+// Contract ID for Atrium (the new rebuilt contract)
+const ATRIUM_CONTRACT_ID = 'cfb1883c-bf70-410d-afe2-8273467ea099';
 
 /**
  * Parse the Particular Conditions text file and extract clauses
