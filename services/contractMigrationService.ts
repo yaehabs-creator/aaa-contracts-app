@@ -1,5 +1,4 @@
 import { SavedContract, LegacyContract, ContractSection, SectionItem, SectionType, ItemType, Clause } from '../types';
-import { reprocessClauseLinks } from '../src/utils/clauseLinker';
 
 /**
  * Check if a contract is in the legacy format (has clauses but no sections)
@@ -218,14 +217,16 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
 
 /**
  * Get all clauses from a contract (works with both old and new format)
- * IMPORTANT: This function now automatically processes clause references into hyperlinks
+ * Tokens (gc_link_tokens, pc_link_tokens) are preserved from SectionItems for hyperlink rendering.
  */
 export function getAllClausesFromContract(contract: SavedContract | LegacyContract): Clause[] {
-  let clauses: Clause[] = [];
+  const clauses: Clause[] = [];
 
   if (contract.clauses && contract.clauses.length > 0) {
-    clauses = contract.clauses;
-  } else if (contract.sections) {
+    return contract.clauses;
+  }
+  
+  if (contract.sections) {
     contract.sections.forEach(section => {
       section.items.forEach(item => {
         if (item.itemType === ItemType.CLAUSE) {
@@ -238,7 +239,5 @@ export function getAllClausesFromContract(contract: SavedContract | LegacyContra
     });
   }
 
-  // Process clause references into hyperlinks before returning
-  // This ensures that all clause references are clickable when contracts are loaded
-  return reprocessClauseLinks(clauses);
+  return clauses;
 }
