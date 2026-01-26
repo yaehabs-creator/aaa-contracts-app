@@ -23,6 +23,7 @@ import { FloatingAIButton } from './src/components/FloatingAIButton';
 import { useAuth } from './src/contexts/AuthContext';
 import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from './src/services/textPreprocessor';
 import { suggestCategories, CategorySuggestion } from './services/categorySuggestionService';
+import { normalizeClauseId, generateClauseIdVariants } from './src/utils/navigation';
 
 const REASSURING_STAGES = [
   { progress: 10, label: "Scanning Pages...", sub: "Mapping document layers" },
@@ -38,14 +39,6 @@ const TEXT_STAGES = [
   { progress: 85, label: "Validating Ledger...", sub: "Confirming condition types" },
   { progress: 100, label: "Ready", sub: "Finalizing" }
 ];
-
-// Normalize clause ID for consistent hyperlink matching
-const normalizeClauseId = (clauseNumber: string): string => {
-  if (!clauseNumber) return '';
-  return clauseNumber
-    .replace(/\s+/g, '')  // Remove all spaces
-    .replace(/[()]/g, ''); // Remove parentheses
-};
 
 // Helper: Get clause status (added, modified, gc-only) for sorting/display
 const getClauseStatus = (clause: Clause): 'added' | 'modified' | 'gc-only' => {
@@ -98,32 +91,47 @@ const linkifyText = (text: string | undefined, availableClauseIds?: Set<string>)
 
   // Strict pattern for clause references:
   // - Must have "Clause" or "Sub-clause" followed by a proper clause number
-  // - Number must have at least one digit, optionally followed by decimal parts
+  // - Number must have at least one digit, optionally followed by decimal parts and letters
   // - Must be followed by word boundary, punctuation, or end of string (not "of", "as", etc.)
-  // Examples: "Clause 1", "Clause 1.1", "Clause 2A", "Clause 2.1.3", "Sub-clause 1.6 (b)"
-  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)(?=[\s,;:.)\]"]|$)/g;
+  // Examples: "Clause 1", "Clause 1.1", "Clause 2A", "Clause 6A.2", "Clause 2.1.3", "Sub-clause 1.6 (b)"
+  const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause)\s+([0-9]+[A-Za-z]?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)(?=[\s,;:.)\]"]|$)/g;
 
   return cleanText.replace(pattern, (match, number) => {
     // Normalize the clause number to match the ID format used in ClauseCard
     const cleanId = normalizeClauseId(number);
 
-    // Only create link if clause exists in the document
-    if (!availableClauseIds.has(cleanId)) {
-      // Clause doesn't exist, return original text without link
-      return match;
+    // Try exact match first
+    if (availableClauseIds.has(cleanId)) {
+      return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
     }
 
-    // Add class for styling and prevent default browser navigation
-    return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
+    // Try fuzzy matching with variants (for alphanumeric clauses like 6A.2)
+    const variants = generateClauseIdVariants(number);
+    for (const variant of variants) {
+      if (availableClauseIds.has(variant)) {
+        return `<a href="#clause-${variant}" class="clause-link" data-clause-id="${variant}">${match}</a>`;
+      }
+    }
+
+    // Clause doesn't exist, return original text without link
+    return match;
   });
 };
 
 // Re-process all clause links in a contract's clauses
 const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
-  // Build Set of all available clause IDs
-  const availableClauseIds = new Set<string>(
-    clausesList.map(c => normalizeClauseId(c.clause_number))
-  );
+  // Build Set of all available clause IDs including variants for fuzzy matching
+  const availableClauseIds = new Set<string>();
+  
+  clausesList.forEach(c => {
+    // Add the normalized ID
+    const normalizedId = normalizeClauseId(c.clause_number);
+    availableClauseIds.add(normalizedId);
+    
+    // Also add all variants for fuzzy matching
+    const variants = generateClauseIdVariants(c.clause_number);
+    variants.forEach(v => availableClauseIds.add(v));
+  });
 
   // Re-process each clause's text fields
   return clausesList.map(c => ({
@@ -1676,7 +1684,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       }
       return 0;
     });
-    setClauses(sorted);
+    // Reprocess clause links before setting
+    setClauses(reprocessClauseLinks(sorted));
     const first = sorted.find(c => c.clause_title && c.clause_title !== 'Untitled');
     const detectedName = first?.clause_title || `Analysis ${new Date().toLocaleDateString()}`;
     setProjectName(detectedName);
@@ -3251,7 +3260,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             const contractWithSections = ensureContractHasSections(selectedContract);
             const allClauses = getAllClausesFromContract(contractWithSections);
             setContract(contractWithSections);
-            setClauses(allClauses);
+            setClauses(reprocessClauseLinks(allClauses));
             setProjectName(contractWithSections.name);
             setActiveContractId(contractWithSections.id);
             setStatus(AnalysisStatus.COMPLETED);

@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Clause } from '../types';
+import { normalizeClauseId, findClauseElement, scrollToClauseByNumber } from '../src/utils/navigation';
 
 interface ClauseCardProps {
   clause: Clause;
@@ -44,14 +45,6 @@ const highlightKeywordsInHTML = (htmlText: string, keywords: string[]): string =
   return highlightedText;
 };
 
-// Helper function to normalize clause IDs (matches App.tsx)
-const normalizeClauseId = (clauseNumber: string): string => {
-  if (!clauseNumber) return '';
-  return clauseNumber
-    .replace(/\s+/g, '')  // Remove all spaces
-    .replace(/[()]/g, ''); // Remove parentheses
-};
-
 export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdit, onDelete, isCompareTarget, searchKeywords = [] }) => {
   const isDual = !!clause.general_condition || !!clause.particular_condition;
   const textLength = clause.clause_text?.length || 0;
@@ -68,6 +61,7 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
   // Handle hyperlink clicks for smooth scrolling to clause references
   // Supports multiple link formats: .clause-link, href="#clause-X", href="clause-X", 
   // and text containing clause references
+  // Uses fuzzy matching to find clauses even if ID format differs slightly
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -80,64 +74,58 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
       const dataClauseId = link.getAttribute('data-clause-id');
       const linkText = link.textContent || '';
       
-      // Extract clause ID from various formats
-      let clauseId: string | null = null;
+      // Skip external links
+      if (href.startsWith('http') || href.startsWith('mailto:')) return;
+      
+      // Extract clause number from various formats
+      let clauseNumber: string | null = null;
       
       // Priority 1: data-clause-id attribute (most reliable)
       if (dataClauseId) {
-        clauseId = normalizeClauseId(dataClauseId);
+        clauseNumber = dataClauseId;
       }
       // Priority 2: href="#clause-X" format
       else if (href.startsWith('#clause-')) {
-        clauseId = normalizeClauseId(href.replace('#clause-', ''));
+        clauseNumber = href.replace('#clause-', '');
       }
       // Priority 3: href="clause-X" format (without #)
       else if (href.startsWith('clause-')) {
-        clauseId = normalizeClauseId(href.replace('clause-', ''));
+        clauseNumber = href.replace('clause-', '');
       }
-      // Priority 4: href="#X.X" format (direct clause number)
-      else if (href.match(/^#\d+(?:[A-Za-z])?(?:\.\d+[A-Za-z]?)*$/)) {
-        clauseId = normalizeClauseId(href.replace('#', ''));
+      // Priority 4: href="#X.X" or href="#6A.2" format (direct clause number)
+      else if (href.match(/^#\d+[A-Za-z]?(?:\.\d+[A-Za-z]?)*$/)) {
+        clauseNumber = href.replace('#', '');
       }
-      // Priority 5: href="#" with clause reference in text
-      else if (href === '#' || href === '') {
-        // Try to extract clause number from link text
-        const clauseMatch = linkText.match(/(?:Clause|Sub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/i);
+      // Priority 5: Extract from link text containing "Clause X" or "Sub-clause X"
+      else if (href === '#' || href === '' || !href.startsWith('http')) {
+        const clauseMatch = linkText.match(/(?:Clause|Sub-[Cc]lause)\s+([0-9]+[A-Za-z]?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/i);
         if (clauseMatch) {
-          clauseId = normalizeClauseId(clauseMatch[1]);
-        }
-      }
-      // Priority 6: Check if link text itself is a clause reference pattern
-      else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
-        const clauseMatch = linkText.match(/(?:Clause|Sub-[Cc]lause)\s+([0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)/i);
-        if (clauseMatch) {
-          clauseId = normalizeClauseId(clauseMatch[1]);
+          clauseNumber = clauseMatch[1];
         }
       }
       
-      // If we found a clause ID, try to scroll to it
-      if (clauseId) {
-        const targetElement = document.getElementById(`clause-${clauseId}`);
-        if (targetElement) {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          
-          // Highlight the target clause briefly
-          targetElement.classList.add('clause-highlight');
-          targetElement.style.transition = 'box-shadow 0.3s ease';
-          targetElement.style.boxShadow = '0 0 0 4px rgba(15, 46, 107, 0.3)';
-          
-          setTimeout(() => {
-            targetElement.style.boxShadow = '';
-            targetElement.classList.remove('clause-highlight');
-          }, 2000);
-        } else {
-          // Clause element not found - prevent navigation to broken link
-          if (href === '#' || href.startsWith('#clause-') || href.startsWith('clause-')) {
-            e.preventDefault();
-            console.warn(`Clause element not found: clause-${clauseId}`);
+      // If we found a clause number, try to scroll to it using fuzzy matching
+      if (clauseNumber) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Use the fuzzy matching function that tries multiple ID formats
+        const found = scrollToClauseByNumber(clauseNumber);
+        
+        if (!found) {
+          // Also try with findClauseElement for additional fuzzy matching
+          const targetElement = findClauseElement(clauseNumber);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            targetElement.classList.add('clause-highlight');
+            targetElement.style.transition = 'box-shadow 0.3s ease';
+            targetElement.style.boxShadow = '0 0 0 4px rgba(15, 46, 107, 0.3)';
+            setTimeout(() => {
+              targetElement.style.boxShadow = '';
+              targetElement.classList.remove('clause-highlight');
+            }, 2000);
+          } else {
+            console.warn(`Clause not found: ${clauseNumber}`);
           }
         }
       }
