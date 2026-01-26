@@ -12,11 +12,11 @@ function removeUndefinedValues(obj: any): any {
   if (obj === null || obj === undefined) {
     return null;
   }
-  
+
   if (Array.isArray(obj)) {
     return obj.map(item => removeUndefinedValues(item));
   }
-  
+
   if (typeof obj === 'object' && obj.constructor === Object) {
     const cleaned: any = {};
     for (const [key, value] of Object.entries(obj)) {
@@ -26,7 +26,7 @@ function removeUndefinedValues(obj: any): any {
     }
     return cleaned;
   }
-  
+
   return obj;
 }
 
@@ -63,7 +63,7 @@ async function saveContractWithSubcollections(contract: SavedContract): Promise<
       onConflict: 'id'
     });
 
-if (contractError) {
+  if (contractError) {
     console.error('Supabase upsert error (subcollections):', {
       code: contractError.code,
       message: contractError.message,
@@ -153,10 +153,11 @@ async function loadContractFromSubcollections(contractId: string, contractMetada
   }
 
   // Load items for each section
+  // Load items for each section
   for (const sectionRow of sectionsData || []) {
     const { data: itemsData, error: itemsError } = await supabase
       .from('contract_items')
-      .select('item_data')
+      .select('item_data, gc_link_tokens, pc_link_tokens')
       .eq('contract_id', contractId)
       .eq('section_type', sectionRow.section_type)
       .order('order_index');
@@ -167,7 +168,13 @@ async function loadContractFromSubcollections(contractId: string, contractMetada
     }
 
     const items: SectionItem[] = (itemsData || [])
-      .map(row => removeUndefinedValues(row.item_data) as SectionItem)
+      .map(row => {
+        const item = removeUndefinedValues(row.item_data) as SectionItem;
+        // Merge tokens if they exist
+        if (row.gc_link_tokens) item.gc_link_tokens = row.gc_link_tokens;
+        if (row.pc_link_tokens) item.pc_link_tokens = row.pc_link_tokens;
+        return item;
+      })
       .sort((a, b) => (a.orderIndex || 0) - (b.orderIndex || 0));
 
     sections.push({
@@ -208,13 +215,13 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
 
     // Ensure contract has sections (migrate if needed), but preserve existing sections
     let migratedContract: SavedContract;
-    
+
     if (contract.sections && contract.sections.length > 0) {
       migratedContract = ensureContractHasSections(contract);
     } else {
       migratedContract = ensureContractHasSections(contract);
     }
-    
+
     // Log what we're saving for debugging
     console.log('Saving contract to Supabase:', {
       id: migratedContract.id,
@@ -226,7 +233,7 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
       generalItems: migratedContract.sections?.find(s => s.sectionType === 'GENERAL')?.items.length || 0,
       particularItems: migratedContract.sections?.find(s => s.sectionType === 'PARTICULAR')?.items.length || 0
     });
-    
+
     // Prepare contract data (remove undefined values)
     const contractData = removeUndefinedValues({
       id: migratedContract.id,
@@ -237,10 +244,10 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
       sections: migratedContract.sections || null,
       uses_subcollections: false
     });
-    
+
     // Check if contract is too large (>1MB)
     const estimatedSize = estimateSize(contractData);
-    
+
     if (estimatedSize > MAX_DOCUMENT_SIZE) {
       // Use relational tables for large contracts
       await saveContractWithSubcollections(migratedContract);
@@ -263,7 +270,7 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
         throw error;
       }
     }
-    
+
     console.log('Contract saved successfully to Supabase');
   } catch (error: any) {
     console.error('Error saving contract:', error);
@@ -274,21 +281,21 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
       hint: error?.hint,
       name: error?.name
     });
-    
+
     // Extract Supabase error details
     const errorCode = error?.code || 'unknown';
     const errorMessage = error?.message || String(error);
     const errorDetails = error?.details || '';
     const errorHint = error?.hint || '';
-    
+
     // Provide more specific error messages
     let userMessage = 'Failed to save contract to server';
-    
+
     // Check for RLS/permission errors
-    if (errorCode === '42501' || errorCode === 'PGRST301' || 
-        errorMessage.includes('permission denied') || 
-        errorMessage.includes('row-level security') ||
-        errorMessage.includes('new row violates row-level security')) {
+    if (errorCode === '42501' || errorCode === 'PGRST301' ||
+      errorMessage.includes('permission denied') ||
+      errorMessage.includes('row-level security') ||
+      errorMessage.includes('new row violates row-level security')) {
       userMessage = 'Permission denied. Please ensure you are logged in and have permission to save contracts. Check browser console for details.';
       console.error('RLS Policy Error - User may not be authenticated or RLS policies may be blocking the operation');
     } else if (errorCode === 'PGRST116') {
@@ -302,7 +309,7 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
     } else {
       userMessage = `Failed to save contract: ${errorMessage}`;
     }
-    
+
     throw new Error(userMessage);
   }
 };
@@ -310,32 +317,32 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
 export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> => {
   try {
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:300',message:'getAllContractsFromSupabase entry',data:{hasSupabase:!!supabase},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:300', message: 'getAllContractsFromSupabase entry', data: { hasSupabase: !!supabase }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
     // #endregion
-    
+
     if (!supabase) {
       console.warn('Supabase not initialized, returning empty array');
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:304',message:'Supabase not initialized',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:304', message: 'Supabase not initialized', data: {}, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
       // #endregion
       return [];
     }
-    
+
     // Check authentication before querying
     const { data: { session }, error: authError } = await supabase.auth.getSession();
-    
+
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:315',message:'Auth session check',data:{hasSession:!!session,hasUser:!!session?.user,userId:session?.user?.id,userEmail:session?.user?.email,hasAuthError:!!authError,authError:authError?.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:315', message: 'Auth session check', data: { hasSession: !!session, hasUser: !!session?.user, userId: session?.user?.id, userEmail: session?.user?.email, hasAuthError: !!authError, authError: authError?.message }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
     // #endregion
-    
+
     if (!session || !session.user) {
       console.warn('No active session when fetching contracts');
       // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:320',message:'No session - returning empty array',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:320', message: 'No session - returning empty array', data: {}, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
       // #endregion
       return [];
     }
-    
+
     // Fetch all contracts ordered by timestamp
     // RLS policies will handle authentication checks
     console.log('Fetching contracts from Supabase...');
@@ -343,9 +350,9 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
       .from('contracts')
       .select('*')
       .order('timestamp', { ascending: false });
-    
+
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:329',message:'Contracts query result',data:{hasError:!!error,errorCode:error?.code,errorMessage:error?.message,errorDetails:error?.details,errorHint:error?.hint,contractsCount:contractsData?.length||0,contractIds:contractsData?.map(c=>c.id)||[],contractNames:contractsData?.map(c=>c.name)||[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:329', message: 'Contracts query result', data: { hasError: !!error, errorCode: error?.code, errorMessage: error?.message, errorDetails: error?.details, errorHint: error?.hint, contractsCount: contractsData?.length || 0, contractIds: contractsData?.map(c => c.id) || [], contractNames: contractsData?.map(c => c.name) || [] }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
     // #endregion
 
     if (error) {
@@ -355,20 +362,20 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
         details: error.details,
         hint: error.hint
       });
-      
+
       // Log the full error for debugging
       console.error('Full error object:', error);
-      
+
       // If permission denied or not found, return empty array
-      if (error.code === 'PGRST116' || error.code === '42501' || 
-          error.message?.includes('permission denied') || 
-          error.message?.includes('row-level security')) {
+      if (error.code === 'PGRST116' || error.code === '42501' ||
+        error.message?.includes('permission denied') ||
+        error.message?.includes('row-level security')) {
         console.warn('Permission denied when fetching contracts - check RLS policies and authentication');
         return [];
       }
       throw new Error(`Failed to fetch contracts from server: ${error.message}`);
     }
-    
+
     console.log(`Successfully fetched ${contractsData?.length || 0} contracts from database`);
     if (contractsData && contractsData.length > 0) {
       console.log('Contract IDs:', contractsData.map(c => c.id));
@@ -388,7 +395,7 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
           if (row.uses_subcollections) {
             return await loadContractFromSubcollections(row.id, row);
           }
-          
+
           // Single document format
           const contract: SavedContract = {
             id: row.id,
@@ -398,7 +405,7 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
             clauses: row.clauses || null,
             sections: row.sections || null
           };
-          
+
           // Auto-migrate on load
           return ensureContractHasSections(contract);
         } catch (err) {
@@ -415,11 +422,11 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
         }
       })
     );
-    
+
     // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'src/services/supabaseService.ts:385',message:'Contracts processed and ready to return',data:{finalContractsCount:contracts.length,contractIds:contracts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:385', message: 'Contracts processed and ready to return', data: { finalContractsCount: contracts.length, contractIds: contracts.map(c => c.id) }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
     // #endregion
-    
+
     return contracts;
   } catch (error: any) {
     console.error('Error fetching contracts:', error);

@@ -159,3 +159,12 @@ export const LinkifyClauseReferences: React.FC<ClauseLinkerProps> = ({ text }) =
 export const linkifyClauseText = (text: string): React.ReactNode => {
     return <LinkifyClauseReferences text={text} />;
 };
+
+/**
+ * Processes a list of clauses and enhances them with link metadata if necessary.
+ * Currently returns clauses as-is since linking is handled at render time or via tokenization.
+ * Kept for backward compatibility with contractMigrationService.
+ */
+export const reprocessClauseLinks = (clauses: any[]): any[] => {
+    return clauses;
+};
