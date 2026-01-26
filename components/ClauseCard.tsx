@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { Clause } from '../types';
 import { normalizeClauseId, findClauseElement, scrollToClauseByNumber } from '../src/utils/navigation';
 
@@ -53,10 +54,10 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
 
   const modCount = clause.comparison?.length || 0;
   const normalizedClauseId = normalizeClauseId(clause.clause_number);
-  
+
   // Check if this is an "added" clause (has PC content but no GC content)
-  const isAddedClause = !!(clause.particular_condition && clause.particular_condition.length > 0) && 
-                        (!clause.general_condition || clause.general_condition.length === 0);
+  const isAddedClause = !!(clause.particular_condition && clause.particular_condition.length > 0) &&
+    (!clause.general_condition || clause.general_condition.length === 0);
 
   // Handle hyperlink clicks for smooth scrolling to clause references
   // Supports multiple link formats: .clause-link, href="#clause-X", href="clause-X", 
@@ -65,21 +66,21 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      
+
       // Check if clicked element is a link or inside a link
       const link = target.closest('a') as HTMLAnchorElement;
       if (!link) return;
-      
+
       const href = link.getAttribute('href') || '';
       const dataClauseId = link.getAttribute('data-clause-id');
       const linkText = link.textContent || '';
-      
+
       // Skip external links
       if (href.startsWith('http') || href.startsWith('mailto:')) return;
-      
+
       // Extract clause number from various formats
       let clauseNumber: string | null = null;
-      
+
       // Priority 1: data-clause-id attribute (most reliable)
       if (dataClauseId) {
         clauseNumber = dataClauseId;
@@ -103,15 +104,15 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
           clauseNumber = clauseMatch[1];
         }
       }
-      
+
       // If we found a clause number, try to scroll to it using fuzzy matching
       if (clauseNumber) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         // Use the fuzzy matching function that tries multiple ID formats
         const found = scrollToClauseByNumber(clauseNumber);
-        
+
         if (!found) {
           // Also try with findClauseElement for additional fuzzy matching
           const targetElement = findClauseElement(clauseNumber);
@@ -126,6 +127,10 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
             }, 2000);
           } else {
             console.warn(`Clause not found: ${clauseNumber}`);
+            toast.error(`Clause ${clauseNumber} not found in this contract.`, {
+              duration: 4000,
+              icon: '🔍',
+            });
           }
         }
       }

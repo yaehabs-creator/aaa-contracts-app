@@ -1,4 +1,5 @@
 import { SavedContract, LegacyContract, ContractSection, SectionItem, SectionType, ItemType, Clause } from '../types';
+import { reprocessClauseLinks } from '../src/utils/clauseLinking';
 
 /**
  * Check if a contract is in the legacy format (has clauses but no sections)
@@ -40,7 +41,7 @@ export function sectionItemToClause(item: SectionItem): Clause | null {
   if (item.itemType !== ItemType.CLAUSE) {
     return null;
   }
-  
+
   return {
     clause_number: item.clause_number || item.number || '',
     clause_title: item.clause_title || item.heading || '',
@@ -109,11 +110,11 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
   });
 
   // Convert clauses to section items with proper ordering
-  const generalItems: SectionItem[] = generalClauses.map((clause, index) => 
+  const generalItems: SectionItem[] = generalClauses.map((clause, index) =>
     clauseToSectionItem(clause, index)
   );
-  
-  const particularItems: SectionItem[] = particularClauses.map((clause, index) => 
+
+  const particularItems: SectionItem[] = particularClauses.map((clause, index) =>
     clauseToSectionItem(clause, index)
   );
 
@@ -155,22 +156,22 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
   if (isLegacyContract(contract)) {
     return migrateContractToSections(contract);
   }
-  
+
   // If sections exist, ensure all required sections are present
   if (contract.sections && contract.sections.length > 0) {
     const sectionTypes = contract.sections.map(s => s.sectionType);
     const requiredTypes = [
-      SectionType.AGREEMENT, 
-      SectionType.LOA, 
-      SectionType.GENERAL, 
+      SectionType.AGREEMENT,
+      SectionType.LOA,
+      SectionType.GENERAL,
       SectionType.PARTICULAR
     ];
-    
+
     const missingTypes = requiredTypes.filter(type => !sectionTypes.includes(type));
-    
+
     if (missingTypes.length > 0) {
       const newSections = [...contract.sections];
-      
+
       missingTypes.forEach(type => {
         let title = '';
         if (type === SectionType.AGREEMENT) title = 'Form of Agreement';
@@ -179,48 +180,48 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         else if (type === SectionType.PARTICULAR) title = 'Particular Conditions';
         else if (type === 'ANNEX1') title = 'Annex 1';
         else if (type === 'ANNEX2') title = 'Annex 2';
-        
+
         newSections.push({
           sectionType: type,
           title,
           items: []
         });
       });
-      
+
       // Sort sections to maintain order
       newSections.sort((a, b) => {
         const order = [
-          SectionType.AGREEMENT, 
-          SectionType.LOA, 
-          SectionType.GENERAL, 
+          SectionType.AGREEMENT,
+          SectionType.LOA,
+          SectionType.GENERAL,
           SectionType.PARTICULAR
         ];
         return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
       });
-      
+
       return {
         ...contract,
         sections: newSections
       };
     }
-    
+
     return contract as SavedContract;
   }
-  
+
   // No sections, migrate
   return migrateContractToSections(contract);
 }
 
 /**
  * Get all clauses from a contract (works with both old and new format)
+ * IMPORTANT: This function now automatically processes clause references into hyperlinks
  */
 export function getAllClausesFromContract(contract: SavedContract | LegacyContract): Clause[] {
+  let clauses: Clause[] = [];
+
   if (contract.clauses && contract.clauses.length > 0) {
-    return contract.clauses;
-  }
-  
-  if (contract.sections) {
-    const clauses: Clause[] = [];
+    clauses = contract.clauses;
+  } else if (contract.sections) {
     contract.sections.forEach(section => {
       section.items.forEach(item => {
         if (item.itemType === ItemType.CLAUSE) {
@@ -231,8 +232,9 @@ export function getAllClausesFromContract(contract: SavedContract | LegacyContra
         }
       });
     });
-    return clauses;
   }
-  
-  return [];
+
+  // Process clause references into hyperlinks before returning
+  // This ensures that all clause references are clickable when contracts are loaded
+  return reprocessClauseLinks(clauses);
 }
