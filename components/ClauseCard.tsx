@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { Clause } from '../types';
 import { normalizeClauseId, findClauseElement, scrollToClauseByNumber } from '../src/utils/navigation';
+import { TokenizedTextRenderer } from '../src/components/admin/TokenizedTextRenderer';
 
 interface ClauseCardProps {
   clause: Clause;
@@ -243,7 +244,16 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
             <div className={`font-mono text-[13px] leading-[1.8] text-aaa-text whitespace-pre-wrap transition-all duration-700 overflow-hidden ${isCollapsed ? 'max-h-[350px]' : 'max-h-none'}`}>
               <div className="font-extrabold text-aaa-blue mb-4 border-b border-aaa-blue/5 pb-2">{clause.clause_number} {clause.clause_title}</div>
               {clause.general_condition ? (
-                <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.general_condition, searchKeywords) : clause.general_condition }} className="verbatim-content" />
+                // Use TokenizedTextRenderer if tokens are available, otherwise fallback to HTML
+                clause.gc_link_tokens && clause.gc_link_tokens.length > 0 ? (
+                  <TokenizedTextRenderer
+                    tokens={clause.gc_link_tokens}
+                    rawText={clause.general_condition}
+                    className="verbatim-content"
+                  />
+                ) : (
+                  <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.general_condition, searchKeywords) : clause.general_condition }} className="verbatim-content" />
+                )
               ) : clause.condition_type === 'General' && clause.clause_text ? (
                 <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.clause_text, searchKeywords) : clause.clause_text }} className="verbatim-content" />
               ) : (
@@ -266,7 +276,16 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
                 )}
               </div>
               {clause.particular_condition ? (
-                <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.particular_condition, searchKeywords) : clause.particular_condition }} className="verbatim-content" />
+                // Use TokenizedTextRenderer if tokens are available, otherwise fallback to HTML
+                clause.pc_link_tokens && clause.pc_link_tokens.length > 0 ? (
+                  <TokenizedTextRenderer
+                    tokens={clause.pc_link_tokens}
+                    rawText={clause.particular_condition}
+                    className="verbatim-content"
+                  />
+                ) : (
+                  <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.particular_condition, searchKeywords) : clause.particular_condition }} className="verbatim-content" />
+                )
               ) : clause.condition_type === 'Particular' ? (
                 <div dangerouslySetInnerHTML={{ __html: searchKeywords.length > 0 ? highlightKeywordsInHTML(clause.clause_text, searchKeywords) : clause.clause_text }} className="verbatim-content" />
               ) : (

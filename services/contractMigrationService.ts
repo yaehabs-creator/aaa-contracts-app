@@ -1,5 +1,5 @@
 import { SavedContract, LegacyContract, ContractSection, SectionItem, SectionType, ItemType, Clause } from '../types';
-import { reprocessClauseLinks } from '../src/utils/clauseLinking';
+import { reprocessClauseLinks } from '../src/utils/clauseLinker';
 
 /**
  * Check if a contract is in the legacy format (has clauses but no sections)
@@ -30,7 +30,9 @@ export function clauseToSectionItem(clause: Clause, orderIndex: number): Section
     time_frames: clause.time_frames,
     financial_assets: clause.financial_assets,
     category: clause.category,
-    chapter: clause.chapter
+    chapter: clause.chapter,
+    gc_link_tokens: clause.gc_link_tokens,
+    pc_link_tokens: clause.pc_link_tokens
   };
 }
 
@@ -54,7 +56,9 @@ export function sectionItemToClause(item: SectionItem): Clause | null {
     time_frames: item.time_frames,
     financial_assets: item.financial_assets,
     category: item.category,
-    chapter: item.chapter
+    chapter: item.chapter,
+    gc_link_tokens: item.gc_link_tokens,
+    pc_link_tokens: item.pc_link_tokens
   };
 }
 

@@ -1,11 +1,11 @@
 
-export type ModificationType = 
-  | "ADDED_TEXT" 
-  | "DELETED_TEXT" 
-  | "CHANGED_WORDING" 
-  | "CHANGED_TIME_PERIOD" 
-  | "CHANGED_AMOUNT" 
-  | "NEW_CLAUSE_ONLY" 
+export type ModificationType =
+  | "ADDED_TEXT"
+  | "DELETED_TEXT"
+  | "CHANGED_WORDING"
+  | "CHANGED_TIME_PERIOD"
+  | "CHANGED_AMOUNT"
+  | "NEW_CLAUSE_ONLY"
   | "DELETED_CLAUSE";
 
 export type ModificationColor = "green" | "red" | "orange" | "purple" | "blue";
@@ -26,7 +26,7 @@ export enum ItemType {
   IMAGE = 'IMAGE'
 }
 
-export type TimeFrameType = 
+export type TimeFrameType =
   | "NOTICE_PERIOD"
   | "PAYMENT_PERIOD"
   | "RESPONSE_TIME"
@@ -35,7 +35,7 @@ export type TimeFrameType =
   | "DEFECTS_LIABILITY_PERIOD"
   | "GENERAL_DURATION";
 
-export type ObligationParty = 
+export type ObligationParty =
   | "Contractor"
   | "Employer"
   | "Engineer/Project Manager"
@@ -48,7 +48,7 @@ export interface TimeFrame {
   short_explanation: string;
 }
 
-export type FinancialAssetType = 
+export type FinancialAssetType =
   | "cost_responsibility"
   | "deduction"
   | "penalty_or_damages"
@@ -68,6 +68,12 @@ export interface FinancialAsset {
   amount: number | null;
   currency_or_basis: CurrencyOrBasis;
   condition: string;
+}
+
+
+export interface LinkToken {
+  t: 'text' | 'ref';
+  v: string;
 }
 
 export interface ComparisonDetail {
@@ -91,6 +97,8 @@ export interface Clause {
   financial_assets?: FinancialAsset[];
   category?: string;
   chapter?: string;
+  gc_link_tokens?: LinkToken[];
+  pc_link_tokens?: LinkToken[];
 }
 
 export interface Category {
@@ -143,6 +151,8 @@ export interface SectionItem {
   financial_assets?: FinancialAsset[];
   category?: string;
   chapter?: string;
+  gc_link_tokens?: LinkToken[];
+  pc_link_tokens?: LinkToken[];
 }
 
 export interface ContractSection {
