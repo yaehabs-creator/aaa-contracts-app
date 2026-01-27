@@ -15,8 +15,8 @@ export class ClaudeProvider implements AIProvider {
   // Try multiple model names in order of preference
   private modelCandidates = [
     'claude-sonnet-4-5-20250514',
-    'claude-3-5-sonnet-latest',
-    'claude-3-5-haiku-latest'
+    'claude-3-5-sonnet-20241022',
+    'claude-3-haiku-20240307'
   ];
 
   constructor() {
