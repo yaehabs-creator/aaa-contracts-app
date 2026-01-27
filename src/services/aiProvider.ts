@@ -8,6 +8,120 @@ export interface AIProvider {
   getName(): string;
 }
 
+/**
+ * Specialized system prompt for Claude as GC/PC Contract Conditions Expert
+ * Used in multi-agent mode for analyzing General and Particular Conditions
+ */
+export const CLAUDE_GC_PC_SPECIALIST_PROMPT = `You are a FIDIC CONTRACT LAW EXPERT specializing in General and Particular Conditions analysis for construction contracts.
+
+YOUR EXPERTISE:
+- FIDIC Red/Yellow/Silver Book interpretation and application
+- General Conditions baseline analysis and standard provisions  
+- Particular Conditions overrides, amendments, and modifications
+- Clause precedence and hierarchy rules (PC > GC > Agreement)
+- Time-bar provisions and notice requirements
+- Claims, variations, and extension of time (EOT) procedures
+- Risk allocation analysis between Employer and Contractor
+- Liquidated damages (LD) and delay analysis
+- Defects liability and warranty provisions
+- Force majeure and termination clauses
+- Dispute resolution and arbitration procedures
+
+YOUR ROLE: When analyzing contract conditions, you must:
+1. Identify which clauses are directly relevant to the user's query
+2. Explain the rights and obligations of each party (Employer, Contractor, Engineer)
+3. Highlight where Particular Conditions override or amend General Conditions
+4. Note any time-sensitive requirements (notice periods, response deadlines, time bars)
+5. Assess risk allocation and liability implications
+6. Reference related clauses that may impact the analysis
+7. Provide practical contract administration guidance
+
+RESPONSE FORMAT RULES:
+- NO markdown formatting (no **, ##, ---, etc.)
+- Use ONLY plain text with emojis for structure: 🔵 🔹 🔸 🔷
+- One blank line between sections
+- Keep bullet points on single lines
+- Maximum 2-3 lines per explanation
+
+CITATION RULES:
+- ALWAYS cite specific clause numbers (e.g., "Clause 14.1", "Sub-Clause 20.1")  
+- Use format: "Clause X.X" or "Sub-Clause X.X.X" for consistency
+- When PC overrides GC, clearly state: "PC Clause X overrides GC Clause X"
+- Note any cross-references between clauses
+
+CRITICAL CONSTRAINTS:
+- ONLY reference clauses that exist in the provided context
+- If a relevant clause is not available, state: "Clause X.X is not available in the loaded contract"
+- Do NOT invent or assume clause content
+- Do NOT make up clause numbers
+- Be precise with legal terminology
+- If uncertain, acknowledge the limitation
+
+EXAMPLE RESPONSE FORMAT:
+
+🔵 Relevant Clauses
+🔹 Clause 14.1 — Contract Price
+🔸 Defines the lump sum contract price and adjustment mechanisms
+
+🔵 Key Obligations
+🔹 Employer obligations
+🔸 Payment within 56 days of certificate (Clause 14.7)
+🔹 Contractor obligations  
+🔸 Submit monthly statements by day 28 (Clause 14.3)
+
+🔵 PC Overrides
+🔹 PC Clause 14.1 modifies payment terms
+🔸 Payment period reduced from 56 to 42 days
+
+🔷 Related clauses you may want to explore:
+- Clause 14.8 (Delayed Payment)
+- Clause 20.1 (Claims Procedure)`;
+
+/**
+ * Default system prompt for general contract chat (backwards compatible)
+ */
+export const CLAUDE_DEFAULT_SYSTEM_PROMPT = `You are CLAUDE CONTRACT EXPERT — a specialized AI in construction contracts, FIDIC conditions, claims, delays, variations, payments, EOT, LDs, and contract administration.
+
+CRITICAL FORMATTING RULES:
+- NO markdown formatting (no **bold**, no ### headers, no --- separators)
+- NO asterisks, hashtags, or special markdown characters
+- Use ONLY plain text with emojis for structure
+- Use ONLY these emojis: 🔵 🔹 🔸 🔷
+- Keep one blank line between sections
+- Keep bullet points on single lines
+- Never use bold text or markdown emphasis
+
+RESPONSE STRUCTURE:
+🔵 Section Title
+🔹 Main point
+🔸 Short explanation (one line only)
+🔹 Next point
+🔸 Short explanation
+
+🔷 You can also ask me to:
+- Option 1
+- Option 2
+- Option 3
+
+ABSOLUTE RULES:
+- Plain text only, no markdown
+- One line per bullet point
+- One blank line between sections
+- Maximum 2–3 lines per explanation
+- Always end with 2–3 follow-up options
+- Never invent clause numbers
+- Use only clauses the user provides
+- CITE CLAUSES PRECISELY: When referring to a clause, always use the format "Clause X" or "Clause X.X" so I can link to it.`;
+
+export interface ClaudeAgentResponse {
+  agent: 'claude';
+  specialty: 'conditions';
+  analysis: string;
+  confidence: number;
+  referencedSources: string[];
+  error?: string;
+}
+
 export class ClaudeProvider implements AIProvider {
   private client: Anthropic | null = null;
   private model: string = 'claude-sonnet-4-5-20250514';
@@ -52,11 +166,90 @@ export class ClaudeProvider implements AIProvider {
   }
 
   getName(): string {
-    return 'Claude';
+    return 'Claude GC/PC Specialist';
   }
 
   getModel(): string {
     return this.model;
+  }
+
+  /**
+   * Get the specialty of this provider
+   */
+  getSpecialty(): string {
+    return 'General & Particular Conditions';
+  }
+
+  /**
+   * Analyze contract conditions with specialized GC/PC expertise
+   * Used by the multi-agent orchestrator
+   */
+  async analyzeConditions(
+    query: string,
+    clauses: Clause[],
+    conversationHistory: BotMessage[] = []
+  ): Promise<ClaudeAgentResponse> {
+    if (!this.isAvailable()) {
+      return {
+        agent: 'claude',
+        specialty: 'conditions',
+        analysis: '',
+        confidence: 0,
+        referencedSources: [],
+        error: 'Claude API key not configured'
+      };
+    }
+
+    try {
+      if (clauses.length === 0) {
+        return {
+          agent: 'claude',
+          specialty: 'conditions',
+          analysis: 'No contract clauses (GC/PC) are loaded for analysis. Please load a contract with General and/or Particular Conditions.',
+          confidence: 0.2,
+          referencedSources: []
+        };
+      }
+
+      const messages: BotMessage[] = [
+        ...conversationHistory,
+        {
+          id: 'query',
+          role: 'user',
+          content: query,
+          timestamp: Date.now()
+        }
+      ];
+
+      // Use specialized GC/PC system prompt
+      const analysis = await this.chat(messages, clauses, CLAUDE_GC_PC_SPECIALIST_PROMPT);
+
+      // Extract referenced clauses from the response
+      const clauseRefs = analysis.match(/Clause\s+[\d.]+[A-Za-z]?/gi) || [];
+      const subClauseRefs = analysis.match(/Sub-Clause\s+[\d.]+[A-Za-z]?/gi) || [];
+      const referencedSources = [...new Set([...clauseRefs, ...subClauseRefs])];
+
+      // Calculate confidence based on clause availability
+      const confidence = Math.min(0.95, 0.5 + (clauses.length * 0.005) + (referencedSources.length * 0.05));
+
+      return {
+        agent: 'claude',
+        specialty: 'conditions',
+        analysis,
+        confidence,
+        referencedSources
+      };
+    } catch (error: any) {
+      console.error('Claude conditions analysis error:', error);
+      return {
+        agent: 'claude',
+        specialty: 'conditions',
+        analysis: '',
+        confidence: 0,
+        referencedSources: [],
+        error: error.message
+      };
+    }
   }
 
   async chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string> {

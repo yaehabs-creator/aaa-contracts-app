@@ -21,11 +21,50 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 # VITE_FIREBASE_APP_ID=your_firebase_app_id
 ```
 
-## Anthropic API (For AI features)
+## AI Configuration (Dual-Agent System)
+
+The application supports a dual-agent AI system where two specialized AI experts collaborate:
+- **Claude (Anthropic)**: GC/PC Specialist - Analyzes General and Particular Conditions
+- **OpenAI (GPT-4)**: Document Specialist - Analyzes Agreement, BOQ, Schedules, Addendums
+
+### Required for Claude GC/PC Expert (Conditions Analysis)
 
 ```env
 VITE_ANTHROPIC_API_KEY=your_anthropic_api_key
 ```
+
+### Required for OpenAI Document Expert (Document Analysis)
+
+```env
+VITE_OPENAI_API_KEY=your_openai_api_key
+VITE_OPENAI_MODEL=gpt-4-turbo-preview  # Optional, defaults to gpt-4-turbo-preview
+```
+
+### Dual-Agent Mode
+
+When BOTH API keys are configured:
+- The system automatically enables **Dual-Agent Mode**
+- Queries are intelligently routed to the appropriate specialist
+- Both experts can collaborate on complex questions
+- Responses show which agent(s) contributed to the answer
+
+When only ONE API key is configured:
+- The system falls back to single-agent mode using the available API
+- Full functionality for that agent's specialty remains available
+
+## How to Get API Keys
+
+### Anthropic API Key (Claude)
+1. Go to https://console.anthropic.com/
+2. Create an account or sign in
+3. Navigate to API Keys
+4. Create a new API key → use as `VITE_ANTHROPIC_API_KEY`
+
+### OpenAI API Key
+1. Go to https://platform.openai.com/
+2. Create an account or sign in
+3. Navigate to API Keys
+4. Create a new secret key → use as `VITE_OPENAI_API_KEY`
 
 ## How to Get Supabase Credentials
 

@@ -1,9 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Clause, BotMessage, SavedContract } from '../../types';
-import { chatWithBot, getSuggestions, explainClause, chatWithDocuments, getDocumentSummary, searchContractDocuments } from '../services/aiBotService';
+import { 
+  chatWithBot, 
+  getSuggestions, 
+  explainClause, 
+  chatWithDocuments, 
+  getDocumentSummary, 
+  searchContractDocuments,
+  chatWithDualAgents,
+  getAgentStatus,
+  isDualAgentModeAvailable,
+  getAgentCapabilitiesSummary
+} from '../services/aiBotService';
 import { isClaudeAvailable } from '../services/aiProvider';
 import { scrollToClause } from '../utils/navigation';
 import { getAllClausesFromContract } from '../../services/contractMigrationService';
+
+// Extended message type to track which agents contributed
+interface ExtendedBotMessage extends BotMessage {
+  agentsUsed?: ('openai' | 'claude')[];
+  isDualMode?: boolean;
+}
 
 interface AIBotSidebarProps {
   isOpen: boolean;
@@ -24,7 +41,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   activeContractId,
   onContractChange
 }) => {
-  const [messages, setMessages] = useState<BotMessage[]>([]);
+  const [messages, setMessages] = useState<ExtendedBotMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -32,11 +49,26 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const [selectedContractId, setSelectedContractId] = useState<string | null>(activeContractId || null);
   const [showContractSelector, setShowContractSelector] = useState(false);
   const [documentCount, setDocumentCount] = useState<number>(0);
+  const [dualAgentMode, setDualAgentMode] = useState<boolean>(false);
+  const [agentStatusInfo, setAgentStatusInfo] = useState<{
+    openai: { available: boolean; name: string };
+    claude: { available: boolean; name: string };
+  } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const claudeAvailable = isClaudeAvailable();
+  
+  // Check for dual-agent mode availability
+  useEffect(() => {
+    const status = getAgentStatus();
+    setAgentStatusInfo({
+      openai: { available: status.openai.available, name: status.openai.name },
+      claude: { available: status.claude.available, name: status.claude.name }
+    });
+    setDualAgentMode(status.dualAgentMode);
+  }, []);
 
   // Get the currently selected contract and its clauses
   const selectedContract = contracts.find(c => c.id === selectedContractId);
@@ -130,9 +162,13 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
   const sendMessage = async (text?: string) => {
     const query = text || inputValue.trim();
-    if (!query || isLoading || !claudeAvailable) return;
+    if (!query || isLoading) return;
+    
+    // Check if at least one agent is available
+    const anyAgentAvailable = claudeAvailable || (agentStatusInfo?.openai.available ?? false);
+    if (!anyAgentAvailable) return;
 
-    const userMessage: BotMessage = {
+    const userMessage: ExtendedBotMessage = {
       id: Date.now().toString(),
       role: 'user',
       content: query,
@@ -149,33 +185,53 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
       const conversationHistory = [...messages, userMessage];
       
       let response: string;
+      let agentsUsed: ('openai' | 'claude')[] = [];
+      let isDualModeResponse = false;
       
-      // ALWAYS use full contract context when a contract is selected
-      // This includes both parsed clauses AND uploaded document chunks
-      // No more restrictive keyword checking - AI always has full contract access
-      if (selectedContractId) {
+      // Use dual-agent mode if available and contract is selected
+      if (dualAgentMode && selectedContractId) {
+        try {
+          const dualResult = await chatWithDualAgents(
+            conversationHistory,
+            activeClauses,
+            selectedContractId
+          );
+          response = dualResult.response;
+          agentsUsed = dualResult.agentsUsed;
+          isDualModeResponse = dualResult.isDualMode;
+        } catch (dualErr) {
+          console.warn('Dual-agent mode failed, falling back to single agent:', dualErr);
+          // Fall back to single-agent mode
+          response = await chatWithBot(conversationHistory, activeClauses, selectedContractId);
+          agentsUsed = ['claude'];
+        }
+      } else if (selectedContractId) {
         // Use chatWithBot with contractId - this triggers full context loading
         // including document chunks from Supabase
         response = await chatWithBot(conversationHistory, activeClauses, selectedContractId);
+        agentsUsed = ['claude'];
       } else {
         // No contract selected - use basic clause-based chat
         response = await chatWithBot(conversationHistory, activeClauses);
+        agentsUsed = ['claude'];
       }
 
-      const botMessage: BotMessage = {
+      const botMessage: ExtendedBotMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: response,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        agentsUsed,
+        isDualMode: isDualModeResponse
       };
 
       setMessages(prev => [...prev, botMessage]);
     } catch (err: any) {
-      setError(err.message || 'Failed to get response from Claude');
-      const errorMessage: BotMessage = {
+      setError(err.message || 'Failed to get response from AI');
+      const errorMessage: ExtendedBotMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `Sorry, I encountered an error: ${err.message || 'Unknown error'}. Please check your ANTHROPIC_API_KEY environment variable.`,
+        content: `Sorry, I encountered an error: ${err.message || 'Unknown error'}. Please check your API keys (VITE_ANTHROPIC_API_KEY and/or VITE_OPENAI_API_KEY).`,
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -184,12 +240,23 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     }
   };
 
+  // Show agent status
+  const showAgentStatus = () => {
+    const statusMessage: ExtendedBotMessage = {
+      id: Date.now().toString(),
+      role: 'assistant',
+      content: getAgentCapabilitiesSummary(),
+      timestamp: Date.now()
+    };
+    setMessages(prev => [...prev, statusMessage]);
+  };
+
   // Show document summary
   const showDocuments = async () => {
     if (!selectedContractId || isLoading) return;
     
     setIsLoading(true);
-    const userMessage: BotMessage = {
+    const userMessage: ExtendedBotMessage = {
       id: Date.now().toString(),
       role: 'user',
       content: '📁 Show uploaded documents',
@@ -305,10 +372,19 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         {/* Header */}
         <div className="ai-bot-header">
           <div className="ai-bot-header-content">
-            <h2 className="ai-bot-title">Claude AI Assistant</h2>
+            <h2 className="ai-bot-title">
+              {dualAgentMode ? 'Dual AI Contract Experts' : 'Claude AI Assistant'}
+            </h2>
             <p className="ai-bot-subtitle">
               {activeClauses.length} clauses{documentCount > 0 ? ` + ${documentCount} docs` : ''} available
             </p>
+            {dualAgentMode && (
+              <div className="ai-bot-dual-mode-badge">
+                <span className="ai-bot-agent-dot openai"></span>
+                <span className="ai-bot-agent-dot claude"></span>
+                Dual-Agent Mode Active
+              </div>
+            )}
           </div>
           <button
             onClick={onClose}
@@ -367,17 +443,44 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         )}
 
         {/* Status Indicator */}
-        {!claudeAvailable && (
+        {!claudeAvailable && !agentStatusInfo?.openai.available && (
           <div className="ai-bot-status-error">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-            <p>Claude API key not configured. Please set ANTHROPIC_API_KEY in your .env.local file.</p>
+            <p>No AI agents configured. Please set VITE_ANTHROPIC_API_KEY and/or VITE_OPENAI_API_KEY in your .env.local file.</p>
+          </div>
+        )}
+
+        {/* Agent Status Bar */}
+        {agentStatusInfo && (
+          <div className="ai-bot-agent-status-bar">
+            <div className={`ai-bot-agent-indicator ${agentStatusInfo.claude.available ? 'active' : 'inactive'}`}>
+              <span className="ai-bot-agent-icon claude-icon">C</span>
+              <span className="ai-bot-agent-label">GC/PC Expert</span>
+              <span className={`ai-bot-agent-status ${agentStatusInfo.claude.available ? 'online' : 'offline'}`}>
+                {agentStatusInfo.claude.available ? '●' : '○'}
+              </span>
+            </div>
+            <div className={`ai-bot-agent-indicator ${agentStatusInfo.openai.available ? 'active' : 'inactive'}`}>
+              <span className="ai-bot-agent-icon openai-icon">O</span>
+              <span className="ai-bot-agent-label">Doc Expert</span>
+              <span className={`ai-bot-agent-status ${agentStatusInfo.openai.available ? 'online' : 'offline'}`}>
+                {agentStatusInfo.openai.available ? '●' : '○'}
+              </span>
+            </div>
+            <button 
+              className="ai-bot-agent-info-btn"
+              onClick={showAgentStatus}
+              title="Show AI agent details"
+            >
+              ?
+            </button>
           </div>
         )}
 
         {/* Quick Actions */}
-        {claudeAvailable && (
+        {(claudeAvailable || agentStatusInfo?.openai.available) && (
           <div className="ai-bot-quick-actions">
             {selectedClause && (
               <button
@@ -436,19 +539,44 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
                   </svg>
                 </div>
                 <h3 className="ai-bot-empty-title">Ask me anything about your contract!</h3>
-                <p className="ai-bot-empty-text">I can explain clauses, answer questions, and provide suggestions.</p>
+                <p className="ai-bot-empty-text">
+                  {dualAgentMode 
+                    ? 'Two AI experts collaborate: Claude analyzes GC/PC conditions while OpenAI examines your documents.' 
+                    : 'I can explain clauses, answer questions, and provide suggestions.'}
+                </p>
               </div>
             )}
 
             {messages.map((message) => {
               // Clean up the message content
               const cleanContent = sanitizeMessage(message.content);
+              const extendedMsg = message as ExtendedBotMessage;
 
               return (
                 <div
                   key={message.id}
                   className={`ai-bot-message ai-bot-message-${message.role}`}
                 >
+                  {/* Agent attribution badge for AI responses */}
+                  {message.role === 'assistant' && extendedMsg.agentsUsed && extendedMsg.agentsUsed.length > 0 && (
+                    <div className="ai-bot-agent-attribution">
+                      {extendedMsg.isDualMode && (
+                        <span className="ai-bot-attribution-badge dual">
+                          <span className="badge-icon">🔄</span> Dual-Agent Response
+                        </span>
+                      )}
+                      {extendedMsg.agentsUsed.includes('claude') && (
+                        <span className="ai-bot-attribution-badge claude">
+                          <span className="badge-icon">C</span> GC/PC Expert
+                        </span>
+                      )}
+                      {extendedMsg.agentsUsed.includes('openai') && (
+                        <span className="ai-bot-attribution-badge openai">
+                          <span className="badge-icon">O</span> Doc Expert
+                        </span>
+                      )}
+                    </div>
+                  )}
                   <div className="ai-bot-bubble">
                     {cleanContent.split('\n').map((line, i) => {
                       const trimmed = line.trim();
@@ -603,6 +731,172 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
           font-weight: 500;
           opacity: 0.85;
           letter-spacing: 0.01em;
+        }
+
+        .ai-bot-dual-mode-badge {
+          display: flex;
+          align-items: center;
+          gap: 0.375rem;
+          margin-top: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: 6px;
+          font-size: 0.6875rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          width: fit-content;
+        }
+
+        .ai-bot-agent-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+        }
+
+        .ai-bot-agent-dot.openai {
+          background: #10B981;
+        }
+
+        .ai-bot-agent-dot.claude {
+          background: #F59E0B;
+        }
+
+        /* Agent Status Bar */
+        .ai-bot-agent-status-bar {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.75rem 1.75rem;
+          background: #F8FAFC;
+          border-bottom: 1px solid #E2E8F0;
+          flex-shrink: 0;
+        }
+
+        .ai-bot-agent-indicator {
+          display: flex;
+          align-items: center;
+          gap: 0.375rem;
+          padding: 0.375rem 0.625rem;
+          background: white;
+          border: 1px solid #E2E8F0;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          transition: all 0.2s ease;
+        }
+
+        .ai-bot-agent-indicator.active {
+          border-color: #10B981;
+          background: #ECFDF5;
+        }
+
+        .ai-bot-agent-indicator.inactive {
+          opacity: 0.5;
+        }
+
+        .ai-bot-agent-icon {
+          width: 1.25rem;
+          height: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 4px;
+          font-size: 0.625rem;
+          font-weight: 800;
+          color: white;
+        }
+
+        .ai-bot-agent-icon.claude-icon {
+          background: linear-gradient(135deg, #F59E0B, #D97706);
+        }
+
+        .ai-bot-agent-icon.openai-icon {
+          background: linear-gradient(135deg, #10B981, #059669);
+        }
+
+        .ai-bot-agent-label {
+          font-weight: 600;
+          color: #475569;
+        }
+
+        .ai-bot-agent-status {
+          font-size: 0.625rem;
+        }
+
+        .ai-bot-agent-status.online {
+          color: #10B981;
+        }
+
+        .ai-bot-agent-status.offline {
+          color: #94A3B8;
+        }
+
+        .ai-bot-agent-info-btn {
+          margin-left: auto;
+          width: 1.5rem;
+          height: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #E2E8F0;
+          border: none;
+          border-radius: 50%;
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #64748B;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .ai-bot-agent-info-btn:hover {
+          background: #CBD5E1;
+          color: #334155;
+        }
+
+        /* Agent Attribution Badges */
+        .ai-bot-agent-attribution {
+          display: flex;
+          gap: 0.375rem;
+          margin-bottom: 0.375rem;
+          flex-wrap: wrap;
+        }
+
+        .ai-bot-attribution-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 0.125rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.625rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+        }
+
+        .ai-bot-attribution-badge .badge-icon {
+          font-size: 0.5rem;
+          width: 0.875rem;
+          height: 0.875rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 3px;
+        }
+
+        .ai-bot-attribution-badge.dual {
+          background: linear-gradient(135deg, #8B5CF6, #6366F1);
+          color: white;
+        }
+
+        .ai-bot-attribution-badge.claude {
+          background: #FEF3C7;
+          color: #92400E;
+        }
+
+        .ai-bot-attribution-badge.openai {
+          background: #D1FAE5;
+          color: #065F46;
         }
 
         .ai-bot-close-btn {

@@ -1,7 +1,9 @@
-import { createAIProvider } from './aiProvider';
+import { createAIProvider, isClaudeAvailable } from './aiProvider';
 import { Clause, BotMessage } from '../../types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 import { getEmbeddingService } from './embeddingService';
+import { getOrchestrator, SynthesizedResponse } from './multiAgentOrchestrator';
+import { isOpenAIAvailable } from './openaiProvider';
 
 // Constants for token management
 const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
@@ -607,4 +609,192 @@ function formatSearchResults(results: DocumentChunkContent[]): string {
   }
 
   return formatted;
+}
+
+// ============================================
+// DUAL-AGENT MULTI-AI SYSTEM
+// ============================================
+
+/**
+ * Check if dual-agent mode is available (both OpenAI and Claude configured)
+ */
+export function isDualAgentModeAvailable(): boolean {
+  return isOpenAIAvailable() && isClaudeAvailable();
+}
+
+/**
+ * Get the status of both AI agents
+ */
+export function getAgentStatus(): {
+  openai: { available: boolean; name: string; specialties: string[] };
+  claude: { available: boolean; name: string; specialties: string[] };
+  dualAgentMode: boolean;
+} {
+  const orchestrator = getOrchestrator();
+  return orchestrator.getAgentStatus();
+}
+
+/**
+ * Chat with dual AI agents (OpenAI for documents, Claude for GC/PC)
+ * 
+ * This function orchestrates both AI agents to provide comprehensive contract analysis:
+ * - OpenAI (Document Specialist): Analyzes Agreement, BOQ, Schedules, Addendums
+ * - Claude (Conditions Specialist): Analyzes General & Particular Conditions
+ * 
+ * The responses are synthesized into a unified expert answer.
+ */
+export async function chatWithDualAgents(
+  messages: BotMessage[],
+  clauses: Clause[],
+  contractId: string | null,
+  options: {
+    forceBothAgents?: boolean;
+    conversationHistory?: BotMessage[];
+  } = {}
+): Promise<{
+  response: string;
+  synthesizedResponse: SynthesizedResponse;
+  agentsUsed: ('openai' | 'claude')[];
+  isDualMode: boolean;
+}> {
+  const orchestrator = getOrchestrator({
+    alwaysUseBothAgents: options.forceBothAgents ?? false
+  });
+
+  // Get the last user message as the query
+  const lastUserMessage = messages.filter(m => m.role === 'user').pop();
+  const query = lastUserMessage?.content || '';
+
+  if (!query) {
+    throw new Error('No query provided');
+  }
+
+  // Get conversation history (excluding the current query)
+  const conversationHistory = options.conversationHistory || 
+    messages.slice(0, -1).filter(m => m.role === 'user' || m.role === 'assistant');
+
+  // Orchestrate the dual-agent response
+  const synthesizedResponse = await orchestrator.orchestrate(
+    query,
+    contractId,
+    clauses,
+    conversationHistory
+  );
+
+  return {
+    response: synthesizedResponse.finalAnswer,
+    synthesizedResponse,
+    agentsUsed: synthesizedResponse.agentsUsed,
+    isDualMode: synthesizedResponse.agentsUsed.length === 2
+  };
+}
+
+/**
+ * Smart chat function that automatically uses dual-agent mode when available
+ * Falls back to single-agent (Claude) mode if OpenAI is not configured
+ */
+export async function chatWithSmartRouting(
+  messages: BotMessage[],
+  clauses: Clause[],
+  contractId: string | null
+): Promise<{
+  response: string;
+  mode: 'dual' | 'claude-only' | 'openai-only' | 'unavailable';
+  agentsUsed: string[];
+  crossReferences?: string[];
+}> {
+  const agentStatus = getAgentStatus();
+
+  // If both agents are available, use dual-agent mode
+  if (agentStatus.dualAgentMode && contractId) {
+    try {
+      const result = await chatWithDualAgents(messages, clauses, contractId);
+      return {
+        response: result.response,
+        mode: result.isDualMode ? 'dual' : (result.agentsUsed[0] === 'claude' ? 'claude-only' : 'openai-only'),
+        agentsUsed: result.agentsUsed,
+        crossReferences: result.synthesizedResponse.crossReferences
+      };
+    } catch (error) {
+      console.warn('Dual-agent mode failed, falling back to single agent:', error);
+    }
+  }
+
+  // Fall back to Claude-only mode
+  if (agentStatus.claude.available) {
+    try {
+      const response = await chatWithBot(messages, clauses, contractId);
+      return {
+        response,
+        mode: 'claude-only',
+        agentsUsed: ['claude']
+      };
+    } catch (error) {
+      console.error('Claude-only mode failed:', error);
+    }
+  }
+
+  // If Claude is not available but OpenAI is, use OpenAI only
+  if (agentStatus.openai.available && contractId) {
+    try {
+      const orchestrator = getOrchestrator();
+      const openaiResponse = await orchestrator['queryOpenAIAgent'](
+        messages[messages.length - 1]?.content || '',
+        contractId,
+        messages.slice(0, -1)
+      );
+      
+      if (openaiResponse.analysis) {
+        return {
+          response: openaiResponse.analysis,
+          mode: 'openai-only',
+          agentsUsed: ['openai']
+        };
+      }
+    } catch (error) {
+      console.error('OpenAI-only mode failed:', error);
+    }
+  }
+
+  return {
+    response: 'No AI agents are available. Please configure your API keys (VITE_ANTHROPIC_API_KEY for Claude and/or VITE_OPENAI_API_KEY for OpenAI).',
+    mode: 'unavailable',
+    agentsUsed: []
+  };
+}
+
+/**
+ * Get a formatted summary of agent capabilities and status
+ */
+export function getAgentCapabilitiesSummary(): string {
+  const status = getAgentStatus();
+  
+  let summary = '🤖 AI Agent Status\n\n';
+  
+  // OpenAI Status
+  summary += `📄 Document Specialist (OpenAI GPT-4)\n`;
+  summary += `Status: ${status.openai.available ? '✅ Available' : '❌ Not Configured'}\n`;
+  if (status.openai.available) {
+    summary += `Specialties: ${status.openai.specialties.join(', ')}\n`;
+  }
+  summary += '\n';
+  
+  // Claude Status
+  summary += `📜 Conditions Specialist (Claude)\n`;
+  summary += `Status: ${status.claude.available ? '✅ Available' : '❌ Not Configured'}\n`;
+  if (status.claude.available) {
+    summary += `Specialties: ${status.claude.specialties.join(', ')}\n`;
+  }
+  summary += '\n';
+  
+  // Dual Mode Status
+  if (status.dualAgentMode) {
+    summary += `🔄 Dual-Agent Mode: ✅ ACTIVE\n`;
+    summary += `Both agents will collaborate to provide comprehensive analysis.\n`;
+  } else {
+    summary += `🔄 Dual-Agent Mode: ❌ Not Available\n`;
+    summary += `Configure both API keys to enable collaborative analysis.\n`;
+  }
+  
+  return summary;
 }
