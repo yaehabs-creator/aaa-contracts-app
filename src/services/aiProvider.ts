@@ -122,13 +122,104 @@ export interface ClaudeAgentResponse {
   error?: string;
 }
 
-// Claude models in order of preference (Jan 2026)
+// Claude models - use official aliases (no dated versions needed)
 const CLAUDE_MODELS = [
-  "claude-sonnet-4-5-20250514",      // Claude Sonnet 4.5 (latest, with date)
-  "claude-sonnet-4-5",               // Claude Sonnet 4.5 (alias)
-  "claude-3-5-sonnet-20241022",      // Claude 3.5 Sonnet (fallback)
-  "claude-3-5-haiku-20241022"        // Claude 3.5 Haiku (lightweight fallback)
+  "claude-sonnet-4-5",    // Claude Sonnet 4.5 (recommended default)
+  "claude-haiku-4-5",     // Claude Haiku 4.5 (fast fallback)
+  "claude-opus-4-5",      // Claude Opus 4.5 (most capable fallback)
 ];
+
+// Rate limit state management
+interface RateLimitState {
+  isLimited: boolean;
+  retryAfter: number | null;
+  lastAttempt: number;
+}
+
+let rateLimitState: RateLimitState = {
+  isLimited: false,
+  retryAfter: null,
+  lastAttempt: 0
+};
+
+// Global request lock to prevent multiple simultaneous requests
+let requestInFlight = false;
+
+/**
+ * Get the current rate limit status for UI feedback
+ */
+export function getRateLimitStatus(): { isLimited: boolean; retryAfterMs: number | null } {
+  if (!rateLimitState.isLimited) {
+    return { isLimited: false, retryAfterMs: null };
+  }
+  
+  const elapsed = Date.now() - rateLimitState.lastAttempt;
+  const remaining = rateLimitState.retryAfter ? (rateLimitState.retryAfter * 1000) - elapsed : null;
+  
+  if (remaining !== null && remaining <= 0) {
+    rateLimitState.isLimited = false;
+    return { isLimited: false, retryAfterMs: null };
+  }
+  
+  return { isLimited: true, retryAfterMs: remaining };
+}
+
+/**
+ * Call Claude API with automatic retry and exponential backoff for rate limits
+ */
+async function callClaudeWithRetry(
+  client: Anthropic,
+  payload: Anthropic.MessageCreateParams,
+  maxAttempts: number = 5
+): Promise<Anthropic.Message> {
+  let attempt = 0;
+  let backoffMs = 500;
+
+  while (attempt < maxAttempts) {
+    try {
+      const response = await client.messages.create(payload);
+      
+      // Success - clear rate limit state
+      rateLimitState.isLimited = false;
+      rateLimitState.retryAfter = null;
+      
+      return response;
+    } catch (err: any) {
+      const status = err?.status;
+      const errorType = err?.error?.type;
+      const retryAfterHeader = err?.headers?.["retry-after"];
+      const retryAfter = retryAfterHeader ? Number(retryAfterHeader) : null;
+
+      // Only retry on rate limits (429) or overload errors
+      const isRateLimited = status === 429 || errorType === "rate_limit_error";
+      const isOverloaded = status === 529 || errorType === "overloaded_error";
+      const isRetryable = isRateLimited || isOverloaded;
+
+      if (!isRetryable) {
+        throw err;
+      }
+
+      // Update rate limit state for UI feedback
+      rateLimitState.isLimited = true;
+      rateLimitState.retryAfter = retryAfter;
+      rateLimitState.lastAttempt = Date.now();
+
+      // Calculate wait time: prefer retry-after header, else exponential backoff
+      const waitMs = (retryAfter && Number.isFinite(retryAfter)) 
+        ? retryAfter * 1000 
+        : backoffMs;
+
+      console.warn(`Claude API rate limited (attempt ${attempt + 1}/${maxAttempts}). Retrying in ${waitMs}ms...`);
+
+      await new Promise(resolve => setTimeout(resolve, waitMs));
+
+      attempt++;
+      backoffMs = Math.min(backoffMs * 2, 8000); // Cap at 8 seconds
+    }
+  }
+
+  throw new Error("Claude API rate-limited (max retry attempts reached). Please wait a moment and try again.");
+}
 
 export class ClaudeProvider implements AIProvider {
   private client: Anthropic | null = null;
@@ -261,73 +352,91 @@ export class ClaudeProvider implements AIProvider {
       throw new Error('Anthropic API key is not configured');
     }
 
-    // Build context from clauses - include FULL clause text, not truncated
-    // Smart truncation: only truncate extremely large clauses (>5000 chars)
-    const MAX_CLAUSE_LENGTH = 5000;
-    const contextText = context.length > 0
-      ? `\n\nCURRENT CONTRACT CLAUSES (${context.length} clauses):\n${context.map(c => {
-        const fullText = c.clause_text || '';
-        const displayText = fullText.length > MAX_CLAUSE_LENGTH 
-          ? fullText.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
-          : fullText;
-        
-        // Include both GC and PC text if available
-        let clauseContent = `Clause ${c.clause_number}: ${c.clause_title}\n`;
-        clauseContent += `[${c.condition_type || 'General'}]\n`;
-        clauseContent += displayText;
-        
-        // Add PC override if exists and different from main text
-        if (c.particular_condition && c.particular_condition !== fullText) {
-          const pcText = c.particular_condition.length > MAX_CLAUSE_LENGTH
-            ? c.particular_condition.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
-            : c.particular_condition;
-          clauseContent += `\n[Particular Condition Override]:\n${pcText}`;
-        }
-        
-        return clauseContent;
-      }).join('\n\n---\n\n')}`
-      : '';
-
-    // Convert BotMessages to Anthropic format
-    const anthropicMessages = messages.map(msg => ({
-      role: msg.role === 'user' ? 'user' : 'assistant' as 'user' | 'assistant',
-      content: msg.content
-    }));
-
-    // If context is provided, append it to the LAST user message
-    if (contextText && anthropicMessages.length > 0) {
-      const lastMsg = anthropicMessages[anthropicMessages.length - 1];
-      if (lastMsg.role === 'user') {
-        lastMsg.content += contextText;
-      }
+    // Prevent multiple simultaneous requests
+    if (requestInFlight) {
+      throw new Error('A request is already in progress. Please wait.');
     }
 
-    // Try each model candidate until one works
-    for (const model of this.modelCandidates) {
-      try {
-        const message = await this.client.messages.create({
-          model: model,
-          max_tokens: 4096,
-          system: systemInstruction,
-          messages: anthropicMessages
-        });
-
-        // Extract text content from response
-        const content = message.content.find(c => c.type === 'text');
-        return content && 'text' in content ? content.text : 'No response received';
-      } catch (error: any) {
-        // If this is a 404 model not found error, try the next model
-        if (error?.status === 404) {
-          console.warn(`Claude model ${model} not available`);
-          continue;
-        }
-        // For other errors (real errors), stop and throw
-        throw error;
-      }
+    // Check if we're currently rate limited
+    const limitStatus = getRateLimitStatus();
+    if (limitStatus.isLimited && limitStatus.retryAfterMs) {
+      const seconds = Math.ceil(limitStatus.retryAfterMs / 1000);
+      throw new Error(`Rate limited. Please wait ${seconds} seconds before trying again.`);
     }
 
-    // If we get here, no models were available
-    throw new Error("No Claude models available");
+    requestInFlight = true;
+
+    try {
+      // Build context from clauses - include FULL clause text, not truncated
+      // Smart truncation: only truncate extremely large clauses (>5000 chars)
+      const MAX_CLAUSE_LENGTH = 5000;
+      const contextText = context.length > 0
+        ? `\n\nCURRENT CONTRACT CLAUSES (${context.length} clauses):\n${context.map(c => {
+          const fullText = c.clause_text || '';
+          const displayText = fullText.length > MAX_CLAUSE_LENGTH 
+            ? fullText.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
+            : fullText;
+          
+          // Include both GC and PC text if available
+          let clauseContent = `Clause ${c.clause_number}: ${c.clause_title}\n`;
+          clauseContent += `[${c.condition_type || 'General'}]\n`;
+          clauseContent += displayText;
+          
+          // Add PC override if exists and different from main text
+          if (c.particular_condition && c.particular_condition !== fullText) {
+            const pcText = c.particular_condition.length > MAX_CLAUSE_LENGTH
+              ? c.particular_condition.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
+              : c.particular_condition;
+            clauseContent += `\n[Particular Condition Override]:\n${pcText}`;
+          }
+          
+          return clauseContent;
+        }).join('\n\n---\n\n')}`
+        : '';
+
+      // Convert BotMessages to Anthropic format
+      const anthropicMessages = messages.map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'assistant' as 'user' | 'assistant',
+        content: msg.content
+      }));
+
+      // If context is provided, append it to the LAST user message
+      if (contextText && anthropicMessages.length > 0) {
+        const lastMsg = anthropicMessages[anthropicMessages.length - 1];
+        if (lastMsg.role === 'user') {
+          lastMsg.content += contextText;
+        }
+      }
+
+      // Try each model candidate until one works
+      for (const model of this.modelCandidates) {
+        try {
+          const message = await callClaudeWithRetry(this.client, {
+            model: model,
+            max_tokens: 4096,
+            system: systemInstruction,
+            messages: anthropicMessages
+          });
+
+          // Extract text content from response
+          const content = message.content.find(c => c.type === 'text');
+          return content && 'text' in content ? content.text : 'No response received';
+        } catch (error: any) {
+          // If this is a 404 model not found error, try the next model
+          if (error?.status === 404) {
+            console.warn(`Claude model ${model} not available, trying next...`);
+            continue;
+          }
+          // For other errors (rate limit exhausted, real errors), throw
+          throw error;
+        }
+      }
+
+      // If we get here, no models were available
+      throw new Error("No Claude models available. Please check your API key has access to Claude models.");
+    } finally {
+      requestInFlight = false;
+    }
   }
 }
 
@@ -338,4 +447,11 @@ export function createAIProvider(): AIProvider {
 export function isClaudeAvailable(): boolean {
   const provider = new ClaudeProvider();
   return provider.isAvailable();
+}
+
+/**
+ * Check if a request is currently in flight
+ */
+export function isRequestInFlight(): boolean {
+  return requestInFlight;
 }

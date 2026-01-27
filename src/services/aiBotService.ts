@@ -1,4 +1,4 @@
-import { createAIProvider, isClaudeAvailable } from './aiProvider';
+import { createAIProvider, isClaudeAvailable, getRateLimitStatus, isRequestInFlight } from './aiProvider';
 import { Clause, BotMessage } from '../../types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 import { getEmbeddingService } from './embeddingService';
@@ -9,6 +9,22 @@ import { isOpenAIAvailable } from './openaiProvider';
 const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
 const RESERVED_RESPONSE_TOKENS = 10000;
 const CHARS_PER_TOKEN = 4;  // Rough estimate
+
+// ============================================
+// REQUEST THROTTLING & DEBOUNCING
+// ============================================
+
+// Track pending suggestions request
+let pendingSuggestionsAbort: AbortController | null = null;
+let suggestionsInFlight = false;
+let lastSuggestionsRequest = 0;
+const SUGGESTIONS_DEBOUNCE_MS = 500;
+const SUGGESTIONS_COOLDOWN_MS = 2000;
+
+/**
+ * Get rate limit status for UI feedback
+ */
+export { getRateLimitStatus, isRequestInFlight };
 
 const CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION = `You are CLAUDE CONTRACT EXPERT — a specialized AI in construction contracts, FIDIC conditions, claims, delays, variations, payments, EOT, LDs, and contract administration.
 
@@ -355,19 +371,69 @@ export async function chatWithBot(
   }
 }
 
+/**
+ * Default suggestions when AI is unavailable or rate-limited
+ */
+const DEFAULT_SUGGESTIONS = [
+  'Explain a clause',
+  'Find clauses about payment',
+  'Search for time-sensitive clauses',
+  'Compare General vs Particular conditions'
+];
+
+/**
+ * Get AI-powered suggestions with proper throttling and debouncing
+ * - Debounces rapid calls (500ms)
+ * - Cancels previous pending requests
+ * - Returns cached/default suggestions if rate-limited
+ * - Only allows one in-flight request at a time
+ */
 export async function getSuggestions(
   clauses: Clause[]
 ): Promise<string[]> {
   const aiProvider = createAIProvider();
 
+  // Return defaults if AI not available
   if (!aiProvider.isAvailable()) {
-    return [
-      'Explain a clause',
-      'Find clauses about payment',
-      'Search for time-sensitive clauses',
-      'Compare General vs Particular conditions'
-    ];
+    return DEFAULT_SUGGESTIONS;
   }
+
+  // Check if we're rate limited
+  const rateLimitStatus = getRateLimitStatus();
+  if (rateLimitStatus.isLimited) {
+    console.log('Suggestions skipped: rate limited');
+    return DEFAULT_SUGGESTIONS;
+  }
+
+  // Check if a request is already in flight (global)
+  if (isRequestInFlight()) {
+    console.log('Suggestions skipped: request already in flight');
+    return DEFAULT_SUGGESTIONS;
+  }
+
+  // Check cooldown between suggestions requests
+  const now = Date.now();
+  if (now - lastSuggestionsRequest < SUGGESTIONS_COOLDOWN_MS) {
+    console.log('Suggestions skipped: cooldown period');
+    return DEFAULT_SUGGESTIONS;
+  }
+
+  // Cancel any pending suggestions request
+  if (pendingSuggestionsAbort) {
+    pendingSuggestionsAbort.abort();
+    pendingSuggestionsAbort = null;
+  }
+
+  // Check if suggestions request already in flight
+  if (suggestionsInFlight) {
+    console.log('Suggestions skipped: suggestions already loading');
+    return DEFAULT_SUGGESTIONS;
+  }
+
+  // Create new abort controller
+  pendingSuggestionsAbort = new AbortController();
+  suggestionsInFlight = true;
+  lastSuggestionsRequest = now;
 
   const query = `Based on these ${clauses.length} contract clauses, suggest 3-5 helpful actions or questions the user might want to explore. Return only a JSON array of strings, no other text.`;
 
@@ -378,6 +444,7 @@ export async function getSuggestions(
       content: query,
       timestamp: Date.now()
     }];
+    
     const response = await aiProvider.chat(messages, clauses, SUGGESTIONS_SYSTEM_INSTRUCTION);
 
     // Try to parse JSON array from response
@@ -392,18 +459,19 @@ export async function getSuggestions(
       return lines.slice(0, 5);
     }
 
-    return [
-      'Explain a clause',
-      'Find clauses about payment',
-      'Search for time-sensitive clauses'
-    ];
+    return DEFAULT_SUGGESTIONS.slice(0, 3);
   } catch (error: any) {
+    // Don't log aborted requests as errors
+    if (error.name === 'AbortError') {
+      console.log('Suggestions request aborted');
+      return DEFAULT_SUGGESTIONS;
+    }
+    
     console.error('Failed to get suggestions:', error);
-    return [
-      'Explain a clause',
-      'Find clauses about payment',
-      'Search for time-sensitive clauses'
-    ];
+    return DEFAULT_SUGGESTIONS.slice(0, 3);
+  } finally {
+    suggestionsInFlight = false;
+    pendingSuggestionsAbort = null;
   }
 }
 

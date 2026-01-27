@@ -1,6 +1,59 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { Clause, DualSourceInput, FileData } from "../types";
 
+// Claude models - use official aliases (no dated versions needed)
+const CLAUDE_MODELS = [
+  "claude-sonnet-4-5",    // Claude Sonnet 4.5 (recommended default)
+  "claude-haiku-4-5",     // Claude Haiku 4.5 (fast fallback)
+  "claude-opus-4-5",      // Claude Opus 4.5 (most capable fallback)
+];
+
+/**
+ * Call Claude API with automatic retry and exponential backoff for rate limits
+ */
+async function callClaudeWithRetry(
+  client: Anthropic,
+  payload: Anthropic.MessageCreateParams,
+  maxAttempts: number = 5
+): Promise<Anthropic.Message> {
+  let attempt = 0;
+  let backoffMs = 500;
+
+  while (attempt < maxAttempts) {
+    try {
+      return await client.messages.create(payload);
+    } catch (err: any) {
+      const status = err?.status;
+      const errorType = err?.error?.type;
+      const retryAfterHeader = err?.headers?.["retry-after"];
+      const retryAfter = retryAfterHeader ? Number(retryAfterHeader) : null;
+
+      // Only retry on rate limits (429) or overload errors
+      const isRateLimited = status === 429 || errorType === "rate_limit_error";
+      const isOverloaded = status === 529 || errorType === "overloaded_error";
+      const isRetryable = isRateLimited || isOverloaded;
+
+      if (!isRetryable) {
+        throw err;
+      }
+
+      // Calculate wait time: prefer retry-after header, else exponential backoff
+      const waitMs = (retryAfter && Number.isFinite(retryAfter)) 
+        ? retryAfter * 1000 
+        : backoffMs;
+
+      console.warn(`Claude API rate limited (attempt ${attempt + 1}/${maxAttempts}). Retrying in ${waitMs}ms...`);
+
+      await new Promise(resolve => setTimeout(resolve, waitMs));
+
+      attempt++;
+      backoffMs = Math.min(backoffMs * 2, 8000); // Cap at 8 seconds
+    }
+  }
+
+  throw new Error("Claude API rate-limited (max retry attempts reached). Please wait a moment and try again.");
+}
+
 const SYSTEM_INSTRUCTION = `You are the high-fidelity extraction engine for AAA Contract Department. 
 Your SOLE PURPOSE is to extract contract clauses 100% VERBATIM.
 
@@ -95,15 +148,6 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
   });
   
   
-  // Try multiple model names in order of preference (Jan 2026)
-  const CLAUDE_MODELS = [
-    "claude-sonnet-4-5-20250514",      // Claude Sonnet 4.5 (latest, with date)
-    "claude-sonnet-4-5",               // Claude Sonnet 4.5 (alias)
-    "claude-3-5-sonnet-20241022",      // Claude 3.5 Sonnet (fallback)
-    "claude-3-5-haiku-20241022"        // Claude 3.5 Haiku (lightweight fallback)
-  ];
-  
-
   let promptText = "";
   let isTextInput = false;
 
@@ -131,7 +175,7 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
   // Try each model candidate until one works
   for (const model of CLAUDE_MODELS) {
     try {
-      const message = await client.messages.create({
+      const message = await callClaudeWithRetry(client, {
         model: model,
         max_tokens: 16384,
         system: SYSTEM_INSTRUCTION,
@@ -168,16 +212,16 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
     } catch (error: any) {
       // If this is a 404 model not found error, try the next model
       if (error?.status === 404) {
-        console.warn(`Claude model ${model} not available`);
+        console.warn(`Claude model ${model} not available, trying next...`);
         continue;
       }
-      // For other errors (real errors), stop and throw
+      // For other errors (rate limit exhausted, real errors), throw
       throw error;
     }
   }
 
   // If we get here, no models were available
-  const error = new Error("No Claude models available");
+  const error = new Error("No Claude models available. Please check your API key has access to Claude models.");
   if (!error) {
     throw new Error('All Claude models failed and no error was captured');
   }
