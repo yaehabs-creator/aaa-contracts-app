@@ -3,6 +3,7 @@ import { SavedContract, ContractSection, SectionType, SectionItem, Clause } from
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '../services/contractMigrationService';
 import { getCategoriesForContract, ContractCategory } from '../src/services/supabaseService';
+import { DocumentsManager } from '../src/components/DocumentsManager';
 
 // Helper: Get clause status (added, modified, gc-only) for sorting/display
 const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-only' => {
@@ -46,8 +47,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
   
-  // Use 'CONDITIONS' as a special identifier for the combined tab
-  type TabType = SectionType | 'CONDITIONS';
+  // Use 'CONDITIONS' and 'DOCUMENTS' as special identifiers for tabs
+  type TabType = SectionType | 'CONDITIONS' | 'DOCUMENTS';
   const [activeTab, setActiveTab] = useState<TabType>('CONDITIONS');
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -486,6 +487,23 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
                 )}
               </button>
             ))}
+            
+            {/* Documents Tab */}
+            <button
+              onClick={() => setActiveTab('DOCUMENTS')}
+              className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${
+                activeTab === 'DOCUMENTS'
+                  ? 'border-amber-500 text-amber-600 bg-white'
+                  : 'border-transparent text-aaa-muted hover:text-amber-600 hover:bg-white/50'
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                Documents
+              </span>
+            </button>
           </div>
           
           {/* Sort Controls (only show for Conditions tab) */}
@@ -577,7 +595,17 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
       {/* Tab Content */}
       <div className="p-8">
-        {activeSection && (
+        {activeTab === 'DOCUMENTS' ? (
+          /* Documents Manager */
+          <DocumentsManager
+            contractId={contractWithSections.id || ''}
+            contractName={contractWithSections.contract_name}
+            onDocumentSelect={(doc) => console.log('Selected document:', doc)}
+            onRefreshNeeded={() => {
+              // Optionally refresh contract data when documents change
+            }}
+          />
+        ) : activeSection && (
           <SectionEditor
             section={activeSection}
             onUpdate={activeTab === 'CONDITIONS' ? handleConditionsUpdate : handleSectionUpdate}

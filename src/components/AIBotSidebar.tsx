@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Clause, BotMessage, SavedContract } from '../../types';
-import { chatWithBot, getSuggestions, explainClause } from '../services/aiBotService';
+import { chatWithBot, getSuggestions, explainClause, chatWithDocuments, getDocumentSummary, searchContractDocuments } from '../services/aiBotService';
 import { isClaudeAvailable } from '../services/aiProvider';
 import { scrollToClause } from '../utils/navigation';
 import { getAllClausesFromContract } from '../../services/contractMigrationService';
@@ -122,7 +122,33 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     try {
       // Pass full conversation history including the new message
       const conversationHistory = [...messages, userMessage];
-      const response = await chatWithBot(conversationHistory, activeClauses);
+      
+      let response: string;
+      
+      // Check if this is a document-related query or if we have a contract selected
+      const isDocQuery = query.toLowerCase().includes('document') || 
+                        query.toLowerCase().includes('uploaded') ||
+                        query.toLowerCase().includes('file') ||
+                        query.toLowerCase().includes('pdf');
+      
+      // Use document-aware chat if we have a contract ID and either:
+      // 1. It's a document-related query
+      // 2. User explicitly asks to search documents
+      if (selectedContractId && isDocQuery) {
+        try {
+          response = await chatWithDocuments(conversationHistory, selectedContractId, {
+            searchQuery: query.length < 100 ? query : undefined,
+            maxTokens: 40000
+          });
+        } catch (docError) {
+          // Fallback to regular chat
+          console.warn('Document chat failed, using regular chat:', docError);
+          response = await chatWithBot(conversationHistory, activeClauses);
+        }
+      } else {
+        // Use regular clause-based chat
+        response = await chatWithBot(conversationHistory, activeClauses);
+      }
 
       const botMessage: BotMessage = {
         id: (Date.now() + 1).toString(),
@@ -138,6 +164,41 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: `Sorry, I encountered an error: ${err.message || 'Unknown error'}. Please check your ANTHROPIC_API_KEY environment variable.`,
+        timestamp: Date.now()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Show document summary
+  const showDocuments = async () => {
+    if (!selectedContractId || isLoading) return;
+    
+    setIsLoading(true);
+    const userMessage: BotMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: '📁 Show uploaded documents',
+      timestamp: Date.now()
+    };
+    setMessages(prev => [...prev, userMessage]);
+
+    try {
+      const summary = await getDocumentSummary(selectedContractId);
+      const botMessage: BotMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: summary,
+        timestamp: Date.now()
+      };
+      setMessages(prev => [...prev, botMessage]);
+    } catch (err: any) {
+      const errorMessage: BotMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'Unable to load document summary. Make sure documents have been uploaded.',
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -302,18 +363,33 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         )}
 
         {/* Quick Actions */}
-        {selectedClause && claudeAvailable && (
+        {claudeAvailable && (
           <div className="ai-bot-quick-actions">
-            <button
-              onClick={handleExplainClause}
-              disabled={isLoading}
-              className="ai-bot-explain-btn"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Explain Clause {selectedClause.clause_number}
-            </button>
+            {selectedClause && (
+              <button
+                onClick={handleExplainClause}
+                disabled={isLoading}
+                className="ai-bot-explain-btn"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Explain Clause {selectedClause.clause_number}
+              </button>
+            )}
+            {selectedContractId && (
+              <button
+                onClick={showDocuments}
+                disabled={isLoading}
+                className="ai-bot-docs-btn"
+                title="Show uploaded documents from Supabase"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                📁 Show Documents
+              </button>
+            )}
           </div>
         )}
 
@@ -725,6 +801,39 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         }
 
         .ai-bot-explain-btn svg {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .ai-bot-docs-btn {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          margin-top: 0.5rem;
+          background: #f59e0b;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+
+        .ai-bot-docs-btn:hover:not(:disabled) {
+          background: #d97706;
+          transform: translateY(-1px);
+        }
+
+        .ai-bot-docs-btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+
+        .ai-bot-docs-btn svg {
           width: 1rem;
           height: 1rem;
         }
