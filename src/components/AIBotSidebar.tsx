@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Clause, BotMessage, SavedContract } from '../../types';
 import { 
   chatWithBot, 
@@ -15,6 +15,13 @@ import {
 import { isClaudeAvailable } from '../services/aiProvider';
 import { scrollToClause } from '../utils/navigation';
 import { getAllClausesFromContract } from '../../services/contractMigrationService';
+
+// Thinking messages for Apple-style calm UX
+const THINKING_MESSAGES = [
+  'Reading the contract…',
+  'Analyzing clauses…',
+  'Checking relevant sections…',
+];
 
 // Extended message type to track which agents contributed
 interface ExtendedBotMessage extends BotMessage {
@@ -44,7 +51,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const [messages, setMessages] = useState<ExtendedBotMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [thinkingMessage, setThinkingMessage] = useState<string>(THINKING_MESSAGES[0]);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [selectedContractId, setSelectedContractId] = useState<string | null>(activeContractId || null);
   const [showContractSelector, setShowContractSelector] = useState(false);
@@ -57,6 +64,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+  const requestInFlightRef = useRef<boolean>(false);
 
   const claudeAvailable = isClaudeAvailable();
   
@@ -150,6 +158,34 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     }
   }, [isOpen]);
 
+  // Safety timeout: reset loading state after 60 seconds to prevent permanent lock
+  useEffect(() => {
+    if (!isLoading) return;
+
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+      requestInFlightRef.current = false;
+    }, 60000); // 60s safety
+
+    return () => clearTimeout(timeout);
+  }, [isLoading]);
+
+  // Rotate thinking messages while loading
+  useEffect(() => {
+    if (!isLoading) {
+      setThinkingMessage(THINKING_MESSAGES[0]);
+      return;
+    }
+
+    let index = 0;
+    const interval = setInterval(() => {
+      index = (index + 1) % THINKING_MESSAGES.length;
+      setThinkingMessage(THINKING_MESSAGES[index]);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [isLoading]);
+
   const loadSuggestions = async () => {
     if (!claudeAvailable) return;
     try {
@@ -160,13 +196,19 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     }
   };
 
-  const sendMessage = async (text?: string) => {
+  const sendMessage = useCallback(async (text?: string) => {
     const query = text || inputValue.trim();
-    if (!query || isLoading) return;
+    
+    // Silent ignore if empty, already loading, or request in flight
+    // MacBook-style: no error, no toast, just ignore
+    if (!query || isLoading || requestInFlightRef.current) return;
     
     // Check if at least one agent is available
     const anyAgentAvailable = claudeAvailable || (agentStatusInfo?.openai.available ?? false);
     if (!anyAgentAvailable) return;
+
+    // Lock the request
+    requestInFlightRef.current = true;
 
     const userMessage: ExtendedBotMessage = {
       id: Date.now().toString(),
@@ -178,7 +220,6 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
-    setError(null);
 
     try {
       // Pass full conversation history including the new message
@@ -227,18 +268,19 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
       setMessages(prev => [...prev, botMessage]);
     } catch (err: any) {
-      setError(err.message || 'Failed to get response from AI');
+      // Show error as a subtle assistant message, not a harsh error banner
       const errorMessage: ExtendedBotMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `Sorry, I encountered an error: ${err.message || 'Unknown error'}. Please check your API keys (VITE_ANTHROPIC_API_KEY and/or VITE_OPENAI_API_KEY).`,
+        content: `I couldn't complete that request. ${err.message?.includes('rate') ? 'The service is busy — please try again in a moment.' : 'Please try again.'}`,
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      requestInFlightRef.current = false;
     }
-  };
+  }, [inputValue, isLoading, claudeAvailable, agentStatusInfo, messages, dualAgentMode, selectedContractId, activeClauses]);
 
   // Show agent status
   const showAgentStatus = () => {
@@ -252,10 +294,13 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   };
 
   // Show document summary
-  const showDocuments = async () => {
-    if (!selectedContractId || isLoading) return;
+  const showDocuments = useCallback(async () => {
+    // Silent ignore if already loading
+    if (!selectedContractId || isLoading || requestInFlightRef.current) return;
     
+    requestInFlightRef.current = true;
     setIsLoading(true);
+    
     const userMessage: ExtendedBotMessage = {
       id: Date.now().toString(),
       role: 'user',
@@ -277,20 +322,22 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
       const errorMessage: BotMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: 'Unable to load document summary. Make sure documents have been uploaded.',
+        content: 'I couldn\'t load the documents right now. Please try again.',
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      requestInFlightRef.current = false;
     }
-  };
+  }, [selectedContractId, isLoading]);
 
-  const handleExplainClause = async () => {
-    if (!selectedClause || !claudeAvailable) return;
+  const handleExplainClause = useCallback(async () => {
+    // Silent ignore if already loading
+    if (!selectedClause || !claudeAvailable || isLoading || requestInFlightRef.current) return;
 
+    requestInFlightRef.current = true;
     setIsLoading(true);
-    setError(null);
 
     const query = `Explain Clause ${selectedClause.clause_number}: ${selectedClause.clause_title}`;
 
@@ -313,18 +360,18 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
       };
       setMessages(prev => [...prev, botMessage]);
     } catch (err: any) {
-      setError(err.message || 'Failed to explain clause');
       const errorMessage: BotMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `Sorry, I encountered an error: ${err.message || 'Unknown error'}. Please check your ANTHROPIC_API_KEY environment variable.`,
+        content: 'I couldn\'t explain that clause right now. Please try again.',
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      requestInFlightRef.current = false;
     }
-  };
+  }, [selectedClause, claudeAvailable, isLoading]);
 
   const handleSuggestionClick = (suggestion: string) => {
     sendMessage(suggestion);
@@ -626,22 +673,11 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
               );
             })}
 
+            {/* Subtle thinking indicator - MacBook style */}
             {isLoading && (
-              <div className="ai-bot-message ai-bot-message-ai">
-                <div className="ai-bot-bubble">
-                  <div className="ai-bot-typing">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {error && (
-              <div className="ai-bot-error">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-                {error}
+              <div className="ai-bot-thinking-indicator">
+                <div className="ai-bot-thinking-dot"></div>
+                <span className="ai-bot-thinking-text">{thinkingMessage}</span>
               </div>
             )}
 
@@ -655,19 +691,23 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask anything…"
-              disabled={isLoading || !claudeAvailable}
-              className="ai-bot-input"
+              placeholder={isLoading ? thinkingMessage : "Ask anything…"}
+              disabled={!claudeAvailable}
+              className={`ai-bot-input ${isLoading ? 'ai-bot-input-thinking' : ''}`}
             />
             <button
               onClick={() => sendMessage()}
               disabled={isLoading || !inputValue.trim() || !claudeAvailable}
-              className="ai-bot-send-btn"
-              aria-label="Send message"
+              className={`ai-bot-send-btn ${isLoading ? 'ai-bot-send-btn-loading' : ''}`}
+              aria-label={isLoading ? 'Analyzing' : 'Send message'}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
+              {isLoading ? (
+                <div className="ai-bot-btn-spinner"></div>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -1366,60 +1406,50 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
           text-align: left;
         }
 
-        /* Typing Indicator */
-        .ai-bot-typing {
-          display: inline-flex;
+        /* Subtle Thinking Indicator - MacBook style */
+        .ai-bot-thinking-indicator {
+          display: flex;
           align-items: center;
-          gap: 0.375rem;
+          gap: 0.5rem;
+          padding: 0.75rem 1rem;
+          margin-bottom: 1rem;
+          color: #64748B;
+          font-size: 0.8125rem;
+          font-weight: 500;
         }
 
-        .ai-bot-typing span {
-          display: inline-block;
+        .ai-bot-thinking-dot {
           width: 8px;
           height: 8px;
           background: #1E6CE8;
           border-radius: 50%;
-          animation: ai-bot-typing 1.4s infinite ease-in-out;
+          animation: ai-bot-pulse 1.5s ease-in-out infinite;
         }
 
-        .ai-bot-typing span:nth-child(2) {
-          animation-delay: 0.2s;
+        .ai-bot-thinking-text {
+          animation: ai-bot-fade-text 0.3s ease-out;
         }
 
-        .ai-bot-typing span:nth-child(3) {
-          animation-delay: 0.4s;
+        @keyframes ai-bot-pulse {
+          0%, 100% {
+            opacity: 0.4;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.1);
+          }
         }
 
-        @keyframes ai-bot-typing {
-          0%, 60%, 100% {
-            opacity: 0.3;
+        @keyframes ai-bot-fade-text {
+          from {
+            opacity: 0;
+            transform: translateY(2px);
+          }
+          to {
+            opacity: 1;
             transform: translateY(0);
           }
-          30% {
-            opacity: 1;
-            transform: translateY(-6px);
-          }
-        }
-
-        /* Error Message */
-        .ai-bot-error {
-          padding: 1rem 1.25rem;
-          background: #FEE2E2;
-          color: #991B1B;
-          border-radius: 12px;
-          font-size: 0.875rem;
-          font-weight: 600;
-          border: 1px solid #FECACA;
-          margin-bottom: 1.25rem;
-          display: flex;
-          align-items: flex-start;
-          gap: 0.75rem;
-          line-height: 1.5;
-        }
-
-        .ai-bot-error svg {
-          flex-shrink: 0;
-          margin-top: 0.125rem;
         }
 
         /* Input Area */
@@ -1487,12 +1517,50 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         .ai-bot-send-btn:disabled {
           background: #CBD5E0;
           cursor: not-allowed;
-          opacity: 0.6;
+        }
+
+        /* MacBook-style loading button */
+        .ai-bot-send-btn-loading {
+          opacity: 0.7;
+          cursor: not-allowed;
+          background: #94A3B8;
+        }
+
+        .ai-bot-send-btn-loading:hover {
+          transform: none !important;
+          box-shadow: none !important;
         }
 
         .ai-bot-send-btn svg {
           width: 1.25rem;
           height: 1.25rem;
+        }
+
+        /* Button spinner */
+        .ai-bot-btn-spinner {
+          width: 1.125rem;
+          height: 1.125rem;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-top-color: white;
+          border-radius: 50%;
+          animation: ai-bot-spin 0.6s linear infinite;
+        }
+
+        @keyframes ai-bot-spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        /* Input thinking state */
+        .ai-bot-input-thinking {
+          background: #F8FAFC;
+          color: #94A3B8;
+        }
+
+        .ai-bot-input-thinking::placeholder {
+          color: #64748B;
+          font-style: italic;
         }
 
         /* Animations */
