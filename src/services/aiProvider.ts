@@ -64,11 +64,31 @@ export class ClaudeProvider implements AIProvider {
       throw new Error('Anthropic API key is not configured');
     }
 
-    // Build context from clauses
+    // Build context from clauses - include FULL clause text, not truncated
+    // Smart truncation: only truncate extremely large clauses (>5000 chars)
+    const MAX_CLAUSE_LENGTH = 5000;
     const contextText = context.length > 0
-      ? `\n\nCURRENT CONTRACT CLAUSES:\n${context.map(c =>
-        `Clause ${c.clause_number}: ${c.clause_title}\n${c.clause_text.substring(0, 500)}...`
-      ).join('\n\n')}`
+      ? `\n\nCURRENT CONTRACT CLAUSES (${context.length} clauses):\n${context.map(c => {
+        const fullText = c.clause_text || '';
+        const displayText = fullText.length > MAX_CLAUSE_LENGTH 
+          ? fullText.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
+          : fullText;
+        
+        // Include both GC and PC text if available
+        let clauseContent = `Clause ${c.clause_number}: ${c.clause_title}\n`;
+        clauseContent += `[${c.condition_type || 'General'}]\n`;
+        clauseContent += displayText;
+        
+        // Add PC override if exists and different from main text
+        if (c.particular_condition && c.particular_condition !== fullText) {
+          const pcText = c.particular_condition.length > MAX_CLAUSE_LENGTH
+            ? c.particular_condition.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
+            : c.particular_condition;
+          clauseContent += `\n[Particular Condition Override]:\n${pcText}`;
+        }
+        
+        return clauseContent;
+      }).join('\n\n---\n\n')}`
       : '';
 
     // Convert BotMessages to Anthropic format
@@ -91,7 +111,7 @@ export class ClaudeProvider implements AIProvider {
       try {
         const message = await this.client.messages.create({
           model: model,
-          max_tokens: 4096,
+          max_tokens: 8192,  // Increased from 4096 for longer responses
           system: systemInstruction,
           messages: anthropicMessages
         });

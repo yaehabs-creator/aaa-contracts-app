@@ -31,6 +31,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [selectedContractId, setSelectedContractId] = useState<string | null>(activeContractId || null);
   const [showContractSelector, setShowContractSelector] = useState(false);
+  const [documentCount, setDocumentCount] = useState<number>(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
@@ -62,12 +63,36 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     }
   }, [activeContractId]);
 
+  // Check for uploaded documents when contract changes
+  useEffect(() => {
+    const checkDocuments = async () => {
+      if (selectedContractId) {
+        try {
+          const summary = await getDocumentSummary(selectedContractId);
+          // Parse the summary to extract document count
+          const match = summary.match(/Total: (\d+) documents/);
+          if (match) {
+            setDocumentCount(parseInt(match[1], 10));
+          } else {
+            setDocumentCount(0);
+          }
+        } catch {
+          setDocumentCount(0);
+        }
+      } else {
+        setDocumentCount(0);
+      }
+    };
+    checkDocuments();
+  }, [selectedContractId]);
+
   const handleContractSelect = (contractId: string) => {
     setSelectedContractId(contractId);
     setShowContractSelector(false);
     // Clear messages when switching contracts
     setMessages([]);
     setSuggestions([]);
+    setDocumentCount(0);
     // Notify parent if callback provided
     if (onContractChange) {
       onContractChange(contractId);
@@ -125,28 +150,15 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
       
       let response: string;
       
-      // Check if this is a document-related query or if we have a contract selected
-      const isDocQuery = query.toLowerCase().includes('document') || 
-                        query.toLowerCase().includes('uploaded') ||
-                        query.toLowerCase().includes('file') ||
-                        query.toLowerCase().includes('pdf');
-      
-      // Use document-aware chat if we have a contract ID and either:
-      // 1. It's a document-related query
-      // 2. User explicitly asks to search documents
-      if (selectedContractId && isDocQuery) {
-        try {
-          response = await chatWithDocuments(conversationHistory, selectedContractId, {
-            searchQuery: query.length < 100 ? query : undefined,
-            maxTokens: 40000
-          });
-        } catch (docError) {
-          // Fallback to regular chat
-          console.warn('Document chat failed, using regular chat:', docError);
-          response = await chatWithBot(conversationHistory, activeClauses);
-        }
+      // ALWAYS use full contract context when a contract is selected
+      // This includes both parsed clauses AND uploaded document chunks
+      // No more restrictive keyword checking - AI always has full contract access
+      if (selectedContractId) {
+        // Use chatWithBot with contractId - this triggers full context loading
+        // including document chunks from Supabase
+        response = await chatWithBot(conversationHistory, activeClauses, selectedContractId);
       } else {
-        // Use regular clause-based chat
+        // No contract selected - use basic clause-based chat
         response = await chatWithBot(conversationHistory, activeClauses);
       }
 
@@ -294,7 +306,9 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
         <div className="ai-bot-header">
           <div className="ai-bot-header-content">
             <h2 className="ai-bot-title">Claude AI Assistant</h2>
-            <p className="ai-bot-subtitle">{activeClauses.length} clauses available</p>
+            <p className="ai-bot-subtitle">
+              {activeClauses.length} clauses{documentCount > 0 ? ` + ${documentCount} docs` : ''} available
+            </p>
           </div>
           <button
             onClick={onClose}

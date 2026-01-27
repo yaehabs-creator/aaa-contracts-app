@@ -2,6 +2,11 @@ import { createAIProvider } from './aiProvider';
 import { Clause, BotMessage } from '../../types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 
+// Constants for token management
+const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
+const RESERVED_RESPONSE_TOKENS = 10000;
+const CHARS_PER_TOKEN = 4;  // Rough estimate
+
 const CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION = `You are CLAUDE CONTRACT EXPERT — a specialized AI in construction contracts, FIDIC conditions, claims, delays, variations, payments, EOT, LDs, and contract administration.
 
 CRITICAL FORMATTING RULES:
@@ -86,9 +91,199 @@ When explaining a clause:
 
 Plain text only, no markdown formatting.`;
 
-export async function chatWithBot(
+/**
+ * Build a unified contract context that combines parsed clauses with document chunks
+ * This provides the AI with the complete contract view
+ */
+export async function buildUnifiedContractContext(
+  contractId: string | null,
+  parsedClauses: Clause[],
+  options: {
+    maxTokens?: number;
+    prioritizeRecent?: boolean;
+    includeDocumentChunks?: boolean;
+  } = {}
+): Promise<{
+  context: string;
+  hasDocuments: boolean;
+  clauseCount: number;
+  chunkCount: number;
+}> {
+  const {
+    maxTokens = MAX_CONTEXT_TOKENS - RESERVED_RESPONSE_TOKENS,
+    prioritizeRecent = true,
+    includeDocumentChunks = true
+  } = options;
+
+  const maxChars = maxTokens * CHARS_PER_TOKEN;
+  let usedChars = 0;
+  const contextParts: string[] = [];
+  let hasDocuments = false;
+  let chunkCount = 0;
+
+  // Priority order for clauses: PC > Addendums > GC
+  // Sort clauses by condition type (Particular first, then General)
+  const sortedClauses = [...parsedClauses].sort((a, b) => {
+    // Particular conditions have priority
+    if (a.condition_type === 'Particular' && b.condition_type !== 'Particular') return -1;
+    if (b.condition_type === 'Particular' && a.condition_type !== 'Particular') return 1;
+    // Then sort by clause number
+    return a.clause_number.localeCompare(b.clause_number, undefined, { numeric: true });
+  });
+
+  // Add header
+  const header = `=== COMPLETE CONTRACT CONTENT ===\nTotal Parsed Clauses: ${parsedClauses.length}\n\n`;
+  contextParts.push(header);
+  usedChars += header.length;
+
+  // 1. Add parsed clauses with full text
+  if (sortedClauses.length > 0) {
+    contextParts.push('=== PARSED CONTRACT CLAUSES ===\n');
+    usedChars += 30;
+
+    for (const clause of sortedClauses) {
+      // Build clause content
+      let clauseContent = `\n[Clause ${clause.clause_number}: ${clause.clause_title}]\n`;
+      clauseContent += `Type: ${clause.condition_type || 'General'}\n`;
+      
+      // Include full clause text
+      const mainText = clause.clause_text || '';
+      clauseContent += mainText + '\n';
+
+      // Include PC override if different
+      if (clause.particular_condition && clause.particular_condition !== mainText) {
+        clauseContent += `\n[Particular Condition Override]:\n${clause.particular_condition}\n`;
+      }
+
+      // Include GC reference if available and different
+      if (clause.general_condition && clause.general_condition !== mainText && clause.general_condition !== clause.particular_condition) {
+        clauseContent += `\n[General Condition Reference]:\n${clause.general_condition}\n`;
+      }
+
+      // Add time frames if present
+      if (clause.time_frames && clause.time_frames.length > 0) {
+        clauseContent += `\nTime Frames:\n`;
+        clause.time_frames.forEach(tf => {
+          clauseContent += `  - ${tf.type}: ${tf.original_phrase} (${tf.applies_to})\n`;
+        });
+      }
+
+      clauseContent += '\n---\n';
+
+      // Check if we have space
+      if (usedChars + clauseContent.length <= maxChars) {
+        contextParts.push(clauseContent);
+        usedChars += clauseContent.length;
+      } else {
+        // Add truncated notice
+        contextParts.push(`\n[Note: ${sortedClauses.length - sortedClauses.indexOf(clause)} more clauses available but truncated due to context limits]\n`);
+        break;
+      }
+    }
+  }
+
+  // 2. Try to add document chunks from Supabase if available
+  if (includeDocumentChunks && contractId) {
+    try {
+      const readerService = getDocumentReaderService();
+      const summary = await readerService.getContractSummary(contractId);
+      
+      if (summary.totalChunks > 0) {
+        hasDocuments = true;
+        chunkCount = summary.totalChunks;
+
+        // Add document summary header
+        const docHeader = `\n=== UPLOADED DOCUMENTS ===\nTotal Documents: ${summary.totalDocuments}\nTotal Extracted Sections: ${summary.totalChunks}\n\n`;
+        
+        if (usedChars + docHeader.length <= maxChars) {
+          contextParts.push(docHeader);
+          usedChars += docHeader.length;
+
+          // Get chunks organized by document group priority
+          // Priority: C (Conditions) > D (Addendums) > A (Agreement) > B (LOA) > I (BOQ) > N (Schedules)
+          const groupPriority: Record<string, number> = {
+            'C': 1, // Conditions of Contract - highest priority
+            'D': 2, // Addendums
+            'A': 3, // Agreement
+            'B': 4, // LOA
+            'I': 5, // BOQ
+            'N': 6  // Schedules
+          };
+
+          const sortedDocs = [...summary.documents].sort((a, b) => {
+            const priorityA = groupPriority[a.group] || 99;
+            const priorityB = groupPriority[b.group] || 99;
+            return priorityA - priorityB;
+          });
+
+          // Fetch and add document content by priority
+          for (const doc of sortedDocs) {
+            if (doc.status !== 'completed' || doc.chunkCount === 0) continue;
+
+            const docContent = await readerService.getDocumentContent(doc.id);
+            if (!docContent) continue;
+
+            const groupLabel = {
+              A: 'Agreement & Annexes',
+              B: 'Letter of Acceptance',
+              C: 'Conditions of Contract',
+              D: 'Addendum',
+              I: 'BOQ & Pricing',
+              N: 'Schedule'
+            }[doc.group] || doc.group;
+
+            let docSection = `\n--- [${groupLabel}] ${doc.name} ---\n`;
+
+            for (const chunk of docContent.chunks) {
+              let chunkText = '';
+              if (chunk.clauseNumber) {
+                chunkText += `[Clause ${chunk.clauseNumber}${chunk.clauseTitle ? ': ' + chunk.clauseTitle : ''}]\n`;
+              }
+              chunkText += chunk.content + '\n\n';
+
+              if (usedChars + docSection.length + chunkText.length <= maxChars) {
+                docSection += chunkText;
+              } else {
+                docSection += `[... ${docContent.chunks.length - docContent.chunks.indexOf(chunk)} more sections truncated]\n`;
+                break;
+              }
+            }
+
+            if (usedChars + docSection.length <= maxChars) {
+              contextParts.push(docSection);
+              usedChars += docSection.length;
+            } else {
+              contextParts.push(`\n[Note: Additional documents available but truncated due to context limits]\n`);
+              break;
+            }
+          }
+        }
+      }
+    } catch (error) {
+      console.warn('Could not fetch document chunks:', error);
+      // Continue without document chunks - not a fatal error
+    }
+  }
+
+  return {
+    context: contextParts.join(''),
+    hasDocuments,
+    clauseCount: parsedClauses.length,
+    chunkCount
+  };
+}
+
+/**
+ * Enhanced chat function that automatically includes full contract context
+ */
+export async function chatWithFullContext(
   messages: BotMessage[],
-  context: Clause[]
+  contractId: string | null,
+  clauses: Clause[],
+  options: {
+    focusClause?: string;
+    searchQuery?: string;
+  } = {}
 ): Promise<string> {
   const aiProvider = createAIProvider();
 
@@ -97,6 +292,60 @@ export async function chatWithBot(
   }
 
   try {
+    // Build unified context
+    const { context, hasDocuments, clauseCount, chunkCount } = await buildUnifiedContractContext(
+      contractId,
+      clauses,
+      { includeDocumentChunks: true }
+    );
+
+    // Enhanced system instruction
+    let systemInstruction = CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION;
+    
+    if (hasDocuments || clauseCount > 0) {
+      systemInstruction += `
+
+CONTRACT CONTEXT AVAILABLE:
+You have access to the complete contract content including:
+- ${clauseCount} parsed clauses with full text
+${hasDocuments ? `- ${chunkCount} extracted sections from uploaded documents` : ''}
+
+When answering questions:
+- Reference specific clauses by number (e.g., "Clause 14.1")
+- Quote relevant text when appropriate
+- If comparing GC vs PC, note which takes precedence (PC overrides GC)
+- For addendums, later addendums override earlier ones
+- If information is not in the provided context, say so clearly
+
+${context}`;
+    }
+
+    return await aiProvider.chat(messages, [], systemInstruction);
+  } catch (error: any) {
+    console.error('Chat with full context failed:', error);
+    // Fallback to basic chat with just clauses
+    return await aiProvider.chat(messages, clauses, CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION);
+  }
+}
+
+export async function chatWithBot(
+  messages: BotMessage[],
+  context: Clause[],
+  contractId?: string | null
+): Promise<string> {
+  const aiProvider = createAIProvider();
+
+  if (!aiProvider.isAvailable()) {
+    throw new Error('Claude API key is not configured. Please check your ANTHROPIC_API_KEY environment variable.');
+  }
+
+  try {
+    // If we have a contractId, use the enhanced full context chat
+    if (contractId) {
+      return await chatWithFullContext(messages, contractId, context);
+    }
+    
+    // Otherwise, use standard chat with clauses
     return await aiProvider.chat(messages, context, CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION);
   } catch (error: any) {
     throw new Error(`Failed to get response from Claude: ${error.message}`);

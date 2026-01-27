@@ -417,6 +417,159 @@ export class DocumentReaderService {
 
     return contextParts.join('\n');
   }
+
+  /**
+   * Merge document chunks with parsed clauses
+   * Enhances parsed clauses with additional content from uploaded documents
+   */
+  async mergeWithParsedClauses(
+    contractId: string,
+    parsedClauses: Array<{
+      clause_number: string;
+      clause_title: string;
+      clause_text: string;
+      condition_type?: string;
+      particular_condition?: string;
+      general_condition?: string;
+    }>
+  ): Promise<Array<{
+    clauseNumber: string;
+    clauseTitle: string;
+    parsedContent: string;
+    documentContent: string | null;
+    hasDocumentVersion: boolean;
+    conditionType: string;
+    sources: string[];
+  }>> {
+    const result: Array<{
+      clauseNumber: string;
+      clauseTitle: string;
+      parsedContent: string;
+      documentContent: string | null;
+      hasDocumentVersion: boolean;
+      conditionType: string;
+      sources: string[];
+    }> = [];
+
+    // Get all document chunks for this contract
+    const allChunks = await this.getContractChunks(contractId);
+    
+    // Create a map of chunks by clause number
+    const chunksByClause = new Map<string, DocumentChunkContent[]>();
+    for (const chunk of allChunks) {
+      if (chunk.clauseNumber) {
+        const existing = chunksByClause.get(chunk.clauseNumber) || [];
+        existing.push(chunk);
+        chunksByClause.set(chunk.clauseNumber, existing);
+      }
+    }
+
+    // Merge with parsed clauses
+    for (const clause of parsedClauses) {
+      const documentChunks = chunksByClause.get(clause.clause_number) || [];
+      
+      // Combine document chunk content
+      const documentContent = documentChunks.length > 0
+        ? documentChunks.map(c => c.content).join('\n\n')
+        : null;
+
+      // Track sources
+      const sources: string[] = ['parsed'];
+      if (documentChunks.length > 0) {
+        sources.push('documents');
+      }
+
+      result.push({
+        clauseNumber: clause.clause_number,
+        clauseTitle: clause.clause_title,
+        parsedContent: clause.clause_text,
+        documentContent,
+        hasDocumentVersion: documentChunks.length > 0,
+        conditionType: clause.condition_type || 'General',
+        sources
+      });
+    }
+
+    // Add any document-only clauses (not in parsed data)
+    const parsedClauseNumbers = new Set(parsedClauses.map(c => c.clause_number));
+    for (const [clauseNumber, chunks] of chunksByClause) {
+      if (!parsedClauseNumbers.has(clauseNumber)) {
+        const firstChunk = chunks[0];
+        result.push({
+          clauseNumber,
+          clauseTitle: firstChunk.clauseTitle || `Clause ${clauseNumber}`,
+          parsedContent: '',
+          documentContent: chunks.map(c => c.content).join('\n\n'),
+          hasDocumentVersion: true,
+          conditionType: 'Document',
+          sources: ['documents']
+        });
+      }
+    }
+
+    // Sort by clause number
+    result.sort((a, b) => 
+      a.clauseNumber.localeCompare(b.clauseNumber, undefined, { numeric: true })
+    );
+
+    return result;
+  }
+
+  /**
+   * Get complete contract content with both parsed and document data
+   * Returns a comprehensive view combining all sources
+   */
+  async getCompleteContractContent(
+    contractId: string,
+    parsedClauses: Array<{
+      clause_number: string;
+      clause_title: string;
+      clause_text: string;
+      condition_type?: string;
+      particular_condition?: string;
+      general_condition?: string;
+    }>
+  ): Promise<{
+    summary: {
+      parsedClauseCount: number;
+      documentChunkCount: number;
+      documentCount: number;
+      hasDocuments: boolean;
+    };
+    content: string;
+  }> {
+    const contractSummary = await this.getContractSummary(contractId);
+    const mergedClauses = await this.mergeWithParsedClauses(contractId, parsedClauses);
+
+    let content = `=== COMPLETE CONTRACT CONTENT ===\n\n`;
+    content += `Parsed Clauses: ${parsedClauses.length}\n`;
+    content += `Documents: ${contractSummary.totalDocuments}\n`;
+    content += `Document Sections: ${contractSummary.totalChunks}\n\n`;
+
+    // Add merged clause content
+    for (const clause of mergedClauses) {
+      content += `--- Clause ${clause.clauseNumber}: ${clause.clauseTitle} ---\n`;
+      content += `[Type: ${clause.conditionType}] [Sources: ${clause.sources.join(', ')}]\n\n`;
+      
+      if (clause.parsedContent) {
+        content += clause.parsedContent + '\n\n';
+      }
+      
+      if (clause.documentContent && clause.documentContent !== clause.parsedContent) {
+        content += `[From uploaded documents]:\n${clause.documentContent}\n\n`;
+      }
+    }
+
+    return {
+      summary: {
+        parsedClauseCount: parsedClauses.length,
+        documentChunkCount: contractSummary.totalChunks,
+        documentCount: contractSummary.totalDocuments,
+        hasDocuments: contractSummary.totalDocuments > 0
+      },
+      content
+    };
+  }
 }
 
 // Singleton instance
