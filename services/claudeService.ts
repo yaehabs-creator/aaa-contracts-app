@@ -97,11 +97,9 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
   
   // Try multiple model names in order of preference
   const modelCandidates = [
-    'claude-3-5-sonnet-20241022',
-    'claude-3-5-sonnet-20240620',
-    'claude-3-opus-20240229',
-    'claude-3-sonnet-20240229',
-    'claude-3-haiku-20240307'
+    'claude-sonnet-4-5-20250514',
+    'claude-3-5-sonnet-latest',
+    'claude-3-5-haiku-latest'
   ];
   
 
