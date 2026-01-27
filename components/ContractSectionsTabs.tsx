@@ -94,10 +94,14 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     });
   }, [contractWithSections.sections]);
 
-  // Filter sections for tabs (exclude GENERAL and PARTICULAR, they'll be combined)
+  // Filter sections for tabs (exclude GENERAL, PARTICULAR, AGREEMENT, and LOA)
+  // AGREEMENT and LOA tabs are hidden as they are not needed in the UI
   const tabSections = useMemo(() => {
     return allSections.filter(s => 
-      s.sectionType !== SectionType.GENERAL && s.sectionType !== SectionType.PARTICULAR
+      s.sectionType !== SectionType.GENERAL && 
+      s.sectionType !== SectionType.PARTICULAR &&
+      s.sectionType !== SectionType.AGREEMENT &&
+      s.sectionType !== SectionType.LOA
     );
   }, [allSections]);
 
@@ -464,7 +468,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               )}
             </button>
             
-            {/* Other Tabs (AGREEMENT, LOA) */}
+            {/* Other Section Tabs (if any) */}
             {tabSections.map((section) => (
               <button
                 key={section.sectionType}
