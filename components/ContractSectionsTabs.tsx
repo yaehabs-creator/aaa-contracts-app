@@ -432,7 +432,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     }
   };
 
-  if (!activeSection) {
+  // Only show "No sections available" if we're not on Documents tab and there's no active section
+  if (!activeSection && activeTab !== 'DOCUMENTS') {
     return (
       <div className="bg-white border border-aaa-border rounded-3xl p-16 text-center">
         <p className="text-aaa-muted font-semibold">No sections available</p>
