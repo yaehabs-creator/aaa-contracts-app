@@ -1,6 +1,7 @@
 import { createAIProvider } from './aiProvider';
 import { Clause, BotMessage } from '../../types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
+import { getEmbeddingService } from './embeddingService';
 
 // Constants for token management
 const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
@@ -145,7 +146,7 @@ export async function buildUnifiedContractContext(
       // Build clause content
       let clauseContent = `\n[Clause ${clause.clause_number}: ${clause.clause_title}]\n`;
       clauseContent += `Type: ${clause.condition_type || 'General'}\n`;
-      
+
       // Include full clause text
       const mainText = clause.clause_text || '';
       clauseContent += mainText + '\n';
@@ -187,14 +188,14 @@ export async function buildUnifiedContractContext(
     try {
       const readerService = getDocumentReaderService();
       const summary = await readerService.getContractSummary(contractId);
-      
+
       if (summary.totalChunks > 0) {
         hasDocuments = true;
         chunkCount = summary.totalChunks;
 
         // Add document summary header
         const docHeader = `\n=== UPLOADED DOCUMENTS ===\nTotal Documents: ${summary.totalDocuments}\nTotal Extracted Sections: ${summary.totalChunks}\n\n`;
-        
+
         if (usedChars + docHeader.length <= maxChars) {
           contextParts.push(docHeader);
           usedChars += docHeader.length;
@@ -301,7 +302,7 @@ export async function chatWithFullContext(
 
     // Enhanced system instruction
     let systemInstruction = CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION;
-    
+
     if (hasDocuments || clauseCount > 0) {
       systemInstruction += `
 
@@ -344,7 +345,7 @@ export async function chatWithBot(
     if (contractId) {
       return await chatWithFullContext(messages, contractId, context);
     }
-    
+
     // Otherwise, use standard chat with clauses
     return await aiProvider.chat(messages, context, CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION);
   } catch (error: any) {
@@ -449,24 +450,37 @@ export async function chatWithDocuments(
 
   try {
     const readerService = getDocumentReaderService();
-    
+
     // Get document context
     let documentContext = '';
-    
+
     if (options.searchQuery) {
       // Search for relevant chunks
-      const searchResults = await readerService.searchDocuments(contractId, options.searchQuery, { limit: 10 });
-      if (searchResults.length > 0) {
-        documentContext = formatSearchResults(searchResults);
+      try {
+        const embeddingService = getEmbeddingService();
+        const queryEmbedding = await embeddingService.generateEmbeddings(options.searchQuery);
+
+        if (queryEmbedding && queryEmbedding.length > 0) {
+          const searchResults = await readerService.searchSimilarChunks(contractId, queryEmbedding[0], { limit: 15 });
+          if (searchResults.length > 0) {
+            documentContext = formatSearchResults(searchResults);
+          }
+        }
+      } catch (err) {
+        console.warn('Vector search failed, falling back to text search');
+        const searchResults = await readerService.searchDocuments(contractId, options.searchQuery, { limit: 10 });
+        if (searchResults.length > 0) {
+          documentContext = formatSearchResults(searchResults);
+        }
       }
     }
-    
+
     // Get formatted document context
     const fullContext = await readerService.formatForAIContext(contractId, {
       maxTokens: options.maxTokens || 30000,
       focusClause: options.focusClause
     });
-    
+
     documentContext = documentContext + '\n\n' + fullContext;
 
     // Enhanced system instruction with document awareness
@@ -500,7 +514,7 @@ export async function searchContractDocuments(
   try {
     const readerService = getDocumentReaderService();
     const results = await readerService.searchDocuments(contractId, query, { limit: 20 });
-    
+
     if (results.length === 0) {
       return {
         found: false,
@@ -510,7 +524,7 @@ export async function searchContractDocuments(
     }
 
     const summary = `Found ${results.length} relevant sections:\n` +
-      results.slice(0, 5).map((r, i) => 
+      results.slice(0, 5).map((r, i) =>
         `${i + 1}. ${r.clauseNumber ? `Clause ${r.clauseNumber}` : 'Section'}: ${r.content.substring(0, 100)}...`
       ).join('\n');
 
@@ -536,7 +550,7 @@ export async function getDocumentSummary(contractId: string): Promise<string> {
   try {
     const readerService = getDocumentReaderService();
     const summary = await readerService.getContractSummary(contractId);
-    
+
     if (summary.totalDocuments === 0) {
       return 'No documents have been uploaded for this contract yet.';
     }
@@ -552,7 +566,7 @@ export async function getDocumentSummary(contractId: string): Promise<string> {
 
     let result = `📁 Contract Documents Summary\n\n`;
     result += `Total: ${summary.totalDocuments} documents, ${summary.totalChunks} extracted sections\n\n`;
-    
+
     // Group by document group
     const byGroup = new Map<string, typeof summary.documents>();
     for (const doc of summary.documents) {
@@ -582,15 +596,15 @@ export async function getDocumentSummary(contractId: string): Promise<string> {
  */
 function formatSearchResults(results: DocumentChunkContent[]): string {
   if (results.length === 0) return '';
-  
+
   let formatted = '=== SEARCH RESULTS ===\n\n';
-  
+
   for (const result of results) {
     if (result.clauseNumber) {
       formatted += `[Clause ${result.clauseNumber}${result.clauseTitle ? ': ' + result.clauseTitle : ''}]\n`;
     }
     formatted += result.content + '\n\n';
   }
-  
+
   return formatted;
 }

@@ -15,6 +15,8 @@ import {
   BatchUploadProgress,
   ValidationResult
 } from '../../types';
+import { extractTextFromPdf } from '../utils/pdfUtils';
+import { getEmbeddingService } from '../services/embeddingService';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
@@ -141,7 +143,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         }
         return updated;
       });
-      
+
       setError(null);
     } catch (err) {
       console.error('Error loading documents:', err);
@@ -179,7 +181,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
     if (contractId) {
       loadDocuments();
       loadActiveJobs();
-      
+
       // Poll for job updates every 5 seconds
       const interval = setInterval(loadActiveJobs, 5000);
       return () => clearInterval(interval);
@@ -197,7 +199,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
   // Get next sequence number for a group
   const getNextSequenceNumber = async (group: DocumentGroup): Promise<number> => {
     if (!supabase) return 1;
-    
+
     const { data } = await supabase
       .from('contract_documents')
       .select('sequence_number')
@@ -237,12 +239,12 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
 
         // Get sequence number
         const seq = await getNextSequenceNumber(selectedGroup);
-        
+
         // Generate filename
         const ext = file.name.split('.').pop() || 'pdf';
         const baseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^A-Za-z0-9_-]/g, '_').substring(0, 50);
         const finalFilename = `${selectedGroup}${seq.toString().padStart(3, '0')}_${baseName}.${ext}`;
-        
+
         // Generate storage path
         const filePath = `contracts/${contractId}/${selectedGroup}/${finalFilename}`;
 
@@ -485,7 +487,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
             {Icons.upload}
           </button>
         </div>
-        
+
         {folder.isExpanded && (
           <div className="folder-content">
             {folder.documents.length === 0 ? (
@@ -502,23 +504,25 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
   };
 
   // Calculate total documents
-  const totalDocuments = Object.values(folders).reduce((sum, f) => sum + f.documents.length, 0);
-  const pendingDocuments = Object.values(folders).reduce(
-    (sum, f) => sum + f.documents.filter(d => d.status === 'pending' || d.status === 'error').length, 
+  const totalDocuments = (Object.values(folders) as FolderState[]).reduce((sum, f) => sum + f.documents.length, 0);
+  const pendingDocuments = (Object.values(folders) as FolderState[]).reduce(
+    (sum, f) => sum + f.documents.filter(d => d.status === 'pending' || d.status === 'error').length,
     0
   );
 
   // Process all pending documents - extract text and create chunks
   const processAllDocuments = async () => {
     if (!supabase || isProcessing) return;
-    
+
     setIsProcessing(true);
     setProcessingStatus('Starting document processing...');
     setError(null);
 
+    const embeddingService = getEmbeddingService();
+
     try {
       // Get all pending documents
-      const allDocs = Object.values(folders).flatMap(f => 
+      const allDocs = (Object.values(folders) as FolderState[]).flatMap(f =>
         f.documents.filter(d => d.status === 'pending' || d.status === 'error')
       );
 
@@ -533,7 +537,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
 
       for (const doc of allDocs) {
         setProcessingStatus(`Processing ${processed + 1}/${allDocs.length}: ${doc.name}`);
-        
+
         try {
           // Get signed URL
           const { data: urlData, error: urlError } = await supabase.storage
@@ -550,44 +554,69 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
             .update({ status: 'processing' })
             .eq('id', doc.id);
 
-          // For PDFs, we need to extract text
-          // This is a simplified version - in production use pdf.js or similar
           let extractedText = '';
-          
+
           if (doc.file_type === 'pdf') {
-            // Try to fetch and parse PDF
-            const response = await fetch(urlData.signedUrl);
-            const text = await response.text();
-            
-            // Basic text extraction from PDF (simplified)
-            // Look for text between stream...endstream
-            const streamRegex = /stream\s*([\s\S]*?)\s*endstream/g;
-            let match;
-            const textParts: string[] = [];
-            
-            while ((match = streamRegex.exec(text)) !== null) {
-              const content = match[1];
-              // Extract readable text (simplified)
-              const readable = content.replace(/[^\x20-\x7E\n]/g, ' ').trim();
-              if (readable.length > 10) {
-                textParts.push(readable);
+            try {
+              setProcessingStatus(`Extracting text from PDF: ${doc.name}`);
+              extractedText = await extractTextFromPdf(urlData.signedUrl);
+
+              if (extractedText.length < 50) {
+                throw new Error('PDF extraction returned too little text. Is it a scanned image?');
               }
-            }
-            
-            extractedText = textParts.join('\n\n');
-            
-            // If no text extracted, add placeholder
-            if (extractedText.length < 50) {
-              extractedText = `[Document: ${doc.name}]\n\nThis PDF document has been uploaded but text extraction requires manual processing or OCR.\n\nFile: ${doc.original_filename || doc.name}\nSize: ${formatFileSize(doc.file_size_bytes || 0)}\nGroup: ${DocumentGroupLabels[doc.document_group as DocumentGroup]}`;
+            } catch (pdfError) {
+              console.warn('Advanced PDF extraction failed, falling back to basic:', pdfError);
+              // Fallback to simple extraction
+              const response = await fetch(urlData.signedUrl);
+              const text = await response.text();
+              // Basic regex text extraction fallback
+              const streamRegex = /stream\s*([\s\S]*?)\s*endstream/g;
+              let match;
+              const textParts: string[] = [];
+              while ((match = streamRegex.exec(text)) !== null) {
+                const content = match[1];
+                const readable = content.replace(/[^\x20-\x7E\n]/g, ' ').trim();
+                if (readable.length > 10) textParts.push(readable);
+              }
+              extractedText = textParts.join('\n\n');
             }
           } else {
-            // For other files, try to read as text
+            // For other files, try to read as text (simplified)
+            // Really we should handle Word/Excel too but sticking to text for now
             const response = await fetch(urlData.signedUrl);
             extractedText = await response.text();
           }
 
+          if (!extractedText || extractedText.length < 20) {
+            extractedText = `[Document: ${doc.name}]\n\nText extraction failed. This might be a scanned document or unsupported format.\n\nFile: ${doc.original_filename}`;
+          }
+
           // Parse into chunks
           const chunks = parseTextToChunks(extractedText, doc.document_group as DocumentGroup);
+
+          // Generate embeddings
+          let embeddings: number[][] = [];
+          try {
+            setProcessingStatus(`Generating AI embeddings for ${doc.name} (${chunks.length} chunks)...`);
+
+            // Prepare input for embedding (add context)
+            const inputs = chunks.map(c =>
+              `Document: ${doc.name}\nClause: ${c.clauseNumber || 'N/A'}\nTitle: ${c.clauseTitle || 'N/A'}\nContent: ${c.content}`
+            );
+
+            // Process in batches of 10
+            const BATCH_SIZE = 10;
+            for (let i = 0; i < inputs.length; i += BATCH_SIZE) {
+              const batch = inputs.slice(i, i + BATCH_SIZE);
+              const batchEmbeddings = await embeddingService.generateEmbeddings(batch);
+              embeddings.push(...batchEmbeddings);
+              // Small delay to be nice to API
+              await new Promise(resolve => setTimeout(resolve, 200));
+            }
+          } catch (embError) {
+            console.error('Embedding generation failed:', embError);
+            // We continue without embeddings (search will fall back to text match)
+          }
 
           // Delete existing chunks
           await supabase
@@ -607,11 +636,13 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
                 clause_number: chunk.clauseNumber,
                 clause_title: chunk.clauseTitle,
                 content_type: 'text',
-                token_count: Math.ceil(chunk.content.length / 4)
+                token_count: Math.ceil(chunk.content.length / 4),
+                embedding: embeddings[idx] || null
               })));
 
             if (insertError) {
               console.error('Error inserting chunks:', insertError);
+              throw insertError;
             }
           }
 
@@ -623,7 +654,8 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
               processed_at: new Date().toISOString(),
               processing_metadata: {
                 chunks_created: chunks.length,
-                text_length: extractedText.length
+                text_length: extractedText.length,
+                has_embeddings: embeddings.length > 0
               }
             })
             .eq('id', doc.id);
@@ -632,7 +664,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         } catch (err: any) {
           console.error(`Error processing ${doc.name}:`, err);
           failed++;
-          
+
           await supabase
             .from('contract_documents')
             .update({
@@ -645,12 +677,13 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
 
       setProcessingStatus(`✅ Completed: ${processed} processed, ${failed} failed`);
       setTimeout(() => setProcessingStatus(null), 5000);
-      
+
       // Refresh documents
       await loadDocuments();
-      
+
     } catch (err: any) {
       setError(`Processing failed: ${err.message}`);
+      setProcessingStatus(null);
     } finally {
       setIsProcessing(false);
     }
@@ -663,13 +696,13 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
     clauseTitle: string | null;
   }> => {
     const chunks: Array<{ content: string; clauseNumber: string | null; clauseTitle: string | null }> = [];
-    
+
     // Pattern to detect clause numbers
     const clausePattern = /(?:^|\n)\s*(?:Clause\s+)?(\d+(?:\.\d+)*(?:[A-Za-z])?)\s*[:\.\-–—]?\s*([A-Z][^\n.]*)?/gm;
-    
+
     const matches: Array<{ index: number; clauseNumber: string; clauseTitle: string | null }> = [];
     let match;
-    
+
     while ((match = clausePattern.exec(text)) !== null) {
       matches.push({
         index: match.index,
@@ -682,11 +715,11 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
     for (let i = 0; i < matches.length; i++) {
       const current = matches[i];
       const next = matches[i + 1];
-      
+
       const startIndex = current.index;
       const endIndex = next ? next.index : text.length;
       const content = text.substring(startIndex, endIndex).trim();
-      
+
       if (content.length > 20) {
         chunks.push({
           content,
@@ -721,8 +754,8 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         </div>
         <div className="dm-actions">
           {pendingDocuments > 0 && (
-            <button 
-              onClick={processAllDocuments} 
+            <button
+              onClick={processAllDocuments}
               disabled={isProcessing}
               className="process-btn"
               title="Extract text from documents for AI"
@@ -784,7 +817,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         <div className="dm-modal-overlay" onClick={() => !isUploading && setShowUploadModal(false)}>
           <div className="dm-modal" onClick={e => e.stopPropagation()}>
             <h3>{Icons.upload} Upload to {DocumentGroupLabels[selectedGroup]}</h3>
-            
+
             <div className="upload-instructions">
               <p>Select files to upload. Supported formats:</p>
               <ul>

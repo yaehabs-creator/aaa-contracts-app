@@ -331,20 +331,20 @@ export class DocumentReaderService {
    */
   async formatForAIContext(
     contractId: string,
-    options: { 
-      maxTokens?: number; 
+    options: {
+      maxTokens?: number;
       includeGroups?: DocumentGroup[];
       focusClause?: string;
     } = {}
   ): Promise<string> {
     const { maxTokens = 50000, includeGroups, focusClause } = options;
-    
+
     let contextParts: string[] = [];
     let estimatedTokens = 0;
 
     // Get contract summary
     const summary = await this.getContractSummary(contractId);
-    
+
     // Header
     contextParts.push(`=== CONTRACT DOCUMENTS CONTEXT ===`);
     contextParts.push(`Total Documents: ${summary.totalDocuments}`);
@@ -362,7 +362,7 @@ export class DocumentReaderService {
         I: 'BOQ',
         N: 'Schedule'
       }[doc.group] || doc.group;
-      
+
       contextParts.push(`- [${groupLabel}] ${doc.name} (${doc.chunkCount} chunks, ${doc.status})`);
     }
     contextParts.push('');
@@ -381,7 +381,7 @@ export class DocumentReaderService {
     }
 
     // Get chunks for included groups
-    const docsToInclude = summary.documents.filter(d => 
+    const docsToInclude = summary.documents.filter(d =>
       !includeGroups || includeGroups.includes(d.group)
     );
 
@@ -407,7 +407,7 @@ export class DocumentReaderService {
         .join('\n\n');
 
       const newTokens = Math.ceil((docHeader + docContent).length / 4);
-      
+
       if (estimatedTokens + newTokens <= maxTokens) {
         contextParts.push(docHeader);
         contextParts.push(docContent);
@@ -453,7 +453,7 @@ export class DocumentReaderService {
 
     // Get all document chunks for this contract
     const allChunks = await this.getContractChunks(contractId);
-    
+
     // Create a map of chunks by clause number
     const chunksByClause = new Map<string, DocumentChunkContent[]>();
     for (const chunk of allChunks) {
@@ -467,7 +467,7 @@ export class DocumentReaderService {
     // Merge with parsed clauses
     for (const clause of parsedClauses) {
       const documentChunks = chunksByClause.get(clause.clause_number) || [];
-      
+
       // Combine document chunk content
       const documentContent = documentChunks.length > 0
         ? documentChunks.map(c => c.content).join('\n\n')
@@ -508,7 +508,7 @@ export class DocumentReaderService {
     }
 
     // Sort by clause number
-    result.sort((a, b) => 
+    result.sort((a, b) =>
       a.clauseNumber.localeCompare(b.clauseNumber, undefined, { numeric: true })
     );
 
@@ -550,11 +550,11 @@ export class DocumentReaderService {
     for (const clause of mergedClauses) {
       content += `--- Clause ${clause.clauseNumber}: ${clause.clauseTitle} ---\n`;
       content += `[Type: ${clause.conditionType}] [Sources: ${clause.sources.join(', ')}]\n\n`;
-      
+
       if (clause.parsedContent) {
         content += clause.parsedContent + '\n\n';
       }
-      
+
       if (clause.documentContent && clause.documentContent !== clause.parsedContent) {
         content += `[From uploaded documents]:\n${clause.documentContent}\n\n`;
       }
@@ -569,6 +569,40 @@ export class DocumentReaderService {
       },
       content
     };
+  }
+  /**
+   * Search documents using vector similarity
+   */
+  async searchSimilarChunks(
+    contractId: string,
+    queryEmbedding: number[],
+    options: { limit?: number; threshold?: number } = {}
+  ): Promise<DocumentChunkContent[]> {
+    const { limit = 10, threshold = 0.5 } = options;
+
+    const { data, error } = await this.supabase
+      .rpc('search_contract_chunks', {
+        p_contract_id: contractId,
+        p_query_embedding: queryEmbedding,
+        p_limit: limit,
+        p_threshold: threshold
+      });
+
+    if (error) {
+      console.error('Error in vector search:', error);
+      throw error;
+    }
+
+    return (data || []).map((chunk: any) => ({
+      chunkId: chunk.chunk_id,
+      chunkIndex: 0,
+      content: chunk.content,
+      clauseNumber: chunk.clause_number,
+      clauseTitle: chunk.document_name,
+      pageNumber: 0,
+      contentType: 'text',
+      score: chunk.similarity
+    }));
   }
 }
 
