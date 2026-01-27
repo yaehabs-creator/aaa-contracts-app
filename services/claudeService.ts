@@ -97,7 +97,8 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
   
   // Try multiple model names in order of preference (Jan 2026)
   const CLAUDE_MODELS = [
-    "claude-sonnet-4-5-20250514",      // Claude Sonnet 4.5 (latest)
+    "claude-sonnet-4-5-20250514",      // Claude Sonnet 4.5 (latest, with date)
+    "claude-sonnet-4-5",               // Claude Sonnet 4.5 (alias)
     "claude-3-5-sonnet-20241022",      // Claude 3.5 Sonnet (fallback)
     "claude-3-5-haiku-20241022"        // Claude 3.5 Haiku (lightweight fallback)
   ];
