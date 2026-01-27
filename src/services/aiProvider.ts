@@ -111,7 +111,7 @@ export class ClaudeProvider implements AIProvider {
       try {
         const message = await this.client.messages.create({
           model: model,
-          max_tokens: 8192,  // Increased from 4096 for longer responses
+          max_tokens: 4096,  // Compatible with all models including Haiku
           system: systemInstruction,
           messages: anthropicMessages
         });
