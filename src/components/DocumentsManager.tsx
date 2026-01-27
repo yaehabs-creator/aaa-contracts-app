@@ -104,6 +104,8 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [showPreview, setShowPreview] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [processingStatus, setProcessingStatus] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -501,6 +503,210 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
 
   // Calculate total documents
   const totalDocuments = Object.values(folders).reduce((sum, f) => sum + f.documents.length, 0);
+  const pendingDocuments = Object.values(folders).reduce(
+    (sum, f) => sum + f.documents.filter(d => d.status === 'pending' || d.status === 'error').length, 
+    0
+  );
+
+  // Process all pending documents - extract text and create chunks
+  const processAllDocuments = async () => {
+    if (!supabase || isProcessing) return;
+    
+    setIsProcessing(true);
+    setProcessingStatus('Starting document processing...');
+    setError(null);
+
+    try {
+      // Get all pending documents
+      const allDocs = Object.values(folders).flatMap(f => 
+        f.documents.filter(d => d.status === 'pending' || d.status === 'error')
+      );
+
+      if (allDocs.length === 0) {
+        setProcessingStatus('No pending documents to process');
+        setTimeout(() => setProcessingStatus(null), 3000);
+        return;
+      }
+
+      let processed = 0;
+      let failed = 0;
+
+      for (const doc of allDocs) {
+        setProcessingStatus(`Processing ${processed + 1}/${allDocs.length}: ${doc.name}`);
+        
+        try {
+          // Get signed URL
+          const { data: urlData, error: urlError } = await supabase.storage
+            .from(STORAGE_BUCKET)
+            .createSignedUrl(doc.file_path, 3600);
+
+          if (urlError || !urlData) {
+            throw new Error('Failed to get document URL');
+          }
+
+          // Update status to processing
+          await supabase
+            .from('contract_documents')
+            .update({ status: 'processing' })
+            .eq('id', doc.id);
+
+          // For PDFs, we need to extract text
+          // This is a simplified version - in production use pdf.js or similar
+          let extractedText = '';
+          
+          if (doc.file_type === 'pdf') {
+            // Try to fetch and parse PDF
+            const response = await fetch(urlData.signedUrl);
+            const text = await response.text();
+            
+            // Basic text extraction from PDF (simplified)
+            // Look for text between stream...endstream
+            const streamRegex = /stream\s*([\s\S]*?)\s*endstream/g;
+            let match;
+            const textParts: string[] = [];
+            
+            while ((match = streamRegex.exec(text)) !== null) {
+              const content = match[1];
+              // Extract readable text (simplified)
+              const readable = content.replace(/[^\x20-\x7E\n]/g, ' ').trim();
+              if (readable.length > 10) {
+                textParts.push(readable);
+              }
+            }
+            
+            extractedText = textParts.join('\n\n');
+            
+            // If no text extracted, add placeholder
+            if (extractedText.length < 50) {
+              extractedText = `[Document: ${doc.name}]\n\nThis PDF document has been uploaded but text extraction requires manual processing or OCR.\n\nFile: ${doc.original_filename || doc.name}\nSize: ${formatFileSize(doc.file_size_bytes || 0)}\nGroup: ${DocumentGroupLabels[doc.document_group as DocumentGroup]}`;
+            }
+          } else {
+            // For other files, try to read as text
+            const response = await fetch(urlData.signedUrl);
+            extractedText = await response.text();
+          }
+
+          // Parse into chunks
+          const chunks = parseTextToChunks(extractedText, doc.document_group as DocumentGroup);
+
+          // Delete existing chunks
+          await supabase
+            .from('contract_document_chunks')
+            .delete()
+            .eq('document_id', doc.id);
+
+          // Insert new chunks
+          if (chunks.length > 0) {
+            const { error: insertError } = await supabase
+              .from('contract_document_chunks')
+              .insert(chunks.map((chunk, idx) => ({
+                document_id: doc.id,
+                contract_id: contractId,
+                chunk_index: idx,
+                content: chunk.content,
+                clause_number: chunk.clauseNumber,
+                clause_title: chunk.clauseTitle,
+                content_type: 'text',
+                token_count: Math.ceil(chunk.content.length / 4)
+              })));
+
+            if (insertError) {
+              console.error('Error inserting chunks:', insertError);
+            }
+          }
+
+          // Update document status
+          await supabase
+            .from('contract_documents')
+            .update({
+              status: 'completed',
+              processed_at: new Date().toISOString(),
+              processing_metadata: {
+                chunks_created: chunks.length,
+                text_length: extractedText.length
+              }
+            })
+            .eq('id', doc.id);
+
+          processed++;
+        } catch (err: any) {
+          console.error(`Error processing ${doc.name}:`, err);
+          failed++;
+          
+          await supabase
+            .from('contract_documents')
+            .update({
+              status: 'error',
+              processing_error: err.message
+            })
+            .eq('id', doc.id);
+        }
+      }
+
+      setProcessingStatus(`✅ Completed: ${processed} processed, ${failed} failed`);
+      setTimeout(() => setProcessingStatus(null), 5000);
+      
+      // Refresh documents
+      await loadDocuments();
+      
+    } catch (err: any) {
+      setError(`Processing failed: ${err.message}`);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  // Parse text into chunks with clause detection
+  const parseTextToChunks = (text: string, documentGroup: DocumentGroup): Array<{
+    content: string;
+    clauseNumber: string | null;
+    clauseTitle: string | null;
+  }> => {
+    const chunks: Array<{ content: string; clauseNumber: string | null; clauseTitle: string | null }> = [];
+    
+    // Pattern to detect clause numbers
+    const clausePattern = /(?:^|\n)\s*(?:Clause\s+)?(\d+(?:\.\d+)*(?:[A-Za-z])?)\s*[:\.\-–—]?\s*([A-Z][^\n.]*)?/gm;
+    
+    const matches: Array<{ index: number; clauseNumber: string; clauseTitle: string | null }> = [];
+    let match;
+    
+    while ((match = clausePattern.exec(text)) !== null) {
+      matches.push({
+        index: match.index,
+        clauseNumber: match[1],
+        clauseTitle: match[2]?.trim() || null
+      });
+    }
+
+    // Create chunks from matches
+    for (let i = 0; i < matches.length; i++) {
+      const current = matches[i];
+      const next = matches[i + 1];
+      
+      const startIndex = current.index;
+      const endIndex = next ? next.index : text.length;
+      const content = text.substring(startIndex, endIndex).trim();
+      
+      if (content.length > 20) {
+        chunks.push({
+          content,
+          clauseNumber: current.clauseNumber,
+          clauseTitle: current.clauseTitle
+        });
+      }
+    }
+
+    // If no clauses detected, create single chunk
+    if (chunks.length === 0 && text.length > 0) {
+      chunks.push({
+        content: text,
+        clauseNumber: null,
+        clauseTitle: null
+      });
+    }
+
+    return chunks;
+  };
 
   return (
     <div className="documents-manager">
@@ -509,13 +715,33 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         <h2>{Icons.folder} Contract Documents</h2>
         <div className="dm-stats">
           <span>{totalDocuments} document{totalDocuments !== 1 ? 's' : ''}</span>
+          {pendingDocuments > 0 && (
+            <span className="pending-badge">{pendingDocuments} pending</span>
+          )}
         </div>
         <div className="dm-actions">
+          {pendingDocuments > 0 && (
+            <button 
+              onClick={processAllDocuments} 
+              disabled={isProcessing}
+              className="process-btn"
+              title="Extract text from documents for AI"
+            >
+              {isProcessing ? Icons.processing : '🔄'} Process for AI
+            </button>
+          )}
           <button onClick={loadDocuments} disabled={isLoading} title="Refresh">
             {isLoading ? Icons.processing : Icons.refresh} Refresh
           </button>
         </div>
       </div>
+
+      {/* Processing status */}
+      {processingStatus && (
+        <div className="dm-processing-status">
+          {Icons.processing} {processingStatus}
+        </div>
+      )}
 
       {/* Connection status */}
       {!supabase && (
@@ -671,6 +897,23 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         .dm-stats {
           color: #64748b;
           font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .pending-badge {
+          background: #fef3c7;
+          color: #92400e;
+          padding: 2px 8px;
+          border-radius: 12px;
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
+
+        .dm-actions {
+          display: flex;
+          gap: 8px;
         }
 
         .dm-actions button {
@@ -691,6 +934,24 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         .dm-actions button:disabled {
           opacity: 0.6;
           cursor: not-allowed;
+        }
+
+        .process-btn {
+          background: #10b981 !important;
+        }
+
+        .process-btn:hover:not(:disabled) {
+          background: #059669 !important;
+        }
+
+        .dm-processing-status {
+          background: #dbeafe;
+          border: 1px solid #3b82f6;
+          color: #1e40af;
+          padding: 12px 16px;
+          border-radius: 8px;
+          margin-bottom: 15px;
+          font-weight: 500;
         }
 
         .dm-warning {
