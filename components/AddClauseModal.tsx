@@ -421,31 +421,31 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
   };
 
   return (
-    <div className="fixed inset-0 z-[150] flex items-center justify-center p-6 bg-aaa-blue/70 backdrop-blur-md modal-backdrop">
-      <div className="bg-white w-full max-w-6xl rounded-[32px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden animate-in zoom-in duration-300 border border-white/20 max-h-[90vh]">
+    <div className="fixed inset-0 z-[150] flex items-center justify-center p-6 mac-modal-backdrop modal-backdrop">
+      <div className="bg-white w-full max-w-6xl rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden modal-content border border-surface-border max-h-[90vh]">
         
-        {/* Header */}
-        <div className="px-10 py-8 border-b border-aaa-border flex items-center justify-between bg-white shrink-0">
-          <div className="flex items-center gap-6">
-            <div className={`w-12 h-12 ${editingClause ? 'bg-emerald-500' : 'bg-aaa-blue'} rounded-xl flex items-center justify-center shadow-lg`}>
+        {/* Header - MacBook style */}
+        <div className="px-8 py-6 border-b border-surface-border flex items-center justify-between bg-white shrink-0">
+          <div className="flex items-center gap-4">
+            <div className={`w-10 h-10 ${editingClause ? 'bg-emerald-500' : 'bg-mac-blue'} rounded-mac-xs flex items-center justify-center`}>
               {editingClause ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
               )}
             </div>
             <div>
-              <h3 className="text-2xl font-black text-aaa-blue tracking-tighter leading-tight">{editingClause ? 'Edit Clause' : 'Append Clause Node'}</h3>
-              <div className="flex items-center gap-3 mt-1">
-                <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-[0.2em]">{editingClause ? 'Modify Clause Content' : 'Dual Verbatim Injection'}</p>
+              <h3 className="text-xl font-semibold text-mac-navy">{editingClause ? 'Edit Clause' : 'Add Clause'}</h3>
+              <div className="flex items-center gap-3 mt-0.5">
+                <p className="text-xs font-medium text-mac-muted">{editingClause ? 'Modify clause content' : 'Add new clause to contract'}</p>
                 {editingClause && (
                   <div className="flex items-center gap-2">
                     {saveStatus === 'saving' && (
-                      <span className="text-[9px] font-black text-aaa-blue uppercase flex items-center gap-1">
+                      <span className="text-[10px] font-medium text-mac-blue flex items-center gap-1">
                         <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -454,7 +454,7 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
                       </span>
                     )}
                     {saveStatus === 'saved' && (
-                      <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-1">
+                      <span className="text-[10px] font-medium text-emerald-600 flex items-center gap-1">
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
@@ -462,7 +462,7 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
                       </span>
                     )}
                     {saveStatus === 'error' && (
-                      <span className="text-[9px] font-black text-red-600 uppercase flex items-center gap-1">
+                      <span className="text-[10px] font-medium text-red-500 flex items-center gap-1">
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -470,40 +470,40 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
                       </span>
                     )}
                     {hasUnsavedChanges && saveStatus === 'idle' && (
-                      <span className="text-[9px] font-black text-amber-600 uppercase">Unsaved changes</span>
+                      <span className="text-[10px] font-medium text-amber-600">Unsaved changes</span>
                     )}
                   </div>
                 )}
               </div>
             </div>
           </div>
-          <button onClick={onClose} className="p-3 hover:bg-aaa-bg rounded-xl transition-all border border-aaa-border group">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:rotate-90 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+          <button onClick={onClose} className="p-2.5 hover:bg-surface-bg rounded-mac-xs transition-all border border-surface-border">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-mac-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
-        {/* Mode Toggle */}
+        {/* Mode Toggle - MacBook style */}
         {step === 'input' && !editingClause && (
-          <div className="px-10 py-4 border-b border-aaa-border bg-aaa-bg/30">
+          <div className="px-8 py-4 border-b border-surface-border bg-surface-bg/30">
             <div className="flex gap-2">
               <button
                 onClick={() => setMode('single')}
-                className={`px-6 py-2 rounded-xl text-xs font-black transition-all ${
+                className={`px-4 py-2 rounded-mac-xs text-sm font-medium transition-all ${
                   mode === 'single' 
-                    ? 'bg-aaa-blue text-white shadow-lg' 
-                    : 'bg-white text-aaa-muted hover:text-aaa-blue border border-aaa-border'
+                    ? 'bg-mac-blue text-white' 
+                    : 'bg-white text-mac-muted hover:text-mac-blue border border-surface-border'
                 }`}
               >
                 Single Clause
               </button>
               <button
                 onClick={() => setMode('bulk')}
-                className={`px-6 py-2 rounded-xl text-xs font-black transition-all ${
+                className={`px-4 py-2 rounded-mac-xs text-sm font-medium transition-all ${
                   mode === 'bulk' 
-                    ? 'bg-aaa-blue text-white shadow-lg' 
-                    : 'bg-white text-aaa-muted hover:text-aaa-blue border border-aaa-border'
+                    ? 'bg-mac-blue text-white' 
+                    : 'bg-white text-mac-muted hover:text-mac-blue border border-surface-border'
                 }`}
               >
                 Bulk Import
@@ -701,8 +701,8 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
           )}
         </div>
 
-        {/* Footer Actions */}
-        <div className="px-10 py-8 border-t border-aaa-border bg-slate-50/50 flex items-center justify-between shrink-0">
+        {/* Footer Actions - MacBook style */}
+        <div className="px-8 py-5 border-t border-surface-border bg-surface-bg/50 flex items-center justify-between shrink-0">
           <button 
             type="button"
             onClick={() => {
@@ -713,17 +713,17 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
                 onClose();
               }
             }}
-            className="px-8 py-4 text-[10px] font-black text-aaa-muted uppercase tracking-widest hover:text-aaa-blue transition-all"
+            className="px-4 py-2.5 text-sm font-medium text-mac-muted hover:text-mac-navy transition-all"
           >
             {step === 'review' ? 'Back' : 'Cancel'}
           </button>
           
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             {step === 'input' && mode === 'bulk' && (
               <button
                 onClick={handleDetectClauses}
                 disabled={isDetecting}
-                className="px-8 py-4 bg-aaa-accent text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-aaa-accent/90 transition-all active:scale-95 disabled:opacity-50 flex items-center gap-3"
+                className="px-5 py-2.5 bg-mac-blue text-white rounded-mac-sm text-sm font-medium hover:bg-mac-blue-hover transition-all active:scale-[0.98] disabled:opacity-50 flex items-center gap-2"
               >
                 {isDetecting ? 'Detecting...' : 'Detect Clauses'}
                 {!isDetecting && (
@@ -738,12 +738,12 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
               <button
                 onClick={handleSaveAll}
                 disabled={isSubmitting || reviewClauses.length === 0}
-                className="px-12 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-aaa-hover transition-all active:scale-95 disabled:opacity-50 flex items-center gap-3"
+                className="px-6 py-2.5 bg-mac-blue text-white rounded-mac-sm text-sm font-medium hover:bg-mac-blue-hover transition-all active:scale-[0.98] disabled:opacity-50 flex items-center gap-2"
               >
-                {isSubmitting ? `Saving ${reviewClauses.length} clauses...` : `Save All (${reviewClauses.length})`}
+                {isSubmitting ? `Saving ${reviewClauses.length}...` : `Save All (${reviewClauses.length})`}
                 {!isSubmitting && (
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 )}
               </button>
@@ -755,7 +755,7 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
                   <button 
                     onClick={handleManualSave}
                     disabled={isSubmitting || saveStatus === 'saving'}
-                    className="px-8 py-4 bg-emerald-600 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-emerald-700 transition-all active:scale-95 disabled:opacity-50 flex items-center gap-2"
+                    className="px-5 py-2.5 bg-emerald-500 text-white rounded-mac-sm text-sm font-medium hover:bg-emerald-600 transition-all active:scale-[0.98] disabled:opacity-50 flex items-center gap-2"
                   >
                     {saveStatus === 'saving' ? (
                       <>
@@ -779,12 +779,12 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
                   type={editingClause ? "button" : "submit"}
                   onClick={editingClause ? undefined : handleSingleSubmit}
                   disabled={isSubmitting || saveStatus === 'saving'}
-                  className="px-12 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-aaa-hover transition-all active:scale-95 disabled:opacity-50 flex items-center gap-3"
+                  className="px-6 py-2.5 bg-mac-blue text-white rounded-mac-sm text-sm font-medium hover:bg-mac-blue-hover transition-all active:scale-[0.98] disabled:opacity-50 flex items-center gap-2"
                 >
-                  {isSubmitting ? (editingClause ? 'Updating...' : 'Syncing...') : (editingClause ? 'Done' : 'Save Dual Clause')}
+                  {isSubmitting ? (editingClause ? 'Updating...' : 'Saving...') : (editingClause ? 'Done' : 'Save Clause')}
                   {!isSubmitting && (
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   )}
                 </button>

@@ -208,21 +208,21 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
   const modalRoot = typeof document !== 'undefined' ? document.body : null;
 
   return (
-    <div className="space-y-6">
-      {/* Message Display */}
+    <div className="space-y-4">
+      {/* Message Display - MacBook style */}
       {message && (
-        <div className={`p-3 rounded-xl border text-sm font-semibold ${
+        <div className={`p-3 rounded-mac-sm border text-sm font-medium ${
           message.type === 'success' 
             ? 'bg-emerald-50 border-emerald-200 text-emerald-700' 
-            : 'bg-red-50 border-red-200 text-red-700'
+            : 'bg-red-50 border-red-200 text-red-600'
         }`}>
           {message.text}
         </div>
       )}
 
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-aaa-border pb-3">
-        <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em]">Category Manager</h4>
+      {/* Header - MacBook style */}
+      <div className="flex items-center justify-between border-b border-surface-border pb-3">
+        <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider">Categories</h4>
         <div className="flex gap-2">
           <button
             onClick={() => {
@@ -230,42 +230,42 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
               setShowMultiSelectModal(true);
               setSelectedClauseNumbers(new Set());
             }}
-            className="px-3 py-1.5 bg-white border border-aaa-border text-aaa-blue rounded-lg text-[9px] font-black uppercase tracking-wider hover:bg-aaa-bg transition-all shadow-sm"
+            className="px-3 py-1.5 bg-white border border-surface-border text-mac-blue rounded-md text-[9px] font-medium hover:bg-surface-bg hover:border-mac-blue transition-all"
           >
-            + Organize
+            Organize
           </button>
           <button
             onClick={() => {
               closeAllModals();
               setShowCreateModal(true);
             }}
-            className="px-3 py-1.5 bg-aaa-blue text-white rounded-lg text-[9px] font-black uppercase tracking-wider hover:bg-aaa-hover transition-all shadow-sm"
+            className="px-3 py-1.5 bg-mac-blue text-white rounded-md text-[9px] font-medium hover:bg-mac-blue-hover transition-all"
           >
             + New
           </button>
         </div>
       </div>
 
-      {/* Categories List */}
+      {/* Categories List - MacBook style */}
       <div className="space-y-2">
         {categories.length === 0 ? (
-          <p className="text-[10px] text-aaa-muted italic text-center py-4">No categories yet. Create one to get started.</p>
+          <p className="text-xs text-mac-muted text-center py-4">No categories yet</p>
         ) : (
           categories.map(category => (
             <div
               key={category.name}
-              className="group p-4 bg-aaa-bg border border-aaa-border rounded-xl hover:border-aaa-blue transition-all"
+              className="group p-4 bg-surface-bg border border-surface-border rounded-mac-sm hover:border-mac-blue/30 transition-all"
             >
               {/* Title: Category name */}
               <div className="mb-2">
-                <div className="text-sm font-semibold text-slate-900">
+                <div className="text-sm font-medium text-mac-navy">
                   {category.name}
                 </div>
               </div>
 
               {/* Subtitle: Clause count + ADD button */}
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-medium text-slate-600">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs text-mac-muted">
                   {category.clauseNumbers.length} clause{category.clauseNumbers.length !== 1 ? 's' : ''}
                 </span>
                 <button
@@ -275,15 +275,15 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
                     setSelectedClauseNumbers(new Set());
                     setShowMultiSelectModal(true);
                   }}
-                  className="px-2 py-1 bg-emerald-500 text-white rounded-lg text-[9px] font-bold uppercase tracking-wider hover:bg-emerald-600 transition-all shadow-sm"
+                  className="px-2 py-1 bg-emerald-500 text-white rounded-md text-[9px] font-medium hover:bg-emerald-600 transition-all"
                   title="Add more clauses"
                 >
-                  + ADD
+                  + Add
                 </button>
                 <div className="flex items-center gap-1 ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
                   <button
                     onClick={() => handleShowCategory(category.name)}
-                    className="p-1.5 hover:bg-aaa-blue hover:text-white rounded-lg transition-all"
+                    className="p-1.5 text-mac-muted hover:bg-mac-blue hover:text-white rounded-md transition-all"
                     title="View clauses"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -297,7 +297,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
                       setRenameNewName(category.name);
                       setShowRenameModal(true);
                     }}
-                    className="p-1.5 hover:bg-aaa-blue hover:text-white rounded-lg transition-all"
+                    className="p-1.5 text-mac-muted hover:bg-mac-blue hover:text-white rounded-md transition-all"
                     title="Rename category"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -306,7 +306,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
                   </button>
                   <button
                     onClick={() => handleDeleteCategory(category.name)}
-                    className="p-1.5 hover:bg-red-500 hover:text-white rounded-lg transition-all"
+                    className="p-1.5 text-mac-muted hover:bg-red-500 hover:text-white rounded-md transition-all"
                     title="Delete"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

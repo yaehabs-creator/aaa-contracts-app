@@ -730,25 +730,25 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
           position: fixed;
           top: 0;
           right: 0;
-          width: 480px;
+          width: 460px;
           height: 100vh;
-          background: #F4F7FA;
-          box-shadow: -8px 0 32px rgba(15, 46, 107, 0.15);
+          background: #F8FAFC;
+          box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
+          border-left: 1px solid rgba(0, 0, 0, 0.06);
           z-index: 1000;
           display: flex;
           flex-direction: column;
           animation: ai-bot-slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Header */
+        /* Header - MacBook style */
         .ai-bot-header {
-          background: #0F2E6B;
+          background: linear-gradient(180deg, #2563EB 0%, #1D4ED8 100%);
           color: white;
-          padding: 1.5rem 1.75rem;
+          padding: 1.25rem 1.5rem;
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           flex-shrink: 0;
         }
 
@@ -758,19 +758,18 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
         .ai-bot-title {
           margin: 0;
-          font-size: 1.375rem;
-          font-weight: 800;
-          letter-spacing: -0.02em;
+          font-size: 1.125rem;
+          font-weight: 600;
+          letter-spacing: -0.01em;
           line-height: 1.3;
           color: white;
         }
 
         .ai-bot-subtitle {
-          margin: 0.5rem 0 0;
+          margin: 0.375rem 0 0;
           font-size: 0.8125rem;
-          font-weight: 500;
-          opacity: 0.85;
-          letter-spacing: 0.01em;
+          font-weight: 400;
+          opacity: 0.8;
         }
 
         .ai-bot-dual-mode-badge {

@@ -298,45 +298,45 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const keywords = ["Time", "Payment", "Insurance", "Liability", "Termination", "Variation", "Dispute"];
 
   return (
-    <aside className="w-80 flex-shrink-0 space-y-6 bg-white border-r border-aaa-border h-[calc(100vh-4rem)] fixed top-16 left-0 overflow-y-auto hidden lg:block p-6 custom-scrollbar z-40 animate-slide-left">
-      {/* Statistics Panel */}
-      <div className="space-y-3 p-4 bg-gradient-to-br from-slate-50 to-aaa-bg border border-aaa-border rounded-2xl">
-        <h4 className="text-[9px] font-black text-aaa-blue uppercase tracking-[0.2em]">Ledger Statistics</h4>
+    <aside className="w-80 flex-shrink-0 space-y-6 bg-white/80 backdrop-blur-xl border-r border-surface-border h-[calc(100vh-4rem)] fixed top-16 left-0 overflow-y-auto hidden lg:block p-6 custom-scrollbar z-40 animate-slide-left">
+      {/* Statistics Panel - MacBook style */}
+      <div className="space-y-4 p-5 bg-surface-bg rounded-mac border border-surface-border shadow-mac-sm">
+        <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider">Statistics</h4>
         <div className="grid grid-cols-4 gap-2">
-          <div className="text-center p-2 bg-white rounded-xl border border-aaa-border shadow-sm">
-            <div className="text-lg font-black text-aaa-blue">{stats.total}</div>
-            <div className="text-[8px] font-bold text-aaa-muted uppercase tracking-wider">Total</div>
+          <div className="text-center p-3 bg-white rounded-mac-sm border border-surface-border shadow-mac-sm">
+            <div className="text-xl font-bold text-mac-blue">{stats.total}</div>
+            <div className="text-[9px] font-medium text-mac-muted mt-1">Total</div>
           </div>
-          <div className="text-center p-2 bg-white rounded-xl border border-emerald-200 shadow-sm">
-            <div className="text-lg font-black text-emerald-600">{stats.added}</div>
-            <div className="text-[8px] font-bold text-emerald-600 uppercase tracking-wider">Added</div>
+          <div className="text-center p-3 bg-emerald-50 rounded-mac-sm border border-emerald-100">
+            <div className="text-xl font-bold text-emerald-600">{stats.added}</div>
+            <div className="text-[9px] font-medium text-emerald-600 mt-1">Added</div>
           </div>
-          <div className="text-center p-2 bg-white rounded-xl border border-amber-200 shadow-sm">
-            <div className="text-lg font-black text-amber-600">{stats.modified}</div>
-            <div className="text-[8px] font-bold text-amber-600 uppercase tracking-wider">Modified</div>
+          <div className="text-center p-3 bg-amber-50 rounded-mac-sm border border-amber-100">
+            <div className="text-xl font-bold text-amber-600">{stats.modified}</div>
+            <div className="text-[9px] font-medium text-amber-600 mt-1">Modified</div>
           </div>
-          <div className="text-center p-2 bg-white rounded-xl border border-slate-200 shadow-sm">
-            <div className="text-lg font-black text-slate-500">{stats.gcOnly}</div>
-            <div className="text-[8px] font-bold text-slate-500 uppercase tracking-wider">GC Only</div>
+          <div className="text-center p-3 bg-slate-50 rounded-mac-sm border border-slate-200">
+            <div className="text-xl font-bold text-mac-muted">{stats.gcOnly}</div>
+            <div className="text-[9px] font-medium text-mac-muted mt-1">GC Only</div>
           </div>
         </div>
-        {/* Progress Bar */}
-        <div className="space-y-1">
+        {/* Progress Bar - MacBook style */}
+        <div className="space-y-2 pt-2">
           <div className="flex items-center justify-between">
-            <span className="text-[9px] font-bold text-aaa-muted">PC Coverage</span>
-            <span className="text-[9px] font-black text-aaa-blue">{stats.pcCoverage}%</span>
+            <span className="text-xs font-medium text-mac-muted">PC Coverage</span>
+            <span className="text-xs font-semibold text-mac-blue">{stats.pcCoverage}%</span>
           </div>
-          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-emerald-500 to-amber-500 rounded-full transition-all duration-500"
+              className="h-full bg-gradient-to-r from-mac-blue to-emerald-500 rounded-full transition-all duration-500"
               style={{ width: `${stats.pcCoverage}%` }}
             />
           </div>
-          <div className="flex items-center gap-3 text-[8px] text-aaa-muted">
-            <span className="flex items-center gap-1">
+          <div className="flex items-center gap-4 text-[10px] text-mac-muted">
+            <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Added
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-amber-500"></span> Modified
             </span>
           </div>
@@ -344,28 +344,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       <div className="space-y-4">
-        <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em] border-b border-aaa-border pb-2">Filter Source</h4>
-        <div className="space-y-2">
+        <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider border-b border-surface-border pb-2">Filter Source</h4>
+        <div className="space-y-3">
           {(['General', 'Particular'] as ConditionType[]).map(type => (
             <label key={type} className="flex items-center gap-3 cursor-pointer group">
               <input
                 type="checkbox"
                 checked={selectedTypes.includes(type)}
                 onChange={() => toggleType(type)}
-                className="w-4 h-4 rounded border-aaa-border text-aaa-blue focus:ring-aaa-blue"
+                className="w-4 h-4 rounded-md border-surface-border text-mac-blue focus:ring-mac-blue/20 focus:ring-offset-0 transition-all"
               />
-              <span className="text-sm font-semibold text-aaa-muted group-hover:text-aaa-blue transition-colors">{type} Condition</span>
+              <span className="text-sm font-medium text-mac-charcoal group-hover:text-mac-blue transition-colors">{type} Condition</span>
             </label>
           ))}
         </div>
       </div>
 
       <div className="space-y-4">
-        <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em] border-b border-aaa-border pb-2">Chapters</h4>
+        <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider border-b border-surface-border pb-2">Chapters</h4>
         <div className="grid grid-cols-4 gap-2">
           <button
             onClick={() => setSelectedGroup(null)}
-            className={`px-1 py-2 text-[10px] font-bold rounded-[8px] border transition-all ${!selectedGroup ? 'bg-aaa-blue text-white border-aaa-blue shadow-sm' : 'bg-white border-aaa-border text-aaa-muted hover:border-aaa-blue'}`}
+            className={`px-2 py-2.5 text-[10px] font-semibold rounded-mac-xs border transition-all ${!selectedGroup ? 'bg-mac-blue text-white border-mac-blue shadow-sm' : 'bg-white border-surface-border text-mac-muted hover:border-mac-blue hover:text-mac-blue'}`}
           >
             ALL
           </button>
@@ -373,7 +373,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               key={g}
               onClick={() => setSelectedGroup(g)}
-              className={`px-1 py-2 text-[10px] font-bold rounded-[8px] border transition-all ${selectedGroup === g ? 'bg-aaa-blue text-white border-aaa-blue shadow-sm' : 'bg-white border-aaa-border text-aaa-muted hover:border-aaa-blue'}`}
+              className={`px-2 py-2.5 text-[10px] font-semibold rounded-mac-xs border transition-all ${selectedGroup === g ? 'bg-mac-blue text-white border-mac-blue shadow-sm' : 'bg-white border-surface-border text-mac-muted hover:border-mac-blue hover:text-mac-blue'}`}
             >
               {g}
             </button>
@@ -382,10 +382,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-aaa-border pb-2">
-          <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em]">Search Clauses</h4>
+        <div className="flex items-center justify-between border-b border-surface-border pb-2">
+          <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider">Search Clauses</h4>
           {searchQuery && (
-            <span className="text-[9px] font-bold text-aaa-blue bg-aaa-blue/10 px-2 py-0.5 rounded-full">
+            <span className="text-[9px] font-medium text-mac-blue bg-mac-blue-subtle px-2.5 py-1 rounded-full">
               {clauses.filter(c => {
                 const keywords = searchQuery.trim().split(/\s+/).filter(k => k.length > 0);
                 if (keywords.length === 0) return true;
@@ -402,7 +402,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           )}
         </div>
         <div className="relative">
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-aaa-muted">
+          <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-mac-muted">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -412,12 +412,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by keywords..."
-            className="w-full pl-10 pr-10 py-2.5 bg-aaa-bg border border-aaa-border rounded-xl text-sm font-medium text-aaa-text placeholder-aaa-muted focus:ring-2 focus:ring-aaa-blue/20 focus:border-aaa-blue outline-none transition-all"
+            className="w-full pl-10 pr-10 py-3 bg-white border border-surface-border rounded-mac-sm text-sm font-medium text-mac-navy placeholder-mac-muted-light focus:ring-0 focus:border-mac-blue focus:shadow-mac-focus outline-none transition-all"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-aaa-muted hover:text-aaa-blue transition-colors rounded-full hover:bg-aaa-bg"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 text-mac-muted hover:text-mac-blue transition-all rounded-md hover:bg-surface-bg"
               title="Clear search"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -426,17 +426,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </button>
           )}
         </div>
-        <div className="text-[9px] text-aaa-muted font-medium leading-relaxed">
-          💡 <strong>Tip:</strong> Use multiple keywords separated by spaces (e.g., "payment insurance")
-        </div>
+        <p className="text-[10px] text-mac-muted leading-relaxed">
+          Use multiple keywords separated by spaces
+        </p>
         <div className="space-y-2">
-          <h5 className="text-[9px] font-black text-aaa-muted uppercase tracking-wider">Quick Filters</h5>
-          <div className="flex flex-wrap gap-2">
+          <h5 className="text-[9px] font-medium text-mac-muted uppercase tracking-wider">Quick Filters</h5>
+          <div className="flex flex-wrap gap-1.5">
             {keywords.map(kw => (
               <button
                 key={kw}
                 onClick={() => setSearchQuery(kw)}
-                className={`px-3 py-1.5 text-[9px] font-black rounded-full border uppercase tracking-wider transition-all ${searchQuery === kw ? 'bg-aaa-blue text-white border-aaa-blue shadow-sm' : 'bg-white border-aaa-border text-aaa-muted hover:text-aaa-blue hover:border-aaa-blue shadow-sm'}`}
+                className={`px-3 py-1.5 text-[10px] font-medium rounded-full border transition-all ${searchQuery === kw ? 'bg-mac-blue text-white border-mac-blue' : 'bg-white border-surface-border text-mac-muted hover:text-mac-blue hover:border-mac-blue'}`}
               >
                 {kw}
               </button>
@@ -446,13 +446,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-aaa-border pb-2">
-          <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em]">Clause Ledger</h4>
+        <div className="flex items-center justify-between border-b border-surface-border pb-2">
+          <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider">Clause Ledger</h4>
           <div className="flex gap-1">
             {isGroupedView && (
               <button
                 onClick={() => setGroupingMode(groupingMode === 'chapter' ? 'category' : 'chapter')}
-                className={`text-[8px] font-black px-2 py-0.5 rounded border transition-all uppercase tracking-tighter bg-aaa-bg text-aaa-muted border-aaa-border hover:text-aaa-blue`}
+                className={`text-[9px] font-medium px-2.5 py-1 rounded-md border transition-all bg-white text-mac-muted border-surface-border hover:text-mac-blue hover:border-mac-blue`}
                 title={groupingMode === 'chapter' ? 'Switch to category grouping' : 'Switch to chapter grouping'}
               >
                 {groupingMode === 'chapter' ? 'Ch.' : 'Cat.'}
@@ -460,14 +460,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
             <button
               onClick={() => setIsGroupedView(!isGroupedView)}
-              className={`text-[8px] font-black px-2 py-0.5 rounded border transition-all uppercase tracking-tighter ${isGroupedView ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-aaa-bg text-aaa-muted border-aaa-border hover:text-aaa-blue'}`}
+              className={`text-[9px] font-medium px-2.5 py-1 rounded-md border transition-all ${isGroupedView ? 'bg-mac-blue text-white border-mac-blue' : 'bg-white text-mac-muted border-surface-border hover:text-mac-blue hover:border-mac-blue'}`}
               title={isGroupedView ? 'Switch to flat view' : 'Switch to grouped view'}
             >
               {isGroupedView ? 'Grp' : 'Flat'}
             </button>
             <button
               onClick={() => setIsEditMode(!isEditMode)}
-              className={`text-[8px] font-black px-2 py-0.5 rounded border transition-all uppercase tracking-tighter ${isEditMode ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-aaa-bg text-aaa-muted border-aaa-border hover:text-aaa-blue'}`}
+              className={`text-[9px] font-medium px-2.5 py-1 rounded-md border transition-all ${isEditMode ? 'bg-mac-blue text-white border-mac-blue' : 'bg-white text-mac-muted border-surface-border hover:text-mac-blue hover:border-mac-blue'}`}
             >
               {isEditMode ? 'Done' : 'Edit'}
             </button>
@@ -484,40 +484,40 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   const modifiedCount = chapterClauses.filter(c => getClauseStatus(c) === 'modified').length;
                   return (
                     <div key={chapter} className="space-y-1">
-                      {/* Chapter Header */}
+                      {/* Chapter Header - MacBook style */}
                       <button
                         onClick={() => toggleChapterCollapse(chapter)}
-                        className="w-full flex items-center justify-between px-3 py-2 border rounded-lg transition-all bg-slate-100 border-slate-200 hover:bg-slate-200"
+                        className="w-full flex items-center justify-between px-3 py-2.5 border rounded-mac-xs transition-all bg-surface-bg border-surface-border hover:bg-surface-bg-subtle hover:border-surface-border-hover"
                       >
                         <div className="flex items-center gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className={`w-3 h-3 text-slate-600 transition-transform ${isCollapsed ? '' : 'rotate-90'}`}
+                            className={`w-3 h-3 text-mac-muted transition-transform duration-200 ${isCollapsed ? '' : 'rotate-90'}`}
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
-                          <span className="text-[10px] font-black text-slate-700 uppercase tracking-wider">Chapter {chapter}</span>
-                          <span className="text-[8px] font-bold text-slate-500 bg-white px-1.5 py-0.5 rounded">
+                          <span className="text-[10px] font-semibold text-mac-navy">Chapter {chapter}</span>
+                          <span className="text-[9px] font-medium text-mac-muted bg-white px-2 py-0.5 rounded-md border border-surface-border">
                             {chapterClauses.length}
                           </span>
                         </div>
                         <div className="flex items-center gap-1">
                           {addedCount > 0 && (
-                            <span className="text-[8px] font-bold text-emerald-600 bg-emerald-100 px-1.5 py-0.5 rounded">
+                            <span className="text-[9px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
                               +{addedCount}
                             </span>
                           )}
                           {modifiedCount > 0 && (
-                            <span className="text-[8px] font-bold text-amber-600 bg-amber-100 px-1.5 py-0.5 rounded">
+                            <span className="text-[9px] font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">
                               ~{modifiedCount}
                             </span>
                           )}
                         </div>
                       </button>
-                      {/* Chapter Clauses */}
+                      {/* Chapter Clauses - MacBook style */}
                       {!isCollapsed && chapterClauses.map((c, idx) => {
                         const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
                         const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
@@ -529,12 +529,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             onDragOver={(e) => handleDragOver(e, originalIndex)}
                             onDrop={(e) => handleDrop(e, originalIndex)}
                             onDragEnd={handleDragEnd}
-                            className={`flex items-center group/ledger transition-all duration-300 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
-                              } ${dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                              } ${isSearchMatch ? 'bg-yellow-50 border-l-2 border-l-yellow-400' : ''}`}
+                            className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                              } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
+                              } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
                           >
                             {isEditMode && (
-                              <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
+                              <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                                 </svg>
@@ -543,19 +543,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             <ClauseStatusBadge clause={c} />
                             <button
                               onClick={() => scrollToClause(c.clause_number)}
-                              className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
-                                } ${isSearchMatch ? 'text-aaa-blue font-black' : ''}`}
+                              className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
                               title={c.clause_title}
                             >
-                              <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
+                              <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
                             </button>
                             {isEditMode && onDelete && (
                               <button
                                 onClick={() => onDelete(originalIndex)}
-                                className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
-                                title="Delete Clause Node"
+                                className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
+                                title="Delete Clause"
                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
                               </button>
                             )}
                           </div>
@@ -566,7 +565,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 })}
               </>
             ) : (
-              /* Category-Based Grouping */
+              /* Category-Based Grouping - MacBook style */
               <>
                 {getOrderedCategories().map(([categoryName, categoryClauses]) => {
                   const isCollapsed = collapsedCategories.has(categoryName);
@@ -584,19 +583,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       onDrop={(e) => handleCategoryDrop(e, categoryName)}
                       onDragEnd={handleCategoryDragEnd}
                     >
-                      {/* Category Header */}
+                      {/* Category Header - MacBook style */}
                       <button
                         onClick={() => toggleCategoryCollapse(categoryName)}
-                        className={`w-full flex items-center justify-between px-3 py-2 border rounded-lg transition-all group ${isDragging
-                          ? 'opacity-30 bg-aaa-bg border-aaa-border'
+                        className={`w-full flex items-center justify-between px-3 py-2.5 border rounded-mac-xs transition-all group ${isDragging
+                          ? 'opacity-30 bg-surface-bg border-surface-border'
                           : isDragOver
-                            ? 'bg-aaa-blue/30 border-aaa-blue border-2'
-                            : 'bg-aaa-blue/10 border-aaa-blue/20 hover:bg-aaa-blue/20'
+                            ? 'bg-mac-blue-light border-mac-blue border-2'
+                            : 'bg-mac-blue-subtle border-mac-blue/10 hover:bg-mac-blue-light'
                           }`}
                       >
                         <div className="flex items-center gap-2">
                           {isEditMode && (
-                            <div className="cursor-grab active:cursor-grabbing text-aaa-blue">
+                            <div className="cursor-grab active:cursor-grabbing text-mac-blue">
                               <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                               </svg>
@@ -604,32 +603,32 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           )}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className={`w-3 h-3 text-aaa-blue transition-transform ${isCollapsed ? '' : 'rotate-90'}`}
+                            className={`w-3 h-3 text-mac-blue transition-transform duration-200 ${isCollapsed ? '' : 'rotate-90'}`}
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
-                          <span className="text-[10px] font-black text-aaa-blue uppercase tracking-wider">{categoryName}</span>
-                          <span className="text-[8px] font-bold text-aaa-blue/60 bg-white px-1.5 py-0.5 rounded">
+                          <span className="text-[10px] font-semibold text-mac-blue">{categoryName}</span>
+                          <span className="text-[9px] font-medium text-mac-blue/70 bg-white px-2 py-0.5 rounded-md border border-mac-blue/10">
                             {categoryClauses.length}
                           </span>
                         </div>
                         <div className="flex items-center gap-1">
                           {addedCount > 0 && (
-                            <span className="text-[8px] font-bold text-emerald-600 bg-emerald-100 px-1.5 py-0.5 rounded">
+                            <span className="text-[9px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
                               +{addedCount}
                             </span>
                           )}
                           {modifiedCount > 0 && (
-                            <span className="text-[8px] font-bold text-amber-600 bg-amber-100 px-1.5 py-0.5 rounded">
+                            <span className="text-[9px] font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">
                               ~{modifiedCount}
                             </span>
                           )}
                         </div>
                       </button>
-                      {/* Category Clauses */}
+                      {/* Category Clauses - MacBook style */}
                       {!isCollapsed && categoryClauses.map((c, idx) => {
                         const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
                         const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
@@ -641,12 +640,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             onDragOver={(e) => handleDragOver(e, originalIndex)}
                             onDrop={(e) => handleDrop(e, originalIndex)}
                             onDragEnd={handleDragEnd}
-                            className={`flex items-center group/ledger transition-all duration-300 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
-                              } ${dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                              } ${isSearchMatch ? 'bg-yellow-50 border-l-2 border-l-yellow-400' : ''}`}
+                            className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                              } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
+                              } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
                           >
                             {isEditMode && (
-                              <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
+                              <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                                 </svg>
@@ -655,19 +654,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             <ClauseStatusBadge clause={c} />
                             <button
                               onClick={() => scrollToClause(c.clause_number)}
-                              className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
-                                } ${isSearchMatch ? 'text-aaa-blue font-black' : ''}`}
+                              className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
                               title={c.clause_title}
                             >
-                              <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
+                              <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
                             </button>
                             {isEditMode && onDelete && (
                               <button
                                 onClick={() => onDelete(originalIndex)}
-                                className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
-                                title="Delete Clause Node"
+                                className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
+                                title="Delete Clause"
                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
                               </button>
                             )}
                           </div>
@@ -676,13 +674,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     </div>
                   );
                 })}
-                {/* Unassigned Clauses */}
+                {/* Unassigned Clauses - MacBook style */}
                 {groupedClauses.unassigned.length > 0 && (
                   <div className="space-y-1 mt-3">
-                    <div className="px-3 py-2 bg-aaa-bg border border-aaa-border rounded-lg flex items-center justify-between">
+                    <div className="px-3 py-2.5 bg-surface-bg border border-surface-border rounded-mac-xs flex items-center justify-between">
                       <div>
-                        <span className="text-[10px] font-black text-aaa-muted uppercase tracking-wider">Unassigned</span>
-                        <span className="ml-2 text-[8px] font-bold text-aaa-muted bg-white px-1.5 py-0.5 rounded">
+                        <span className="text-[10px] font-semibold text-mac-muted">Unassigned</span>
+                        <span className="ml-2 text-[9px] font-medium text-mac-muted bg-white px-2 py-0.5 rounded-md border border-surface-border">
                           {groupedClauses.unassigned.length}
                         </span>
                       </div>
@@ -691,7 +689,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           const unassignedNumbers = groupedClauses.unassigned.map(c => c.clause_number);
                           setAutoAssignTrigger({ clauseNumbers: unassignedNumbers });
                         }}
-                        className="px-2 py-1 bg-emerald-500 text-white rounded-lg text-[8px] font-bold uppercase tracking-wider hover:bg-emerald-600 transition-all shadow-sm"
+                        className="px-3 py-1.5 bg-emerald-500 text-white rounded-md text-[9px] font-medium hover:bg-emerald-600 transition-all"
                         title="Auto-assign all unassigned clauses"
                       >
                         Auto-assign
@@ -708,12 +706,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           onDragOver={(e) => handleDragOver(e, originalIndex)}
                           onDrop={(e) => handleDrop(e, originalIndex)}
                           onDragEnd={handleDragEnd}
-                          className={`flex items-center group/ledger transition-all duration-300 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
-                            } ${dragOverIndex === originalIndex ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                            } ${isSearchMatch ? 'bg-yellow-50 border-l-2 border-l-yellow-400' : ''}`}
+                          className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                            } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
+                            } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
                         >
                           {isEditMode && (
-                            <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
+                            <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
                               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                               </svg>
@@ -722,19 +720,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           <ClauseStatusBadge clause={c} />
                           <button
                             onClick={() => scrollToClause(c.clause_number)}
-                            className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
+                            className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}
                               } ${isSearchMatch ? 'text-aaa-blue font-black' : ''}`}
                             title={c.clause_title}
                           >
-                            <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
+                            <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
                           </button>
                           {isEditMode && onDelete && (
                             <button
                               onClick={() => onDelete(originalIndex)}
-                              className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
-                              title="Delete Clause Node"
+                              className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
+                              title="Delete Clause"
                             >
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
                             </button>
                           )}
                         </div>
@@ -745,7 +743,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </>
             )
           ) : (
-            /* Flat View */
+            /* Flat View - MacBook style */
             (clauses || []).map((c, i) => {
               const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
               return (
@@ -756,12 +754,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onDragOver={(e) => handleDragOver(e, i)}
                   onDrop={(e) => handleDrop(e, i)}
                   onDragEnd={handleDragEnd}
-                  className={`flex items-center group/ledger transition-all duration-300 stagger-item ${draggedIndex === i ? 'opacity-30' : ''
-                    } ${dragOverIndex === i ? 'border-t-2 border-aaa-blue bg-aaa-bg/50' : 'border-t border-transparent'
-                    } ${isSearchMatch ? 'bg-yellow-50 border-l-2 border-l-yellow-400' : ''}`}
+                  className={`flex items-center group/ledger transition-all duration-200 stagger-item ${draggedIndex === i ? 'opacity-30' : ''
+                    } ${dragOverIndex === i ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
+                    } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
                 >
                   {isEditMode && (
-                    <div className="px-2 cursor-grab active:cursor-grabbing text-aaa-muted">
+                    <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                       </svg>
@@ -770,13 +768,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <ClauseStatusBadge clause={c} />
                   <button
                     onClick={() => scrollToClause(c.clause_number)}
-                    className={`flex-1 text-left px-3 py-2 text-[11px] font-bold text-aaa-muted hover:bg-aaa-bg hover:text-aaa-blue transition-all truncate border border-transparent hover:border-aaa-blue/10 ${isEditMode ? 'rounded-none' : 'rounded-aaa'
-                      } ${isSearchMatch ? 'text-aaa-blue font-black' : ''}`}
+                    className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
                     title={c.clause_title}
                   >
-                    <span className="text-aaa-blue mr-2 font-black">{c.clause_number}</span> {c.clause_title || 'Untitled'}
+                    <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
                     {c.category && (
-                      <span className="ml-2 text-[8px] font-bold text-aaa-muted bg-white px-1.5 py-0.5 rounded border border-aaa-border">
+                      <span className="ml-2 text-[9px] font-medium text-mac-muted bg-white px-2 py-0.5 rounded-md border border-surface-border">
                         {c.category}
                       </span>
                     )}
@@ -784,10 +781,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   {isEditMode && onDelete && (
                     <button
                       onClick={() => onDelete(i)}
-                      className="p-2 hover:bg-red-500 hover:text-white text-red-400 transition-colors"
-                      title="Delete Clause Node"
+                      className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
+                      title="Delete Clause"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
                     </button>
                   )}
                 </div>
@@ -797,9 +794,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
 
-      {/* Category Manager Section */}
+      {/* Category Manager Section - MacBook style */}
       {onClausesUpdate && (
-        <div className="pt-6 border-t border-aaa-border">
+        <div className="pt-6 border-t border-surface-border">
           <CategoryManager
             clauses={clauses}
             onClausesUpdate={(updatedClauses) => {

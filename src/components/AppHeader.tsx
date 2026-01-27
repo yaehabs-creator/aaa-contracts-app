@@ -14,83 +14,56 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, show
   const getRoleBadge = () => {
     if (!user) return null;
     
-    const colors = {
-      admin: '#e53e3e',
-      editor: '#3182ce',
-      viewer: '#38a169'
+    const roleStyles: Record<string, string> = {
+      admin: 'bg-red-50 text-red-600',
+      editor: 'bg-mac-blue-subtle text-mac-blue',
+      viewer: 'bg-emerald-50 text-emerald-600'
     };
 
     return (
-      <span style={{
-        padding: '0.25rem 0.75rem',
-        borderRadius: '12px',
-        background: colors[user.role],
-        color: 'white',
-        fontSize: '0.75rem',
-        fontWeight: 'bold',
-        marginLeft: '0.5rem'
-      }}>
-        {user.role.toUpperCase()}
+      <span className={`px-2.5 py-1 rounded-md text-xs font-medium ${roleStyles[user.role] || roleStyles.viewer}`}>
+        {user.role.charAt(0).toUpperCase() + user.role.slice(1)}
       </span>
     );
   };
 
   return (
-    <div style={{
-      background: 'white',
-      borderBottom: '1px solid #e2e8f0',
-      padding: '1rem 2rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <h1 style={{ margin: 0, fontSize: '1.5rem', color: '#2d3748' }}>
-          🏢 AAA Contract Department
-        </h1>
+    <header className="bg-white/80 backdrop-blur-xl border-b border-surface-border px-8 py-4 flex justify-between items-center sticky top-0 z-50">
+      <div className="flex items-center gap-4">
+        <div className="w-9 h-9 bg-mac-blue rounded-mac-xs flex items-center justify-center">
+          <span className="text-white font-bold text-sm">AAA</span>
+        </div>
+        <div>
+          <h1 className="text-lg font-semibold text-mac-navy">Contract Department</h1>
+        </div>
         {getRoleBadge()}
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <span style={{ color: '#718096', fontSize: '0.875rem' }}>
+      <div className="flex items-center gap-3">
+        <span className="text-sm text-mac-muted">
           {user?.displayName || user?.email}
         </span>
 
         {isAdmin() && (
           <button
             onClick={onShowUserManagement}
-            style={{
-              padding: '0.5rem 1rem',
-              background: showingUserManagement ? '#667eea' : '#e2e8f0',
-              color: showingUserManagement ? 'white' : '#2d3748',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '0.875rem',
-              fontWeight: 'bold'
-            }}
+            className={`px-4 py-2 rounded-mac-xs text-sm font-medium transition-all ${
+              showingUserManagement 
+                ? 'bg-mac-blue text-white' 
+                : 'bg-surface-bg text-mac-charcoal hover:bg-surface-bg-subtle border border-surface-border'
+            }`}
           >
-            {showingUserManagement ? '📊 Dashboard' : '👥 Users'}
+            {showingUserManagement ? 'Dashboard' : 'Users'}
           </button>
         )}
 
         <button
           onClick={signOut}
-          style={{
-            padding: '0.5rem 1rem',
-            background: '#fc8181',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontSize: '0.875rem',
-            fontWeight: 'bold'
-          }}
+          className="px-4 py-2 bg-white border border-surface-border text-mac-muted hover:text-red-500 hover:border-red-300 rounded-mac-xs text-sm font-medium transition-all"
         >
           Sign Out
         </button>
       </div>
-    </div>
+    </header>
   );
 };

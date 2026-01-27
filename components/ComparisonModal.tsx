@@ -371,32 +371,33 @@ Output Format:
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-aaa-blue/90 backdrop-blur-xl modal-backdrop">
-      <div className="bg-white w-full max-w-[1650px] h-[95vh] rounded-[32px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden modal-content border border-white/20">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 mac-modal-backdrop modal-backdrop">
+      <div className="bg-white w-full max-w-[1650px] h-[95vh] rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden modal-content border border-surface-border">
         
-        <div className="px-12 py-8 border-b border-aaa-border flex items-center justify-between bg-white shrink-0 shadow-sm relative z-10">
-          <div className="flex items-center gap-10">
-             <div className="w-16 h-16 bg-aaa-blue rounded-2xl flex items-center justify-center shadow-2xl">
-                <span className="text-white font-black text-lg">AAA</span>
+        {/* Header - MacBook style */}
+        <div className="px-8 py-6 border-b border-surface-border flex items-center justify-between bg-white shrink-0 relative z-10">
+          <div className="flex items-center gap-6">
+             <div className="w-12 h-12 bg-mac-blue rounded-mac-sm flex items-center justify-center">
+                <span className="text-white font-bold text-sm">AAA</span>
              </div>
              <div>
-                <h3 className="text-4xl font-black text-aaa-blue tracking-tighter">Temporal Intelligence Ledger</h3>
-                <div className="flex items-center gap-4 mt-2">
-                   <div className="px-3 py-1 bg-aaa-bg rounded-lg border border-aaa-blue/10">
-                      <span className="text-[11px] font-black text-aaa-blue mono">CLAUSE {baseClause.clause_number}</span>
+                <h3 className="text-2xl font-semibold text-mac-navy">Clause Analysis</h3>
+                <div className="flex items-center gap-3 mt-1">
+                   <div className="px-2.5 py-1 bg-mac-blue-subtle rounded-md">
+                      <span className="text-xs font-medium text-mac-blue mono">Clause {baseClause.clause_number}</span>
                    </div>
-                   <span className="text-aaa-muted font-bold text-sm">{baseClause.clause_title}</span>
+                   <span className="text-mac-muted text-sm">{baseClause.clause_title}</span>
                 </div>
              </div>
           </div>
           
-          <div className="flex items-center gap-4">
-            {error && <span className="text-red-500 text-[10px] font-bold uppercase animate-pulse">{error}</span>}
+          <div className="flex items-center gap-3">
+            {error && <span className="text-red-500 text-xs font-medium">{error}</span>}
             <button 
               onClick={analyzeClauseWithAI}
               disabled={isAnalyzing}
-              className={`px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all shadow-xl flex items-center gap-3 ${
-                isAnalyzing ? 'bg-aaa-muted cursor-not-allowed text-white/50' : 'bg-aaa-blue text-white hover:bg-aaa-hover active:scale-95'
+              className={`px-5 py-2.5 rounded-mac-sm text-sm font-medium transition-all flex items-center gap-2 ${
+                isAnalyzing ? 'bg-mac-muted cursor-not-allowed text-white/60' : 'bg-mac-blue text-white hover:bg-mac-blue-hover active:scale-[0.98]'
               }`}
             >
               {isAnalyzing ? (
@@ -405,77 +406,79 @@ Output Format:
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Syncing AI Ledger...
+                  Analyzing...
                 </>
               ) : (
                 <>
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  Analyze & Save Timeframes
+                  Analyze Timeframes
                 </>
               )}
             </button>
 
-            <button onClick={onClose} className="p-4 hover:bg-aaa-bg rounded-2xl transition-all border border-aaa-border hover:border-aaa-blue group">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 group-hover:rotate-90 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg>
+            <button onClick={onClose} className="p-2.5 hover:bg-surface-bg rounded-mac-xs transition-all border border-surface-border hover:border-mac-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-mac-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
           </div>
         </div>
 
         <div className="flex-1 flex flex-col overflow-y-auto custom-scrollbar">
-          <div className="flex divide-x divide-aaa-border bg-slate-50/20 shrink-0 border-b border-aaa-border">
-            <div className="w-2/3 flex divide-x divide-aaa-border">
+          <div className="flex divide-x divide-surface-border bg-surface-bg/30 shrink-0 border-b border-surface-border">
+            {/* GC/PC Content Panels - MacBook style */}
+            <div className="w-2/3 flex divide-x divide-surface-border">
               <div className="w-1/2 flex flex-col">
-                <div className="px-8 py-3 bg-white/50 border-b border-aaa-border">
-                  <span className="text-[10px] font-black text-aaa-blue uppercase tracking-widest">Baseline (GC)</span>
+                <div className="px-6 py-3 bg-surface-bg border-b border-surface-border">
+                  <span className="text-[10px] font-medium text-mac-navy uppercase tracking-wider">General Conditions</span>
                 </div>
-                <div className="flex-1 p-10 font-mono text-[13px] leading-relaxed">
-                  <div className="font-black text-aaa-blue mb-4 uppercase">{baseClause.clause_number} {baseClause.clause_title}</div>
+                <div className="flex-1 p-6 font-mono text-sm leading-relaxed text-mac-charcoal">
+                  <div className="font-semibold text-mac-navy mb-3">{baseClause.clause_number} {baseClause.clause_title}</div>
                   {baseClause.general_condition ? (
                     <div dangerouslySetInnerHTML={{ __html: baseClause.general_condition }} className="verbatim-content" />
                   ) : baseClause.condition_type === 'General' ? (
                     <div dangerouslySetInnerHTML={{ __html: baseClause.clause_text }} className="verbatim-content" />
                   ) : (
-                    <div className="h-40 flex items-center justify-center border-2 border-dashed border-aaa-border/50 rounded-2xl bg-white/50 text-[10px] font-black uppercase text-aaa-muted opacity-40">Not Present in Baseline</div>
+                    <div className="h-32 flex items-center justify-center border border-dashed border-surface-border rounded-mac-sm bg-surface-bg text-xs font-medium text-mac-muted">Not in baseline</div>
                   )}
                 </div>
               </div>
               <div className="w-1/2 flex flex-col bg-white">
-                <div className="px-8 py-3 bg-white border-b border-aaa-border shadow-sm">
-                  <span className="text-[10px] font-black text-aaa-accent uppercase tracking-widest">Modification (PC)</span>
+                <div className="px-6 py-3 bg-white border-b border-surface-border">
+                  <span className="text-[10px] font-medium text-mac-blue uppercase tracking-wider">Particular Conditions</span>
                 </div>
-                <div className="flex-1 p-10 font-mono text-[13px] leading-relaxed">
-                  <div className="font-black text-aaa-accent mb-4 uppercase">{baseClause.clause_number} {baseClause.clause_title}</div>
+                <div className="flex-1 p-6 font-mono text-sm leading-relaxed text-mac-charcoal">
+                  <div className="font-semibold text-mac-blue mb-3">{baseClause.clause_number} {baseClause.clause_title}</div>
                   {baseClause.particular_condition ? (
                     <div dangerouslySetInnerHTML={{ __html: baseClause.particular_condition }} className="verbatim-content" />
                   ) : baseClause.condition_type === 'Particular' ? (
                     <div dangerouslySetInnerHTML={{ __html: baseClause.clause_text }} className="verbatim-content" />
                   ) : (
-                    <div className="h-40 flex items-center justify-center border-2 border-dashed border-aaa-border/50 rounded-2xl bg-white/50 text-[10px] font-black uppercase text-aaa-muted opacity-40">No Particular Revision</div>
+                    <div className="h-32 flex items-center justify-center border border-dashed border-surface-border rounded-mac-sm bg-surface-bg text-xs font-medium text-mac-muted">No particular revision</div>
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="w-1/3 flex flex-col bg-slate-50 overflow-hidden">
-               <div className="px-8 py-5 border-b border-aaa-border bg-white flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                     <span className="text-[11px] font-black text-aaa-blue uppercase tracking-widest">Temporal Assets</span>
+            {/* Temporal Assets Panel - MacBook style */}
+            <div className="w-1/3 flex flex-col bg-surface-bg overflow-hidden">
+               <div className="px-6 py-4 border-b border-surface-border bg-white flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                     <span className="text-xs font-medium text-mac-navy">Temporal Assets</span>
                   </div>
-                  <span className="px-2 py-0.5 bg-aaa-blue/5 text-aaa-blue text-[9px] font-bold rounded">{(baseClause.time_frames || []).length} Frames</span>
+                  <span className="px-2 py-0.5 bg-mac-blue-subtle text-mac-blue text-[10px] font-medium rounded-md">{(baseClause.time_frames || []).length}</span>
                </div>
                
-               <div className="flex-1 p-8 space-y-6 overflow-y-auto custom-scrollbar">
+               <div className="flex-1 p-4 space-y-3 overflow-y-auto custom-scrollbar">
                   {(baseClause.time_frames || []).map((tf, i) => (
-                    <div key={i} className="bg-white p-6 rounded-2xl border border-aaa-border shadow-sm hover:border-aaa-blue transition-all group relative">
+                    <div key={i} className="bg-white p-4 rounded-mac-sm border border-surface-border shadow-mac-sm hover:shadow-mac transition-all group relative">
                        <button 
                          onClick={() => deleteTimeFrame(i)}
-                         className="absolute top-4 right-4 p-2 text-aaa-muted hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"
-                         title="Remove Asset"
+                         className="absolute top-3 right-3 p-1.5 text-mac-muted hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all rounded-md hover:bg-red-50"
+                         title="Remove"
                        >
-                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                          </svg>
                        </button>
@@ -683,9 +686,10 @@ Output Format:
           )}
         </div>
 
-        <div className="px-12 py-4 bg-aaa-blue text-white text-[10px] font-black uppercase tracking-[0.5em] flex justify-between items-center shrink-0">
-          <span>AAA TEMPORAL EXTRACTION v2.5</span>
-          <span className="opacity-60 uppercase">Temporal Assets Persisted in Ledger</span>
+        {/* Footer - MacBook style */}
+        <div className="px-8 py-3 bg-surface-bg border-t border-surface-border text-xs font-medium text-mac-muted flex justify-between items-center shrink-0">
+          <span>AAA Contract Analysis</span>
+          <span>Changes auto-saved</span>
         </div>
       </div>
     </div>

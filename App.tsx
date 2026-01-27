@@ -1894,49 +1894,48 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             className="hidden"
           />
 
-          <header className="sticky top-0 z-50 glass border-b border-aaa-border shadow-premium px-8 h-20 flex items-center justify-between">
-            <div className="flex items-center gap-5 cursor-pointer" onClick={goBackToInput}>
-              <div className="w-12 h-12 bg-aaa-blue rounded-xl flex items-center justify-center shadow-xl">
-                <span className="text-white font-black text-sm">AAA</span>
+          <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-surface-border px-8 h-16 flex items-center justify-between">
+            <div className="flex items-center gap-4 cursor-pointer" onClick={goBackToInput}>
+              <div className="w-10 h-10 bg-mac-blue rounded-mac-xs flex items-center justify-center">
+                <span className="text-white font-bold text-sm">AAA</span>
               </div>
               <div>
-                <h1 className="text-xl font-extrabold text-aaa-blue tracking-tighter leading-none">Contract Department</h1>
-                <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-[0.3em] mt-1.5">High-Fidelity Analysis</p>
+                <h1 className="text-lg font-semibold text-mac-navy">Contract Department</h1>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {status === AnalysisStatus.COMPLETED && (
                 <>
                   <button
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                    className="p-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group"
+                    className="p-2 bg-white border border-surface-border rounded-mac-xs hover:border-mac-blue transition-all group"
                     title={isSidebarOpen ? "Hide sidebar" : "Show sidebar"}
                   >
                     {isSidebarOpen ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-muted group-hover:text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
                       </svg>
                     ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-aaa-muted group-hover:text-aaa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-muted group-hover:text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                       </svg>
                     )}
                   </button>
-                  <div className="flex items-center gap-6">
-                    <div className="relative group flex items-center">
+                  <div className="flex items-center gap-4">
+                    <div className="relative flex items-center">
                       <input
                         type="text"
                         value={smartSearchQuery}
                         onChange={(e) => setSmartSearchQuery(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && smartSearchClauses(smartSearchQuery)}
-                        placeholder="Smart search matrix..."
-                        className="w-80 px-6 py-2.5 bg-white border border-aaa-border rounded-full text-sm font-medium focus:ring-4 focus:ring-aaa-blue/5 focus:border-aaa-blue outline-none shadow-sm transition-all"
+                        placeholder="Search clauses..."
+                        className="w-72 px-4 py-2 bg-white border border-surface-border rounded-mac-sm text-sm focus:border-mac-blue focus:shadow-mac-focus outline-none transition-all"
                       />
                       <button
                         onClick={() => smartSearchClauses(smartSearchQuery)}
                         disabled={isSearching}
-                        className="absolute right-2 p-2 bg-aaa-blue text-white rounded-full hover:bg-aaa-hover transition-colors disabled:bg-aaa-muted"
+                        className="absolute right-1.5 p-1.5 bg-mac-blue text-white rounded-md hover:bg-mac-blue-hover transition-colors disabled:bg-mac-muted"
                       >
                         {isSearching ? (
                           <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -1945,7 +1944,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                           </svg>
                         ) : (
                           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                           </svg>
                         )}
                       </button>
@@ -1953,10 +1952,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
                     <button
                       onClick={() => setIsAddModalOpen(true)}
-                      className="flex items-center gap-3 px-6 py-2.5 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all shadow-lg active:scale-95"
+                      className="flex items-center gap-2 px-4 py-2 bg-mac-blue text-white rounded-mac-sm text-sm font-medium hover:bg-mac-blue-hover transition-all active:scale-[0.98]"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
-                      + Add Clause
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
+                      Add Clause
                     </button>
                   </div>
                 </>
