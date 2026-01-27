@@ -397,6 +397,157 @@
         position: relative !important;
         z-index: 10 !important;
       }
+      
+      /* ===== MacBook-Style Glass UI Login ===== */
+      
+      /* Glass card entrance animation */
+      @keyframes glassCardEnter {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-glass-enter {
+        animation: glassCardEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      
+      /* Error shake animation */
+      @keyframes errorShake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-6px); }
+        40%, 80% { transform: translateX(6px); }
+      }
+      
+      .animate-shake {
+        animation: errorShake 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Error fade-in slide */
+      @keyframes errorFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-error-enter {
+        animation: errorFadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      
+      /* Floating label animation */
+      @keyframes labelFloat {
+        from {
+          transform: translateY(0);
+          font-size: 1rem;
+        }
+        to {
+          transform: translateY(-24px);
+          font-size: 0.75rem;
+        }
+      }
+      
+      /* Noise texture overlay */
+      .glass-noise::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        opacity: 0.03;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+      
+      /* Glass card styling */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 
+          0 8px 32px rgba(15, 46, 107, 0.08),
+          0 0 0 1px rgba(0, 0, 0, 0.03),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      }
+      
+      /* MacBook-style input focus ring */
+      .glass-input:focus {
+        outline: none;
+        border-color: rgba(30, 108, 232, 0.5);
+        box-shadow: 0 0 0 3px rgba(30, 108, 232, 0.12);
+      }
+      
+      /* MacBook-style button */
+      .glass-button {
+        background: linear-gradient(180deg, #1E6CE8 0%, #0F2E6B 100%);
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .glass-button:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(15, 46, 107, 0.25);
+      }
+      
+      .glass-button:active:not(:disabled) {
+        transform: scale(0.98);
+      }
+      
+      .glass-button:disabled {
+        background: linear-gradient(180deg, #94A3B8 0%, #64748B 100%);
+        cursor: not-allowed;
+      }
+      
+      /* Respect reduced motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        .animate-glass-enter,
+        .animate-shake,
+        .animate-error-enter {
+          animation: none !important;
+        }
+        
+        .glass-button,
+        .glass-input,
+        * {
+          transition-duration: 0.01ms !important;
+        }
+      }
+      
+      /* ===== Responsive Styles for Glass Login ===== */
+      
+      /* Mobile: Full-width card with generous padding */
+      @media (max-width: 480px) {
+        .glass-card {
+          max-width: 100% !important;
+          margin: 0 0.5rem;
+          padding: 2rem 1.5rem !important;
+          border-radius: 20px !important;
+        }
+      }
+      
+      /* Tablet adjustments */
+      @media (min-width: 481px) and (max-width: 768px) {
+        .glass-card {
+          max-width: 400px !important;
+          padding: 2.25rem 1.75rem !important;
+        }
+      }
+      
+      /* Large screens - center with more breathing room */
+      @media (min-width: 1200px) {
+        .glass-card {
+          max-width: 440px !important;
+          padding: 3rem 2.5rem !important;
+        }
+      }
     </style>
 </head>
   <body>

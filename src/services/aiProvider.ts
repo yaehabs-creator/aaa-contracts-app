@@ -122,16 +122,19 @@ export interface ClaudeAgentResponse {
   error?: string;
 }
 
+// Claude models in order of preference
+const CLAUDE_MODELS = [
+  "claude-3-5-sonnet-latest",
+  "claude-3-5-haiku-latest",
+  "claude-3-opus-latest"
+];
+
 export class ClaudeProvider implements AIProvider {
   private client: Anthropic | null = null;
-  private model: string = 'claude-sonnet-4-5-20250514';
+  private model: string = CLAUDE_MODELS[0];
   
   // Try multiple model names in order of preference
-  private modelCandidates = [
-    'claude-sonnet-4-5-20250514',
-    'claude-3-5-sonnet-20241022',
-    'claude-3-haiku-20240307'
-  ];
+  private modelCandidates = CLAUDE_MODELS;
 
   constructor() {
     const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -299,38 +302,31 @@ export class ClaudeProvider implements AIProvider {
     }
 
     // Try each model candidate until one works
-    let lastError: any = null;
     for (const model of this.modelCandidates) {
       try {
         const message = await this.client.messages.create({
           model: model,
-          max_tokens: 4096,  // Compatible with all models including Haiku
+          max_tokens: 4096,
           system: systemInstruction,
           messages: anthropicMessages
         });
-
 
         // Extract text content from response
         const content = message.content.find(c => c.type === 'text');
         return content && 'text' in content ? content.text : 'No response received';
       } catch (error: any) {
-        // If this is a model not found error, try the next model
-        if (error?.message && (error.message.includes('not_found_error') || error.message.includes('model'))) {
-          console.warn(`Model ${model} not found, trying next model...`);
-          lastError = error;
-          continue; // Try next model
+        // If this is a 404 model not found error, try the next model
+        if (error?.status === 404) {
+          console.warn(`Claude model ${model} not available`);
+          continue;
         }
-        // For other errors, break and handle below
-        lastError = error;
-        break;
+        // For other errors (real errors), stop and throw
+        throw error;
       }
     }
 
-    // If we get here, all models failed
-    if (!lastError) {
-      throw new Error('All Claude models failed and no error was captured');
-    }
-    throw new Error(`Claude API error: ${lastError.message || 'Unknown error'}`);
+    // If we get here, no models were available
+    throw new Error("No Claude models available");
   }
 }
 

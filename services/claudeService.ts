@@ -96,10 +96,10 @@ export async function analyzeContract(input: string | FileData | DualSourceInput
   
   
   // Try multiple model names in order of preference
-  const modelCandidates = [
-    'claude-sonnet-4-5-20250514',
-    'claude-3-5-sonnet-20241022',
-    'claude-3-haiku-20240307'
+  const CLAUDE_MODELS = [
+    "claude-3-5-sonnet-latest",
+    "claude-3-5-haiku-latest",
+    "claude-3-opus-latest"
   ];
   
 
@@ -128,8 +128,7 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
   }
 
   // Try each model candidate until one works
-  let lastError: any = null;
-  for (const model of modelCandidates) {
+  for (const model of CLAUDE_MODELS) {
     try {
       const message = await client.messages.create({
         model: model,
@@ -142,7 +141,6 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
           }
         ]
       });
-      
 
       const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
         ? (message.content.find(c => c.type === 'text') as any).text
@@ -167,20 +165,18 @@ ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction erro
         throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
       }
     } catch (error: any) {
-      // If this is a model not found error, try the next model
-      if (error.message && error.message.includes('not_found_error') && error.message.includes('model')) {
-        console.warn(`Model ${model} not found, trying next model...`);
-        lastError = error;
-        continue; // Try next model
+      // If this is a 404 model not found error, try the next model
+      if (error?.status === 404) {
+        console.warn(`Claude model ${model} not available`);
+        continue;
       }
-      // For other errors, break and handle below
-      lastError = error;
-      break;
+      // For other errors (real errors), stop and throw
+      throw error;
     }
   }
 
-  // If we get here, all models failed
-  const error = lastError;
+  // If we get here, no models were available
+  const error = new Error("No Claude models available");
   if (!error) {
     throw new Error('All Claude models failed and no error was captured');
   }

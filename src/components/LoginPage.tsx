@@ -1,12 +1,338 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+
+// ============================================
+// MacBook-Style Glass UI Components
+// ============================================
+
+interface GlassLayoutProps {
+  children: React.ReactNode;
+}
+
+const GlassLayout: React.FC<GlassLayoutProps> = ({ children }) => (
+  <div
+    style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '1.25rem',
+      position: 'relative',
+      overflow: 'hidden',
+      fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif",
+      // Soft gradient background
+      background: 'linear-gradient(135deg, #E8F0FE 0%, #F4F7FA 25%, #F8FAFC 50%, #EEF2FF 75%, #F0F4FF 100%)',
+    }}
+  >
+    {/* Blur orb - top right */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '-15%',
+        right: '-10%',
+        width: '50%',
+        height: '50%',
+        background: 'radial-gradient(circle, rgba(30, 108, 232, 0.12) 0%, rgba(30, 108, 232, 0.04) 40%, transparent 70%)',
+        borderRadius: '50%',
+        filter: 'blur(40px)',
+        pointerEvents: 'none',
+      }}
+    />
+    
+    {/* Blur orb - bottom left */}
+    <div
+      style={{
+        position: 'absolute',
+        bottom: '-20%',
+        left: '-15%',
+        width: '55%',
+        height: '55%',
+        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 40%, transparent 70%)',
+        borderRadius: '50%',
+        filter: 'blur(50px)',
+        pointerEvents: 'none',
+      }}
+    />
+
+    {/* Subtle center glow */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '80%',
+        height: '60%',
+        background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 0%, transparent 60%)',
+        pointerEvents: 'none',
+      }}
+    />
+
+    {/* Noise texture overlay */}
+    <div
+      className="glass-noise"
+      style={{
+        position: 'absolute',
+        inset: 0,
+        pointerEvents: 'none',
+      }}
+    />
+
+    {children}
+  </div>
+);
+
+interface GlassCardProps {
+  children: React.ReactNode;
+}
+
+const GlassCard: React.FC<GlassCardProps> = ({ children }) => (
+  <div
+    className="glass-card animate-glass-enter"
+    style={{
+      width: '100%',
+      maxWidth: '420px',
+      padding: '2.5rem 2rem',
+      borderRadius: '24px',
+      position: 'relative',
+      zIndex: 1,
+    }}
+  >
+    {children}
+  </div>
+);
+
+// ============================================
+// Form Components
+// ============================================
+
+interface FloatingInputProps {
+  id: string;
+  type: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  required?: boolean;
+  autoComplete?: string;
+  showPasswordToggle?: boolean;
+}
+
+const FloatingInput: React.FC<FloatingInputProps> = ({
+  id,
+  type: initialType,
+  label,
+  value,
+  onChange,
+  required = false,
+  autoComplete,
+  showPasswordToggle = false,
+}) => {
+  const [isFocused, setIsFocused] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const isActive = isFocused || value.length > 0;
+  
+  const type = showPasswordToggle && showPassword ? 'text' : initialType;
+
+  return (
+    <div style={{ position: 'relative', marginBottom: '1.25rem' }}>
+      {/* Floating Label */}
+      <label
+        htmlFor={id}
+        style={{
+          position: 'absolute',
+          left: '1rem',
+          top: isActive ? '0.5rem' : '1rem',
+          fontSize: isActive ? '0.7rem' : '0.95rem',
+          fontWeight: isActive ? 600 : 400,
+          color: isFocused ? '#1E6CE8' : '#64748B',
+          letterSpacing: isActive ? '0.02em' : '0',
+          textTransform: isActive ? 'uppercase' : 'none',
+          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      >
+        {label}
+      </label>
+
+      {/* Input Field */}
+      <input
+        id={id}
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        required={required}
+        autoComplete={autoComplete}
+        className="glass-input"
+        style={{
+          width: '100%',
+          height: '56px',
+          padding: isActive ? '1.5rem 1rem 0.5rem 1rem' : '1rem',
+          paddingRight: showPasswordToggle ? '3rem' : '1rem',
+          fontSize: '1rem',
+          fontWeight: 500,
+          color: '#1A2333',
+          background: isFocused ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.6)',
+          border: `1.5px solid ${isFocused ? 'rgba(30, 108, 232, 0.5)' : 'rgba(0, 0, 0, 0.08)'}`,
+          borderRadius: '14px',
+          outline: 'none',
+          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          boxSizing: 'border-box',
+        }}
+      />
+
+      {/* Password Toggle Button */}
+      {showPasswordToggle && (
+        <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          aria-label={showPassword ? 'Hide password' : 'Show password'}
+          style={{
+            position: 'absolute',
+            right: '0.75rem',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'none',
+            border: 'none',
+            padding: '0.5rem',
+            cursor: 'pointer',
+            color: '#64748B',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '8px',
+            transition: 'all 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = '#1E6CE8';
+            e.currentTarget.style.background = 'rgba(30, 108, 232, 0.08)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = '#64748B';
+            e.currentTarget.style.background = 'none';
+          }}
+        >
+          {showPassword ? (
+            // Eye-off icon
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+              <line x1="1" y1="1" x2="23" y2="23" />
+            </svg>
+          ) : (
+            // Eye icon
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          )}
+        </button>
+      )}
+    </div>
+  );
+};
+
+interface ErrorMessageProps {
+  message: string;
+  onAnimationEnd?: () => void;
+}
+
+const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onAnimationEnd }) => {
+  const [shouldShake, setShouldShake] = useState(true);
+
+  useEffect(() => {
+    setShouldShake(true);
+    const timer = setTimeout(() => setShouldShake(false), 400);
+    return () => clearTimeout(timer);
+  }, [message]);
+
+  return (
+    <div
+      className={`animate-error-enter ${shouldShake ? 'animate-shake' : ''}`}
+      onAnimationEnd={onAnimationEnd}
+      style={{
+        padding: '0.875rem 1rem',
+        marginBottom: '1.25rem',
+        background: 'rgba(254, 226, 226, 0.8)',
+        backdropFilter: 'blur(8px)',
+        border: '1px solid rgba(252, 165, 165, 0.5)',
+        borderRadius: '12px',
+        color: '#DC2626',
+        fontSize: '0.875rem',
+        fontWeight: 500,
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.625rem',
+      }}
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      <span>{message}</span>
+    </div>
+  );
+};
+
+interface SubmitButtonProps {
+  loading: boolean;
+  children: React.ReactNode;
+}
+
+const SubmitButton: React.FC<SubmitButtonProps> = ({ loading, children }) => (
+  <button
+    type="submit"
+    disabled={loading}
+    className="glass-button"
+    style={{
+      width: '100%',
+      height: '52px',
+      padding: '0 1.5rem',
+      fontSize: '1rem',
+      fontWeight: 600,
+      color: 'white',
+      border: 'none',
+      borderRadius: '14px',
+      cursor: loading ? 'not-allowed' : 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '0.5rem',
+      letterSpacing: '0.02em',
+      boxShadow: loading ? 'none' : '0 4px 14px rgba(15, 46, 107, 0.2)',
+    }}
+  >
+    {loading ? (
+      <>
+        <span
+          style={{
+            width: '18px',
+            height: '18px',
+            border: '2px solid rgba(255, 255, 255, 0.3)',
+            borderTopColor: 'white',
+            borderRadius: '50%',
+            animation: 'spin 0.6s linear infinite',
+          }}
+        />
+        <span>Signing in...</span>
+      </>
+    ) : (
+      children
+    )}
+  </button>
+);
+
+// ============================================
+// Main Login Page Component
+// ============================================
 
 export const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [focusedField, setFocusedField] = useState<string | null>(null);
   const { signIn } = useAuth();
 
   // Check for error messages from auth state changes
@@ -32,15 +358,15 @@ export const LoginPage: React.FC = () => {
       
       // Provide user-friendly error messages (Supabase errors)
       if (errorMsg.includes('Invalid login credentials') || errorMsg.includes('Invalid email or password')) {
-        errorMessage = 'Invalid email or password. Please check your credentials and try again.';
+        errorMessage = 'Invalid email or password. Please check your credentials.';
       } else if (errorMsg.includes('Email not confirmed') || errorMsg.includes('email not confirmed')) {
         errorMessage = 'Please verify your email address before signing in.';
       } else if (errorMsg.includes('User not found') || errorMsg.includes('No account found')) {
-        errorMessage = 'No account found with this email. Please contact your administrator.';
+        errorMessage = 'No account found with this email.';
       } else if (errorMsg.includes('Invalid email')) {
-        errorMessage = 'Invalid email address. Please check and try again.';
+        errorMessage = 'Please enter a valid email address.';
       } else if (errorMsg.includes('network') || errorMsg.includes('fetch')) {
-        errorMessage = 'Network error. Please check your internet connection and try again.';
+        errorMessage = 'Network error. Please check your connection.';
       } else if (errorMsg) {
         errorMessage = errorMsg;
       }
@@ -52,330 +378,129 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div 
-      className="animate-fade-in"
-      style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: '#F4F7FA', // aaa-bg
-      padding: '1rem',
-      position: 'relative',
-      overflow: 'hidden',
-      fontFamily: "'Inter', sans-serif"
-    }}>
-      {/* Decorative background elements matching app theme */}
-      <div style={{
-        position: 'absolute',
-        top: '-20%',
-        right: '-20%',
-        width: '60%',
-        height: '60%',
-        background: 'radial-gradient(circle, rgba(15, 46, 107, 0.05) 0%, transparent 70%)',
-        borderRadius: '50%'
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '-20%',
-        left: '-20%',
-        width: '50%',
-        height: '50%',
-        background: 'radial-gradient(circle, rgba(30, 108, 232, 0.05) 0%, transparent 70%)',
-        borderRadius: '50%'
-      }} />
-
-      <div 
-        className="login-container animate-scale-in"
-        style={{
-        background: 'white',
-        padding: '3rem 2.5rem',
-        borderRadius: '12px', // aaa border radius
-        boxShadow: '0 10px 30px -10px rgba(15, 46, 107, 0.1)', // premium shadow
-        border: '1px solid #D1D9E6', // aaa-border
-        width: '100%',
-        maxWidth: '440px',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        {/* Logo/Header Section */}
-        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div style={{
-            width: '80px',
-            height: '80px',
-            margin: '0 auto 1.5rem',
-            background: '#0F2E6B', // aaa-blue
-            borderRadius: '20px', // More rounded corners for pill-like shape
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 10px 30px -10px rgba(15, 46, 107, 0.2)' // premium shadow
-          }}>
-            <span style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '28px',
-              fontWeight: '900',
-              color: 'white',
-              letterSpacing: '-1px',
-              lineHeight: '1'
-            }}>
+    <GlassLayout>
+      <GlassCard>
+        {/* Logo */}
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <div
+            style={{
+              width: '72px',
+              height: '72px',
+              margin: '0 auto 1.25rem',
+              background: 'linear-gradient(135deg, #1E6CE8 0%, #0F2E6B 100%)',
+              borderRadius: '18px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 8px 24px rgba(15, 46, 107, 0.2)',
+            }}
+          >
+            <span
+              style={{
+                fontSize: '24px',
+                fontWeight: 800,
+                color: 'white',
+                letterSpacing: '-0.5px',
+              }}
+            >
               AAA
             </span>
           </div>
-          <h1 style={{
-            margin: 0,
-            fontSize: '1.75rem',
-            fontWeight: '800',
-            color: '#1A2333', // aaa-text
-            letterSpacing: '-0.5px',
-            marginBottom: '0.5rem'
-          }}>
+
+          {/* Heading */}
+          <h1
+            style={{
+              margin: 0,
+              fontSize: '1.5rem',
+              fontWeight: 600,
+              color: '#1A2333',
+              letterSpacing: '-0.02em',
+              marginBottom: '0.375rem',
+            }}
+          >
             AAA Contract Department
           </h1>
-          <p style={{
-            margin: 0,
-            fontSize: '0.95rem',
-            color: '#5C6B82', // aaa-muted
-            fontWeight: '400'
-          }}>
+          <p
+            style={{
+              margin: 0,
+              fontSize: '0.9375rem',
+              color: '#64748B',
+              fontWeight: 400,
+            }}
+          >
             Sign in to your account
           </p>
         </div>
-        
-        <form onSubmit={handleSubmit} style={{ display: 'block', width: '100%' }}>
-          <div style={{ marginBottom: '1.5rem', display: 'block', width: '100%' }}>
-            <label style={{
-              display: 'block',
-              marginBottom: '0.5rem',
-              color: '#1A2333', // aaa-text
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              letterSpacing: '0.3px'
-            }}>
-              Email Address
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => setFocusedField('email')}
-              onBlur={() => setFocusedField(null)}
-              required
-              placeholder="you@example.com"
-              className="login-email-input"
-              style={{
-                width: '100%',
-                padding: '0.875rem 1rem',
-                border: `2px solid ${focusedField === 'email' ? '#1E6CE8' : '#D1D9E6'}`, // aaa-accent / aaa-border
-                borderRadius: '12px', // aaa border radius
-                fontSize: '1rem',
-                color: '#1A2333', // aaa-text
-                transition: 'all 0.2s ease',
-                outline: 'none',
-                background: focusedField === 'email' ? '#F4F7FA' : '#fff', // aaa-bg
-                boxShadow: focusedField === 'email' ? '0 0 0 3px rgba(30, 108, 232, 0.1)' : 'none',
-                boxSizing: 'border-box',
-                display: 'block',
-                opacity: '1',
-                visibility: 'visible',
-                height: 'auto',
-                minHeight: '44px',
-                margin: '0',
-                position: 'relative',
-                zIndex: '10'
-              }}
-            />
-          </div>
 
-          <div style={{ marginBottom: '1.5rem', display: 'block', width: '100%' }}>
-            <label style={{
-              display: 'block',
-              marginBottom: '0.5rem',
-              color: '#1A2333', // aaa-text
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              letterSpacing: '0.3px'
-            }}>
-              Password
-            </label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onFocus={() => setFocusedField('password')}
-              onBlur={() => setFocusedField(null)}
-              required
-              placeholder="Enter your password"
-              className="login-password-input"
-              style={{
-                width: '100%',
-                padding: '0.875rem 1rem',
-                border: `2px solid ${focusedField === 'password' ? '#1E6CE8' : '#D1D9E6'}`, // aaa-accent / aaa-border
-                borderRadius: '12px', // aaa border radius
-                fontSize: '1rem',
-                color: '#1A2333', // aaa-text
-                transition: 'all 0.2s ease',
-                outline: 'none',
-                background: focusedField === 'password' ? '#F4F7FA' : '#fff', // aaa-bg
-                boxShadow: focusedField === 'password' ? '0 0 0 3px rgba(30, 108, 232, 0.1)' : 'none',
-                boxSizing: 'border-box',
-                display: 'block',
-                opacity: '1',
-                visibility: 'visible',
-                height: 'auto',
-                minHeight: '44px',
-                margin: '0',
-                position: 'relative',
-                zIndex: '10'
-              }}
-            />
-          </div>
+        {/* Login Form */}
+        <form onSubmit={handleSubmit}>
+          <FloatingInput
+            id="email"
+            type="email"
+            label="Email Address"
+            value={email}
+            onChange={setEmail}
+            required
+            autoComplete="email"
+          />
 
-          {error && (
-            <div style={{
-              padding: '0.875rem 1rem',
-              marginBottom: '1.5rem',
-              background: '#FEE2E2',
-              border: '2px solid #FCA5A5',
-              borderRadius: '12px', // aaa border radius
-              color: '#DC2626',
-              fontSize: '0.875rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontWeight: '500'
-            }}>
-              <span style={{ fontSize: '1.2rem' }}>⚠️</span>
-              <span>{error}</span>
-            </div>
-          )}
+          <FloatingInput
+            id="password"
+            type="password"
+            label="Password"
+            value={password}
+            onChange={setPassword}
+            required
+            autoComplete="current-password"
+            showPasswordToggle
+          />
 
-          <button
-            type="submit"
-            disabled={loading}
-            style={{
-              width: '100%',
-              padding: '0.875rem 1.5rem',
-              background: loading 
-                ? '#D1D9E6' // aaa-border (disabled)
-                : '#0F2E6B', // aaa-blue
-              color: 'white',
-              border: 'none',
-              borderRadius: '12px', // aaa border radius
-              fontSize: '1rem',
-              fontWeight: '700',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              transition: 'all 0.2s ease',
-              boxShadow: loading 
-                ? 'none' 
-                : '0 10px 30px -10px rgba(15, 46, 107, 0.2)', // premium shadow
-              transform: loading ? 'none' : 'translateY(0)',
-              letterSpacing: '0.3px'
-            }}
-            onMouseEnter={(e) => {
-              if (!loading) {
-                e.currentTarget.style.background = '#091B40'; // aaa-hover
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 10px 30px -10px rgba(15, 46, 107, 0.3)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!loading) {
-                e.currentTarget.style.background = '#0F2E6B'; // aaa-blue
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 10px 30px -10px rgba(15, 46, 107, 0.2)';
-              }
-            }}
-          >
-            {loading ? (
-              <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                <span style={{
-                  display: 'inline-block',
-                  width: '16px',
-                  height: '16px',
-                  border: '2px solid rgba(255,255,255,0.3)',
-                  borderTopColor: 'white',
-                  borderRadius: '50%',
-                  animation: 'spin 0.6s linear infinite'
-                }} />
-                Signing in...
-              </span>
-            ) : (
-              'Sign In'
-            )}
-          </button>
+          {error && <ErrorMessage message={error} />}
+
+          <SubmitButton loading={loading}>
+            Sign In
+          </SubmitButton>
         </form>
 
-        <div style={{
-          marginTop: '2rem',
-          paddingTop: '2rem',
-          borderTop: '1px solid #D1D9E6', // aaa-border
-          textAlign: 'center'
-        }}>
-          <p style={{
-            margin: 0,
-            color: '#5C6B82', // aaa-muted
-            fontSize: '0.75rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.4rem',
-            fontStyle: 'italic'
-          }}>
-            <span style={{ opacity: 0.7 }}>Developed by</span>
-            <span style={{
-              color: '#1E6CE8', // aaa-accent
-              fontWeight: '600',
-              letterSpacing: '0.3px'
-            }}>Abdelrhman Ehab</span>
+        {/* Footer */}
+        <div
+          style={{
+            marginTop: '2rem',
+            paddingTop: '1.5rem',
+            borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+            textAlign: 'center',
+          }}
+        >
+          <p
+            style={{
+              margin: 0,
+              fontSize: '0.75rem',
+              color: '#94A3B8',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.375rem',
+            }}
+          >
+            <span>Developed by</span>
+            <span
+              style={{
+                color: '#64748B',
+                fontWeight: 500,
+              }}
+            >
+              Abdelrhman Ehab
+            </span>
           </p>
         </div>
-      </div>
+      </GlassCard>
 
+      {/* Keyframe for spinner */}
       <style>{`
         @keyframes spin {
           to { transform: rotate(360deg); }
         }
-        .login-container input[type="email"],
-        .login-container input[type="password"],
-        .login-container input[type="text"],
-        .login-container form input[type="email"],
-        .login-container form input[type="password"],
-        .login-container form input[type="text"],
-        .login-email-input,
-        .login-password-input,
-        .login-name-input {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          width: 100% !important;
-          height: auto !important;
-          min-height: 44px !important;
-          max-height: none !important;
-          color: #1a202c !important;
-          background: #fff !important;
-          border: 2px solid #D1D9E6 !important;
-          padding: 0.875rem 1rem !important;
-          font-size: 1rem !important;
-          box-sizing: border-box !important;
-          margin: 0 !important;
-          position: relative !important;
-          z-index: 10 !important;
-          overflow: visible !important;
-          clip: auto !important;
-          clip-path: none !important;
-        }
-        .login-container form {
-          display: block !important;
-          width: 100% !important;
-        }
-        .login-container form > div {
-          display: block !important;
-          width: 100% !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
       `}</style>
-    </div>
+    </GlassLayout>
   );
 };
