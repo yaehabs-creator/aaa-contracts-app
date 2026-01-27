@@ -122,11 +122,11 @@ export interface ClaudeAgentResponse {
   error?: string;
 }
 
-// Claude models in order of preference
+// Claude models in order of preference (Jan 2026)
 const CLAUDE_MODELS = [
-  "claude-3-5-sonnet-latest",
-  "claude-3-5-haiku-latest",
-  "claude-3-opus-latest"
+  "claude-sonnet-4-5-20250514",      // Claude Sonnet 4.5 (latest)
+  "claude-3-5-sonnet-20241022",      // Claude 3.5 Sonnet (fallback)
+  "claude-3-5-haiku-20241022"        // Claude 3.5 Haiku (lightweight fallback)
 ];
 
 export class ClaudeProvider implements AIProvider {
@@ -304,6 +304,9 @@ export class ClaudeProvider implements AIProvider {
     // Try each model candidate until one works
     for (const model of this.modelCandidates) {
       try {
+        // #region agent log
+        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:chat',message:'Trying model',data:{model},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H4'})}).catch(()=>{});
+        // #endregion
         const message = await this.client.messages.create({
           model: model,
           max_tokens: 4096,
@@ -315,6 +318,9 @@ export class ClaudeProvider implements AIProvider {
         const content = message.content.find(c => c.type === 'text');
         return content && 'text' in content ? content.text : 'No response received';
       } catch (error: any) {
+        // #region agent log
+        fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'aiProvider.ts:catch',message:'Error caught',data:{model,errorStatus:error?.status,errorType:error?.error?.type,errorMessage:error?.message,errorName:error?.name,errorCode:error?.code,hasError:!!error?.error,errorKeys:error?Object.keys(error):[]},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'H1-H3'})}).catch(()=>{});
+        // #endregion
         // If this is a 404 model not found error, try the next model
         if (error?.status === 404) {
           console.warn(`Claude model ${model} not available`);
