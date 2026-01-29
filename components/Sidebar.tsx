@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Clause, ConditionType } from '../types';
 import { CategoryManager } from './CategoryManager';
 import { scrollToClause, normalizeClauseId } from '../src/utils/navigation';
@@ -517,49 +518,64 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           )}
                         </div>
                       </button>
-                      {/* Chapter Clauses - MacBook style */}
-                      {!isCollapsed && chapterClauses.map((c, idx) => {
-                        const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
-                        const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
-                        return (
-                          <div
-                            key={`${c.condition_type}-${c.clause_number}-${idx}`}
-                            draggable={isEditMode}
-                            onDragStart={() => handleDragStart(originalIndex)}
-                            onDragOver={(e) => handleDragOver(e, originalIndex)}
-                            onDrop={(e) => handleDrop(e, originalIndex)}
-                            onDragEnd={handleDragEnd}
-                            className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
-                              } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
-                              } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
+                      {/* Chapter Clauses - MacBook style with animations */}
+                      <AnimatePresence>
+                        {!isCollapsed && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                            className="overflow-hidden"
                           >
-                            {isEditMode && (
-                              <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
-                                </svg>
-                              </div>
-                            )}
-                            <ClauseStatusBadge clause={c} />
-                            <button
-                              onClick={() => scrollToClause(c.clause_number)}
-                              className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
-                              title={c.clause_title}
-                            >
-                              <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
-                            </button>
-                            {isEditMode && onDelete && (
-                              <button
-                                onClick={() => onDelete(originalIndex)}
-                                className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
-                                title="Delete Clause"
-                              >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
-                              </button>
-                            )}
-                          </div>
-                        );
-                      })}
+                            {chapterClauses.map((c, idx) => {
+                              const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
+                              const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
+                              return (
+                                <motion.div
+                                  key={`${c.condition_type}-${c.clause_number}-${idx}`}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.03, duration: 0.2 }}
+                                  draggable={isEditMode}
+                                  onDragStart={() => handleDragStart(originalIndex)}
+                                  onDragOver={(e) => handleDragOver(e, originalIndex)}
+                                  onDrop={(e) => handleDrop(e, originalIndex)}
+                                  onDragEnd={handleDragEnd}
+                                  className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                                    } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
+                                    } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
+                                >
+                                  {isEditMode && (
+                                    <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
+                                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+                                      </svg>
+                                    </div>
+                                  )}
+                                  <ClauseStatusBadge clause={c} />
+                                  <button
+                                    onClick={() => scrollToClause(c.clause_number)}
+                                    className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
+                                    title={c.clause_title}
+                                  >
+                                    <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
+                                  </button>
+                                  {isEditMode && onDelete && (
+                                    <button
+                                      onClick={() => onDelete(originalIndex)}
+                                      className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
+                                      title="Delete Clause"
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                                    </button>
+                                  )}
+                                </motion.div>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 })}
@@ -628,49 +644,64 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           )}
                         </div>
                       </button>
-                      {/* Category Clauses - MacBook style */}
-                      {!isCollapsed && categoryClauses.map((c, idx) => {
-                        const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
-                        const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
-                        return (
-                          <div
-                            key={`${c.condition_type}-${c.clause_number}-${idx}`}
-                            draggable={isEditMode}
-                            onDragStart={() => handleDragStart(originalIndex)}
-                            onDragOver={(e) => handleDragOver(e, originalIndex)}
-                            onDrop={(e) => handleDrop(e, originalIndex)}
-                            onDragEnd={handleDragEnd}
-                            className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
-                              } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
-                              } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
+                      {/* Category Clauses - MacBook style with animations */}
+                      <AnimatePresence>
+                        {!isCollapsed && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                            className="overflow-hidden"
                           >
-                            {isEditMode && (
-                              <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
-                                </svg>
-                              </div>
-                            )}
-                            <ClauseStatusBadge clause={c} />
-                            <button
-                              onClick={() => scrollToClause(c.clause_number)}
-                              className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
-                              title={c.clause_title}
-                            >
-                              <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
-                            </button>
-                            {isEditMode && onDelete && (
-                              <button
-                                onClick={() => onDelete(originalIndex)}
-                                className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
-                                title="Delete Clause"
-                              >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
-                              </button>
-                            )}
-                          </div>
-                        );
-                      })}
+                            {categoryClauses.map((c, idx) => {
+                              const originalIndex = clauses.findIndex(cl => cl.clause_number === c.clause_number && cl.condition_type === c.condition_type);
+                              const isSearchMatch = searchQuery && clauseMatchesSearch(c, searchQuery);
+                              return (
+                                <motion.div
+                                  key={`${c.condition_type}-${c.clause_number}-${idx}`}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.03, duration: 0.2 }}
+                                  draggable={isEditMode}
+                                  onDragStart={() => handleDragStart(originalIndex)}
+                                  onDragOver={(e) => handleDragOver(e, originalIndex)}
+                                  onDrop={(e) => handleDrop(e, originalIndex)}
+                                  onDragEnd={handleDragEnd}
+                                  className={`flex items-center group/ledger transition-all duration-200 ml-4 ${draggedIndex === originalIndex ? 'opacity-30' : ''
+                                    } ${dragOverIndex === originalIndex ? 'border-t-2 border-mac-blue bg-mac-blue-subtle' : 'border-t border-transparent'
+                                    } ${isSearchMatch ? 'bg-amber-50 border-l-2 border-l-amber-400' : ''}`}
+                                >
+                                  {isEditMode && (
+                                    <div className="px-2 cursor-grab active:cursor-grabbing text-mac-muted">
+                                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+                                      </svg>
+                                    </div>
+                                  )}
+                                  <ClauseStatusBadge clause={c} />
+                                  <button
+                                    onClick={() => scrollToClause(c.clause_number)}
+                                    className={`flex-1 text-left px-3 py-2.5 text-[11px] font-medium text-mac-charcoal hover:bg-surface-bg hover:text-mac-blue transition-all truncate rounded-md ${isSearchMatch ? 'text-mac-blue font-semibold' : ''}`}
+                                    title={c.clause_title}
+                                  >
+                                    <span className="text-mac-blue mr-2 font-semibold">{c.clause_number}</span> {c.clause_title || 'Untitled'}
+                                  </button>
+                                  {isEditMode && onDelete && (
+                                    <button
+                                      onClick={() => onDelete(originalIndex)}
+                                      className="p-2 hover:bg-red-50 text-mac-muted hover:text-red-500 transition-all rounded-md"
+                                      title="Delete Clause"
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                                    </button>
+                                  )}
+                                </motion.div>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 })}

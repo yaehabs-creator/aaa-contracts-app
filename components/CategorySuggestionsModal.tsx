@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { motion } from 'framer-motion';
 import { CategorySuggestion } from '../services/categorySuggestionService';
 import { Clause } from '../types';
 
@@ -74,8 +75,19 @@ export const CategorySuggestionsModal: React.FC<CategorySuggestionsModalProps> =
   }
 
   return createPortal(
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+    >
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
         <div className="p-6 border-b border-aaa-border bg-gradient-to-r from-aaa-blue to-aaa-accent">
           <div className="flex items-center justify-between">
@@ -200,8 +212,8 @@ export const CategorySuggestionsModal: React.FC<CategorySuggestionsModalProps> =
             </button>
           </div>
         </div>
-      </div>
-    </div>,
+      </motion.div>
+    </motion.div>,
     document.body
   );
 };

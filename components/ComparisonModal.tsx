@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Clause, TimeFrame, TimeFrameType, ObligationParty, FinancialAsset } from '../types';
 import Anthropic from "@anthropic-ai/sdk";
 
@@ -371,8 +372,19 @@ Output Format:
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 mac-modal-backdrop modal-backdrop">
-      <div className="bg-white w-full max-w-[1650px] h-[95vh] rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden modal-content border border-surface-border">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-6 mac-modal-backdrop"
+    >
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="bg-white w-full max-w-[1650px] h-[95vh] rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden border border-surface-border">
         
         {/* Header - MacBook style */}
         <div className="px-8 py-6 border-b border-surface-border flex items-center justify-between bg-white shrink-0 relative z-10">
@@ -691,7 +703,7 @@ Output Format:
           <span>AAA Contract Analysis</span>
           <span>Changes auto-saved</span>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };

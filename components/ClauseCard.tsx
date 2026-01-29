@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 import { Clause } from '../types';
 import { normalizeClauseId, findClauseElement, scrollToClauseByNumber } from '../src/utils/navigation';
 import { TokenizedTextRenderer } from '../src/components/admin/TokenizedTextRenderer';
@@ -154,14 +155,20 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
   };
 
   return (
-    <div
+    <motion.div
       id={`clause-${normalizedClauseId}`}
-      className={`relative group bg-white border rounded-mac-lg shadow-mac transition-all duration-300 hover:shadow-mac-hover overflow-hidden card-enter ${isCompareTarget ? 'border-mac-blue ring-2 ring-mac-blue/20' : 'border-surface-border'
-        }`}
-      style={{
-        animation: 'slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        animationFillMode: 'both'
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      whileHover={{ y: -2, boxShadow: '0 8px 32px -4px rgba(29,78,216,0.15), 0 0 0 1px rgba(29,78,216,0.08)' }}
+      transition={{ 
+        type: 'spring', 
+        stiffness: 300, 
+        damping: 25,
+        opacity: { duration: 0.3 }
       }}
+      className={`relative group bg-white border rounded-mac-lg shadow-mac overflow-hidden ${isCompareTarget ? 'border-mac-blue ring-2 ring-mac-blue/20' : 'border-surface-border'
+        }`}
     >
       {/* Header - MacBook style */}
       <div className="flex flex-wrap items-center justify-between px-8 py-5 border-b border-surface-border bg-surface-bg/50">
@@ -311,6 +318,6 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };

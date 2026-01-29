@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { detectClausesFromText, DetectedClause } from '../services/clauseDetectionService';
 import { Clause } from '../types';
 
@@ -421,8 +422,19 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
   };
 
   return (
-    <div className="fixed inset-0 z-[150] flex items-center justify-center p-6 mac-modal-backdrop modal-backdrop">
-      <div className="bg-white w-full max-w-6xl rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden modal-content border border-surface-border max-h-[90vh]">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-[150] flex items-center justify-center p-6 mac-modal-backdrop"
+    >
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="bg-white w-full max-w-6xl rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden border border-surface-border max-h-[90vh]">
         
         {/* Header - MacBook style */}
         <div className="px-8 py-6 border-b border-surface-border flex items-center justify-between bg-white shrink-0">
@@ -792,7 +804,7 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({ onClose, onSave,
             )}
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
