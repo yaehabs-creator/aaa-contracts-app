@@ -64,7 +64,7 @@ const ClauseStatusBadge: React.FC<{ clause: Clause }> = ({ clause }) => {
   if (status === 'modified') {
     return (
       <span 
-        className="w-2 h-2 rounded-full bg-indigo-500 flex-shrink-0" 
+        className="w-2 h-2 rounded-full bg-indigo-600 flex-shrink-0" 
         title="Modified (GC + PC)"
       />
     );
@@ -337,7 +337,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Added
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-indigo-500"></span> Modified
+              <span className="w-2 h-2 rounded-full bg-indigo-600"></span> Modified
             </span>
           </div>
         </div>

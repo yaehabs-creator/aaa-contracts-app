@@ -183,8 +183,8 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
               clause.condition_type === 'General' 
                 ? 'bg-slate-100 text-slate-600 border border-slate-200' 
                 : clause.condition_type === 'Both'
-                ? 'bg-indigo-500 text-white'
-                : 'bg-violet-500 text-white'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-violet-600 text-white'
               }`}>
               {clause.condition_type}
             </span>
@@ -194,12 +194,12 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
               </span>
             )}
             {clause.section && (
-              <span className="px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-medium rounded-full">
+              <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-[10px] font-medium rounded-full">
                 Section {clause.section}
               </span>
             )}
             {modCount > 0 && (
-              <span className="px-3 py-1 bg-violet-50 text-violet-600 text-[10px] font-medium rounded-full">
+              <span className="px-3 py-1 bg-violet-100 text-violet-700 text-[10px] font-medium rounded-full">
                 {modCount} Modifications
               </span>
             )}

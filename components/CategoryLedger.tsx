@@ -28,7 +28,7 @@ const ClauseStatusBadge: React.FC<{ itemData: LedgerClause['item_data'] }> = ({ 
   if (status === 'modified') {
     return (
       <span 
-        className="w-2 h-2 rounded-full bg-indigo-500 flex-shrink-0" 
+        className="w-2 h-2 rounded-full bg-indigo-600 flex-shrink-0" 
         title="Modified (GC + PC)"
       />
     );
@@ -296,7 +296,7 @@ export const CategoryLedger: React.FC<CategoryLedgerProps> = ({
           </div>
           <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-full transition-all duration-500"
+              className="h-full bg-gradient-to-r from-emerald-500 to-indigo-600 rounded-full transition-all duration-500"
               style={{ width: `${stats.pcCoverage}%` }}
             />
           </div>
@@ -305,7 +305,7 @@ export const CategoryLedger: React.FC<CategoryLedgerProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Added
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-indigo-500"></span> Modified
+              <span className="w-2 h-2 rounded-full bg-indigo-600"></span> Modified
             </span>
           </div>
         </div>
