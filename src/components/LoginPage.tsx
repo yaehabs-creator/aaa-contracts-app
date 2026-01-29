@@ -32,7 +32,7 @@ const GlassLayout: React.FC<GlassLayoutProps> = ({ children }) => (
         right: '-10%',
         width: '50%',
         height: '50%',
-        background: 'radial-gradient(circle, rgba(30, 108, 232, 0.12) 0%, rgba(30, 108, 232, 0.04) 40%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(29, 78, 216, 0.15) 0%, rgba(29, 78, 216, 0.05) 40%, transparent 70%)',
         borderRadius: '50%',
         filter: 'blur(40px)',
         pointerEvents: 'none',
@@ -47,7 +47,7 @@ const GlassLayout: React.FC<GlassLayoutProps> = ({ children }) => (
         left: '-15%',
         width: '55%',
         height: '55%',
-        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 40%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(29, 78, 216, 0.12) 0%, rgba(30, 64, 175, 0.06) 40%, transparent 70%)',
         borderRadius: '50%',
         filter: 'blur(50px)',
         pointerEvents: 'none',
@@ -144,7 +144,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
           top: isActive ? '0.5rem' : '1rem',
           fontSize: isActive ? '0.7rem' : '0.95rem',
           fontWeight: isActive ? 600 : 400,
-          color: isFocused ? '#1E6CE8' : '#64748B',
+          color: isFocused ? '#1D4ED8' : '#64748B',
           letterSpacing: isActive ? '0.02em' : '0',
           textTransform: isActive ? 'uppercase' : 'none',
           transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -175,7 +175,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
           fontWeight: 500,
           color: '#1A2333',
           background: isFocused ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.6)',
-          border: `1.5px solid ${isFocused ? 'rgba(30, 108, 232, 0.5)' : 'rgba(0, 0, 0, 0.08)'}`,
+          border: `1.5px solid ${isFocused ? 'rgba(29, 78, 216, 0.5)' : 'rgba(0, 0, 0, 0.08)'}`,
           borderRadius: '14px',
           outline: 'none',
           transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -206,8 +206,8 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#1E6CE8';
-            e.currentTarget.style.background = 'rgba(30, 108, 232, 0.08)';
+            e.currentTarget.style.color = '#1D4ED8';
+            e.currentTarget.style.background = 'rgba(29, 78, 216, 0.08)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.color = '#64748B';
@@ -301,7 +301,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ loading, children }) => (
       justifyContent: 'center',
       gap: '0.5rem',
       letterSpacing: '0.02em',
-      boxShadow: loading ? 'none' : '0 4px 14px rgba(15, 46, 107, 0.2)',
+      boxShadow: loading ? 'none' : '0 4px 14px rgba(29, 78, 216, 0.25)',
     }}
   >
     {loading ? (
@@ -387,12 +387,12 @@ export const LoginPage: React.FC = () => {
               width: '72px',
               height: '72px',
               margin: '0 auto 1.25rem',
-              background: 'linear-gradient(135deg, #1E6CE8 0%, #0F2E6B 100%)',
+              background: 'linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%)',
               borderRadius: '18px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 8px 24px rgba(15, 46, 107, 0.2)',
+              boxShadow: '0 8px 24px rgba(29, 78, 216, 0.25)',
             }}
           >
             <span

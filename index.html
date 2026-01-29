@@ -27,12 +27,12 @@
                 muted: '#6B7280',
                 accent: '#818CF8'
               },
-              // Modern Blue design system
+              // Modern Blue design system (darker)
               mac: {
-                blue: '#2563EB',
-                'blue-hover': '#1D4ED8',
-                'blue-light': '#BFDBFE',
-                'blue-subtle': '#DBEAFE',
+                blue: '#1D4ED8',
+                'blue-hover': '#1E40AF',
+                'blue-light': '#93C5FD',
+                'blue-subtle': '#BFDBFE',
                 navy: '#1E3A8A',
                 charcoal: '#1E293B',
                 muted: '#6B7280',
@@ -63,7 +63,7 @@
               'mac': '0 4px 24px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
               'mac-hover': '0 8px 32px -4px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)',
               'mac-sm': '0 2px 8px -2px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02)',
-              'mac-focus': '0 0 0 3px rgba(37, 99, 235, 0.15)',
+              'mac-focus': '0 0 0 3px rgba(29, 78, 216, 0.15)',
               'mac-inset': 'inset 0 1px 2px rgba(0,0,0,0.04)'
             },
             spacing: {
@@ -85,12 +85,12 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-      /* ===== Modern Blue Design System ===== */
+      /* ===== Modern Blue Design System (Darker) ===== */
       :root {
-        --mac-blue: #2563EB;
-        --mac-blue-hover: #1D4ED8;
-        --mac-blue-light: #BFDBFE;
-        --mac-blue-subtle: #DBEAFE;
+        --mac-blue: #1D4ED8;
+        --mac-blue-hover: #1E40AF;
+        --mac-blue-light: #93C5FD;
+        --mac-blue-subtle: #BFDBFE;
         --mac-navy: #1E3A8A;
         --mac-charcoal: #1E293B;
         --mac-muted: #6B7280;
@@ -98,9 +98,9 @@
         --surface-bg: #F8FAFC;
         --surface-bg-subtle: #F1F5F9;
         --surface-card: #FFFFFF;
-        --surface-border: rgba(37,99,235,0.1);
-        --shadow-mac: 0 4px 24px -4px rgba(37,99,235,0.12), 0 0 0 1px rgba(37,99,235,0.06);
-        --shadow-mac-hover: 0 8px 32px -4px rgba(37,99,235,0.18), 0 0 0 1px rgba(37,99,235,0.1);
+        --surface-border: rgba(29,78,216,0.1);
+        --shadow-mac: 0 4px 24px -4px rgba(29,78,216,0.12), 0 0 0 1px rgba(29,78,216,0.06);
+        --shadow-mac-hover: 0 8px 32px -4px rgba(29,78,216,0.18), 0 0 0 1px rgba(29,78,216,0.1);
         --radius-mac: 16px;
         --radius-mac-lg: 20px;
         --radius-mac-sm: 12px;
@@ -302,10 +302,10 @@
       
       @keyframes highlightClause {
         0% {
-          box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5);
+          box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.5);
         }
         100% {
-          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+          box-shadow: 0 0 0 0 rgba(29, 78, 216, 0);
         }
       }
       
@@ -398,13 +398,13 @@
         border: none;
         border-radius: var(--radius-mac-sm);
         font-weight: 500;
-        box-shadow: 0 2px 8px -2px rgba(37, 99, 235, 0.35);
+        box-shadow: 0 2px 8px -2px rgba(29, 78, 216, 0.35);
         transition: all var(--transition-mac);
       }
       
       .btn-mac-primary:hover:not(:disabled) {
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.45);
+        box-shadow: 0 4px 12px -2px rgba(29, 78, 216, 0.45);
       }
       
       /* MacBook-style secondary button */
@@ -648,28 +648,28 @@
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.18);
         box-shadow: 
-          0 8px 32px rgba(37, 99, 235, 0.1),
-          0 0 0 1px rgba(37, 99, 235, 0.06),
+          0 8px 32px rgba(29, 78, 216, 0.1),
+          0 0 0 1px rgba(29, 78, 216, 0.06),
           inset 0 1px 0 rgba(255, 255, 255, 0.5);
       }
       
       /* MacBook-style input focus ring */
       .glass-input:focus {
         outline: none;
-        border-color: rgba(37, 99, 235, 0.5);
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        border-color: rgba(29, 78, 216, 0.5);
+        box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
       }
       
       /* MacBook-style button */
       .glass-button {
-        background: linear-gradient(180deg, #2563EB 0%, #1D4ED8 100%);
+        background: linear-gradient(180deg, #1D4ED8 0%, #1E40AF 100%);
         transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
                     box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
       
       .glass-button:hover:not(:disabled) {
         transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
       }
       
       .glass-button:active:not(:disabled) {
