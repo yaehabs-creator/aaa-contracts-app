@@ -741,9 +741,9 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
           animation: ai-bot-slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Header - MacBook style */
+        /* Header - Modern Indigo style */
         .ai-bot-header {
-          background: linear-gradient(180deg, #2563EB 0%, #1D4ED8 100%);
+          background: linear-gradient(180deg, #6366F1 0%, #4F46E5 100%);
           color: white;
           padding: 1.25rem 1.5rem;
           display: flex;

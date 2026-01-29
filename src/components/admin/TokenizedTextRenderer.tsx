@@ -41,7 +41,7 @@ export const TokenizedTextRenderer: React.FC<TokenizedTextRendererProps> = ({
                                 // The tokenizer should have stripped parens.
                                 scrollToClauseByNumber(token.v);
                             }}
-                            className="clause-ref inline-block text-blue-600 hover:text-blue-800 hover:underline font-medium bg-transparent border-0 p-0 cursor-pointer"
+                            className="clause-ref inline-block text-indigo-600 hover:text-indigo-800 hover:underline font-medium bg-transparent border-0 p-0 cursor-pointer"
                             title={`Go to Clause ${token.v}`}
                         >
                             {token.v}

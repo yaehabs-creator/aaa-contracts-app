@@ -1,0 +1,36 @@
+{
+  "id": "contract-1768916903624",
+  "name": "New Contract 1/20/2026",
+  "timestamp": 1768916903624,
+  "clauses": [],
+  "metadata": {
+    "totalClauses": 0,
+    "generalCount": 0,
+    "particularCount": 0,
+    "highRiskCount": 0,
+    "conflictCount": 0,
+    "timeSensitiveCount": 0
+  },
+  "sections": [
+    {
+      "sectionType": "AGREEMENT",
+      "title": "Form of Agreement",
+      "items": []
+    },
+    {
+      "sectionType": "LOA",
+      "title": "Letter of Acceptance",
+      "items": []
+    },
+    {
+      "sectionType": "GENERAL",
+      "title": "General Conditions",
+      "items": []
+    },
+    {
+      "sectionType": "PARTICULAR",
+      "title": "Particular Conditions",
+      "items": []
+    }
+  ]
+}

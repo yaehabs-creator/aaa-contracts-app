@@ -365,7 +365,7 @@ Output Format:
     if (t.includes('DEDUCTION')) return 'text-orange-600 bg-orange-50 border-orange-100';
     if (t.includes('PENALTY') || t.includes('DAMAGES')) return 'text-red-700 bg-red-100 border-red-200';
     if (t.includes('PAYMENT_ENTITLEMENT')) return 'text-emerald-600 bg-emerald-50 border-emerald-100';
-    if (t.includes('REIMBURSEMENT')) return 'text-blue-600 bg-blue-50 border-blue-100';
+    if (t.includes('REIMBURSEMENT')) return 'text-indigo-600 bg-indigo-50 border-indigo-100';
     if (t.includes('LIMIT') || t.includes('CAP')) return 'text-purple-600 bg-purple-50 border-purple-100';
     return 'text-aaa-blue bg-aaa-bg border-aaa-blue/10';
   };

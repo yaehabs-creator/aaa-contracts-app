@@ -441,7 +441,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
                   value={newCategoryName}
                   onChange={(e) => setNewCategoryName(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleCreateCategory()}
-                  className="w-full rounded-2xl border border-slate-200 px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                  className="w-full rounded-2xl border border-slate-200 px-4 py-2.5 text-sm text-slate-900 outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100"
                   placeholder="e.g. Interpretation, Notices, Payment, Variations…"
                   autoFocus
                 />
@@ -470,7 +470,7 @@ export const CategoryManager: React.FC<CategoryManagerProps> = ({ clauses, onCla
               </button>
               <button
                 onClick={handleCreateCategory}
-                className="rounded-2xl bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700"
+                className="rounded-2xl bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
               >
                 Save category
               </button>
