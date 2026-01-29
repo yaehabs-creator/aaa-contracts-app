@@ -535,8 +535,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
                   onClick={() => onSortModeChange('category')}
                   className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
                     sortMode === 'category'
-                      ? 'bg-violet-500 text-white border-violet-500'
-                      : 'bg-white text-aaa-muted border-aaa-border hover:border-violet-500 hover:text-violet-600'
+                      ? 'bg-purple-500 text-white border-purple-500'
+                      : 'bg-white text-aaa-muted border-aaa-border hover:border-purple-500 hover:text-purple-600'
                   }`}
                   title="Group by categories from Admin Editor"
                 >

@@ -64,7 +64,7 @@ const ClauseStatusBadge: React.FC<{ clause: Clause }> = ({ clause }) => {
   if (status === 'modified') {
     return (
       <span 
-        className="w-2 h-2 rounded-full bg-indigo-600 flex-shrink-0" 
+        className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0" 
         title="Modified (GC + PC)"
       />
     );
@@ -311,9 +311,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="text-xl font-bold text-emerald-600">{stats.added}</div>
             <div className="text-[9px] font-medium text-emerald-600 mt-1">Added</div>
           </div>
-          <div className="text-center p-3 bg-indigo-50 rounded-mac-sm border border-indigo-100">
-            <div className="text-xl font-bold text-indigo-600">{stats.modified}</div>
-            <div className="text-[9px] font-medium text-indigo-600 mt-1">Modified</div>
+          <div className="text-center p-3 bg-blue-50 rounded-mac-sm border border-blue-100">
+            <div className="text-xl font-bold text-blue-600">{stats.modified}</div>
+            <div className="text-[9px] font-medium text-blue-600 mt-1">Modified</div>
           </div>
           <div className="text-center p-3 bg-slate-50 rounded-mac-sm border border-slate-200">
             <div className="text-xl font-bold text-mac-muted">{stats.gcOnly}</div>
@@ -337,7 +337,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Added
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-indigo-600"></span> Modified
+              <span className="w-2 h-2 rounded-full bg-blue-600"></span> Modified
             </span>
           </div>
         </div>
@@ -511,7 +511,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </span>
                           )}
                           {modifiedCount > 0 && (
-                            <span className="text-[9px] font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">
+                            <span className="text-[9px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">
                               ~{modifiedCount}
                             </span>
                           )}
@@ -622,7 +622,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             </span>
                           )}
                           {modifiedCount > 0 && (
-                            <span className="text-[9px] font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">
+                            <span className="text-[9px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">
                               ~{modifiedCount}
                             </span>
                           )}

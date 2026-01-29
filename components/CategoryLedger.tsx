@@ -28,7 +28,7 @@ const ClauseStatusBadge: React.FC<{ itemData: LedgerClause['item_data'] }> = ({ 
   if (status === 'modified') {
     return (
       <span 
-        className="w-2 h-2 rounded-full bg-indigo-600 flex-shrink-0" 
+        className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0" 
         title="Modified (GC + PC)"
       />
     );
@@ -118,7 +118,7 @@ const CategoryAccordion: React.FC<{
             </span>
           )}
           {stats.modified > 0 && (
-            <span className="text-[8px] font-bold text-indigo-600 bg-indigo-100 px-1.5 py-0.5 rounded">
+            <span className="text-[8px] font-bold text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded">
               ~{stats.modified}
             </span>
           )}
@@ -279,9 +279,9 @@ export const CategoryLedger: React.FC<CategoryLedgerProps> = ({
             <div className="text-lg font-black text-emerald-600">{stats.added}</div>
             <div className="text-[8px] font-bold text-emerald-600 uppercase tracking-wider">Added</div>
           </div>
-          <div className="text-center p-2 bg-white rounded-xl border border-indigo-200 shadow-sm">
-            <div className="text-lg font-black text-indigo-600">{stats.modified}</div>
-            <div className="text-[8px] font-bold text-indigo-600 uppercase tracking-wider">Modified</div>
+          <div className="text-center p-2 bg-white rounded-xl border border-blue-200 shadow-sm">
+            <div className="text-lg font-black text-blue-600">{stats.modified}</div>
+            <div className="text-[8px] font-bold text-blue-600 uppercase tracking-wider">Modified</div>
           </div>
           <div className="text-center p-2 bg-white rounded-xl border border-slate-200 shadow-sm">
             <div className="text-lg font-black text-slate-500">{stats.gcOnly}</div>
@@ -296,7 +296,7 @@ export const CategoryLedger: React.FC<CategoryLedgerProps> = ({
           </div>
           <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-emerald-500 to-indigo-600 rounded-full transition-all duration-500"
+              className="h-full bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full transition-all duration-500"
               style={{ width: `${stats.pcCoverage}%` }}
             />
           </div>
@@ -305,7 +305,7 @@ export const CategoryLedger: React.FC<CategoryLedgerProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Added
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-indigo-600"></span> Modified
+              <span className="w-2 h-2 rounded-full bg-blue-600"></span> Modified
             </span>
           </div>
         </div>

@@ -38,7 +38,7 @@ export const SaveStatusIndicator: React.FC<SaveStatusIndicatorProps> = ({
           text: 'Saving...',
           bgColor: 'bg-blue-50',
           textColor: 'text-aaa-blue',
-          borderColor: 'border-indigo-200'
+          borderColor: 'border-blue-200'
         };
       case 'saved':
         return {
