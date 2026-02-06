@@ -38,12 +38,12 @@ const clauseMatchesSearch = (clause: Clause, query: string): boolean => {
 const getClauseStatus = (clause: Clause): 'added' | 'modified' | 'gc-only' => {
   const hasPC = clause.particular_condition && clause.particular_condition.length > 0;
   const hasGC = clause.general_condition && clause.general_condition.length > 0;
-  
+
   // For dual-source contracts (have both GC and PC fields populated)
   if (hasPC && !hasGC) return 'added';
   if (hasPC && hasGC) return 'modified';
   if (hasGC) return 'gc-only';
-  
+
   // Fallback for single-source contracts (only condition_type is set)
   // These contracts don't have separate GC/PC fields, just clause_text with condition_type
   if (clause.condition_type === 'Particular') return 'added';
@@ -53,19 +53,19 @@ const getClauseStatus = (clause: Clause): 'added' | 'modified' | 'gc-only' => {
 // Status Badge Component
 const ClauseStatusBadge: React.FC<{ clause: Clause }> = ({ clause }) => {
   const status = getClauseStatus(clause);
-  
+
   if (status === 'added') {
     return (
-      <span 
-        className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" 
+      <span
+        className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"
         title="Added (PC only)"
       />
     );
   }
   if (status === 'modified') {
     return (
-      <span 
-        className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0" 
+      <span
+        className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"
         title="Modified (GC + PC)"
       />
     );
@@ -328,7 +328,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <span className="text-xs font-semibold text-mac-blue">{stats.pcCoverage}%</span>
           </div>
           <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-            <div 
+            <div
               className="h-full bg-gradient-to-r from-mac-blue to-emerald-500 rounded-full transition-all duration-500"
               style={{ width: `${stats.pcCoverage}%` }}
             />
@@ -343,6 +343,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Graduation Project Presentation Button */}
+      <button
+        onClick={() => window.location.hash = '#presentation'}
+        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-mac-sm shadow-md transition-all group relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+        </svg>
+        <span className="text-xs font-bold uppercase tracking-wider">Start Presentation</span>
+      </button>
 
       <div className="space-y-4">
         <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider border-b border-surface-border pb-2">Filter Source</h4>

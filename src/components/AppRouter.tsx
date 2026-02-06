@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ContractEditorPage } from '../pages/admin/ContractEditorPage';
+import { PresentationPage } from '../pages/PresentationPage';
 
 interface AppRouterProps {
   children: React.ReactNode;
@@ -26,6 +27,10 @@ export const AppRouter: React.FC<AppRouterProps> = ({ children }) => {
   // Route matching
   if (currentRoute === '#/admin/contract-editor') {
     return <ContractEditorPage />;
+  }
+
+  if (currentRoute === '#presentation') {
+    return <PresentationPage />;
   }
 
   // Default: render the main app
