@@ -2,6 +2,88 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navigateToHome } from '../components/AppRouter';
+import { ClauseCard } from '../../components/ClauseCard';
+import { LinkifyClauseReferences } from '../utils/clauseLinker';
+import { Clause } from '../../types';
+
+// Interactive Mockup Component
+// Interactive Mockup Component
+const MockScreenshot: React.FC<{ type: 'comparison' | 'navigation' }> = ({ type }) => {
+    // Mock Data for Real Components
+    const mockClause: Clause = {
+        clause_number: '14.2',
+        clause_title: 'Advance Payment',
+        condition_type: 'General',
+        clause_text: 'The Employer shall make an advance payment, as an interest-free loan for mobilisation...',
+        general_condition: 'The Employer shall make an advance payment, as an interest-free loan for mobilisation and cash flow support, when the Contractor submits a guarantee in accordance with this Sub-Clause.',
+        particular_condition: 'The Advance Payment shall be 10% of the Accepted Contract Amount, payable in two equal installments.',
+        category: 'Payment',
+        comparison: [
+            {
+                type: 'CHANGED_WORDING',
+                color: 'blue',
+                excerpt_general: 'interest-free loan for mobilisation and cash flow support',
+                excerpt_particular: '10% of the Accepted Contract Amount',
+                comment: 'Changed payment basis'
+            }
+        ]
+    };
+
+    const navigationText = `
+    The Contractor shall obtain (at his cost) a Performance Security for proper performance, 
+    in the amount stated in the Particular Conditions and with the wording attached to 
+    the Particular Conditions. 
+    
+    See also Clause 14.2 [Advance Payment] for details on financial guarantees.
+    Refer to Sub-Clause 4.2 regarding the return of the Performance Security.
+    `;
+
+    return (
+        <div className="w-full bg-white rounded-lg overflow-hidden shadow-2xl flex flex-col text-slate-800 font-sans text-sm border-4 border-gray-200">
+            <div className="bg-gray-100 border-b border-gray-200 px-4 py-2 flex items-center gap-2">
+                <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="mx-auto bg-gray-200 text-gray-500 text-xs px-3 py-1 rounded-md font-mono">
+                    {type === 'comparison' ? 'ae-contract-app/comparison-view' : 'ae-contract-app/clause-linker'}
+                </div>
+            </div>
+
+            <div className="p-8 bg-slate-50 min-h-[400px] flex items-center justify-center">
+                {type === 'comparison' ? (
+                    <div className="w-full max-w-3xl transform scale-100 origin-top">
+                        <div className="mb-4 text-center">
+                            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Live Component Demo</span>
+                        </div>
+                        {/* Rendering actual ClauseCard component */}
+                        <ClauseCard
+                            clause={mockClause}
+                            searchQuery=""
+                            onEdit={() => { }}
+                            onDelete={() => { }}
+                        />
+                    </div>
+                ) : (
+                    <div className="w-full max-w-2xl bg-white p-8 rounded shadow-lg border border-gray-100">
+                        <div className="mb-6 border-b pb-4">
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">Clause 4.2 - Performance Security</h3>
+                            <div className="text-gray-600 leading-relaxed text-base">
+                                {/* Rendering actual Linker component */}
+                                <LinkifyClauseReferences text={navigationText} />
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-blue-600 bg-blue-50 p-3 rounded">
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Hover over the highlighted text above to see the live linking in action!</span>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
 
 // Slide Data
 const SLIDES = [
@@ -63,11 +145,11 @@ const SLIDES = [
     },
     {
         id: 'feature-comparison',
-        type: 'feature',
+        type: 'screenshot', // Changed to screenshot
+        mockupType: 'comparison', // Specifies which mockup to render
         title: 'Dual-Mode Comparison',
         subtitle: 'The Core Innovation',
         description: 'A dedicated interface solving the "General vs Particular" problem. Instantly see what changed from the standard baseline.',
-        image: 'comparison-mockup',
         bg: 'from-slate-700 to-slate-900'
     },
     {
@@ -97,15 +179,11 @@ const SLIDES = [
     },
     {
         id: 'feature-navigation',
-        type: 'content',
+        type: 'screenshot', // Changed to screenshot
+        mockupType: 'navigation', // Specifies which mockup to render
         title: 'Intelligent Navigation',
-        content: [
-            { title: 'Auto-Hyperlinking', text: 'Detects "Clause X.X" references and automatically turns them into clickable links.' },
-            { title: 'Cross-Referencing', text: 'Jump between related clauses instantly without scrolling.' },
-            { title: 'Fuzzy Matching', text: 'Intelligently resolves references even with typos (e.g., "Cl. 14.1" vs "Clause 14.1").' },
-            { title: 'Context Preservation', text: 'Maintains navigation history for easy backtracking.' }
-        ],
-        icon: '🔗',
+        subtitle: 'Live Reference Linking',
+        description: 'Detects "Clause X.X" references and creates active hyperlinks. Clicking instantly smooth-scrolls to the target clause, highlighting it for context.',
         bg: 'from-blue-800 to-cyan-900'
     },
     {
@@ -376,6 +454,27 @@ export const PresentationPage: React.FC = () => {
                                 )}
                             </div>
                         )}
+
+                        {/* Render Mock Screenshot */}
+                        {slide.type === 'screenshot' && (
+                            <div className="flex flex-col items-center space-y-10">
+                                <div className="text-center">
+                                    <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
+                                    <p className="text-2xl text-blue-200">{slide.subtitle}</p>
+                                    <p className="text-lg text-white/70 max-w-3xl mt-4 mx-auto">{slide.description}</p>
+                                </div>
+                                <motion.div
+                                    initial={{ y: 50, opacity: 0, rotateX: 20 }}
+                                    animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                    style={{ perspective: 1000 }}
+                                    className="w-full max-w-4xl"
+                                >
+                                    <MockScreenshot type={(slide as any).mockupType} />
+                                </motion.div>
+                            </div>
+                        )}
+
                     </div>
                 </motion.div>
             </AnimatePresence>
