@@ -13,7 +13,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, show
 
   const getRoleBadge = () => {
     if (!user) return null;
-    
+
     const roleStyles: Record<string, string> = {
       admin: 'bg-red-50 text-red-600',
       editor: 'bg-mac-blue-subtle text-mac-blue',
@@ -31,7 +31,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, show
     <header className="bg-white/80 backdrop-blur-xl border-b border-surface-border px-8 py-4 flex justify-between items-center sticky top-0 z-50">
       <div className="flex items-center gap-4">
         <div className="w-9 h-9 bg-mac-blue rounded-mac-xs flex items-center justify-center">
-          <span className="text-white font-bold text-sm">AAA</span>
+          <span className="text-white font-bold text-sm">AE</span>
         </div>
         <div>
           <h1 className="text-lg font-semibold text-mac-navy">Contract Department</h1>
@@ -47,11 +47,10 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, show
         {isAdmin() && (
           <button
             onClick={onShowUserManagement}
-            className={`px-4 py-2 rounded-mac-xs text-sm font-medium transition-all ${
-              showingUserManagement 
-                ? 'bg-mac-blue text-white' 
+            className={`px-4 py-2 rounded-mac-xs text-sm font-medium transition-all ${showingUserManagement
+                ? 'bg-mac-blue text-white'
                 : 'bg-surface-bg text-mac-charcoal hover:bg-surface-bg-subtle border border-surface-border'
-            }`}
+              }`}
           >
             {showingUserManagement ? 'Dashboard' : 'Users'}
           </button>

@@ -38,7 +38,7 @@ const GlassLayout: React.FC<GlassLayoutProps> = ({ children }) => (
         pointerEvents: 'none',
       }}
     />
-    
+
     {/* Blur orb - bottom left */}
     <div
       style={{
@@ -130,7 +130,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const isActive = isFocused || value.length > 0;
-  
+
   const type = showPasswordToggle && showPassword ? 'text' : initialType;
 
   return (
@@ -353,9 +353,9 @@ export const LoginPage: React.FC = () => {
       await signIn(email, password);
     } catch (err: any) {
       const errorMsg = err.message || err.toString();
-      
+
       let errorMessage = 'Failed to sign in';
-      
+
       // Provide user-friendly error messages (Supabase errors)
       if (errorMsg.includes('Invalid login credentials') || errorMsg.includes('Invalid email or password')) {
         errorMessage = 'Invalid email or password. Please check your credentials.';
@@ -370,7 +370,7 @@ export const LoginPage: React.FC = () => {
       } else if (errorMsg) {
         errorMessage = errorMsg;
       }
-      
+
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -403,7 +403,7 @@ export const LoginPage: React.FC = () => {
                 letterSpacing: '-0.5px',
               }}
             >
-              AAA
+              AE
             </span>
           </div>
 
@@ -418,7 +418,7 @@ export const LoginPage: React.FC = () => {
               marginBottom: '0.375rem',
             }}
           >
-            AAA Contract Department
+            AE Contract Department
           </h1>
           <p
             style={{

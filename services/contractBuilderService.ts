@@ -34,8 +34,8 @@ function generateContractMetadata(clauses: Clause[]): SavedContract['metadata'] 
     }
 
     // Check for conflicts (clauses with both general and particular conditions that differ)
-    if (clause.general_condition && clause.particular_condition && 
-        clause.general_condition.trim() !== clause.particular_condition.trim()) {
+    if (clause.general_condition && clause.particular_condition &&
+      clause.general_condition.trim() !== clause.particular_condition.trim()) {
       conflictCount++;
       highRiskCount++; // Conflicts are considered high-risk
     }
@@ -89,10 +89,18 @@ export async function buildContractFromText(
   const particularClauses: Clause[] = [];
 
   clauses.forEach(clause => {
-    if (clause.condition_type === 'General') {
-      generalClauses.push(clause);
-    } else if (clause.condition_type === 'Particular') {
+    const type = (clause.condition_type || '').toLowerCase();
+
+    // Check if clause has particular content, which might imply it belongs in Particular section
+    // if strictly purely particular. However, usually 'Particular' type means "New Addition".
+    // 'General' type means baseline, potentially with modifications in particular_condition field.
+
+    if (type === 'particular' || type === 'particular conditions') {
       particularClauses.push(clause);
+    } else {
+      // Default to General for 'general', 'both', 'modified', or unknown types
+      // This ensures we never drop extracted data.
+      generalClauses.push(clause);
     }
   });
 
@@ -185,10 +193,10 @@ export function exportContractToJSONFile(
   // Generate filename if not provided
   const fileTimestamp = new Date().toISOString().split('T')[0];
   const defaultFilename = filename || `${contract.name.replace(/[^a-z0-9]/gi, '_')}_${fileTimestamp}.json`;
-  
+
   // Convert contract to JSON string (matching Hassan Allam format - single contract object)
   const jsonContent = JSON.stringify(contract, null, 2);
-  
+
   // Use existing download function
   downloadBackupFile(jsonContent, defaultFilename);
 }

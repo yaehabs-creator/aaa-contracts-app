@@ -34,7 +34,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
             margin: '0 auto 1.5rem'
           }} />
           <p style={{ color: '#1A2333', fontSize: '1.2rem', fontWeight: 'bold' }}>
-            Loading AAA Contract Department...
+            Loading AE Contract Department...
           </p>
         </div>
         <style>{`
@@ -55,7 +55,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
   if (!canEdit() && !showUserManagement) {
     return (
       <div>
-        <AppHeader 
+        <AppHeader
           onShowUserManagement={() => setShowUserManagement(!showUserManagement)}
           showingUserManagement={showUserManagement}
           onToggleBot={onToggleBot}
@@ -92,7 +92,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
             </div>
             <h2 style={{ marginBottom: '1rem', color: '#2d3748' }}>View-Only Access</h2>
             <p style={{ color: '#718096', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-              Your account has <strong>Viewer</strong> permissions. You can view contracts 
+              Your account has <strong>Viewer</strong> permissions. You can view contracts
               but cannot create or edit them.
             </p>
             <p style={{ color: '#718096', fontSize: '0.875rem' }}>
@@ -106,7 +106,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
 
   return (
     <div>
-      <AppHeader 
+      <AppHeader
         onShowUserManagement={() => setShowUserManagement(!showUserManagement)}
         showingUserManagement={showUserManagement}
         onToggleBot={onToggleBot}

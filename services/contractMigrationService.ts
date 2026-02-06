@@ -105,10 +105,14 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
   const particularClauses: Clause[] = [];
 
   contract.clauses.forEach(clause => {
-    if (clause.condition_type === 'General') {
-      generalClauses.push(clause);
-    } else if (clause.condition_type === 'Particular') {
+    const type = (clause.condition_type || '').toLowerCase();
+
+    if (type === 'particular' || type === 'particular conditions') {
       particularClauses.push(clause);
+    } else {
+      // Default to General for 'general', 'both', 'modified', or unknown types
+      // This ensures we never drop extracted data during migration.
+      generalClauses.push(clause);
     }
   });
 
@@ -225,7 +229,7 @@ export function getAllClausesFromContract(contract: SavedContract | LegacyContra
   if (contract.clauses && contract.clauses.length > 0) {
     return contract.clauses;
   }
-  
+
   if (contract.sections) {
     contract.sections.forEach(section => {
       section.items.forEach(item => {
