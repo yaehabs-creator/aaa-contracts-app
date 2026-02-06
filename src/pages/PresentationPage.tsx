@@ -71,6 +71,70 @@ const SLIDES = [
         bg: 'from-slate-700 to-slate-900'
     },
     {
+        id: 'feature-dashboard',
+        type: 'content',
+        title: 'Dashboard & Analytics',
+        content: [
+            { title: 'Real-time Stats', text: 'Instant overview of total clauses, modifications, and new additions.' },
+            { title: 'Project Health', text: 'Visual indicators for contract completeness and risk areas.' },
+            { title: 'Progress Tracking', text: 'Track the status of contract analysis and reviews.' },
+            { title: 'Smart Categorization', text: 'Automatic grouping of clauses by chapter and category.' }
+        ],
+        icon: '📊',
+        bg: 'from-indigo-800 to-slate-900'
+    },
+    {
+        id: 'feature-search',
+        type: 'feature',
+        title: 'Semantic Smart Search',
+        subtitle: 'Find Meaning, Not Just Keywords',
+        description: 'Powered by vector embeddings, our search understands context. Type "payment delays" and find clauses about "Application for Interim Payment" or "Time for Payment" instantly.',
+        stats: [
+            { label: 'Speed', value: '< 100ms' },
+            { label: 'Relevance', value: 'High' }
+        ],
+        bg: 'from-purple-800 to-indigo-900'
+    },
+    {
+        id: 'feature-navigation',
+        type: 'content',
+        title: 'Intelligent Navigation',
+        content: [
+            { title: 'Auto-Hyperlinking', text: 'Detects "Clause X.X" references and automatically turns them into clickable links.' },
+            { title: 'Cross-Referencing', text: 'Jump between related clauses instantly without scrolling.' },
+            { title: 'Fuzzy Matching', text: 'Intelligently resolves references even with typos (e.g., "Cl. 14.1" vs "Clause 14.1").' },
+            { title: 'Context Preservation', text: 'Maintains navigation history for easy backtracking.' }
+        ],
+        icon: '🔗',
+        bg: 'from-blue-800 to-cyan-900'
+    },
+    {
+        id: 'feature-admin',
+        type: 'grid',
+        title: 'Admin Control Suite',
+        items: [
+            { name: 'Contract Editor', icon: '📝', desc: 'Full CRUD operations' },
+            { name: 'Category Manager', icon: '🗂️', desc: 'Organize by discipline' },
+            { name: 'User Access', icon: '👥', desc: 'Role-based security' },
+            { name: 'Data Import', icon: '📥', desc: 'Bulk clause ingestion' },
+            { name: 'Version Control', icon: 'history', desc: 'Track changes' },
+            { name: 'System Config', icon: '⚙️', desc: 'Global settings' }
+        ],
+        bg: 'from-slate-800 to-gray-900'
+    },
+    {
+        id: 'feature-ai',
+        type: 'feature',
+        title: 'AI Contract Assistant',
+        subtitle: 'Your 24/7 Legal Engineer',
+        description: 'Ask questions about your specific contract. "What are the penalties for delay?" or "Summarize the insurance requirements." uses RAG (Retrieval Augmented Generation) for accurate answers.',
+        stats: [
+            { label: 'Model', value: 'Claude 3.5' },
+            { label: 'Context', value: 'Full Doc' }
+        ],
+        bg: 'from-emerald-800 to-teal-900'
+    },
+    {
         id: 'impact',
         type: 'content',
         title: 'Project Impact',
