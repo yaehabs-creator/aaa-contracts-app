@@ -48,7 +48,7 @@ const highlightKeywordsInHTML = (htmlText: string, keywords: string[]): string =
   return highlightedText;
 };
 
-export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdit, onDelete, isCompareTarget, searchKeywords = [] }) => {
+export const ClauseCard: React.FC<ClauseCardProps> = React.memo(({ clause, onCompare, onEdit, onDelete, isCompareTarget, searchKeywords = [] }) => {
   const isDual = !!clause.general_condition || !!clause.particular_condition;
   const textLength = clause.clause_text?.length || 0;
   const [isCollapsed, setIsCollapsed] = useState(textLength > 1200);
@@ -161,9 +161,9 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       whileHover={{ y: -2, boxShadow: '0 8px 32px -4px rgba(29,78,216,0.15), 0 0 0 1px rgba(29,78,216,0.08)' }}
-      transition={{ 
-        type: 'spring', 
-        stiffness: 300, 
+      transition={{
+        type: 'spring',
+        stiffness: 300,
         damping: 25,
         opacity: { duration: 0.3 }
       }}
@@ -186,10 +186,9 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
           </div>
           <div className="hidden sm:block h-8 w-px bg-surface-border mx-2" />
           <div className="flex flex-wrap gap-2">
-            <span className={`px-3 py-1 text-[10px] font-medium rounded-full ${
-              clause.condition_type === 'General' 
-                ? 'bg-slate-100 text-slate-600 border border-slate-200' 
-                : clause.condition_type === 'Both'
+            <span className={`px-3 py-1 text-[10px] font-medium rounded-full ${clause.condition_type === 'General'
+              ? 'bg-slate-100 text-slate-600 border border-slate-200'
+              : clause.condition_type === 'Both'
                 ? 'bg-blue-600 text-white'
                 : 'bg-purple-600 text-white'
               }`}>
@@ -320,4 +319,4 @@ export const ClauseCard: React.FC<ClauseCardProps> = ({ clause, onCompare, onEdi
       </div>
     </motion.div>
   );
-};
+});

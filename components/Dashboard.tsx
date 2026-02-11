@@ -6,7 +6,7 @@ interface DashboardProps {
   clauses: Clause[];
 }
 
-export const Dashboard: React.FC<DashboardProps> = ({ clauses }) => {
+export const Dashboard: React.FC<DashboardProps> = React.memo(({ clauses }) => {
   const timeSensitiveCount = clauses.filter(c => c.time_frames && c.time_frames.length > 0).length;
   const total = clauses.length || 1;
   const tsPercent = (timeSensitiveCount / total) * 100;
@@ -96,4 +96,4 @@ export const Dashboard: React.FC<DashboardProps> = ({ clauses }) => {
       </div>
     </div>
   );
-};
+});

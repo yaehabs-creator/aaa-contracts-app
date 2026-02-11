@@ -10,7 +10,7 @@ interface SectionItemCardProps {
 
 const highlightKeywords = (text: string, keywords: string[]): string => {
   if (!keywords || keywords.length === 0) return text;
-  
+
   let highlighted = text;
   keywords.forEach(keyword => {
     if (keyword.trim().length > 0) {
@@ -22,7 +22,7 @@ const highlightKeywords = (text: string, keywords: string[]): string => {
   return highlighted;
 };
 
-export const SectionItemCard: React.FC<SectionItemCardProps> = ({ item, onEdit, onDelete, searchKeywords = [] }) => {
+export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ item, onEdit, onDelete, searchKeywords = [] }) => {
   const isParagraph = item.itemType === ItemType.PARAGRAPH;
   const isField = item.itemType === ItemType.FIELD;
   const isImage = item.itemType === ItemType.IMAGE;
@@ -159,4 +159,4 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = ({ item, onEdit, 
       </div>
     </div>
   );
-};
+});

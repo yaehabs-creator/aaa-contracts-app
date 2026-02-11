@@ -77,85 +77,68 @@ const stripClauseLinks = (text: string | undefined): string => {
   return text.replace(/<a\s+href="#clause-[^"]*"[^>]*class="clause-link"[^>]*>([^<]*)<\/a>/gi, '$1');
 };
 
+const linkifyCache = new Map<string, string>();
+
 const linkifyText = (text: string | undefined, availableClauseIds?: Set<string>): string => {
   if (!text) return "";
 
-  // First, strip any existing clause links to allow re-processing
+  const cacheKey = `${text}|${availableClauseIds?.size || 0}`;
+  if (linkifyCache.has(cacheKey)) return linkifyCache.get(cacheKey)!;
+
   let cleanText = stripClauseLinks(text);
 
-  // If no available clause IDs provided, return text without links
-  // This prevents broken links when we don't know what clauses exist
   if (!availableClauseIds || availableClauseIds.size === 0) {
+    linkifyCache.set(cacheKey, cleanText);
     return cleanText;
   }
 
-  // Strict pattern for clause references:
-  // - Must have "Clause" or "Sub-clause" followed by a proper clause number
-  // - Number must have at least one digit, optionally followed by decimal parts and letters
-  // - Must be followed by word boundary, punctuation, or end of string (not "of", "as", etc.)
-  // Examples: "Clause 1", "Clause 1.1", "Clause 2A", "Clause 6A.2", "Clause 2.1.3", "Sub-clause 1.6 (b)"
   const pattern = /(?:[Cc]lause|[Ss]ub-[Cc]lause)\s+([0-9]+[A-Za-z]?(?:\.[0-9]+[A-Za-z]?)*(?:\s*\([a-z0-9]+\))?)(?=[\s,;:.)\]"]|$)/g;
 
-  return cleanText.replace(pattern, (match, number) => {
-    // Normalize the clause number to match the ID format used in ClauseCard
+  const result = cleanText.replace(pattern, (match, number) => {
     const cleanId = normalizeClauseId(number);
-
-    // Try exact match first
     if (availableClauseIds.has(cleanId)) {
       return `<a href="#clause-${cleanId}" class="clause-link" data-clause-id="${cleanId}">${match}</a>`;
     }
-
-    // Try fuzzy matching with variants (for alphanumeric clauses like 6A.2)
     const variants = generateClauseIdVariants(number);
     for (const variant of variants) {
       if (availableClauseIds.has(variant)) {
         return `<a href="#clause-${variant}" class="clause-link" data-clause-id="${variant}">${match}</a>`;
       }
     }
-
-    // Clause doesn't exist, return original text without link
     return match;
   });
+
+  linkifyCache.set(cacheKey, result);
+  return result;
 };
 
 // Re-process all clause links in a contract's clauses
 const reprocessClauseLinks = (clausesList: Clause[]): Clause[] => {
-  console.log('[App.tsx] LOCAL reprocessClauseLinks called with', clausesList.length, 'clauses');
-
-  // Build Set of all available clause IDs including variants for fuzzy matching
   const availableClauseIds = new Set<string>();
 
   clausesList.forEach(c => {
-    // Add the normalized ID
     const normalizedId = normalizeClauseId(c.clause_number);
     availableClauseIds.add(normalizedId);
-
-    // Also add all variants for fuzzy matching
     const variants = generateClauseIdVariants(c.clause_number);
     variants.forEach(v => availableClauseIds.add(v));
   });
 
-  console.log('[App.tsx] Built availableClauseIds with', availableClauseIds.size, 'variants');
+  return clausesList.map(c => {
+    const newText = linkifyText(c.clause_text, availableClauseIds);
+    const newGC = linkifyText(c.general_condition, availableClauseIds);
+    const newPC = linkifyText(c.particular_condition, availableClauseIds);
 
-  // Re-process each clause's text fields
-  const result = clausesList.map(c => ({
-    ...c,
-    clause_text: linkifyText(c.clause_text, availableClauseIds),
-    general_condition: linkifyText(c.general_condition, availableClauseIds),
-    particular_condition: linkifyText(c.particular_condition, availableClauseIds)
-  }));
+    if (newText === c.clause_text && newGC === c.general_condition && newPC === c.particular_condition) {
+      return c;
+    }
 
-  // Check if any links were created
-  let totalLinks = 0;
-  result.forEach(c => {
-    const allText = (c.clause_text || '') + (c.general_condition || '') + (c.particular_condition || '');
-    const linkMatches = allText.match(/class="clause-link"/g);
-    if (linkMatches) totalLinks += linkMatches.length;
+    return {
+      ...c,
+      clause_text: newText,
+      general_condition: newGC,
+      particular_condition: newPC
+    };
   });
-
-  console.log('[App.tsx] Total links created:', totalLinks);
-
-  return result;
 };
 
 // Helper: Get all clauses from contract AND reprocess links
