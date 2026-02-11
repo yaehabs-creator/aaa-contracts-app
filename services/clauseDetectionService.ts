@@ -1,4 +1,4 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { callAIProxy } from "../src/services/aiProxyClient";
 
 export interface DetectedClause {
   clause_number: string;
@@ -54,21 +54,9 @@ export async function detectClausesFromText(
   generalText?: string,
   particularText?: string
 ): Promise<DetectedClause[]> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    console.warn('ANTHROPIC_API_KEY not configured, cannot detect clauses');
-    return [];
-  }
-
   if (!text && !generalText && !particularText) {
     return [];
   }
-
-  const client = new Anthropic({
-    apiKey,
-    dangerouslyAllowBrowser: true
-  });
-  const model = 'claude-sonnet-4-5-20250929';
 
   let prompt = '';
   if (isDualInput && generalText && particularText) {
@@ -91,8 +79,9 @@ Extract all distinct clauses, identifying their clause numbers and titles.`;
   }
 
   try {
-    const message = await client.messages.create({
-      model: model,
+    const response = await callAIProxy({
+      provider: 'anthropic',
+      model: 'claude-sonnet-4-5',
       max_tokens: 4096,
       system: CLAUSE_DETECTION_SYSTEM_PROMPT,
       messages: [
@@ -103,9 +92,8 @@ Extract all distinct clauses, identifying their clause numbers and titles.`;
       ]
     });
 
-    const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
-      ? (message.content.find(c => c.type === 'text') as any).text
-      : '';
+    const textBlock = response.content.find(c => c.type === 'text');
+    const resultText = textBlock?.text || '';
 
     if (!resultText) {
       return [];
@@ -124,8 +112,8 @@ Extract all distinct clauses, identifying their clause numbers and titles.`;
       if (parsed.clauses && Array.isArray(parsed.clauses)) {
         // Validate and filter clauses
         const validClauses = parsed.clauses
-          .filter((c: any) => 
-            c.clause_number && 
+          .filter((c: any) =>
+            c.clause_number &&
             c.clause_title &&
             typeof c.confidence === 'number' &&
             c.confidence >= 0 &&
@@ -139,24 +127,16 @@ Extract all distinct clauses, identifying their clause numbers and titles.`;
             confidence: Math.max(0, Math.min(1, c.confidence))
           }))
           .sort((a: DetectedClause, b: DetectedClause) => {
-            // Sort by clause number
             return a.clause_number.localeCompare(b.clause_number, undefined, { numeric: true });
           });
-        
-        if (validClauses.length === 0 && parsed.clauses.length > 0) {
-          // All clauses were filtered out during validation
-        }
-        
+
         return validClauses;
       }
-      
-      
+
       return [];
     } catch (parseError: any) {
       console.error('Failed to parse clause detection response:', parseError);
       console.error('Response text:', jsonText.substring(0, 500));
-      
-      
       return [];
     }
   } catch (error: any) {

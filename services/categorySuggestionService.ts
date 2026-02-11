@@ -1,4 +1,4 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { callAIProxy } from "../src/services/aiProxyClient";
 import { Clause } from "../types";
 
 export interface CategorySuggestion {
@@ -44,24 +44,11 @@ Return ONLY valid JSON in this exact format:
 - Ensure all clause numbers match exactly as provided in the input`;
 
 export async function suggestCategories(clauses: Clause[]): Promise<CategorySuggestion[]> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    console.warn('ANTHROPIC_API_KEY not configured, skipping category suggestions');
-    return [];
-  }
-
   if (!clauses || clauses.length === 0) {
     return [];
   }
 
-  const client = new Anthropic({
-    apiKey,
-    dangerouslyAllowBrowser: true
-  });
-  const model = 'claude-sonnet-4-5-20250929';
-
   // Prepare clause summary for analysis
-  // Include clause number, title, and a snippet of text to help with categorization
   const clauseSummaries = clauses.map(c => ({
     clause_number: c.clause_number,
     clause_title: c.clause_title || 'Untitled',
@@ -76,8 +63,9 @@ ${JSON.stringify(clauseSummaries, null, 2)}
 Provide category suggestions that would help organize these clauses into meaningful groups.`;
 
   try {
-    const message = await client.messages.create({
-      model: model,
+    const response = await callAIProxy({
+      provider: 'anthropic',
+      model: 'claude-sonnet-4-5',
       max_tokens: 4096,
       system: CATEGORY_SUGGESTION_SYSTEM_PROMPT,
       messages: [
@@ -88,9 +76,8 @@ Provide category suggestions that would help organize these clauses into meaning
       ]
     });
 
-    const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
-      ? (message.content.find(c => c.type === 'text') as any).text
-      : '';
+    const textBlock = response.content.find(c => c.type === 'text');
+    const resultText = textBlock?.text || '';
 
     if (!resultText) {
       return [];
@@ -107,10 +94,9 @@ Provide category suggestions that would help organize these clauses into meaning
     try {
       const parsed = JSON.parse(jsonText);
       if (parsed.suggestions && Array.isArray(parsed.suggestions)) {
-        // Validate and filter suggestions
         return parsed.suggestions
-          .filter((s: any) => 
-            s.categoryName && 
+          .filter((s: any) =>
+            s.categoryName &&
             Array.isArray(s.suggestedClauseNumbers) &&
             typeof s.confidence === 'number' &&
             s.confidence >= 0 &&
@@ -118,7 +104,7 @@ Provide category suggestions that would help organize these clauses into meaning
           )
           .map((s: any) => ({
             categoryName: s.categoryName.trim(),
-            suggestedClauseNumbers: s.suggestedClauseNumbers.filter((num: string) => 
+            suggestedClauseNumbers: s.suggestedClauseNumbers.filter((num: string) =>
               clauses.some(c => c.clause_number === num)
             ),
             confidence: Math.max(0, Math.min(1, s.confidence)),
