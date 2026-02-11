@@ -28,12 +28,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     const loadLoginRequiredSetting = async () => {
       try {
-        const required = await getLoginRequired();
+        // Add timeout to prevent hanging if Supabase query stalls
+        const timeoutPromise = new Promise<boolean>((resolve) => {
+          setTimeout(() => {
+            console.warn('Login required setting fetch timed out, defaulting to true');
+            resolve(true);
+          }, 5000);
+        });
+        const required = await Promise.race([getLoginRequired(), timeoutPromise]);
         setLoginRequiredState(required);
         console.log('Login required setting:', required);
       } catch (error) {
         console.error('Error loading login required setting:', error);
-        // Default to true on error
         setLoginRequiredState(true);
       } finally {
         setSettingsLoading(false);
@@ -62,7 +68,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       try {
         const { data: { session }, error } = await supabase.auth.getSession();
         if (error) throw error;
-        
+
         if (session?.user) {
           await loadUserProfile(session.user);
         } else {
@@ -92,7 +98,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator to create your user profile.');
             await supabase.auth.signOut();
             setUser(null);
-            setLoading(false);
+            setAuthLoading(false);
             return;
           }
           throw error;
@@ -108,9 +114,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             lastLogin: userData.last_login || undefined,
             createdBy: userData.created_by || undefined
           };
-          
+
           setUser(profile);
-          
+
           // Update last login
           await supabase
             .from('users')
@@ -142,7 +148,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       clearTimeout(timeoutId);
       setAuthError(null);
-      
+
       if (session?.user) {
         await loadUserProfile(session.user);
       } else {
@@ -161,7 +167,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (!supabase) {
       throw new Error('Supabase is not configured. Please check your environment variables.');
     }
-    
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
