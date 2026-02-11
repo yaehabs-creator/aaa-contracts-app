@@ -49,10 +49,9 @@ service cloud.firestore {
       // Everyone authenticated can read
       allow read: if isAuthenticated();
       
-      // Allow any authenticated user to create/update (relaxed for backup import)
-      // TODO: Tighten this later to require canEdit() role check
-      allow create: if isAuthenticated();
-      allow update: if isAuthenticated();
+      // Only editors and admins can create/update contracts
+      allow create: if canEdit();
+      allow update: if canEdit();
       
       // Only admins can delete
       allow delete: if isAdmin();
@@ -60,16 +59,16 @@ service cloud.firestore {
       // Sections subcollection (for large contracts)
       match /sections/{sectionId} {
         allow read: if isAuthenticated();
-        allow create: if isAuthenticated();
-        allow update: if isAuthenticated();
-        allow delete: if isAuthenticated();
+        allow create: if canEdit();
+        allow update: if canEdit();
+        allow delete: if canEdit();
         
         // Items subcollection within sections
         match /items/{itemId} {
           allow read: if isAuthenticated();
-          allow create: if isAuthenticated();
-          allow update: if isAuthenticated();
-          allow delete: if isAuthenticated();
+          allow create: if canEdit();
+          allow update: if canEdit();
+          allow delete: if canEdit();
         }
       }
     }

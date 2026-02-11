@@ -105,24 +105,15 @@ async function saveContractWithSubcollections(contractRef: any, contract: SavedC
 }
 
 export const saveContractToFirestore = async (contract: SavedContract): Promise<void> => {
-  // #region agent log
-  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:19',message:'saveContractToFirestore entry',data:{contractId:contract.id,contractName:contract.name,dbIsNull:db===null,authIsNull:auth===null,currentUser:auth?.currentUser?.uid||null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-  // #endregion
   
   try {
     // Check if db is initialized
     if (!db) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:25',message:'db is null',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
       throw new Error('Firebase Firestore is not initialized. Please check your Firebase configuration.');
     }
 
     // Check authentication status
     const currentUser = auth?.currentUser;
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:32',message:'auth check before save',data:{isAuthenticated:!!currentUser,userId:currentUser?.uid||null,email:currentUser?.email||null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-    // #endregion
 
     // Ensure contract has sections (migrate if needed), but preserve existing sections
     let migratedContract: SavedContract;
@@ -148,10 +139,6 @@ export const saveContractToFirestore = async (contract: SavedContract): Promise<
       particularItems: migratedContract.sections?.find(s => s.sectionType === 'PARTICULAR')?.items.length || 0
     });
     
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:55',message:'before setDoc call',data:{contractId:migratedContract.id,hasSections:!!migratedContract.sections,sectionsCount:migratedContract.sections?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
-    
     const contractRef = doc(db, CONTRACTS_COLLECTION, migratedContract.id);
     
     // Prepare contract data for Firestore (remove undefined values and convert timestamp)
@@ -160,17 +147,10 @@ export const saveContractToFirestore = async (contract: SavedContract): Promise<
       timestamp: Timestamp.fromMillis(migratedContract.timestamp)
     });
     
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:85',message:'contractData prepared',data:{contractId:migratedContract.id,hasClauses:!!contractData.clauses,hasSections:!!contractData.sections,keys:Object.keys(contractData),estimatedSize:estimateSize(contractData)},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'E'})}).catch(()=>{});
-    // #endregion
-    
     // Check if contract is too large (>1MB)
     const estimatedSize = estimateSize(contractData);
     
     if (estimatedSize > MAX_DOCUMENT_SIZE) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:150',message:'contract too large, using subcollections',data:{contractId:migratedContract.id,estimatedSize},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'G'})}).catch(()=>{});
-      // #endregion
       
       // Use subcollections for large contracts
       await saveContractWithSubcollections(contractRef, migratedContract);
@@ -179,15 +159,8 @@ export const saveContractToFirestore = async (contract: SavedContract): Promise<
       await setDoc(contractRef, contractData, { merge: false });
     }
     
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:160',message:'setDoc success',data:{contractId:migratedContract.id,usedSubcollections:estimatedSize>MAX_DOCUMENT_SIZE},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
-    
     console.log('Contract saved successfully to Firestore');
   } catch (error: any) {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:71',message:'setDoc error caught',data:{errorCode:error?.code||null,errorMessage:error?.message||String(error),errorName:error?.name||null,stack:error?.stack?.substring(0,500)||null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-    // #endregion
     
     console.error('Error saving contract:', error);
     
@@ -216,15 +189,9 @@ export const saveContractToFirestore = async (contract: SavedContract): Promise<
 };
 
 export const getAllContractsFromFirestore = async (): Promise<SavedContract[]> => {
-  // #region agent log
-  fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:144',message:'getAllContractsFromFirestore entry',data:{dbIsNull:db===null},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'F'})}).catch(()=>{});
-  // #endregion
   
   try {
     if (!db) {
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:149',message:'db is null in getAllContracts',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'F'})}).catch(()=>{});
-      // #endregion
       return [];
     }
     
@@ -233,10 +200,6 @@ export const getAllContractsFromFirestore = async (): Promise<SavedContract[]> =
       orderBy('timestamp', 'desc')
     );
     const querySnapshot = await getDocs(q);
-    
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:160',message:'querySnapshot received',data:{docCount:querySnapshot.docs.length,docIds:querySnapshot.docs.map(d=>d.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'F'})}).catch(()=>{});
-    // #endregion
     
     // Load contracts (we'll load full data for each contract that uses subcollections)
     const contracts = await Promise.all(
@@ -260,15 +223,8 @@ export const getAllContractsFromFirestore = async (): Promise<SavedContract[]> =
       })
     );
     
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:175',message:'contracts processed',data:{contractCount:contracts.length,contractIds:contracts.map(c=>c.id),contractNames:contracts.map(c=>c.name)},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'F'})}).catch(()=>{});
-    // #endregion
-    
     return contracts;
   } catch (error: any) {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'firestoreService.ts:180',message:'getAllContracts error',data:{errorCode:error?.code||null,errorMessage:error?.message||String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'F'})}).catch(()=>{});
-    // #endregion
     
     console.error('Error fetching contracts:', error);
     // If permission denied, return empty array (user not authenticated yet)

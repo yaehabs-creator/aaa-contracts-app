@@ -316,30 +316,17 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
 
 export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> => {
   try {
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:300', message: 'getAllContractsFromSupabase entry', data: { hasSupabase: !!supabase }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
-    // #endregion
 
     if (!supabase) {
       console.warn('Supabase not initialized, returning empty array');
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:304', message: 'Supabase not initialized', data: {}, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
-      // #endregion
       return [];
     }
 
     // Check authentication before querying
     const { data: { session }, error: authError } = await supabase.auth.getSession();
 
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:315', message: 'Auth session check', data: { hasSession: !!session, hasUser: !!session?.user, userId: session?.user?.id, userEmail: session?.user?.email, hasAuthError: !!authError, authError: authError?.message }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
-    // #endregion
-
     if (!session || !session.user) {
       console.warn('No active session when fetching contracts');
-      // #region agent log
-      fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:320', message: 'No session - returning empty array', data: {}, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
-      // #endregion
       return [];
     }
 
@@ -350,10 +337,6 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
       .from('contracts')
       .select('*')
       .order('timestamp', { ascending: false });
-
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:329', message: 'Contracts query result', data: { hasError: !!error, errorCode: error?.code, errorMessage: error?.message, errorDetails: error?.details, errorHint: error?.hint, contractsCount: contractsData?.length || 0, contractIds: contractsData?.map(c => c.id) || [], contractNames: contractsData?.map(c => c.name) || [] }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
-    // #endregion
 
     if (error) {
       console.error('Error fetching contracts:', {
@@ -422,10 +405,6 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
         }
       })
     );
-
-    // #region agent log
-    fetch('http://127.0.0.1:7246/ingest/af3752a4-3911-4caa-a71b-f1e58332ade5', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'src/services/supabaseService.ts:385', message: 'Contracts processed and ready to return', data: { finalContractsCount: contracts.length, contractIds: contracts.map(c => c.id) }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'C' }) }).catch(() => { });
-    // #endregion
 
     return contracts;
   } catch (error: any) {

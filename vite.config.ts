@@ -52,10 +52,9 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
     },
     plugins: [react()],
-    define: {
-      'process.env.ANTHROPIC_API_KEY': JSON.stringify(env.VITE_ANTHROPIC_API_KEY || env.ANTHROPIC_API_KEY),
-      'process.env.OPENAI_API_KEY': JSON.stringify(env.VITE_OPENAI_API_KEY || env.OPENAI_API_KEY)
-    },
+    // API keys are now handled server-side via /api/ai-proxy
+    // DO NOT expose API keys in the client bundle
+    define: {},
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
