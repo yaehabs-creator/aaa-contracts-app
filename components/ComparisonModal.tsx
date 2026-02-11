@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Clause, TimeFrame, TimeFrameType, ObligationParty, FinancialAsset } from '../types';
-import Anthropic from "@anthropic-ai/sdk";
+import { callAIProxy } from '../src/services/aiProxyClient';
 
 interface AIAnalysisResult {
   clause_id: string;
@@ -64,19 +64,7 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({ baseClause, al
     setIsAnalyzing(true);
     setError(null);
 
-    // API key for timeframe/temporal extraction
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      setError('Anthropic API key not configured. Please set ANTHROPIC_API_KEY in your environment variables.');
-      setIsAnalyzing(false);
-      return;
-    }
-    
-    const client = new Anthropic({ 
-      apiKey,
-      dangerouslyAllowBrowser: true 
-    });
-    const model = 'claude-sonnet-4-5-20250929';
+
 
     const systemInstruction = `You are the Contract Intelligence Engine for the AAA Contract Department.
 Your ONLY job is to analyze construction contract clauses and return a STRICT JSON object.
@@ -116,10 +104,10 @@ Rules:
     };
 
     try {
-      const message = await client.messages.create({
-        model: model,
+      const response = await callAIProxy({
+        provider: 'anthropic',
+        model: 'claude-sonnet-4-5',
         max_tokens: 4096,
-        temperature: 0.1,
         system: systemInstruction,
         messages: [
           {
@@ -129,9 +117,9 @@ Rules:
         ]
       });
 
-      const content = message.content.find(c => c.type === 'text');
-      const resultText = content && 'text' in content ? content.text : '';
-      
+      const content = response.content.find(c => c.type === 'text');
+      const resultText = content?.text || '';
+
       // Extract JSON from response (might be wrapped in markdown)
       let jsonText = resultText.trim();
       if (jsonText.startsWith('```json')) {
@@ -139,7 +127,7 @@ Rules:
       } else if (jsonText.startsWith('```')) {
         jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
       }
-      
+
       const result: AIAnalysisResult = JSON.parse(jsonText);
       setAnalysisResult(result);
 
@@ -155,7 +143,7 @@ Rules:
         const currentFrames = baseClause.time_frames || [];
         // Filter out duplicates based on phrase
         const uniqueNewFrames = newFrames.filter(nf => !currentFrames.some(cf => cf.original_phrase === nf.original_phrase));
-        
+
         if (uniqueNewFrames.length > 0) {
           onUpdateClause({
             ...baseClause,
@@ -197,21 +185,9 @@ Rules:
     setIsGeneratingFinancials(true);
     setFinancialError(null);
 
-    // API key for financial/cost extraction
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      setFinancialError('Anthropic API key not configured. Please set ANTHROPIC_API_KEY in your environment variables.');
-      setIsGeneratingFinancials(false);
-      return;
-    }
-    
-    const client = new Anthropic({ 
-      apiKey,
-      dangerouslyAllowBrowser: true 
-    });
-    const model = 'claude-sonnet-4-5-20250929';
+    try {
 
-    const systemInstruction = `You analyze one contract clause at a time and extract ONLY financial information.
+      const systemInstruction = `You analyze one contract clause at a time and extract ONLY financial information.
 Do NOT extract: timeframes, durations, notices, deadlines, or temporal data.
 
 Your job is to identify all financial assets in the clause, including:
@@ -250,21 +226,20 @@ Output Format:
   "financial_assets": []
 }`;
 
-    const generalText = baseClause.general_condition || (baseClause.condition_type === 'General' ? baseClause.clause_text : '') || '';
-    const particularText = baseClause.particular_condition || (baseClause.condition_type === 'Particular' ? baseClause.clause_text : '') || '';
+      const generalText = baseClause.general_condition || (baseClause.condition_type === 'General' ? baseClause.clause_text : '') || '';
+      const particularText = baseClause.particular_condition || (baseClause.condition_type === 'Particular' ? baseClause.clause_text : '') || '';
 
-    const promptInput = {
-      clause_id: baseClause.clause_number,
-      clause_title: baseClause.clause_title,
-      general_clause_text: generalText,
-      particular_clause_text: particularText
-    };
+      const promptInput = {
+        clause_id: baseClause.clause_number,
+        clause_title: baseClause.clause_title,
+        general_clause_text: generalText,
+        particular_clause_text: particularText
+      };
 
-    try {
-      const message = await client.messages.create({
-        model: model,
+      const response = await callAIProxy({
+        provider: 'anthropic',
+        model: 'claude-sonnet-4-5',
         max_tokens: 4096,
-        temperature: 0.1,
         system: systemInstruction,
         messages: [
           {
@@ -274,9 +249,9 @@ Output Format:
         ]
       });
 
-      const content = message.content.find(c => c.type === 'text');
-      const resultText = content && 'text' in content ? content.text : '';
-      
+      const content = response.content.find(c => c.type === 'text');
+      const resultText = content?.text || '';
+
       // Extract JSON from response (might be wrapped in markdown)
       let jsonText = resultText.trim();
       if (jsonText.startsWith('```json')) {
@@ -284,9 +259,9 @@ Output Format:
       } else if (jsonText.startsWith('```')) {
         jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
       }
-      
+
       const result = JSON.parse(jsonText);
-      
+
       // Process financial assets and determine source
       const financialAssets: FinancialAsset[] = (result.financial_assets || []).map((fa: any) => {
         // Determine source based on which text contains the raw_text
@@ -314,10 +289,10 @@ Output Format:
       // Update clause with extracted financial assets
       const currentAssets = baseClause.financial_assets || [];
       // Filter out duplicates based on raw_text
-      const uniqueNewAssets = financialAssets.filter(na => 
+      const uniqueNewAssets = financialAssets.filter(na =>
         !currentAssets.some(ca => ca.raw_text === na.raw_text)
       );
-      
+
       if (uniqueNewAssets.length > 0 || financialAssets.length === 0) {
         onUpdateClause({
           ...baseClause,
@@ -372,45 +347,44 @@ Output Format:
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[100] flex items-center justify-center p-6 mac-modal-backdrop"
     >
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
         className="bg-white w-full max-w-[1650px] h-[95vh] rounded-mac-lg shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden border border-surface-border">
-        
+
         {/* Header - MacBook style */}
         <div className="px-8 py-6 border-b border-surface-border flex items-center justify-between bg-white shrink-0 relative z-10">
           <div className="flex items-center gap-6">
-             <div className="w-12 h-12 bg-mac-blue rounded-mac-sm flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AAA</span>
-             </div>
-             <div>
-                <h3 className="text-2xl font-semibold text-mac-navy">Clause Analysis</h3>
-                <div className="flex items-center gap-3 mt-1">
-                   <div className="px-2.5 py-1 bg-mac-blue-subtle rounded-md">
-                      <span className="text-xs font-medium text-mac-blue mono">Clause {baseClause.clause_number}</span>
-                   </div>
-                   <span className="text-mac-muted text-sm">{baseClause.clause_title}</span>
+            <div className="w-12 h-12 bg-mac-blue rounded-mac-sm flex items-center justify-center">
+              <span className="text-white font-bold text-sm">AAA</span>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-mac-navy">Clause Analysis</h3>
+              <div className="flex items-center gap-3 mt-1">
+                <div className="px-2.5 py-1 bg-mac-blue-subtle rounded-md">
+                  <span className="text-xs font-medium text-mac-blue mono">Clause {baseClause.clause_number}</span>
                 </div>
-             </div>
+                <span className="text-mac-muted text-sm">{baseClause.clause_title}</span>
+              </div>
+            </div>
           </div>
-          
+
           <div className="flex items-center gap-3">
             {error && <span className="text-red-500 text-xs font-medium">{error}</span>}
-            <button 
+            <button
               onClick={analyzeClauseWithAI}
               disabled={isAnalyzing}
-              className={`px-5 py-2.5 rounded-mac-sm text-sm font-medium transition-all flex items-center gap-2 ${
-                isAnalyzing ? 'bg-mac-muted cursor-not-allowed text-white/60' : 'bg-mac-blue text-white hover:bg-mac-blue-hover active:scale-[0.98]'
-              }`}
+              className={`px-5 py-2.5 rounded-mac-sm text-sm font-medium transition-all flex items-center gap-2 ${isAnalyzing ? 'bg-mac-muted cursor-not-allowed text-white/60' : 'bg-mac-blue text-white hover:bg-mac-blue-hover active:scale-[0.98]'
+                }`}
             >
               {isAnalyzing ? (
                 <>
@@ -474,42 +448,42 @@ Output Format:
 
             {/* Temporal Assets Panel - MacBook style */}
             <div className="w-1/3 flex flex-col bg-surface-bg overflow-hidden">
-               <div className="px-6 py-4 border-b border-surface-border bg-white flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                     <span className="text-xs font-medium text-mac-navy">Temporal Assets</span>
-                  </div>
-                  <span className="px-2 py-0.5 bg-mac-blue-subtle text-mac-blue text-[10px] font-medium rounded-md">{(baseClause.time_frames || []).length}</span>
-               </div>
-               
-               <div className="flex-1 p-4 space-y-3 overflow-y-auto custom-scrollbar">
-                  {(baseClause.time_frames || []).map((tf, i) => (
-                    <div key={i} className="bg-white p-4 rounded-mac-sm border border-surface-border shadow-mac-sm hover:shadow-mac transition-all group relative">
-                       <button 
-                         onClick={() => deleteTimeFrame(i)}
-                         className="absolute top-3 right-3 p-1.5 text-mac-muted hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all rounded-md hover:bg-red-50"
-                         title="Remove"
-                       >
-                         <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                         </svg>
-                       </button>
-                       <div className="flex items-center justify-between mb-4">
-                          <span className={`px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest border ${getTimeTypeColor(tf.type)}`}>
-                            {tf.type.replace(/_/g, ' ')}
-                          </span>
-                          <span className="text-[9px] font-bold text-aaa-muted uppercase pr-8">{tf.applies_to}</span>
-                       </div>
-                       <div className="p-3 bg-aaa-bg rounded-lg border border-aaa-blue/5 mb-4">
-                          <p className="text-[12px] font-mono font-bold text-aaa-blue leading-relaxed">"{tf.original_phrase}"</p>
-                       </div>
-                       <p className="text-[11px] font-semibold text-aaa-text leading-tight group-hover:text-aaa-blue transition-colors">{tf.short_explanation}</p>
+              <div className="px-6 py-4 border-b border-surface-border bg-white flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  <span className="text-xs font-medium text-mac-navy">Temporal Assets</span>
+                </div>
+                <span className="px-2 py-0.5 bg-mac-blue-subtle text-mac-blue text-[10px] font-medium rounded-md">{(baseClause.time_frames || []).length}</span>
+              </div>
+
+              <div className="flex-1 p-4 space-y-3 overflow-y-auto custom-scrollbar">
+                {(baseClause.time_frames || []).map((tf, i) => (
+                  <div key={i} className="bg-white p-4 rounded-mac-sm border border-surface-border shadow-mac-sm hover:shadow-mac transition-all group relative">
+                    <button
+                      onClick={() => deleteTimeFrame(i)}
+                      className="absolute top-3 right-3 p-1.5 text-mac-muted hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all rounded-md hover:bg-red-50"
+                      title="Remove"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className={`px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest border ${getTimeTypeColor(tf.type)}`}>
+                        {tf.type.replace(/_/g, ' ')}
+                      </span>
+                      <span className="text-[9px] font-bold text-aaa-muted uppercase pr-8">{tf.applies_to}</span>
                     </div>
-                  ))}
-                  {(!baseClause.time_frames || baseClause.time_frames.length === 0) && (
-                    <div className="h-40 flex flex-col items-center justify-center opacity-40 text-center"><p className="text-xs font-black uppercase tracking-widest">No Temporal Nodes</p></div>
-                  )}
-               </div>
+                    <div className="p-3 bg-aaa-bg rounded-lg border border-aaa-blue/5 mb-4">
+                      <p className="text-[12px] font-mono font-bold text-aaa-blue leading-relaxed">"{tf.original_phrase}"</p>
+                    </div>
+                    <p className="text-[11px] font-semibold text-aaa-text leading-tight group-hover:text-aaa-blue transition-colors">{tf.short_explanation}</p>
+                  </div>
+                ))}
+                {(!baseClause.time_frames || baseClause.time_frames.length === 0) && (
+                  <div className="h-40 flex flex-col items-center justify-center opacity-40 text-center"><p className="text-xs font-black uppercase tracking-widest">No Temporal Nodes</p></div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -530,11 +504,10 @@ Output Format:
                 <button
                   onClick={generateFinancialAssets}
                   disabled={isGeneratingFinancials}
-                  className={`px-6 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all shadow-lg flex items-center gap-2 ${
-                    isGeneratingFinancials 
-                      ? 'bg-aaa-muted cursor-not-allowed text-white/50' 
-                      : 'bg-emerald-600 text-white hover:bg-emerald-700 active:scale-95'
-                  }`}
+                  className={`px-6 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all shadow-lg flex items-center gap-2 ${isGeneratingFinancials
+                    ? 'bg-aaa-muted cursor-not-allowed text-white/50'
+                    : 'bg-emerald-600 text-white hover:bg-emerald-700 active:scale-95'
+                    }`}
                 >
                   {isGeneratingFinancials ? (
                     <>
@@ -568,14 +541,13 @@ Output Format:
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
                   </button>
-                  
+
                   <div className="flex items-center justify-between mb-4">
                     <span className={`px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest border ${getFinancialTypeColor(fa.type)}`}>
                       {fa.type.replace(/_/g, ' ')}
                     </span>
-                    <span className={`px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest border ${
-                      fa.source === 'GC' ? 'text-aaa-blue bg-aaa-bg border-aaa-blue/20' : 'text-emerald-600 bg-emerald-50 border-emerald-200'
-                    }`}>
+                    <span className={`px-2 py-1 rounded text-[8px] font-black uppercase tracking-widest border ${fa.source === 'GC' ? 'text-aaa-blue bg-aaa-bg border-aaa-blue/20' : 'text-emerald-600 bg-emerald-50 border-emerald-200'
+                      }`}>
                       {fa.source}
                     </span>
                   </div>
@@ -665,7 +637,7 @@ Output Format:
 
                   <div className="bg-slate-50 p-8 rounded-[32px] border border-aaa-border shadow-inner-soft space-y-8">
                     <h5 className="text-[11px] font-black text-aaa-blue uppercase tracking-widest mb-2">Modification Impact</h5>
-                    
+
                     {analysisResult.particular_vs_general.has_particular ? (
                       <div className="space-y-6">
                         <div className="flex flex-wrap gap-3">

@@ -4,17 +4,20 @@
 export function getMissingConfig(): string[] {
   const missing: string[] = [];
 
-  // Anthropic Claude API key (primary for OCR analysis)
-  // Check both import.meta.env (Vite) and process.env (defined in vite.config.ts)
-  const anthropicKey = 
-    (import.meta as any).env?.VITE_ANTHROPIC_API_KEY || 
-    (import.meta as any).env?.ANTHROPIC_API_KEY ||
-    (typeof process !== 'undefined' && (process as any).env?.ANTHROPIC_API_KEY);
-    
-  if (!anthropicKey) {
-    missing.push('ANTHROPIC_API_KEY (Claude)');
+  // API keys are now handled server-side via /api/ai-proxy
+  // The client no longer needs ANTHROPIC_API_KEY or OPENAI_API_KEY
+  // 
+  // We only check for Supabase config (which is safe to be client-side,
+  // as the anon key is meant to be public and RLS protects the data)
+  const supabaseUrl = (import.meta as any).env?.VITE_SUPABASE_URL;
+  const supabaseKey = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl) {
+    missing.push('VITE_SUPABASE_URL');
+  }
+  if (!supabaseKey) {
+    missing.push('VITE_SUPABASE_ANON_KEY');
   }
 
-  // You can add more keys as needed in the future
   return missing;
 }

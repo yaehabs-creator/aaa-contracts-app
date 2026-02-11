@@ -2,7 +2,7 @@
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { analyzeContract } from './services/claudeService';
-import Anthropic from '@anthropic-ai/sdk';
+import { callAIProxy } from './src/services/aiProxyClient';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
 import { getContractFromSupabase } from './src/services/supabaseService';
 import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
@@ -566,18 +566,6 @@ const App: React.FC = () => {
     setIsSearching(true);
     setSearchError(null);
 
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      setSearchError('Claude API key is not configured');
-      setIsSearching(false);
-      return;
-    }
-
-    const client = new Anthropic({
-      apiKey,
-      dangerouslyAllowBrowser: true
-    });
-
     const searchContext = clauses.map(c => ({
       clause_id: `C.${c.clause_number}`,
       clause_number: c.clause_number,
@@ -587,8 +575,9 @@ const App: React.FC = () => {
     }));
 
     try {
-      const message = await client.messages.create({
-        model: 'claude-sonnet-4-5-20250929',
+      const response = await callAIProxy({
+        provider: 'anthropic',
+        model: 'claude-sonnet-4-5',
         max_tokens: 4096,
         system: `You are the Smart Search Engine for AAA Contract Department.
 You receive a natural-language query and a list of clauses.
@@ -603,8 +592,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         ]
       });
 
-      const content = message.content.find(c => c.type === 'text');
-      const resultText = content && 'text' in content ? content.text : '';
+      const content = response.content.find(c => c.type === 'text');
+      const resultText = content?.text || '';
 
       // Extract JSON from response (might be wrapped in markdown)
       let jsonText = resultText.trim();

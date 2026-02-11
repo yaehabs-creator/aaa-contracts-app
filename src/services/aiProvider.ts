@@ -1,5 +1,5 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { Clause, BotMessage } from "../../types";
+import { callAIProxy } from "./aiProxyClient";
 
 export interface AIProvider {
   chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string>;
@@ -152,47 +152,49 @@ export function getRateLimitStatus(): { isLimited: boolean; retryAfterMs: number
   if (!rateLimitState.isLimited) {
     return { isLimited: false, retryAfterMs: null };
   }
-  
+
   const elapsed = Date.now() - rateLimitState.lastAttempt;
   const remaining = rateLimitState.retryAfter ? (rateLimitState.retryAfter * 1000) - elapsed : null;
-  
+
   if (remaining !== null && remaining <= 0) {
     rateLimitState.isLimited = false;
     return { isLimited: false, retryAfterMs: null };
   }
-  
+
   return { isLimited: true, retryAfterMs: remaining };
 }
 
 /**
- * Call Claude API with automatic retry and exponential backoff for rate limits
+ * Call AI proxy with automatic retry and exponential backoff for rate limits
  */
-async function callClaudeWithRetry(
-  client: Anthropic,
-  payload: Anthropic.MessageCreateParams,
+async function callClaudeViaProxy(
+  model: string,
+  system: string,
+  messages: Array<{ role: string; content: string }>,
+  maxTokens: number = 4096,
   maxAttempts: number = 5
-): Promise<Anthropic.Message> {
+): Promise<{ content: Array<{ type: string; text: string }> }> {
   let attempt = 0;
   let backoffMs = 500;
 
   while (attempt < maxAttempts) {
     try {
-      const response = await client.messages.create(payload);
-      
+      const response = await callAIProxy({
+        provider: 'anthropic',
+        model,
+        system,
+        messages,
+        max_tokens: maxTokens,
+      });
+
       // Success - clear rate limit state
       rateLimitState.isLimited = false;
       rateLimitState.retryAfter = null;
-      
+
       return response;
     } catch (err: any) {
-      const status = err?.status;
-      const errorType = err?.error?.type;
-      const retryAfterHeader = err?.headers?.["retry-after"];
-      const retryAfter = retryAfterHeader ? Number(retryAfterHeader) : null;
-
-      // Only retry on rate limits (429) or overload errors
-      const isRateLimited = status === 429 || errorType === "rate_limit_error";
-      const isOverloaded = status === 529 || errorType === "overloaded_error";
+      const isRateLimited = err.message?.includes('429') || err.message?.includes('rate limit');
+      const isOverloaded = err.message?.includes('529') || err.message?.includes('overload');
       const isRetryable = isRateLimited || isOverloaded;
 
       if (!isRetryable) {
@@ -201,20 +203,16 @@ async function callClaudeWithRetry(
 
       // Update rate limit state for UI feedback
       rateLimitState.isLimited = true;
-      rateLimitState.retryAfter = retryAfter;
       rateLimitState.lastAttempt = Date.now();
 
-      // Calculate wait time: prefer retry-after header, else exponential backoff
-      const waitMs = (retryAfter && Number.isFinite(retryAfter)) 
-        ? retryAfter * 1000 
-        : backoffMs;
+      const waitMs = backoffMs;
 
       console.warn(`Claude API rate limited (attempt ${attempt + 1}/${maxAttempts}). Retrying in ${waitMs}ms...`);
 
       await new Promise(resolve => setTimeout(resolve, waitMs));
 
       attempt++;
-      backoffMs = Math.min(backoffMs * 2, 8000); // Cap at 8 seconds
+      backoffMs = Math.min(backoffMs * 2, 8000);
     }
   }
 
@@ -222,42 +220,20 @@ async function callClaudeWithRetry(
 }
 
 export class ClaudeProvider implements AIProvider {
-  private client: Anthropic | null = null;
   private model: string = CLAUDE_MODELS[0];
-  
+
   // Try multiple model names in order of preference
   private modelCandidates = CLAUDE_MODELS;
 
   constructor() {
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    console.log('ClaudeProvider constructor - API key check:', {
-      hasApiKey: !!apiKey,
-      apiKeyLength: apiKey?.length || 0,
-      apiKeyPrefix: apiKey?.substring(0, 15) || 'none',
-      allEnvKeys: Object.keys(process.env).filter(k => k.includes('ANTHROPIC') || k.includes('API'))
-    });
-    if (apiKey) {
-      try {
-        // Allow browser usage - API key is injected at build time via Vite, not exposed in client code
-        this.client = new Anthropic({
-          apiKey,
-          dangerouslyAllowBrowser: true
-        });
-        console.log('Claude client initialized successfully');
-      } catch (error) {
-        console.error('Failed to initialize Claude client:', error);
-      }
-    } else {
-      console.warn('ANTHROPIC_API_KEY not found in process.env');
-    }
+    // API keys are now server-side via /api/ai-proxy
+    // No client-side key needed
+    console.log('ClaudeProvider initialized (using server-side AI proxy)');
   }
 
   isAvailable(): boolean {
-    const hasKey = !!process.env.ANTHROPIC_API_KEY;
-    const hasClient = this.client !== null;
-    const available = hasClient && hasKey;
-    console.log('Claude isAvailable check:', { hasKey, hasClient, available });
-    return available;
+    // Always available — the proxy handles auth server-side
+    return true;
   }
 
   getName(): string {
@@ -348,10 +324,6 @@ export class ClaudeProvider implements AIProvider {
   }
 
   async chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string> {
-    if (!this.client) {
-      throw new Error('Anthropic API key is not configured');
-    }
-
     // Prevent multiple simultaneous requests
     if (requestInFlight) {
       throw new Error('A request is already in progress. Please wait.');
@@ -368,72 +340,54 @@ export class ClaudeProvider implements AIProvider {
 
     try {
       // Build context from clauses - include FULL clause text, not truncated
-      // Smart truncation: only truncate extremely large clauses (>5000 chars)
       const MAX_CLAUSE_LENGTH = 5000;
       const contextText = context.length > 0
         ? `\n\nCURRENT CONTRACT CLAUSES (${context.length} clauses):\n${context.map(c => {
           const fullText = c.clause_text || '';
-          const displayText = fullText.length > MAX_CLAUSE_LENGTH 
+          const displayText = fullText.length > MAX_CLAUSE_LENGTH
             ? fullText.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
             : fullText;
-          
-          // Include both GC and PC text if available
+
           let clauseContent = `Clause ${c.clause_number}: ${c.clause_title}\n`;
           clauseContent += `[${c.condition_type || 'General'}]\n`;
           clauseContent += displayText;
-          
-          // Add PC override if exists and different from main text
+
           if (c.particular_condition && c.particular_condition !== fullText) {
             const pcText = c.particular_condition.length > MAX_CLAUSE_LENGTH
               ? c.particular_condition.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
               : c.particular_condition;
             clauseContent += `\n[Particular Condition Override]:\n${pcText}`;
           }
-          
+
           return clauseContent;
         }).join('\n\n---\n\n')}`
         : '';
 
-      // Convert BotMessages to Anthropic format
-      const anthropicMessages = messages.map(msg => ({
-        role: msg.role === 'user' ? 'user' : 'assistant' as 'user' | 'assistant',
+      // Convert BotMessages to simple format
+      const proxyMessages = messages.map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'assistant',
         content: msg.content
       }));
 
       // If context is provided, append it to the LAST user message
-      if (contextText && anthropicMessages.length > 0) {
-        const lastMsg = anthropicMessages[anthropicMessages.length - 1];
+      if (contextText && proxyMessages.length > 0) {
+        const lastMsg = proxyMessages[proxyMessages.length - 1];
         if (lastMsg.role === 'user') {
           lastMsg.content += contextText;
         }
       }
 
-      // Try each model candidate until one works
-      for (const model of this.modelCandidates) {
-        try {
-          const message = await callClaudeWithRetry(this.client, {
-            model: model,
-            max_tokens: 4096,
-            system: systemInstruction,
-            messages: anthropicMessages
-          });
+      // Call through the proxy with retry
+      const response = await callClaudeViaProxy(
+        this.model,
+        systemInstruction,
+        proxyMessages,
+        4096
+      );
 
-          // Extract text content from response
-          const content = message.content.find(c => c.type === 'text');
-          return content && 'text' in content ? content.text : 'No response received';
-        } catch (error: any) {
-          // If this is a 404 model not found error, try the next model
-          if (error?.status === 404) {
-            console.warn(`Claude model ${model} not available, trying next...`);
-            continue;
-          }
-          // For other errors (rate limit exhausted, real errors), throw
-          throw error;
-        }
-      }
-
-      // If we get here, no models were available
-      throw new Error("No Claude models available. Please check your API key has access to Claude models.");
+      // Extract text content from response
+      const content = response.content.find(c => c.type === 'text');
+      return content?.text || 'No response received';
     } finally {
       requestInFlight = false;
     }
@@ -445,8 +399,8 @@ export function createAIProvider(): AIProvider {
 }
 
 export function isClaudeAvailable(): boolean {
-  const provider = new ClaudeProvider();
-  return provider.isAvailable();
+  // Always available — keys are server-side
+  return true;
 }
 
 /**

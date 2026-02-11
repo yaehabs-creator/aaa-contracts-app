@@ -1,58 +1,12 @@
-import Anthropic from "@anthropic-ai/sdk";
-import { Clause, DualSourceInput, FileData } from "../types";
-
-// Claude models - use official aliases (no dated versions needed)
-const CLAUDE_MODELS = [
-  "claude-sonnet-4-5",    // Claude Sonnet 4.5 (recommended default)
-  "claude-haiku-4-5",     // Claude Haiku 4.5 (fast fallback)
-  "claude-opus-4-5",      // Claude Opus 4.5 (most capable fallback)
-];
-
 /**
- * Call Claude API with automatic retry and exponential backoff for rate limits
+ * Claude Service — Contract Analysis
+ * 
+ * Now routes through /api/ai-proxy instead of direct Anthropic SDK calls.
+ * API keys are kept server-side only.
  */
-async function callClaudeWithRetry(
-  client: Anthropic,
-  payload: Anthropic.MessageCreateParams,
-  maxAttempts: number = 5
-): Promise<Anthropic.Message> {
-  let attempt = 0;
-  let backoffMs = 500;
 
-  while (attempt < maxAttempts) {
-    try {
-      return await client.messages.create(payload);
-    } catch (err: any) {
-      const status = err?.status;
-      const errorType = err?.error?.type;
-      const retryAfterHeader = err?.headers?.["retry-after"];
-      const retryAfter = retryAfterHeader ? Number(retryAfterHeader) : null;
-
-      // Only retry on rate limits (429) or overload errors
-      const isRateLimited = status === 429 || errorType === "rate_limit_error";
-      const isOverloaded = status === 529 || errorType === "overloaded_error";
-      const isRetryable = isRateLimited || isOverloaded;
-
-      if (!isRetryable) {
-        throw err;
-      }
-
-      // Calculate wait time: prefer retry-after header, else exponential backoff
-      const waitMs = (retryAfter && Number.isFinite(retryAfter)) 
-        ? retryAfter * 1000 
-        : backoffMs;
-
-      console.warn(`Claude API rate limited (attempt ${attempt + 1}/${maxAttempts}). Retrying in ${waitMs}ms...`);
-
-      await new Promise(resolve => setTimeout(resolve, waitMs));
-
-      attempt++;
-      backoffMs = Math.min(backoffMs * 2, 8000); // Cap at 8 seconds
-    }
-  }
-
-  throw new Error("Claude API rate-limited (max retry attempts reached). Please wait a moment and try again.");
-}
+import { Clause, DualSourceInput, FileData } from "../types";
+import { callAIProxy } from "../src/services/aiProxyClient";
 
 const SYSTEM_INSTRUCTION = `You are the high-fidelity extraction engine for AAA Contract Department. 
 Your SOLE PURPOSE is to extract contract clauses 100% VERBATIM.
@@ -137,17 +91,6 @@ async function delay(ms: number) {
 }
 
 export async function analyzeContract(input: string | FileData | DualSourceInput, retryCount = 0): Promise<Clause[]> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error('ANTHROPIC_API_KEY is not configured');
-  }
-
-  const client = new Anthropic({
-    apiKey,
-    dangerouslyAllowBrowser: true
-  });
-  
-  
   let promptText = "";
   let isTextInput = false;
 
@@ -172,97 +115,77 @@ ${typeof dual.particular === 'string' ? dual.particular : '[PDF DATA]'}
 ${isTextInput && !isCleanText ? 'NOTE: This text may contain PDF extraction errors. Please intelligently fix obvious errors (spacing, OCR mistakes, broken words) while maintaining verbatim accuracy and legal terminology.' : isCleanText ? 'NOTE: This text is already clean and preprocessed. Extract clauses verbatim without additional cleaning or error correction.' : ''}`;
   }
 
-  // Try each model candidate until one works
-  for (const model of CLAUDE_MODELS) {
+  try {
+    // Route through the AI proxy — API key stays server-side
+    const response = await callAIProxy({
+      provider: 'anthropic',
+      model: 'claude-sonnet-4-5',
+      system: SYSTEM_INSTRUCTION,
+      max_tokens: 16384,
+      messages: [
+        {
+          role: 'user',
+          content: promptText
+        }
+      ]
+    });
+
+    const textBlock = response.content.find(c => c.type === 'text');
+    const resultText = textBlock?.text || '';
+
+    if (!resultText) return [];
+
+    // Try to extract JSON from the response (Claude might wrap it in markdown)
+    let jsonText = resultText.trim();
+    // Remove markdown code blocks if present
+    if (jsonText.startsWith('```json')) {
+      jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+    } else if (jsonText.startsWith('```')) {
+      jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
+    }
+
     try {
-      const message = await callClaudeWithRetry(client, {
-        model: model,
-        max_tokens: 16384,
-        system: SYSTEM_INSTRUCTION,
-        messages: [
-          {
-            role: 'user',
-            content: promptText
-          }
-        ]
-      });
-
-      const resultText = message.content.find(c => c.type === 'text') && 'text' in message.content.find(c => c.type === 'text')!
-        ? (message.content.find(c => c.type === 'text') as any).text
-        : '';
-
-      if (!resultText) return [];
-
-      // Try to extract JSON from the response (Claude might wrap it in markdown)
-      let jsonText = resultText.trim();
-      // Remove markdown code blocks if present
-      if (jsonText.startsWith('```json')) {
-        jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
-      } else if (jsonText.startsWith('```')) {
-        jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
-      }
-
-      try {
-        return JSON.parse(jsonText);
-      } catch (parseError: any) {
-        console.error('JSON Parse Error:', parseError);
-        console.error('Response text (first 500 chars):', jsonText.substring(0, 500));
-        throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
-      }
-    } catch (error: any) {
-      // If this is a 404 model not found error, try the next model
-      if (error?.status === 404) {
-        console.warn(`Claude model ${model} not available, trying next...`);
-        continue;
-      }
-      // For other errors (rate limit exhausted, real errors), throw
-      throw error;
+      return JSON.parse(jsonText);
+    } catch (parseError: any) {
+      console.error('JSON Parse Error:', parseError);
+      console.error('Response text (first 500 chars):', jsonText.substring(0, 500));
+      throw new Error(`Failed to parse Claude's response as JSON. The response may be incomplete or malformed. ${parseError.message}`);
     }
-  }
+  } catch (error: any) {
+    console.error('Claude API Error:', error);
 
-  // If we get here, no models were available
-  const error = new Error("No Claude models available. Please check your API key has access to Claude models.");
-  if (!error) {
-    throw new Error('All Claude models failed and no error was captured');
-  }
+    if (retryCount < 1) {
+      await delay(2000);
+      return analyzeContract(input, retryCount + 1);
+    }
 
-  // Log the actual error for debugging
-  console.error('Claude API Error:', error);
+    // Preserve and provide specific error messages
+    let errorMessage = "Batch extraction failed. ";
 
-  if (retryCount < 1) {
-    await delay(2000);
-    return analyzeContract(input, retryCount + 1);
-  }
-
-  // Preserve and provide specific error messages
-  let errorMessage = "Batch extraction failed. ";
-
-  if (error.message) {
-    // Check for specific error types
-    if (error.message.includes('JSON') || error.name === 'SyntaxError' || error.message.includes('parse')) {
-      errorMessage += "Invalid JSON response from Claude. The response may be malformed or incomplete.";
-    } else if (error.status === 401 || error.message.includes('401') || error.message.includes('authentication') || error.message.includes('API key')) {
-      errorMessage += "API authentication failed. Please check your ANTHROPIC_API_KEY.";
-    } else if (error.status === 429 || error.message.includes('429') || error.message.includes('rate limit')) {
-      errorMessage += "Rate limit exceeded. Please wait a moment and try again.";
-    } else if (error.status === 500 || error.message.includes('500') || error.message.includes('server error')) {
-      errorMessage += "Claude API server error. Please try again later.";
-    } else if (error.message.includes('timeout') || error.message.includes('network') || error.message.includes('fetch')) {
-      errorMessage += "Network error or timeout. Please check your connection and try again.";
-    } else if (error.message.includes('content_filter') || error.message.includes('safety')) {
-      errorMessage += "Content was filtered by Claude's safety system. Please review your input.";
-    } else if (error.message.includes('context_length') || error.message.includes('token')) {
-      errorMessage += "Input is too large. Please split your text into smaller chunks.";
-    } else if (error.message.includes('not_found_error') || error.message.includes('model')) {
-      errorMessage += `Model not found. Tried: ${modelCandidates.join(', ')}. Please check your API key has access to Claude models.`;
+    if (error.message) {
+      if (error.message.includes('JSON') || error.name === 'SyntaxError' || error.message.includes('parse')) {
+        errorMessage += "Invalid JSON response from Claude. The response may be malformed or incomplete.";
+      } else if (error.message.includes('401') || error.message.includes('authentication') || error.message.includes('API key')) {
+        errorMessage += "API authentication failed. Please check your ANTHROPIC_API_KEY is set on the server.";
+      } else if (error.message.includes('429') || error.message.includes('rate limit')) {
+        errorMessage += "Rate limit exceeded. Please wait a moment and try again.";
+      } else if (error.message.includes('500') || error.message.includes('server error')) {
+        errorMessage += "Claude API server error. Please try again later.";
+      } else if (error.message.includes('timeout') || error.message.includes('network') || error.message.includes('fetch')) {
+        errorMessage += "Network error or timeout. Please check your connection and try again.";
+      } else if (error.message.includes('content_filter') || error.message.includes('safety')) {
+        errorMessage += "Content was filtered by Claude's safety system. Please review your input.";
+      } else if (error.message.includes('context_length') || error.message.includes('token')) {
+        errorMessage += "Input is too large. Please split your text into smaller chunks.";
+      } else if (error.message.includes('not_found') || error.message.includes('model')) {
+        errorMessage += "Model not found. Please check your API key has access to Claude models.";
+      } else {
+        errorMessage += `Error: ${error.message}`;
+      }
     } else {
-      errorMessage += `Error: ${error.message}`;
+      errorMessage += "Unknown error occurred. Please check the browser console for details.";
     }
-  } else if (error.status) {
-    errorMessage += `API returned status ${error.status}. Please try again.`;
-  } else {
-    errorMessage += "Unknown error occurred. Please check the browser console for details.";
-  }
 
-  throw new Error(errorMessage);
+    throw new Error(errorMessage);
+  }
 }
