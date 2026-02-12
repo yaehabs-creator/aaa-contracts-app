@@ -2,7 +2,6 @@ import { supabase } from '../supabase/config';
 import { SavedContract, ContractSection, SectionItem, SectionType } from '../../types';
 import { ensureContractHasSections } from '../../services/contractMigrationService';
 
-const MAX_DOCUMENT_SIZE = 1000000; // 1MB in bytes (with some buffer)
 
 /**
  * Recursively removes undefined values from an object.
@@ -30,106 +29,7 @@ function removeUndefinedValues(obj: any): any {
   return obj;
 }
 
-/**
- * Estimate the size of an object in bytes (rough approximation)
- */
-function estimateSize(obj: any): number {
-  return JSON.stringify(obj).length * 2; // Rough estimate: UTF-16 encoding
-}
 
-/**
- * Save contract using relational tables for large contracts
- */
-async function saveContractWithSubcollections(contract: SavedContract): Promise<void> {
-  if (!supabase) {
-    throw new Error('Supabase is not initialized. Please check your Supabase configuration.');
-  }
-
-  // Save main contract document (metadata only)
-  const contractMetadata = removeUndefinedValues({
-    id: contract.id,
-    name: contract.name,
-    timestamp: contract.timestamp,
-    metadata: contract.metadata,
-    clauses: contract.clauses || null,
-    sections: null, // Not stored in main table for subcollections
-    uses_subcollections: true
-  });
-
-  // Upsert contract metadata (authentication already checked in parent function)
-  const { data, error: contractError } = await supabase
-    .from('contracts')
-    .upsert(contractMetadata, {
-      onConflict: 'id'
-    });
-
-  if (contractError) {
-    console.error('Supabase upsert error (subcollections):', {
-      code: contractError.code,
-      message: contractError.message,
-      details: contractError.details,
-      hint: contractError.hint
-    });
-    throw new Error(`Failed to save contract metadata: ${contractError.message}`);
-  }
-
-  // Save sections and items as relational tables
-  if (contract.sections && contract.sections.length > 0) {
-    for (const section of contract.sections) {
-      // Upsert section
-      const { error: sectionError } = await supabase
-        .from('contract_sections')
-        .upsert({
-          contract_id: contract.id,
-          section_type: section.sectionType,
-          title: section.title,
-          item_count: section.items.length
-        }, {
-          onConflict: 'contract_id,section_type'
-        });
-
-      if (sectionError) {
-        throw new Error(`Failed to save section ${section.sectionType}: ${sectionError.message}`);
-      }
-
-      // Delete existing items for this section
-      const { error: deleteError } = await supabase
-        .from('contract_items')
-        .delete()
-        .eq('contract_id', contract.id)
-        .eq('section_type', section.sectionType);
-
-      if (deleteError) {
-        console.error(`Failed to delete existing items for section ${section.sectionType}:`, deleteError);
-        // Continue anyway - the insert might still work if items don't exist
-      }
-
-      // Insert items
-      if (section.items.length > 0) {
-        // Always use array index for order_index to ensure uniqueness
-        // The unique constraint is on (contract_id, section_type, order_index)
-        const itemsToInsert = section.items.map((item, index) => {
-          // Update the item's orderIndex to match the array position
-          const updatedItem = { ...item, orderIndex: index };
-          return {
-            contract_id: contract.id,
-            section_type: section.sectionType,
-            order_index: index,
-            item_data: removeUndefinedValues(updatedItem)
-          };
-        });
-
-        const { error: itemsError } = await supabase
-          .from('contract_items')
-          .insert(itemsToInsert);
-
-        if (itemsError) {
-          throw new Error(`Failed to save items for section ${section.sectionType}: ${itemsError.message}`);
-        }
-      }
-    }
-  }
-}
 
 /**
  * Load contract from relational tables (subcollections)
@@ -240,38 +140,28 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
       name: migratedContract.name,
       timestamp: migratedContract.timestamp,
       metadata: migratedContract.metadata,
-      clauses: migratedContract.clauses || null,
-      sections: migratedContract.sections || null,
-      uses_subcollections: false
+      sections: migratedContract.sections || []
     });
 
-    // Check if contract is too large (>1MB)
-    const estimatedSize = estimateSize(contractData);
+    console.log('Saving contract via atomic RPC:', migratedContract.id);
 
-    if (estimatedSize > MAX_DOCUMENT_SIZE) {
-      // Use relational tables for large contracts
-      await saveContractWithSubcollections(migratedContract);
-    } else {
-      // Save as single document for smaller contracts
-      const { data, error } = await supabase
-        .from('contracts')
-        .upsert(contractData, {
-          onConflict: 'id'
-        });
+    // Call the atomic RPC function
+    const { data: rpcData, error: rpcError } = await supabase.rpc('save_full_contract', {
+      p_contract_data: contractData
+    });
 
-      if (error) {
-        console.error('Supabase upsert error:', {
-          code: error.code,
-          message: error.message,
-          details: error.details,
-          hint: error.hint,
-          authUser: session?.user?.id
-        });
-        throw error;
-      }
+    if (rpcError) {
+      console.error('Supabase RPC error:', {
+        code: rpcError.code,
+        message: rpcError.message,
+        details: rpcError.details,
+        hint: rpcError.hint,
+        authUser: session?.user?.id
+      });
+      throw rpcError;
     }
 
-    console.log('Contract saved successfully to Supabase');
+    console.log('Contract saved successfully via RPC:', rpcData);
   } catch (error: any) {
     console.error('Error saving contract:', error);
     console.error('Full error details:', {

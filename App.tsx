@@ -266,6 +266,44 @@ const App: React.FC = () => {
   const [activeContractId, setActiveContractId] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const [showContractSelector, setShowContractSelector] = useState(false);
+  const [hasDraft, setHasDraft] = useState(false);
+
+  // --- DRAFT/LOCAL BACKUP LOGIC ---
+  useEffect(() => {
+    const draft = localStorage.getItem('aaa_contract_draft');
+    if (draft) {
+      setHasDraft(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (contract) {
+      localStorage.setItem('aaa_contract_draft', JSON.stringify(contract));
+    }
+  }, [contract]);
+
+  const restoreDraft = () => {
+    const draftJson = localStorage.getItem('aaa_contract_draft');
+    if (draftJson) {
+      try {
+        const parsedDraft = JSON.parse(draftJson);
+        setContract(parsedDraft);
+        setClauses(getClausesWithProcessedLinks(parsedDraft));
+        if (parsedDraft.id) setActiveContractId(parsedDraft.id);
+        setStatus(AnalysisStatus.COMPLETED);
+        toast.success('Unsaved progress restored');
+        setHasDraft(false);
+      } catch (err) {
+        console.error('Failed to restore draft:', err);
+        toast.error('Failed to restore draft');
+      }
+    }
+  };
+
+  const clearDraft = () => {
+    localStorage.removeItem('aaa_contract_draft');
+    setHasDraft(false);
+  };
 
   // Smart Search States
   const [smartSearchQuery, setSmartSearchQuery] = useState('');
@@ -446,6 +484,7 @@ const App: React.FC = () => {
       });
 
       await saveContractToDB(contractWithSections);
+      clearDraft(); // Success! Clear the local backup
       setContract(contractWithSections);
       if (!activeContractId) setActiveContractId(targetId);
       await refreshLibrary();
@@ -477,6 +516,7 @@ const App: React.FC = () => {
 
       // Save to database
       await saveContractToDB(contractWithSections);
+      clearDraft(); // Success! Clear the local backup
 
       // Update local state with reprocessed clause links
       setContract(contractWithSections);
@@ -1938,6 +1978,27 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             <main className={`flex-1 overflow-y-auto px-6 py-6 custom-scrollbar transition-all ${status !== AnalysisStatus.COMPLETED ? 'max-w-7xl mx-auto' : status === AnalysisStatus.COMPLETED && isSidebarOpen ? 'lg:ml-80' : ''}`}>
               {status === AnalysisStatus.IDLE && (
                 <div className="space-y-16 animate-in fade-in duration-1000">
+                  {hasDraft && (
+                    <div className="max-w-4xl mx-auto -mb-8 animate-in slide-in-from-top duration-500">
+                      <div className="bg-aaa-blue/5 border border-aaa-blue/20 p-4 rounded-2xl flex items-center justify-between shadow-sm">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-aaa-blue/10 rounded-xl flex items-center justify-center text-aaa-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-black text-aaa-blue uppercase tracking-tight">Unsaved Progress Detected</h4>
+                            <p className="text-xs text-aaa-muted font-medium">You have a draft from a previous session that wasn't saved to the cloud.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <button onClick={clearDraft} className="px-5 py-2 text-[10px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-colors">Discard</button>
+                          <button onClick={restoreDraft} className="px-7 py-2.5 bg-aaa-blue text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-aaa-navy transition-all active:scale-95">Restore Draft</button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   <div className="text-center space-y-6">
                     <div className="inline-flex items-center gap-3 px-5 py-2 bg-white border border-aaa-blue/10 text-aaa-blue text-[10px] font-black uppercase tracking-[0.3em] rounded-full shadow-sm">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
