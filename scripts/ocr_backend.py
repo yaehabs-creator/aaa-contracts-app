@@ -1,4 +1,5 @@
 import os
+import traceback
 
 # Disable connectivity check on startup - must be before any paddle imports
 os.environ["PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK"] = "True"
@@ -8,7 +9,6 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from paddleocr import PaddleOCR
 import numpy as np
-import cv2
 import io
 from PIL import Image
 
@@ -24,83 +24,88 @@ app.add_middleware(
 )
 
 # Initialize PaddleOCR
-# Note: In PaddleOCR 3.x, use_gpu is no longer a direct argument.
-# It automatically detects GPU if paddlepaddle-gpu is installed.
-# use_angle_cls is deprecated in favor of use_textline_orientation.
-print("Initializing PaddleOCR (v3.4.0 compatible)...")
-
+print("Initializing PaddleOCR (v3.4.0)...")
 try:
-    # Try initialization with orientation detection
     ocr = PaddleOCR(use_textline_orientation=True, lang='en')
     print("PaddleOCR initialized successfully.")
 except Exception as e:
-    print(f"PaddleOCR initialization failed: {e}")
-    # Fallback to basic settings if needed
-    ocr = PaddleOCR(lang='en')
+    print(f"Init with textline_orientation failed: {e}, trying basic...")
+    try:
+        ocr = PaddleOCR(lang='en')
+        print("PaddleOCR initialized (basic mode).")
+    except Exception as e2:
+        print(f"PaddleOCR init failed completely: {e2}")
+        ocr = None
+
 
 @app.get("/health")
 async def health():
-    return {
-        "status": "ok", 
-        "engine": "paddle",
-        "version": "3.4.0-compat"
-    }
+    return {"status": "ok", "engine": "paddle", "version": "3.4.0"}
+
 
 @app.post("/ocr")
 async def perform_ocr(file: UploadFile = File(...)):
+    if ocr is None:
+        raise HTTPException(status_code=503, detail="PaddleOCR failed to initialize")
+
+    temp_path = None
     try:
         contents = await file.read()
-        
-        # Determine if it's a PDF or Image
-        filename = file.filename.lower()
-        
+        filename = (file.filename or "unknown.pdf").lower()
+
         if filename.endswith('.pdf'):
-            # PaddleOCR has built-in PDF support
-            # We write to a temp file because PaddleOCR expects a path for PDFs
             temp_path = f"temp_{file.filename}"
             with open(temp_path, "wb") as f:
                 f.write(contents)
-            
-            # cls=True enables the textline orientation/angle classifier
-            result = ocr.ocr(temp_path, cls=True)
-            if os.path.exists(temp_path):
-                os.remove(temp_path)
+            input_data = temp_path
         else:
-            # Process as image
             image = Image.open(io.BytesIO(contents)).convert('RGB')
             img_array = np.array(image)
-            # Convert RGB to BGR for OpenCV (PaddleOCR uses BGR)
-            img_array = img_array[:, :, ::-1].copy()
-            
-            result = ocr.ocr(img_array, cls=True)
+            img_array = img_array[:, :, ::-1].copy()  # RGB -> BGR
+            input_data = img_array
 
-        # Flatten and format results
-        # PaddleOCR result is a list of lists (one per page for PDFs, one element for images)
+        # Use predict() - the v3.4.0 API (ocr() is deprecated and broken)
+        prediction = ocr.predict(input_data)
+
         extracted_text = []
         raw_results = []
         pages = []
-        
-        if result:
-            for page_idx, page in enumerate(result):
-                page_lines = []
-                if page:
-                    for line in page:
-                        box = line[0]
-                        text, confidence = line[1]
-                        extracted_text.append(text)
-                        page_lines.append(text)
-                        raw_results.append({
-                            "text": text,
-                            "confidence": float(confidence),
-                            "box": box,
-                            "page": page_idx + 1
-                        })
-                
-                pages.append({
-                    "page_number": page_idx + 1,
-                    "text": "\n".join(page_lines),
-                    "line_count": len(page_lines)
+
+        for item in prediction:
+            # item is an OCRResult with .json property
+            res = item.json.get('res', item.json)
+
+            rec_texts = res.get('rec_texts', [])
+            rec_scores = res.get('rec_scores', [])
+            dt_polys = res.get('dt_polys', [])
+            page_index = res.get('page_index', None)
+            page_num = (page_index if page_index is not None else len(pages)) + 1
+
+            page_lines = []
+            for i, text in enumerate(rec_texts):
+                text_str = str(text)
+                confidence = float(rec_scores[i]) if i < len(rec_scores) else 0.0
+                box = dt_polys[i] if i < len(dt_polys) else []
+                # Convert numpy arrays to plain lists for JSON serialization
+                if hasattr(box, 'tolist'):
+                    box = box.tolist()
+
+                extracted_text.append(text_str)
+                page_lines.append(text_str)
+                raw_results.append({
+                    "text": text_str,
+                    "confidence": confidence,
+                    "box": box,
+                    "page": page_num
                 })
+
+            pages.append({
+                "page_number": page_num,
+                "text": "\n".join(page_lines),
+                "line_count": len(page_lines)
+            })
+
+        print(f"OCR complete: {len(pages)} pages, {len(extracted_text)} text lines")
 
         return {
             "text": "\n".join(extracted_text),
@@ -109,13 +114,15 @@ async def perform_ocr(file: UploadFile = File(...)):
             "page_count": len(pages),
             "engine": "paddle"
         }
-        
+
     except Exception as e:
         print(f"OCR Error: {e}")
-        # Cleanup temp file if it exists on error
-        if 'temp_path' in locals() and os.path.exists(temp_path):
-            os.remove(temp_path)
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            os.remove(temp_path)
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
