@@ -94,6 +94,26 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
           sectionType: SectionType.PARTICULAR,
           title: 'Particular Conditions',
           items: []
+        },
+        {
+          sectionType: SectionType.ADDENDUM,
+          title: 'Addendums',
+          items: []
+        },
+        {
+          sectionType: SectionType.BOQ,
+          title: 'Bills of Quantities',
+          items: []
+        },
+        {
+          sectionType: SectionType.AUTOMATION,
+          title: 'Automation Application',
+          items: []
+        },
+        {
+          sectionType: SectionType.INSTRUCTION,
+          title: 'Instruction to Tenderers',
+          items: []
         }
       ],
       clauses: []  // Keep empty array for backward compatibility
@@ -146,6 +166,26 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
       sectionType: SectionType.PARTICULAR,
       title: 'Particular Conditions',
       items: particularItems
+    },
+    {
+      sectionType: SectionType.ADDENDUM,
+      title: 'Addendums',
+      items: []
+    },
+    {
+      sectionType: SectionType.BOQ,
+      title: 'Bills of Quantities',
+      items: []
+    },
+    {
+      sectionType: SectionType.AUTOMATION,
+      title: 'Automation Application',
+      items: []
+    },
+    {
+      sectionType: SectionType.INSTRUCTION,
+      title: 'Instruction to Tenderers',
+      items: []
     }
   ];
 
@@ -171,7 +211,11 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
       SectionType.AGREEMENT,
       SectionType.LOA,
       SectionType.GENERAL,
-      SectionType.PARTICULAR
+      SectionType.PARTICULAR,
+      SectionType.ADDENDUM,
+      SectionType.BOQ,
+      SectionType.AUTOMATION,
+      SectionType.INSTRUCTION
     ];
 
     const missingTypes = requiredTypes.filter(type => !sectionTypes.includes(type));
@@ -185,6 +229,10 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         else if (type === SectionType.LOA) title = 'Letter of Acceptance';
         else if (type === SectionType.GENERAL) title = 'General Conditions';
         else if (type === SectionType.PARTICULAR) title = 'Particular Conditions';
+        else if (type === SectionType.ADDENDUM) title = 'Addendums';
+        else if (type === SectionType.BOQ) title = 'Bills of Quantities';
+        else if (type === SectionType.AUTOMATION) title = 'Automation Application';
+        else if (type === SectionType.INSTRUCTION) title = 'Instruction to Tenderers';
         else if (type === 'ANNEX1') title = 'Annex 1';
         else if (type === 'ANNEX2') title = 'Annex 2';
 
@@ -201,7 +249,11 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
           SectionType.AGREEMENT,
           SectionType.LOA,
           SectionType.GENERAL,
-          SectionType.PARTICULAR
+          SectionType.PARTICULAR,
+          SectionType.ADDENDUM,
+          SectionType.BOQ,
+          SectionType.AUTOMATION,
+          SectionType.INSTRUCTION
         ];
         return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
       });

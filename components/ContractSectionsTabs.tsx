@@ -8,11 +8,11 @@ import { getCategoriesForContract, ContractCategory } from '../src/services/supa
 const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-only' => {
   const hasPC = item.particular_condition && item.particular_condition.length > 0;
   const hasGC = item.general_condition && item.general_condition.length > 0;
-  
+
   if (hasPC && !hasGC) return 'added';
   if (hasPC && hasGC) return 'modified';
   if (hasGC) return 'gc-only';
-  
+
   // Fallback for single-source contracts
   if (item.condition_type === 'Particular') return 'added';
   return 'gc-only';
@@ -45,22 +45,22 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 }) => {
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
-  
+
   // Use 'CONDITIONS' as special identifier for the conditions tab
   type TabType = SectionType | 'CONDITIONS';
   const [activeTab, setActiveTab] = useState<TabType>('CONDITIONS');
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  
+
   // Categories from Admin Editor
   const [categories, setCategories] = useState<ContractCategory[]>([]);
   const [categoriesLoading, setCategoriesLoading] = useState(false);
-  
+
   // Fetch categories when contract changes
   useEffect(() => {
     const loadCategories = async () => {
       if (!contract.id) return;
-      
+
       setCategoriesLoading(true);
       try {
         const cats = await getCategoriesForContract(contract.id);
@@ -71,7 +71,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
         setCategoriesLoading(false);
       }
     };
-    
+
     loadCategories();
   }, [contract.id]);
 
@@ -80,24 +80,30 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     if (!contractWithSections.sections) {
       return [];
     }
-    
-    // Sort sections to maintain order: AGREEMENT, LOA, GENERAL, PARTICULAR
+
+    // Sort sections to maintain order
     return [...contractWithSections.sections].sort((a, b) => {
       const order = [
-        SectionType.AGREEMENT, 
-        SectionType.LOA, 
-        SectionType.GENERAL, 
-        SectionType.PARTICULAR
+        SectionType.AGREEMENT,
+        SectionType.LOA,
+        SectionType.GENERAL,
+        SectionType.PARTICULAR,
+        SectionType.ADDENDUM,
+        SectionType.BOQ,
+        SectionType.AUTOMATION,
+        SectionType.INSTRUCTION
       ];
-      return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
+      const idxA = order.indexOf(a.sectionType);
+      const idxB = order.indexOf(b.sectionType);
+      return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
     });
   }, [contractWithSections.sections]);
 
   // Filter sections for tabs (exclude GENERAL, PARTICULAR, AGREEMENT, and LOA)
   // AGREEMENT and LOA tabs are hidden as they are not needed in the UI
   const tabSections = useMemo(() => {
-    return allSections.filter(s => 
-      s.sectionType !== SectionType.GENERAL && 
+    return allSections.filter(s =>
+      s.sectionType !== SectionType.GENERAL &&
       s.sectionType !== SectionType.PARTICULAR &&
       s.sectionType !== SectionType.AGREEMENT &&
       s.sectionType !== SectionType.LOA
@@ -105,11 +111,11 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   }, [allSections]);
 
   // Get GENERAL and PARTICULAR sections
-  const generalSection = useMemo(() => 
+  const generalSection = useMemo(() =>
     allSections.find(s => s.sectionType === SectionType.GENERAL),
     [allSections]
   );
-  const particularSection = useMemo(() => 
+  const particularSection = useMemo(() =>
     allSections.find(s => s.sectionType === SectionType.PARTICULAR),
     [allSections]
   );
@@ -117,16 +123,16 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   // Create combined Conditions section when CONDITIONS tab is active
   const combinedConditionsSection = useMemo((): ContractSection | null => {
     if (activeTab !== 'CONDITIONS') return null;
-    
+
     const generalItems = generalSection?.items || [];
     const particularItems = particularSection?.items || [];
-    
+
     // Combine items, marking their origin section
     const combinedItems: (SectionItem & { _originSection?: SectionType })[] = [
       ...generalItems.map(item => ({ ...item, _originSection: SectionType.GENERAL })),
       ...particularItems.map(item => ({ ...item, _originSection: SectionType.PARTICULAR }))
     ];
-    
+
     // Apply sorting based on sortMode
     if (sortMode === 'category' && categories.length > 0) {
       // Sort by category order, then by clause number within category
@@ -135,17 +141,17 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       categories.forEach((cat, idx) => {
         categoryOrderMap.set(cat.id, idx);
       });
-      
+
       combinedItems.sort((a, b) => {
         const catIdA = (a as any).category_id || '';
         const catIdB = (b as any).category_id || '';
-        
+
         // Items without category go to the end
         const catOrderA = catIdA ? (categoryOrderMap.get(catIdA) ?? 999) : 1000;
         const catOrderB = catIdB ? (categoryOrderMap.get(catIdB) ?? 999) : 1000;
-        
+
         if (catOrderA !== catOrderB) return catOrderA - catOrderB;
-        
+
         // Within same category, sort by clause number
         const numA = parseFloat(a.clause_number || '0') || 0;
         const numB = parseFloat(b.clause_number || '0') || 0;
@@ -172,7 +178,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       // Default: sort by orderIndex
       combinedItems.sort((a, b) => (a.orderIndex || 0) - (b.orderIndex || 0));
     }
-    
+
     return {
       sectionType: SectionType.GENERAL, // Use GENERAL as the type for compatibility
       title: 'Conditions',
@@ -204,17 +210,17 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   // Handle updates for combined Conditions section
   const handleConditionsUpdate = (updatedSection: ContractSection) => {
     const updatedItems = updatedSection.items;
-    
+
     // Split items back into GENERAL and PARTICULAR based on their origin
     const generalItems: SectionItem[] = [];
     const particularItems: SectionItem[] = [];
-    
+
     updatedItems.forEach((item, index) => {
       const originSection = (item as any)._originSection;
       const cleanItem = { ...item };
       delete (cleanItem as any)._originSection;
       cleanItem.orderIndex = index;
-      
+
       if (originSection === SectionType.GENERAL) {
         generalItems.push(cleanItem);
       } else if (originSection === SectionType.PARTICULAR) {
@@ -270,7 +276,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       const currentItems = activeSection.items || [];
       const updatedItems = [...currentItems];
       updatedItems[index] = item;
-      
+
       const updatedSection: ContractSection = {
         ...activeSection,
         items: updatedItems
@@ -299,7 +305,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       if (!activeSection) return;
       const currentItems = activeSection.items || [];
       const updatedItems = currentItems.filter((_, i) => i !== index);
-      
+
       const updatedSection: ContractSection = {
         ...activeSection,
         items: updatedItems
@@ -332,7 +338,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       const updatedItems = [...currentItems];
       const [moved] = updatedItems.splice(fromIndex, 1);
       updatedItems.splice(toIndex, 0, moved);
-      
+
       const updatedSection: ContractSection = {
         ...activeSection,
         items: updatedItems
@@ -364,19 +370,19 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       // Need to determine which section the clause belongs to
       const item = activeSection?.items[index];
       if (!item) return;
-      
-      const originSection = (item as any)._originSection || 
+
+      const originSection = (item as any)._originSection ||
         (item.condition_type === 'Particular' ? SectionType.PARTICULAR : SectionType.GENERAL);
-      
+
       // Find the original index in the source section
       const sourceSection = originSection === SectionType.GENERAL ? generalSection : particularSection;
       if (!sourceSection) return;
-      
-      const sourceIndex = sourceSection.items.findIndex(i => 
-        i.clause_number === item.clause_number && 
+
+      const sourceIndex = sourceSection.items.findIndex(i =>
+        i.clause_number === item.clause_number &&
         i.clause_title === item.clause_title
       );
-      
+
       if (sourceIndex >= 0 && onDeleteClause) {
         onDeleteClause(sourceIndex, originSection);
       } else {
@@ -415,7 +421,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
     setIsSaving(true);
     setSaveStatus('idle');
-    
+
     try {
       await onSave(contractWithSections);
       setSaveStatus('success');
@@ -450,82 +456,75 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             {/* Conditions Tab (Combined GENERAL + PARTICULAR) */}
             <button
               onClick={() => setActiveTab('CONDITIONS')}
-              className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${
-                activeTab === 'CONDITIONS'
+              className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${activeTab === 'CONDITIONS'
                   ? 'border-aaa-blue text-aaa-blue bg-white'
                   : 'border-transparent text-aaa-muted hover:text-aaa-blue hover:bg-white/50'
-              }`}
+                }`}
             >
               Conditions
               {((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0 && (
-                <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${
-                  activeTab === 'CONDITIONS'
+                <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${activeTab === 'CONDITIONS'
                     ? 'bg-aaa-blue/10 text-aaa-blue'
                     : 'bg-aaa-bg text-aaa-muted'
-                }`}>
+                  }`}>
                   {(generalSection?.items.length || 0) + (particularSection?.items.length || 0)}
                 </span>
               )}
             </button>
-            
+
             {/* Other Section Tabs (if any) */}
             {tabSections.map((section) => (
               <button
                 key={section.sectionType}
                 onClick={() => setActiveTab(section.sectionType)}
-                className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${
-                  activeTab === section.sectionType
+                className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${activeTab === section.sectionType
                     ? 'border-aaa-blue text-aaa-blue bg-white'
                     : 'border-transparent text-aaa-muted hover:text-aaa-blue hover:bg-white/50'
-                }`}
+                  }`}
               >
                 {section.title}
                 {section.items.length > 0 && (
-                  <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${
-                    activeTab === section.sectionType
+                  <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${activeTab === section.sectionType
                       ? 'bg-aaa-blue/10 text-aaa-blue'
                       : 'bg-aaa-bg text-aaa-muted'
-                  }`}>
+                    }`}>
                     {section.items.length}
                   </span>
                 )}
               </button>
             ))}
-            
+
           </div>
-          
+
           {/* Sort Controls (only show for Conditions tab) */}
           {activeTab === 'CONDITIONS' && onSortModeChange && (
             <div className="px-4 py-2 flex items-center gap-2 border-l border-aaa-border">
               <span className="text-[9px] font-bold text-aaa-muted uppercase tracking-wider">Sort:</span>
               <button
                 onClick={() => onSortModeChange('default')}
-                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
-                  sortMode === 'default'
+                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'default'
                     ? 'bg-aaa-blue text-white border-aaa-blue'
                     : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
-                }`}
+                  }`}
               >
                 Default
               </button>
               <button
                 onClick={() => onSortModeChange('status')}
-                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
-                  sortMode === 'status'
+                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'status'
                     ? 'bg-aaa-blue text-white border-aaa-blue'
                     : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
-                }`}
+                  }`}
                 title="Group by: Added, Modified, GC-only"
               >
                 By Status
               </button>
               <button
                 onClick={() => onSortModeChange('chapter')}
-                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
-                  sortMode === 'chapter'
+                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'chapter'
                     ? 'bg-aaa-blue text-white border-aaa-blue'
                     : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
-                }`}
+                  }`}
                 title="Sort by clause number"
               >
                 By Chapter
@@ -533,11 +532,10 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               {categories.length > 0 && (
                 <button
                   onClick={() => onSortModeChange('category')}
-                  className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${
-                    sortMode === 'category'
+                  className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'category'
                       ? 'bg-purple-500 text-white border-purple-500'
                       : 'bg-white text-aaa-muted border-aaa-border hover:border-purple-500 hover:text-purple-600'
-                  }`}
+                    }`}
                   title="Group by categories from Admin Editor"
                 >
                   By Category
@@ -545,7 +543,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               )}
             </div>
           )}
-          
+
           {/* Save Button */}
           <div className="px-6 py-2 flex items-center gap-3">
             {saveStatus === 'success' && (
@@ -557,13 +555,12 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             <button
               onClick={handleSave}
               disabled={isSaving}
-              className={`px-6 py-2.5 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ${
-                isSaving
+              className={`px-6 py-2.5 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ${isSaving
                   ? 'bg-aaa-bg text-aaa-muted cursor-not-allowed'
                   : saveStatus === 'success'
-                  ? 'bg-green-500 text-white hover:bg-green-600'
-                  : 'bg-aaa-blue text-white hover:bg-aaa-blue/90 shadow-md hover:shadow-lg'
-              }`}
+                    ? 'bg-green-500 text-white hover:bg-green-600'
+                    : 'bg-aaa-blue text-white hover:bg-aaa-blue/90 shadow-md hover:shadow-lg'
+                }`}
             >
               {isSaving ? (
                 <span className="flex items-center gap-2">

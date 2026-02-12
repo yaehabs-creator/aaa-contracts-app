@@ -20,7 +20,9 @@ export enum SectionType {
   ADDENDUM = 'ADDENDUM',
   BOQ = 'BOQ',
   SCHEDULE = 'SCHEDULE',
-  ANNEX = 'ANNEX'
+  ANNEX = 'ANNEX',
+  AUTOMATION = 'AUTOMATION',
+  INSTRUCTION = 'INSTRUCTION'
 }
 
 export enum ItemType {
@@ -204,7 +206,8 @@ export enum AnalysisStatus {
   ANALYZING = 'ANALYZING',
   COMPLETED = 'COMPLETED',
   ERROR = 'ERROR',
-  LIBRARY = 'LIBRARY'
+  LIBRARY = 'LIBRARY',
+  PDF_PREVIEW = 'PDF_PREVIEW'
 }
 
 export interface BotMessage {
@@ -291,7 +294,7 @@ export interface DocumentChunk {
   created_at?: string;
 }
 
-export type ReferenceType = 
+export type ReferenceType =
   | 'mentions'        // Simple reference to another clause
   | 'overrides'       // PC overrides GC, or Addendum overrides base
   | 'supplements'     // Adds to existing clause
@@ -350,7 +353,7 @@ export interface IngestionJob {
 // Validation Types
 // ============================================
 
-export type ValidationErrorCode = 
+export type ValidationErrorCode =
   | 'DUPLICATE_CLAUSE'
   | 'UNRESOLVED_REFERENCE'
   | 'ADDENDUM_ORDER'
@@ -459,12 +462,12 @@ export interface FileNamingValidation {
 export function validateFileName(filename: string): FileNamingValidation {
   const pattern = /^([ABCDIN])(\d{3})_([A-Za-z0-9_-]+)\.([a-zA-Z0-9]+)$/;
   const match = filename.match(pattern);
-  
+
   if (!match) {
     // Try to generate a suggested name
     const ext = filename.split('.').pop() || 'pdf';
     const baseName = filename.replace(/\.[^/.]+$/, '').replace(/[^A-Za-z0-9_-]/g, '_');
-    
+
     return {
       isValid: false,
       suggestedName: `X001_${baseName}.${ext}`,
@@ -476,9 +479,9 @@ export function validateFileName(filename: string): FileNamingValidation {
       ]
     };
   }
-  
+
   const [, group, seq, name, ext] = match;
-  
+
   return {
     isValid: true,
     parsed: {

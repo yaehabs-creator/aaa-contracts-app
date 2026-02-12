@@ -246,6 +246,13 @@ const App: React.FC = () => {
   const [aiCleanedText, setAiCleanedText] = useState<string | null>(null);
   const [skipTextCleaning, setSkipTextCleaning] = useState(false);
 
+  // PDF Preview states
+  const [extractedPdfPages, setExtractedPdfPages] = useState<string[]>([]);
+  const [cleanedPdfPages, setCleanedPdfPages] = useState<string[] | null>(null);
+  const [isCleaningPdf, setIsCleaningPdf] = useState(false);
+  const [pdfTargetSection, setPdfTargetSection] = useState<SectionType>(SectionType.GENERAL);
+  const [pdfEditText, setPdfEditText] = useState('');
+
   const [searchFilter, setSearchFilter] = useState<string>('');
   const [selectedTypes, setSelectedTypes] = useState<ConditionType[]>(['General', 'Particular']);
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
@@ -1383,82 +1390,205 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     setStatus(AnalysisStatus.ANALYZING);
     setError(null);
     setProgress(5);
-    let allExtractedClauses: Clause[] = [];
     try {
+      let allPages: string[] = [];
       if ('data' in input) {
-        // extractPagesFromPdf handles progress 5-40% internally
         const pages = await extractPagesFromPdf(input as FileData);
-        setBatchInfo({ current: 0, total: pages.length });
-        setLiveStatus({ message: 'Analyzing clauses...', detail: `Processing ${pages.length} pages`, isActive: true });
-
-        // Continue from 40% (extraction complete) to 95% (analysis)
-        const analysisStartProgress = 40;
-        const analysisEndProgress = 95;
-
-        for (let i = 0; i < pages.length; i++) {
-          setBatchInfo({ current: i + 1, total: pages.length });
-          const result = await analyzeContract(pages[i]);
-          allExtractedClauses = [...allExtractedClauses, ...result];
-          // Deduplicate after each page to prevent accumulation of duplicates
-          allExtractedClauses = deduplicateClauses(allExtractedClauses);
-
-          // Progress from 40% to 95% based on page analysis
-          const progressPercent = analysisStartProgress + Math.floor(((i + 1) / pages.length) * (analysisEndProgress - analysisStartProgress));
-          setProgress(progressPercent);
-          setLiveStatus({
-            message: 'Analyzing clauses...',
-            detail: `Processing page ${i + 1} of ${pages.length}`,
-            isActive: true
-          });
-        }
+        allPages = pages;
       } else {
-        // Dual source PDFs
         setLiveStatus({ message: 'Loading PDFs...', detail: 'Loading General and Particular PDFs', isActive: true });
-
-        // extractPagesFromPdf handles progress 5-40% internally, but we have 2 PDFs
-        // Split progress: 5-22.5% for general, 22.5-40% for particular
         setProgress(5);
         const gPages = await extractPagesFromPdf(input.general as FileData);
         setProgress(22);
-
         setLiveStatus({ message: 'Loading PDFs...', detail: 'Loading Particular PDF', isActive: true });
         const pPages = await extractPagesFromPdf(input.particular as FileData);
         setProgress(40);
-
-        const maxPages = Math.max(gPages.length, pPages.length);
-        setBatchInfo({ current: 0, total: Math.ceil(maxPages / 2) });
-        setLiveStatus({ message: 'Analyzing clauses...', detail: 'Comparing General and Particular conditions', isActive: true });
-
-        // Continue from 40% to 95%
-        const analysisStartProgress = 40;
-        const analysisEndProgress = 95;
-        const batchCount = Math.ceil(maxPages / 2);
-
-        for (let b = 0; b < batchCount; b++) {
-          setBatchInfo({ current: b + 1, total: batchCount });
-          const gChunk = gPages.slice(b * 2, (b + 1) * 2).join("\n\n");
-          const pChunk = pPages.slice(b * 2, (b + 1) * 2).join("\n\n");
-          const result = await analyzeContract({ general: gChunk, particular: pChunk });
-          allExtractedClauses = [...allExtractedClauses, ...result];
-          // Deduplicate after each batch to prevent accumulation of duplicates
-          allExtractedClauses = deduplicateClauses(allExtractedClauses);
-
-          const progressPercent = analysisStartProgress + Math.floor(((b + 1) / batchCount) * (analysisEndProgress - analysisStartProgress));
-          setProgress(progressPercent);
-          setLiveStatus({
-            message: 'Analyzing clauses...',
-            detail: `Processing batch ${b + 1} of ${batchCount}`,
-            isActive: true
-          });
-        }
+        allPages = [...gPages, ...pPages];
       }
-      setProgress(95);
-      finalizeAnalysis(allExtractedClauses);
+
+      // Stop here — show the extracted text to the user for review
+      setExtractedPdfPages(allPages);
+      setPdfEditText(allPages.join('\n\n'));
+      setCleanedPdfPages(null);
+      setStatus(AnalysisStatus.PDF_PREVIEW);
+      setProgress(0);
+      setLiveStatus({ message: '', detail: '', isActive: false });
     } catch (err: any) {
       setError(err.message);
       setStatus(AnalysisStatus.ERROR);
       setLiveStatus({ message: 'Error', detail: err.message || 'Unknown error', isActive: false });
     }
+  };
+
+  // AI cleanup: fix broken lines, OCR errors, spacing
+  const handleAICleanPdf = async () => {
+    setIsCleaningPdf(true);
+    try {
+      const textToClean = pdfEditText;
+      const response = await callAIProxy({
+        provider: 'anthropic',
+        model: 'claude-sonnet-4-5',
+        system: `You are a text cleanup assistant. Fix OCR errors, broken lines, and spacing issues in the following text. Rules:
+- Fix broken words across lines (rejoin hyphenated line breaks)
+- Fix obvious OCR errors (e.g., "rn" → "m", "0" → "O" where contextually appropriate)
+- Normalize spacing and punctuation
+- Preserve the original meaning and legal terminology exactly
+- Preserve page separators (--- PAGE N ---)
+- Return ONLY the cleaned text, no commentary`,
+        max_tokens: 16384,
+        messages: [{ role: 'user', content: `Clean this OCR-extracted text:\n\n${textToClean}` }]
+      });
+      const textBlock = response.content.find((c: any) => c.type === 'text');
+      const cleanedText = textBlock?.text || textToClean;
+      setPdfEditText(cleanedText);
+      setCleanedPdfPages(cleanedText.split(/\n---\s*PAGE\s+\d+\s*---\n/).filter(Boolean));
+      toast.success('Text cleaned by AI');
+    } catch (err: any) {
+      console.error('AI cleanup error:', err);
+      toast.error(`AI cleanup failed: ${err.message}`);
+    } finally {
+      setIsCleaningPdf(false);
+    }
+  };
+
+  // Add the extracted/cleaned text to a contract as clauses
+  const handleAddPdfToContract = async () => {
+    if (!activeContractId || !contract) {
+      toast.error('Please select a contract from the Archive first');
+      return;
+    }
+
+    setStatus(AnalysisStatus.ANALYZING);
+    setProgress(5);
+    setError(null);
+
+    try {
+      // Split text into page-sized chunks for analysis
+      const textToAnalyze = pdfEditText;
+      const chunks = textToAnalyze.split(/\n---\s*PAGE\s+\d+\s*---\n/).filter(Boolean);
+      const pages = chunks.length > 0 ? chunks : [textToAnalyze];
+
+      let allExtractedClauses: Clause[] = [];
+      setBatchInfo({ current: 0, total: pages.length });
+      setLiveStatus({ message: 'Analyzing clauses...', detail: `Processing ${pages.length} page(s)`, isActive: true });
+
+      for (let i = 0; i < pages.length; i++) {
+        setBatchInfo({ current: i + 1, total: pages.length });
+        const result = await analyzeContract(pages[i]);
+        allExtractedClauses = [...allExtractedClauses, ...result];
+        allExtractedClauses = deduplicateClauses(allExtractedClauses);
+
+        const progressPercent = 10 + Math.floor(((i + 1) / pages.length) * 80);
+        setProgress(progressPercent);
+        setLiveStatus({
+          message: 'Analyzing clauses...',
+          detail: `Processing page ${i + 1} of ${pages.length}`,
+          isActive: true
+        });
+      }
+
+      // Add clauses to the target section of the contract
+      const updatedContract = { ...contract };
+      if (!updatedContract.sections) {
+        updatedContract.sections = [];
+      }
+
+      let targetSection = updatedContract.sections.find(s => s.sectionType === pdfTargetSection);
+      if (!targetSection) {
+        // Create the section if it doesn't exist
+        const sectionTitles: Record<string, string> = {
+          [SectionType.AGREEMENT]: 'Form of Agreement',
+          [SectionType.LOA]: 'Letter of Acceptance',
+          [SectionType.GENERAL]: 'General Conditions',
+          [SectionType.PARTICULAR]: 'Particular Conditions',
+          [SectionType.ADDENDUM]: 'Addendums',
+          [SectionType.BOQ]: 'Bills of Quantities',
+          [SectionType.AUTOMATION]: 'Automation Application',
+          [SectionType.INSTRUCTION]: 'Instruction to Tenderers',
+        };
+        targetSection = {
+          sectionType: pdfTargetSection,
+          title: sectionTitles[pdfTargetSection] || pdfTargetSection,
+          items: []
+        };
+        updatedContract.sections.push(targetSection);
+      }
+
+      // Append new clauses as SectionItems (never overwrite existing)
+      const startIndex = targetSection.items.length;
+      const newItems = allExtractedClauses.map((clause, idx) => ({
+        itemType: 'CLAUSE' as any,
+        orderIndex: startIndex + idx,
+        number: clause.clause_number,
+        heading: clause.clause_title,
+        text: clause.clause_text,
+        clause_number: clause.clause_number,
+        clause_title: clause.clause_title,
+        condition_type: clause.condition_type,
+        clause_text: clause.clause_text,
+        general_condition: clause.general_condition,
+        particular_condition: clause.particular_condition,
+        comparison: clause.comparison,
+        has_time_frame: clause.has_time_frame,
+        time_frames: clause.time_frames,
+        financial_assets: clause.financial_assets,
+        category: clause.category,
+        chapter: clause.chapter,
+      }));
+      targetSection.items = [...targetSection.items, ...newItems];
+
+      // Update metadata
+      const allItems = updatedContract.sections.flatMap(s => s.items);
+      updatedContract.metadata = {
+        ...updatedContract.metadata,
+        totalClauses: allItems.length,
+        generalCount: allItems.filter(i => i.condition_type === 'General').length,
+        particularCount: allItems.filter(i => i.condition_type === 'Particular').length,
+      };
+
+      // Save to Supabase
+      await performSaveContract(updatedContract);
+      setContract(updatedContract);
+
+      // Rebuild clauses list for display
+      const allClauses = allExtractedClauses;
+      setClauses(prev => [...prev, ...allClauses]);
+
+      setProgress(100);
+      setStatus(AnalysisStatus.COMPLETED);
+      setLiveStatus({ message: '', detail: '', isActive: false });
+      toast.success(`Added ${newItems.length} clauses to ${targetSection.title}`);
+
+      // Clear preview state
+      setExtractedPdfPages([]);
+      setCleanedPdfPages(null);
+      setPdfEditText('');
+    } catch (err: any) {
+      setError(err.message);
+      setStatus(AnalysisStatus.ERROR);
+      setLiveStatus({ message: 'Error', detail: err.message || 'Unknown error', isActive: false });
+    }
+  };
+
+  const handleDownloadOcrJson = () => {
+    if (!pdfEditText) return;
+    const exportData = {
+      type: 'aaa_ocr_export',
+      version: '1.0',
+      text: pdfEditText,
+      pages: pdfEditText.split(/\n---\s*PAGE\s+\d+\s*---\n/).filter(Boolean),
+      timestamp: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `ocr_export_${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast.success('OCR JSON downloaded');
   };
 
   const finalizeAnalysis = async (allExtractedClauses: Clause[]) => {
@@ -1870,7 +2000,39 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                           </div>
                           <h3 className="text-4xl font-black text-aaa-text">Source Injection</h3>
                           <p className="text-aaa-muted -mt-4 text-sm font-bold uppercase tracking-widest">Enhanced Page-by-Page Scan</p>
-                          <input type="file" ref={fileInputRef} className="hidden" accept="application/pdf" onChange={(e) => e.target.files?.[0] && processFile(e.target.files[0], handlePdfAnalysis)} />
+                          <input
+                            type="file"
+                            ref={fileInputRef}
+                            className="hidden"
+                            accept="application/pdf,application/json"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (!file) return;
+
+                              if (file.type === 'application/json' || file.name.endsWith('.json')) {
+                                const reader = new FileReader();
+                                reader.onload = () => {
+                                  try {
+                                    const json = JSON.parse(reader.result as string);
+                                    if (json.type === 'aaa_ocr_export') {
+                                      setPdfEditText(json.text);
+                                      setExtractedPdfPages(json.pages || []);
+                                      setCleanedPdfPages(null);
+                                      setStatus(AnalysisStatus.PDF_PREVIEW);
+                                      toast.success('OCR data imported from JSON');
+                                    } else {
+                                      toast.error('Invalid OCR JSON file');
+                                    }
+                                  } catch (err) {
+                                    toast.error('Failed to parse JSON file');
+                                  }
+                                };
+                                reader.readAsText(file);
+                              } else {
+                                processFile(file, handlePdfAnalysis);
+                              }
+                            }}
+                          />
                         </div>
                       )}
 
@@ -2272,6 +2434,150 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       )}
                     </>
                   )}
+                </div>
+              )}
+
+              {status === AnalysisStatus.PDF_PREVIEW && (
+                <div className="space-y-6 animate-in fade-in duration-500">
+                  {/* Header */}
+                  <div className="bg-white border border-aaa-border rounded-3xl p-8 shadow-premium">
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <h2 className="text-2xl font-black text-aaa-navy tracking-tight">PDF Text Preview</h2>
+                        <p className="text-sm text-aaa-muted mt-1">
+                          {extractedPdfPages.length} page(s) extracted • Review and edit the text below
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={() => {
+                            setStatus(AnalysisStatus.IDLE);
+                            setExtractedPdfPages([]);
+                            setCleanedPdfPages(null);
+                            setPdfEditText('');
+                          }}
+                          className="px-5 py-2.5 bg-white border border-aaa-border text-aaa-muted rounded-xl text-sm font-bold hover:bg-gray-50 transition-all"
+                        >
+                          ← Back
+                        </button>
+                        <button
+                          onClick={handleAICleanPdf}
+                          disabled={isCleaningPdf}
+                          className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${isCleaningPdf
+                            ? 'bg-purple-200 text-purple-400 cursor-not-allowed'
+                            : cleanedPdfPages
+                              ? 'bg-green-500 text-white hover:bg-green-600'
+                              : 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-600 hover:to-indigo-600 shadow-lg hover:shadow-xl'
+                            }`}
+                        >
+                          {isCleaningPdf ? (
+                            <>
+                              <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Cleaning...
+                            </>
+                          ) : cleanedPdfPages ? (
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              Cleaned ✓
+                            </>
+                          ) : (
+                            <>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                              Fix with AI
+                            </>
+                          )}
+                        </button>
+                        <button
+                          onClick={handleDownloadOcrJson}
+                          className="px-5 py-2.5 bg-white border border-aaa-border text-aaa-navy rounded-xl text-sm font-bold hover:bg-gray-50 transition-all flex items-center gap-2"
+                          title="Download OCR text as JSON"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                          </svg>
+                          JSON
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Editable text area */}
+                    <textarea
+                      value={pdfEditText}
+                      onChange={(e) => setPdfEditText(e.target.value)}
+                      className="w-full h-[50vh] px-5 py-4 bg-slate-50 border border-aaa-border rounded-2xl text-sm font-mono text-aaa-navy leading-relaxed focus:border-aaa-blue focus:ring-2 focus:ring-aaa-blue/20 outline-none transition-all resize-none custom-scrollbar"
+                      placeholder="Extracted text will appear here..."
+                    />
+                  </div>
+
+                  {/* Add to Contract panel */}
+                  <div className="bg-white border border-aaa-border rounded-3xl p-8 shadow-premium">
+                    <h3 className="text-lg font-black text-aaa-navy mb-4">Add to Contract</h3>
+                    <div className="flex items-end gap-4 flex-wrap">
+                      {/* Contract selector */}
+                      <div className="flex-1 min-w-[200px]">
+                        <label className="block text-xs font-bold text-aaa-muted uppercase tracking-wider mb-2">Contract</label>
+                        <select
+                          value={activeContractId || ''}
+                          onChange={(e) => {
+                            const selectedId = e.target.value;
+                            setActiveContractId(selectedId);
+                            const selectedContract = library.find(c => c.id === selectedId);
+                            if (selectedContract) {
+                              setContract(selectedContract);
+                              setClauses([]);
+                            }
+                          }}
+                          className="w-full px-4 py-3 bg-white border border-aaa-border rounded-xl text-sm font-semibold text-aaa-navy focus:border-aaa-blue focus:ring-2 focus:ring-aaa-blue/20 outline-none transition-all"
+                        >
+                          <option value="">Select a contract...</option>
+                          {library.map(c => (
+                            <option key={c.id} value={c.id}>{c.name} ({c.metadata.totalClauses} clauses)</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* Section selector */}
+                      <div className="flex-1 min-w-[200px]">
+                        <label className="block text-xs font-bold text-aaa-muted uppercase tracking-wider mb-2">Category / Section</label>
+                        <select
+                          value={pdfTargetSection}
+                          onChange={(e) => setPdfTargetSection(e.target.value as SectionType)}
+                          className="w-full px-4 py-3 bg-white border border-aaa-border rounded-xl text-sm font-semibold text-aaa-navy focus:border-aaa-blue focus:ring-2 focus:ring-aaa-blue/20 outline-none transition-all"
+                        >
+                          <option value={SectionType.AGREEMENT}>A - Form of Agreement</option>
+                          <option value={SectionType.LOA}>B - Letter of Acceptance</option>
+                          <option value={SectionType.GENERAL}>C - General Conditions</option>
+                          <option value={SectionType.PARTICULAR}>C - Particular Conditions</option>
+                          <option value={SectionType.ADDENDUM}>D - Addendums</option>
+                          <option value={SectionType.BOQ}>I - Bills of Quantities</option>
+                          <option value={SectionType.AUTOMATION}>N - Automation Application</option>
+                          <option value={SectionType.INSTRUCTION}>P - Instruction to Tenderers</option>
+                        </select>
+                      </div>
+
+                      {/* Add button */}
+                      <button
+                        onClick={handleAddPdfToContract}
+                        disabled={!activeContractId}
+                        className={`px-8 py-3 rounded-xl text-sm font-black uppercase tracking-wider transition-all ${activeContractId
+                          ? 'bg-aaa-blue text-white hover:bg-aaa-blue/90 shadow-lg hover:shadow-xl active:scale-[0.98]'
+                          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                          }`}
+                      >
+                        Add to Contract
+                      </button>
+                    </div>
+                    {!activeContractId && (
+                      <p className="mt-3 text-xs text-amber-600 font-medium">⚠ Select a contract from the dropdown above, or go to Archive to load one</p>
+                    )}
+                  </div>
                 </div>
               )}
 
