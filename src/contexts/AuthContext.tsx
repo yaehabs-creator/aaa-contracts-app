@@ -83,6 +83,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     // Load user profile from Supabase
     const loadUserProfile = async (supabaseUser: User) => {
+      console.log('Loading profile for user:', supabaseUser.id);
       try {
         // Fetch user profile from users table
         const { data: userData, error } = await supabase
@@ -98,7 +99,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator to create your user profile.');
             await supabase.auth.signOut();
             setUser(null);
-            setAuthLoading(false);
             return;
           }
           throw error;
@@ -115,45 +115,53 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             createdBy: userData.created_by || undefined
           };
 
+          console.log('User profile loaded successfully:', profile.displayName);
           setUser(profile);
 
-          // Update last login
-          await supabase
+          // Update last login (non-blocking)
+          supabase
             .from('users')
             .update({ last_login: Date.now() })
-            .eq('uid', supabaseUser.id);
+            .eq('uid', supabaseUser.id)
+            .then(({ error }) => {
+              if (error) console.warn('Failed to update last login:', error);
+            });
         }
       } catch (error) {
         console.error('Error fetching user profile:', error);
         sessionStorage.setItem('loginError', 'Error loading your profile. Please try again or contact your administrator.');
         setUser(null);
       } finally {
+        console.log('Auth initialization complete (profile)');
         setAuthLoading(false);
+        clearTimeout(timeoutId);
       }
     };
 
     // Set timeout
     timeoutId = setTimeout(() => {
       if (authLoading) {
-        console.error('Auth initialization timeout - Supabase may not be configured correctly');
-        setAuthError('Supabase configuration error. Please check your environment variables.');
+        console.error('Auth initialization timeout - Supabase may not be configured correctly or query is hanging');
+        setAuthError('Authentication timed out. Please refresh the page.');
         setAuthLoading(false);
       }
-    }, 10000);
+    }, 12000); // Slightly longer than the app-level timeout
 
     // Get initial session
     getInitialSession();
 
     // Listen for auth state changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      clearTimeout(timeoutId);
+      console.log('Auth state change event:', event);
       setAuthError(null);
 
       if (session?.user) {
         await loadUserProfile(session.user);
       } else {
+        console.log('No session found in state change');
         setUser(null);
         setAuthLoading(false);
+        clearTimeout(timeoutId);
       }
     });
 
