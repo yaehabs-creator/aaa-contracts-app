@@ -37,8 +37,8 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   const [editingItemIndex, setEditingItemIndex] = useState<number>(-1);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  // Check if this is a clause section
-  const isClauseSection =
+  // Sections that favor Clause-style rendering for primary content
+  const isDefaultClauseSection =
     section.sectionType === SectionType.GENERAL ||
     section.sectionType === SectionType.PARTICULAR ||
     section.sectionType === SectionType.TENDER ||
@@ -48,20 +48,20 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     section.sectionType === SectionType.INSTRUCTION ||
     section.title === 'Conditions';
 
-  // Check if this is an item/document section
-  const isItemSection =
+  const isFormSection =
     section.sectionType === SectionType.AGREEMENT ||
-    section.sectionType === SectionType.LOA ||
-    section.sectionType === SectionType.DRAWINGS ||
-    section.sectionType === SectionType.BOQ ||
-    section.sectionType === SectionType.SCHEDULE ||
-    section.sectionType === SectionType.ANNEX ||
-    section.sectionType === SectionType.ADDENDUM ||
-    section.sectionType === SectionType.AUTOMATION ||
-    section.sectionType === SectionType.EXTRAS;
+    section.sectionType === SectionType.LOA;
 
   // Filter items based on search query
   const filteredItems = useMemo(() => {
+    // Debug logging for troubleshooting
+    if (section.items.length > 0) {
+      console.log(`[SectionEditor] Rendering section: ${section.title}`, {
+        type: section.sectionType,
+        itemsCount: section.items.length
+      });
+    }
+
     if (!searchQuery.trim()) {
       return section.items;
     }
@@ -243,7 +243,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           )}
         </div>
 
-        {isItemSection && (
+        {isFormSection && (
           <button
             onClick={() => setIsAddModalOpen(true)}
             className="flex items-center gap-2 px-6 py-3 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all shadow-lg"
@@ -254,7 +254,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
             Add Item
           </button>
         )}
-        {isClauseSection && onAddClause && (
+        {isDefaultClauseSection && onAddClause && (
           <button
             onClick={onAddClause}
             className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg"
@@ -273,7 +273,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           <p className="text-aaa-muted font-semibold">
             {searchQuery ? 'No items match your search' : `No items in ${section.title}`}
           </p>
-          {!searchQuery && isItemSection && (
+          {!searchQuery && isFormSection && (
             <button
               onClick={() => setIsAddModalOpen(true)}
               className="mt-4 px-6 py-2 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all"
@@ -285,7 +285,8 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
       ) : (
         <div className="grid grid-cols-1 gap-6">
           {filteredItems.map((item, index) => {
-            if (item.itemType === ItemType.CLAUSE && isClauseSection) {
+            // Priority 1: Render as Clause if it's a clause item
+            if (item.itemType === ItemType.CLAUSE) {
               const clause = sectionItemToClause(item);
               if (!clause) return null;
 
@@ -300,22 +301,22 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                   />
                 </div>
               );
-            } else if (isItemSection) {
-              return (
-                <div key={`item-${index}-${item.orderIndex}`}>
-                  <SectionItemCard
-                    item={item}
-                    onEdit={() => {
-                      setEditingItem(item);
-                      setEditingItemIndex(section.items.indexOf(item));
-                    }}
-                    onDelete={() => handleDeleteItem(section.items.indexOf(item))}
-                    searchKeywords={searchKeywords}
-                  />
-                </div>
-              );
             }
-            return null;
+
+            // Priority 2: Render as standard SectionItemCard for everything else
+            return (
+              <div key={`item-${index}-${item.orderIndex}`}>
+                <SectionItemCard
+                  item={item}
+                  onEdit={() => {
+                    setEditingItem(item);
+                    setEditingItemIndex(section.items.indexOf(item));
+                  }}
+                  onDelete={() => handleDeleteItem(section.items.indexOf(item))}
+                  searchKeywords={searchKeywords}
+                />
+              </div>
+            );
           })}
         </div>
       )}
