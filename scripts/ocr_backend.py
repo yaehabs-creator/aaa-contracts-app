@@ -56,7 +56,7 @@ async def perform_ocr(file: UploadFile = File(...)):
         
         if filename.endswith('.pdf'):
             # PaddleOCR has built-in PDF support
-            # We'll write to a temp file because PaddleOCR expects a path for PDFs
+            # We write to a temp file because PaddleOCR expects a path for PDFs
             temp_path = f"temp_{file.filename}"
             with open(temp_path, "wb") as f:
                 f.write(contents)
@@ -75,26 +75,38 @@ async def perform_ocr(file: UploadFile = File(...)):
             result = ocr.ocr(img_array, cls=True)
 
         # Flatten and format results
-        # PaddleOCR result is a list of lists (one per page)
+        # PaddleOCR result is a list of lists (one per page for PDFs, one element for images)
         extracted_text = []
         raw_results = []
+        pages = []
         
         if result:
-            for page in result:
+            for page_idx, page in enumerate(result):
+                page_lines = []
                 if page:
                     for line in page:
                         box = line[0]
                         text, confidence = line[1]
                         extracted_text.append(text)
+                        page_lines.append(text)
                         raw_results.append({
                             "text": text,
                             "confidence": float(confidence),
-                            "box": box
+                            "box": box,
+                            "page": page_idx + 1
                         })
+                
+                pages.append({
+                    "page_number": page_idx + 1,
+                    "text": "\n".join(page_lines),
+                    "line_count": len(page_lines)
+                })
 
         return {
             "text": "\n".join(extracted_text),
             "results": raw_results,
+            "pages": pages,
+            "page_count": len(pages),
             "engine": "paddle"
         }
         

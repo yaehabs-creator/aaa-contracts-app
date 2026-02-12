@@ -28,6 +28,7 @@ import { FloatingAIButton } from './src/components/FloatingAIButton';
 import { useAuth } from './src/contexts/AuthContext';
 import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from './src/services/textPreprocessor';
 import { suggestCategories, CategorySuggestion } from './services/categorySuggestionService';
+import { PaddleOcrService } from './src/services/paddleOcrService';
 import { normalizeClauseId, generateClauseIdVariants } from './src/utils/navigation';
 
 const REASSURING_STAGES = [
@@ -968,103 +969,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     }
   };
 
-  // Helper function to extract text from a single page with improved accuracy
-  const extractTextFromPage = async (page: any, pageNumber: number, viewport: any): Promise<string> => {
-    const textContent = await page.getTextContent();
-    const items = textContent.items as any[];
-
-    if (items.length === 0) {
-      return `--- PAGE ${pageNumber} ---\n`;
-    }
-
-    // Get page dimensions for multi-column detection
-    const pageWidth = viewport.width;
-    const columnGapThreshold = Math.max(100, pageWidth * 0.2); // 100px or 20% of page width
-
-    // Process items to calculate font sizes and line heights
-    const processedItems = items.map((item: any) => {
-      const transform = item.transform;
-      const x = transform[4];
-      const y = transform[5];
-
-      // Calculate font size from transform matrix (scale in Y direction)
-      const fontSize = Math.abs(transform[3] || 12); // Default to 12 if not available
-
-      // Estimate line height as 1.2x font size (common in documents)
-      const lineHeight = fontSize * 1.2;
-
-      // Calculate character width estimate
-      const charWidth = fontSize * 0.6; // Rough estimate
-
-      return {
-        text: item.str,
-        x,
-        y,
-        fontSize,
-        lineHeight,
-        charWidth,
-        transform
-      };
-    });
-
-    // Sort items: top to bottom (descending Y), then left to right (ascending X)
-    processedItems.sort((a, b) => {
-      // Primary sort: Y position (top to bottom) - higher Y comes first
-      const yDiff = Math.abs(b.y - a.y);
-      if (yDiff > Math.min(a.lineHeight * 0.5, b.lineHeight * 0.5)) {
-        return b.y - a.y; // Different lines - sort by Y
-      }
-      // Same line (or very close) - sort left to right
-      return a.x - b.x;
-    });
-
-    let pageText = `--- PAGE ${pageNumber} ---\n`;
-    let lastY = -1;
-    let lastX = -1;
-    let lastLineHeight = 0;
-
-    for (const item of processedItems) {
-      const currentY = item.y;
-      const currentX = item.x;
-
-      // Detect paragraph breaks: vertical gap > 2x line height (moving down significantly)
-      const verticalGap = lastY !== -1 ? lastY - currentY : 0; // Positive when moving down
-      const isParagraphBreak = lastY !== -1 && verticalGap > Math.max(item.lineHeight * 2, lastLineHeight * 2);
-
-      // Detect line breaks: vertical gap > 0.5x line height (moving down to new line)
-      const isLineBreak = lastY !== -1 && verticalGap > Math.min(item.lineHeight * 0.5, lastLineHeight * 0.5);
-
-      // Detect multi-column: large X gap (new column)
-      const isNewColumn = lastX !== -1 && Math.abs(currentX - lastX) > columnGapThreshold && !isLineBreak && !isParagraphBreak;
-
-      if (isParagraphBreak) {
-        pageText += "\n\n"; // Double newline for paragraph
-      } else if (isLineBreak || isNewColumn) {
-        pageText += "\n"; // Single newline for line break or column
-      }
-
-      // Handle spacing between words on same line
-      if (!isLineBreak && !isParagraphBreak && !isNewColumn && lastX !== -1) {
-        const xGap = currentX - (lastX + (lastLineHeight * 0.6)); // Estimate end of last word
-        const expectedSpacing = item.charWidth; // Expected space between words
-
-        // If gap is larger than expected spacing, add space
-        if (xGap > expectedSpacing * 1.5) {
-          pageText += " ";
-        } else if (xGap > expectedSpacing * 0.5) {
-          pageText += " "; // Still add space for smaller gaps
-        }
-      }
-
-      pageText += item.text;
-
-      lastY = currentY;
-      lastX = currentX + (item.text.length * item.charWidth); // Estimate end of current text
-      lastLineHeight = item.lineHeight;
-    }
-
-    return pageText;
-  };
+  // PaddleOCR-based PDF text extraction (replaces old pdfjsLib approach)
 
   // Remove headers and footers by detecting repeated text
   const removeHeadersFooters = (pages: string[]): string[] => {
@@ -1119,83 +1024,36 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   };
 
   const extractPagesFromPdf = async (fileData: FileData): Promise<string[]> => {
-    setLiveStatus({ message: 'Loading PDF...', detail: 'Initializing document', isActive: true });
+    setLiveStatus({ message: 'Loading PDF...', detail: 'Connecting to PaddleOCR engine', isActive: true });
 
-    const loadingTask = (window as any).pdfjsLib.getDocument({ data: atob(fileData.data) });
-    const pdf = await loadingTask.promise;
-    const totalPages = pdf.numPages;
-    const batchSize = 6; // Process 4-8 pages at a time (using 6 as balanced)
-
-    setLiveStatus({ message: 'Extracting text...', detail: `Processing ${totalPages} pages`, isActive: true });
-
-    const allPages: string[] = [];
-    const failedPages: number[] = [];
-    const pageTimings: number[] = [];
-
-    // Process pages in batches
-    for (let batchStart = 1; batchStart <= totalPages; batchStart += batchSize) {
-      const batchEnd = Math.min(batchStart + batchSize - 1, totalPages);
-      const batchPageNumbers = Array.from({ length: batchEnd - batchStart + 1 }, (_, i) => batchStart + i);
-
-      // Process batch in parallel
-      const batchResults = await Promise.allSettled(
-        batchPageNumbers.map(async (pageNum) => {
-          const pageStartTime = Date.now();
-          try {
-            const page = await pdf.getPage(pageNum);
-            const viewport = page.getViewport({ scale: 1.0 });
-            const pageText = await extractTextFromPage(page, pageNum, viewport);
-            const pageTime = Date.now() - pageStartTime;
-            return { pageNum, pageText, pageTime };
-          } catch (error: any) {
-            failedPages.push(pageNum);
-            console.error(`Failed to extract page ${pageNum}:`, error);
-            // Return placeholder for failed page
-            return { pageNum, pageText: `--- PAGE ${pageNum} ---\n[Error extracting page content]`, pageTime: 0 };
-          }
-        })
-      );
-
-      // Collect successful pages and timings
-      batchResults.forEach((result) => {
-        if (result.status === 'fulfilled') {
-          const { pageText, pageTime } = result.value;
-          allPages.push(pageText);
-          if (pageTime > 0) {
-            pageTimings.push(pageTime);
-          }
-        } else {
-          console.error('Batch processing error:', result.reason);
-        }
-      });
-
-      // Update progress
-      const processed = Math.min(batchEnd, totalPages);
-      const avgTimePerPage = pageTimings.length > 0
-        ? pageTimings.reduce((a, b) => a + b, 0) / pageTimings.length
-        : 0;
-      const remainingPages = totalPages - processed;
-      const estimatedTimeRemaining = Math.ceil(remainingPages * avgTimePerPage / 1000);
-
-      setProgress(Math.floor((processed / totalPages) * 30 + 5)); // 5-35% for extraction
-      setLiveStatus({
-        message: 'Extracting text...',
-        detail: `Page ${processed} of ${totalPages}${estimatedTimeRemaining > 0 ? ` (~${estimatedTimeRemaining}s remaining)` : ''}`,
-        isActive: true
-      });
+    // Check PaddleOCR availability first
+    const ocrAvailable = await PaddleOcrService.checkAvailability();
+    if (!ocrAvailable) {
+      throw new Error('PaddleOCR service is not running. Please start it with: py -3.12 scripts/ocr_backend.py');
     }
 
+    setLiveStatus({ message: 'Extracting text...', detail: 'GPU-accelerated OCR processing (this may take a moment for large PDFs)', isActive: true });
+    setProgress(10);
+
+    // Send the entire PDF to PaddleOCR for GPU-accelerated extraction
+    const startTime = Date.now();
+    const pages = await PaddleOcrService.processBase64Pdf(fileData.data, fileData.name || 'document.pdf');
+    const extractionTime = ((Date.now() - startTime) / 1000).toFixed(1);
+
+    console.log(`PaddleOCR extracted ${pages.length} pages in ${extractionTime}s`);
+    setProgress(35);
+
     // Remove headers and footers
-    if (allPages.length > 0) {
+    if (pages.length > 0) {
       setLiveStatus({ message: 'Cleaning text...', detail: 'Removing headers and footers', isActive: true });
       setProgress(36);
-      const cleanedPages = removeHeadersFooters(allPages);
+      const cleanedPages = removeHeadersFooters(pages);
       setProgress(40);
-      setLiveStatus({ message: 'Extraction complete', detail: `Processed ${cleanedPages.length} pages${failedPages.length > 0 ? ` (${failedPages.length} failed)` : ''}`, isActive: false });
+      setLiveStatus({ message: 'Extraction complete', detail: `Processed ${cleanedPages.length} pages in ${extractionTime}s (PaddleOCR)`, isActive: false });
       return cleanedPages;
     }
 
-    return allPages;
+    return pages;
   };
 
   const handleTextAnalysis = async (general: string, particular: string) => {
