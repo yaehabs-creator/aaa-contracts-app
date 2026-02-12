@@ -15,14 +15,20 @@ export type ConditionType = 'General' | 'Particular';
 export enum SectionType {
   AGREEMENT = 'AGREEMENT',
   LOA = 'LOA',
+  TENDER = 'TENDER',
   GENERAL = 'GENERAL',
   PARTICULAR = 'PARTICULAR',
+  REQUIREMENTS = 'REQUIREMENTS',
+  PROPOSAL = 'PROPOSAL',
+  DRAWINGS = 'DRAWINGS',
+  SPECIFICATION = 'SPECIFICATION',
   ADDENDUM = 'ADDENDUM',
   BOQ = 'BOQ',
   SCHEDULE = 'SCHEDULE',
   ANNEX = 'ANNEX',
   AUTOMATION = 'AUTOMATION',
-  INSTRUCTION = 'INSTRUCTION'
+  INSTRUCTION = 'INSTRUCTION',
+  EXTRAS = 'EXTRAS'
 }
 
 export enum ItemType {
@@ -489,6 +495,7 @@ export function validateFileName(filename: string): FileNamingValidation {
       sequence: parseInt(seq, 10),
       name,
       extension: ext
-    }
+    },
+    errors: []
   };
 }

@@ -86,8 +86,8 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
           items: []
         },
         {
-          sectionType: SectionType.GENERAL,
-          title: 'General Conditions',
+          sectionType: SectionType.TENDER,
+          title: 'Letter of Tender',
           items: []
         },
         {
@@ -96,8 +96,28 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
           items: []
         },
         {
-          sectionType: SectionType.ADDENDUM,
-          title: 'Addendums',
+          sectionType: SectionType.GENERAL,
+          title: 'General Conditions',
+          items: []
+        },
+        {
+          sectionType: SectionType.REQUIREMENTS,
+          title: 'Employer\'s Requirements',
+          items: []
+        },
+        {
+          sectionType: SectionType.SPECIFICATION,
+          title: 'Specification',
+          items: []
+        },
+        {
+          sectionType: SectionType.PROPOSAL,
+          title: 'Contractor\'s Proposal',
+          items: []
+        },
+        {
+          sectionType: SectionType.DRAWINGS,
+          title: 'Drawings',
           items: []
         },
         {
@@ -106,13 +126,33 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
           items: []
         },
         {
-          sectionType: SectionType.AUTOMATION,
-          title: 'Automation Application',
+          sectionType: SectionType.SCHEDULE,
+          title: 'Schedules',
+          items: []
+        },
+        {
+          sectionType: SectionType.ANNEX,
+          title: 'Annexes',
+          items: []
+        },
+        {
+          sectionType: SectionType.ADDENDUM,
+          title: 'Addendums',
           items: []
         },
         {
           sectionType: SectionType.INSTRUCTION,
           title: 'Instruction to Tenderers',
+          items: []
+        },
+        {
+          sectionType: SectionType.AUTOMATION,
+          title: 'Automation Application',
+          items: []
+        },
+        {
+          sectionType: SectionType.EXTRAS,
+          title: 'Extras/Other Documents',
           items: []
         }
       ],
@@ -158,9 +198,9 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
       items: []
     },
     {
-      sectionType: SectionType.GENERAL,
-      title: 'General Conditions',
-      items: generalItems
+      sectionType: SectionType.TENDER,
+      title: 'Letter of Tender',
+      items: []
     },
     {
       sectionType: SectionType.PARTICULAR,
@@ -168,8 +208,28 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
       items: particularItems
     },
     {
-      sectionType: SectionType.ADDENDUM,
-      title: 'Addendums',
+      sectionType: SectionType.GENERAL,
+      title: 'General Conditions',
+      items: generalItems
+    },
+    {
+      sectionType: SectionType.REQUIREMENTS,
+      title: 'Employer\'s Requirements',
+      items: []
+    },
+    {
+      sectionType: SectionType.SPECIFICATION,
+      title: 'Specification',
+      items: []
+    },
+    {
+      sectionType: SectionType.PROPOSAL,
+      title: 'Contractor\'s Proposal',
+      items: []
+    },
+    {
+      sectionType: SectionType.DRAWINGS,
+      title: 'Drawings',
       items: []
     },
     {
@@ -178,13 +238,33 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
       items: []
     },
     {
-      sectionType: SectionType.AUTOMATION,
-      title: 'Automation Application',
+      sectionType: SectionType.SCHEDULE,
+      title: 'Schedules',
+      items: []
+    },
+    {
+      sectionType: SectionType.ANNEX,
+      title: 'Annexes',
+      items: []
+    },
+    {
+      sectionType: SectionType.ADDENDUM,
+      title: 'Addendums',
       items: []
     },
     {
       sectionType: SectionType.INSTRUCTION,
       title: 'Instruction to Tenderers',
+      items: []
+    },
+    {
+      sectionType: SectionType.AUTOMATION,
+      title: 'Automation Application',
+      items: []
+    },
+    {
+      sectionType: SectionType.EXTRAS,
+      title: 'Extras/Other Documents',
       items: []
     }
   ];
@@ -210,12 +290,20 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
     const requiredTypes = [
       SectionType.AGREEMENT,
       SectionType.LOA,
-      SectionType.GENERAL,
+      SectionType.TENDER,
       SectionType.PARTICULAR,
-      SectionType.ADDENDUM,
+      SectionType.GENERAL,
+      SectionType.REQUIREMENTS,
+      SectionType.SPECIFICATION,
+      SectionType.PROPOSAL,
+      SectionType.DRAWINGS,
       SectionType.BOQ,
+      SectionType.SCHEDULE,
+      SectionType.ANNEX,
+      SectionType.ADDENDUM,
+      SectionType.INSTRUCTION,
       SectionType.AUTOMATION,
-      SectionType.INSTRUCTION
+      SectionType.EXTRAS
     ];
 
     const missingTypes = requiredTypes.filter(type => !sectionTypes.includes(type));
@@ -227,12 +315,20 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         let title = '';
         if (type === SectionType.AGREEMENT) title = 'Form of Agreement';
         else if (type === SectionType.LOA) title = 'Letter of Acceptance';
+        else if (type === SectionType.TENDER) title = 'Letter of Tender';
         else if (type === SectionType.GENERAL) title = 'General Conditions';
         else if (type === SectionType.PARTICULAR) title = 'Particular Conditions';
+        else if (type === SectionType.REQUIREMENTS) title = 'Employer\'s Requirements';
+        else if (type === SectionType.SPECIFICATION) title = 'Specification';
+        else if (type === SectionType.PROPOSAL) title = 'Contractor\'s Proposal';
+        else if (type === SectionType.DRAWINGS) title = 'Drawings';
         else if (type === SectionType.ADDENDUM) title = 'Addendums';
         else if (type === SectionType.BOQ) title = 'Bills of Quantities';
+        else if (type === SectionType.SCHEDULE) title = 'Schedules';
+        else if (type === SectionType.ANNEX) title = 'Annexes';
         else if (type === SectionType.AUTOMATION) title = 'Automation Application';
         else if (type === SectionType.INSTRUCTION) title = 'Instruction to Tenderers';
+        else if (type === SectionType.EXTRAS) title = 'Extras/Other Documents';
         else if (type === 'ANNEX1') title = 'Annex 1';
         else if (type === 'ANNEX2') title = 'Annex 2';
 
@@ -248,12 +344,20 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         const order = [
           SectionType.AGREEMENT,
           SectionType.LOA,
-          SectionType.GENERAL,
+          SectionType.TENDER,
           SectionType.PARTICULAR,
-          SectionType.ADDENDUM,
+          SectionType.GENERAL,
+          SectionType.REQUIREMENTS,
+          SectionType.SPECIFICATION,
+          SectionType.PROPOSAL,
+          SectionType.DRAWINGS,
           SectionType.BOQ,
+          SectionType.SCHEDULE,
+          SectionType.ANNEX,
+          SectionType.ADDENDUM,
+          SectionType.INSTRUCTION,
           SectionType.AUTOMATION,
-          SectionType.INSTRUCTION
+          SectionType.EXTRAS
         ];
         return order.indexOf(a.sectionType) - order.indexOf(b.sectionType);
       });

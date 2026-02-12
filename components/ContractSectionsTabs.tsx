@@ -186,13 +186,60 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     };
   }, [activeTab, generalSection, particularSection, sortMode, categories]);
 
+  // Grouping logic for FIDIC Folders
+  const folderGroups = useMemo(() => {
+    const groups = [
+      {
+        id: 'FORMS',
+        label: 'Forms',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        ),
+        types: [SectionType.AGREEMENT, SectionType.LOA, SectionType.TENDER]
+      },
+      {
+        id: 'CONDITIONS',
+        label: 'Conditions',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+          </svg>
+        ),
+        types: ['CONDITIONS' as any]
+      },
+      {
+        id: 'TECHNICAL',
+        label: 'Technical',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        ),
+        types: [SectionType.REQUIREMENTS, SectionType.SPECIFICATION, SectionType.PROPOSAL, SectionType.DRAWINGS]
+      },
+      {
+        id: 'SCHEDULES',
+        label: 'Schedules',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        ),
+        types: [SectionType.BOQ, SectionType.SCHEDULE, SectionType.ANNEX, SectionType.ADDENDUM, SectionType.INSTRUCTION, SectionType.AUTOMATION, SectionType.EXTRAS]
+      }
+    ];
+    return groups;
+  }, []);
+
   // Get active section based on tab
   const activeSection = useMemo(() => {
     if (activeTab === 'CONDITIONS') {
       return combinedConditionsSection;
     }
-    return allSections.find(s => s.sectionType === activeTab) || tabSections[0];
-  }, [activeTab, allSections, tabSections, combinedConditionsSection]);
+    return allSections.find(s => s.sectionType === activeTab);
+  }, [activeTab, allSections, combinedConditionsSection]);
 
   const handleSectionUpdate = (updatedSection: ContractSection) => {
     const updatedSections = allSections.map(s =>
@@ -448,52 +495,64 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
   return (
     <div className="bg-white border border-aaa-border rounded-3xl shadow-premium overflow-hidden">
-      {/* Header with Tabs and Save Button */}
+      {/* Header with Categorized Groups */}
       <div className="border-b border-aaa-border bg-slate-50/50">
-        <div className="flex items-center justify-between">
-          {/* Tabs */}
-          <div className="flex overflow-x-auto custom-scrollbar flex-1">
-            {/* Conditions Tab (Combined GENERAL + PARTICULAR) */}
-            <button
-              onClick={() => setActiveTab('CONDITIONS')}
-              className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${activeTab === 'CONDITIONS'
-                  ? 'border-aaa-blue text-aaa-blue bg-white'
-                  : 'border-transparent text-aaa-muted hover:text-aaa-blue hover:bg-white/50'
-                }`}
-            >
-              Conditions
-              {((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0 && (
-                <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${activeTab === 'CONDITIONS'
-                    ? 'bg-aaa-blue/10 text-aaa-blue'
-                    : 'bg-aaa-bg text-aaa-muted'
-                  }`}>
-                  {(generalSection?.items.length || 0) + (particularSection?.items.length || 0)}
-                </span>
-              )}
-            </button>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between">
+          {/* Folders Navigation */}
+          <div className="flex overflow-x-auto custom-scrollbar flex-1 border-r border-aaa-border">
+            {folderGroups.map((group) => {
+              const groupItemsCount = group.types.reduce((acc, type) => {
+                if (type === 'CONDITIONS') {
+                  const genCount = generalSection?.items.length || 0;
+                  const parCount = particularSection?.items.length || 0;
+                  return acc + genCount + parCount;
+                }
+                const section = allSections.find(s => s.sectionType === type);
+                return acc + (section?.items.length || 0);
+              }, 0);
 
-            {/* Other Section Tabs (if any) */}
-            {tabSections.map((section) => (
-              <button
-                key={section.sectionType}
-                onClick={() => setActiveTab(section.sectionType)}
-                className={`px-8 py-4 text-sm font-black uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${activeTab === section.sectionType
-                    ? 'border-aaa-blue text-aaa-blue bg-white'
-                    : 'border-transparent text-aaa-muted hover:text-aaa-blue hover:bg-white/50'
-                  }`}
-              >
-                {section.title}
-                {section.items.length > 0 && (
-                  <span className={`ml-2 px-2 py-0.5 rounded-full text-[10px] ${activeTab === section.sectionType
-                      ? 'bg-aaa-blue/10 text-aaa-blue'
-                      : 'bg-aaa-bg text-aaa-muted'
+              const isGroupActive = group.types.includes(activeTab as any);
+
+              return (
+                <div key={group.id} className={`flex flex-col border-r border-aaa-border last:border-r-0 min-w-[200px] ${isGroupActive ? 'bg-white' : ''}`}>
+                  <div className={`px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] border-b flex items-center gap-2 ${isGroupActive ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-slate-100 text-aaa-muted border-aaa-border'
                     }`}>
-                    {section.items.length}
-                  </span>
-                )}
-              </button>
-            ))}
+                    {group.icon}
+                    {group.label}
+                    {groupItemsCount > 0 && (
+                      <span className={`ml-auto px-1.5 py-0.5 rounded-md text-[9px] ${isGroupActive ? 'bg-white text-aaa-blue' : 'bg-aaa-border text-aaa-muted'}`}>
+                        {groupItemsCount}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap p-1 gap-1">
+                    {group.types.map((type) => {
+                      const section = type === 'CONDITIONS' ? { title: 'Conditions', items: [] } : allSections.find(s => s.sectionType === type);
+                      if (!section && type !== 'CONDITIONS') return null;
 
+                      const isActive = activeTab === type;
+                      const hasItems = type === 'CONDITIONS'
+                        ? ((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0
+                        : (section?.items.length || 0) > 0;
+
+                      return (
+                        <button
+                          key={type as string}
+                          onClick={() => setActiveTab(type as any)}
+                          className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition-all flex items-center gap-1.5 ${isActive
+                            ? 'bg-aaa-bg text-aaa-blue shadow-sm'
+                            : 'text-aaa-muted hover:text-aaa-blue hover:bg-aaa-bg/30'
+                            }`}
+                        >
+                          {type === 'CONDITIONS' ? 'Conditions' : section?.title.split(' ').pop()}
+                          {hasItems && <span className="w-1 h-1 rounded-full bg-aaa-blue"></span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Sort Controls (only show for Conditions tab) */}
@@ -503,8 +562,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               <button
                 onClick={() => onSortModeChange('default')}
                 className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'default'
-                    ? 'bg-aaa-blue text-white border-aaa-blue'
-                    : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
+                  ? 'bg-aaa-blue text-white border-aaa-blue'
+                  : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
                   }`}
               >
                 Default
@@ -512,8 +571,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               <button
                 onClick={() => onSortModeChange('status')}
                 className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'status'
-                    ? 'bg-aaa-blue text-white border-aaa-blue'
-                    : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
+                  ? 'bg-aaa-blue text-white border-aaa-blue'
+                  : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
                   }`}
                 title="Group by: Added, Modified, GC-only"
               >
@@ -522,8 +581,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               <button
                 onClick={() => onSortModeChange('chapter')}
                 className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'chapter'
-                    ? 'bg-aaa-blue text-white border-aaa-blue'
-                    : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
+                  ? 'bg-aaa-blue text-white border-aaa-blue'
+                  : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
                   }`}
                 title="Sort by clause number"
               >
@@ -533,8 +592,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
                 <button
                   onClick={() => onSortModeChange('category')}
                   className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'category'
-                      ? 'bg-purple-500 text-white border-purple-500'
-                      : 'bg-white text-aaa-muted border-aaa-border hover:border-purple-500 hover:text-purple-600'
+                    ? 'bg-purple-500 text-white border-purple-500'
+                    : 'bg-white text-aaa-muted border-aaa-border hover:border-purple-500 hover:text-purple-600'
                     }`}
                   title="Group by categories from Admin Editor"
                 >
@@ -556,10 +615,10 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               onClick={handleSave}
               disabled={isSaving}
               className={`px-6 py-2.5 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ${isSaving
-                  ? 'bg-aaa-bg text-aaa-muted cursor-not-allowed'
-                  : saveStatus === 'success'
-                    ? 'bg-green-500 text-white hover:bg-green-600'
-                    : 'bg-aaa-blue text-white hover:bg-aaa-blue/90 shadow-md hover:shadow-lg'
+                ? 'bg-aaa-bg text-aaa-muted cursor-not-allowed'
+                : saveStatus === 'success'
+                  ? 'bg-green-500 text-white hover:bg-green-600'
+                  : 'bg-aaa-blue text-white hover:bg-aaa-blue/90 shadow-md hover:shadow-lg'
                 }`}
             >
               {isSaving ? (

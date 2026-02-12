@@ -1539,12 +1539,20 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         const sectionTitles: Record<string, string> = {
           [SectionType.AGREEMENT]: 'Form of Agreement',
           [SectionType.LOA]: 'Letter of Acceptance',
+          [SectionType.TENDER]: 'Letter of Tender',
           [SectionType.GENERAL]: 'General Conditions',
           [SectionType.PARTICULAR]: 'Particular Conditions',
+          [SectionType.REQUIREMENTS]: 'Employer\'s Requirements',
+          [SectionType.SPECIFICATION]: 'Specification',
+          [SectionType.PROPOSAL]: 'Contractor\'s Proposal',
+          [SectionType.DRAWINGS]: 'Drawings',
           [SectionType.ADDENDUM]: 'Addendums',
           [SectionType.BOQ]: 'Bills of Quantities',
+          [SectionType.SCHEDULE]: 'Schedules',
+          [SectionType.ANNEX]: 'Annexes',
           [SectionType.AUTOMATION]: 'Automation Application',
           [SectionType.INSTRUCTION]: 'Instruction to Tenderers',
+          [SectionType.EXTRAS]: 'Extras/Other Documents',
         };
         targetSection = {
           sectionType: pdfTargetSection,
@@ -2614,12 +2622,20 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                         >
                           <option value={SectionType.AGREEMENT}>A - Form of Agreement</option>
                           <option value={SectionType.LOA}>B - Letter of Acceptance</option>
-                          <option value={SectionType.GENERAL}>C - General Conditions</option>
+                          <option value={SectionType.TENDER}>T - Letter of Tender</option>
                           <option value={SectionType.PARTICULAR}>C - Particular Conditions</option>
-                          <option value={SectionType.ADDENDUM}>D - Addendums</option>
+                          <option value={SectionType.GENERAL}>C - General Conditions</option>
+                          <option value={SectionType.REQUIREMENTS}>E - Employer's Requirements</option>
+                          <option value={SectionType.SPECIFICATION}>S - Specification</option>
+                          <option value={SectionType.PROPOSAL}>P - Contractor's Proposal</option>
+                          <option value={SectionType.DRAWINGS}>D - Drawings</option>
                           <option value={SectionType.BOQ}>I - Bills of Quantities</option>
+                          <option value={SectionType.SCHEDULE}>J - Schedules</option>
+                          <option value={SectionType.ANNEX}>K - Annexes</option>
+                          <option value={SectionType.ADDENDUM}>L - Addendums</option>
+                          <option value={SectionType.INSTRUCTION}>M - Instruction to Tenderers</option>
                           <option value={SectionType.AUTOMATION}>N - Automation Application</option>
-                          <option value={SectionType.INSTRUCTION}>P - Instruction to Tenderers</option>
+                          <option value={SectionType.EXTRAS}>O - Extras/Other</option>
                         </select>
                       </div>
 
