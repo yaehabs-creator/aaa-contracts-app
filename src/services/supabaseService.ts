@@ -314,7 +314,7 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
   }
 };
 
-export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> => {
+export const getAllContractsFromSupabase = async (options: { metadataOnly?: boolean } = {}): Promise<SavedContract[]> => {
   try {
 
     if (!supabase) {
@@ -360,14 +360,18 @@ export const getAllContractsFromSupabase = async (): Promise<SavedContract[]> =>
     }
 
     console.log(`Successfully fetched ${contractsData?.length || 0} contracts from database`);
-    if (contractsData && contractsData.length > 0) {
-      console.log('Contract IDs:', contractsData.map(c => c.id));
-      console.log('Contract names:', contractsData.map(c => c.name));
-    } else {
-      console.log('No contracts found in database. This could mean:');
-      console.log('1. No contracts have been created yet');
-      console.log('2. RLS policies are blocking access');
-      console.log('3. User is not authenticated');
+
+    // If only metadata is requested, return the raw metadata without loading subcollections/sections
+    if (options.metadataOnly) {
+      return (contractsData || []).map(row => ({
+        id: row.id,
+        name: row.name,
+        timestamp: row.timestamp,
+        metadata: row.metadata,
+        clauses: null,
+        sections: null,
+        uses_subcollections: row.uses_subcollections
+      } as SavedContract));
     }
 
     // Load full contract data (including subcollections if needed)

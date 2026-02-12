@@ -1,9 +1,9 @@
 
 import { SavedContract } from "../types";
-import { 
-  saveContractToSupabase, 
-  getAllContractsFromSupabase, 
-  deleteContractFromSupabase 
+import {
+  saveContractToSupabase,
+  getAllContractsFromSupabase,
+  deleteContractFromSupabase
 } from "../src/services/supabaseService";
 
 // Legacy IndexedDB functions - kept for backward compatibility
@@ -32,8 +32,8 @@ export const saveContractToDB = async (contract: SavedContract): Promise<void> =
   return saveContractToSupabase(contract);
 };
 
-export const getAllContracts = async (): Promise<SavedContract[]> => {
-  return getAllContractsFromSupabase();
+export const getAllContracts = async (options?: { metadataOnly?: boolean }): Promise<SavedContract[]> => {
+  return getAllContractsFromSupabase(options);
 };
 
 export const deleteContractFromDB = async (id: string): Promise<void> => {

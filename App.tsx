@@ -6,19 +6,24 @@ import { callAIProxy } from './src/services/aiProxyClient';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
 import { getContractFromSupabase } from './src/services/supabaseService';
 import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
-import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard';
-import { Dashboard } from './components/Dashboard';
-import { CategoryLedger } from './components/CategoryLedger';
-import { ComparisonModal } from './components/ComparisonModal';
-import { AddClauseModal } from './components/AddClauseModal';
-import { CategoryManager } from './components/CategoryManager';
-import { CategorySuggestionsModal } from './components/CategorySuggestionsModal';
+// import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard'; // Lazy loaded below
+import { groupClausesByParent } from './components/GroupedClauseCard';
 import { CategoryManagerService } from './services/categoryManagerService';
 import { ContractSectionsTabs } from './components/ContractSectionsTabs';
+
+// Lazy load heavy components for performance
+const ComparisonModal = React.lazy(() => import('./components/ComparisonModal').then(m => ({ default: m.ComparisonModal })));
+const AddClauseModal = React.lazy(() => import('./components/AddClauseModal').then(m => ({ default: m.AddClauseModal })));
+const CategoryManager = React.lazy(() => import('./components/CategoryManager').then(m => ({ default: m.CategoryManager })));
+const CategorySuggestionsModal = React.lazy(() => import('./components/CategorySuggestionsModal').then(m => ({ default: m.CategorySuggestionsModal })));
+const CategoryLedger = React.lazy(() => import('./components/CategoryLedger').then(m => ({ default: m.CategoryLedger })));
+const Dashboard = React.lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
+const AIBotSidebar = React.lazy(() => import('./src/components/AIBotSidebar').then(m => ({ default: m.AIBotSidebar })));
+const GroupedClauseCard = React.lazy(() => import('./components/GroupedClauseCard').then(m => ({ default: m.GroupedClauseCard })));
 import { ensureContractHasSections, getAllClausesFromContract, clauseToSectionItem, sectionItemToClause } from './services/contractMigrationService';
 import { ItemType } from './types';
 import { AppWrapper } from './src/components/AppWrapper';
-import { AIBotSidebar } from './src/components/AIBotSidebar';
+// import { AIBotSidebar } from './src/components/AIBotSidebar'; // Lazy loaded above
 import { FloatingAIButton } from './src/components/FloatingAIButton';
 import { useAuth } from './src/contexts/AuthContext';
 import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from './src/services/textPreprocessor';
@@ -365,9 +370,10 @@ const App: React.FC = () => {
 
   const refreshLibrary = async () => {
     try {
-      console.log('Refreshing library...');
-      const contracts = await getAllContracts();
-      console.log(`Loaded ${contracts?.length || 0} contracts into library`);
+      console.log('Refreshing library (metadata only)...');
+      // Use metadataOnly: true to speed up initial load
+      const contracts = await getAllContracts({ metadataOnly: true });
+      console.log(`Loaded ${contracts?.length || 0} contracts (metadata) into library`);
       setLibrary(contracts || []);
     } catch (err: any) {
       console.error("Library load failed:", err?.message);
@@ -2611,7 +2617,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                     </div>
                   </div>
 
-                  <Dashboard clauses={clauses} />
+                  <React.Suspense fallback={<div className="h-64 flex items-center justify-center bg-aaa-bg/30 rounded-3xl border border-aaa-border animate-pulse"><p className="text-xs font-black uppercase tracking-[0.2em] text-aaa-muted">Loading Analytics...</p></div>}>
+                    <Dashboard clauses={clauses} />
+                  </React.Suspense>
 
                   {(searchResults || searchError || isSearching) && (
                     <div className="bg-white p-10 rounded-[32px] border border-aaa-blue/10 shadow-premium animate-in slide-in-from-bottom-6">
@@ -2709,23 +2717,25 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       });
                       setContract(fallbackContract);
                       return (
-                        <ContractSectionsTabs
-                          contract={fallbackContract}
-                          onUpdate={async (updatedContract) => {
-                            setContract(updatedContract);
-                            setClauses(getClausesWithProcessedLinks(updatedContract));
-                          }}
-                          onSave={async (updatedContract) => {
-                            await performSaveContract(updatedContract);
-                          }}
-                          onEditClause={handleEditClause}
-                          onCompareClause={setCompareClause}
-                          onDeleteClause={handleDeleteClause}
-                          onReorderClause={handleReorder}
-                          onAddClause={() => setIsAddModalOpen(true)}
-                          sortMode={sortMode}
-                          onSortModeChange={setSortMode}
-                        />
+                        <React.Suspense fallback={<div className="py-20 flex flex-col items-center justify-center gap-4 text-aaa-muted"><div className="w-8 h-8 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" /><p className="text-xs font-black uppercase tracking-[0.3em]">Opening Contract Structure...</p></div>}>
+                          <ContractSectionsTabs
+                            contract={fallbackContract}
+                            onUpdate={async (updatedContract) => {
+                              setContract(updatedContract);
+                              setClauses(getClausesWithProcessedLinks(updatedContract));
+                            }}
+                            onSave={async (updatedContract) => {
+                              await performSaveContract(updatedContract);
+                            }}
+                            onEditClause={handleEditClause}
+                            onCompareClause={setCompareClause}
+                            onDeleteClause={handleDeleteClause}
+                            onReorderClause={handleReorder}
+                            onAddClause={() => setIsAddModalOpen(true)}
+                            sortMode={sortMode}
+                            onSortModeChange={setSortMode}
+                          />
+                        </React.Suspense>
                       );
                     })()
                   ) : (
@@ -3103,71 +3113,41 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
             </main>
           </div>
 
-          {compareClause && (
-            <ComparisonModal
-              baseClause={compareClause}
-              allClauses={clauses}
-              onClose={() => setCompareClause(null)}
-              onUpdateClause={handleUpdateClause}
-            />
-          )}
+          <React.Suspense fallback={null}>
+            {compareClause && (
+              <ComparisonModal
+                baseClause={compareClause}
+                allClauses={clauses}
+                onClose={() => setCompareClause(null)}
+                onUpdateClause={handleUpdateClause}
+              />
+            )}
+          </React.Suspense>
 
-          {isAddModalOpen && (
-            <AddClauseModal
-              contractId={activeContractId || 'current-contract'}
-              onClose={() => {
-                setIsAddModalOpen(false);
-                setEditingClause(null);
-              }}
-              onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
-              editingClause={editingClause}
-            />
-          )}
+          <React.Suspense fallback={null}>
+            {isAddModalOpen && (
+              <AddClauseModal
+                contractId={activeContractId || 'current-contract'}
+                onClose={() => {
+                  setIsAddModalOpen(false);
+                  setEditingClause(null);
+                }}
+                onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
+                editingClause={editingClause}
+              />
+            )}
+          </React.Suspense>
 
-          {showCategorySuggestions && categorySuggestions.length > 0 && (
-            <CategorySuggestionsModal
-              suggestions={categorySuggestions}
-              clauses={clauses}
-              onAccept={(suggestion) => {
-                // Assign clauses to category using CategoryManagerService
-                const categoryService = new CategoryManagerService();
-                categoryService.initialize(clauses);
+          <React.Suspense fallback={null}>
+            {showCategorySuggestions && categorySuggestions.length > 0 && (
+              <CategorySuggestionsModal
+                suggestions={categorySuggestions}
+                clauses={clauses}
+                onAccept={(suggestion) => {
+                  // Assign clauses to category using CategoryManagerService
+                  const categoryService = new CategoryManagerService();
+                  categoryService.initialize(clauses);
 
-                // Create category if it doesn't exist (ignore error if already exists)
-                categoryService.processAction({
-                  action: 'create_category',
-                  category_name: suggestion.categoryName
-                });
-
-                // Add clauses to category
-                const updatedClauses = [...clauses];
-                suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
-                  const addResult = categoryService.processAction({
-                    action: 'add_clause',
-                    clause_number: clauseNumber,
-                    category_name: suggestion.categoryName
-                  });
-                  if (addResult.success) {
-                    const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
-                    if (clause) {
-                      clause.category = suggestion.categoryName;
-                    }
-                  }
-                });
-                setClauses(updatedClauses);
-                persistCurrentProject(updatedClauses, projectName);
-              }}
-              onReject={(suggestion) => {
-                // Just remove from suggestions list
-                setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
-              }}
-              onAcceptAll={() => {
-                // Accept all remaining suggestions
-                const categoryService = new CategoryManagerService();
-                categoryService.initialize(clauses);
-                const updatedClauses = [...clauses];
-
-                categorySuggestions.forEach(suggestion => {
                   // Create category if it doesn't exist (ignore error if already exists)
                   categoryService.processAction({
                     action: 'create_category',
@@ -3175,6 +3155,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                   });
 
                   // Add clauses to category
+                  const updatedClauses = [...clauses];
                   suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
                     const addResult = categoryService.processAction({
                       action: 'add_clause',
@@ -3183,23 +3164,58 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                     });
                     if (addResult.success) {
                       const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
-                      if (clause && !clause.category) {
+                      if (clause) {
                         clause.category = suggestion.categoryName;
                       }
                     }
                   });
-                });
+                  setClauses(updatedClauses);
+                  persistCurrentProject(updatedClauses, projectName);
+                }}
+                onReject={(suggestion) => {
+                  // Just remove from suggestions list
+                  setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
+                }}
+                onAcceptAll={() => {
+                  // Accept all remaining suggestions
+                  const categoryService = new CategoryManagerService();
+                  categoryService.initialize(clauses);
+                  const updatedClauses = [...clauses];
 
-                setClauses(updatedClauses);
-                persistCurrentProject(updatedClauses, projectName);
-                setShowCategorySuggestions(false);
-              }}
-              onDismiss={() => {
-                setShowCategorySuggestions(false);
-                setCategorySuggestions([]);
-              }}
-            />
-          )}
+                  categorySuggestions.forEach(suggestion => {
+                    // Create category if it doesn't exist (ignore error if already exists)
+                    categoryService.processAction({
+                      action: 'create_category',
+                      category_name: suggestion.categoryName
+                    });
+
+                    // Add clauses to category
+                    suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
+                      const addResult = categoryService.processAction({
+                        action: 'add_clause',
+                        clause_number: clauseNumber,
+                        category_name: suggestion.categoryName
+                      });
+                      if (addResult.success) {
+                        const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
+                        if (clause && !clause.category) {
+                          clause.category = suggestion.categoryName;
+                        }
+                      }
+                    });
+                  });
+
+                  setClauses(updatedClauses);
+                  persistCurrentProject(updatedClauses, projectName);
+                  setShowCategorySuggestions(false);
+                }}
+                onDismiss={() => {
+                  setShowCategorySuggestions(false);
+                  setCategorySuggestions([]);
+                }}
+              />
+            )}
+          </React.Suspense>
 
           <footer className="glass border-t border-aaa-border px-10 h-16 flex items-center justify-between z-10 shrink-0">
             <div className="flex flex-col">
@@ -3210,27 +3226,29 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
         </div>
       </AppWrapper>
 
-      <AIBotSidebar
-        isOpen={isBotOpen}
-        onClose={() => setIsBotOpen(false)}
-        clauses={clauses}
-        selectedClause={selectedClauseForBot}
-        contracts={library}
-        activeContractId={activeContractId}
-        onContractChange={(contractId) => {
-          // Find and load the selected contract
-          const selectedContract = library.find(c => c.id === contractId);
-          if (selectedContract) {
-            const contractWithSections = ensureContractHasSections(selectedContract);
-            const allClauses = getAllClausesFromContract(contractWithSections);
-            setContract(contractWithSections);
-            setClauses(reprocessClauseLinks(allClauses));
-            setProjectName(contractWithSections.name);
-            setActiveContractId(contractWithSections.id);
-            setStatus(AnalysisStatus.COMPLETED);
-          }
-        }}
-      />
+      <React.Suspense fallback={null}>
+        <AIBotSidebar
+          isOpen={isBotOpen}
+          onClose={() => setIsBotOpen(false)}
+          clauses={clauses}
+          selectedClause={selectedClauseForBot}
+          contracts={library}
+          activeContractId={activeContractId}
+          onContractChange={(contractId) => {
+            // Find and load the selected contract
+            const selectedContract = library.find(c => c.id === contractId);
+            if (selectedContract) {
+              const contractWithSections = ensureContractHasSections(selectedContract);
+              const allClauses = getAllClausesFromContract(contractWithSections);
+              setContract(contractWithSections);
+              setClauses(reprocessClauseLinks(allClauses));
+              setProjectName(contractWithSections.name);
+              setActiveContractId(contractWithSections.id);
+              setStatus(AnalysisStatus.COMPLETED);
+            }
+          }}
+        />
+      </React.Suspense>
 
       <FloatingAIButton
         onClick={() => setIsBotOpen(!isBotOpen)}

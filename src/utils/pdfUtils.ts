@@ -1,12 +1,14 @@
-
-import * as pdfjsLib from 'pdfjs-dist';
+// Top-level imports removed for bundle optimization
+// import * as pdfjsLib from 'pdfjs-dist';
 import { TextItem } from 'pdfjs-dist/types/src/display/api';
-
-// Set worker source using a more reliable CDN link
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
 
 export async function extractTextFromPdf(url: string): Promise<string> {
     try {
+        const pdfjsLib = await import('pdfjs-dist');
+
+        // Set worker source inside function
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
+
         const loadingTask = pdfjsLib.getDocument(url);
         const pdf = await loadingTask.promise;
 
