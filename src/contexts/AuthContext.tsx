@@ -33,7 +33,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setTimeout(() => {
             console.warn('Login required setting fetch timed out, defaulting to true');
             resolve(true);
-          }, 5000);
+          }, 15000);
         });
         const required = await Promise.race([getLoginRequired(), timeoutPromise]);
         setLoginRequiredState(required);
@@ -145,7 +145,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setAuthError('Authentication timed out. Please refresh the page.');
         setAuthLoading(false);
       }
-    }, 12000); // Slightly longer than the app-level timeout
+    }, 30000); // Increased from 12s to 30s to be more resilient to slow connections
 
     // Get initial session
     getInitialSession();
