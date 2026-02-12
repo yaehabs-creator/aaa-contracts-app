@@ -37,12 +37,28 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   const [editingItemIndex, setEditingItemIndex] = useState<number>(-1);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  // Check if this is a clause section (GENERAL, PARTICULAR, or combined Conditions)
-  // Combined Conditions section uses GENERAL type but has title "Conditions"
-  const isClauseSection = section.sectionType === SectionType.GENERAL || 
-                         section.sectionType === SectionType.PARTICULAR ||
-                         section.title === 'Conditions';
-  const isItemSection = section.sectionType === SectionType.AGREEMENT || section.sectionType === SectionType.LOA;
+  // Check if this is a clause section
+  const isClauseSection =
+    section.sectionType === SectionType.GENERAL ||
+    section.sectionType === SectionType.PARTICULAR ||
+    section.sectionType === SectionType.TENDER ||
+    section.sectionType === SectionType.REQUIREMENTS ||
+    section.sectionType === SectionType.PROPOSAL ||
+    section.sectionType === SectionType.SPECIFICATION ||
+    section.sectionType === SectionType.INSTRUCTION ||
+    section.title === 'Conditions';
+
+  // Check if this is an item/document section
+  const isItemSection =
+    section.sectionType === SectionType.AGREEMENT ||
+    section.sectionType === SectionType.LOA ||
+    section.sectionType === SectionType.DRAWINGS ||
+    section.sectionType === SectionType.BOQ ||
+    section.sectionType === SectionType.SCHEDULE ||
+    section.sectionType === SectionType.ANNEX ||
+    section.sectionType === SectionType.ADDENDUM ||
+    section.sectionType === SectionType.AUTOMATION ||
+    section.sectionType === SectionType.EXTRAS;
 
   // Filter items based on search query
   const filteredItems = useMemo(() => {
@@ -51,12 +67,12 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     }
 
     const keywords = searchQuery.trim().toLowerCase().split(/\s+/);
-    
+
     return section.items.filter(item => {
       if (item.itemType === ItemType.CLAUSE) {
         const clause = sectionItemToClause(item);
         if (!clause) return false;
-        
+
         const searchableText = [
           clause.clause_number,
           clause.clause_title,
@@ -64,21 +80,21 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           clause.general_condition || '',
           clause.particular_condition || ''
         ].join(' ').toLowerCase();
-        
+
         return keywords.every(keyword => searchableText.includes(keyword));
       } else if (item.itemType === ItemType.PARAGRAPH) {
         const searchableText = [
           item.heading || '',
           item.text || ''
         ].join(' ').toLowerCase();
-        
+
         return keywords.every(keyword => searchableText.includes(keyword));
       } else if (item.itemType === ItemType.FIELD) {
         const searchableText = [
           item.fieldKey || '',
           item.fieldValue || ''
         ].join(' ').toLowerCase();
-        
+
         return keywords.every(keyword => searchableText.includes(keyword));
       } else if (item.itemType === ItemType.IMAGE) {
         const searchableText = [
@@ -86,7 +102,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           item.imageAlt || '',
           item.heading || ''
         ].join(' ').toLowerCase();
-        
+
         return keywords.every(keyword => searchableText.includes(keyword));
       }
       return false;
@@ -100,12 +116,12 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
       ...item,
       orderIndex: section.items.length
     };
-    
+
     const updatedSection: ContractSection = {
       ...section,
       items: [...section.items, newItem]
     };
-    
+
     onUpdate(updatedSection);
     if (onAddItem) {
       onAddItem(newItem);
@@ -116,12 +132,12 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   const handleEditItem = (item: SectionItem) => {
     const updatedItems = [...section.items];
     updatedItems[editingItemIndex] = item;
-    
+
     const updatedSection: ContractSection = {
       ...section,
       items: updatedItems
     };
-    
+
     onUpdate(updatedSection);
     if (onEditItem) {
       onEditItem(item, editingItemIndex);
@@ -156,7 +172,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     const updatedItems = [...section.items];
     const [moved] = updatedItems.splice(fromIndex, 1);
     updatedItems.splice(toIndex, 0, moved);
-    
+
     // Update order indices
     updatedItems.forEach((item, i) => {
       item.orderIndex = i;
@@ -195,7 +211,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   const handleReorderClauseClick = (fromIndex: number, toIndex: number) => {
     const originalFromIndex = section.items.indexOf(filteredItems[fromIndex]);
     const originalToIndex = section.items.indexOf(filteredItems[toIndex]);
-    
+
     if (onReorderClause) {
       onReorderClause(originalFromIndex, originalToIndex);
     } else {
@@ -226,7 +242,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
             </button>
           )}
         </div>
-        
+
         {isItemSection && (
           <button
             onClick={() => setIsAddModalOpen(true)}
