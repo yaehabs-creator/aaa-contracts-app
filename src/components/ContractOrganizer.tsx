@@ -4,12 +4,12 @@ import {
     FolderSchemaField,
     SavedContract,
     ExtractedData
-} from '../../types';
+} from '@/types';
 import toast from 'react-hot-toast';
 import { PaddleOcrService } from '../services/paddleOcrService';
-import { extractDataForSchema } from '../../services/organizerExtractionService';
-import { getOrganizerData } from '../services/supabaseService';
-import { cleanTextWithAI } from '../services/textPreprocessor';
+import { extractDataForSchema } from '@/services/organizerExtractionService';
+import { getOrganizerData } from '@/src/services/supabaseService';
+import { cleanTextWithAI } from '@/src/services/textPreprocessor';
 
 interface ContractOrganizerProps {
     contract: SavedContract | null;
