@@ -54,6 +54,67 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
     const effectiveContract = contract || localContract;
 
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const importJsonRef = useRef<HTMLInputElement>(null);
+
+    const handleExportJSON = () => {
+        if (!effectiveContract) {
+            toast.error('No contract context to export');
+            return;
+        }
+
+        const exportData = {
+            exportTimestamp: Date.now(),
+            contract: effectiveContract,
+            organizer: {
+                subfolders,
+                schemas,
+                extractedData
+            }
+        };
+
+        const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `contract_${effectiveContract.title.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        toast.success('Contract exported to JSON');
+    };
+
+    const handleImportJSON = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+
+        try {
+            const text = await file.text();
+            const data = JSON.parse(text);
+
+            if (!data.contract || !data.organizer) {
+                throw new Error('Invalid export file format');
+            }
+
+            // Restore contract context
+            if (data.contract) {
+                setLocalContract(data.contract);
+                setShowCreationForm(false);
+            }
+
+            // Restore organizer data
+            if (data.organizer.subfolders) setSubfolders(data.organizer.subfolders);
+            if (data.organizer.schemas) setSchemas(data.organizer.schemas);
+            if (data.organizer.extractedData) setExtractedData(data.organizer.extractedData);
+
+            toast.success('Contract context restored from JSON');
+        } catch (err: any) {
+            console.error('Import error:', err);
+            toast.error(`Import failed: ${err.message}`);
+        } finally {
+            if (importJsonRef.current) importJsonRef.current.value = '';
+        }
+    };
 
     // Helper to add a subfolder
     const addSubfolder = () => {
@@ -369,6 +430,31 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
+                    <div className="flex items-center bg-aaa-bg/50 rounded-xl p-1 border border-aaa-border mr-2">
+                        <button
+                            onClick={handleExportJSON}
+                            disabled={!effectiveContract}
+                            className="px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-all disabled:opacity-30"
+                            title="Export all data to JSON"
+                        >
+                            Export
+                        </button>
+                        <div className="w-[1px] h-4 bg-aaa-border mx-1" />
+                        <button
+                            onClick={() => importJsonRef.current?.click()}
+                            className="px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-all"
+                            title="Import data from JSON"
+                        >
+                            Import
+                        </button>
+                        <input
+                            type="file"
+                            ref={importJsonRef}
+                            onChange={handleImportJSON}
+                            className="hidden"
+                            accept="application/json"
+                        />
+                    </div>
                     <button
                         onClick={onClose}
                         className="px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-all"
