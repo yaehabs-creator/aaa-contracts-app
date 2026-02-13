@@ -6,7 +6,7 @@ import { AppError, AppErrors } from '../../../shared/application/errors/AppError
 import { ErrorHandler } from '../../../shared/application/errors/ErrorHandler';
 import { logger } from '../../../shared/infrastructure/observability/Logger';
 import { metrics } from '../../../shared/infrastructure/observability/Metrics';
-import { ensureContractHasSections } from '../../../services/contractMigrationService';
+import { ensureContractHasSections } from '../../../../services/contractMigrationService';
 
 const MAX_DOCUMENT_SIZE = 1000000; // 1MB in bytes
 
@@ -18,11 +18,11 @@ function removeUndefinedValues(obj: any): any {
   if (obj === null || obj === undefined) {
     return null;
   }
-  
+
   if (Array.isArray(obj)) {
     return obj.map(item => removeUndefinedValues(item));
   }
-  
+
   if (typeof obj === 'object' && obj.constructor === Object) {
     const cleaned: any = {};
     for (const [key, value] of Object.entries(obj)) {
@@ -32,7 +32,7 @@ function removeUndefinedValues(obj: any): any {
     }
     return cleaned;
   }
-  
+
   return obj;
 }
 

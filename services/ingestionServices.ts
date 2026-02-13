@@ -3,6 +3,11 @@
  * Exports all services related to contract document ingestion
  */
 
+import { getClauseReferenceService } from './clauseReferenceService';
+import { getDocumentOverrideService } from './documentOverrideService';
+import { getVectorSearchService } from './vectorSearchService';
+import { getIngestionValidationService } from './ingestionValidationService';
+
 // Upload Service
 export {
   DocumentUploadService,
@@ -131,7 +136,7 @@ export async function runFullIngestionPipeline(
       validationResult = await validationService.validateIngestion(contractId);
       stages.validation = {
         success: validationResult.isValid,
-        message: validationResult.isValid 
+        message: validationResult.isValid
           ? 'Validation passed'
           : `Found ${validationResult.errors.length} errors, ${validationResult.warnings.length} warnings`
       };

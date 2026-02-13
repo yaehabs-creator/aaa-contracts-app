@@ -74,6 +74,10 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
   if (!contract.clauses || contract.clauses.length === 0) {
     return {
       ...contract,
+      title: (contract as any).title || (contract as any).name || "Untitled Contract",
+      status: (contract as any).status || 'draft',
+      version: (contract as any).version || 1,
+      is_deleted: (contract as any).is_deleted || false,
       sections: [
         {
           sectionType: SectionType.AGREEMENT,
@@ -271,6 +275,10 @@ export function migrateContractToSections(contract: SavedContract | LegacyContra
 
   return {
     ...contract,
+    title: (contract as any).title || (contract as any).name || "Untitled Contract",
+    status: (contract as any).status || 'draft',
+    version: (contract as any).version || 1,
+    is_deleted: (contract as any).is_deleted || false,
     sections,
     clauses: contract.clauses  // Keep for backward compatibility
   };
