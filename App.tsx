@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { analyzeContract } from './services/claudeService';
 import { callAIProxy } from './src/services/aiProxyClient';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
-import { getContractFromSupabase } from './src/services/supabaseService';
+import { getContractFromSupabase, saveOrganizerData, saveContractToSupabase } from './src/services/supabaseService';
 import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
 // import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard'; // Lazy loaded below
 import { groupClausesByParent } from './components/GroupedClauseCard';
@@ -20,6 +20,7 @@ const CategoryLedger = React.lazy(() => import('./components/CategoryLedger').th
 const Dashboard = React.lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
 const AIBotSidebar = React.lazy(() => import('./src/components/AIBotSidebar').then(m => ({ default: m.AIBotSidebar })));
 const GroupedClauseCard = React.lazy(() => import('./components/GroupedClauseCard').then(m => ({ default: m.GroupedClauseCard })));
+const ContractOrganizer = React.lazy(() => import('./src/components/ContractOrganizer').then(m => ({ default: m.ContractOrganizer })));
 import { ensureContractHasSections, getAllClausesFromContract, clauseToSectionItem, sectionItemToClause } from './services/contractMigrationService';
 import { ItemType } from './types';
 import { AppWrapper } from './src/components/AppWrapper';
@@ -1971,6 +1972,16 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                   <span className="text-[10px] font-black uppercase tracking-widest text-amber-700">Admin</span>
                 </a>
               )}
+
+              <button
+                onClick={() => setStatus(AnalysisStatus.ORGANIZER)}
+                className={`flex items-center gap-3 px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all group ${status === AnalysisStatus.ORGANIZER ? 'bg-aaa-blue text-white' : 'bg-white border border-aaa-border'}`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className={`w-4 h-4 ${status === AnalysisStatus.ORGANIZER ? 'text-white' : 'text-aaa-muted group-hover:text-aaa-blue'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span className={`text-[10px] font-black uppercase tracking-widest ${status === AnalysisStatus.ORGANIZER ? 'text-white' : 'text-aaa-muted group-hover:text-aaa-blue'}`}>Organizer</span>
+              </button>
             </div>
           </header>
 
@@ -3144,6 +3155,61 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 </div>
               )}
 
+              {status === AnalysisStatus.ORGANIZER && (
+                <div className="h-[calc(100vh-140px)]">
+                  <React.Suspense fallback={<div className="flex items-center justify-center h-full"><div className="w-12 h-12 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" /></div>}>
+                    <ContractOrganizer
+                      contract={contract}
+                      onClose={() => setStatus(AnalysisStatus.COMPLETED)}
+                      onSaveAll={async (data) => {
+                        console.log('Save All triggered:', data);
+
+                        // Persist to Supabase
+                        try {
+                          // The contract to save is either the new one from organizer or current state
+                          const contractToSave = data.contract || contract;
+                          const targetContractId = contractToSave?.id;
+
+                          if (!targetContractId) {
+                            throw new Error("No contract available to save. Please initialize a contract first.");
+                          }
+
+                          // 1. ALWAYS ensure the contract record exists in the DB first (Foreign Key requirement)
+                          try {
+                            console.log('Ensuring contract record is archived...', targetContractId);
+                            // If it's a new contract from organizer, update global state first
+                            if (data.contract) {
+                              setContract(data.contract);
+                              setLibrary(prev => [data.contract!, ...prev.filter(c => c.id !== data.contract!.id)]);
+                            }
+
+                            await saveContractToSupabase(contractToSave!);
+                            console.log('Contract record verified/saved in archive');
+                          } catch (contractError: any) {
+                            console.error('CRITICAL: Failed to save parent contract record:', contractError);
+                            throw new Error(`Archive Error: ${contractError.message}. We cannot save organizer data without the contract record.`);
+                          }
+
+                          // 2. Save organizer data (depends on contract record)
+                          console.log('Attempting to save organizer data for contract:', targetContractId);
+                          await saveOrganizerData(targetContractId, {
+                            subfolders: data.subfolders,
+                            schemas: data.schemas,
+                            extractedData: data.extractedData
+                          });
+
+                          toast.success('All changes successfully saved to database!');
+                        } catch (error: any) {
+                          console.error('Full save operation failed:', error);
+                          toast.error(error.message || 'An unexpected error occurred during save');
+                          throw error; // Rethrow to update UI state in ContractOrganizer
+                        }
+                      }}
+                    />
+                  </React.Suspense>
+                </div>
+              )}
+
               {status === AnalysisStatus.LIBRARY && (
                 <div className="space-y-12 max-w-7xl mx-auto pb-20">
                   <div className="flex items-center justify-between border-b border-aaa-border pb-10">
@@ -3159,7 +3225,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       <button onClick={() => setStatus(AnalysisStatus.IDLE)} className="px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all">New Extraction</button>
                       <button
                         onClick={async () => {
-                          const newContractId = `contract-${Date.now()}`;
+                          const newContractId = crypto.randomUUID();
                           const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
 
                           const emptyContract = ensureContractHasSections({
@@ -3327,7 +3393,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                     <div className="p-8 border-t border-aaa-border flex gap-4 justify-end">
                       <button
                         onClick={async () => {
-                          const newContractId = `contract-${Date.now()}`;
+                          const newContractId = crypto.randomUUID();
                           const newContractName = `New Contract ${new Date().toLocaleDateString()}`;
 
                           setClauses([]);

@@ -175,7 +175,18 @@ export interface ContractSection {
 
 export interface SavedContract {
   id: string;
-  name: string;
+  name: string; // Kept for backward compatibility
+  title: string;
+  project_id?: string;
+  contractor_id?: string;
+  contractor_name?: string;
+  contract_number?: string;
+  status: 'draft' | 'active' | 'closed';
+  start_date?: string;
+  end_date?: string;
+  currency?: string;
+  value?: number;
+  scope_text?: string;
   timestamp: number;
   clauses?: Clause[];  // Legacy format - kept for backward compatibility
   sections?: ContractSection[];  // New format
@@ -187,6 +198,11 @@ export interface SavedContract {
     conflictCount: number;
     timeSensitiveCount?: number;
   };
+  version: number;
+  is_deleted: boolean;
+  created_by?: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 // Legacy contract format for migration detection
@@ -213,7 +229,8 @@ export enum AnalysisStatus {
   COMPLETED = 'COMPLETED',
   ERROR = 'ERROR',
   LIBRARY = 'LIBRARY',
-  PDF_PREVIEW = 'PDF_PREVIEW'
+  PDF_PREVIEW = 'PDF_PREVIEW',
+  ORGANIZER = 'ORGANIZER'
 }
 
 export interface BotMessage {
@@ -499,3 +516,54 @@ export function validateFileName(filename: string): FileNamingValidation {
     errors: []
   };
 }
+
+// ============================================
+// Contract Organizer Types
+// ============================================
+
+export interface ContractTemplate {
+  id: string;
+  name: string;
+  description?: string;
+  is_default: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface ContractSubfolder {
+  id: string;
+  template_id: string;
+  folder_code: 'A' | 'B' | 'C' | 'D' | 'I' | 'N' | 'P';
+  name: string;
+  order_index: number;
+}
+
+export interface FolderSchemaField {
+  id: string;
+  subfolder_id: string;
+  key: string;
+  label: string;
+  type: 'text' | 'date' | 'number' | 'currency' | 'select' | 'boolean' | 'list' | 'object';
+  required: boolean;
+  allowed_values?: any[];
+  help_text?: string;
+}
+
+export interface ExtractedData {
+  id: string;
+  contract_id: string;
+  doc_id?: string;
+  subfolder_id: string | null;
+  field_key: string;
+  value: any;
+  confidence: number;
+  evidence: {
+    page: number;
+    snippet: string;
+  };
+  status: 'extracted' | 'missing' | 'uncertain';
+  is_modified?: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+

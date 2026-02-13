@@ -1,5 +1,5 @@
 import { supabase } from '../supabase/config';
-import { SavedContract, ContractSection, SectionItem, SectionType } from '../../types';
+import { SavedContract, ContractSection, SectionItem, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData } from '../../types';
 import { ensureContractHasSections } from '../../services/contractMigrationService';
 
 
@@ -138,30 +138,48 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
     const contractData = removeUndefinedValues({
       id: migratedContract.id,
       name: migratedContract.name,
+      title: migratedContract.title || migratedContract.name,
+      project_id: migratedContract.project_id,
+      contractor_id: migratedContract.contractor_id,
+      contractor_name: migratedContract.contractor_name,
+      contract_number: migratedContract.contract_number,
+      status: migratedContract.status || 'draft',
+      start_date: migratedContract.start_date,
+      end_date: migratedContract.end_date,
+      currency: migratedContract.currency,
+      value: migratedContract.value,
+      scope_text: migratedContract.scope_text,
       timestamp: migratedContract.timestamp,
       metadata: migratedContract.metadata,
       sections: migratedContract.sections || []
     });
 
-    console.log('Saving contract via atomic RPC:', migratedContract.id);
+    console.log('Saving contract via atomic RPC v2:', migratedContract.id, 'Expected Version:', migratedContract.version);
 
-    // Call the atomic RPC function
-    const { data: rpcData, error: rpcError } = await supabase.rpc('save_full_contract', {
-      p_contract_data: contractData
+    // Call the atomic RPC function v2 with optimistic concurrency
+    const { data: rpcData, error: rpcError } = await supabase.rpc('save_contract_v2', {
+      p_contract_data: contractData,
+      p_expected_version: migratedContract.version
     });
 
     if (rpcError) {
-      console.error('Supabase RPC error:', {
-        code: rpcError.code,
-        message: rpcError.message,
-        details: rpcError.details,
-        hint: rpcError.hint,
-        authUser: session?.user?.id
-      });
+      console.error('Supabase RPC error:', rpcError);
       throw rpcError;
     }
 
-    console.log('Contract saved successfully via RPC:', rpcData);
+    if (rpcData?.status === 'conflict') {
+      const error = new Error('Conflict: The contract has been modified by another user.') as any;
+      error.code = '409';
+      error.currentServerVersion = rpcData.current_version;
+      throw error;
+    }
+
+    console.log('Contract saved successfully via RPC v2:', rpcData);
+
+    // Update the contract object with the new version from server
+    if (rpcData?.version) {
+      migratedContract.version = rpcData.version;
+    }
   } catch (error: any) {
     console.error('Error saving contract:', error);
     console.error('Full error details:', {
@@ -256,11 +274,26 @@ export const getAllContractsFromSupabase = async (options: { metadataOnly?: bool
       return (contractsData || []).map(row => ({
         id: row.id,
         name: row.name,
+        title: row.title || row.name,
+        project_id: row.project_id,
+        contractor_id: row.contractor_id,
+        contract_number: row.contract_number,
+        status: (row.status || 'draft') as 'draft' | 'active' | 'closed',
+        start_date: row.start_date,
+        end_date: row.end_date,
+        currency: row.currency,
+        value: row.value,
+        scope_text: row.scope_text,
         timestamp: row.timestamp,
         metadata: row.metadata,
         clauses: null,
         sections: null,
-        uses_subcollections: row.uses_subcollections
+        uses_subcollections: row.uses_subcollections,
+        version: row.version || 1,
+        is_deleted: row.is_deleted || false,
+        created_at: row.created_at,
+        updated_at: row.updated_at,
+        created_by: row.created_by
       } as SavedContract));
     }
 
@@ -277,10 +310,25 @@ export const getAllContractsFromSupabase = async (options: { metadataOnly?: bool
           const contract: SavedContract = {
             id: row.id,
             name: row.name,
+            title: row.title || row.name,
+            project_id: row.project_id,
+            contractor_id: row.contractor_id,
+            contract_number: row.contract_number,
+            status: (row.status || 'draft') as 'draft' | 'active' | 'closed',
+            start_date: row.start_date,
+            end_date: row.end_date,
+            currency: row.currency,
+            value: row.value,
+            scope_text: row.scope_text,
             timestamp: row.timestamp,
             metadata: row.metadata,
             clauses: row.clauses || null,
-            sections: row.sections || null
+            sections: row.sections || null,
+            version: row.version || 1,
+            is_deleted: row.is_deleted || false,
+            created_at: row.created_at,
+            updated_at: row.updated_at,
+            created_by: row.created_by
           };
 
           // Auto-migrate on load
@@ -344,10 +392,25 @@ export const getContractFromSupabase = async (id: string): Promise<SavedContract
     const contract: SavedContract = {
       id: contractData.id,
       name: contractData.name,
+      title: contractData.title || contractData.name,
+      project_id: contractData.project_id,
+      contractor_id: contractData.contractor_id,
+      contract_number: contractData.contract_number,
+      status: (contractData.status || 'draft') as 'draft' | 'active' | 'closed',
+      start_date: contractData.start_date,
+      end_date: contractData.end_date,
+      currency: contractData.currency,
+      value: contractData.value,
+      scope_text: contractData.scope_text,
       timestamp: contractData.timestamp,
       metadata: contractData.metadata,
       clauses: contractData.clauses || null,
-      sections: contractData.sections || null
+      sections: contractData.sections || null,
+      version: contractData.version || 1,
+      is_deleted: contractData.is_deleted || false,
+      created_at: contractData.created_at,
+      updated_at: contractData.updated_at,
+      created_by: contractData.created_by
     };
 
     // Log what we're loading
@@ -618,5 +681,120 @@ export const getClauseCategoryAssignments = async (contractId: string): Promise<
   } catch (error) {
     console.error('Error fetching clause category assignments:', error);
     return new Map();
+  }
+};
+// ============================================
+// Contract Organizer Persistence
+// ============================================
+
+const DEFAULT_TEMPLATE_ID = '7f23c9a0-1234-4567-890a-bcdef1234567';
+
+export const getOrganizerData = async (contractId: string) => {
+  if (!supabase) throw new Error('Supabase not initialized');
+
+  // Load subfolders for the default template
+  const { data: subfolders, error: subError } = await supabase
+    .from('contract_subfolders')
+    .select('*')
+    .eq('template_id', DEFAULT_TEMPLATE_ID)
+    .order('order_index');
+
+  if (subError) throw subError;
+
+  // Load schemas for those subfolders
+  const subfolderIds = subfolders?.map(s => s.id) || [];
+  let schemasData: any[] = [];
+
+  if (subfolderIds.length > 0) {
+    const { data: schemas, error: schemaError } = await supabase
+      .from('contract_folder_schema')
+      .select('*')
+      .in('subfolder_id', subfolderIds);
+    if (schemaError) throw schemaError;
+    schemasData = schemas || [];
+  }
+
+  // Load extracted data for this contract
+  const { data: extracted, error: extError } = await supabase
+    .from('contract_extracted_data')
+    .select('*')
+    .eq('contract_id', contractId);
+
+  if (extError) throw extError;
+
+  return {
+    subfolders: (subfolders || []) as ContractSubfolder[],
+    schemas: schemasData as FolderSchemaField[],
+    extractedData: (extracted || []) as ExtractedData[]
+  };
+};
+
+export const saveOrganizerData = async (contractId: string, data: {
+  subfolders: ContractSubfolder[],
+  schemas: Record<string, FolderSchemaField[]>,
+  extractedData: ExtractedData[]
+}) => {
+  if (!supabase) throw new Error('Supabase not initialized');
+
+  // 1. Upsert subfolders
+  if (data.subfolders.length > 0) {
+    const { error: subError } = await supabase
+      .from('contract_subfolders')
+      .upsert(data.subfolders.map(s => ({
+        id: s.id,
+        template_id: DEFAULT_TEMPLATE_ID,
+        folder_code: s.folder_code,
+        name: s.name,
+        order_index: s.order_index
+      })));
+    if (subError) {
+      console.error('Subfolder upsert error:', subError);
+      throw new Error(`Failed to save subfolders: ${subError.message} (${subError.code})`);
+    }
+  }
+
+  // 2. Upsert schemas
+  const allFields: any[] = [];
+  Object.values(data.schemas).forEach(fields => {
+    allFields.push(...fields);
+  });
+
+  if (allFields.length > 0) {
+    const { error: schemaError } = await supabase
+      .from('contract_folder_schema')
+      .upsert(allFields.map(f => ({
+        id: f.id,
+        subfolder_id: f.subfolder_id,
+        key: f.key,
+        label: f.label,
+        type: f.type,
+        required: f.required,
+        allowed_values: f.allowed_values,
+        help_text: f.help_text
+      })));
+    if (schemaError) throw schemaError;
+  }
+
+  // 3. Upsert extracted data
+  if (data.extractedData.length > 0) {
+    const { error: extError } = await supabase
+      .from('contract_extracted_data')
+      .upsert(data.extractedData.map(ed => ({
+        id: ed.id,
+        contract_id: contractId,
+        doc_id: ed.doc_id,
+        subfolder_id: ed.subfolder_id,
+        field_key: ed.field_key,
+        value: ed.value,
+        confidence: ed.confidence,
+        evidence: ed.evidence,
+        status: ed.status,
+        updated_at: new Date().toISOString()
+      })));
+
+    if (extError) {
+      console.error('Extraction upsert error:', extError);
+      throw new Error(`Failed to save extracted data: ${extError.message} (${extError.code})`);
+    }
   }
 };
