@@ -10,7 +10,7 @@
  * - Schedules & Annexes (Group N)
  */
 
-import { BotMessage, DocumentGroup } from '../../types';
+import { BotMessage, DocumentGroup } from '@/types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 import { getEmbeddingService } from './embeddingService';
 

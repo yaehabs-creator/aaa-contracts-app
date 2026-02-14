@@ -12,7 +12,7 @@
  * - Conflict Resolution: Handle disagreements between agents
  */
 
-import { BotMessage, Clause, DocumentGroup } from '../../types';
+import { BotMessage, Clause, DocumentGroup } from '@/types';
 import { getOpenAIProvider, OpenAIAgentResponse, isOpenAIAvailable } from './openaiProvider';
 import { ClaudeProvider, isClaudeAvailable } from './aiProvider';
 import { getDocumentReaderService } from './documentReaderService';

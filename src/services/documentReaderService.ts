@@ -5,7 +5,7 @@
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { ContractDocument, DocumentGroup, DocumentChunk } from '../../types';
+import { ContractDocument, DocumentGroup, DocumentChunk } from '@/types';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_URL || '';

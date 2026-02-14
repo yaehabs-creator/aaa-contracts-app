@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '../supabase/config';
 import { UserProfile, AuthContextType } from '../types/user';
-import { getLoginRequired, setLoginRequired as setLoginRequiredApi } from '../services/supabaseService';
+import { getLoginRequired, setLoginRequired as setLoginRequiredApi } from '@/services/supabaseService';
 import type { User, Session } from '@supabase/supabase-js';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);

@@ -1,4 +1,4 @@
-import { Clause, BotMessage } from "../../types";
+import { Clause, BotMessage } from "../types";
 import { callAIProxy } from "./aiProxyClient";
 
 export interface AIProvider {

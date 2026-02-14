@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { EditorClause, EditorCategory } from '../../services/adminEditorService';
-import { useDebouncedSave, SaveStatus } from '../../hooks/useDebouncedSave';
-import { normalizeClauseId } from '../../utils/navigation';
+import { EditorClause, EditorCategory } from '@/services/adminEditorService';
+import { useDebouncedSave, SaveStatus } from '@/hooks/useDebouncedSave';
+import { normalizeClauseId } from '@/utils/navigation';
 import { TokenizedTextRenderer } from './TokenizedTextRenderer';
 
 interface ClauseEditorCardProps {

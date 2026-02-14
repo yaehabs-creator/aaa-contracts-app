@@ -9,14 +9,14 @@
 
 import React, { useState, useRef, useCallback } from 'react';
 import toast from 'react-hot-toast';
-import { Clause, SavedContract, SectionType, ConditionType, ItemType } from '../../types';
-import { saveContractToDB, getAllContracts, deleteContractFromDB } from '../../services/dbService';
+import { Clause, SavedContract, SectionType, ConditionType, ItemType } from '@/types';
+import { saveContractToDB, getAllContracts, deleteContractFromDB } from '@/services/dbService';
 import {
     ensureContractHasSections,
     getAllClausesFromContract,
     clauseToSectionItem,
     sectionItemToClause,
-} from '../../services/contractMigrationService';
+} from '@/services/contractMigrationService';
 import { reprocessClauseLinks } from '../utils/clauseLinks';
 
 export interface ContractManagerState {

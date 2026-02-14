@@ -13,7 +13,7 @@ import {
     estimateTokens,
     highlightKeywords,
 } from '../utils/clauseLinks';
-import { Clause } from '../../types';
+import { Clause } from '@/types';
 
 // ── stripClauseLinks ──────────────────────────────────────
 

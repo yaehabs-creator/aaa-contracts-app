@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navigateToHome } from '../components/AppRouter';
-import { ClauseCard } from '../../components/ClauseCard';
+import { ClauseCard } from '../components/ClauseCard';
 import { LinkifyClauseReferences } from '../utils/clauseLinker';
-import { Clause } from '../../types';
+import { Clause } from '@/types';
 
 // Interactive Mockup Component
 // Interactive Mockup Component
@@ -60,7 +60,7 @@ const MockScreenshot: React.FC<{ type: 'comparison' | 'navigation' }> = ({ type 
                         {/* Rendering actual ClauseCard component */}
                         <ClauseCard
                             clause={mockClause}
-                            searchQuery=""
+                            searchKeywords={[]}
                             onEdit={() => { }}
                             onDelete={() => { }}
                         />

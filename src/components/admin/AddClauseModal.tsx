@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { EditorCategory } from '../../services/adminEditorService';
-import { CreateClauseParams } from '../../hooks/useAdminEditor';
+import { EditorCategory } from '@/services/adminEditorService';
+import { CreateClauseParams } from '@/hooks/useAdminEditor';
 
 interface AddClauseModalProps {
   isOpen: boolean;
@@ -27,7 +27,7 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({
   const [clauseNumber, setClauseNumber] = useState('');
   const [clauseTitle, setClauseTitle] = useState('');
   const [clauseText, setClauseText] = useState('');
-  
+
   // UI state
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -96,7 +96,7 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={() => !isSaving && onClose()}
       />
@@ -141,11 +141,10 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setSectionType('PARTICULAR')}
-                  className={`flex-1 px-4 py-3 rounded-lg border-2 font-bold text-sm transition-all ${
-                    sectionType === 'PARTICULAR'
+                  className={`flex-1 px-4 py-3 rounded-lg border-2 font-bold text-sm transition-all ${sectionType === 'PARTICULAR'
                       ? 'border-aaa-blue bg-aaa-blue/5 text-aaa-blue'
                       : 'border-aaa-border text-aaa-muted hover:border-aaa-blue/50'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-center gap-2">
                     <span className={`w-3 h-3 rounded-full ${sectionType === 'PARTICULAR' ? 'bg-aaa-blue' : 'bg-slate-300'}`} />
@@ -156,11 +155,10 @@ export const AddClauseModal: React.FC<AddClauseModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setSectionType('GENERAL')}
-                  className={`flex-1 px-4 py-3 rounded-lg border-2 font-bold text-sm transition-all ${
-                    sectionType === 'GENERAL'
+                  className={`flex-1 px-4 py-3 rounded-lg border-2 font-bold text-sm transition-all ${sectionType === 'GENERAL'
                       ? 'border-aaa-blue bg-aaa-blue/5 text-aaa-blue'
                       : 'border-aaa-border text-aaa-muted hover:border-aaa-blue/50'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-center gap-2">
                     <span className={`w-3 h-3 rounded-full ${sectionType === 'GENERAL' ? 'bg-aaa-blue' : 'bg-slate-300'}`} />
