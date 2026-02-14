@@ -6,7 +6,7 @@ import { AppError, AppErrors } from '../../../shared/application/errors/AppError
 import { ErrorHandler } from '../../../shared/application/errors/ErrorHandler';
 import { logger } from '../../../shared/infrastructure/observability/Logger';
 import { metrics } from '../../../shared/infrastructure/observability/Metrics';
-import { ensureContractHasSections } from '../../../../services/contractMigrationService';
+import { ensureContractHasSections } from '@/services/contractMigrationService';
 
 const MAX_DOCUMENT_SIZE = 1000000; // 1MB in bytes
 

@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Clause, BotMessage, SavedContract } from '../../types';
-import { 
-  chatWithBot, 
-  getSuggestions, 
-  explainClause, 
-  chatWithDocuments, 
-  getDocumentSummary, 
+import { Clause, BotMessage, SavedContract } from '@/types';
+import {
+  chatWithBot,
+  getSuggestions,
+  explainClause,
+  chatWithDocuments,
+  getDocumentSummary,
   searchContractDocuments,
   chatWithDualAgents,
   getAgentStatus,
   isDualAgentModeAvailable,
   getAgentCapabilitiesSummary
-} from '../services/aiBotService';
-import { isClaudeAvailable } from '../services/aiProvider';
-import { scrollToClause } from '../utils/navigation';
-import { getAllClausesFromContract } from '../../services/contractMigrationService';
+} from '@/services/aiBotService';
+import { isClaudeAvailable } from '@/services/aiProvider';
+import { scrollToClause } from '@/utils/navigation';
+import { getAllClausesFromContract } from '@/services/contractMigrationService';
 
 // Thinking messages for Apple-style calm UX
 const THINKING_MESSAGES = [
@@ -67,7 +67,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const requestInFlightRef = useRef<boolean>(false);
 
   const claudeAvailable = isClaudeAvailable();
-  
+
   // Check for dual-agent mode availability
   useEffect(() => {
     const status = getAgentStatus();
@@ -80,7 +80,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
   // Get the currently selected contract and its clauses
   const selectedContract = contracts.find(c => c.id === selectedContractId);
-  
+
   // Safely get clauses from contract with fallback
   const getClausesSafe = (contract: SavedContract | null | undefined): Clause[] => {
     if (!contract) return [];
@@ -91,9 +91,9 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
       return [];
     }
   };
-  
-  const activeClauses = selectedContract 
-    ? getClausesSafe(selectedContract) 
+
+  const activeClauses = selectedContract
+    ? getClausesSafe(selectedContract)
     : clauses;
 
   // Update selected contract when activeContractId changes
@@ -198,11 +198,11 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
 
   const sendMessage = useCallback(async (text?: string) => {
     const query = text || inputValue.trim();
-    
+
     // Silent ignore if empty, already loading, or request in flight
     // MacBook-style: no error, no toast, just ignore
     if (!query || isLoading || requestInFlightRef.current) return;
-    
+
     // Check if at least one agent is available
     const anyAgentAvailable = claudeAvailable || (agentStatusInfo?.openai.available ?? false);
     if (!anyAgentAvailable) return;
@@ -224,11 +224,11 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
     try {
       // Pass full conversation history including the new message
       const conversationHistory = [...messages, userMessage];
-      
+
       let response: string;
       let agentsUsed: ('openai' | 'claude')[] = [];
       let isDualModeResponse = false;
-      
+
       // Use dual-agent mode if available and contract is selected
       if (dualAgentMode && selectedContractId) {
         try {
@@ -297,10 +297,10 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const showDocuments = useCallback(async () => {
     // Silent ignore if already loading
     if (!selectedContractId || isLoading || requestInFlightRef.current) return;
-    
+
     requestInFlightRef.current = true;
     setIsLoading(true);
-    
+
     const userMessage: ExtendedBotMessage = {
       id: Date.now().toString(),
       role: 'user',
@@ -454,17 +454,17 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
                   {selectedContract?.name || 'Select a contract'}
                 </span>
               </div>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
                 className={`ai-bot-contract-chevron ${showContractSelector ? 'rotated' : ''}`}
-                fill="none" 
-                viewBox="0 0 24 24" 
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
               </svg>
             </div>
-            
+
             {showContractSelector && (
               <div className="ai-bot-contract-dropdown">
                 {contracts.map((contract) => (
@@ -516,7 +516,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
                 {agentStatusInfo.openai.available ? '●' : '○'}
               </span>
             </div>
-            <button 
+            <button
               className="ai-bot-agent-info-btn"
               onClick={showAgentStatus}
               title="Show AI agent details"
@@ -587,8 +587,8 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
                 </div>
                 <h3 className="ai-bot-empty-title">Ask me anything about your contract!</h3>
                 <p className="ai-bot-empty-text">
-                  {dualAgentMode 
-                    ? 'Two AI experts collaborate: Claude analyzes GC/PC conditions while OpenAI examines your documents.' 
+                  {dualAgentMode
+                    ? 'Two AI experts collaborate: Claude analyzes GC/PC conditions while OpenAI examines your documents.'
                     : 'I can explain clauses, answer questions, and provide suggestions.'}
                 </p>
               </div>

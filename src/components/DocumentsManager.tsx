@@ -14,9 +14,9 @@ import {
   IngestionJob,
   BatchUploadProgress,
   ValidationResult
-} from '../../types';
+} from '@/types';
 import { extractTextFromPdf } from '../utils/pdfUtils';
-import { getEmbeddingService } from '../services/embeddingService';
+import { getEmbeddingService } from '@/services/embeddingService';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';

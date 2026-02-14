@@ -10,13 +10,13 @@
 
 import { useState, useCallback } from 'react';
 import toast from 'react-hot-toast';
-import { Clause, SavedContract, SectionType, ConditionType, ItemType } from '../../types';
+import { Clause, SavedContract, SectionType, ConditionType, ItemType } from '@/types';
 import {
     ensureContractHasSections,
     getAllClausesFromContract,
     clauseToSectionItem,
     sectionItemToClause,
-} from '../../services/contractMigrationService';
+} from '@/services/contractMigrationService';
 import { reprocessClauseLinks, linkifyText } from '../utils/clauseLinks';
 import { normalizeClauseId } from '../utils/navigation';
 

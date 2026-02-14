@@ -1,5 +1,5 @@
 import { createAIProvider, isClaudeAvailable, getRateLimitStatus, isRequestInFlight } from './aiProvider';
-import { Clause, BotMessage } from '../../types';
+import { Clause, BotMessage } from '@/types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 import { getEmbeddingService } from './embeddingService';
 import { getOrchestrator, SynthesizedResponse } from './multiAgentOrchestrator';

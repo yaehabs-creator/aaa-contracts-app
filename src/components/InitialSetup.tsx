@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { initializeAdminUser } from '../services/userService';
+import { initializeAdminUser } from '@/services/userService';
 
 export const InitialSetup: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
   const [email, setEmail] = useState('');

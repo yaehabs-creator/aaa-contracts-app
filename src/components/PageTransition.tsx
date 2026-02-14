@@ -23,7 +23,7 @@ const pageVariants = {
 
 const pageTransition = {
   duration: 0.3,
-  ease: [0.4, 0, 0.2, 1], // Custom easing for smooth feel
+  ease: [0.4, 0, 0.2, 1] as const, // Custom easing for smooth feel
 };
 
 export const PageTransition: React.FC<PageTransitionProps> = ({ children, transitionKey }) => (
@@ -64,7 +64,7 @@ export const SlideTransition: React.FC<PageTransitionProps> = ({ children, trans
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -30 }}
-      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] as const }}
     >
       {children}
     </motion.div>

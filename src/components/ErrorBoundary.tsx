@@ -5,7 +5,7 @@
  * This provides a graceful fallback UI and allows recovery.
  */
 
-import React, { Component, ErrorInfo } from 'react';
+import * as React from 'react';
 
 interface ErrorBoundaryProps {
     children: React.ReactNode;
@@ -15,23 +15,26 @@ interface ErrorBoundaryProps {
 interface ErrorBoundaryState {
     hasError: boolean;
     error: Error | null;
-    errorInfo: ErrorInfo | null;
+    errorInfo: React.ErrorInfo | null;
 }
 
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-    state: ErrorBoundaryState = { hasError: false, error: null, errorInfo: null };
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+    constructor(props: ErrorBoundaryProps) {
+        super(props);
+        this.state = { hasError: false, error: null, errorInfo: null };
+    }
 
     static getDerivedStateFromError(error: Error): Partial<ErrorBoundaryState> {
         return { hasError: true, error };
     }
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
         console.error('ErrorBoundary caught an error:', error, errorInfo);
-        (this as any).setState({ errorInfo });
+        this.setState({ errorInfo });
     }
 
     handleReset = () => {
-        (this as any).setState({ hasError: false, error: null, errorInfo: null });
+        this.setState({ hasError: false, error: null, errorInfo: null });
     };
 
     render() {

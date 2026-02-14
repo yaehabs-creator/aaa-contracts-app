@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { getAllUsers, createUser, updateUserRole, deleteUser, getActiveUsersCount, isUserActive } from '../services/userService';
+import { getAllUsers, createUser, updateUserRole, deleteUser, getActiveUsersCount, isUserActive } from '@/services/userService';
 import { UserProfile, UserRole } from '../types/user';
 import { BackupManager } from './BackupManager';
 import { ContractBuilder } from './ContractBuilder';

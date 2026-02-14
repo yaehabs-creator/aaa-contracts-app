@@ -1,800 +1,888 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AAA Contract Department</title>
-    <script>
-      window.process = window.process || { env: {} };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Legacy tailwind config
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              // Legacy colors (keeping for backward compatibility during transition)
-              aaa: {
-                blue: '#6366F1',
-                hover: '#4F46E5',
-                bg: '#FAFAFF',
-                border: 'rgba(99,102,241,0.1)',
-                text: '#312E81',
-                muted: '#6B7280',
-                accent: '#818CF8'
-              },
-              // Modern Blue design system (darker)
-              mac: {
-                blue: '#1D4ED8',
-                'blue-hover': '#1E40AF',
-                'blue-light': '#93C5FD',
-                'blue-subtle': '#BFDBFE',
-                navy: '#1E3A8A',
-                charcoal: '#1E293B',
-                muted: '#6B7280',
-                'muted-light': '#9CA3AF'
-              },
-              surface: {
-                bg: '#FAFAFF',
-                'bg-subtle': '#F5F3FF',
-                card: '#FFFFFF',
-                border: 'rgba(99,102,241,0.1)',
-                'border-hover': 'rgba(99,102,241,0.2)'
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AAA Contract Department</title>
+  <script>
+    window.process = window.process || { env: {} };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Legacy tailwind config
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Legacy colors (keeping for backward compatibility during transition)
+            aaa: {
+              blue: '#6366F1',
+              hover: '#4F46E5',
+              bg: '#FAFAFF',
+              border: 'rgba(99,102,241,0.1)',
+              text: '#312E81',
+              muted: '#6B7280',
+              accent: '#818CF8'
             },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-              mono: ['JetBrains Mono', 'SF Mono', 'monospace']
+            // Modern Blue design system (darker)
+            mac: {
+              blue: '#1D4ED8',
+              'blue-hover': '#1E40AF',
+              'blue-light': '#93C5FD',
+              'blue-subtle': '#BFDBFE',
+              navy: '#1E3A8A',
+              charcoal: '#1E293B',
+              muted: '#6B7280',
+              'muted-light': '#9CA3AF'
             },
-            borderRadius: {
-              'aaa': '12px',
-              'mac': '16px',
-              'mac-lg': '20px',
-              'mac-sm': '12px',
-              'mac-xs': '8px'
-            },
-            boxShadow: {
-              'premium': '0 4px 24px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
-              'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.03)',
-              'mac': '0 4px 24px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
-              'mac-hover': '0 8px 32px -4px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)',
-              'mac-sm': '0 2px 8px -2px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02)',
-              'mac-focus': '0 0 0 3px rgba(29, 78, 216, 0.15)',
-              'mac-inset': 'inset 0 1px 2px rgba(0,0,0,0.04)'
-            },
-            spacing: {
-              'mac-xs': '0.5rem',
-              'mac-sm': '1rem',
-              'mac-md': '1.5rem',
-              'mac-lg': '2rem',
-              'mac-xl': '3rem'
-            },
-            transitionTimingFunction: {
-              'mac': 'cubic-bezier(0.4, 0, 0.2, 1)'
-            },
-            transitionDuration: {
-              'mac': '200ms'
+            surface: {
+              bg: '#FAFAFF',
+              'bg-subtle': '#F5F3FF',
+              card: '#FFFFFF',
+              border: 'rgba(99,102,241,0.1)',
+              'border-hover': 'rgba(99,102,241,0.2)'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'SF Mono', 'monospace']
+          },
+          borderRadius: {
+            'aaa': '12px',
+            'mac': '16px',
+            'mac-lg': '20px',
+            'mac-sm': '12px',
+            'mac-xs': '8px'
+          },
+          boxShadow: {
+            'premium': '0 4px 24px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
+            'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.03)',
+            'mac': '0 4px 24px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03)',
+            'mac-hover': '0 8px 32px -4px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04)',
+            'mac-sm': '0 2px 8px -2px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02)',
+            'mac-focus': '0 0 0 3px rgba(29, 78, 216, 0.15)',
+            'mac-inset': 'inset 0 1px 2px rgba(0,0,0,0.04)'
+          },
+          spacing: {
+            'mac-xs': '0.5rem',
+            'mac-sm': '1rem',
+            'mac-md': '1.5rem',
+            'mac-lg': '2rem',
+            'mac-xl': '3rem'
+          },
+          transitionTimingFunction: {
+            'mac': 'cubic-bezier(0.4, 0, 0.2, 1)'
+          },
+          transitionDuration: {
+            'mac': '200ms'
           }
         }
       }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-      /* ===== Modern Blue Design System (Darker) ===== */
-      :root {
-        --mac-blue: #1D4ED8;
-        --mac-blue-hover: #1E40AF;
-        --mac-blue-light: #93C5FD;
-        --mac-blue-subtle: #BFDBFE;
-        --mac-navy: #1E3A8A;
-        --mac-charcoal: #1E293B;
-        --mac-muted: #6B7280;
-        --mac-muted-light: #9CA3AF;
-        --surface-bg: #F8FAFC;
-        --surface-bg-subtle: #F1F5F9;
-        --surface-card: #FFFFFF;
-        --surface-border: rgba(29,78,216,0.1);
-        --shadow-mac: 0 4px 24px -4px rgba(29,78,216,0.12), 0 0 0 1px rgba(29,78,216,0.06);
-        --shadow-mac-hover: 0 8px 32px -4px rgba(29,78,216,0.18), 0 0 0 1px rgba(29,78,216,0.1);
-        --radius-mac: 16px;
-        --radius-mac-lg: 20px;
-        --radius-mac-sm: 12px;
-        --transition-mac: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      body {
-        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #EFF6FF 100%);
-        color: var(--mac-navy);
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        min-height: 100vh;
-      }
-      
-      .mono {
-        font-family: 'JetBrains Mono', 'SF Mono', monospace;
-      }
-      
-      /* Glass effect - MacBook style */
-      .glass {
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-      }
-      
-      /* Skeleton loader animation */
-      .skeleton {
-        background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
-        background-size: 200% 100%;
-        animation: skeleton-pulse 1.5s ease-in-out infinite;
-      }
-      
-      @keyframes skeleton-pulse {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
-      }
-      
-      .shimmer {
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-      }
-      
-      @keyframes shimmer {
-        0% { background-position: -200% 0; }
-        100% { background-position: 200% 0; }
-      }
-      
-      /* Premium scrollbar - MacBook style */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.15);
-        border-radius: 100px;
-        border: 2px solid transparent;
-        background-clip: content-box;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(0, 0, 0, 0.25);
-        border: 2px solid transparent;
-        background-clip: content-box;
-      }
-      .contract-container {
-        scrollbar-gutter: stable;
-      }
-      
-      /* Internal Clause Hyperlinks - MacBook style */
-      .verbatim-content a.clause-link,
-      .clause-link {
-        color: var(--mac-blue);
-        text-decoration: underline;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all var(--transition-mac);
-        text-underline-offset: 4px;
-        padding: 0 2px;
-        border-radius: 6px;
-      }
-      .verbatim-content a.clause-link:hover,
-      .clause-link:hover {
-        color: var(--mac-blue-hover);
-        text-decoration: none;
-        background-color: var(--mac-blue-subtle);
-        padding: 2px 6px;
-        border-radius: 6px;
-      }
-      /* Fallback for any legacy hyperlinks without clause-link class */
-      .verbatim-content a:not(.clause-link) {
-        color: var(--mac-blue);
-        font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        transition: all var(--transition-mac);
-        padding: 0 2px;
-        border-radius: 6px;
-        cursor: pointer;
-      }
-      .verbatim-content a:not(.clause-link):hover {
-        background-color: var(--mac-blue-subtle);
-        color: var(--mac-blue-hover);
-      }
-      
-      /* Search keyword highlighting */
-      .highlight-keyword {
-        background-color: #FEF3C7 !important;
-        color: #92400E !important;
-        padding: 2px 4px !important;
-        border-radius: 3px !important;
-        font-weight: 600 !important;
-        box-shadow: 0 1px 2px rgba(146, 64, 14, 0.2) !important;
-      }
-      
-      mark.highlight-keyword {
-        display: inline;
-      }
-      
-      /* Smooth scrolling for clause navigation */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Global smooth transitions */
-      * {
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      /* Smooth page transitions */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      
-      @keyframes slideInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      @keyframes slideInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      
-      @keyframes slideInRight {
-        from {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      
-      @keyframes scaleIn {
-        from {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-      
-      @keyframes highlightClause {
-        0% {
-          box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.5);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(29, 78, 216, 0);
-        }
-      }
-      
-      @keyframes pulse-dot {
-        0%, 100% { 
-          opacity: 1; 
-          transform: scale(1);
-        }
-        50% { 
-          opacity: 0.5; 
-          transform: scale(0.8);
-        }
-      }
-      
-      .animate-pulse-dot {
-        animation: pulse-dot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ===== Modern Blue Design System (Darker) ===== */
+    :root {
+      --mac-blue: #1D4ED8;
+      --mac-blue-hover: #1E40AF;
+      --mac-blue-light: #93C5FD;
+      --mac-blue-subtle: #BFDBFE;
+      --mac-navy: #1E3A8A;
+      --mac-charcoal: #1E293B;
+      --mac-muted: #6B7280;
+      --mac-muted-light: #9CA3AF;
+      --surface-bg: #F8FAFC;
+      --surface-bg-subtle: #F1F5F9;
+      --surface-card: #FFFFFF;
+      --surface-border: rgba(29, 78, 216, 0.1);
+      --shadow-mac: 0 4px 24px -4px rgba(29, 78, 216, 0.12), 0 0 0 1px rgba(29, 78, 216, 0.06);
+      --shadow-mac-hover: 0 8px 32px -4px rgba(29, 78, 216, 0.18), 0 0 0 1px rgba(29, 78, 216, 0.1);
+      --radius-mac: 16px;
+      --radius-mac-lg: 20px;
+      --radius-mac-sm: 12px;
+      --transition-mac: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #EFF6FF 100%);
+      color: var(--mac-navy);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    }
+
+    /* Glass effect - MacBook style */
+    .glass {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    /* Skeleton loader animation */
+    .skeleton {
+      background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+      background-size: 200% 100%;
+      animation: skeleton-pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes skeleton-pulse {
+      0% {
+        background-position: 200% 0;
       }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-6px); }
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
       }
 
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
+      100% {
+        background-position: 200% 0;
       }
-      
-      /* Smooth entrance animations */
-      .animate-fade-in {
-        animation: fadeIn 0.4s ease-out;
-      }
-      
-      .animate-slide-up {
-        animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .animate-slide-down {
-        animation: slideInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .animate-slide-left {
-        animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .animate-slide-right {
-        animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .animate-scale-in {
-        animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      /* Smooth hover effects - MacBook style */
-      .smooth-hover {
-        transition: all var(--transition-mac);
-      }
-      
-      .smooth-hover:hover {
-        transform: translateY(-1px);
-      }
-      
-      /* MacBook-style card hover */
-      .mac-card-hover {
-        transition: all var(--transition-mac);
-      }
-      
-      .mac-card-hover:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-mac-hover);
-      }
-      
-      /* Smooth button interactions - MacBook style */
-      button {
-        transition: all var(--transition-mac);
-      }
-      
-      button:active:not(:disabled) {
-        transform: scale(0.98);
-      }
-      
-      button:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-      
-      /* MacBook-style primary button */
-      .btn-mac-primary {
-        background: linear-gradient(180deg, var(--mac-blue) 0%, var(--mac-blue-hover) 100%);
-        color: white;
-        border: none;
-        border-radius: var(--radius-mac-sm);
-        font-weight: 500;
-        box-shadow: 0 2px 8px -2px rgba(29, 78, 216, 0.35);
-        transition: all var(--transition-mac);
-      }
-      
-      .btn-mac-primary:hover:not(:disabled) {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px -2px rgba(29, 78, 216, 0.45);
-      }
-      
-      /* MacBook-style secondary button */
-      .btn-mac-secondary {
-        background: white;
-        color: var(--mac-blue);
-        border: 1px solid var(--surface-border);
-        border-radius: var(--radius-mac-sm);
-        font-weight: 500;
-        transition: all var(--transition-mac);
-      }
-      
-      .btn-mac-secondary:hover:not(:disabled) {
-        border-color: var(--mac-blue);
-        background: var(--mac-blue-subtle);
-      }
-      
-      /* Smooth card animations */
-      .card-enter {
-        animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      /* MacBook-style card */
-      .mac-card {
-        background: var(--surface-card);
-        border-radius: var(--radius-mac);
-        border: 1px solid var(--surface-border);
-        box-shadow: var(--shadow-mac);
-      }
-      
-      /* Stagger animation for lists */
-      @keyframes stagger {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .stagger-item {
-        animation: stagger 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Premium scrollbar - MacBook style */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 100px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.25);
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    .contract-container {
+      scrollbar-gutter: stable;
+    }
+
+    /* Internal Clause Hyperlinks - MacBook style */
+    .verbatim-content a.clause-link,
+    .clause-link {
+      color: var(--mac-blue);
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all var(--transition-mac);
+      text-underline-offset: 4px;
+      padding: 0 2px;
+      border-radius: 6px;
+    }
+
+    .verbatim-content a.clause-link:hover,
+    .clause-link:hover {
+      color: var(--mac-blue-hover);
+      text-decoration: none;
+      background-color: var(--mac-blue-subtle);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    /* Fallback for any legacy hyperlinks without clause-link class */
+    .verbatim-content a:not(.clause-link) {
+      color: var(--mac-blue);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: all var(--transition-mac);
+      padding: 0 2px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .verbatim-content a:not(.clause-link):hover {
+      background-color: var(--mac-blue-subtle);
+      color: var(--mac-blue-hover);
+    }
+
+    /* Search keyword highlighting */
+    .highlight-keyword {
+      background-color: #FEF3C7 !important;
+      color: #92400E !important;
+      padding: 2px 4px !important;
+      border-radius: 3px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 1px 2px rgba(146, 64, 14, 0.2) !important;
+    }
+
+    mark.highlight-keyword {
+      display: inline;
+    }
+
+    /* Smooth scrolling for clause navigation */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Global smooth transitions */
+    * {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Smooth page transitions */
+    @keyframes fadeIn {
+      from {
         opacity: 0;
       }
-      
-      .stagger-item:nth-child(1) { animation-delay: 0.05s; }
-      .stagger-item:nth-child(2) { animation-delay: 0.1s; }
-      .stagger-item:nth-child(3) { animation-delay: 0.15s; }
-      .stagger-item:nth-child(4) { animation-delay: 0.2s; }
-      .stagger-item:nth-child(5) { animation-delay: 0.25s; }
-      .stagger-item:nth-child(6) { animation-delay: 0.3s; }
-      .stagger-item:nth-child(7) { animation-delay: 0.35s; }
-      .stagger-item:nth-child(8) { animation-delay: 0.4s; }
-      .stagger-item:nth-child(9) { animation-delay: 0.45s; }
-      .stagger-item:nth-child(10) { animation-delay: 0.5s; }
-      
-      /* Smooth modal animations */
-      @keyframes modalBackdrop {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+
+      to {
+        opacity: 1;
       }
-      
-      @keyframes modalContent {
-        from {
-          opacity: 0;
-          transform: scale(0.95) translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-      
-      .modal-backdrop {
-        animation: modalBackdrop 0.2s ease-out;
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      
-      .modal-content {
-        animation: modalContent 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
       }
-      
-      /* MacBook-style modal */
-      .mac-modal-backdrop {
-        background: rgba(15, 23, 42, 0.6);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      
-      .mac-modal-content {
-        background: var(--surface-card);
-        border-radius: var(--radius-mac-lg);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
       }
-      
-      /* MacBook-style input focus */
-      input, textarea, select {
-        transition: all var(--transition-mac);
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
-      
-      .mac-input {
-        background: white;
-        border: 1px solid var(--surface-border);
-        border-radius: var(--radius-mac-sm);
-        padding: 0.75rem 1rem;
-        font-size: 0.9375rem;
-        transition: all var(--transition-mac);
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
       }
-      
-      .mac-input:focus {
-        outline: none;
-        border-color: var(--mac-blue);
-        box-shadow: var(--shadow-mac-focus);
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
-      
-      .mac-input::placeholder {
-        color: var(--mac-muted-light);
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
       }
-      
-      /* Smooth scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-        transition: background 0.3s ease;
+
+      to {
+        opacity: 1;
+        transform: scale(1);
       }
-      
-      ::-webkit-scrollbar-thumb {
-        transition: background 0.3s ease;
+    }
+
+    @keyframes highlightClause {
+      0% {
+        box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.5);
       }
-      
-      /* Highlight target clause when navigated to via hyperlink */
-      [id^="clause-"]:target {
-        animation: highlightClause 2s ease-out;
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(29, 78, 216, 0);
       }
-      
-      /* Highlight clause when scrolled to via sidebar click */
-      .clause-highlight {
-        animation: highlightClause 2s ease-out;
-        scroll-margin-top: 100px;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
-      
-      /* Ensure login page inputs are always visible */
-      .login-container input[type="email"],
-      .login-container input[type="password"],
-      .login-email-input,
-      .login-password-input {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 44px !important;
-        color: #1a202c !important;
-        background: #fff !important;
-        border: 2px solid #e2e8f0 !important;
-        padding: 0.875rem 1rem !important;
-        font-size: 1rem !important;
-        box-sizing: border-box !important;
-        margin: 0 !important;
-        position: relative !important;
-        z-index: 10 !important;
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
       }
-      
-      /* ===== MacBook-Style Glass UI Login ===== */
-      
-      /* Glass card entrance animation */
-      @keyframes glassCardEnter {
-        from {
-          opacity: 0;
-          transform: translateY(8px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+    }
+
+    .animate-pulse-dot {
+      animation: pulse-dot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
       }
-      
-      .animate-glass-enter {
-        animation: glassCardEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+      50% {
+        transform: translateY(-6px);
       }
-      
-      /* Error shake animation */
-      @keyframes errorShake {
-        0%, 100% { transform: translateX(0); }
-        20%, 60% { transform: translateX(-6px); }
-        40%, 80% { transform: translateX(6px); }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Smooth entrance animations */
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .animate-slide-up {
+      animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-slide-down {
+      animation: slideInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-slide-left {
+      animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-slide-right {
+      animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Smooth hover effects - MacBook style */
+    .smooth-hover {
+      transition: all var(--transition-mac);
+    }
+
+    .smooth-hover:hover {
+      transform: translateY(-1px);
+    }
+
+    /* MacBook-style card hover */
+    .mac-card-hover {
+      transition: all var(--transition-mac);
+    }
+
+    .mac-card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-mac-hover);
+    }
+
+    /* Smooth button interactions - MacBook style */
+    button {
+      transition: all var(--transition-mac);
+    }
+
+    button:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* MacBook-style primary button */
+    .btn-mac-primary {
+      background: linear-gradient(180deg, var(--mac-blue) 0%, var(--mac-blue-hover) 100%);
+      color: white;
+      border: none;
+      border-radius: var(--radius-mac-sm);
+      font-weight: 500;
+      box-shadow: 0 2px 8px -2px rgba(29, 78, 216, 0.35);
+      transition: all var(--transition-mac);
+    }
+
+    .btn-mac-primary:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px -2px rgba(29, 78, 216, 0.45);
+    }
+
+    /* MacBook-style secondary button */
+    .btn-mac-secondary {
+      background: white;
+      color: var(--mac-blue);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-mac-sm);
+      font-weight: 500;
+      transition: all var(--transition-mac);
+    }
+
+    .btn-mac-secondary:hover:not(:disabled) {
+      border-color: var(--mac-blue);
+      background: var(--mac-blue-subtle);
+    }
+
+    /* Smooth card animations */
+    .card-enter {
+      animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* MacBook-style card */
+    .mac-card {
+      background: var(--surface-card);
+      border-radius: var(--radius-mac);
+      border: 1px solid var(--surface-border);
+      box-shadow: var(--shadow-mac);
+    }
+
+    /* Stagger animation for lists */
+    @keyframes stagger {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
-      
-      .animate-shake {
-        animation: errorShake 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      
-      /* Error fade-in slide */
-      @keyframes errorFadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-4px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+    }
+
+    .stagger-item {
+      animation: stagger 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+
+    .stagger-item:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .stagger-item:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-item:nth-child(3) {
+      animation-delay: 0.15s;
+    }
+
+    .stagger-item:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-item:nth-child(5) {
+      animation-delay: 0.25s;
+    }
+
+    .stagger-item:nth-child(6) {
+      animation-delay: 0.3s;
+    }
+
+    .stagger-item:nth-child(7) {
+      animation-delay: 0.35s;
+    }
+
+    .stagger-item:nth-child(8) {
+      animation-delay: 0.4s;
+    }
+
+    .stagger-item:nth-child(9) {
+      animation-delay: 0.45s;
+    }
+
+    .stagger-item:nth-child(10) {
+      animation-delay: 0.5s;
+    }
+
+    /* Smooth modal animations */
+    @keyframes modalBackdrop {
+      from {
+        opacity: 0;
       }
-      
-      .animate-error-enter {
-        animation: errorFadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+      to {
+        opacity: 1;
       }
-      
-      /* Floating label animation */
-      @keyframes labelFloat {
-        from {
-          transform: translateY(0);
-          font-size: 1rem;
-        }
-        to {
-          transform: translateY(-24px);
-          font-size: 0.75rem;
-        }
+    }
+
+    @keyframes modalContent {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
       }
-      
-      /* Noise texture overlay */
-      .glass-noise::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        opacity: 0.03;
-        pointer-events: none;
-        border-radius: inherit;
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
       }
-      
-      /* Glass card styling */
-      .glass-card {
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow: 
-          0 8px 32px rgba(29, 78, 216, 0.1),
-          0 0 0 1px rgba(29, 78, 216, 0.06),
-          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .modal-backdrop {
+      animation: modalBackdrop 0.2s ease-out;
+    }
+
+    .modal-content {
+      animation: modalContent 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* MacBook-style modal */
+    .mac-modal-backdrop {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .mac-modal-content {
+      background: var(--surface-card);
+      border-radius: var(--radius-mac-lg);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    /* MacBook-style input focus */
+    input,
+    textarea,
+    select {
+      transition: all var(--transition-mac);
+    }
+
+    .mac-input {
+      background: white;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-mac-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.9375rem;
+      transition: all var(--transition-mac);
+    }
+
+    .mac-input:focus {
+      outline: none;
+      border-color: var(--mac-blue);
+      box-shadow: var(--shadow-mac-focus);
+    }
+
+    .mac-input::placeholder {
+      color: var(--mac-muted-light);
+    }
+
+    /* Smooth scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      transition: background 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      transition: background 0.3s ease;
+    }
+
+    /* Highlight target clause when navigated to via hyperlink */
+    [id^="clause-"]:target {
+      animation: highlightClause 2s ease-out;
+    }
+
+    /* Highlight clause when scrolled to via sidebar click */
+    .clause-highlight {
+      animation: highlightClause 2s ease-out;
+      scroll-margin-top: 100px;
+    }
+
+    /* Ensure login page inputs are always visible */
+    .login-container input[type="email"],
+    .login-container input[type="password"],
+    .login-email-input,
+    .login-password-input {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 44px !important;
+      color: #1a202c !important;
+      background: #fff !important;
+      border: 2px solid #e2e8f0 !important;
+      padding: 0.875rem 1rem !important;
+      font-size: 1rem !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    /* ===== MacBook-Style Glass UI Login ===== */
+
+    /* Glass card entrance animation */
+    @keyframes glassCardEnter {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
       }
-      
-      /* MacBook-style input focus ring */
-      .glass-input:focus {
-        outline: none;
-        border-color: rgba(29, 78, 216, 0.5);
-        box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      
-      /* MacBook-style button */
-      .glass-button {
-        background: linear-gradient(180deg, #1D4ED8 0%, #1E40AF 100%);
-        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
-                    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-glass-enter {
+      animation: glassCardEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Error shake animation */
+    @keyframes errorShake {
+
+      0%,
+      100% {
+        transform: translateX(0);
       }
-      
-      .glass-button:hover:not(:disabled) {
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
+
+      20%,
+      60% {
+        transform: translateX(-6px);
       }
-      
-      .glass-button:active:not(:disabled) {
-        transform: scale(0.98);
+
+      40%,
+      80% {
+        transform: translateX(6px);
       }
-      
-      .glass-button:disabled {
-        background: linear-gradient(180deg, #94A3B8 0%, #64748B 100%);
-        cursor: not-allowed;
+    }
+
+    .animate-shake {
+      animation: errorShake 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Error fade-in slide */
+    @keyframes errorFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
       }
-      
-      /* Respect reduced motion preference */
-      @media (prefers-reduced-motion: reduce) {
-        .animate-glass-enter,
-        .animate-shake,
-        .animate-error-enter,
-        .animate-fade-in,
-        .animate-slide-up,
-        .animate-slide-down,
-        .animate-slide-left,
-        .animate-slide-right,
-        .animate-scale-in,
-        .card-enter,
-        .stagger-item,
-        .modal-backdrop,
-        .modal-content {
-          animation: none !important;
-        }
-        
-        .glass-button,
-        .glass-input,
-        .mac-card-hover,
-        .smooth-hover,
-        button,
-        input,
-        textarea,
-        select,
-        * {
-          transition-duration: 0.01ms !important;
-          animation-duration: 0.01ms !important;
-        }
-        
-        .mac-card-hover:hover,
-        .smooth-hover:hover {
-          transform: none !important;
-        }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      
-      /* ===== MacBook-style utility classes ===== */
-      
-      /* Badge styles */
-      .mac-badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.25rem 0.625rem;
+    }
+
+    .animate-error-enter {
+      animation: errorFadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Floating label animation */
+    @keyframes labelFloat {
+      from {
+        transform: translateY(0);
+        font-size: 1rem;
+      }
+
+      to {
+        transform: translateY(-24px);
         font-size: 0.75rem;
-        font-weight: 500;
-        border-radius: 9999px;
-        transition: all var(--transition-mac);
       }
-      
-      .mac-badge-blue {
-        background: var(--mac-blue-subtle);
-        color: var(--mac-blue);
+    }
+
+    /* Noise texture overlay */
+    .glass-noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    /* Glass card styling */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow:
+        0 8px 32px rgba(29, 78, 216, 0.1),
+        0 0 0 1px rgba(29, 78, 216, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    /* MacBook-style input focus ring */
+    .glass-input:focus {
+      outline: none;
+      border-color: rgba(29, 78, 216, 0.5);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+    }
+
+    /* MacBook-style button */
+    .glass-button {
+      background: linear-gradient(180deg, #1D4ED8 0%, #1E40AF 100%);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
+    }
+
+    .glass-button:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
+    .glass-button:disabled {
+      background: linear-gradient(180deg, #94A3B8 0%, #64748B 100%);
+      cursor: not-allowed;
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+
+      .animate-glass-enter,
+      .animate-shake,
+      .animate-error-enter,
+      .animate-fade-in,
+      .animate-slide-up,
+      .animate-slide-down,
+      .animate-slide-left,
+      .animate-slide-right,
+      .animate-scale-in,
+      .card-enter,
+      .stagger-item,
+      .modal-backdrop,
+      .modal-content {
+        animation: none !important;
       }
-      
-      .mac-badge-muted {
-        background: var(--surface-bg-subtle);
-        color: var(--mac-muted);
+
+      .glass-button,
+      .glass-input,
+      .mac-card-hover,
+      .smooth-hover,
+      button,
+      input,
+      textarea,
+      select,
+      * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
       }
-      
-      /* Section divider */
-      .mac-divider {
-        height: 1px;
-        background: var(--surface-border);
-        margin: 1.5rem 0;
+
+      .mac-card-hover:hover,
+      .smooth-hover:hover {
+        transform: none !important;
       }
-      
-      /* ===== Responsive Styles for Glass Login ===== */
-      
-      /* Mobile: Full-width card with generous padding */
-      @media (max-width: 480px) {
-        .glass-card {
-          max-width: 100% !important;
-          margin: 0 0.5rem;
-          padding: 2rem 1.5rem !important;
-          border-radius: 20px !important;
-        }
+    }
+
+    /* ===== MacBook-style utility classes ===== */
+
+    /* Badge styles */
+    .mac-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      transition: all var(--transition-mac);
+    }
+
+    .mac-badge-blue {
+      background: var(--mac-blue-subtle);
+      color: var(--mac-blue);
+    }
+
+    .mac-badge-muted {
+      background: var(--surface-bg-subtle);
+      color: var(--mac-muted);
+    }
+
+    /* Section divider */
+    .mac-divider {
+      height: 1px;
+      background: var(--surface-border);
+      margin: 1.5rem 0;
+    }
+
+    /* ===== Responsive Styles for Glass Login ===== */
+
+    /* Mobile: Full-width card with generous padding */
+    @media (max-width: 480px) {
+      .glass-card {
+        max-width: 100% !important;
+        margin: 0 0.5rem;
+        padding: 2rem 1.5rem !important;
+        border-radius: 20px !important;
       }
-      
-      /* Tablet adjustments */
-      @media (min-width: 481px) and (max-width: 768px) {
-        .glass-card {
-          max-width: 400px !important;
-          padding: 2.25rem 1.75rem !important;
-        }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .glass-card {
+        max-width: 400px !important;
+        padding: 2.25rem 1.75rem !important;
       }
-      
-      /* Large screens - center with more breathing room */
-      @media (min-width: 1200px) {
-        .glass-card {
-          max-width: 440px !important;
-          padding: 3rem 2.5rem !important;
-        }
+    }
+
+    /* Large screens - center with more breathing room */
+    @media (min-width: 1200px) {
+      .glass-card {
+        max-width: 440px !important;
+        padding: 3rem 2.5rem !important;
       }
-    </style>
+    }
+  </style>
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script>
     // Track all failed resource loads with both console and fetch
-    window.addEventListener('error', function(e) {
+    window.addEventListener('error', function (e) {
       if (e.target && e.target.src) {
-        const errorData = {src:e.target.src,type:e.target.tagName,status:e.target.status||'unknown'};
+        const errorData = { src: e.target.src, type: e.target.tagName, status: e.target.status || 'unknown' };
         console.error('Resource load error:', errorData);
       }
     }, true);
     // Track module import errors
-    window.addEventListener('unhandledrejection', function(e) {
+    window.addEventListener('unhandledrejection', function (e) {
       if (e.reason && e.reason.message) {
-        const errorData = {error:e.reason.message,stack:e.reason.stack||''};
+        const errorData = { error: e.reason.message, stack: e.reason.stack || '' };
         console.error('Module import error:', errorData);
       }
     });
     // Track successful module load
     console.log('HTML loaded, starting module import:', window.location.href);
   </script>
-  <script type="module" src="/index.tsx"></script>
+  <script type="module" src="/src/index.tsx"></script>
 </body>
+
 </html>

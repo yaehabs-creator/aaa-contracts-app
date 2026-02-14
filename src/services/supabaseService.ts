@@ -1,6 +1,6 @@
 import { supabase } from '../supabase/config';
-import { SavedContract, ContractSection, SectionItem, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData } from '../../types';
-import { ensureContractHasSections } from '../../services/contractMigrationService';
+import { SavedContract, ContractSection, SectionItem, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData } from '@/types';
+import { ensureContractHasSections } from '@/services/contractMigrationService';
 
 
 /**

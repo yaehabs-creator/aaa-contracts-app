@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { EditorCategory } from '../../services/adminEditorService';
+import { EditorCategory } from '@/services/adminEditorService';
 
 interface CategoryItemProps {
   category: EditorCategory;

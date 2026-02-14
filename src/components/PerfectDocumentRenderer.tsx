@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { JSX } from 'react';
-import { OCRResult, OCRBlock, OCRLine, OCRWord, PageLayout, DocumentLayout } from '../services/advancedOCRService';
+import { OCRResult, OCRBlock, OCRLine, OCRWord, PageLayout, DocumentLayout } from '@/services/advancedOCRService';
 
 export interface DocumentRendererProps {
   ocrResult: OCRResult;

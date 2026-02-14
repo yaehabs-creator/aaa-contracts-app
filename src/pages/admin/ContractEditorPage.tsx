@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAdminEditor, CreateClauseParams } from '../../hooks/useAdminEditor';
-import { adminEditorService } from '../../services/adminEditorService';
+import { adminEditorService } from '@/services/adminEditorService';
 import { toast } from 'react-hot-toast';
 import { AdminGuard } from '../../components/admin/AdminGuard';
 import { ContractPicker } from '../../components/admin/ContractPicker';

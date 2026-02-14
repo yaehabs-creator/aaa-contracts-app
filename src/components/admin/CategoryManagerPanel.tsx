@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { EditorCategory } from '../../services/adminEditorService';
-import { EditorLoadingState } from '../../hooks/useAdminEditor';
+import { EditorCategory } from '@/services/adminEditorService';
+import { EditorLoadingState } from '@/hooks/useAdminEditor';
 import CategoryItem from './CategoryItem';
 
 interface CategoryManagerPanelProps {

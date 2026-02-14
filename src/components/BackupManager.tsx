@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { SavedContract } from '../../types';
-import { 
-  exportAllContractsToJSON, 
+import { SavedContract } from '@/types';
+import {
+  exportAllContractsToJSON,
   exportContractsToJSON,
   importContractsFromJSON,
   restoreContracts,
@@ -10,8 +10,8 @@ import {
   validateBackupFile,
   BackupFile,
   RestoreMode
-} from '../services/backupService';
-import { getAllContracts } from '../../services/dbService';
+} from '@/services/backupService';
+import { getAllContracts } from '@/services/dbService';
 
 export const BackupManager: React.FC = () => {
   const { user: currentUser } = useAuth();
@@ -26,7 +26,7 @@ export const BackupManager: React.FC = () => {
   const [restorePreview, setRestorePreview] = useState<BackupFile | null>(null);
   const [restoreMode, setRestoreMode] = useState<RestoreMode>('merge');
   const [restoreProgress, setRestoreProgress] = useState<{ current: number; total: number } | null>(null);
-  
+
   // Ref to prevent multiple simultaneous restores
   const isRestoringRef = useRef(false);
 
@@ -52,7 +52,7 @@ export const BackupManager: React.FC = () => {
       const jsonContent = await exportAllContractsToJSON(currentUser?.email || 'admin');
       const filename = `contract-backup-all-${new Date().toISOString().split('T')[0]}.json`;
       downloadBackupFile(jsonContent, filename);
-      
+
       setSuccess(`Successfully exported ${allContracts.length} contracts to backup file.`);
     } catch (err: any) {
       setError(err.message || 'Failed to export contracts');
@@ -81,7 +81,7 @@ export const BackupManager: React.FC = () => {
       const jsonContent = await exportContractsToJSON(contractsToExport, currentUser?.email || 'admin');
       const filename = `contract-backup-selected-${new Date().toISOString().split('T')[0]}.json`;
       downloadBackupFile(jsonContent, filename);
-      
+
       setSuccess(`Successfully exported ${contractsToExport.length} contracts to backup file.`);
       setShowSelectModal(false);
       setSelectedContracts(new Set());
@@ -106,7 +106,7 @@ export const BackupManager: React.FC = () => {
       setError('');
       const backup = await importContractsFromJSON(file);
       const validation = validateBackupFile(backup);
-      
+
       if (!validation.valid) {
         setError(`Invalid backup file: ${validation.errors.join(', ')}`);
         setLoading(false);
@@ -125,7 +125,7 @@ export const BackupManager: React.FC = () => {
 
   const handleRestore = async () => {
     if (!restorePreview) return;
-    
+
     // Prevent multiple simultaneous restores using ref
     if (isRestoringRef.current || loading) {
       console.warn('Restore already in progress, ignoring duplicate call');
@@ -157,7 +157,7 @@ export const BackupManager: React.FC = () => {
       );
 
       setRestoreProgress(null);
-      
+
       if (result.errors.length > 0) {
         setError(`Restore completed with errors: ${result.errors.join('; ')}`);
       } else {
@@ -169,7 +169,7 @@ export const BackupManager: React.FC = () => {
 
       // Reload contracts
       await loadContracts();
-      
+
       // Close modal after a delay
       setTimeout(() => {
         setShowRestoreModal(false);
@@ -255,7 +255,7 @@ export const BackupManager: React.FC = () => {
           <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
             Create a JSON backup file of your contracts
           </p>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <button
               onClick={handleExportAll}
@@ -331,7 +331,7 @@ export const BackupManager: React.FC = () => {
           <p style={{ fontSize: '0.875rem', color: '#64748B', marginBottom: '1.5rem' }}>
             Import contracts from a JSON backup file
           </p>
-          
+
           <label style={{
             display: 'block',
             width: '100%',
@@ -347,16 +347,16 @@ export const BackupManager: React.FC = () => {
             transition: 'all 0.2s ease',
             opacity: loading ? 0.6 : 1
           }}
-          onMouseEnter={(e) => {
-            if (!loading) {
-              e.currentTarget.style.background = '#E0EBFF';
-            }
-          }}
-          onMouseLeave={(e) => {
-            if (!loading) {
-              e.currentTarget.style.background = '#F0F4FF';
-            }
-          }}
+            onMouseEnter={(e) => {
+              if (!loading) {
+                e.currentTarget.style.background = '#E0EBFF';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!loading) {
+                e.currentTarget.style.background = '#F0F4FF';
+              }
+            }}
           >
             📤 Choose Backup File
             <input
@@ -540,7 +540,7 @@ export const BackupManager: React.FC = () => {
             boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
           }}>
             <h3 style={{ marginTop: 0, marginBottom: '1rem' }}>Restore Backup</h3>
-            
+
             <div style={{ marginBottom: '1.5rem', padding: '1rem', background: '#F0F4FF', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
                 <strong>File:</strong> {restoreFile?.name}

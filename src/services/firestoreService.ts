@@ -13,8 +13,8 @@ import {
   where
 } from 'firebase/firestore';
 import { db, auth } from '../firebase/config';
-import { SavedContract, ContractSection, SectionItem, SectionType } from '../../types';
-import { ensureContractHasSections } from '../../services/contractMigrationService';
+import { SavedContract, ContractSection, SectionItem, SectionType } from '@/types';
+import { ensureContractHasSections } from '@/services/contractMigrationService';
 
 const CONTRACTS_COLLECTION = 'contracts';
 const MAX_DOCUMENT_SIZE = 1000000; // 1MB in bytes (with some buffer)
