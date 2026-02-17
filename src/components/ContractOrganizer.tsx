@@ -44,6 +44,19 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
     const [showFullTextModal, setShowFullTextModal] = useState(false);
     const [fullOcrText, setFullOcrText] = useState<string | null>(null);
     const [isRepairing, setIsRepairing] = useState(false);
+    const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+
+    // Warn before leaving if there are unsaved changes
+    useEffect(() => {
+        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+            if (hasUnsavedChanges) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        };
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+    }, [hasUnsavedChanges]);
 
     // Local contract state for when no contract is passed via props
     const [localContract, setLocalContract] = useState<SavedContract | null>(null);
@@ -129,16 +142,19 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
         setSubfolders([...subfolders, newSubfolder]);
         setSelectedSubfolderId(newId);
         setSchemas({ ...schemas, [newId]: [] });
+        setHasUnsavedChanges(true);
     };
 
     const removeSubfolder = (id: string) => {
         setSubfolders(subfolders.filter(s => s.id !== id));
         if (selectedSubfolderId === id) setSelectedSubfolderId(null);
         setExtractedData(extractedData.filter(d => d.subfolder_id !== id));
+        setHasUnsavedChanges(true);
     };
 
     const updateSubfolder = (id: string, name: string) => {
         setSubfolders(subfolders.map(s => s.id === id ? { ...s, name } : s));
+        setHasUnsavedChanges(true);
     };
 
     // Schema Field Helpers
@@ -155,6 +171,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             ...schemas,
             [subfolderId]: [...(schemas[subfolderId] || []), newField]
         });
+        setHasUnsavedChanges(true);
     };
 
     const updateField = (subfolderId: string, fieldId: string, updates: Partial<FolderSchemaField>) => {
@@ -162,6 +179,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             ...schemas,
             [subfolderId]: (schemas[subfolderId] || []).map(f => f.id === fieldId ? { ...f, ...updates } : f)
         });
+        setHasUnsavedChanges(true);
     };
 
     const removeField = (subfolderId: string, fieldId: string) => {
@@ -169,7 +187,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             ...schemas,
             [subfolderId]: (schemas[subfolderId] || []).filter(f => f.id !== fieldId)
         });
-        setExtractedData(extractedData.filter(d => d.field_key !== 'UNKNOWN')); // Note: Key logic might need refinement if used
+        setHasUnsavedChanges(true);
     };
 
     const [ocrAvailable, setOcrAvailable] = useState<boolean | null>(null);
@@ -312,6 +330,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             ]);
 
             setFullOcrText(ocrResponse.text);
+            setHasUnsavedChanges(true);
             toast.success(`Extracted ${newExtractedData.length} fields from document`);
         } catch (err: any) {
             console.error('Processing error:', err);
@@ -348,6 +367,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
                 schemas,
                 extractedData
             });
+            setHasUnsavedChanges(false);
             // Final success toast is now handled by the App.tsx onSaveAll handler
         } catch (err) {
             toast.error('Failed to save changes');
@@ -422,6 +442,11 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
                         <div className="px-3 py-1 bg-aaa-blue/10 text-aaa-blue text-[9px] font-black rounded-full uppercase tracking-widest border border-aaa-blue/20">
                             {effectiveContract?.title || 'No Contract'}
                         </div>
+                        {hasUnsavedChanges && (
+                            <div className="px-3 py-1 bg-amber-500/10 text-amber-600 text-[9px] font-black rounded-full uppercase tracking-widest border border-amber-500/20 animate-pulse">
+                                Unsaved Changes
+                            </div>
+                        )}
                         {ocrAvailable !== null && (
                             <div className={`px-3 py-1 ${ocrAvailable ? 'bg-blue-500/10 text-blue-600 border-blue-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'} text-[9px] font-black rounded-full uppercase tracking-widest border`}>
                                 OCR: {ocrAvailable ? 'Connected' : 'Disconnected (Local:8000)'}

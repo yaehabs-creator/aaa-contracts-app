@@ -736,8 +736,22 @@ export const saveOrganizerData = async (contractId: string, data: {
 }) => {
   if (!supabase) throw new Error('Supabase not initialized');
 
-  // 1. Upsert subfolders
+  console.log('Synchronizing organizer data for contract:', contractId);
+
+  // 1. Sync Subfolders (Upsert current, delete stale)
   if (data.subfolders.length > 0) {
+    const currentSubfolderIds = data.subfolders.map(s => s.id);
+
+    // Delete subfolders that belong to this template but are NOT in the current list
+    // Note: We use the default template ID as per current architecture
+    const { error: delSubError } = await supabase
+      .from('contract_subfolders')
+      .delete()
+      .eq('template_id', DEFAULT_TEMPLATE_ID)
+      .not('id', 'in', `(${currentSubfolderIds.join(',')})`);
+
+    if (delSubError) console.error('Error deleting stale subfolders:', delSubError);
+
     const { error: subError } = await supabase
       .from('contract_subfolders')
       .upsert(data.subfolders.map(s => ({
@@ -747,19 +761,28 @@ export const saveOrganizerData = async (contractId: string, data: {
         name: s.name,
         order_index: s.order_index
       })));
-    if (subError) {
-      console.error('Subfolder upsert error:', subError);
-      throw new Error(`Failed to save subfolders: ${subError.message} (${subError.code})`);
-    }
+    if (subError) throw new Error(`Failed to save subfolders: ${subError.message}`);
   }
 
-  // 2. Upsert schemas
+  // 2. Sync Schemas
   const allFields: any[] = [];
   Object.values(data.schemas).forEach(fields => {
     allFields.push(...fields);
   });
 
   if (allFields.length > 0) {
+    const currentFieldIds = allFields.map(f => f.id);
+
+    // Delete fields that are NOT in the current list but belong to our subfolders
+    const currentSubfolderIds = data.subfolders.map(s => s.id);
+    const { error: delSchemaError } = await supabase
+      .from('contract_folder_schema')
+      .delete()
+      .in('subfolder_id', currentSubfolderIds)
+      .not('id', 'in', `(${currentFieldIds.join(',')})`);
+
+    if (delSchemaError) console.error('Error deleting stale schema fields:', delSchemaError);
+
     const { error: schemaError } = await supabase
       .from('contract_folder_schema')
       .upsert(allFields.map(f => ({
@@ -775,8 +798,19 @@ export const saveOrganizerData = async (contractId: string, data: {
     if (schemaError) throw schemaError;
   }
 
-  // 3. Upsert extracted data
+  // 3. Sync Extracted Data
   if (data.extractedData.length > 0) {
+    const currentExtractedIds = data.extractedData.map(ed => ed.id);
+
+    // Delete extracted data for this contract that is NOT in the current list
+    const { error: delExtError } = await supabase
+      .from('contract_extracted_data')
+      .delete()
+      .eq('contract_id', contractId)
+      .not('id', 'in', `(${currentExtractedIds.join(',')})`);
+
+    if (delExtError) console.error('Error deleting stale extracted data:', delExtError);
+
     const { error: extError } = await supabase
       .from('contract_extracted_data')
       .upsert(data.extractedData.map(ed => ({
@@ -792,9 +826,13 @@ export const saveOrganizerData = async (contractId: string, data: {
         updated_at: new Date().toISOString()
       })));
 
-    if (extError) {
-      console.error('Extraction upsert error:', extError);
-      throw new Error(`Failed to save extracted data: ${extError.message} (${extError.code})`);
-    }
+    if (extError) throw new Error(`Failed to save extracted data: ${extError.message}`);
+  } else {
+    // If we have NO extracted data in the UI, but it exists in DB, wipe it for this contract
+    const { error: clearError } = await supabase
+      .from('contract_extracted_data')
+      .delete()
+      .eq('contract_id', contractId);
+    if (clearError) console.error('Error clearing extracted data:', clearError);
   }
 };
