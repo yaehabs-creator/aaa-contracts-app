@@ -139,6 +139,7 @@ export interface DualSourceInput {
 }
 
 export interface SectionItem {
+  id?: string;
   itemType: ItemType;
   number?: string;  // For clauses
   heading?: string;  // For paragraphs/clauses
@@ -165,6 +166,13 @@ export interface SectionItem {
   chapter?: string;
   gc_link_tokens?: LinkToken[];
   pc_link_tokens?: LinkToken[];
+  // Extraction metadata
+  confidence?: number;
+  evidence?: {
+    page: number;
+    snippet: string;
+  };
+  status?: 'extracted' | 'missing' | 'manual' | 'uncertain';
 }
 
 export interface ContractSection {

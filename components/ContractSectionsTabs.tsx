@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { SavedContract, ContractSection, SectionType, SectionItem, Clause } from '../types';
+import { SavedContract, ContractSection, SectionType, SectionItem, Clause, ContractSubfolder, ExtractedData } from '../types';
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '../services/contractMigrationService';
 import { getCategoriesForContract, ContractCategory } from '../src/services/supabaseService';
@@ -29,6 +29,8 @@ interface ContractSectionsTabsProps {
   onAddClause?: () => void;
   sortMode?: 'default' | 'status' | 'chapter' | 'category';
   onSortModeChange?: (mode: 'default' | 'status' | 'chapter' | 'category') => void;
+  organizerSubfolders?: ContractSubfolder[];
+  organizerExtractedData?: ExtractedData[];
 }
 
 export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
@@ -41,7 +43,9 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   onReorderClause,
   onAddClause,
   sortMode = 'default',
-  onSortModeChange
+  onSortModeChange,
+  organizerSubfolders = [],
+  organizerExtractedData = []
 }) => {
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
@@ -659,6 +663,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             onDeleteClause={(index) => handleDeleteClause(index, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
             onReorderClause={(fromIndex, toIndex) => handleReorderClause(fromIndex, toIndex, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
             onAddClause={onAddClause}
+            organizerSubfolders={organizerSubfolders}
+            organizerExtractedData={organizerExtractedData}
           />
         )}
       </div>

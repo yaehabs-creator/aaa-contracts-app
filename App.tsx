@@ -4,8 +4,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import { analyzeContract } from './services/claudeService';
 import { callAIProxy } from './src/services/aiProxyClient';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
-import { getContractFromSupabase, saveOrganizerData, saveContractToSupabase } from './src/services/supabaseService';
-import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType } from './types';
+import { getContractFromSupabase, saveOrganizerData, saveContractToSupabase, getOrganizerData } from './src/services/supabaseService';
+import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData } from './types';
 // import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard'; // Lazy loaded below
 import { groupClausesByParent } from './components/GroupedClauseCard';
 import { CategoryManagerService } from './services/categoryManagerService';
@@ -268,6 +268,9 @@ const App: React.FC = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [showContractSelector, setShowContractSelector] = useState(false);
   const [hasDraft, setHasDraft] = useState(false);
+  const [organizerSubfolders, setOrganizerSubfolders] = useState<ContractSubfolder[]>([]);
+  const [organizerSchemas, setOrganizerSchemas] = useState<Record<string, FolderSchemaField[]>>({});
+  const [organizerExtractedData, setOrganizerExtractedData] = useState<ExtractedData[]>([]);
 
   // --- DRAFT/LOCAL BACKUP LOGIC ---
   useEffect(() => {
@@ -300,6 +303,42 @@ const App: React.FC = () => {
       }
     }
   };
+
+  // Fetch organizer data when a contract is selected
+  useEffect(() => {
+    const fetchOrganizerData = async () => {
+      if (!activeContractId) {
+        setOrganizerSubfolders([]);
+        setOrganizerSchemas({});
+        setOrganizerExtractedData([]);
+        return;
+      }
+
+      try {
+        console.log('App: Fetching organizer data for contract:', activeContractId);
+        const data = await getOrganizerData(activeContractId);
+
+        setOrganizerSubfolders(data.subfolders);
+
+        // Convert array of schemas to a record keyed by subfolder_id
+        const schemaMap: Record<string, FolderSchemaField[]> = {};
+        data.schemas.forEach(field => {
+          if (!schemaMap[field.subfolder_id]) {
+            schemaMap[field.subfolder_id] = [];
+          }
+          schemaMap[field.subfolder_id].push(field);
+        });
+        setOrganizerSchemas(schemaMap);
+
+        setOrganizerExtractedData(data.extractedData);
+      } catch (err) {
+        console.error('App: Failed to fetch organizer data:', err);
+        // Don't show toast for this background operation to avoid annoying the user
+      }
+    };
+
+    fetchOrganizerData();
+  }, [activeContractId]);
 
   const clearDraft = () => {
     localStorage.removeItem('aaa_contract_draft');
@@ -2960,6 +2999,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       onAddClause={() => setIsAddModalOpen(true)}
                       sortMode={sortMode}
                       onSortModeChange={setSortMode}
+                      organizerSubfolders={organizerSubfolders}
+                      organizerExtractedData={organizerExtractedData}
                     />
                   ) : clauses.length > 0 ? (
                     // Fallback: if contract not set but clauses exist, create contract
@@ -2997,6 +3038,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                             onAddClause={() => setIsAddModalOpen(true)}
                             sortMode={sortMode}
                             onSortModeChange={setSortMode}
+                            organizerSubfolders={organizerSubfolders}
+                            organizerExtractedData={organizerExtractedData}
                           />
                         </React.Suspense>
                       );
@@ -3171,9 +3214,20 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                   <React.Suspense fallback={<div className="flex items-center justify-center h-full"><div className="w-12 h-12 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" /></div>}>
                     <ContractOrganizer
                       contract={contract}
+                      subfolders={organizerSubfolders}
+                      schemas={organizerSchemas}
+                      extractedData={organizerExtractedData}
+                      onUpdateSubfolders={setOrganizerSubfolders}
+                      onUpdateSchemas={setOrganizerSchemas}
+                      onUpdateExtractedData={setOrganizerExtractedData}
                       onClose={() => setStatus(AnalysisStatus.COMPLETED)}
                       onSaveAll={async (data, silent = false) => {
                         console.log('Save All triggered:', { ...data, silent });
+
+                        // Update local state first for responsiveness
+                        if (data.subfolders) setOrganizerSubfolders(data.subfolders);
+                        if (data.schemas) setOrganizerSchemas(data.schemas);
+                        if (data.extractedData) setOrganizerExtractedData(data.extractedData);
 
                         // Persist to Supabase
                         try {

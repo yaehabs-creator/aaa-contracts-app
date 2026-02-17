@@ -13,6 +13,12 @@ import { cleanTextWithAI } from '@/src/services/textPreprocessor';
 
 interface ContractOrganizerProps {
     contract: SavedContract | null;
+    subfolders: ContractSubfolder[];
+    schemas: Record<string, FolderSchemaField[]>;
+    extractedData: ExtractedData[];
+    onUpdateSubfolders: (subfolders: ContractSubfolder[]) => void;
+    onUpdateSchemas: (schemas: Record<string, FolderSchemaField[]>) => void;
+    onUpdateExtractedData: (data: ExtractedData[]) => void;
     onClose: () => void;
     onSaveAll: (data: {
         contract?: SavedContract,
@@ -32,12 +38,19 @@ const FIXED_FOLDERS = [
     { code: 'P', name: 'Instruction To Tenderers & its Appendices' }
 ] as const;
 
-export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, onClose, onSaveAll }) => {
+export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
+    contract,
+    subfolders,
+    schemas,
+    extractedData,
+    onUpdateSubfolders,
+    onUpdateSchemas,
+    onUpdateExtractedData,
+    onClose,
+    onSaveAll
+}) => {
     const [activeFolder, setActiveFolder] = useState<string>('A');
     const [selectedSubfolderId, setSelectedSubfolderId] = useState<string | null>(null);
-    const [subfolders, setSubfolders] = useState<ContractSubfolder[]>([]);
-    const [schemas, setSchemas] = useState<Record<string, FolderSchemaField[]>>({});
-    const [extractedData, setExtractedData] = useState<ExtractedData[]>([]);
     const [isSaving, setIsSaving] = useState(false);
     const [isProcessing, setIsProcessing] = useState(false);
     const [processingStatus, setProcessingStatus] = useState('');
@@ -138,9 +151,9 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             }
 
             // Restore organizer data
-            if (data.organizer.subfolders) setSubfolders(data.organizer.subfolders);
-            if (data.organizer.schemas) setSchemas(data.organizer.schemas);
-            if (data.organizer.extractedData) setExtractedData(data.organizer.extractedData);
+            if (data.organizer.subfolders) onUpdateSubfolders(data.organizer.subfolders);
+            if (data.organizer.schemas) onUpdateSchemas(data.organizer.schemas);
+            if (data.organizer.extractedData) onUpdateExtractedData(data.organizer.extractedData);
 
             toast.success('Contract context restored from JSON');
         } catch (err: any) {
@@ -161,21 +174,21 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             name: 'New Subfolder',
             order_index: subfolders.filter(s => s.folder_code === activeFolder).length
         };
-        setSubfolders([...subfolders, newSubfolder]);
+        onUpdateSubfolders([...subfolders, newSubfolder]);
         setSelectedSubfolderId(newId);
-        setSchemas({ ...schemas, [newId]: [] });
+        onUpdateSchemas({ ...schemas, [newId]: [] });
         setHasUnsavedChanges(true);
     };
 
     const removeSubfolder = (id: string) => {
-        setSubfolders(subfolders.filter(s => s.id !== id));
+        onUpdateSubfolders(subfolders.filter(s => s.id !== id));
         if (selectedSubfolderId === id) setSelectedSubfolderId(null);
-        setExtractedData(extractedData.filter(d => d.subfolder_id !== id));
+        onUpdateExtractedData(extractedData.filter(d => d.subfolder_id !== id));
         setHasUnsavedChanges(true);
     };
 
     const updateSubfolder = (id: string, name: string) => {
-        setSubfolders(subfolders.map(s => s.id === id ? { ...s, name } : s));
+        onUpdateSubfolders(subfolders.map(s => s.id === id ? { ...s, name } : s));
         setHasUnsavedChanges(true);
     };
 
@@ -189,7 +202,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             type: 'text',
             required: false
         };
-        setSchemas({
+        onUpdateSchemas({
             ...schemas,
             [subfolderId]: [...(schemas[subfolderId] || []), newField]
         });
@@ -197,7 +210,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
     };
 
     const updateField = (subfolderId: string, fieldId: string, updates: Partial<FolderSchemaField>) => {
-        setSchemas({
+        onUpdateSchemas({
             ...schemas,
             [subfolderId]: (schemas[subfolderId] || []).map(f => f.id === fieldId ? { ...f, ...updates } : f)
         });
@@ -205,7 +218,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
     };
 
     const removeField = (subfolderId: string, fieldId: string) => {
-        setSchemas({
+        onUpdateSchemas({
             ...schemas,
             [subfolderId]: (schemas[subfolderId] || []).filter(f => f.id !== fieldId)
         });
@@ -221,7 +234,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
                 try {
                     const data = await getOrganizerData(effectiveContract.id);
                     if (data.subfolders.length > 0) {
-                        setSubfolders(data.subfolders);
+                        onUpdateSubfolders(data.subfolders);
 
                         // Map schemas back to the state record format
                         const schemaRecord: Record<string, FolderSchemaField[]> = {};
@@ -231,15 +244,15 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
                             }
                             schemaRecord[field.subfolder_id].push(field);
                         });
-                        setSchemas(schemaRecord);
+                        onUpdateSchemas(schemaRecord);
 
-                        setExtractedData(data.extractedData);
+                        onUpdateExtractedData(data.extractedData);
                         console.log('Organizer data loaded successfully for contract:', effectiveContract.id);
                     } else {
                         // Reset if no data found for this contract
-                        setSubfolders([]);
-                        setSchemas({});
-                        setExtractedData([]);
+                        onUpdateSubfolders([]);
+                        onUpdateSchemas({});
+                        onUpdateExtractedData([]);
                     }
                 } catch (err) {
                     console.error('Failed to load organizer data:', err);
@@ -248,7 +261,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             };
             loadData();
         }
-    }, [contract?.id, localContract?.id]);
+    }, [contract?.id, localContract?.id, onUpdateSubfolders, onUpdateSchemas, onUpdateExtractedData]);
 
     useEffect(() => {
         PaddleOcrService.checkAvailability().then(setOcrAvailable);
@@ -346,8 +359,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
             });
 
             // Merge with existing data for this subfolder
-            setExtractedData(prev => [
-                ...prev.filter(d => d.subfolder_id !== selectedSubfolderId),
+            onUpdateExtractedData([
+                ...extractedData.filter(d => d.subfolder_id !== selectedSubfolderId),
                 ...newExtractedData
             ]);
 

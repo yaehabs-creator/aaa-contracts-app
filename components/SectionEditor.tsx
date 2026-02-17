@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ContractSection, SectionItem, SectionType, ItemType, Clause } from '../types';
+import { ContractSection, SectionItem, SectionType, ItemType, Clause, ContractSubfolder, ExtractedData } from '../types';
 import { ClauseCard } from './ClauseCard';
 import { SectionItemCard } from './SectionItemCard';
 import { ItemEditorModal } from './ItemEditorModal';
@@ -17,7 +17,25 @@ interface SectionEditorProps {
   onDeleteClause?: (index: number) => void;
   onReorderClause?: (fromIndex: number, toIndex: number) => void;
   onAddClause?: () => void;
+  organizerSubfolders?: ContractSubfolder[];
+  organizerExtractedData?: ExtractedData[];
 }
+
+const FOLDER_TO_SECTION_MAPPING: Record<string, SectionType[]> = {
+  'A': [SectionType.AGREEMENT],
+  'B': [SectionType.LOA],
+  'P': [SectionType.TENDER],
+  'C': [SectionType.GENERAL, SectionType.PARTICULAR],
+  'D': [SectionType.ADDENDUM],
+  'I': [SectionType.BOQ],
+  'N': [SectionType.AUTOMATION],
+  'S': [SectionType.SPECIFICATION],
+  'E': [SectionType.REQUIREMENTS],
+  'J': [SectionType.SCHEDULE],
+  'K': [SectionType.ANNEX],
+  'M': [SectionType.INSTRUCTION],
+  'O': [SectionType.EXTRAS]
+};
 
 export const SectionEditor: React.FC<SectionEditorProps> = ({
   section,
@@ -30,7 +48,9 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   onCompareClause,
   onDeleteClause,
   onReorderClause,
-  onAddClause
+  onAddClause,
+  organizerSubfolders = [],
+  organizerExtractedData = []
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [editingItem, setEditingItem] = useState<SectionItem | null>(null);
@@ -52,23 +72,54 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     section.sectionType === SectionType.AGREEMENT ||
     section.sectionType === SectionType.LOA;
 
+  // Merge section items with organizer data
+  const allIntegratedItems = useMemo(() => {
+    const nativeItems = section.items || [];
+
+    // Find subfolders that map to this section type
+    const relevantSubfolders = organizerSubfolders.filter(sub => {
+      const mappedSections = FOLDER_TO_SECTION_MAPPING[sub.folder_code];
+      return mappedSections?.includes(section.sectionType);
+    });
+
+    // Convert extracted data from these subfolders into SectionItems
+    const extractedItems: SectionItem[] = [];
+    relevantSubfolders.forEach(sub => {
+      const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id);
+      dataForSub.forEach(data => {
+        extractedItems.push({
+          id: data.id,
+          itemType: ItemType.FIELD,
+          fieldKey: data.field_key,
+          fieldValue: data.value,
+          orderIndex: nativeItems.length + extractedItems.length,
+          confidence: data.confidence,
+          evidence: data.evidence,
+          status: data.status
+        });
+      });
+    });
+
+    return [...nativeItems, ...extractedItems];
+  }, [section.items, section.sectionType, organizerSubfolders, organizerExtractedData]);
+
   // Filter items based on search query
   const filteredItems = useMemo(() => {
     // Debug logging for troubleshooting
-    if (section.items.length > 0) {
+    if (allIntegratedItems.length > 0) {
       console.log(`[SectionEditor] Rendering section: ${section.title}`, {
         type: section.sectionType,
-        itemsCount: section.items.length
+        itemsCount: allIntegratedItems.length
       });
     }
 
     if (!searchQuery.trim()) {
-      return section.items;
+      return allIntegratedItems;
     }
 
     const keywords = searchQuery.trim().toLowerCase().split(/\s+/);
 
-    return section.items.filter(item => {
+    return allIntegratedItems.filter(item => {
       if (item.itemType === ItemType.CLAUSE) {
         const clause = sectionItemToClause(item);
         if (!clause) return false;
@@ -107,7 +158,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
       }
       return false;
     });
-  }, [section.items, searchQuery]);
+  }, [allIntegratedItems, searchQuery, section.title, section.sectionType]);
 
   const searchKeywords = searchQuery.trim().split(/\s+/).filter(k => k.length > 0);
 

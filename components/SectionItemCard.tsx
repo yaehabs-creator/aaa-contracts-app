@@ -102,19 +102,65 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ ite
           )}
 
           {isField && (
-            <div className="bg-aaa-bg/30 p-6 rounded-2xl border border-aaa-border/50">
-              <div className="space-y-2">
-                <div className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">
-                  Value
+            <div className="bg-aaa-bg/30 p-6 rounded-2xl border border-aaa-border/50 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="space-y-2 flex-1">
+                  <div className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">
+                    Value
+                  </div>
+                  <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
+                    {searchKeywords.length > 0 ? (
+                      <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.fieldValue || '', searchKeywords) }} />
+                    ) : (
+                      item.fieldValue
+                    )}
+                  </div>
                 </div>
-                <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
-                  {searchKeywords.length > 0 ? (
-                    <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.fieldValue || '', searchKeywords) }} />
-                  ) : (
-                    item.fieldValue
-                  )}
-                </div>
+
+                {/* Status and Confidence */}
+                {(item.status || item.confidence !== undefined) && (
+                  <div className="flex flex-col items-end gap-2 ml-6 pl-6 border-l border-aaa-border/50">
+                    {item.status && (
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter ${item.status === 'extracted' ? 'bg-emerald-100 text-emerald-700' :
+                        item.status === 'uncertain' ? 'bg-amber-100 text-amber-700' :
+                          'bg-slate-100 text-slate-600'
+                        }`}>
+                        {item.status}
+                      </span>
+                    )}
+                    {item.confidence !== undefined && (
+                      <div className="flex flex-col items-end gap-1">
+                        <div className="text-[9px] font-bold text-aaa-muted">
+                          {Math.round(item.confidence * 100)}% Confidence
+                        </div>
+                        <div className="w-16 h-1 bg-aaa-border rounded-full overflow-hidden">
+                          <div
+                            className={`h-full rounded-full transition-all duration-500 ${item.confidence > 0.8 ? 'bg-emerald-500' :
+                              item.confidence > 0.5 ? 'bg-amber-500' : 'bg-red-500'
+                              }`}
+                            style={{ width: `${item.confidence * 100}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
+
+              {/* Evidence Snippet */}
+              {item.evidence && item.evidence.snippet && (
+                <div className="pt-4 border-t border-aaa-border/30">
+                  <div className="text-[9px] font-black text-aaa-muted uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Evidence (Page {item.evidence.page})
+                  </div>
+                  <div className="text-[11px] leading-relaxed text-aaa-muted italic bg-white/50 p-3 rounded-xl border border-aaa-border/20">
+                    "{item.evidence.snippet}"
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
@@ -127,7 +173,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ ite
                     alt={item.imageAlt || item.imageTitle || 'Image'}
                     title={item.imageTitle}
                     className="max-w-full max-h-[600px] w-auto h-auto rounded-lg shadow-lg object-contain"
-                    style={{ imageRendering: 'high-quality' }}
+                    style={{ imageRendering: 'auto' }}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
