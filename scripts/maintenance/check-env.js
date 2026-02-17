@@ -7,14 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
 
-// Required environment variables
+// Required environment variables (Supabase)
 const requiredVars = [
-  'VITE_FIREBASE_API_KEY',
-  'VITE_FIREBASE_AUTH_DOMAIN',
-  'VITE_FIREBASE_PROJECT_ID',
-  'VITE_FIREBASE_STORAGE_BUCKET',
-  'VITE_FIREBASE_MESSAGING_SENDER_ID',
-  'VITE_FIREBASE_APP_ID'
+  'VITE_SUPABASE_URL',
+  'VITE_SUPABASE_ANON_KEY'
 ];
 
 console.log('🔍 Checking environment variables...\n');
@@ -91,8 +87,8 @@ if (missingVars.length > 0 || emptyVars.length > 0) {
   console.error('💡 Solution:');
   console.error('   1. Open .env.local in your editor');
   console.error('   2. Ensure all required variables are set with actual values');
-  console.error('   3. Get Firebase config from Firebase Console → Project Settings → Your apps');
-  console.error('   4. See DEPLOYMENT_GUIDE.md for detailed setup instructions\n');
+console.error('   3. Get Supabase URL and anon key from Supabase Dashboard → Settings → API');
+console.error('   4. See docs/ENV_EXAMPLE.md for an example\n');
   process.exit(1);
 }
 

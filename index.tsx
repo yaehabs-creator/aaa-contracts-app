@@ -32,10 +32,9 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      // Check for Supabase configuration errors (preferred) or Firebase (legacy)
+      // Check for Supabase configuration errors
       const supabaseError = typeof window !== 'undefined' ? (window as any).__SUPABASE_CONFIG_ERROR__ : null;
-      const firebaseError = typeof window !== 'undefined' ? (window as any).__FIREBASE_CONFIG_ERROR__ : null;
-      const configError = supabaseError || firebaseError;
+      const configError = supabaseError;
       const errorMessage = configError?.message || this.state.error?.message || 'An error occurred while loading the application.';
       const missingVars = configError?.missingVars || [];
       const instructions = configError?.instructions || 'Please check your configuration and try again.';
@@ -97,8 +96,8 @@ class ErrorBoundary extends React.Component<
                 <li style={{ marginBottom: '0.5rem' }}>Check browser console (F12) for detailed error messages</li>
                 <li style={{ marginBottom: '0.5rem' }}>Verify <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>.env.local</code> exists and contains all required variables</li>
                 <li style={{ marginBottom: '0.5rem' }}>Run <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>npm run build:check</code> to verify environment variables</li>
-                <li style={{ marginBottom: '0.5rem' }}>Rebuild and redeploy: <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>npm run build && firebase deploy</code></li>
-                <li>See <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>DEPLOYMENT_GUIDE.md</code> for detailed troubleshooting</li>
+                <li style={{ marginBottom: '0.5rem' }}>Rebuild and redeploy: <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>npm run build</code> then deploy on your hosting provider</li>
+                <li>See docs in <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>docs/</code> for setup/troubleshooting</li>
               </ol>
             </div>
 
