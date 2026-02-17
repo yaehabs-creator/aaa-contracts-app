@@ -451,7 +451,7 @@ const App: React.FC = () => {
 
     // If immediate save requested (e.g., after analysis completes), save right away
     if (immediate) {
-      await performSave(targetClauses, targetName, targetId);
+      await performSave(targetClauses, targetName, targetId, false);
       return;
     }
 
@@ -459,14 +459,15 @@ const App: React.FC = () => {
     saveTimeoutRef.current = setTimeout(async () => {
       const pending = pendingSaveRef.current;
       if (pending) {
-        await performSave(pending.clauses || clauses, pending.name || projectName, targetId);
+        // Auto-saves (debounced) are silent
+        await performSave(pending.clauses || clauses, pending.name || projectName, targetId, true);
         pendingSaveRef.current = null;
       }
     }, 1000);
   };
 
-  const performSave = async (targetClauses: Clause[], targetName: string, targetId: string) => {
-    setIsSaving(true);
+  const performSave = async (targetClauses: Clause[], targetName: string, targetId: string, silent: boolean = false) => {
+    if (!silent) setIsSaving(true);
     try {
       // Create contract with sections
       const contractWithSections = ensureContractHasSections({
@@ -489,16 +490,21 @@ const App: React.FC = () => {
       setContract(contractWithSections);
       if (!activeContractId) setActiveContractId(targetId);
       await refreshLibrary();
-      toast.success('Contract saved successfully!');
+      if (!silent) toast.success('Contract saved successfully!');
     } catch (err) {
       console.error("Save failed:", err);
+      if (!silent) toast.error("Failed to save changes");
     } finally {
-      setTimeout(() => setIsSaving(false), 800);
+      if (!silent) {
+        setTimeout(() => setIsSaving(false), 800);
+      } else {
+        setIsSaving(false);
+      }
     }
   };
 
-  const performSaveContract = async (targetContract: SavedContract) => {
-    setIsSaving(true);
+  const performSaveContract = async (targetContract: SavedContract, silent: boolean = false) => {
+    if (!silent) setIsSaving(true);
     try {
       // Ensure contract has sections, but preserve existing sections if they exist
       let contractWithSections: SavedContract;
@@ -527,18 +533,23 @@ const App: React.FC = () => {
       // Refresh library to show updated contract
       await refreshLibrary();
 
-      console.log('Contract saved successfully:', {
-        id: contractWithSections.id,
-        name: contractWithSections.name,
-        sectionsCount: contractWithSections.sections?.length || 0,
-        agreementItems: contractWithSections.sections?.find(s => s.sectionType === SectionType.AGREEMENT)?.items.length || 0,
-        loaItems: contractWithSections.sections?.find(s => s.sectionType === SectionType.LOA)?.items.length || 0
-      });
+      if (!silent) {
+        toast.success('Contract saved successfully!');
+        console.log('Contract saved successfully:', {
+          id: contractWithSections.id,
+          name: contractWithSections.name,
+          sectionsCount: contractWithSections.sections?.length || 0,
+        });
+      }
     } catch (err) {
       console.error("Save failed:", err);
-      toast.error(`Failed to save contract: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      if (!silent) toast.error(`Failed to save contract: ${err instanceof Error ? err.message : 'Unknown error'}`);
     } finally {
-      setTimeout(() => setIsSaving(false), 800);
+      if (!silent) {
+        setTimeout(() => setIsSaving(false), 800);
+      } else {
+        setIsSaving(false);
+      }
     }
   };
 
@@ -3161,8 +3172,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                     <ContractOrganizer
                       contract={contract}
                       onClose={() => setStatus(AnalysisStatus.COMPLETED)}
-                      onSaveAll={async (data) => {
-                        console.log('Save All triggered:', data);
+                      onSaveAll={async (data, silent = false) => {
+                        console.log('Save All triggered:', { ...data, silent });
 
                         // Persist to Supabase
                         try {
@@ -3176,32 +3187,35 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
                           // 1. ALWAYS ensure the contract record exists in the DB first (Foreign Key requirement)
                           try {
-                            console.log('Ensuring contract record is archived...', targetContractId);
+                            if (!silent) console.log('Ensuring contract record is archived...', targetContractId);
                             // If it's a new contract from organizer, update global state first
                             if (data.contract) {
                               setContract(data.contract);
                               setLibrary(prev => [data.contract!, ...prev.filter(c => c.id !== data.contract!.id)]);
                             }
 
-                            await saveContractToSupabase(contractToSave!);
-                            console.log('Contract record verified/saved in archive');
+                            // Use silent save if requested
+                            if (contractToSave) {
+                              await saveContractToSupabase(contractToSave);
+                            }
+                            if (!silent) console.log('Contract record verified/saved in archive');
                           } catch (contractError: any) {
                             console.error('CRITICAL: Failed to save parent contract record:', contractError);
                             throw new Error(`Archive Error: ${contractError.message}. We cannot save organizer data without the contract record.`);
                           }
 
                           // 2. Save organizer data (depends on contract record)
-                          console.log('Attempting to save organizer data for contract:', targetContractId);
+                          if (!silent) console.log('Attempting to save organizer data for contract:', targetContractId);
                           await saveOrganizerData(targetContractId, {
                             subfolders: data.subfolders,
                             schemas: data.schemas,
                             extractedData: data.extractedData
                           });
 
-                          toast.success('All changes successfully saved to database!');
+                          if (!silent) toast.success('All changes successfully saved to database!');
                         } catch (error: any) {
                           console.error('Full save operation failed:', error);
-                          toast.error(error.message || 'An unexpected error occurred during save');
+                          if (!silent) toast.error(error.message || 'An unexpected error occurred during save');
                           throw error; // Rethrow to update UI state in ContractOrganizer
                         }
                       }}

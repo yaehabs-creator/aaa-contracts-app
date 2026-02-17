@@ -19,7 +19,7 @@ interface ContractOrganizerProps {
         subfolders: ContractSubfolder[],
         schemas: Record<string, FolderSchemaField[]>,
         extractedData: ExtractedData[]
-    }) => Promise<void>;
+    }, silent?: boolean) => Promise<void>;
 }
 
 const FIXED_FOLDERS = [
@@ -46,6 +46,36 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
     const [isRepairing, setIsRepairing] = useState(false);
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
+    // Local contract state for when no contract is passed via props
+    const [localContract, setLocalContract] = useState<SavedContract | null>(null);
+    const [showCreationForm, setShowCreationForm] = useState(!contract);
+    const [newContractTitle, setNewContractTitle] = useState('');
+    const [newContractor, setNewContractor] = useState('');
+
+    const effectiveContract = contract || localContract;
+
+    // Auto-save logic
+    useEffect(() => {
+        if (!hasUnsavedChanges || !effectiveContract) return;
+
+        const autoSaveTimer = setTimeout(async () => {
+            console.log('Organizer: Triggering silent auto-save...');
+            try {
+                await onSaveAll({
+                    contract: localContract || undefined,
+                    subfolders,
+                    schemas,
+                    extractedData
+                }, true); // Silent save
+                setHasUnsavedChanges(false);
+            } catch (err) {
+                console.error('Organizer auto-save failed:', err);
+            }
+        }, 30000); // 30 seconds
+
+        return () => clearTimeout(autoSaveTimer);
+    }, [hasUnsavedChanges, subfolders, schemas, extractedData, effectiveContract]);
+
     // Warn before leaving if there are unsaved changes
     useEffect(() => {
         const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -57,14 +87,6 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
         window.addEventListener('beforeunload', handleBeforeUnload);
         return () => window.removeEventListener('beforeunload', handleBeforeUnload);
     }, [hasUnsavedChanges]);
-
-    // Local contract state for when no contract is passed via props
-    const [localContract, setLocalContract] = useState<SavedContract | null>(null);
-    const [showCreationForm, setShowCreationForm] = useState(!contract);
-    const [newContractTitle, setNewContractTitle] = useState('');
-    const [newContractor, setNewContractor] = useState('');
-
-    const effectiveContract = contract || localContract;
 
     const fileInputRef = useRef<HTMLInputElement>(null);
     const importJsonRef = useRef<HTMLInputElement>(null);
@@ -366,9 +388,9 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({ contract, 
                 subfolders,
                 schemas,
                 extractedData
-            });
+            }, false); // Not silent
             setHasUnsavedChanges(false);
-            // Final success toast is now handled by the App.tsx onSaveAll handler
+            toast.success('Successfully saved all changes');
         } catch (err) {
             toast.error('Failed to save changes');
         } finally {

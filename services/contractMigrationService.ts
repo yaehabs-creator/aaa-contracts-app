@@ -337,8 +337,6 @@ export function ensureContractHasSections(contract: SavedContract | LegacyContra
         else if (type === SectionType.AUTOMATION) title = 'Automation Application';
         else if (type === SectionType.INSTRUCTION) title = 'Instruction to Tenderers';
         else if (type === SectionType.EXTRAS) title = 'Extras/Other Documents';
-        else if (type === 'ANNEX1') title = 'Annex 1';
-        else if (type === 'ANNEX2') title = 'Annex 2';
 
         newSections.push({
           sectionType: type,

@@ -6,21 +6,24 @@ import { ensureContractHasSections } from '../../services/contractMigrationServi
 /**
  * Recursively removes undefined values from an object.
  * PostgreSQL JSONB doesn't accept undefined values - they must be omitted or set to null.
+ * Added a depth limit to prevent infinite loops on circular references.
  */
-function removeUndefinedValues(obj: any): any {
+function removeUndefinedValues(obj: any, depth = 0): any {
+  if (depth > 10) return obj; // Prevent infinite recursion
+
   if (obj === null || obj === undefined) {
     return null;
   }
 
   if (Array.isArray(obj)) {
-    return obj.map(item => removeUndefinedValues(item));
+    return obj.map(item => removeUndefinedValues(item, depth + 1));
   }
 
   if (typeof obj === 'object' && obj.constructor === Object) {
     const cleaned: any = {};
     for (const [key, value] of Object.entries(obj)) {
       if (value !== undefined) {
-        cleaned[key] = removeUndefinedValues(value);
+        cleaned[key] = removeUndefinedValues(value, depth + 1);
       }
     }
     return cleaned;
@@ -97,11 +100,13 @@ async function loadContractFromSubcollections(contractId: string, contractMetada
 
 export const saveContractToSupabase = async (contract: SavedContract): Promise<void> => {
   try {
+    console.log('[SUPABASE] Entering saveContractToSupabase...');
     if (!supabase) {
       throw new Error('Supabase is not initialized. Please check your Supabase configuration.');
     }
 
     // Verify authentication before attempting to save
+    console.log('[SUPABASE] Checking auth session...');
     const { data: { session }, error: authError } = await supabase.auth.getSession();
     if (authError) {
       console.error('Auth session error:', authError);
@@ -111,7 +116,7 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
       console.error('No active session found');
       throw new Error('You are not authenticated. Please log in and try again.');
     }
-    console.log('Authenticated user:', session.user.id, session.user.email);
+    console.log('[SUPABASE] Authenticated user:', session.user.id, session.user.email);
 
     // Ensure contract has sections (migrate if needed), but preserve existing sections
     let migratedContract: SavedContract;
