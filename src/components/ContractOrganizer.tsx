@@ -183,6 +183,11 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     const removeSubfolder = (id: string) => {
         onUpdateSubfolders(subfolders.filter(s => s.id !== id));
         if (selectedSubfolderId === id) setSelectedSubfolderId(null);
+        // Clean up schemas for this subfolder
+        const nextSchemas = { ...schemas };
+        delete nextSchemas[id];
+        onUpdateSchemas(nextSchemas);
+        // Clean up extracted data
         onUpdateExtractedData(extractedData.filter(d => d.subfolder_id !== id));
         setHasUnsavedChanges(true);
     };

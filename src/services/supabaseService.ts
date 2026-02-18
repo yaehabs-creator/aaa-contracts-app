@@ -774,15 +774,22 @@ export const saveOrganizerData = async (contractId: string, data: {
 
   // 2. Sync Schemas
   const allFields: any[] = [];
-  Object.values(data.schemas).forEach(fields => {
-    allFields.push(...fields);
+  const currentSubfolderIds = data.subfolders.map(s => s.id);
+
+  // Filter schemas to only include those for subfolders we are currently saving
+  // This prevents FK violations if stale schemas exist in the UI state
+  Object.entries(data.schemas).forEach(([subfolderId, fields]) => {
+    if (currentSubfolderIds.includes(subfolderId)) {
+      allFields.push(...fields);
+    } else {
+      console.warn(`saveOrganizerData: Skipping schema for subfolder ${subfolderId} as it's not in the active list`);
+    }
   });
 
   if (allFields.length > 0) {
     const currentFieldIds = allFields.map(f => f.id);
 
-    // Delete fields that are NOT in the current list but belong to our subfolders
-    const currentSubfolderIds = data.subfolders.map(s => s.id);
+    // Delete fields that are NOT in the current list but belong to our active subfolders
     const { error: delSchemaError } = await supabase
       .from('contract_folder_schema')
       .delete()
