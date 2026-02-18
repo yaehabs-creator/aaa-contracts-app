@@ -37,18 +37,18 @@ YOUR EXPERTISE:
 - Technical Schedules & Specifications (understanding scope of works and technical requirements)
 - Addendums & Clarifications (tracking contract modifications and their implications)
 
-YOUR ROLE: When analyzing uploaded contract documents, you must:
+YOUR ROLE: When analyzing contract documentation, you must:
 1. Extract and explain financial terms, rates, and pricing structures
 2. Identify milestone schedules, payment terms, and deliverables
-3. Highlight technical requirements and specifications
-4. Clarify commercial obligations and entitlements
-5. Note any amendments or clarifications from addendums
+3. CROSS-REFERENCE INFORMATION: Relate data in one document (e.g., BOQ rates) to another (e.g., Clause 14 payment terms in the Conditions).
+4. WHOLE-CONTRACT AWARENESS: Consider how terms in the Agreement might be modified by an Addendum or specific technical specification.
+5. Clarify commercial obligations and entitlements
 
 RESPONSE STYLE:
 - Be precise and cite specific document sections when possible
 - Use clear, professional language suitable for contract administration
 - Highlight commercial and financial implications
-- Note any ambiguities or areas requiring clarification
+- Note any inconsistencies or ambiguities between different documents
 - Reference specific page numbers, sections, or item numbers when available
 
 CRITICAL RULES:
@@ -56,7 +56,7 @@ CRITICAL RULES:
 - If information is not available in the documents, clearly state this
 - Do not make assumptions about terms not explicitly stated
 - When citing amounts or rates, quote them exactly as they appear
-- Flag any inconsistencies between documents
+- FLAG CONFLICTS: If a later document (e.g., Addendum 2) contradicts an earlier one, highlight this.
 
 FORMAT YOUR RESPONSES:
 - Use clear section headers for different topics
@@ -153,7 +153,7 @@ export class OpenAIProvider {
     chunks: DocumentChunkContent[];
     documentGroups: DocumentGroup[];
   }> {
-    const { maxChunks = 20, useVectorSearch = true } = options;
+    const { maxChunks = 30, useVectorSearch = true } = options;
     const readerService = getDocumentReaderService();
     let chunks: DocumentChunkContent[] = [];
     const foundGroups = new Set<DocumentGroup>();
@@ -164,7 +164,7 @@ export class OpenAIProvider {
         try {
           const embeddingService = getEmbeddingService();
           const embeddings = await embeddingService.generateEmbeddings(query);
-          
+
           if (embeddings && embeddings.length > 0) {
             const vectorResults = await readerService.searchSimilarChunks(
               contractId,
@@ -188,11 +188,11 @@ export class OpenAIProvider {
 
       // Also get document summary for context
       const summary = await readerService.getContractSummary(contractId);
-      
+
       // Build context string
       let context = `=== DOCUMENT ANALYSIS CONTEXT ===\n`;
       context += `Contract Documents Available:\n`;
-      
+
       for (const doc of summary.documents) {
         if (OPENAI_DOCUMENT_GROUPS.includes(doc.group)) {
           const groupLabel = this.getGroupLabel(doc.group);
@@ -205,7 +205,7 @@ export class OpenAIProvider {
       // Add relevant chunks
       if (chunks.length > 0) {
         context += `=== RELEVANT DOCUMENT SECTIONS ===\n\n`;
-        
+
         for (const chunk of chunks) {
           if (chunk.clauseNumber) {
             context += `[Section ${chunk.clauseNumber}${chunk.clauseTitle ? ': ' + chunk.clauseTitle : ''}]\n`;
@@ -290,7 +290,7 @@ export class OpenAIProvider {
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(
-          errorData.error?.message || 
+          errorData.error?.message ||
           `OpenAI API error: ${response.status} ${response.statusText}`
         );
       }
@@ -360,7 +360,7 @@ export class OpenAIProvider {
       // Extract referenced sources from chunks
       const referencedSources = chunks
         .filter(c => c.clauseNumber || c.clauseTitle)
-        .map(c => c.clauseNumber 
+        .map(c => c.clauseNumber
           ? `Section ${c.clauseNumber}${c.clauseTitle ? ': ' + c.clauseTitle : ''}`
           : c.clauseTitle || 'Document section'
         )

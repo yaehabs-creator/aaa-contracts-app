@@ -5,8 +5,7 @@ import { analyzeContract } from './services/claudeService';
 import { callAIProxy } from './src/services/aiProxyClient';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
 import { getContractFromSupabase, saveOrganizerData, saveContractToSupabase, getOrganizerData } from './src/services/supabaseService';
-import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData } from './types';
-// import { GroupedClauseCard, groupClausesByParent } from './components/GroupedClauseCard'; // Lazy loaded below
+import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData, ItemType, ContextPill, SectionItem } from './types';
 import { groupClausesByParent } from './components/GroupedClauseCard';
 import { CategoryManagerService } from './services/categoryManagerService';
 import { ContractSectionsTabs } from './components/ContractSectionsTabs';
@@ -18,11 +17,10 @@ const CategoryManager = React.lazy(() => import('./components/CategoryManager').
 const CategorySuggestionsModal = React.lazy(() => import('./components/CategorySuggestionsModal').then(m => ({ default: m.CategorySuggestionsModal })));
 const CategoryLedger = React.lazy(() => import('./components/CategoryLedger').then(m => ({ default: m.CategoryLedger })));
 const Dashboard = React.lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
-const AIBotSidebar = React.lazy(() => import('./src/components/AIBotSidebar').then(m => ({ default: m.AIBotSidebar })));
 const GroupedClauseCard = React.lazy(() => import('./components/GroupedClauseCard').then(m => ({ default: m.GroupedClauseCard })));
 const ContractOrganizer = React.lazy(() => import('./src/components/ContractOrganizer').then(m => ({ default: m.ContractOrganizer })));
 import { ensureContractHasSections, getAllClausesFromContract, clauseToSectionItem, sectionItemToClause } from './services/contractMigrationService';
-import { ItemType } from './types';
+import ChatContainer from './src/components/chat/ChatContainer';
 import { AppWrapper } from './src/components/AppWrapper';
 // import { AIBotSidebar } from './src/components/AIBotSidebar'; // Lazy loaded above
 import { FloatingAIButton } from './src/components/FloatingAIButton';
@@ -3628,27 +3626,16 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       </AppWrapper>
 
       <React.Suspense fallback={null}>
-        <AIBotSidebar
+        <ChatContainer
           isOpen={isBotOpen}
           onClose={() => setIsBotOpen(false)}
-          clauses={clauses}
-          selectedClause={selectedClauseForBot}
-          selectedItem={selectedItemForBot}
-          contracts={library}
-          activeContractId={activeContractId}
-          onContractChange={(contractId) => {
-            // Find and load the selected contract
-            const selectedContract = library.find(c => c.id === contractId);
-            if (selectedContract) {
-              const contractWithSections = ensureContractHasSections(selectedContract);
-              const allClauses = getAllClausesFromContract(contractWithSections);
-              setContract(contractWithSections);
-              setClauses(reprocessClauseLinks(allClauses));
-              setProjectName(contractWithSections.name);
-              setActiveContractId(contractWithSections.id);
-              setStatus(AnalysisStatus.COMPLETED);
-            }
-          }}
+          conversationId={activeContractId || undefined}
+          title={projectName ? `Analysis: ${projectName}` : undefined}
+          initialContextPills={selectedItemForBot ? [{
+            id: 'initial',
+            label: selectedItemForBot.itemType === 'FIELD' ? selectedItemForBot.fieldKey : 'Selected Item',
+            type: 'context'
+          }] : []}
         />
       </React.Suspense>
 

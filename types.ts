@@ -253,6 +253,12 @@ export interface BotMessage {
   suggestions?: string[];
 }
 
+export interface ContextPill {
+  id: string;
+  label: string;
+  type: 'clause' | 'document' | 'general' | 'context';
+}
+
 // ============================================
 // Document Ingestion Types
 // ============================================

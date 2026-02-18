@@ -34,6 +34,12 @@ const CONDITIONS_KEYWORDS = [
   'sub-clause', 'precedence', 'override', 'amendment'
 ];
 
+const GLOBAL_KEYWORDS = [
+  'whole', 'all', 'everything', 'entire', 'complete', 'overview', 'landscape',
+  'summarize the contract', 'summarize everything', 'full analysis',
+  'across all documents', 'total contract', 'compare all'
+];
+
 export interface AgentResponse {
   agent: 'openai' | 'claude';
   specialty: string;
@@ -135,6 +141,15 @@ export class MultiAgentOrchestrator {
       }
     }
 
+    // Check for global keywords
+    let globalScore = 0;
+    for (const keyword of GLOBAL_KEYWORDS) {
+      if (lowerQuery.includes(keyword)) {
+        globalScore += 2; // High weight
+        detectedTopics.push(`global:${keyword}`);
+      }
+    }
+
     // Normalize scores
     const maxDocScore = Math.min(documentScore, 5);
     const maxCondScore = Math.min(conditionsScore, 5);
@@ -142,14 +157,14 @@ export class MultiAgentOrchestrator {
     const documentRelevance = maxDocScore > 0 ? Math.min(1, 0.3 + (maxDocScore * 0.14)) : 0.2;
     const conditionsRelevance = maxCondScore > 0 ? Math.min(1, 0.3 + (maxCondScore * 0.14)) : 0.2;
 
-    // If query is generic (no specific keywords), both agents should contribute
-    const isGenericQuery = documentScore === 0 && conditionsScore === 0;
+    // If query is generic (no specific keywords) or global, both agents should contribute
+    const isGenericOrGlobal = (documentScore === 0 && conditionsScore === 0) || globalScore > 2;
 
     return {
-      requiresDocuments: documentScore > 0 || isGenericQuery,
-      requiresConditions: conditionsScore > 0 || isGenericQuery,
-      documentRelevance: isGenericQuery ? 0.5 : documentRelevance,
-      conditionsRelevance: isGenericQuery ? 0.5 : conditionsRelevance,
+      requiresDocuments: documentScore > 0 || isGenericOrGlobal,
+      requiresConditions: conditionsScore > 0 || isGenericOrGlobal,
+      documentRelevance: isGenericOrGlobal ? 0.8 : documentRelevance,
+      conditionsRelevance: isGenericOrGlobal ? 0.8 : conditionsRelevance,
       detectedTopics
     };
   }

@@ -151,9 +151,43 @@ export async function buildUnifiedContractContext(
   });
 
   // Add header
-  const header = `=== COMPLETE CONTRACT CONTENT ===\nTotal Parsed Clauses: ${parsedClauses.length}\n\n`;
+  const header = `=== COMPLETE CONTRACT ANALYSIS CONTEXT ===\nTotal Parsed Clauses: ${parsedClauses.length}\n`;
   contextParts.push(header);
   usedChars += header.length;
+
+  // 0. Add Document Landscape (The "Big Picture")
+  if (contractId) {
+    try {
+      const readerService = getDocumentReaderService();
+      const summary = await readerService.getContractSummary(contractId);
+      if (summary.totalDocuments > 0) {
+        let landscape = '\n=== DOCUMENT LANDSCAPE (OVERVIEW) ===\n';
+        landscape += `The contract consists of ${summary.totalDocuments} primary documents across ${summary.totalChunks} sections.\n`;
+        landscape += `Consult these categories for specific data:\n`;
+
+        const categoryMap: Record<string, string> = {
+          A: 'Agreement (Core variables, legal parties)',
+          B: 'LOA (Acceptance terms, Contract Sum)',
+          C: 'Conditions (GC/PC rights & obligations)',
+          D: 'Addendums (Overrides/Amendments)',
+          I: 'BOQ (Rates, Quantities, Pricing)',
+          N: 'Schedules (Milestones, Drawings, Appendices)'
+        };
+
+        for (const doc of summary.documents) {
+          landscape += `- [${doc.group}] ${doc.name} (${categoryMap[doc.group] || 'Other'})\n`;
+        }
+        landscape += '\n';
+
+        if (usedChars + landscape.length <= maxChars) {
+          contextParts.push(landscape);
+          usedChars += landscape.length;
+        }
+      }
+    } catch (e) {
+      console.warn('Failed to build landscape:', e);
+    }
+  }
 
   // 1. Add parsed clauses with full text
   if (sortedClauses.length > 0) {
