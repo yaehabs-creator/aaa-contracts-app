@@ -56,6 +56,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   const [editingItem, setEditingItem] = useState<SectionItem | null>(null);
   const [editingItemIndex, setEditingItemIndex] = useState<number>(-1);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [showOrganizerData, setShowOrganizerData] = useState(true);
 
   // Sections that favor Clause-style rendering for primary content
   const isDefaultClauseSection =
@@ -83,7 +84,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     });
 
     // Convert extracted data from these subfolders into SectionItems
-    const extractedItems: SectionItem[] = [];
+    const extractedItems: (SectionItem & { isIntegrated?: boolean })[] = [];
     relevantSubfolders.forEach(sub => {
       const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id);
       dataForSub.forEach(data => {
@@ -96,7 +97,8 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
             orderIndex: nativeItems.length + extractedItems.length,
             confidence: data.confidence,
             evidence: data.evidence,
-            status: data.status
+            status: data.status,
+            isIntegrated: true
           });
         } else {
           extractedItems.push({
@@ -107,14 +109,16 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
             orderIndex: nativeItems.length + extractedItems.length,
             confidence: data.confidence,
             evidence: data.evidence,
-            status: data.status
+            status: data.status,
+            isIntegrated: true
           });
         }
       });
     });
 
+    if (!showOrganizerData) return nativeItems;
     return [...nativeItems, ...extractedItems];
-  }, [section.items, section.sectionType, organizerSubfolders, organizerExtractedData]);
+  }, [section.items, section.sectionType, organizerSubfolders, organizerExtractedData, showOrganizerData]);
 
   // Filter items based on search query
   const filteredItems = useMemo(() => {
@@ -307,6 +311,21 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           )}
         </div>
 
+        {organizerExtractedData.length > 0 && (
+          <button
+            onClick={() => setShowOrganizerData(!showOrganizerData)}
+            className={`flex items-center gap-2 px-6 py-3 border-2 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all ${showOrganizerData
+              ? 'bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100'
+              : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100'
+              }`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            {showOrganizerData ? 'Hide Organizer Data' : 'Show Organizer Data'}
+          </button>
+        )}
+
         {isFormSection && (
           <button
             onClick={() => setIsAddModalOpen(true)}
@@ -378,6 +397,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                   }}
                   onDelete={() => handleDeleteItem(section.items.indexOf(item))}
                   searchKeywords={searchKeywords}
+                  hideMetadata={!!(item as any).isIntegrated}
                 />
               </div>
             );

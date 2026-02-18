@@ -6,6 +6,7 @@ interface SectionItemCardProps {
   onEdit: () => void;
   onDelete: () => void;
   searchKeywords?: string[];
+  hideMetadata?: boolean;
 }
 
 const highlightKeywords = (text: string, keywords: string[]): string => {
@@ -22,10 +23,20 @@ const highlightKeywords = (text: string, keywords: string[]): string => {
   return highlighted;
 };
 
-export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ item, onEdit, onDelete, searchKeywords = [] }) => {
+export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
+  item,
+  onEdit,
+  onDelete,
+  searchKeywords = [],
+  hideMetadata = false
+}) => {
   const isParagraph = item.itemType === ItemType.PARAGRAPH;
   const isField = item.itemType === ItemType.FIELD;
   const isImage = item.itemType === ItemType.IMAGE;
+
+  // Technical field keys (e.g. field_123456789) should be hidden in presentation
+  const isTechnicalKey = item.fieldKey?.startsWith('field_') && !isNaN(Number(item.fieldKey.split('_')[1]));
+  const shouldShowFieldHeader = isField && (!hideMetadata || !isTechnicalKey);
 
   return (
     <div className="bg-white border border-aaa-border rounded-3xl shadow-premium overflow-hidden transition-all duration-300 hover:shadow-xl">
@@ -42,11 +53,13 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ ite
                 )}
               </h3>
             )}
-            {isField && (
+            {shouldShowFieldHeader && (
               <div className="flex items-center gap-3 mb-3">
-                <span className="px-3 py-1 bg-aaa-blue text-white text-[10px] font-black rounded-full uppercase tracking-widest">
-                  Field
-                </span>
+                {!hideMetadata && (
+                  <span className="px-3 py-1 bg-aaa-blue text-white text-[10px] font-black rounded-full uppercase tracking-widest">
+                    Field
+                  </span>
+                )}
                 <h3 className="text-lg font-black text-aaa-blue tracking-tight">
                   {searchKeywords.length > 0 ? (
                     <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.fieldKey || '', searchKeywords) }} />
@@ -102,13 +115,15 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ ite
           )}
 
           {isField && (
-            <div className="bg-aaa-bg/30 p-6 rounded-2xl border border-aaa-border/50 space-y-4">
+            <div className={`${hideMetadata ? 'bg-transparent p-0' : 'bg-aaa-bg/30 p-6'} rounded-2xl border ${hideMetadata ? 'border-none' : 'border-aaa-border/50'} space-y-4`}>
               <div className="flex items-center justify-between">
                 <div className="space-y-2 flex-1">
-                  <div className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">
-                    Value
-                  </div>
-                  <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
+                  {!hideMetadata && (
+                    <div className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">
+                      Value
+                    </div>
+                  )}
+                  <div className={`font-mono ${hideMetadata ? 'text-base font-medium' : 'text-sm'} leading-relaxed text-aaa-text whitespace-pre-wrap`}>
                     {searchKeywords.length > 0 ? (
                       <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.fieldValue || '', searchKeywords) }} />
                     ) : (
@@ -118,7 +133,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ ite
                 </div>
 
                 {/* Status and Confidence */}
-                {(item.status || item.confidence !== undefined) && (
+                {!hideMetadata && (item.status || item.confidence !== undefined) && (
                   <div className="flex flex-col items-end gap-2 ml-6 pl-6 border-l border-aaa-border/50">
                     {item.status && (
                       <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter ${item.status === 'extracted' ? 'bg-emerald-100 text-emerald-700' :
@@ -148,7 +163,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({ ite
               </div>
 
               {/* Evidence Snippet */}
-              {item.evidence && item.evidence.snippet && (
+              {!hideMetadata && item.evidence && item.evidence.snippet && (
                 <div className="pt-4 border-t border-aaa-border/30">
                   <div className="text-[9px] font-black text-aaa-muted uppercase tracking-widest mb-2 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
