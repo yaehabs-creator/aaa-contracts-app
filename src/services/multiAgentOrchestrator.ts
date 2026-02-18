@@ -116,7 +116,7 @@ export class MultiAgentOrchestrator {
   classifyQuery(query: string): QueryClassification {
     const lowerQuery = query.toLowerCase();
     const detectedTopics: string[] = [];
-    
+
     // Check for document-related keywords
     let documentScore = 0;
     for (const keyword of DOCUMENT_KEYWORDS) {
@@ -138,7 +138,7 @@ export class MultiAgentOrchestrator {
     // Normalize scores
     const maxDocScore = Math.min(documentScore, 5);
     const maxCondScore = Math.min(conditionsScore, 5);
-    
+
     const documentRelevance = maxDocScore > 0 ? Math.min(1, 0.3 + (maxDocScore * 0.14)) : 0.2;
     const conditionsRelevance = maxCondScore > 0 ? Math.min(1, 0.3 + (maxCondScore * 0.14)) : 0.2;
 
@@ -155,12 +155,35 @@ export class MultiAgentOrchestrator {
   }
 
   /**
-   * Get context for Claude (GC/PC clauses)
+   * Get context for Claude (GC/PC clauses + Organizer Data)
    */
-  private buildClaudeContext(clauses: Clause[]): string {
-    if (clauses.length === 0) return '';
+  private async buildClaudeContext(clauses: Clause[], contractId: string | null): Promise<string> {
+    const readerService = getDocumentReaderService();
+    let context = '';
 
-    let context = `=== CONTRACT CONDITIONS (GC/PC) ===\n`;
+    // 1. Add Organizer Data (High priority overview)
+    if (contractId) {
+      try {
+        const extractedData = await readerService.getContractExtractedData(contractId);
+        if (extractedData.length > 0) {
+          context += `=== CONTRACT ORGANIZER: PROJECT DATA ===\n`;
+          for (const data of extractedData) {
+            const value = data.value ? (typeof data.value === 'string' ? data.value : JSON.stringify(data.value)) : 'Not set';
+            if (value && value !== 'Not set') {
+              context += `${data.field_key}: ${value}\n`;
+              if (data.doc_name) context += `Source: ${data.doc_name}\n`;
+            }
+          }
+          context += '\n';
+        }
+      } catch (err) {
+        console.warn('Failed to fetch organizer data for orchestrator:', err);
+      }
+    }
+
+    if (clauses.length === 0 && !context) return '';
+
+    context += `=== CONTRACT CONDITIONS (GC/PC) ===\n`;
     context += `Total Clauses: ${clauses.length}\n\n`;
 
     // Sort by condition type (Particular first, then General)
@@ -173,7 +196,7 @@ export class MultiAgentOrchestrator {
     for (const clause of sortedClauses) {
       context += `[Clause ${clause.clause_number}: ${clause.clause_title}]\n`;
       context += `Type: ${clause.condition_type || 'General'}\n`;
-      
+
       if (clause.clause_text) {
         context += clause.clause_text + '\n';
       }
@@ -212,8 +235,8 @@ export class MultiAgentOrchestrator {
     }
 
     try {
-      const context = this.buildClaudeContext(clauses);
-      
+      const context = await this.buildClaudeContext(clauses, null); // We'll pass null here if we don't have contractId in basic mode
+
       if (clauses.length === 0) {
         return {
           agent: 'claude',
@@ -235,7 +258,7 @@ export class MultiAgentOrchestrator {
       ];
 
       // Use the enhanced Claude system prompt (will be updated in next step)
-      const analysis = await this.claudeProvider.chat(messages, clauses, 
+      const analysis = await this.claudeProvider.chat(messages, clauses,
         this.getClaudeSpecialistPrompt() + '\n\n' + context
       );
 
@@ -393,12 +416,12 @@ CRITICAL:
         // Look for clause numbers mentioned in document analysis
         const docClauseRefs = openaiResponse.analysis.match(/Clause\s+[\d.]+[A-Za-z]?/gi) || [];
         const condClauseRefs = claudeResponse.referencedSources || [];
-        
+
         // Find common references
         for (const docRef of docClauseRefs) {
           for (const condRef of condClauseRefs) {
             if (docRef.toLowerCase().includes(condRef.toLowerCase().replace('clause ', '')) ||
-                condRef.toLowerCase().includes(docRef.toLowerCase().replace('clause ', ''))) {
+              condRef.toLowerCase().includes(docRef.toLowerCase().replace('clause ', ''))) {
               crossReferences.push(`${docRef} referenced in both documents and conditions`);
             }
           }
@@ -471,20 +494,30 @@ CRITICAL:
     query: string,
     contractId: string | null,
     clauses: Clause[],
-    conversationHistory: BotMessage[] = []
+    conversationHistory: BotMessage[] = [],
+    options: { forceDocumentSearch?: boolean } = {}
   ): Promise<SynthesizedResponse> {
     // Classify the query
     const classification = this.classifyQuery(query);
-    
+
+    // Override classification if document search is forced
+    if (options.forceDocumentSearch) {
+      classification.requiresDocuments = true;
+      classification.documentRelevance = 1.0;
+    }
+
     // Check available agents
     const available = this.getAvailableAgents();
-    
+
     // Prepare promises for parallel execution
     const promises: Promise<AgentResponse | null>[] = [];
 
+    // Build shared contexts
+    const claudeContext = await this.buildClaudeContext(clauses, contractId);
+
     // Query OpenAI if documents are relevant and available
-    if ((classification.requiresDocuments || this.config.alwaysUseBothAgents) && 
-        available.openai && contractId) {
+    if ((classification.requiresDocuments || this.config.alwaysUseBothAgents) &&
+      available.openai && contractId) {
       promises.push(
         this.queryOpenAIAgent(query, contractId, conversationHistory)
           .catch(err => {
@@ -497,10 +530,30 @@ CRITICAL:
     }
 
     // Query Claude if conditions are relevant and available
-    if ((classification.requiresConditions || this.config.alwaysUseBothAgents) && 
-        available.claude) {
+    if ((classification.requiresConditions || this.config.alwaysUseBothAgents) &&
+      available.claude) {
+      const messages: BotMessage[] = [
+        ...conversationHistory,
+        {
+          id: 'query',
+          role: 'user',
+          content: query,
+          timestamp: Date.now()
+        }
+      ];
+
       promises.push(
-        this.queryClaudeAgent(query, clauses, conversationHistory)
+        this.claudeProvider.chat(messages, clauses, this.getClaudeSpecialistPrompt() + '\n\n' + claudeContext)
+          .then(analysis => {
+            const clauseRefs = analysis.match(/Clause\s+[\d.]+[A-Za-z]?/gi) || [];
+            return {
+              agent: 'claude',
+              specialty: 'conditions',
+              analysis,
+              confidence: Math.min(0.9, 0.5 + (clauses.length * 0.01)),
+              referencedSources: [...new Set(clauseRefs)]
+            } as AgentResponse;
+          })
           .catch(err => {
             console.error('Claude agent failed:', err);
             return null;
@@ -531,7 +584,7 @@ CRITICAL:
     dualAgentMode: boolean;
   } {
     const available = this.getAvailableAgents();
-    
+
     return {
       openai: {
         available: available.openai,

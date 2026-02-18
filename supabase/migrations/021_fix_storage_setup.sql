@@ -7,7 +7,7 @@ INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_typ
 VALUES (
   'contract-documents', 
   'contract-documents', 
-  false, 
+  true, 
   52428800, -- 50MB
   ARRAY['application/pdf']::text[]
 )
@@ -16,11 +16,15 @@ ON CONFLICT (id) DO UPDATE SET
   file_size_limit = EXCLUDED.file_size_limit,
   allowed_mime_types = EXCLUDED.allowed_mime_types;
 
--- 2. Clean up any old policies for the misspelled bucket 'contract-docs' (if they exist)
+-- 2. Clean up any old policies
 DROP POLICY IF EXISTS "Authenticated users can upload contract documents" ON storage.objects;
 DROP POLICY IF EXISTS "Authenticated users can read contract documents" ON storage.objects;
 DROP POLICY IF EXISTS "Authenticated users can update contract documents" ON storage.objects;
 DROP POLICY IF EXISTS "Authenticated users can delete contract documents" ON storage.objects;
+DROP POLICY IF EXISTS "Allow authenticated upload" ON storage.objects;
+DROP POLICY IF EXISTS "Allow authenticated read" ON storage.objects;
+DROP POLICY IF EXISTS "Allow authenticated update" ON storage.objects;
+DROP POLICY IF EXISTS "Allow authenticated delete" ON storage.objects;
 
 -- 3. Create fresh policies for 'contract-documents'
 

@@ -17,6 +17,7 @@ interface SectionEditorProps {
   onDeleteClause?: (index: number) => void;
   onReorderClause?: (fromIndex: number, toIndex: number) => void;
   onAddClause?: () => void;
+  onAskAI?: (item: any) => void;
   organizerSubfolders?: ContractSubfolder[];
   organizerExtractedData?: ExtractedData[];
   organizerSchemas?: Record<string, FolderSchemaField[]>;
@@ -52,6 +53,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   onDeleteClause,
   onReorderClause,
   onAddClause,
+  onAskAI,
   organizerSubfolders = [],
   organizerExtractedData = [],
   organizerSchemas = {}
@@ -389,6 +391,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                     onEdit={() => handleEditClauseClick(index)}
                     onDelete={() => handleDeleteClauseClick(index)}
                     onCompare={onCompareClause}
+                    onAskAI={onAskAI}
                     searchKeywords={searchKeywords}
                   />
                 </div>
@@ -405,6 +408,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                     setEditingItemIndex(section.items.indexOf(item));
                   }}
                   onDelete={() => handleDeleteItem(section.items.indexOf(item))}
+                  onAskAI={onAskAI}
                   searchKeywords={searchKeywords}
                   hideMetadata={false}
                   organizerExtractedData={organizerExtractedData}

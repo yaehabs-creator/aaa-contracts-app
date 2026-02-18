@@ -136,6 +136,24 @@ export class DocumentReaderService {
   }
 
   /**
+   * Get all extracted data from the organizer for a contract
+   */
+  async getContractExtractedData(contractId: string): Promise<any[]> {
+    const { data, error } = await this.supabase
+      .from('contract_extracted_data')
+      .select('*')
+      .eq('contract_id', contractId)
+      .order('created_at');
+
+    if (error) {
+      console.error('Error fetching extracted data:', error);
+      throw error;
+    }
+
+    return data || [];
+  }
+
+  /**
    * Get full document content (all chunks combined)
    */
   async getDocumentContent(documentId: string): Promise<DocumentContent | null> {
@@ -351,8 +369,26 @@ export class DocumentReaderService {
     contextParts.push(`Total Extracted Chunks: ${summary.totalChunks}`);
     contextParts.push('');
 
-    // Document list
-    contextParts.push('Available Documents:');
+    // 1. Organizer Extracted Data (Highest priority for specific project info)
+    const extractedData = await this.getContractExtractedData(contractId);
+    if (extractedData.length > 0) {
+      contextParts.push(`=== CONTRACT ORGANIZER: KEY PROJECT INFORMATION ===`);
+      contextParts.push(`The following specific fields were extracted or manually set in the project organizer:`);
+
+      for (const data of extractedData) {
+        const value = data.value ? (typeof data.value === 'string' ? data.value : JSON.stringify(data.value)) : 'Not set';
+        if (value && value !== 'Not set') {
+          contextParts.push(`- ${data.field_key}: ${value}`);
+          if (data.doc_name) {
+            contextParts.push(`  (Source: ${data.doc_name})`);
+          }
+        }
+      }
+      contextParts.push('');
+    }
+
+    // 2. Document list
+    contextParts.push('Available Uploaded Documents:');
     for (const doc of summary.documents) {
       const groupLabel = {
         A: 'Agreement',

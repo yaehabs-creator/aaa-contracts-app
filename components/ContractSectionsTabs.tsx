@@ -27,6 +27,7 @@ interface ContractSectionsTabsProps {
   onDeleteClause?: (index: number, sectionType: SectionType) => void;
   onReorderClause?: (fromIndex: number, toIndex: number, sectionType: SectionType) => void;
   onAddClause?: () => void;
+  onAskAI?: (item: any) => void;
   sortMode?: 'default' | 'status' | 'chapter' | 'category';
   onSortModeChange?: (mode: 'default' | 'status' | 'chapter' | 'category') => void;
   organizerSubfolders?: ContractSubfolder[];
@@ -43,6 +44,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   onDeleteClause,
   onReorderClause,
   onAddClause,
+  onAskAI,
   sortMode = 'default',
   onSortModeChange,
   organizerSubfolders = [],
@@ -684,6 +686,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             onDeleteClause={(index) => handleDeleteClause(index, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
             onReorderClause={(fromIndex, toIndex) => handleReorderClause(fromIndex, toIndex, activeTab === 'CONDITIONS' ? 'CONDITIONS' : activeSection.sectionType)}
             onAddClause={onAddClause}
+            onAskAI={onAskAI}
             organizerSubfolders={organizerSubfolders}
             organizerExtractedData={organizerExtractedData}
             organizerSchemas={organizerSchemas}

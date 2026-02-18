@@ -10,7 +10,7 @@ export type ModificationType =
 
 export type ModificationColor = "green" | "red" | "orange" | "purple" | "blue";
 
-export type ConditionType = 'General' | 'Particular';
+export type ConditionType = 'General' | 'Particular' | 'Both';
 
 export enum SectionType {
   AGREEMENT = 'AGREEMENT',
@@ -112,6 +112,7 @@ export interface Clause {
   chapter?: string;
   gc_link_tokens?: LinkToken[];
   pc_link_tokens?: LinkToken[];
+  section?: string;
 }
 
 export interface Category {

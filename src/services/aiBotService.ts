@@ -201,6 +201,39 @@ export async function buildUnifiedContractContext(
     }
   }
 
+  // 1.5. Add Contract Organizer Data (Fields and integrated summaries)
+  if (contractId) {
+    try {
+      const readerService = getDocumentReaderService();
+      const extractedData = await readerService.getContractExtractedData(contractId);
+
+      if (extractedData.length > 0) {
+        const organizerHeader = '\n=== CONTRACT ORGANIZER: PROJECT DATA ===\n';
+        if (usedChars + organizerHeader.length <= maxChars) {
+          contextParts.push(organizerHeader);
+          usedChars += organizerHeader.length;
+
+          for (const data of extractedData) {
+            const value = data.value ? (typeof data.value === 'string' ? data.value : JSON.stringify(data.value)) : 'Not set';
+            if (value && value !== 'Not set') {
+              let fieldLine = `${data.field_key}: ${value}\n`;
+              if (data.doc_name) fieldLine += `Source: ${data.doc_name}\n`;
+
+              if (usedChars + fieldLine.length <= maxChars) {
+                contextParts.push(fieldLine);
+                usedChars += fieldLine.length;
+              }
+            }
+          }
+          contextParts.push('\n');
+          usedChars += 1;
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to add organizer data to context:', error);
+    }
+  }
+
   // 2. Try to add document chunks from Supabase if available
   if (includeDocumentChunks && contractId) {
     try {
@@ -327,9 +360,11 @@ export async function chatWithFullContext(
 CONTRACT CONTEXT AVAILABLE:
 You have access to the complete contract content including:
 - ${clauseCount} parsed clauses with full text
+- Specific project fields and values from the Contract Organizer
 ${hasDocuments ? `- ${chunkCount} extracted sections from uploaded documents` : ''}
 
 When answering questions:
+- Use the Contract Organizer data for specific project details like names, dates, BOQ items, and Drawing references.
 - Reference specific clauses by number (e.g., "Clause 14.1")
 - Quote relevant text when appropriate
 - If comparing GC vs PC, note which takes precedence (PC overrides GC)
@@ -444,7 +479,7 @@ export async function getSuggestions(
       content: query,
       timestamp: Date.now()
     }];
-    
+
     const response = await aiProvider.chat(messages, clauses, SUGGESTIONS_SYSTEM_INSTRUCTION);
 
     // Try to parse JSON array from response
@@ -466,7 +501,7 @@ export async function getSuggestions(
       console.log('Suggestions request aborted');
       return DEFAULT_SUGGESTIONS;
     }
-    
+
     console.error('Failed to get suggestions:', error);
     return DEFAULT_SUGGESTIONS.slice(0, 3);
   } finally {
@@ -717,6 +752,7 @@ export async function chatWithDualAgents(
   contractId: string | null,
   options: {
     forceBothAgents?: boolean;
+    forceDocumentSearch?: boolean;
     conversationHistory?: BotMessage[];
   } = {}
 ): Promise<{
@@ -738,7 +774,7 @@ export async function chatWithDualAgents(
   }
 
   // Get conversation history (excluding the current query)
-  const conversationHistory = options.conversationHistory || 
+  const conversationHistory = options.conversationHistory ||
     messages.slice(0, -1).filter(m => m.role === 'user' || m.role === 'assistant');
 
   // Orchestrate the dual-agent response
@@ -746,7 +782,8 @@ export async function chatWithDualAgents(
     query,
     contractId,
     clauses,
-    conversationHistory
+    conversationHistory,
+    { forceDocumentSearch: options.forceDocumentSearch }
   );
 
   return {
@@ -811,7 +848,7 @@ export async function chatWithSmartRouting(
         contractId,
         messages.slice(0, -1)
       );
-      
+
       if (openaiResponse.analysis) {
         return {
           response: openaiResponse.analysis,
@@ -836,9 +873,9 @@ export async function chatWithSmartRouting(
  */
 export function getAgentCapabilitiesSummary(): string {
   const status = getAgentStatus();
-  
+
   let summary = '🤖 AI Agent Status\n\n';
-  
+
   // OpenAI Status
   summary += `📄 Document Specialist (OpenAI GPT-4)\n`;
   summary += `Status: ${status.openai.available ? '✅ Available' : '❌ Not Configured'}\n`;
@@ -846,7 +883,7 @@ export function getAgentCapabilitiesSummary(): string {
     summary += `Specialties: ${status.openai.specialties.join(', ')}\n`;
   }
   summary += '\n';
-  
+
   // Claude Status
   summary += `📜 Conditions Specialist (Claude)\n`;
   summary += `Status: ${status.claude.available ? '✅ Available' : '❌ Not Configured'}\n`;
@@ -854,7 +891,7 @@ export function getAgentCapabilitiesSummary(): string {
     summary += `Specialties: ${status.claude.specialties.join(', ')}\n`;
   }
   summary += '\n';
-  
+
   // Dual Mode Status
   if (status.dualAgentMode) {
     summary += `🔄 Dual-Agent Mode: ✅ ACTIVE\n`;
@@ -863,6 +900,6 @@ export function getAgentCapabilitiesSummary(): string {
     summary += `🔄 Dual-Agent Mode: ❌ Not Available\n`;
     summary += `Configure both API keys to enable collaborative analysis.\n`;
   }
-  
+
   return summary;
 }

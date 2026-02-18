@@ -354,6 +354,7 @@ const App: React.FC = () => {
   // AI Bot States
   const [isBotOpen, setIsBotOpen] = useState(false);
   const [selectedClauseForBot, setSelectedClauseForBot] = useState<Clause | null>(null);
+  const [selectedItemForBot, setSelectedItemForBot] = useState<any | null>(null);
 
   // Chapter Display View
   const [viewByChapter, setViewByChapter] = useState(false);
@@ -713,6 +714,25 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
   const handleEditClause = (clause: Clause) => {
     setEditingClause(clause);
     setIsAddModalOpen(true);
+  };
+
+  const handleAskAI = (item: any) => {
+    // If it's a clause, set both for safety but AIBotSidebar prioritizes selectedItem if we want
+    if (item.itemType === ItemType.CLAUSE) {
+      const clause = sectionItemToClause(item);
+      setSelectedClauseForBot(clause);
+      setSelectedItemForBot(null);
+    } else if ((item as Clause).clause_number) {
+      // It's a clause object
+      setSelectedClauseForBot(item as Clause);
+      setSelectedItemForBot(null);
+    } else {
+      // It's a SectionItem (Field, Paragraph, PDF)
+      setSelectedItemForBot(item);
+      setSelectedClauseForBot(null);
+    }
+
+    setIsBotOpen(true);
   };
 
   const handleUpdateClauseFromModal = async (data: {
@@ -2997,6 +3017,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       onDeleteClause={handleDeleteClause}
                       onReorderClause={handleReorder}
                       onAddClause={() => setIsAddModalOpen(true)}
+                      onAskAI={handleAskAI}
                       sortMode={sortMode}
                       onSortModeChange={setSortMode}
                       organizerSubfolders={organizerSubfolders}
@@ -3037,6 +3058,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                             onDeleteClause={handleDeleteClause}
                             onReorderClause={handleReorder}
                             onAddClause={() => setIsAddModalOpen(true)}
+                            onAskAI={handleAskAI}
                             sortMode={sortMode}
                             onSortModeChange={setSortMode}
                             organizerSubfolders={organizerSubfolders}
@@ -3611,6 +3633,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           onClose={() => setIsBotOpen(false)}
           clauses={clauses}
           selectedClause={selectedClauseForBot}
+          selectedItem={selectedItemForBot}
           contracts={library}
           activeContractId={activeContractId}
           onContractChange={(contractId) => {
