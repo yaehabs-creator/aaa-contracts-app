@@ -66,6 +66,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     const [fullOcrText, setFullOcrText] = useState<string | null>(null);
     const [isRepairing, setIsRepairing] = useState(false);
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+    const [ingestionMode, setIngestionMode] = useState<'extraction' | 'pdf-viewer'>('extraction');
 
     // Local contract state for when no contract is passed via props
     const [localContract, setLocalContract] = useState<SavedContract | null>(null);
@@ -346,10 +347,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
             return;
         }
 
-        const isPdfRequired = activeFolder === 'E' || activeFolder === 'I';
-
         try {
-            if (isPdfRequired) {
+            if (ingestionMode === 'pdf-viewer') {
                 // PDF DIRECT UPLOAD (BYPASS OCR)
                 setProcessingStatus('Uploading document directly...');
                 const storagePath = `${effectiveContract.id}/${selectedSubfolderId}/${file.name}`;
@@ -594,6 +593,12 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                     onClick={() => {
                                         setActiveFolder(folder.code);
                                         setSelectedSubfolderId(null);
+                                        // Auto-switch mode for convenience
+                                        if (folder.code === 'E' || folder.code === 'I') {
+                                            setIngestionMode('pdf-viewer');
+                                        } else {
+                                            setIngestionMode('extraction');
+                                        }
                                     }}
                                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeFolder === folder.code
                                         ? 'bg-white shadow-md border border-aaa-blue/10 text-aaa-blue'
@@ -752,8 +757,26 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                                 </div>
                                             )}
 
-                                            <h4 className="text-xl font-black text-aaa-text tracking-tighter mb-2">Source Ingestion</h4>
-                                            <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-8">Scan PDF for extraction</p>
+                                            <div className="flex items-center justify-between mb-2">
+                                                <h4 className="text-xl font-black text-aaa-text tracking-tighter">Source Ingestion</h4>
+                                                <div className="flex p-1 bg-aaa-bg/50 border border-aaa-border rounded-xl">
+                                                    <button
+                                                        onClick={() => setIngestionMode('extraction')}
+                                                        className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'extraction' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
+                                                    >
+                                                        OCR EXTRACTION
+                                                    </button>
+                                                    <button
+                                                        onClick={() => setIngestionMode('pdf-viewer')}
+                                                        className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'pdf-viewer' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
+                                                    >
+                                                        PDF VIEWER
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-8">
+                                                {ingestionMode === 'extraction' ? 'Scan PDF for automated data extraction' : 'Upload original PDF for direct viewing'}
+                                            </p>
 
                                             <div
                                                 onClick={() => fileInputRef.current?.click()}
