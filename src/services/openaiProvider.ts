@@ -169,7 +169,7 @@ export class OpenAIProvider {
             const vectorResults = await readerService.searchSimilarChunks(
               contractId,
               embeddings[0],
-              { limit: maxChunks, threshold: 0.5 }
+              { limit: maxChunks, threshold: 0.4 }
             );
             chunks = vectorResults;
           }
@@ -367,7 +367,16 @@ export class OpenAIProvider {
         .filter((v, i, a) => a.indexOf(v) === i); // Deduplicate
 
       // Calculate confidence based on search results quality
-      const confidence = Math.min(0.9, 0.5 + (chunks.length * 0.02));
+      let confidence = 0.5;
+      if (chunks.length > 5) confidence += 0.1;
+      if (chunks.length > 15) confidence += 0.1;
+
+      // Boost confidence if specific document refs found
+      if (analysis.includes('Agreement') || analysis.includes('BOQ') || analysis.includes('Schedule')) {
+        confidence += 0.15;
+      }
+
+      confidence = Math.min(0.95, confidence + (chunks.length * 0.01));
 
       return {
         agent: 'openai',

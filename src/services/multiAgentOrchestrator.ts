@@ -176,7 +176,35 @@ export class MultiAgentOrchestrator {
     const readerService = getDocumentReaderService();
     let context = '';
 
-    // 1. Add Organizer Data (High priority overview)
+    // 1. Add Document Landscape (The "Big Picture")
+    if (contractId) {
+      try {
+        const summary = await readerService.getContractSummary(contractId);
+        if (summary.totalDocuments > 0) {
+          context += `=== DOCUMENT LANDSCAPE (OVERVIEW) ===\n`;
+          context += `The contract consists of ${summary.totalDocuments} primary documents across ${summary.totalChunks} sections.\n`;
+          context += `Consult these categories for specific data:\n`;
+
+          const categoryMap: Record<string, string> = {
+            A: 'Agreement (Core variables, legal parties)',
+            B: 'LOA (Acceptance terms, Contract Sum)',
+            C: 'Conditions (GC/PC rights & obligations)',
+            D: 'Addendums (Overrides/Amendments)',
+            I: 'BOQ (Rates, Quantities, Pricing)',
+            N: 'Schedules (Milestones, Drawings, Appendices)'
+          };
+
+          for (const doc of summary.documents) {
+            context += `- [${doc.group}] ${doc.name} (${categoryMap[doc.group] || 'Other'})\n`;
+          }
+          context += '\n';
+        }
+      } catch (err) {
+        console.warn('Failed to fetch document landscape for orchestrator:', err);
+      }
+    }
+
+    // 2. Add Organizer Data (High priority metadata)
     if (contractId) {
       try {
         const extractedData = await readerService.getContractExtractedData(contractId);
@@ -282,7 +310,14 @@ export class MultiAgentOrchestrator {
       const referencedSources = [...new Set(clauseRefs)];
 
       // Calculate confidence based on clause availability and response quality
-      const confidence = Math.min(0.9, 0.5 + (clauses.length * 0.01));
+      // Boost confidence if keywords are found or if we have a lot of clauses
+      let confidence = 0.5;
+
+      if (clauses.length > 0) confidence += 0.1;
+      if (analysis.length > 200) confidence += 0.1;
+      if (analysis.includes('Clause') || analysis.includes('General Condition')) confidence += 0.1;
+
+      confidence = Math.min(0.95, confidence + (clauses.length * 0.005));
 
       return {
         agent: 'claude',
@@ -388,20 +423,25 @@ CRITICAL:
 
     // If neither agent provided a good response
     if (agentsUsed.length === 0) {
-      const errors = [
-        openaiResponse?.error,
-        claudeResponse?.error
-      ].filter(Boolean);
+      // Create a more helpful fallback message based on why they failed
+      let fallbackMsg = "I am unable to provide a detailed analysis for this query because I couldn't find a high-confidence match in the specific sections of the contract documents or clauses.\n\n";
+
+      if (classification.requiresDocuments) {
+        fallbackMsg += "🔹 Try rephrasing your search for documents (Agreement, BOQ, etc.).\n";
+      }
+      if (classification.requiresConditions) {
+        fallbackMsg += "🔹 Ensure the General and Particular conditions are correctly loaded.\n";
+      }
+
+      fallbackMsg += "\nTip: If you are looking for a specific section like 'Appendix B', check if it is listed in the 'Organizer' tab first.";
 
       return {
-        finalAnswer: errors.length > 0
-          ? `Unable to analyze: ${errors.join('; ')}`
-          : 'Unable to provide analysis. Please ensure contract documents and clauses are loaded.',
+        finalAnswer: fallbackMsg,
         openaiInsights: openaiResponse,
         claudeInsights: claudeResponse,
         crossReferences: [],
         agentsUsed: [],
-        synthesisNotes: 'No agents provided sufficient analysis'
+        synthesisNotes: 'Fallback triggered: No agent provided sufficient confidence.'
       };
     }
 
