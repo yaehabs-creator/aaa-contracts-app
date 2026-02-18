@@ -2,7 +2,42 @@
 // import * as pdfjsLib from 'pdfjs-dist';
 import { TextItem } from 'pdfjs-dist/types/src/display/api';
 
-export async function extractTextFromPdf(url: string): Promise<string> {
+/**
+ * Detects if a PDF is likely scanned (image-only) by checking text content density.
+ * Returns true if the average text per page is below the threshold.
+ */
+export async function isScannedPdf(url: string, threshold: number = 100): Promise<boolean> {
+    try {
+        const pdfjsLib = await import('pdfjs-dist');
+        const loadingTask = pdfjsLib.getDocument(url);
+        const pdf = await loadingTask.promise;
+
+        const numPages = pdf.numPages;
+        if (numPages === 0) return true;
+
+        let totalTextLength = 0;
+        // Check first 3 pages or all if less
+        const pagesToCheck = Math.min(numPages, 3);
+
+        for (let i = 1; i <= pagesToCheck; i++) {
+            const page = await pdf.getPage(i);
+            const textContent = await page.getTextContent();
+            const pageText = textContent.items
+                .filter((item): item is TextItem => 'str' in item)
+                .map(item => item.str)
+                .join(' ');
+            totalTextLength += pageText.trim().length;
+        }
+
+        const averageTextPerPage = totalTextLength / pagesToCheck;
+        return averageTextPerPage < threshold;
+    } catch (error) {
+        console.error('Error checking if PDF is scanned:', error);
+        return true; // Assume scanned on error to be safe
+    }
+}
+
+export async function extractTextFromPdf(url: string, options: { onProgress?: (p: number) => void } = {}): Promise<string> {
     try {
         const pdfjsLib = await import('pdfjs-dist');
 
@@ -26,6 +61,10 @@ export async function extractTextFromPdf(url: string): Promise<string> {
                 .join(' ');
 
             fullText += `[Page ${i}]\n${pageText}\n\n`;
+
+            if (options.onProgress) {
+                options.onProgress(i / numPages);
+            }
         }
 
         return fullText;

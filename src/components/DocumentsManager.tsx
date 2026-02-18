@@ -15,8 +15,9 @@ import {
   BatchUploadProgress,
   ValidationResult
 } from '../../types';
-import { extractTextFromPdf } from '../utils/pdfUtils';
+import { extractTextFromPdf, isScannedPdf } from '../utils/pdfUtils';
 import { getEmbeddingService } from '../services/embeddingService';
+import { PaddleOcrService } from '../services/paddleOcrService';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
@@ -558,27 +559,34 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
 
           if (doc.file_type === 'pdf') {
             try {
-              setProcessingStatus(`Extracting text from PDF: ${doc.name}`);
-              extractedText = await extractTextFromPdf(urlData.signedUrl);
+              setProcessingStatus(`Analyzing PDF type: ${doc.name}`);
+              const isScanned = await isScannedPdf(urlData.signedUrl);
+
+              if (isScanned) {
+                setProcessingStatus(`Scanned PDF detected. Starting OCR for ${doc.name}...`);
+
+                // Fetch the file to convert to base64
+                const response = await fetch(urlData.signedUrl);
+                const arrayBuffer = await response.arrayBuffer();
+                const base64 = btoa(
+                  new Uint8Array(arrayBuffer)
+                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
+                );
+
+                const ocrPages = await PaddleOcrService.processBase64Pdf(base64, doc.original_filename || doc.name);
+                extractedText = ocrPages.join('\n\n');
+                setProcessingStatus(`OCR completed for ${doc.name}. Chunks: ${ocrPages.length}`);
+              } else {
+                setProcessingStatus(`Searchable PDF detected. Extracting text: ${doc.name}`);
+                extractedText = await extractTextFromPdf(urlData.signedUrl);
+              }
 
               if (extractedText.length < 50) {
-                throw new Error('PDF extraction returned too little text. Is it a scanned image?');
+                throw new Error('PDF extraction returned too little text. OCR may have failed or document is empty.');
               }
-            } catch (pdfError) {
-              console.warn('Advanced PDF extraction failed, falling back to basic:', pdfError);
-              // Fallback to simple extraction
-              const response = await fetch(urlData.signedUrl);
-              const text = await response.text();
-              // Basic regex text extraction fallback
-              const streamRegex = /stream\s*([\s\S]*?)\s*endstream/g;
-              let match;
-              const textParts: string[] = [];
-              while ((match = streamRegex.exec(text)) !== null) {
-                const content = match[1];
-                const readable = content.replace(/[^\x20-\x7E\n]/g, ' ').trim();
-                if (readable.length > 10) textParts.push(readable);
-              }
-              extractedText = textParts.join('\n\n');
+            } catch (pdfError: any) {
+              console.warn('Text extraction or OCR failed:', pdfError);
+              throw new Error(`Failed to extract text from ${doc.name}: ${pdfError.message}`);
             }
           } else {
             // For other files, try to read as text (simplified)

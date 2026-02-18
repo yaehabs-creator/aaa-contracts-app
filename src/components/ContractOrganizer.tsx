@@ -565,6 +565,22 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                         />
                     </div>
                     <button
+                        onClick={() => {
+                            const dmBtn = document.querySelector('.process-btn') as HTMLButtonElement;
+                            if (dmBtn) {
+                                dmBtn.click();
+                                toast.success('Starting document synchronization for AI...');
+                            } else {
+                                toast.error('Please open the Documents tab to sync files.');
+                            }
+                        }}
+                        className="px-6 py-2.5 bg-emerald-50 text-emerald-600 border border-emerald-200 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-100 transition-all active:scale-95 flex items-center gap-2"
+                        title="Sync all uploaded PDFs for AI analysis (OCR + Embeddings)"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        One-Click Sync
+                    </button>
+                    <button
                         onClick={onClose}
                         className="px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-all"
                     >
