@@ -30,7 +30,7 @@ const FOLDER_TO_SECTION_MAPPING: Record<string, SectionType[]> = {
   'I': [SectionType.BOQ],
   'N': [SectionType.AUTOMATION],
   'S': [SectionType.SPECIFICATION],
-  'E': [SectionType.REQUIREMENTS],
+  'E': [SectionType.DRAWINGS],
   'J': [SectionType.SCHEDULE],
   'K': [SectionType.ANNEX],
   'M': [SectionType.INSTRUCTION],
@@ -89,15 +89,18 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
       // Only show the full/repaired text from the organizer for a clean view
       const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id && d.field_key === '__full_text__');
       dataForSub.forEach(data => {
+        const isPdf = !!data.doc_url;
         extractedItems.push({
           id: data.id,
-          itemType: ItemType.PARAGRAPH,
+          itemType: isPdf ? ItemType.PDF : ItemType.PARAGRAPH,
           heading: sub.name,
           text: data.value as string,
           orderIndex: nativeItems.length + extractedItems.length,
           confidence: data.confidence,
           evidence: data.evidence,
           status: data.status,
+          doc_url: data.doc_url,
+          doc_name: data.doc_name,
           isIntegrated: true
         });
       });

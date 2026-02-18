@@ -838,6 +838,8 @@ export const saveOrganizerData = async (contractId: string, data: {
         confidence: ed.confidence,
         evidence: ed.evidence,
         status: ed.status,
+        doc_url: ed.doc_url,
+        doc_name: ed.doc_name,
         updated_at: new Date().toISOString()
       })));
 
@@ -850,4 +852,50 @@ export const saveOrganizerData = async (contractId: string, data: {
       .eq('contract_id', contractId);
     if (clearError) console.error('Error clearing extracted data:', clearError);
   }
+};
+
+// ============================================
+// Supabase Storage - Document Management
+// ============================================
+
+const STORAGE_BUCKET = 'contract-documents';
+
+/**
+ * Upload a document to Supabase Storage
+ */
+export const uploadContractDocument = async (file: File, path: string): Promise<string> => {
+  if (!supabase) throw new Error('Supabase not initialized');
+
+  const { data, error } = await supabase.storage
+    .from(STORAGE_BUCKET)
+    .upload(path, file, {
+      cacheControl: '3600',
+      upsert: true
+    });
+
+  if (error) {
+    // If bucket doesn't exist, this might fail. In a real app we'd ensure it exists.
+    console.error('Storage upload error:', error);
+    throw new Error(`Failed to upload document: ${error.message}`);
+  }
+
+  // Get public URL
+  const { data: { publicUrl } } = supabase.storage
+    .from(STORAGE_BUCKET)
+    .getPublicUrl(data.path);
+
+  return publicUrl;
+};
+
+/**
+ * Get a public URL for a document
+ */
+export const getDocumentUrl = (path: string): string => {
+  if (!supabase) throw new Error('Supabase not initialized');
+
+  const { data: { publicUrl } } = supabase.storage
+    .from(STORAGE_BUCKET)
+    .getPublicUrl(path);
+
+  return publicUrl;
 };

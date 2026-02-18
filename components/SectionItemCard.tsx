@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionItem, ItemType } from '../types';
+import { PDFViewer } from './PDFViewer';
 
 interface SectionItemCardProps {
   item: SectionItem;
@@ -36,6 +37,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
   const isParagraph = item.itemType === ItemType.PARAGRAPH;
   const isField = item.itemType === ItemType.FIELD;
   const isImage = item.itemType === ItemType.IMAGE;
+  const isPdf = item.itemType === ItemType.PDF || !!item.doc_url;
 
   return (
     <div className={`bg-white border ${isExpanded ? 'border-aaa-blue ring-2 ring-aaa-blue/5' : 'border-aaa-border'} rounded-3xl shadow-premium overflow-hidden transition-all duration-500 hover:shadow-xl`}>
@@ -143,13 +145,44 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
               <div className="px-8 pb-8 space-y-6 pt-2">
                 {isParagraph && (
                   <div className={`${hideMetadata ? 'bg-transparent' : 'bg-aaa-bg/30 p-6'} rounded-2xl border ${hideMetadata ? 'border-none' : 'border-aaa-border/50'} space-y-4`}>
-                    <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
-                      {searchKeywords.length > 0 ? (
-                        <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.text || '', searchKeywords) }} />
-                      ) : (
-                        item.text
-                      )}
-                    </div>
+                    {!isPdf ? (
+                      <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
+                        {searchKeywords.length > 0 ? (
+                          <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.text || '', searchKeywords) }} />
+                        ) : (
+                          item.text
+                        )}
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-4 p-4 bg-white border border-aaa-border rounded-xl shadow-sm">
+                          <div className="w-12 h-12 bg-red-50 text-red-500 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-sm font-black text-aaa-text uppercase leading-none mb-1">{item.doc_name || 'Document Attachment'}</p>
+                            <p className="text-[10px] font-bold text-aaa-muted uppercase tracking-widest">PDF Document • Ready for Review</p>
+                          </div>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (item.doc_url) window.open(item.doc_url, '_blank');
+                            }}
+                            className="px-4 py-2 bg-aaa-blue text-white rounded-lg text-[10px] font-black uppercase tracking-widest shadow-md hover:bg-aaa-navy transition-all"
+                          >
+                            Open Original
+                          </button>
+                        </div>
+
+                        {isExpanded && item.doc_url && (
+                          <div className="h-[600px] mt-4">
+                            <PDFViewer url={item.doc_url} title={item.doc_name} />
+                          </div>
+                        )}
+                      </div>
+                    )}
 
                     {!hideMetadata && (item.status || item.confidence !== undefined || item.evidence) && (
                       <div className="pt-4 border-t border-aaa-border/30">
@@ -157,8 +190,8 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
                           <div className="flex items-center gap-4">
                             {item.status && (
                               <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter ${item.status === 'extracted' ? 'bg-emerald-100 text-emerald-700' :
-                                item.status === 'uncertain' ? 'bg-amber-100 text-amber-700' :
-                                  'bg-slate-100 text-slate-600'
+                                  item.status === 'uncertain' ? 'bg-amber-100 text-amber-700' :
+                                    'bg-slate-100 text-slate-600'
                                 }`}>
                                 {item.status}
                               </span>
@@ -171,7 +204,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
                                 <div className="w-12 h-1 bg-aaa-border rounded-full overflow-hidden">
                                   <div
                                     className={`h-full rounded-full transition-all duration-500 ${item.confidence > 0.8 ? 'bg-emerald-500' :
-                                      item.confidence > 0.5 ? 'bg-amber-500' : 'bg-red-500'
+                                        item.confidence > 0.5 ? 'bg-amber-500' : 'bg-red-500'
                                       }`}
                                     style={{ width: `${item.confidence * 100}%` }}
                                   />
@@ -212,8 +245,8 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
                         <div className="flex flex-col items-end gap-2 ml-6 pl-6 border-l border-aaa-border/50">
                           {item.status && (
                             <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter ${item.status === 'extracted' ? 'bg-emerald-100 text-emerald-700' :
-                              item.status === 'uncertain' ? 'bg-amber-100 text-amber-700' :
-                                'bg-slate-100 text-slate-600'
+                                item.status === 'uncertain' ? 'bg-amber-100 text-amber-700' :
+                                  'bg-slate-100 text-slate-600'
                               }`}>
                               {item.status}
                             </span>
@@ -226,7 +259,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
                               <div className="w-16 h-1 bg-aaa-border rounded-full overflow-hidden">
                                 <div
                                   className={`h-full rounded-full transition-all duration-500 ${item.confidence > 0.8 ? 'bg-emerald-500' :
-                                    item.confidence > 0.5 ? 'bg-amber-500' : 'bg-red-500'
+                                      item.confidence > 0.5 ? 'bg-amber-500' : 'bg-red-500'
                                     }`}
                                   style={{ width: `${item.confidence * 100}%` }}
                                 />

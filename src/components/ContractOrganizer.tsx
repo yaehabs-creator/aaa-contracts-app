@@ -8,7 +8,7 @@ import {
 import toast from 'react-hot-toast';
 import { PaddleOcrService } from '../services/paddleOcrService';
 import { extractDataForSchema } from '@/services/organizerExtractionService';
-import { getOrganizerData } from '@/src/services/supabaseService';
+import { getOrganizerData, uploadContractDocument } from '@/src/services/supabaseService';
 import { cleanTextWithAI } from '@/src/services/textPreprocessor';
 
 interface ContractOrganizerProps {
@@ -33,6 +33,7 @@ const FIXED_FOLDERS = [
     { code: 'B', name: 'Signed Letter of Acceptance' },
     { code: 'C', name: 'Conditions of Contract & its Appendices' },
     { code: 'D', name: 'Addendums & Post Tender Addendums' },
+    { code: 'E', name: 'Contract Drawings' },
     { code: 'I', name: 'Priced Bills of Quantities and Method of Measurements' },
     { code: 'N', name: 'Automation Application' },
     { code: 'P', name: 'Instruction To Tenderers & its Appendices' }
@@ -338,47 +339,77 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
             return;
         }
 
-        setIsProcessing(true);
-        setProcessingStatus('Initializing local OCR...');
-        console.log('Starting OCR for:', file.name);
+        const isPdfRequired = activeFolder === 'E' || activeFolder === 'I';
 
         try {
-            // 1. Run local OCR
-            setProcessingStatus('Running OCR (this may take a minute)...');
-            const ocrResponse = await PaddleOcrService.processFile(file, file.name);
-            console.log('OCR Result:', ocrResponse);
+            if (isPdfRequired) {
+                // PDF DIRECT UPLOAD (BYPASS OCR)
+                setProcessingStatus('Uploading document directly...');
+                const storagePath = `${effectiveContract.id}/${selectedSubfolderId}/${file.name}`;
+                const publicUrl = await uploadContractDocument(file, storagePath);
 
-            // 2. Run Extraction with Claude
-            setProcessingStatus('AI Extraction in progress...');
-            const extraction = await extractDataForSchema(ocrResponse.text, schema);
-            console.log('Extraction Result:', extraction);
-
-            // 3. Map to state
-            const newExtractedData: ExtractedData[] = extraction.extracted_fields.map(field => {
-                return {
+                const pdfData: ExtractedData = {
                     id: crypto.randomUUID(),
                     contract_id: effectiveContract.id,
                     subfolder_id: selectedSubfolderId,
-                    field_key: field.key,
-                    value: field.value,
-                    confidence: extraction.confidence_score || 0.9,
+                    field_key: '__full_text__',
+                    value: `Document: ${file.name} (View in PDF Player)`,
+                    doc_url: publicUrl,
+                    doc_name: file.name,
+                    confidence: 1.0,
                     evidence: {
-                        page: field.page_number || 1,
-                        snippet: field.evidence_text || ''
+                        page: 1,
+                        snippet: 'PDF Document Upload'
                     },
-                    status: field.value ? 'extracted' : 'missing' as any
+                    status: 'extracted'
                 };
-            });
 
-            // Merge with existing data for this subfolder
-            onUpdateExtractedData([
-                ...extractedData.filter(d => d.subfolder_id !== selectedSubfolderId),
-                ...newExtractedData
-            ]);
+                onUpdateExtractedData([
+                    ...extractedData.filter(d => d.subfolder_id !== selectedSubfolderId),
+                    pdfData
+                ]);
 
-            setFullOcrText(ocrResponse.text);
-            setHasUnsavedChanges(true);
-            toast.success(`Extracted ${newExtractedData.length} fields from document`);
+                setFullOcrText(null); // Clear OCR text for PDF items
+                setHasUnsavedChanges(true);
+                toast.success(`PDF Document uploaded successfully!`);
+            } else {
+                // 1. Run local OCR
+                setProcessingStatus('Running OCR (this may take a minute)...');
+                const ocrResponse = await PaddleOcrService.processFile(file, file.name);
+                console.log('OCR Result:', ocrResponse);
+
+                // 2. Run Extraction with Claude
+                setProcessingStatus('AI Extraction in progress...');
+                const extraction = await extractDataForSchema(ocrResponse.text, schema);
+                console.log('Extraction Result:', extraction);
+
+                // 3. Map to state
+                const newExtractedData: ExtractedData[] = extraction.extracted_fields.map(field => {
+                    return {
+                        id: crypto.randomUUID(),
+                        contract_id: effectiveContract.id,
+                        subfolder_id: selectedSubfolderId,
+                        field_key: field.key,
+                        value: field.value,
+                        confidence: extraction.confidence_score || 0.9,
+                        evidence: {
+                            page: field.page_number || 1,
+                            snippet: field.evidence_text || ''
+                        },
+                        status: field.value ? 'extracted' : 'missing' as any
+                    };
+                });
+
+                // Merge with existing data for this subfolder
+                onUpdateExtractedData([
+                    ...extractedData.filter(d => d.subfolder_id !== selectedSubfolderId),
+                    ...newExtractedData
+                ]);
+
+                setFullOcrText(ocrResponse.text);
+                setHasUnsavedChanges(true);
+                toast.success(`Extracted ${newExtractedData.length} fields from document`);
+            }
         } catch (err: any) {
             console.error('Processing error:', err);
             toast.error(`Processing failed: ${err.message}`);

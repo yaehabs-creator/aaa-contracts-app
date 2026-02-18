@@ -35,7 +35,8 @@ export enum ItemType {
   CLAUSE = 'CLAUSE',
   PARAGRAPH = 'PARAGRAPH',
   FIELD = 'FIELD',
-  IMAGE = 'IMAGE'
+  IMAGE = 'IMAGE',
+  PDF = 'PDF'
 }
 
 export type TimeFrameType =
@@ -173,6 +174,8 @@ export interface SectionItem {
     snippet: string;
   };
   status?: 'extracted' | 'missing' | 'manual' | 'uncertain';
+  doc_url?: string;
+  doc_name?: string;
 }
 
 export interface ContractSection {
@@ -570,7 +573,8 @@ export interface ExtractedData {
     snippet: string;
   };
   status: 'extracted' | 'missing' | 'uncertain';
-  is_modified?: boolean;
+  doc_url?: string;
+  doc_name?: string;
   created_at?: string;
   updated_at?: string;
 }
