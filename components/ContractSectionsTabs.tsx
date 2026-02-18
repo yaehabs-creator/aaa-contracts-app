@@ -103,14 +103,11 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     });
   }, [contractWithSections.sections]);
 
-  // Filter sections for tabs (exclude GENERAL, PARTICULAR, AGREEMENT, and LOA)
-  // AGREEMENT and LOA tabs are hidden as they are not needed in the UI
+  // Filter sections for tabs (exclude GENERAL and PARTICULAR as they are in the CONDITIONS tab)
   const tabSections = useMemo(() => {
     return allSections.filter(s =>
       s.sectionType !== SectionType.GENERAL &&
-      s.sectionType !== SectionType.PARTICULAR &&
-      s.sectionType !== SectionType.AGREEMENT &&
-      s.sectionType !== SectionType.LOA
+      s.sectionType !== SectionType.PARTICULAR
     );
   }, [allSections]);
 
@@ -236,6 +233,28 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     ];
     return groups;
   }, []);
+
+  // Professional labels for tabs
+  const getTabLabel = (type: string): string => {
+    const labels: Record<string, string> = {
+      [SectionType.AGREEMENT]: 'Agreement',
+      [SectionType.LOA]: 'Acceptance',
+      [SectionType.TENDER]: 'Tender',
+      'CONDITIONS': 'Conditions',
+      [SectionType.REQUIREMENTS]: 'Requirements',
+      [SectionType.SPECIFICATION]: 'Specification',
+      [SectionType.PROPOSAL]: 'Proposal',
+      [SectionType.DRAWINGS]: 'Drawings',
+      [SectionType.BOQ]: 'Quantities',
+      [SectionType.SCHEDULE]: 'Schedules',
+      [SectionType.ANNEX]: 'Annexes',
+      [SectionType.ADDENDUM]: 'Addendums',
+      [SectionType.INSTRUCTION]: 'Tenderers',
+      [SectionType.AUTOMATION]: 'Application',
+      [SectionType.EXTRAS]: 'Documents'
+    };
+    return labels[type] || type;
+  };
 
   // Get active section based on tab
   const activeSection = useMemo(() => {
@@ -548,7 +567,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
                             : 'text-aaa-muted hover:text-aaa-blue hover:bg-aaa-bg/30'
                             }`}
                         >
-                          {type === 'CONDITIONS' ? 'Conditions' : section?.title.split(' ').pop()}
+                          {getTabLabel(type as string)}
                           {hasItems && <span className="w-1 h-1 rounded-full bg-aaa-blue"></span>}
                         </button>
                       );

@@ -31,12 +31,19 @@ interface ContractOrganizerProps {
 const FIXED_FOLDERS = [
     { code: 'A', name: 'Form of Agreement & its Annexes' },
     { code: 'B', name: 'Signed Letter of Acceptance' },
+    { code: 'T', name: 'Form of Tender' },
     { code: 'C', name: 'Conditions of Contract & its Appendices' },
-    { code: 'D', name: 'Addendums & Post Tender Addendums' },
+    { code: 'R', name: 'Employer\'s Requirements' },
+    { code: 'S', name: 'Specification' },
+    { code: 'Q', name: 'Technical Proposal' },
     { code: 'E', name: 'Contract Drawings' },
-    { code: 'I', name: 'Priced Bills of Quantities and Method of Measurements' },
+    { code: 'I', name: 'Priced Bills of Quantities' },
+    { code: 'J', name: 'Schedules' },
+    { code: 'K', name: 'Annexes' },
+    { code: 'D', name: 'Addendums & Post Tender Addendums' },
+    { code: 'P', name: 'Instruction To Tenderers' },
     { code: 'N', name: 'Automation Application' },
-    { code: 'P', name: 'Instruction To Tenderers & its Appendices' }
+    { code: 'O', name: 'Other Documents' }
 ] as const;
 
 export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({

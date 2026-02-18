@@ -24,16 +24,18 @@ interface SectionEditorProps {
 const FOLDER_TO_SECTION_MAPPING: Record<string, SectionType[]> = {
   'A': [SectionType.AGREEMENT],
   'B': [SectionType.LOA],
-  'P': [SectionType.TENDER],
+  'T': [SectionType.TENDER],
   'C': [SectionType.GENERAL, SectionType.PARTICULAR],
   'D': [SectionType.ADDENDUM],
   'I': [SectionType.BOQ],
   'N': [SectionType.AUTOMATION],
   'S': [SectionType.SPECIFICATION],
   'E': [SectionType.DRAWINGS],
+  'R': [SectionType.REQUIREMENTS],
+  'Q': [SectionType.PROPOSAL],
   'J': [SectionType.SCHEDULE],
   'K': [SectionType.ANNEX],
-  'M': [SectionType.INSTRUCTION],
+  'P': [SectionType.INSTRUCTION],
   'O': [SectionType.EXTRAS]
 };
 
@@ -158,6 +160,13 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
         const searchableText = [
           item.imageTitle || '',
           item.imageAlt || '',
+          item.heading || ''
+        ].join(' ').toLowerCase();
+
+        return keywords.every(keyword => searchableText.includes(keyword));
+      } else if (item.itemType === ItemType.PDF) {
+        const searchableText = [
+          item.doc_name || '',
           item.heading || ''
         ].join(' ').toLowerCase();
 
