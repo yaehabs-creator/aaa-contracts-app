@@ -54,6 +54,14 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
                 )}
               </h3>
             )}
+
+            {(item as any).isIntegrated && (
+              <div className="flex items-center gap-1.5 mb-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span className="text-[9px] font-black text-emerald-600 uppercase tracking-[0.2em]">Integrated Source</span>
+              </div>
+            )}
+
             {shouldShowFieldHeader && (
               <div className="flex items-center gap-3 mb-3">
                 {!hideMetadata && (

@@ -252,6 +252,13 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                         onUpdateSchemas(schemaRecord);
 
                         onUpdateExtractedData(data.extractedData);
+
+                        // Also initialize fullOcrText if it exists in extractedData
+                        const fullTextEntry = data.extractedData.find(d => d.field_key === '__full_text__');
+                        if (fullTextEntry && fullTextEntry.value) {
+                            setFullOcrText(fullTextEntry.value as string);
+                        }
+
                         console.log('Organizer data loaded successfully for contract:', effectiveContract.id);
                     } else {
                         // Reset if no data found for this contract
@@ -777,17 +784,39 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                             <div className="p-0 max-h-[400px] overflow-y-auto thin-scrollbar">
                                                 {extractedData.filter(d => d.subfolder_id === selectedSubfolderId).map(data => {
                                                     const field = schemas[selectedSubfolderId]?.find(f => f.key === data.field_key);
+                                                    const isFullText = data.field_key === '__full_text__';
+
                                                     return (
-                                                        <div key={data.id} className="p-6 hover:bg-slate-50 transition-all border-b border-slate-100 last:border-b-0">
+                                                        <div key={data.id} className={`p-6 hover:bg-slate-50 transition-all border-b border-slate-100 last:border-b-0 ${isFullText ? 'bg-emerald-50/30' : ''}`}>
                                                             <div className="flex items-center justify-between mb-3">
-                                                                <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{field?.label || data.field_key}</span>
+                                                                <span className={`text-[10px] font-black uppercase tracking-widest ${isFullText ? 'text-emerald-600' : 'text-aaa-muted'}`}>
+                                                                    {isFullText ? 'Full Document Text (Integrated)' : (field?.label || data.field_key)}
+                                                                </span>
                                                                 <span className="px-2 py-1 bg-emerald-50 text-emerald-600 text-[9px] font-black rounded uppercase">Page {data.evidence.page}</span>
                                                             </div>
-                                                            <div className="text-sm font-black text-aaa-blue mb-2">{data.value || 'N/A'}</div>
-                                                            {data.evidence.snippet && (
-                                                                <div className="bg-aaa-bg/50 p-3 rounded-lg border border-aaa-border/50">
-                                                                    <p className="text-[10px] font-medium text-aaa-muted italic">"...{data.evidence.snippet}..."</p>
+
+                                                            {isFullText ? (
+                                                                <div className="flex flex-col gap-3">
+                                                                    <div className="text-xs font-medium text-aaa-muted line-clamp-3 bg-white/50 p-4 rounded-xl border border-emerald-100 italic">
+                                                                        {data.value || 'No content'}
+                                                                    </div>
+                                                                    <button
+                                                                        onClick={() => setShowFullTextModal(true)}
+                                                                        className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest hover:text-emerald-700 transition-colors"
+                                                                    >
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                                                                        Read Full Extraction
+                                                                    </button>
                                                                 </div>
+                                                            ) : (
+                                                                <>
+                                                                    <div className="text-sm font-black text-aaa-blue mb-2">{data.value || 'N/A'}</div>
+                                                                    {data.evidence.snippet && (
+                                                                        <div className="bg-aaa-bg/50 p-3 rounded-lg border border-aaa-border/50">
+                                                                            <p className="text-[10px] font-medium text-aaa-muted italic">"...{data.evidence.snippet}..."</p>
+                                                                        </div>
+                                                                    )}
+                                                                </>
                                                             )}
                                                         </div>
                                                     );
@@ -821,6 +850,18 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                         {isRepairing ? 'Repairing...' : 'Repair with AI'}
                                     </button>
                                 )}
+                                <button
+                                    onClick={() => {
+                                        if (fullOcrText) {
+                                            navigator.clipboard.writeText(fullOcrText);
+                                            toast.success('Copied to clipboard');
+                                        }
+                                    }}
+                                    className="flex items-center gap-3 px-6 py-3 bg-white border border-aaa-blue text-aaa-blue rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-blue hover:text-white transition-all shadow-sm active:scale-95"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                                    Copy Text
+                                </button>
                                 <button
                                     onClick={() => setShowFullTextModal(false)}
                                     className="w-12 h-12 flex items-center justify-center bg-aaa-bg rounded-2xl text-aaa-muted hover:text-aaa-blue transition-all"
