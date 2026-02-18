@@ -98,6 +98,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
     return initial;
   });
   const [selectedDocument, setSelectedDocument] = useState<ContractDocument | null>(null);
+  const [forceOcrMode, setForceOcrMode] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<BatchUploadProgress | null>(null);
   const [activeJobs, setActiveJobs] = useState<IngestionJob[]>([]);
@@ -528,7 +529,10 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
     });
 
     try {
-      await readerService.batchProcessAll(contractId);
+      await readerService.batchProcessAll(contractId, {
+        forceOcr: forceOcrMode,
+        reprocessAll: forceOcrMode
+      });
 
       // Artificial delay to show completion status
       setTimeout(() => setProcessingStatus(null), 5000);
@@ -557,6 +561,16 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
           )}
         </div>
         <div className="dm-actions">
+          <div
+            className={`dm-force-ocr-toggle ${forceOcrMode ? 'active' : ''}`}
+            onClick={() => setForceOcrMode(!forceOcrMode)}
+            title="When enabled, OCR will be performed even on searchable documents and already processed files."
+          >
+            <div className="toggle-track">
+              <div className="toggle-thumb" />
+            </div>
+            <span>Full OCR Mode</span>
+          </div>
           {pendingDocuments > 0 && (
             <button
               onClick={processAllDocuments}
@@ -564,7 +578,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
               className="process-btn"
               title="Extract text from documents for AI"
             >
-              {isProcessing ? Icons.processing : '🔄'} Process for AI
+              {isProcessing ? Icons.processing : '🔄'} {forceOcrMode ? 'Run Deep Sync' : 'Process for AI'}
             </button>
           )}
           <button onClick={loadDocuments} disabled={isLoading} title="Refresh">

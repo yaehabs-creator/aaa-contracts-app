@@ -7,4 +7,33 @@
   .clause-ref {
     @apply font-semibold text-aaa-blue hover:text-blue-700 hover:underline cursor-pointer;
   }
+
+  /* Full OCR Toggle Styles */
+  .dm-force-ocr-toggle {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-lg border border-transparent hover:bg-slate-50 hover:border-slate-200 transition-all cursor-pointer select-none mr-2;
+  }
+
+  .dm-force-ocr-toggle.active {
+    @apply text-emerald-600;
+  }
+
+  .dm-force-ocr-toggle .toggle-track {
+    @apply w-7 h-4 rounded-full bg-slate-300 relative transition-all;
+  }
+
+  .dm-force-ocr-toggle.active .toggle-track {
+    @apply bg-emerald-500;
+  }
+
+  .dm-force-ocr-toggle .toggle-thumb {
+    @apply absolute top-0.5 left-0.5 w-3 h-3 bg-white rounded-full transition-all;
+  }
+
+  .dm-force-ocr-toggle.active .toggle-thumb {
+    @apply left-3.5;
+  }
+
+  .dm-force-ocr-toggle span {
+    @apply text-[8px] font-black uppercase tracking-widest;
+  }
 }

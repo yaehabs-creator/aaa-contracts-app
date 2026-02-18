@@ -62,6 +62,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     const [selectedSubfolderId, setSelectedSubfolderId] = useState<string | null>(null);
     const [isSaving, setIsSaving] = useState(false);
     const [isSyncing, setIsSyncing] = useState(false);
+    const [forceOcr, setForceOcr] = useState(false);
     const [syncStatus, setSyncStatus] = useState<string | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
     const [processingStatus, setProcessingStatus] = useState('');
@@ -573,6 +574,19 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                             accept="application/json"
                         />
                     </div>
+                    {/* Force OCR Toggle */}
+                    <div
+                        className="flex items-center gap-2 mr-2 px-3 py-1.5 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer border border-transparent hover:border-slate-200"
+                        onClick={() => setForceOcr(!forceOcr)}
+                        title="When enabled, OCR will be performed even on searchable documents and already processed files."
+                    >
+                        <div className={`w-7 h-4 rounded-full transition-all relative ${forceOcr ? 'bg-emerald-500' : 'bg-slate-300'}`}>
+                            <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${forceOcr ? 'left-3.5' : 'left-0.5'}`} />
+                        </div>
+                        <span className={`text-[8px] font-black uppercase tracking-widest ${forceOcr ? 'text-emerald-600' : 'text-aaa-muted'} select-none`}>
+                            Full OCR Mode
+                        </span>
+                    </div>
                     <button
                         onClick={async () => {
                             if (!effectiveContract) return;
@@ -583,8 +597,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                             });
 
                             try {
-                                toast.success('Starting background synchronization...');
-                                await readerService.batchProcessAll(effectiveContract.id);
+                                toast.success(forceOcr ? 'Starting DEEP synchronization (Forced OCR)...' : 'Starting background synchronization...');
+                                await readerService.batchProcessAll(effectiveContract.id, { forceOcr, reprocessAll: forceOcr });
                                 toast.success('All documents synchronized successfully!');
                             } catch (err: any) {
                                 toast.error(`Sync failed: ${err.message}`);

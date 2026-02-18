@@ -612,9 +612,18 @@ export class DocumentReaderService {
   /**
    * Process all pending or failed documents for a contract
    */
-  async batchProcessAll(contractId: string): Promise<{ processed: number; failed: number }> {
+  async batchProcessAll(
+    contractId: string,
+    options: { forceOcr?: boolean; reprocessAll?: boolean } = {}
+  ): Promise<{ processed: number; failed: number }> {
     const documents = await this.getContractDocuments(contractId);
-    const pendingDocs = documents.filter(d => d.status === 'pending' || d.status === 'error');
+
+    // Determine which documents to target
+    const targetStatus = options.reprocessAll
+      ? ['pending', 'processing', 'completed', 'error']
+      : ['pending', 'error'];
+
+    const pendingDocs = documents.filter(d => targetStatus.includes(d.status));
 
     if (pendingDocs.length === 0) {
       this.emitProgress('No pending documents to process');
@@ -646,11 +655,15 @@ export class DocumentReaderService {
 
         // 3. Extract text
         if (doc.file_type === 'pdf') {
-          this.emitProgress(`Analyzing PDF type: ${doc.name}`);
-          const isScanned = await isScannedPdf(urlData.signedUrl);
+          let useOcr = options.forceOcr;
 
-          if (isScanned) {
-            this.emitProgress(`Scanned PDF detected. Starting OCR for ${doc.name}...`);
+          if (!useOcr) {
+            this.emitProgress(`Analyzing PDF type: ${doc.name}`);
+            useOcr = await isScannedPdf(urlData.signedUrl);
+          }
+
+          if (useOcr) {
+            this.emitProgress(`${options.forceOcr ? 'Forcing Full OCR' : 'Scanned PDF detected'}. Starting OCR for ${doc.name}...`);
             const response = await fetch(urlData.signedUrl);
             const arrayBuffer = await response.arrayBuffer();
             const base64 = btoa(
