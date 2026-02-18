@@ -584,7 +584,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
 
             <div className="flex-1 flex overflow-hidden">
                 {/* Left Sidebar: Folder Tree */}
-                <div className="w-80 border-r border-aaa-border flex flex-col bg-aaa-bg/10">
+                <div className="w-80 border-r border-aaa-border flex flex-col bg-aaa-bg/10 overflow-y-auto custom-scrollbar">
                     <div className="p-6">
                         <h3 className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-4">Contract Modules</h3>
                         <div className="space-y-1">
