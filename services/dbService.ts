@@ -28,7 +28,7 @@ export const openDB = (): Promise<IDBDatabase> => {
 };
 
 // Main API - now uses Supabase
-export const saveContractToDB = async (contract: SavedContract): Promise<void> => {
+export const saveContractToDB = async (contract: SavedContract): Promise<SavedContract> => {
   return saveContractToSupabase(contract);
 };
 

@@ -524,9 +524,9 @@ const App: React.FC = () => {
         }
       });
 
-      await saveContractToDB(contractWithSections);
+      const savedContract = await saveContractToDB(contractWithSections);
       clearDraft(); // Success! Clear the local backup
-      setContract(contractWithSections);
+      setContract(savedContract);
       if (!activeContractId) setActiveContractId(targetId);
       await refreshLibrary();
       if (!silent) toast.success('Contract saved successfully!');
@@ -561,13 +561,13 @@ const App: React.FC = () => {
       }
 
       // Save to database
-      await saveContractToDB(contractWithSections);
+      const savedContract = await saveContractToDB(contractWithSections);
       clearDraft(); // Success! Clear the local backup
 
-      // Update local state with reprocessed clause links
-      setContract(contractWithSections);
-      setClauses(getClausesWithProcessedLinks(contractWithSections));
-      if (!activeContractId) setActiveContractId(contractWithSections.id);
+      // Update local state with reprocessed clause links (preserved from server)
+      setContract(savedContract);
+      setClauses(getClausesWithProcessedLinks(savedContract));
+      if (!activeContractId) setActiveContractId(savedContract.id);
 
       // Refresh library to show updated contract
       await refreshLibrary();
@@ -1287,12 +1287,12 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
           // More detailed status updates during API wait
           const statusPhases = [
-            { message: 'AI Processing...', detail: 'Sending request to Claude API' },
-            { message: 'AI Processing...', detail: 'Claude is analyzing your contract' },
-            { message: 'AI Processing...', detail: 'Extracting clauses verbatim...' },
-            { message: 'AI Processing...', detail: 'Processing General and Particular conditions...' },
-            { message: 'AI Processing...', detail: 'Identifying clause boundaries...' },
-            { message: 'AI Processing...', detail: 'Validating text integrity...' }
+            { message: 'AI Processing...', detail: 'Sending request to Claude API', isActive: true },
+            { message: 'AI Processing...', detail: 'Claude is analyzing your contract', isActive: true },
+            { message: 'AI Processing...', detail: 'Extracting clauses verbatim...', isActive: true },
+            { message: 'AI Processing...', detail: 'Processing General and Particular conditions...', isActive: true },
+            { message: 'AI Processing...', detail: 'Identifying clause boundaries...', isActive: true },
+            { message: 'AI Processing...', detail: 'Validating text integrity...', isActive: true }
           ];
           let phaseIndex = 0;
 
@@ -3250,7 +3250,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
                             // Use silent save if requested
                             if (contractToSave) {
-                              await saveContractToSupabase(contractToSave);
+                              const savedContract = await saveContractToSupabase(contractToSave);
+                              // IMPORTANT: Update global state with the saved contract to sync the version
+                              setContract(savedContract);
+                              setLibrary(prev => [savedContract, ...prev.filter(c => c.id !== savedContract.id)]);
                             }
                             if (!silent) console.log('Contract record verified/saved in archive');
                           } catch (contractError: any) {

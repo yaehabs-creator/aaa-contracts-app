@@ -98,7 +98,7 @@ async function loadContractFromSubcollections(contractId: string, contractMetada
   return ensureContractHasSections(contract);
 }
 
-export const saveContractToSupabase = async (contract: SavedContract): Promise<void> => {
+export const saveContractToSupabase = async (contract: SavedContract): Promise<SavedContract> => {
   try {
     console.log('[SUPABASE] Entering saveContractToSupabase...');
     if (!supabase) {
@@ -185,6 +185,9 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<v
     if (rpcData?.version) {
       migratedContract.version = rpcData.version;
     }
+
+    return migratedContract;
+
   } catch (error: any) {
     console.error('Error saving contract:', error);
     console.error('Full error details:', {
