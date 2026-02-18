@@ -37,8 +37,8 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
   const [isExpanded, setIsExpanded] = useState(false);
 
   // For integrated items, try to find the original document metadata in organizerExtractedData
-  const integratedData = (item as any).isIntegrated && item.fieldKey ?
-    organizerExtractedData.find(d => d.field_key === item.fieldKey) : null;
+  const integratedData = (item as any).isIntegrated ?
+    organizerExtractedData.find(d => d.id === item.id || (item.fieldKey && d.field_key === item.fieldKey)) : null;
 
   const doc_url = item.doc_url || integratedData?.doc_url;
   const doc_name = item.doc_name || integratedData?.doc_name;
@@ -152,7 +152,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
               className="overflow-hidden"
             >
               <div className="px-8 pb-8 space-y-6 pt-2">
-                {isParagraph && (
+                {(isParagraph || item.itemType === ItemType.PDF) && (
                   <div className={`${hideMetadata ? 'bg-transparent' : 'bg-aaa-bg/30 p-6'} rounded-2xl border ${hideMetadata ? 'border-none' : 'border-aaa-border/50'} space-y-4`}>
                     {!isPdf ? (
                       <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">

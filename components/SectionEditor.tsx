@@ -102,7 +102,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
 
         extractedItems.push({
           id: data.id,
-          itemType: isFullText ? (isPdf ? ItemType.PDF : ItemType.PARAGRAPH) : ItemType.FIELD,
+          itemType: isFullText ? ItemType.PARAGRAPH : ItemType.FIELD,
           heading: isFullText ? label : undefined,
           fieldKey: !isFullText ? label : undefined,
           fieldValue: !isFullText ? data.value as string : undefined,
