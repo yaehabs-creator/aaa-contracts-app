@@ -14,11 +14,12 @@ export type ChatContainerProps = {
     width?: number;
     side?: 'left' | 'right';
     conversationId?: string;
+    contractClauses?: any[];
     persist?: boolean;
     initialContextPills?: ContextPill[];
 };
 
-const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'persist' | 'initialContextPills'>> = React.memo(({
+const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractClauses' | 'persist' | 'initialContextPills'>> = React.memo(({
     isOpen,
     onClose,
     title = "AI Contract Assistant",
@@ -46,7 +47,7 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'persist' 
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, onClose]);
 
-    const slideVariants = {
+    const slideVariants: any = {
         hidden: {
             x: side === 'right' ? '100%' : '-100%',
             opacity: 0,
@@ -153,14 +154,16 @@ const ChatContainer: React.FC<ChatContainerProps> = ({
     width = 420,
     side = "right",
     conversationId,
+    contractClauses,
     persist = true,
     initialContextPills = []
 }) => {
     const providerConfig = useMemo(() => ({
         conversationId,
+        contractClauses,
         persist,
         initialContextPills
-    }), [conversationId, persist, initialContextPills]);
+    }), [conversationId, contractClauses, persist, initialContextPills]);
 
     return (
         <ChatProvider config={providerConfig}>

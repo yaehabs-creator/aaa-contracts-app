@@ -11,6 +11,7 @@ interface ChatContextValue {
     atBottom: boolean;
     setAtBottom: (val: boolean) => void;
     conversationId: string | null;
+    contractClauses: any[];
 }
 
 const ChatContext = createContext<ChatContextValue | undefined>(undefined);
@@ -19,6 +20,7 @@ export const ChatProvider: React.FC<{
     children: ReactNode;
     config: {
         conversationId?: string;
+        contractClauses?: any[];
         persist?: boolean;
         initialContextPills?: ContextPill[];
     };
@@ -37,8 +39,9 @@ export const ChatProvider: React.FC<{
         setContextPills,
         atBottom,
         setAtBottom,
-        conversationId: config.conversationId || null
-    }), [messages, isThinkingOrStreaming, contextPills, atBottom, config.conversationId]);
+        conversationId: config.conversationId || null,
+        contractClauses: config.contractClauses || []
+    }), [messages, isThinkingOrStreaming, contextPills, atBottom, config.conversationId, config.contractClauses]);
 
     return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 };

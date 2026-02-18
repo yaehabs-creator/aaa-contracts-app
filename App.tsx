@@ -3630,6 +3630,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           isOpen={isBotOpen}
           onClose={() => setIsBotOpen(false)}
           conversationId={activeContractId || undefined}
+          contractClauses={clauses}
           title={projectName ? `Analysis: ${projectName}` : undefined}
           initialContextPills={selectedItemForBot ? [{
             id: 'initial',

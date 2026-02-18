@@ -13,7 +13,8 @@ export const useChat = () => {
         setContextPills,
         atBottom,
         setAtBottom,
-        conversationId
+        conversationId,
+        contractClauses
     } = useChatContext();
 
     const sendMessage = useCallback(async (content: string) => {
@@ -34,8 +35,8 @@ export const useChat = () => {
             // For now, we assume these are available or handled by the service
             const response = await chatWithDualAgents(
                 [...messages, userMessage],
-                [], // clauses should be injected here
-                null, // contractId should be injected here
+                contractClauses,
+                conversationId,
                 {
                     forceDocumentSearch: content.toLowerCase().startsWith('/search'),
                     conversationHistory: messages
@@ -65,7 +66,7 @@ export const useChat = () => {
         } finally {
             setIsThinkingOrStreaming(false);
         }
-    }, [messages, isThinkingOrStreaming, setMessages, setIsThinkingOrStreaming, conversationId]);
+    }, [messages, isThinkingOrStreaming, setMessages, setIsThinkingOrStreaming, conversationId, contractClauses]);
 
     const cancelCurrent = useCallback(() => {
         // Logic to abort the current fetch/stream
