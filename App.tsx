@@ -3001,6 +3001,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       onSortModeChange={setSortMode}
                       organizerSubfolders={organizerSubfolders}
                       organizerExtractedData={organizerExtractedData}
+                      organizerSchemas={organizerSchemas}
                     />
                   ) : clauses.length > 0 ? (
                     // Fallback: if contract not set but clauses exist, create contract

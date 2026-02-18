@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ContractSection, SectionItem, SectionType, ItemType, Clause, ContractSubfolder, ExtractedData } from '../types';
+import { ContractSection, SectionItem, SectionType, ItemType, Clause, ContractSubfolder, ExtractedData, FolderSchemaField } from '../types';
 import { ClauseCard } from './ClauseCard';
 import { SectionItemCard } from './SectionItemCard';
 import { ItemEditorModal } from './ItemEditorModal';
@@ -19,6 +19,7 @@ interface SectionEditorProps {
   onAddClause?: () => void;
   organizerSubfolders?: ContractSubfolder[];
   organizerExtractedData?: ExtractedData[];
+  organizerSchemas?: Record<string, FolderSchemaField[]>;
 }
 
 const FOLDER_TO_SECTION_MAPPING: Record<string, SectionType[]> = {
@@ -52,7 +53,8 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   onReorderClause,
   onAddClause,
   organizerSubfolders = [],
-  organizerExtractedData = []
+  organizerExtractedData = [],
+  organizerSchemas = {}
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [editingItem, setEditingItem] = useState<SectionItem | null>(null);
@@ -88,15 +90,23 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     // Convert extracted data from these subfolders into SectionItems
     const extractedItems: (SectionItem & { isIntegrated?: boolean })[] = [];
     relevantSubfolders.forEach(sub => {
-      // Only show the full/repaired text from the organizer for a clean view
-      const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id && d.field_key === '__full_text__');
+      // Find all data for this subfolder
+      const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id);
+
       dataForSub.forEach(data => {
+        const isFullText = data.field_key === '__full_text__';
+        const fieldSchema = organizerSchemas[sub.id]?.find(f => f.key === data.field_key);
+        const label = isFullText ? sub.name : (fieldSchema?.label || data.field_key);
+
         const isPdf = !!data.doc_url;
+
         extractedItems.push({
           id: data.id,
-          itemType: isPdf ? ItemType.PDF : ItemType.PARAGRAPH,
-          heading: sub.name,
-          text: data.value as string,
+          itemType: isFullText ? (isPdf ? ItemType.PDF : ItemType.PARAGRAPH) : ItemType.FIELD,
+          heading: isFullText ? label : undefined,
+          fieldKey: !isFullText ? label : undefined,
+          fieldValue: !isFullText ? data.value as string : undefined,
+          text: isFullText ? data.value as string : undefined,
           orderIndex: nativeItems.length + extractedItems.length,
           confidence: data.confidence,
           evidence: data.evidence,
@@ -397,6 +407,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                   onDelete={() => handleDeleteItem(section.items.indexOf(item))}
                   searchKeywords={searchKeywords}
                   hideMetadata={false}
+                  organizerExtractedData={organizerExtractedData}
                 />
               </div>
             );

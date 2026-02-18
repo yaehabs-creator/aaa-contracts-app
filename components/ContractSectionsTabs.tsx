@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { SavedContract, ContractSection, SectionType, SectionItem, Clause, ContractSubfolder, ExtractedData } from '../types';
+import { SavedContract, ContractSection, SectionType, SectionItem, Clause, ContractSubfolder, ExtractedData, FolderSchemaField } from '../types';
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '../services/contractMigrationService';
 import { getCategoriesForContract, ContractCategory } from '../src/services/supabaseService';
@@ -31,6 +31,7 @@ interface ContractSectionsTabsProps {
   onSortModeChange?: (mode: 'default' | 'status' | 'chapter' | 'category') => void;
   organizerSubfolders?: ContractSubfolder[];
   organizerExtractedData?: ExtractedData[];
+  organizerSchemas?: Record<string, FolderSchemaField[]>;
 }
 
 export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
@@ -45,7 +46,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   sortMode = 'default',
   onSortModeChange,
   organizerSubfolders = [],
-  organizerExtractedData = []
+  organizerExtractedData = [],
+  organizerSchemas = {}
 }) => {
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
@@ -684,6 +686,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             onAddClause={onAddClause}
             organizerSubfolders={organizerSubfolders}
             organizerExtractedData={organizerExtractedData}
+            organizerSchemas={organizerSchemas}
           />
         )}
       </div>
