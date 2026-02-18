@@ -37,10 +37,6 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
   const isField = item.itemType === ItemType.FIELD;
   const isImage = item.itemType === ItemType.IMAGE;
 
-  // Technical field keys (e.g. field_123456789) should be hidden in presentation
-  const isTechnicalKey = item.fieldKey?.startsWith('field_') && !isNaN(Number(item.fieldKey.split('_')[1]));
-  const shouldShowFieldHeader = isField;
-
   return (
     <div className={`bg-white border ${isExpanded ? 'border-aaa-blue ring-2 ring-aaa-blue/5' : 'border-aaa-border'} rounded-3xl shadow-premium overflow-hidden transition-all duration-500 hover:shadow-xl`}>
       <div className="p-0">
@@ -67,18 +63,18 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
               </div>
             )}
 
-            {shouldShowFieldHeader && (
+            {isField && (
               <div className="flex items-center gap-3 mb-3">
                 {!hideMetadata && (
-                  <span className={`px-3 py-1 ${isTechnicalKey ? 'bg-amber-500' : 'bg-aaa-blue'} text-white text-[10px] font-black rounded-full uppercase tracking-widest`}>
-                    {isTechnicalKey ? 'Extracted Item' : 'Field'}
+                  <span className="px-3 py-1 bg-aaa-blue text-white text-[10px] font-black rounded-full uppercase tracking-widest">
+                    Field
                   </span>
                 )}
                 <h3 className="text-lg font-black text-aaa-blue tracking-tight">
                   {searchKeywords.length > 0 ? (
-                    <span dangerouslySetInnerHTML={{ __html: highlightKeywords(isTechnicalKey ? (item.heading || 'Data Segment') : (item.fieldKey || ''), searchKeywords) }} />
+                    <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.fieldKey || '', searchKeywords) }} />
                   ) : (
-                    isTechnicalKey ? (item.heading || 'Data Segment') : item.fieldKey
+                    item.fieldKey
                   )}
                 </h3>
               </div>

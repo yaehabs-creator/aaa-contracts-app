@@ -86,33 +86,20 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     // Convert extracted data from these subfolders into SectionItems
     const extractedItems: (SectionItem & { isIntegrated?: boolean })[] = [];
     relevantSubfolders.forEach(sub => {
-      const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id);
+      // Only show the full/repaired text from the organizer for a clean view
+      const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id && d.field_key === '__full_text__');
       dataForSub.forEach(data => {
-        if (data.field_key === '__full_text__') {
-          extractedItems.push({
-            id: data.id,
-            itemType: ItemType.PARAGRAPH,
-            heading: sub.name,
-            text: data.value as string,
-            orderIndex: nativeItems.length + extractedItems.length,
-            confidence: data.confidence,
-            evidence: data.evidence,
-            status: data.status,
-            isIntegrated: true
-          });
-        } else {
-          extractedItems.push({
-            id: data.id,
-            itemType: ItemType.FIELD,
-            fieldKey: data.field_key,
-            fieldValue: data.value,
-            orderIndex: nativeItems.length + extractedItems.length,
-            confidence: data.confidence,
-            evidence: data.evidence,
-            status: data.status,
-            isIntegrated: true
-          });
-        }
+        extractedItems.push({
+          id: data.id,
+          itemType: ItemType.PARAGRAPH,
+          heading: sub.name,
+          text: data.value as string,
+          orderIndex: nativeItems.length + extractedItems.length,
+          confidence: data.confidence,
+          evidence: data.evidence,
+          status: data.status,
+          isIntegrated: true
+        });
       });
     });
 
