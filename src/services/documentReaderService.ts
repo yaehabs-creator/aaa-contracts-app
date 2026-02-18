@@ -6,6 +6,9 @@
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { ContractDocument, DocumentGroup, DocumentChunk } from '../../types';
+import { extractTextFromPdf, isScannedPdf } from '../utils/pdfUtils';
+import { getEmbeddingService } from '../services/embeddingService';
+import { PaddleOcrService } from './paddleOcrService';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_URL || '';
@@ -607,6 +610,189 @@ export class DocumentReaderService {
     };
   }
   /**
+   * Process all pending or failed documents for a contract
+   */
+  async batchProcessAll(contractId: string): Promise<{ processed: number; failed: number }> {
+    const documents = await this.getContractDocuments(contractId);
+    const pendingDocs = documents.filter(d => d.status === 'pending' || d.status === 'error');
+
+    if (pendingDocs.length === 0) {
+      this.emitProgress('No pending documents to process');
+      return { processed: 0, failed: 0 };
+    }
+
+    let processed = 0;
+    let failed = 0;
+    const embeddingService = getEmbeddingService();
+
+    for (const doc of pendingDocs) {
+      this.emitProgress(`Processing ${processed + 1}/${pendingDocs.length}: ${doc.name}`);
+
+      try {
+        // 1. Get signed URL
+        const { data: urlData, error: urlError } = await this.supabase.storage
+          .from(STORAGE_BUCKET)
+          .createSignedUrl(doc.file_path, 3600);
+
+        if (urlError || !urlData) throw new Error('Failed to get document URL');
+
+        // 2. Update status to processing
+        await this.supabase
+          .from('contract_documents')
+          .update({ status: 'processing' })
+          .eq('id', doc.id);
+
+        let extractedText = '';
+
+        // 3. Extract text
+        if (doc.file_type === 'pdf') {
+          this.emitProgress(`Analyzing PDF type: ${doc.name}`);
+          const isScanned = await isScannedPdf(urlData.signedUrl);
+
+          if (isScanned) {
+            this.emitProgress(`Scanned PDF detected. Starting OCR for ${doc.name}...`);
+            const response = await fetch(urlData.signedUrl);
+            const arrayBuffer = await response.arrayBuffer();
+            const base64 = btoa(
+              new Uint8Array(arrayBuffer)
+                .reduce((data, byte) => data + String.fromCharCode(byte), '')
+            );
+
+            const ocrPages = await PaddleOcrService.processBase64Pdf(base64, doc.original_filename || doc.name);
+            extractedText = ocrPages.join('\n\n');
+          } else {
+            this.emitProgress(`Searchable PDF detected. Extracting text: ${doc.name}`);
+            extractedText = await extractTextFromPdf(urlData.signedUrl);
+          }
+        } else {
+          // For other files, try to read as text (simplified)
+          const response = await fetch(urlData.signedUrl);
+          extractedText = await response.text();
+        }
+
+        if (!extractedText || extractedText.length < 50) {
+          throw new Error('Extraction produced insufficient text.');
+        }
+
+        // 4. Parse into chunks
+        const chunks = this.parseTextToChunks(extractedText, doc.document_group as DocumentGroup);
+
+        // 5. Generate embeddings
+        let embeddings: number[][] = [];
+        this.emitProgress(`Generating AI embeddings for ${doc.name}...`);
+
+        const inputs = chunks.map(c =>
+          `Document: ${doc.name}\nTitle: ${c.clauseTitle || 'N/A'}\nContent: ${c.content}`
+        );
+
+        // Process in batches of 10
+        const BATCH_SIZE = 10;
+        for (let i = 0; i < inputs.length; i += BATCH_SIZE) {
+          const batch = inputs.slice(i, i + BATCH_SIZE);
+          const batchEmbeddings = await embeddingService.generateEmbeddings(batch);
+          embeddings.push(...batchEmbeddings);
+        }
+
+        // 6. Save chunks
+        await this.supabase
+          .from('contract_document_chunks')
+          .delete()
+          .eq('document_id', doc.id);
+
+        if (chunks.length > 0) {
+          const { error: insertError } = await this.supabase
+            .from('contract_document_chunks')
+            .insert(chunks.map((chunk, idx) => ({
+              document_id: doc.id,
+              contract_id: contractId,
+              chunk_index: idx,
+              content: chunk.content,
+              clause_number: chunk.clauseNumber,
+              clause_title: chunk.clauseTitle,
+              content_type: 'text',
+              token_count: Math.ceil(chunk.content.length / 4),
+              embedding: embeddings[idx] || null
+            })));
+
+          if (insertError) throw insertError;
+        }
+
+        // 7. Success
+        await this.supabase
+          .from('contract_documents')
+          .update({
+            status: 'completed',
+            processed_at: new Date().toISOString(),
+            processing_metadata: {
+              chunks_created: chunks.length,
+              text_length: extractedText.length,
+              has_embeddings: embeddings.length > 0
+            }
+          })
+          .eq('id', doc.id);
+
+        processed++;
+      } catch (err: any) {
+        console.error(`Error processing ${doc.name}:`, err);
+        failed++;
+        await this.supabase
+          .from('contract_documents')
+          .update({
+            status: 'error',
+            processing_error: err.message
+          })
+          .eq('id', doc.id);
+      }
+    }
+
+    this.emitProgress(`✅ Sync Complete: ${processed} processed, ${failed} failed`);
+    return { processed, failed };
+  }
+
+  /**
+   * Helper to parse text into chunks
+   */
+  private parseTextToChunks(text: string, documentGroup: DocumentGroup): Array<{
+    content: string;
+    clauseNumber: string | null;
+    clauseTitle: string | null;
+  }> {
+    const chunks: Array<{ content: string; clauseNumber: string | null; clauseTitle: string | null }> = [];
+    const clausePattern = /(?:^|\n)\s*(?:Clause\s+)?(\d+(?:\.\d+)*(?:[A-Za-z])?)\s*[:\.\-–—]?\s*([A-Z][^\n.]*)?/gm;
+
+    const matches: Array<{ index: number; clauseNumber: string; clauseTitle: string | null }> = [];
+    let match;
+
+    while ((match = clausePattern.exec(text)) !== null) {
+      matches.push({
+        index: match.index,
+        clauseNumber: match[1],
+        clauseTitle: match[2]?.trim() || null
+      });
+    }
+
+    for (let i = 0; i < matches.length; i++) {
+      const current = matches[i];
+      const next = matches[i + 1];
+      const content = text.substring(current.index, next ? next.index : text.length).trim();
+
+      if (content.length > 20) {
+        chunks.push({
+          content,
+          clauseNumber: current.clauseNumber,
+          clauseTitle: current.clauseTitle
+        });
+      }
+    }
+
+    if (chunks.length === 0 && text.length > 0) {
+      chunks.push({ content: text, clauseNumber: null, clauseTitle: null });
+    }
+
+    return chunks;
+  }
+
+  /**
    * Search documents using vector similarity
    */
   async searchSimilarChunks(
@@ -639,6 +825,22 @@ export class DocumentReaderService {
       contentType: 'text',
       score: chunk.similarity
     }));
+  }
+
+  /**
+   * Listen for processing progress updates
+   */
+  private progressListeners: Array<(status: string) => void> = [];
+
+  onProgress(listener: (status: string) => void) {
+    this.progressListeners.push(listener);
+    return () => {
+      this.progressListeners = this.progressListeners.filter(l => l !== listener);
+    };
+  }
+
+  private emitProgress(status: string) {
+    this.progressListeners.forEach(l => l(status));
   }
 }
 

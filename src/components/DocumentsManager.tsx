@@ -18,6 +18,7 @@ import {
 import { extractTextFromPdf, isScannedPdf } from '../utils/pdfUtils';
 import { getEmbeddingService } from '../services/embeddingService';
 import { PaddleOcrService } from '../services/paddleOcrService';
+import { getDocumentReaderService } from '../services/documentReaderService';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
@@ -519,235 +520,30 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
     setProcessingStatus('Starting document processing...');
     setError(null);
 
-    const embeddingService = getEmbeddingService();
+    const readerService = getDocumentReaderService();
+
+    // Subscribe to progress
+    const unsubscribe = readerService.onProgress((status) => {
+      setProcessingStatus(status);
+    });
 
     try {
-      // Get all pending documents
-      const allDocs = (Object.values(folders) as FolderState[]).flatMap(f =>
-        f.documents.filter(d => d.status === 'pending' || d.status === 'error')
-      );
+      await readerService.batchProcessAll(contractId);
 
-      if (allDocs.length === 0) {
-        setProcessingStatus('No pending documents to process');
-        setTimeout(() => setProcessingStatus(null), 3000);
-        return;
-      }
-
-      let processed = 0;
-      let failed = 0;
-
-      for (const doc of allDocs) {
-        setProcessingStatus(`Processing ${processed + 1}/${allDocs.length}: ${doc.name}`);
-
-        try {
-          // Get signed URL
-          const { data: urlData, error: urlError } = await supabase.storage
-            .from(STORAGE_BUCKET)
-            .createSignedUrl(doc.file_path, 3600);
-
-          if (urlError || !urlData) {
-            throw new Error('Failed to get document URL');
-          }
-
-          // Update status to processing
-          await supabase
-            .from('contract_documents')
-            .update({ status: 'processing' })
-            .eq('id', doc.id);
-
-          let extractedText = '';
-
-          if (doc.file_type === 'pdf') {
-            try {
-              setProcessingStatus(`Analyzing PDF type: ${doc.name}`);
-              const isScanned = await isScannedPdf(urlData.signedUrl);
-
-              if (isScanned) {
-                setProcessingStatus(`Scanned PDF detected. Starting OCR for ${doc.name}...`);
-
-                // Fetch the file to convert to base64
-                const response = await fetch(urlData.signedUrl);
-                const arrayBuffer = await response.arrayBuffer();
-                const base64 = btoa(
-                  new Uint8Array(arrayBuffer)
-                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
-                );
-
-                const ocrPages = await PaddleOcrService.processBase64Pdf(base64, doc.original_filename || doc.name);
-                extractedText = ocrPages.join('\n\n');
-                setProcessingStatus(`OCR completed for ${doc.name}. Chunks: ${ocrPages.length}`);
-              } else {
-                setProcessingStatus(`Searchable PDF detected. Extracting text: ${doc.name}`);
-                extractedText = await extractTextFromPdf(urlData.signedUrl);
-              }
-
-              if (extractedText.length < 50) {
-                throw new Error('PDF extraction returned too little text. OCR may have failed or document is empty.');
-              }
-            } catch (pdfError: any) {
-              console.warn('Text extraction or OCR failed:', pdfError);
-              throw new Error(`Failed to extract text from ${doc.name}: ${pdfError.message}`);
-            }
-          } else {
-            // For other files, try to read as text (simplified)
-            // Really we should handle Word/Excel too but sticking to text for now
-            const response = await fetch(urlData.signedUrl);
-            extractedText = await response.text();
-          }
-
-          if (!extractedText || extractedText.length < 20) {
-            extractedText = `[Document: ${doc.name}]\n\nText extraction failed. This might be a scanned document or unsupported format.\n\nFile: ${doc.original_filename}`;
-          }
-
-          // Parse into chunks
-          const chunks = parseTextToChunks(extractedText, doc.document_group as DocumentGroup);
-
-          // Generate embeddings
-          let embeddings: number[][] = [];
-          try {
-            setProcessingStatus(`Generating AI embeddings for ${doc.name} (${chunks.length} chunks)...`);
-
-            // Prepare input for embedding (add context)
-            const inputs = chunks.map(c =>
-              `Document: ${doc.name}\nClause: ${c.clauseNumber || 'N/A'}\nTitle: ${c.clauseTitle || 'N/A'}\nContent: ${c.content}`
-            );
-
-            // Process in batches of 10
-            const BATCH_SIZE = 10;
-            for (let i = 0; i < inputs.length; i += BATCH_SIZE) {
-              const batch = inputs.slice(i, i + BATCH_SIZE);
-              const batchEmbeddings = await embeddingService.generateEmbeddings(batch);
-              embeddings.push(...batchEmbeddings);
-              // Small delay to be nice to API
-              await new Promise(resolve => setTimeout(resolve, 200));
-            }
-          } catch (embError) {
-            console.error('Embedding generation failed:', embError);
-            // We continue without embeddings (search will fall back to text match)
-          }
-
-          // Delete existing chunks
-          await supabase
-            .from('contract_document_chunks')
-            .delete()
-            .eq('document_id', doc.id);
-
-          // Insert new chunks
-          if (chunks.length > 0) {
-            const { error: insertError } = await supabase
-              .from('contract_document_chunks')
-              .insert(chunks.map((chunk, idx) => ({
-                document_id: doc.id,
-                contract_id: contractId,
-                chunk_index: idx,
-                content: chunk.content,
-                clause_number: chunk.clauseNumber,
-                clause_title: chunk.clauseTitle,
-                content_type: 'text',
-                token_count: Math.ceil(chunk.content.length / 4),
-                embedding: embeddings[idx] || null
-              })));
-
-            if (insertError) {
-              console.error('Error inserting chunks:', insertError);
-              throw insertError;
-            }
-          }
-
-          // Update document status
-          await supabase
-            .from('contract_documents')
-            .update({
-              status: 'completed',
-              processed_at: new Date().toISOString(),
-              processing_metadata: {
-                chunks_created: chunks.length,
-                text_length: extractedText.length,
-                has_embeddings: embeddings.length > 0
-              }
-            })
-            .eq('id', doc.id);
-
-          processed++;
-        } catch (err: any) {
-          console.error(`Error processing ${doc.name}:`, err);
-          failed++;
-
-          await supabase
-            .from('contract_documents')
-            .update({
-              status: 'error',
-              processing_error: err.message
-            })
-            .eq('id', doc.id);
-        }
-      }
-
-      setProcessingStatus(`✅ Completed: ${processed} processed, ${failed} failed`);
+      // Artificial delay to show completion status
       setTimeout(() => setProcessingStatus(null), 5000);
 
       // Refresh documents
       await loadDocuments();
-
     } catch (err: any) {
       setError(`Processing failed: ${err.message}`);
       setProcessingStatus(null);
     } finally {
+      unsubscribe();
       setIsProcessing(false);
     }
   };
 
-  // Parse text into chunks with clause detection
-  const parseTextToChunks = (text: string, documentGroup: DocumentGroup): Array<{
-    content: string;
-    clauseNumber: string | null;
-    clauseTitle: string | null;
-  }> => {
-    const chunks: Array<{ content: string; clauseNumber: string | null; clauseTitle: string | null }> = [];
-
-    // Pattern to detect clause numbers
-    const clausePattern = /(?:^|\n)\s*(?:Clause\s+)?(\d+(?:\.\d+)*(?:[A-Za-z])?)\s*[:\.\-–—]?\s*([A-Z][^\n.]*)?/gm;
-
-    const matches: Array<{ index: number; clauseNumber: string; clauseTitle: string | null }> = [];
-    let match;
-
-    while ((match = clausePattern.exec(text)) !== null) {
-      matches.push({
-        index: match.index,
-        clauseNumber: match[1],
-        clauseTitle: match[2]?.trim() || null
-      });
-    }
-
-    // Create chunks from matches
-    for (let i = 0; i < matches.length; i++) {
-      const current = matches[i];
-      const next = matches[i + 1];
-
-      const startIndex = current.index;
-      const endIndex = next ? next.index : text.length;
-      const content = text.substring(startIndex, endIndex).trim();
-
-      if (content.length > 20) {
-        chunks.push({
-          content,
-          clauseNumber: current.clauseNumber,
-          clauseTitle: current.clauseTitle
-        });
-      }
-    }
-
-    // If no clauses detected, create single chunk
-    if (chunks.length === 0 && text.length > 0) {
-      chunks.push({
-        content: text,
-        clauseNumber: null,
-        clauseTitle: null
-      });
-    }
-
-    return chunks;
-  };
 
   return (
     <div className="documents-manager">

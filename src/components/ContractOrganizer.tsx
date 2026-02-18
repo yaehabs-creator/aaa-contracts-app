@@ -6,6 +6,7 @@ import {
     ExtractedData
 } from '@/types';
 import toast from 'react-hot-toast';
+import { getDocumentReaderService } from '../services/documentReaderService';
 import { PaddleOcrService } from '../services/paddleOcrService';
 import { extractDataForSchema } from '@/services/organizerExtractionService';
 import { getOrganizerData, uploadContractDocument } from '@/src/services/supabaseService';
@@ -60,6 +61,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     const [activeFolder, setActiveFolder] = useState<string>('A');
     const [selectedSubfolderId, setSelectedSubfolderId] = useState<string | null>(null);
     const [isSaving, setIsSaving] = useState(false);
+    const [isSyncing, setIsSyncing] = useState(false);
+    const [syncStatus, setSyncStatus] = useState<string | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
     const [processingStatus, setProcessingStatus] = useState('');
     const [showFullTextModal, setShowFullTextModal] = useState(false);
@@ -536,6 +539,12 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                 OCR: {ocrAvailable ? 'Connected' : 'Disconnected (Local:8000)'}
                             </div>
                         )}
+                        {syncStatus && (
+                            <div className="px-3 py-1 bg-emerald-500/10 text-emerald-600 text-[9px] font-black rounded-full uppercase tracking-widest border border-emerald-500/20 animate-pulse flex items-center gap-2">
+                                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping" />
+                                {syncStatus}
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -565,20 +574,36 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                         />
                     </div>
                     <button
-                        onClick={() => {
-                            const dmBtn = document.querySelector('.process-btn') as HTMLButtonElement;
-                            if (dmBtn) {
-                                dmBtn.click();
-                                toast.success('Starting document synchronization for AI...');
-                            } else {
-                                toast.error('Please open the Documents tab to sync files.');
+                        onClick={async () => {
+                            if (!effectiveContract) return;
+                            setIsSyncing(true);
+                            const readerService = getDocumentReaderService();
+                            const unsubscribe = readerService.onProgress((status) => {
+                                setSyncStatus(status);
+                            });
+
+                            try {
+                                toast.success('Starting background synchronization...');
+                                await readerService.batchProcessAll(effectiveContract.id);
+                                toast.success('All documents synchronized successfully!');
+                            } catch (err: any) {
+                                toast.error(`Sync failed: ${err.message}`);
+                            } finally {
+                                unsubscribe();
+                                setIsSyncing(false);
+                                setSyncStatus(null);
                             }
                         }}
-                        className="px-6 py-2.5 bg-emerald-50 text-emerald-600 border border-emerald-200 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-100 transition-all active:scale-95 flex items-center gap-2"
+                        disabled={isSyncing}
+                        className={`px-6 py-2.5 ${isSyncing ? 'bg-slate-100 text-aaa-muted' : 'bg-emerald-50 text-emerald-600 border border-emerald-200'} rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-100 transition-all active:scale-95 flex items-center gap-2`}
                         title="Sync all uploaded PDFs for AI analysis (OCR + Embeddings)"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                        One-Click Sync
+                        {isSyncing ? (
+                            <div className="w-4 h-4 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        )}
+                        {isSyncing ? 'Syncing...' : 'One-Click Sync'}
                     </button>
                     <button
                         onClick={onClose}
