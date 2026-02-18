@@ -324,7 +324,7 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
         {!isExpanded && (
           <div className="px-8 pb-8 flex flex-col gap-2">
             <div className="font-mono text-sm leading-relaxed text-aaa-text/60 line-clamp-2 italic">
-              {isParagraph ? (item.text || 'No content preview') : (item.fieldValue || 'No value preview')}
+              {isPdf ? (doc_name || 'PDF Document Attachment') : isParagraph ? (item.text || 'No content preview') : (item.fieldValue || 'No value preview')}
             </div>
             <button
               onClick={() => setIsExpanded(true)}
