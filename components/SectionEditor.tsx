@@ -397,7 +397,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                   }}
                   onDelete={() => handleDeleteItem(section.items.indexOf(item))}
                   searchKeywords={searchKeywords}
-                  hideMetadata={!!(item as any).isIntegrated}
+                  hideMetadata={false}
                 />
               </div>
             );

@@ -36,7 +36,8 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
 
   // Technical field keys (e.g. field_123456789) should be hidden in presentation
   const isTechnicalKey = item.fieldKey?.startsWith('field_') && !isNaN(Number(item.fieldKey.split('_')[1]));
-  const shouldShowFieldHeader = isField && (!hideMetadata || !isTechnicalKey);
+  // If it's a technical key but we want to show it, we'll give it a friendly name below
+  const shouldShowFieldHeader = isField;
 
   return (
     <div className="bg-white border border-aaa-border rounded-3xl shadow-premium overflow-hidden transition-all duration-300 hover:shadow-xl">
@@ -56,15 +57,15 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
             {shouldShowFieldHeader && (
               <div className="flex items-center gap-3 mb-3">
                 {!hideMetadata && (
-                  <span className="px-3 py-1 bg-aaa-blue text-white text-[10px] font-black rounded-full uppercase tracking-widest">
-                    Field
+                  <span className={`px-3 py-1 ${isTechnicalKey ? 'bg-amber-500' : 'bg-aaa-blue'} text-white text-[10px] font-black rounded-full uppercase tracking-widest`}>
+                    {isTechnicalKey ? 'Extracted Item' : 'Field'}
                   </span>
                 )}
                 <h3 className="text-lg font-black text-aaa-blue tracking-tight">
                   {searchKeywords.length > 0 ? (
-                    <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.fieldKey || '', searchKeywords) }} />
+                    <span dangerouslySetInnerHTML={{ __html: highlightKeywords(isTechnicalKey ? (item.heading || 'Data Segment') : (item.fieldKey || ''), searchKeywords) }} />
                   ) : (
-                    item.fieldKey
+                    isTechnicalKey ? (item.heading || 'Data Segment') : item.fieldKey
                   )}
                 </h3>
               </div>
@@ -105,11 +106,51 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
         {/* Content */}
         <div className="space-y-4">
           {isParagraph && (
-            <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
-              {searchKeywords.length > 0 ? (
-                <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.text || '', searchKeywords) }} />
-              ) : (
-                item.text
+            <div className={`${hideMetadata ? 'bg-transparent' : 'bg-aaa-bg/30 p-6'} rounded-2xl border ${hideMetadata ? 'border-none' : 'border-aaa-border/50'} space-y-4`}>
+              <div className="font-mono text-sm leading-relaxed text-aaa-text whitespace-pre-wrap">
+                {searchKeywords.length > 0 ? (
+                  <span dangerouslySetInnerHTML={{ __html: highlightKeywords(item.text || '', searchKeywords) }} />
+                ) : (
+                  item.text
+                )}
+              </div>
+
+              {/* Metadata for paragraphs (important for integrated text segments) */}
+              {!hideMetadata && (item.status || item.confidence !== undefined || item.evidence) && (
+                <div className="pt-4 border-t border-aaa-border/30">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      {item.status && (
+                        <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter ${item.status === 'extracted' ? 'bg-emerald-100 text-emerald-700' :
+                          item.status === 'uncertain' ? 'bg-amber-100 text-amber-700' :
+                            'bg-slate-100 text-slate-600'
+                          }`}>
+                          {item.status}
+                        </span>
+                      )}
+                      {item.confidence !== undefined && (
+                        <div className="flex items-center gap-2">
+                          <div className="text-[9px] font-bold text-aaa-muted">
+                            {Math.round(item.confidence * 100)}% Confidence
+                          </div>
+                          <div className="w-12 h-1 bg-aaa-border rounded-full overflow-hidden">
+                            <div
+                              className={`h-full rounded-full transition-all duration-500 ${item.confidence > 0.8 ? 'bg-emerald-500' :
+                                item.confidence > 0.5 ? 'bg-amber-500' : 'bg-red-500'
+                                }`}
+                              style={{ width: `${item.confidence * 100}%` }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    {item.evidence && item.evidence.page && (
+                      <span className="text-[9px] font-black text-aaa-muted uppercase tracking-widest">
+                        Page {item.evidence.page}
+                      </span>
+                    )}
+                  </div>
+                </div>
               )}
             </div>
           )}
