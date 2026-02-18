@@ -87,16 +87,29 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     relevantSubfolders.forEach(sub => {
       const dataForSub = organizerExtractedData.filter(d => d.subfolder_id === sub.id);
       dataForSub.forEach(data => {
-        extractedItems.push({
-          id: data.id,
-          itemType: ItemType.FIELD,
-          fieldKey: data.field_key,
-          fieldValue: data.value,
-          orderIndex: nativeItems.length + extractedItems.length,
-          confidence: data.confidence,
-          evidence: data.evidence,
-          status: data.status
-        });
+        if (data.field_key === '__full_text__') {
+          extractedItems.push({
+            id: data.id,
+            itemType: ItemType.PARAGRAPH,
+            heading: sub.name,
+            text: data.value as string,
+            orderIndex: nativeItems.length + extractedItems.length,
+            confidence: data.confidence,
+            evidence: data.evidence,
+            status: data.status
+          });
+        } else {
+          extractedItems.push({
+            id: data.id,
+            itemType: ItemType.FIELD,
+            fieldKey: data.field_key,
+            fieldValue: data.value,
+            orderIndex: nativeItems.length + extractedItems.length,
+            confidence: data.confidence,
+            evidence: data.evidence,
+            status: data.status
+          });
+        }
       });
     });
 

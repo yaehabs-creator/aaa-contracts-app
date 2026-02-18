@@ -727,14 +727,47 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                         <div className="bg-white rounded-3xl border border-aaa-border shadow-premium overflow-hidden">
                                             <div className="p-6 bg-slate-50 border-b border-aaa-border flex items-center justify-between">
                                                 <h4 className="text-sm font-black text-aaa-text uppercase tracking-widest">Extraction Results</h4>
-                                                {fullOcrText && (
-                                                    <button
-                                                        onClick={() => setShowFullTextModal(true)}
-                                                        className="px-4 py-1.5 bg-aaa-blue text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-aaa-hover transition-all"
-                                                    >
-                                                        Source Text
-                                                    </button>
-                                                )}
+                                                <div className="flex items-center gap-2">
+                                                    {fullOcrText && (
+                                                        <button
+                                                            onClick={async () => {
+                                                                if (!fullOcrText || !selectedSubfolderId || !effectiveContract) return;
+
+                                                                const fullTextEntry: ExtractedData = {
+                                                                    id: crypto.randomUUID(),
+                                                                    contract_id: effectiveContract.id,
+                                                                    subfolder_id: selectedSubfolderId,
+                                                                    field_key: '__full_text__',
+                                                                    value: fullOcrText,
+                                                                    confidence: 1.0,
+                                                                    evidence: {
+                                                                        page: 1,
+                                                                        snippet: 'Full Document Text'
+                                                                    },
+                                                                    status: 'extracted'
+                                                                };
+
+                                                                onUpdateExtractedData([
+                                                                    ...extractedData.filter(d => d.field_key !== '__full_text__' || d.subfolder_id !== selectedSubfolderId),
+                                                                    fullTextEntry
+                                                                ]);
+                                                                setHasUnsavedChanges(true);
+                                                                toast.success('Full text imported as paragraph');
+                                                            }}
+                                                            className="px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-emerald-700 transition-all"
+                                                        >
+                                                            Import Full Text
+                                                        </button>
+                                                    )}
+                                                    {fullOcrText && (
+                                                        <button
+                                                            onClick={() => setShowFullTextModal(true)}
+                                                            className="px-4 py-1.5 bg-aaa-blue text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-aaa-hover transition-all"
+                                                        >
+                                                            Source Text
+                                                        </button>
+                                                    )}
+                                                </div>
                                             </div>
                                             <div className="p-0 max-h-[400px] overflow-y-auto thin-scrollbar">
                                                 {extractedData.filter(d => d.subfolder_id === selectedSubfolderId).map(data => {
