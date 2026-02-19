@@ -12,6 +12,7 @@ import { extractDataForSchema } from '@/services/organizerExtractionService';
 import { getOrganizerData, uploadContractDocument } from '@/src/services/supabaseService';
 import { cleanTextWithAI } from '@/src/services/textPreprocessor';
 import { analyzePDFWithClaude } from '@/src/services/pdfAnalysisClient';
+import { AIKnowledgeManager } from './AIKnowledgeManager';
 
 interface ContractOrganizerProps {
     contract: SavedContract | null;
@@ -46,7 +47,8 @@ const FIXED_FOLDERS = [
     { code: 'P', name: 'Instruction To Tenderers' },
     { code: 'N', name: 'Automation Application' },
     { code: 'O', name: 'Other Documents' },
-    { code: 'AI', name: 'AI Analysis Library' }
+    { code: 'AI', name: 'AI Analysis Library' },
+    { code: 'DATA', name: 'AI Knowledge Base' }
 ] as const;
 
 export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
@@ -726,403 +728,409 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                 <div className="flex-1 flex flex-col overflow-hidden bg-white">
                     <div className="p-8 overflow-y-auto h-full dotted-bg">
                         <div className="max-w-5xl mx-auto space-y-12 pb-20">
-                            <section>
-                                <div className="flex items-center justify-between mb-8 pb-4 border-b border-aaa-border/50">
-                                    <div>
-                                        <h3 className="text-3xl font-black text-aaa-text tracking-tighter">
-                                            Subfolders: Module {activeFolder}
-                                        </h3>
-                                        <p className="text-xs text-aaa-muted font-medium mt-1">Classify documents for mapping and extraction.</p>
-                                    </div>
-                                    <button
-                                        onClick={addSubfolder}
-                                        className="flex items-center gap-3 px-6 py-3 bg-aaa-bg text-aaa-blue rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-aaa-blue/10 transition-all border border-aaa-blue/10 active:scale-95"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
-                                        Add Subfolder
-                                    </button>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {activeSubfolders.length === 0 ? (
-                                        <div className="col-span-full bg-aaa-bg/10 rounded-3xl p-16 border border-dashed border-aaa-border flex flex-col items-center gap-6 group hover:bg-aaa-bg/20 transition-all cursor-pointer" onClick={addSubfolder}>
-                                            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-aaa-blue shadow-sm border border-aaa-blue/5 group-hover:scale-110 transition-transform">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
-                                            </div>
-                                            <div className="text-center">
-                                                <p className="text-lg font-black text-aaa-text tracking-tight">Empty Module</p>
-                                                <p className="text-xs text-aaa-muted font-medium mt-1">No subfolders defined. Click to initialize the first category.</p>
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        activeSubfolders.map(sub => (
-                                            <div
-                                                key={sub.id}
-                                                onClick={() => setSelectedSubfolderId(sub.id)}
-                                                className={`group p-6 rounded-2xl border transition-all cursor-pointer relative ${selectedSubfolderId === sub.id
-                                                    ? 'bg-aaa-blue/5 border-aaa-blue ring-2 ring-aaa-blue/10'
-                                                    : 'bg-white border-aaa-border hover:border-aaa-blue hover:shadow-md'
-                                                    }`}
-                                            >
-                                                <div className="flex items-center justify-between mb-4">
-                                                    <input
-                                                        type="text"
-                                                        value={sub.name}
-                                                        onChange={(e) => updateSubfolder(sub.id, e.target.value)}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                        className="bg-transparent font-black text-sm text-aaa-text focus:outline-none focus:text-aaa-blue flex-1"
-                                                    />
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            removeSubfolder(sub.id);
-                                                        }}
-                                                        className="opacity-0 group-hover:opacity-100 p-2 text-red-400 hover:text-red-600 transition-all"
-                                                    >
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        ))
-                                    )}
-                                </div>
-                            </section>
-
-                            {activeFolder === 'AI' ? (
-                                <div className="space-y-8 animate-in fade-in duration-500">
-                                    <div className="flex items-center justify-between mb-8 pb-4 border-b border-aaa-border/50">
-                                        <div>
-                                            <h3 className="text-3xl font-black text-aaa-text tracking-tighter">
-                                                AI Analysis Library
-                                            </h3>
-                                            <p className="text-xs text-aaa-muted font-medium mt-1">Repository of all persistent Claude native document analyses.</p>
-                                        </div>
-                                    </div>
-
-                                    {extractedData.filter(d => d.field_key === '__claude_analysis__').length === 0 ? (
-                                        <div className="bg-aaa-bg/10 rounded-3xl p-16 border border-dashed border-aaa-border flex flex-col items-center gap-6">
-                                            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-aaa-blue shadow-sm">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                            </div>
-                                            <p className="text-sm font-bold text-aaa-muted">No AI analyses generated yet. Upload a document in "Claude Native" mode to populate this list.</p>
-                                        </div>
-                                    ) : (
-                                        <div className="grid grid-cols-1 gap-6">
-                                            {extractedData.filter(d => d.field_key === '__claude_analysis__').map(analysis => (
-                                                <div key={analysis.id} className="bg-white rounded-[32px] border border-aaa-blue/20 shadow-premium p-8 overflow-hidden relative">
-                                                    <div className="absolute top-0 right-0 p-8">
-                                                        <div className="px-4 py-2 bg-aaa-blue text-white text-[10px] font-black rounded-xl uppercase tracking-widest shadow-lg">
-                                                            Claude 3.5 Sonnet
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex items-center gap-4 mb-8">
-                                                        <div className="w-14 h-14 bg-aaa-blue/10 rounded-2xl flex items-center justify-center text-aaa-blue">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="text-xl font-black text-aaa-text tracking-tighter uppercase">{analysis.doc_name || 'Analyzed Document'}</h4>
-                                                            <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{new Date(analysis.created_at || Date.now()).toLocaleDateString()} • Persistent Analysis</p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="bg-slate-50 border border-aaa-border rounded-2xl p-8 max-h-[400px] overflow-y-auto thin-scrollbar">
-                                                        <div className="text-sm font-medium text-slate-700 whitespace-pre-wrap leading-relaxed">
-                                                            {analysis.value}
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex justify-end gap-3 mt-8">
-                                                        <button
-                                                            onClick={() => {
-                                                                navigator.clipboard.writeText(analysis.value as string);
-                                                                toast.success('Report copied to clipboard');
-                                                            }}
-                                                            className="px-6 py-3 bg-white border border-aaa-border rounded-xl text-[10px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-all"
-                                                        >
-                                                            Copy Report
-                                                        </button>
-                                                        <button
-                                                            onClick={() => window.open(analysis.doc_url, '_blank')}
-                                                            className="px-8 py-3 bg-aaa-blue text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-aaa-navy transition-all"
-                                                        >
-                                                            View Original PDF
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            ) : selectedSubfolder && (
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-in slide-in-from-bottom-4 duration-500">
-                                    {/* Left: Schema Editor */}
-                                    <div className="bg-white rounded-3xl border border-aaa-blue/20 shadow-premium overflow-hidden border-t-8 border-t-aaa-blue">
-                                        <div className="p-8 border-b border-aaa-border flex items-center justify-between bg-aaa-blue/[0.02]">
+                            {activeFolder === 'DATA' ? (
+                                <AIKnowledgeManager />
+                            ) : (
+                                <>
+                                    <section>
+                                        <div className="flex items-center justify-between mb-8 pb-4 border-b border-aaa-border/50">
                                             <div>
-                                                <h4 className="text-xl font-black text-aaa-text tracking-tighter">
-                                                    Extraction Schema
-                                                </h4>
-                                                <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mt-1">Fields for {selectedSubfolder.name}</p>
+                                                <h3 className="text-3xl font-black text-aaa-text tracking-tighter">
+                                                    Subfolders: Module {activeFolder}
+                                                </h3>
+                                                <p className="text-xs text-aaa-muted font-medium mt-1">Classify documents for mapping and extraction.</p>
                                             </div>
                                             <button
-                                                onClick={() => addField(selectedSubfolder.id)}
-                                                className="px-6 py-2.5 bg-aaa-blue text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-md hover:bg-aaa-navy transition-all active:scale-95 flex items-center gap-2"
+                                                onClick={addSubfolder}
+                                                className="flex items-center gap-3 px-6 py-3 bg-aaa-bg text-aaa-blue rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-aaa-blue/10 transition-all border border-aaa-blue/10 active:scale-95"
                                             >
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
-                                                Add Field
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
+                                                Add Subfolder
                                             </button>
                                         </div>
 
-                                        <div className="p-8 max-h-[600px] overflow-y-auto thin-scrollbar">
-                                            {(schemas[selectedSubfolder.id] || []).map(field => (
-                                                <div key={field.id} className="bg-aaa-bg/10 p-5 rounded-2xl border border-aaa-border/30 space-y-4 mb-4">
-                                                    <div className="flex items-start justify-between">
-                                                        <div className="flex-1 space-y-4">
-                                                            <div className="grid grid-cols-2 gap-4">
-                                                                <div className="space-y-1">
-                                                                    <label className="text-[9px] font-black text-aaa-muted uppercase tracking-widest">Label</label>
-                                                                    <input
-                                                                        type="text"
-                                                                        value={field.label}
-                                                                        onChange={(e) => updateField(selectedSubfolder.id, field.id, { label: e.target.value })}
-                                                                        className="w-full bg-white border border-aaa-border rounded-lg px-3 py-2 text-xs font-bold focus:border-aaa-blue outline-none"
-                                                                    />
-                                                                </div>
-                                                                <div className="space-y-1">
-                                                                    <label className="text-[9px] font-black text-aaa-muted uppercase tracking-widest">Key</label>
-                                                                    <input
-                                                                        type="text"
-                                                                        value={field.key}
-                                                                        onChange={(e) => updateField(selectedSubfolder.id, field.id, { key: e.target.value })}
-                                                                        className="w-full bg-white border border-aaa-border rounded-lg px-3 py-2 text-xs font-mono focus:border-aaa-blue outline-none"
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button
-                                                            onClick={() => removeField(selectedSubfolder.id, field.id)}
-                                                            className="ml-4 p-2 text-red-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all"
-                                                        >
-                                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                                                        </button>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {activeSubfolders.length === 0 ? (
+                                                <div className="col-span-full bg-aaa-bg/10 rounded-3xl p-16 border border-dashed border-aaa-border flex flex-col items-center gap-6 group hover:bg-aaa-bg/20 transition-all cursor-pointer" onClick={addSubfolder}>
+                                                    <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-aaa-blue shadow-sm border border-aaa-blue/5 group-hover:scale-110 transition-transform">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                                                    </div>
+                                                    <div className="text-center">
+                                                        <p className="text-lg font-black text-aaa-text tracking-tight">Empty Module</p>
+                                                        <p className="text-xs text-aaa-muted font-medium mt-1">No subfolders defined. Click to initialize the first category.</p>
                                                     </div>
                                                 </div>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* Right: Ingestion & Results */}
-                                    <div className="space-y-8">
-                                        <div className="bg-white rounded-3xl border border-aaa-border shadow-premium p-8 border-t-8 border-t-aaa-accent relative overflow-hidden">
-                                            {isProcessing && (
-                                                <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-50 flex flex-col items-center justify-center p-8 text-center">
-                                                    <div className="w-20 h-20 mb-6 relative">
-                                                        <div className="absolute inset-0 border-4 border-aaa-accent/20 rounded-full" />
-                                                        <div className="absolute inset-0 border-4 border-aaa-accent border-t-transparent rounded-full animate-spin" />
+                                            ) : (
+                                                activeSubfolders.map(sub => (
+                                                    <div
+                                                        key={sub.id}
+                                                        onClick={() => setSelectedSubfolderId(sub.id)}
+                                                        className={`group p-6 rounded-2xl border transition-all cursor-pointer relative ${selectedSubfolderId === sub.id
+                                                            ? 'bg-aaa-blue/5 border-aaa-blue ring-2 ring-aaa-blue/10'
+                                                            : 'bg-white border-aaa-border hover:border-aaa-blue hover:shadow-md'
+                                                            }`}
+                                                    >
+                                                        <div className="flex items-center justify-between mb-4">
+                                                            <input
+                                                                type="text"
+                                                                value={sub.name}
+                                                                onChange={(e) => updateSubfolder(sub.id, e.target.value)}
+                                                                onClick={(e) => e.stopPropagation()}
+                                                                className="bg-transparent font-black text-sm text-aaa-text focus:outline-none focus:text-aaa-blue flex-1"
+                                                            />
+                                                            <button
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    removeSubfolder(sub.id);
+                                                                }}
+                                                                className="opacity-0 group-hover:opacity-100 p-2 text-red-400 hover:text-red-600 transition-all"
+                                                            >
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <h4 className="text-xl font-black text-aaa-text mb-2 tracking-tighter uppercase">Processing Source</h4>
-                                                    <p className="text-sm font-bold text-aaa-accent animate-pulse">{processingStatus}</p>
+                                                ))
+                                            )}
+                                        </div>
+                                    </section>
+
+                                    {activeFolder === 'AI' ? (
+                                        <div className="space-y-8 animate-in fade-in duration-500">
+                                            <div className="flex items-center justify-between mb-8 pb-4 border-b border-aaa-border/50">
+                                                <div>
+                                                    <h3 className="text-3xl font-black text-aaa-text tracking-tighter">
+                                                        AI Analysis Library
+                                                    </h3>
+                                                    <p className="text-xs text-aaa-muted font-medium mt-1">Repository of all persistent Claude native document analyses.</p>
+                                                </div>
+                                            </div>
+
+                                            {extractedData.filter(d => d.field_key === '__claude_analysis__').length === 0 ? (
+                                                <div className="bg-aaa-bg/10 rounded-3xl p-16 border border-dashed border-aaa-border flex flex-col items-center gap-6">
+                                                    <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-aaa-blue shadow-sm">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                                    </div>
+                                                    <p className="text-sm font-bold text-aaa-muted">No AI analyses generated yet. Upload a document in "Claude Native" mode to populate this list.</p>
+                                                </div>
+                                            ) : (
+                                                <div className="grid grid-cols-1 gap-6">
+                                                    {extractedData.filter(d => d.field_key === '__claude_analysis__').map(analysis => (
+                                                        <div key={analysis.id} className="bg-white rounded-[32px] border border-aaa-blue/20 shadow-premium p-8 overflow-hidden relative">
+                                                            <div className="absolute top-0 right-0 p-8">
+                                                                <div className="px-4 py-2 bg-aaa-blue text-white text-[10px] font-black rounded-xl uppercase tracking-widest shadow-lg">
+                                                                    Claude 3.5 Sonnet
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex items-center gap-4 mb-8">
+                                                                <div className="w-14 h-14 bg-aaa-blue/10 rounded-2xl flex items-center justify-center text-aaa-blue">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 className="text-xl font-black text-aaa-text tracking-tighter uppercase">{analysis.doc_name || 'Analyzed Document'}</h4>
+                                                                    <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">{new Date(analysis.created_at || Date.now()).toLocaleDateString()} • Persistent Analysis</p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="bg-slate-50 border border-aaa-border rounded-2xl p-8 max-h-[400px] overflow-y-auto thin-scrollbar">
+                                                                <div className="text-sm font-medium text-slate-700 whitespace-pre-wrap leading-relaxed">
+                                                                    {analysis.value}
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex justify-end gap-3 mt-8">
+                                                                <button
+                                                                    onClick={() => {
+                                                                        navigator.clipboard.writeText(analysis.value as string);
+                                                                        toast.success('Report copied to clipboard');
+                                                                    }}
+                                                                    className="px-6 py-3 bg-white border border-aaa-border rounded-xl text-[10px] font-black uppercase tracking-widest text-aaa-muted hover:text-aaa-blue transition-all"
+                                                                >
+                                                                    Copy Report
+                                                                </button>
+                                                                <button
+                                                                    onClick={() => window.open(analysis.doc_url, '_blank')}
+                                                                    className="px-8 py-3 bg-aaa-blue text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-aaa-navy transition-all"
+                                                                >
+                                                                    View Original PDF
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             )}
-
-                                            <div className="flex items-center justify-between mb-2">
-                                                <h4 className="text-xl font-black text-aaa-text tracking-tighter">Source Ingestion</h4>
-                                                <div className="flex p-1 bg-aaa-bg/50 border border-aaa-border rounded-xl">
-                                                    <button
-                                                        onClick={() => setIngestionMode('extraction')}
-                                                        className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'extraction' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
-                                                    >
-                                                        OCR EXTRACTION
-                                                    </button>
-                                                    <button
-                                                        onClick={() => setIngestionMode('pdf-viewer')}
-                                                        className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'pdf-viewer' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
-                                                    >
-                                                        PDF VIEWER
-                                                    </button>
-                                                    <button
-                                                        onClick={() => setIngestionMode('claude-native')}
-                                                        className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'claude-native' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
-                                                        title="Use Claude's built-in PDF vision for deep analysis (Fast & Accurate)"
-                                                    >
-                                                        CLAUDE NATIVE
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-8">
-                                                {ingestionMode === 'extraction' ? 'Scan PDF for automated data extraction' : ingestionMode === 'claude-native' ? 'Analyze PDF using Claude Native Intelligence (No OCR required)' : 'Upload original PDF for direct viewing'}
-                                            </p>
-
-                                            <div
-                                                onClick={() => fileInputRef.current?.click()}
-                                                className="bg-aaa-bg/30 border-2 border-dashed border-aaa-border rounded-2xl p-12 flex flex-col items-center gap-4 hover:border-aaa-accent hover:bg-aaa-accent/5 transition-all cursor-pointer group"
-                                            >
-                                                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-aaa-accent shadow-sm border border-aaa-accent/10 group-hover:scale-110 transition-transform">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
-                                                </div>
-                                                <p className="text-xs font-black uppercase tracking-[0.2em] text-aaa-muted group-hover:text-aaa-accent">Select Source PDF</p>
-                                                <input
-                                                    type="file"
-                                                    ref={fileInputRef}
-                                                    onChange={handleFileUpload}
-                                                    className="hidden"
-                                                    accept="application/pdf"
-                                                />
-                                            </div>
                                         </div>
+                                    ) : selectedSubfolder && (
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-in slide-in-from-bottom-4 duration-500">
+                                            {/* Left: Schema Editor */}
+                                            <div className="bg-white rounded-3xl border border-aaa-blue/20 shadow-premium overflow-hidden border-t-8 border-t-aaa-blue">
+                                                <div className="p-8 border-b border-aaa-border flex items-center justify-between bg-aaa-blue/[0.02]">
+                                                    <div>
+                                                        <h4 className="text-xl font-black text-aaa-text tracking-tighter">
+                                                            Extraction Schema
+                                                        </h4>
+                                                        <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mt-1">Fields for {selectedSubfolder.name}</p>
+                                                    </div>
+                                                    <button
+                                                        onClick={() => addField(selectedSubfolder.id)}
+                                                        className="px-6 py-2.5 bg-aaa-blue text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-md hover:bg-aaa-navy transition-all active:scale-95 flex items-center gap-2"
+                                                    >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
+                                                        Add Field
+                                                    </button>
+                                                </div>
 
-                                        {/* Extraction Results */}
-                                        <div className="bg-white rounded-3xl border border-aaa-border shadow-premium overflow-hidden">
-                                            <div className="p-6 bg-slate-50 border-b border-aaa-border flex items-center justify-between">
-                                                <h4 className="text-sm font-black text-aaa-text uppercase tracking-widest">Extraction Results</h4>
-                                                <div className="flex items-center gap-2">
-                                                    {fullOcrText && (
-                                                        <button
-                                                            onClick={async () => {
-                                                                if (!fullOcrText || !selectedSubfolderId || !effectiveContract) return;
-
-                                                                const fullTextEntry: ExtractedData = {
-                                                                    id: crypto.randomUUID(),
-                                                                    contract_id: effectiveContract.id,
-                                                                    subfolder_id: selectedSubfolderId,
-                                                                    field_key: '__full_text__',
-                                                                    value: fullOcrText,
-                                                                    confidence: 1.0,
-                                                                    evidence: {
-                                                                        page: 1,
-                                                                        snippet: 'Full Document Text'
-                                                                    },
-                                                                    status: 'extracted'
-                                                                };
-
-                                                                onUpdateExtractedData([
-                                                                    ...extractedData.filter(d => d.field_key !== '__full_text__' || d.subfolder_id !== selectedSubfolderId),
-                                                                    fullTextEntry
-                                                                ]);
-                                                                setHasUnsavedChanges(true);
-                                                                toast.success('Full text imported as paragraph');
-                                                            }}
-                                                            className="px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-emerald-700 transition-all"
-                                                        >
-                                                            Import Full Text
-                                                        </button>
-                                                    )}
-                                                    {fullOcrText && (
-                                                        <button
-                                                            onClick={() => setShowFullTextModal(true)}
-                                                            className="px-4 py-1.5 bg-aaa-blue text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-aaa-hover transition-all"
-                                                        >
-                                                            Source Text
-                                                        </button>
-                                                    )}
+                                                <div className="p-8 max-h-[600px] overflow-y-auto thin-scrollbar">
+                                                    {(schemas[selectedSubfolder.id] || []).map(field => (
+                                                        <div key={field.id} className="bg-aaa-bg/10 p-5 rounded-2xl border border-aaa-border/30 space-y-4 mb-4">
+                                                            <div className="flex items-start justify-between">
+                                                                <div className="flex-1 space-y-4">
+                                                                    <div className="grid grid-cols-2 gap-4">
+                                                                        <div className="space-y-1">
+                                                                            <label className="text-[9px] font-black text-aaa-muted uppercase tracking-widest">Label</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                value={field.label}
+                                                                                onChange={(e) => updateField(selectedSubfolder.id, field.id, { label: e.target.value })}
+                                                                                className="w-full bg-white border border-aaa-border rounded-lg px-3 py-2 text-xs font-bold focus:border-aaa-blue outline-none"
+                                                                            />
+                                                                        </div>
+                                                                        <div className="space-y-1">
+                                                                            <label className="text-[9px] font-black text-aaa-muted uppercase tracking-widest">Key</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                value={field.key}
+                                                                                onChange={(e) => updateField(selectedSubfolder.id, field.id, { key: e.target.value })}
+                                                                                className="w-full bg-white border border-aaa-border rounded-lg px-3 py-2 text-xs font-mono focus:border-aaa-blue outline-none"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button
+                                                                    onClick={() => removeField(selectedSubfolder.id, field.id)}
+                                                                    className="ml-4 p-2 text-red-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all"
+                                                                >
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
-                                            <div className="p-0 max-h-[400px] overflow-y-auto thin-scrollbar">
-                                                {extractedData.filter(d => d.subfolder_id === selectedSubfolderId).map(data => {
-                                                    const field = schemas[selectedSubfolderId]?.find(f => f.key === data.field_key);
-                                                    const isFullText = data.field_key === '__full_text__';
 
-                                                    return (
-                                                        <div key={data.id} className={`p-6 hover:bg-slate-50 transition-all border-b border-slate-100 last:border-b-0 ${isFullText ? 'bg-emerald-50/30' : data.field_key === '__claude_analysis__' ? 'bg-aaa-blue/[0.03]' : ''}`}>
-                                                            <div className="flex items-center justify-between mb-3">
-                                                                <span className={`text-[10px] font-black uppercase tracking-widest ${isFullText ? 'text-emerald-600' : data.field_key === '__claude_analysis__' ? 'text-aaa-blue' : 'text-aaa-muted'}`}>
-                                                                    {isFullText ? 'Full Document Text (Integrated)' : data.field_key === '__claude_analysis__' ? 'Claude Native Intelligence Analysis' : (field?.label || data.field_key)}
-                                                                </span>
-                                                                <span className="px-2 py-1 bg-emerald-50 text-emerald-600 text-[9px] font-black rounded uppercase">Page {data.evidence.page}</span>
+                                            {/* Right: Ingestion & Results */}
+                                            <div className="space-y-8">
+                                                <div className="bg-white rounded-3xl border border-aaa-border shadow-premium p-8 border-t-8 border-t-aaa-accent relative overflow-hidden">
+                                                    {isProcessing && (
+                                                        <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-50 flex flex-col items-center justify-center p-8 text-center">
+                                                            <div className="w-20 h-20 mb-6 relative">
+                                                                <div className="absolute inset-0 border-4 border-aaa-accent/20 rounded-full" />
+                                                                <div className="absolute inset-0 border-4 border-aaa-accent border-t-transparent rounded-full animate-spin" />
                                                             </div>
+                                                            <h4 className="text-xl font-black text-aaa-text mb-2 tracking-tighter uppercase">Processing Source</h4>
+                                                            <p className="text-sm font-bold text-aaa-accent animate-pulse">{processingStatus}</p>
+                                                        </div>
+                                                    )}
 
-                                                            {isFullText ? (
-                                                                <div className="flex flex-col gap-3">
-                                                                    <div className="text-xs font-medium text-aaa-muted line-clamp-3 bg-white/50 p-4 rounded-xl border border-emerald-100 italic">
-                                                                        {data.value || 'No content'}
-                                                                    </div>
-                                                                    <button
-                                                                        onClick={() => setShowFullTextModal(true)}
-                                                                        className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest hover:text-emerald-700 transition-colors"
-                                                                    >
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                                                                        Read Full Extraction
-                                                                    </button>
-                                                                </div>
-                                                            ) : data.field_key === '__claude_analysis__' ? (
-                                                                <div className="space-y-4">
-                                                                    <div className="flex items-center gap-2 px-3 py-1 bg-aaa-blue/10 text-aaa-blue text-[8px] font-black rounded-lg uppercase tracking-widest w-fit">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                                                        AI Report Generated
-                                                                    </div>
-                                                                    <div className="text-sm font-medium text-aaa-text whitespace-pre-wrap bg-white/50 p-6 rounded-2xl border border-aaa-blue/10 leading-relaxed shadow-sm">
-                                                                        {data.value || 'Analysis pending...'}
-                                                                    </div>
-                                                                </div>
-                                                            ) : (
-                                                                <>
-                                                                    <div className="text-sm font-black text-aaa-blue mb-2">{data.value || 'N/A'}</div>
-                                                                    {data.evidence.snippet && (
-                                                                        <div className="bg-aaa-bg/50 p-3 rounded-lg border border-aaa-border/50">
-                                                                            <p className="text-[10px] font-medium text-aaa-muted italic">"...{data.evidence.snippet}..."</p>
-                                                                        </div>
-                                                                    )}
-                                                                </>
+                                                    <div className="flex items-center justify-between mb-2">
+                                                        <h4 className="text-xl font-black text-aaa-text tracking-tighter">Source Ingestion</h4>
+                                                        <div className="flex p-1 bg-aaa-bg/50 border border-aaa-border rounded-xl">
+                                                            <button
+                                                                onClick={() => setIngestionMode('extraction')}
+                                                                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'extraction' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
+                                                            >
+                                                                OCR EXTRACTION
+                                                            </button>
+                                                            <button
+                                                                onClick={() => setIngestionMode('pdf-viewer')}
+                                                                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'pdf-viewer' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
+                                                            >
+                                                                PDF VIEWER
+                                                            </button>
+                                                            <button
+                                                                onClick={() => setIngestionMode('claude-native')}
+                                                                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'claude-native' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
+                                                                title="Use Claude's built-in PDF vision for deep analysis (Fast & Accurate)"
+                                                            >
+                                                                CLAUDE NATIVE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-8">
+                                                        {ingestionMode === 'extraction' ? 'Scan PDF for automated data extraction' : ingestionMode === 'claude-native' ? 'Analyze PDF using Claude Native Intelligence (No OCR required)' : 'Upload original PDF for direct viewing'}
+                                                    </p>
+
+                                                    <div
+                                                        onClick={() => fileInputRef.current?.click()}
+                                                        className="bg-aaa-bg/30 border-2 border-dashed border-aaa-border rounded-2xl p-12 flex flex-col items-center gap-4 hover:border-aaa-accent hover:bg-aaa-accent/5 transition-all cursor-pointer group"
+                                                    >
+                                                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-aaa-accent shadow-sm border border-aaa-accent/10 group-hover:scale-110 transition-transform">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+                                                        </div>
+                                                        <p className="text-xs font-black uppercase tracking-[0.2em] text-aaa-muted group-hover:text-aaa-accent">Select Source PDF</p>
+                                                        <input
+                                                            type="file"
+                                                            ref={fileInputRef}
+                                                            onChange={handleFileUpload}
+                                                            className="hidden"
+                                                            accept="application/pdf"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                {/* Extraction Results */}
+                                                <div className="bg-white rounded-3xl border border-aaa-border shadow-premium overflow-hidden">
+                                                    <div className="p-6 bg-slate-50 border-b border-aaa-border flex items-center justify-between">
+                                                        <h4 className="text-sm font-black text-aaa-text uppercase tracking-widest">Extraction Results</h4>
+                                                        <div className="flex items-center gap-2">
+                                                            {fullOcrText && (
+                                                                <button
+                                                                    onClick={async () => {
+                                                                        if (!fullOcrText || !selectedSubfolderId || !effectiveContract) return;
+
+                                                                        const fullTextEntry: ExtractedData = {
+                                                                            id: crypto.randomUUID(),
+                                                                            contract_id: effectiveContract.id,
+                                                                            subfolder_id: selectedSubfolderId,
+                                                                            field_key: '__full_text__',
+                                                                            value: fullOcrText,
+                                                                            confidence: 1.0,
+                                                                            evidence: {
+                                                                                page: 1,
+                                                                                snippet: 'Full Document Text'
+                                                                            },
+                                                                            status: 'extracted'
+                                                                        };
+
+                                                                        onUpdateExtractedData([
+                                                                            ...extractedData.filter(d => d.field_key !== '__full_text__' || d.subfolder_id !== selectedSubfolderId),
+                                                                            fullTextEntry
+                                                                        ]);
+                                                                        setHasUnsavedChanges(true);
+                                                                        toast.success('Full text imported as paragraph');
+                                                                    }}
+                                                                    className="px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-emerald-700 transition-all"
+                                                                >
+                                                                    Import Full Text
+                                                                </button>
+                                                            )}
+                                                            {fullOcrText && (
+                                                                <button
+                                                                    onClick={() => setShowFullTextModal(true)}
+                                                                    className="px-4 py-1.5 bg-aaa-blue text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-sm hover:bg-aaa-hover transition-all"
+                                                                >
+                                                                    Source Text
+                                                                </button>
                                                             )}
                                                         </div>
-                                                    );
-                                                })}
+                                                    </div>
+                                                    <div className="p-0 max-h-[400px] overflow-y-auto thin-scrollbar">
+                                                        {extractedData.filter(d => d.subfolder_id === selectedSubfolderId).map(data => {
+                                                            const field = schemas[selectedSubfolderId]?.find(f => f.key === data.field_key);
+                                                            const isFullText = data.field_key === '__full_text__';
+
+                                                            return (
+                                                                <div key={data.id} className={`p-6 hover:bg-slate-50 transition-all border-b border-slate-100 last:border-b-0 ${isFullText ? 'bg-emerald-50/30' : data.field_key === '__claude_analysis__' ? 'bg-aaa-blue/[0.03]' : ''}`}>
+                                                                    <div className="flex items-center justify-between mb-3">
+                                                                        <span className={`text-[10px] font-black uppercase tracking-widest ${isFullText ? 'text-emerald-600' : data.field_key === '__claude_analysis__' ? 'text-aaa-blue' : 'text-aaa-muted'}`}>
+                                                                            {isFullText ? 'Full Document Text (Integrated)' : data.field_key === '__claude_analysis__' ? 'Claude Native Intelligence Analysis' : (field?.label || data.field_key)}
+                                                                        </span>
+                                                                        <span className="px-2 py-1 bg-emerald-50 text-emerald-600 text-[9px] font-black rounded uppercase">Page {data.evidence.page}</span>
+                                                                    </div>
+
+                                                                    {isFullText ? (
+                                                                        <div className="flex flex-col gap-3">
+                                                                            <div className="text-xs font-medium text-aaa-muted line-clamp-3 bg-white/50 p-4 rounded-xl border border-emerald-100 italic">
+                                                                                {data.value || 'No content'}
+                                                                            </div>
+                                                                            <button
+                                                                                onClick={() => setShowFullTextModal(true)}
+                                                                                className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest hover:text-emerald-700 transition-colors"
+                                                                            >
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                                                                                Read Full Extraction
+                                                                            </button>
+                                                                        </div>
+                                                                    ) : data.field_key === '__claude_analysis__' ? (
+                                                                        <div className="space-y-4">
+                                                                            <div className="flex items-center gap-2 px-3 py-1 bg-aaa-blue/10 text-aaa-blue text-[8px] font-black rounded-lg uppercase tracking-widest w-fit">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                                                                AI Report Generated
+                                                                            </div>
+                                                                            <div className="text-sm font-medium text-aaa-text whitespace-pre-wrap bg-white/50 p-6 rounded-2xl border border-aaa-blue/10 leading-relaxed shadow-sm">
+                                                                                {data.value || 'Analysis pending...'}
+                                                                            </div>
+                                                                        </div>
+                                                                    ) : (
+                                                                        <>
+                                                                            <div className="text-sm font-black text-aaa-blue mb-2">{data.value || 'N/A'}</div>
+                                                                            {data.evidence.snippet && (
+                                                                                <div className="bg-aaa-bg/50 p-3 rounded-lg border border-aaa-border/50">
+                                                                                    <p className="text-[10px] font-medium text-aaa-muted italic">"...{data.evidence.snippet}..."</p>
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    )}
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    )}
+                                </>
                             )}
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Source Text Modal */}
-            {showFullTextModal && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-8 bg-black/60 backdrop-blur-sm">
-                    <div className="bg-white w-full max-w-5xl h-[85vh] rounded-[40px] shadow-2xl overflow-hidden flex flex-col border border-aaa-border">
-                        <div className="p-8 border-b border-aaa-border flex items-center justify-between bg-white relative z-10">
-                            <div>
-                                <h2 className="text-3xl font-black text-aaa-blue tracking-tighter">Source Text Inspection</h2>
-                                <p className="text-xs font-black text-aaa-muted uppercase tracking-widest mt-1">Directly extracted OCR data</p>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                {fullOcrText && (
+                {/* Source Text Modal */}
+                {showFullTextModal && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-8 bg-black/60 backdrop-blur-sm">
+                        <div className="bg-white w-full max-w-5xl h-[85vh] rounded-[40px] shadow-2xl overflow-hidden flex flex-col border border-aaa-border">
+                            <div className="p-8 border-b border-aaa-border flex items-center justify-between bg-white relative z-10">
+                                <div>
+                                    <h2 className="text-3xl font-black text-aaa-blue tracking-tighter">Source Text Inspection</h2>
+                                    <p className="text-xs font-black text-aaa-muted uppercase tracking-widest mt-1">Directly extracted OCR data</p>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    {fullOcrText && (
+                                        <button
+                                            onClick={handleRepairText}
+                                            disabled={isRepairing}
+                                            className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all shadow-lg active:scale-95 ${isRepairing ? 'bg-slate-100 text-aaa-muted cursor-not-allowed' : 'bg-emerald-500 text-white hover:bg-emerald-600'}`}
+                                        >
+                                            {isRepairing ? 'Repairing...' : 'Repair with AI'}
+                                        </button>
+                                    )}
                                     <button
-                                        onClick={handleRepairText}
-                                        disabled={isRepairing}
-                                        className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all shadow-lg active:scale-95 ${isRepairing ? 'bg-slate-100 text-aaa-muted cursor-not-allowed' : 'bg-emerald-500 text-white hover:bg-emerald-600'}`}
+                                        onClick={() => {
+                                            if (fullOcrText) {
+                                                navigator.clipboard.writeText(fullOcrText);
+                                                toast.success('Copied to clipboard');
+                                            }
+                                        }}
+                                        className="flex items-center gap-3 px-6 py-3 bg-white border border-aaa-blue text-aaa-blue rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-blue hover:text-white transition-all shadow-sm active:scale-95"
                                     >
-                                        {isRepairing ? 'Repairing...' : 'Repair with AI'}
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                                        Copy Text
                                     </button>
-                                )}
-                                <button
-                                    onClick={() => {
-                                        if (fullOcrText) {
-                                            navigator.clipboard.writeText(fullOcrText);
-                                            toast.success('Copied to clipboard');
-                                        }
-                                    }}
-                                    className="flex items-center gap-3 px-6 py-3 bg-white border border-aaa-blue text-aaa-blue rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-blue hover:text-white transition-all shadow-sm active:scale-95"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
-                                    Copy Text
-                                </button>
-                                <button
-                                    onClick={() => setShowFullTextModal(false)}
-                                    className="w-12 h-12 flex items-center justify-center bg-aaa-bg rounded-2xl text-aaa-muted hover:text-aaa-blue transition-all"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg>
-                                </button>
+                                    <button
+                                        onClick={() => setShowFullTextModal(false)}
+                                        className="w-12 h-12 flex items-center justify-center bg-aaa-bg rounded-2xl text-aaa-muted hover:text-aaa-blue transition-all"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex-1 overflow-y-auto p-10 bg-slate-50 thin-scrollbar">
-                            <pre className="p-12 bg-white rounded-[32px] border border-aaa-border whitespace-pre-wrap font-mono text-sm leading-relaxed text-slate-700">{fullOcrText}</pre>
-                        </div>
-                        <div className="p-8 border-t border-aaa-border bg-white flex justify-end">
-                            <button onClick={() => setShowFullTextModal(false)} className="px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all">Close Viewer</button>
+                            <div className="flex-1 overflow-y-auto p-10 bg-slate-50 thin-scrollbar">
+                                <pre className="p-12 bg-white rounded-[32px] border border-aaa-border whitespace-pre-wrap font-mono text-sm leading-relaxed text-slate-700">{fullOcrText}</pre>
+                            </div>
+                            <div className="p-8 border-t border-aaa-border bg-white flex justify-end">
+                                <button onClick={() => setShowFullTextModal(false)} className="px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all">Close Viewer</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
 
             <style>{`
         .dotted-bg { background-image: radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 0); background-size: 40px 40px; }

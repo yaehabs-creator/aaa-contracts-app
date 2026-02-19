@@ -4,6 +4,7 @@ import { getDocumentReaderService, DocumentChunkContent } from './documentReader
 import { getEmbeddingService } from './embeddingService';
 import { getOrchestrator, SynthesizedResponse } from './multiAgentOrchestrator';
 import { isOpenAIAvailable } from './openaiProvider';
+import { fetchKnowledgeContext } from './aiKnowledgeService';
 
 // Constants for token management
 const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
@@ -60,6 +61,7 @@ ABSOLUTE RULES:
 - Never invent clause numbers
 - Use only clauses the user provides
 - CITE CLAUSES PRECISELY: When referring to a clause, always use the format "Clause X" or "Clause X.X" so I can link to it.
+- KNOWLEDGE BASE: You have access to an AI Knowledge Base section. When answering, always check if the knowledge base contains relevant data and use it in your answer.
 
 EXAMPLE:
 
@@ -349,6 +351,17 @@ export async function buildUnifiedContractContext(
       console.warn('Could not fetch document chunks:', error);
       // Continue without document chunks - not a fatal error
     }
+  }
+
+  // 3. Add AI Knowledge Base data (Persistent global context)
+  try {
+    const knowledgeContext = await fetchKnowledgeContext();
+    if (knowledgeContext && usedChars + knowledgeContext.length <= maxChars) {
+      contextParts.push(knowledgeContext);
+      usedChars += knowledgeContext.length;
+    }
+  } catch (error) {
+    console.warn('Failed to add knowledge base to context:', error);
   }
 
   return {
