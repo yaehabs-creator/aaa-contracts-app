@@ -385,30 +385,19 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                 setHasUnsavedChanges(true);
                 toast.success(`PDF Document uploaded successfully!`);
             } else if (ingestionMode === 'claude-native') {
-                // CLAUDE NATIVE PDF ANALYSIS (NO OCR NEEDED)
-                setProcessingStatus('Uploading & Analyzing with Claude (Native PDF)...');
+                // CLAUDE NATIVE PDF ANALYSIS — sends PDF bytes directly to Claude, no OCR needed
+                setProcessingStatus('Analyzing with Claude Native Intelligence...');
 
-                // 1. Upload to storage (so we have a document_id and path)
+                // 1. Upload to storage in the background (for reference/download later)
                 const storagePath = `${effectiveContract.id}/${selectedSubfolderId}/${file.name}`;
                 const publicUrl = await uploadContractDocument(file, storagePath);
 
-                // We need to ensure a contract_document record exists for the cache to link to
-                // Ideally we'd use getDocumentReaderService().createDocumentRecord here,
-                // but for now we follow the existing pattern in uploadContractDocument/extractedData.
-
-                // 2. Perform Native Analysis
-                // Note: The /api/ai-proxy-pdf expects a document_id that exists in contract_documents.
-                // In this app, it seems contract_documents are created by the sync service.
-                // To keep it simple for the user, we'll inform them to Sync first OR we handle it.
-
-                // Since we don't have a document_id yet (it's created on sync), 
-                // we'll use a placeholder or prompt the user to sync if they want the persistent cache.
-                // FOR NOW: We'll show the power of the Native API directly.
-
+                // 2. Send the raw File directly to the Claude Native PDF endpoint
                 const analysisResult = await analyzePDFWithClaude({
-                    documentId: effectiveContract.id, // Falling back to contract level if doc id not available
+                    file,
                     prompt: "Extract a professional summary of this document, identify the main parties, key dates, and any financial implications. Organize it as a clean report.",
-                    model: 'claude-3-5-sonnet-latest'
+                    model: 'claude-3-5-sonnet-20241022',
+                    cacheKey: `${effectiveContract.id}-${selectedSubfolderId}-${file.name}-${file.size}`
                 });
 
                 const analysisData: ExtractedData = {
@@ -432,7 +421,9 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                     analysisData
                 ]);
 
-                toast.success(`Claude Native Analysis completed and cached!`);
+                setHasUnsavedChanges(true);
+                toast.success(`Claude Native Analysis complete!${analysisResult.cached ? ' (from cache)' : ''}`);
+
             } else {
                 // 1. Run local OCR
                 setProcessingStatus('Running OCR (this may take a minute)...');
