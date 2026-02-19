@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:graphrag": "cd graphrag-workbench && npm run dev -- -p 3001",
     "build": "vite build",
     "build:check": "node scripts/check-env.js && vite build",
     "preview": "vite preview",
@@ -12,7 +13,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "graphrag:install": "cd graphrag-workbench && npm install",
+    "graphrag:build": "cd graphrag-workbench && npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ContractEditorPage } from '../pages/admin/ContractEditorPage';
 import { PresentationPage } from '../pages/PresentationPage';
+import { KnowledgeGraphPage } from '../pages/KnowledgeGraphPage';
 
 interface AppRouterProps {
   children: React.ReactNode;
@@ -10,6 +11,8 @@ interface AppRouterProps {
  * Simple hash-based router for the application
  * Supports:
  * - #/admin/contract-editor -> Admin Contract Editor
+ * - #presentation -> Presentation Page
+ * - #/knowledge-graph -> GraphRAG Knowledge Graph Workbench
  * - Default (no hash or other) -> Main App
  */
 export const AppRouter: React.FC<AppRouterProps> = ({ children }) => {
@@ -33,6 +36,10 @@ export const AppRouter: React.FC<AppRouterProps> = ({ children }) => {
     return <PresentationPage />;
   }
 
+  if (currentRoute === '#/knowledge-graph') {
+    return <KnowledgeGraphPage />;
+  }
+
   // Default: render the main app
   return <>{children}</>;
 };
@@ -46,6 +53,10 @@ export const navigateTo = (route: string) => {
 
 export const navigateToAdminEditor = () => {
   navigateTo('#/admin/contract-editor');
+};
+
+export const navigateToKnowledgeGraph = () => {
+  navigateTo('#/knowledge-graph');
 };
 
 export const navigateToHome = () => {

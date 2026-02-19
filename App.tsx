@@ -2041,6 +2041,19 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 </a>
               )}
 
+              {/* GraphRAG Knowledge Graph */}
+              <a
+                href="#/knowledge-graph"
+                className="flex items-center gap-2 px-4 py-2.5 bg-indigo-50 border border-indigo-200 rounded-xl shadow-sm hover:shadow-md hover:bg-indigo-100 transition-all group"
+                title="Open GraphRAG Knowledge Graph Workbench"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="12" cy="12" r="3" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-700">Knowledge Graph</span>
+              </a>
+
               <button
                 onClick={() => setStatus(AnalysisStatus.ORGANIZER)}
                 className={`flex items-center gap-3 px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all group ${status === AnalysisStatus.ORGANIZER ? 'bg-aaa-blue text-white' : 'bg-white border border-aaa-border'}`}
