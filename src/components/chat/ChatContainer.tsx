@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useCallback, useRef } from 'react';
+import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChatProvider } from '../../context/ChatContext';
 import { useChat } from '../../hooks/useChat';
@@ -6,6 +6,7 @@ import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 import TypingIndicator from './TypingIndicator';
 import { ContextPill } from '../../../types';
+import { JsonDataChatPanel } from './JsonDataChatPanel';
 
 export type ChatContainerProps = {
     isOpen: boolean;
@@ -17,6 +18,7 @@ export type ChatContainerProps = {
     contractClauses?: any[];
     persist?: boolean;
     initialContextPills?: ContextPill[];
+    contractId?: string | null;
 };
 
 const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractClauses' | 'persist' | 'initialContextPills'>> = React.memo(({
@@ -24,7 +26,8 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
     onClose,
     title = "AI Contract Assistant",
     width = 420,
-    side = "right"
+    side = "right",
+    contractId = null,
 }) => {
     const {
         messages,
@@ -37,6 +40,7 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
         setAtBottom
     } = useChat();
 
+    const [activeTab, setActiveTab] = useState<'chat' | 'json'>('chat');
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -92,7 +96,8 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
               bg-white/70 backdrop-blur-2xl border border-white/40
               shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-[2.5rem]`}
                     >
-                        <header className="h-20 px-8 flex items-center justify-between border-b border-black/[0.03] bg-white/30">
+                        {/* ── Header ── */}
+                        <header className="h-20 px-8 flex items-center justify-between border-b border-black/[0.03] bg-white/30 flex-shrink-0">
                             <div className="flex flex-col">
                                 <h2 className="text-xl font-black text-black tracking-tight leading-none">{title}</h2>
                                 <div className="flex items-center gap-2 mt-1.5">
@@ -111,35 +116,67 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
                             </button>
                         </header>
 
-                        <main className="flex-1 flex flex-col min-h-0 bg-gradient-to-b from-transparent to-black/[0.01]">
-                            <MessageList
-                                messages={messages}
-                                atBottom={atBottom}
-                                setAtBottom={setAtBottom}
-                            />
-                            <AnimatePresence>
-                                {isThinkingOrStreaming && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 10 }}
-                                        className="px-8 py-3"
-                                    >
-                                        <TypingIndicator />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </main>
+                        {/* ── Tab Switcher ── */}
+                        <div className="flex border-b border-black/[0.05] bg-white/20 flex-shrink-0">
+                            <button
+                                onClick={() => setActiveTab('chat')}
+                                className={`flex-1 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all ${activeTab === 'chat'
+                                        ? 'text-black border-b-2 border-black'
+                                        : 'text-black/30 hover:text-black/50'
+                                    }`}
+                            >
+                                💬 Contract AI
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('json')}
+                                className={`flex-1 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all ${activeTab === 'json'
+                                        ? 'text-indigo-600 border-b-2 border-indigo-500'
+                                        : 'text-black/30 hover:text-black/50'
+                                    }`}
+                            >
+                                🗄️ JSON Data
+                            </button>
+                        </div>
 
-                        <footer className="p-6 bg-white/20">
-                            <ChatInput
-                                onSend={sendMessage}
-                                onCancel={cancelCurrent}
-                                isProcessing={isThinkingOrStreaming}
-                                contextPills={contextPills}
-                                onRemovePill={removeContextPill}
-                            />
-                        </footer>
+                        {/* ── JSON Data Panel ── */}
+                        {activeTab === 'json' && (
+                            <div className="flex-1 overflow-y-auto">
+                                <JsonDataChatPanel contractId={contractId} />
+                            </div>
+                        )}
+
+                        {/* ── Contract AI Chat ── */}
+                        {activeTab === 'chat' && (
+                            <main className="flex-1 flex flex-col min-h-0 bg-gradient-to-b from-transparent to-black/[0.01]">
+                                <MessageList
+                                    messages={messages}
+                                    atBottom={atBottom}
+                                    setAtBottom={setAtBottom}
+                                />
+                                <AnimatePresence>
+                                    {isThinkingOrStreaming && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: 10 }}
+                                            className="px-8 py-3"
+                                        >
+                                            <TypingIndicator />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                <footer className="p-6 bg-white/20">
+                                    <ChatInput
+                                        onSend={sendMessage}
+                                        onCancel={cancelCurrent}
+                                        isProcessing={isThinkingOrStreaming}
+                                        contextPills={contextPills}
+                                        onRemovePill={removeContextPill}
+                                    />
+                                </footer>
+                            </main>
+                        )}
                     </motion.div>
                 </>
             )}
@@ -156,7 +193,8 @@ const ChatContainer: React.FC<ChatContainerProps> = ({
     conversationId,
     contractClauses,
     persist = true,
-    initialContextPills = []
+    initialContextPills = [],
+    contractId = null,
 }) => {
     const providerConfig = useMemo(() => ({
         conversationId,
@@ -173,6 +211,7 @@ const ChatContainer: React.FC<ChatContainerProps> = ({
                 title={title}
                 width={width}
                 side={side}
+                contractId={contractId}
             />
         </ChatProvider>
     );
