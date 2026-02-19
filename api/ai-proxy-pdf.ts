@@ -4,22 +4,18 @@ import crypto from 'crypto';
 /**
  * Vercel Serverless Function: Native PDF Analysis with Claude
  *
- * Accepts a PDF as base64 directly from the client.
- * No Supabase Storage lookup required — works out of the box.
+ * Receives a public Supabase Storage URL, fetches the PDF server-side,
+ * and sends it to Claude's Native PDF API.
  *
- * Flow:
- * 1. Check cache (by hash of pdf_base64 + prompt).
- * 2. If MISS: send PDF + prompt to Claude Native PDF API.
- * 3. Store result in Supabase cache.
- * 4. Return analysis.
+ * This avoids the HTTP 413 payload limit from sending large base64 PDFs.
  */
 
 interface PDFAnalysisRequest {
-    pdf_base64: string;       // Base64-encoded PDF data
-    document_name?: string;   // Original filename for reference
+    pdf_url: string;          // Public URL to the PDF in Supabase Storage
+    document_name?: string;
     prompt: string;
     model?: string;
-    cache_key?: string;        // Optional override for cache key
+    cache_key?: string;
     force_refresh?: boolean;
 }
 
@@ -30,53 +26,43 @@ const CLAUDE_MODELS = [
 ];
 
 export default async function handler(req: any, res: any) {
-    // CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-    if (req.method === 'OPTIONS') {
-        return res.status(200).json({ ok: true });
-    }
+    if (req.method === 'OPTIONS') return res.status(200).json({ ok: true });
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
+    const { pdf_url, document_name, prompt, model, cache_key, force_refresh } = req.body as PDFAnalysisRequest;
 
-    const { pdf_base64, document_name, prompt, model, cache_key, force_refresh } = req.body as PDFAnalysisRequest;
-
-    if (!pdf_base64 || !prompt) {
-        return res.status(400).json({ error: 'Missing required fields: pdf_base64, prompt' });
+    if (!pdf_url || !prompt) {
+        return res.status(400).json({ error: 'Missing required fields: pdf_url, prompt' });
     }
 
     try {
-        // 1. Check for Claude API key (required)
+        // 1. Claude API key (required)
         const anthropicApiKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
         if (!anthropicApiKey) {
             throw new Error('ANTHROPIC_API_KEY not configured on server');
         }
 
-        // 2. Optional: try to use Supabase cache (gracefully skip if not configured)
+        // 2. Optional Supabase cache
         const supabaseUrl = process.env.VITE_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
         const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
         const cacheEnabled = !!(supabaseUrl && supabaseServiceKey);
+        const supabaseClient = cacheEnabled ? createClient(supabaseUrl!, supabaseServiceKey!) : null;
 
-        let supabase: ReturnType<typeof createClient> | null = null;
-        if (cacheEnabled) {
-            supabase = createClient(supabaseUrl!, supabaseServiceKey!);
-        }
-
-        // 3. Compute cache key
+        // 3. Compute cache hash
         const cacheHash = crypto
             .createHash('sha256')
-            .update(cache_key || pdf_base64.slice(0, 2048)) // Hash first 2KB of PDF + prompt for perf
+            .update(cache_key || pdf_url)
             .update(prompt)
             .digest('hex');
 
         // 4. Check cache
-        if (cacheEnabled && supabase && !force_refresh) {
+        if (cacheEnabled && supabaseClient && !force_refresh) {
             try {
-                const { data: cached } = await (supabase as any)
+                const { data: cached } = await (supabaseClient as any)
                     .from('pdf_analysis_cache')
                     .select('*')
                     .eq('prompt_hash', cacheHash)
@@ -95,10 +81,24 @@ export default async function handler(req: any, res: any) {
             }
         }
 
-        // 5. Call Claude Native PDF API
+        // 5. Fetch PDF from Supabase Storage URL
+        console.log(`Fetching PDF from: ${pdf_url}`);
+        const pdfResponse = await fetch(pdf_url);
+
+        if (!pdfResponse.ok) {
+            return res.status(400).json({
+                error: `Failed to fetch PDF from storage URL (${pdfResponse.status}). Make sure the bucket is public.`
+            });
+        }
+
+        const pdfBuffer = await pdfResponse.arrayBuffer();
+        const base64PDF = Buffer.from(pdfBuffer).toString('base64');
+        console.log(`PDF fetched: ${Math.round(pdfBuffer.byteLength / 1024)}KB, ${base64PDF.length} base64 chars`);
+
+        // 6. Call Claude Native PDF API
         const selectedModel = model || CLAUDE_MODELS[0];
 
-        const response = await fetchWithRetry(
+        const claudeResponse = await fetchWithRetry(
             'https://api.anthropic.com/v1/messages',
             {
                 method: 'POST',
@@ -111,45 +111,43 @@ export default async function handler(req: any, res: any) {
                 body: JSON.stringify({
                     model: selectedModel,
                     max_tokens: 4096,
-                    messages: [
-                        {
-                            role: 'user',
-                            content: [
-                                {
-                                    type: 'document',
-                                    source: {
-                                        type: 'base64',
-                                        media_type: 'application/pdf',
-                                        data: pdf_base64,
-                                    },
+                    messages: [{
+                        role: 'user',
+                        content: [
+                            {
+                                type: 'document',
+                                source: {
+                                    type: 'base64',
+                                    media_type: 'application/pdf',
+                                    data: base64PDF,
                                 },
-                                {
-                                    type: 'text',
-                                    text: prompt,
-                                },
-                            ],
-                        },
-                    ],
+                            },
+                            {
+                                type: 'text',
+                                text: prompt,
+                            },
+                        ],
+                    }],
                 }),
             }
         );
 
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw { status: response.status, message: errorData.error?.message || `Claude API error ${response.status}` };
+        if (!claudeResponse.ok) {
+            const errorData = await claudeResponse.json().catch(() => ({}));
+            throw { status: claudeResponse.status, message: errorData.error?.message || `Claude API error ${claudeResponse.status}` };
         }
 
-        const claudeResult = await response.json();
+        const claudeResult = await claudeResponse.json();
         const textBlock = claudeResult.content?.find((c: any) => c.type === 'text');
         const analysis = textBlock?.text || '';
 
-        // 6. Store in cache (non-fatal if it fails)
-        if (cacheEnabled && supabase) {
+        // 7. Store in cache (non-fatal)
+        if (cacheEnabled && supabaseClient) {
             try {
-                await (supabase as any)
+                await (supabaseClient as any)
                     .from('pdf_analysis_cache')
                     .upsert({
-                        document_id: cacheHash, // Use hash as a synthetic document_id if no real one
+                        document_id: cacheHash,
                         prompt_hash: cacheHash,
                         prompt_text: prompt,
                         analysis_json: { response: analysis },
@@ -175,9 +173,6 @@ export default async function handler(req: any, res: any) {
     }
 }
 
-/**
- * Fetch with exponential backoff retry for rate limits
- */
 async function fetchWithRetry(url: string, options: any, maxAttempts = 3): Promise<Response> {
     let attempt = 0;
     let backoffMs = 1000;

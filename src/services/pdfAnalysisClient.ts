@@ -1,15 +1,17 @@
 /**
  * PDF Analysis Client
- * 
- * Client-side service for analyzing PDFs directly with Claude's native PDF support.
- * Sends the PDF as base64 directly to the API — no pre-existing document record needed.
+ *
+ * Uploads the PDF to Supabase Storage first, then passes the public URL
+ * to the server-side Claude API — no large payloads, no 413 errors.
  */
+
 
 interface AnalysisRequest {
     file: File;
     prompt: string;
     model?: string;
-    cacheKey?: string; // Optional: used to deduplicate calls for the same file+prompt
+    storagePath: string;  // Where the file has already been uploaded
+    publicUrl: string;    // Public URL from Supabase Storage
 }
 
 interface AnalysisResponse {
@@ -30,43 +32,21 @@ const getProxyUrl = (): string => {
 };
 
 /**
- * Convert a File object to a base64 string.
- */
-function fileToBase64(file: File): Promise<string> {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => {
-            const result = reader.result as string;
-            // Strip the Data URL prefix (e.g., "data:application/pdf;base64,")
-            const base64 = result.split(',')[1];
-            resolve(base64);
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-    });
-}
-
-/**
- * Analyze a PDF File using Claude's Native PDF API.
- * The file is converted to base64 client-side and sent directly.
+ * Analyze a PDF using Claude's Native PDF API.
+ * Passes the public Supabase Storage URL to the backend instead of base64.
  */
 export async function analyzePDFWithClaude(request: AnalysisRequest): Promise<AnalysisResponse> {
     const url = getProxyUrl();
 
-    // Convert File to base64
-    const base64PDF = await fileToBase64(request.file);
-
     const response = await fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            pdf_base64: base64PDF,
+            pdf_url: request.publicUrl,
             document_name: request.file.name,
             prompt: request.prompt,
             model: request.model,
-            cache_key: request.cacheKey,
+            cache_key: `${request.storagePath}-${request.prompt.slice(0, 50)}`,
         }),
     });
 
@@ -79,20 +59,22 @@ export async function analyzePDFWithClaude(request: AnalysisRequest): Promise<An
 }
 
 /**
- * Helper: Simple Party Extraction from PDF
+ * Helper: Extract parties from PDF
  */
-export async function extractPartiesFromPDF(file: File): Promise<string> {
-    const prompt = `Please analyze this contract document and extract the main parties involved (Employer/Client and Contractor/Consultant). 
-  Return the names and their roles clearly.`;
-
-    const result = await analyzePDFWithClaude({ file, prompt });
+export async function extractPartiesFromPDF(file: File, storagePath: string, publicUrl: string): Promise<string> {
+    const result = await analyzePDFWithClaude({
+        file,
+        storagePath,
+        publicUrl,
+        prompt: `Please analyze this contract document and extract the main parties involved (Employer/Client and Contractor/Consultant). Return the names and their roles clearly.`
+    });
     return result.analysis.response;
 }
 
 /**
  * Helper: General Q&A with a PDF
  */
-export async function askPDF(file: File, question: string): Promise<string> {
-    const result = await analyzePDFWithClaude({ file, prompt: question });
+export async function askPDF(file: File, storagePath: string, publicUrl: string, question: string): Promise<string> {
+    const result = await analyzePDFWithClaude({ file, storagePath, publicUrl, prompt: question });
     return result.analysis.response;
 }

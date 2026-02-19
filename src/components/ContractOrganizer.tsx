@@ -385,19 +385,21 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                 setHasUnsavedChanges(true);
                 toast.success(`PDF Document uploaded successfully!`);
             } else if (ingestionMode === 'claude-native') {
-                // CLAUDE NATIVE PDF ANALYSIS — sends PDF bytes directly to Claude, no OCR needed
-                setProcessingStatus('Analyzing with Claude Native Intelligence...');
+                // CLAUDE NATIVE PDF ANALYSIS — upload to storage, then fetch via URL server-side
+                setProcessingStatus('Uploading PDF to storage...');
 
-                // 1. Upload to storage in the background (for reference/download later)
+                // 1. Upload file to Supabase Storage first (gets a public URL)
                 const storagePath = `${effectiveContract.id}/${selectedSubfolderId}/${file.name}`;
                 const publicUrl = await uploadContractDocument(file, storagePath);
 
-                // 2. Send the raw File directly to the Claude Native PDF endpoint
+                // 2. Send the storage URL to Claude Native PDF endpoint (no 413 risk)
+                setProcessingStatus('Analyzing with Claude Native Intelligence...');
                 const analysisResult = await analyzePDFWithClaude({
                     file,
+                    storagePath,
+                    publicUrl,
                     prompt: "Extract a professional summary of this document, identify the main parties, key dates, and any financial implications. Organize it as a clean report.",
                     model: 'claude-3-5-sonnet-20241022',
-                    cacheKey: `${effectiveContract.id}-${selectedSubfolderId}-${file.name}-${file.size}`
                 });
 
                 const analysisData: ExtractedData = {
@@ -423,6 +425,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
 
                 setHasUnsavedChanges(true);
                 toast.success(`Claude Native Analysis complete!${analysisResult.cached ? ' (from cache)' : ''}`);
+
 
             } else {
                 // 1. Run local OCR
