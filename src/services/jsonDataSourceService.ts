@@ -7,6 +7,7 @@
  */
 
 import { supabase } from '../supabase/config';
+import { cleanNullBytes } from '../utils/jsonUtils';
 
 export interface JsonDataSource {
     id: string;
@@ -53,7 +54,7 @@ export async function uploadJsonDataSource(
     let parsedContent: any;
 
     try {
-        parsedContent = JSON.parse(rawText);
+        parsedContent = cleanNullBytes(JSON.parse(rawText));
     } catch {
         throw new Error(`Invalid JSON: ${file.name} could not be parsed`);
     }

@@ -1,4 +1,5 @@
 import { supabase } from '../supabase/config';
+import { cleanNullBytes } from '../utils/jsonUtils';
 
 export interface AIKnowledgeFile {
     id: string;
@@ -29,7 +30,7 @@ export const uploadJsonFile = async (
     let parsedContent: any;
     try {
         const text = await file.text();
-        parsedContent = JSON.parse(text);
+        parsedContent = cleanNullBytes(JSON.parse(text));
     } catch (e) {
         throw new Error('Invalid JSON file format');
     }
