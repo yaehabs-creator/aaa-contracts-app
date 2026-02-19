@@ -1,0 +1,182 @@
+{
+  "id": "atrium-general-conditions-001",
+  "name": "ATRIUM Quality Contractors - General Conditions",
+  "title": "Conditions of Contract - General Conditions (First Edition 2006)",
+  "status": "active",
+  "timestamp": 1735689600000,
+  "version": 1,
+  "is_deleted": false,
+  "metadata": {
+    "totalClauses": 32,
+    "generalCount": 32,
+    "particularCount": 0,
+    "highRiskCount": 0,
+    "conflictCount": 0,
+    "timeSensitiveCount": 0,
+    "contractType": "FIDIC-based",
+    "employer": "Emaar Misr",
+    "project": "Mivida Gardens Project - East Cairo",
+    "contractor": "ATRIUM Quality Contractors",
+    "package": "PK#01 - Construction of Villas, Plot Fences, Rough Grading, Infrastructure and Landscape Works",
+    "firstEdition": "2006",
+    "location": "East Cairo, Cairo, Egypt"
+  },
+  "sections": [
+    {
+      "sectionType": "GENERAL",
+      "title": "General Conditions",
+      "items": [
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1",
+          "clause_title": "DEFINITIONS AND INTERPRETATION",
+          "condition_type": "General",
+          "clause_text": "1.1 Definitions - In the Contract, as defined in the Particular Conditions attached to these Conditions of Contract as Appendix A, the following words and expressions shall have the meanings hereby assigned to them except where the context otherwise requires: (a) 'Advance Payment Bond' means the bond named in Clause 7.1 (Provision of Bonds) as the Advance Payment Bond. (b) 'Bills of Quantities' means the document entitled bills of quantities, duly completed and priced, forming a part of the Contract. (c) 'Conditions of Contract' means these Conditions of Contract including Appendices forming a part of the Contract. (d) 'Contractor's Drawings' means all drawings, calculations, computer programmes and other software, samples, patterns, models, manuals and other documents and information of a technical nature (if any) to be submitted by the Contractor under the Contract. (e) 'Contractor's Equipment' means all apparatus, machinery, vehicles and other things of whatsoever nature required for the carrying out and completion of the Works and the remedying of defects therein other than Plant and Free Issue Items. (f) 'Contractor's Representative' means the person for the time being in office as the Contractor's Representative pursuant to Clause 10.1 (Contractor's Representative). (g) 'Cost' means all expenditure reasonably incurred (or to be incurred), whether on or off the Site, including overhead and similar charges, but does not include profit. (h) 'Defects Liability Period' has the meaning assigned by Clause 21.2 (Defects after Taking Over). (i) 'Employer's Representative' means the person for the time being appointed by the Employer and notified in writing to the Project Manager, the Supervision Consultant and the Contractor to act on behalf of the Employer for the purposes of the Contract to the extent provided for by the said appointment. (j) 'Extended Warranty' means any guarantee or warranty either express or implied whether provided for by the Contract or otherwise which extends beyond the expiry of the relevant Defects Liability Period.",
+          "orderIndex": 1
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.2",
+          "clause_title": "Interpretation",
+          "condition_type": "General",
+          "clause_text": "The use of the words persons or parties shall include firms and corporations and any organisation having legal capacity. Except where the context requires otherwise, words indicating one gender include all genders.",
+          "orderIndex": 2
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.3",
+          "clause_title": "Singular and Plural",
+          "condition_type": "General",
+          "clause_text": "Except where the context requires otherwise, words indicating the singular also include the plural and words indicating the plural also include the singular.",
+          "orderIndex": 3
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.4",
+          "clause_title": "Headings",
+          "condition_type": "General",
+          "clause_text": "The headings used in these Conditions of Contract shall not be deemed to be part thereof or be taken into consideration in the interpretation or construction thereof or of the Contract.",
+          "orderIndex": 4
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.5",
+          "clause_title": "References to Clauses",
+          "condition_type": "General",
+          "clause_text": "A reference in these Conditions of Contract to any Clause is, except where it is expressly stated to the contrary, a reference to such Clause herein.",
+          "orderIndex": 5
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.6",
+          "clause_title": "Notices, Consents, Approvals and Agreements",
+          "condition_type": "General",
+          "clause_text": "(a) Wherever in the Contract provision is made for the giving or issuing of a notice, consent, approval, certificate, determination or request by any person then unless otherwise specified such notice, consent, approval, certificate, determination or request shall be in writing and the words 'notify', 'consent', 'approve', 'certify' and 'determine' shall be construed accordingly. (b) Wherever a provision of the Contract includes the word 'agree', 'agreed' or 'agreement', then unless otherwise specified such provision requires the agreement to be in writing.",
+          "orderIndex": 6
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.7",
+          "clause_title": "Communications",
+          "condition_type": "General",
+          "clause_text": "(a) Wherever in the Contract provision is made for a communication to be 'written' or 'in writing', then unless otherwise specified this means any hand-written, type-written or printed communication including communications by telefax but excluding electronic mail and communications by modem. (b) Any written communication given by the Supervision Consultant under the Contract to any person other than the Project Manager shall also bear the signature of the Project Manager provided that any written communication given by the Supervision Consultant to the Supervision Consultant's Representative under Clause 2A.6 (Supervision Consultant's Power to Delegate) and the copying of any such communication to the Contractor and to the Employer shall not require such signature of the Project Manager. (c) The Contractor shall comply with the Project Manager's procedures for the time being in force relating to communications and any accompanying documentation (and the distribution of copies thereof) between the Employer, the Project Manager, the Supervision Consultant, the Contractor and any other persons notified in writing by the Project Manager to the Contractor.",
+          "orderIndex": 7
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.8",
+          "clause_title": "Gregorian Calendar",
+          "condition_type": "General",
+          "clause_text": "All dates and periods of time referred to in the Contract shall be ascertained in accordance with the Gregorian calendar.",
+          "orderIndex": 8
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.9",
+          "clause_title": "Joint and Several",
+          "condition_type": "General",
+          "clause_text": "If the Contractor consists of more than one legal person, the persons comprising the same shall be jointly and severally liable to the Employer for each and every liability and obligation under the Contract, and any of the events listed in Clause 30.2 (Definition of Default) shall be deemed to have occurred in relation to the Contractor if it has occurred in relation to any one of the persons comprising the Contractor. Such persons shall designate one of them to act as leader with authority to bind the Contractor and each such person and shall notify the Employer accordingly. The composition or the legal status of the Contractor shall not be altered without the prior consent of the Employer.",
+          "orderIndex": 9
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.10",
+          "clause_title": "Waiver",
+          "condition_type": "General",
+          "clause_text": "No failure to exercise and no delay by either the Employer, the Project Manager, the Supervision Consultant or the Contractor in exercising any right, power or privilege under the Contract shall operate as a waiver thereof nor shall any single or partial exercise by either the Employer, the Project Manager, the Supervision Consultant or the Contractor of any right, power or privilege preclude any other or further exercise thereof or the exercise of any other right, power or privilege.",
+          "orderIndex": 10
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.11",
+          "clause_title": "Entire Agreement",
+          "condition_type": "General",
+          "clause_text": "The Contract constitutes the entire agreement between the Employer and the Contractor concerning the Works and accordingly supersedes and cancels all discussions and other documents in whatever form concerning the same.",
+          "orderIndex": 11
+        },
+        {
+          "itemType": "CLAUSE",
+          "clause_number": "1.12",
+          "clause_title": "Amendments",
+          "condition_type": "General",
+          "clause_text": "The Contract shall not be amended except by a written document signed by duly authorised representatives of the Employer and the Contractor.",
+          "orderIndex": 12
+        }
+      ]
+    },
+    {
+      "sectionType": "AGREEMENT",
+      "title": "Form of Agreement",
+      "items": [
+        {
+          "itemType": "FIELD",
+          "fieldKey": "contract_parties",
+          "fieldValue": "Emaar Misr (Employer) and ATRIUM Quality Contractors (Contractor)",
+          "orderIndex": 1
+        },
+        {
+          "itemType": "FIELD",
+          "fieldKey": "project_location",
+          "fieldValue": "Mivida Gardens Project, East Cairo, Cairo, Egypt",
+          "orderIndex": 2
+        },
+        {
+          "itemType": "FIELD",
+          "fieldKey": "construction_package",
+          "fieldValue": "PK#01 - Construction of Villas, Plot Fences, Rough Grading, Infrastructure and Landscape Works for Parcel 1 and Parcel 2",
+          "orderIndex": 3
+        },
+        {
+          "itemType": "FIELD",
+          "fieldKey": "contract_edition",
+          "fieldValue": "First Edition 2006",
+          "orderIndex": 4
+        }
+      ]
+    },
+    {
+      "sectionType": "LOA",
+      "title": "Letter of Acceptance",
+      "items": [
+        {
+          "itemType": "PARAGRAPH",
+          "heading": "Appendices Included",
+          "text": "Appendix A: Particular Conditions; Appendix B: Form of Performance Bond; Appendix C: Form of Advance Payment Bond; Appendix D: Tender Construction Schedule; Appendix E: List of Contract Drawings; Appendix F: List of Manufacturers; Appendix G: Emaar CAR open insurance cover",
+          "orderIndex": 1
+        }
+      ]
+    },
+    {
+      "sectionType": "PARTICULAR",
+      "title": "Particular Conditions",
+      "items": [
+        {
+          "itemType": "PARAGRAPH",
+          "heading": "Status",
+          "text": "Particular Conditions to be attached as Appendix A (not included in this extract)",
+          "orderIndex": 1
+        }
+      ]
+    }
+  ]
+}
