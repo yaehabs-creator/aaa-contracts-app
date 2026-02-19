@@ -15,6 +15,7 @@ import {
 import { isClaudeAvailable } from '../services/aiProvider';
 import { scrollToClause } from '../utils/navigation';
 import { getAllClausesFromContract } from '../../services/contractMigrationService';
+import { JsonDataChatPanel } from './chat/JsonDataChatPanel';
 
 // Thinking messages for Apple-style calm UX
 const THINKING_MESSAGES = [
@@ -59,6 +60,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
   const [showContractSelector, setShowContractSelector] = useState(false);
   const [documentCount, setDocumentCount] = useState<number>(0);
   const [dualAgentMode, setDualAgentMode] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<'chat' | 'json'>('chat');
   const [agentStatusInfo, setAgentStatusInfo] = useState<{
     openai: { available: boolean; name: string };
     claude: { available: boolean; name: string };
@@ -555,194 +557,243 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
           </div>
         )}
 
-        {/* Quick Actions */}
-        {(claudeAvailable || agentStatusInfo?.openai.available) && (
-          <div className="ai-bot-quick-actions">
-            {selectedClause && (
-              <button
-                onClick={handleExplainClause}
-                disabled={isLoading}
-                className="ai-bot-explain-btn"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Explain Clause {selectedClause.clause_number}
-              </button>
-            )}
-            {selectedContractId && (
-              <button
-                onClick={showDocuments}
-                disabled={isLoading}
-                className="ai-bot-docs-btn"
-                title="Show uploaded documents from Supabase"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                </svg>
-                📁 Show Documents
-              </button>
-            )}
-          </div>
-        )}
-
-        {/* Suggestions */}
-        {suggestions.length > 0 && messages.length === 0 && claudeAvailable && (
-          <div className="ai-bot-suggestions-wrapper">
-            <div className="ai-bot-suggestions" ref={suggestionsRef}>
-              {suggestions.map((suggestion, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSuggestionClick(suggestion)}
-                  disabled={isLoading}
-                  className="ai-bot-suggestion-card"
-                >
-                  {suggestion}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Chat Wrapper */}
-        <div className="ai-bot-chat-wrapper">
-          <div className="ai-bot-chat-window">
-            {messages.length === 0 && (
-              <div className="ai-bot-empty-state">
-                <div className="ai-bot-empty-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <h3 className="ai-bot-empty-title">Ask me anything about your contract!</h3>
-                <p className="ai-bot-empty-text">
-                  {dualAgentMode
-                    ? 'Two AI experts collaborate: Claude analyzes GC/PC conditions while OpenAI examines your documents.'
-                    : 'I can explain clauses, answer questions, and provide suggestions.'}
-                </p>
-              </div>
-            )}
-
-            {messages.map((message) => {
-              // Clean up the message content
-              const cleanContent = sanitizeMessage(message.content);
-              const extendedMsg = message as ExtendedBotMessage;
-
-              return (
-                <div
-                  key={message.id}
-                  className={`ai-bot-message ai-bot-message-${message.role}`}
-                >
-                  {/* Agent attribution badge for AI responses */}
-                  {message.role === 'assistant' && extendedMsg.agentsUsed && extendedMsg.agentsUsed.length > 0 && (
-                    <div className="ai-bot-agent-attribution">
-                      {extendedMsg.isDualMode && (
-                        <span className="ai-bot-attribution-badge dual">
-                          <span className="badge-icon">🔄</span> Dual-Agent Response
-                        </span>
-                      )}
-                      {extendedMsg.agentsUsed.includes('claude') && (
-                        <span className="ai-bot-attribution-badge claude">
-                          <span className="badge-icon">C</span> GC/PC Expert
-                        </span>
-                      )}
-                      {extendedMsg.agentsUsed.includes('openai') && (
-                        <span className="ai-bot-attribution-badge openai">
-                          <span className="badge-icon">O</span> Doc Expert
-                        </span>
-                      )}
-                    </div>
-                  )}
-                  <div className="ai-bot-bubble">
-                    {cleanContent.split('\n').map((line, i) => {
-                      const trimmed = line.trim();
-                      if (!trimmed) return <div key={i} className="h-2" />;
-
-                      let style: React.CSSProperties = {};
-                      let content = trimmed;
-
-                      // Style variants based on prefixes
-                      if (trimmed.startsWith('🔵')) {
-                        style = { fontWeight: 700, color: '#0F2E6B', marginTop: '1rem', marginBottom: '0.5rem' };
-                      } else if (trimmed.startsWith('🔹')) {
-                        style = { fontWeight: 600, marginBottom: '0.25rem' };
-                      } else if (trimmed.startsWith('🔸')) {
-                        style = { opacity: 0.8, marginBottom: '0.5rem', paddingLeft: '1rem' };
-                      } else if (trimmed.startsWith('🔷')) {
-                        style = { fontWeight: 600, color: '#1E6CE8', marginTop: '1rem', marginBottom: '0.5rem' };
-                      }
-
-                      // Split by Clause regex to create links
-                      // Matches: Clause 1, Clause 1.1, Clause 2A, etc.
-                      const parts = content.split(/(Clause\s+[0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*)/g);
-
-                      return (
-                        <p key={i} style={style}>
-                          {parts.map((part, j) => {
-                            if (part.match(/^Clause\s+[0-9]/)) {
-                              const clauseNum = part.replace(/^Clause\s+/, '');
-                              return (
-                                <button
-                                  key={j}
-                                  onClick={() => scrollToClause(clauseNum)}
-                                  className="text-aaa-accent hover:underline font-bold bg-blue-50 px-1 rounded cursor-pointer inline-block transition-colors hover:bg-blue-100"
-                                  title={`Scroll to ${part}`}
-                                >
-                                  {part}
-                                </button>
-                              );
-                            }
-                            return <span key={j}>{part}</span>;
-                          })}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Subtle thinking indicator - MacBook style */}
-            {isLoading && (
-              <div className="ai-bot-thinking-indicator">
-                <div className="ai-bot-thinking-dot"></div>
-                <span className="ai-bot-thinking-text">{thinkingMessage}</span>
-              </div>
-            )}
-
-            <div ref={messagesEndRef} />
-          </div>
-
-          <div className="ai-bot-input-area">
-            <input
-              ref={inputRef}
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder={isLoading ? thinkingMessage : "Ask anything…"}
-              disabled={!claudeAvailable}
-              className={`ai-bot-input ${isLoading ? 'ai-bot-input-thinking' : ''}`}
-            />
-            <button
-              onClick={() => sendMessage()}
-              disabled={isLoading || !inputValue.trim() || !claudeAvailable}
-              className={`ai-bot-send-btn ${isLoading ? 'ai-bot-send-btn-loading' : ''}`}
-              aria-label={isLoading ? 'Analyzing' : 'Send message'}
-            >
-              {isLoading ? (
-                <div className="ai-bot-btn-spinner"></div>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              )}
-            </button>
-          </div>
+        {/* ── Tab Switcher ── */}
+        <div style={{ display: 'flex', borderBottom: '1px solid #f0f0f0', backgroundColor: '#fafafa' }}>
+          <button
+            onClick={() => setActiveTab('chat')}
+            style={{
+              flex: 1,
+              padding: '9px 0',
+              fontSize: '12px',
+              fontWeight: activeTab === 'chat' ? 600 : 400,
+              color: activeTab === 'chat' ? '#4f46e5' : '#6b7280',
+              borderBottom: activeTab === 'chat' ? '2px solid #4f46e5' : '2px solid transparent',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.15s',
+            }}
+          >
+            💬 Contract AI
+          </button>
+          <button
+            onClick={() => setActiveTab('json')}
+            style={{
+              flex: 1,
+              padding: '9px 0',
+              fontSize: '12px',
+              fontWeight: activeTab === 'json' ? 600 : 400,
+              color: activeTab === 'json' ? '#4f46e5' : '#6b7280',
+              borderBottom: activeTab === 'json' ? '2px solid #4f46e5' : '2px solid transparent',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.15s',
+            }}
+          >
+            🗄️ JSON Data
+          </button>
         </div>
-      </div>
 
-      <style>{`
+        {/* ── JSON Data Panel ── */}
+        {activeTab === 'json' && (
+          <div style={{ flex: 1, overflowY: 'auto' }}>
+            <JsonDataChatPanel contractId={selectedContractId} />
+          </div>
+        )}
+
+        {/* ── EXISTING CHAT (only when chat tab active) ── */}
+        {activeTab === 'chat' && (
+          <>
+            {(claudeAvailable || agentStatusInfo?.openai.available) && (
+              <div className="ai-bot-quick-actions">
+                {selectedClause && (
+                  <button
+                    onClick={handleExplainClause}
+                    disabled={isLoading}
+                    className="ai-bot-explain-btn"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Explain Clause {selectedClause.clause_number}
+                  </button>
+                )}
+                {selectedContractId && (
+                  <button
+                    onClick={showDocuments}
+                    disabled={isLoading}
+                    className="ai-bot-docs-btn"
+                    title="Show uploaded documents from Supabase"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                    </svg>
+                    📁 Show Documents
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Suggestions */}
+            {suggestions.length > 0 && messages.length === 0 && claudeAvailable && (
+              <div className="ai-bot-suggestions-wrapper">
+                <div className="ai-bot-suggestions" ref={suggestionsRef}>
+                  {suggestions.map((suggestion, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      disabled={isLoading}
+                      className="ai-bot-suggestion-card"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Chat Wrapper */}
+            <div className="ai-bot-chat-wrapper">
+              <div className="ai-bot-chat-window">
+                {messages.length === 0 && (
+                  <div className="ai-bot-empty-state">
+                    <div className="ai-bot-empty-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <h3 className="ai-bot-empty-title">Ask me anything about your contract!</h3>
+                    <p className="ai-bot-empty-text">
+                      {dualAgentMode
+                        ? 'Two AI experts collaborate: Claude analyzes GC/PC conditions while OpenAI examines your documents.'
+                        : 'I can explain clauses, answer questions, and provide suggestions.'}
+                    </p>
+                  </div>
+                )}
+
+                {messages.map((message) => {
+                  // Clean up the message content
+                  const cleanContent = sanitizeMessage(message.content);
+                  const extendedMsg = message as ExtendedBotMessage;
+
+                  return (
+                    <div
+                      key={message.id}
+                      className={`ai-bot-message ai-bot-message-${message.role}`}
+                    >
+                      {/* Agent attribution badge for AI responses */}
+                      {message.role === 'assistant' && extendedMsg.agentsUsed && extendedMsg.agentsUsed.length > 0 && (
+                        <div className="ai-bot-agent-attribution">
+                          {extendedMsg.isDualMode && (
+                            <span className="ai-bot-attribution-badge dual">
+                              <span className="badge-icon">🔄</span> Dual-Agent Response
+                            </span>
+                          )}
+                          {extendedMsg.agentsUsed.includes('claude') && (
+                            <span className="ai-bot-attribution-badge claude">
+                              <span className="badge-icon">C</span> GC/PC Expert
+                            </span>
+                          )}
+                          {extendedMsg.agentsUsed.includes('openai') && (
+                            <span className="ai-bot-attribution-badge openai">
+                              <span className="badge-icon">O</span> Doc Expert
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      <div className="ai-bot-bubble">
+                        {cleanContent.split('\n').map((line, i) => {
+                          const trimmed = line.trim();
+                          if (!trimmed) return <div key={i} className="h-2" />;
+
+                          let style: React.CSSProperties = {};
+                          let content = trimmed;
+
+                          // Style variants based on prefixes
+                          if (trimmed.startsWith('🔵')) {
+                            style = { fontWeight: 700, color: '#0F2E6B', marginTop: '1rem', marginBottom: '0.5rem' };
+                          } else if (trimmed.startsWith('🔹')) {
+                            style = { fontWeight: 600, marginBottom: '0.25rem' };
+                          } else if (trimmed.startsWith('🔸')) {
+                            style = { opacity: 0.8, marginBottom: '0.5rem', paddingLeft: '1rem' };
+                          } else if (trimmed.startsWith('🔷')) {
+                            style = { fontWeight: 600, color: '#1E6CE8', marginTop: '1rem', marginBottom: '0.5rem' };
+                          }
+
+                          // Split by Clause regex to create links
+                          // Matches: Clause 1, Clause 1.1, Clause 2A, etc.
+                          const parts = content.split(/(Clause\s+[0-9]+(?:[A-Za-z])?(?:\.[0-9]+[A-Za-z]?)*)/g);
+
+                          return (
+                            <p key={i} style={style}>
+                              {parts.map((part, j) => {
+                                if (part.match(/^Clause\s+[0-9]/)) {
+                                  const clauseNum = part.replace(/^Clause\s+/, '');
+                                  return (
+                                    <button
+                                      key={j}
+                                      onClick={() => scrollToClause(clauseNum)}
+                                      className="text-aaa-accent hover:underline font-bold bg-blue-50 px-1 rounded cursor-pointer inline-block transition-colors hover:bg-blue-100"
+                                      title={`Scroll to ${part}`}
+                                    >
+                                      {part}
+                                    </button>
+                                  );
+                                }
+                                return <span key={j}>{part}</span>;
+                              })}
+                            </p>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Subtle thinking indicator - MacBook style */}
+                {isLoading && (
+                  <div className="ai-bot-thinking-indicator">
+                    <div className="ai-bot-thinking-dot"></div>
+                    <span className="ai-bot-thinking-text">{thinkingMessage}</span>
+                  </div>
+                )}
+
+                <div ref={messagesEndRef} />
+              </div>
+
+              <div className="ai-bot-input-area">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder={isLoading ? thinkingMessage : "Ask anything…"}
+                  disabled={!claudeAvailable}
+                  className={`ai-bot-input ${isLoading ? 'ai-bot-input-thinking' : ''}`}
+                />
+                <button
+                  onClick={() => sendMessage()}
+                  disabled={isLoading || !inputValue.trim() || !claudeAvailable}
+                  className={`ai-bot-send-btn ${isLoading ? 'ai-bot-send-btn-loading' : ''}`}
+                  aria-label={isLoading ? 'Analyzing' : 'Send message'}
+                >
+                  {isLoading ? (
+                    <div className="ai-bot-btn-spinner"></div>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+            </div>
+
+          </>
+        )}
+
+        <style>{`
         .ai-bot-backdrop {
           position: fixed;
           top: 0;
@@ -1610,6 +1661,7 @@ export const AIBotSidebar: React.FC<AIBotSidebarProps> = ({
           }
         }
       `}</style>
+      </div>
     </>
   );
 };
