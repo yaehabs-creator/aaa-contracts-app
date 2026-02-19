@@ -63,11 +63,13 @@ export async function uploadJsonDataSource(
     const keyFields = getTopLevelKeys(parsedContent);
     const rowCount = Array.isArray(parsedContent) ? parsedContent.length : undefined;
 
-    // 3. Upload to storage
+    // 3. Upload to storage — upload as text/plain to avoid MIME type restrictions
+    //    on the contract-documents bucket (which blocks application/json).
     const storagePath = `json-sources/${session.user.id}/${contractId || 'global'}/${Date.now()}_${file.name}`;
+    const uploadBlob = new Blob([rawText], { type: 'text/plain' });
     const { data: uploadData, error: uploadError } = await supabase.storage
         .from(STORAGE_BUCKET)
-        .upload(storagePath, file, { cacheControl: '3600', upsert: true });
+        .upload(storagePath, uploadBlob, { cacheControl: '3600', upsert: true, contentType: 'text/plain' });
 
     if (uploadError) throw new Error(`Upload failed: ${uploadError.message}`);
 
