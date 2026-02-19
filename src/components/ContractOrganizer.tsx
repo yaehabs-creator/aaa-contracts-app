@@ -399,7 +399,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                     storagePath,
                     publicUrl,
                     prompt: "Extract a professional summary of this document, identify the main parties, key dates, and any financial implications. Organize it as a clean report.",
-                    model: 'claude-3-5-sonnet-20241022',
+                    model: 'claude-sonnet-4-5',
                 });
 
                 const analysisData: ExtractedData = {

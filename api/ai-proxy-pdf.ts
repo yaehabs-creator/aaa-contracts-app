@@ -20,9 +20,9 @@ interface PDFAnalysisRequest {
 }
 
 const CLAUDE_MODELS = [
-    'claude-3-5-sonnet-20241022',
-    'claude-3-5-sonnet-latest',
-    'claude-3-7-sonnet-20250219',
+    'claude-sonnet-4-5',
+    'claude-opus-4-5',
+    'claude-haiku-4-5',
 ];
 
 export default async function handler(req: any, res: any) {
@@ -106,7 +106,6 @@ export default async function handler(req: any, res: any) {
                     'Content-Type': 'application/json',
                     'x-api-key': anthropicApiKey,
                     'anthropic-version': '2023-06-01',
-                    'anthropic-beta': 'pdfs-2024-09-25',
                 },
                 body: JSON.stringify({
                     model: selectedModel,
