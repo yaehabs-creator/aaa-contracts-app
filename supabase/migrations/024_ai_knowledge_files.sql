@@ -5,10 +5,12 @@ CREATE TABLE IF NOT EXISTS ai_knowledge_files (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,                          -- User-friendly label
   description TEXT,                            -- Optional description
-  original_filename TEXT NOT NULL,             -- Original .json filename
-  file_path TEXT NOT NULL,                     -- Storage path: ai-knowledge/{filename}
+  original_filename TEXT NOT NULL,             -- Original filename
+  file_path TEXT NOT NULL,                     -- Storage path for structured JSON
+  raw_file_path TEXT,                          -- Storage path for original PDF/JSON
+  file_type TEXT DEFAULT 'json',               -- pdf, json, text
   file_size INTEGER,                           -- Bytes
-  content JSONB NOT NULL,                      -- Parsed JSON stored for fast AI access
+  content JSONB NOT NULL,                      -- Parsed content
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
