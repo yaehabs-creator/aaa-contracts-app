@@ -29,7 +29,8 @@ export interface JsonDataSource {
 }
 
 const STORAGE_BUCKET = 'contract-documents';
-const MAX_INLINE_BYTES = 512 * 1024; // 512 KB — larger goes URL-only
+const MAX_INLINE_BYTES = 512 * 1024;    // 512 KB — smaller files get inlined into DB
+export const LARGE_FILE_THRESHOLD = 2 * 1024 * 1024; // 2 MB — files above this skip client-side JSON.parse()
 
 // ============================================================
 // UPLOAD
@@ -42,46 +43,73 @@ export async function uploadJsonDataSource(
     file: File,
     contractId: string | null,
     label?: string,
-    description?: string
+    description?: string,
+    onProgress?: (phase: string, pct: number) => void,
 ): Promise<JsonDataSource> {
     if (!supabase) throw new Error('Supabase not initialized');
 
     const { data: { session } } = await supabase.auth.getSession();
     if (!session?.user) throw new Error('Not authenticated');
 
-    // 1. Parse the JSON client-side
-    const rawText = await file.text();
-    let parsedContent: any;
+    const isLargeFile = file.size > LARGE_FILE_THRESHOLD;
 
-    try {
-        parsedContent = cleanNullBytes(JSON.parse(rawText));
-    } catch {
-        throw new Error(`Invalid JSON: ${file.name} could not be parsed`);
+    let parsedContent: any = null;
+    let summary = '';
+    let keyFields: string[] = [];
+    let rowCount: number | undefined;
+
+    if (isLargeFile) {
+        // ── LARGE FILE PATH ──────────────────────────────────────────
+        // Skip JSON.parse() in the browser entirely.
+        // We only read the first ~4KB to build a lightweight summary.
+        onProgress?.('Reading file header…', 5);
+        const headerChunk = file.slice(0, 4096);
+        const headerText = await headerChunk.text();
+        summary = `Large JSON file (${(file.size / 1024 / 1024).toFixed(1)} MB). Content available via storage URL.`;
+        // Try to detect if it's an array from the first character
+        const firstChar = headerText.trimStart()[0];
+        if (firstChar === '[') {
+            summary = `Large JSON array (${(file.size / 1024 / 1024).toFixed(1)} MB). Content available via storage URL.`;
+        } else if (firstChar === '{') {
+            summary = `Large JSON object (${(file.size / 1024 / 1024).toFixed(1)} MB). Content available via storage URL.`;
+        }
+        // No inline content for large files
+        parsedContent = null;
+    } else {
+        // ── SMALL FILE PATH ──────────────────────────────────────────
+        // Parse the full JSON client-side (file is small enough)
+        onProgress?.('Parsing JSON…', 10);
+        const rawText = await file.text();
+        try {
+            parsedContent = cleanNullBytes(JSON.parse(rawText));
+        } catch {
+            throw new Error(`Invalid JSON: ${file.name} could not be parsed`);
+        }
+        summary = buildContentSummary(parsedContent);
+        keyFields = getTopLevelKeys(parsedContent);
+        rowCount = Array.isArray(parsedContent) ? parsedContent.length : undefined;
     }
 
-    // 2. Build content summary (top-level keys + value snippets)
-    const summary = buildContentSummary(parsedContent);
-    const keyFields = getTopLevelKeys(parsedContent);
-    const rowCount = Array.isArray(parsedContent) ? parsedContent.length : undefined;
-
-    // 3. Upload to storage — upload as text/plain to avoid MIME type restrictions
-    //    on the contract-documents bucket (which blocks application/json).
+    // Upload raw file bytes directly to storage (no re-encoding for large files)
+    onProgress?.('Uploading to cloud…', 30);
     const storagePath = `json-sources/${session.user.id}/${contractId || 'global'}/${Date.now()}_${file.name}`;
-    const uploadBlob = new Blob([rawText], { type: 'text/plain' });
+
+    // Use the raw File blob directly — this is the key optimisation.
+    // For small files we used to re-create a Blob from text; now we skip that.
     const { data: uploadData, error: uploadError } = await supabase.storage
         .from(STORAGE_BUCKET)
-        .upload(storagePath, uploadBlob, { cacheControl: '3600', upsert: true, contentType: 'text/plain' });
+        .upload(storagePath, file, { cacheControl: '3600', upsert: true, contentType: 'text/plain' });
 
     if (uploadError) throw new Error(`Upload failed: ${uploadError.message}`);
 
+    onProgress?.('Saving metadata…', 90);
     const { data: { publicUrl } } = supabase.storage
         .from(STORAGE_BUCKET)
         .getPublicUrl(uploadData.path);
 
-    // 4. Only inline content if small enough (avoid bloating the DB)
-    const inlineContent = file.size <= MAX_INLINE_BYTES ? parsedContent : null;
+    // Only inline parsed content if it's small enough to avoid DB bloat
+    const inlineContent = !isLargeFile && file.size <= MAX_INLINE_BYTES ? parsedContent : null;
 
-    // 5. Insert record
     const record = {
         contract_id: contractId,
         user_id: session.user.id,
@@ -105,6 +133,7 @@ export async function uploadJsonDataSource(
         .single();
 
     if (error) throw new Error(`Failed to save metadata: ${error.message}`);
+    onProgress?.('Done', 100);
     return data as JsonDataSource;
 }
 

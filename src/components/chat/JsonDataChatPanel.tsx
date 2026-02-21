@@ -4,6 +4,7 @@ import {
     getJsonDataSources,
     deleteJsonDataSource,
     JsonDataSource,
+    LARGE_FILE_THRESHOLD,
 } from '../../services/jsonDataSourceService';
 
 interface JsonDataChatPanelProps {
@@ -24,6 +25,7 @@ export const JsonDataChatPanel: React.FC<JsonDataChatPanelProps> = ({ contractId
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const [uploadLabel, setUploadLabel] = useState('');
+    const [uploadProgress, setUploadProgress] = useState<{ phase: string; pct: number } | null>(null);
     const [error, setError] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -48,9 +50,16 @@ export const JsonDataChatPanel: React.FC<JsonDataChatPanelProps> = ({ contractId
         if (!file) return;
 
         setIsUploading(true);
+        setUploadProgress({ phase: 'Starting…', pct: 0 });
         setError(null);
         try {
-            const source = await uploadJsonDataSource(file, contractId, uploadLabel || undefined);
+            const source = await uploadJsonDataSource(
+                file,
+                contractId,
+                uploadLabel || undefined,
+                undefined,
+                (phase, pct) => setUploadProgress({ phase, pct }),
+            );
             setSources(prev => [source, ...prev]);
             setSelectedIds(prev => new Set([...prev, source.id]));
             setUploadLabel('');
@@ -59,6 +68,7 @@ export const JsonDataChatPanel: React.FC<JsonDataChatPanelProps> = ({ contractId
             setError(err.message);
         } finally {
             setIsUploading(false);
+            setUploadProgress(null);
         }
     }
 
@@ -172,6 +182,22 @@ export const JsonDataChatPanel: React.FC<JsonDataChatPanelProps> = ({ contractId
                     />
                 </div>
 
+                {/* Upload progress bar */}
+                {isUploading && uploadProgress && (
+                    <div className="mt-2 space-y-1">
+                        <div className="flex justify-between text-[10px] text-indigo-600 font-medium">
+                            <span>{uploadProgress.phase}</span>
+                            <span>{uploadProgress.pct}%</span>
+                        </div>
+                        <div className="w-full bg-indigo-100 rounded-full h-1.5 overflow-hidden">
+                            <div
+                                className="h-full bg-indigo-500 rounded-full transition-all duration-300"
+                                style={{ width: `${uploadProgress.pct}%` }}
+                            />
+                        </div>
+                    </div>
+                )}
+
                 {/* Source list */}
                 {sources.length > 0 && (
                     <div className="space-y-1 max-h-28 overflow-y-auto">
@@ -194,9 +220,12 @@ export const JsonDataChatPanel: React.FC<JsonDataChatPanelProps> = ({ contractId
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <p className="text-xs font-medium text-gray-700 truncate">{source.name}</p>
-                                    {source.content_summary && (
-                                        <p className="text-[10px] text-gray-400 truncate">{source.content_summary}</p>
-                                    )}
+                                    <p className="text-[10px] text-gray-400 truncate">
+                                        {source.size_bytes ? (source.size_bytes >= 1024 * 1024
+                                            ? `${(source.size_bytes / 1024 / 1024).toFixed(1)} MB`
+                                            : `${Math.round(source.size_bytes / 1024)} KB`) : ''}
+                                        {source.content_summary ? ` · ${source.content_summary}` : ''}
+                                    </p>
                                 </div>
                                 <button
                                     onClick={e => { e.stopPropagation(); handleDelete(source.id); }}
