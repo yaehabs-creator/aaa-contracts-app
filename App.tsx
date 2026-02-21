@@ -16,6 +16,7 @@ const AddClauseModal = React.lazy(() => import('./components/AddClauseModal').th
 const CategoryManager = React.lazy(() => import('./components/CategoryManager').then(m => ({ default: m.CategoryManager })));
 const CategorySuggestionsModal = React.lazy(() => import('./components/CategorySuggestionsModal').then(m => ({ default: m.CategorySuggestionsModal })));
 const CategoryLedger = React.lazy(() => import('./components/CategoryLedger').then(m => ({ default: m.CategoryLedger })));
+const Sidebar = React.lazy(() => import('./components/Sidebar').then(m => ({ default: m.Sidebar })));
 const Dashboard = React.lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
 const GroupedClauseCard = React.lazy(() => import('./components/GroupedClauseCard').then(m => ({ default: m.GroupedClauseCard })));
 const ContractOrganizer = React.lazy(() => import('./src/components/ContractOrganizer').then(m => ({ default: m.ContractOrganizer })));
@@ -2064,10 +2065,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
           <div className="flex-1 flex overflow-hidden">
             {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
-              <CategoryLedger
-                contractId={contract?.id || null}
+              <Sidebar
+                clauses={clauses}
                 searchQuery={searchFilter}
-                onSearchChange={setSearchFilter}
+                setSearchQuery={setSearchFilter}
               />
             )}
 
