@@ -272,6 +272,7 @@ const App: React.FC = () => {
   const [organizerSchemas, setOrganizerSchemas] = useState<Record<string, FolderSchemaField[]>>({});
   const [organizerExtractedData, setOrganizerExtractedData] = useState<ExtractedData[]>([]);
   const [librarySearchQuery, setLibrarySearchQuery] = useState('');
+  const [activeTab, setActiveTab] = useState<SectionType | 'CONDITIONS'>('CONDITIONS');
 
   // --- DRAFT/LOCAL BACKUP LOGIC ---
   useEffect(() => {
@@ -2049,7 +2050,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           <div className="flex-1 flex overflow-hidden">
             {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
               <Sidebar
+                contract={contract}
                 clauses={clauses}
+                activeTab={activeTab}
+                onTabChange={setActiveTab}
                 searchQuery={searchFilter}
                 setSearchQuery={setSearchFilter}
                 sortMode={sortMode}
@@ -3012,6 +3016,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                       organizerSubfolders={organizerSubfolders}
                       organizerExtractedData={organizerExtractedData}
                       organizerSchemas={organizerSchemas}
+                      activeTab={activeTab}
+                      onTabChange={setActiveTab}
                     />
                   ) : clauses.length > 0 ? (
                     // Fallback: if contract not set but clauses exist, create contract
@@ -3039,9 +3045,6 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                               setContract(updatedContract);
                               setClauses(getClausesWithProcessedLinks(updatedContract));
                             }}
-                            onSave={async (updatedContract) => {
-                              await performSaveContract(updatedContract);
-                            }}
                             onEditClause={handleEditClause}
                             onCompareClause={setCompareClause}
                             onDeleteClause={handleDeleteClause}
@@ -3052,6 +3055,8 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                             onSortModeChange={setSortMode}
                             organizerSubfolders={organizerSubfolders}
                             organizerExtractedData={organizerExtractedData}
+                            activeTab={activeTab}
+                            onTabChange={setActiveTab}
                           />
                         </React.Suspense>
                       );

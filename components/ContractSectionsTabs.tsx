@@ -32,6 +32,8 @@ interface ContractSectionsTabsProps {
   organizerSubfolders?: ContractSubfolder[];
   organizerExtractedData?: ExtractedData[];
   organizerSchemas?: Record<string, FolderSchemaField[]>;
+  activeTab: SectionType | 'CONDITIONS';
+  onTabChange: (tab: SectionType | 'CONDITIONS') => void;
 }
 
 export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
@@ -47,14 +49,13 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   onSortModeChange,
   organizerSubfolders = [],
   organizerExtractedData = [],
-  organizerSchemas = {}
+  organizerSchemas = {},
+  activeTab,
+  onTabChange,
 }) => {
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
 
-  // Use 'CONDITIONS' as special identifier for the conditions tab
-  type TabType = SectionType | 'CONDITIONS';
-  const [activeTab, setActiveTab] = useState<TabType>('CONDITIONS');
 
   // Categories from Admin Editor
   const [categories, setCategories] = useState<ContractCategory[]>([]);
@@ -537,7 +538,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
                       return (
                         <button
                           key={type as string}
-                          onClick={() => setActiveTab(type as any)}
+                          onClick={() => onTabChange(type as any)}
                           className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition-all flex items-center gap-1.5 ${isActive
                             ? 'bg-aaa-bg text-aaa-blue shadow-sm'
                             : 'text-aaa-muted hover:text-aaa-blue hover:bg-aaa-bg/30'
