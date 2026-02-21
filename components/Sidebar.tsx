@@ -344,17 +344,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
 
-      {/* Graduation Project Presentation Button */}
-      <button
-        onClick={() => window.location.hash = '#presentation'}
-        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-mac-sm shadow-md transition-all group relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-        </svg>
-        <span className="text-xs font-bold uppercase tracking-wider">Start Presentation</span>
-      </button>
 
       <div className="space-y-4">
         <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider border-b border-surface-border pb-2">Filter Source</h4>

@@ -11,10 +11,86 @@ import PDFParser from 'pdf2json';
 
 async function extractTextFromPdf(pdfPath) {
     console.log(`Analyzing ${pdfPath}...`);
+    let fullText = "";
 
-    // 1. Try pdf2json first
+    const stats = fs.statSync(pdfPath);
+    // If it's a small file, try the old way first
+    if (stats.size < 5 * 1024 * 1024) {
+        const text = await tryPdf2Json(pdfPath);
+        if (text) return text;
+    }
+
+    console.log("Using batch OCR processing...");
+
+    let currentPage = 0;
+    // Check if a starting page was provided in args
+    const startPageArg = process.argv.find(a => a.startsWith('--start-page='));
+    if (startPageArg) {
+        currentPage = parseInt(startPageArg.split('=')[1]);
+        console.log(`Starting from manually specified page: ${currentPage + 1}`);
+    }
+
+    const batchSize = 10;
+    let hasMore = true;
+    const intermediatePath = pdfPath.replace(/\.pdf$/i, '_intermediate.txt');
+
+    // Always load existing progress if it exists
+    if (fs.existsSync(intermediatePath)) {
+        console.log("Found intermediate file. Loading existing progress...");
+        fullText = fs.readFileSync(intermediatePath, 'utf8');
+
+        // If user didn't specify a start page, try to detect it
+        if (currentPage === 0) {
+            const markers = fullText.match(/\[BATCH_COMPLETED_UP_TO_PAGE_(\d+)\]/g);
+            if (markers) {
+                const lastPage = parseInt(markers[markers.length - 1].match(/\d+/)[0]);
+                currentPage = lastPage;
+                console.log(`Resuming from detected page ${currentPage + 1}...`);
+            }
+        }
+    }
+
+    while (hasMore) {
+        console.log(`Processing batch: pages ${currentPage + 1} to ${currentPage + batchSize}...`);
+        try {
+            const url = `http://localhost:8000/ocr-path?file_path=${encodeURIComponent(pdfPath)}&start_page=${currentPage}&limit=${batchSize}`;
+            const response = await fetch(url, { method: 'POST' });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Batch OCR failed: ${errorText}`);
+            }
+
+            const data = await response.json();
+            if (!data.text && data.is_last_batch) {
+                hasMore = false;
+                break;
+            }
+
+            fullText += data.text + `\n\n[BATCH_COMPLETED_UP_TO_PAGE_${currentPage + data.page_count}]\n\n`;
+            console.log(`Completed batch. Total text length: ${fullText.length}. Progress: ${currentPage + data.page_count} / ${data.total_pages || '?'}`);
+
+            if (data.is_last_batch || data.page_count === 0) {
+                hasMore = false;
+            } else {
+                currentPage += data.page_count;
+            }
+
+            // Save progress every batch
+            fs.writeFileSync(intermediatePath, fullText);
+
+        } catch (error) {
+            console.error(`Error in batch starting at p${currentPage + 1}:`, error.message);
+            hasMore = false;
+        }
+    }
+
+    return fullText;
+}
+
+async function tryPdf2Json(pdfPath) {
     const pdfParser = new PDFParser();
-    const textContent = await new Promise((resolve) => {
+    return new Promise((resolve) => {
         pdfParser.on("pdfParser_dataError", () => resolve(null));
         pdfParser.on("pdfParser_dataReady", (pdfData) => {
             let rawText = "";
@@ -24,39 +100,10 @@ async function extractTextFromPdf(pdfPath) {
                 });
                 rawText += "\n";
             });
-            resolve(rawText.trim());
+            resolve(rawText.trim() || null);
         });
         pdfParser.loadPDF(pdfPath);
     });
-
-    if (textContent && textContent.length > 500) {
-        console.log("Extracted text using pdf2json.");
-        return textContent;
-    }
-
-    // 2. Fallback to OCR backend
-    console.log("PDF appears to be a scan. Falling back to OCR backend...");
-    try {
-        const fileBuffer = fs.readFileSync(pdfPath);
-        const formData = new FormData();
-        formData.append('file', new Blob([fileBuffer]), path.basename(pdfPath));
-
-        const response = await fetch('http://localhost:8000/ocr', {
-            method: 'POST',
-            body: formData
-        });
-
-        if (!response.ok) {
-            throw new Error(`OCR backend returned ${response.status}: ${await response.text()}`);
-        }
-
-        const data = await response.json();
-        console.log("Extracted text using PaddleOCR.");
-        return data.text;
-    } catch (error) {
-        console.warn("OCR backend failed:", error.message);
-        return textContent || ""; // Return what we have
-    }
 }
 
 function parseContractText(text) {
