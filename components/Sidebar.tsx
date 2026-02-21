@@ -115,22 +115,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           </div>
         </div>
-
-        {/* Separator */}
-        <div className="h-px bg-gradient-to-r from-transparent via-aaa-border to-transparent opacity-50" />
-
-        {/* Placeholder for future sidebar items (e.g., Quick Filters or categories) */}
-        <div className="space-y-4">
-          <h4 className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em] opacity-40">System Context</h4>
-          <div className="p-6 border-2 border-dashed border-aaa-border rounded-[32px] bg-aaa-bg/20 flex flex-col items-center justify-center text-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-white border border-aaa-border flex items-center justify-center text-aaa-muted">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p className="text-[10px] font-bold text-aaa-muted/60 uppercase tracking-widest">Additional panels will appear here during analysis</p>
-          </div>
-        </div>
       </div>
     </aside>
   );
