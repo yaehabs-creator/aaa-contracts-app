@@ -226,6 +226,7 @@ export class MultiAgentOrchestrator {
     }
 
     // 2.5. Add JSON Data Sources (Uploaded interactive data)
+    let hasJsonSources = false;
     if (contractId) {
       try {
         const jsonSources = await getJsonDataSources(contractId);
@@ -233,6 +234,7 @@ export class MultiAgentOrchestrator {
           const jsonContext = await buildJsonContext(jsonSources, 30000);
           if (jsonContext) {
             context += jsonContext;
+            hasJsonSources = true;
           }
         }
       } catch (err) {
@@ -240,10 +242,14 @@ export class MultiAgentOrchestrator {
       }
     }
 
-    if (clauses.length === 0 && !context) return '';
+    if (clauses.length === 0 && !hasJsonSources && !context) return '';
 
     context += `=== CONTRACT CONDITIONS (GC/PC) ===\n`;
-    context += `Total Clauses: ${clauses.length}\n\n`;
+    if (clauses.length === 0 && hasJsonSources) {
+      context += `Note: No structured clauses were found in the primary database, but raw contract data is available in the "ATTACHED JSON DATA SOURCES" section above. Use those sources to identify clauses and conditions.\n\n`;
+    } else {
+      context += `Total Structured Clauses: ${clauses.length}\n\n`;
+    }
 
     // Sort by condition type (Particular first, then General)
     const sortedClauses = [...clauses].sort((a, b) => {
@@ -294,13 +300,13 @@ export class MultiAgentOrchestrator {
     }
 
     try {
-      const context = await this.buildClaudeContext(clauses, null); // We'll pass null here if we don't have contractId in basic mode
+      const context = await this.buildClaudeContext(clauses, null);
 
-      if (clauses.length === 0) {
+      if (!context) {
         return {
           agent: 'claude',
           specialty: 'conditions',
-          analysis: 'No contract clauses (GC/PC) are loaded for analysis.',
+          analysis: 'No contract context or clauses (GC/PC) are loaded for analysis.',
           confidence: 0.2,
           referencedSources: []
         };
