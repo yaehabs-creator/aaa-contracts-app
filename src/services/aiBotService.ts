@@ -5,6 +5,7 @@ import { getEmbeddingService } from './embeddingService';
 import { getOrchestrator, SynthesizedResponse } from './multiAgentOrchestrator';
 import { isOpenAIAvailable } from './openaiProvider';
 import { fetchKnowledgeContext } from './aiKnowledgeService';
+import { getJsonDataSources, buildJsonContext } from './jsonDataSourceService';
 
 // Constants for token management
 const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
@@ -350,6 +351,22 @@ export async function buildUnifiedContractContext(
     } catch (error) {
       console.warn('Could not fetch document chunks:', error);
       // Continue without document chunks - not a fatal error
+    }
+  }
+
+  // 2.5. Add JSON Data Sources (Uploaded interactive data)
+  if (contractId) {
+    try {
+      const jsonSources = await getJsonDataSources(contractId);
+      if (jsonSources.length > 0) {
+        const jsonContext = await buildJsonContext(jsonSources, maxChars - usedChars - 5000);
+        if (jsonContext && usedChars + jsonContext.length <= maxChars) {
+          contextParts.push(jsonContext);
+          usedChars += jsonContext.length;
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to add JSON data sources to context:', error);
     }
   }
 

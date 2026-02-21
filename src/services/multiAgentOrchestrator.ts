@@ -16,6 +16,7 @@ import { BotMessage, Clause, DocumentGroup } from '../../types';
 import { getOpenAIProvider, OpenAIAgentResponse, isOpenAIAvailable } from './openaiProvider';
 import { ClaudeProvider, isClaudeAvailable } from './aiProvider';
 import { getDocumentReaderService } from './documentReaderService';
+import { getJsonDataSources, buildJsonContext } from './jsonDataSourceService';
 
 // Query classification keywords
 const DOCUMENT_KEYWORDS = [
@@ -221,6 +222,21 @@ export class MultiAgentOrchestrator {
         }
       } catch (err) {
         console.warn('Failed to fetch organizer data for orchestrator:', err);
+      }
+    }
+
+    // 2.5. Add JSON Data Sources (Uploaded interactive data)
+    if (contractId) {
+      try {
+        const jsonSources = await getJsonDataSources(contractId);
+        if (jsonSources.length > 0) {
+          const jsonContext = await buildJsonContext(jsonSources, 30000);
+          if (jsonContext) {
+            context += jsonContext;
+          }
+        }
+      } catch (err) {
+        console.warn('Failed to add JSON data sources to orchestrator context:', err);
       }
     }
 

@@ -98,7 +98,17 @@ export async function uploadJsonDataSource(
     // For small files we used to re-create a Blob from text; now we skip that.
     const { data: uploadData, error: uploadError } = await supabase.storage
         .from(STORAGE_BUCKET)
-        .upload(storagePath, file, { cacheControl: '3600', upsert: true, contentType: 'text/plain' });
+        .upload(storagePath, file, {
+            cacheControl: '3600',
+            upsert: true,
+            contentType: 'text/plain',
+            // @ts-ignore - Some versions of supabase-js support this but types may lag
+            onUploadProgress: (progress: { loaded: number; total: number }) => {
+                const total = progress.total || file.size;
+                const pct = Math.round((progress.loaded / total) * 70) + 15; // 15% to 85%
+                onProgress?.('Uploading to cloud…', pct);
+            }
+        });
 
     if (uploadError) throw new Error(`Upload failed: ${uploadError.message}`);
 
