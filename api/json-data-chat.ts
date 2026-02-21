@@ -73,6 +73,10 @@ export default async function handler(req: any, res: any) {
             const header = `\n--- [${source.name}]${source.description ? ` — ${source.description}` : ''} ---\n`;
             let body = '';
 
+            // SECURITY: Check file size if it's from storage
+            const fileSize = source.size_bytes || 0;
+            const isTooLargeForFullParse = fileSize > 5 * 1024 * 1024; // 5MB limit for serverless JSON.parse
+
             // Try inline content first
             if (source.parsed_content) {
                 const content = source.parsed_content;
@@ -82,19 +86,25 @@ export default async function handler(req: any, res: any) {
                     body = JSON.stringify(content, null, 2) + '\n';
                 }
             } else if (source.public_url) {
-                // Fetch from storage
-                try {
-                    const storageRes = await fetch(source.public_url);
-                    if (storageRes.ok) {
-                        const fetched = await storageRes.json();
-                        if (Array.isArray(fetched) && fetched.length > 30) {
-                            body = `(${fetched.length} total rows. Displaying first 30):\n${JSON.stringify(fetched.slice(0, 30), null, 2)}\n`;
-                        } else {
-                            body = JSON.stringify(fetched, null, 2) + '\n';
+                if (isTooLargeForFullParse) {
+                    body = `[CAUTION: This file is very large (${(fileSize / 1024 / 1024).toFixed(1)}MB). Full scan skipped to prevent memory timeout.]\n`;
+                    body += `Summary: ${source.content_summary || 'unavailable'}\n`;
+                    body += `Recommendation: This document is too large for a single chat query. Please ask about specific sections or use the main Contract Archive for deep analysis.\n`;
+                } else {
+                    // Fetch from storage (Safe for < 5MB)
+                    try {
+                        const storageRes = await fetch(source.public_url);
+                        if (storageRes.ok) {
+                            const fetched = await storageRes.json();
+                            if (Array.isArray(fetched) && fetched.length > 30) {
+                                body = `(${fetched.length} total rows. Displaying first 30):\n${JSON.stringify(fetched.slice(0, 30), null, 2)}\n`;
+                            } else {
+                                body = JSON.stringify(fetched, null, 2) + '\n';
+                            }
                         }
+                    } catch {
+                        body = `[Could not fetch content — Summary: ${source.content_summary || 'unavailable'}]\n`;
                     }
-                } catch {
-                    body = `[Could not fetch content — Summary: ${source.content_summary || 'unavailable'}]\n`;
                 }
             } else {
                 body = `Summary: ${source.content_summary || 'No content available'}\n`;
