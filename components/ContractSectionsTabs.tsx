@@ -540,6 +540,23 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
               const isGroupActive = group.types.includes(activeTab as any);
 
+              // Calculate stats for CONDITIONS group
+              const conditionStats = group.id === 'CONDITIONS' ? (() => {
+                const genItems = generalSection?.items || [];
+                const parItems = particularSection?.items || [];
+                const total = genItems.length + parItems.length;
+
+                // Approximate Added/Modified based on items
+                // In our system, items in Particular section are usually 'Added' or 'Modified'
+                // Items in General section are usually 'GC Only'
+                const added = parItems.filter(i => getClauseStatusFromItem(i) === 'added').length;
+                const modified = parItems.filter(i => getClauseStatusFromItem(i) === 'modified').length;
+                const gcOnly = genItems.length;
+                const coverage = total > 0 ? Math.round(((added + modified) / total) * 100) : 0;
+
+                return { total, added, modified, gcOnly, coverage };
+              })() : null;
+
               return (
                 <div key={group.id} className={`flex flex-col border-r border-aaa-border last:border-r-0 min-w-[200px] ${isGroupActive ? 'bg-white' : ''}`}>
                   <div className={`px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] border-b flex items-center gap-2 ${isGroupActive ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-slate-100 text-aaa-muted border-aaa-border'
@@ -552,30 +569,69 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
                       </span>
                     )}
                   </div>
-                  <div className="flex flex-wrap p-1 gap-1">
-                    {group.types.map((type) => {
-                      const section = type === 'CONDITIONS' ? { title: 'Conditions', items: [] } : allSections.find(s => s.sectionType === type);
-                      if (!section && type !== 'CONDITIONS') return null;
+                  <div className="flex flex-col p-1 gap-1">
+                    <div className="flex flex-wrap gap-1">
+                      {group.types.map((type) => {
+                        const section = type === 'CONDITIONS' ? { title: 'Conditions', items: [] } : allSections.find(s => s.sectionType === type);
+                        if (!section && type !== 'CONDITIONS') return null;
 
-                      const isActive = activeTab === type;
-                      const hasItems = type === 'CONDITIONS'
-                        ? ((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0
-                        : (section?.items.length || 0) > 0;
+                        const isActive = activeTab === type;
+                        const hasItems = type === 'CONDITIONS'
+                          ? ((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0
+                          : (section?.items.length || 0) > 0;
 
-                      return (
-                        <button
-                          key={type as string}
-                          onClick={() => setActiveTab(type as any)}
-                          className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition-all flex items-center gap-1.5 ${isActive
-                            ? 'bg-aaa-bg text-aaa-blue shadow-sm'
-                            : 'text-aaa-muted hover:text-aaa-blue hover:bg-aaa-bg/30'
-                            }`}
-                        >
-                          {getTabLabel(type as string)}
-                          {hasItems && <span className="w-1 h-1 rounded-full bg-aaa-blue"></span>}
-                        </button>
-                      );
-                    })}
+                        return (
+                          <button
+                            key={type as string}
+                            onClick={() => setActiveTab(type as any)}
+                            className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition-all flex items-center gap-1.5 ${isActive
+                              ? 'bg-aaa-bg text-aaa-blue shadow-sm'
+                              : 'text-aaa-muted hover:text-aaa-blue hover:bg-aaa-bg/30'
+                              }`}
+                          >
+                            {getTabLabel(type as string)}
+                            {hasItems && <span className="w-1 h-1 rounded-full bg-aaa-blue"></span>}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Ledger Statistics for Conditions Folder */}
+                    {group.id === 'CONDITIONS' && conditionStats && (
+                      <div className="mt-2 px-2 pb-2 space-y-3">
+                        <div className="grid grid-cols-2 gap-1.5">
+                          <div className="bg-slate-50 border border-slate-200/60 rounded-xl p-2 text-center">
+                            <div className="text-xs font-black text-aaa-blue">{conditionStats.total}</div>
+                            <div className="text-[7px] font-black uppercase tracking-widest text-aaa-muted opacity-60">Total</div>
+                          </div>
+                          <div className="bg-emerald-50/50 border border-emerald-100 rounded-xl p-2 text-center">
+                            <div className="text-xs font-black text-emerald-600">{conditionStats.added}</div>
+                            <div className="text-[7px] font-black uppercase tracking-widest text-emerald-600 opacity-60">Added</div>
+                          </div>
+                          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-2 text-center">
+                            <div className="text-xs font-black text-blue-600">{conditionStats.modified}</div>
+                            <div className="text-[7px] font-black uppercase tracking-widest text-blue-600 opacity-60">Modified</div>
+                          </div>
+                          <div className="bg-slate-50 border border-slate-200/60 rounded-xl p-2 text-center">
+                            <div className="text-xs font-black text-aaa-muted">{conditionStats.gcOnly}</div>
+                            <div className="text-[7px] font-black uppercase tracking-widest text-aaa-muted opacity-60">GC Only</div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-1">
+                          <div className="flex items-center justify-between px-1">
+                            <span className="text-[8px] font-black text-aaa-muted uppercase tracking-wider">PC Coverage</span>
+                            <span className="text-[8px] font-black text-aaa-blue">{conditionStats.coverage}%</span>
+                          </div>
+                          <div className="h-1 bg-slate-100 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-aaa-blue rounded-full transition-all duration-500"
+                              style={{ width: `${conditionStats.coverage}%` }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               );

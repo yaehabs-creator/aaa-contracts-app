@@ -6,7 +6,7 @@ import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 import TypingIndicator from './TypingIndicator';
 import { ContextPill } from '../../../types';
-import { JsonDataChatPanel } from './JsonDataChatPanel';
+
 
 export type ChatContainerProps = {
     isOpen: boolean;
@@ -40,7 +40,7 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
         setAtBottom
     } = useChat();
 
-    const [activeTab, setActiveTab] = useState<'chat' | 'json'>('chat');
+
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -116,67 +116,37 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
                             </button>
                         </header>
 
-                        {/* ── Tab Switcher ── */}
-                        <div className="flex border-b border-black/[0.05] bg-white/20 flex-shrink-0">
-                            <button
-                                onClick={() => setActiveTab('chat')}
-                                className={`flex-1 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all ${activeTab === 'chat'
-                                        ? 'text-black border-b-2 border-black'
-                                        : 'text-black/30 hover:text-black/50'
-                                    }`}
-                            >
-                                💬 Contract AI
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('json')}
-                                className={`flex-1 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all ${activeTab === 'json'
-                                        ? 'text-indigo-600 border-b-2 border-indigo-500'
-                                        : 'text-black/30 hover:text-black/50'
-                                    }`}
-                            >
-                                🗄️ JSON Data
-                            </button>
-                        </div>
-
-                        {/* ── JSON Data Panel ── */}
-                        {activeTab === 'json' && (
-                            <div className="flex-1 overflow-y-auto">
-                                <JsonDataChatPanel contractId={contractId} />
-                            </div>
-                        )}
-
                         {/* ── Contract AI Chat ── */}
-                        {activeTab === 'chat' && (
-                            <main className="flex-1 flex flex-col min-h-0 bg-gradient-to-b from-transparent to-black/[0.01]">
-                                <MessageList
-                                    messages={messages}
-                                    atBottom={atBottom}
-                                    setAtBottom={setAtBottom}
-                                />
-                                <AnimatePresence>
-                                    {isThinkingOrStreaming && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            className="px-8 py-3"
-                                        >
-                                            <TypingIndicator />
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                        <main className="flex-1 flex flex-col min-h-0 bg-gradient-to-b from-transparent to-black/[0.01]">
+                            <MessageList
+                                messages={messages}
+                                atBottom={atBottom}
+                                setAtBottom={setAtBottom}
+                            />
+                            <AnimatePresence>
+                                {isThinkingOrStreaming && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        className="px-8 py-3"
+                                    >
+                                        <TypingIndicator />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
 
-                                <footer className="p-6 bg-white/20">
-                                    <ChatInput
-                                        onSend={sendMessage}
-                                        onCancel={cancelCurrent}
-                                        isProcessing={isThinkingOrStreaming}
-                                        contextPills={contextPills}
-                                        onRemovePill={removeContextPill}
-                                    />
-                                </footer>
-                            </main>
-                        )}
+                            <footer className="p-6 bg-white/20">
+                                <ChatInput
+                                    onSend={sendMessage}
+                                    onCancel={cancelCurrent}
+                                    isProcessing={isThinkingOrStreaming}
+                                    contextPills={contextPills}
+                                    onRemovePill={removeContextPill}
+                                />
+                            </footer>
+                        </main>
+
                     </motion.div>
                 </>
             )}

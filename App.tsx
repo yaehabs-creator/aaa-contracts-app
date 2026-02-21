@@ -2946,9 +2946,6 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                     </div>
                   </div>
 
-                  <React.Suspense fallback={<div className="h-64 flex items-center justify-center bg-aaa-bg/30 rounded-3xl border border-aaa-border animate-pulse"><p className="text-xs font-black uppercase tracking-[0.2em] text-aaa-muted">Loading Analytics...</p></div>}>
-                    <Dashboard clauses={clauses} />
-                  </React.Suspense>
 
                   {(searchResults || searchError || isSearching) && (
                     <div className="bg-white p-10 rounded-[32px] border border-aaa-blue/10 shadow-premium animate-in slide-in-from-bottom-6">

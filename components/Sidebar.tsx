@@ -300,49 +300,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <aside className="w-80 flex-shrink-0 space-y-6 bg-white/80 backdrop-blur-xl border-r border-surface-border h-[calc(100vh-4rem)] fixed top-16 left-0 overflow-y-auto hidden lg:block p-6 custom-scrollbar z-40 animate-slide-left">
-      {/* Statistics Panel - MacBook style */}
-      <div className="space-y-4 p-5 bg-surface-bg rounded-mac border border-surface-border shadow-mac-sm">
-        <h4 className="text-[10px] font-semibold text-mac-navy uppercase tracking-wider">Statistics</h4>
-        <div className="grid grid-cols-4 gap-2">
-          <div className="text-center p-3 bg-white rounded-mac-sm border border-surface-border shadow-mac-sm">
-            <div className="text-xl font-bold text-mac-blue">{stats.total}</div>
-            <div className="text-[9px] font-medium text-mac-muted mt-1">Total</div>
-          </div>
-          <div className="text-center p-3 bg-emerald-50 rounded-mac-sm border border-emerald-100">
-            <div className="text-xl font-bold text-emerald-600">{stats.added}</div>
-            <div className="text-[9px] font-medium text-emerald-600 mt-1">Added</div>
-          </div>
-          <div className="text-center p-3 bg-blue-50 rounded-mac-sm border border-blue-100">
-            <div className="text-xl font-bold text-blue-600">{stats.modified}</div>
-            <div className="text-[9px] font-medium text-blue-600 mt-1">Modified</div>
-          </div>
-          <div className="text-center p-3 bg-slate-50 rounded-mac-sm border border-slate-200">
-            <div className="text-xl font-bold text-mac-muted">{stats.gcOnly}</div>
-            <div className="text-[9px] font-medium text-mac-muted mt-1">GC Only</div>
-          </div>
-        </div>
-        {/* Progress Bar - MacBook style */}
-        <div className="space-y-2 pt-2">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-mac-muted">PC Coverage</span>
-            <span className="text-xs font-semibold text-mac-blue">{stats.pcCoverage}%</span>
-          </div>
-          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-mac-blue to-emerald-500 rounded-full transition-all duration-500"
-              style={{ width: `${stats.pcCoverage}%` }}
-            />
-          </div>
-          <div className="flex items-center gap-4 text-[10px] text-mac-muted">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Added
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-blue-600"></span> Modified
-            </span>
-          </div>
-        </div>
-      </div>
 
 
       <div className="space-y-4">
