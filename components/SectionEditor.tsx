@@ -98,7 +98,16 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
       dataForSub.forEach(data => {
         const isFullText = data.field_key === '__full_text__';
         const fieldSchema = organizerSchemas[sub.id]?.find(f => f.key === data.field_key);
-        const label = isFullText ? sub.name : (fieldSchema?.label || data.field_key);
+
+        // Create user-friendly labels
+        let label = isFullText ? sub.name : (fieldSchema?.label || data.field_key);
+
+        // Clean up common technical patterns
+        if (label === '__claude_analysis__') label = 'AI Analysis Summary';
+        if (label === '__full_text__') label = sub.name || 'Extracted Text';
+        if (label.startsWith('__') && label.endsWith('__')) {
+          label = label.replace(/__/g, '').split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
 
         const isPdf = !!data.doc_url;
 
