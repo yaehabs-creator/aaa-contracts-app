@@ -27,7 +27,7 @@ import { FloatingAIButton } from './src/components/FloatingAIButton';
 import { useAuth } from './src/contexts/AuthContext';
 import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from './src/services/textPreprocessor';
 import { suggestCategories, CategorySuggestion } from './services/categorySuggestionService';
-import { PaddleOcrService } from './src/services/paddleOcrService';
+import { DoclingService } from './src/services/doclingService';
 import { normalizeClauseId, generateClauseIdVariants } from './src/utils/navigation';
 
 const REASSURING_STAGES = [
@@ -1139,9 +1139,9 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
     setLiveStatus({ message: 'Loading PDF...', detail: 'Connecting to PaddleOCR engine', isActive: true });
 
     // Check PaddleOCR availability first
-    const ocrAvailable = await PaddleOcrService.checkAvailability();
+    const ocrAvailable = await DoclingService.checkAvailability();
     if (!ocrAvailable) {
-      throw new Error('PaddleOCR service is not running. Please start it with: py -3.12 scripts/ocr_backend.py');
+      throw new Error('Docling service is not running. Please start it with: py scripts/docling_backend.py');
     }
 
     setLiveStatus({ message: 'Extracting text...', detail: 'GPU-accelerated OCR processing (this may take a moment for large PDFs)', isActive: true });
@@ -1149,10 +1149,10 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
     // Send the entire PDF to PaddleOCR for GPU-accelerated extraction
     const startTime = Date.now();
-    const pages = await PaddleOcrService.processBase64Pdf(fileData.data, fileData.name || 'document.pdf');
+    const pages = await DoclingService.processBase64Pdf(fileData.data, fileData.name || 'document.pdf');
     const extractionTime = ((Date.now() - startTime) / 1000).toFixed(1);
 
-    console.log(`PaddleOCR extracted ${pages.length} pages in ${extractionTime}s`);
+    console.log(`Docling extracted ${pages.length} pages in ${extractionTime}s`);
     setProgress(35);
 
     // Remove headers and footers
@@ -1161,7 +1161,7 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
       setProgress(36);
       const cleanedPages = removeHeadersFooters(pages);
       setProgress(40);
-      setLiveStatus({ message: 'Extraction complete', detail: `Processed ${cleanedPages.length} pages in ${extractionTime}s (PaddleOCR)`, isActive: false });
+      setLiveStatus({ message: 'Extraction complete', detail: `Processed ${cleanedPages.length} pages in ${extractionTime}s (Docling)`, isActive: false });
       return cleanedPages;
     }
 

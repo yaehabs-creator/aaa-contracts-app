@@ -1,6 +1,6 @@
 /**
  * Streaming OCR Service for Large Documents
- * Refactored to use PaddleOCR via AdvancedOCRService
+ * Refactored to use Docling via AdvancedOCRService
  */
 
 import { AdvancedOCRService, OCRResult, OCRConfig } from './advancedOCRService';
@@ -29,7 +29,7 @@ export class StreamingOCRService {
 
   constructor(config: Partial<StreamingOCRConfig> = {}) {
     this.config = {
-      engine: 'paddle',
+      engine: 'docling',
       languages: ['eng'],
       preprocessing: {
         enhanceContrast: true,
@@ -65,7 +65,7 @@ export class StreamingOCRService {
   }
 
   /**
-   * Process document (Forwarding to AdvancedOCRService which uses PaddleOCR)
+   * Process document (Forwarding to AdvancedOCRService which uses Docling)
    */
   async processLargeDocument(
     file: File | ArrayBuffer,

@@ -11,7 +11,7 @@ import json
 import time
 from pathlib import Path
 
-app = FastAPI(title="Docling OCR/Document Conversion API (Legacy ocr_backend.py)")
+app = FastAPI(title="Docling OCR/Document Conversion API")
 
 # Setup CORS
 app.add_middleware(
@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 # Initialize Docling
-print("Initializing Docling DocumentConverter (as ocr_backend.py replacement)...")
+print("Initializing Docling DocumentConverter...")
 try:
     # Memory-optimized pipeline options
     pipeline_options = PdfPipelineOptions()
@@ -47,7 +47,7 @@ except Exception as e:
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "engine": "docling", "mode": "compatibility_layer"}
+    return {"status": "ok", "engine": "docling"}
 
 
 def process_docling_result(result):
@@ -60,9 +60,15 @@ def process_docling_result(result):
     
     # Extract page-level data
     pages_data = []
+    # If generate_parsed_pages was True, we can theoretically get per-page info
+    # But for simplicity, we can also use the structured elements
     
     # Map elements to 'results'
     results = []
+    
+    # Docling items have .prov (provenance) which contains bounding box
+    # bbox format in Docling: [l, t, r, b] (left, top, right, bottom)
+    # Frontend expects: [[x1,y1], [x2,y2], [x3,y3], [x4,y4]]
     
     for item, level in doc.iterate_items():
         if hasattr(item, 'text'):
@@ -77,11 +83,13 @@ def process_docling_result(result):
                 if hasattr(prov, 'bbox') and prov.bbox:
                     b = prov.bbox
                     # Convert [l, t, r, b] to 4-point polygon
+                    # Coordinate system might need adjustment (Docling uses points from bottom-left or top-left?)
+                    # Paddle expects top-left [x,y]. Docling bbox is often [l,t,r,b].
                     bbox_poly = [[b.l, b.t], [b.r, b.t], [b.r, b.b], [b.l, b.b]]
             
             results.append({
                 "text": text_str,
-                "confidence": 0.95,
+                "confidence": 0.95, # Docling doesn't always provide confidence per item easily
                 "box": bbox_poly,
                 "page": page_num
             })

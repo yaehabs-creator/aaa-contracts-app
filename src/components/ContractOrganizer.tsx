@@ -7,7 +7,7 @@ import {
 } from '@/types';
 import toast from 'react-hot-toast';
 import { getDocumentReaderService } from '../services/documentReaderService';
-import { PaddleOcrService } from '../services/paddleOcrService';
+import { DoclingService } from '../services/doclingService';
 import { extractDataForSchema } from '@/services/organizerExtractionService';
 import { getOrganizerData, uploadContractDocument } from '@/src/services/supabaseService';
 import { cleanTextWithAI } from '@/src/services/textPreprocessor';
@@ -293,7 +293,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     }, [contract?.id, localContract?.id, onUpdateSubfolders, onUpdateSchemas, onUpdateExtractedData]);
 
     useEffect(() => {
-        PaddleOcrService.checkAvailability().then(setOcrAvailable);
+        DoclingService.checkAvailability().then(setOcrAvailable);
     }, []);
 
     const handleCreateContract = () => {
@@ -345,7 +345,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
         }
 
         if (ocrAvailable === false) {
-            toast.error('PaddleOCR service is unresponsive. Please start the OCR server.');
+            toast.error('Docling service is unresponsive. Please start the Docling server.');
             return;
         }
 
@@ -432,7 +432,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
             } else {
                 // 1. Run local OCR
                 setProcessingStatus('Running OCR (this may take a minute)...');
-                const ocrResponse = await PaddleOcrService.processFile(file, file.name);
+                const ocrResponse = await DoclingService.processFile(file, file.name);
                 console.log('OCR Result:', ocrResponse);
 
                 // 2. Run Extraction with Claude

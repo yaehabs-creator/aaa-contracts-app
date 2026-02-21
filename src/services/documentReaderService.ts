@@ -8,7 +8,7 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { ContractDocument, DocumentGroup, DocumentChunk } from '../../types';
 import { extractTextFromPdf, isScannedPdf } from '../utils/pdfUtils';
 import { getEmbeddingService } from '../services/embeddingService';
-import { PaddleOcrService } from './paddleOcrService';
+import { DoclingService } from './doclingService';
 
 // Initialize Supabase client
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_URL || '';
@@ -671,7 +671,7 @@ export class DocumentReaderService {
                 .reduce((data, byte) => data + String.fromCharCode(byte), '')
             );
 
-            const ocrPages = await PaddleOcrService.processBase64Pdf(base64, doc.original_filename || doc.name);
+            const ocrPages = await DoclingService.processBase64Pdf(base64, doc.original_filename || doc.name);
             extractedText = ocrPages.join('\n\n');
           } else {
             this.emitProgress(`Searchable PDF detected. Extracting text: ${doc.name}`);

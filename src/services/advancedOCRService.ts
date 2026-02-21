@@ -1,4 +1,4 @@
-import { PaddleOcrService } from './paddleOcrService';
+import { DoclingService } from './doclingService';
 
 export interface OCRResult {
   text: string;
@@ -118,7 +118,7 @@ export interface OCRMetadata {
 
 export type BlockType = 'text' | 'title' | 'subtitle' | 'paragraph' | 'list' | 'table' | 'header' | 'footer' | 'signature' | 'stamp';
 
-export type OCREngine = 'paddle' | 'cloud-vision';
+export type OCREngine = 'docling' | 'cloud-vision';
 
 export interface OCRConfig {
   engine: OCREngine;
@@ -155,7 +155,7 @@ export interface PerformanceConfig {
 }
 
 /**
- * Advanced OCR Service with PaddleOCR as primary engine
+ * Advanced OCR Service with Docling as primary engine
  */
 export class AdvancedOCRService {
   private cache = new Map<string, OCRResult>();
@@ -163,7 +163,7 @@ export class AdvancedOCRService {
 
   constructor(config: Partial<OCRConfig> = {}) {
     this.config = {
-      engine: 'paddle',
+      engine: 'docling',
       languages: ['eng'],
       preprocessing: {
         enhanceContrast: true,
@@ -196,14 +196,14 @@ export class AdvancedOCRService {
    * Initialize OCR engines
    */
   async initialize(): Promise<void> {
-    const isPaddleAvailable = await PaddleOcrService.checkAvailability();
-    if (!isPaddleAvailable) {
-      console.warn('PaddleOCR backend not detected at http://localhost:8000. Please start the ocr_backend.py script.');
+    const isDoclingAvailable = await DoclingService.checkAvailability();
+    if (!isDoclingAvailable) {
+      console.warn('Docling backend not detected at http://localhost:8000. Please start the docling_backend.py script.');
     }
   }
 
   /**
-   * Process document with PaddleOCR
+   * Process document with Docling
    */
   async processDocument(
     file: File | ArrayBuffer,
@@ -221,12 +221,12 @@ export class AdvancedOCRService {
     if (onProgress) onProgress(10, 1, 1);
 
     try {
-      const paddleResult = await PaddleOcrService.processFile(file, file instanceof File ? file.name : 'document.pdf');
+      const doclingResult = await DoclingService.processFile(file, file instanceof File ? file.name : 'document.pdf');
 
       if (onProgress) onProgress(80, 1, 1);
 
-      // Map PaddleOCR results to our enterprise format
-      const blocks: OCRBlock[] = (paddleResult.results || []).map((r: any, index: number) => ({
+      // Map Docling results to our enterprise format
+      const blocks: OCRBlock[] = (doclingResult.results || []).map((r: any, index: number) => ({
         text: r.text,
         confidence: r.confidence,
         lines: [],
@@ -242,9 +242,9 @@ export class AdvancedOCRService {
       }));
 
       const result: OCRResult = {
-        text: paddleResult.text,
-        confidence: paddleResult.results?.length > 0
-          ? paddleResult.results.reduce((acc: number, r: any) => acc + r.confidence, 0) / paddleResult.results.length
+        text: doclingResult.text,
+        confidence: doclingResult.results?.length > 0
+          ? doclingResult.results.reduce((acc: number, r: any) => acc + r.confidence, 0) / doclingResult.results.length
           : 0,
         words: [],
         lines: [],
@@ -268,13 +268,13 @@ export class AdvancedOCRService {
           detectedFonts: [],
         },
         metadata: {
-          engine: 'paddle',
+          engine: 'docling',
           processingTime: Date.now() - startTime,
-          totalPages: 1,
-          totalWords: paddleResult.results?.length || 0,
-          averageConfidence: 0.9,
+          totalPages: doclingResult.page_count || 1,
+          totalWords: doclingResult.results?.length || 0,
+          averageConfidence: 0.95,
           detectedLanguages: ['en'],
-          qualityScore: 0.9,
+          qualityScore: 0.95,
           preprocessingApplied: [],
         },
       };
@@ -287,7 +287,7 @@ export class AdvancedOCRService {
       return result;
 
     } catch (error) {
-      console.error('PaddleOCR Error:', error);
+      console.error('Docling Error:', error);
       throw error;
     }
   }

@@ -17,7 +17,7 @@ import {
 } from '../../types';
 import { extractTextFromPdf, isScannedPdf } from '../utils/pdfUtils';
 import { getEmbeddingService } from '../services/embeddingService';
-import { PaddleOcrService } from '../services/paddleOcrService';
+import { DoclingService } from '../services/doclingService';
 import { getDocumentReaderService } from '../services/documentReaderService';
 
 // Initialize Supabase client

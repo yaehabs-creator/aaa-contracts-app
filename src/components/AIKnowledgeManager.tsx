@@ -6,7 +6,7 @@ import {
     AIKnowledgeFile,
     uploadPdfToKnowledge
 } from '../services/aiKnowledgeService';
-import { PaddleOcrService } from '../services/paddleOcrService';
+import { DoclingService } from '../services/doclingService';
 import toast from 'react-hot-toast';
 
 export const AIKnowledgeManager: React.FC = () => {
@@ -112,7 +112,7 @@ export const AIKnowledgeManager: React.FC = () => {
         try {
             if (isPdf) {
                 setIsOcrProcessing(true);
-                const ocrResult = await PaddleOcrService.processFile(file, file.name);
+                const ocrResult = await DoclingService.processFile(file, file.name);
                 setIsOcrProcessing(false);
 
                 toast.loading('Structuring and saving contract data...', { id: toastId });

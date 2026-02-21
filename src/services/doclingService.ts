@@ -1,5 +1,6 @@
 /**
- * Service to communicate with the local PaddleOCR microservice.
+ * Service to communicate with the local Docling microservice.
+ * Replaced PaddleOCR with Docling for superior document structure extraction.
  */
 
 export interface OcrPageResult {
@@ -21,12 +22,12 @@ export interface OcrResponse {
     engine: string;
 }
 
-export class PaddleOcrService {
+export class DoclingService {
     private static readonly API_BASE = 'http://localhost:8000';
     private static isAvailable: boolean | null = null;
 
     /**
-     * Check if the local PaddleOCR service is running.
+     * Check if the local Docling service is running.
      */
     static async checkAvailability(): Promise<boolean> {
         try {
@@ -44,7 +45,7 @@ export class PaddleOcrService {
     }
 
     /**
-     * Process a file (Image or PDF) using PaddleOCR.
+     * Process a file (Image or PDF) using Docling.
      */
     static async processFile(file: File | ArrayBuffer, fileName: string): Promise<OcrResponse> {
         const formData = new FormData();
@@ -65,15 +66,14 @@ export class PaddleOcrService {
 
         if (!response.ok) {
             const error = await response.json();
-            throw new Error(error.detail || 'PaddleOCR request failed');
+            throw new Error(error.detail || 'Docling request failed');
         }
 
         return await response.json();
     }
 
     /**
-     * Process a base64-encoded PDF using PaddleOCR and return per-page text.
-     * This replaces the old pdfjsLib-based extractPagesFromPdf.
+     * Process a base64-encoded PDF using Docling and return per-page text.
      * 
      * @param base64Data - The base64-encoded PDF data (without data: prefix)
      * @param fileName - Original filename for the PDF
@@ -97,8 +97,8 @@ export class PaddleOcrService {
         });
 
         if (!response.ok) {
-            const error = await response.json().catch(() => ({ detail: 'PaddleOCR request failed' }));
-            throw new Error(error.detail || `PaddleOCR request failed (HTTP ${response.status})`);
+            const error = await response.json().catch(() => ({ detail: 'Docling request failed' }));
+            throw new Error(error.detail || `Docling request failed (HTTP ${response.status})`);
         }
 
         const data: OcrResponse = await response.json();
