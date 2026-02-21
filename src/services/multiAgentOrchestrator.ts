@@ -620,7 +620,7 @@ CRITICAL:
       ];
 
       promises.push(
-        this.claudeProvider.chat(messages, clauses, this.getClaudeSpecialistPrompt() + '\n\n' + claudeContext)
+        this.claudeProvider.chat(messages, clauses, this.getClaudeSpecialistPrompt() + '\n\n' + claudeContext, contractId)
           .then(analysis => {
             const clauseRefs = analysis.match(/Clause\s+[\d.]+[A-Za-z]?/gi) || [];
             return {

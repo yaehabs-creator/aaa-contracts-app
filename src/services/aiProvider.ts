@@ -323,7 +323,7 @@ export class ClaudeProvider implements AIProvider {
     }
   }
 
-  async chat(messages: BotMessage[], context: Clause[], systemInstruction: string): Promise<string> {
+  async chat(messages: BotMessage[], context: Clause[], systemInstruction: string, contractId?: string | null): Promise<string> {
     // Prevent multiple simultaneous requests
     if (requestInFlight) {
       throw new Error('A request is already in progress. Please wait.');
@@ -339,10 +339,24 @@ export class ClaudeProvider implements AIProvider {
     requestInFlight = true;
 
     try {
-      // Build context from clauses - include FULL clause text, not truncated
-      const MAX_CLAUSE_LENGTH = 5000;
-      const contextText = context.length > 0
-        ? `\n\nCURRENT CONTRACT CLAUSES (${context.length} clauses):\n${context.map(c => {
+      let contextText = '';
+
+      // If we have a contractId, use the unified context builder (which includes JSON Data Sources)
+      if (contractId) {
+        try {
+          // Dynamic import to avoid circular dependency
+          const { buildUnifiedContractContext } = await import('./aiBotService');
+          const unifiedContext = await buildUnifiedContractContext(contractId, context, { includeDocumentChunks: true });
+          contextText = `\n\n=== CONTRACT CONTEXT ===\n${unifiedContext.context}`;
+        } catch (ctxError) {
+          console.warn('Failed to build unified context in ClaudeProvider:', ctxError);
+        }
+      }
+
+      // Fallback: If unified context failed or no contractId, use the basic context builder
+      if (!contextText && context.length > 0) {
+        const MAX_CLAUSE_LENGTH = 5000;
+        contextText = `\n\nCURRENT CONTRACT CLAUSES (${context.length} clauses):\n${context.map(c => {
           const fullText = c.clause_text || '';
           const displayText = fullText.length > MAX_CLAUSE_LENGTH
             ? fullText.substring(0, MAX_CLAUSE_LENGTH) + '... [truncated]'
@@ -360,8 +374,8 @@ export class ClaudeProvider implements AIProvider {
           }
 
           return clauseContent;
-        }).join('\n\n---\n\n')}`
-        : '';
+        }).join('\n\n---\n\n')}`;
+      }
 
       // Convert BotMessages to simple format
       const proxyMessages = messages.map(msg => ({
