@@ -21,7 +21,6 @@ const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-
 interface ContractSectionsTabsProps {
   contract: SavedContract;
   onUpdate: (updatedContract: SavedContract) => void;
-  onSave?: (contract: SavedContract) => Promise<void>;
   onEditClause?: (clause: Clause) => void;
   onCompareClause?: (clause: Clause) => void;
   onDeleteClause?: (index: number, sectionType: SectionType) => void;
@@ -38,7 +37,6 @@ interface ContractSectionsTabsProps {
 export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   contract,
   onUpdate,
-  onSave,
   onEditClause,
   onCompareClause,
   onDeleteClause,
@@ -57,8 +55,6 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   // Use 'CONDITIONS' as special identifier for the conditions tab
   type TabType = SectionType | 'CONDITIONS';
   const [activeTab, setActiveTab] = useState<TabType>('CONDITIONS');
-  const [isSaving, setIsSaving] = useState(false);
-  const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Categories from Admin Editor
   const [categories, setCategories] = useState<ContractCategory[]>([]);
@@ -73,8 +69,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       try {
         const cats = await getCategoriesForContract(contract.id);
         setCategories(cats);
-      } catch (error) {
-        console.error('Error loading categories:', error);
+      } catch (err) {
+        console.error('Failed to load categories:', err);
       } finally {
         setCategoriesLoading(false);
       }
@@ -82,6 +78,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
     loadCategories();
   }, [contract.id]);
+
 
   // Get all sections in order
   const allSections = useMemo(() => {
@@ -486,31 +483,6 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     }
   };
 
-  const handleSave = async () => {
-    if (!onSave) {
-      // If no onSave prop, just call onUpdate (fallback to auto-save behavior)
-      onUpdate(contractWithSections);
-      return;
-    }
-
-    setIsSaving(true);
-    setSaveStatus('idle');
-
-    try {
-      await onSave(contractWithSections);
-      setSaveStatus('success');
-      // Clear success message after 2 seconds
-      setTimeout(() => setSaveStatus('idle'), 2000);
-    } catch (error) {
-      console.error('Failed to save contract:', error);
-      setSaveStatus('error');
-      // Clear error message after 3 seconds
-      setTimeout(() => setSaveStatus('idle'), 3000);
-    } finally {
-      setIsSaving(false);
-    }
-  };
-
   // Only show "No sections available" if there's no active section
   if (!activeSection) {
     return (
@@ -582,85 +554,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             })}
           </div>
 
-          {/* Sort Controls (only show for Conditions tab) */}
-          {activeTab === 'CONDITIONS' && onSortModeChange && (
-            <div className="px-4 py-2 flex items-center gap-2 border-l border-aaa-border">
-              <span className="text-[9px] font-bold text-aaa-muted uppercase tracking-wider">Sort:</span>
-              <button
-                onClick={() => onSortModeChange('default')}
-                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'default'
-                  ? 'bg-aaa-blue text-white border-aaa-blue'
-                  : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
-                  }`}
-              >
-                Default
-              </button>
-              <button
-                onClick={() => onSortModeChange('status')}
-                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'status'
-                  ? 'bg-aaa-blue text-white border-aaa-blue'
-                  : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
-                  }`}
-                title="Group by: Added, Modified, GC-only"
-              >
-                By Status
-              </button>
-              <button
-                onClick={() => onSortModeChange('chapter')}
-                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'chapter'
-                  ? 'bg-aaa-blue text-white border-aaa-blue'
-                  : 'bg-white text-aaa-muted border-aaa-border hover:border-aaa-blue hover:text-aaa-blue'
-                  }`}
-                title="Sort by clause number"
-              >
-                By Chapter
-              </button>
-              {categories.length > 0 && (
-                <button
-                  onClick={() => onSortModeChange('category')}
-                  className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-wider rounded-lg border transition-all ${sortMode === 'category'
-                    ? 'bg-purple-500 text-white border-purple-500'
-                    : 'bg-white text-aaa-muted border-aaa-border hover:border-purple-500 hover:text-purple-600'
-                    }`}
-                  title="Group by categories from Admin Editor"
-                >
-                  By Category
-                </button>
-              )}
-            </div>
-          )}
 
-          {/* Save Button */}
-          <div className="px-6 py-2 flex items-center gap-3">
-            {saveStatus === 'success' && (
-              <span className="text-sm text-green-600 font-semibold">Saved!</span>
-            )}
-            {saveStatus === 'error' && (
-              <span className="text-sm text-red-600 font-semibold">Save failed</span>
-            )}
-            <button
-              onClick={handleSave}
-              disabled={isSaving}
-              className={`px-6 py-2.5 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ${isSaving
-                ? 'bg-aaa-bg text-aaa-muted cursor-not-allowed'
-                : saveStatus === 'success'
-                  ? 'bg-green-500 text-white hover:bg-green-600'
-                  : 'bg-aaa-blue text-white hover:bg-aaa-blue/90 shadow-md hover:shadow-lg'
-                }`}
-            >
-              {isSaving ? (
-                <span className="flex items-center gap-2">
-                  <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Saving...
-                </span>
-              ) : (
-                'Save Contract'
-              )}
-            </button>
-          </div>
         </div>
       </div>
 

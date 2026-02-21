@@ -265,6 +265,7 @@ const App: React.FC = () => {
   const [projectName, setProjectName] = useState('');
   const [activeContractId, setActiveContractId] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [showContractSelector, setShowContractSelector] = useState(false);
   const [hasDraft, setHasDraft] = useState(false);
   const [organizerSubfolders, setOrganizerSubfolders] = useState<ContractSubfolder[]>([]);
@@ -539,46 +540,28 @@ const App: React.FC = () => {
   };
 
   const performSaveContract = async (targetContract: SavedContract, silent: boolean = false) => {
-    if (!silent) setIsSaving(true);
+    if (!silent) {
+      setIsSaving(true);
+      setSaveStatus('idle');
+    }
     try {
-      // Ensure contract has sections, but preserve existing sections if they exist
-      let contractWithSections: SavedContract;
-      if (targetContract.sections && targetContract.sections.length > 0) {
-        // Contract already has sections - preserve them as-is
-        contractWithSections = ensureContractHasSections(targetContract);
-      } else {
-        // No sections - migrate/create them
-        contractWithSections = ensureContractHasSections(targetContract);
-      }
-
-      // Ensure we have an ID
-      if (!contractWithSections.id) {
-        contractWithSections.id = activeContractId || crypto.randomUUID();
-      }
-
-      // Save to database
-      const savedContract = await saveContractToDB(contractWithSections);
-      clearDraft(); // Success! Clear the local backup
-
-      // Update local state with reprocessed clause links (preserved from server)
+      const savedContract = await saveContractToSupabase(targetContract);
       setContract(savedContract);
-      setClauses(getClausesWithProcessedLinks(savedContract));
-      if (!activeContractId) setActiveContractId(savedContract.id);
-
-      // Refresh library to show updated contract
       await refreshLibrary();
-
       if (!silent) {
-        toast.success('Contract saved successfully!');
-        console.log('Contract saved successfully:', {
-          id: contractWithSections.id,
-          name: contractWithSections.name,
-          sectionsCount: contractWithSections.sections?.length || 0,
-        });
+        toast.success('Changes saved successfully!');
+        setSaveStatus('success');
+        setTimeout(() => setSaveStatus('idle'), 3000);
       }
-    } catch (err) {
-      console.error("Save failed:", err);
-      if (!silent) toast.error(`Failed to save contract: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      return savedContract;
+    } catch (err: any) {
+      console.error("Save to Supabase failed:", err);
+      if (!silent) {
+        toast.error(`Failed to save: ${err.message}`);
+        setSaveStatus('error');
+        setTimeout(() => setSaveStatus('idle'), 3000);
+      }
+      throw err;
     } finally {
       if (!silent) {
         setTimeout(() => setIsSaving(false), 800);
@@ -2069,6 +2052,11 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                 clauses={clauses}
                 searchQuery={searchFilter}
                 setSearchQuery={setSearchFilter}
+                sortMode={sortMode}
+                onSortModeChange={setSortMode}
+                isSaving={isSaving}
+                saveStatus={saveStatus}
+                handleSave={() => contract && performSaveContract(contract)}
               />
             )}
 
@@ -3012,10 +3000,6 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                         // Reprocess clause links to ensure internal references work
                         setContract(updatedContract);
                         setClauses(getClausesWithProcessedLinks(updatedContract));
-                      }}
-                      onSave={async (updatedContract) => {
-                        // Explicit save when Save button is clicked
-                        await performSaveContract(updatedContract);
                       }}
                       onEditClause={handleEditClause}
                       onCompareClause={setCompareClause}
