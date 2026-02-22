@@ -254,7 +254,11 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
         // Upload to storage
         const { error: uploadError } = await supabase.storage
           .from(STORAGE_BUCKET)
-          .upload(filePath, file, { cacheControl: '3600', upsert: false });
+          .upload(filePath, file, {
+            cacheControl: '3600',
+            upsert: false,
+            contentType: file.type // Explicitly set content type to ensure browser viewing
+          });
 
         if (uploadError) {
           setUploadProgress(prev => prev ? {
@@ -423,6 +427,8 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
       onClick={() => {
         setSelectedDocument(doc);
         onDocumentSelect?.(doc);
+        // Automatically open preview on click
+        handlePreviewDocument(doc);
       }}
     >
       <span className="document-icon">{getFileIcon(doc.file_type)}</span>
@@ -435,13 +441,13 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
       <span className="document-status" title={doc.status}>
         {getStatusIcon(doc.status)}
       </span>
-      <div className="document-actions">
+      <div className="document-actions visible">
         <button
-          className="action-btn"
+          className="action-btn preview-primary"
           onClick={(e) => { e.stopPropagation(); handlePreviewDocument(doc); }}
-          title="Preview"
+          title="Preview Document"
         >
-          {Icons.view}
+          {Icons.view} View
         </button>
         <button
           className="action-btn"
@@ -1019,13 +1025,34 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
 
         .document-actions {
           display: flex;
-          gap: 4px;
-          opacity: 0;
+          gap: 6px;
+          opacity: 0.7;
           transition: opacity 0.2s;
+        }
+        
+        .document-actions.visible {
+          opacity: 1;
         }
 
         .document-item:hover .document-actions {
           opacity: 1;
+        }
+
+        .action-btn.preview-primary {
+          background: #eff6ff;
+          color: #1d4ed8;
+          border: 1px solid #bfdbfe;
+          font-weight: 600;
+          font-size: 0.8rem;
+          padding: 4px 10px;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+
+        .action-btn.preview-primary:hover {
+          background: #dbeafe;
+          border-color: #3b82f6;
         }
 
         .action-btn {
