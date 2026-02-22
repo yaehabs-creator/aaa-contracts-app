@@ -36,22 +36,63 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚠️</div>
               <h2 style={{ color: '#1A2333', marginBottom: '0.5rem' }}>Authentication Issue</h2>
               <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
-                {authError}
+                The application encountered an issue while connecting to the secure vault.
               </p>
-              <button
-                onClick={() => window.location.reload()}
-                style={{
-                  padding: '0.75rem 1.5rem',
-                  background: '#1e3a8a',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '12px',
-                  fontWeight: 600,
-                  cursor: 'pointer'
-                }}
-              >
-                Refresh Page
-              </button>
+
+              <div style={{
+                textAlign: 'left',
+                background: '#F8FAFC',
+                padding: '1rem',
+                borderRadius: '12px',
+                marginBottom: '1.5rem',
+                border: '1px solid #E2E8F0',
+                fontSize: '0.8rem',
+                color: '#475569',
+                fontFamily: 'monospace',
+                overflowWrap: 'break-word'
+              }}>
+                <strong>Error Details:</strong><br />
+                {authError}
+              </div>
+
+              <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+                <button
+                  onClick={() => window.location.reload()}
+                  style={{
+                    padding: '0.75rem 1.5rem',
+                    background: '#1e3a8a',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    cursor: 'pointer'
+                  }}
+                >
+                  Try Again
+                </button>
+                <button
+                  onClick={() => {
+                    const info = {
+                      url: window.location.href,
+                      userAgent: navigator.userAgent,
+                      timestamp: new Date().toISOString(),
+                      error: authError
+                    };
+                    alert("Diagnostic Info (Share this with your dev):\n\n" + JSON.stringify(info, null, 2));
+                  }}
+                  style={{
+                    padding: '0.75rem 1.5rem',
+                    background: 'white',
+                    color: '#1e3a8a',
+                    border: '1.5px solid #1e3a8a',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    cursor: 'pointer'
+                  }}
+                >
+                  Diagnostic Info
+                </button>
+              </div>
             </div>
           ) : (
             <>

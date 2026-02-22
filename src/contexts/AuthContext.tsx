@@ -67,6 +67,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Get initial session
     const getInitialSession = async () => {
       try {
+        // Check if storage is accessible (Supabase needs it)
+        try {
+          localStorage.setItem('supabase_test', 'test');
+          localStorage.removeItem('supabase_test');
+        } catch (e) {
+          throw new Error('Local storage is blocked by your browser. Please enable cookies and site data to sign in.');
+        }
+
         const { data: { session }, error } = await supabase.auth.getSession();
         if (error) throw error;
 
@@ -75,9 +83,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         } else {
           setAuthLoading(false);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error getting initial session:', error);
-        setAuthError('Failed to initialize authentication.');
+        const errorMessage = error.message || 'Unknown error';
+        setAuthError(`Failed to initialize authentication: ${errorMessage}`);
         setAuthLoading(false);
       }
     };
