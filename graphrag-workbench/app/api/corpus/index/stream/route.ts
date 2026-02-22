@@ -94,8 +94,39 @@ export async function GET() {
           try {
             const list = await fs.readdir(inputDir, { withFileTypes: true }).catch(() => [])
             const txts = list.filter(e => e.isFile() && e.name.toLowerCase().endsWith('.txt'))
-            if (txts.length === 0) {
-              send('log', { line: `No .txt files found in ${path.join('input')}. Upload PDFs or TXT files.` })
+
+            // --- CONTRACT JSON INTEGRATION ---
+            // Look for Docling/Contract JSONs in the parent directory to feed into GraphRAG
+            const parentDir = path.join(root, '..')
+            const parentFiles = await fs.readdir(parentDir, { withFileTypes: true }).catch(() => [])
+            const contractJsons = parentFiles.filter(f =>
+              f.name.toLowerCase().endsWith('.json') &&
+              (f.name.includes('docling') || f.name.includes('Contract'))
+            )
+
+            for (const jsonFile of contractJsons) {
+              const fullPath = path.join(parentDir, jsonFile.name)
+              try {
+                const content = await fs.readFile(fullPath, 'utf-8')
+                const parsed = JSON.parse(content)
+                // Extract text if it follows standard contract export formats
+                let extractedText = ""
+                if (parsed.text) extractedText = parsed.text
+                else if (parsed.content) extractedText = parsed.content
+                else if (parsed.clauses) extractedText = parsed.clauses.map((c: any) => `${c.clause_number} ${c.clause_title}\n${c.clause_text}`).join('\n\n')
+
+                if (extractedText) {
+                  const outName = `${jsonFile.name.replace(/\.json$/i, '')}_extracted.txt`
+                  await fs.writeFile(path.join(inputDir, outName), extractedText)
+                  send('log', { line: `Integrated contract JSON: ${jsonFile.name} -> ${outName}` })
+                }
+              } catch (err) {
+                console.error(`Failed to integrate ${jsonFile.name}:`, err)
+              }
+            }
+
+            if (txts.length === 0 && contractJsons.length === 0) {
+              send('log', { line: `No .txt or contract .json files found. Upload PDFs or TXT files.` })
             }
           } catch { }
           // Update uploads registry statuses to 'scanning'
@@ -112,7 +143,9 @@ export async function GET() {
         }
       })().then(async () => {
         // Start indexing after dataset is prepared
-        const cmd = `python -m graphrag index --root ${JSON.stringify(root)}`
+        // Use forward slashes and quotes to avoid Windows double-escaping issues
+        const normalizedRoot = root.replace(/\\/g, '/')
+        const cmd = `python -m graphrag index --root "${normalizedRoot}"`
         const child = spawnShell(cmd, { cwd: root, env })
         const appendLog = async (line: string) => {
           try {
@@ -167,7 +200,8 @@ export async function GET() {
         // If prep fails, attempt to run index anyway to surface errors
         const configFile = 'settings.yaml'
         send('status', { message: `Indexing started…` })
-        const cmd = `python -m graphrag index --root ${JSON.stringify(root)}`
+        const normalizedRoot = root.replace(/\\/g, '/')
+        const cmd = `python -m graphrag index --root "${normalizedRoot}"`
         spawnShell(cmd, { cwd: root, env })
       });
     }
