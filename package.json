@@ -7,7 +7,7 @@
     "dev": "vite",
     "dev:graphrag": "cd graphrag-workbench && npm run dev -- -p 3001",
     "build": "vite build",
-    "build:check": "node scripts/check-env.js && vite build",
+    "build:check": "node scripts/maintenance/check-env.js && vite build",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",

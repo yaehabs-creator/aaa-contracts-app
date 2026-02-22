@@ -31,7 +31,8 @@ export function clauseToSectionItem(clause: Clause, orderIndex: number): Section
     category: clause.category,
     chapter: clause.chapter,
     gc_link_tokens: clause.gc_link_tokens,
-    pc_link_tokens: clause.pc_link_tokens
+    pc_link_tokens: clause.pc_link_tokens,
+    isHidden: clause.isHidden
   };
 }
 
@@ -57,7 +58,8 @@ export function sectionItemToClause(item: SectionItem): Clause | null {
     category: item.category,
     chapter: item.chapter,
     gc_link_tokens: item.gc_link_tokens,
-    pc_link_tokens: item.pc_link_tokens
+    pc_link_tokens: item.pc_link_tokens,
+    isHidden: item.isHidden
   };
 }
 

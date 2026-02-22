@@ -3326,13 +3326,21 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
                       <div className="flex gap-4">
                         <button
-                          onClick={() => importBackupRef.current?.click()}
-                          className="flex items-center gap-3 px-8 py-4 bg-white border border-aaa-blue text-aaa-blue rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-bg transition-all shadow-sm active:scale-95"
+                          onClick={() => {
+                            setContract(null);
+                            setClauses([]);
+                            setActiveContractId(null);
+                            setProjectName('');
+                            setOrganizerSubfolders([]);
+                            setOrganizerSchemas({});
+                            setOrganizerExtractedData([]);
+                            setStatus(AnalysisStatus.ORGANIZER);
+                          }}
+                          className="flex-1 md:flex-none px-12 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all active:scale-95 flex items-center gap-3"
                         >
-                          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
-                          Import
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
+                          Add Contract
                         </button>
-                        <button onClick={() => setStatus(AnalysisStatus.IDLE)} className="flex-1 md:flex-none px-10 py-4 bg-aaa-blue text-white rounded-2xl text-[10px] font-black uppercase shadow-xl hover:bg-aaa-hover transition-all active:scale-95">New Extraction</button>
                       </div>
                     </div>
                   </div>
@@ -3346,7 +3354,22 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
                         <h3 className="text-3xl font-black text-aaa-text tracking-tight">Your Archive is Empty</h3>
                         <p className="text-aaa-muted max-w-md mx-auto font-medium">Start your first automated contract analysis to see your records appear here for permanent storage.</p>
                       </div>
-                      <button onClick={() => setStatus(AnalysisStatus.IDLE)} className="px-12 py-5 bg-aaa-blue text-white rounded-2xl text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-aaa-hover transition-all transform hover:-translate-y-1">Initialize First Analysis</button>
+                      <button
+                        onClick={() => {
+                          setContract(null);
+                          setClauses([]);
+                          setActiveContractId(null);
+                          setProjectName('');
+                          setOrganizerSubfolders([]);
+                          setOrganizerSchemas({});
+                          setOrganizerExtractedData([]);
+                          setStatus(AnalysisStatus.ORGANIZER);
+                        }}
+                        className="px-12 py-5 bg-aaa-blue text-white rounded-2xl text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-aaa-hover transition-all transform hover:-translate-y-1 flex items-center gap-3 mx-auto"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" /></svg>
+                        Add Contract
+                      </button>
                     </div>
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

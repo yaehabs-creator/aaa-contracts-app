@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Clause } from '../types';
 import { normalizeClauseId, findClauseElement, scrollToClauseByNumber } from '../src/utils/navigation';
 import { TokenizedTextRenderer } from '../src/components/admin/TokenizedTextRenderer';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface ClauseCardProps {
   clause: Clause;
@@ -14,6 +15,7 @@ interface ClauseCardProps {
   onAskAI?: (clause: Clause) => void;
   isCompareTarget?: boolean;
   searchKeywords?: string[];
+  onToggleVisibility?: (clause: Clause) => void;
 }
 
 // Helper function to highlight keywords in HTML text (simple regex approach)
@@ -49,7 +51,8 @@ const highlightKeywordsInHTML = (htmlText: string, keywords: string[]): string =
   return highlightedText;
 };
 
-export const ClauseCard: React.FC<ClauseCardProps> = React.memo(({ clause, onCompare, onEdit, onDelete, onAskAI, isCompareTarget, searchKeywords = [] }) => {
+export const ClauseCard: React.FC<ClauseCardProps> = React.memo(({ clause, onCompare, onEdit, onDelete, onAskAI, onToggleVisibility, isCompareTarget, searchKeywords = [] }) => {
+  const { isAdmin } = useAuth();
   const isDual = !!clause.general_condition || !!clause.particular_condition;
   const textLength = clause.clause_text?.length || 0;
   const [isCollapsed, setIsCollapsed] = useState(textLength > 1200);
@@ -161,58 +164,84 @@ export const ClauseCard: React.FC<ClauseCardProps> = React.memo(({ clause, onCom
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      whileHover={{ y: -2, boxShadow: '0 8px 32px -4px rgba(29,78,216,0.15), 0 0 0 1px rgba(29,78,216,0.08)' }}
+      whileHover={{ y: -2, boxShadow: '0 8px 32px -4px rgba(30,58,138,0.15), 0 0 0 1px rgba(30,58,138,0.08)' }}
       transition={{
         type: 'spring',
         stiffness: 300,
         damping: 25,
         opacity: { duration: 0.3 }
       }}
-      className={`relative group bg-white border rounded-mac-lg shadow-mac overflow-hidden ${isCompareTarget ? 'border-mac-blue ring-2 ring-mac-blue/20' : 'border-surface-border'
-        }`}
+      className={`relative group bg-white border rounded-mac-lg shadow-mac overflow-hidden ${isCompareTarget ? 'border-mac-blue ring-2 ring-mac-blue/20' : clause.isHidden ? 'border-amber-400 bg-amber-50/20 ring-4 ring-amber-400/5' : 'border-surface-border'
+        } ${clause.isHidden && !isAdmin() ? 'hidden' : ''}`}
     >
-      {/* Header - MacBook style */}
-      <div className="flex flex-wrap items-center justify-between px-8 py-5 border-b border-surface-border bg-surface-bg/50">
-        <div className="flex items-center gap-6">
-          <div className="flex flex-col">
-            <span className="text-[9px] font-medium uppercase tracking-wider text-mac-muted mb-1.5">Clause</span>
-            <div className="flex items-center gap-3">
-              <div className="px-3 py-1.5 bg-mac-blue rounded-mac-xs">
-                <span className="text-lg font-bold text-white tracking-tight mono">{clause.clause_number}</span>
+      <div className={clause.isHidden ? 'opacity-75' : ''}>
+        {/* Header - MacBook style */}
+        <div className="flex flex-wrap items-center justify-between px-8 py-5 border-b border-surface-border bg-surface-bg/50">
+          <div className="flex items-center gap-6">
+            <div className="flex flex-col">
+              <span className="text-[9px] font-medium uppercase tracking-wider text-mac-muted mb-1.5">Clause</span>
+              <div className="flex items-center gap-3">
+                <div className="px-3 py-1.5 bg-mac-blue rounded-mac-xs">
+                  <span className="text-lg font-bold text-white tracking-tight mono">{clause.clause_number}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-mac-navy tracking-tight group-hover:text-mac-blue transition-colors">
+                  {clause.clause_title || 'Untitled'}
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold text-mac-navy tracking-tight group-hover:text-mac-blue transition-colors">
-                {clause.clause_title || 'Untitled'}
-              </h3>
+            </div>
+            <div className="hidden sm:block h-8 w-px bg-surface-border mx-2" />
+            <div className="flex flex-wrap gap-2">
+              {clause.isHidden && isAdmin() && (
+                <span className="px-3 py-1 text-[10px] font-black rounded-full bg-amber-100 text-amber-700 border border-amber-200 flex items-center gap-1.5 uppercase tracking-widest">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+                  </svg>
+                  Admin Only
+                </span>
+              )}
+              <span className={`px-3 py-1 text-[10px] font-medium rounded-full ${clause.condition_type === 'General'
+                ? 'bg-slate-100 text-slate-600 border border-slate-200'
+                : clause.condition_type === 'Both'
+                  ? 'bg-mac-blue text-white'
+                  : 'bg-mac-navy text-white'
+                }`}>
+                {clause.condition_type}
+              </span>
+              {isAddedClause && (
+                <span className="px-3 py-1 text-[10px] font-medium rounded-full bg-emerald-500 text-white">
+                  Added
+                </span>
+              )}
+              {clause.section && (
+                <span className="px-3 py-1 bg-mac-blue-subtle text-mac-blue text-[10px] font-medium rounded-full">
+                  Section {clause.section}
+                </span>
+              )}
+              {modCount > 0 && (
+                <span className="px-3 py-1 bg-purple-100 text-purple-700 text-[10px] font-medium rounded-full">
+                  {modCount} Modifications
+                </span>
+              )}
             </div>
           </div>
-          <div className="hidden sm:block h-8 w-px bg-surface-border mx-2" />
-          <div className="flex flex-wrap gap-2">
-            <span className={`px-3 py-1 text-[10px] font-medium rounded-full ${clause.condition_type === 'General'
-              ? 'bg-slate-100 text-slate-600 border border-slate-200'
-              : clause.condition_type === 'Both'
-                ? 'bg-blue-600 text-white'
-                : 'bg-purple-600 text-white'
-              }`}>
-              {clause.condition_type}
-            </span>
-            {isAddedClause && (
-              <span className="px-3 py-1 text-[10px] font-medium rounded-full bg-emerald-500 text-white">
-                Added
-              </span>
-            )}
-            {clause.section && (
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-medium rounded-full">
-                Section {clause.section}
-              </span>
-            )}
-            {modCount > 0 && (
-              <span className="px-3 py-1 bg-purple-100 text-purple-700 text-[10px] font-medium rounded-full">
-                {modCount} Modifications
-              </span>
-            )}
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
+          {isAdmin() && onToggleVisibility && (
+            <button
+              onClick={() => onToggleVisibility(clause)}
+              className={`p-2.5 rounded-mac-xs transition-all ${clause.isHidden ? 'bg-amber-50 border border-amber-200 text-amber-600' : 'bg-white border border-surface-border text-mac-muted hover:text-mac-blue hover:border-mac-blue'}`}
+              title={clause.isHidden ? "Make Visible to Everyone" : "Hide from Non-Admins"}
+            >
+              {clause.isHidden ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              )}
+            </button>
+          )}
           {onEdit && (
             <button
               onClick={() => onEdit(clause)}
@@ -332,6 +361,6 @@ export const ClauseCard: React.FC<ClauseCardProps> = React.memo(({ clause, onCom
           </div>
         )}
       </div>
-    </motion.div>
+    </motion.div >
   );
 });

@@ -113,6 +113,7 @@ export interface Clause {
   gc_link_tokens?: LinkToken[];
   pc_link_tokens?: LinkToken[];
   section?: string;
+  isHidden?: boolean;
 }
 
 export interface Category {
@@ -177,6 +178,7 @@ export interface SectionItem {
   status?: 'extracted' | 'missing' | 'manual' | 'uncertain';
   doc_url?: string;
   doc_name?: string;
+  isHidden?: boolean;
 }
 
 export interface ContractSection {
@@ -582,6 +584,7 @@ export interface ExtractedData {
   status: 'extracted' | 'missing' | 'uncertain';
   doc_url?: string;
   doc_name?: string;
+  isHidden?: boolean;
   created_at?: string;
   updated_at?: string;
 }

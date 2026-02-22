@@ -146,26 +146,27 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
     }
 
     const newItem: SectionItem = {
+      ...item,
       itemType,
       orderIndex: item?.orderIndex || 0,
       ...(itemType === ItemType.PARAGRAPH
         ? {
-            heading: heading.trim() || undefined,
-            text: text.trim()
-          }
+          heading: heading.trim() || undefined,
+          text: text.trim()
+        }
         : itemType === ItemType.FIELD
-        ? {
+          ? {
             fieldKey: fieldKey.trim(),
             fieldValue: fieldValue.trim()
           }
-        : itemType === ItemType.IMAGE
-        ? {
-            imageUrl: imageUrl.trim(),
-            imageAlt: imageAlt.trim() || undefined,
-            imageTitle: imageTitle.trim() || undefined,
-            heading: imageTitle.trim() || undefined
-          }
-        : {})
+          : itemType === ItemType.IMAGE
+            ? {
+              imageUrl: imageUrl.trim(),
+              imageAlt: imageAlt.trim() || undefined,
+              imageTitle: imageTitle.trim() || undefined,
+              heading: imageTitle.trim() || undefined
+            }
+            : {})
     };
 
     onSave(newItem);
@@ -204,11 +205,10 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   setItemType(ItemType.PARAGRAPH);
                   setErrors({});
                 }}
-                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${
-                  itemType === ItemType.PARAGRAPH
+                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${itemType === ItemType.PARAGRAPH
                     ? 'bg-aaa-blue text-white shadow-lg'
                     : 'text-aaa-muted hover:text-aaa-blue'
-                }`}
+                  }`}
               >
                 Paragraph
               </button>
@@ -217,11 +217,10 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   setItemType(ItemType.FIELD);
                   setErrors({});
                 }}
-                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${
-                  itemType === ItemType.FIELD
+                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${itemType === ItemType.FIELD
                     ? 'bg-aaa-blue text-white shadow-lg'
                     : 'text-aaa-muted hover:text-aaa-blue'
-                }`}
+                  }`}
               >
                 Field
               </button>
@@ -230,11 +229,10 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   setItemType(ItemType.IMAGE);
                   setErrors({});
                 }}
-                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${
-                  itemType === ItemType.IMAGE
+                className={`flex-1 px-4 py-3 rounded-xl text-xs font-black transition-all ${itemType === ItemType.IMAGE
                     ? 'bg-aaa-blue text-white shadow-lg'
                     : 'text-aaa-muted hover:text-aaa-blue'
-                }`}
+                  }`}
               >
                 Image
               </button>
@@ -266,9 +264,8 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Enter paragraph text..."
                   rows={8}
-                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-mono focus:ring-2 focus:ring-aaa-blue/5 outline-none custom-scrollbar ${
-                    errors.text ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
-                  }`}
+                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-mono focus:ring-2 focus:ring-aaa-blue/5 outline-none custom-scrollbar ${errors.text ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
+                    }`}
                 />
                 {errors.text && (
                   <p className="mt-2 text-xs text-red-500 font-semibold">{errors.text}</p>
@@ -289,9 +286,8 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   value={fieldKey}
                   onChange={(e) => setFieldKey(e.target.value)}
                   placeholder="e.g., Date, Parties, Contract Price"
-                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-medium focus:ring-2 focus:ring-aaa-blue/5 outline-none ${
-                    errors.fieldKey ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
-                  }`}
+                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-medium focus:ring-2 focus:ring-aaa-blue/5 outline-none ${errors.fieldKey ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
+                    }`}
                 />
                 {errors.fieldKey && (
                   <p className="mt-2 text-xs text-red-500 font-semibold">{errors.fieldKey}</p>
@@ -307,9 +303,8 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   onChange={(e) => setFieldValue(e.target.value)}
                   placeholder="Enter field value..."
                   rows={6}
-                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-mono focus:ring-2 focus:ring-aaa-blue/5 outline-none custom-scrollbar ${
-                    errors.fieldValue ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
-                  }`}
+                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-mono focus:ring-2 focus:ring-aaa-blue/5 outline-none custom-scrollbar ${errors.fieldValue ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
+                    }`}
                 />
                 {errors.fieldValue && (
                   <p className="mt-2 text-xs text-red-500 font-semibold">{errors.fieldValue}</p>
@@ -326,11 +321,10 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
-                className={`relative border-2 border-dashed rounded-2xl p-8 transition-all ${
-                  isDragging
+                className={`relative border-2 border-dashed rounded-2xl p-8 transition-all ${isDragging
                     ? 'border-aaa-blue bg-aaa-blue/5'
                     : 'border-aaa-border bg-aaa-bg/30 hover:border-aaa-blue/50'
-                }`}
+                  }`}
               >
                 <input
                   type="file"
@@ -386,9 +380,8 @@ export const ItemEditorModal: React.FC<ItemEditorModalProps> = ({ onClose, onSav
                   value={imageUrl}
                   onChange={(e) => setImageUrl(e.target.value)}
                   placeholder="https://example.com/image.jpg or paste base64 data URL"
-                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-medium focus:ring-2 focus:ring-aaa-blue/5 outline-none ${
-                    errors.imageUrl ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
-                  }`}
+                  className={`w-full px-4 py-3 bg-white border rounded-xl text-sm font-medium focus:ring-2 focus:ring-aaa-blue/5 outline-none ${errors.imageUrl ? 'border-red-500' : 'border-aaa-border focus:border-aaa-blue'
+                    }`}
                 />
                 {errors.imageUrl && (
                   <p className="mt-2 text-xs text-red-500 font-semibold">{errors.imageUrl}</p>

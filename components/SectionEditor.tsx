@@ -4,6 +4,7 @@ import { ClauseCard } from './ClauseCard';
 import { SectionItemCard } from './SectionItemCard';
 import { ItemEditorModal } from './ItemEditorModal';
 import { sectionItemToClause } from '../services/contractMigrationService';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface SectionEditorProps {
   section: ContractSection;
@@ -58,6 +59,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
   organizerExtractedData = [],
   organizerSchemas = {}
 }) => {
+  const { isAdmin } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
   const [editingItem, setEditingItem] = useState<SectionItem | null>(null);
   const [editingItemIndex, setEditingItemIndex] = useState<number>(-1);
@@ -111,6 +113,11 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
 
         const isPdf = !!data.doc_url;
 
+        // Deduplicate: Don't add if this item is already in nativeItems (e.g. was promoted/manually added)
+        if (nativeItems.some(ni => ni.id === data.id || (ni.fieldKey === label && ni.fieldValue === (data.value as string)))) {
+          return;
+        }
+
         extractedItems.push({
           id: data.id,
           itemType: isFullText ? ItemType.PARAGRAPH : ItemType.FIELD,
@@ -124,7 +131,8 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           status: data.status,
           doc_url: data.doc_url,
           doc_name: data.doc_name,
-          isIntegrated: true
+          isIntegrated: true,
+          isHidden: data.isHidden
         });
       });
     });
@@ -132,6 +140,42 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
     if (!showOrganizerData) return nativeItems;
     return [...nativeItems, ...extractedItems];
   }, [section.items, section.sectionType, organizerSubfolders, organizerExtractedData, showOrganizerData]);
+
+  // Handle visibility toggle
+  const handleToggleVisibility = (item: SectionItem) => {
+    if (!isAdmin()) return;
+
+    // Check if it's already a native item
+    const nativeIndex = (section.items || []).findIndex(i =>
+      i.id === item.id ||
+      (i.heading === item.heading && i.text === item.text && i.itemType === item.itemType && i.fieldKey === item.fieldKey)
+    );
+
+    if (nativeIndex !== -1) {
+      const updatedItems = [...(section.items || [])];
+      updatedItems[nativeIndex] = {
+        ...updatedItems[nativeIndex],
+        isHidden: !updatedItems[nativeIndex].isHidden
+      };
+
+      onUpdate({
+        ...section,
+        items: updatedItems
+      });
+    } else if ((item as any).isIntegrated) {
+      // Integrated item - promote to native and toggle visibility
+      const newItem: SectionItem = {
+        ...item,
+        isHidden: !item.isHidden,
+        orderIndex: (section.items || []).length
+      };
+
+      onUpdate({
+        ...section,
+        items: [...(section.items || []), newItem]
+      });
+    }
+  };
 
   // Filter items based on search query
   const filteredItems = useMemo(() => {
@@ -143,13 +187,19 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
       });
     }
 
+    // Role-based visibility filtering
+    let items = allIntegratedItems;
+    if (!isAdmin()) {
+      items = items.filter(item => !item.isHidden);
+    }
+
     if (!searchQuery.trim()) {
-      return allIntegratedItems;
+      return items;
     }
 
     const keywords = searchQuery.trim().toLowerCase().split(/\s+/);
 
-    return allIntegratedItems.filter(item => {
+    return items.filter(item => {
       if (item.itemType === ItemType.CLAUSE) {
         const clause = sectionItemToClause(item);
         if (!clause) return false;
@@ -330,44 +380,6 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
             </button>
           )}
         </div>
-
-        {organizerExtractedData.length > 0 && (
-          <button
-            onClick={() => setShowOrganizerData(!showOrganizerData)}
-            className={`flex items-center gap-2 px-6 py-3 border-2 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all ${showOrganizerData
-              ? 'bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100'
-              : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100'
-              }`}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            {showOrganizerData ? 'Hide Organizer Data' : 'Show Organizer Data'}
-          </button>
-        )}
-
-        {isFormSection && (
-          <button
-            onClick={() => setIsAddModalOpen(true)}
-            className="flex items-center gap-2 px-6 py-3 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all shadow-lg"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
-            </svg>
-            Add Item
-          </button>
-        )}
-        {isDefaultClauseSection && onAddClause && (
-          <button
-            onClick={onAddClause}
-            className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
-            </svg>
-            Add Clause
-          </button>
-        )}
       </div>
 
       {/* Items List */}
@@ -376,14 +388,6 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           <p className="text-aaa-muted font-semibold">
             {searchQuery ? 'No items match your search' : `No items in ${section.title}`}
           </p>
-          {!searchQuery && isFormSection && (
-            <button
-              onClick={() => setIsAddModalOpen(true)}
-              className="mt-4 px-6 py-2 bg-aaa-blue text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-aaa-hover transition-all"
-            >
-              Add First Item
-            </button>
-          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-6">
@@ -402,6 +406,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                     onCompare={onCompareClause}
                     onAskAI={onAskAI}
                     searchKeywords={searchKeywords}
+                    onToggleVisibility={() => handleToggleVisibility(item)}
                   />
                 </div>
               );
@@ -421,6 +426,7 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
                   searchKeywords={searchKeywords}
                   hideMetadata={false}
                   organizerExtractedData={organizerExtractedData}
+                  onToggleVisibility={() => handleToggleVisibility(item)}
                 />
               </div>
             );

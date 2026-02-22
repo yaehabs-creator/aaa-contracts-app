@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Clause, SavedContract, SectionType } from '../types';
 import { scrollToClauseByNumber } from '../src/hooks/useContractLedgerData';
 import { ensureContractHasSections } from '../services/contractMigrationService';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface SidebarProps {
   contract: SavedContract | null;
@@ -36,6 +37,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   saveStatus = 'idle',
   handleSave
 }) => {
+  const { isAdmin } = useAuth();
   const [navSearch, setNavSearch] = useState('');
 
   const contractWithSections = useMemo(() => {
@@ -44,13 +46,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
   }, [contract]);
 
   const filteredClauses = useMemo(() => {
-    if (!navSearch) return clauses;
+    let result = clauses;
+
+    // Filter out hidden items for non-admins
+    if (!isAdmin()) {
+      result = result.filter(c => !c.isHidden);
+    }
+
+    if (!navSearch) return result;
     const lowerSearch = navSearch.toLowerCase();
-    return clauses.filter(c =>
+    return result.filter(c =>
       c.clause_number?.toLowerCase().includes(lowerSearch) ||
       c.clause_title?.toLowerCase().includes(lowerSearch)
     );
-  }, [clauses, navSearch]);
+  }, [clauses, navSearch, isAdmin]);
 
   const sections = useMemo(() => {
     if (!contractWithSections?.sections) return [];
@@ -70,8 +79,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               onClick={() => onTabChange('CONDITIONS')}
               className={`w-full text-left px-4 py-3 rounded-2xl text-[12px] font-bold transition-all flex items-center gap-3 group relative overflow-hidden ${activeTab === 'CONDITIONS'
-                  ? 'bg-aaa-blue text-white shadow-lg shadow-indigo-100'
-                  : 'text-slate-600 hover:bg-white hover:text-aaa-blue hover:shadow-sm'
+                ? 'bg-aaa-blue text-white shadow-lg shadow-blue-900/20'
+                : 'text-slate-600 hover:bg-white hover:text-aaa-blue hover:shadow-sm'
                 }`}
             >
               <div className={`w-1.5 h-1.5 rounded-full transition-all ${activeTab === 'CONDITIONS' ? 'bg-white scale-125' : 'bg-slate-300 group-hover:bg-aaa-blue'
@@ -93,8 +102,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   key={section.sectionType}
                   onClick={() => onTabChange(section.sectionType)}
                   className={`w-full text-left px-4 py-3 rounded-2xl text-[12px] font-bold transition-all flex items-center gap-3 group border ${isActive
-                      ? 'bg-aaa-blue text-white border-aaa-blue shadow-lg shadow-indigo-100'
-                      : 'text-slate-500 border-transparent hover:bg-white hover:text-aaa-blue hover:border-slate-100 hover:shadow-sm'
+                    ? 'bg-aaa-blue text-white border-aaa-blue shadow-lg shadow-blue-900/20'
+                    : 'text-slate-500 border-transparent hover:bg-white hover:text-aaa-blue hover:border-slate-100 hover:shadow-sm'
                     }`}
                 >
                   <div className={`w-1.5 h-1.5 rounded-full transition-all ${isActive ? 'bg-white scale-125' : 'bg-slate-200 group-hover:bg-aaa-blue'
@@ -143,8 +152,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   key={opt.id}
                   onClick={() => onSortModeChange?.(opt.id as any)}
                   className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all ${sortMode === opt.id
-                      ? 'bg-white text-aaa-blue shadow-sm'
-                      : 'text-slate-400 hover:text-slate-600'
+                    ? 'bg-white text-aaa-blue shadow-sm'
+                    : 'text-slate-400 hover:text-slate-600'
                     }`}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -160,8 +169,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <button
                   key={`${clause.clause_number}-${clause.condition_type}`}
                   onClick={() => scrollToClauseByNumber(clause.clause_number)}
-                  className="w-full text-left p-3.5 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white hover:shadow-md hover:shadow-slate-100/50 transition-all group/item relative overflow-hidden"
+                  className={`w-full text-left p-3.5 rounded-2xl border transition-all group/item relative overflow-hidden ${clause.isHidden
+                    ? 'bg-amber-50/50 border-amber-100 opacity-60'
+                    : 'border-transparent hover:border-slate-100 hover:bg-white hover:shadow-md hover:shadow-slate-100/50'
+                    }`}
                 >
+                  {clause.isHidden && (
+                    <div className="absolute top-0 right-0 p-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-sm" />
+                    </div>
+                  )}
                   <div className="flex items-start gap-3">
                     <span className="flex-shrink-0 px-2 py-1 bg-slate-50 text-slate-400 group-hover/item:bg-aaa-blue/5 group-hover/item:text-aaa-blue rounded-lg font-black text-[10px] min-w-[36px] text-center border border-slate-100/50 transition-colors">
                       {clause.clause_number}
@@ -172,8 +189,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       </p>
                       <div className="flex items-center gap-2">
                         <span className={`text-[8px] font-black uppercase tracking-widest px-1.5 rounded-md ${clause.condition_type === 'Particular'
-                            ? 'text-indigo-500 bg-indigo-50/50'
-                            : 'text-slate-400 bg-slate-50'
+                          ? 'text-indigo-500 bg-indigo-50/50'
+                          : 'text-slate-400 bg-slate-50'
                           }`}>
                           {clause.condition_type}
                         </span>
@@ -225,8 +242,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             className={`w-full px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.25em] transition-all relative overflow-hidden group shadow-2xl ${isSaving
               ? 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
               : saveStatus === 'success'
-                ? 'bg-emerald-500 text-white hover:bg-emerald-600 shadow-emerald-200 active:scale-95'
-                : 'bg-aaa-blue text-white hover:bg-blue-700 shadow-indigo-200 active:scale-95'
+                ? 'bg-amber-400 text-white hover:bg-amber-500 shadow-amber-200 active:scale-95'
+                : 'bg-aaa-blue text-white hover:bg-blue-900 shadow-blue-900/20 active:scale-95'
               }`}
           >
             <span className="relative z-10 flex items-center justify-center gap-3">
