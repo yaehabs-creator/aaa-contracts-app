@@ -14,7 +14,9 @@ export const useChat = () => {
         atBottom,
         setAtBottom,
         conversationId,
-        contractClauses
+        contractClauses,
+        isGraphMode,
+        setIsGraphMode
     } = useChatContext();
 
     const sendMessage = useCallback(async (content: string) => {
@@ -39,6 +41,7 @@ export const useChat = () => {
                 conversationId,
                 {
                     forceDocumentSearch: content.toLowerCase().startsWith('/search'),
+                    forceGraphSearch: isGraphMode,
                     conversationHistory: messages
                 }
             );
@@ -90,6 +93,8 @@ export const useChat = () => {
         removeContextPill,
         clearChat,
         atBottom,
-        setAtBottom
+        setAtBottom,
+        isGraphMode,
+        setIsGraphMode
     };
 };

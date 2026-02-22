@@ -41,8 +41,13 @@ const GLOBAL_KEYWORDS = [
   'across all documents', 'total contract', 'compare all'
 ];
 
+const GRAPH_KEYWORDS = [
+  'party', 'who', 'when', 'relationship', 'connect', 'involved', 'expire',
+  'sign', 'link', 'hierarchy', 'network', 'map', 'graph', 'database'
+];
+
 export interface AgentResponse {
-  agent: 'openai' | 'claude';
+  agent: 'openai' | 'claude' | 'graph';
   specialty: string;
   analysis: string;
   confidence: number;
@@ -54,16 +59,19 @@ export interface SynthesizedResponse {
   finalAnswer: string;
   openaiInsights: AgentResponse | null;
   claudeInsights: AgentResponse | null;
+  graphInsights: AgentResponse | null;
   crossReferences: string[];
-  agentsUsed: ('openai' | 'claude')[];
+  agentsUsed: ('openai' | 'claude' | 'graph')[];
   synthesisNotes: string;
 }
 
 export interface QueryClassification {
   requiresDocuments: boolean;
   requiresConditions: boolean;
+  requiresGraph: boolean;
   documentRelevance: number; // 0-1
   conditionsRelevance: number; // 0-1
+  graphRelevance: number; // 0-1
   detectedTopics: string[];
 }
 
@@ -79,11 +87,12 @@ const SYNTHESIS_SYSTEM_PROMPT = `You are a CONTRACT SYNTHESIS EXPERT. Your role 
 AGENT SPECIALTIES:
 1. Document Specialist (OpenAI): Analyzes Agreement, BOQ, Schedules, Addendums - focuses on commercial/financial aspects
 2. Conditions Specialist (Claude): Analyzes General & Particular Conditions - focuses on legal rights, obligations, precedence
+3. Graph Retrieval Expert (Neo4j): Queries structured relationships (Parties, Dates, Connections) - focuses on relational facts
 
 YOUR TASK:
-- Combine insights from both agents into a unified, clear response
+- Combine insights from all agents into a unified, clear response
 - Resolve any conflicts by noting which source takes precedence
-- Highlight cross-references between documents and conditions
+- Highlight cross-references between documents, conditions, and the knowledge graph
 - Present the information in a logical, easy-to-understand format
 - Maintain professional, precise contract language
 
@@ -151,21 +160,34 @@ export class MultiAgentOrchestrator {
       }
     }
 
+    // Check for graph-related keywords
+    let graphScore = 0;
+    for (const keyword of GRAPH_KEYWORDS) {
+      if (lowerQuery.includes(keyword)) {
+        graphScore += 1;
+        detectedTopics.push(`graph:${keyword}`);
+      }
+    }
+
     // Normalize scores
     const maxDocScore = Math.min(documentScore, 5);
     const maxCondScore = Math.min(conditionsScore, 5);
+    const maxGraphScore = Math.min(graphScore, 5);
 
     const documentRelevance = maxDocScore > 0 ? Math.min(1, 0.3 + (maxDocScore * 0.14)) : 0.2;
     const conditionsRelevance = maxCondScore > 0 ? Math.min(1, 0.3 + (maxCondScore * 0.14)) : 0.2;
+    const graphRelevance = maxGraphScore > 0 ? Math.min(1, 0.3 + (maxGraphScore * 0.14)) : 0.2;
 
     // If query is generic (no specific keywords) or global, both agents should contribute
-    const isGenericOrGlobal = (documentScore === 0 && conditionsScore === 0) || globalScore > 2;
+    const isGenericOrGlobal = (documentScore === 0 && conditionsScore === 0 && graphScore === 0) || globalScore > 2;
 
     return {
       requiresDocuments: documentScore > 0 || isGenericOrGlobal,
       requiresConditions: conditionsScore > 0 || isGenericOrGlobal,
+      requiresGraph: graphScore > 0 || isGenericOrGlobal,
       documentRelevance: isGenericOrGlobal ? 0.8 : documentRelevance,
       conditionsRelevance: isGenericOrGlobal ? 0.8 : conditionsRelevance,
+      graphRelevance: isGenericOrGlobal ? 0.8 : graphRelevance,
       detectedTopics
     };
   }
@@ -424,24 +446,63 @@ CRITICAL:
   }
 
   /**
+   * Query Neo4j Graph for relational analysis
+   */
+  async queryGraphAgent(
+    query: string,
+    contractId: string
+  ): Promise<AgentResponse> {
+    try {
+      // Lazy load to avoid issues if not needed
+      const { graphExtractionService } = await import('./graphExtraction');
+
+      const results = await graphExtractionService.generateAndRunQuery(query);
+      const analysis = results && results.length > 0
+        ? `Knowledge Graph identifies the following related entities: ${results.join(', ')}`
+        : 'The Knowledge Graph does not contain specific relational data for this query yet.';
+
+      return {
+        agent: 'graph',
+        specialty: 'relational',
+        analysis,
+        confidence: results && results.length > 0 ? 0.85 : 0.1,
+        referencedSources: ['Neo4j Knowledge Graph']
+      };
+    } catch (error: any) {
+      console.error('Graph agent error:', error);
+      return {
+        agent: 'graph',
+        specialty: 'relational',
+        analysis: '',
+        confidence: 0,
+        referencedSources: [],
+        error: error.message
+      };
+    }
+  }
+
+  /**
    * Synthesize responses from both agents
    */
   synthesizeResponses(
     query: string,
     openaiResponse: AgentResponse | null,
     claudeResponse: AgentResponse | null,
+    graphResponse: AgentResponse | null,
     classification: QueryClassification
   ): SynthesizedResponse {
-    const agentsUsed: ('openai' | 'claude')[] = [];
+    const agentsUsed: ('openai' | 'claude' | 'graph')[] = [];
     const crossReferences: string[] = [];
     let synthesisNotes = '';
 
     // Determine which responses to use based on availability and confidence
     const hasOpenAI = openaiResponse && !openaiResponse.error && openaiResponse.confidence > this.config.confidenceThreshold!;
     const hasClaude = claudeResponse && !claudeResponse.error && claudeResponse.confidence > this.config.confidenceThreshold!;
+    const hasGraph = graphResponse && !graphResponse.error && graphResponse.confidence > this.config.confidenceThreshold!;
 
     if (hasOpenAI) agentsUsed.push('openai');
     if (hasClaude) agentsUsed.push('claude');
+    if (hasGraph) agentsUsed.push('graph');
 
     // If neither agent provided a good response
     if (agentsUsed.length === 0) {
@@ -461,6 +522,7 @@ CRITICAL:
         finalAnswer: fallbackMsg,
         openaiInsights: openaiResponse,
         claudeInsights: claudeResponse,
+        graphInsights: graphResponse,
         crossReferences: [],
         agentsUsed: [],
         synthesisNotes: 'Fallback triggered: No agent provided sufficient confidence.'
@@ -474,19 +536,23 @@ CRITICAL:
     if (agentsUsed.length === 1) {
       if (hasOpenAI && openaiResponse) {
         finalAnswer = openaiResponse.analysis;
-        synthesisNotes = 'Response from Document Specialist only (GC/PC analysis unavailable or not relevant)';
+        synthesisNotes = 'Response from Document Specialist only';
       } else if (hasClaude && claudeResponse) {
         finalAnswer = claudeResponse.analysis;
-        synthesisNotes = 'Response from Conditions Specialist only (Document analysis unavailable or not relevant)';
+        synthesisNotes = 'Response from Conditions Specialist only';
+      } else if (hasGraph && graphResponse) {
+        finalAnswer = graphResponse.analysis;
+        synthesisNotes = 'Response from Graph Specialist only';
       }
     } else {
-      // Both agents responded - synthesize their insights
+      // Multiple agents responded - synthesize their insights
       finalAnswer = this.buildSynthesizedAnswer(
-        openaiResponse!,
-        claudeResponse!,
+        openaiResponse,
+        claudeResponse,
+        graphResponse,
         classification
       );
-      synthesisNotes = 'Combined analysis from both Document and Conditions Specialists';
+      synthesisNotes = `Combined analysis from ${agentsUsed.join(' and ')}`;
 
       // Find cross-references between the responses
       if (openaiResponse && claudeResponse) {
@@ -510,6 +576,7 @@ CRITICAL:
       finalAnswer,
       openaiInsights: openaiResponse,
       claudeInsights: claudeResponse,
+      graphInsights: graphResponse,
       crossReferences: [...new Set(crossReferences)],
       agentsUsed,
       synthesisNotes
@@ -520,45 +587,51 @@ CRITICAL:
    * Build a synthesized answer from both agent responses
    */
   private buildSynthesizedAnswer(
-    openaiResponse: AgentResponse,
-    claudeResponse: AgentResponse,
+    openaiResponse: AgentResponse | null,
+    claudeResponse: AgentResponse | null,
+    graphResponse: AgentResponse | null,
     classification: QueryClassification
   ): string {
     const parts: string[] = [];
 
     // Determine the order based on query classification
+    // 1. Graph results are usually high precision and concise - show first if highly relevant
+    if (graphResponse && graphResponse.analysis && classification.graphRelevance > 0.7) {
+      parts.push('🔵 From Knowledge Graph (Direct Relationships)\n');
+      parts.push(graphResponse.analysis);
+      parts.push('\n');
+    }
+
     const documentsFirst = classification.documentRelevance > classification.conditionsRelevance;
 
     if (documentsFirst) {
-      // Documents first, then conditions
-      if (openaiResponse.analysis) {
-        parts.push('🔵 From Contract Documents (Agreement, BOQ, Schedules)\n');
+      if (openaiResponse && openaiResponse.analysis) {
+        parts.push('\n🔵 From Contract Documents (Agreement, BOQ, Schedules)\n');
         parts.push(openaiResponse.analysis);
         parts.push('\n');
       }
 
-      if (claudeResponse.analysis) {
+      if (claudeResponse && claudeResponse.analysis) {
         parts.push('\n🔵 From Contract Conditions (GC/PC)\n');
         parts.push(claudeResponse.analysis);
       }
     } else {
-      // Conditions first, then documents
-      if (claudeResponse.analysis) {
-        parts.push('🔵 From Contract Conditions (GC/PC)\n');
+      if (claudeResponse && claudeResponse.analysis) {
+        parts.push('\n🔵 From Contract Conditions (GC/PC)\n');
         parts.push(claudeResponse.analysis);
         parts.push('\n');
       }
 
-      if (openaiResponse.analysis) {
+      if (openaiResponse && openaiResponse.analysis) {
         parts.push('\n🔵 From Contract Documents (Agreement, BOQ, Schedules)\n');
         parts.push(openaiResponse.analysis);
       }
     }
 
-    // Add synthesis note if both agents contributed significantly
-    if (openaiResponse.confidence > 0.5 && claudeResponse.confidence > 0.5) {
-      parts.push('\n\n🔷 Note: This analysis combines insights from contract documents and conditions. ');
-      parts.push('For definitive interpretation, the hierarchy is: Particular Conditions > General Conditions > Agreement > Schedules.');
+    // Add graph info at the end if it wasn't shown at the top
+    if (graphResponse && graphResponse.analysis && classification.graphRelevance <= 0.7 && classification.graphRelevance > 0.3) {
+      parts.push('\n\n🔵 Knowledge Graph Insights\n');
+      parts.push(graphResponse.analysis);
     }
 
     return parts.join('');
@@ -572,7 +645,7 @@ CRITICAL:
     contractId: string | null,
     clauses: Clause[],
     conversationHistory: BotMessage[] = [],
-    options: { forceDocumentSearch?: boolean } = {}
+    options: { forceDocumentSearch?: boolean; forceGraphSearch?: boolean } = {}
   ): Promise<SynthesizedResponse> {
     // Classify the query
     const classification = this.classifyQuery(query);
@@ -581,6 +654,11 @@ CRITICAL:
     if (options.forceDocumentSearch) {
       classification.requiresDocuments = true;
       classification.documentRelevance = 1.0;
+    }
+
+    if (options.forceGraphSearch) {
+      classification.requiresGraph = true;
+      classification.graphRelevance = 1.0;
     }
 
     // Check available agents
@@ -592,7 +670,20 @@ CRITICAL:
     // Build shared contexts
     const claudeContext = await this.buildClaudeContext(clauses, contractId);
 
-    // Query OpenAI if documents are relevant and available
+    // 1. Query Graph Agent if relevant
+    if ((classification.requiresGraph || this.config.alwaysUseBothAgents) && contractId) {
+      promises.push(
+        this.queryGraphAgent(query, contractId)
+          .catch(err => {
+            console.error('Graph agent failed:', err);
+            return null;
+          })
+      );
+    } else {
+      promises.push(Promise.resolve(null));
+    }
+
+    // 2. Query OpenAI if documents are relevant and available
     if ((classification.requiresDocuments || this.config.alwaysUseBothAgents) &&
       available.openai && contractId) {
       promises.push(
@@ -606,7 +697,7 @@ CRITICAL:
       promises.push(Promise.resolve(null));
     }
 
-    // Query Claude if conditions are relevant and available
+    // 3. Query Claude if conditions are relevant and available
     if ((classification.requiresConditions || this.config.alwaysUseBothAgents) &&
       available.claude) {
       const messages: BotMessage[] = [
@@ -641,13 +732,14 @@ CRITICAL:
     }
 
     // Execute in parallel
-    const [openaiResponse, claudeResponse] = await Promise.all(promises);
+    const [graphResponse, openaiResponse, claudeResponse] = await Promise.all(promises);
 
     // Synthesize the responses
     return this.synthesizeResponses(
       query,
       openaiResponse,
       claudeResponse,
+      graphResponse,
       classification
     );
   }

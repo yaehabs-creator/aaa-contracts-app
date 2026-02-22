@@ -12,6 +12,8 @@ interface ChatContextValue {
     setAtBottom: (val: boolean) => void;
     conversationId: string | null;
     contractClauses: any[];
+    isGraphMode: boolean;
+    setIsGraphMode: (val: boolean) => void;
 }
 
 const ChatContext = createContext<ChatContextValue | undefined>(undefined);
@@ -29,6 +31,7 @@ export const ChatProvider: React.FC<{
     const [isThinkingOrStreaming, setIsThinkingOrStreaming] = useState(false);
     const [contextPills, setContextPills] = useState<ContextPill[]>(config.initialContextPills || []);
     const [atBottom, setAtBottom] = useState(true);
+    const [isGraphMode, setIsGraphMode] = useState(false);
 
     const value = useMemo(() => ({
         messages,
@@ -40,8 +43,10 @@ export const ChatProvider: React.FC<{
         atBottom,
         setAtBottom,
         conversationId: config.conversationId || null,
-        contractClauses: config.contractClauses || []
-    }), [messages, isThinkingOrStreaming, contextPills, atBottom, config.conversationId, config.contractClauses]);
+        contractClauses: config.contractClauses || [],
+        isGraphMode,
+        setIsGraphMode
+    }), [messages, isThinkingOrStreaming, contextPills, atBottom, config.conversationId, config.contractClauses, isGraphMode]);
 
     return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 };

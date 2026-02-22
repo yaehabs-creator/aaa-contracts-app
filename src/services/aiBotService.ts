@@ -817,12 +817,13 @@ export async function chatWithDualAgents(
   options: {
     forceBothAgents?: boolean;
     forceDocumentSearch?: boolean;
+    forceGraphSearch?: boolean;
     conversationHistory?: BotMessage[];
   } = {}
 ): Promise<{
   response: string;
   synthesizedResponse: SynthesizedResponse;
-  agentsUsed: ('openai' | 'claude')[];
+  agentsUsed: ('openai' | 'claude' | 'graph')[];
   isDualMode: boolean;
 }> {
   const orchestrator = getOrchestrator({
@@ -847,7 +848,10 @@ export async function chatWithDualAgents(
     contractId,
     clauses,
     conversationHistory,
-    { forceDocumentSearch: options.forceDocumentSearch }
+    {
+      forceDocumentSearch: options.forceDocumentSearch,
+      forceGraphSearch: options.forceGraphSearch
+    }
   );
 
   return {

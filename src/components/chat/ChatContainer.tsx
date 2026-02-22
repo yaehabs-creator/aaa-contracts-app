@@ -37,7 +37,9 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
         contextPills,
         removeContextPill,
         atBottom,
-        setAtBottom
+        setAtBottom,
+        isGraphMode,
+        setIsGraphMode
     } = useChat();
 
 
@@ -100,9 +102,22 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
                         <header className="h-20 px-8 flex items-center justify-between border-b border-black/[0.03] bg-white/30 flex-shrink-0">
                             <div className="flex flex-col">
                                 <h2 className="text-xl font-black text-black tracking-tight leading-none">{title}</h2>
-                                <div className="flex items-center gap-2 mt-1.5">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span className="text-[10px] font-bold text-black/40 uppercase tracking-widest">Neural Analysis Active</span>
+                                <div className="flex items-center gap-3 mt-1.5">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`w-1.5 h-1.5 rounded-full ${isGraphMode ? 'bg-purple-500' : 'bg-emerald-500'} animate-pulse`} />
+                                        <span className="text-[10px] font-bold text-black/40 uppercase tracking-widest">
+                                            {isGraphMode ? 'Graph Analysis' : 'Neural Analysis'} Active
+                                        </span>
+                                    </div>
+                                    <button
+                                        onClick={() => setIsGraphMode(!isGraphMode)}
+                                        className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-tighter transition-all border
+                                            ${isGraphMode
+                                                ? 'bg-purple-500/10 border-purple-500/20 text-purple-600'
+                                                : 'bg-black/[0.03] border-transparent text-black/30 hover:text-black/60'}`}
+                                    >
+                                        {isGraphMode ? 'Graph On' : 'Graph Off'}
+                                    </button>
                                 </div>
                             </div>
                             <button
