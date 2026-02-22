@@ -8,6 +8,18 @@ import './index.css';
 import { getMissingConfig } from './src/config/validators';
 import Onboarding from './src/components/ConfigOnboarding';
 
+// Polyfill for crypto.randomUUID in insecure contexts (like accessing via IP)
+if (typeof window !== 'undefined' && !window.crypto.randomUUID) {
+  console.warn('Polyfilling crypto.randomUUID for insecure context');
+  window.crypto.randomUUID = function () {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      const r = Math.random() * 16 | 0;
+      const v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    }) as any;
+  };
+}
+
 // Proper React Error Boundary class component
 class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
@@ -63,7 +75,7 @@ class ErrorBoundary extends React.Component<
             <p style={{ color: '#1A2333', marginBottom: '1rem', lineHeight: '1.6', fontSize: '1rem' }}>
               {errorMessage}
             </p>
-            
+
             {missingVars.length > 0 && (
               <div style={{
                 background: '#FEE2E2',

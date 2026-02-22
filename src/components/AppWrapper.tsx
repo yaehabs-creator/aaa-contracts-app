@@ -11,31 +11,67 @@ interface AppWrapperProps {
 }
 
 export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, isBotOpen }) => {
-  const { user, loading, canEdit } = useAuth();
+  const { user, loading, canEdit, canView, authError } = useAuth();
   const [showUserManagement, setShowUserManagement] = useState(false);
 
-  if (loading) {
+  if (loading || authError) {
     return (
       <div style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#F4F7FA' // aaa-bg
+        background: '#F4F7FA',
+        padding: '2rem'
       }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            width: '60px',
-            height: '60px',
-            border: '5px solid rgba(15, 46, 107, 0.1)', // aaa-blue with opacity
-            borderTop: '5px solid #0F2E6B', // aaa-blue
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 1.5rem'
-          }} />
-          <p style={{ color: '#1A2333', fontSize: '1.2rem', fontWeight: 'bold' }}>
-            Loading AE Contract Department...
-          </p>
+        <div style={{ textAlign: 'center', maxWidth: '400px' }}>
+          {authError ? (
+            <div style={{
+              background: 'white',
+              padding: '2rem',
+              borderRadius: '24px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+              border: '1.5px solid #FEE2E2'
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚠️</div>
+              <h2 style={{ color: '#1A2333', marginBottom: '0.5rem' }}>Authentication Issue</h2>
+              <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
+                {authError}
+              </p>
+              <button
+                onClick={() => window.location.reload()}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  background: '#1e3a8a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer'
+                }}
+              >
+                Refresh Page
+              </button>
+            </div>
+          ) : (
+            <>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                border: '5px solid rgba(30, 58, 138, 0.1)',
+                borderTop: '5px solid #1e3a8a',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite',
+                margin: '0 auto 1.5rem'
+              }} />
+              <p style={{ color: '#1A2333', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em' }}>
+                Loading AE Contract Department...
+              </p>
+              <p style={{ color: '#64748B', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+                Synchronizing with secure vault...
+              </p>
+            </>
+          )}
         </div>
         <style>{`
           @keyframes spin {
@@ -51,8 +87,8 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
     return <LoginPage />;
   }
 
-  // Check if user has permission to edit/create
-  if (!canEdit() && !showUserManagement) {
+  // Check if user has permission to view (all authenticated users with a profile)
+  if (!canView() && !showUserManagement) {
     return (
       <div>
         <AppHeader
@@ -80,7 +116,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
             <div style={{
               width: '80px',
               height: '80px',
-              background: '#fef3c7',
+              background: '#fee2e2',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -88,15 +124,14 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
               margin: '0 auto 2rem',
               fontSize: '2rem'
             }}>
-              👁️
+              🚫
             </div>
-            <h2 style={{ marginBottom: '1rem', color: '#2d3748' }}>View-Only Access</h2>
+            <h2 style={{ marginBottom: '1rem', color: '#2d3748' }}>Access Restricted</h2>
             <p style={{ color: '#718096', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-              Your account has <strong>Viewer</strong> permissions. You can view contracts
-              but cannot create or edit them.
+              Your account does not have permission to view the Contract Department.
             </p>
             <p style={{ color: '#718096', fontSize: '0.875rem' }}>
-              Contact your administrator to request elevated permissions.
+              Please contact your administrator to request access.
             </p>
           </div>
         </div>

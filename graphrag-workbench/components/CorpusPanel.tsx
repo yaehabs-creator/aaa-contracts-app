@@ -30,9 +30,9 @@ import {
 } from '@tanstack/react-table'
 
 type CorpusState = {
-  uploads: { name: string; size: number; mtime: number; type: 'txt'|'pdf'; status?: string }[]
+  uploads: { name: string; size: number; mtime: number; type: 'txt' | 'pdf' | 'json'; status?: string }[]
   outputStats?: { entities?: number; relationships?: number; communities?: number; text_units?: number; last_index_time?: string }
-  queue: { name: string; status: 'pending'|'processing'|'done'|'error'; message?: string }[]
+  queue: { name: string; status: 'pending' | 'processing' | 'done' | 'error'; message?: string }[]
   kgName?: string
 }
 
@@ -59,10 +59,10 @@ export default function CorpusPanel() {
       const res = await fetch('/api/corpus/logs', { cache: 'no-store' })
       if (res.ok) {
         const arr = await res.json()
-        const items = Array.isArray(arr) ? arr as Array[{ ts: number; text: string }] : []
+        const items = Array.isArray(arr) ? arr as Array<{ ts: number; text: string }> : []
         setPersistedLogs(items)
       }
-    } catch {}
+    } catch { }
   }, [])
 
   const refresh = React.useCallback(async () => {
@@ -75,7 +75,7 @@ export default function CorpusPanel() {
     await loadLogs()
   }, [loadLogs])
 
-  useEffect(() => { 
+  useEffect(() => {
     refresh()
   }, [refresh])
 
@@ -100,11 +100,14 @@ export default function CorpusPanel() {
     const arrayFiles: File[] = Array.isArray(files)
       ? (files as File[])
       : Array.from(files as FileList)
-    const pdfs = arrayFiles.filter(
-      (f) => f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf')
+    const normalizedFiles = arrayFiles.filter(
+      (f) => f.type === 'application/pdf' ||
+        f.name.toLowerCase().endsWith('.pdf') ||
+        f.name.toLowerCase().endsWith('.json') ||
+        f.name.toLowerCase().endsWith('.txt')
     )
-    if (pdfs.length === 0) return
-    pdfs.forEach((f) => data.append('files', f))
+    if (normalizedFiles.length === 0) return
+    normalizedFiles.forEach((f) => data.append('files', f))
     setUploading(true)
     try {
       const res = await fetch('/api/corpus/upload', { method: 'POST', body: data })
@@ -138,10 +141,10 @@ export default function CorpusPanel() {
           refresh()
           try {
             window.dispatchEvent(new Event('graph-data-updated'))
-          } catch {}
+          } catch { }
           setStartTime(null)
         }
-      } catch {}
+      } catch { }
     }
     es.onerror = () => {
       setRunning(false)
@@ -150,7 +153,7 @@ export default function CorpusPanel() {
   }
 
   const stopIndex = async () => {
-    try { await fetch('/api/corpus/index/stop', { method: 'POST' }) } catch {}
+    try { await fetch('/api/corpus/index/stop', { method: 'POST' }) } catch { }
     if (sseRef.current) { sseRef.current.close(); sseRef.current = null }
     setRunning(false)
   }
@@ -164,7 +167,7 @@ export default function CorpusPanel() {
         const arr = Array.isArray(data?.archives) ? (data.archives as Array<{ name?: string; sizeKB?: number }>) : []
         setArchives(arr.map(a => ({ name: String(a.name || ''), sizeKB: Number(a.sizeKB || 0) })))
       }
-    } catch {}
+    } catch { }
   }
 
   const archiveCurrent = async () => {
@@ -173,9 +176,9 @@ export default function CorpusPanel() {
       if (res.ok) {
         await refresh()
         await refreshArchives()
-        try { window.dispatchEvent(new Event('graph-data-cleared')) } catch {}
+        try { window.dispatchEvent(new Event('graph-data-cleared')) } catch { }
       }
-    } catch {}
+    } catch { }
   }
 
   const restoreArchive = async (name: string) => {
@@ -184,9 +187,9 @@ export default function CorpusPanel() {
       if (res.ok) {
         await refresh()
         await refreshArchives()
-        try { window.dispatchEvent(new Event('graph-data-updated')) } catch {}
+        try { window.dispatchEvent(new Event('graph-data-updated')) } catch { }
       }
-    } catch {}
+    } catch { }
   }
 
   const renameArchive = async (from: string) => {
@@ -195,7 +198,7 @@ export default function CorpusPanel() {
     try {
       const res = await fetch('/api/corpus/archive/rename', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ from, to }) })
       if (res.ok) await refreshArchives()
-    } catch {}
+    } catch { }
   }
 
   const deleteArchive = async (name: string) => {
@@ -203,7 +206,7 @@ export default function CorpusPanel() {
     try {
       const res = await fetch('/api/corpus/archive/delete', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) })
       if (res.ok) await refreshArchives()
-    } catch {}
+    } catch { }
   }
 
   // Track whether user is near bottom (to avoid fighting manual scroll-up)
@@ -306,7 +309,7 @@ export default function CorpusPanel() {
                   try {
                     const res = await fetch('/api/corpus/kg/rename', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: next }) })
                     if (res.ok) await refresh()
-                  } catch {}
+                  } catch { }
                 }}
               >Rename</Button>
             </div>
@@ -337,7 +340,7 @@ export default function CorpusPanel() {
                       <RotateCcw className="h-4 w-4" />
                     </Button>
                   </div>
-                  <Button onClick={(e)=>{ e.preventDefault(); archiveCurrent() }} className="w-full mb-2">
+                  <Button onClick={(e) => { e.preventDefault(); archiveCurrent() }} className="w-full mb-2">
                     <Archive className="h-4 w-4 mr-2" /> Archive current
                   </Button>
                   <DropdownMenuSeparator />
@@ -369,7 +372,7 @@ export default function CorpusPanel() {
             </div>
           </div>
         </div>
-        
+
         {/* OpenAI-only indexing (settings.yaml) */}
       </div>
 
@@ -483,7 +486,7 @@ export default function CorpusPanel() {
 
       {/* Dataset card (PDF drop zone + table) */}
       <div className="p-4 border-b">
-        <Card 
+        <Card
           onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
           onDragLeave={() => setDragOver(false)}
           onDrop={(e) => {
@@ -502,19 +505,19 @@ export default function CorpusPanel() {
           <CardHeader className="pb-2 flex flex-row items-start justify-between">
             <div>
               <CardTitle className="text-sm">Dataset</CardTitle>
-              <CardDescription>Drop PDF files here (.pdf only){uploading && <span className="ml-2">• Uploading…</span>}</CardDescription>
+              <CardDescription>Drop files here (.pdf, .json, .txt){uploading && <span className="ml-2">• Uploading…</span>}</CardDescription>
             </div>
             <div className="flex items-center gap-2">
-              <Input id="dataset-file-input" type="file" multiple accept=".pdf" className="hidden" onChange={(e) => e.target.files && onFiles(e.target.files)} />
+              <Input id="dataset-file-input" type="file" multiple accept=".pdf,.json,.txt" className="hidden" onChange={(e) => e.target.files && onFiles(e.target.files)} />
               <Button size="sm" onClick={() => document.getElementById('dataset-file-input')?.click()}>
-                <Plus className="h-4 w-4 mr-1" /> Add PDFs
+                <Plus className="h-4 w-4 mr-1" /> Add Files
               </Button>
             </div>
           </CardHeader>
           <CardContent>
             <div className="max-h-56 overflow-y-auto">
               <FilesDataTable
-                rows={state.uploads.filter((f) => f.type === 'pdf')}
+                rows={state.uploads.filter((f) => ['pdf', 'json', 'txt'].includes(f.type))}
                 onRemove={async (name) => {
                   try {
                     await fetch('/api/corpus/remove', {
@@ -523,11 +526,11 @@ export default function CorpusPanel() {
                       body: JSON.stringify({ name }),
                     })
                     refresh()
-                  } catch {}
+                  } catch { }
                 }}
               />
-              {state.uploads.filter((f) => f.type === 'pdf').length === 0 && (
-                <div className="text-xs text-muted-foreground">No PDFs in input/ yet.</div>
+              {state.uploads.filter((f) => ['pdf', 'json', 'txt'].includes(f.type)).length === 0 && (
+                <div className="text-xs text-muted-foreground">No files in input/ yet.</div>
               )}
             </div>
           </CardContent>
@@ -576,7 +579,7 @@ type UploadRow = {
   name: string
   size: number
   mtime: number
-  type: 'txt' | 'pdf'
+  type: 'txt' | 'pdf' | 'json'
   status?: string
 }
 

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import path from 'node:path'
 import fs from 'node:fs/promises'
-interface UploadEntry { name: string; size: number; mtime: number; type: 'txt'|'pdf'; status?: string }
+interface UploadEntry { name: string; size: number; mtime: number; type: 'txt' | 'pdf' | 'json'; status?: string }
 async function readUploads(p: string): Promise<UploadEntry[]> {
   try {
     const raw = await fs.readFile(p, 'utf-8')
@@ -27,7 +27,11 @@ export async function POST(req: Request) {
       const arr = new Uint8Array(await f.arrayBuffer())
       const outPath = path.join(inputDir, safeName)
       await fs.writeFile(outPath, arr)
-      const entry: UploadEntry = { name: safeName, size: arr.length, mtime: Date.now(), type: safeName.toLowerCase().endsWith('.pdf') ? 'pdf' : 'txt', status: 'pending' }
+      let type: 'txt' | 'pdf' | 'json' = 'txt'
+      if (safeName.toLowerCase().endsWith('.pdf')) type = 'pdf'
+      else if (safeName.toLowerCase().endsWith('.json')) type = 'json'
+
+      const entry: UploadEntry = { name: safeName, size: arr.length, mtime: Date.now(), type, status: 'pending' }
       const idx = reg.findIndex((x) => x.name === entry.name)
       if (idx >= 0) reg[idx] = entry; else reg.push(entry)
     }

@@ -6,7 +6,7 @@ interface UploadEntry {
   name: string
   size: number
   mtime: number
-  type: 'txt'|'pdf'
+  type: 'txt' | 'pdf' | 'json'
   status?: string
   prepared_at?: number
   indexed_at?: number
@@ -25,9 +25,12 @@ export async function POST(req: NextRequest) {
     const p = path.join(inputDir, name)
     // Remove original
     await fs.rm(p, { force: true })
-    // Attempt to remove derived .txt if original was PDF
+    // Attempt to remove derived .txt if original was PDF or JSON
     if (name.toLowerCase().endsWith('.pdf')) {
       const txt = name.replace(/\.pdf$/i, '.txt')
+      await fs.rm(path.join(inputDir, txt), { force: true })
+    } else if (name.toLowerCase().endsWith('.json')) {
+      const txt = name.replace(/\.json$/i, '_extracted.txt')
       await fs.rm(path.join(inputDir, txt), { force: true })
     }
     // Update uploads registry

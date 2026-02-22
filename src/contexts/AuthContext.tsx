@@ -31,20 +31,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // Add timeout to prevent hanging if Supabase query stalls
         const timeoutPromise = new Promise<boolean>((resolve) => {
           setTimeout(() => {
-            console.warn('Login required setting fetch timed out, defaulting to true');
+            console.warn('⚠️ Login required setting fetch timed out after 5s, defaulting to true');
             resolve(true);
-          }, 15000);
+          }, 5000); // Reduced from 15s to 5s
         });
         const required = await Promise.race([getLoginRequired(), timeoutPromise]);
         setLoginRequiredState(required);
-        console.log('Login required setting:', required);
+        console.log('✅ Login required setting loaded:', required);
       } catch (error) {
-        console.error('Error loading login required setting:', error);
+        console.error('❌ Error loading login required setting:', error);
         setLoginRequiredState(true);
       } finally {
         setSettingsLoading(false);
       }
     };
+    console.log('🏁 Starting login required setting fetch...');
     loadLoginRequiredSetting();
   }, []);
 
@@ -140,12 +141,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     // Set timeout
     timeoutId = setTimeout(() => {
-      if (authLoading) {
-        console.error('Auth initialization timeout - Supabase may not be configured correctly or query is hanging');
-        setAuthError('Authentication timed out. Please refresh the page.');
-        setAuthLoading(false);
-      }
-    }, 30000); // Increased from 12s to 30s to be more resilient to slow connections
+      // Use a function to check the LATEST state
+      setAuthLoading(currentLoading => {
+        if (currentLoading) {
+          console.error('🚨 Auth initialization timeout - Supabase query is hanging');
+          setAuthError('Authentication timed out. Please refresh the page or check your connection.');
+          return false;
+        }
+        return false;
+      });
+    }, 20000); // Reduced from 30s to 20s
 
     // Get initial session
     getInitialSession();
@@ -176,12 +181,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       throw new Error('Supabase is not configured. Please check your environment variables.');
     }
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    console.log('🔐 Attempting sign in for:', email);
+
+    // Add a local timeout for the sign-in request
+    const signInPromise = supabase.auth.signInWithPassword({
       email,
       password
     });
 
+    const timeoutPromise = new Promise<any>((_, reject) => {
+      setTimeout(() => reject(new Error('Sign-in request timed out. Please check your connection.')), 15000);
+    });
+
+    const { data, error } = await Promise.race([signInPromise, timeoutPromise]);
+
     if (error) {
+      console.error('❌ Sign-in error:', error);
       // Map Supabase errors to user-friendly messages
       if (error.message.includes('Invalid login credentials')) {
         throw new Error('Invalid email or password');
@@ -193,8 +208,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
 
     if (!data.user) {
+      console.error('❌ Sign-in failed: No user returned');
       throw new Error('Failed to sign in');
     }
+
+    console.log('✅ Sign-in successful for user:', data.user.id);
   };
 
   const signUp = async (email: string, password: string, displayName: string) => {
@@ -282,6 +300,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const value: AuthContextType = {
     user,
     loading,
+    authError,
     loginRequired,
     signIn,
     signUp,
