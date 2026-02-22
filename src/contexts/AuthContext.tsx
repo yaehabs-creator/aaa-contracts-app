@@ -76,14 +76,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           throw new Error('Local storage is blocked. Please enable cookies/site-data.');
         }
 
-        // Add a 10s timeout just for the getSession call itself
-        // to distinguish between "Slow Connection" and "Complete Hang"
+        // Detect connection speed
+        const isSlowConnection = (navigator as any).connection?.effectiveType === '3g' ||
+          (navigator as any).connection?.effectiveType === '2g';
+
+        // 30s timeout for session fetch - 3G connections need a lot of headspace
+        const timeoutMs = isSlowConnection ? 45000 : 30000;
+
         const sessionPromise = supabase.auth.getSession();
         const sessionTimeout = new Promise<any>((_, reject) =>
-          setTimeout(() => reject(new Error('Connection to secure vault (Supabase) timed out. Your firewall or network might be blocking access to our database.')), 10000)
+          setTimeout(() => reject(new Error(`Connection to secure vault timed out after ${timeoutMs / 1000}s. Your connection (${(navigator as any).connection?.effectiveType || 'unknown'}) is too slow or being blocked.`)), timeoutMs)
         );
 
-        console.log('🔄 getInitialSession: Fetching session...');
+        console.log(`🔄 getInitialSession: Fetching session (Timeout: ${timeoutMs}ms)...`);
         const { data: { session }, error } = await Promise.race([sessionPromise, sessionTimeout]);
 
         if (error) throw error;
@@ -98,8 +103,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       } catch (error: any) {
         console.error('❌ Error getting initial session:', error);
-        const errorMessage = error.message || 'Unknown error';
-        setAuthError(`Authentication initialization failed: ${errorMessage}`);
+        let errorMessage = error.message || 'Unknown error';
+
+        // Specialized handling for the "signal is aborted" error seen in logs
+        if (errorMessage.includes('signal is aborted')) {
+          errorMessage = 'The connection was interrupted by your browser. This usually happens on slow 3G/4G networks. Please try refreshing or switching to a faster connection.';
+        }
+
+        setAuthError(`Authentication issue: ${errorMessage}`);
         setAuthLoading(false);
         clearTimeout(timeoutId);
       }
@@ -114,6 +125,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       console.log('🔄 loadUserProfile: Loading profile for:', supabaseUser.id);
       try {
         // Simple timeout for the database query
+        const isSlow = (navigator as any).connection?.effectiveType === '3g' ||
+          (navigator as any).connection?.effectiveType === '2g';
+        const qTimeoutMs = isSlow ? 45000 : 30000;
+
         const queryPromise = supabase
           .from('users')
           .select('*')
@@ -121,7 +136,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           .single();
 
         const queryTimeout = new Promise<any>((_, reject) =>
-          setTimeout(() => reject(new Error('User profile fetch timed out. The database may be down or unreachable.')), 10000)
+          setTimeout(() => reject(new Error(`Profile load timed out (${qTimeoutMs / 1000}s). The network is too slow.`)), qTimeoutMs)
         );
 
         const { data: userData, error } = await Promise.race([queryPromise, queryTimeout]);
