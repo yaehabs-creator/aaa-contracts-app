@@ -23,4 +23,5 @@ export interface AuthContextType {
   canView: () => boolean;
   setLoginRequired: (required: boolean) => Promise<void>;
   refreshLoginRequired: () => Promise<void>;
+  checkHealth: () => Promise<boolean>;
 }

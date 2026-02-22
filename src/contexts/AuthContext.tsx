@@ -24,16 +24,37 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Combined loading state - wait for both auth and settings
   const loading = authLoading || settingsLoading;
 
+  const checkSupabaseHealth = async (): Promise<boolean> => {
+    if (!supabase) return false;
+    try {
+      const url = import.meta.env.VITE_SUPABASE_URL;
+      if (!url) return false;
+
+      const startTime = Date.now();
+      const response = await fetch(`${url}/rest/v1/`, {
+        method: 'GET',
+        headers: {
+          'apikey': import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+        }
+      });
+      const duration = Date.now() - startTime;
+      console.log(`🏥 Supabase Health Check: ${response.status} (${duration}ms)`);
+      return response.ok || response.status === 401; // 401 is actually "healthy" because we didn't send full auth
+    } catch (err) {
+      console.error('🏥 Supabase Health Check Failed:', err);
+      return false;
+    }
+  };
+
   // Load login required setting on mount
   useEffect(() => {
     const loadLoginRequiredSetting = async () => {
       try {
-        // Add timeout to prevent hanging if Supabase query stalls
         const timeoutPromise = new Promise<boolean>((resolve) => {
           setTimeout(() => {
             console.warn('⚠️ Login required setting fetch timed out after 5s, defaulting to true');
             resolve(true);
-          }, 5000); // Reduced from 15s to 5s
+          }, 5000);
         });
         const required = await Promise.race([getLoginRequired(), timeoutPromise]);
         setLoginRequiredState(required);
@@ -45,7 +66,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setSettingsLoading(false);
       }
     };
-    console.log('🏁 Starting login required setting fetch...');
     loadLoginRequiredSetting();
   }, []);
 
@@ -64,58 +84,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     let timeoutId: NodeJS.Timeout;
 
-    // Get initial session
-    const getInitialSession = async () => {
-      console.log('🔄 getInitialSession: Starting...');
-      try {
-        // Check if storage is accessible (Supabase needs it)
-        try {
-          localStorage.setItem('supabase_test', 'test');
-          localStorage.removeItem('supabase_test');
-        } catch (e) {
-          throw new Error('Local storage is blocked. Please enable cookies/site-data.');
-        }
-
-        // Detect connection speed
-        const isSlowConnection = (navigator as any).connection?.effectiveType === '3g' ||
-          (navigator as any).connection?.effectiveType === '2g';
-
-        // 30s timeout for session fetch - 3G connections need a lot of headspace
-        const timeoutMs = isSlowConnection ? 45000 : 30000;
-
-        const sessionPromise = supabase.auth.getSession();
-        const sessionTimeout = new Promise<any>((_, reject) =>
-          setTimeout(() => reject(new Error(`Connection to secure vault timed out after ${timeoutMs / 1000}s. Your connection (${(navigator as any).connection?.effectiveType || 'unknown'}) is too slow or being blocked.`)), timeoutMs)
-        );
-
-        console.log(`🔄 getInitialSession: Fetching session (Timeout: ${timeoutMs}ms)...`);
-        const { data: { session }, error } = await Promise.race([sessionPromise, sessionTimeout]);
-
-        if (error) throw error;
-
-        if (session?.user) {
-          console.log('🔄 getInitialSession: Session found, loading profile...');
-          await loadUserProfile(session.user);
-        } else {
-          console.log('🔄 getInitialSession: No session found.');
-          setAuthLoading(false);
-          clearTimeout(timeoutId);
-        }
-      } catch (error: any) {
-        console.error('❌ Error getting initial session:', error);
-        let errorMessage = error.message || 'Unknown error';
-
-        // Specialized handling for the "signal is aborted" error seen in logs
-        if (errorMessage.includes('signal is aborted')) {
-          errorMessage = 'The connection was interrupted by your browser. This usually happens on slow 3G/4G networks. Please try refreshing or switching to a faster connection.';
-        }
-
-        setAuthError(`Authentication issue: ${errorMessage}`);
-        setAuthLoading(false);
-        clearTimeout(timeoutId);
-      }
-    };
-
     // Load user profile from Supabase
     let isProfileLoading = false;
     const loadUserProfile = async (supabaseUser: User) => {
@@ -124,7 +92,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       console.log('🔄 loadUserProfile: Loading profile for:', supabaseUser.id);
       try {
-        // Simple timeout for the database query
         const isSlow = (navigator as any).connection?.effectiveType === '3g' ||
           (navigator as any).connection?.effectiveType === '2g';
         const qTimeoutMs = isSlow ? 45000 : 30000;
@@ -143,7 +110,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
         if (error) {
           if (error.code === 'PGRST116') {
-            // Profile not found
             console.error('User profile not found in Supabase for:', supabaseUser.id, supabaseUser.email);
             sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator.');
             await supabase.auth.signOut();
@@ -167,7 +133,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           console.log('✅ loadUserProfile: Profile loaded:', profile.displayName);
           setUser(profile);
 
-          // Update last login (non-blocking)
           supabase
             .from('users')
             .update({ last_login: Date.now() })
@@ -187,9 +152,58 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     };
 
-    // Set timeout
+    // Get initial session
+    const getInitialSession = async () => {
+      console.log('🔄 getInitialSession: Starting...');
+      try {
+        const isHealthy = await checkSupabaseHealth();
+        if (!isHealthy) {
+          throw new Error('Supabase vault is unreachable. Your firewall or network might be blocking "supabase.co" domains.');
+        }
+
+        try {
+          localStorage.setItem('supabase_test', 'test');
+          localStorage.removeItem('supabase_test');
+        } catch (e) {
+          throw new Error('Local storage is blocked. Please enable cookies/site-data.');
+        }
+
+        const isSlowConnection = (navigator as any).connection?.effectiveType === '3g' ||
+          (navigator as any).connection?.effectiveType === '2g';
+
+        const timeoutMs = isSlowConnection ? 45000 : 30000;
+
+        const sessionPromise = supabase.auth.getSession();
+        const sessionTimeout = new Promise<any>((_, reject) =>
+          setTimeout(() => reject(new Error(`Connection to secure vault timed out after ${timeoutMs / 1000}s. Your connection (${(navigator as any).connection?.effectiveType || 'unknown'}) is too slow or being blocked.`)), timeoutMs)
+        );
+
+        console.log(`🔄 getInitialSession: Fetching session (Timeout: ${timeoutMs}ms)...`);
+        const { data: { session }, error } = await Promise.race([sessionPromise, sessionTimeout]);
+
+        if (error) throw error;
+
+        if (session?.user) {
+          console.log('🔄 getInitialSession: Session found, loading profile...');
+          await loadUserProfile(session.user);
+        } else {
+          console.log('🔄 getInitialSession: No session found.');
+          setAuthLoading(false);
+          clearTimeout(timeoutId);
+        }
+      } catch (error: any) {
+        console.error('❌ Error getting initial session:', error);
+        let errorMessage = error.message || 'Unknown error';
+        if (errorMessage.includes('signal is aborted')) {
+          errorMessage = 'The connection was interrupted by your browser. This usually happens on slow 3G/4G networks. Please try refreshing or switching to a faster connection.';
+        }
+        setAuthError(`Authentication issue: ${errorMessage}`);
+        setAuthLoading(false);
+        clearTimeout(timeoutId);
+      }
+    };
+
     timeoutId = setTimeout(() => {
-      // Use a function to check the LATEST state
       setAuthLoading(currentLoading => {
         if (currentLoading) {
           console.error('🚨 Auth initialization timeout - Supabase query is hanging');
@@ -198,12 +212,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
         return false;
       });
-    }, 60000); // Increased from 20s to 60s for better slow-connection support
+    }, 60000);
 
-    // Get initial session
     getInitialSession();
 
-    // Listen for auth state changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log('Auth state change event:', event);
       setAuthError(null);
@@ -225,18 +237,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    if (!supabase) {
-      throw new Error('Supabase is not configured. Please check your environment variables.');
-    }
-
+    if (!supabase) throw new Error('Supabase is not configured.');
     console.log('🔐 Attempting sign in for:', email);
 
-    // Add a local timeout for the sign-in request
-    const signInPromise = supabase.auth.signInWithPassword({
-      email,
-      password
-    });
-
+    const signInPromise = supabase.auth.signInWithPassword({ email, password });
     const timeoutPromise = new Promise<any>((_, reject) => {
       setTimeout(() => reject(new Error('Sign-in request timed out. Please check your connection.')), 30000);
     });
@@ -245,78 +249,37 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     if (error) {
       console.error('❌ Sign-in error:', error);
-      // Map Supabase errors to user-friendly messages
-      if (error.message.includes('Invalid login credentials')) {
-        throw new Error('Invalid email or password');
-      }
-      if (error.message.includes('Email not confirmed') || error.message.includes('email not confirmed')) {
-        throw new Error('Email not confirmed. Please check your inbox and verify your email address.');
-      }
+      if (error.message.includes('Invalid login credentials')) throw new Error('Invalid email or password');
+      if (error.message.includes('Email not confirmed')) throw new Error('Email not confirmed. Please check your inbox.');
       throw new Error(error.message || 'Failed to sign in');
     }
 
-    if (!data.user) {
-      console.error('❌ Sign-in failed: No user returned');
-      throw new Error('Failed to sign in');
-    }
-
+    if (!data.user) throw new Error('Failed to sign in');
     console.log('✅ Sign-in successful for user:', data.user.id);
   };
 
   const signUp = async (email: string, password: string, displayName: string) => {
-    if (!supabase) {
-      throw new Error('Supabase is not configured. Please check your environment variables.');
-    }
-
-    // Create auth user in Supabase
-    // Pass display_name in metadata so the database trigger can use it
+    if (!supabase) throw new Error('Supabase is not configured.');
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        data: {
-          display_name: displayName,
-          full_name: displayName,
-        }
+        data: { display_name: displayName, full_name: displayName }
       }
     });
 
     if (error) {
-      // Map Supabase errors to user-friendly messages
-      if (error.message.includes('User already registered')) {
-        throw new Error('An account with this email already exists. Please sign in instead.');
-      }
-      if (error.message.includes('Password should be at least')) {
-        throw new Error('Password must be at least 6 characters long.');
-      }
-      if (error.message.includes('Invalid email')) {
-        throw new Error('Please enter a valid email address.');
-      }
+      if (error.message.includes('User already registered')) throw new Error('An account with this email already exists.');
+      if (error.message.includes('Password should be at least')) throw new Error('Password must be at least 6 characters long.');
       throw new Error(error.message || 'Failed to create account');
     }
 
-    if (!data.user) {
-      throw new Error('Failed to create account');
-    }
-
-    // Note: User profile is automatically created by database trigger (handle_new_user)
-    // The trigger uses the display_name from user metadata
-
-    // Check if email confirmation is required
-    if (data.user.identities && data.user.identities.length === 0) {
-      throw new Error('An account with this email already exists. Please sign in instead.');
-    }
-
-    // If email confirmation is enabled, user needs to verify
-    if (!data.session) {
-      throw new Error('SUCCESS_NEEDS_VERIFICATION');
-    }
+    if (!data.user) throw new Error('Failed to create account');
+    if (!data.session) throw new Error('SUCCESS_NEEDS_VERIFICATION');
   };
 
   const signOut = async () => {
-    if (!supabase) {
-      throw new Error('Supabase is not configured.');
-    }
+    if (!supabase) throw new Error('Supabase is not configured.');
     await supabase.auth.signOut();
   };
 
@@ -324,7 +287,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const canEdit = () => user?.role === 'admin' || user?.role === 'editor';
   const canView = () => user?.role === 'admin' || user?.role === 'editor' || user?.role === 'viewer';
 
-  // Function to update login required setting (admin only)
   const setLoginRequired = async (required: boolean) => {
     try {
       await setLoginRequiredApi(required);
@@ -335,7 +297,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  // Function to refresh login required setting
   const refreshLoginRequired = async () => {
     try {
       const required = await getLoginRequired();
@@ -357,7 +318,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     canEdit,
     canView,
     setLoginRequired,
-    refreshLoginRequired
+    refreshLoginRequired,
+    checkHealth: checkSupabaseHealth
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

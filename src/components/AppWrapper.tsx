@@ -11,8 +11,23 @@ interface AppWrapperProps {
 }
 
 export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, isBotOpen }) => {
-  const { user, loading, canEdit, canView, authError } = useAuth();
+  const { user, loading, canEdit, canView, authError, checkHealth } = useAuth();
   const [showUserManagement, setShowUserManagement] = useState(false);
+  const [isCheckingHealth, setIsCheckingHealth] = useState(false);
+  const [healthStatus, setHealthStatus] = useState<string | null>(null);
+
+  const handleManualHealthCheck = async () => {
+    setIsCheckingHealth(true);
+    setHealthStatus('Checking connectivity...');
+    try {
+      const isHealthy = await checkHealth();
+      setHealthStatus(isHealthy ? '✅ Connection to vault is active.' : '❌ Vault is unreachable. Possible firewall block.');
+    } catch (err) {
+      setHealthStatus('❌ Error during health check.');
+    } finally {
+      setIsCheckingHealth(false);
+    }
+  };
 
   if (loading || authError) {
     return (
@@ -44,7 +59,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
                 background: '#F8FAFC',
                 padding: '1rem',
                 borderRadius: '12px',
-                marginBottom: '1.5rem',
+                marginBottom: '1rem',
                 border: '1px solid #E2E8F0',
                 fontSize: '0.8rem',
                 color: '#475569',
@@ -55,11 +70,26 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
                 {authError}
               </div>
 
-              <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+              {healthStatus && (
+                <div style={{
+                  padding: '0.75rem',
+                  background: healthStatus.includes('✅') ? '#F0FDF4' : '#FEF2F2',
+                  borderRadius: '12px',
+                  fontSize: '0.8rem',
+                  color: healthStatus.includes('✅') ? '#166534' : '#991B1B',
+                  marginBottom: '1.5rem',
+                  border: `1px solid ${healthStatus.includes('✅') ? '#BBF7D0' : '#FECACA'}`,
+                  textAlign: 'left'
+                }}>
+                  {healthStatus}
+                </div>
+              )}
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                 <button
                   onClick={() => window.location.reload()}
                   style={{
-                    padding: '0.75rem 1.5rem',
+                    padding: '0.75rem',
                     background: '#1e3a8a',
                     color: 'white',
                     border: 'none',
@@ -71,12 +101,30 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
                   Try Again
                 </button>
                 <button
-                  onClick={() => {
+                  onClick={handleManualHealthCheck}
+                  disabled={isCheckingHealth}
+                  style={{
+                    padding: '0.75rem',
+                    background: '#F8FAFC',
+                    color: '#475569',
+                    border: '1px solid #E2E8F0',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    cursor: isCheckingHealth ? 'not-allowed' : 'pointer',
+                    opacity: isCheckingHealth ? 0.7 : 1
+                  }}
+                >
+                  {isCheckingHealth ? 'Checking...' : 'Check Health'}
+                </button>
+                <button
+                  onClick={async () => {
+                    const hStatus = await checkHealth();
                     const info = {
                       url: window.location.href,
                       userAgent: navigator.userAgent,
                       timestamp: new Date().toISOString(),
                       error: authError,
+                      vaultHealthy: hStatus,
                       supabaseUrl: (import.meta as any).env.VITE_SUPABASE_URL || 'Not Set',
                       isSecureContext: window.isSecureContext,
                       connection: (navigator as any).connection ? {
@@ -84,19 +132,26 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
                         saveData: (navigator as any).connection.saveData
                       } : 'Unknown'
                     };
-                    alert("Diagnostic Info (Share this with your dev):\n\n" + JSON.stringify(info, null, 2));
+
+                    const diagnosticText = JSON.stringify(info, null, 2);
+                    navigator.clipboard.writeText(diagnosticText).then(() => {
+                      alert("Diagnostic info copied to clipboard! Share this with your developer.");
+                    }).catch(() => {
+                      alert("Diagnostic Info:\n\n" + diagnosticText);
+                    });
                   }}
                   style={{
-                    padding: '0.75rem 1.5rem',
+                    padding: '0.75rem',
                     background: 'white',
                     color: '#1e3a8a',
                     border: '1.5px solid #1e3a8a',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    gridColumn: 'span 2'
                   }}
                 >
-                  Diagnostic Info
+                  Copy Diagnostic Info
                 </button>
               </div>
             </div>
