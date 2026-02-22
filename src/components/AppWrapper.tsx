@@ -76,7 +76,13 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
                       url: window.location.href,
                       userAgent: navigator.userAgent,
                       timestamp: new Date().toISOString(),
-                      error: authError
+                      error: authError,
+                      supabaseUrl: (import.meta as any).env.VITE_SUPABASE_URL || 'Not Set',
+                      isSecureContext: window.isSecureContext,
+                      connection: (navigator as any).connection ? {
+                        effectiveType: (navigator as any).connection.effectiveType,
+                        saveData: (navigator as any).connection.saveData
+                      } : 'Unknown'
                     };
                     alert("Diagnostic Info (Share this with your dev):\n\n" + JSON.stringify(info, null, 2));
                   }}

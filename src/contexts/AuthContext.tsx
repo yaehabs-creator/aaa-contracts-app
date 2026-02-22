@@ -127,7 +127,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
           console.log('User profile loaded successfully:', profile.displayName);
           setUser(profile);
-
           // Update last login (non-blocking)
           supabase
             .from('users')
@@ -159,7 +158,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
         return false;
       });
-    }, 20000); // Reduced from 30s to 20s
+    }, 60000); // Increased from 20s to 60s for better slow-connection support
 
     // Get initial session
     getInitialSession();
@@ -199,7 +198,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
 
     const timeoutPromise = new Promise<any>((_, reject) => {
-      setTimeout(() => reject(new Error('Sign-in request timed out. Please check your connection.')), 15000);
+      setTimeout(() => reject(new Error('Sign-in request timed out. Please check your connection.')), 30000);
     });
 
     const { data, error } = await Promise.race([signInPromise, timeoutPromise]);
