@@ -66,47 +66,71 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     // Get initial session
     const getInitialSession = async () => {
+      console.log('🔄 getInitialSession: Starting...');
       try {
         // Check if storage is accessible (Supabase needs it)
         try {
           localStorage.setItem('supabase_test', 'test');
           localStorage.removeItem('supabase_test');
         } catch (e) {
-          throw new Error('Local storage is blocked by your browser. Please enable cookies and site data to sign in.');
+          throw new Error('Local storage is blocked. Please enable cookies/site-data.');
         }
 
-        const { data: { session }, error } = await supabase.auth.getSession();
+        // Add a 10s timeout just for the getSession call itself
+        // to distinguish between "Slow Connection" and "Complete Hang"
+        const sessionPromise = supabase.auth.getSession();
+        const sessionTimeout = new Promise<any>((_, reject) =>
+          setTimeout(() => reject(new Error('Connection to secure vault (Supabase) timed out. Your firewall or network might be blocking access to our database.')), 10000)
+        );
+
+        console.log('🔄 getInitialSession: Fetching session...');
+        const { data: { session }, error } = await Promise.race([sessionPromise, sessionTimeout]);
+
         if (error) throw error;
 
         if (session?.user) {
+          console.log('🔄 getInitialSession: Session found, loading profile...');
           await loadUserProfile(session.user);
         } else {
+          console.log('🔄 getInitialSession: No session found.');
           setAuthLoading(false);
+          clearTimeout(timeoutId);
         }
       } catch (error: any) {
-        console.error('Error getting initial session:', error);
+        console.error('❌ Error getting initial session:', error);
         const errorMessage = error.message || 'Unknown error';
-        setAuthError(`Failed to initialize authentication: ${errorMessage}`);
+        setAuthError(`Authentication initialization failed: ${errorMessage}`);
         setAuthLoading(false);
+        clearTimeout(timeoutId);
       }
     };
 
     // Load user profile from Supabase
+    let isProfileLoading = false;
     const loadUserProfile = async (supabaseUser: User) => {
-      console.log('Loading profile for user:', supabaseUser.id);
+      if (isProfileLoading) return;
+      isProfileLoading = true;
+
+      console.log('🔄 loadUserProfile: Loading profile for:', supabaseUser.id);
       try {
-        // Fetch user profile from users table
-        const { data: userData, error } = await supabase
+        // Simple timeout for the database query
+        const queryPromise = supabase
           .from('users')
           .select('*')
           .eq('uid', supabaseUser.id)
           .single();
 
+        const queryTimeout = new Promise<any>((_, reject) =>
+          setTimeout(() => reject(new Error('User profile fetch timed out. The database may be down or unreachable.')), 10000)
+        );
+
+        const { data: userData, error } = await Promise.race([queryPromise, queryTimeout]);
+
         if (error) {
           if (error.code === 'PGRST116') {
             // Profile not found
             console.error('User profile not found in Supabase for:', supabaseUser.id, supabaseUser.email);
-            sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator to create your user profile.');
+            sessionStorage.setItem('loginError', 'Your account exists but your profile is missing. Please contact your administrator.');
             await supabase.auth.signOut();
             setUser(null);
             return;
@@ -125,8 +149,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             createdBy: userData.created_by || undefined
           };
 
-          console.log('User profile loaded successfully:', profile.displayName);
+          console.log('✅ loadUserProfile: Profile loaded:', profile.displayName);
           setUser(profile);
+
           // Update last login (non-blocking)
           supabase
             .from('users')
@@ -136,12 +161,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               if (error) console.warn('Failed to update last login:', error);
             });
         }
-      } catch (error) {
-        console.error('Error fetching user profile:', error);
-        sessionStorage.setItem('loginError', 'Error loading your profile. Please try again or contact your administrator.');
+      } catch (error: any) {
+        console.error('❌ Error fetching user profile:', error);
+        setAuthError(`Profile load failed: ${error.message || 'Unknown error'}`);
         setUser(null);
       } finally {
-        console.log('Auth initialization complete (profile)');
+        isProfileLoading = false;
         setAuthLoading(false);
         clearTimeout(timeoutId);
       }
