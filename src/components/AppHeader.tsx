@@ -46,6 +46,21 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onShowUserManagement, show
 
         {isAdmin() && (
           <button
+            onClick={() => {
+              if (confirm('Clear local app cache? This will sign you out and clear all local drafts.')) {
+                localStorage.clear();
+                sessionStorage.clear();
+                window.location.reload();
+              }
+            }}
+            className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 rounded-mac-xs text-sm font-medium transition-all"
+          >
+            Clear Cache
+          </button>
+        )}
+
+        {isAdmin() && (
+          <button
             onClick={onShowUserManagement}
             className={`px-4 py-2 rounded-mac-xs text-sm font-medium transition-all ${showingUserManagement
               ? 'bg-mac-blue text-white'
