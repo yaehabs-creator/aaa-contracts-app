@@ -104,8 +104,15 @@ export async function GET() {
               (f.name.includes('docling') || f.name.includes('Contract'))
             )
 
-            for (const jsonFile of contractJsons) {
-              const fullPath = path.join(parentDir, jsonFile.name)
+            // Look for JSON files in the INPUT folder as well
+            const inputFiles = await fs.readdir(inputDir, { withFileTypes: true }).catch(() => [])
+            const localJsons = inputFiles.filter(f => f.isFile() && f.name.toLowerCase().endsWith('.json'))
+
+            const allJsons = [...contractJsons.map(f => ({ path: path.join(parentDir, f.name), name: f.name })),
+            ...localJsons.map(f => ({ path: path.join(inputDir, f.name), name: f.name }))]
+
+            for (const jsonInfo of allJsons) {
+              const fullPath = jsonInfo.path
               try {
                 const content = await fs.readFile(fullPath, 'utf-8')
                 const parsed = JSON.parse(content)
@@ -116,17 +123,17 @@ export async function GET() {
                 else if (parsed.clauses) extractedText = parsed.clauses.map((c: any) => `${c.clause_number} ${c.clause_title}\n${c.clause_text}`).join('\n\n')
 
                 if (extractedText) {
-                  const outName = `${jsonFile.name.replace(/\.json$/i, '')}_extracted.txt`
+                  const outName = `${jsonInfo.name.replace(/\.json$/i, '')}_extracted.txt`
                   await fs.writeFile(path.join(inputDir, outName), extractedText)
-                  send('log', { line: `Integrated contract JSON: ${jsonFile.name} -> ${outName}` })
+                  send('log', { line: `Integrated JSON: ${jsonInfo.name} -> ${outName}` })
                 }
               } catch (err) {
-                console.error(`Failed to integrate ${jsonFile.name}:`, err)
+                console.error(`Failed to integrate ${jsonInfo.name}:`, err)
               }
             }
 
-            if (txts.length === 0 && contractJsons.length === 0) {
-              send('log', { line: `No .txt or contract .json files found. Upload PDFs or TXT files.` })
+            if (txts.length === 0 && allJsons.length === 0) {
+              send('log', { line: `No .txt or .json files found. Upload PDFs, JSON, or TXT files.` })
             }
           } catch { }
           // Update uploads registry statuses to 'scanning'
@@ -142,10 +149,8 @@ export async function GET() {
           send('log', { line: `dataset prep warning: ${String(e)}` })
         }
       })().then(async () => {
-        // Start indexing after dataset is prepared
-        // Use forward slashes and quotes to avoid Windows double-escaping issues
-        const normalizedRoot = root.replace(/\\/g, '/')
-        const cmd = `python -m graphrag index --root "${normalizedRoot}"`
+        // Start indexing after dataset is prepared: run directly in root to avoid Windows quoting issues
+        const cmd = `python -m graphrag index`
         const child = spawnShell(cmd, { cwd: root, env })
         const appendLog = async (line: string) => {
           try {
@@ -196,13 +201,9 @@ export async function GET() {
           send('done', { ok: false })
           controller.close()
         })
-      }).catch(() => {
-        // If prep fails, attempt to run index anyway to surface errors
-        const configFile = 'settings.yaml'
-        send('status', { message: `Indexing started…` })
-        const normalizedRoot = root.replace(/\\/g, '/')
-        const cmd = `python -m graphrag index --root "${normalizedRoot}"`
-        spawnShell(cmd, { cwd: root, env })
+        // If prep fails, attempt to run index anyway to surface error
+        const fallbackCmd = `python -m graphrag index`
+        spawnShell(fallbackCmd, { cwd: root, env })
       });
     }
   })
