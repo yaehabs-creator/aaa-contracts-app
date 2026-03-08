@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ContractEditorPage } from '../pages/admin/ContractEditorPage';
-import { KnowledgeGraphPage } from '../pages/KnowledgeGraphPage';
 
 interface AppRouterProps {
   children: React.ReactNode;
@@ -31,9 +30,7 @@ export const AppRouter: React.FC<AppRouterProps> = ({ children }) => {
   }
 
 
-  if (currentRoute === '#/knowledge-graph') {
-    return <KnowledgeGraphPage />;
-  }
+
 
   // Default: render the main app
   return <>{children}</>;
@@ -50,9 +47,7 @@ export const navigateToAdminEditor = () => {
   navigateTo('#/admin/contract-editor');
 };
 
-export const navigateToKnowledgeGraph = () => {
-  navigateTo('#/knowledge-graph');
-};
+
 
 export const navigateToHome = () => {
   window.location.hash = '';
