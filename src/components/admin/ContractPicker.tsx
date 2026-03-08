@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ContractSummary } from '../../services/adminEditorService';
-import { EditorLoadingState } from '../../hooks/useAdminEditor';
+import { ContractSummary } from '@/services/adminEditorService';
+import { EditorLoadingState } from '@/hooks/useAdminEditor';
 
 interface ContractPickerProps {
   contracts: ContractSummary[];

@@ -1,5 +1,5 @@
 import { supabase } from '../supabase/config';
-import { cleanNullBytes } from '../utils/jsonUtils';
+import { cleanNullBytes } from '@/utils/jsonUtils';
 
 export interface AIKnowledgeFile {
     id: string;

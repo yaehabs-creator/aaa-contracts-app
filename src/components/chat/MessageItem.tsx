@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BotMessage } from '../../../types';
+import { BotMessage } from '@/types';
 
 interface MessageItemProps {
     message: BotMessage;

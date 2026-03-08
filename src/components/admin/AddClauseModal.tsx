@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { EditorCategory } from '../../services/adminEditorService';
-import { CreateClauseParams } from '../../hooks/useAdminEditor';
+import { EditorCategory } from '@/services/adminEditorService';
+import { CreateClauseParams } from '@/hooks/useAdminEditor';
 
 interface AddClauseModalProps {
   isOpen: boolean;

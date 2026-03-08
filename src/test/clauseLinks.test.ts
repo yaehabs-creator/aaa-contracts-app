@@ -12,8 +12,8 @@ import {
     getClauseStatus,
     estimateTokens,
     highlightKeywords,
-} from '../utils/clauseLinks';
-import { Clause } from '../../types';
+} from '@/utils/clauseLinks';
+import { Clause } from '@/types';
 
 // ── stripClauseLinks ──────────────────────────────────────
 

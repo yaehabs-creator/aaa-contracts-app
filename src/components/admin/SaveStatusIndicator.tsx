@@ -1,5 +1,5 @@
 import React from 'react';
-import { SaveStatus } from '../../hooks/useDebouncedSave';
+import { SaveStatus } from '@/hooks/useDebouncedSave';
 
 interface SaveStatusIndicatorProps {
   status: SaveStatus;

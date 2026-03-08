@@ -6,8 +6,8 @@
  */
 
 import { useState, useCallback } from 'react';
-import { Clause } from '../../types';
-import { callClaude } from '../services/aiProxyClient';
+import { Clause } from '@/types';
+import { callClaude } from '@/services/aiProxyClient';
 
 export interface SearchResult {
     clause_id: string;

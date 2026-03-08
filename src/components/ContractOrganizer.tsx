@@ -6,12 +6,12 @@ import {
     ExtractedData
 } from '@/types';
 import toast from 'react-hot-toast';
-import { getDocumentReaderService } from '../services/documentReaderService';
-import { DoclingService } from '../services/doclingService';
+import { getDocumentReaderService } from '@/services/documentReaderService';
+import { DoclingService } from '@/services/doclingService';
 import { extractDataForSchema } from '@/services/organizerExtractionService';
-import { getOrganizerData, uploadContractDocument } from '@/src/services/supabaseService';
-import { cleanTextWithAI } from '@/src/services/textPreprocessor';
-import { analyzePDFWithClaude } from '@/src/services/pdfAnalysisClient';
+import { getOrganizerData, uploadContractDocument } from '@/services/supabaseService';
+import { cleanTextWithAI } from '@/services/textPreprocessor';
+import { analyzePDFWithClaude } from '@/services/pdfAnalysisClient';
 import { AIKnowledgeManager } from './AIKnowledgeManager';
 
 interface ContractOrganizerProps {

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useChatContext } from '../context/ChatContext';
-import { chatWithDualAgents } from '../services/aiBotService';
-import { BotMessage, ContextPill } from '../../types';
+import { chatWithDualAgents } from '@/services/aiBotService';
+import { BotMessage, ContextPill } from '@/types';
 
 export const useChat = () => {
     const {

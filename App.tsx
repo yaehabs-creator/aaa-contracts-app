@@ -1,34 +1,34 @@
 
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { analyzeContract } from './services/claudeService';
-import { callAIProxy } from './src/services/aiProxyClient';
-import { saveContractToDB, getAllContracts, deleteContractFromDB } from './services/dbService';
-import { getContractFromSupabase, saveOrganizerData, saveContractToSupabase, getOrganizerData } from './src/services/supabaseService';
-import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData, ItemType, ContextPill, SectionItem } from './types';
-import { groupClausesByParent } from './components/GroupedClauseCard';
-import { CategoryManagerService } from './services/categoryManagerService';
-import { ContractSectionsTabs } from './components/ContractSectionsTabs';
+import { analyzeContract } from '@/services/claudeService';
+import { callAIProxy } from '@/services/aiProxyClient';
+import { saveContractToDB, getAllContracts, deleteContractFromDB } from '@/services/dbService';
+import { getContractFromSupabase, saveOrganizerData, saveContractToSupabase, getOrganizerData } from '@/services/supabaseService';
+import { Clause, AnalysisStatus, SavedContract, ConditionType, FileData, DualSourceInput, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData, ItemType, ContextPill, SectionItem } from '@/types';
+import { groupClausesByParent } from '@/components/GroupedClauseCard';
+import { CategoryManagerService } from '@/services/categoryManagerService';
+import { ContractSectionsTabs } from '@/components/ContractSectionsTabs';
 
 // Lazy load heavy components for performance
-const ComparisonModal = React.lazy(() => import('./components/ComparisonModal').then(m => ({ default: m.ComparisonModal })));
-const AddClauseModal = React.lazy(() => import('./components/AddClauseModal').then(m => ({ default: m.AddClauseModal })));
-const CategoryManager = React.lazy(() => import('./components/CategoryManager').then(m => ({ default: m.CategoryManager })));
-const CategorySuggestionsModal = React.lazy(() => import('./components/CategorySuggestionsModal').then(m => ({ default: m.CategorySuggestionsModal })));
-const CategoryLedger = React.lazy(() => import('./components/CategoryLedger').then(m => ({ default: m.CategoryLedger })));
-const Sidebar = React.lazy(() => import('./components/Sidebar').then(m => ({ default: m.Sidebar })));
-const Dashboard = React.lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
-const GroupedClauseCard = React.lazy(() => import('./components/GroupedClauseCard').then(m => ({ default: m.GroupedClauseCard })));
-const ContractOrganizer = React.lazy(() => import('./src/components/ContractOrganizer').then(m => ({ default: m.ContractOrganizer })));
-import { ensureContractHasSections, getAllClausesFromContract, clauseToSectionItem, sectionItemToClause } from './services/contractMigrationService';
-import ChatContainer from './src/components/chat/ChatContainer';
-import { AppWrapper } from './src/components/AppWrapper';
-// import { AIBotSidebar } from './src/components/AIBotSidebar'; // Lazy loaded above
-import { FloatingAIButton } from './src/components/FloatingAIButton';
+const ComparisonModal = React.lazy(() => import('@/components/ComparisonModal').then(m => ({ default: m.ComparisonModal })));
+const AddClauseModal = React.lazy(() => import('@/components/AddClauseModal').then(m => ({ default: m.AddClauseModal })));
+const CategoryManager = React.lazy(() => import('@/components/CategoryManager').then(m => ({ default: m.CategoryManager })));
+const CategorySuggestionsModal = React.lazy(() => import('@/components/CategorySuggestionsModal').then(m => ({ default: m.CategorySuggestionsModal })));
+const CategoryLedger = React.lazy(() => import('@/components/CategoryLedger').then(m => ({ default: m.CategoryLedger })));
+const Sidebar = React.lazy(() => import('@/components/Sidebar').then(m => ({ default: m.Sidebar })));
+const Dashboard = React.lazy(() => import('@/components/Dashboard').then(m => ({ default: m.Dashboard })));
+const GroupedClauseCard = React.lazy(() => import('@/components/GroupedClauseCard').then(m => ({ default: m.GroupedClauseCard })));
+const ContractOrganizer = React.lazy(() => import('@/components/ContractOrganizer').then(m => ({ default: m.ContractOrganizer })));
+import { ensureContractHasSections, getAllClausesFromContract, clauseToSectionItem, sectionItemToClause } from '@/services/contractMigrationService';
+
+import { AppWrapper } from '@/components/AppWrapper';
+// import { AIBotSidebar } from '@/components/AIBotSidebar'; // Lazy loaded above
+
 import { useAuth } from './src/contexts/AuthContext';
-import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from './src/services/textPreprocessor';
-import { suggestCategories, CategorySuggestion } from './services/categorySuggestionService';
-import { DoclingService } from './src/services/doclingService';
+import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWithAI } from '@/services/textPreprocessor';
+import { suggestCategories, CategorySuggestion } from '@/services/categorySuggestionService';
+import { DoclingService } from '@/services/doclingService';
 import { normalizeClauseId, generateClauseIdVariants } from './src/utils/navigation';
 
 const REASSURING_STAGES = [
@@ -634,47 +634,68 @@ const App: React.FC = () => {
     setIsSearching(true);
     setSearchError(null);
 
-    const searchContext = clauses.map(c => ({
-      clause_id: `C.${c.clause_number}`,
-      clause_number: c.clause_number,
-      title: c.clause_title,
-      text: c.clause_text.substring(0, 500),
-      condition_type: c.condition_type
-    }));
+    // Give UI time to show loading state
+    await new Promise(resolve => setTimeout(resolve, 50));
 
     try {
-      const response = await callAIProxy({
-        provider: 'anthropic',
-        model: 'claude-sonnet-4-5',
-        max_tokens: 4096,
-        system: `You are the Smart Search Engine for AAA Contract Department.
-You receive a natural-language query and a list of clauses.
-Your job is to select and rank the top 5 clauses that best match the query by meaning and keywords.
-Focus on construction contract concepts: time frames, payment, insurance, liability, termination, etc.
-Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "clause_number": "...", "title": "...", "condition_type": "...", "relevance_score": 0.0-1.0, "reason": "..."}]}. Do not add any extra text.`,
-        messages: [
-          {
-            role: 'user',
-            content: `USER QUERY: "${query}"\n\nCLAUSE DATA:\n${JSON.stringify(searchContext)}`
+      const lowerQuery = query.toLowerCase();
+      const searchTerms = lowerQuery.split(/\s+/).filter(t => t.length > 2); // Split into terms, ignore short words
+
+      // Simple but fast local scoring
+      const scoredResults = clauses.map(c => {
+        let score = 0;
+        let reason = '';
+
+        const titleLower = c.clause_title.toLowerCase();
+        const textLower = c.clause_text.toLowerCase();
+
+        // Exact Phrase Match
+        if (titleLower.includes(lowerQuery)) {
+          score += 0.8;
+          reason = 'Exact match in title';
+        } else if (textLower.includes(lowerQuery)) {
+          score += 0.6;
+          reason = 'Exact phrase match in text';
+        }
+
+        // Term Matching
+        let matchedTerms = 0;
+        for (const term of searchTerms) {
+          if (titleLower.includes(term)) {
+            score += 0.3;
+            matchedTerms++;
+            if (!reason) reason = `Contains keyword "${term}" in title`;
+          } else if (textLower.includes(term)) {
+            score += 0.1;
+            matchedTerms++;
+            if (!reason) reason = `Contains keyword "${term}" in text`;
           }
-        ]
+        }
+
+        // Boost if multiple terms match
+        if (matchedTerms > 1) {
+          score += (matchedTerms * 0.1);
+        }
+
+        return {
+          clause_id: `C.${c.clause_number}`,
+          clause_number: c.clause_number,
+          title: c.clause_title,
+          condition_type: c.condition_type,
+          relevance_score: Math.min(score, 1.0),
+          reason: reason || 'Matches search terms'
+        };
       });
 
-      const content = response.content.find(c => c.type === 'text');
-      const resultText = content?.text || '';
+      // Filter, sort by score, and take top 10
+      const results = scoredResults
+        .filter(r => r.relevance_score > 0)
+        .sort((a, b) => b.relevance_score - a.relevance_score)
+        .slice(0, 10);
 
-      // Extract JSON from response (might be wrapped in markdown)
-      let jsonText = resultText.trim();
-      if (jsonText.startsWith('```json')) {
-        jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
-      } else if (jsonText.startsWith('```')) {
-        jsonText = jsonText.replace(/^```\n?/, '').replace(/\n?```$/, '');
-      }
-
-      const result = JSON.parse(jsonText);
-      setSearchResults(result.results);
+      setSearchResults(results);
     } catch (err) {
-      console.error("Smart Search Error:", err);
+      console.error("Local Search Error:", err);
       setSearchError("Search failed. Please try again.");
     } finally {
       setIsSearching(false);
@@ -1068,89 +1089,39 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
 
   // PaddleOCR-based PDF text extraction (replaces old pdfjsLib approach)
 
-  // Remove headers and footers by detecting repeated text
-  const removeHeadersFooters = (pages: string[]): string[] => {
-    if (pages.length < 3) return pages; // Need at least 3 pages to detect patterns
 
-    // Extract top and bottom lines from each page
-    const headerLines: Map<string, number> = new Map();
-    const footerLines: Map<string, number> = new Map();
-
-    pages.forEach((pageText, index) => {
-      const lines = pageText.split('\n');
-      // Top 10% of lines (headers)
-      const headerCount = Math.max(1, Math.floor(lines.length * 0.1));
-      for (let i = 0; i < headerCount; i++) {
-        const line = lines[i]?.trim();
-        if (line && line !== `--- PAGE ${index + 1} ---`) {
-          headerLines.set(line, (headerLines.get(line) || 0) + 1);
-        }
-      }
-
-      // Bottom 10% of lines (footers)
-      const footerCount = Math.max(1, Math.floor(lines.length * 0.1));
-      for (let i = lines.length - footerCount; i < lines.length; i++) {
-        const line = lines[i]?.trim();
-        if (line && line !== `--- PAGE ${index + 1} ---`) {
-          footerLines.set(line, (footerLines.get(line) || 0) + 1);
-        }
-      }
-    });
-
-    // Identify lines that appear on >70% of pages
-    const threshold = Math.ceil(pages.length * 0.7);
-    const headerPatterns = Array.from(headerLines.entries())
-      .filter(([_, count]) => count >= threshold)
-      .map(([line]) => line);
-    const footerPatterns = Array.from(footerLines.entries())
-      .filter(([_, count]) => count >= threshold)
-      .map(([line]) => line);
-
-    // Remove header/footer patterns from pages
-    return pages.map((pageText, index) => {
-      const lines = pageText.split('\n');
-      const filteredLines = lines.filter(line => {
-        const trimmed = line.trim();
-        // Keep page markers
-        if (trimmed.startsWith('--- PAGE')) return true;
-        // Remove common headers/footers
-        return !headerPatterns.includes(trimmed) && !footerPatterns.includes(trimmed);
-      });
-      return filteredLines.join('\n');
-    });
-  };
 
   const extractPagesFromPdf = async (fileData: FileData): Promise<string[]> => {
-    setLiveStatus({ message: 'Loading PDF...', detail: 'Connecting to PaddleOCR engine', isActive: true });
+    return new Promise((resolve, reject) => {
+      const worker = new Worker(new URL('@/workers/pdfWorker.ts', import.meta.url), { type: 'module' });
 
-    // Check PaddleOCR availability first
-    const ocrAvailable = await DoclingService.checkAvailability();
-    if (!ocrAvailable) {
-      throw new Error('Docling service is not running. Please start it with: py scripts/docling_backend.py');
-    }
+      worker.onmessage = (e) => {
+        const { type, payload } = e.data;
+        switch (type) {
+          case 'PROGRESS':
+            setLiveStatus({ message: payload.message, detail: payload.detail, isActive: true });
+            if (payload.percent) setProgress(payload.percent);
+            break;
+          case 'EXTRACTION_COMPLETE':
+            setLiveStatus({ message: 'Extraction complete', detail: `Processed ${payload.pages.length} pages`, isActive: false });
+            setProgress(40);
+            worker.terminate();
+            resolve(payload.pages);
+            break;
+          case 'ERROR':
+            worker.terminate();
+            reject(new Error(payload.error));
+            break;
+        }
+      };
 
-    setLiveStatus({ message: 'Extracting text...', detail: 'GPU-accelerated OCR processing (this may take a moment for large PDFs)', isActive: true });
-    setProgress(10);
+      worker.onerror = (err) => {
+        worker.terminate();
+        reject(new Error(err.message || 'Worker failed'));
+      };
 
-    // Send the entire PDF to PaddleOCR for GPU-accelerated extraction
-    const startTime = Date.now();
-    const pages = await DoclingService.processBase64Pdf(fileData.data, fileData.name || 'document.pdf');
-    const extractionTime = ((Date.now() - startTime) / 1000).toFixed(1);
-
-    console.log(`Docling extracted ${pages.length} pages in ${extractionTime}s`);
-    setProgress(35);
-
-    // Remove headers and footers
-    if (pages.length > 0) {
-      setLiveStatus({ message: 'Cleaning text...', detail: 'Removing headers and footers', isActive: true });
-      setProgress(36);
-      const cleanedPages = removeHeadersFooters(pages);
-      setProgress(40);
-      setLiveStatus({ message: 'Extraction complete', detail: `Processed ${cleanedPages.length} pages in ${extractionTime}s (Docling)`, isActive: false });
-      return cleanedPages;
-    }
-
-    return pages;
+      worker.postMessage({ type: 'START_EXTRACTION', payload: { fileData } });
+    });
   };
 
   const handleTextAnalysis = async (general: string, particular: string) => {
@@ -3650,26 +3621,6 @@ Return ONLY valid JSON with this structure: {"results": [{"clause_id": "...", "c
           </footer>
         </div>
       </AppWrapper>
-
-      <React.Suspense fallback={null}>
-        <ChatContainer
-          isOpen={isBotOpen}
-          onClose={() => setIsBotOpen(false)}
-          conversationId={activeContractId || undefined}
-          contractClauses={clauses}
-          title={projectName ? `Analysis: ${projectName}` : undefined}
-          initialContextPills={selectedItemForBot ? [{
-            id: 'initial',
-            label: selectedItemForBot.itemType === 'FIELD' ? selectedItemForBot.fieldKey : 'Selected Item',
-            type: 'context'
-          }] : []}
-        />
-      </React.Suspense>
-
-      <FloatingAIButton
-        onClick={() => setIsBotOpen(!isBotOpen)}
-        isOpen={isBotOpen}
-      />
     </>
   );
 };

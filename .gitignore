@@ -33,3 +33,10 @@ dist-ssr
 *.sw?
 .vercel
 .env*.local
+
+# Data and large files
+*.pdf
+*_docling_batches/
+*_docling.json
+temp_check.cjs
+*Atrium Full Contract*

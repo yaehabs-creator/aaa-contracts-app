@@ -4,7 +4,7 @@
  * Handles clause cross-referencing: linking, stripping, reprocessing, highlighting.
  */
 
-import { Clause } from '../../types';
+import { Clause } from '@/types';
 import { normalizeClauseId, generateClauseIdVariants } from './navigation';
 
 /** Strip existing clause hyperlinks from text and keep the inner text */

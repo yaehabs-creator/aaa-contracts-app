@@ -7,7 +7,7 @@
  */
 
 import { supabase } from '../supabase/config';
-import { cleanNullBytes } from '../utils/jsonUtils';
+import { cleanNullBytes } from '@/utils/jsonUtils';
 
 export interface JsonDataSource {
     id: string;

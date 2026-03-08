@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { scrollToClauseByNumber } from '../../utils/navigation';
-import { LinkToken } from '../../utils/clauseTokenizer';
+import { scrollToClauseByNumber } from '@/utils/navigation';
+import { LinkToken } from '@/utils/clauseTokenizer';
 
 interface TokenizedTextRendererProps {
     tokens: LinkToken[] | null;

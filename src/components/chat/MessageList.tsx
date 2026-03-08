@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { BotMessage } from '../../../types';
+import { BotMessage } from '@/types';
 import MessageItem from './MessageItem';
 
 interface MessageListProps {

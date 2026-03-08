@@ -1,11 +1,11 @@
 import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChatProvider } from '../../context/ChatContext';
-import { useChat } from '../../hooks/useChat';
+import { useChat } from '@/hooks/useChat';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 import TypingIndicator from './TypingIndicator';
-import { ContextPill } from '../../../types';
+import { ContextPill } from '@/types';
 
 
 export type ChatContainerProps = {

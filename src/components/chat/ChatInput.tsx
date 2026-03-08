@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ContextPill } from '../../../types';
+import { ContextPill } from '@/types';
 
 interface ChatInputProps {
     onSend: (content: string) => void;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { buildContractFromText, exportContractToJSONFile } from '../../services/contractBuilderService';
-import { SavedContract } from '../../types';
+import { buildContractFromText, exportContractToJSONFile } from '@/services/contractBuilderService';
+import { SavedContract } from '@/types';
 
 export const ContractBuilder: React.FC = () => {
   const [generalText, setGeneralText] = useState('');

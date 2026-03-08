@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { EditorClause, EditorCategory } from '../../services/adminEditorService';
-import { EditorLoadingState } from '../../hooks/useAdminEditor';
+import { EditorClause, EditorCategory } from '@/services/adminEditorService';
+import { EditorLoadingState } from '@/hooks/useAdminEditor';
 import ClauseEditorCard from './ClauseEditorCard';
 
 interface ClauseEditorPanelProps {

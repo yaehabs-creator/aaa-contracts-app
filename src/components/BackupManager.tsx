@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { SavedContract } from '../../types';
+import { SavedContract } from '@/types';
 import { 
   exportAllContractsToJSON, 
   exportContractsToJSON,
@@ -10,8 +10,8 @@ import {
   validateBackupFile,
   BackupFile,
   RestoreMode
-} from '../services/backupService';
-import { getAllContracts } from '../../services/dbService';
+} from '@/services/backupService';
+import { getAllContracts } from '@/services/dbService';
 
 export const BackupManager: React.FC = () => {
   const { user: currentUser } = useAuth();

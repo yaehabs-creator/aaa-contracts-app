@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { useAdminEditor, CreateClauseParams } from '../../hooks/useAdminEditor';
-import { adminEditorService } from '../../services/adminEditorService';
+import { useAdminEditor, CreateClauseParams } from '@/hooks/useAdminEditor';
+import { adminEditorService } from '@/services/adminEditorService';
 import { toast } from 'react-hot-toast';
-import { AdminGuard } from '../../components/admin/AdminGuard';
-import { ContractPicker } from '../../components/admin/ContractPicker';
-import { CategoryManagerPanel } from '../../components/admin/CategoryManagerPanel';
-import { ClauseEditorPanel } from '../../components/admin/ClauseEditorPanel';
-import { SaveStatusIndicator } from '../../components/admin/SaveStatusIndicator';
-import { AddClauseModal } from '../../components/admin/AddClauseModal';
+import { AdminGuard } from '@/components/admin/AdminGuard';
+import { ContractPicker } from '@/components/admin/ContractPicker';
+import { CategoryManagerPanel } from '@/components/admin/CategoryManagerPanel';
+import { ClauseEditorPanel } from '@/components/admin/ClauseEditorPanel';
+import { SaveStatusIndicator } from '@/components/admin/SaveStatusIndicator';
+import { AddClauseModal } from '@/components/admin/AddClauseModal';
 import { useAuth } from '../../contexts/AuthContext';
 
 /**

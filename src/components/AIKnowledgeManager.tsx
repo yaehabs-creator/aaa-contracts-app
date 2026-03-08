@@ -5,8 +5,8 @@ import {
     deleteKnowledgeFile,
     AIKnowledgeFile,
     uploadPdfToKnowledge
-} from '../services/aiKnowledgeService';
-import { DoclingService } from '../services/doclingService';
+} from '@/services/aiKnowledgeService';
+import { DoclingService } from '@/services/doclingService';
 import toast from 'react-hot-toast';
 
 export const AIKnowledgeManager: React.FC = () => {

@@ -5,9 +5,9 @@
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { ContractDocument, DocumentGroup, DocumentChunk } from '../../types';
-import { extractTextFromPdf, isScannedPdf } from '../utils/pdfUtils';
-import { getEmbeddingService } from '../services/embeddingService';
+import { ContractDocument, DocumentGroup, DocumentChunk } from '@/types';
+import { extractTextFromPdf, isScannedPdf } from '@/utils/pdfUtils';
+import { getEmbeddingService } from '@/services/embeddingService';
 import { DoclingService } from './doclingService';
 
 // Initialize Supabase client

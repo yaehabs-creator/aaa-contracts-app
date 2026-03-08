@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useCallback, useMemo, ReactNode } from 'react';
-import { BotMessage, ContextPill } from '../../types';
+import { BotMessage, ContextPill } from '@/types';
 
 interface ChatContextValue {
     messages: BotMessage[];

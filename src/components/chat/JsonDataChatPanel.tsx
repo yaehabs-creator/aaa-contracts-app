@@ -5,7 +5,7 @@ import {
     deleteJsonDataSource,
     JsonDataSource,
     LARGE_FILE_THRESHOLD,
-} from '../../services/jsonDataSourceService';
+} from '@/services/jsonDataSourceService';
 
 interface JsonDataChatPanelProps {
     contractId: string | null;

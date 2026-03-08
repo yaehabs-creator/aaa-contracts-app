@@ -1,5 +1,5 @@
 import { createAIProvider, isClaudeAvailable, getRateLimitStatus, isRequestInFlight } from './aiProvider';
-import { Clause, BotMessage } from '../../types';
+import { Clause, BotMessage } from '@/types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 import { getEmbeddingService } from './embeddingService';
 import { getOrchestrator, SynthesizedResponse } from './multiAgentOrchestrator';
@@ -823,7 +823,7 @@ export async function chatWithDualAgents(
 ): Promise<{
   response: string;
   synthesizedResponse: SynthesizedResponse;
-  agentsUsed: ('openai' | 'claude' | 'graph')[];
+  agentsUsed: ('openai' | 'claude')[];
   isDualMode: boolean;
 }> {
   const orchestrator = getOrchestrator({

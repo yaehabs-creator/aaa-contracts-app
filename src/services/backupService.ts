@@ -1,5 +1,5 @@
-import { SavedContract } from '../../types';
-import { saveContractToDB, getAllContracts } from '../../services/dbService';
+import { SavedContract } from '@/types';
+import { saveContractToDB, getAllContracts } from '@/services/dbService';
 
 export interface BackupFile {
   version: string;

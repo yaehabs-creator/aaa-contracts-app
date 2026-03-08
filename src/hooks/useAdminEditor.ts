@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { adminEditorService, ContractSummary, EditorCategory, EditorClause } from '../services/adminEditorService';
+import { adminEditorService, ContractSummary, EditorCategory, EditorClause } from '@/services/adminEditorService';
 import { useAuth } from '../contexts/AuthContext';
 
 export type EditorLoadingState = 'idle' | 'loading' | 'loaded' | 'error';
