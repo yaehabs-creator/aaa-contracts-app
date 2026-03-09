@@ -30,6 +30,8 @@ import { preprocessText, splitTextIntoChunks, detectCorruptedLines, cleanTextWit
 import { suggestCategories, CategorySuggestion } from '@/services/categorySuggestionService';
 import { DoclingService } from '@/services/doclingService';
 import { normalizeClauseId, generateClauseIdVariants } from './src/utils/navigation';
+import { useAppStore } from '@/store/useAppStore';
+const ChatContainer = React.lazy(() => import('@/components/chat/ChatContainer'));
 
 const REASSURING_STAGES = [
   { progress: 10, label: "Scanning Pages...", sub: "Mapping document layers" },
@@ -205,14 +207,68 @@ interface SearchResult {
 }
 
 const App: React.FC = () => {
-  const { isAdmin, user, loading: authLoading } = useAuth();
-  const [status, setStatus] = useState<AnalysisStatus>(AnalysisStatus.LIBRARY);
-  const [clauses, setClauses] = useState<Clause[]>([]);
-  const [contract, setContract] = useState<SavedContract | null>(null);
+  const { user, isAdmin, loading: authLoading } = useAuth();
+  const {
+    status, setStatus,
+    clauses, setClauses,
+    contract, setContract,
+    progress, setProgress,
+    activeStage, setActiveStage,
+    batchInfo, setBatchInfo,
+    library, setLibrary,
+    projectName, setProjectName,
+    activeContractId, setActiveContractId,
+    isSaving, setIsSaving,
+    saveStatus, setSaveStatus,
+    showContractSelector, setShowContractSelector,
+    hasDraft, setHasDraft,
+    organizerSubfolders, setOrganizerSubfolders,
+    organizerSchemas, setOrganizerSchemas,
+    organizerExtractedData, setOrganizerExtractedData,
+    librarySearchQuery, setLibrarySearchQuery,
+    activeTab, setActiveTab,
+    isSidebarOpen, setIsSidebarOpen,
+    smartSearchQuery, setSmartSearchQuery,
+    isSearching, setIsSearching,
+    searchResults, setSearchResults,
+    searchError, setSearchError,
+    smartSearchClauses,
+
+    generalFile, setGeneralFile,
+    particularFile, setParticularFile,
+    pastedGeneralText, setPastedGeneralText,
+    pastedParticularText, setPastedParticularText,
+    inputMode, setInputMode,
+    textToFix, setTextToFix,
+    fixedText, setFixedText,
+    linesToRemove, setLinesToRemove,
+    showCorruptionReview, setShowCorruptionReview,
+    currentCorruptionIndex, setCurrentCorruptionIndex,
+    useAICleaning, setUseAICleaning,
+    isAICleaning, setIsAICleaning,
+    aiCleanedText, setAiCleanedText,
+    skipTextCleaning, setSkipTextCleaning,
+
+    extractedPdfPages, setExtractedPdfPages,
+    cleanedPdfPages, setCleanedPdfPages,
+    isCleaningPdf, setIsCleaningPdf,
+    pdfTargetSection, setPdfTargetSection,
+    pdfEditText, setPdfEditText,
+
+    selectedGroup, setSelectedGroup,
+    compareClause, setCompareClause,
+    isAddModalOpen, setIsAddModalOpen,
+    categorySuggestions, setCategorySuggestions,
+    showCategorySuggestions, setShowCategorySuggestions,
+    searchFilter, setSearchFilter,
+    selectedTypes, setSelectedTypes,
+    sortMode, setSortMode,
+    isBotOpen, setIsBotOpen,
+    selectedClauseForBot, setSelectedClauseForBot,
+    selectedItemForBot, setSelectedItemForBot,
+    toggleBot
+  } = useAppStore();
   const [error, setError] = useState<string | null>(null);
-  const [progress, setProgress] = useState(0);
-  const [activeStage, setActiveStage] = useState(REASSURING_STAGES[0]);
-  const [batchInfo, setBatchInfo] = useState({ current: 0, total: 0 });
   const [liveStatus, setLiveStatus] = useState<{
     message: string;
     detail: string;
@@ -231,48 +287,6 @@ const App: React.FC = () => {
     };
   } | null>(null);
 
-  const [generalFile, setGeneralFile] = useState<FileData | null>(null);
-  const [particularFile, setParticularFile] = useState<FileData | null>(null);
-  const [pastedGeneralText, setPastedGeneralText] = useState('');
-  const [pastedParticularText, setPastedParticularText] = useState('');
-  const [inputMode, setInputMode] = useState<'single' | 'dual' | 'text' | 'fixer'>('dual');
-  const [textToFix, setTextToFix] = useState('');
-  const [fixedText, setFixedText] = useState<{ cleaned: string; fixes: Array<{ original: string; fixed: string; reason: string }>; removedLines: number; corruptedLines?: Array<{ line: string; reason: string; index: number }> } | null>(null);
-  const [linesToRemove, setLinesToRemove] = useState<Set<number>>(new Set());
-  const [showCorruptionReview, setShowCorruptionReview] = useState(false);
-  const [currentCorruptionIndex, setCurrentCorruptionIndex] = useState(0);
-  const [useAICleaning, setUseAICleaning] = useState(false);
-  const [isAICleaning, setIsAICleaning] = useState(false);
-  const [aiCleanedText, setAiCleanedText] = useState<string | null>(null);
-  const [skipTextCleaning, setSkipTextCleaning] = useState(false);
-
-  // PDF Preview states
-  const [extractedPdfPages, setExtractedPdfPages] = useState<string[]>([]);
-  const [cleanedPdfPages, setCleanedPdfPages] = useState<string[] | null>(null);
-  const [isCleaningPdf, setIsCleaningPdf] = useState(false);
-  const [pdfTargetSection, setPdfTargetSection] = useState<SectionType>(SectionType.GENERAL);
-  const [pdfEditText, setPdfEditText] = useState('');
-
-  const [searchFilter, setSearchFilter] = useState<string>('');
-  const [selectedTypes, setSelectedTypes] = useState<ConditionType[]>(['General', 'Particular']);
-  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
-  const [compareClause, setCompareClause] = useState<Clause | null>(null);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const [categorySuggestions, setCategorySuggestions] = useState<CategorySuggestion[]>([]);
-  const [showCategorySuggestions, setShowCategorySuggestions] = useState(false);
-
-  const [library, setLibrary] = useState<SavedContract[]>([]);
-  const [projectName, setProjectName] = useState('');
-  const [activeContractId, setActiveContractId] = useState<string | null>(null);
-  const [isSaving, setIsSaving] = useState(false);
-  const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [showContractSelector, setShowContractSelector] = useState(false);
-  const [hasDraft, setHasDraft] = useState(false);
-  const [organizerSubfolders, setOrganizerSubfolders] = useState<ContractSubfolder[]>([]);
-  const [organizerSchemas, setOrganizerSchemas] = useState<Record<string, FolderSchemaField[]>>({});
-  const [organizerExtractedData, setOrganizerExtractedData] = useState<ExtractedData[]>([]);
-  const [librarySearchQuery, setLibrarySearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState<SectionType | 'CONDITIONS'>('CONDITIONS');
 
   // --- DRAFT/LOCAL BACKUP LOGIC ---
   useEffect(() => {
@@ -347,25 +361,11 @@ const App: React.FC = () => {
     setHasDraft(false);
   };
 
-  // Smart Search States
-  const [smartSearchQuery, setSmartSearchQuery] = useState('');
-  const [isSearching, setIsSearching] = useState(false);
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
-  const [searchError, setSearchError] = useState<string | null>(null);
-
-  // AI Bot States
-  const [isBotOpen, setIsBotOpen] = useState(false);
-  const [selectedClauseForBot, setSelectedClauseForBot] = useState<Clause | null>(null);
-  const [selectedItemForBot, setSelectedItemForBot] = useState<any | null>(null);
+  // smartSearchQuery, isSearching, searchResults, searchError are now in the store
 
   // Chapter Display View
   const [viewByChapter, setViewByChapter] = useState(false);
 
-  // Sort Mode for clause organization
-  const [sortMode, setSortMode] = useState<'default' | 'status' | 'chapter' | 'category'>('default');
-
-  // Sidebar visibility
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const generalFileRef = useRef<HTMLInputElement>(null);
@@ -629,78 +629,6 @@ const App: React.FC = () => {
     persistCurrentProject(updatedClauses);
   };
 
-  const smartSearchClauses = async (query: string) => {
-    if (!query.trim()) return;
-    setIsSearching(true);
-    setSearchError(null);
-
-    // Give UI time to show loading state
-    await new Promise(resolve => setTimeout(resolve, 50));
-
-    try {
-      const lowerQuery = query.toLowerCase();
-      const searchTerms = lowerQuery.split(/\s+/).filter(t => t.length > 2); // Split into terms, ignore short words
-
-      // Simple but fast local scoring
-      const scoredResults = clauses.map(c => {
-        let score = 0;
-        let reason = '';
-
-        const titleLower = c.clause_title.toLowerCase();
-        const textLower = c.clause_text.toLowerCase();
-
-        // Exact Phrase Match
-        if (titleLower.includes(lowerQuery)) {
-          score += 0.8;
-          reason = 'Exact match in title';
-        } else if (textLower.includes(lowerQuery)) {
-          score += 0.6;
-          reason = 'Exact phrase match in text';
-        }
-
-        // Term Matching
-        let matchedTerms = 0;
-        for (const term of searchTerms) {
-          if (titleLower.includes(term)) {
-            score += 0.3;
-            matchedTerms++;
-            if (!reason) reason = `Contains keyword "${term}" in title`;
-          } else if (textLower.includes(term)) {
-            score += 0.1;
-            matchedTerms++;
-            if (!reason) reason = `Contains keyword "${term}" in text`;
-          }
-        }
-
-        // Boost if multiple terms match
-        if (matchedTerms > 1) {
-          score += (matchedTerms * 0.1);
-        }
-
-        return {
-          clause_id: `C.${c.clause_number}`,
-          clause_number: c.clause_number,
-          title: c.clause_title,
-          condition_type: c.condition_type,
-          relevance_score: Math.min(score, 1.0),
-          reason: reason || 'Matches search terms'
-        };
-      });
-
-      // Filter, sort by score, and take top 10
-      const results = scoredResults
-        .filter(r => r.relevance_score > 0)
-        .sort((a, b) => b.relevance_score - a.relevance_score)
-        .slice(0, 10);
-
-      setSearchResults(results);
-    } catch (err) {
-      console.error("Local Search Error:", err);
-      setSearchError("Search failed. Please try again.");
-    } finally {
-      setIsSearching(false);
-    }
-  };
 
   const onOpenClause = (clauseNumber: string) => {
     const clause = clauses.find(c => c.clause_number === clauseNumber);
@@ -1273,10 +1201,7 @@ const App: React.FC = () => {
 
           // Update progress periodically while waiting
           const progressInterval = setInterval(() => {
-            setProgress(prev => {
-              if (prev < 85) return prev + 1;
-              return prev;
-            });
+            setProgress(progress + 5);
           }, 3000); // Update every 3 seconds
 
           const result = await Promise.race([apiCall, timeoutPromise]);
@@ -1620,8 +1545,7 @@ const App: React.FC = () => {
       setContract(updatedContract);
 
       // Rebuild clauses list for display
-      const allClauses = allExtractedClauses;
-      setClauses(prev => [...prev, ...allClauses]);
+      setClauses([...clauses, ...allExtractedClauses]);
 
       setProgress(100);
       setStatus(AnalysisStatus.COMPLETED);
@@ -1860,12 +1784,6 @@ const App: React.FC = () => {
     return filteredClauses;
   }, [filteredClauses, sortMode]);
 
-  const goBackToLibrary = () => {
-    setStatus(AnalysisStatus.LIBRARY);
-    setClauses([]);
-    setActiveContractId(null);
-    setLiveStatus({ message: '', detail: '', isActive: false });
-  };
 
   return (
     <>
@@ -1896,7 +1814,7 @@ const App: React.FC = () => {
           },
         }}
       />
-      <AppWrapper onToggleBot={() => setIsBotOpen(!isBotOpen)} isBotOpen={isBotOpen}>
+      <AppWrapper>
         <div className="min-h-screen flex flex-col">
           <input
             type="file"
@@ -1906,107 +1824,6 @@ const App: React.FC = () => {
             className="hidden"
           />
 
-          <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-surface-border px-8 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-4 cursor-pointer" onClick={goBackToLibrary}>
-              <div className="w-10 h-10 bg-mac-blue rounded-mac-xs flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AAA</span>
-              </div>
-              <div>
-                <h1 className="text-lg font-semibold text-mac-navy">Contract Department</h1>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              {status === AnalysisStatus.COMPLETED && (
-                <>
-                  <button
-                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                    className="p-2 bg-white border border-surface-border rounded-mac-xs hover:border-mac-blue transition-all group"
-                    title={isSidebarOpen ? "Hide sidebar" : "Show sidebar"}
-                  >
-                    {isSidebarOpen ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-muted group-hover:text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-mac-muted group-hover:text-mac-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                      </svg>
-                    )}
-                  </button>
-                  <div className="flex items-center gap-4">
-                    <div className="relative flex items-center">
-                      <input
-                        type="text"
-                        value={smartSearchQuery}
-                        onChange={(e) => setSmartSearchQuery(e.target.value)}
-                        onKeyDown={(e) => e.key === 'Enter' && smartSearchClauses(smartSearchQuery)}
-                        placeholder="Search clauses..."
-                        className="w-72 px-4 py-2 bg-white border border-surface-border rounded-mac-sm text-sm focus:border-mac-blue focus:shadow-mac-focus outline-none transition-all"
-                      />
-                      <button
-                        onClick={() => smartSearchClauses(smartSearchQuery)}
-                        disabled={isSearching}
-                        className="absolute right-1.5 p-1.5 bg-mac-blue text-white rounded-md hover:bg-mac-blue-hover transition-colors disabled:bg-mac-muted"
-                      >
-                        {isSearching ? (
-                          <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                        ) : (
-                          <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                          </svg>
-                        )}
-                      </button>
-                    </div>
-
-                    <button
-                      onClick={() => setIsAddModalOpen(true)}
-                      className="flex items-center gap-2 px-4 py-2 bg-mac-blue text-white rounded-mac-sm text-sm font-medium hover:bg-mac-blue-hover transition-all active:scale-[0.98]"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
-                      Add Clause
-                    </button>
-                  </div>
-                </>
-              )}
-
-              <button onClick={() => setStatus(AnalysisStatus.LIBRARY)} className="flex items-center gap-3 px-5 py-2.5 bg-white border border-aaa-border rounded-xl shadow-sm hover:shadow-md transition-all group">
-                <span className="text-[10px] font-black uppercase tracking-widest text-aaa-muted group-hover:text-aaa-blue">Archive</span>
-                <span className="w-6 h-6 bg-aaa-bg rounded-lg flex items-center justify-center text-[10px] font-black text-aaa-blue border border-aaa-blue/10">{library.length}</span>
-              </button>
-
-              {/* Admin Editor Link - Only visible to admins */}
-              {isAdmin() && (
-                <a
-                  href="#/admin/contract-editor"
-                  className="flex items-center gap-2 px-4 py-2.5 bg-amber-50 border border-amber-200 rounded-xl shadow-sm hover:shadow-md hover:bg-amber-100 transition-all group"
-                  title="Open Admin Contract Editor"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-amber-700">Admin</span>
-                </a>
-              )}
-
-
-              {/* Organizer Link */}
-
-              <button
-                onClick={() => setStatus(AnalysisStatus.ORGANIZER)}
-                className={`flex items-center gap-3 px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all group ${status === AnalysisStatus.ORGANIZER ? 'bg-aaa-blue text-white' : 'bg-white border border-aaa-border'}`}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className={`w-4 h-4 ${status === AnalysisStatus.ORGANIZER ? 'text-white' : 'text-aaa-muted group-hover:text-aaa-blue'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <span className={`text-[10px] font-black uppercase tracking-widest ${status === AnalysisStatus.ORGANIZER ? 'text-white' : 'text-aaa-muted group-hover:text-aaa-blue'}`}>Organizer</span>
-              </button>
-            </div>
-          </header>
 
           <div className="flex-1 flex overflow-hidden">
             {status === AnalysisStatus.COMPLETED && isSidebarOpen && (
@@ -2866,7 +2683,17 @@ const App: React.FC = () => {
                   <h3 className="text-3xl font-black text-aaa-blue">Process Stalled</h3>
                   <p className="text-aaa-muted max-w-md mx-auto">{error}</p>
                   <div className="flex gap-4">
-                    <button onClick={goBackToLibrary} className="px-12 py-4 bg-aaa-blue text-white rounded-2xl font-black">Back to Archive</button>
+                    <button
+                      onClick={() => {
+                        setStatus(AnalysisStatus.LIBRARY);
+                        setClauses([]);
+                        setActiveContractId(null);
+                        setLiveStatus({ message: '', detail: '', isActive: false });
+                      }}
+                      className="px-12 py-4 bg-aaa-blue text-white rounded-2xl font-black"
+                    >
+                      Back to Archive
+                    </button>
                   </div>
                 </div>
               )}
@@ -3189,7 +3016,7 @@ const App: React.FC = () => {
 
               {status === AnalysisStatus.ORGANIZER && (
                 <div className="h-[calc(100vh-140px)]">
-                  <React.Suspense fallback={<div className="flex items-center justify-center h-full"><div className="w-12 h-12 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" /></div>}>
+                  <React.Suspense fallback={<div className="flex items-center justify-center h-full"><div className="w-12 h-12 border-4 border-aaa-blue border-t-transparent rounded-full animate-spin" /><p className="text-xs font-black uppercase tracking-[0.3em]">Opening Contract Structure...</p></div>}>
                     <ContractOrganizer
                       contract={contract}
                       subfolders={organizerSubfolders}
@@ -3229,9 +3056,8 @@ const App: React.FC = () => {
                             // Use silent save if requested
                             if (contractToSave) {
                               const savedContract = await saveContractToSupabase(contractToSave);
-                              // IMPORTANT: Update global state with the saved contract to sync the version
                               setContract(savedContract);
-                              setLibrary(prev => [savedContract, ...prev.filter(c => c.id !== savedContract.id)]);
+                              setLibrary(prev => prev.filter(c => c.id !== contract?.id));
                             }
                             if (!silent) console.log('Contract record verified/saved in archive');
                           } catch (contractError: any) {
@@ -3498,42 +3324,78 @@ const App: React.FC = () => {
               )}
             </main>
           </div>
+        </div>
 
-          <React.Suspense fallback={null}>
-            {compareClause && (
-              <ComparisonModal
-                baseClause={compareClause}
-                allClauses={clauses}
-                onClose={() => setCompareClause(null)}
-                onUpdateClause={handleUpdateClause}
-              />
-            )}
-          </React.Suspense>
+        <React.Suspense fallback={null}>
+          {compareClause && (
+            <ComparisonModal
+              baseClause={compareClause}
+              allClauses={clauses}
+              onClose={() => setCompareClause(null)}
+              onUpdateClause={handleUpdateClause}
+            />
+          )}
+        </React.Suspense>
 
-          <React.Suspense fallback={null}>
-            {isAddModalOpen && (
-              <AddClauseModal
-                contractId={activeContractId || 'current-contract'}
-                onClose={() => {
-                  setIsAddModalOpen(false);
-                  setEditingClause(null);
-                }}
-                onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
-                editingClause={editingClause}
-              />
-            )}
-          </React.Suspense>
+        <React.Suspense fallback={null}>
+          {isAddModalOpen && (
+            <AddClauseModal
+              contractId={activeContractId || 'current-contract'}
+              onClose={() => {
+                setIsAddModalOpen(false);
+                setEditingClause(null);
+              }}
+              onSave={editingClause ? handleUpdateClauseFromModal : handleSaveManualClause}
+              editingClause={editingClause}
+            />
+          )}
+        </React.Suspense>
 
-          <React.Suspense fallback={null}>
-            {showCategorySuggestions && categorySuggestions.length > 0 && (
-              <CategorySuggestionsModal
-                suggestions={categorySuggestions}
-                clauses={clauses}
-                onAccept={(suggestion) => {
-                  // Assign clauses to category using CategoryManagerService
-                  const categoryService = new CategoryManagerService();
-                  categoryService.initialize(clauses);
+        <React.Suspense fallback={null}>
+          {showCategorySuggestions && categorySuggestions.length > 0 && (
+            <CategorySuggestionsModal
+              suggestions={categorySuggestions}
+              clauses={clauses}
+              onAccept={(suggestion) => {
+                // Assign clauses to category using CategoryManagerService
+                const categoryService = new CategoryManagerService();
+                categoryService.initialize(clauses);
 
+                // Create category if it doesn't exist (ignore error if already exists)
+                categoryService.processAction({
+                  action: 'create_category',
+                  category_name: suggestion.categoryName
+                });
+
+                // Add clauses to category
+                const updatedClauses = [...clauses];
+                suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
+                  const addResult = categoryService.processAction({
+                    action: 'add_clause',
+                    clause_number: clauseNumber,
+                    category_name: suggestion.categoryName
+                  });
+                  if (addResult.success) {
+                    const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
+                    if (clause) {
+                      clause.category = suggestion.categoryName;
+                    }
+                  }
+                });
+                setClauses(updatedClauses);
+                persistCurrentProject(updatedClauses, projectName);
+              }}
+              onReject={(suggestion) => {
+                // Just remove from suggestions list
+                setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
+              }}
+              onAcceptAll={() => {
+                // Accept all remaining suggestions
+                const categoryService = new CategoryManagerService();
+                categoryService.initialize(clauses);
+                const updatedClauses = [...clauses];
+
+                categorySuggestions.forEach(suggestion => {
                   // Create category if it doesn't exist (ignore error if already exists)
                   categoryService.processAction({
                     action: 'create_category',
@@ -3541,7 +3403,6 @@ const App: React.FC = () => {
                   });
 
                   // Add clauses to category
-                  const updatedClauses = [...clauses];
                   suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
                     const addResult = categoryService.processAction({
                       action: 'add_clause',
@@ -3550,67 +3411,38 @@ const App: React.FC = () => {
                     });
                     if (addResult.success) {
                       const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
-                      if (clause) {
+                      if (clause && !clause.category) {
                         clause.category = suggestion.categoryName;
                       }
                     }
                   });
-                  setClauses(updatedClauses);
-                  persistCurrentProject(updatedClauses, projectName);
-                }}
-                onReject={(suggestion) => {
-                  // Just remove from suggestions list
-                  setCategorySuggestions(prev => prev.filter(s => s.categoryName !== suggestion.categoryName));
-                }}
-                onAcceptAll={() => {
-                  // Accept all remaining suggestions
-                  const categoryService = new CategoryManagerService();
-                  categoryService.initialize(clauses);
-                  const updatedClauses = [...clauses];
+                });
 
-                  categorySuggestions.forEach(suggestion => {
-                    // Create category if it doesn't exist (ignore error if already exists)
-                    categoryService.processAction({
-                      action: 'create_category',
-                      category_name: suggestion.categoryName
-                    });
+                setClauses(updatedClauses);
+                persistCurrentProject(updatedClauses, projectName);
+                setShowCategorySuggestions(false);
+              }}
+              onDismiss={() => {
+                setShowCategorySuggestions(false);
+                setCategorySuggestions([]);
+              }}
+            />
+          )}
+        </React.Suspense>
 
-                    // Add clauses to category
-                    suggestion.suggestedClauseNumbers.forEach(clauseNumber => {
-                      const addResult = categoryService.processAction({
-                        action: 'add_clause',
-                        clause_number: clauseNumber,
-                        category_name: suggestion.categoryName
-                      });
-                      if (addResult.success) {
-                        const clause = updatedClauses.find(c => c.clause_number === clauseNumber);
-                        if (clause && !clause.category) {
-                          clause.category = suggestion.categoryName;
-                        }
-                      }
-                    });
-                  });
-
-                  setClauses(updatedClauses);
-                  persistCurrentProject(updatedClauses, projectName);
-                  setShowCategorySuggestions(false);
-                }}
-                onDismiss={() => {
-                  setShowCategorySuggestions(false);
-                  setCategorySuggestions([]);
-                }}
-              />
-            )}
-          </React.Suspense>
-
-          <footer className="glass border-t border-aaa-border px-10 h-16 flex items-center justify-between z-10 shrink-0">
-            <div className="flex flex-col">
-              <p className="text-[9px] font-black text-aaa-muted uppercase tracking-[0.5em]">AAA CONTRACT DEPARTMENT © 2025</p>
-            </div>
-            <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Precision Engine Pro</span>
-          </footer>
-        </div>
-      </AppWrapper>
+        <footer className="glass border-t border-aaa-border px-10 h-16 flex items-center justify-between z-10 shrink-0">
+          <div className="flex flex-col">
+            <p className="text-[9px] font-black text-aaa-muted uppercase tracking-[0.5em]">AAA CONTRACT DEPARTMENT © 2025</p>
+          </div>
+          <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Precision Engine Pro</span>
+        </footer>
+        <ChatContainer
+          isOpen={isBotOpen}
+          onClose={() => setIsBotOpen(false)}
+          contractClauses={clauses}
+          contractId={activeContractId}
+        />
+      </AppWrapper >
     </>
   );
 };

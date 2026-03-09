@@ -243,13 +243,11 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
 
   return (
     <div>
-      <AppHeader
-        onShowUserManagement={() => setShowUserManagement(!showUserManagement)}
-        showingUserManagement={showUserManagement}
-        onToggleBot={onToggleBot}
-        isBotOpen={isBotOpen}
-      />
-      {showUserManagement ? <UserManagement /> : children}
+      <AppHeader />
+
+      <main className="flex-1 flex overflow-hidden">
+        {showUserManagement ? <UserManagement /> : children}
+      </main>
     </div>
   );
 };
