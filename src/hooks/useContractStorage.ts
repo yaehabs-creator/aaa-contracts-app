@@ -12,10 +12,10 @@
  * Extracted from App.tsx to improve separation of concerns.
  */
 
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from '@/services/dbService';
-import { saveContractToSupabase, saveOrganizerData, getOrganizerData } from '@/services/supabaseService';
+import { saveContractToSupabase, saveOrganizerData, getOrganizerData, getContractFromSupabase } from '@/services/supabaseService';
 import { ensureContractHasSections, getAllClausesFromContract } from '@/services/contractMigrationService';
 import { Clause, SavedContract, FolderSchemaField, AnalysisStatus } from '@/types';
 import { useAppStore } from '@/store/useAppStore';
@@ -54,6 +54,29 @@ export function useContractStorage() {
       setLibrary([]);
     }
   };
+
+  /** Loads a full contract by ID and sets it as active. */
+  const loadContract = useCallback(async (id: string) => {
+    try {
+      const fullContract = await getContractFromSupabase(id);
+      if (fullContract) {
+        setContract(fullContract);
+        const processedClauses = getClausesWithProcessedLinks(fullContract);
+        setClauses(processedClauses);
+        setActiveContractId(id);
+        setProjectName(fullContract.name);
+        setStatus(AnalysisStatus.COMPLETED);
+        
+        // Also load organizer data
+        await loadOrganizerData(id);
+        return true;
+      }
+      return false;
+    } catch (err) {
+      console.error('Failed to load contract:', err);
+      return false;
+    }
+  }, [setContract, setClauses, setActiveContractId, setProjectName, setStatus]);
 
   // ---------------------------------------------------------------------------
   // ORGANIZER DATA
@@ -354,6 +377,7 @@ export function useContractStorage() {
   return {
     // Library
     refreshLibrary,
+    loadContract,
     // Organizer
     loadOrganizerData,
     // Draft

@@ -62,6 +62,7 @@ const App: React.FC = () => {
   // --- STORAGE & PERSISTENCE ---
   const {
     refreshLibrary,
+    loadContract,
     clearDraft,
     restoreDraft,
     persistCurrentProject,
@@ -72,9 +73,7 @@ const App: React.FC = () => {
     handleExportContract,
     handleImportBackup,
     cleanupSaveTimer,
-  } = useContractStorage();
-
-  // Draft: detect if one exists on mount
+  } = useContractStorage();  // Draft: detect if one exists on mount
   useEffect(() => {
     const draft = localStorage.getItem('aaa_contract_draft');
     if (draft) setHasDraft(true);
@@ -94,15 +93,30 @@ const App: React.FC = () => {
     else { localStorage.removeItem('aaa_active_contract_id'); }
   }, [activeContractId]);
 
-  // Library: load when auth is ready
-  const hasShownSelectorRef = useRef(false);
+  // Library & Initial Load: load when auth is ready
+  const hasInitialLoadDoneRef = useRef(false);
   useEffect(() => {
     if (authLoading || !user) return;
-    if (hasShownSelectorRef.current) return;
-    if (clauses.length > 0) { hasShownSelectorRef.current = true; return; }
-    hasShownSelectorRef.current = true;
-    refreshLibrary().catch(err => console.error('Failed to load contracts:', err));
-  }, [authLoading, user, clauses.length, refreshLibrary]);
+    if (hasInitialLoadDoneRef.current) return;
+    hasInitialLoadDoneRef.current = true;
+
+    const init = async () => {
+      // 1. Refresh list
+      await refreshLibrary().catch(err => console.error('Failed to load library:', err));
+
+      // 2. Try to restore last active contract
+      const savedId = localStorage.getItem('aaa_active_contract_id');
+      if (savedId && clauses.length === 0) {
+        console.log('Restoring last active contract:', savedId);
+        const success = await loadContract(savedId);
+        if (!success) {
+          console.warn('Could not restore last active contract, falling back to Library.');
+        }
+      }
+    };
+
+    init();
+  }, [authLoading, user, clauses.length, refreshLibrary, loadContract]);
 
   // Close contract selector on Escape
   useEffect(() => {
@@ -380,12 +394,7 @@ const App: React.FC = () => {
           )}
         </React.Suspense>
 
-        <footer className="glass border-t border-aaa-border px-10 h-16 flex items-center justify-between z-10 shrink-0">
-          <div className="flex flex-col">
-            <p className="text-[9px] font-black text-aaa-muted uppercase tracking-[0.5em]">AAA CONTRACT DEPARTMENT © 2025</p>
-          </div>
-          <span className="text-[9px] font-black text-emerald-600 uppercase flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Precision Engine Pro</span>
-        </footer>
+
         <ChatContainer
           isOpen={isBotOpen}
           onClose={() => setIsBotOpen(false)}
