@@ -44,6 +44,21 @@ interface AppState {
     activeStage: any;
     batchInfo: { current: number; total: number };
 
+    // Analysis Live Status (shown during AI processing)
+    liveStatus: { message: string; detail: string; isActive: boolean };
+    preprocessingInfo: {
+        generalFixes: number;
+        particularFixes: number;
+        estimatedClauses: number;
+        fixes: Array<{ original: string; fixed: string; reason: string }>;
+        tokenInfo: {
+            inputTokens: number;
+            outputTokenLimit: number;
+            totalTokenBudget: number;
+            usagePercentage: number;
+        };
+    } | null;
+
     // Organizer State
     organizerSubfolders: ContractSubfolder[];
     organizerSchemas: Record<string, FolderSchemaField[]>;
@@ -88,8 +103,8 @@ interface AppState {
     // Actions
     setStatus: (status: AnalysisStatus) => void;
     setContract: (contract: SavedContract | null) => void;
-    setClauses: (clauses: Clause[]) => void;
-    setLibrary: (library: SavedContract[]) => void;
+    setClauses: (clauses: Clause[] | ((prev: Clause[]) => Clause[])) => void;
+    setLibrary: (library: SavedContract[] | ((prev: SavedContract[]) => SavedContract[])) => void;
     setActiveContractId: (id: string | null) => void;
     setProjectName: (name: string) => void;
     setSearchFilter: (filter: string) => void;
@@ -104,6 +119,10 @@ interface AppState {
     setProgress: (progress: number) => void;
     setActiveStage: (stage: any) => void;
     setBatchInfo: (info: { current: number; total: number }) => void;
+    setLiveStatus: (status: { message: string; detail: string; isActive: boolean } | ((prev: { message: string; detail: string; isActive: boolean }) => { message: string; detail: string; isActive: boolean })) => void;
+    setPreprocessingInfo: (info: AppState['preprocessingInfo']) => void;
+    setError: (error: string | null) => void;
+    error: string | null;
     setIsSearching: (isSearching: boolean) => void;
     setSearchResults: (results: any[] | null) => void;
     setSearchError: (error: string | null) => void;
@@ -172,6 +191,9 @@ export const useAppStore = create<AppState>((set) => ({
     progress: 0,
     activeStage: null,
     batchInfo: { current: 0, total: 0 },
+    liveStatus: { message: '', detail: '', isActive: false },
+    preprocessingInfo: null,
+    error: null,
 
     organizerSubfolders: [],
     organizerSchemas: {},
@@ -213,8 +235,8 @@ export const useAppStore = create<AppState>((set) => ({
     // Simple Actions
     setStatus: (status) => set({ status }),
     setContract: (contract) => set({ contract }),
-    setClauses: (clauses) => set({ clauses }),
-    setLibrary: (library) => set({ library }),
+    setClauses: (clauses) => set((state) => ({ clauses: typeof clauses === 'function' ? clauses(state.clauses) : clauses })),
+    setLibrary: (library) => set((state) => ({ library: typeof library === 'function' ? library(state.library) : library })),
     setActiveContractId: (activeContractId) => set({ activeContractId }),
     setProjectName: (projectName) => set({ projectName }),
     setSearchFilter: (searchFilter) => set({ searchFilter }),
@@ -229,6 +251,11 @@ export const useAppStore = create<AppState>((set) => ({
     setProgress: (progress) => set({ progress }),
     setActiveStage: (activeStage) => set({ activeStage }),
     setBatchInfo: (batchInfo) => set({ batchInfo }),
+    setLiveStatus: (statusOrUpdater) => set((state) => ({
+        liveStatus: typeof statusOrUpdater === 'function' ? statusOrUpdater(state.liveStatus) : statusOrUpdater,
+    })),
+    setPreprocessingInfo: (preprocessingInfo) => set({ preprocessingInfo }),
+    setError: (error) => set({ error }),
     setIsSearching: (isSearching) => set({ isSearching }),
     setSearchResults: (searchResults) => set({ searchResults }),
     setSearchError: (searchError) => set({ searchError }),

@@ -6,11 +6,9 @@ import { AppHeader } from './AppHeader';
 
 interface AppWrapperProps {
   children: React.ReactNode;
-  onToggleBot?: () => void;
-  isBotOpen?: boolean;
 }
 
-export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, isBotOpen }) => {
+export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
   const { user, loading, canEdit, canView, authError, checkHealth } = useAuth();
   const [showUserManagement, setShowUserManagement] = useState(false);
   const [isCheckingHealth, setIsCheckingHealth] = useState(false);
@@ -196,8 +194,6 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children, onToggleBot, i
         <AppHeader
           onShowUserManagement={() => setShowUserManagement(!showUserManagement)}
           showingUserManagement={showUserManagement}
-          onToggleBot={onToggleBot}
-          isBotOpen={isBotOpen}
         />
         <div style={{
           minHeight: 'calc(100vh - 80px)',
