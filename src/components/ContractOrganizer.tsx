@@ -73,7 +73,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
         activeLayout, 
         isEditing, 
         startEditing, 
-        fetchLayout 
+        fetchLayout,
+        cancelEditing
     } = useOrganizerLayout();
 
     // Load layout on contract change
@@ -318,11 +319,6 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
             },
             version: 1,
             is_deleted: false,
-            ingestion_progress: {
-                expected_sections: ["AGREEMENT", "PARTICULAR_CONDITIONS", "GENERAL_CONDITIONS"],
-                completed_sections: [],
-                errors: []
-            }
         };
 
         setLocalContract(newContract);
@@ -692,13 +688,15 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                 <div className="w-80 border-r border-aaa-border flex flex-col bg-aaa-bg/10 overflow-y-auto custom-scrollbar">
                     <div className="p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">Contract Modules</h3>
+                            <h3 className="text-[10px] font-black text-aaa-muted uppercase tracking-[0.2em]">Contract Modules</h3>
                             {effectiveContract && (
                                 <button 
                                     onClick={startEditing}
-                                    className="p-1 px-2 text-[9px] font-black text-aaa-blue bg-aaa-blue/5 border border-aaa-blue/10 rounded-lg hover:bg-aaa-blue/10 transition-all uppercase tracking-tighter"
+                                    className="p-1.5 hover:bg-aaa-blue/10 text-aaa-muted hover:text-aaa-blue rounded-lg transition-all flex items-center gap-1.5"
+                                    title="Edit Sidebar Layout"
                                 >
-                                    Edit Layout
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                                    <span className="text-[9px] font-black uppercase">Edit</span>
                                 </button>
                             )}
                         </div>
@@ -1153,7 +1151,7 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
             {/* Layout Editor Sidebar Overlay */}
             <OrganizerLayoutEditor 
                 isOpen={isEditing} 
-                onClose={() => {}} 
+                onClose={() => cancelEditing()} 
             />
 
             <style>{`

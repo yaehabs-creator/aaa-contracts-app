@@ -15,7 +15,7 @@ export interface AIKnowledgeFile {
     updated_at: string;
 }
 
-const STORAGE_BUCKET = 'contract-docs';
+const STORAGE_BUCKET = 'contract-documents';
 const STORAGE_PREFIX = 'ai-knowledge';
 
 /**

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useOrganizerLayout } from '@/hooks/useOrganizerLayout';
 import { FIXED_FOLDERS } from '@/utils/layoutUtils';
-import { motion, AnimatePresence, Reorder } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';
 
 export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
@@ -79,15 +79,7 @@ export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => v
                 </div>
             </div>
 
-            <Reorder.Group 
-                axis="y" 
-                values={activeLayout} 
-                onReorder={(newOrder) => {
-                    // This assumes useOrganizerLayout provides a way to bulk update
-                    // but since we have reorderFolders(from, to), we might need to adapt.
-                    // Let's use motion.div layout instead for simplicity if we want to keep current hook API,
-                    // OR update the hook. Actually, motion.div layout="position" is very robust.
-                }}
+            <div 
                 className="flex-1 overflow-y-auto p-6 space-y-3 custom-scrollbar"
             >
                 <AnimatePresence mode="popLayout">
@@ -174,7 +166,7 @@ export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => v
                         );
                     })}
                 </AnimatePresence>
-            </Reorder.Group>
+            </div>
 
             <div className="p-6 border-t border-aaa-border bg-aaa-bg/30 space-y-3">
                 <button 

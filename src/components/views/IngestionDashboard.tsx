@@ -26,7 +26,7 @@ export const IngestionDashboard: React.FC = () => {
         if (!contract) return;
         
         const isProcessing = contract.status === 'processing' || 
-                           contract.ingestion_progress.completed_sections.length < 3;
+                           (contract.ingestion_progress?.completed_sections?.length ?? 0) < 3;
         
         if (isProcessing) {
             const interval = setInterval(async () => {
@@ -96,7 +96,7 @@ export const IngestionDashboard: React.FC = () => {
         }
     };
 
-    const isComplete = contract.ingestion_progress.completed_sections.length >= 3;
+    const isComplete = (contract.ingestion_progress?.completed_sections?.length ?? 0) >= 3;
 
     return (
         <div className="max-w-6xl mx-auto p-8 space-y-12 animate-in fade-in duration-700">
@@ -120,7 +120,7 @@ export const IngestionDashboard: React.FC = () => {
                     <div>
                         <h4 className="text-[10px] font-black text-aaa-blue uppercase tracking-[0.2em] mb-1">Ingestion Integrity</h4>
                         <div className="text-3xl font-black text-aaa-blue">
-                            {Math.round((contract.ingestion_progress.completed_sections.length / 3) * 100)}%
+                            {Math.round(((contract.ingestion_progress?.completed_sections?.length ?? 0) / 3) * 100)}%
                         </div>
                     </div>
                     <div className="text-right">
@@ -133,7 +133,7 @@ export const IngestionDashboard: React.FC = () => {
                 <div className="h-4 bg-aaa-bg rounded-full overflow-hidden border border-aaa-border/50">
                     <div 
                         className="h-full bg-gradient-to-r from-aaa-blue to-aaa-accent rounded-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(56,121,209,0.5)]"
-                        style={{ width: `${(contract.ingestion_progress.completed_sections.length / 3) * 100}%` }}
+                        style={{ width: `${((contract.ingestion_progress?.completed_sections?.length ?? 0) / 3) * 100}%` }}
                     />
                 </div>
             </div>
@@ -141,7 +141,7 @@ export const IngestionDashboard: React.FC = () => {
             {/* Section Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {sections.map((sec) => {
-                    const isDone = contract.ingestion_progress.completed_sections.includes(sec.key);
+                    const isDone = contract.ingestion_progress?.completed_sections?.includes(sec.key) ?? false;
                     const isUploading = uploadingSection === sec.key;
                     
                     return (

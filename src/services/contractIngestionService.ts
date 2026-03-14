@@ -150,7 +150,7 @@ export async function storeIngestionClauses(
         .eq('id', contractId)
         .single();
 
-    const newProgress: IngestionProgress = { ...contract.ingestion_progress };
+    const newProgress: IngestionProgress = contract.ingestion_progress ? { ...contract.ingestion_progress } : { expected_sections: [], completed_sections: [] };
     if (!newProgress.completed_sections.includes(sectionKey)) {
         newProgress.completed_sections.push(sectionKey);
     }
@@ -175,7 +175,7 @@ export async function verifyAndActivateContract(contractId: string) {
     
     if (contractError || !contract) throw new Error("Contract not found");
 
-    const { expected_sections, completed_sections } = contract.ingestion_progress;
+    const { expected_sections = [], completed_sections = [] } = contract.ingestion_progress || {};
     const missing = expected_sections.filter((s: string) => !completed_sections.includes(s));
 
     if (missing.length > 0) {

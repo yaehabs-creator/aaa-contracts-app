@@ -187,30 +187,23 @@ export interface ContractSection {
   items: SectionItem[];
 }
 
-export interface IngestionProgress {
-  expected_sections: string[];
-  completed_sections: string[];
-  errors: Array<{ section: string; message: string }>;
-}
-
 export interface SavedContract {
   id: string;
-  name: string;
+  name: string; // Kept for backward compatibility
   title: string;
   project_id?: string;
   contractor_id?: string;
   contractor_name?: string;
   contract_number?: string;
-  status: 'draft' | 'ready' | 'processing' | 'partial_failure';
-  ingestion_progress: IngestionProgress;
+  status: 'draft' | 'processing' | 'active' | 'closed';
   start_date?: string;
   end_date?: string;
   currency?: string;
   value?: number;
   scope_text?: string;
   timestamp: number;
-  clauses?: Clause[];  // For backward compatibility
-  sections?: ContractSection[];  // For backward compatibility
+  clauses?: Clause[];  // Legacy format - kept for backward compatibility
+  sections?: ContractSection[];  // New format
   metadata: {
     totalClauses: number;
     generalCount: number;
@@ -219,8 +212,9 @@ export interface SavedContract {
     conflictCount: number;
     timeSensitiveCount?: number;
   };
+  ingestion_progress?: IngestionProgress;
   version: number;
-  is_deleted: boolean;
+  is_deleted?: boolean;
   created_by?: string;
   created_at?: string;
   updated_at?: string;
@@ -270,8 +264,129 @@ export interface ContextPill {
 }
 
 // ============================================
-// New Verified Ingestion Types
+// Document Ingestion Types
 // ============================================
+
+/**
+ * Document groups following FIDIC contract structure
+ * A = Form of Agreement & Annexes
+ * B = Letter of Acceptance
+ * C = Conditions of Contract (GC/PC)
+ * D = Addendums & Post-Tender Addendums
+ * I = Bills of Quantities & Method of Measurement
+ * N = Schedules, Annexes, Technical Appendices
+ */
+export enum DocumentGroup {
+  A = 'A', // Form of Agreement
+  B = 'B', // Letter of Acceptance
+  C = 'C', // Conditions of Contract
+  D = 'D', // Addendums
+  I = 'I', // BOQ
+  N = 'N'  // Schedules/Annexes
+}
+
+export const DocumentGroupLabels: Record<DocumentGroup, string> = {
+  [DocumentGroup.A]: 'Form of Agreement & Annexes',
+  [DocumentGroup.B]: 'Letter of Acceptance',
+  [DocumentGroup.C]: 'Conditions of Contract',
+  [DocumentGroup.D]: 'Addendums & Clarifications',
+  [DocumentGroup.I]: 'Bills of Quantities',
+  [DocumentGroup.N]: 'Schedules & Annexes'
+};
+
+export type DocumentStatus = 'pending' | 'processing' | 'completed' | 'error';
+
+export interface ContractDocument {
+  id: string;
+  contract_id: string;
+  document_group: DocumentGroup;
+  name: string;
+  original_filename?: string;
+  file_path: string;
+  file_type: string;
+  file_size_bytes?: number;
+  page_count?: number;
+  sequence_number: number;
+  effective_date?: string;
+  supersedes_document_id?: string;
+  status: DocumentStatus;
+  processing_error?: string;
+  processing_metadata?: Record<string, any>;
+  created_at?: string;
+  updated_at?: string;
+  processed_at?: string;
+}
+
+export type ChunkContentType = 'text' | 'table' | 'form' | 'metadata' | 'heading';
+
+export interface DocumentChunk {
+  id: string;
+  document_id: string;
+  contract_id: string;
+  chunk_index: number;
+  content: string;
+  content_hash?: string;
+  content_type: ChunkContentType;
+  clause_number?: string;
+  clause_title?: string;
+  page_number?: number;
+  page_range_start?: number;
+  page_range_end?: number;
+  token_count?: number;
+  confidence_score?: number;
+  embedding?: number[];
+  metadata?: Record<string, any>;
+  created_at?: string;
+}
+
+export type ReferenceType =
+  | 'mentions'        // Simple reference to another clause
+  | 'overrides'       // PC overrides GC, or Addendum overrides base
+  | 'supplements'     // Adds to existing clause
+  | 'cross_reference' // Mutual reference
+  | 'defines'         // Definition reference
+  | 'amends';         // Partial modification
+
+export interface ClauseReference {
+  id: string;
+  contract_id: string;
+  source_clause_number: string;
+  source_document_id?: string;
+  source_chunk_id?: string;
+  target_clause_number: string;
+  target_document_id?: string;
+  target_chunk_id?: string;
+  reference_type: ReferenceType;
+  reference_text?: string;
+  is_resolved?: boolean;
+  created_at?: string;
+}
+
+export type OverrideType = 'full' | 'partial' | 'clause_specific';
+
+export interface DocumentOverride {
+  id: string;
+  contract_id: string;
+  overriding_document_id: string;
+  overridden_document_id: string;
+  override_scope: string;
+  override_type: OverrideType;
+  affected_clauses?: string[];
+  reason?: string;
+  effective_date?: string;
+  created_at?: string;
+}
+
+export type IngestionJobType = 'ocr' | 'parsing' | 'chunking' | 'embedding' | 'validation' | 'full_ingestion';
+export type IngestionJobStatus = 'queued' | 'processing' | 'completed' | 'failed' | 'cancelled';
+
+export interface IngestionProgress {
+  expected_sections: string[];
+  completed_sections: string[];
+  total_chunks?: number;
+  processed_chunks?: number;
+  errors?: string[];
+}
 
 export interface IngestionSection {
   id: string;
@@ -281,9 +396,8 @@ export interface IngestionSection {
   file_url: string;
   file_hash: string;
   file_size: number;
-  status: 'uploaded' | 'extracting' | 'completed' | 'failed' | 'repairing';
-  chunk_metadata: Record<string, any>;
-  created_at: string;
+  status: 'uploaded' | 'processing' | 'completed' | 'error';
+  created_at?: string;
 }
 
 export interface IngestionClause {
@@ -292,12 +406,170 @@ export interface IngestionClause {
   section_id: string;
   section_key: string;
   clause_number: string;
-  parent_clause_number?: string;
   title: string;
   content: string;
-  page_start?: number;
-  page_end?: number;
-  created_at: string;
+  page_start: number;
+  page_end: number;
+  created_at?: string;
+}
+
+export interface IngestionJob {
+  id: string;
+  contract_id: string;
+  document_id?: string;
+  job_type: IngestionJobType;
+  status: IngestionJobStatus;
+  progress: number;
+  error_message?: string;
+  metadata?: Record<string, any>;
+  started_at?: string;
+  completed_at?: string;
+  created_at?: string;
+}
+
+// ============================================
+// Validation Types
+// ============================================
+
+export type ValidationErrorCode =
+  | 'DUPLICATE_CLAUSE'
+  | 'UNRESOLVED_REFERENCE'
+  | 'ADDENDUM_ORDER'
+  | 'MISSING_PC_OVERRIDE'
+  | 'OCR_CONFIDENCE_LOW'
+  | 'DUPLICATE_CHUNK'
+  | 'INVALID_CLAUSE_NUMBER'
+  | 'MISSING_REQUIRED_FIELD'
+  | 'TABLE_EXTRACTION_FAILED'
+  | 'NAMING_CONVENTION_VIOLATION';
+
+export interface ValidationError {
+  code: ValidationErrorCode;
+  message: string;
+  items: any[];
+  severity: 'error' | 'warning';
+}
+
+export interface ValidationResult {
+  isValid: boolean;
+  errors: ValidationError[];
+  warnings: ValidationError[];
+  summary: {
+    totalDocuments: number;
+    totalChunks: number;
+    totalReferences: number;
+    unresolvedReferences: number;
+    lowConfidenceChunks: number;
+  };
+}
+
+// ============================================
+// Search Types
+// ============================================
+
+export interface ChunkSearchResult {
+  chunk_id: string;
+  document_id: string;
+  document_name: string;
+  document_group: DocumentGroup;
+  clause_number?: string;
+  content: string;
+  similarity: number;
+  is_overridden?: boolean;
+  overridden_by?: string[];
+}
+
+export interface EffectiveClause {
+  chunk_id: string;
+  document_id: string;
+  document_name: string;
+  document_group: DocumentGroup;
+  content: string;
+  is_overridden: boolean;
+  overridden_by: string[];
+}
+
+// ============================================
+// File Upload Types
+// ============================================
+
+export interface FileUploadRequest {
+  file: File;
+  contractId: string;
+  documentGroup: DocumentGroup;
+  sequenceNumber?: number;
+  effectiveDate?: string;
+  supersedesDocumentId?: string;
+}
+
+export interface FileUploadResult {
+  success: boolean;
+  documentId?: string;
+  filePath?: string;
+  error?: string;
+}
+
+export interface BatchUploadProgress {
+  totalFiles: number;
+  completedFiles: number;
+  currentFile?: string;
+  errors: Array<{ filename: string; error: string }>;
+}
+
+// ============================================
+// Naming Convention Validation
+// ============================================
+
+export interface FileNamingValidation {
+  isValid: boolean;
+  suggestedName?: string;
+  errors: string[];
+  parsed?: {
+    group: DocumentGroup;
+    sequence: number;
+    name: string;
+    extension: string;
+  };
+}
+
+/**
+ * Validates a filename against the naming convention:
+ * {GROUP}{SEQUENCE}_{Document_Name}.{ext}
+ * Example: A001_Form_of_Agreement.pdf
+ */
+export function validateFileName(filename: string): FileNamingValidation {
+  const pattern = /^([ABCDIN])(\d{3})_([A-Za-z0-9_-]+)\.([a-zA-Z0-9]+)$/;
+  const match = filename.match(pattern);
+
+  if (!match) {
+    // Try to generate a suggested name
+    const ext = filename.split('.').pop() || 'pdf';
+    const baseName = filename.replace(/\.[^/.]+$/, '').replace(/[^A-Za-z0-9_-]/g, '_');
+
+    return {
+      isValid: false,
+      suggestedName: `X001_${baseName}.${ext}`,
+      errors: [
+        'Filename must follow pattern: {GROUP}{SEQ}_{Name}.{ext}',
+        'GROUP must be A, B, C, D, I, or N',
+        'SEQ must be 3 digits (001-999)',
+        'Name must use underscores, no spaces'
+      ]
+    };
+  }
+
+  const [, group, seq, name, ext] = match;
+
+  return {
+    isValid: true,
+    parsed: {
+      group: group as DocumentGroup,
+      sequence: parseInt(seq, 10),
+      name,
+      extension: ext
+    },
+    errors: []
+  };
 }
 
 // ============================================
@@ -311,12 +583,6 @@ export interface ContractTemplate {
   is_default: boolean;
   created_at?: string;
   updated_at?: string;
-}
-
-export interface OrganizerFolderLayout {
-  code: string;        // matches FIXED_FOLDERS code (e.g. 'A', 'B', 'AI')
-  isVisible: boolean;
-  order: number;       // 0-based display order
 }
 
 export interface ContractSubfolder {
@@ -359,3 +625,10 @@ export interface ExtractedData {
   updated_at?: string;
 }
 
+
+// Contract Organizer Types
+export interface OrganizerFolderLayout {
+  code: string;
+  isVisible: boolean;
+  order: number;
+}

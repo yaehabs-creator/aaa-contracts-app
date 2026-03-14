@@ -18,7 +18,7 @@ export const FIXED_FOLDERS = [
     { code: 'O', name: 'Other Documents' },
     { code: 'AI', name: 'AI Analysis Library' },
     { code: 'DATA', name: 'AI Knowledge Base' }
-] as const;
+];
 
 export function buildDefaultLayout(): OrganizerFolderLayout[] {
     return FIXED_FOLDERS.map((f, index) => ({
