@@ -28,7 +28,7 @@ export interface JsonDataSource {
     updated_at: string;
 }
 
-const STORAGE_BUCKET = 'contract-documents';
+const STORAGE_BUCKET = 'contract-docs';
 const MAX_INLINE_BYTES = 512 * 1024;    // 512 KB — smaller files get inlined into DB
 export const LARGE_FILE_THRESHOLD = 2 * 1024 * 1024; // 2 MB — files above this skip client-side JSON.parse()
 

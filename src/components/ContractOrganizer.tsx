@@ -13,6 +13,9 @@ import { getOrganizerData, uploadContractDocument } from '@/services/supabaseSer
 import { cleanTextWithAI } from '@/services/textPreprocessor';
 import { analyzePDFWithClaude } from '@/services/pdfAnalysisClient';
 import { AIKnowledgeManager } from './AIKnowledgeManager';
+import { useOrganizerLayout } from '@/hooks/useOrganizerLayout';
+import { OrganizerLayoutEditor } from './OrganizerLayoutEditor';
+import { FIXED_FOLDERS as UTILS_FIXED_FOLDERS } from '@/utils/layoutUtils';
 
 interface ContractOrganizerProps {
     contract: SavedContract | null;
@@ -31,25 +34,7 @@ interface ContractOrganizerProps {
     }, silent?: boolean) => Promise<void>;
 }
 
-const FIXED_FOLDERS = [
-    { code: 'A', name: 'Form of Agreement & its Annexes' },
-    { code: 'B', name: 'Signed Letter of Acceptance' },
-    { code: 'T', name: 'Form of Tender' },
-    { code: 'C', name: 'Conditions of Contract & its Appendices' },
-    { code: 'R', name: 'Employer\'s Requirements' },
-    { code: 'S', name: 'Specification' },
-    { code: 'Q', name: 'Technical Proposal' },
-    { code: 'E', name: 'Contract Drawings' },
-    { code: 'I', name: 'Priced Bills of Quantities' },
-    { code: 'J', name: 'Schedules' },
-    { code: 'K', name: 'Annexes' },
-    { code: 'D', name: 'Addendums & Post Tender Addendums' },
-    { code: 'P', name: 'Instruction To Tenderers' },
-    { code: 'N', name: 'Automation Application' },
-    { code: 'O', name: 'Other Documents' },
-    { code: 'AI', name: 'AI Analysis Library' },
-    { code: 'DATA', name: 'AI Knowledge Base' }
-] as const;
+const FIXED_FOLDERS = UTILS_FIXED_FOLDERS;
 
 export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     contract,
@@ -83,6 +68,20 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     const [newContractor, setNewContractor] = useState('');
 
     const effectiveContract = contract || localContract;
+
+    const { 
+        activeLayout, 
+        isEditing, 
+        startEditing, 
+        fetchLayout 
+    } = useOrganizerLayout();
+
+    // Load layout on contract change
+    useEffect(() => {
+        if (effectiveContract?.id) {
+            fetchLayout(effectiveContract.id);
+        }
+    }, [effectiveContract?.id, fetchLayout]);
 
     // Auto-save logic
     useEffect(() => {
@@ -319,6 +318,11 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
             },
             version: 1,
             is_deleted: false,
+            ingestion_progress: {
+                expected_sections: ["AGREEMENT", "PARTICULAR_CONDITIONS", "GENERAL_CONDITIONS"],
+                completed_sections: [],
+                errors: []
+            }
         };
 
         setLocalContract(newContract);
@@ -687,39 +691,53 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                 {/* Left Sidebar: Folder Tree */}
                 <div className="w-80 border-r border-aaa-border flex flex-col bg-aaa-bg/10 overflow-y-auto custom-scrollbar">
                     <div className="p-6">
-                        <h3 className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-4">Contract Modules</h3>
-                        <div className="space-y-1">
-                            {FIXED_FOLDERS.map(folder => (
-                                <button
-                                    key={folder.code}
-                                    onClick={() => {
-                                        setActiveFolder(folder.code);
-                                        setSelectedSubfolderId(null);
-                                        // Auto-switch mode for convenience
-                                        if (folder.code === 'E' || folder.code === 'I') {
-                                            setIngestionMode('pdf-viewer');
-                                        } else {
-                                            setIngestionMode('extraction');
-                                        }
-                                    }}
-                                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeFolder === folder.code
-                                        ? 'bg-white shadow-md border border-aaa-blue/10 text-aaa-blue'
-                                        : 'text-aaa-text hover:bg-white/50'
-                                        }`}
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className="text-[10px] font-black text-aaa-muted uppercase tracking-widest">Contract Modules</h3>
+                            {effectiveContract && (
+                                <button 
+                                    onClick={startEditing}
+                                    className="p-1 px-2 text-[9px] font-black text-aaa-blue bg-aaa-blue/5 border border-aaa-blue/10 rounded-lg hover:bg-aaa-blue/10 transition-all uppercase tracking-tighter"
                                 >
-                                    <span className={`w-8 h-8 flex items-center justify-center rounded-lg text-xs font-black border ${activeFolder === folder.code ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-aaa-bg text-aaa-blue border-aaa-blue/10'
-                                        }`}>
-                                        {folder.code}
-                                    </span>
-                                    <div className="flex-1 min-w-0">
-                                        <p className="text-[11px] font-black truncate text-left leading-none mb-1 uppercase tracking-tighter">{folder.name.split(' ')[0]}</p>
-                                        <p className="text-[9px] font-bold text-aaa-muted truncate text-left">{folder.name}</p>
-                                    </div>
-                                    {folder.code === 'AI' && (
-                                        <div className="w-2 h-2 bg-aaa-blue rounded-full animate-pulse" />
-                                    )}
+                                    Edit Layout
                                 </button>
-                            ))}
+                            )}
+                        </div>
+                        <div className="space-y-1">
+                            {activeLayout.filter(f => f.isVisible).map(item => {
+                                const folder = FIXED_FOLDERS.find(f => f.code === item.code);
+                                if (!folder) return null;
+                                return (
+                                    <button
+                                        key={folder.code}
+                                        onClick={() => {
+                                            setActiveFolder(folder.code);
+                                            setSelectedSubfolderId(null);
+                                            // Auto-switch mode for convenience
+                                            if (folder.code === 'E' || folder.code === 'I') {
+                                                setIngestionMode('pdf-viewer');
+                                            } else {
+                                                setIngestionMode('extraction');
+                                            }
+                                        }}
+                                        className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeFolder === folder.code
+                                            ? 'bg-white shadow-md border border-aaa-blue/10 text-aaa-blue'
+                                            : 'text-aaa-text hover:bg-white/50'
+                                            }`}
+                                    >
+                                        <span className={`w-8 h-8 flex items-center justify-center rounded-lg text-xs font-black border ${activeFolder === folder.code ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-aaa-bg text-aaa-blue border-aaa-blue/10'
+                                            }`}>
+                                            {folder.code}
+                                        </span>
+                                        <div className="flex-1 min-w-0">
+                                            <p className="text-[11px] font-black truncate text-left leading-none mb-1 uppercase tracking-tighter">{folder.name.split(' ')[0]}</p>
+                                            <p className="text-[9px] font-bold text-aaa-muted truncate text-left">{folder.name}</p>
+                                        </div>
+                                        {folder.code === 'AI' && (
+                                            <div className="w-2 h-2 bg-aaa-blue rounded-full animate-pulse" />
+                                        )}
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -1131,6 +1149,12 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                     </div>
                 )}
             </div>
+            
+            {/* Layout Editor Sidebar Overlay */}
+            <OrganizerLayoutEditor 
+                isOpen={isEditing} 
+                onClose={() => {}} 
+            />
 
             <style>{`
         .dotted-bg { background-image: radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 0); background-size: 40px 40px; }

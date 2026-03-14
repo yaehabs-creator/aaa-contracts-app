@@ -9,7 +9,8 @@ import {
     SectionType,
     ContractSubfolder,
     FolderSchemaField,
-    ExtractedData
+    ExtractedData,
+    OrganizerFolderLayout
 } from '@/types';
 
 interface AppState {
@@ -63,6 +64,8 @@ interface AppState {
     organizerSubfolders: ContractSubfolder[];
     organizerSchemas: Record<string, FolderSchemaField[]>;
     organizerExtractedData: ExtractedData[];
+    organizerLayout: OrganizerFolderLayout[];
+    pendingLayout: OrganizerFolderLayout[] | null;
 
     searchResults: any[] | null;
     searchError: string | null;
@@ -156,6 +159,8 @@ interface AppState {
     setOrganizerSubfolders: (subfolders: ContractSubfolder[]) => void;
     setOrganizerSchemas: (schemas: Record<string, FolderSchemaField[]>) => void;
     setOrganizerExtractedData: (data: ExtractedData[]) => void;
+    setOrganizerLayout: (layout: OrganizerFolderLayout[]) => void;
+    setPendingLayout: (layout: OrganizerFolderLayout[] | null) => void;
 
     smartSearchClauses: (query: string) => Promise<void>;
     setIsBotOpen: (isOpen: boolean) => void;
@@ -198,6 +203,8 @@ export const useAppStore = create<AppState>((set) => ({
     organizerSubfolders: [],
     organizerSchemas: {},
     organizerExtractedData: [],
+    organizerLayout: [],
+    pendingLayout: null,
 
     searchResults: null,
     searchError: null,
@@ -289,6 +296,8 @@ export const useAppStore = create<AppState>((set) => ({
     setOrganizerSubfolders: (organizerSubfolders) => set({ organizerSubfolders }),
     setOrganizerSchemas: (organizerSchemas) => set({ organizerSchemas }),
     setOrganizerExtractedData: (organizerExtractedData) => set({ organizerExtractedData }),
+    setOrganizerLayout: (organizerLayout) => set({ organizerLayout }),
+    setPendingLayout: (pendingLayout) => set({ pendingLayout }),
 
     setIsBotOpen: (isBotOpen) => set({ isBotOpen }),
     toggleBot: () => set((state) => ({ isBotOpen: !state.isBotOpen })),

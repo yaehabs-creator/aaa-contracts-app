@@ -1,5 +1,5 @@
 import { supabase } from '../supabase/config';
-import { SavedContract, ContractSection, SectionItem, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData } from '@/types';
+import { SavedContract, ContractSection, SectionItem, SectionType, ContractSubfolder, FolderSchemaField, ExtractedData, OrganizerFolderLayout } from '@/types';
 import { ensureContractHasSections } from '@/services/contractMigrationService';
 
 
@@ -149,6 +149,11 @@ export const saveContractToSupabase = async (contract: SavedContract): Promise<S
       contractor_name: migratedContract.contractor_name,
       contract_number: migratedContract.contract_number,
       status: migratedContract.status || 'draft',
+      ingestion_progress: migratedContract.ingestion_progress || {
+          expected_sections: ["AGREEMENT", "PARTICULAR_CONDITIONS", "GENERAL_CONDITIONS"],
+          completed_sections: [],
+          errors: []
+      },
       start_date: migratedContract.start_date,
       end_date: migratedContract.end_date,
       currency: migratedContract.currency,
@@ -286,7 +291,8 @@ export const getAllContractsFromSupabase = async (options: { metadataOnly?: bool
         project_id: row.project_id,
         contractor_id: row.contractor_id,
         contract_number: row.contract_number,
-        status: (row.status || 'draft') as 'draft' | 'active' | 'closed',
+        status: (row.status || 'draft') as any,
+        ingestion_progress: row.ingestion_progress,
         start_date: row.start_date,
         end_date: row.end_date,
         currency: row.currency,
@@ -322,7 +328,8 @@ export const getAllContractsFromSupabase = async (options: { metadataOnly?: bool
             project_id: row.project_id,
             contractor_id: row.contractor_id,
             contract_number: row.contract_number,
-            status: (row.status || 'draft') as 'draft' | 'active' | 'closed',
+            status: (row.status || 'draft') as any,
+            ingestion_progress: row.ingestion_progress,
             start_date: row.start_date,
             end_date: row.end_date,
             currency: row.currency,
@@ -404,7 +411,8 @@ export const getContractFromSupabase = async (id: string): Promise<SavedContract
       project_id: contractData.project_id,
       contractor_id: contractData.contractor_id,
       contract_number: contractData.contract_number,
-      status: (contractData.status || 'draft') as 'draft' | 'active' | 'closed',
+      status: (contractData.status || 'draft') as any,
+      ingestion_progress: contractData.ingestion_progress,
       start_date: contractData.start_date,
       end_date: contractData.end_date,
       currency: contractData.currency,
@@ -420,6 +428,27 @@ export const getContractFromSupabase = async (id: string): Promise<SavedContract
       updated_at: contractData.updated_at,
       created_by: contractData.created_by
     };
+
+    // Load clauses if ready
+    if (contract.status === 'ready') {
+        const { data: ingestionClauses } = await supabase
+            .from('ingestion_clauses')
+            .select('*')
+            .eq('contract_id', id)
+            .order('clause_number');
+        
+        if (ingestionClauses && ingestionClauses.length > 0) {
+            // Map new clauses to legacy format for UI compatibility
+            contract.clauses = ingestionClauses.map(ic => ({
+                clause_number: ic.clause_number,
+                clause_title: ic.title,
+                clause_text: ic.content,
+                condition_type: ic.section_key === 'GENERAL_CONDITIONS' ? 'General' : 'Particular',
+                comparison: [],
+                category: ''
+            }));
+        }
+    }
 
     // Log what we're loading
     console.log('Loading contract from Supabase:', {
@@ -854,11 +883,63 @@ export const saveOrganizerData = async (contractId: string, data: {
   }
 };
 
+export const getOrganizerLayout = async (contractId: string): Promise<OrganizerFolderLayout[]> => {
+  if (!supabase) throw new Error('Supabase not initialized');
+
+  try {
+    const { data, error } = await supabase
+      .from('organizer_layouts')
+      .select('layout')
+      .eq('contract_id', contractId)
+      .single();
+
+    if (error) {
+      if (error.code === 'PGRST116') {
+        // Not found - returning default layout (internal handled by hook/caller if needed, 
+        // but here we return empty array so hook knows to use defaults)
+        return [];
+      }
+      console.warn('getOrganizerLayout error:', error);
+      return [];
+    }
+
+    return (data.layout || []) as OrganizerFolderLayout[];
+  } catch (err) {
+    console.error('Failed to fetch organizer layout:', err);
+    return [];
+  }
+};
+
+export const saveOrganizerLayout = async (contractId: string, layout: OrganizerFolderLayout[]) => {
+  if (!supabase) throw new Error('Supabase not initialized');
+
+  const { data: { session } } = await supabase.auth.getSession();
+  const userId = session?.user?.id;
+
+  if (!userId) throw new Error('User must be logged in to save layout');
+
+  const { error } = await supabase
+    .from('organizer_layouts')
+    .upsert({
+      contract_id: contractId,
+      created_by: userId,
+      layout,
+      updated_at: new Date().toISOString()
+    }, {
+      onConflict: 'contract_id'
+    });
+
+  if (error) {
+    console.error('saveOrganizerLayout error:', error);
+    throw new Error(`Failed to save layout: ${error.message}`);
+  }
+};
+
 // ============================================
 // Supabase Storage - Document Management
 // ============================================
 
-const STORAGE_BUCKET = 'contract-documents';
+const STORAGE_BUCKET = 'contract-docs';
 
 /**
  * Upload a document to Supabase Storage
