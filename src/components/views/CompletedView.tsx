@@ -114,18 +114,7 @@ export const CompletedView: React.FC<CompletedViewProps> = ({
               placeholder="Enter Project Name..."
             />
           </div>
-          <div className="flex flex-col items-end gap-2">
-            <div className="flex items-center gap-3">
-              {isSaving && (
-                <span className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest animate-pulse">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  Session Sync
-                </span>
-              )}
-              <span className="text-[10px] font-black text-aaa-muted uppercase tracking-widest opacity-40">Matrix v2.6.0</span>
-            </div>
-            <p className="text-aaa-muted text-[10px] font-bold uppercase tracking-[0.2em]">{clauses.length} Verbatim Data Nodes</p>
-          </div>
+
         </div>
       </div>
 
