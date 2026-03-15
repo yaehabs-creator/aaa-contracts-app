@@ -13,6 +13,8 @@ import { getOrganizerData, uploadContractDocument } from '@/services/supabaseSer
 import { cleanTextWithAI } from '@/services/textPreprocessor';
 import { analyzePDFWithClaude } from '@/services/pdfAnalysisClient';
 import { AIKnowledgeManager } from './AIKnowledgeManager';
+import { extractClausesWithPaddleOCR } from '@/services/paddleOcrService';
+import { useAppStore } from '@/store/useAppStore';
 import { useOrganizerLayout } from '@/hooks/useOrganizerLayout';
 import { OrganizerLayoutEditor } from './OrganizerLayoutEditor';
 import { FIXED_FOLDERS as UTILS_FIXED_FOLDERS } from '@/utils/layoutUtils';
@@ -59,7 +61,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
     const [fullOcrText, setFullOcrText] = useState<string | null>(null);
     const [isRepairing, setIsRepairing] = useState(false);
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
-    const [ingestionMode, setIngestionMode] = useState<'extraction' | 'pdf-viewer' | 'claude-native'>('extraction');
+    const [ingestionMode, setIngestionMode] = useState<'extraction' | 'pdf-viewer' | 'claude-native' | 'paddle-ocr'>('paddle-ocr');
+    const { clauses, setClauses } = useAppStore();
 
     // Local contract state for when no contract is passed via props
     const [localContract, setLocalContract] = useState<SavedContract | null>(null);
@@ -428,6 +431,18 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                 setHasUnsavedChanges(true);
                 toast.success(`Claude Native Analysis complete!${analysisResult.cached ? ' (from cache)' : ''}`);
 
+            } else if (ingestionMode === 'paddle-ocr') {
+                setProcessingStatus('Extracting Clauses via PaddleOCR Pipeline...');
+                
+                // Call our mock paddle OCR service
+                const extractedClauses = await extractClausesWithPaddleOCR(file);
+                
+                // Map the extracted clauses to the global app store
+                // So they appear in the Main UI 'Conditions' tab side-by-side!
+                setClauses([...clauses, ...extractedClauses]);
+                
+                setHasUnsavedChanges(true);
+                toast.success(`PaddleOCR extracted ${extractedClauses.length} clauses successfully! View them in the Conditions tab.`);
 
             } else {
                 // 1. Run local OCR
@@ -897,10 +912,17 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                                             >
                                                                 CLAUDE NATIVE
                                                             </button>
+                                                            <button
+                                                                onClick={() => setIngestionMode('paddle-ocr')}
+                                                                className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded-lg transition-all ${ingestionMode === 'paddle-ocr' ? 'bg-aaa-blue text-white shadow-sm' : 'text-aaa-muted hover:text-aaa-blue'}`}
+                                                                title="Deep extraction of clauses using PaddleOCR"
+                                                            >
+                                                                PADDLE OCR
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mb-8">
-                                                        {ingestionMode === 'extraction' ? 'Scan PDF for automated data extraction' : ingestionMode === 'claude-native' ? 'Analyze PDF using Claude Native Intelligence (No OCR required)' : 'Upload original PDF for direct viewing'}
+                                                        {ingestionMode === 'paddle-ocr' ? 'Extract conditions into side-by-side clauses using PaddleOCR' : ingestionMode === 'extraction' ? 'Scan PDF for automated data extraction' : ingestionMode === 'claude-native' ? 'Analyze PDF using Claude Native Intelligence (No OCR required)' : 'Upload original PDF for direct viewing'}
                                                     </p>
 
                                                     <div
