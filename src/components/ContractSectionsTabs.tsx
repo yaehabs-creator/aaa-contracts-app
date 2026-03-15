@@ -23,19 +23,19 @@ const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-
 const TYPE_TO_CODE: Record<string, string> = {
   [SectionType.AGREEMENT]: 'A',
   [SectionType.LOA]: 'B',
-  [SectionType.TENDER]: 'T',
   'CONDITIONS': 'C',
-  [SectionType.REQUIREMENTS]: 'R',
-  [SectionType.SPECIFICATION]: 'S',
-  [SectionType.PROPOSAL]: 'Q',
-  [SectionType.DRAWINGS]: 'E',
-  [SectionType.BOQ]: 'I',
-  [SectionType.SCHEDULE]: 'J',
-  [SectionType.ANNEX]: 'K',
+  [SectionType.TENDER]: 'D', // Grouped with Addendums
   [SectionType.ADDENDUM]: 'D',
-  [SectionType.INSTRUCTION]: 'P',
+  [SectionType.REPORT]: 'E', // Soil report
+  [SectionType.DRAWINGS]: 'F',
+  [SectionType.SPECIFICATION]: 'G',
+  [SectionType.SCHEDULE]: 'H', // Cut sheets
+  [SectionType.BOQ]: 'I', // Priced BOQ, J for Non-priced handled by grouping later or same tab
+  [SectionType.REQUIREMENTS]: 'K', // Also M for Hoarding
+  [SectionType.FORMS]: 'L',
   [SectionType.AUTOMATION]: 'N',
-  [SectionType.EXTRAS]: 'O'
+  [SectionType.UNDERTAKING]: 'O',
+  [SectionType.INSTRUCTION]: 'P'
 };
 
 interface ContractSectionsTabsProps {
@@ -225,7 +225,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
         ),
-        types: [SectionType.AGREEMENT, SectionType.LOA, SectionType.TENDER]
+        types: [SectionType.AGREEMENT, SectionType.LOA, SectionType.TENDER, SectionType.ADDENDUM, SectionType.FORMS, SectionType.UNDERTAKING, SectionType.INSTRUCTION]
       },
       {
         id: 'CONDITIONS',
@@ -245,7 +245,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
           </svg>
         ),
-        types: [SectionType.REQUIREMENTS, SectionType.SPECIFICATION, SectionType.PROPOSAL, SectionType.DRAWINGS]
+        types: [SectionType.REPORT, SectionType.DRAWINGS, SectionType.SPECIFICATION, SectionType.REQUIREMENTS, SectionType.PROPOSAL]
       },
       {
         id: 'SCHEDULES',
@@ -255,7 +255,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
         ),
-        types: [SectionType.BOQ, SectionType.SCHEDULE, SectionType.ANNEX, SectionType.ADDENDUM, SectionType.INSTRUCTION, SectionType.AUTOMATION, SectionType.EXTRAS]
+        types: [SectionType.BOQ, SectionType.SCHEDULE, SectionType.ANNEX, SectionType.AUTOMATION, SectionType.EXTRAS]
       }
     ];
 
@@ -305,16 +305,19 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       [SectionType.LOA]: 'Acceptance',
       [SectionType.TENDER]: 'Tender',
       'CONDITIONS': 'Conditions',
-      [SectionType.REQUIREMENTS]: 'Requirements',
-      [SectionType.SPECIFICATION]: 'Specification',
-      [SectionType.PROPOSAL]: 'Proposal',
+      [SectionType.REPORT]: 'Investigation Report',
       [SectionType.DRAWINGS]: 'Drawings',
-      [SectionType.BOQ]: 'Quantities',
+      [SectionType.SPECIFICATION]: 'Specifications',
       [SectionType.SCHEDULE]: 'Schedules',
+      [SectionType.BOQ]: 'Quantities',
+      [SectionType.REQUIREMENTS]: 'Requirements',
+      [SectionType.FORMS]: 'Forms',
+      [SectionType.AUTOMATION]: 'User Guide',
+      [SectionType.UNDERTAKING]: 'Undertaking',
+      [SectionType.PROPOSAL]: 'Proposal',
       [SectionType.ANNEX]: 'Annexes',
-      [SectionType.ADDENDUM]: 'Addendums',
+      [SectionType.ADDENDUM]: 'Addenda',
       [SectionType.INSTRUCTION]: 'Tenderers',
-      [SectionType.AUTOMATION]: 'Application',
       [SectionType.EXTRAS]: 'Documents'
     };
     return labels[type] || type;

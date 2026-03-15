@@ -27,19 +27,20 @@ interface SectionEditorProps {
 const FOLDER_TO_SECTION_MAPPING: Record<string, SectionType[]> = {
   'A': [SectionType.AGREEMENT],
   'B': [SectionType.LOA],
-  'T': [SectionType.TENDER],
   'C': [SectionType.GENERAL, SectionType.PARTICULAR],
-  'D': [SectionType.ADDENDUM],
-  'I': [SectionType.BOQ],
-  'N': [SectionType.AUTOMATION],
-  'S': [SectionType.SPECIFICATION],
-  'E': [SectionType.DRAWINGS],
-  'R': [SectionType.REQUIREMENTS],
-  'Q': [SectionType.PROPOSAL],
-  'J': [SectionType.SCHEDULE],
-  'K': [SectionType.ANNEX],
-  'P': [SectionType.INSTRUCTION],
-  'O': [SectionType.EXTRAS]
+  'D': [SectionType.TENDER, SectionType.ADDENDUM], // Grouped addendas and tender letters
+  'E': [SectionType.REPORT], // Soil investigation report
+  'F': [SectionType.DRAWINGS],
+  'G': [SectionType.SPECIFICATION],
+  'H': [SectionType.SCHEDULE], // Cut sheets
+  'I': [SectionType.BOQ], // Priced BOQ
+  'J': [SectionType.BOQ], // Non-priced BOQ
+  'K': [SectionType.REQUIREMENTS], // Health and safety
+  'L': [SectionType.FORMS], // Control forms
+  'M': [SectionType.REQUIREMENTS], // Hoarding
+  'N': [SectionType.AUTOMATION], // User guide
+  'O': [SectionType.UNDERTAKING], // Confidentiality undertaking
+  'P': [SectionType.INSTRUCTION], // ITT
 };
 
 export const SectionEditor: React.FC<SectionEditorProps> = ({

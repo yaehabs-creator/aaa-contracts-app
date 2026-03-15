@@ -13,20 +13,24 @@ export type ModificationColor = "green" | "red" | "orange" | "purple" | "blue";
 export type ConditionType = 'General' | 'Particular' | 'Both';
 
 export enum SectionType {
-  AGREEMENT = 'AGREEMENT',
-  LOA = 'LOA',
-  TENDER = 'TENDER',
-  GENERAL = 'GENERAL',
-  PARTICULAR = 'PARTICULAR',
-  REQUIREMENTS = 'REQUIREMENTS',
-  PROPOSAL = 'PROPOSAL',
-  DRAWINGS = 'DRAWINGS',
-  SPECIFICATION = 'SPECIFICATION',
-  ADDENDUM = 'ADDENDUM',
-  BOQ = 'BOQ',
-  SCHEDULE = 'SCHEDULE',
+  AGREEMENT = 'AGREEMENT', // A
+  LOA = 'LOA', // B
+  CONDITIONS = 'CONDITIONS', // C
+  TENDER = 'TENDER', // D (Addenda) & P
+  GENERAL = 'GENERAL', // Part of C
+  PARTICULAR = 'PARTICULAR', // Part of C
+  REPORT = 'REPORT', // E
+  DRAWINGS = 'DRAWINGS', // F
+  SPECIFICATION = 'SPECIFICATION', // G
+  SCHEDULE = 'SCHEDULE', // H
+  BOQ = 'BOQ', // I, J
+  REQUIREMENTS = 'REQUIREMENTS', // K (Health & Safety), M (Hoarding)
+  FORMS = 'FORMS', // L
+  AUTOMATION = 'AUTOMATION', // N
+  UNDERTAKING = 'UNDERTAKING', // O
+  PROPOSAL = 'PROPOSAL', // not explicitly in A-P but keeping for backward compatibility
   ANNEX = 'ANNEX',
-  AUTOMATION = 'AUTOMATION',
+  ADDENDUM = 'ADDENDUM',
   INSTRUCTION = 'INSTRUCTION',
   EXTRAS = 'EXTRAS'
 }
