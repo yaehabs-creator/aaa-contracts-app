@@ -555,58 +555,28 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       <div className="border-b border-aaa-border bg-slate-50/50">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between">
           {/* Folders Navigation */}
-          <div className="flex overflow-x-auto custom-scrollbar flex-1 border-r border-aaa-border">
-            {folderGroups.map((group) => {
-              const groupItemsCount = group.types.reduce((acc, type) => {
-                if (type === 'CONDITIONS') {
-                  const genCount = generalSection?.items.length || 0;
-                  const parCount = particularSection?.items.length || 0;
-                  return acc + genCount + parCount;
-                }
-                const section = allSections.find(s => s.sectionType === type);
-                return acc + (section?.items.length || 0);
-              }, 0);
+          <div className="flex overflow-x-auto custom-scrollbar flex-1 p-2 gap-2">
+            {folderGroups.flatMap(group => group.types).map((type) => {
+              const section = type === 'CONDITIONS' ? { title: 'Conditions', items: [] } : allSections.find(s => s.sectionType === type);
+              if (!section && type !== 'CONDITIONS') return null;
 
-              const isGroupActive = group.types.includes(activeTab as any);
+              const isActive = activeTab === type;
+              const hasItems = type === 'CONDITIONS'
+                ? ((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0
+                : (section?.items.length || 0) > 0;
 
               return (
-                <div key={group.id} className={`flex flex-col border-r border-aaa-border last:border-r-0 min-w-[200px] ${isGroupActive ? 'bg-white' : ''}`}>
-                  <div className={`px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] border-b flex items-center gap-2 ${isGroupActive ? 'bg-aaa-blue text-white border-aaa-blue' : 'bg-slate-100 text-aaa-muted border-aaa-border'
-                    }`}>
-                    {group.icon}
-                    {group.label}
-                    {groupItemsCount > 0 && (
-                      <span className={`ml-auto px-1.5 py-0.5 rounded-md text-[9px] ${isGroupActive ? 'bg-white text-aaa-blue' : 'bg-aaa-border text-aaa-muted'}`}>
-                        {groupItemsCount}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex flex-wrap p-1 gap-1">
-                    {group.types.map((type) => {
-                      const section = type === 'CONDITIONS' ? { title: 'Conditions', items: [] } : allSections.find(s => s.sectionType === type);
-                      if (!section && type !== 'CONDITIONS') return null;
-
-                      const isActive = activeTab === type;
-                      const hasItems = type === 'CONDITIONS'
-                        ? ((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0
-                        : (section?.items.length || 0) > 0;
-
-                      return (
-                        <button
-                          key={type as string}
-                          onClick={() => onTabChange(type as any)}
-                          className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition-all flex items-center gap-1.5 ${isActive
-                            ? 'bg-aaa-bg text-aaa-blue shadow-sm'
-                            : 'text-aaa-muted hover:text-aaa-blue hover:bg-aaa-bg/30'
-                            }`}
-                        >
-                          {getTabLabel(type as string)}
-                          {hasItems && <span className="w-1 h-1 rounded-full bg-aaa-blue"></span>}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
+                <button
+                  key={type as string}
+                  onClick={() => onTabChange(type as any)}
+                  className={`px-4 py-2 text-[11px] font-bold rounded-xl transition-all flex items-center gap-2 ${isActive
+                    ? 'bg-aaa-blue text-white shadow-md'
+                    : 'bg-aaa-bg/50 text-aaa-muted hover:text-aaa-blue hover:bg-aaa-blue/10 border border-transparent hover:border-aaa-blue/20'
+                    }`}
+                >
+                  {getTabLabel(type as string)}
+                  {hasItems && <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white' : 'bg-aaa-blue animate-pulse'}`}></span>}
+                </button>
               );
             })}
           </div>
