@@ -18,34 +18,6 @@ export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => v
 
     const [dragIndex, setDragIndex] = useState<number | null>(null);
 
-    const handleCopyJson = () => {
-        const exportData = {
-            contractId: contract?.id,
-            timestamp: new Date().toISOString(),
-            layout: activeLayout
-        };
-        navigator.clipboard.writeText(JSON.stringify(exportData, null, 2));
-        toast.success('Configuration copied to clipboard');
-    };
-
-    const handleDownloadJson = () => {
-        const exportData = {
-            contractId: contract?.id,
-            timestamp: new Date().toISOString(),
-            layout: activeLayout
-        };
-        const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `organizer_layout_${contract?.id || 'export'}.json`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        toast.success('Layout exported successfully');
-    };
-
     if (!isOpen) return null;
 
     return (
@@ -56,20 +28,6 @@ export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => v
                     <p className="text-[10px] font-black text-aaa-muted uppercase tracking-widest mt-1">Order and visibility</p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <button 
-                        onClick={handleCopyJson}
-                        title="Copy Layout JSON"
-                        className="p-2 hover:bg-aaa-blue/5 text-aaa-muted hover:text-aaa-blue rounded-xl transition-all"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                    </button>
-                    <button 
-                        onClick={handleDownloadJson}
-                        title="Download Layout JSON"
-                        className="p-2 hover:bg-aaa-blue/5 text-aaa-muted hover:text-aaa-blue rounded-xl transition-all"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                    </button>
                     <button 
                         onClick={() => { cancelEditing(); onClose(); }}
                         className="p-2 hover:bg-aaa-bg rounded-xl transition-all"

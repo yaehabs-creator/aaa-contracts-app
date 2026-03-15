@@ -3,6 +3,8 @@ import { SavedContract, ContractSection, SectionType, SectionItem, Clause, Contr
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '@/services/contractMigrationService';
 import { getCategoriesForContract, ContractCategory } from '@/services/supabaseService';
+import { useAppStore } from '@/store/useAppStore';
+import { buildDefaultLayout } from '@/utils/layoutUtils';
 
 // Helper: Get clause status (added, modified, gc-only) for sorting/display
 const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-only' => {
@@ -16,6 +18,24 @@ const getClauseStatusFromItem = (item: SectionItem): 'added' | 'modified' | 'gc-
   // Fallback for single-source contracts
   if (item.condition_type === 'Particular') return 'added';
   return 'gc-only';
+};
+
+const TYPE_TO_CODE: Record<string, string> = {
+  [SectionType.AGREEMENT]: 'A',
+  [SectionType.LOA]: 'B',
+  [SectionType.TENDER]: 'T',
+  'CONDITIONS': 'C',
+  [SectionType.REQUIREMENTS]: 'R',
+  [SectionType.SPECIFICATION]: 'S',
+  [SectionType.PROPOSAL]: 'Q',
+  [SectionType.DRAWINGS]: 'E',
+  [SectionType.BOQ]: 'I',
+  [SectionType.SCHEDULE]: 'J',
+  [SectionType.ANNEX]: 'K',
+  [SectionType.ADDENDUM]: 'D',
+  [SectionType.INSTRUCTION]: 'P',
+  [SectionType.AUTOMATION]: 'N',
+  [SectionType.EXTRAS]: 'O'
 };
 
 interface ContractSectionsTabsProps {
@@ -53,6 +73,8 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
   activeTab,
   onTabChange,
 }) => {
+  const { organizerLayout } = useAppStore();
+
   // Ensure contract has sections
   const contractWithSections = useMemo(() => ensureContractHasSections(contract), [contract]);
 
@@ -189,9 +211,12 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     };
   }, [activeTab, generalSection, particularSection, sortMode, categories]);
 
-  // Grouping logic for FIDIC Folders
+  // Grouping logic for FIDIC Folders - NOW DYNAMIC BASED ON ORGANIZER LAYOUT
   const folderGroups = useMemo(() => {
-    const groups = [
+    // Current layout from store or default
+    const currentLayout = organizerLayout.length > 0 ? organizerLayout : buildDefaultLayout();
+
+    const baseGroups = [
       {
         id: 'FORMS',
         label: 'Forms',
@@ -233,8 +258,39 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
         types: [SectionType.BOQ, SectionType.SCHEDULE, SectionType.ANNEX, SectionType.ADDENDUM, SectionType.INSTRUCTION, SectionType.AUTOMATION, SectionType.EXTRAS]
       }
     ];
-    return groups;
-  }, []);
+
+    // Map each group to its items filtered and sorted by the global organizer layout
+    const processedGroups = baseGroups.map(group => {
+      // 1. Filter out hidden folder types
+      const visibleTypes = group.types.filter(type => {
+        const code = TYPE_TO_CODE[type];
+        if (!code) return true; // Show by default if unknown type
+        const layoutItem = currentLayout.find(l => l.code === code);
+        return layoutItem ? layoutItem.isVisible : true;
+      });
+
+      // 2. Sort types within the group based on their layout order
+      const sortedTypes = [...visibleTypes].sort((a, b) => {
+        const codeA = TYPE_TO_CODE[a];
+        const codeB = TYPE_TO_CODE[b];
+        const itemA = currentLayout.find(l => l.code === codeA);
+        const itemB = currentLayout.find(l => l.code === codeB);
+        return (itemA?.order ?? 0) - (itemB?.order ?? 0);
+      });
+
+      return { ...group, types: sortedTypes };
+    }).filter(group => group.types.length > 0); // Remove empty groups
+
+    // 3. Sort the GROUPS themselves based on the lowest folder order found within each group
+    // e.g. If the first folder of TECHNICAL (R) is moved before FORMS (A), TECHNICAL group should move left.
+    const sortedGroups = [...processedGroups].sort((ga, gb) => {
+      const minA = Math.min(...ga.types.map(t => currentLayout.find(l => l.code === TYPE_TO_CODE[t])?.order ?? 999));
+      const minB = Math.min(...gb.types.map(t => currentLayout.find(l => l.code === TYPE_TO_CODE[t])?.order ?? 999));
+      return minA - minB;
+    });
+
+    return sortedGroups;
+  }, [organizerLayout]);
 
   // Professional labels for tabs
   const getTabLabel = (type: string): string => {

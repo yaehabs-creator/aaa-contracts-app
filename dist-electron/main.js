@@ -1,18 +1,20 @@
-import { app as l, BrowserWindow as r, Menu as n, shell as c } from "electron";
-import o from "node:path";
-import { fileURLToPath as d } from "node:url";
-const s = o.dirname(d(import.meta.url));
-process.env.APP_ROOT = o.join(s, "..");
-const t = process.env.VITE_DEV_SERVER_URL, _ = o.join(process.env.APP_ROOT, "dist"), i = o.join(process.env.APP_ROOT, "dist");
-process.env.VITE_PUBLIC = t ? o.join(process.env.APP_ROOT, "public") : i;
-let e;
-function a() {
-  e = new r({
-    icon: o.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
+import { app, BrowserWindow, Menu, shell } from "electron";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+const __dirname$1 = path.dirname(fileURLToPath(import.meta.url));
+process.env.APP_ROOT = path.join(__dirname$1, "..");
+const VITE_DEV_SERVER_URL = process.env["VITE_DEV_SERVER_URL"];
+const MAIN_DIST = path.join(process.env.APP_ROOT, "dist");
+const RENDERER_DIST = path.join(process.env.APP_ROOT, "dist");
+process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, "public") : RENDERER_DIST;
+let win;
+function createWindow() {
+  win = new BrowserWindow({
+    icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
-      preload: o.join(s, "preload.mjs"),
-      nodeIntegration: !1,
-      contextIsolation: !0
+      preload: path.join(__dirname$1, "preload.mjs"),
+      nodeIntegration: false,
+      contextIsolation: true
     },
     width: 1200,
     height: 800,
@@ -20,10 +22,16 @@ function a() {
     minHeight: 600,
     titleBarStyle: "default"
     // Standard title bar for stability as requested
-  }), e.webContents.on("did-finish-load", () => {
-    e == null || e.webContents.send("main-process-message", (/* @__PURE__ */ new Date()).toLocaleString());
-  }), t ? e.loadURL(t) : e.loadFile(o.join(i, "index.html"));
-  const p = n.buildFromTemplate([
+  });
+  win.webContents.on("did-finish-load", () => {
+    win == null ? void 0 : win.webContents.send("main-process-message", (/* @__PURE__ */ new Date()).toLocaleString());
+  });
+  if (VITE_DEV_SERVER_URL) {
+    win.loadURL(VITE_DEV_SERVER_URL);
+  } else {
+    win.loadFile(path.join(RENDERER_DIST, "index.html"));
+  }
+  const menu = Menu.buildFromTemplate([
     {
       label: "File",
       submenu: [
@@ -62,23 +70,28 @@ function a() {
         {
           label: "Learn More",
           click: async () => {
-            await c.openExternal("https://electronjs.org");
+            await shell.openExternal("https://electronjs.org");
           }
         }
       ]
     }
   ]);
-  n.setApplicationMenu(p);
+  Menu.setApplicationMenu(menu);
 }
-l.on("window-all-closed", () => {
-  process.platform !== "darwin" && (l.quit(), e = null);
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+    win = null;
+  }
 });
-l.on("activate", () => {
-  r.getAllWindows().length === 0 && a();
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
 });
-l.whenReady().then(a);
+app.whenReady().then(createWindow);
 export {
-  _ as MAIN_DIST,
-  i as RENDERER_DIST,
-  t as VITE_DEV_SERVER_URL
+  MAIN_DIST,
+  RENDERER_DIST,
+  VITE_DEV_SERVER_URL
 };

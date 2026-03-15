@@ -20,6 +20,7 @@ import { useContractStorage } from './src/hooks/useContractStorage';
 import { useAnalysisPipeline } from './src/hooks/useAnalysisPipeline';
 import { useContractActions } from './src/hooks/useContractActions';
 import { useAppStore } from '@/store/useAppStore';
+import { useLayoutRealtime } from '@/hooks/useLayoutRealtime';
 const ChatContainer = React.lazy(() => import('@/components/chat/ChatContainer'));
 
 // Extracted Views
@@ -58,6 +59,9 @@ const App: React.FC = () => {
     categorySuggestions, setCategorySuggestions,
     showCategorySuggestions, setShowCategorySuggestions,
   } = useAppStore();
+
+  // Enable Realtime Layout Sync for all users
+  useLayoutRealtime();
 
   // --- STORAGE & PERSISTENCE ---
   const {

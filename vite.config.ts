@@ -339,24 +339,20 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       react(),
-      electron({
-        main: {
-          // Shortcut of `build.lib.entry`.
-          entry: 'electron/main.ts',
-        },
-        preload: {
-          // Shortcut of `build.rollupOptions.input`.
-          // Preload scripts may contain Web-assets, so use `build.rollupOptions.input` instead `build.lib.entry`.
-          input: 'electron/preload.ts',
-        },
-        // Ployfill the Electron and Node.js API for Renderer process.
-        // If you want use Node.js in Renderer process, the `nodeIntegration` needs to be enabled in the Main process.
-        // See 👉 https://github.com/electron-vite/vite-plugin-electron-renderer
-        renderer: process.env.NODE_ENV === 'test'
-          // https://github.com/electron-vite/vite-plugin-electron-renderer/issues/78#issuecomment-1537049348
-          ? undefined
-          : {},
-      }),
+      // Only use the Electron plugin if specifically requested via VITE_ELECTRON=true
+      ...(env.VITE_ELECTRON === 'true' ? [
+        electron({
+          main: {
+            entry: 'electron/main.ts',
+          },
+          preload: {
+            input: 'electron/preload.ts',
+          },
+          renderer: process.env.NODE_ENV === 'test'
+            ? undefined
+            : {},
+        })
+      ] : []),
       // Handle /api/ai-proxy locally in dev mode (reads API keys from .env/.env.local)
       ...(mode === 'development' ? [localAIProxy(env)] : []),
     ],

@@ -15,11 +15,12 @@
 import { useRef, useCallback } from 'react';
 import toast from 'react-hot-toast';
 import { saveContractToDB, getAllContracts, deleteContractFromDB } from '@/services/dbService';
-import { saveContractToSupabase, saveOrganizerData, getOrganizerData, getContractFromSupabase } from '@/services/supabaseService';
+import { saveContractToSupabase, saveOrganizerData, getOrganizerData, getContractFromSupabase, getOrganizerLayout } from '@/services/supabaseService';
 import { ensureContractHasSections, getAllClausesFromContract } from '@/services/contractMigrationService';
 import { Clause, SavedContract, FolderSchemaField, AnalysisStatus } from '@/types';
 import { useAppStore } from '@/store/useAppStore';
 import { reprocessClauseLinks, getClausesWithProcessedLinks } from '@/utils/contractUtils';
+import { buildDefaultLayout } from '@/utils/layoutUtils';
 
 export function useContractStorage() {
   const {
@@ -34,6 +35,7 @@ export function useContractStorage() {
     setOrganizerSubfolders,
     setOrganizerSchemas,
     setOrganizerExtractedData,
+    setOrganizerLayout,
   } = useAppStore();
 
   // Debounce refs (stable across renders, do not trigger re-renders)
@@ -91,10 +93,12 @@ export function useContractStorage() {
       setOrganizerSubfolders([]);
       setOrganizerSchemas({});
       setOrganizerExtractedData([]);
+      setOrganizerLayout([]);
       return;
     }
 
     try {
+      // 1. Fetch core organizer data (subfolders, schemas, records)
       const data = await getOrganizerData(contractId);
       setOrganizerSubfolders(data.subfolders);
 
@@ -105,8 +109,20 @@ export function useContractStorage() {
       });
       setOrganizerSchemas(schemaMap);
       setOrganizerExtractedData(data.extractedData);
+
+      // 2. Fetch layout (order and visibility)
+      console.log('[STORAGE] Loading organizer layout for contract:', contractId);
+      const layout = await getOrganizerLayout(contractId);
+      if (layout && layout.length > 0) {
+        setOrganizerLayout(layout);
+      } else {
+        console.log('[STORAGE] No layout found, using default');
+        setOrganizerLayout(buildDefaultLayout());
+      }
     } catch (err) {
       console.error('Failed to fetch organizer data:', err);
+      // Fallback to default layout if everything fails
+      setOrganizerLayout(buildDefaultLayout());
     }
   };
 

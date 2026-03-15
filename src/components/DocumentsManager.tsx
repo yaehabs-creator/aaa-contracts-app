@@ -567,16 +567,6 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
           )}
         </div>
         <div className="dm-actions">
-          <div
-            className={`dm-force-ocr-toggle ${forceOcrMode ? 'active' : ''}`}
-            onClick={() => setForceOcrMode(!forceOcrMode)}
-            title="When enabled, OCR will be performed even on searchable documents and already processed files."
-          >
-            <div className="toggle-track">
-              <div className="toggle-thumb" />
-            </div>
-            <span>Full OCR Mode</span>
-          </div>
           {pendingDocuments > 0 && (
             <button
               onClick={processAllDocuments}
@@ -584,7 +574,7 @@ export const DocumentsManager: React.FC<DocumentsManagerProps> = ({
               className="process-btn"
               title="Extract text from documents for AI"
             >
-              {isProcessing ? Icons.processing : '🔄'} {forceOcrMode ? 'Run Deep Sync' : 'Process for AI'}
+              {isProcessing ? Icons.processing : '🔄'} Process for AI
             </button>
           )}
           <button onClick={loadDocuments} disabled={isLoading} title="Refresh">

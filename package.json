@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:electron": "vite",
+    "dev:web": "vite",
+    "dev:electron": "cross-env VITE_ELECTRON=true vite",
     "build": "vite build",
     "build:electron": "vite build && electron-builder",
     "build:check": "node scripts/maintenance/check-env.js && vite build",

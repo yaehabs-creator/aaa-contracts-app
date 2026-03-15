@@ -746,12 +746,12 @@ export const saveOrganizerData = async (contractId: string, data: {
 
   console.log('Synchronizing organizer data for contract:', contractId);
 
-  // 1. Sync Subfolders (Upsert current, delete stale)
+  // 1. Sync Subfolders (Upsert current)
   if (data.subfolders.length > 0) {
     const currentSubfolderIds = data.subfolders.map(s => s.id);
 
-    // Delete subfolders that belong to this template but are NOT in the current list
-    // Note: We use the default template ID as per current architecture
+    // NOTE: Subfolder cleanup from template is disabled to prevent cross-contract data loss
+    /*
     const { error: delSubError } = await supabase
       .from('contract_subfolders')
       .delete()
@@ -759,6 +759,7 @@ export const saveOrganizerData = async (contractId: string, data: {
       .not('id', 'in', `(${currentSubfolderIds.join(',')})`);
 
     if (delSubError) console.error('Error deleting stale subfolders:', delSubError);
+    */
 
     const { error: subError } = await supabase
       .from('contract_subfolders')
@@ -908,7 +909,7 @@ export const getOrganizerLayout = async (contractId: string): Promise<OrganizerF
 
   const { data, error } = await supabase
     .from('organizer_layouts')
-    .select('layout_data')
+    .select('layout')
     .eq('contract_id', contractId)
     .maybeSingle();
 
@@ -917,7 +918,7 @@ export const getOrganizerLayout = async (contractId: string): Promise<OrganizerF
     return [];
   }
 
-  return data?.layout_data || [];
+  return data?.layout || [];
 };
 
 export const saveOrganizerLayout = async (contractId: string, layout: OrganizerFolderLayout[]): Promise<void> => {
@@ -927,7 +928,7 @@ export const saveOrganizerLayout = async (contractId: string, layout: OrganizerF
     .from('organizer_layouts')
     .upsert({
       contract_id: contractId,
-      layout_data: layout,
+      layout: layout,
       updated_at: new Date().toISOString()
     }, { onConflict: 'contract_id' });
 
