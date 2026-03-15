@@ -294,6 +294,12 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
   // Professional labels for tabs
   const getTabLabel = (type: string): string => {
+    const code = TYPE_TO_CODE[type];
+    if (code) {
+      const layoutItem = organizerLayout.find(l => l.code === code);
+      if (layoutItem?.customName) return layoutItem.customName;
+    }
+
     const labels: Record<string, string> = {
       [SectionType.AGREEMENT]: 'Agreement',
       [SectionType.LOA]: 'Acceptance',
@@ -564,6 +570,9 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
               const hasItems = type === 'CONDITIONS'
                 ? ((generalSection?.items.length || 0) + (particularSection?.items.length || 0)) > 0
                 : (section?.items.length || 0) > 0;
+
+              // Hide empty sections to reduce UI clutter (except the main Conditions tab)
+              if (!hasItems && type !== 'CONDITIONS') return null;
 
               return (
                 <button

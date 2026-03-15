@@ -657,8 +657,8 @@ export const ContractOrganizer: React.FC<ContractOrganizerProps> = ({
                                             {folder.code}
                                         </span>
                                         <div className="flex-1 min-w-0">
-                                            <p className="text-[11px] font-black truncate text-left leading-none mb-1 uppercase tracking-tighter">{folder.name.split(' ')[0]}</p>
-                                            <p className="text-[9px] font-bold text-aaa-muted truncate text-left">{folder.name}</p>
+                                            <p className="text-[11px] font-black truncate text-left leading-none mb-1 uppercase tracking-tighter">{(item.customName || folder.name).split(' ')[0]}</p>
+                                            <p className="text-[9px] font-bold text-aaa-muted truncate text-left">{item.customName || folder.name}</p>
                                         </div>
                                         {folder.code === 'AI' && (
                                             <div className="w-2 h-2 bg-aaa-blue rounded-full animate-pulse" />

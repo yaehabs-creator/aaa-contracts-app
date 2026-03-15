@@ -631,4 +631,5 @@ export interface OrganizerFolderLayout {
   code: string;
   isVisible: boolean;
   order: number;
+  customName?: string;
 }

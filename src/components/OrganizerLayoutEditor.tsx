@@ -8,6 +8,7 @@ export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => v
     const { 
         activeLayout, 
         toggleFolder, 
+        renameFolder,
         reorderFolders, 
         confirmLayout, 
         cancelEditing, 
@@ -103,12 +104,18 @@ export const OrganizerLayoutEditor: React.FC<{ isOpen: boolean; onClose: () => v
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 8h16M4 16h16" /></svg>
                                 </div>
 
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2">
-                                        <span className="w-6 h-6 flex items-center justify-center rounded-md bg-aaa-bg text-[10px] font-black border border-aaa-border">{item.code}</span>
-                                        <p className="text-[11px] font-black truncate uppercase tracking-tight">{folderInfo?.name.split(' ')[0]}</p>
+                                <div className="flex-1 min-w-0 pr-4">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="w-5 h-5 flex flex-shrink-0 items-center justify-center rounded-md bg-aaa-bg text-[9px] font-black border border-aaa-border">{item.code}</span>
+                                        <input 
+                                            type="text"
+                                            value={item.customName !== undefined ? item.customName : (folderInfo?.name || '')}
+                                            onChange={(e) => renameFolder(item.code, e.target.value)}
+                                            placeholder={folderInfo?.name}
+                                            className="w-full text-[11px] font-black uppercase tracking-tight bg-transparent border-b border-transparent hover:border-aaa-border focus:border-aaa-blue focus:outline-none transition-colors"
+                                        />
                                     </div>
-                                    <p className="text-[9px] font-bold text-aaa-muted truncate mt-0.5">{folderInfo?.name}</p>
+                                    <p className="text-[8px] font-bold text-aaa-muted truncate">Default: {folderInfo?.name}</p>
                                 </div>
 
                                 <label className="relative inline-flex items-center cursor-pointer">

@@ -43,6 +43,11 @@ export function useOrganizerLayout() {
         setPendingLayout(toggleFolderVisibility(pendingLayout, code));
     }, [pendingLayout, setPendingLayout]);
 
+    const renameFolder = useCallback((code: string, newName: string) => {
+        if (!pendingLayout) return;
+        setPendingLayout(pendingLayout.map(item => item.code === code ? { ...item, customName: newName } : item));
+    }, [pendingLayout, setPendingLayout]);
+
     const reorderFolders = useCallback((fromIndex: number, toIndex: number) => {
         if (!pendingLayout) return;
         if (fromIndex === toIndex) return;
@@ -97,6 +102,7 @@ export function useOrganizerLayout() {
         startEditing,
         cancelEditing,
         toggleFolder,
+        renameFolder,
         reorderFolders,
         confirmLayout,
         fetchLayout,
