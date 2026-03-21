@@ -246,10 +246,12 @@ class AdvancedQueryRequest(BaseModel):
 # Setup CORS
 app.add_middleware(
     CORSMiddleware,
+    allow_origin_regex="https://.*\.vercel\.app", # Allow all Vercel previews
     allow_origins=[
-        "*", 
-        "http://localhost:5173", 
-        "https://ae-contract-01-47b6vzt80-aehabs-projects.vercel.app"
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:5173",
     ],
     allow_credentials=True,
     allow_methods=["*"],

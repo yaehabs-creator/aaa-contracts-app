@@ -10,6 +10,7 @@ import ChatInput from '@/components/chat/ChatInput';
 import TypingIndicator from '@/components/chat/TypingIndicator';
 import { AnalysisStatus } from '@/types';
 import { APP_CONFIG } from '@/config/appConfig';
+import { getAllContracts, listKnowledgeItems } from '@/services/dbService';
 
 const BACKEND = APP_CONFIG.BACKEND_URL;
 
@@ -92,26 +93,20 @@ export const AIChatView: React.FC = () => {
   const [uploadProgress, setUploadProgress] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Fetch contracts from backend
+  // Fetch contracts from Supabase
   const fetchContracts = async () => {
     try {
-      const res = await fetch(`${BACKEND}/contracts/list`);
-      if (res.ok) {
-        const data = await res.json();
-        setContracts(data);
-      }
+      const data = await getAllContracts();
+      setContracts(data as any);
     } catch { /* silent */ }
   };
 
-  // Fetch knowledge items
+  // Fetch knowledge items from Supabase
   const fetchKnowledge = async () => {
     try {
-      const res = await fetch(`${BACKEND}/list-knowledge`);
-      if (res.ok) {
-        const data = await res.json();
-        setKnowledgeItems(data);
-        setDigestedKnowledge(data);
-      }
+      const data = await listKnowledgeItems();
+      setKnowledgeItems(data);
+      setDigestedKnowledge(data);
     } catch { /* silent */ }
   };
 

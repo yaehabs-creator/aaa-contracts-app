@@ -22,8 +22,10 @@ export interface OcrResponse {
     engine: string;
 }
 
+import { APP_CONFIG } from '@/config/appConfig';
+
 export class DoclingService {
-    private static readonly API_BASE = 'http://localhost:8001';
+    private static readonly API_BASE = APP_CONFIG.BACKEND_URL;
     private static isAvailable: boolean | null = null;
 
     /**
