@@ -70,92 +70,63 @@ export const ContractHubView: React.FC = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    const toastId = toast.loading(`Initializing ${file.name}...`);
+    const toastId = toast.loading(`Starting Neural Digestion: ${file.name}...`);
     setIsProcessing(true);
-    setProgress(5);
-    setCurrentStep('Initializing baseline...');
+    setProgress(0);
+    setCurrentStep('Uploading to Engine...');
     
     try {
       const formData = new FormData();
       formData.append('file', file);
 
-      // 1. Initialize
-      const initRes = await fetch(`${APP_CONFIG.BACKEND_URL}/contracts/process/init`, {
+      // Start Background Process
+      const res = await fetch(`${APP_CONFIG.BACKEND_URL}/contracts/process/background`, {
         method: 'POST',
         body: formData
       });
 
-      if (!initRes.ok) throw new Error('Failed to initialize processing');
-      const meta = await initRes.json();
-      const contractId = meta.id;
-      const pCount = meta.page_count;
+      if (!res.ok) throw new Error('Failed to start digestion');
+      const { id: contractId } = await res.json();
       
-      setTotalPages(pCount);
-      setProgress(10);
-      setCurrentStep(`Extracting ${pCount} pages...`);
+      toast.success('Digestion job queued on Server', { id: toastId });
 
-      // 1b. Check Resumability
-      const statusRes = await fetch(`${APP_CONFIG.BACKEND_URL}/contracts/process/status/${contractId}`);
-      let processedPages: number[] = [];
-      if (statusRes.ok) {
-        const statusData = await statusRes.json();
-        processedPages = statusData.processed_pages || [];
-        if (processedPages.length > 0) {
-            toast.success(`Resuming: ${processedPages.length} segments already cached!`, { id: toastId });
+      // Polling for progress
+      const pollInterval = setInterval(async () => {
+        try {
+          const contractRes = await getContractById(contractId);
+          if (contractRes) {
+            const prog = typeof contractRes.ingestion_progress === 'number' 
+              ? contractRes.ingestion_progress 
+              : (contractRes.ingestion_progress?.processed_chunks || 0);
+              
+            const status = contractRes.status;
+            
+            setProgress(prog);
+            
+            if (status === 'processed' || prog >= 100) {
+              clearInterval(pollInterval);
+              setCurrentStep('Complete!');
+              toast.success(`Contract "${contractRes.name}" ready!`, { id: toastId });
+              setTimeout(() => {
+                fetchContracts();
+                setIsProcessing(false);
+                setProgress(0);
+              }, 1000);
+            } else if (status === 'error') {
+              clearInterval(pollInterval);
+              throw new Error('Server-side processing failed');
+            } else {
+              setCurrentStep(`Digesting: ${prog}%`);
+            }
+          }
+        } catch (pollErr) {
+          console.error('Polling error:', pollErr);
         }
-      }
+      }, 2000);
 
-      // 2. Process Pages Individually
-      for (let i = 1; i <= pCount; i++) {
-        setCurrentPage(i);
-        
-        // SKIP if already processed
-        if (processedPages.includes(i)) {
-            console.log(`Skipping Page ${i} (cached)`);
-            const pageProgress = 10 + Math.floor((i / pCount) * 80);
-            setProgress(pageProgress);
-            continue;
-        }
-
-        setCurrentStep(`Processing Page ${i} of ${pCount}...`);
-        
-        const pageRes = await fetch(`${APP_CONFIG.BACKEND_URL}/contracts/process/page/${contractId}/${i}`, {
-          method: 'POST'
-        });
-
-        if (!pageRes.ok) {
-            console.error(`Failed page ${i}`);
-            // We can continue or abort. Let's try to continue for resilience.
-        }
-        
-        // Update progress: 10% to 90%
-        const pageProgress = 10 + Math.floor((i / pCount) * 80);
-        setProgress(pageProgress);
-      }
-
-      // 3. Finalize
-      setCurrentStep('Merging intelligence layers...');
-      const finalRes = await fetch(`${APP_CONFIG.BACKEND_URL}/contracts/process/finalize/${contractId}`, {
-        method: 'POST'
-      });
-
-      if (!finalRes.ok) throw new Error('Failed to finalize contract');
-      
-      const result = await finalRes.json();
-      setProgress(100);
-      setCurrentStep('Complete!');
-      
-      toast.success(`Contract "${result.name}" processed in ${pCount} chunks!`, { id: toastId });
-      setTimeout(() => {
-        fetchContracts();
-        setIsProcessing(false);
-        setProgress(0);
-        setCurrentPage(0);
-        setTotalPages(0);
-      }, 1000);
     } catch (err) {
       console.error(err);
-      toast.error('Chunked digestion failed. Check backend connection.', { id: toastId });
+      toast.error('Digestion failed. Check engine logs.', { id: toastId });
       setIsProcessing(false);
       setProgress(0);
     } finally {

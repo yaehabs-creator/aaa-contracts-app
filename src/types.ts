@@ -200,7 +200,7 @@ export interface SavedContract {
   contractor_id?: string;
   contractor_name?: string;
   contract_number?: string;
-  status: 'draft' | 'processing' | 'active' | 'closed';
+  status: 'draft' | 'processing' | 'active' | 'closed' | 'processed' | 'error' | 'queued';
   start_date?: string;
   end_date?: string;
   currency?: string;
@@ -217,7 +217,7 @@ export interface SavedContract {
     conflictCount: number;
     timeSensitiveCount?: number;
   };
-  ingestion_progress?: IngestionProgress;
+  ingestion_progress?: number | IngestionProgress;
   version: number;
   is_deleted?: boolean;
   created_by?: string;

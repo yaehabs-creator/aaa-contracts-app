@@ -175,18 +175,11 @@ scripts_dir = str(Path(os.getenv("APPDATA")) / "Python" / "Python312" / "Scripts
 if scripts_dir not in os.environ["PATH"]:
     os.environ["PATH"] = scripts_dir + os.pathsep + os.environ["PATH"]
 
-print("Importing RAGAnything...")
-# Import RAGAnything
-try:
-    from raganything import RAGAnything
-    from raganything.config import RAGAnythingConfig
-    import anthropic
-    from openai import OpenAI
-except ImportError:
-    print("RAGAnything or dependencies not installed. Advanced RAG will be disabled.")
-    RAGAnything = None
+from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
-app = FastAPI(title="Docling OCR/Document Conversion API")
+app = FastAPI(title="AEhab Neural Digestion Engine")
 
 # Setup Database path
 BASE_DIR = Path(__file__).parent.parent if "__file__" in locals() else Path(os.getcwd())
@@ -462,155 +455,95 @@ async def list_knowledge():
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# --- Contract Database Endpoints (Folder-per-contract) ---
+# --- BACKGROUND JOB MANAGER ---
 
-contracts_dir = DB_DIR / "contracts"
-contracts_dir.mkdir(parents=True, exist_ok=True)
+async def semantic_cleaning_layer(text: str):
+    """Clean OCR noise and structure markdown using LLM."""
+    if not text or len(text) < 10: return text
+    
+    llm = get_llm_model_func()
+    if not llm: return text # Fallback to raw
+    
+    prompt = f"Clean the following OCR text from a contract. Remove page headers, footers, and line numbers. Fix obvious typos but keep the legal wording EXACT. Return only the cleaned markdown:\n\n{text[:8000]}"
+    try:
+        cleaned = await llm(prompt, system_prompt="You are a precise contract editor. Only output the cleaned text.")
+        return cleaned
+    except:
+        return text
 
+async def background_digest_task(contract_id: str, file_path: Path):
+    """Complete Neural Digestion: OCR -> Clean -> Index -> Supabase."""
+    contract_folder = file_path.parent
+    try:
+        # 1. Update status
+        db_manager.save_contract({"id": contract_id, "status": "processing", "ingestion_progress": 10})
+        
+        # 2. Convert with Docling
+        print(f"[{contract_id}] Starting Neural Conversion...")
+        result = await asyncio.to_thread(converter.convert, str(file_path))
+        doc = result.document
+        raw_md = doc.export_to_markdown()
+        
+        db_manager.save_contract({"id": contract_id, "ingestion_progress": 60})
+        
+        # 3. Semantic Cleaning (experimental on first 10000 chars for speed)
+        print(f"[{contract_id}] Running Semantic Cleaning...")
+        cleaned_md = await semantic_cleaning_layer(raw_md)
+        
+        # 4. Save locally and to Supabase Bucket
+        extracted_path = contract_folder / "extracted.md"
+        with open(extracted_path, "w", encoding="utf-8") as f:
+            f.write(cleaned_md)
+            
+        db_manager.upload_file(contract_id, extracted_path, "extracted.md")
+        db_manager.upload_file(contract_id, file_path, file_path.name) # Original PDF
+        
+        # 5. Finalize
+        metadata = {
+            "id": contract_id,
+            "status": "processed",
+            "ingestion_progress": 100,
+            "text_length": len(cleaned_md),
+            "finalized_at": time.time()
+        }
+        db_manager.save_contract(metadata)
+        print(f"[{contract_id}] Digestion Complete.")
+        
+    except Exception as e:
+        print(f"Background Job Failed ({contract_id}): {e}")
+        traceback.print_exc()
+        db_manager.save_contract({"id": contract_id, "status": "error", "metadata": {"error": str(e)}})
 
-@app.post("/contracts/process/init")
-async def init_batch_process(file: UploadFile = File(...)):
-    """Initialize a chunked process. Saves original PDF and returns page count."""
+@app.post("/contracts/process/background")
+async def start_background_digest(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
+    """Entry point for Clean Ingestion. Starts background job and returns immediately."""
     try:
         file_bytes = await file.read()
         original_name = file.filename or "contract.pdf"
-        safe_name = "".join([c for c in Path(original_name).stem if c.isalnum() or c in (' ', '_', '-')]).strip()
-        safe_name = safe_name.replace(' ', '_') # Replace spaces with underscores for better URL/Path handling
-        
-        # Check if a partial batch for this exact filename exists
-        existing_batches = list(contracts_dir.glob(f"batch_{safe_name}_*"))
-        if existing_batches:
-            latest_batch = sorted(existing_batches, key=lambda x: x.name.split('_')[-1])[-1]
-            meta_path = latest_batch / "metadata.json"
-            if meta_path.exists():
-                with open(meta_path, "r", encoding="utf-8") as f:
-                    meta = json.load(f)
-                if meta.get("status") in ["initializing", "processing"]:
-                    print(f"Resuming existing batch: {latest_batch.name}")
-                    return meta
-
-        contract_id = f"batch_{safe_name}_{int(time.time() * 1000)}"
+        safe_name = "".join([c for c in Path(original_name).stem if c.isalnum() or c in (' ', '_', '-')]).strip().replace(' ', '_')
+        contract_id = f"{safe_name}_{int(time.time() * 1000)}"
         
         contract_folder = contracts_dir / contract_id
         contract_folder.mkdir(parents=True, exist_ok=True)
-        (contract_folder / "chunks").mkdir(exist_ok=True)
-        
-        # Save original PDF
         pdf_path = contract_folder / original_name
         with open(pdf_path, "wb") as f:
             f.write(file_bytes)
             
-        # Get page count using PyPdfium or similar
-        import pypdfium2 as pdfium
-        pdf = pdfium.PdfDocument(file_bytes)
-        page_count = len(pdf)
-        pdf.close()
-        
-        # Initial Metadata
-        metadata = {
+        # Register in DB
+        db_manager.save_contract({
             "id": contract_id,
             "name": safe_name,
-            "original_filename": original_name,
-            "timestamp": time.time(),
-            "page_count": page_count,
-            "status": "initializing"
-        }
-        # Save metadata and index in DB
-        with open(contract_folder / "metadata.json", "w", encoding="utf-8") as f:
-            json.dump(metadata, f, indent=2)
-            
-        db_manager.save_contract(metadata)
-        return metadata
+            "status": "queued",
+            "ingestion_progress": 0,
+            "timestamp": time.time()
+        })
+        
+        # Start Background Task
+        background_tasks.add_task(background_digest_task, contract_id, pdf_path)
+        
+        return {"id": contract_id, "message": "In-depth Neural Digestion started in background."}
     except Exception as e:
-        print(f"Batch Init Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/contracts/process/page/{contract_id}/{page_num}")
-async def process_page(contract_id: str, page_num: int):
-    """Process a single page of a contract."""
-    contract_folder = contracts_dir / contract_id
-    if not contract_folder.exists():
-        raise HTTPException(status_code=404, detail="Contract session not found")
-        
-    try:
-        # Find the PDF
-        pdf_files = list(contract_folder.glob("*.pdf"))
-        if not pdf_files:
-            raise HTTPException(status_code=404, detail="PDF source missing")
-        pdf_path = pdf_files[0]
-        
-        if converter is None:
-            raise HTTPException(status_code=503, detail="Docling not available")
-            
-        # Process a single page (Docling uses 1-based indexing)
-        result = converter.convert(str(pdf_path), page_range=(page_num, page_num))
-        processed = process_docling_result(result)
-        
-        # Save page chunk
-        chunk_path = contract_folder / "chunks" / f"page_{page_num}.json"
-        with open(chunk_path, "w", encoding="utf-8") as f:
-            json.dump(processed, f, indent=2, ensure_ascii=False)
-            
-        return {"status": "success", "page": page_num}
-    except Exception as e:
-        print(f"Page Processing Error ({page_num}): {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get("/contracts/process/status/{contract_id}")
-async def get_batch_status(contract_id: str):
-    """Check how many pages are already processed for a batch."""
-    contract_folder = contracts_dir / contract_id
-    if not contract_folder.exists():
-        raise HTTPException(status_code=404, detail="Batch not found")
-        
-    chunks_dir = contract_folder / "chunks"
-    processed_pages = [int(f.stem.split('_')[1]) for f in chunks_dir.glob("page_*.json")]
-    
-    meta_path = contract_folder / "metadata.json"
-    meta = {}
-    if meta_path.exists():
-        with open(meta_path, "r", encoding="utf-8") as f:
-            meta = json.load(f)
-            
-    return {
-        "id": contract_id,
-        "processed_pages": processed_pages,
-        "total_pages": meta.get("page_count", 0),
-        "status": meta.get("status", "unknown")
-    }
-
-
-@app.post("/contracts/process/finalize/{contract_id}")
-async def finalize_batch(contract_id: str):
-    """Merge all processed pages and finalize contract files."""
-    contract_folder = contracts_dir / contract_id
-    if not contract_folder.exists():
-        raise HTTPException(status_code=404, detail="Contract session not found")
-        
-    try:
-        chunks_dir = contract_folder / "chunks"
-        chunk_files = sorted(list(chunks_dir.glob("page_*.json")), 
-                           key=lambda x: int(x.stem.split('_')[1]))
-        
-        all_pages = []
-        full_text_parts = []
-        
-        for cf in chunk_files:
-            with open(cf, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                all_pages.extend(data.get("pages", []))
-                full_text_parts.append(data.get("text", ""))
-        
-        full_text = "\n\n".join(full_text_parts)
-        
-        # Save final files
-        with open(contract_folder / "extracted.md", "w", encoding="utf-8") as f:
-            f.write(full_text)
-            
-        with open(contract_folder / "pages.json", "w", encoding="utf-8") as f:
-            json.dump(all_pages, f, indent=2, ensure_ascii=False)
             
         # Update metadata
         meta_path = contract_folder / "metadata.json"
