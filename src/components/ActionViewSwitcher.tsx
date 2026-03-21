@@ -8,7 +8,6 @@ import { scrollToClauseByNumber } from '@/hooks/useContractLedgerData';
 
 // Lazy load view components
 const AIChatView = React.lazy(() => import('./views/AIChatView').then(m => ({ default: m.AIChatView })));
-const ContractHubView = React.lazy(() => import('./views/ContractHubView').then(m => ({ default: m.ContractHubView })));
 const OrganizerView = React.lazy(() => import('./views/OrganizerView').then(m => ({ default: m.OrganizerView })));
 const CompletedView = React.lazy(() => import('./views/CompletedView').then(m => ({ default: m.CompletedView })));
 
@@ -76,29 +75,16 @@ export const ActionViewSwitcher: React.FC = () => {
         return (
             <div className="h-full w-full overflow-hidden">
                 <AnimatePresence mode="wait">
-                    {activeView === 'chat' ? (
-                        <motion.div
-                            key="chat-view"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 20 }}
-                            transition={{ duration: 0.3, ease: 'easeOut' }}
-                            className="h-full w-full"
-                        >
-                            <AIChatView />
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            key="hub-view"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            transition={{ duration: 0.3, ease: 'easeOut' }}
-                            className="h-full w-full overflow-y-auto"
-                        >
-                            <ContractHubView />
-                        </motion.div>
-                    )}
+                    <motion.div
+                        key="chat-view"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                        className="h-full w-full"
+                    >
+                        <AIChatView />
+                    </motion.div>
                 </AnimatePresence>
             </div>
         );
