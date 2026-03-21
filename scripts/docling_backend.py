@@ -210,7 +210,11 @@ class AdvancedQueryRequest(BaseModel):
 # Setup CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "*", 
+        "http://localhost:5173", 
+        "https://ae-contract-01-47b6vzt80-aehabs-projects.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

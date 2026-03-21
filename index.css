@@ -1,2 +1,148 @@
-/* Global styles are defined in index.html */
-/* This file exists to satisfy Vite build requirements */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Modern Blue Design System (Darker) ===== */
+:root {
+  --mac-blue: #1e3a8a;
+  --mac-blue-hover: #172554;
+  --mac-blue-light: #60a5fa;
+  --mac-blue-subtle: #dbeafe;
+  --mac-navy: #172554;
+  --mac-charcoal: #0f172a;
+  --mac-muted: #64748b;
+  --mac-muted-light: #94a3b8;
+  --surface-bg: #F8FAFC;
+  --surface-bg-subtle: #F1F5F9;
+  --surface-card: #FFFFFF;
+  --surface-border: rgba(30, 58, 138, 0.1);
+  --shadow-mac: 0 4px 24px -4px rgba(30, 58, 138, 0.12), 0 0 0 1px rgba(30, 58, 138, 0.06);
+  --shadow-mac-hover: 0 8px 32px -4px rgba(30, 58, 138, 0.18), 0 0 0 1px rgba(30, 58, 138, 0.1);
+  --radius-mac: 16px;
+  --radius-mac-lg: 20px;
+  --radius-mac-sm: 12px;
+  --transition-mac: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #EFF6FF 100%);
+  color: var(--mac-navy);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+/* Glass effect - MacBook style */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Skeleton loader animation */
+.skeleton {
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Premium scrollbar - MacBook style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Internal Clause Hyperlinks - MacBook style */
+.verbatim-content a.clause-link,
+.clause-link {
+  color: var(--mac-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-mac);
+  text-underline-offset: 4px;
+  padding: 0 2px;
+  border-radius: 6px;
+}
+
+.verbatim-content a.clause-link:hover,
+.clause-link:hover {
+  color: var(--mac-blue-hover);
+  text-decoration: none;
+  background-color: var(--mac-blue-subtle);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* Fallback for any legacy hyperlinks without clause-link class */
+.verbatim-content a:not(.clause-link) {
+  color: var(--mac-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all var(--transition-mac);
+  padding: 0 2px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Smooth scrolling for clause navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom MacBook styles */
+.mac-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-mac);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow-mac);
+}
