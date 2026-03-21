@@ -1,5 +1,6 @@
 import { Clause, ContractSection, SectionItem, ItemType, SectionType } from '@/types';
 import { detectClausesFromText, detectHierarchicalSectionsFromText, DetectedSection, DetectedMainClause, DetectedSubClause } from './clauseDetectionService';
+import { APP_CONFIG } from '@/config/appConfig';
 
 /**
  * Maps AI hierarchical clauses to our app's SectionItem structure
@@ -27,7 +28,7 @@ export async function extractHierarchicalContract(file: File): Promise<ContractS
     const formData = new FormData();
     formData.append('file', file);
 
-    const ocrResponse = await fetch('http://localhost:8001/paddle-ocr', {
+    const ocrResponse = await fetch(`${APP_CONFIG.BACKEND_URL}/paddle-ocr`, {
       method: 'POST',
       body: formData,
     });
@@ -70,7 +71,7 @@ export async function extractClausesWithPaddleOCR(file: File): Promise<Clause[]>
     formData.append('file', file);
 
     // Call our Python PaddleOCR backend
-    const ocrResponse = await fetch('http://localhost:8001/paddle-ocr', {
+    const ocrResponse = await fetch(`${APP_CONFIG.BACKEND_URL}/paddle-ocr`, {
       method: 'POST',
       body: formData,
     });

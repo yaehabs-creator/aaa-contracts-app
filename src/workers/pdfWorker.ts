@@ -1,5 +1,6 @@
 import { FileData } from '@/types';
 import { DoclingService } from '@/services/doclingService';
+import { APP_CONFIG } from '@/config/appConfig';
 
 // Web Worker for offloading heavy PDF processing
 
@@ -82,7 +83,7 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
             const startTime = Date.now();
 
             try {
-                const response = await fetch('http://localhost:8001/process/base64', {
+                const response = await fetch(`${APP_CONFIG.BACKEND_URL}/process/base64`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
