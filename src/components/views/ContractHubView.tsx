@@ -248,7 +248,7 @@ export const ContractHubView: React.FC = () => {
               <Database className="w-6 h-6" />
             </div>
             <h1 className="text-4xl font-black tracking-tighter text-mac-navy">
-              Contract Intelligence Hub
+              AEhab Intelligence Hub
             </h1>
           </div>
           <p className="text-slate-500 font-medium max-w-2xl ml-1">
@@ -449,17 +449,17 @@ export const ContractHubView: React.FC = () => {
                         ? 'bg-emerald-500 text-white border-emerald-400 shadow-emerald-200' 
                         : 'bg-white text-mac-blue border-mac-blue/10 hover:bg-mac-blue hover:text-white hover:shadow-mac-blue/20'
                     }`}
-                    title="Deploy Senior Principal Engineer Persona"
+                    title="Deploy AEhab Senior Engineer"
                   >
                     {item.status === 'agentic_ready' || item.status === 'advanced_rag_ready' ? (
                       <>
                         <ShieldCheck className="w-4 h-4" />
-                        Senior RAG Active
+                        AEhab Senior Active
                       </>
                     ) : (
                       <>
                         <Zap className="w-4 h-4 animate-pulse text-amber-500" />
-                        Deploy Senior Agent (RAG)
+                        Deploy AEhab Agent (RAG)
                       </>
                     )}
                   </button>

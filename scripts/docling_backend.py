@@ -1,131 +1,152 @@
-from pathlib import Path
-import shutil
+import json
+import time
+import os
+import traceback
+from supabase import create_client, Client
 from dotenv import load_dotenv
-import asyncio
-import sqlite3
-import json
-import time
-import json
-import time
 
-# --- SQLITE DATABASE MANAGER ---
+# --- SUPABASE CONFIGURATION ---
 BASE_DIR = Path(__file__).parent.parent if "__file__" in locals() else Path(os.getcwd())
-DB_DIR = BASE_DIR / "Database"
-DB_DIR.mkdir(parents=True, exist_ok=True)
+load_dotenv(BASE_DIR / ".env.local")
+
+SUPABASE_URL = os.getenv("VITE_SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+
+if not SUPABASE_URL or not SUPABASE_KEY:
+    print("CRITICAL: Supabase environment variables missing. Backend will be limited.")
+    supabase: Client = None
+else:
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+    print(f"Connected to Supabase at {SUPABASE_URL}")
+
+# --- SUPABASE DATABASE MANAGER ---
 
 class DatabaseManager:
-    def __init__(self, db_path):
-        print(f"Initializing DatabaseManager with {db_path}...")
-        self.db_path = db_path
-        self._init_db()
+    def __init__(self):
+        self._ensure_bucket()
 
-    def _get_connection(self):
-        conn = sqlite3.connect(self.db_path)
-        conn.row_factory = sqlite3.Row
-        return conn
-
-    def _init_db(self):
-        with self._get_connection() as conn:
-            # Contracts Table
-            conn.execute("""
-                CREATE TABLE IF NOT EXISTS contracts (
-                    id TEXT PRIMARY KEY,
-                    name TEXT,
-                    original_filename TEXT,
-                    page_count INTEGER,
-                    status TEXT,
-                    timestamp REAL,
-                    text_length INTEGER,
-                    metadata_json TEXT
-                )
-            """)
-            # Chat History Table
-            conn.execute("""
-                CREATE TABLE IF NOT EXISTS chat_history (
-                    id TEXT PRIMARY KEY,
-                    contract_id TEXT,
-                    role TEXT,
-                    content TEXT,
-                    timestamp REAL,
-                    agents_used TEXT
-                )
-            """)
-            conn.commit()
-        print(f"Database initialized at {self.db_path}")
+    def _ensure_bucket(self):
+        if not supabase: return
+        try:
+            # Check if 'contracts' bucket exists, create if not
+            buckets = supabase.storage.list_buckets()
+            if not any(b.name == 'contracts' for b in buckets):
+                supabase.storage.create_bucket('contracts', options={"public": False})
+                print("Created 'contracts' storage bucket.")
+        except Exception as e:
+            print(f"Bucket check error: {e}")
 
     def save_contract(self, metadata: dict):
-        with self._get_connection() as conn:
-            conn.execute("""
-                INSERT OR REPLACE INTO contracts (id, name, original_filename, page_count, status, timestamp, text_length, metadata_json)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                metadata.get("id"),
-                metadata.get("name"),
-                metadata.get("original_filename"),
-                metadata.get("page_count"),
-                metadata.get("status"),
-                metadata.get("timestamp"),
-                metadata.get("text_length"),
-                json.dumps(metadata)
-            ))
-            conn.commit()
+        if not supabase: return
+        try:
+            # Sync with 'contracts' table in Supabase
+            supabase.table("contracts").upsert({
+                "id": metadata.get("id"),
+                "name": metadata.get("name"),
+                "title": metadata.get("name"),
+                "status": metadata.get("status"),
+                "metadata": metadata, # Store full metadata object in JSONB column
+                "is_deleted": False,
+                "updated_at": "now()"
+            }).execute()
+            print(f"Synced contract {metadata.get('id')} to Supabase.")
+        except Exception as e:
+            print(f"Supabase save_contract error: {e}")
 
     def list_contracts(self):
-        with self._get_connection() as conn:
-            rows = conn.execute("SELECT * FROM contracts ORDER BY timestamp DESC").fetchall()
-            return [dict(row) for row in rows]
+        if not supabase: return []
+        try:
+            res = supabase.table("contracts").select("*").eq("is_deleted", False).order("updated_at", desc=True).execute()
+            # Map Supabase rows to the dictionary format expected by the frontend
+            return [ {**row.get("metadata", {}), "id": row["id"], "name": row["name"]} for row in res.data ]
+        except Exception as e:
+            print(f"Supabase list_contracts error: {e}")
+            return []
 
     def get_contract(self, contract_id: str):
-        with self._get_connection() as conn:
-            row = conn.execute("SELECT * FROM contracts WHERE id = ?", (contract_id,)).fetchone()
-            return dict(row) if row else None
+        if not supabase: return None
+        try:
+            res = supabase.table("contracts").select("*").eq("id", contract_id).execute()
+            if res.data:
+                return {**res.data[0].get("metadata", {}), "id": res.data[0]["id"]}
+            return None
+        except Exception as e:
+            print(f"Supabase get_contract error: {e}")
+            return None
 
     def delete_contract(self, contract_id: str):
-        with self._get_connection() as conn:
-            conn.execute("DELETE FROM contracts WHERE id = ?", (contract_id,))
-            conn.commit()
+        if not supabase: return
+        try:
+            supabase.table("contracts").update({"is_deleted": True}).eq("id", contract_id).execute()
+            print(f"Marked contract {contract_id} as deleted in Supabase.")
+        except Exception as e:
+            print(f"Supabase delete_contract error: {e}")
 
     def save_message(self, msg_id: str, contract_id: str, role: str, content: str, agents: list = None):
-        with self._get_connection() as conn:
-            conn.execute("""
-                INSERT INTO chat_history (id, contract_id, role, content, timestamp, agents_used)
-                VALUES (?, ?, ?, ?, ?, ?)
-            """, (msg_id, contract_id, role, content, time.time(), json.dumps(agents or [])))
-            conn.commit()
+        if not supabase: return
+        try:
+            supabase.table("chat_messages").insert({
+                "id": msg_id,
+                "contract_id": contract_id,
+                "role": role,
+                "content": content,
+                "created_at": "now()"
+            }).execute()
+        except Exception as e:
+            print(f"Supabase save_message error: {e}")
 
     def get_history(self, contract_id: str):
-        with self._get_connection() as conn:
-            rows = conn.execute("SELECT * FROM chat_history WHERE contract_id = ? ORDER BY timestamp ASC", (contract_id,)).fetchall()
-            return [dict(row) for row in rows]
+        if not supabase: return []
+        try:
+            res = supabase.table("chat_messages").select("*").eq("contract_id", contract_id).order("created_at", desc=False).execute()
+            return res.data
+        except Exception as e:
+            print(f"Supabase get_history error: {e}")
+            return []
+
+    def upload_file(self, contract_id: str, file_path: Path, remote_name: str):
+        if not supabase: return None
+        try:
+            with open(file_path, "rb") as f:
+                path_on_storage = f"{contract_id}/{remote_name}"
+                res = supabase.storage.from_("contracts").upload(
+                    path=path_on_storage,
+                    file=f,
+                    file_options={"upsert": "true"}
+                )
+                return path_on_storage
+        except Exception as e:
+            print(f"Supabase upload_file error: {e}")
+            return None
 
 print("Creating db_manager...")
-db_manager = DatabaseManager(DB_DIR / "aaa_local.db")
-print("db_manager created.")
+db_manager = DatabaseManager()
+print("db_manager (Supabase) created.")
 
-def migrate_existing_data():
-    """Migrate folder-based metadata.json files into SQLite."""
-    print("Starting migration check...")
-    contracts_dir = DB_DIR / "contracts"
-    if not contracts_dir.exists():
-        return
-    
-    count = 0
-    for folder in contracts_dir.iterdir():
-        if not folder.is_dir():
-            continue
-        meta_path = folder / "metadata.json"
-        if meta_path.exists():
-            try:
-                with open(meta_path, "r", encoding="utf-8") as f:
-                    meta = json.load(f)
-                db_manager.save_contract(meta)
-                count += 1
-            except Exception as e:
-                print(f"Migration error for {folder.name}: {e}")
-    if count > 0:
-        print(f"Successfully migrated {count} contracts to SQLite.")
+# def migrate_existing_data():
+#     """Migrate folder-based metadata.json files into SQLite."""
+#     print("Starting migration check...")
+#     contracts_dir = DB_DIR / "contracts"
+#     if not contracts_dir.exists():
+#         return
+#     
+#     count = 0
+#     for folder in contracts_dir.iterdir():
+#         if not folder.is_dir():
+#             continue
+#         meta_path = folder / "metadata.json"
+#         if meta_path.exists():
+#             try:
+#                 with open(meta_path, "r", encoding="utf-8") as f:
+#                     meta = json.load(f)
+#                 db_manager.save_contract(meta)
+#                 count += 1
+#             except Exception as e:
+#                 print(f"Migration error for {folder.name}: {e}")
+#     if count > 0:
+#         print(f"Successfully migrated {count} contracts to Supabase (locally cached).")
 
-migrate_existing_data()
+# migrate_existing_data()
 
 print("Importing FastAPI and standard libs...")
 import os

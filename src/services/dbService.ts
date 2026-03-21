@@ -58,8 +58,8 @@ export const saveContractToDB = async (contract: SavedContract): Promise<SavedCo
 
     return { ...contract, ...data, timestamp: Date.now() };
   } catch (error) {
-    console.error('Supabase save failed, falling back to IndexedDB:', error);
-    return saveToIndexedDB(contract);
+    console.error('Supabase save failed:', error);
+    throw error;
   }
 };
 
@@ -98,8 +98,8 @@ export const getAllContracts = async (_options?: { metadataOnly?: boolean }): Pr
       updated_at: row.updated_at,
     }));
   } catch (error) {
-    console.warn('Supabase list failed, falling back to IndexedDB:', error);
-    return getAllFromIndexedDB();
+    console.error('Supabase list failed:', error);
+    throw error;
   }
 };
 
@@ -162,8 +162,8 @@ export const deleteContractFromDB = async (id: string): Promise<void> => {
 
     if (error) throw error;
   } catch (error) {
-    console.error('Supabase delete failed, falling back to IndexedDB:', error);
-    await deleteFromIndexedDB(id);
+    console.error('Supabase delete failed:', error);
+    throw error;
   }
 };
 
