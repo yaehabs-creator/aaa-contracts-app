@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useChatContext } from '../context/ChatContext';
+import { useChatContext } from '../contexts/ChatContext';
 import { chatWithSmartRouting } from '@/services/aiBotService';
 import { BotMessage, ContextPill } from '@/types';
 import { db } from '@/services/dbService';
