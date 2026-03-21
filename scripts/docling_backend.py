@@ -39,17 +39,27 @@ class DatabaseManager:
     def save_contract(self, metadata: dict):
         if not supabase: return
         try:
-            # Sync with 'contracts' table in Supabase
-            supabase.table("contracts").upsert({
+            # Map identity fields to columns
+            payload = {
                 "id": metadata.get("id"),
                 "name": metadata.get("name"),
                 "title": metadata.get("name"),
+                "contractor_name": metadata.get("company_name") or metadata.get("contractor_name"),
+                "start_date": metadata.get("effective_date") or metadata.get("start_date"),
+                "end_date": metadata.get("expiry_date") or metadata.get("end_date"),
+                "value": metadata.get("contract_value") or metadata.get("value"),
                 "status": metadata.get("status"),
-                "metadata": metadata, # Store full metadata object in JSONB column
+                "metadata": metadata,
                 "is_deleted": False,
                 "updated_at": "now()"
-            }).execute()
-            print(f"Synced contract {metadata.get('id')} to Supabase.")
+            }
+            # Clean None values for date columns to avoid Supabase errors
+            if not payload["start_date"]: del payload["start_date"]
+            if not payload["end_date"]: del payload["end_date"]
+            if payload["value"] is None: del payload["value"]
+
+            supabase.table("contracts").upsert(payload).execute()
+            print(f"Synced contract {metadata.get('id')} with identity to Supabase.")
         except Exception as e:
             print(f"Supabase save_contract error: {e}")
 
@@ -563,67 +573,91 @@ async def AI_tag_clauses(contract_id: str, clauses: list):
         print(f"AI Tagging Error: {e}")
         
     return clauses
+async def extract_identity(text: str):
+    """Fast extraction of key contract attributes using LLM."""
+    if not text or len(text) < 100: return {}
+    
+    llm = get_llm_model_func()
+    if not llm: return {}
+    
+    prompt = """Analyze the start of this contract and extract the following identity fields in JSON format:
+    - company_name: (The main counterparty/contractor)
+    - effective_date: (YYYY-MM-DD or null)
+    - expiry_date: (YYYY-MM-DD or null)
+    - contract_value: (Numeric value only or null)
+    - currency: (3-letter code like AED, USD)
+    - renewal_type: (Auto-renewal, Manual, or None)
+    
+    Contract Text:
+    """ + text[:10000]
+    
+    try:
+        res = await llm(prompt, system_prompt="You are a contract analyst. Output JSON ONLY.")
+        json_match = re.search(r'\{.*\}', res, re.DOTALL)
+        if json_match:
+            return json.loads(json_match.group())
+    except Exception as e:
+        print(f"Identity Extraction Error: {e}")
+    return {}
 
 async def background_digest_task(contract_id: str, file_path: Path):
-    """Complete Neural Digestion: OCR -> Clean -> Segment -> Tag -> Index -> Supabase."""
+    """Complete Neural Digestion with Identity Extraction."""
     contract_folder = file_path.parent
     try:
         # 1. Update status
-        db_manager.save_contract({"id": contract_id, "status": "processing", "ingestion_progress": 10})
+        db_manager.save_contract({"id": contract_id, "status": "processing", "ingestion_progress": 5})
         
         # 2. Convert with Docling
         print(f"[{contract_id}] Starting Neural Conversion...")
         result = await asyncio.to_thread(converter.convert, str(file_path))
         raw_md = result.document.export_to_markdown()
         
-        db_manager.save_contract({"id": contract_id, "ingestion_progress": 50})
+        db_manager.save_contract({"id": contract_id, "ingestion_progress": 40})
         
-        # 3. Semantic Cleaning
+        # 3. IDENTITY EXTRACTION (Phase 4)
+        print(f"[{contract_id}] Extracting Identity...")
+        identity = await extract_identity(raw_md)
+        # Immediate sync for the Repository View
+        db_manager.save_contract({"id": contract_id, "status": "processing", "ingestion_progress": 50, **identity})
+        
+        # 4. Semantic Cleaning
         print(f"[{contract_id}] Running Semantic Cleaning...")
         cleaned_md = await semantic_cleaning_layer(raw_md)
         
-        # 4. Clause Segmentation & Tagging (NEW PHASE 3)
+        # 5. Clause Segmentation & Tagging
         print(f"[{contract_id}] Segmenting Clauses...")
         clauses = await segment_into_clauses(cleaned_md)
         
-        db_manager.save_contract({"id": contract_id, "ingestion_progress": 70})
+        db_manager.save_contract({"id": contract_id, "ingestion_progress": 80})
         
-        print(f"[{contract_id}] AI Tagging {len(clauses)} Clauses...")
-        tagged_clauses = await AI_tag_clauses(contract_id, clauses)
-        
-        # 5. Save locally and to Supabase
+        # 6. Save and Sync
         extracted_path = contract_folder / "extracted.md"
         with open(extracted_path, "w", encoding="utf-8") as f:
             f.write(cleaned_md)
             
-        clauses_json_path = contract_folder / "clauses.json"
-        with open(clauses_json_path, "w", encoding="utf-8") as f:
-            json.dump(tagged_clauses, f, indent=2)
-            
-        # Sync to Supabase Storage and DB
         db_manager.upload_file(contract_id, extracted_path, "extracted.md")
         db_manager.upload_file(contract_id, file_path, file_path.name)
-        db_manager.sync_clauses(contract_id, tagged_clauses)
+        db_manager.sync_clauses(contract_id, clauses)
         
-        # 6. Finalize
-        metadata = {
+        # 7. Finalize
+        final_meta = {
             "id": contract_id,
             "status": "processed",
             "ingestion_progress": 100,
-            "text_length": len(cleaned_md),
-            "finalized_at": time.time(),
+            **identity,
             "metadata": {
-                "clause_count": len(tagged_clauses),
-                "has_clauses": len(tagged_clauses) > 0
+                **identity,
+                "clause_count": len(clauses)
             }
         }
-        db_manager.save_contract(metadata)
-        print(f"[{contract_id}] Digestion Complete. {len(tagged_clauses)} clauses identified.")
+        db_manager.save_contract(final_meta)
+        print(f"[{contract_id}] Smart Digestion Complete.")
         
     except Exception as e:
         print(f"Background Job Failed ({contract_id}): {e}")
         traceback.print_exc()
-        db_manager.save_contract({"id": contract_id, "status": "error", "metadata": {"error": str(e)}})
+        db_manager.save_contract({"id": contract_id, "status": "error"})
+
 
 @app.post("/contracts/process/background")
 async def start_background_digest(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
