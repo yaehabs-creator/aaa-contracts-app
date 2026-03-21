@@ -95,6 +95,32 @@ class DatabaseManager:
         except Exception as e:
             print(f"Supabase save_message error: {e}")
 
+    def sync_clauses(self, contract_id: str, clauses: list):
+        """Insert processed clauses into Supabase."""
+        if not supabase: return
+        try:
+            # First, clean older clauses for this contract to avoid duplicates
+            supabase.table("clauses").delete().eq("contract_id", contract_id).execute()
+            
+            rows = []
+            for i, c in enumerate(clauses):
+                rows.append({
+                    "contract_id": contract_id,
+                    "clause_number": c.get("number", ""),
+                    "clause_title": c.get("title", "Untitled Clause"),
+                    "clause_text": c.get("text", ""),
+                    "category": c.get("category"),
+                    "chapter": c.get("chapter"),
+                    "condition_type": c.get("type", "General"),
+                    "order_index": i
+                })
+            
+            if rows:
+                supabase.table("clauses").insert(rows).execute()
+                print(f"Synced {len(rows)} clauses to Supabase for {contract_id}.")
+        except Exception as e:
+            print(f"Supabase sync_clauses error: {e}")
+
     def get_history(self, contract_id: str):
         if not supabase: return []
         try:
@@ -475,8 +501,71 @@ async def semantic_cleaning_layer(text: str):
     except:
         return text
 
+import re
+
+async def segment_into_clauses(text: str):
+    """Segment contract markdown into list of clauses using Regex and AI."""
+    # Pattern for Clause numbers: e.g. "1.1", "Clause 8.4", "Sub-Clause 10.1"
+    pattern = r'(?m)^(?:Clause\s+|Sub-Clause\s+)?(\d+(?:\.\d+)+)\s+([A-Z][^\n]+)'
+    
+    matches = list(re.finditer(pattern, text))
+    clauses = []
+    
+    for i, match in enumerate(matches):
+        num = match.group(1)
+        title = match.group(2).strip()
+        start = match.start()
+        end = matches[i+1].start() if i + 1 < len(matches) else len(text)
+        content = text[start:end].strip()
+        
+        clauses.append({
+            "number": num,
+            "title": title,
+            "text": content,
+            "category": "Uncategorized"
+        })
+    
+    # If no clauses found by regex, it might be a poor OCR or different format
+    if not clauses and len(text) > 500:
+        # Fallback: create large blocks or use AI to find headers
+        pass
+        
+    return clauses
+
+async def AI_tag_clauses(contract_id: str, clauses: list):
+    """Use AI to categorize clauses (e.g. Risk, Delay, Payment)."""
+    if not clauses: return []
+    
+    llm = get_llm_model_func()
+    if not llm: return clauses
+    
+    # Process only first 20 clauses to avoid token limits for now
+    sample = clauses[:25]
+    
+    prompt = """Analyze the following list of clause titles and numbers from a construction contract. 
+    Assign each to one of these categories: [Contractual, Financial, Technical, Administrative, Legal, Risk].
+    Return a JSON list of objects: [{"number": "...", "category": "..."}]
+    
+    List:
+    """ + "\n".join([f"{c['number']}: {c['title']}" for c in sample])
+    
+    try:
+        res = await llm(prompt, system_prompt="You are a construction contract expert. Output JSON ONLY.")
+        # Simple extraction of JSON from response
+        json_match = re.search(r'\[.*\]', res, re.DOTALL)
+        if json_match:
+            tags = json.loads(json_match.group())
+            tag_map = {t['number']: t['category'] for t in tags}
+            for c in clauses:
+                if c['number'] in tag_map:
+                    c['category'] = tag_map[c['number']]
+    except Exception as e:
+        print(f"AI Tagging Error: {e}")
+        
+    return clauses
+
 async def background_digest_task(contract_id: str, file_path: Path):
-    """Complete Neural Digestion: OCR -> Clean -> Index -> Supabase."""
+    """Complete Neural Digestion: OCR -> Clean -> Segment -> Tag -> Index -> Supabase."""
     contract_folder = file_path.parent
     try:
         # 1. Update status
@@ -485,33 +574,51 @@ async def background_digest_task(contract_id: str, file_path: Path):
         # 2. Convert with Docling
         print(f"[{contract_id}] Starting Neural Conversion...")
         result = await asyncio.to_thread(converter.convert, str(file_path))
-        doc = result.document
-        raw_md = doc.export_to_markdown()
+        raw_md = result.document.export_to_markdown()
         
-        db_manager.save_contract({"id": contract_id, "ingestion_progress": 60})
+        db_manager.save_contract({"id": contract_id, "ingestion_progress": 50})
         
-        # 3. Semantic Cleaning (experimental on first 10000 chars for speed)
+        # 3. Semantic Cleaning
         print(f"[{contract_id}] Running Semantic Cleaning...")
         cleaned_md = await semantic_cleaning_layer(raw_md)
         
-        # 4. Save locally and to Supabase Bucket
+        # 4. Clause Segmentation & Tagging (NEW PHASE 3)
+        print(f"[{contract_id}] Segmenting Clauses...")
+        clauses = await segment_into_clauses(cleaned_md)
+        
+        db_manager.save_contract({"id": contract_id, "ingestion_progress": 70})
+        
+        print(f"[{contract_id}] AI Tagging {len(clauses)} Clauses...")
+        tagged_clauses = await AI_tag_clauses(contract_id, clauses)
+        
+        # 5. Save locally and to Supabase
         extracted_path = contract_folder / "extracted.md"
         with open(extracted_path, "w", encoding="utf-8") as f:
             f.write(cleaned_md)
             
+        clauses_json_path = contract_folder / "clauses.json"
+        with open(clauses_json_path, "w", encoding="utf-8") as f:
+            json.dump(tagged_clauses, f, indent=2)
+            
+        # Sync to Supabase Storage and DB
         db_manager.upload_file(contract_id, extracted_path, "extracted.md")
-        db_manager.upload_file(contract_id, file_path, file_path.name) # Original PDF
+        db_manager.upload_file(contract_id, file_path, file_path.name)
+        db_manager.sync_clauses(contract_id, tagged_clauses)
         
-        # 5. Finalize
+        # 6. Finalize
         metadata = {
             "id": contract_id,
             "status": "processed",
             "ingestion_progress": 100,
             "text_length": len(cleaned_md),
-            "finalized_at": time.time()
+            "finalized_at": time.time(),
+            "metadata": {
+                "clause_count": len(tagged_clauses),
+                "has_clauses": len(tagged_clauses) > 0
+            }
         }
         db_manager.save_contract(metadata)
-        print(f"[{contract_id}] Digestion Complete.")
+        print(f"[{contract_id}] Digestion Complete. {len(tagged_clauses)} clauses identified.")
         
     except Exception as e:
         print(f"Background Job Failed ({contract_id}): {e}")
