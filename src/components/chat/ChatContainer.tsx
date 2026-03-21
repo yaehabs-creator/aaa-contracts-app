@@ -1,7 +1,7 @@
 
 import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChatProvider } from '../../context/ChatContext';
+import { ChatProvider } from '../../contexts/ChatContext';
 import { useChat } from '@/hooks/useChat';
 import { useAppStore } from '@/store/useAppStore';
 import MessageList from './MessageList';
