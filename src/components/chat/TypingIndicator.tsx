@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ThinkingMessages = [
+    'Activating OpenClaw Intelligence…',
+    'Consulting OpenClaw Knowledge Hub…',
     'Reading the contract…',
     'Analyzing clauses…',
     'Checking relevant sections…',

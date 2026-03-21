@@ -16,8 +16,6 @@ export const useChat = () => {
         setAtBottom,
         conversationId,
         contractClauses,
-        isGraphMode,
-        setIsGraphMode,
         uploadedContract
     } = useChatContext();
 
@@ -97,8 +95,6 @@ export const useChat = () => {
         removeContextPill,
         clearChat,
         atBottom,
-        setAtBottom,
-        isGraphMode,
-        setIsGraphMode
+        setAtBottom
     };
 };

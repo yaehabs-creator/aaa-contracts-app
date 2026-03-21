@@ -51,8 +51,6 @@ interface ChatContextValue {
     setAtBottom: (val: boolean) => void;
     conversationId: string | null;
     contractClauses: any[];
-    isGraphMode: boolean;
-    setIsGraphMode: (val: boolean) => void;
     uploadedContract: UploadedContract | null;
     setUploadedContract: (data: UploadedContract | null) => void;
     clearUploadedContract: () => void;
@@ -76,7 +74,6 @@ export const ChatProvider: React.FC<{
     const [isThinkingOrStreaming, setIsThinkingOrStreaming] = useState(false);
     const [contextPills, setContextPills] = useState<ContextPill[]>(config.initialContextPills || []);
     const [atBottom, setAtBottom] = useState(true);
-    const [isGraphMode, setIsGraphMode] = useState(false);
     const [uploadedContract, setUploadedContractState] = useState<UploadedContract | null>(() =>
         persist ? loadUploadedContract(conversationId) : null
     );
@@ -123,12 +120,10 @@ export const ChatProvider: React.FC<{
         setAtBottom,
         conversationId,
         contractClauses: config.contractClauses || [],
-        isGraphMode,
-        setIsGraphMode,
         uploadedContract,
         setUploadedContract,
         clearUploadedContract
-    }), [messages, isThinkingOrStreaming, contextPills, atBottom, conversationId, config.contractClauses, isGraphMode, uploadedContract, setUploadedContract, clearUploadedContract]);
+    }), [messages, isThinkingOrStreaming, contextPills, atBottom, conversationId, config.contractClauses, uploadedContract, setUploadedContract, clearUploadedContract]);
 
     return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 };

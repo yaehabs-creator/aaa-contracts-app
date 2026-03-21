@@ -149,7 +149,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Ask a question about the contract..."
+                    placeholder="Ask OpenClaw anything..."
                     className="flex-1 bg-transparent border-none focus:ring-0 resize-none py-3 px-4 text-sm font-medium text-black placeholder:text-black/30 max-h-[200px] scrollbar-hide"
                     rows={1}
                 />

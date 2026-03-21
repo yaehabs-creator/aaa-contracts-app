@@ -71,9 +71,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 }
 
 async function handleAnthropic(body: ProxyRequest, res: VercelResponse) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'ANTHROPIC_API_KEY not configured on server' });
+    return res.status(500).json({ error: 'ANTHROPIC_API_KEY (or VITE_ version) not configured on server' });
   }
 
   const model = body.model || CLAUDE_MODELS[0];
@@ -130,9 +130,9 @@ async function handleAnthropic(body: ProxyRequest, res: VercelResponse) {
 }
 
 async function handleOpenAI(body: ProxyRequest, res: VercelResponse) {
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'OPENAI_API_KEY not configured on server' });
+    return res.status(500).json({ error: 'OPENAI_API_KEY (or VITE_ version) not configured on server' });
   }
 
   const model = body.model || 'gpt-4o';

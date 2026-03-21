@@ -40,12 +40,10 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
         contextPills,
         removeContextPill,
         atBottom,
-        setAtBottom,
-        isGraphMode,
-        setIsGraphMode
+        setAtBottom
     } = useChat();
 
-    const { activeChatContextIds } = useAppStore();
+    const { activeChatContextIds, isOpenClawActive, setIsOpenClawActive } = useAppStore();
     const [isKnowledgePickerOpen, setIsKnowledgePickerOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -116,13 +114,14 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
                                         </span>
                                     </div>
                                     <button
-                                        onClick={() => setIsGraphMode(!isGraphMode)}
-                                        className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-tighter transition-all border
-                                            ${isGraphMode
-                                                ? 'bg-purple-500/10 border-purple-500/20 text-purple-600'
-                                                : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600'}`}
+                                        onClick={() => setIsOpenClawActive(!isOpenClawActive)}
+                                        className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border flex items-center gap-1.5
+                                            ${isOpenClawActive
+                                                ? 'bg-purple-600/10 border-purple-600/20 text-purple-600 shadow-[0_0_15px_rgba(147,51,234,0.15)]'
+                                                : 'bg-black/5 border-black/10 text-black/40'}`}
                                     >
-                                        {isGraphMode ? 'Agentic' : 'Standard'}
+                                        <div className={`w-1 h-1 rounded-full ${isOpenClawActive ? 'bg-purple-600 animate-pulse' : 'bg-black/30'}`} />
+                                        {isOpenClawActive ? 'OpenClaw Active' : 'Standard AI'}
                                     </button>
                                 </div>
                             </div>
