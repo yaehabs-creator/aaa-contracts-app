@@ -48,8 +48,8 @@ const MessageList: React.FC<MessageListProps> = ({ messages, atBottom, setAtBott
                         </svg>
                     </div>
                     <div>
-                        <p className="text-sm font-black uppercase tracking-widest text-black">Precision Analysis Ready</p>
-                        <p className="text-xs font-medium text-black/60 mt-1">Ask anything about your contract documents</p>
+                        <p className="text-sm font-black uppercase tracking-widest text-black">AEhab AI Agent Ready</p>
+                        <p className="text-xs font-medium text-black/60 mt-1">Ask AEhab anything about your contract documents</p>
                     </div>
                 </div>
             ) : (

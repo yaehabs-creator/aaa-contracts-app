@@ -293,8 +293,8 @@ export const AIChatView: React.FC = () => {
             </button>
             <div className="flex items-center gap-3">
               <div className={`w-2 h-2 rounded-full ${isSeniorActive ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'}`} />
-              <span className="text-[11px] font-bold text-black/50 uppercase tracking-widest">
-                {isSeniorActive ? 'Senior Principal Engineer persona active' : 'AI Chat Assistant'}
+              <span className="text-[11px] font-black text-black/50 uppercase tracking-widest">
+                {isSeniorActive ? 'AEhab Senior Engineer active' : 'AEhab AI Agent'}
               </span>
             </div>
           </div>

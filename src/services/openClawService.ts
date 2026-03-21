@@ -29,14 +29,14 @@ class OpenClawService {
     private agents: OpenClawAgent[] = [
         {
             id: 'contract-analyzer',
-            name: 'Contract Analyst',
+            name: 'AEhab Contract Analyst',
             role: 'Legal Expert',
             description: 'Specializes in analyzing contract clauses and risk assessment.',
             tools: ['search_documents', 'compare_clauses', 'extract_fields']
         },
         {
             id: 'senior-engineer',
-            name: 'Senior Principal Contract Engineer',
+            name: 'AEhab Senior Principal Engineer',
             role: 'Contract Forensic & RAG Specialist',
             description: 'Expert in technical contract forensic, risk mitigation, and structural RAG querying. Acts as a senior advisor for complex infrastructure projects.',
             tools: ['deep_rag_search', 'risk_forensic', 'structural_analysis']
@@ -89,7 +89,7 @@ class OpenClawService {
      */
     private getAgentSystemPrompt(agentId: string, context: Clause[], contractId?: string | null, customContext?: string): string {
         const agent = this.agents.find(a => a.id === agentId);
-        let prompt = `You are the OpenClaw ${agent?.name || 'Agent'}. ${agent?.description || ''}\n\n`;
+        let prompt = `You are AEhab, specifically acting as the ${agent?.name || 'Agent'}. ${agent?.description || ''}\n\n`;
         
         prompt += `PROTOCOL: OpenClaw ACP v1.0\n`;
         prompt += `MODE: Agentic\n\n`;

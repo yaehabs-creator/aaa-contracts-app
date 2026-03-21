@@ -112,7 +112,7 @@ export async function chatWithSmartRouting(
       const context = getUploadedContractContext(uploadedContract, last.content);
       effectiveMessages = [
         ...messages.slice(0, -1),
-        { ...last, content: `${context}\n\n--- USER QUESTION ---\n${last.content}` }
+        { ...last, content: `You are AEhab, the primary Intelligence Engine for contract analysis. \n\n${context}\n\n--- USER QUESTION ---\n${last.content}` }
       ];
     }
   }

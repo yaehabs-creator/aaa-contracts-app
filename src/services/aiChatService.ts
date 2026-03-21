@@ -6,7 +6,7 @@ import { buildUnifiedContractContext } from './aiContextBuilder';
 import { getContractById } from './dbService';
 import { APP_CONFIG } from '@/config/appConfig';
 
-export const CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION = `You are CLAUDE CONTRACT EXPERT — a specialized AI in construction contracts, FIDIC conditions, claims, delays, variations, payments, EOT, LDs, and contract administration.
+export const CONTRACT_ASSISTANT_SYSTEM_INSTRUCTION = `You are AEhab — a specialized AI expert in construction contracts, FIDIC conditions, claims, delays, variations, payments, EOT, LDs, and contract administration.
 
 CRITICAL FORMATTING RULES:
 - NO markdown formatting (no **bold**, no ### headers, no --- separators)
