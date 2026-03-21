@@ -1,6 +1,7 @@
 import path from 'path';
 import { defineConfig, loadEnv, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 /**
  * Vite plugin: Local AI Proxy
@@ -273,6 +274,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       react(),
+      tailwindcss(),
       // Handle /api/ai-proxy locally in dev mode (reads API keys from .env/.env.local)
       ...(mode === 'development' ? [localAIProxy(env)] : []),
     ],
