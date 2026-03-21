@@ -1,0 +1,175 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\nDivision 04: Masonry.\n\n## Division04:Masonry.\n\n| Specification Settio  Category  Emaar Vendor   | Specification Settio  Category  Emaar Vendor   | Specification Settio  Category  Emaar Vendor   | Specification Settio  Category  Emaar Vendor   | Specification Settio  Category  Emaar Vendor   | Specification Settio  Category  Emaar Vendor   |\n|------------------------------------------------|------------------------------------------------|------------------------------------------------|------------------------------------------------|------------------------------------------------|------------------------------------------------|\n| Divislon a4:Masoary                            | Divislon a4:Masoary                            | Divislon a4:Masoary                            | Divislon a4:Masoary                            | Divislon a4:Masoary                            | Divislon a4:Masoary                            |\n|                                                | Speciflication Settlon                         | Category                                       | Emaar Nendor                                   | Local distributor                              | Country of origin                              |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | Toblat                                         |                                                | Egypt                                          |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | ArabBrick                                      |                                                | Egvpt                                          |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | Cimenta                                        |                                                | Egvpt                                          |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | Natlonal CermenlL Cu.                          |                                                | Cgvpt                                          |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | CPD(Orascom)                                   |                                                | Egypt                                          |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | El Bonian                                      |                                                | Egypt                                          |\n| 17                                             | 042200-Masonry                                 | MechanicallyProducedConcreteMasonryUnlts       | OrApproved Equal*                              |                                                |                                                |\n| 17                                             | 042200-Masonry                                 | ConcreteMasonryaccessories                     | Metal X                                        |                                                | Egvpt                                          |\n| 17                                             | 042200-Masonry                                 | ConcreteMasonryaccessories                     | Metal HA                                       |                                                | Egypt                                          |\n| 17                                             | 042200-Masonry                                 | ConcreteMasonryaccessories                     | Bridge Egvpt                                   |                                                | Egypt                                          |\n| 17                                             | 042200-Masonry                                 | ConcreteMasonryaccessories                     | Unitech                                        |                                                | Egypt                                          |\n| 17                                             | 042200-Masonry                                 | ConcreteMasonryaccessories                     | OrApproved Equal*                              |                                                |                                                |\n\nCon\r\nal C\n\nConstruc\r\nernational C\r\n国\n\nDivision 04: Masonary\n\n<!-- image -->\n\n## Residential",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          744.0063781738281
+        ],
+        [
+          93.8004659016927,
+          744.0063781738281
+        ],
+        [
+          93.8004659016927,
+          734.8840637207031
+        ],
+        [
+          75.53842671712239,
+          734.8840637207031
+        ]
+      ],
+      "page": 173
+    },
+    {
+      "text": "Division 04: Masonry.",
+      "confidence": 0.95,
+      "box": [
+        [
+          50.568748474121094,
+          727.75537109375
+        ],
+        [
+          148.2191162109375,
+          727.75537109375
+        ],
+        [
+          148.2191162109375,
+          719.6130981445312
+        ],
+        [
+          50.568748474121094,
+          719.6130981445312
+        ]
+      ],
+      "page": 173
+    },
+    {
+      "text": "Division04:Masonry.",
+      "confidence": 0.95,
+      "box": [
+        [
+          50.220601399739586,
+          710.0050354003906
+        ],
+        [
+          151.90694173177084,
+          710.0050354003906
+        ],
+        [
+          151.90694173177084,
+          698.8094685872396
+        ],
+        [
+          50.220601399739586,
+          698.8094685872396
+        ]
+      ],
+      "page": 173
+    },
+    {
+      "text": "Con\r\nal C",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.69931030273438,
+          272.4952392578125
+        ],
+        [
+          181.929443359375,
+          272.4952392578125
+        ],
+        [
+          181.929443359375,
+          260.7919006347656
+        ],
+        [
+          169.69931030273438,
+          260.7919006347656
+        ]
+      ],
+      "page": 173
+    },
+    {
+      "text": "Construc\r\nernational C\r\n国",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.3231658935547,
+          277.8804931640625
+        ],
+        [
+          214.63693237304688,
+          277.8804931640625
+        ],
+        [
+          214.63693237304688,
+          238.61199951171875
+        ],
+        [
+          128.3231658935547,
+          238.61199951171875
+        ]
+      ],
+      "page": 173
+    },
+    {
+      "text": "Division 04: Masonary",
+      "confidence": 0.95,
+      "box": [
+        [
+          259.2342834472656,
+          691.712158203125
+        ],
+        [
+          322.0124816894531,
+          691.712158203125
+        ],
+        [
+          322.0124816894531,
+          685.2864379882812
+        ],
+        [
+          259.2342834472656,
+          685.2864379882812
+        ]
+      ],
+      "page": 173
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          431.2331136067708,
+          745.6649831136068
+        ],
+        [
+          510.5069580078125,
+          745.6649831136068
+        ],
+        [
+          510.5069580078125,
+          731.1522115071615
+        ],
+        [
+          431.2331136067708,
+          731.1522115071615
+        ]
+      ],
+      "page": 173
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 173,
+      "text": "MISR\nDivision 04: Masonry.\nDivision04:Masonry.\nCon\r\nal C\nConstruc\r\nernational C\r\n国\nDivision 04: Masonary\nResidential",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

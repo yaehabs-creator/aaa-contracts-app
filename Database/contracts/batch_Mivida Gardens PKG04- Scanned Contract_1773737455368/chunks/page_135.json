@@ -1,0 +1,474 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nThe period referred to in Conditions of Contract is five (5) days after the endofeachmonth.\n\n## 17.7 Rate of Progress\n\nInsert \"based on the approved Programme critical path\" after \"The ContractAdministrator\"in thefourth lineof SubClause17.7\n\n## 17.8 Site Working Hours\n\nNoneoftheWorksshallbecarriedoutonSiteduringthenightoronlocally recognized days of rest or on declared public holidays in the Country without the prior approval of the Contract Administrator, except when work is unavoidable or absolutely necessaryfor the protection of life or property or for the safety of theWorks,inwhichcase theContractor shall immediatelyadvisetheContractAdministrator.\n\nIncase theworkrequiresthiepresenceof theConsultantbeyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear Egyptian Pounds two hundred and seventy-five (EGP 275/hour / engineer).\n\nThe normal working hours shall be 8 hours/day, 6 days/week.\n\n## 18. SUSPENSIONOFWORKS\n\n## 18.1 Suspension Order\n\nIn the second paragraph delete \"paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\" and substitute \"added to the Contract Sum\".\n\n## 19. TIMEFORCOMPLETIONANDLIQUIDATEDDAMAGES\n\n## 19.1 Time for Completion\n\nRename the existing paragraph as (a)\n\nAddnewparagraphs(b)&amp;(c)as follows:\n\n- (b) The Time for Completion (contract period) shall be as stated in the FormofAgreementandinaccordancewiththeMasterConstruction Schedule Appendix D of Conditions of Contract. Such contract period Contract Documents.\n- C Both parties have agreed that the Works shall be carried out and handed over to the Employer in phases. Other contractors shall be allowed to carry out other work within the contract period. The contractual milestones for Taking Over in Appendix D (if exists) of the ConditionsofContractdesignatephases.\n\n## 19.2 Extensionof Time\n\nReplace \"as may in his opinion be reasonable\" in the 5th line of Sub-Clause 19.2 with \"based on the critical path of the updated approved Programme\".\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          752.1680603027344
+        ],
+        [
+          177.5852254231771,
+          752.1680603027344
+        ],
+        [
+          177.5852254231771,
+          733.5020650227865
+        ],
+        [
+          98.51751708984375,
+          733.5020650227865
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          729.2597961425781
+        ],
+        [
+          151.79308064778647,
+          729.2597961425781
+        ],
+        [
+          151.79308064778647,
+          717.3814392089844
+        ],
+        [
+          126.42376708984375,
+          717.3814392089844
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "The period referred to in Conditions of Contract is five (5) days after the endofeachmonth.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.3233846028646,
+          698.2912089029948
+        ],
+        [
+          502.7353108723958,
+          698.2912089029948
+        ],
+        [
+          502.7353108723958,
+          673.68603515625
+        ],
+        [
+          165.3233846028646,
+          673.68603515625
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "17.7 Rate of Progress",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          669.01953125
+        ],
+        [
+          245.6595662434896,
+          669.01953125
+        ],
+        [
+          245.6595662434896,
+          655.4442749023438
+        ],
+        [
+          126.42376708984375,
+          655.4442749023438
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "Insert \"based on the approved Programme critical path\" after \"The ContractAdministrator\"in thefourth lineof SubClause17.7",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          651.626220703125
+        ],
+        [
+          502.7353108723958,
+          651.626220703125
+        ],
+        [
+          502.7353108723958,
+          626.5968221028646
+        ],
+        [
+          164.47774251302084,
+          626.5968221028646
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "17.8 Site Working Hours",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          623.2030029296875
+        ],
+        [
+          257.07574462890625,
+          623.2030029296875
+        ],
+        [
+          257.07574462890625,
+          609.6277465820312
+        ],
+        [
+          126.00094604492188,
+          609.6277465820312
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "NoneoftheWorksshallbecarriedoutonSiteduringthenightoronlocally recognized days of rest or on declared public holidays in the Country without the prior approval of the Contract Administrator, except when work is unavoidable or absolutely necessaryfor the protection of life or property or for the safety of theWorks,inwhichcase theContractor shall immediatelyadvisetheContractAdministrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          604.5370076497396
+        ],
+        [
+          502.7353108723958,
+          604.5370076497396
+        ],
+        [
+          502.7353108723958,
+          531.994160970052
+        ],
+        [
+          163.6321004231771,
+          531.994160970052
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "Incase theworkrequiresthiepresenceof theConsultantbeyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear Egyptian Pounds two hundred and seventy-five (EGP 275/hour / engineer).",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          526.9034423828125
+        ],
+        [
+          501.8896484375,
+          526.9034423828125
+        ],
+        [
+          501.8896484375,
+          477.69309488932294
+        ],
+        [
+          163.6321004231771,
+          477.69309488932294
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "The normal working hours shall be 8 hours/day, 6 days/week.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          474.29925537109375
+        ],
+        [
+          447.7684733072917,
+          474.29925537109375
+        ],
+        [
+          447.7684733072917,
+          460.72401936848956
+        ],
+        [
+          163.6321004231771,
+          460.72401936848956
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "18. SUSPENSIONOFWORKS",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          452.23948160807294
+        ],
+        [
+          254.538818359375,
+          452.23948160807294
+        ],
+        [
+          254.538818359375,
+          439.93686930338544
+        ],
+        [
+          93.86647542317708,
+          439.93686930338544
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "18.1 Suspension Order",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          435.27036539713544
+        ],
+        [
+          250.7334187825521,
+          435.27036539713544
+        ],
+        [
+          250.7334187825521,
+          421.69508870442706
+        ],
+        [
+          124.73248291015625,
+          421.69508870442706
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "In the second paragraph delete \"paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\" and substitute \"added to the Contract Sum\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          417.87705485026044
+        ],
+        [
+          501.0440266927083,
+          417.87705485026044
+        ],
+        [
+          501.0440266927083,
+          381.39353434244794
+        ],
+        [
+          163.20927937825522,
+          381.39353434244794
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "19. TIMEFORCOMPLETIONANDLIQUIDATEDDAMAGES",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          371.63629150390625
+        ],
+        [
+          395.7613525390625,
+          371.63629150390625
+        ],
+        [
+          395.7613525390625,
+          358.90948486328125
+        ],
+        [
+          93.4436543782552,
+          358.90948486328125
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "19.1 Time for Completion",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.30965169270833,
+          354.66721598307294
+        ],
+        [
+          259.1898600260417,
+          354.66721598307294
+        ],
+        [
+          259.1898600260417,
+          340.66770426432294
+        ],
+        [
+          124.30965169270833,
+          340.66770426432294
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "Rename the existing paragraph as (a)",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          337.27390543619794
+        ],
+        [
+          340.37168375651044,
+          337.27390543619794
+        ],
+        [
+          340.37168375651044,
+          323.2743937174479
+        ],
+        [
+          162.78645833333334,
+          323.2743937174479
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "Addnewparagraphs(b)&(c)as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          319.0321248372396
+        ],
+        [
+          353.0563557942708,
+          319.0321248372396
+        ],
+        [
+          353.0563557942708,
+          306.72955322265625
+        ],
+        [
+          163.20927937825522,
+          306.72955322265625
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "(b) The Time for Completion (contract period) shall be as stated in the FormofAgreementandinaccordancewiththeMasterConstruction Schedule Appendix D of Conditions of Contract. Such contract period Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          302.06304931640625
+        ],
+        [
+          501.0440266927083,
+          302.06304931640625
+        ],
+        [
+          501.0440266927083,
+          241.82277425130212
+        ],
+        [
+          163.20927937825522,
+          241.82277425130212
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "C Both parties have agreed that the Works shall be carried out and handed over to the Employer in phases. Other contractors shall be allowed to carry out other work within the contract period. The contractual milestones for Taking Over in Appendix D (if exists) of the ConditionsofContractdesignatephases.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.90056355794272,
+          237.58050537109375
+        ],
+        [
+          501.0440266927083,
+          237.58050537109375
+        ],
+        [
+          501.0440266927083,
+          176.06756591796875
+        ],
+        [
+          164.90056355794272,
+          176.06756591796875
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "19.2 Extensionof Time",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.0411885579427,
+          172.67376708984375
+        ],
+        [
+          247.7736612955729,
+          172.67376708984375
+        ],
+        [
+          247.7736612955729,
+          159.52272542317712
+        ],
+        [
+          123.0411885579427,
+          159.52272542317712
+        ]
+      ],
+      "page": 135
+    },
+    {
+      "text": "Replace \"as may in his opinion be reasonable\" in the 5th line of Sub-Clause 19.2 with \"based on the critical path of the updated approved Programme\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.3636271158854,
+          155.70465087890625
+        ],
+        [
+          500.1983642578125,
+          155.70465087890625
+        ],
+        [
+          500.1983642578125,
+          128.12994384765625
+        ],
+        [
+          162.3636271158854,
+          128.12994384765625
+        ]
+      ],
+      "page": 135
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 135,
+      "text": "EMAAR\nMISR\nThe period referred to in Conditions of Contract is five (5) days after the endofeachmonth.\n17.7 Rate of Progress\nInsert \"based on the approved Programme critical path\" after \"The ContractAdministrator\"in thefourth lineof SubClause17.7\n17.8 Site Working Hours\nNoneoftheWorksshallbecarriedoutonSiteduringthenightoronlocally recognized days of rest or on declared public holidays in the Country without the prior approval of the Contract Administrator, except when work is unavoidable or absolutely necessaryfor the protection of life or property or for the safety of theWorks,inwhichcase theContractor shall immediatelyadvisetheContractAdministrator.\nIncase theworkrequiresthiepresenceof theConsultantbeyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear Egyptian Pounds two hundred and seventy-five (EGP 275/hour / engineer).\nThe normal working hours shall be 8 hours/day, 6 days/week.\n18. SUSPENSIONOFWORKS\n18.1 Suspension Order\nIn the second paragraph delete \"paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\" and substitute \"added to the Contract Sum\".\n19. TIMEFORCOMPLETIONANDLIQUIDATEDDAMAGES\n19.1 Time for Completion\nRename the existing paragraph as (a)\nAddnewparagraphs(b)&(c)as follows:\n(b) The Time for Completion (contract period) shall be as stated in the FormofAgreementandinaccordancewiththeMasterConstruction Schedule Appendix D of Conditions of Contract. Such contract period Contract Documents.\nC Both parties have agreed that the Works shall be carried out and handed over to the Employer in phases. Other contractors shall be allowed to carry out other work within the contract period. The contractual milestones for Taking Over in Appendix D (if exists) of the ConditionsofContractdesignatephases.\n19.2 Extensionof Time\nReplace \"as may in his opinion be reasonable\" in the 5th line of Sub-Clause 19.2 with \"based on the critical path of the updated approved Programme\".",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

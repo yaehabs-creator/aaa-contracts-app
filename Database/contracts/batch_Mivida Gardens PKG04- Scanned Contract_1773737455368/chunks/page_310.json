@@ -1,0 +1,313 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## CONTRAGT DRAWINGS\n\n- 1.1 The drawings issued with the Tender are issued solely to show the basic principles on which Tenders are to be prepared. The drawings are not to be taken as working drawings. Co-ordination, shop, or working drawings and, where specified, design drawings are to be prepared and submited by  the Contractor in accordance with CONTRACTDOCUMENTS.\n- 1.2 Dimensions should not be scaled from Drawings. The Contractor shall obtain from the Supervision Consultant any dimensions required bu not given in figures on the Drawings nor calculable from figures on the Drawings.\n\n## 2 CO-ORDINATIONDRAWINGS\n\n- 2.1 The Contractor shall be responsible for the preparation and timely provision of co-ordination drawings showing the co-ordination of the work of Sub-contractorsand allother contractors.Theco-ordination drawings shallbe in sufficient detailtoshow overalldimensions of structural members， architectural Ifeatures， including finishing, ductwork, piping, conduit, equipment, fixtures and show clearance between each work.\n- 2.2 Co-ordination drawings shall bear a signature block with the following certification:\n\nThe work represented on this drawing has been co-ordinated with all Sub-ccntractors and other affected contractors. Contractors'Representatives DateInitial\n\n- 2.3 The sianature block shall include spaces for the company names and signatures of Sub-contractors and contractors.\n- 2.4 Reproducible, original, co-ordination drawings shall be signed by each affected Sub-contractor and contractor indicating agreement that the work has been co-ordinated.The Contractor shall then distribute a copy of signed co-ordinationdrawings toeachof the affected Sub contractors and contractors.\n- 2.5 For the purposes of co-ordination each contractor shall provide other contractors whose work is affected with the required information and drawings for co-ordination of their work.\n- 2.6 The Contractor shall submit three (3) reproducible print drawings of all A1 size drawings. One (1) high quality reproducible drawing with the Supervision Consultant review stamp shall be returned  to the Contractor. Emua? Kisr ?ct\n\n<!-- image -->\n\n<!-- image -->\n\n## SECTION 01340 DRAWINGS",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          749.8114878336588
+        ],
+        [
+          131.9847208658854,
+          749.8114878336588
+        ],
+        [
+          131.9847208658854,
+          739.4452260335287
+        ],
+        [
+          108.74212646484375,
+          739.4452260335287
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "CONTRAGT DRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          666.8813781738281
+        ],
+        [
+          240.72684733072916,
+          666.8813781738281
+        ],
+        [
+          240.72684733072916,
+          655.2711690266927
+        ],
+        [
+          110.81736246744792,
+          655.2711690266927
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "1.1 The drawings issued with the Tender are issued solely to show the basic principles on which Tenders are to be prepared. The drawings are not to be taken as working drawings. Co-ordination, shop, or working drawings and, where specified, design drawings are to be prepared and submited by  the Contractor in accordance with CONTRACTDOCUMENTS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          640.34375
+        ],
+        [
+          505.9414469401042,
+          640.34375
+        ],
+        [
+          505.9414469401042,
+          563.21875
+        ],
+        [
+          109.98726399739583,
+          563.21875
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "1.2 Dimensions should not be scaled from Drawings. The Contractor shall obtain from the Supervision Consultant any dimensions required bu not given in figures on the Drawings nor calculable from figures on the Drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          549.120625813802
+        ],
+        [
+          505.5263671875,
+          549.120625813802
+        ],
+        [
+          505.5263671875,
+          495.63071695963544
+        ],
+        [
+          109.98726399739583,
+          495.63071695963544
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2 CO-ORDINATIONDRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          483.1912027994792
+        ],
+        [
+          269.36505126953125,
+          483.1912027994792
+        ],
+        [
+          269.36505126953125,
+          471.58099365234375
+        ],
+        [
+          75.53842671712239,
+          471.58099365234375
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2.1 The Contractor shall be responsible for the preparation and timely provision of co-ordination drawings showing the co-ordination of the work of Sub-contractorsand allother contractors.Theco-ordination drawings shallbe in sufficient detailtoshow overalldimensions of structural members， architectural Ifeatures， including finishing, ductwork, piping, conduit, equipment, fixtures and show clearance between each work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          464.94659423828125
+        ],
+        [
+          506.3564860026042,
+          464.94659423828125
+        ],
+        [
+          506.3564860026042,
+          372.47951253255206
+        ],
+        [
+          108.32708740234375,
+          372.47951253255206
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2.2 Co-ordination drawings shall bear a signature block with the following certification:",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          367.91835530598956
+        ],
+        [
+          504.28125,
+          367.91835530598956
+        ],
+        [
+          504.28125,
+          341.79538981119794
+        ],
+        [
+          107.9120381673177,
+          341.79538981119794
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "The work represented on this drawing has been co-ordinated with all Sub-ccntractors and other affected contractors. Contractors'Representatives DateInitial",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.19096883138022,
+          327.28261311848956
+        ],
+        [
+          474.8129475911458,
+          327.28261311848956
+        ],
+        [
+          474.8129475911458,
+          289.1347452799479
+        ],
+        [
+          143.19096883138022,
+          289.1347452799479
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2.3 The sianature block shall include spaces for the company names and signatures of Sub-contractors and contractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          283.32965087890625
+        ],
+        [
+          504.28125,
+          283.32965087890625
+        ],
+        [
+          504.28125,
+          256.7920125325521
+        ],
+        [
+          107.49698893229167,
+          256.7920125325521
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2.4 Reproducible, original, co-ordination drawings shall be signed by each affected Sub-contractor and contractor indicating agreement that the work has been co-ordinated.The Contractor shall then distribute a copy of signed co-ordinationdrawings toeachof the affected Sub contractors and contractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          251.40155029296875
+        ],
+        [
+          505.111328125,
+          251.40155029296875
+        ],
+        [
+          505.111328125,
+          185.88677978515625
+        ],
+        [
+          107.49698893229167,
+          185.88677978515625
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2.5 For the purposes of co-ordination each contractor shall provide other contractors whose work is affected with the required information and drawings for co-ordination of their work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          180.49631754557288
+        ],
+        [
+          504.28125,
+          180.49631754557288
+        ],
+        [
+          504.28125,
+          141.10451253255212
+        ],
+        [
+          107.08193969726562,
+          141.10451253255212
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "2.6 The Contractor shall submit three (3) reproducible print drawings of all A1 size drawings. One (1) high quality reproducible drawing with the Supervision Consultant review stamp shall be returned  to the Contractor. Emua? Kisr ?ct",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          135.71405029296875
+        ],
+        [
+          504.28125,
+          135.71405029296875
+        ],
+        [
+          504.28125,
+          76.41904703776038
+        ],
+        [
+          107.08193969726562,
+          76.41904703776038
+        ]
+      ],
+      "page": 310
+    },
+    {
+      "text": "SECTION 01340 DRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          248.61273193359375,
+          718.7126973470052
+        ],
+        [
+          333.6972249348958,
+          718.7126973470052
+        ],
+        [
+          333.6972249348958,
+          694.2483215332031
+        ],
+        [
+          248.61273193359375,
+          694.2483215332031
+        ]
+      ],
+      "page": 310
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 310,
+      "text": "MISR\nCONTRAGT DRAWINGS\n1.1 The drawings issued with the Tender are issued solely to show the basic principles on which Tenders are to be prepared. The drawings are not to be taken as working drawings. Co-ordination, shop, or working drawings and, where specified, design drawings are to be prepared and submited by  the Contractor in accordance with CONTRACTDOCUMENTS.\n1.2 Dimensions should not be scaled from Drawings. The Contractor shall obtain from the Supervision Consultant any dimensions required bu not given in figures on the Drawings nor calculable from figures on the Drawings.\n2 CO-ORDINATIONDRAWINGS\n2.1 The Contractor shall be responsible for the preparation and timely provision of co-ordination drawings showing the co-ordination of the work of Sub-contractorsand allother contractors.Theco-ordination drawings shallbe in sufficient detailtoshow overalldimensions of structural members， architectural Ifeatures， including finishing, ductwork, piping, conduit, equipment, fixtures and show clearance between each work.\n2.2 Co-ordination drawings shall bear a signature block with the following certification:\nThe work represented on this drawing has been co-ordinated with all Sub-ccntractors and other affected contractors. Contractors'Representatives DateInitial\n2.3 The sianature block shall include spaces for the company names and signatures of Sub-contractors and contractors.\n2.4 Reproducible, original, co-ordination drawings shall be signed by each affected Sub-contractor and contractor indicating agreement that the work has been co-ordinated.The Contractor shall then distribute a copy of signed co-ordinationdrawings toeachof the affected Sub contractors and contractors.\n2.5 For the purposes of co-ordination each contractor shall provide other contractors whose work is affected with the required information and drawings for co-ordination of their work.\n2.6 The Contractor shall submit three (3) reproducible print drawings of all A1 size drawings. One (1) high quality reproducible drawing with the Supervision Consultant review stamp shall be returned  to the Contractor. Emua? Kisr ?ct\nSECTION 01340 DRAWINGS",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

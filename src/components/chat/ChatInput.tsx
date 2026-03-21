@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ContextPill } from '@/types';
+import { useChatContext } from '@/contexts/ChatContext';
+import { processUploadedContract, type UploadProgress } from '@/services/chatContractUploadService';
 
 interface ChatInputProps {
     onSend: (content: string) => void;
@@ -17,8 +19,12 @@ const ChatInput: React.FC<ChatInputProps> = ({
     contextPills,
     onRemovePill
 }) => {
+    const { uploadedContract, setUploadedContract, clearUploadedContract } = useChatContext();
     const [input, setInput] = useState('');
     const inputRef = useRef<HTMLTextAreaElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
+    const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
+    const [uploadError, setUploadError] = useState<string | null>(null);
 
     const handleSend = () => {
         if (input.trim() && !isProcessing) {
@@ -31,6 +37,28 @@ const ChatInput: React.FC<ChatInputProps> = ({
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             handleSend();
+        }
+    };
+
+    const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        e.target.value = '';
+        if (!file) return;
+        const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+        const isTxt = file.type === 'text/plain' || file.name.toLowerCase().endsWith('.txt');
+        if (!isPdf && !isTxt) {
+            setUploadError('Please upload a .pdf or .txt file.');
+            return;
+        }
+        setUploadError(null);
+        setUploadProgress({ phase: 'reading', message: 'Reading file…' });
+        try {
+            const result = await processUploadedContract(file, (p) => setUploadProgress(p));
+            setUploadedContract(result);
+            setUploadProgress(null);
+        } catch (err) {
+            setUploadError(err instanceof Error ? err.message : 'Upload failed.');
+            setUploadProgress(null);
         }
     };
 
@@ -70,7 +98,52 @@ const ChatInput: React.FC<ChatInputProps> = ({
                 )}
             </AnimatePresence>
 
+            {uploadProgress && (
+                <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-aaa-blue/10 border border-aaa-blue/20 text-[11px] font-semibold text-aaa-blue">
+                    <svg className="animate-spin w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    {uploadProgress.message}
+                </div>
+            )}
+            {uploadError && (
+                <div className="px-3 py-2 rounded-xl bg-red-50 border border-red-200 text-[11px] font-semibold text-red-700">
+                    {uploadError}
+                </div>
+            )}
+            {uploadedContract && !uploadProgress && (
+                <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200">
+                    <span className="text-[11px] font-semibold text-emerald-800 truncate">Contract loaded: {uploadedContract.name}</span>
+                    <button
+                        type="button"
+                        onClick={clearUploadedContract}
+                        className="text-[10px] font-bold text-emerald-600 hover:text-emerald-800 uppercase tracking-wider shrink-0"
+                    >
+                        Clear
+                    </button>
+                </div>
+            )}
+
             <div className="relative flex items-end gap-3 p-2 bg-black/[0.03] border border-black/[0.05] rounded-[2rem] focus-within:bg-white focus-within:shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-all">
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept=".pdf,.txt,application/pdf,text/plain"
+                    className="hidden"
+                    onChange={handleFileSelect}
+                />
+                <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={!!uploadProgress || isProcessing}
+                    className="w-11 h-11 rounded-full flex items-center justify-center bg-black/[0.05] text-black/40 hover:bg-black/10 hover:text-black/60 transition-all shrink-0 disabled:opacity-50 disabled:pointer-events-none"
+                    title="Upload contract (PDF or TXT)"
+                >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
+                    </svg>
+                </button>
                 <textarea
                     ref={inputRef}
                     value={input}
@@ -82,6 +155,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
                 />
 
                 <button
+                    type="button"
                     onClick={isProcessing ? onCancel : handleSend}
                     disabled={!input.trim() && !isProcessing}
                     className={`

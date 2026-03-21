@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## CONTROL FORMS\n\n## 4.0 Quality Control Forms Index\n\n|   4.22 | Airflow Test Report                                            |\n|--------|----------------------------------------------------------------|\n|   4.23 | Drainage Pipe Water Line Pipe Checklist                        |\n|   4.24 | Checklist Electrical Underground Conduits & (Electrical Ducts) |\n|   4.25 | Protected Membrane Roofing Roof Water Proofing Checklist       |\n|   4.26 | Metal Door / Frame Checklist                                   |\n|   4.27 | Pre Engineered Building Checklist                              |\n|   4.28 | Calibration of Unit Weight of Sand                             |\n|   4.29 | Sieve Analysis                                                 |\n|   4.3  | Determination of Modified Proctor                              |\n|   4.31 | Survey Works Checklist                                         |\n|   4.32 | Request for Alternatlve or Substitution                        |\n|   4.33 | Inspection and Test Plan                                       |\n|   4.34 | Field Memorandum                                               |\n|   4.35 | Handing Over Between Package Contractors                       |\n|   4.36 | Request For Coring                                             |\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "CONTROL FORMS",
+      "confidence": 0.95,
+      "box": [
+        [
+          243.21712239583334,
+          676.0036926269531
+        ],
+        [
+          332.45208740234375,
+          676.0036926269531
+        ],
+        [
+          332.45208740234375,
+          664.8081258138021
+        ],
+        [
+          243.21712239583334,
+          664.8081258138021
+        ]
+      ],
+      "page": 493
+    },
+    {
+      "text": "4.0 Quality Control Forms Index",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.03287760416666,
+          600.1226399739584
+        ],
+        [
+          361.5053304036458,
+          600.1226399739584
+        ],
+        [
+          361.5053304036458,
+          565.292012532552
+        ],
+        [
+          205.03287760416666,
+          565.292012532552
+        ]
+      ],
+      "page": 493
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 493,
+      "text": "CONTROL FORMS\n4.0 Quality Control Forms Index",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

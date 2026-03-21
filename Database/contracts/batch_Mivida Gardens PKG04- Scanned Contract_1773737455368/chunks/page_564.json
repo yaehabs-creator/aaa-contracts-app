@@ -1,0 +1,129 @@
+{
+  "text": "depending on the application. The Emaar brand mark should always be grey or white that is being communicated to. These have an order of preference dependent on the audience Emaar is made up of two main colours of grey and white.\n\npalette is usedmore dominantly. When communicating the corporate brand,the primary colour\n\n## PRIMARY COLOURS\n\n<!-- image -->\n\nWHITE\n\n<!-- image -->\n\n## Colour palette 2.0 Colour Usage\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "depending on the application. The Emaar brand mark should always be grey or white that is being communicated to. These have an order of preference dependent on the audience Emaar is made up of two main colours of grey and white.",
+      "confidence": 0.95,
+      "box": [
+        [
+          369.9691975911458,
+          772.1067403157552
+        ],
+        [
+          390.6875,
+          772.1067403157552
+        ],
+        [
+          390.6875,
+          573.5684204101562
+        ],
+        [
+          369.9691975911458,
+          573.5684204101562
+        ]
+      ],
+      "page": 564
+    },
+    {
+      "text": "palette is usedmore dominantly. When communicating the corporate brand,the primary colour",
+      "confidence": 0.95,
+      "box": [
+        [
+          438.0435384114583,
+          771.2582855224609
+        ],
+        [
+          456.647705078125,
+          771.2582855224609
+        ],
+        [
+          456.647705078125,
+          543.0240681966145
+        ],
+        [
+          438.0435384114583,
+          543.0240681966145
+        ]
+      ],
+      "page": 564
+    },
+    {
+      "text": "PRIMARY COLOURS",
+      "confidence": 0.95,
+      "box": [
+        [
+          457.4933675130208,
+          771.2582855224609
+        ],
+        [
+          466.3726399739583,
+          771.2582855224609
+        ],
+        [
+          466.3726399739583,
+          694.0489400227865
+        ],
+        [
+          457.4933675130208,
+          694.0489400227865
+        ]
+      ],
+      "page": 564
+    },
+    {
+      "text": "WHITE",
+      "confidence": 0.95,
+      "box": [
+        [
+          84.98721313476562,
+          267.27642822265625
+        ],
+        [
+          98.94033813476562,
+          267.27642822265625
+        ],
+        [
+          98.94033813476562,
+          224.00526936848962
+        ],
+        [
+          84.98721313476562,
+          224.00526936848962
+        ]
+      ],
+      "page": 564
+    },
+    {
+      "text": "Colour palette 2.0 Colour Usage",
+      "confidence": 0.95,
+      "box": [
+        [
+          505.2722574869792,
+          771.2582855224609
+        ],
+        [
+          545.8631591796875,
+          771.2582855224609
+        ],
+        [
+          545.8631591796875,
+          588.8405965169271
+        ],
+        [
+          505.2722574869792,
+          588.8405965169271
+        ]
+      ],
+      "page": 564
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 564,
+      "text": "depending on the application. The Emaar brand mark should always be grey or white that is being communicated to. These have an order of preference dependent on the audience Emaar is made up of two main colours of grey and white.\npalette is usedmore dominantly. When communicating the corporate brand,the primary colour\nPRIMARY COLOURS\nWHITE\nColour palette 2.0 Colour Usage",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

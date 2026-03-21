@@ -1,0 +1,428 @@
+{
+  "text": "<!-- image -->\n\n## PART 1- GENERAL\n\n## 1.01 DESCRIPTION\n\n1. Work included: To enable orderly review during progress of the Works, and to provide for systematic discussion of problems, Contract Administrator will conduct Project meetings throughout the construction period. To expedite resolution of items,meetingswill be segregated into:\n- a) Technical - regarding Requests for Information, coordination between trades, scheduling priorities and progress, quality control deficiencies, site safety and other technical conflicts.\n- b) Administrative - regarding payments, claims, reports, certificates, unit prices, photos, etc.\n\n## 2. Related work:\n\n- a) Documents affecting work of this Section include, but are not necessarily limited to, Conditions of Contract and Sections in Division 1 of the Technical Specifications.\n- b) The Contractor's relations with Subcontractors anid materials suppliers, and discussions relative thereto, are the Contractor's responsibility and normally are not part of project meetings content.\n\n## 1.02SUBMITTALS\n\n1. Agenda items: To the maximum extent practicable, advise Contract Administrator at least 24 hours in advance of Project meetings regarding proposed items to bc addcd to thc agcnda.\n2. Minutes:\n- a) Contract Administrator will record, reproduce and distribute copies of minutes within seven (7) days after each meeting and transmit to all attendees,affected parties not in attendance and the Employer.Action by the parties shall be identified.\n- b) Recipients of copies may make and distribute such other copies as they wish.\n\n## 1.03 QUALITYASSURANCE\n\n- 1 For those persons designated by the Contractor to attend and participate in Project meetings, provide required authority to commit the Contractor to solutions agreed upon in the Project meetings.\n\n## PART2-PRODUCTS\n\n<!-- image -->\n\n## SECTION01200\n\n## PROJECTMEETINGS\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "PART 1- GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          675.1743977864584
+        ],
+        [
+          181.3752237955729,
+          675.1743977864584
+        ],
+        [
+          181.3752237955729,
+          663.5641784667969
+        ],
+        [
+          77.1986083984375,
+          663.5641784667969
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "1.01 DESCRIPTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          651.9539591471354
+        ],
+        [
+          188.4310099283854,
+          651.9539591471354
+        ],
+        [
+          188.4310099283854,
+          640.34375
+        ],
+        [
+          78.02870178222656,
+          640.34375
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Work included: To enable orderly review during progress of the Works, and to provide for systematic discussion of problems, Contract Administrator will conduct Project meetings throughout the construction period. To expedite resolution of items,meetingswill be segregated into:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          634.9532877604166
+        ],
+        [
+          505.111328125,
+          634.9532877604166
+        ],
+        [
+          505.111328125,
+          587.6831258138021
+        ],
+        [
+          95.87569173177083,
+          587.6831258138021
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Technical - regarding Requests for Information, coordination between trades, scheduling priorities and progress, quality control deficiencies, site safety and other technical conflicts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          583.1219685872396
+        ],
+        [
+          505.5263671875,
+          583.1219685872396
+        ],
+        [
+          505.5263671875,
+          547.876688639323
+        ],
+        [
+          111.23241170247395,
+          547.876688639323
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Administrative - regarding payments, claims, reports, certificates, unit prices, photos, etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          544.5594889322917
+        ],
+        [
+          506.3564860026042,
+          544.5594889322917
+        ],
+        [
+          506.3564860026042,
+          519.680440266927
+        ],
+        [
+          109.98726399739583,
+          519.680440266927
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "2. Related work:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          509.7288411458333
+        ],
+        [
+          181.790283203125,
+          509.7288411458333
+        ],
+        [
+          181.790283203125,
+          497.28932698567706
+        ],
+        [
+          94.63055419921875,
+          497.28932698567706
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Documents affecting work of this Section include, but are not necessarily limited to, Conditions of Contract and Sections in Division 1 of the Technical Specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          492.3135172526042
+        ],
+        [
+          505.111328125,
+          492.3135172526042
+        ],
+        [
+          505.111328125,
+          456.65358479817706
+        ],
+        [
+          110.81736246744792,
+          456.65358479817706
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "The Contractor's relations with Subcontractors anid materials suppliers, and discussions relative thereto, are the Contractor's responsibility and normally are not part of project meetings content.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          452.92173258463544
+        ],
+        [
+          504.6962890625,
+          452.92173258463544
+        ],
+        [
+          504.6962890625,
+          416.84710693359375
+        ],
+        [
+          111.23241170247395,
+          416.84710693359375
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "1.02SUBMITTALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          406.48085530598956
+        ],
+        [
+          182.205322265625,
+          406.48085530598956
+        ],
+        [
+          182.205322265625,
+          395.28529866536456
+        ],
+        [
+          78.02870178222656,
+          395.28529866536456
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Agenda items: To the maximum extent practicable, advise Contract Administrator at least 24 hours in advance of Project meetings regarding proposed items to bc addcd to thc agcnda.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          389.89483642578125
+        ],
+        [
+          505.9414469401042,
+          389.89483642578125
+        ],
+        [
+          505.9414469401042,
+          354.23488362630206
+        ],
+        [
+          95.0456034342448,
+          354.23488362630206
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Minutes:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          350.08839925130206
+        ],
+        [
+          156.05740356445312,
+          350.08839925130206
+        ],
+        [
+          156.05740356445312,
+          337.64886474609375
+        ],
+        [
+          93.8004659016927,
+          337.64886474609375
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Contract Administrator will record, reproduce and distribute copies of minutes within seven (7) days after each meeting and transmit to all attendees,affected parties not in attendance and the Employer.Action by the parties shall be identified.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          333.08770751953125
+        ],
+        [
+          506.7715250651042,
+          333.08770751953125
+        ],
+        [
+          506.7715250651042,
+          286.2321980794271
+        ],
+        [
+          110.81736246744792,
+          286.2321980794271
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "Recipients of copies may make and distribute such other copies as they wish.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          282.9150187174479
+        ],
+        [
+          504.6962890625,
+          282.9150187174479
+        ],
+        [
+          504.6962890625,
+          258.0359903971354
+        ],
+        [
+          110.81736246744792,
+          258.0359903971354
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "1.03 QUALITYASSURANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          247.66969807942712
+        ],
+        [
+          232.4259236653646,
+          247.66969807942712
+        ],
+        [
+          232.4259236653646,
+          236.05950927734375
+        ],
+        [
+          78.02870178222656,
+          236.05950927734375
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "1 For those persons designated by the Contractor to attend and participate in Project meetings, provide required authority to commit the Contractor to solutions agreed upon in the Project meetings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          224.86391194661462
+        ],
+        [
+          505.5263671875,
+          224.86391194661462
+        ],
+        [
+          505.5263671875,
+          189.20399983723962
+        ],
+        [
+          96.70579020182292,
+          189.20399983723962
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "PART2-PRODUCTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          168.05682373046875
+        ],
+        [
+          192.16644287109375,
+          168.05682373046875
+        ],
+        [
+          192.16644287109375,
+          156.86122639973962
+        ],
+        [
+          78.02870178222656,
+          156.86122639973962
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "SECTION01200",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.85786946614584,
+          719.9566446940104
+        ],
+        [
+          333.6972249348958,
+          719.9566446940104
+        ],
+        [
+          333.6972249348958,
+          708.7610880533854
+        ],
+        [
+          249.85786946614584,
+          708.7610880533854
+        ]
+      ],
+      "page": 277
+    },
+    {
+      "text": "PROJECTMEETINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          233.67106119791666,
+          697.5655212402344
+        ],
+        [
+          348.2238362630208,
+          697.5655212402344
+        ],
+        [
+          348.2238362630208,
+          686.7846069335938
+        ],
+        [
+          233.67106119791666,
+          686.7846069335938
+        ]
+      ],
+      "page": 277
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 277,
+      "text": "PART 1- GENERAL\n1.01 DESCRIPTION\nWork included: To enable orderly review during progress of the Works, and to provide for systematic discussion of problems, Contract Administrator will conduct Project meetings throughout the construction period. To expedite resolution of items,meetingswill be segregated into:\nTechnical - regarding Requests for Information, coordination between trades, scheduling priorities and progress, quality control deficiencies, site safety and other technical conflicts.\nAdministrative - regarding payments, claims, reports, certificates, unit prices, photos, etc.\n2. Related work:\nDocuments affecting work of this Section include, but are not necessarily limited to, Conditions of Contract and Sections in Division 1 of the Technical Specifications.\nThe Contractor's relations with Subcontractors anid materials suppliers, and discussions relative thereto, are the Contractor's responsibility and normally are not part of project meetings content.\n1.02SUBMITTALS\nAgenda items: To the maximum extent practicable, advise Contract Administrator at least 24 hours in advance of Project meetings regarding proposed items to bc addcd to thc agcnda.\nMinutes:\nContract Administrator will record, reproduce and distribute copies of minutes within seven (7) days after each meeting and transmit to all attendees,affected parties not in attendance and the Employer.Action by the parties shall be identified.\nRecipients of copies may make and distribute such other copies as they wish.\n1.03 QUALITYASSURANCE\n1 For those persons designated by the Contractor to attend and participate in Project meetings, provide required authority to commit the Contractor to solutions agreed upon in the Project meetings.\nPART2-PRODUCTS\nSECTION01200\nPROJECTMEETINGS",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

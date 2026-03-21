@@ -1,0 +1,451 @@
+{
+  "text": "<!-- image -->\n\n## CONFIDENTIALITYUNDERTAKING\n\nThisConfidentialityUndertakingismadeby:\n\nMr. Wang Zhi CSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD 3rd floor,NoxMall,5thSettlement,NewCairo,Cairo,Egypt\n\nOf\n\nDated this day\n\n/ /2025\n\n## PREAMBLE:\n\n- (A) AttherequestofEmaar,theUndertakingPartywishestocarryouttheTransaction (asdefinedbelowinclause1).\n- (B) Inco-operating,EmaarmaydiscloseConfidential Information(asdefinedbelowin clause 1)for thepurposes of theTransaction to theUndertakingParty.\n- (C) TheUndertakingPartywillensurethatConfidential InformationdisclosedbyEmaar will remain confidential in accordance with the terms of this Undertaking.\n\n## NOWITISHEREBYAGREEDASFOLLOWS:\n\nTheabovepreambleformsanintegralpartofthisUndertaking.\n\n## 1. DEFINITIONS\n\n- 1.1 \"Confidential Information\"means any and all information concerning the proposed Transaction that is non-public andproprietary innature including information conveyed inany tangible form whatsoever andincluding inter alia,patents and patent applications, trade secrets,proprietary information,customer and guest lists, their names,addresses and anypersonnel informationrelating to customers or guests of Emaar,market data,financial data,pricing information,engineering files and anyother ideas, samples, techniques, illustrations, sketches, images, drawings， works of authorship，models, inventions, know-how，processes, apparatuses,equipment, algorithms,formulae,theexistenceoftheconceptoftheProjectitself（Theaward announcement) or any project, all designs, photographs,drawings,specifications, literature,cash flows,proformas,promotional material and any othermaterial bearing or incorporating any informationrelating to anyproject and intellectualpropertyrights therein，disclosed by Emaar to theUndertaking Party for the purposes of the in thepublic domainorwhichEmaar subsequentlymakespublic.\n- 1.2 \"Transaction\"means all negotiations and dealings between theParties concerning the Project.\n2. InconsiderationofEMAARdisclosing tome/ustheconceptof theprojectand the Confidcntial Information,l/wetheundersignedherebyundertakethatI/we:\n- 2.1 shall maintainconfidential theproject.\n- 2.2 shall maintain confidential all confidential information that I/we may acquire in any manner.\n- 2.3 shall notdirectlyorindirectlydiscloseanyof theconfidential informationinwholeorin writtenconsentofEMAARinaccordancewith thisAgreement,orwherethedisclosure ismadein the ordinary courseof business to a party appointed by EMAAR in respect of the project.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "CONFIDENTIALITYUNDERTAKING",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          697.0185343424479
+        ],
+        [
+          298.0894775390625,
+          697.0185343424479
+        ],
+        [
+          298.0894775390625,
+          686.412851969401
+        ],
+        [
+          96.82623291015625,
+          686.412851969401
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "ThisConfidentialityUndertakingismadeby:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          673.2618103027344
+        ],
+        [
+          282.445068359375,
+          673.2618103027344
+        ],
+        [
+          282.445068359375,
+          662.2319132486979
+        ],
+        [
+          96.82623291015625,
+          662.2319132486979
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "Mr. Wang Zhi CSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD 3rd floor,NoxMall,5thSettlement,NewCairo,Cairo,Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          651.626220703125
+        ],
+        [
+          458.7618408203125,
+          651.626220703125
+        ],
+        [
+          458.7618408203125,
+          618.1122843424479
+        ],
+        [
+          189.42423502604166,
+          618.1122843424479
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "Of",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          640.5963134765625
+        ],
+        [
+          110.77935791015625,
+          640.5963134765625
+        ],
+        [
+          110.77935791015625,
+          628.7179565429688
+        ],
+        [
+          95.55775960286458,
+          628.7179565429688
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "Dated this day",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          606.6581420898438
+        ],
+        [
+          161.94080607096353,
+          606.6581420898438
+        ],
+        [
+          161.94080607096353,
+          594.3555501302084
+        ],
+        [
+          96.40340169270833,
+          594.3555501302084
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "/ /2025",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.1827596028646,
+          606.6581420898438
+        ],
+        [
+          262.99525960286456,
+          606.6581420898438
+        ],
+        [
+          262.99525960286456,
+          596.0524698893229
+        ],
+        [
+          207.1827596028646,
+          596.0524698893229
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "PREAMBLE:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          583.7498779296875
+        ],
+        [
+          153.90719604492188,
+          583.7498779296875
+        ],
+        [
+          153.90719604492188,
+          573.5684204101562
+        ],
+        [
+          96.82623291015625,
+          573.5684204101562
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "(A) AttherequestofEmaar,theUndertakingPartywishestocarryouttheTransaction (asdefinedbelowinclause1).",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          559.5689290364583
+        ],
+        [
+          488.359375,
+          559.5689290364583
+        ],
+        [
+          488.359375,
+          537.933349609375
+        ],
+        [
+          95.98058064778645,
+          537.933349609375
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "(B) Inco-operating,EmaarmaydiscloseConfidential Information(asdefinedbelowin clause 1)for thepurposes of theTransaction to theUndertakingParty.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          534.539530436198
+        ],
+        [
+          488.359375,
+          534.539530436198
+        ],
+        [
+          488.359375,
+          513.3281656901042
+        ],
+        [
+          95.98058064778645,
+          513.3281656901042
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "(C) TheUndertakingPartywillensurethatConfidential InformationdisclosedbyEmaar will remain confidential in accordance with the terms of this Undertaking.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          510.35858154296875
+        ],
+        [
+          488.7821858723958,
+          510.35858154296875
+        ],
+        [
+          488.7821858723958,
+          487.87453206380206
+        ],
+        [
+          95.98058064778645,
+          487.87453206380206
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "NOWITISHEREBYAGREEDASFOLLOWS:",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          476.84462483723956
+        ],
+        [
+          299.3579508463542,
+          476.84462483723956
+        ],
+        [
+          299.3579508463542,
+          467.51165771484375
+        ],
+        [
+          97.24905395507812,
+          467.51165771484375
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "TheabovepreambleformsanintegralpartofthisUndertaking.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          455.63328043619794
+        ],
+        [
+          361.0899658203125,
+          455.63328043619794
+        ],
+        [
+          361.0899658203125,
+          444.60337320963544
+        ],
+        [
+          97.671875,
+          444.60337320963544
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "1. DEFINITIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          433.14923095703125
+        ],
+        [
+          168.70596313476562,
+          433.14923095703125
+        ],
+        [
+          168.70596313476562,
+          422.11932373046875
+        ],
+        [
+          97.24905395507812,
+          422.11932373046875
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "1.1 \"Confidential Information\"means any and all information concerning the proposed Transaction that is non-public andproprietary innature including information conveyed inany tangible form whatsoever andincluding inter alia,patents and patent applications, trade secrets,proprietary information,customer and guest lists, their names,addresses and anypersonnel informationrelating to customers or guests of Emaar,market data,financial data,pricing information,engineering files and anyother ideas, samples, techniques, illustrations, sketches, images, drawings， works of authorship，models, inventions, know-how，processes, apparatuses,equipment, algorithms,formulae,theexistenceoftheconceptoftheProjectitself（Theaward announcement) or any project, all designs, photographs,drawings,specifications, literature,cash flows,proformas,promotional material and any othermaterial bearing or incorporating any informationrelating to anyproject and intellectualpropertyrights therein，disclosed by Emaar to theUndertaking Party for the purposes of the in thepublic domainorwhichEmaar subsequentlymakespublic.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          419.99818929036456
+        ],
+        [
+          490.4734700520833,
+          419.99818929036456
+        ],
+        [
+          490.4734700520833,
+          255.39805094401038
+        ],
+        [
+          97.24905395507812,
+          255.39805094401038
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "1.2 \"Transaction\"means all negotiations and dealings between theParties concerning the Project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          252.85268147786462
+        ],
+        [
+          489.6278483072917,
+          252.85268147786462
+        ],
+        [
+          489.6278483072917,
+          229.52020263671875
+        ],
+        [
+          98.51751708984375,
+          229.52020263671875
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "InconsiderationofEMAARdisclosing tome/ustheconceptof theprojectand the Confidcntial Information,l/wetheundersignedherebyundertakethatI/we:",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          224.00526936848962
+        ],
+        [
+          489.6278483072917,
+          224.00526936848962
+        ],
+        [
+          489.6278483072917,
+          202.36964925130212
+        ],
+        [
+          98.09469604492188,
+          202.36964925130212
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "2.1 shall maintainconfidential theproject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          198.97585042317712
+        ],
+        [
+          281.59942626953125,
+          198.97585042317712
+        ],
+        [
+          281.59942626953125,
+          188.37017822265625
+        ],
+        [
+          97.24905395507812,
+          188.37017822265625
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "2.2 shall maintain confidential all confidential information that I/we may acquire in any manner.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          186.67327880859375
+        ],
+        [
+          489.6278483072917,
+          186.67327880859375
+        ],
+        [
+          489.6278483072917,
+          163.76499430338538
+        ],
+        [
+          97.24905395507812,
+          163.76499430338538
+        ]
+      ],
+      "page": 573
+    },
+    {
+      "text": "2.3 shall notdirectlyorindirectlydiscloseanyof theconfidential informationinwholeorin writtenconsentofEMAARinaccordancewith thisAgreement,orwherethedisclosure ismadein the ordinary courseof business to a party appointed by EMAAR in respect of the project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          160.79538981119788
+        ],
+        [
+          491.3191324869792,
+          160.79538981119788
+        ],
+        [
+          491.3191324869792,
+          105.64589436848962
+        ],
+        [
+          97.671875,
+          105.64589436848962
+        ]
+      ],
+      "page": 573
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 573,
+      "text": "CONFIDENTIALITYUNDERTAKING\nThisConfidentialityUndertakingismadeby:\nMr. Wang Zhi CSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD 3rd floor,NoxMall,5thSettlement,NewCairo,Cairo,Egypt\nOf\nDated this day\n/ /2025\nPREAMBLE:\n(A) AttherequestofEmaar,theUndertakingPartywishestocarryouttheTransaction (asdefinedbelowinclause1).\n(B) Inco-operating,EmaarmaydiscloseConfidential Information(asdefinedbelowin clause 1)for thepurposes of theTransaction to theUndertakingParty.\n(C) TheUndertakingPartywillensurethatConfidential InformationdisclosedbyEmaar will remain confidential in accordance with the terms of this Undertaking.\nNOWITISHEREBYAGREEDASFOLLOWS:\nTheabovepreambleformsanintegralpartofthisUndertaking.\n1. DEFINITIONS\n1.1 \"Confidential Information\"means any and all information concerning the proposed Transaction that is non-public andproprietary innature including information conveyed inany tangible form whatsoever andincluding inter alia,patents and patent applications, trade secrets,proprietary information,customer and guest lists, their names,addresses and anypersonnel informationrelating to customers or guests of Emaar,market data,financial data,pricing information,engineering files and anyother ideas, samples, techniques, illustrations, sketches, images, drawings， works of authorship，models, inventions, know-how，processes, apparatuses,equipment, algorithms,formulae,theexistenceoftheconceptoftheProjectitself（Theaward announcement) or any project, all designs, photographs,drawings,specifications, literature,cash flows,proformas,promotional material and any othermaterial bearing or incorporating any informationrelating to anyproject and intellectualpropertyrights therein，disclosed by Emaar to theUndertaking Party for the purposes of the in thepublic domainorwhichEmaar subsequentlymakespublic.\n1.2 \"Transaction\"means all negotiations and dealings between theParties concerning the Project.\nInconsiderationofEMAARdisclosing tome/ustheconceptof theprojectand the Confidcntial Information,l/wetheundersignedherebyundertakethatI/we:\n2.1 shall maintainconfidential theproject.\n2.2 shall maintain confidential all confidential information that I/we may acquire in any manner.\n2.3 shall notdirectlyorindirectlydiscloseanyof theconfidential informationinwholeorin writtenconsentofEMAARinaccordancewith thisAgreement,orwherethedisclosure ismadein the ordinary courseof business to a party appointed by EMAAR in respect of the project.",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

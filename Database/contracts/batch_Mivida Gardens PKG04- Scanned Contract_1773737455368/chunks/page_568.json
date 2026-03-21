@@ -1,0 +1,727 @@
+{
+  "text": "Finish - Painted while with two part system.\n\ndnd paraflex panel to accoimmodate signage design.\n\nMaterial-Galvanized metal box with interna! lighting\n\nDimensions-Secondaly350mM(H!x3075MM(w)\n\n3750MM(H)X3075MM(W）\n\nDimensions-Primarv SectionA'&amp;‘B’Combined\n\n·Dimensions-PrinarvSectionA3075mm(H)x3075Mm(w)\n\nwith four16mManchorbolis.300mmlong on each support\n\nAliaching primary and secondary supports to foundation\n\nFinish - Painted white with two part systen.\n\nMaterial-Galvanized steel.\n\nDimensiuns-300x1mx300nM\n\nFinish -Painted white with two part system.\n\nMaterial -Galvanized tubular steel.\n\nDimensions-75mm in diameter.\n\nTertiarySupportingFramework\n\nFinish-Painted white with two part system\n\nMaterial -Galvamized tubular steel.\n\nDimensions-I50mm in ianeter.\n\nSecondary SupportingFramework\n\nFinish-Paintedwhite with two pait system.\n\nMatetial-Galvanized tubular steel.\n\nDimensions-200mm in diametet.\n\nPrimary SupportingFramework\n\nMandatory Plot Sign - 1 of 2\n\nEMAAR\n\nMISR\n\n<!-- image -->\n\nLightboxes\n\nAnchor Bolts\n\nBase Plate\n\nCOMPONENTS",
+  "results": [
+    {
+      "text": "Finish - Painted while with two part system.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.2225341796875,
+          783.1366424560547
+        ],
+        [
+          150.10179646809897,
+          783.1366424560547
+        ],
+        [
+          150.10179646809897,
+          660.959228515625
+        ],
+        [
+          141.2225341796875,
+          660.959228515625
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "dnd paraflex panel to accoimmodate signage design.",
+      "confidence": 0.95,
+      "box": [
+        [
+          149.6789754231771,
+          782.2881927490234
+        ],
+        [
+          157.28976440429688,
+          782.2881927490234
+        ],
+        [
+          157.28976440429688,
+          641.0205485026041
+        ],
+        [
+          149.6789754231771,
+          641.0205485026041
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Material-Galvanized metal box with interna! lighting",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          782.2881927490234
+        ],
+        [
+          165.74620564778647,
+          782.2881927490234
+        ],
+        [
+          165.74620564778647,
+          638.0509643554688
+        ],
+        [
+          158.13541666666666,
+          638.0509643554688
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Dimensions-Secondaly350mM(H!x3075MM(w)",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          782.7124176025391
+        ],
+        [
+          175.47111002604166,
+          782.7124176025391
+        ],
+        [
+          175.47111002604166,
+          647.3839518229166
+        ],
+        [
+          165.74620564778647,
+          647.3839518229166
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "3750MM(H)X3075MM(W）",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          782.2881927490234
+        ],
+        [
+          183.50472005208334,
+          782.2881927490234
+        ],
+        [
+          183.50472005208334,
+          709.745351155599
+        ],
+        [
+          175.04829915364584,
+          709.745351155599
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Dimensions-Primarv SectionA'&‘B’Combined",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.6590779622396,
+          783.1366424560547
+        ],
+        [
+          191.11551920572916,
+          783.1366424560547
+        ],
+        [
+          191.11551920572916,
+          647.8081868489584
+        ],
+        [
+          182.6590779622396,
+          647.8081868489584
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "·Dimensions-PrinarvSectionA3075mm(H)x3075Mm(w)",
+      "confidence": 0.95,
+      "box": [
+        [
+          198.726318359375,
+          789.5000508626302
+        ],
+        [
+          207.6055908203125,
+          789.5000508626302
+        ],
+        [
+          207.6055908203125,
+          624.4756876627604
+        ],
+        [
+          198.726318359375,
+          624.4756876627604
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "with four16mManchorbolis.300mmlong on each support",
+      "confidence": 0.95,
+      "box": [
+        [
+          218.59895833333334,
+          782.7124176025391
+        ],
+        [
+          225.36409505208334,
+          782.7124176025391
+        ],
+        [
+          225.36409505208334,
+          622.7787882486979
+        ],
+        [
+          218.59895833333334,
+          622.7787882486979
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Aliaching primary and secondary supports to foundation",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.20975748697916,
+          783.1366424560547
+        ],
+        [
+          234.66617838541666,
+          783.1366424560547
+        ],
+        [
+          234.66617838541666,
+          627.8695068359375
+        ],
+        [
+          226.20975748697916,
+          627.8695068359375
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Finish - Painted white with two part systen.",
+      "confidence": 0.95,
+      "box": [
+        [
+          245.6595662434896,
+          783.985097249349
+        ],
+        [
+          254.538818359375,
+          783.985097249349
+        ],
+        [
+          254.538818359375,
+          662.2319132486979
+        ],
+        [
+          245.6595662434896,
+          662.2319132486979
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Material-Galvanized steel.",
+      "confidence": 0.95,
+      "box": [
+        [
+          254.9616495768229,
+          783.5608723958334
+        ],
+        [
+          262.1496175130208,
+          783.5608723958334
+        ],
+        [
+          262.1496175130208,
+          702.9577128092448
+        ],
+        [
+          254.9616495768229,
+          702.9577128092448
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Dimensiuns-300x1mx300nM",
+      "confidence": 0.95,
+      "box": [
+        [
+          262.99525960286456,
+          783.5608723958334
+        ],
+        [
+          271.4517008463542,
+          783.5608723958334
+        ],
+        [
+          271.4517008463542,
+          697.8669840494791
+        ],
+        [
+          262.99525960286456,
+          697.8669840494791
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Finish -Painted white with two part system.",
+      "confidence": 0.95,
+      "box": [
+        [
+          281.59942626953125,
+          784.4093271891276
+        ],
+        [
+          289.63303629557294,
+          784.4093271891276
+        ],
+        [
+          289.63303629557294,
+          662.6561279296875
+        ],
+        [
+          281.59942626953125,
+          662.6561279296875
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Material -Galvanized tubular steel.",
+      "confidence": 0.95,
+      "box": [
+        [
+          290.0558675130208,
+          786.1062367757162
+        ],
+        [
+          298.51230875651044,
+          786.1062367757162
+        ],
+        [
+          298.51230875651044,
+          684.7159423828125
+        ],
+        [
+          290.0558675130208,
+          684.7159423828125
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Dimensions-75mm in diameter.",
+      "confidence": 0.95,
+      "box": [
+        [
+          298.51230875651044,
+          786.1062367757162
+        ],
+        [
+          305.7002766927083,
+          786.1062367757162
+        ],
+        [
+          305.7002766927083,
+          693.2004903157552
+        ],
+        [
+          298.51230875651044,
+          693.2004903157552
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "TertiarySupportingFramework",
+      "confidence": 0.95,
+      "box": [
+        [
+          306.54591878255206,
+          787.8031412760416
+        ],
+        [
+          315.0023600260417,
+          787.8031412760416
+        ],
+        [
+          315.0023600260417,
+          702.1092529296875
+        ],
+        [
+          306.54591878255206,
+          702.1092529296875
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Finish-Painted white with two part system",
+      "confidence": 0.95,
+      "box": [
+        [
+          317.53928629557294,
+          786.5304616292318
+        ],
+        [
+          325.15008544921875,
+          786.5304616292318
+        ],
+        [
+          325.15008544921875,
+          662.2319132486979
+        ],
+        [
+          317.53928629557294,
+          662.2319132486979
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Material -Galvamized tubular steel.",
+      "confidence": 0.95,
+      "box": [
+        [
+          325.5729166666667,
+          786.9546915690104
+        ],
+        [
+          333.6065266927083,
+          786.9546915690104
+        ],
+        [
+          333.6065266927083,
+          684.7159423828125
+        ],
+        [
+          325.5729166666667,
+          684.7159423828125
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Dimensions-I50mm in ianeter.",
+      "confidence": 0.95,
+      "box": [
+        [
+          334.0293375651042,
+          786.5304616292318
+        ],
+        [
+          342.4857991536458,
+          786.5304616292318
+        ],
+        [
+          342.4857991536458,
+          689.3824462890625
+        ],
+        [
+          334.0293375651042,
+          689.3824462890625
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Secondary SupportingFramework",
+      "confidence": 0.95,
+      "box": [
+        [
+          341.64013671875,
+          789.0758260091146
+        ],
+        [
+          351.3650309244792,
+          789.0758260091146
+        ],
+        [
+          351.3650309244792,
+          695.3216247558594
+        ],
+        [
+          341.64013671875,
+          695.3216247558594
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Finish-Paintedwhite with two pait system.",
+      "confidence": 0.95,
+      "box": [
+        [
+          353.4791666666667,
+          786.9546915690104
+        ],
+        [
+          361.0899658203125,
+          786.9546915690104
+        ],
+        [
+          361.0899658203125,
+          661.8076782226562
+        ],
+        [
+          353.4791666666667,
+          661.8076782226562
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Matetial-Galvanized tubular steel.",
+      "confidence": 0.95,
+      "box": [
+        [
+          361.5127766927083,
+          786.5304616292318
+        ],
+        [
+          369.9691975911458,
+          786.5304616292318
+        ],
+        [
+          369.9691975911458,
+          684.7159423828125
+        ],
+        [
+          361.5127766927083,
+          684.7159423828125
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Dimensions-200mm in diametet.",
+      "confidence": 0.95,
+      "box": [
+        [
+          369.54638671875,
+          788.2273712158203
+        ],
+        [
+          378.0028483072917,
+          788.2273712158203
+        ],
+        [
+          378.0028483072917,
+          690.2308959960938
+        ],
+        [
+          369.54638671875,
+          690.2308959960938
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Primary SupportingFramework",
+      "confidence": 0.95,
+      "box": [
+        [
+          378.0028483072917,
+          788.2273712158203
+        ],
+        [
+          386.4592692057292,
+          788.2273712158203
+        ],
+        [
+          386.4592692057292,
+          702.5334879557291
+        ],
+        [
+          378.0028483072917,
+          702.5334879557291
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Mandatory Plot Sign - 1 of 2",
+      "confidence": 0.95,
+      "box": [
+        [
+          412.6742350260417,
+          784.4093271891276
+        ],
+        [
+          429.164306640625,
+          784.4093271891276
+        ],
+        [
+          429.164306640625,
+          626.5968221028646
+        ],
+        [
+          412.6742350260417,
+          626.5968221028646
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          499.3527425130208,
+          751.7438354492188
+        ],
+        [
+          523.03076171875,
+          751.7438354492188
+        ],
+        [
+          523.03076171875,
+          664.7772623697916
+        ],
+        [
+          499.3527425130208,
+          664.7772623697916
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          484.553955078125,
+          720.7752482096354
+        ],
+        [
+          495.12451171875,
+          720.7752482096354
+        ],
+        [
+          495.12451171875,
+          694.0489400227865
+        ],
+        [
+          484.553955078125,
+          694.0489400227865
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Lightboxes",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.1827596028646,
+          789.0758260091146
+        ],
+        [
+          216.4848429361979,
+          789.0758260091146
+        ],
+        [
+          216.4848429361979,
+          756.8345591227213
+        ],
+        [
+          207.1827596028646,
+          756.8345591227213
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Anchor Bolts",
+      "confidence": 0.95,
+      "box": [
+        [
+          235.5118408203125,
+          789.0758260091146
+        ],
+        [
+          243.96826171875,
+          789.0758260091146
+        ],
+        [
+          243.96826171875,
+          750.0469258626302
+        ],
+        [
+          235.5118408203125,
+          750.0469258626302
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "Base Plate",
+      "confidence": 0.95,
+      "box": [
+        [
+          271.4517008463542,
+          789.0758260091146
+        ],
+        [
+          279.90814208984375,
+          789.0758260091146
+        ],
+        [
+          279.90814208984375,
+          755.1376546223959
+        ],
+        [
+          271.4517008463542,
+          755.1376546223959
+        ]
+      ],
+      "page": 568
+    },
+    {
+      "text": "COMPONENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          389.4190266927083,
+          788.6515960693359
+        ],
+        [
+          399.5667317708333,
+          788.6515960693359
+        ],
+        [
+          399.5667317708333,
+          734.3505249023438
+        ],
+        [
+          389.4190266927083,
+          734.3505249023438
+        ]
+      ],
+      "page": 568
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 568,
+      "text": "Finish - Painted while with two part system.\ndnd paraflex panel to accoimmodate signage design.\nMaterial-Galvanized metal box with interna! lighting\nDimensions-Secondaly350mM(H!x3075MM(w)\n3750MM(H)X3075MM(W）\nDimensions-Primarv SectionA'&‘B’Combined\n·Dimensions-PrinarvSectionA3075mm(H)x3075Mm(w)\nwith four16mManchorbolis.300mmlong on each support\nAliaching primary and secondary supports to foundation\nFinish - Painted white with two part systen.\nMaterial-Galvanized steel.\nDimensiuns-300x1mx300nM\nFinish -Painted white with two part system.\nMaterial -Galvanized tubular steel.\nDimensions-75mm in diameter.\nTertiarySupportingFramework\nFinish-Painted white with two part system\nMaterial -Galvamized tubular steel.\nDimensions-I50mm in ianeter.\nSecondary SupportingFramework\nFinish-Paintedwhite with two pait system.\nMatetial-Galvanized tubular steel.\nDimensions-200mm in diametet.\nPrimary SupportingFramework\nMandatory Plot Sign - 1 of 2\nEMAAR\nMISR\nLightboxes\nAnchor Bolts\nBase Plate\nCOMPONENTS",
+      "line_count": 31
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

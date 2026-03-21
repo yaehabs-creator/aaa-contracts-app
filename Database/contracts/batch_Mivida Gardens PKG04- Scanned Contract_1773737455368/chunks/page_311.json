@@ -1,0 +1,313 @@
+{
+  "text": "3\n\n- 2.7 The Contractor shall submit three (3) copies of all A3 and smaller size drawings.One copy with the Supervision Consultants review stamp shall be returned to the Contractor.\n\n## SHOL DRAWINGS, CATALOGUES LTC.\n\n- 3.1 The Contractor shall be responsible for the preparation and timely provision of shop drawings which shall indicate proposed materials and methods of construction, fabrication, erection, layout and setting out, diagrams on various systems, equipment control, and other descriptive data, catalogues and brochures required to show that materials, equipment and system and position thereof shall conform to the Drawings and Specification. Shop drawings shall establish actual detail of all assembled, manufactured or fabricated items, co-ordinate and indicate proper relation to adjoining work, amplify design details of mechanical and electrical equipment in proper relation to physical construction to suit actual conditions.\n- 3.2 Shop drawings shall be taken to mean the same as detail drawings, fabrication drawings, working drawings, erection drawings, assembly drawings, or any drawing required to supplement the Supervision Consultant's design drawings and/or the Contractor's co-ordination drawings.\n- 3.3 The Contractor shall submit shop drawings following the distribution of the signed co-ordination drawings.\n- 3.4 All shop drawings shall bear thefollowing certification:\n\nThis drawing has been  checked  for  completeness, accuracy, co-ordination, and compliance with the Contract Documents.\n\nAll dimensions and field conditions have been verified.\n\n## Contractor's Representative Date\n\n- 3.5 The Contractor shall be responsible for the provision of all catalogues, brochures, and technical data or any other descriptive data required by the specification or the Supervision Consultant.\n- 3.6 The Contractor shall submit shop drawings, co-ordination drawings, catalogues, brochures and technical data at his own cost and in such sequence so as to cause no delay in the Works or in the work of other contractors or Sub-contractors.No extensions of time shall be granted because of the Contractor's failure to have shop drawings, coordination drawing, catalogues, brochures and technical data submitted in ample time to allow for processing and review. Sub-contractors shall submit shop drawings, co-ordination drawings, catalogues, brochures, and technical data through the Contractor.\n\nEmaarMisrIorDevelloprnent\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "3",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          664.3934834798177
+        ],
+        [
+          84.66944376627605,
+          664.3934834798177
+        ],
+        [
+          84.66944376627605,
+          655.2711690266927
+        ],
+        [
+          78.02870178222656,
+          655.2711690266927
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "2.7 The Contractor shall submit three (3) copies of all A3 and smaller size drawings.One copy with the Supervision Consultants review stamp shall be returned to the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          718.2980448404948
+        ],
+        [
+          505.111328125,
+          718.2980448404948
+        ],
+        [
+          505.111328125,
+          679.7355448404948
+        ],
+        [
+          109.98726399739583,
+          679.7355448404948
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "SHOL DRAWINGS, CATALOGUES LTC.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          665.2227783203125
+        ],
+        [
+          324.5662027994792,
+          665.2227783203125
+        ],
+        [
+          324.5662027994792,
+          654.4418640136719
+        ],
+        [
+          111.23241170247395,
+          654.4418640136719
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "3.1 The Contractor shall be responsible for the preparation and timely provision of shop drawings which shall indicate proposed materials and methods of construction, fabrication, erection, layout and setting out, diagrams on various systems, equipment control, and other descriptive data, catalogues and brochures required to show that materials, equipment and system and position thereof shall conform to the Drawings and Specification. Shop drawings shall establish actual detail of all assembled, manufactured or fabricated items, co-ordinate and indicate proper relation to adjoining work, amplify design details of mechanical and electrical equipment in proper relation to physical construction to suit actual conditions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          646.9781494140625
+        ],
+        [
+          506.7715250651042,
+          646.9781494140625
+        ],
+        [
+          506.7715250651042,
+          490.24025472005206
+        ],
+        [
+          110.81736246744792,
+          490.24025472005206
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "3.2 Shop drawings shall be taken to mean the same as detail drawings, fabrication drawings, working drawings, erection drawings, assembly drawings, or any drawing required to supplement the Supervision Consultant's design drawings and/or the Contractor's co-ordination drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          484.43516031901044
+        ],
+        [
+          505.5263671875,
+          484.43516031901044
+        ],
+        [
+          505.5263671875,
+          418.09108479817706
+        ],
+        [
+          111.23241170247395,
+          418.09108479817706
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "3.3 The Contractor shall submit shop drawings following the distribution of the signed co-ordination drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          413.11525472005206
+        ],
+        [
+          506.7715250651042,
+          413.11525472005206
+        ],
+        [
+          506.7715250651042,
+          386.99228922526044
+        ],
+        [
+          110.40231323242188,
+          386.99228922526044
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "3.4 All shop drawings shall bear thefollowing certification:",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          380.77252197265625
+        ],
+        [
+          417.1215413411458,
+          380.77252197265625
+        ],
+        [
+          417.1215413411458,
+          368.74766031901044
+        ],
+        [
+          111.23241170247395,
+          368.74766031901044
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "This drawing has been  checked  for  completeness, accuracy, co-ordination, and compliance with the Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.63981119791666,
+          355.47886149088544
+        ],
+        [
+          506.7715250651042,
+          355.47886149088544
+        ],
+        [
+          506.7715250651042,
+          317.74562581380206
+        ],
+        [
+          177.63981119791666,
+          317.74562581380206
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "All dimensions and field conditions have been verified.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.05485026041666,
+          315.25775146484375
+        ],
+        [
+          475.64306640625,
+          315.25775146484375
+        ],
+        [
+          475.64306640625,
+          304.8914591471354
+        ],
+        [
+          178.05485026041666,
+          304.8914591471354
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "Contractor's Representative Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.88494873046875,
+          289.96405029296875
+        ],
+        [
+          410.8958333333333,
+          289.96405029296875
+        ],
+        [
+          410.8958333333333,
+          277.1098836263021
+        ],
+        [
+          178.88494873046875,
+          277.1098836263021
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "3.5 The Contractor shall be responsible for the provision of all catalogues, brochures, and technical data or any other descriptive data required by the specification or the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          271.3047892252604
+        ],
+        [
+          504.6962890625,
+          271.3047892252604
+        ],
+        [
+          504.6962890625,
+          232.74228922526038
+        ],
+        [
+          110.81736246744792,
+          232.74228922526038
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "3.6 The Contractor shall submit shop drawings, co-ordination drawings, catalogues, brochures and technical data at his own cost and in such sequence so as to cause no delay in the Works or in the work of other contractors or Sub-contractors.No extensions of time shall be granted because of the Contractor's failure to have shop drawings, coordination drawing, catalogues, brochures and technical data submitted in ample time to allow for processing and review. Sub-contractors shall submit shop drawings, co-ordination drawings, catalogues, brochures, and technical data through the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          226.93719482421875
+        ],
+        [
+          507.1865641276042,
+          226.93719482421875
+        ],
+        [
+          507.1865641276042,
+          108.76182047526038
+        ],
+        [
+          111.64745076497395,
+          108.76182047526038
+        ]
+      ],
+      "page": 311
+    },
+    {
+      "text": "EmaarMisrIorDevelloprnent",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          56.51580810546875
+        ],
+        [
+          165.18842569986978,
+          56.51580810546875
+        ],
+        [
+          165.18842569986978,
+          46.97886149088538
+        ],
+        [
+          78.85879516601562,
+          46.97886149088538
+        ]
+      ],
+      "page": 311
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 311,
+      "text": "3\n2.7 The Contractor shall submit three (3) copies of all A3 and smaller size drawings.One copy with the Supervision Consultants review stamp shall be returned to the Contractor.\nSHOL DRAWINGS, CATALOGUES LTC.\n3.1 The Contractor shall be responsible for the preparation and timely provision of shop drawings which shall indicate proposed materials and methods of construction, fabrication, erection, layout and setting out, diagrams on various systems, equipment control, and other descriptive data, catalogues and brochures required to show that materials, equipment and system and position thereof shall conform to the Drawings and Specification. Shop drawings shall establish actual detail of all assembled, manufactured or fabricated items, co-ordinate and indicate proper relation to adjoining work, amplify design details of mechanical and electrical equipment in proper relation to physical construction to suit actual conditions.\n3.2 Shop drawings shall be taken to mean the same as detail drawings, fabrication drawings, working drawings, erection drawings, assembly drawings, or any drawing required to supplement the Supervision Consultant's design drawings and/or the Contractor's co-ordination drawings.\n3.3 The Contractor shall submit shop drawings following the distribution of the signed co-ordination drawings.\n3.4 All shop drawings shall bear thefollowing certification:\nThis drawing has been  checked  for  completeness, accuracy, co-ordination, and compliance with the Contract Documents.\nAll dimensions and field conditions have been verified.\nContractor's Representative Date\n3.5 The Contractor shall be responsible for the provision of all catalogues, brochures, and technical data or any other descriptive data required by the specification or the Supervision Consultant.\n3.6 The Contractor shall submit shop drawings, co-ordination drawings, catalogues, brochures and technical data at his own cost and in such sequence so as to cause no delay in the Works or in the work of other contractors or Sub-contractors.No extensions of time shall be granted because of the Contractor's failure to have shop drawings, coordination drawing, catalogues, brochures and technical data submitted in ample time to allow for processing and review. Sub-contractors shall submit shop drawings, co-ordination drawings, catalogues, brochures, and technical data through the Contractor.\nEmaarMisrIorDevelloprnent",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

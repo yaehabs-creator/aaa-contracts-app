@@ -1,50 +1,27 @@
-import type { SupabaseClient } from '@supabase/supabase-js';
-import { IContractRepository } from '../../../domain/contracts/repositories/IContractRepository';
-import { IUserRepository } from '../../../domain/users/repositories/IUserRepository';
-import { SupabaseContractRepository } from '../../../infrastructure/contracts/repositories/SupabaseContractRepository';
-import { SupabaseUserRepository } from '../../../infrastructure/users/repositories/SupabaseUserRepository';
 
 /**
- * Service container for dependency injection
- * Provides centralized access to repositories and services
+ * Service container for dependency injection (Mock)
+ * Supabase has been removed.
  */
 export class ServiceContainer {
-  private contractRepository: IContractRepository | null = null;
-  private userRepository: IUserRepository | null = null;
+  private contractRepository: any = null;
+  private userRepository: any = null;
 
-  constructor(private readonly supabase: SupabaseClient) {}
+  constructor(private readonly supabase: any) {}
 
-  /**
-   * Get contract repository
-   */
-  getContractRepository(): IContractRepository {
-    if (!this.contractRepository) {
-      this.contractRepository = new SupabaseContractRepository(this.supabase);
-    }
+  getContractRepository(): any {
     return this.contractRepository;
   }
 
-  /**
-   * Get user repository
-   */
-  getUserRepository(): IUserRepository {
-    if (!this.userRepository) {
-      this.userRepository = new SupabaseUserRepository(this.supabase);
-    }
+  getUserRepository(): any {
     return this.userRepository;
   }
 
-  /**
-   * Set contract repository (for testing)
-   */
-  setContractRepository(repository: IContractRepository): void {
+  setContractRepository(repository: any): void {
     this.contractRepository = repository;
   }
 
-  /**
-   * Set user repository (for testing)
-   */
-  setUserRepository(repository: IUserRepository): void {
+  setUserRepository(repository: any): void {
     this.userRepository = repository;
   }
 }

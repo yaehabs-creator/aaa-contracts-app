@@ -1,0 +1,520 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- *Recognizing each individual's ability to effect positive change in the workplace, community and the environment.\n- ·Rewarding behaviors that enhance the safety and well-being of the workplace, community and environment.\n- oAccepting that everyone is empowered to stop work if it is unsafe.\n- HSE Leadership Tours are to berecorded and copies of the reports are to beissued to EMAARMisr, any findings are to be followed up by the visiting Project Director(s).\n\n## 2.4.2.4.1.4. Measurement\n\n- &gt; Measurement is a key part of the plan-do-check-act management process which has essential principles related to:\n- eStrong and active leadership from the top.\n- ·Visible,active commitment.\n- Establishingeffective downwardcommunicationsystems and managementstructures.\n- Integration of good health and safety management with business decisions.\n- Workerinvolvement:\n- ●Engaging the workforce in thc promotion and achievement of safe and healthy conditions\n- 0Effective upward communication\n- cProviding high quality training.\n- &gt;Assessment and review:\n- Identifying and managinghealth and safetyrisks.\n- ?Accessing andfollowingcompetent advice.\n- ·Monitoring,reporting and reviewing performance.\n\n<!-- image -->\n\norrectistributedwithout\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          731.1522115071615
+        ],
+        [
+          340.7530110677083,
+          731.1522115071615
+        ],
+        [
+          340.7530110677083,
+          700.8827209472656
+        ],
+        [
+          191.33634440104166,
+          700.8827209472656
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          701.7120259602865
+        ],
+        [
+          217.4842529296875,
+          701.7120259602865
+        ],
+        [
+          217.4842529296875,
+          687.1992594401041
+        ],
+        [
+          75.12337748209636,
+          687.1992594401041
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "*Recognizing each individual's ability to effect positive change in the workplace, community and the environment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          674.3450927734375
+        ],
+        [
+          508.0166829427083,
+          674.3450927734375
+        ],
+        [
+          508.0166829427083,
+          644.9049072265625
+        ],
+        [
+          95.87569173177083,
+          644.9049072265625
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "·Rewarding behaviors that enhance the safety and well-being of the workplace, community and environment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.53587849934895,
+          638.6851399739584
+        ],
+        [
+          507.6016031901042,
+          638.6851399739584
+        ],
+        [
+          507.6016031901042,
+          609.6596069335938
+        ],
+        [
+          97.53587849934895,
+          609.6596069335938
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "oAccepting that everyone is empowered to stop work if it is unsafe.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          603.0252075195312
+        ],
+        [
+          378.107177734375,
+          603.0252075195312
+        ],
+        [
+          378.107177734375,
+          589.3417358398438
+        ],
+        [
+          96.70579020182292,
+          589.3417358398438
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "HSE Leadership Tours are to berecorded and copies of the reports are to beissued to EMAARMisr, any findings are to be followed up by the visiting Project Director(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          579.3901163736979
+        ],
+        [
+          495.5652669270833,
+          579.3901163736979
+        ],
+        [
+          495.5652669270833,
+          553.2671305338542
+        ],
+        [
+          90.8951416015625,
+          553.2671305338542
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "2.4.2.4.1.4. Measurement",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          549.5352783203125
+        ],
+        [
+          190.5062459309896,
+          549.5352783203125
+        ],
+        [
+          190.5062459309896,
+          536.6811116536458
+        ],
+        [
+          73.87823994954427,
+          536.6811116536458
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "> Measurement is a key part of the plan-do-check-act management process which has essential principles related to:",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          532.1199544270833
+        ],
+        [
+          496.3953857421875,
+          532.1199544270833
+        ],
+        [
+          496.3953857421875,
+          506.41164143880206
+        ],
+        [
+          73.46319580078125,
+          506.41164143880206
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "eStrong and active leadership from the top.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          499.7772216796875
+        ],
+        [
+          278.49607340494794,
+          499.7772216796875
+        ],
+        [
+          278.49607340494794,
+          485.67909749348956
+        ],
+        [
+          94.63055419921875,
+          485.67909749348956
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "·Visible,active commitment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          480.70330810546875
+        ],
+        [
+          223.7099609375,
+          480.70330810546875
+        ],
+        [
+          223.7099609375,
+          469.09307861328125
+        ],
+        [
+          94.63055419921875,
+          469.09307861328125
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "Establishingeffective downwardcommunicationsystems and managementstructures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          457.89752197265625
+        ],
+        [
+          441.1942138671875,
+          457.89752197265625
+        ],
+        [
+          441.1942138671875,
+          444.21405029296875
+        ],
+        [
+          90.48009236653645,
+          444.21405029296875
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "Integration of good health and safety management with business decisions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          440.06756591796875
+        ],
+        [
+          395.9541829427083,
+          440.06756591796875
+        ],
+        [
+          395.9541829427083,
+          425.96942138671875
+        ],
+        [
+          90.06504313151042,
+          425.96942138671875
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "Workerinvolvement:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          422.23756917317706
+        ],
+        [
+          179.30000813802084,
+          422.23756917317706
+        ],
+        [
+          179.30000813802084,
+          409.79807535807294
+        ],
+        [
+          90.48009236653645,
+          409.79807535807294
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "●Engaging the workforce in thc promotion and achievement of safe and healthy conditions",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          402.74900309244794
+        ],
+        [
+          472.3226725260417,
+          402.74900309244794
+        ],
+        [
+          472.3226725260417,
+          389.48020426432294
+        ],
+        [
+          93.8004659016927,
+          389.48020426432294
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "0Effective upward communication",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          384.50437418619794
+        ],
+        [
+          244.0472208658854,
+          384.50437418619794
+        ],
+        [
+          244.0472208658854,
+          372.47951253255206
+        ],
+        [
+          94.2155049641927,
+          372.47951253255206
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "cProviding high quality training.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          367.08905029296875
+        ],
+        [
+          235.33125813802084,
+          367.08905029296875
+        ],
+        [
+          235.33125813802084,
+          352.57627360026044
+        ],
+        [
+          95.46065266927083,
+          352.57627360026044
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": ">Assessment and review:",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.63310241699219,
+          273.7927042643229
+        ],
+        [
+          188.8460693359375,
+          273.7927042643229
+        ],
+        [
+          188.8460693359375,
+          261.3531697591146
+        ],
+        [
+          72.63310241699219,
+          261.3531697591146
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "Identifying and managinghealth and safetyrisks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          253.88946533203125
+        ],
+        [
+          306.3041585286458,
+          253.88946533203125
+        ],
+        [
+          306.3041585286458,
+          242.27923583984375
+        ],
+        [
+          93.38541666666667,
+          242.27923583984375
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "?Accessing andfollowingcompetent advice.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          235.64483642578125
+        ],
+        [
+          282.6465250651042,
+          235.64483642578125
+        ],
+        [
+          282.6465250651042,
+          224.03464762369788
+        ],
+        [
+          92.97036743164062,
+          224.03464762369788
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "·Monitoring,reporting and reviewing performance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          217.40020751953125
+        ],
+        [
+          312.5298665364583,
+          217.40020751953125
+        ],
+        [
+          312.5298665364583,
+          204.96071370442712
+        ],
+        [
+          93.38541666666667,
+          204.96071370442712
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "orrectistributedwithout",
+      "confidence": 0.95,
+      "box": [
+        [
+          421.6870524088542,
+          100.88340250651038
+        ],
+        [
+          502.6210530598958,
+          100.88340250651038
+        ],
+        [
+          502.6210530598958,
+          91.34645589192712
+        ],
+        [
+          421.6870524088542,
+          91.34645589192712
+        ]
+      ],
+      "page": 414
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          454.0606282552083,
+          735.2987162272135
+        ],
+        [
+          511.3370361328125,
+          735.2987162272135
+        ],
+        [
+          511.3370361328125,
+          722.4445495605469
+        ],
+        [
+          454.0606282552083,
+          722.4445495605469
+        ]
+      ],
+      "page": 414
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 414,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n*Recognizing each individual's ability to effect positive change in the workplace, community and the environment.\n·Rewarding behaviors that enhance the safety and well-being of the workplace, community and environment.\noAccepting that everyone is empowered to stop work if it is unsafe.\nHSE Leadership Tours are to berecorded and copies of the reports are to beissued to EMAARMisr, any findings are to be followed up by the visiting Project Director(s).\n2.4.2.4.1.4. Measurement\n> Measurement is a key part of the plan-do-check-act management process which has essential principles related to:\neStrong and active leadership from the top.\n·Visible,active commitment.\nEstablishingeffective downwardcommunicationsystems and managementstructures.\nIntegration of good health and safety management with business decisions.\nWorkerinvolvement:\n●Engaging the workforce in thc promotion and achievement of safe and healthy conditions\n0Effective upward communication\ncProviding high quality training.\n>Assessment and review:\nIdentifying and managinghealth and safetyrisks.\n?Accessing andfollowingcompetent advice.\n·Monitoring,reporting and reviewing performance.\norrectistributedwithout\nEMAAR",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

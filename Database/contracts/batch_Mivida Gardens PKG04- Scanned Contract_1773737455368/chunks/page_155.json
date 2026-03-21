@@ -1,0 +1,382 @@
+{
+  "text": "<!-- image -->\n\n[Date]\n\nEMAAR MISR FOR DEVELOPMENT,H/Qat Emaar MisrSales Center-\"Uptown Cairo\",P.O.BoX229,MOKATTAM11571,CAIRO,EGYPT\n\nDear Sirs,\n\nMivida Gardens Project inEast Cairo,Cairo -ARAB REPUBLIC OF EGYPT, construction,completion,maintenance,andguaranteeofPK#04:ConstructionofParcel 11,Parcel 12 Townhomes&amp;GradingWorksforParcel 11inMividaGardensProject.\n\n## ADVANCEPAYMENTBONDNO.[ 1\n\nWhereasourclient, .(referredtohereinafteras\"theContractor\") hasenteredintoacontractwithyoudated .... (referred tohereinafteras\"the Contract\") for the carrying out and completion of PK#04: Construction of Parcel 11, Parcel 12Townhomes&amp;GradingWorksforParcel 11,formingpartof theprojectknown as Mivida Gardens Project in East Cairo, Cairo -Arab Republic of Egypt.\n\nAnd whereas the Contract provides for the payment by you to the Contractor in the amount of ten percent (10%)of the Contract Sum (Basic Scope) Egyptian pounds (LE.) (the\"Advance Payment\").\n\nAndwhereasthe Contractcontains,anobligation on thepartof theContractorto obtain anddeliveranAdvancePaymentBond inanamountequaltotheAdvancePayment.\n\nWe,[name of the Bank and address], hereby irrevocably and unconditionally undertake that,forthwithuponourreceivingwrittennoticefromyourdulyauthorizedrepresentative stating thatinyoursoleandabsolutejudgment,theContractorhasfailed toobserveor perform any of theterms,conditions or provisions ofthe Contract onitspart to be observedorperformed,wewill,withoutprooforconditionsandwithoutanyrightofsetoffdeductionor counterclaimandnotwithstanding anyobjectionwhichmaybemadeby theContractor or anyotherperson,forthwithpaytoyou tosuch account asyoumay nominate in Egyptian pounds such amount as you may in such notice require not exceeding (when aggregated with any amount(s) previously so paid) the amount for which thisBond isforthe timebeingvalid.\n\nThisBondshall bevalid fromthedatehereofinitsfull amount(saveasmay fromtime to timebereduced inaccordancewiththetermshereof),namelyEgyptianpounds[words] ([Currency] [figures]) and shall continue to be so valid with respect to any such written noticetousasisreferredtoaboveandasisreceivedbyusnotlaterthantheExpiryDate (as hereinafter defined).\n\nThevalueof thisBondshallfrom time totimebereducedby anamountwhichyou notify\n\n<!-- image -->\n\n## APPENDIXC\n\n## FORMOFADVANCEPAYMENTBOND\n\nAppendix C\n\n际埃及\n\n任公司",
+  "results": [
+    {
+      "text": "[Date]",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.56486002604166,
+          646.5355021158854
+        ],
+        [
+          178.43086751302084,
+          646.5355021158854
+        ],
+        [
+          178.43086751302084,
+          632.9602254231771
+        ],
+        [
+          147.56486002604166,
+          632.9602254231771
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "EMAAR MISR FOR DEVELOPMENT,H/Qat Emaar MisrSales Center-\"Uptown Cairo\",P.O.BoX229,MOKATTAM11571,CAIRO,EGYPT",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.6382548014323,
+          621.9303181966146
+        ],
+        [
+          493.4332275390625,
+          621.9303181966146
+        ],
+        [
+          493.4332275390625,
+          597.7493693033854
+        ],
+        [
+          89.6382548014323,
+          597.7493693033854
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "Dear Sirs,",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.79261271158855,
+          586.2952473958334
+        ],
+        [
+          136.57149251302084,
+          586.2952473958334
+        ],
+        [
+          136.57149251302084,
+          573.5684204101562
+        ],
+        [
+          88.79261271158855,
+          573.5684204101562
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "Mivida Gardens Project inEast Cairo,Cairo -ARAB REPUBLIC OF EGYPT, construction,completion,maintenance,andguaranteeofPK#04:ConstructionofParcel 11,Parcel 12 Townhomes&GradingWorksforParcel 11inMividaGardensProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.79261271158855,
+          561.6900634765625
+        ],
+        [
+          494.2788899739583,
+          561.6900634765625
+        ],
+        [
+          494.2788899739583,
+          525.206522623698
+        ],
+        [
+          88.79261271158855,
+          525.206522623698
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "ADVANCEPAYMENTBONDNO.[ 1",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.79261271158855,
+          514.600850423177
+        ],
+        [
+          336.9890950520833,
+          514.600850423177
+        ],
+        [
+          336.9890950520833,
+          501.44980875651044
+        ],
+        [
+          88.79261271158855,
+          501.44980875651044
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "Whereasourclient, .(referredtohereinafteras\"theContractor\") hasenteredintoacontractwithyoudated .... (referred tohereinafteras\"the Contract\") for the carrying out and completion of PK#04: Construction of Parcel 11, Parcel 12Townhomes&GradingWorksforParcel 11,formingpartof theprojectknown as Mivida Gardens Project in East Cairo, Cairo -Arab Republic of Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.52414957682292,
+          489.99566650390625
+        ],
+        [
+          494.2788899739583,
+          489.99566650390625
+        ],
+        [
+          494.2788899739583,
+          428.05853271484375
+        ],
+        [
+          87.52414957682292,
+          428.05853271484375
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "And whereas the Contract provides for the payment by you to the Contractor in the amount of ten percent (10%)of the Contract Sum (Basic Scope) Egyptian pounds (LE.) (the\"Advance Payment\").",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.52414957682292,
+          418.30128987630206
+        ],
+        [
+          493.4332275390625,
+          418.30128987630206
+        ],
+        [
+          493.4332275390625,
+          381.39353434244794
+        ],
+        [
+          87.52414957682292,
+          381.39353434244794
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "Andwhereasthe Contractcontains,anobligation on thepartof theContractorto obtain anddeliveranAdvancePaymentBond inanamountequaltotheAdvancePayment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9469706217448,
+          369.51515706380206
+        ],
+        [
+          493.4332275390625,
+          369.51515706380206
+        ],
+        [
+          493.4332275390625,
+          344.90997314453125
+        ],
+        [
+          87.9469706217448,
+          344.90997314453125
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "We,[name of the Bank and address], hereby irrevocably and unconditionally undertake that,forthwithuponourreceivingwrittennoticefromyourdulyauthorizedrepresentative stating thatinyoursoleandabsolutejudgment,theContractorhasfailed toobserveor perform any of theterms,conditions or provisions ofthe Contract onitspart to be observedorperformed,wewill,withoutprooforconditionsandwithoutanyrightofsetoffdeductionor counterclaimandnotwithstanding anyobjectionwhichmaybemadeby theContractor or anyotherperson,forthwithpaytoyou tosuch account asyoumay nominate in Egyptian pounds such amount as you may in such notice require not exceeding (when aggregated with any amount(s) previously so paid) the amount for which thisBond isforthe timebeingvalid.",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.67849731445312,
+          334.30430094401044
+        ],
+        [
+          494.2788899739583,
+          334.30430094401044
+        ],
+        [
+          494.2788899739583,
+          213.82379150390625
+        ],
+        [
+          86.67849731445312,
+          213.82379150390625
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "ThisBondshall bevalid fromthedatehereofinitsfull amount(saveasmay fromtime to timebereduced inaccordancewiththetermshereof),namelyEgyptianpounds[words] ([Currency] [figures]) and shall continue to be so valid with respect to any such written noticetousasisreferredtoaboveandasisreceivedbyusnotlaterthantheExpiryDate (as hereinafter defined).",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.67849731445312,
+          202.36964925130212
+        ],
+        [
+          492.5875651041667,
+          202.36964925130212
+        ],
+        [
+          492.5875651041667,
+          141.70522054036462
+        ],
+        [
+          86.67849731445312,
+          141.70522054036462
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "Thevalueof thisBondshallfrom time totimebereducedby anamountwhichyou notify",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.67849731445312,
+          130.25103759765625
+        ],
+        [
+          491.3191324869792,
+          130.25103759765625
+        ],
+        [
+          491.3191324869792,
+          117.52423095703125
+        ],
+        [
+          86.67849731445312,
+          117.52423095703125
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "APPENDIXC",
+      "confidence": 0.95,
+      "box": [
+        [
+          260.03550211588544,
+          693.6247151692709
+        ],
+        [
+          324.7272542317708,
+          693.6247151692709
+        ],
+        [
+          324.7272542317708,
+          682.1705830891927
+        ],
+        [
+          260.03550211588544,
+          682.1705830891927
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "FORMOFADVANCEPAYMENTBOND",
+      "confidence": 0.95,
+      "box": [
+        [
+          196.18939208984375,
+          670.2922159830729
+        ],
+        [
+          386.882080078125,
+          670.2922159830729
+        ],
+        [
+          386.882080078125,
+          658.4138590494791
+        ],
+        [
+          196.18939208984375,
+          658.4138590494791
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "Appendix C",
+      "confidence": 0.95,
+      "box": [
+        [
+          401.6808675130208,
+          716.1087544759115
+        ],
+        [
+          442.2717692057292,
+          716.1087544759115
+        ],
+        [
+          442.2717692057292,
+          705.9273071289062
+        ],
+        [
+          401.6808675130208,
+          705.9273071289062
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "际埃及",
+      "confidence": 0.95,
+      "box": [
+        [
+          507.3863525390625,
+          80.61643473307288
+        ],
+        [
+          526.8361409505209,
+          80.61643473307288
+        ],
+        [
+          526.8361409505209,
+          52.19325764973962
+        ],
+        [
+          507.3863525390625,
+          52.19325764973962
+        ]
+      ],
+      "page": 155
+    },
+    {
+      "text": "任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          495.9701741536458,
+          69.58656819661462
+        ],
+        [
+          518.8025309244791,
+          69.58656819661462
+        ],
+        [
+          518.8025309244791,
+          38.19374593098962
+        ],
+        [
+          495.9701741536458,
+          38.19374593098962
+        ]
+      ],
+      "page": 155
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 155,
+      "text": "[Date]\nEMAAR MISR FOR DEVELOPMENT,H/Qat Emaar MisrSales Center-\"Uptown Cairo\",P.O.BoX229,MOKATTAM11571,CAIRO,EGYPT\nDear Sirs,\nMivida Gardens Project inEast Cairo,Cairo -ARAB REPUBLIC OF EGYPT, construction,completion,maintenance,andguaranteeofPK#04:ConstructionofParcel 11,Parcel 12 Townhomes&GradingWorksforParcel 11inMividaGardensProject.\nADVANCEPAYMENTBONDNO.[ 1\nWhereasourclient, .(referredtohereinafteras\"theContractor\") hasenteredintoacontractwithyoudated .... (referred tohereinafteras\"the Contract\") for the carrying out and completion of PK#04: Construction of Parcel 11, Parcel 12Townhomes&GradingWorksforParcel 11,formingpartof theprojectknown as Mivida Gardens Project in East Cairo, Cairo -Arab Republic of Egypt.\nAnd whereas the Contract provides for the payment by you to the Contractor in the amount of ten percent (10%)of the Contract Sum (Basic Scope) Egyptian pounds (LE.) (the\"Advance Payment\").\nAndwhereasthe Contractcontains,anobligation on thepartof theContractorto obtain anddeliveranAdvancePaymentBond inanamountequaltotheAdvancePayment.\nWe,[name of the Bank and address], hereby irrevocably and unconditionally undertake that,forthwithuponourreceivingwrittennoticefromyourdulyauthorizedrepresentative stating thatinyoursoleandabsolutejudgment,theContractorhasfailed toobserveor perform any of theterms,conditions or provisions ofthe Contract onitspart to be observedorperformed,wewill,withoutprooforconditionsandwithoutanyrightofsetoffdeductionor counterclaimandnotwithstanding anyobjectionwhichmaybemadeby theContractor or anyotherperson,forthwithpaytoyou tosuch account asyoumay nominate in Egyptian pounds such amount as you may in such notice require not exceeding (when aggregated with any amount(s) previously so paid) the amount for which thisBond isforthe timebeingvalid.\nThisBondshall bevalid fromthedatehereofinitsfull amount(saveasmay fromtime to timebereduced inaccordancewiththetermshereof),namelyEgyptianpounds[words] ([Currency] [figures]) and shall continue to be so valid with respect to any such written noticetousasisreferredtoaboveandasisreceivedbyusnotlaterthantheExpiryDate (as hereinafter defined).\nThevalueof thisBondshallfrom time totimebereducedby anamountwhichyou notify\nAPPENDIXC\nFORMOFADVANCEPAYMENTBOND\nAppendix C\n际埃及\n任公司",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

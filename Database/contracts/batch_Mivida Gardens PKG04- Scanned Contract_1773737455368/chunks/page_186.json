@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\n## Division14:ConvevingSystem.\n\n| Where\"OrApproved Equalis mentioned, please refer to the Notes in Page(1) of this document.   | Where\"OrApproved Equalis mentioned, please refer to the Notes in Page(1) of this document.   | Where\"OrApproved Equalis mentioned, please refer to the Notes in Page(1) of this document.   | Where\"OrApproved Equalis mentioned, please refer to the Notes in Page(1) of this document.   | Where\"OrApproved Equalis mentioned, please refer to the Notes in Page(1) of this document.   | Where\"OrApproved Equalis mentioned, please refer to the Notes in Page(1) of this document.   |\n|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|\n| Dhlsion.14.Convaying Systom                                                                  | Dhlsion.14.Convaying Systom                                                                  | Dhlsion.14.Convaying Systom                                                                  | Dhlsion.14.Convaying Systom                                                                  | Dhlsion.14.Convaying Systom                                                                  | Dhlsion.14.Convaying Systom                                                                  |\n|                                                                                              | Specifieation SecUan                                                                         |                                                                                              | Emaar Vendor                                                                                 | Localdistributor                                                                             | Country of arlein                                                                            |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Otis（Germany.France&Spain)                                                                  | Otis-EgvptOffice                                                                             | Germany                                                                                      |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Schindler                                                                                    | Schlndler-EgyptOfflice                                                                       | Germany                                                                                      |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | KONE                                                                                         | KONE                                                                                         | Finland/China                                                                                |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | ThyssenKrupp                                                                                 |                                                                                              |                                                                                              |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Mitsubishi-Melco Mec-                                                                        | Melco Mec                                                                                    | Japan                                                                                        |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Fujitecc-Japan                                                                               | International Engineering&Trade - HyundaiElevators,Mokattam,Cairo                            | S.Korea                                                                                      |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Hyundai-South Korea                                                                          | Hitachi Group For Elevators & Escalators,Nasr City,Cairo                                     | ueder                                                                                        |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Hitachi                                                                                      | Kenyaliftcompany                                                                             | Germany                                                                                      |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Haushahn-Germany                                                                             |                                                                                              | Germany                                                                                      |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | Orona                                                                                        | Global                                                                                       | Spain                                                                                        |\n| 57                                                                                           | 142000-Elevators                                                                             | Elevatorsincludingall accessories                                                            | OrApproved Equal                                                                             |                                                                                              |                                                                                              |\n| 58                                                                                           | 4q1n？-Garhag Chutes                                                                         | Trash r hutes inclucling allaccessories, prnklais, Tube, Doors, etc.                         | Unitech                                                                                      | Unitech                                                                                      | Egvpt                                                                                        |\n| 58                                                                                           | 4q1n？-Garhag Chutes                                                                         | Trash r hutes inclucling allaccessories, prnklais, Tube, Doors, etc.                         | Egytam                                                                                       | Egytam                                                                                       | Eevpt                                                                                        |\n| 58                                                                                           | 4q1n？-Garhag Chutes                                                                         | Trash r hutes inclucling allaccessories, prnklais, Tube, Doors, etc.                         | OrApproved Equal *                                                                           |                                                                                              |                                                                                              |\n\n<!-- image -->\n\n<!-- image -->\n\n## Residential",
+  "results": [
+    {
+      "text": "Division14:ConvevingSystem.",
+      "confidence": 0.95,
+      "box": [
+        [
+          50.6356455485026,
+          712.4929402669271
+        ],
+        [
+          194.24165852864584,
+          712.4929402669271
+        ],
+        [
+          194.24165852864584,
+          700.4680786132812
+        ],
+        [
+          50.6356455485026,
+          700.4680786132812
+        ]
+      ],
+      "page": 186
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          433.308349609375,
+          741.9331258138021
+        ],
+        [
+          512.1671142578125,
+          741.9331258138021
+        ],
+        [
+          512.1671142578125,
+          726.591054280599
+        ],
+        [
+          433.308349609375,
+          726.591054280599
+        ]
+      ],
+      "page": 186
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 186,
+      "text": "Division14:ConvevingSystem.\nResidential",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

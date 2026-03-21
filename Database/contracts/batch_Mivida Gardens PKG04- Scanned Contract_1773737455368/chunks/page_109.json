@@ -1,0 +1,244 @@
+{
+  "text": "maybecomeduefromtheContractor.\n\nFollowing such entry and expuision,theContractorshall complyimmediately at itsownCostwith anyinstructiongivenbytheProject Managertoremove from theSite and theWorksany Contractor'sEquipment.Suchinstruction by theProject Managermaybegivenat anytimefollowingsuchentry and expulsion.\n\n## ValuationatEntryand Expulsion\n\n- 30.5 Where Clause 30.4 (Continuation following Default) applies, the Project Manager shall, as soon as may be practicable after such entry by the Employerandexpulsionof theContractor,makesuchinvestigationand enquiriesashemaythinknecessaryandfromtheresultsthereofshall prepareandsignafinalaccountwhichinhisopinionshowsallamounts which should havebeenwithinparagraphs(a)and (c)of Clause29.8 (PaymentonFrustrationorForceMajeure)hadtheentryandexpulsion beenaterminationunderClause29(FrustrationandForceMajeure).\n\n## Payments after Entry and Expulsion\n\n- 30.6 WhereClause30.4(ContinuationfollowingDefault)applies,theEmployer shallnotafter theentryandexpulsionbeliabletomakeanypayment whatsoevertotheContractor,whetherinconnectionwiththeContractorthe Works orfor any other reason of any kind until the expiration of the last date ofexpiryofaDefectsLiabilityPeriodoranyextensionthereofforaSection orPortionoftheWorks,and thereafteruntiltheCostofcompleting the Works and all other Costs incurred bythe Employerinrelationtheretohave beenascertained andtheamountthereofcertifiedbytheProjectManager. TheEmployer shall(without prejudice to hisright torecover from the Contractor damages arising out of the Contractor's default together with damagesforallconsequential loss)thenbeliabletopay totheContractor only anamountcertified by theProject Managerand calculated asbeing:-\n- (a) the amount shown by the flnal account prepared in accordance with Clause30.5(ValuationatEntryandExpulsion);less\n- (b) the total of all payments already made to the Contractor pursuant to InterimCertificatesorotherwiseandtoanyNominated Subcontractor under Clause 24.2 (Delayed Payments to Nominated Subcontractors);less\n- (c) anyamountbywhichtheCostsofcompletingtheWorksandother CostsincurredbytheEmployerinrelationtheretoexceedthe differencebetweentheamountwhichwould havebeenpayablelu theContractoruponduecompletionoftheWorksbyit and the amountsshownbythefinalaccount;andless\n- (d) anyamountwhichisorbecomespayableunderClause19.3 (Liquidated Damages).\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "maybecomeduefromtheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          710.1695760091146
+        ],
+        [
+          330.2239583333333,
+          710.1695760091146
+        ],
+        [
+          330.2239583333333,
+          699.1396687825521
+        ],
+        [
+          158.55823771158853,
+          699.1396687825521
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "Following such entry and expuision,theContractorshall complyimmediately at itsownCostwith anyinstructiongivenbytheProject Managertoremove from theSite and theWorksany Contractor'sEquipment.Suchinstruction by theProject Managermaybegivenat anytimefollowingsuchentry and expulsion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          688.5339864095052
+        ],
+        [
+          488.359375,
+          688.5339864095052
+        ],
+        [
+          488.359375,
+          630.4148763020834
+        ],
+        [
+          157.28976440429688,
+          630.4148763020834
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "ValuationatEntryand Expulsion",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          620.6576334635416
+        ],
+        [
+          241.43133544921875,
+          620.6576334635416
+        ],
+        [
+          241.43133544921875,
+          608.3550618489584
+        ],
+        [
+          95.55775960286458,
+          608.3550618489584
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "30.5 Where Clause 30.4 (Continuation following Default) applies, the Project Manager shall, as soon as may be practicable after such entry by the Employerandexpulsionof theContractor,makesuchinvestigationand enquiriesashemaythinknecessaryandfromtheresultsthereofshall prepareandsignafinalaccountwhichinhisopinionshowsallamounts which should havebeenwithinparagraphs(a)and (c)of Clause29.8 (PaymentonFrustrationorForceMajeure)hadtheentryandexpulsion beenaterminationunderClause29(FrustrationandForceMajeure).",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.08144124348958,
+          598.1736043294271
+        ],
+        [
+          488.7821858723958,
+          598.1736043294271
+        ],
+        [
+          488.7821858723958,
+          505.2678629557292
+        ],
+        [
+          120.08144124348958,
+          505.2678629557292
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "Payments after Entry and Expulsion",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          495.51064046223956
+        ],
+        [
+          255.80729166666666,
+          495.51064046223956
+        ],
+        [
+          255.80729166666666,
+          482.78383382161456
+        ],
+        [
+          95.1349385579427,
+          482.78383382161456
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "30.6 WhereClause30.4(ContinuationfollowingDefault)applies,theEmployer shallnotafter theentryandexpulsionbeliabletomakeanypayment whatsoevertotheContractor,whetherinconnectionwiththeContractorthe Works orfor any other reason of any kind until the expiration of the last date ofexpiryofaDefectsLiabilityPeriodoranyextensionthereofforaSection orPortionoftheWorks,and thereafteruntiltheCostofcompleting the Works and all other Costs incurred bythe Employerinrelationtheretohave beenascertained andtheamountthereofcertifiedbytheProjectManager. TheEmployer shall(without prejudice to hisright torecover from the Contractor damages arising out of the Contractor's default together with damagesforallconsequential loss)thenbeliabletopay totheContractor only anamountcertified by theProject Managerand calculated asbeing:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.2357889811198,
+          472.60235595703125
+        ],
+        [
+          487.9365234375,
+          472.60235595703125
+        ],
+        [
+          487.9365234375,
+          334.30430094401044
+        ],
+        [
+          119.2357889811198,
+          334.30430094401044
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "(a) the amount shown by the flnal account prepared in accordance with Clause30.5(ValuationatEntryandExpulsion);less",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          325.81976318359375
+        ],
+        [
+          486.6680908203125,
+          325.81976318359375
+        ],
+        [
+          486.6680908203125,
+          300.7903849283854
+        ],
+        [
+          155.1756591796875,
+          300.7903849283854
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "(b) the total of all payments already made to the Contractor pursuant to InterimCertificatesorotherwiseandtoanyNominated Subcontractor under Clause 24.2 (Delayed Payments to Nominated Subcontractors);less",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.59848022460938,
+          291.4573771158854
+        ],
+        [
+          487.0909016927083,
+          291.4573771158854
+        ],
+        [
+          487.0909016927083,
+          244.36814371744788
+        ],
+        [
+          155.59848022460938,
+          244.36814371744788
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "(c) anyamountbywhichtheCostsofcompletingtheWorksandother CostsincurredbytheEmployerinrelationtheretoexceedthe differencebetweentheamountwhichwould havebeenpayablelu theContractoruponduecompletionoftheWorksbyit and the amountsshownbythefinalaccount;andless",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          234.18670654296875
+        ],
+        [
+          486.6680908203125,
+          234.18670654296875
+        ],
+        [
+          486.6680908203125,
+          176.91603597005212
+        ],
+        [
+          155.1756591796875,
+          176.91603597005212
+        ]
+      ],
+      "page": 109
+    },
+    {
+      "text": "(d) anyamountwhichisorbecomespayableunderClause19.3 (Liquidated Damages).",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.75283813476562,
+          165.88612874348962
+        ],
+        [
+          486.2452392578125,
+          165.88612874348962
+        ],
+        [
+          486.2452392578125,
+          142.12937418619788
+        ],
+        [
+          154.75283813476562,
+          142.12937418619788
+        ]
+      ],
+      "page": 109
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 109,
+      "text": "maybecomeduefromtheContractor.\nFollowing such entry and expuision,theContractorshall complyimmediately at itsownCostwith anyinstructiongivenbytheProject Managertoremove from theSite and theWorksany Contractor'sEquipment.Suchinstruction by theProject Managermaybegivenat anytimefollowingsuchentry and expulsion.\nValuationatEntryand Expulsion\n30.5 Where Clause 30.4 (Continuation following Default) applies, the Project Manager shall, as soon as may be practicable after such entry by the Employerandexpulsionof theContractor,makesuchinvestigationand enquiriesashemaythinknecessaryandfromtheresultsthereofshall prepareandsignafinalaccountwhichinhisopinionshowsallamounts which should havebeenwithinparagraphs(a)and (c)of Clause29.8 (PaymentonFrustrationorForceMajeure)hadtheentryandexpulsion beenaterminationunderClause29(FrustrationandForceMajeure).\nPayments after Entry and Expulsion\n30.6 WhereClause30.4(ContinuationfollowingDefault)applies,theEmployer shallnotafter theentryandexpulsionbeliabletomakeanypayment whatsoevertotheContractor,whetherinconnectionwiththeContractorthe Works orfor any other reason of any kind until the expiration of the last date ofexpiryofaDefectsLiabilityPeriodoranyextensionthereofforaSection orPortionoftheWorks,and thereafteruntiltheCostofcompleting the Works and all other Costs incurred bythe Employerinrelationtheretohave beenascertained andtheamountthereofcertifiedbytheProjectManager. TheEmployer shall(without prejudice to hisright torecover from the Contractor damages arising out of the Contractor's default together with damagesforallconsequential loss)thenbeliabletopay totheContractor only anamountcertified by theProject Managerand calculated asbeing:-\n(a) the amount shown by the flnal account prepared in accordance with Clause30.5(ValuationatEntryandExpulsion);less\n(b) the total of all payments already made to the Contractor pursuant to InterimCertificatesorotherwiseandtoanyNominated Subcontractor under Clause 24.2 (Delayed Payments to Nominated Subcontractors);less\n(c) anyamountbywhichtheCostsofcompletingtheWorksandother CostsincurredbytheEmployerinrelationtheretoexceedthe differencebetweentheamountwhichwould havebeenpayablelu theContractoruponduecompletionoftheWorksbyit and the amountsshownbythefinalaccount;andless\n(d) anyamountwhichisorbecomespayableunderClause19.3 (Liquidated Damages).",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

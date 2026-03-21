@@ -1,0 +1,635 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- 23.8 Exclusion of Small Claims\n\nDelete paragraph (c) entirely.\n\n## 25. MEASURMENTS[IncaseofLumpsumcontractsonly]\n\n- 25.1 Quantities\n\nDelete“or for the purposes of Clause 25.2 (Works to be Measured)\"\n\n- 25.2 Works to be Mcasured.\n\nDelete thisSub-ClausefortheLumpSumScopeonly.\n\n- 25.3 Method ofMeasurement Delete this Sub-Clause for the Lump Sum Scope only.\n- 25.4 Valuation\n\nDeletethisSub-ClausefortheLumpSumScopeonly.\n\n## 26. INTERIMANDFINALCERTIFICATES\n\n- 26.1 Application of Interim Certificates\n\nAdd the following paragraph to Sub-Clause 26.1 (a):\n\nThe Advance Payment Bond shall be reduced in amount according to the refunded values through progress payments.\n\n) estimated net direct cost\" in item 26.1 (b) (i) by \"seventy five percent (75%) of the estimated net direct cost or sixty percent (60%) of the BOQ itemrate for architectural works and fifty percent (50%) of the BoQ item rateforelectromechanlcalworksincaseofcoribinedilenswheredirect cost could not be presented based on the Contract Administrator approval.\"\n\nThe combined iterns are:\n\n- 1.GRC\n3. Wooden pergola\n2. Metal work\n- 4.Wooder1 doors\n- 5.AluminumWindows\n- 6.Aluminum doors\n7. Marble.\n\nAdd a new paragraph at the end of item 26.1 (b):\n\nThe Contractor shall not be entitled to submit such Interim Certificate application unless the amounts within paragraphs (i), (i), and (ii) of this Sub-Clausewhichrelatetoworkdoneand/orPlantprovidedby(orother entitlements of the Contractor) shall be equal to or grealer thar 90% (ninety percent) of the amount identified by the approved Work In Place histogram in accordance withsub-clause 26-2 (J).\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.94033813476562,
+          748.7742411295573
+        ],
+        [
+          178.0080362955729,
+          748.7742411295573
+        ],
+        [
+          178.0080362955729,
+          730.1082458496094
+        ],
+        [
+          98.94033813476562,
+          730.1082458496094
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          725.4417521158854
+        ],
+        [
+          151.79308064778647,
+          725.4417521158854
+        ],
+        [
+          151.79308064778647,
+          714.8360697428385
+        ],
+        [
+          127.2694091796875,
+          714.8360697428385
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "23.8 Exclusion of Small Claims",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          695.3216247558594
+        ],
+        [
+          287.0961100260417,
+          695.3216247558594
+        ],
+        [
+          287.0961100260417,
+          683.019032796224
+        ],
+        [
+          126.84658813476562,
+          683.019032796224
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Delete paragraph (c) entirely.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          677.5040791829427
+        ],
+        [
+          301.89487711588544,
+          677.5040791829427
+        ],
+        [
+          301.89487711588544,
+          665.6257120768229
+        ],
+        [
+          166.16902669270834,
+          665.6257120768229
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "25. MEASURMENTS[IncaseofLumpsumcontractsonly]",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          655.0200398763021
+        ],
+        [
+          396.6070149739583,
+          655.0200398763021
+        ],
+        [
+          396.6070149739583,
+          643.1416829427084
+        ],
+        [
+          95.55775960286458,
+          643.1416829427084
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "25.1 Quantities",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          638.4751790364584
+        ],
+        [
+          215.63920084635416,
+          638.4751790364584
+        ],
+        [
+          215.63920084635416,
+          626.1725870768229
+        ],
+        [
+          126.84658813476562,
+          626.1725870768229
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Delete“or for the purposes of Clause 25.2 (Works to be Measured)\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          621.506103515625
+        ],
+        [
+          478.2116292317708,
+          621.506103515625
+        ],
+        [
+          478.2116292317708,
+          609.6277465820312
+        ],
+        [
+          166.16902669270834,
+          609.6277465820312
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "25.2 Works to be Mcasured.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          603.6885579427084
+        ],
+        [
+          275.25710042317706,
+          603.6885579427084
+        ],
+        [
+          275.25710042317706,
+          591.3859659830729
+        ],
+        [
+          127.2694091796875,
+          591.3859659830729
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Delete thisSub-ClausefortheLumpSumScopeonly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          586.2952473958334
+        ],
+        [
+          415.211181640625,
+          586.2952473958334
+        ],
+        [
+          415.211181640625,
+          575.2653401692708
+        ],
+        [
+          167.0146687825521,
+          575.2653401692708
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "25.3 Method ofMeasurement Delete this Sub-Clause for the Lump Sum Scope only.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          569.326151529948
+        ],
+        [
+          416.0568033854167,
+          569.326151529948
+        ],
+        [
+          416.0568033854167,
+          540.0544840494792
+        ],
+        [
+          127.2694091796875,
+          540.0544840494792
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "25.4 Valuation",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          534.9637654622395
+        ],
+        [
+          212.25663248697916,
+          534.9637654622395
+        ],
+        [
+          212.25663248697916,
+          522.6611735026042
+        ],
+        [
+          127.2694091796875,
+          522.6611735026042
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "DeletethisSub-ClausefortheLumpSumScopeonly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          517.5704345703125
+        ],
+        [
+          416.4796142578125,
+          517.5704345703125
+        ],
+        [
+          416.4796142578125,
+          506.54054768880206
+        ],
+        [
+          167.86032104492188,
+          506.54054768880206
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "26. INTERIMANDFINALCERTIFICATES",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          495.08640543619794
+        ],
+        [
+          309.0828450520833,
+          495.08640543619794
+        ],
+        [
+          309.0828450520833,
+          483.20802815755206
+        ],
+        [
+          96.40340169270833,
+          483.20802815755206
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "26.1 Application of Interim Certificates",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          477.69309488932294
+        ],
+        [
+          320.921875,
+          477.69309488932294
+        ],
+        [
+          320.921875,
+          466.23895263671875
+        ],
+        [
+          128.11505126953125,
+          466.23895263671875
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Add the following paragraph to Sub-Clause 26.1 (a):",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          460.29978434244794
+        ],
+        [
+          408.023193359375,
+          460.29978434244794
+        ],
+        [
+          408.023193359375,
+          449.26987711588544
+        ],
+        [
+          166.59184773763022,
+          449.26987711588544
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "The Advance Payment Bond shall be reduced in amount according to the refunded values through progress payments.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          443.75490315755206
+        ],
+        [
+          502.7353108723958,
+          443.75490315755206
+        ],
+        [
+          502.7353108723958,
+          419.14975992838544
+        ],
+        [
+          167.4375,
+          419.14975992838544
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": ") estimated net direct cost\" in item 26.1 (b) (i) by \"seventy five percent (75%) of the estimated net direct cost or sixty percent (60%) of the BOQ itemrate for architectural works and fifty percent (50%) of the BoQ item rateforelectromechanlcalworksincaseofcoribinedilenswheredirect cost could not be presented based on the Contract Administrator approval.\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          414.05902099609375
+        ],
+        [
+          504.4265950520833,
+          414.05902099609375
+        ],
+        [
+          504.4265950520833,
+          330.91050211588544
+        ],
+        [
+          166.59184773763022,
+          330.91050211588544
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "The combined iterns are:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          325.3955281575521
+        ],
+        [
+          283.29071044921875,
+          325.3955281575521
+        ],
+        [
+          283.29071044921875,
+          313.9414265950521
+        ],
+        [
+          167.86032104492188,
+          313.9414265950521
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "1.GRC",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          313.5171915690104
+        ],
+        [
+          208.8740437825521,
+          313.5171915690104
+        ],
+        [
+          208.8740437825521,
+          302.06304931640625
+        ],
+        [
+          167.4375,
+          302.06304931640625
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Wooden pergola",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          289.7604777018229
+        ],
+        [
+          260.4583333333333,
+          289.7604777018229
+        ],
+        [
+          260.4583333333333,
+          278.30633544921875
+        ],
+        [
+          167.4375,
+          278.30633544921875
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Metal work",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          302.4872843424479
+        ],
+        [
+          235.93465169270834,
+          302.4872843424479
+        ],
+        [
+          235.93465169270834,
+          288.9120076497396
+        ],
+        [
+          166.59184773763022,
+          288.9120076497396
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "4.Wooder1 doors",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          277.4578653971354
+        ],
+        [
+          252.8475341796875,
+          277.4578653971354
+        ],
+        [
+          252.8475341796875,
+          266.4279581705729
+        ],
+        [
+          167.4375,
+          266.4279581705729
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "5.AluminumWindows",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          265.57952880859375
+        ],
+        [
+          276.1027425130208,
+          265.57952880859375
+        ],
+        [
+          276.1027425130208,
+          254.12538655598962
+        ],
+        [
+          167.4375,
+          254.12538655598962
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "6.Aluminum doors",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          253.27691650390625
+        ],
+        [
+          260.4583333333333,
+          253.27691650390625
+        ],
+        [
+          260.4583333333333,
+          242.24700927734375
+        ],
+        [
+          167.4375,
+          242.24700927734375
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Marble.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          241.82277425130212
+        ],
+        [
+          219.02176920572916,
+          241.82277425130212
+        ],
+        [
+          219.02176920572916,
+          229.52020263671875
+        ],
+        [
+          167.4375,
+          229.52020263671875
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "Add a new paragraph at the end of item 26.1 (b):",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          224.85369873046875
+        ],
+        [
+          394.070068359375,
+          224.85369873046875
+        ],
+        [
+          394.070068359375,
+          212.97536214192712
+        ],
+        [
+          167.86032104492188,
+          212.97536214192712
+        ]
+      ],
+      "page": 140
+    },
+    {
+      "text": "The Contractor shall not be entitled to submit such Interim Certificate application unless the amounts within paragraphs (i), (i), and (ii) of this Sub-Clausewhichrelatetoworkdoneand/orPlantprovidedby(orother entitlements of the Contractor) shall be equal to or grealer thar 90% (ninety percent) of the amount identified by the approved Work In Place histogram in accordance withsub-clause 26-2 (J).",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          207.03615315755212
+        ],
+        [
+          505.2722574869792,
+          207.03615315755212
+        ],
+        [
+          505.2722574869792,
+          135.76601155598962
+        ],
+        [
+          167.86032104492188,
+          135.76601155598962
+        ]
+      ],
+      "page": 140
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 140,
+      "text": "EMAAR\nMISR\n23.8 Exclusion of Small Claims\nDelete paragraph (c) entirely.\n25. MEASURMENTS[IncaseofLumpsumcontractsonly]\n25.1 Quantities\nDelete“or for the purposes of Clause 25.2 (Works to be Measured)\"\n25.2 Works to be Mcasured.\nDelete thisSub-ClausefortheLumpSumScopeonly.\n25.3 Method ofMeasurement Delete this Sub-Clause for the Lump Sum Scope only.\n25.4 Valuation\nDeletethisSub-ClausefortheLumpSumScopeonly.\n26. INTERIMANDFINALCERTIFICATES\n26.1 Application of Interim Certificates\nAdd the following paragraph to Sub-Clause 26.1 (a):\nThe Advance Payment Bond shall be reduced in amount according to the refunded values through progress payments.\n) estimated net direct cost\" in item 26.1 (b) (i) by \"seventy five percent (75%) of the estimated net direct cost or sixty percent (60%) of the BOQ itemrate for architectural works and fifty percent (50%) of the BoQ item rateforelectromechanlcalworksincaseofcoribinedilenswheredirect cost could not be presented based on the Contract Administrator approval.\"\nThe combined iterns are:\n1.GRC\nWooden pergola\nMetal work\n4.Wooder1 doors\n5.AluminumWindows\n6.Aluminum doors\nMarble.\nAdd a new paragraph at the end of item 26.1 (b):\nThe Contractor shall not be entitled to submit such Interim Certificate application unless the amounts within paragraphs (i), (i), and (ii) of this Sub-Clausewhichrelatetoworkdoneand/orPlantprovidedby(orother entitlements of the Contractor) shall be equal to or grealer thar 90% (ninety percent) of the amount identified by the approved Work In Place histogram in accordance withsub-clause 26-2 (J).",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

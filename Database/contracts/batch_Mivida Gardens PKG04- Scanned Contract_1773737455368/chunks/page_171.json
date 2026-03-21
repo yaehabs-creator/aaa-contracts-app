@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Residential\n\n| Country o             | Country o                                | Country o                                 | Country o             | Country o             | Country o             |\n|-----------------------|------------------------------------------|-------------------------------------------|-----------------------|-----------------------|-----------------------|\n| Specification Section | Specification Section                    | Specification Section                     | Specification Section | Specification Section | Specification Section |\n|                       | Specification Section                    | Category                                  | Emaar Vendor          | Local distrlbutor     | Country'ot origina    |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Proludic              |                       | France                |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Husson                |                       | France                |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Eibe                  | Egvptosoft            | Germany               |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Alaab-Edufun          |                       |                       |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Berliner              |                       | Germany               |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Playdale              |                       | U.K                   |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | ElAlamein             | LSC&A                 | U.K                   |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | Timberplay            |                       | U.K                   |\n| 11                    | 02880-Play Field Equipment and Structure | Playground Equipment&Play Structure       | OrApproved Equal*     |                       | U.K                   |\n| 12                    | 02890-Traffic Signs and Signal           | Post-mounted signs&Structure-mountedsigns | PinkCo.               |                       |                       |\n| 12                    | 02890-Traffic Signs and Signal           | Post-mounted signs&Structure-mountedsigns | Unilex                |                       | Egvpt                 |\n| 12                    | 02890-Traffic Signs and Signal           | Post-mounted signs&Structure-mountedsigns | Pico                  |                       |                       |\n| 12                    | 02890-Traffic Signs and Signal           | Post-mounted signs&Structure-mountedsigns | NewVision             |                       | Egypt                 |\n| 12                    | 02890-Traffic Signs and Signal           | Post-mounted signs&Structure-mountedsigns | Cladix                |                       |                       |\n| 12                    | 02890-Traffic Signs and Signal           | Post-mounted signs&Structure-mountedsigns | OrApprovedEqual*      |                       |                       |\n| 14                    | Maintenance 02935-Plant                  | Fertilizersandcompost                     | Al Safwa              |                       | Egvpt                 |\n| 14                    | Maintenance 02935-Plant                  | Fertilizersandcompost                     | Al Louls Cumuust      |                       | Cgypt                 |\n| 14                    | Maintenance 02935-Plant                  | Fertilizersandcompost                     | Al Zahra Compost      |                       | Egypt                 |\n| 14                    | Maintenance 02935-Plant                  | Fertilizersandcompost                     | Al Malcks Compost     |                       | Egypt                 |\n| 14                    | Maintenance 02935-Plant                  | Fertilizersandcompost                     | Al Nile               |                       |                       |\n| 14                    | Maintenance 02935-Plant                  | Fertilizersandcompost                     | OrApproved Equal *    |                       |                       |\n\nnat\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          765.5682067871094
+        ],
+        [
+          93.38541666666667,
+          765.5682067871094
+        ],
+        [
+          93.38541666666667,
+          756.4458923339844
+        ],
+        [
+          75.53842671712239,
+          756.4458923339844
+        ]
+      ],
+      "page": 171
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          431.6481526692708,
+          766.3975067138672
+        ],
+        [
+          510.5069580078125,
+          766.3975067138672
+        ],
+        [
+          510.5069580078125,
+          751.8847401936849
+        ],
+        [
+          431.6481526692708,
+          751.8847401936849
+        ]
+      ],
+      "page": 171
+    },
+    {
+      "text": "nat",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.50625610351562,
+          266.7268981933594
+        ],
+        [
+          132.9508514404297,
+          266.7268981933594
+        ],
+        [
+          132.9508514404297,
+          250.3022003173828
+        ],
+        [
+          114.50625610351562,
+          250.3022003173828
+        ]
+      ],
+      "page": 171
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 171,
+      "text": "MISR\nResidential\nnat",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- OHT are to be fitted with a device to prevent over-hoisting and over-lowering and these are to be properly maintained and tested daily by the crane operator.\n- A safe systeim of work is required for the crane operator, maintenance and inspection staff and for any other persons working on or near the OHT or its tracks.\n\n## 3.17. Hoists (passenger and goods)\n\n- The erection, extension and dismantling of hoists must only bc carricd out by trained competent erectors under the direction of a competent supervisor.\n- All hoists must be thoroughly examined by a competent person:\n- Beforefirstuseonsite\n- Aftersubstantial alteration,modification orrepair\n- After any exceptional circumstance, such as accidental overloading, and at least every six months if used for carrying passengers, or at least every 12 months if used for carrying goods.\n- ·A copy of the current examination and test certificate is tobe on site.\n- Hoistswill onlybe operated by persons whohave been trained how to use ofthe hoist.The operator should:\n- ·Know the rated load of the hoist\n- Be able to accurately assess the weight and distribution of any load brought on to the hoist, and therefore identify if it is overloaded\n- Have access to accurate wind-speed figures and be aware of any limitations placed on the hoist\n- Be able to lower the hoist to the next landing in the event of a power failure (passenger carrying hoists only)\n- Carry out daily pre-use checks and weekly inspections, and take the appropriate follow-up action as necessary\n- Thefreestandingheight of the hoistmastisnevertobe exceeded andis tobe tied to the structure in accordance with the manufacturer's recommendations.\n- Enclosures and gates must have a minimum height of 2m unless a lesser height is adequate to secure the safety of personnel.\n- Hoist platforms are to be sound and maintained in good condition. The platform must display the safeworkingload and ongoodshoists a notice prohibitingpassengers must alsobe displayed.\n- Gates must be fitted at all levels where access is required and all gates must be closed except when loading and unloading.\n- An overrun device must be fitted just above the highest platform position or near the top of the mast and hoists mustbe fitted with an arrest device to support the platform or cage.\n\n<!-- image -->\n\nEMAAR\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.16644287109375,
+          729.9082641601562
+        ],
+        [
+          340.7530110677083,
+          729.9082641601562
+        ],
+        [
+          340.7530110677083,
+          700.8827209472656
+        ],
+        [
+          192.16644287109375,
+          700.8827209472656
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          685.5406595865885
+        ],
+        [
+          76.36852010091145,
+          685.5406595865885
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "OHT are to be fitted with a device to prevent over-hoisting and over-lowering and these are to be properly maintained and tested daily by the crane operator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          673.1011454264323
+        ],
+        [
+          496.8104248046875,
+          673.1011454264323
+        ],
+        [
+          496.8104248046875,
+          648.2221069335938
+        ],
+        [
+          92.55532836914062,
+          648.2221069335938
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "A safe systeim of work is required for the crane operator, maintenance and inspection staff and for any other persons working on or near the OHT or its tracks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          642.0023600260416
+        ],
+        [
+          496.3953857421875,
+          642.0023600260416
+        ],
+        [
+          496.3953857421875,
+          617.9526163736979
+        ],
+        [
+          91.72522989908855,
+          617.9526163736979
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "3.17. Hoists (passenger and goods)",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.428466796875,
+          610.903564453125
+        ],
+        [
+          377.277099609375,
+          610.903564453125
+        ],
+        [
+          377.277099609375,
+          598.8787027994791
+        ],
+        [
+          210.428466796875,
+          598.8787027994791
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "The erection, extension and dismantling of hoists must only bc carricd out by trained competent erectors under the direction of a competent supervisor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          591.8296305338541
+        ],
+        [
+          495.9803059895833,
+          591.8296305338541
+        ],
+        [
+          495.9803059895833,
+          567.7799072265625
+        ],
+        [
+          93.38541666666667,
+          567.7799072265625
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "All hoists must be thoroughly examined by a competent person:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          561.1455078125
+        ],
+        [
+          353.2043863932292,
+          561.1455078125
+        ],
+        [
+          353.2043863932292,
+          549.120625813802
+        ],
+        [
+          92.97036743164062,
+          549.120625813802
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Beforefirstuseonsite",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          541.2422688802083
+        ],
+        [
+          202.1275431315104,
+          541.2422688802083
+        ],
+        [
+          202.1275431315104,
+          531.705322265625
+        ],
+        [
+          100.02615356445312,
+          531.705322265625
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Aftersubstantial alteration,modification orrepair",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          523.8269449869792
+        ],
+        [
+          312.5298665364583,
+          523.8269449869792
+        ],
+        [
+          312.5298665364583,
+          513.0460408528645
+        ],
+        [
+          101.2712910970052,
+          513.0460408528645
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "After any exceptional circumstance, such as accidental overloading, and at least every six months if used for carrying passengers, or at least every 12 months if used for carrying goods.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.68634033203125,
+          505.58233642578125
+        ],
+        [
+          508.0166829427083,
+          505.58233642578125
+        ],
+        [
+          508.0166829427083,
+          476.14215087890625
+        ],
+        [
+          101.68634033203125,
+          476.14215087890625
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "·A copy of the current examination and test certificate is tobe on site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.53587849934895,
+          469.92238362630206
+        ],
+        [
+          389.7284749348958,
+          469.92238362630206
+        ],
+        [
+          389.7284749348958,
+          459.14145914713544
+        ],
+        [
+          97.53587849934895,
+          459.14145914713544
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Hoistswill onlybe operated by persons whohave been trained how to use ofthe hoist.The operator should:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          446.70196533203125
+        ],
+        [
+          496.3953857421875,
+          446.70196533203125
+        ],
+        [
+          496.3953857421875,
+          423.48154703776044
+        ],
+        [
+          92.97036743164062,
+          423.48154703776044
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "·Know the rated load of the hoist",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          415.18849690755206
+        ],
+        [
+          242.38704427083334,
+          415.18849690755206
+        ],
+        [
+          242.38704427083334,
+          404.82224527994794
+        ],
+        [
+          97.12082926432292,
+          404.82224527994794
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Be able to accurately assess the weight and distribution of any load brought on to the hoist, and therefore identify if it is overloaded",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          397.77321370442706
+        ],
+        [
+          508.8467610677083,
+          397.77321370442706
+        ],
+        [
+          508.8467610677083,
+          368.74766031901044
+        ],
+        [
+          100.44120279947917,
+          368.74766031901044
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Have access to accurate wind-speed figures and be aware of any limitations placed on the hoist",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          362.11326090494794
+        ],
+        [
+          496.8104248046875,
+          362.11326090494794
+        ],
+        [
+          496.8104248046875,
+          350.91770426432294
+        ],
+        [
+          106.66690063476562,
+          350.91770426432294
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Be able to lower the hoist to the next landing in the event of a power failure (passenger carrying hoists only)",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          344.69793701171875
+        ],
+        [
+          508.4317220052083,
+          344.69793701171875
+        ],
+        [
+          508.4317220052083,
+          313.59914143880206
+        ],
+        [
+          100.8562520345052,
+          313.59914143880206
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Carry out daily pre-use checks and weekly inspections, and take the appropriate follow-up action as necessary",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          308.20867919921875
+        ],
+        [
+          508.4317220052083,
+          308.20867919921875
+        ],
+        [
+          508.4317220052083,
+          278.76849365234375
+        ],
+        [
+          100.8562520345052,
+          278.76849365234375
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Thefreestandingheight of the hoistmastisnevertobe exceeded andis tobe tied to the structure in accordance with the manufacturer's recommendations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          267.15826416015625
+        ],
+        [
+          497.6405029296875,
+          267.15826416015625
+        ],
+        [
+          497.6405029296875,
+          243.52321370442712
+        ],
+        [
+          93.8004659016927,
+          243.52321370442712
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Enclosures and gates must have a minimum height of 2m unless a lesser height is adequate to secure the safety of personnel.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          236.47414143880212
+        ],
+        [
+          497.2254638671875,
+          236.47414143880212
+        ],
+        [
+          497.2254638671875,
+          212.42441813151038
+        ],
+        [
+          93.8004659016927,
+          212.42441813151038
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Hoist platforms are to be sound and maintained in good condition. The platform must display the safeworkingload and ongoodshoists a notice prohibitingpassengers must alsobe displayed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          206.20465087890625
+        ],
+        [
+          497.2254638671875,
+          206.20465087890625
+        ],
+        [
+          497.2254638671875,
+          182.56955973307288
+        ],
+        [
+          93.38541666666667,
+          182.56955973307288
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "Gates must be fitted at all levels where access is required and all gates must be closed except when loading and unloading.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          175.52052815755212
+        ],
+        [
+          497.6405029296875,
+          175.52052815755212
+        ],
+        [
+          497.6405029296875,
+          150.22682698567712
+        ],
+        [
+          93.8004659016927,
+          150.22682698567712
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "An overrun device must be fitted just above the highest platform position or near the top of the mast and hoists mustbe fitted with an arrest device to support the platform or cage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          144.42173258463538
+        ],
+        [
+          498.4705810546875,
+          144.42173258463538
+        ],
+        [
+          498.4705810546875,
+          120.78664143880212
+        ],
+        [
+          92.97036743164062,
+          120.78664143880212
+        ]
+      ],
+      "page": 449
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          735.713368733724
+        ],
+        [
+          509.6768391927083,
+          735.713368733724
+        ],
+        [
+          509.6768391927083,
+          723.2738545735677
+        ],
+        [
+          453.2305501302083,
+          723.2738545735677
+        ]
+      ],
+      "page": 449
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 449,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nOHT are to be fitted with a device to prevent over-hoisting and over-lowering and these are to be properly maintained and tested daily by the crane operator.\nA safe systeim of work is required for the crane operator, maintenance and inspection staff and for any other persons working on or near the OHT or its tracks.\n3.17. Hoists (passenger and goods)\nThe erection, extension and dismantling of hoists must only bc carricd out by trained competent erectors under the direction of a competent supervisor.\nAll hoists must be thoroughly examined by a competent person:\nBeforefirstuseonsite\nAftersubstantial alteration,modification orrepair\nAfter any exceptional circumstance, such as accidental overloading, and at least every six months if used for carrying passengers, or at least every 12 months if used for carrying goods.\n·A copy of the current examination and test certificate is tobe on site.\nHoistswill onlybe operated by persons whohave been trained how to use ofthe hoist.The operator should:\n·Know the rated load of the hoist\nBe able to accurately assess the weight and distribution of any load brought on to the hoist, and therefore identify if it is overloaded\nHave access to accurate wind-speed figures and be aware of any limitations placed on the hoist\nBe able to lower the hoist to the next landing in the event of a power failure (passenger carrying hoists only)\nCarry out daily pre-use checks and weekly inspections, and take the appropriate follow-up action as necessary\nThefreestandingheight of the hoistmastisnevertobe exceeded andis tobe tied to the structure in accordance with the manufacturer's recommendations.\nEnclosures and gates must have a minimum height of 2m unless a lesser height is adequate to secure the safety of personnel.\nHoist platforms are to be sound and maintained in good condition. The platform must display the safeworkingload and ongoodshoists a notice prohibitingpassengers must alsobe displayed.\nGates must be fitted at all levels where access is required and all gates must be closed except when loading and unloading.\nAn overrun device must be fitted just above the highest platform position or near the top of the mast and hoists mustbe fitted with an arrest device to support the platform or cage.\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

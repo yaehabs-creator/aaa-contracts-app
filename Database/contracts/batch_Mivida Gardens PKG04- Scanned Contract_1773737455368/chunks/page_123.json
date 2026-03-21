@@ -1,0 +1,428 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- 7.1 (b) TheAdvancePaymentBondguarantee amount:Thevalue shallbe the samevalueoftheAdvancePaymentasstated intheAgreementFormof this Contract.\n\n## 9. THE SITE\n\n- 9.1 InformationandInspection\n\nDelete the second paragraph of Sub-Clause 9.1 and substitute by the following:\n\nThe Contractor is obliged to perform additional exploratory pits and/or of EgyptianCods and standard schedule 1-13 &amp;1-14.TimeandCost associated shall be the soleresponsibility of the Contractor.\n\nAt the end of the last paragraph add \"except for reasons stipulated in article 9.1A (Unforeseeable Physical Conditions)\n\n## Add New Sub-Clause 9.1A as follows:\n\n## 9.1A UnforeseeablePhysical Conditions:\n\nIn this Sub-Clause,\"physical conditions\" or \"physical obstructions\" means sub-surfaceandhydrological conditionsonly.\n\nNotwithstanding the provisions of Sub-Clause 9.1, if during the execution oftheWorkstheContractorencountersphysicalobstructionsorphysical conditions,which obstructions or conditions were,in his opinion，not foreseeablebyanexperiencedcontractor,theContractorshall forthwith givenoticethereoftotheContractAdministratorwithacopytothe Employer.Onreceipt of suchnotice,the Contract Administrator shall, if in his opinion such obstructions or conditions could not have been reasonablyforeseenbyanexperiencedcontractor,afterdueconsultation withtheEmployerand theContractor,determine:\n\n- (i) anyextensionoftimetowhichtheContractorisentitledunder Clause 19.2, and/ol\n- (i) Contractorbyreasonofsuchobstructions orconditionshavingbeen encountered,whichshall be added totheContractSum,and shall notify theContractor accordingly,with a copy to theEmployer.\n- 9.4 Opportunitiesfor Other contractors\n\nIn the 1st line after \"requirements of\" add “and in coordination with\"\n\nAl Lhie end of thisSub-Clauseadd\"lf theworks carrled out by suchother contractorsemployedby theEmployercausedtheContractor toincur additionalcostortimeandprovidedthatitisnotattributablepartiallyor whollytotheContractor,theContractorwillhavetherighttoclaimforsuch additionalcostortimeinaccordancewiththeproceduressetoutinthe Contract.\n\n- 9.6 Notices,Permits,and Fees:\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          751.7438354492188
+        ],
+        [
+          177.5852254231771,
+          751.7438354492188
+        ],
+        [
+          177.5852254231771,
+          733.0778401692709
+        ],
+        [
+          98.51751708984375,
+          733.0778401692709
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          729.2597961425781
+        ],
+        [
+          150.94743855794272,
+          729.2597961425781
+        ],
+        [
+          150.94743855794272,
+          717.3814392089844
+        ],
+        [
+          126.84658813476562,
+          717.3814392089844
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "7.1 (b) TheAdvancePaymentBondguarantee amount:Thevalue shallbe the samevalueoftheAdvancePaymentasstated intheAgreementFormof this Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          698.2912089029948
+        ],
+        [
+          502.7353108723958,
+          698.2912089029948
+        ],
+        [
+          502.7353108723958,
+          661.3834431966146
+        ],
+        [
+          126.42376708984375,
+          661.3834431966146
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "9. THE SITE",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          651.2020060221354
+        ],
+        [
+          174.6254679361979,
+          651.2020060221354
+        ],
+        [
+          174.6254679361979,
+          639.3236287434896
+        ],
+        [
+          94.28929646809895,
+          639.3236287434896
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "9.1 InformationandInspection",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          633.8086751302084
+        ],
+        [
+          289.21022542317706,
+          633.8086751302084
+        ],
+        [
+          289.21022542317706,
+          621.0818684895834
+        ],
+        [
+          125.578125,
+          621.0818684895834
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "Delete the second paragraph of Sub-Clause 9.1 and substitute by the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          616.4153645833334
+        ],
+        [
+          501.8896484375,
+          616.4153645833334
+        ],
+        [
+          501.8896484375,
+          590.9617513020834
+        ],
+        [
+          164.05492146809897,
+          590.9617513020834
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "The Contractor is obliged to perform additional exploratory pits and/or of EgyptianCods and standard schedule 1-13 &1-14.TimeandCost associated shall be the soleresponsibility of the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          587.5679321289062
+        ],
+        [
+          502.3125,
+          587.5679321289062
+        ],
+        [
+          502.3125,
+          537.5091145833333
+        ],
+        [
+          164.47774251302084,
+          537.5091145833333
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "At the end of the last paragraph add \"except for reasons stipulated in article 9.1A (Unforeseeable Physical Conditions)",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          533.6910807291667
+        ],
+        [
+          501.4668375651042,
+          533.6910807291667
+        ],
+        [
+          501.4668375651042,
+          507.81321207682294
+        ],
+        [
+          163.6321004231771,
+          507.81321207682294
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "Add New Sub-Clause 9.1A as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          505.2678629557292
+        ],
+        [
+          313.73388671875,
+          505.2678629557292
+        ],
+        [
+          313.73388671875,
+          490.84413655598956
+        ],
+        [
+          125.15530395507812,
+          490.84413655598956
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "9.1A UnforeseeablePhysical Conditions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          487.45029703776044
+        ],
+        [
+          330.6467692057292,
+          487.45029703776044
+        ],
+        [
+          330.6467692057292,
+          474.29925537109375
+        ],
+        [
+          124.73248291015625,
+          474.29925537109375
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "In this Sub-Clause,\"physical conditions\" or \"physical obstructions\" means sub-surfaceandhydrological conditionsonly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          470.48122151692706
+        ],
+        [
+          501.0440266927083,
+          470.48122151692706
+        ],
+        [
+          501.0440266927083,
+          445.02760823567706
+        ],
+        [
+          163.6321004231771,
+          445.02760823567706
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "Notwithstanding the provisions of Sub-Clause 9.1, if during the execution oftheWorkstheContractorencountersphysicalobstructionsorphysical conditions,which obstructions or conditions were,in his opinion，not foreseeablebyanexperiencedcontractor,theContractorshall forthwith givenoticethereoftotheContractAdministratorwithacopytothe Employer.Onreceipt of suchnotice,the Contract Administrator shall, if in his opinion such obstructions or conditions could not have been reasonablyforeseenbyanexperiencedcontractor,afterdueconsultation withtheEmployerand theContractor,determine:",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          441.20957438151044
+        ],
+        [
+          501.4668375651042,
+          441.20957438151044
+        ],
+        [
+          501.4668375651042,
+          332.18316650390625
+        ],
+        [
+          162.78645833333334,
+          332.18316650390625
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "(i) anyextensionoftimetowhichtheContractorisentitledunder Clause 19.2, and/ol",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          327.51666259765625
+        ],
+        [
+          499.3527425130208,
+          327.51666259765625
+        ],
+        [
+          499.3527425130208,
+          303.3357137044271
+        ],
+        [
+          162.78645833333334,
+          303.3357137044271
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "(i) Contractorbyreasonofsuchobstructions orconditionshavingbeen encountered,whichshall be added totheContractSum,and shall notify theContractor accordingly,with a copy to theEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          297.8207804361979
+        ],
+        [
+          499.3527425130208,
+          297.8207804361979
+        ],
+        [
+          499.3527425130208,
+          249.45888264973962
+        ],
+        [
+          159.40387980143228,
+          249.45888264973962
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "9.4 Opportunitiesfor Other contractors",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.61836751302083,
+          246.06504313151038
+        ],
+        [
+          325.5729166666667,
+          246.06504313151038
+        ],
+        [
+          325.5729166666667,
+          232.91400146484375
+        ],
+        [
+          122.61836751302083,
+          232.91400146484375
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "In the 1st line after \"requirements of\" add “and in coordination with\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.3636271158854,
+          228.67173258463538
+        ],
+        [
+          472.2921142578125,
+          228.67173258463538
+        ],
+        [
+          472.2921142578125,
+          214.67226155598962
+        ],
+        [
+          162.3636271158854,
+          214.67226155598962
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "Al Lhie end of thisSub-Clauseadd\"lf theworks carrled out by suchother contractorsemployedby theEmployercausedtheContractor toincur additionalcostortimeandprovidedthatitisnotattributablepartiallyor whollytotheContractor,theContractorwillhavetherighttoclaimforsuch additionalcostortimeinaccordancewiththeproceduressetoutinthe Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.3636271158854,
+          211.27842203776038
+        ],
+        [
+          499.3527425130208,
+          211.27842203776038
+        ],
+        [
+          499.3527425130208,
+          139.15981038411462
+        ],
+        [
+          162.3636271158854,
+          139.15981038411462
+        ]
+      ],
+      "page": 123
+    },
+    {
+      "text": "9.6 Notices,Permits,and Fees:",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.19554646809895,
+          134.49330647786462
+        ],
+        [
+          291.7471516927083,
+          134.49330647786462
+        ],
+        [
+          291.7471516927083,
+          121.76649983723962
+        ],
+        [
+          122.19554646809895,
+          121.76649983723962
+        ]
+      ],
+      "page": 123
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 123,
+      "text": "EMAAR\nMISR\n7.1 (b) TheAdvancePaymentBondguarantee amount:Thevalue shallbe the samevalueoftheAdvancePaymentasstated intheAgreementFormof this Contract.\n9. THE SITE\n9.1 InformationandInspection\nDelete the second paragraph of Sub-Clause 9.1 and substitute by the following:\nThe Contractor is obliged to perform additional exploratory pits and/or of EgyptianCods and standard schedule 1-13 &1-14.TimeandCost associated shall be the soleresponsibility of the Contractor.\nAt the end of the last paragraph add \"except for reasons stipulated in article 9.1A (Unforeseeable Physical Conditions)\nAdd New Sub-Clause 9.1A as follows:\n9.1A UnforeseeablePhysical Conditions:\nIn this Sub-Clause,\"physical conditions\" or \"physical obstructions\" means sub-surfaceandhydrological conditionsonly.\nNotwithstanding the provisions of Sub-Clause 9.1, if during the execution oftheWorkstheContractorencountersphysicalobstructionsorphysical conditions,which obstructions or conditions were,in his opinion，not foreseeablebyanexperiencedcontractor,theContractorshall forthwith givenoticethereoftotheContractAdministratorwithacopytothe Employer.Onreceipt of suchnotice,the Contract Administrator shall, if in his opinion such obstructions or conditions could not have been reasonablyforeseenbyanexperiencedcontractor,afterdueconsultation withtheEmployerand theContractor,determine:\n(i) anyextensionoftimetowhichtheContractorisentitledunder Clause 19.2, and/ol\n(i) Contractorbyreasonofsuchobstructions orconditionshavingbeen encountered,whichshall be added totheContractSum,and shall notify theContractor accordingly,with a copy to theEmployer.\n9.4 Opportunitiesfor Other contractors\nIn the 1st line after \"requirements of\" add “and in coordination with\"\nAl Lhie end of thisSub-Clauseadd\"lf theworks carrled out by suchother contractorsemployedby theEmployercausedtheContractor toincur additionalcostortimeandprovidedthatitisnotattributablepartiallyor whollytotheContractor,theContractorwillhavetherighttoclaimforsuch additionalcostortimeinaccordancewiththeproceduressetoutinthe Contract.\n9.6 Notices,Permits,and Fees:",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

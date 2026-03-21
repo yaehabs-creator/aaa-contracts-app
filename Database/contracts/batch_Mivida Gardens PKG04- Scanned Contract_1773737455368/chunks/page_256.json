@@ -1,0 +1,543 @@
+{
+  "text": "<!-- image -->\n\napproved by Supervision Consultant.\n\n## 4.ExpansionBoltandAll-In-OneAnchors:\n\n- : Load-carrying capacity of device.\n- a) Whenever expansion type fastening devices of any kind, which rely upon friction forces created by expansion of thedevice or all-in-one screw anchors of the Tapcon type installed ir crilled holes, are to be used in concrete and masonry, submit following data to the Contract Administrator for the Supervision Consultant's review:\n- : Nature and magnitude of force to be applied to device with supporting data.\n- : Whether device is self drilling or, if not, the size of bit to be used to dril holestoreceivethedevice.\n- : Materials to which device is fastened.\n- :Installation procedure to ensure that fastener is secure and reliable and that metal reinforcing is not damaged.\n\nAllsuchdata shallbear the sealof aprofessionallicensedstructural Supervision Consultant approved by the Supervision Consultant.\n\n- b)If requested by the Supervision Consultant, conduct Onsite tests of installed fasteners using an approved independent testing company with properly designed and calibrated force measuring apparatus. Contractor shall bear the cost of testing.\n\n## 1.12 2DIELECTRICSEPARATION\n\n1. Ensure that a dielectric separator approved by the Supervision Consultant is providedinapermanentmanneroverentirecontactsurfacestoprevent electrolytic action (galvanic corrosion) between dissimilar metals. Similarly, prevent corrosionto aluminum in contact withalkaline materials such as contained in concrete, masonry and like construction.\n\n## 1.13 FINISHES,APPEARANCE\n\n1. Finish exposed surfaces to approval of Supervision Consultant. Colour, tone, texture,  grain, pattern, smoothness,  flatness, .evenness,  matching, Consultant's approval.\n\n## 1.14 CLEANINGDURINGCONSTRUCTION\n\nContractor shall:\n\n1. Ensure that spatters, droppings, soil, labels, and debris are removed from surfaces to receive finishes, before they set up. Leave work and adjacent finished work in new condition.\n3. Maintain premises \"broom clean\" where Contractor is working at all times:tion Vacuum clean interior areas immediately before finish painting commences.\n2. Use only cleaning materialswhich are recommended for the purpose by both the manufacturer of the surface to be cleaned and of the cleaning material.\n4. Ensure that ductwork is blown out to remove dust, dirt and other foreign materials prior to painting and seal open ended ductwork to prevent entry of foreign materials.\n5. 6.Do not allow waste\n5. Do not burn or bury waste material at the Site. Remove as often as requiredto avoid accumulation.\n\nEmaar Misr forDevelopment\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "approved by Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          720.3712972005209
+        ],
+        [
+          293.02268473307294,
+          720.3712972005209
+        ],
+        [
+          293.02268473307294,
+          708.346435546875
+        ],
+        [
+          110.81736246744792,
+          708.346435546875
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "4.ExpansionBoltandAll-In-OneAnchors:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          698.3948262532552
+        ],
+        [
+          307.96435546875,
+          698.3948262532552
+        ],
+        [
+          307.96435546875,
+          685.9553019205729
+        ],
+        [
+          93.38541666666667,
+          685.9553019205729
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": ": Load-carrying capacity of device.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          629.9774780273438
+        ],
+        [
+          298.8333333333333,
+          629.9774780273438
+        ],
+        [
+          298.8333333333333,
+          616.2940266927084
+        ],
+        [
+          127.00417073567708,
+          616.2940266927084
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Whenever expansion type fastening devices of any kind, which rely upon friction forces created by expansion of thedevice or all-in-one screw anchors of the Tapcon type installed ir crilled holes, are to be used in concrete and masonry, submit following data to the Contract Administrator for the Supervision Consultant's review:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          686.7846069335938
+        ],
+        [
+          504.6962890625,
+          686.7846069335938
+        ],
+        [
+          504.6962890625,
+          627.9042358398438
+        ],
+        [
+          109.57222493489583,
+          627.9042358398438
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": ": Nature and magnitude of force to be applied to device with supporting data.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.75902303059895,
+          619.1965738932291
+        ],
+        [
+          503.8662109375,
+          619.1965738932291
+        ],
+        [
+          503.8662109375,
+          595.1468505859375
+        ],
+        [
+          125.75902303059895,
+          595.1468505859375
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": ": Whether device is self drilling or, if not, the size of bit to be used to dril holestoreceivethedevice.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          584.3659261067709
+        ],
+        [
+          503.8662109375,
+          584.3659261067709
+        ],
+        [
+          503.8662109375,
+          560.3162027994792
+        ],
+        [
+          127.00417073567708,
+          560.3162027994792
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": ": Materials to which device is fastened.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.58912150065105,
+          595.9761352539062
+        ],
+        [
+          319.5856526692708,
+          595.9761352539062
+        ],
+        [
+          319.5856526692708,
+          583.1219685872396
+        ],
+        [
+          126.58912150065105,
+          583.1219685872396
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": ":Installation procedure to ensure that fastener is secure and reliable and that metal reinforcing is not damaged.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.58912150065105,
+          561.5601603190105
+        ],
+        [
+          504.28125,
+          561.5601603190105
+        ],
+        [
+          504.28125,
+          536.2664591471355
+        ],
+        [
+          126.58912150065105,
+          536.2664591471355
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Allsuchdata shallbear the sealof aprofessionallicensedstructural Supervision Consultant approved by the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          527.558817545573
+        ],
+        [
+          504.6962890625,
+          527.558817545573
+        ],
+        [
+          504.6962890625,
+          502.26511637369794
+        ],
+        [
+          126.174072265625,
+          502.26511637369794
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "b)If requested by the Supervision Consultant, conduct Onsite tests of installed fasteners using an approved independent testing company with properly designed and calibrated force measuring apparatus. Contractor shall bear the cost of testing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          493.55747477213544
+        ],
+        [
+          504.28125,
+          493.55747477213544
+        ],
+        [
+          504.28125,
+          445.04335530598956
+        ],
+        [
+          109.1571756998698,
+          445.04335530598956
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "1.12 2DIELECTRICSEPARATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          436.33571370442706
+        ],
+        [
+          251.5180460611979,
+          436.33571370442706
+        ],
+        [
+          251.5180460611979,
+          424.31081136067706
+        ],
+        [
+          75.12337748209636,
+          424.31081136067706
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Ensure that a dielectric separator approved by the Supervision Consultant is providedinapermanentmanneroverentirecontactsurfacestoprevent electrolytic action (galvanic corrosion) between dissimilar metals. Similarly, prevent corrosionto aluminum in contact withalkaline materials such as contained in concrete, masonry and like construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          414.35923258463544
+        ],
+        [
+          503.8662109375,
+          414.35923258463544
+        ],
+        [
+          503.8662109375,
+          354.23488362630206
+        ],
+        [
+          91.3101806640625,
+          354.23488362630206
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "1.13 FINISHES,APPEARANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          345.52724202473956
+        ],
+        [
+          243.21712239583334,
+          345.52724202473956
+        ],
+        [
+          243.21712239583334,
+          333.50238037109375
+        ],
+        [
+          73.87823994954427,
+          333.50238037109375
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Finish exposed surfaces to approval of Supervision Consultant. Colour, tone, texture,  grain, pattern, smoothness,  flatness, .evenness,  matching, Consultant's approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          322.72145589192706
+        ],
+        [
+          503.8662109375,
+          322.72145589192706
+        ],
+        [
+          503.8662109375,
+          275.0366414388021
+        ],
+        [
+          90.8951416015625,
+          275.0366414388021
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "1.14 CLEANINGDURINGCONSTRUCTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.29328918457031,
+          265.9143269856771
+        ],
+        [
+          306.71921793619794,
+          265.9143269856771
+        ],
+        [
+          306.71921793619794,
+          253.47483317057288
+        ],
+        [
+          74.29328918457031,
+          253.47483317057288
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Contractor shall:",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          243.10854085286462
+        ],
+        [
+          190.0912068684896,
+          243.10854085286462
+        ],
+        [
+          190.0912068684896,
+          229.83974202473962
+        ],
+        [
+          107.49698893229167,
+          229.83974202473962
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Ensure that spatters, droppings, soil, labels, and debris are removed from surfaces to receive finishes, before they set up. Leave work and adjacent finished work in new condition.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          221.13205973307288
+        ],
+        [
+          503.0360921223958,
+          221.13205973307288
+        ],
+        [
+          503.0360921223958,
+          185.05747477213538
+        ],
+        [
+          89.65000406901042,
+          185.05747477213538
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Maintain premises \"broom clean\" where Contractor is working at all times:tion Vacuum clean interior areas immediately before finish painting commences.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          164.32497151692712
+        ],
+        [
+          528.7689615885416,
+          164.32497151692712
+        ],
+        [
+          528.7689615885416,
+          137.78729248046875
+        ],
+        [
+          90.48009236653645,
+          137.78729248046875
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Use only cleaning materialswhich are recommended for the purpose by both the manufacturer of the surface to be cleaned and of the cleaning material.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          185.88677978515625
+        ],
+        [
+          502.2060139973958,
+          185.88677978515625
+        ],
+        [
+          502.2060139973958,
+          161.00775146484375
+        ],
+        [
+          90.48009236653645,
+          161.00775146484375
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Ensure that ductwork is blown out to remove dust, dirt and other foreign materials prior to painting and seal open ended ductwork to prevent entry of foreign materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          141.93381754557288
+        ],
+        [
+          503.8662109375,
+          141.93381754557288
+        ],
+        [
+          503.8662109375,
+          105.02996826171875
+        ],
+        [
+          90.06504313151042,
+          105.02996826171875
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "6.Do not allow waste",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          83.88275146484375
+        ],
+        [
+          212.08866373697916,
+          83.88275146484375
+        ],
+        [
+          212.08866373697916,
+          71.02858479817712
+        ],
+        [
+          88.4048563639323,
+          71.02858479817712
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Do not burn or bury waste material at the Site. Remove as often as requiredto avoid accumulation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          107.51784261067712
+        ],
+        [
+          503.0360921223958,
+          107.51784261067712
+        ],
+        [
+          503.0360921223958,
+          82.63877360026038
+        ],
+        [
+          87.9898173014323,
+          82.63877360026038
+        ]
+      ],
+      "page": 256
+    },
+    {
+      "text": "Emaar Misr forDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          71.80300903320312,
+          58.17441813151038
+        ],
+        [
+          157.71759033203125,
+          58.17441813151038
+        ],
+        [
+          157.71759033203125,
+          48.63747151692712
+        ],
+        [
+          71.80300903320312,
+          48.63747151692712
+        ]
+      ],
+      "page": 256
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 256,
+      "text": "approved by Supervision Consultant.\n4.ExpansionBoltandAll-In-OneAnchors:\n: Load-carrying capacity of device.\nWhenever expansion type fastening devices of any kind, which rely upon friction forces created by expansion of thedevice or all-in-one screw anchors of the Tapcon type installed ir crilled holes, are to be used in concrete and masonry, submit following data to the Contract Administrator for the Supervision Consultant's review:\n: Nature and magnitude of force to be applied to device with supporting data.\n: Whether device is self drilling or, if not, the size of bit to be used to dril holestoreceivethedevice.\n: Materials to which device is fastened.\n:Installation procedure to ensure that fastener is secure and reliable and that metal reinforcing is not damaged.\nAllsuchdata shallbear the sealof aprofessionallicensedstructural Supervision Consultant approved by the Supervision Consultant.\nb)If requested by the Supervision Consultant, conduct Onsite tests of installed fasteners using an approved independent testing company with properly designed and calibrated force measuring apparatus. Contractor shall bear the cost of testing.\n1.12 2DIELECTRICSEPARATION\nEnsure that a dielectric separator approved by the Supervision Consultant is providedinapermanentmanneroverentirecontactsurfacestoprevent electrolytic action (galvanic corrosion) between dissimilar metals. Similarly, prevent corrosionto aluminum in contact withalkaline materials such as contained in concrete, masonry and like construction.\n1.13 FINISHES,APPEARANCE\nFinish exposed surfaces to approval of Supervision Consultant. Colour, tone, texture,  grain, pattern, smoothness,  flatness, .evenness,  matching, Consultant's approval.\n1.14 CLEANINGDURINGCONSTRUCTION\nContractor shall:\nEnsure that spatters, droppings, soil, labels, and debris are removed from surfaces to receive finishes, before they set up. Leave work and adjacent finished work in new condition.\nMaintain premises \"broom clean\" where Contractor is working at all times:tion Vacuum clean interior areas immediately before finish painting commences.\nUse only cleaning materialswhich are recommended for the purpose by both the manufacturer of the surface to be cleaned and of the cleaning material.\nEnsure that ductwork is blown out to remove dust, dirt and other foreign materials prior to painting and seal open ended ductwork to prevent entry of foreign materials.\n6.Do not allow waste\nDo not burn or bury waste material at the Site. Remove as often as requiredto avoid accumulation.\nEmaar Misr forDevelopment",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,198 @@
+{
+  "text": "<!-- image -->\n\n## Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt\n\n## Construction Package PK#04\n\n## Construction of Townhomes Villas in Parcel 11 &amp; Parcel 12\n\n## Instructions to Tenderers\n\nAppendices\n\nAppendixH:Form of Tender Letter\n\nCorelnuctionufTownhomesVillas inParcel 11&amp;Farcel 12 Instruction toTenderers-Appendlxes\n\nPage2of2\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.49810791015625,
+          647.3839518229166
+        ],
+        [
+          392.8015950520833,
+          647.3839518229166
+        ],
+        [
+          392.8015950520833,
+          528.600341796875
+        ],
+        [
+          194.49810791015625,
+          528.600341796875
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          172.9341837565104,
+          446.30027262369794
+        ],
+        [
+          413.9427083333333,
+          446.30027262369794
+        ],
+        [
+          413.9427083333333,
+          430.60386149088544
+        ],
+        [
+          172.9341837565104,
+          430.60386149088544
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "Construction of Townhomes Villas in Parcel 11 & Parcel 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          406.42291259765625
+        ],
+        [
+          439.7348225911458,
+          406.42291259765625
+        ],
+        [
+          439.7348225911458,
+          372.06052652994794
+        ],
+        [
+          156.44412231445312,
+          372.06052652994794
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "Instructions to Tenderers",
+      "confidence": 0.95,
+      "box": [
+        [
+          199.99479166666666,
+          335.15277099609375
+        ],
+        [
+          387.304931640625,
+          335.15277099609375
+        ],
+        [
+          387.304931640625,
+          321.15325927734375
+        ],
+        [
+          199.99479166666666,
+          321.15325927734375
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "Appendices",
+      "confidence": 0.95,
+      "box": [
+        [
+          253.69317626953125,
+          302.9115193684896
+        ],
+        [
+          334.45216878255206,
+          302.9115193684896
+        ],
+        [
+          334.45216878255206,
+          285.9424031575521
+        ],
+        [
+          253.69317626953125,
+          285.9424031575521
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "AppendixH:Form of Tender Letter",
+      "confidence": 0.95,
+      "box": [
+        [
+          213.1022745768229,
+          254.54962158203125
+        ],
+        [
+          375.8887125651042,
+          254.54962158203125
+        ],
+        [
+          375.8887125651042,
+          243.51971435546875
+        ],
+        [
+          213.1022745768229,
+          243.51971435546875
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "CorelnuctionufTownhomesVillas inParcel 11&Farcel 12 Instruction toTenderers-Appendlxes",
+      "confidence": 0.95,
+      "box": [
+        [
+          344.1770833333333,
+          91.22214762369788
+        ],
+        [
+          505.695068359375,
+          91.22214762369788
+        ],
+        [
+          505.695068359375,
+          75.10154215494788
+        ],
+        [
+          344.1770833333333,
+          75.10154215494788
+        ]
+      ],
+      "page": 593
+    },
+    {
+      "text": "Page2of2",
+      "confidence": 0.95,
+      "box": [
+        [
+          469.3323567708333,
+          76.37416585286462
+        ],
+        [
+          505.695068359375,
+          76.37416585286462
+        ],
+        [
+          505.695068359375,
+          69.16233317057288
+        ],
+        [
+          469.3323567708333,
+          69.16233317057288
+        ]
+      ],
+      "page": 593
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 593,
+      "text": "Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Townhomes Villas in Parcel 11 & Parcel 12\nInstructions to Tenderers\nAppendices\nAppendixH:Form of Tender Letter\nCorelnuctionufTownhomesVillas inParcel 11&Farcel 12 Instruction toTenderers-Appendlxes\nPage2of2",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

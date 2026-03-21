@@ -1,0 +1,382 @@
+{
+  "text": "<!-- image -->\n\n## USE OF SITE\n\n- 1.1 T'he Contractor shall not use the Site for any purpose other than for carrying out the Works.\n\n## 2 ADVERTISING\n\n- 2.1 The Contractor shall not display or permit advertisements to be displayed on site without consent of the Employer.\n\n## 3 WORKING HOURS\n\n- 3.1 None of the Works shall be carried out on Site during the night or on locally recognised days of rest or on declared public holidays in the Country without the approval of the Contract Administrator,except when work is unavoidable or absolutely necessary for the protection of life or property or for the safety of the Works, in which case the Contractor shall immediately advise the Contract Administrator(with a copy to the Supervision Consultant). The Contractor shall in the carrying out of the Works on Site comply with the codes and requirements regarding noise control.\n\nIn case the work requires the presence of the Supervision Consultant beyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear EGP 275 per Hour for each Engineer.\n\n## 4 ACCIDENTPREVENTION\n\n- 4.1 RefertoSection01520.\n\n## 5 PROTECTIONOFADJOININGPROPERTY\n\n- 5.1 All reasonable precautions must be taken by the Contractor to prevent damage to adjoining property.\n- 5.2 The Package Contractor shall provide and maintain during the execution of the Works all shoring, strutting, needling and other supports as may be necessary to preserve the stability of the ground or any adjacent buildings.\n\n## 6 ROADS AND FOOTPATHS\n\n- 6.1 The Contractor shall ensure that no damage beyond fairwear and tear is caused by site traffic to roads and footpaths outside the site boundaries.Each contractor shall be required to repair damage directly attributable to hiswork,suchas excavationand trenches access the site access road.\n\n## 7 LABOUR RECORD\n\n<!-- image -->\n\n## SECTION01230 JOBSITEADMINISTRATION",
+  "results": [
+    {
+      "text": "USE OF SITE",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          681.8087972005209
+        ],
+        [
+          180.9601847330729,
+          681.8087972005209
+        ],
+        [
+          180.9601847330729,
+          670.6132405598959
+        ],
+        [
+          109.98726399739583,
+          670.6132405598959
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "1.1 T'he Contractor shall not use the Site for any purpose other than for carrying out the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          663.5641784667969
+        ],
+        [
+          504.28125,
+          663.5641784667969
+        ],
+        [
+          504.28125,
+          637.4412027994791
+        ],
+        [
+          109.1571756998698,
+          637.4412027994791
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "2 ADVERTISING",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          625.4163208007812
+        ],
+        [
+          187.6009318033854,
+          625.4163208007812
+        ],
+        [
+          187.6009318033854,
+          613.8061116536459
+        ],
+        [
+          75.95347086588542,
+          613.8061116536459
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "2.1 The Contractor shall not display or permit advertisements to be displayed on site without consent of the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          607.5863647460938
+        ],
+        [
+          504.6962890625,
+          607.5863647460938
+        ],
+        [
+          504.6962890625,
+          580.6340738932291
+        ],
+        [
+          107.49698893229167,
+          580.6340738932291
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "3 WORKING HOURS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          568.6092122395834
+        ],
+        [
+          210.428466796875,
+          568.6092122395834
+        ],
+        [
+          210.428466796875,
+          557.4136352539062
+        ],
+        [
+          75.95347086588542,
+          557.4136352539062
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "3.1 None of the Works shall be carried out on Site during the night or on locally recognised days of rest or on declared public holidays in the Country without the approval of the Contract Administrator,except when work is unavoidable or absolutely necessary for the protection of life or property or for the safety of the Works, in which case the Contractor shall immediately advise the Contract Administrator(with a copy to the Supervision Consultant). The Contractor shall in the carrying out of the Works on Site comply with the codes and requirements regarding noise control.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          550.3645833333333
+        ],
+        [
+          505.111328125,
+          550.3645833333333
+        ],
+        [
+          505.111328125,
+          433.01849365234375
+        ],
+        [
+          109.1571756998698,
+          433.01849365234375
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "In case the work requires the presence of the Supervision Consultant beyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear EGP 275 per Hour for each Engineer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          432.18918863932294
+        ],
+        [
+          505.111328125,
+          432.18918863932294
+        ],
+        [
+          505.111328125,
+          380.35788981119794
+        ],
+        [
+          143.60601806640625,
+          380.35788981119794
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "4 ACCIDENTPREVENTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          368.33302815755206
+        ],
+        [
+          245.7073974609375,
+          368.33302815755206
+        ],
+        [
+          245.7073974609375,
+          357.55210367838544
+        ],
+        [
+          75.95347086588542,
+          357.55210367838544
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "4.1 RefertoSection01520.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          350.08839925130206
+        ],
+        [
+          263.13934326171875,
+          350.08839925130206
+        ],
+        [
+          263.13934326171875,
+          338.47816975911456
+        ],
+        [
+          108.74212646484375,
+          338.47816975911456
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "5 PROTECTIONOFADJOININGPROPERTY",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          325.20937093098956
+        ],
+        [
+          335.35740152994794,
+          325.20937093098956
+        ],
+        [
+          335.35740152994794,
+          314.01377360026044
+        ],
+        [
+          75.95347086588542,
+          314.01377360026044
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "5.1 All reasonable precautions must be taken by the Contractor to prevent damage to adjoining property.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          306.9647420247396
+        ],
+        [
+          505.5263671875,
+          306.9647420247396
+        ],
+        [
+          505.5263671875,
+          280.4271036783854
+        ],
+        [
+          107.9120381673177,
+          280.4271036783854
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "5.2 The Package Contractor shall provide and maintain during the execution of the Works all shoring, strutting, needling and other supports as may be necessary to preserve the stability of the ground or any adjacent buildings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          275.0366414388021
+        ],
+        [
+          505.111328125,
+          275.0366414388021
+        ],
+        [
+          505.111328125,
+          222.79066975911462
+        ],
+        [
+          108.32708740234375,
+          222.79066975911462
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "6 ROADS AND FOOTPATHS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          211.18048095703125
+        ],
+        [
+          252.76318359375,
+          211.18048095703125
+        ],
+        [
+          252.76318359375,
+          199.15557861328125
+        ],
+        [
+          75.95347086588542,
+          199.15557861328125
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "6.1 The Contractor shall ensure that no damage beyond fairwear and tear is caused by site traffic to roads and footpaths outside the site boundaries.Each contractor shall be required to repair damage directly attributable to hiswork,suchas excavationand trenches access the site access road.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          192.52117919921875
+        ],
+        [
+          505.9414469401042,
+          192.52117919921875
+        ],
+        [
+          505.9414469401042,
+          128.25034586588538
+        ],
+        [
+          109.1571756998698,
+          128.25034586588538
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "7 LABOUR RECORD",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          114.98154703776038
+        ],
+        [
+          211.2585652669271,
+          114.98154703776038
+        ],
+        [
+          211.2585652669271,
+          104.20062255859375
+        ],
+        [
+          76.36852010091145,
+          104.20062255859375
+        ]
+      ],
+      "page": 280
+    },
+    {
+      "text": "SECTION01230 JOBSITEADMINISTRATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.08866373697916,
+          719.542002360026
+        ],
+        [
+          366.9009195963542,
+          719.542002360026
+        ],
+        [
+          366.9009195963542,
+          695.4922688802084
+        ],
+        [
+          212.08866373697916,
+          695.4922688802084
+        ]
+      ],
+      "page": 280
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 280,
+      "text": "USE OF SITE\n1.1 T'he Contractor shall not use the Site for any purpose other than for carrying out the Works.\n2 ADVERTISING\n2.1 The Contractor shall not display or permit advertisements to be displayed on site without consent of the Employer.\n3 WORKING HOURS\n3.1 None of the Works shall be carried out on Site during the night or on locally recognised days of rest or on declared public holidays in the Country without the approval of the Contract Administrator,except when work is unavoidable or absolutely necessary for the protection of life or property or for the safety of the Works, in which case the Contractor shall immediately advise the Contract Administrator(with a copy to the Supervision Consultant). The Contractor shall in the carrying out of the Works on Site comply with the codes and requirements regarding noise control.\nIn case the work requires the presence of the Supervision Consultant beyond the normal working hours, a prior notice shall be given by the Contractor and the Contractor shall bear EGP 275 per Hour for each Engineer.\n4 ACCIDENTPREVENTION\n4.1 RefertoSection01520.\n5 PROTECTIONOFADJOININGPROPERTY\n5.1 All reasonable precautions must be taken by the Contractor to prevent damage to adjoining property.\n5.2 The Package Contractor shall provide and maintain during the execution of the Works all shoring, strutting, needling and other supports as may be necessary to preserve the stability of the ground or any adjacent buildings.\n6 ROADS AND FOOTPATHS\n6.1 The Contractor shall ensure that no damage beyond fairwear and tear is caused by site traffic to roads and footpaths outside the site boundaries.Each contractor shall be required to repair damage directly attributable to hiswork,suchas excavationand trenches access the site access road.\n7 LABOUR RECORD\nSECTION01230 JOBSITEADMINISTRATION",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

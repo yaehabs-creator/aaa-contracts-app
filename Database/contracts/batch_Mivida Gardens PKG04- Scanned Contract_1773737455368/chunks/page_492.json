@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n## CONTROL FORMS\n\n## 4.0 Quality Control Forms Index\n\n| 4.01   | Material Inspection Report                                      |\n|--------|-----------------------------------------------------------------|\n| 4.1 A  | Material Inspection Report for Epoxy Coated Reinforcement Steel |\n| 4.2    | Material Deliveries Storage Checklist                           |\n| 4.02A  | Deliveries of Steel Checklist                                   |\n| 4.3    | Request for Inspection and Approval                             |\n| 4.03A  | Request for Inspection and Approval (Demoltlon)                 |\n| 4.3B   | Inspection Schedule                                             |\n| 4.4    | Field Inspection Daily Report                                   |\n| 4.5    | Record of Concrete Pour                                         |\n| 4.05A  | Concrete Truck Info                                             |\n| 4.6    | Pre-Concrete Inspection Record                                  |\n| 4.7    | Record of Testing - On or Off Site                              |\n| 4.8    | Summary of Test Requirements                                    |\n| 4.9    | Off-site Inspection Report                                      |\n| 4.10   | Advice of Defects                                               |\n| 4.11   | Non-Conformance Report                                          |\n| 4.12   | Status Summary on Non-Conformance Notices                       |\n| 4.13   | Maintenance Inspection Check List                               |\n| 4.14   | Record of Ceiling Space Closure                                 |\n| 4.15   | Internal Procedures                                             |\n| 4.16   | Concrete Cube Test Report                                       |\n| 4.17   | Mortar Cube Test Results                                        |\n| 4.18   | Block Works Checklist                                           |\n| 4.19   | Certificate of Hydrostatic / Pneumatic Test                     |\n| 4.20   | HVAC Checklist                                                  |\n| 4.21   | Hupna SAE. Tax Cord 218-287-2UH                                 |\n\nPO Baz. 229, Molat\n\nCR12B41\n\nCaiu, Eaypt\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "CONTROL FORMS",
+      "confidence": 0.95,
+      "box": [
+        [
+          244.8773193359375,
+          677.2476501464844
+        ],
+        [
+          335.35740152994794,
+          677.2476501464844
+        ],
+        [
+          335.35740152994794,
+          665.2227783203125
+        ],
+        [
+          244.8773193359375,
+          665.2227783203125
+        ]
+      ],
+      "page": 492
+    },
+    {
+      "text": "4.0 Quality Control Forms Index",
+      "confidence": 0.95,
+      "box": [
+        [
+          203.7877400716146,
+          631.221435546875
+        ],
+        [
+          361.5053304036458,
+          631.221435546875
+        ],
+        [
+          361.5053304036458,
+          595.5615030924479
+        ],
+        [
+          203.7877400716146,
+          595.5615030924479
+        ]
+      ],
+      "page": 492
+    },
+    {
+      "text": "PO Baz. 229, Molat",
+      "confidence": 0.95,
+      "box": [
+        [
+          273.1004638671875,
+          69.78460693359375
+        ],
+        [
+          335.35740152994794,
+          69.78460693359375
+        ],
+        [
+          335.35740152994794,
+          59.41839599609375
+        ],
+        [
+          273.1004638671875,
+          59.41839599609375
+        ]
+      ],
+      "page": 492
+    },
+    {
+      "text": "CR12B41",
+      "confidence": 0.95,
+      "box": [
+        [
+          273.93056233723956,
+          76.41904703776038
+        ],
+        [
+          300.9085693359375,
+          76.41904703776038
+        ],
+        [
+          300.9085693359375,
+          66.46746826171875
+        ],
+        [
+          273.93056233723956,
+          66.46746826171875
+        ]
+      ],
+      "page": 492
+    },
+    {
+      "text": "Caiu, Eaypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          273.93056233723956,
+          63.56488037109375
+        ],
+        [
+          305.4740804036458,
+          63.56488037109375
+        ],
+        [
+          305.4740804036458,
+          52.78395589192712
+        ],
+        [
+          273.93056233723956,
+          52.78395589192712
+        ]
+      ],
+      "page": 492
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 492,
+      "text": "CONTROL FORMS\n4.0 Quality Control Forms Index\nPO Baz. 229, Molat\nCR12B41\nCaiu, Eaypt",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

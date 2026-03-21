@@ -1,0 +1,612 @@
+{
+  "text": "中建国际埃\n\n## Projects Department Health &amp; Safety Standards\n\n## Ref: EGY/PRJCTS/HSE/REQs\n\n- Before any demolition works, the site is to be fully secured with signs displayed around the perimeter informing personnel and members of the public of the dangers on the site and that demolition is in progress.\n- A pre-survey is to be carried out and is to take into account:\n- The presence of adjoining or adjacent properties\n- The type and structure of the buildings tobe demolished\n- The condition of structural members and the contribution of floors,roofs,walls etc. to overall stability\n- The need for temporary works or shoring\n- Presence of any tanks orvessels\n- Overhead orunderground services\n- Environmental considerations such as dust suppression,run off risks,etc.\n- Health hazards such as lead dust or paint, residues from previous processes, contaminated land etc.\n- Thesequence of demolitionisnormally determinedbythedesignof thebuilding and the associated assessmentsmadeby a competent demolition cxpert,Buildingsaregenerallydemolished inreverse order of their constriction.Demolition should wherever possibleinvolve methods that make it unnecessary for persons towork at height.\n- Where a balling machine,pulverizing grab,pusher arm or shears are to be cmployed there is to be sufficient space for them tobeused safely.\n- The sequence of demolition is to allow debris tobe cleared on a regular basis so that floors do not become overloaded and horizontal pressures on the walls are avoided.\n- &gt;A method statement and permit to work is required for all work involving demolitions.\n\n## 3.12. Working at Height\n\n- Wherever possible work at height is to be avoided e.g. arranging for the work to be undertaken on theground,where it cannot be avoided Contractors are to ensure that:\n- All work at height is properly planned, organized and supervised by a competent person\n- Weatherconditions aretakenintoaccount\n- Those involved in the work are trained and competent\n- The place where work at height is carried out is safe\n- Equipment is appropriately inspected\n- The risk from falling objects are adequately controlled\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "中建国际埃",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          85.12672932942712
+        ],
+        [
+          95.46065266927083,
+          85.12672932942712
+        ],
+        [
+          95.46065266927083,
+          27.07562255859375
+        ],
+        [
+          95.46065266927083,
+          27.07562255859375
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          728.2496643066406
+        ],
+        [
+          340.7530110677083,
+          728.2496643066406
+        ],
+        [
+          340.7530110677083,
+          700.0534261067709
+        ],
+        [
+          190.92130533854166,
+          700.0534261067709
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          698.8094685872396
+        ],
+        [
+          217.0692138671875,
+          698.8094685872396
+        ],
+        [
+          217.0692138671875,
+          685.1260070800781
+        ],
+        [
+          75.12337748209636,
+          685.1260070800781
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Before any demolition works, the site is to be fully secured with signs displayed around the perimeter informing personnel and members of the public of the dangers on the site and that demolition is in progress.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          672.6864929199219
+        ],
+        [
+          497.2254638671875,
+          672.6864929199219
+        ],
+        [
+          497.2254638671875,
+          635.7825927734375
+        ],
+        [
+          92.14027913411458,
+          635.7825927734375
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "A pre-survey is to be carried out and is to take into account:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          628.7335408528646
+        ],
+        [
+          336.1875,
+          628.7335408528646
+        ],
+        [
+          336.1875,
+          617.9526163736979
+        ],
+        [
+          92.14027913411458,
+          617.9526163736979
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The presence of adjoining or adjacent properties",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          610.0742594401041
+        ],
+        [
+          306.3041585286458,
+          610.0742594401041
+        ],
+        [
+          306.3041585286458,
+          597.6347452799479
+        ],
+        [
+          96.70579020182292,
+          597.6347452799479
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The type and structure of the buildings tobe demolished",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          591.4149780273438
+        ],
+        [
+          339.0928141276042,
+          591.4149780273438
+        ],
+        [
+          339.0928141276042,
+          581.0487263997396
+        ],
+        [
+          100.8562520345052,
+          581.0487263997396
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The condition of structural members and the contribution of floors,roofs,walls etc. to overall stability",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          573.5850219726562
+        ],
+        [
+          506.7715250651042,
+          573.5850219726562
+        ],
+        [
+          506.7715250651042,
+          543.3155314127605
+        ],
+        [
+          99.19606526692708,
+          543.3155314127605
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The need for temporary works or shoring",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          538.3397216796875
+        ],
+        [
+          278.0810139973958,
+          538.3397216796875
+        ],
+        [
+          278.0810139973958,
+          525.0709025065105
+        ],
+        [
+          109.1571756998698,
+          525.0709025065105
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Presence of any tanks orvessels",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          519.2657877604167
+        ],
+        [
+          240.31180826822916,
+          519.2657877604167
+        ],
+        [
+          240.31180826822916,
+          508.48488362630206
+        ],
+        [
+          108.32708740234375,
+          508.48488362630206
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Overhead orunderground services",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          501.02117919921875
+        ],
+        [
+          249.85786946614584,
+          501.02117919921875
+        ],
+        [
+          249.85786946614584,
+          490.24025472005206
+        ],
+        [
+          108.74212646484375,
+          490.24025472005206
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Environmental considerations such as dust suppression,run off risks,etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          482.77655029296875
+        ],
+        [
+          405.915283203125,
+          482.77655029296875
+        ],
+        [
+          405.915283203125,
+          471.99562581380206
+        ],
+        [
+          108.32708740234375,
+          471.99562581380206
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Health hazards such as lead dust or paint, residues from previous processes, contaminated land etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          464.94659423828125
+        ],
+        [
+          506.7715250651042,
+          464.94659423828125
+        ],
+        [
+          506.7715250651042,
+          454.16566975911456
+        ],
+        [
+          107.9120381673177,
+          454.16566975911456
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Thesequence of demolitionisnormally determinedbythedesignof thebuilding and the associated assessmentsmadeby a competent demolition cxpert,Buildingsaregenerallydemolished inreverse order of their constriction.Demolition should wherever possibleinvolve methods that make it unnecessary for persons towork at height.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          441.31150309244794
+        ],
+        [
+          497.2254638671875,
+          441.31150309244794
+        ],
+        [
+          497.2254638671875,
+          392.79738362630206
+        ],
+        [
+          93.38541666666667,
+          392.79738362630206
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Where a balling machine,pulverizing grab,pusher arm or shears are to be cmployed there is to be sufficient space for them tobeused safely.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          386.57761637369794
+        ],
+        [
+          496.8104248046875,
+          386.57761637369794
+        ],
+        [
+          496.8104248046875,
+          360.86928304036456
+        ],
+        [
+          92.97036743164062,
+          360.86928304036456
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The sequence of demolition is to allow debris tobe cleared on a regular basis so that floors do not become overloaded and horizontal pressures on the walls are avoided.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          355.06418863932294
+        ],
+        [
+          496.8104248046875,
+          355.06418863932294
+        ],
+        [
+          496.8104248046875,
+          331.84377034505206
+        ],
+        [
+          92.97036743164062,
+          331.84377034505206
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": ">A method statement and permit to work is required for all work involving demolitions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          325.20937093098956
+        ],
+        [
+          444.5145670572917,
+          325.20937093098956
+        ],
+        [
+          444.5145670572917,
+          313.18450927734375
+        ],
+        [
+          75.95347086588542,
+          313.18450927734375
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "3.12. Working at Height",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.5206095377604,
+          306.13543701171875
+        ],
+        [
+          354.4495442708333,
+          306.13543701171875
+        ],
+        [
+          354.4495442708333,
+          293.6959025065104
+        ],
+        [
+          229.5206095377604,
+          293.6959025065104
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Wherever possible work at height is to be avoided e.g. arranging for the work to be undertaken on theground,where it cannot be avoided Contractors are to ensure that:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          287.0615030924479
+        ],
+        [
+          496.8104248046875,
+          287.0615030924479
+        ],
+        [
+          496.8104248046875,
+          263.8410847981771
+        ],
+        [
+          93.38541666666667,
+          263.8410847981771
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "All work at height is properly planned, organized and supervised by a competent person",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.78101603190105,
+          255.54807535807288
+        ],
+        [
+          467.7571614583333,
+          255.54807535807288
+        ],
+        [
+          467.7571614583333,
+          244.76715087890625
+        ],
+        [
+          98.78101603190105,
+          244.76715087890625
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Weatherconditions aretakenintoaccount",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          237.30344645182288
+        ],
+        [
+          282.2314860026042,
+          237.30344645182288
+        ],
+        [
+          282.2314860026042,
+          226.52252197265625
+        ],
+        [
+          101.2712910970052,
+          226.52252197265625
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Those involved in the work are trained and competent",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          219.05881754557288
+        ],
+        [
+          329.96181233723956,
+          219.05881754557288
+        ],
+        [
+          329.96181233723956,
+          208.27789306640625
+        ],
+        [
+          109.1571756998698,
+          208.27789306640625
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The place where work at height is carried out is safe",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          200.81418863932288
+        ],
+        [
+          322.90602620442706,
+          200.81418863932288
+        ],
+        [
+          322.90602620442706,
+          190.44793701171875
+        ],
+        [
+          100.8562520345052,
+          190.44793701171875
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "Equipment is appropriately inspected",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          182.56955973307288
+        ],
+        [
+          263.13934326171875,
+          182.56955973307288
+        ],
+        [
+          263.13934326171875,
+          170.54469807942712
+        ],
+        [
+          100.02615356445312,
+          170.54469807942712
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "The risk from falling objects are adequately controlled",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          164.73960367838538
+        ],
+        [
+          332.45208740234375,
+          164.73960367838538
+        ],
+        [
+          332.45208740234375,
+          153.12937418619788
+        ],
+        [
+          100.02615356445312,
+          153.12937418619788
+        ]
+      ],
+      "page": 437
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.4004720052083,
+          735.2987162272135
+        ],
+        [
+          509.2618001302083,
+          735.2987162272135
+        ],
+        [
+          509.2618001302083,
+          722.4445495605469
+        ],
+        [
+          452.4004720052083,
+          722.4445495605469
+        ]
+      ],
+      "page": 437
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 437,
+      "text": "中建国际埃\nProjects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\nBefore any demolition works, the site is to be fully secured with signs displayed around the perimeter informing personnel and members of the public of the dangers on the site and that demolition is in progress.\nA pre-survey is to be carried out and is to take into account:\nThe presence of adjoining or adjacent properties\nThe type and structure of the buildings tobe demolished\nThe condition of structural members and the contribution of floors,roofs,walls etc. to overall stability\nThe need for temporary works or shoring\nPresence of any tanks orvessels\nOverhead orunderground services\nEnvironmental considerations such as dust suppression,run off risks,etc.\nHealth hazards such as lead dust or paint, residues from previous processes, contaminated land etc.\nThesequence of demolitionisnormally determinedbythedesignof thebuilding and the associated assessmentsmadeby a competent demolition cxpert,Buildingsaregenerallydemolished inreverse order of their constriction.Demolition should wherever possibleinvolve methods that make it unnecessary for persons towork at height.\nWhere a balling machine,pulverizing grab,pusher arm or shears are to be cmployed there is to be sufficient space for them tobeused safely.\nThe sequence of demolition is to allow debris tobe cleared on a regular basis so that floors do not become overloaded and horizontal pressures on the walls are avoided.\n>A method statement and permit to work is required for all work involving demolitions.\n3.12. Working at Height\nWherever possible work at height is to be avoided e.g. arranging for the work to be undertaken on theground,where it cannot be avoided Contractors are to ensure that:\nAll work at height is properly planned, organized and supervised by a competent person\nWeatherconditions aretakenintoaccount\nThose involved in the work are trained and competent\nThe place where work at height is carried out is safe\nEquipment is appropriately inspected\nThe risk from falling objects are adequately controlled\nEMAAR",
+      "line_count": 26
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

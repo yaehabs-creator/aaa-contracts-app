@@ -1,0 +1,267 @@
+{
+  "text": "- (c) TheContractorshall complywiththeProjectManager'sprocedures forthetimebeinginforcerelatingtocommunicationsandany accompanyingdocumentation(and thedistributionofcopiesthereof) betweenthe Employer,the Project Manager，the Supervision Consultant,theContractorand anyotherpersonsnotified inwriting by theProjectManagerto theContractor.\n\n## GregorianCalendar\n\n- 1.8 All datesandperiodsof timereferredtointheContractshallbeascertained inaccordancewiththeGregoriancalendar.\n\n## Joint and Several\n\n- 1.9 If the Contractor consists of more thanone legal person,the persons comprisingthesameshallbejointlyandseverallyliabletotheEmployerfor eachandeveryliabilityandobligationundertheContract,andanyofthe eventslisted inClause30.2(DefinitionofDefault)shallbedeemed tohave occurred inrelationtotheContractorif it hasoccurredinrelationtoanyone of thepersons comprising the Contractor.Suchpersons shall designate oneofthemtoactasleaderwithauthoritytobind theContractorandeach thelegalstatusof theContractorshallnotbealteredwithouttheprior consentoftheEmployer.\n\n## Waiver\n\n- 1.10 Nofailuretoexerciseandnodelaybyeither theEmployer,theProject Manager,theSupervisionConsultantor the Contractorinexercising any right,powerorprivilegeundertheContractshall operateasawaiverthereof Manager,theSupervisionConsultantortheContractorofanyright,power orprivilegeprecludeanyotherorfurtherexercisethereofortheexerciseof anyotherright,powerorprivilege.\n\n## Entire Agreement\n\n- 1.11 TheContractconstitutestheentireagreementbetweentheEmployer and cancels all discussions andother documentsinwhateverform concerning the same.\n\n## Amendments\n\n- 1.12 The Contractshall notbeamendedexceptbyawrittendocumentsigned by duly authorised representativesof theEmployer and theContractor.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(c) TheContractorshall complywiththeProjectManager'sprocedures forthetimebeinginforcerelatingtocommunicationsandany accompanyingdocumentation(and thedistributionofcopiesthereof) betweenthe Employer,the Project Manager，the Supervision Consultant,theContractorand anyotherpersonsnotified inwriting by theProjectManagerto theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          723.7448425292969
+        ],
+        [
+          487.5137125651042,
+          723.7448425292969
+        ],
+        [
+          487.5137125651042,
+          654.1715901692709
+        ],
+        [
+          156.44412231445312,
+          654.1715901692709
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "GregorianCalendar",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          644.8385823567709
+        ],
+        [
+          184.35038248697916,
+          644.8385823567709
+        ],
+        [
+          184.35038248697916,
+          632.1117757161459
+        ],
+        [
+          95.1349385579427,
+          632.1117757161459
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "1.8 All datesandperiodsof timereferredtointheContractshallbeascertained inaccordancewiththeGregoriancalendar.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          621.9303181966146
+        ],
+        [
+          487.0909016927083,
+          621.9303181966146
+        ],
+        [
+          487.0909016927083,
+          597.7493693033854
+        ],
+        [
+          124.73248291015625,
+          597.7493693033854
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "Joint and Several",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          587.9921468098959
+        ],
+        [
+          174.2026570638021,
+          587.9921468098959
+        ],
+        [
+          174.2026570638021,
+          575.6895548502605
+        ],
+        [
+          93.86647542317708,
+          575.6895548502605
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "1.9 If the Contractor consists of more thanone legal person,the persons comprisingthesameshallbejointlyandseverallyliabletotheEmployerfor eachandeveryliabilityandobligationundertheContract,andanyofthe eventslisted inClause30.2(DefinitionofDefault)shallbedeemed tohave occurred inrelationtotheContractorif it hasoccurredinrelationtoanyone of thepersons comprising the Contractor.Suchpersons shall designate oneofthemtoactasleaderwithauthoritytobind theContractorandeach thelegalstatusof theContractorshallnotbealteredwithouttheprior consentoftheEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          564.65966796875
+        ],
+        [
+          487.0909016927083,
+          564.65966796875
+        ],
+        [
+          487.0909016927083,
+          450.11830647786456
+        ],
+        [
+          125.15530395507812,
+          450.11830647786456
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "Waiver",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          440.36110432942706
+        ],
+        [
+          127.2694091796875,
+          440.36110432942706
+        ],
+        [
+          127.2694091796875,
+          427.63429768880206
+        ],
+        [
+          93.02083333333333,
+          427.63429768880206
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "1.10 Nofailuretoexerciseandnodelaybyeither theEmployer,theProject Manager,theSupervisionConsultantor the Contractorinexercising any right,powerorprivilegeundertheContractshall operateasawaiverthereof Manager,theSupervisionConsultantortheContractorofanyright,power orprivilegeprecludeanyotherorfurtherexercisethereofortheexerciseof anyotherright,powerorprivilege.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          417.02862548828125
+        ],
+        [
+          487.0909016927083,
+          417.02862548828125
+        ],
+        [
+          487.0909016927083,
+          336.00120035807294
+        ],
+        [
+          125.15530395507812,
+          336.00120035807294
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "Entire Agreement",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          326.6682332356771
+        ],
+        [
+          173.35699462890625,
+          326.6682332356771
+        ],
+        [
+          173.35699462890625,
+          314.3656209309896
+        ],
+        [
+          93.02083333333333,
+          314.3656209309896
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "1.11 TheContractconstitutestheentireagreementbetweentheEmployer and cancels all discussions andother documentsinwhateverform concerning the same.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          303.75994873046875
+        ],
+        [
+          485.8224283854167,
+          303.75994873046875
+        ],
+        [
+          485.8224283854167,
+          257.5191853841146
+        ],
+        [
+          124.73248291015625,
+          257.5191853841146
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "Amendments",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.17519124348958,
+          246.91351318359375
+        ],
+        [
+          153.06155395507812,
+          246.91351318359375
+        ],
+        [
+          153.06155395507812,
+          235.45937093098962
+        ],
+        [
+          92.17519124348958,
+          235.45937093098962
+        ]
+      ],
+      "page": 33
+    },
+    {
+      "text": "1.12 The Contractshall notbeamendedexceptbyawrittendocumentsigned by duly authorised representativesof theEmployer and theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.30965169270833,
+          224.00526936848962
+        ],
+        [
+          484.976806640625,
+          224.00526936848962
+        ],
+        [
+          484.976806640625,
+          200.24851481119788
+        ],
+        [
+          124.30965169270833,
+          200.24851481119788
+        ]
+      ],
+      "page": 33
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 33,
+      "text": "(c) TheContractorshall complywiththeProjectManager'sprocedures forthetimebeinginforcerelatingtocommunicationsandany accompanyingdocumentation(and thedistributionofcopiesthereof) betweenthe Employer,the Project Manager，the Supervision Consultant,theContractorand anyotherpersonsnotified inwriting by theProjectManagerto theContractor.\nGregorianCalendar\n1.8 All datesandperiodsof timereferredtointheContractshallbeascertained inaccordancewiththeGregoriancalendar.\nJoint and Several\n1.9 If the Contractor consists of more thanone legal person,the persons comprisingthesameshallbejointlyandseverallyliabletotheEmployerfor eachandeveryliabilityandobligationundertheContract,andanyofthe eventslisted inClause30.2(DefinitionofDefault)shallbedeemed tohave occurred inrelationtotheContractorif it hasoccurredinrelationtoanyone of thepersons comprising the Contractor.Suchpersons shall designate oneofthemtoactasleaderwithauthoritytobind theContractorandeach thelegalstatusof theContractorshallnotbealteredwithouttheprior consentoftheEmployer.\nWaiver\n1.10 Nofailuretoexerciseandnodelaybyeither theEmployer,theProject Manager,theSupervisionConsultantor the Contractorinexercising any right,powerorprivilegeundertheContractshall operateasawaiverthereof Manager,theSupervisionConsultantortheContractorofanyright,power orprivilegeprecludeanyotherorfurtherexercisethereofortheexerciseof anyotherright,powerorprivilege.\nEntire Agreement\n1.11 TheContractconstitutestheentireagreementbetweentheEmployer and cancels all discussions andother documentsinwhateverform concerning the same.\nAmendments\n1.12 The Contractshall notbeamendedexceptbyawrittendocumentsigned by duly authorised representativesof theEmployer and theContractor.",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

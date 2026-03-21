@@ -1,0 +1,244 @@
+{
+  "text": "<!-- image -->\n\n## Emaar Misr, Mivida Gardens Project\n\n## East Cairo, Cairo, Egypt\n\n## Construction Package PK#04\n\n## Construction of Townhomes Villas in Parcel 11 &amp; Parcel 12\n\n## Instructions to Tenderers\n\nAppendices\n\nAppendixI: Form of Tender Bond\n\nEmaarMisr,\n\nConstructlonPackage PK#04\n\nMivldaGardensProlect,EastCairoEgy\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr, Mivida Gardens Project",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.6524658203125,
+          659.2623087565104
+        ],
+        [
+          388.5733642578125,
+          659.2623087565104
+        ],
+        [
+          388.5733642578125,
+          579.5076090494792
+        ],
+        [
+          193.6524658203125,
+          579.5076090494792
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.5383504231771,
+          559.5689290364583
+        ],
+        [
+          391.5331217447917,
+          559.5689290364583
+        ],
+        [
+          391.5331217447917,
+          538.3575846354167
+        ],
+        [
+          191.5383504231771,
+          538.3575846354167
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.55160522460938,
+          459.45131429036456
+        ],
+        [
+          411.40576171875,
+          459.45131429036456
+        ],
+        [
+          411.40576171875,
+          439.51263427734375
+        ],
+        [
+          169.55160522460938,
+          439.51263427734375
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "Construction of Townhomes Villas in Parcel 11 & Parcel 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.63872273763022,
+          418.30128987630206
+        ],
+        [
+          437.1979166666667,
+          418.30128987630206
+        ],
+        [
+          437.1979166666667,
+          382.24196370442706
+        ],
+        [
+          152.63872273763022,
+          382.24196370442706
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "Instructions to Tenderers",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.9209187825521,
+          347.03110758463544
+        ],
+        [
+          383.0767008463542,
+          347.03110758463544
+        ],
+        [
+          383.0767008463542,
+          331.33473714192706
+        ],
+        [
+          194.9209187825521,
+          331.33473714192706
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "Appendices",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.88777669270834,
+          313.9414265950521
+        ],
+        [
+          330.2239583333333,
+          313.9414265950521
+        ],
+        [
+          330.2239583333333,
+          296.9723103841146
+        ],
+        [
+          249.88777669270834,
+          296.9723103841146
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "AppendixI: Form of Tender Bond",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.25663248697916,
+          265.57952880859375
+        ],
+        [
+          367.4322916666667,
+          265.57952880859375
+        ],
+        [
+          367.4322916666667,
+          253.27691650390625
+        ],
+        [
+          212.25663248697916,
+          253.27691650390625
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "EmaarMisr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          91.64638264973962
+        ],
+        [
+          133.61173502604166,
+          91.64638264973962
+        ],
+        [
+          133.61173502604166,
+          83.16184488932288
+        ],
+        [
+          95.98058064778645,
+          83.16184488932288
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "ConstructlonPackage PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          77.22263590494788
+        ],
+        [
+          183.50472005208334,
+          77.22263590494788
+        ],
+        [
+          183.50472005208334,
+          68.31386311848962
+        ],
+        [
+          96.40340169270833,
+          68.31386311848962
+        ]
+      ],
+      "page": 596
+    },
+    {
+      "text": "MivldaGardensProlect,EastCairoEgy",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          86.97987874348962
+        ],
+        [
+          221.5587158203125,
+          86.97987874348962
+        ],
+        [
+          221.5587158203125,
+          74.25307210286462
+        ],
+        [
+          95.1349385579427,
+          74.25307210286462
+        ]
+      ],
+      "page": 596
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 596,
+      "text": "Emaar Misr, Mivida Gardens Project\nEast Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Townhomes Villas in Parcel 11 & Parcel 12\nInstructions to Tenderers\nAppendices\nAppendixI: Form of Tender Bond\nEmaarMisr,\nConstructlonPackage PK#04\nMivldaGardensProlect,EastCairoEgy",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

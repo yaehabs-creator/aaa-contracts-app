@@ -1,0 +1,152 @@
+{
+  "text": "<!-- image -->\n\nEmaar Misr,\n\n## Mivida Gardens Project East Cairo, Cairo, Egypt\n\nConstruction Package PK#04\n\n## Construction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\n## Conditions of Contract Appendices\n\nAppendix “C\" Advance Payment Bond\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          243.54545084635416,
+          644.4143676757812
+        ],
+        [
+          341.64013671875,
+          644.4143676757812
+        ],
+        [
+          341.64013671875,
+          625.3241373697916
+        ],
+        [
+          243.54545084635416,
+          625.3241373697916
+        ]
+      ],
+      "page": 154
+    },
+    {
+      "text": "Mivida Gardens Project East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.07527669270834,
+          583.7498779296875
+        ],
+        [
+          392.8015950520833,
+          583.7498779296875
+        ],
+        [
+          392.8015950520833,
+          523.933858235677
+        ],
+        [
+          194.07527669270834,
+          523.933858235677
+        ]
+      ],
+      "page": 154
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          172.9341837565104,
+          403.02911376953125
+        ],
+        [
+          413.5198567708333,
+          403.02911376953125
+        ],
+        [
+          413.5198567708333,
+          386.90846761067706
+        ],
+        [
+          172.9341837565104,
+          386.90846761067706
+        ]
+      ],
+      "page": 154
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.81296793619792,
+          362.72751871744794
+        ],
+        [
+          475.6747233072917,
+          362.72751871744794
+        ],
+        [
+          475.6747233072917,
+          327.51666259765625
+        ],
+        [
+          118.81296793619792,
+          327.51666259765625
+        ]
+      ],
+      "page": 154
+    },
+    {
+      "text": "Conditions of Contract Appendices",
+      "confidence": 0.95,
+      "box": [
+        [
+          214.7935587565104,
+          291.4573771158854
+        ],
+        [
+          384.3451741536458,
+          291.4573771158854
+        ],
+        [
+          384.3451741536458,
+          258.3676554361979
+        ],
+        [
+          214.7935587565104,
+          258.3676554361979
+        ]
+      ],
+      "page": 154
+    },
+    {
+      "text": "Appendix “C\" Advance Payment Bond",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.70596313476562,
+          241.82277425130212
+        ],
+        [
+          402.9493408203125,
+          241.82277425130212
+        ],
+        [
+          402.9493408203125,
+          228.24753824869788
+        ],
+        [
+          168.70596313476562,
+          228.24753824869788
+        ]
+      ],
+      "page": 154
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 154,
+      "text": "Emaar Misr,\nMivida Gardens Project East Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\nConditions of Contract Appendices\nAppendix “C\" Advance Payment Bond",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

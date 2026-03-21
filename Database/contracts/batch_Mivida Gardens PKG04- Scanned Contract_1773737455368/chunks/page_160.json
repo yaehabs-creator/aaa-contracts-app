@@ -1,0 +1,60 @@
+{
+  "text": "onal aternationa Con\r\n中\n\n<!-- image -->\n\nCab\n\n<!-- image -->\n\n| # 10.0 - Construction Completion and Handing over for Group 02 Townhomes (Parcel 11) #9.0-Construction Completion and Handing over for Group 02 Townhomes (Parcel 12) #8.0-Construction Completion and Handing over for Group 01 Townhomes (Parcel 11)   | # 7.0- Construction Completion and Handing over for Group 01 Townhomes (Parcel 12) #6.0-Skeleton&Fenceworksfor Group02Townhomes(Parcel11)   | #5.0-Skeleton&Fenceworks for Group 02Townhomes(Parcel 12)   | #4.0-Skeleton&Fenceworks for Group 01Townhomes(Parcel 11)   | #3.0-Skeleton&Fence works for Group 01 Townhomes(Parcel 12)   | ockup  mpletion  n (  (Parcel  l 1  12)   | Contractual Milestones    |\n|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------------------|\n|                                                                                                                                                                                                                                                          | 188                                                                                                                                         |                                                             |                                                             | 8 4                                                           | Number of Units 4                         |                           |\n| 30 28.5 24                                                                                                                                                                                                                                               | 22.5 20                                                                                                                                     | 17.5                                                        | 14.5                                                        | 13 12                                                         | 12                                        | CommencementDate (Months) |",
+  "results": [
+    {
+      "text": "onal aternationa Con\r\n中",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.51251220703125,
+          435.8762512207031
+        ],
+        [
+          243.4806365966797,
+          435.8762512207031
+        ],
+        [
+          243.4806365966797,
+          408.3383483886719
+        ],
+        [
+          182.51251220703125,
+          408.3383483886719
+        ]
+      ],
+      "page": 160
+    },
+    {
+      "text": "Cab",
+      "confidence": 0.95,
+      "box": [
+        [
+          216.2545166015625,
+          281.3349914550781
+        ],
+        [
+          222.5044403076172,
+          281.3349914550781
+        ],
+        [
+          222.5044403076172,
+          270.9542236328125
+        ],
+        [
+          216.2545166015625,
+          270.9542236328125
+        ]
+      ],
+      "page": 160
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 160,
+      "text": "onal aternationa Con\r\n中\nCab",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

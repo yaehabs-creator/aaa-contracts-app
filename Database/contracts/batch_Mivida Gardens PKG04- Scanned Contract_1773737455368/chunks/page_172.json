@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\nMISR\n\n## Division 03:Concrete.\n\n| Specification Section  Emaar Vendor  Country of origin   | Specification Section  Emaar Vendor  Country of origin   | Specification Section  Emaar Vendor  Country of origin     | Specification Section  Emaar Vendor  Country of origin   | Specification Section  Emaar Vendor  Country of origin   | Specification Section  Emaar Vendor  Country of origin   |\n|----------------------------------------------------------|----------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|\n| Category                                                 | Category                                                 | Category                                                   | Category                                                 | Category                                                 | Category                                                 |\n|                                                          | Specification Section                                    |                                                            | Emaar Vondor                                             | Locat distributor                                        | Country of origin                                        |\n| 15                                                       |                                                          | Admixtures                                                 | SIka                                                     | Sika Egypt                                               | Switzerland                                              |\n| 15                                                       |                                                          | Admixtures                                                 | Fosroc                                                   | Fosroc                                                   | Egvpt                                                    |\n| 15                                                       |                                                          | Admixtures                                                 | Prokem                                                   | Prokem                                                   | Egypt                                                    |\n| 15                                                       |                                                          | Admixtures                                                 | Chryso                                                   | Saint-Gobain Egvpt                                       | Egypt                                                    |\n| 15                                                       |                                                          | Admixtures                                                 | Mapei                                                    | Mapei Egvpt                                              | Italy,Dubai,Egt                                          |\n| 15                                                       | 033000 Cast-In-Place                                     | Admixtures                                                 | Or Approved Equal                                        |                                                          |                                                          |\n| 15                                                       | Concrete                                                 | Accessories:Bonding agent,joint filler                     | Sika                                                     | SikaEgvpt                                                | Egvpt                                                    |\n| 15                                                       |                                                          | Accessories:Bonding agent,joint filler                     | Fosroc                                                   | Fosroc                                                   | Egypt                                                    |\n| 15                                                       |                                                          | Accessories:Bonding agent,joint filler                     | Mapei                                                    | Mapei Egypt                                              | Italy-UAE-Egvpt                                          |\n| 15                                                       |                                                          | Accessories:Bonding agent,joint filler                     | Prokem                                                   | Prokem                                                   | Egypt                                                    |\n| 15                                                       |                                                          | Accessories:Bonding agent,joint filler                     | DryMix-WeberEgypt                                        | Saint-Gobain Egvpt                                       | Egypt-UAE-Lebanon                                        |\n| 15                                                       |                                                          | Accessories:Bonding agent,joint filler                     | OrApproved Equal*                                        |                                                          |                                                          |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | Fibrex                                                   | Fibrex                                                   | Egvpt                                                    |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | Mena Country                                             | Mena Country                                             | Egvpt                                                    |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | Leco Misr                                                | DocoMicr                                                 | Egvpt                                                    |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | El Banaaon Construction(El Shebokshy)                    | El Banaaon Construction                                  | Egypt                                                    |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | Al Roqie                                                 | Al Roqie                                                 | Egvpt                                                    |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | WajId                                                    |                                                          | Egvpt                                                    |\n| 16                                                       | 034900 - Glass-Fiber- Reinforced Concrete                | lass fiber reinforced concrete (GRC) including accessories | Or Approved Equal *                                      |                                                          |                                                          |\n\nContret\n\nInter\r\n中\n\n<!-- image -->\n\n<!-- image -->\n\n## Residential",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          747.3235829671224
+        ],
+        [
+          95.0456034342448,
+          747.3235829671224
+        ],
+        [
+          95.0456034342448,
+          738.2012736002604
+        ],
+        [
+          77.1986083984375,
+          738.2012736002604
+        ]
+      ],
+      "page": 172
+    },
+    {
+      "text": "Division 03:Concrete.",
+      "confidence": 0.95,
+      "box": [
+        [
+          51.05069478352865,
+          717.0540974934896
+        ],
+        [
+          153.982177734375,
+          717.0540974934896
+        ],
+        [
+          153.982177734375,
+          705.0292256673177
+        ],
+        [
+          51.05069478352865,
+          705.0292256673177
+        ]
+      ],
+      "page": 172
+    },
+    {
+      "text": "Contret",
+      "confidence": 0.95,
+      "box": [
+        [
+          295.85626220703125,
+          695.781005859375
+        ],
+        [
+          317.3625183105469,
+          695.781005859375
+        ],
+        [
+          317.3625183105469,
+          689.3870239257812
+        ],
+        [
+          295.85626220703125,
+          689.3870239257812
+        ]
+      ],
+      "page": 172
+    },
+    {
+      "text": "Inter\r\n中",
+      "confidence": 0.95,
+      "box": [
+        [
+          294.6937561035156,
+          290.95428466796875
+        ],
+        [
+          318.81243896484375,
+          290.95428466796875
+        ],
+        [
+          318.81243896484375,
+          270.6457214355469
+        ],
+        [
+          294.6937561035156,
+          270.6457214355469
+        ]
+      ],
+      "page": 172
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          432.8932698567708,
+          745.6649831136068
+        ],
+        [
+          512.9972330729166,
+          745.6649831136068
+        ],
+        [
+          512.9972330729166,
+          730.3229166666666
+        ],
+        [
+          432.8932698567708,
+          730.3229166666666
+        ]
+      ],
+      "page": 172
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 172,
+      "text": "MISR\nDivision 03:Concrete.\nContret\nInter\r\n中\nResidential",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

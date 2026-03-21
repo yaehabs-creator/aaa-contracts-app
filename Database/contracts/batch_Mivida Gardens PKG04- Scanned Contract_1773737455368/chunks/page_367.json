@@ -1,0 +1,497 @@
+{
+  "text": "<!-- image -->\n\n## SECTION01630\n\n## PRODUCTOPTIONSANDSUBSTITUTIONS\n\nPART 1 -- GENERAL.\n\n## 1.01 SUMMARY\n\n1. This Section describes product options available to the Contractor, as weli as procedures for securing approval of proposed substitutions.\n2. 2.Related Work:\n- a) Other Contract documents affecting this Section include, but are not necessarily limited to,Conditionsof Contract,and Sections inDivision 1 of theseSpecifications.\n4. b)Make submittals in accordance with the provisions of Sections 01300 and 01340.\n\n## 1.02 PRODUCT'OPTIONS\n\n1. The Contract is based on standards of quality established therein.\n2. a)In agreeing to the terms and conditions of the Contract, the Contractor hasaccepted a responsibility toverifythat the specifiedproductswill be availableandtoplaceordersforallrequiredmaterialsinsuchatimely mannerasisneeded tomeethis agreedContractProgramme.\n- b) Neither the Employer, the Contract Administrator nor the Supervision Consultant has agreed to the substitution of materials or methods called for in the Contract, except as they may specifically otherwise state in writing.\n4. 2.Materialsand/ormethodsspecifiedbyname:\n- a) Where materials and/or methods are specified by naming a single manufacturer and/or model number, without stating that equal products will be considered, only the material and/or method named is approved for incorporation into the Works.\n- b) Should the Contractor demonstrate to the approval of Contract Administrator that a specified material or method was ordered in a timely manner and will not be available in time for incorporation into the Works, the Contractor shall submit such data on proposed substitute materials and/or methods as are needed to help the SupervisionConsultant determine suitability of the proposed substitution.\n7. C Where materials and/or methods are specified by name and/or model\n- i. Thematerial and/or method specifiedby name establishes the required standard of quality;\n- il. Materials and/or methods proposed by the Contractor to be used in lieu of materials and/or methods so specified by name shall in ways equalorexceedthequalitiesof theramedmaterials or methods.\n\naui Kg pasodde se jenba ho io 'lenba do, aseiyd Consultant,\" occurs in the Contract, do not assume that the quipment, or methods will be approved as equal unless the eyiewandapproval.andracco\n\n<!-- image -->\n\nEmaar Misr for Development\n\nSpecilications Dlv.01 General Requirements\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "SECTION01630",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.44283040364584,
+          719.9566446940104
+        ],
+        [
+          333.6972249348958,
+          719.9566446940104
+        ],
+        [
+          333.6972249348958,
+          708.7610880533854
+        ],
+        [
+          249.44283040364584,
+          708.7610880533854
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "PRODUCTOPTIONSANDSUBSTITUTIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          176.3946736653646,
+          697.150868733724
+        ],
+        [
+          406.330322265625,
+          697.150868733724
+        ],
+        [
+          406.330322265625,
+          686.3699544270834
+        ],
+        [
+          176.3946736653646,
+          686.3699544270834
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "PART 1 -- GENERAL.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          673.5157877604166
+        ],
+        [
+          183.8654988606771,
+          673.5157877604166
+        ],
+        [
+          183.8654988606771,
+          662.3202311197916
+        ],
+        [
+          78.44375101725261,
+          662.3202311197916
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "1.01 SUMMARY",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          651.1246541341146
+        ],
+        [
+          170.99906412760416,
+          651.1246541341146
+        ],
+        [
+          170.99906412760416,
+          639.0997924804688
+        ],
+        [
+          77.61365763346355,
+          639.0997924804688
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "This Section describes product options available to the Contractor, as weli as procedures for securing approval of proposed substitutions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          634.5386352539062
+        ],
+        [
+          505.9414469401042,
+          634.5386352539062
+        ],
+        [
+          505.9414469401042,
+          610.903564453125
+        ],
+        [
+          110.81736246744792,
+          610.903564453125
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "2.Related Work:",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          605.0984497070312
+        ],
+        [
+          202.1275431315104,
+          605.0984497070312
+        ],
+        [
+          202.1275431315104,
+          594.7321980794271
+        ],
+        [
+          111.64745076497395,
+          594.7321980794271
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Other Contract documents affecting this Section include, but are not necessarily limited to,Conditionsof Contract,and Sections inDivision 1 of theseSpecifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.66434733072916,
+          593.9028930664062
+        ],
+        [
+          506.3564860026042,
+          593.9028930664062
+        ],
+        [
+          506.3564860026042,
+          559.4868977864583
+        ],
+        [
+          128.66434733072916,
+          559.4868977864583
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "b)Make submittals in accordance with the provisions of Sections 01300 and 01340.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.66434733072916,
+          559.4868977864583
+        ],
+        [
+          505.111328125,
+          559.4868977864583
+        ],
+        [
+          505.111328125,
+          537.5104166666667
+        ],
+        [
+          128.66434733072916,
+          537.5104166666667
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "1.02 PRODUCT'OPTIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          525.4855550130208
+        ],
+        [
+          221.63472493489584,
+          525.4855550130208
+        ],
+        [
+          221.63472493489584,
+          513.8753458658855
+        ],
+        [
+          78.44375101725261,
+          513.8753458658855
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "The Contract is based on standards of quality established therein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          508.8995361328125
+        ],
+        [
+          459.8712972005208,
+          508.8995361328125
+        ],
+        [
+          459.8712972005208,
+          497.28932698567706
+        ],
+        [
+          112.0625,
+          497.28932698567706
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "a)In agreeing to the terms and conditions of the Contract, the Contractor hasaccepted a responsibility toverifythat the specifiedproductswill be availableandtoplaceordersforallrequiredmaterialsinsuchatimely mannerasisneeded tomeethis agreedContractProgramme.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          491.4842122395833
+        ],
+        [
+          505.9414469401042,
+          491.4842122395833
+        ],
+        [
+          505.9414469401042,
+          446.28729248046875
+        ],
+        [
+          129.07939656575522,
+          446.28729248046875
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Neither the Employer, the Contract Administrator nor the Supervision Consultant has agreed to the substitution of materials or methods called for in the Contract, except as they may specifically otherwise state in writing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.32453409830728,
+          440.89683024088544
+        ],
+        [
+          506.7715250651042,
+          440.89683024088544
+        ],
+        [
+          506.7715250651042,
+          392.79738362630206
+        ],
+        [
+          130.32453409830728,
+          392.79738362630206
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "2.Materialsand/ormethodsspecifiedbyname:",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          388.65089925130206
+        ],
+        [
+          356.1097005208333,
+          388.65089925130206
+        ],
+        [
+          356.1097005208333,
+          377.86997477213544
+        ],
+        [
+          113.30763753255208,
+          377.86997477213544
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Where materials and/or methods are specified by naming a single manufacturer and/or model number, without stating that equal products will be considered, only the material and/or method named is approved for incorporation into the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          372.89414469401044
+        ],
+        [
+          506.3564860026042,
+          372.89414469401044
+        ],
+        [
+          506.3564860026042,
+          326.86794026692706
+        ],
+        [
+          129.07939656575522,
+          326.86794026692706
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Should the Contractor demonstrate to the approval of Contract Administrator that a specified material or method was ordered in a timely manner and will not be available in time for incorporation into the Works, the Contractor shall submit such data on proposed substitute materials and/or methods as are needed to help the SupervisionConsultant determine suitability of the proposed substitution.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.66434733072916,
+          321.47751871744794
+        ],
+        [
+          507.6016031901042,
+          321.47751871744794
+        ],
+        [
+          507.6016031901042,
+          252.23085530598962
+        ],
+        [
+          128.66434733072916,
+          252.23085530598962
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "C Where materials and/or methods are specified by name and/or model",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.9847208658854,
+          247.25506591796875
+        ],
+        [
+          506.7715250651042,
+          247.25506591796875
+        ],
+        [
+          506.7715250651042,
+          236.47414143880212
+        ],
+        [
+          131.9847208658854,
+          236.47414143880212
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Thematerial and/or method specifiedby name establishes the required standard of quality;",
+      "confidence": 0.95,
+      "box": [
+        [
+          148.58657836914062,
+          224.03464762369788
+        ],
+        [
+          505.9414469401042,
+          224.03464762369788
+        ],
+        [
+          505.9414469401042,
+          200.81418863932288
+        ],
+        [
+          148.58657836914062,
+          200.81418863932288
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Materials and/or methods proposed by the Contractor to be used in lieu of materials and/or methods so specified by name shall in ways equalorexceedthequalitiesof theramedmaterials or methods.",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.51134236653647,
+          201.64349365234375
+        ],
+        [
+          506.7715250651042,
+          201.64349365234375
+        ],
+        [
+          506.7715250651042,
+          156.03196207682288
+        ],
+        [
+          146.51134236653647,
+          156.03196207682288
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "aui Kg pasodde se jenba ho io 'lenba do, aseiyd Consultant,\" occurs in the Contract, do not assume that the quipment, or methods will be approved as equal unless the eyiewandapproval.andracco",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.44791666666666,
+          151.88543701171875
+        ],
+        [
+          507.6016031901042,
+          151.88543701171875
+        ],
+        [
+          507.6016031901042,
+          116.22552490234375
+        ],
+        [
+          205.44791666666666,
+          116.22552490234375
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Emaar Misr for Development",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          56.10117594401038
+        ],
+        [
+          165.60347493489584,
+          56.10117594401038
+        ],
+        [
+          165.60347493489584,
+          46.97886149088538
+        ],
+        [
+          79.27384440104167,
+          46.97886149088538
+        ]
+      ],
+      "page": 367
+    },
+    {
+      "text": "Specilications Dlv.01 General Requirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          47.80812581380212
+        ],
+        [
+          210.428466796875,
+          47.80812581380212
+        ],
+        [
+          210.428466796875,
+          39.92978922526038
+        ],
+        [
+          79.27384440104167,
+          39.92978922526038
+        ]
+      ],
+      "page": 367
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 367,
+      "text": "SECTION01630\nPRODUCTOPTIONSANDSUBSTITUTIONS\nPART 1 -- GENERAL.\n1.01 SUMMARY\nThis Section describes product options available to the Contractor, as weli as procedures for securing approval of proposed substitutions.\n2.Related Work:\nOther Contract documents affecting this Section include, but are not necessarily limited to,Conditionsof Contract,and Sections inDivision 1 of theseSpecifications.\nb)Make submittals in accordance with the provisions of Sections 01300 and 01340.\n1.02 PRODUCT'OPTIONS\nThe Contract is based on standards of quality established therein.\na)In agreeing to the terms and conditions of the Contract, the Contractor hasaccepted a responsibility toverifythat the specifiedproductswill be availableandtoplaceordersforallrequiredmaterialsinsuchatimely mannerasisneeded tomeethis agreedContractProgramme.\nNeither the Employer, the Contract Administrator nor the Supervision Consultant has agreed to the substitution of materials or methods called for in the Contract, except as they may specifically otherwise state in writing.\n2.Materialsand/ormethodsspecifiedbyname:\nWhere materials and/or methods are specified by naming a single manufacturer and/or model number, without stating that equal products will be considered, only the material and/or method named is approved for incorporation into the Works.\nShould the Contractor demonstrate to the approval of Contract Administrator that a specified material or method was ordered in a timely manner and will not be available in time for incorporation into the Works, the Contractor shall submit such data on proposed substitute materials and/or methods as are needed to help the SupervisionConsultant determine suitability of the proposed substitution.\nC Where materials and/or methods are specified by name and/or model\nThematerial and/or method specifiedby name establishes the required standard of quality;\nMaterials and/or methods proposed by the Contractor to be used in lieu of materials and/or methods so specified by name shall in ways equalorexceedthequalitiesof theramedmaterials or methods.\naui Kg pasodde se jenba ho io 'lenba do, aseiyd Consultant,\" occurs in the Contract, do not assume that the quipment, or methods will be approved as equal unless the eyiewandapproval.andracco\nEmaar Misr for Development\nSpecilications Dlv.01 General Requirements",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\n## Package ID : PK#04\n\n## Subject:Construction of TownhomesVillas inParcels 11&amp;12\n\n## Project : Mivida Gardens",
+  "results": [
+    {
+      "text": "Package ID : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          485.1891276041667,
+          704.1999308268229
+        ],
+        [
+          498.0555419921875,
+          704.1999308268229
+        ],
+        [
+          498.0555419921875,
+          628.3188883463541
+        ],
+        [
+          485.1891276041667,
+          628.3188883463541
+        ]
+      ],
+      "page": 243
+    },
+    {
+      "text": "Subject:Construction of TownhomesVillas inParcels 11&12",
+      "confidence": 0.95,
+      "box": [
+        [
+          501.7909749348958,
+          704.1999308268229
+        ],
+        [
+          514.2423502604166,
+          704.1999308268229
+        ],
+        [
+          514.2423502604166,
+          473.65423583984375
+        ],
+        [
+          501.7909749348958,
+          473.65423583984375
+        ]
+      ],
+      "page": 243
+    },
+    {
+      "text": "Project : Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          517.1476643880209,
+          704.6145833333334
+        ],
+        [
+          529.5990804036459,
+          704.6145833333334
+        ],
+        [
+          529.5990804036459,
+          609.2449544270834
+        ],
+        [
+          517.1476643880209,
+          609.2449544270834
+        ]
+      ],
+      "page": 243
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 243,
+      "text": "Package ID : PK#04\nSubject:Construction of TownhomesVillas inParcels 11&12\nProject : Mivida Gardens",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

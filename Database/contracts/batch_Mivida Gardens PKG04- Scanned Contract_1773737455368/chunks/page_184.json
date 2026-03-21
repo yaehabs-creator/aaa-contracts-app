@@ -1,0 +1,106 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Division13:SpecialConstruction\n\n<!-- image -->\n\n| Country of  Categon Divislon tB:Speaial Construetion   | Country of  Categon Divislon tB:Speaial Construetion   | Country of  Categon Divislon tB:Speaial Construetion                                                                                                                                                 | Country of  Categon Divislon tB:Speaial Construetion                                                                                                                                                                                                                                                              | Country of  Categon Divislon tB:Speaial Construetion                                                                         |\n|--------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|\n|                                                        | Specitication section                                  | cotegory                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                   | Countryot oAgin                                                                                                              |\n| 51                                                     | 13152 Pools and Fountains Equipment                    | Swimming Pools and Fountains Equipment Swimming Pool Pumps and Basket Strainers Regenerative Media Filters Dosing Pumps PH/ORP Controller Ozune Generalur Systerns(OPTIONAL) AutomalicFiling Systein | Emaar Vendor distibutor Astral Pool Hayward PSH(Pumps) Desjoyaux HerbornerPumpen SpeckPumps Aquify-FRP Strainers MermadeFRPStrainers Atecpool Aquify NeptuneBenson Efficpool AquaRevival LLC ProMinent AstralPools LMI ProMinent AstralPools BECSVs ProMinent Triogen Oase Hunter                                 | Spain Spain Germany Germany USA USA Spain USA USA Spain USA Germany Spain USA Germany Spain USA Germany UK Germany USA Egypt |\n| 52                                                     | 13965-Fire Suppression systems                         | Sprinklers,Siamese,alarms,valves, stand pipe,fire hose cabinet,hoses and switches Valves ,Alarm and Switches INSTRUMENTS AND GAUGES                                                                  | Naffco Bristol Bavaria Sffeco Reliable Viking TYCOFIRE&BUILDINGPRODUCTSLP OK Nibco Kennedy Wetflo Stockham Co Fairbanks Co. WattsRegulatorCo. Genebre VictualicCo. Aschroft Weksler Weiss Genebre Winter                                                                                                          | Egypt Egyot KSA U.S.A U.S.A U.S.A U.S.A U.S.A U.S.A Spain USA U.S.A U.S.A                                                    |\n|                                                        |                                                        | مصر العلمية الا Siamese on Steel Pipe and Fittings ERW PIpes Grooved Pipe Fittings & Couplings onnection                                                                                             | (Egypt) Smith industries, inc: pottec El Nasr co.forPiping Enco Steel IPIC El Nasrforcasting Shield Linda Tube Manutacturing (Eaypt) VictuallcCo. Grinnel Co. PotterRoemer Badgerfireprotectioh; Reliable automaticsnrihercaime. Smithindustriesncpote foemer div. Angus Giacomini Naffco Bristol Ravaria Sffeco\" | U.S.A U.S.A Spain Canada Egvpt Egypt Egvpt Egvpt Egvot Or approved equal. U.S.A KSA                                          |\n| CR nd214-287-200 P.O                                   |                                                        | Mi rape Mlig hosecabinets,frectshers,hosereels and (stand pipe and switches(anrscape lse Nnly)                                                                                                       |                                                                                                                                                                                                                                                                                                                   | U.K UAE Egvot Fevnt                                                                                                          |\n\nDivislon\n\n## Residential",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          743.1770782470703
+        ],
+        [
+          93.8004659016927,
+          743.1770782470703
+        ],
+        [
+          93.8004659016927,
+          734.4694213867188
+        ],
+        [
+          76.36852010091145,
+          734.4694213867188
+        ]
+      ],
+      "page": 184
+    },
+    {
+      "text": "Division13:SpecialConstruction",
+      "confidence": 0.95,
+      "box": [
+        [
+          50.220601399739586,
+          709.1757405598959
+        ],
+        [
+          200.88240559895834,
+          709.1757405598959
+        ],
+        [
+          200.88240559895834,
+          697.9801737467448
+        ],
+        [
+          50.220601399739586,
+          697.9801737467448
+        ]
+      ],
+      "page": 184
+    },
+    {
+      "text": "Divislon",
+      "confidence": 0.95,
+      "box": [
+        [
+          245.28282165527344,
+          689.9683227539062
+        ],
+        [
+          266.2124938964844,
+          689.9683227539062
+        ],
+        [
+          266.2124938964844,
+          683.5590209960938
+        ],
+        [
+          245.28282165527344,
+          683.5590209960938
+        ]
+      ],
+      "page": 184
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          432.0631917317708,
+          742.7624257405599
+        ],
+        [
+          511.7520751953125,
+          742.7624257405599
+        ],
+        [
+          511.7520751953125,
+          727.4203592936198
+        ],
+        [
+          432.0631917317708,
+          727.4203592936198
+        ]
+      ],
+      "page": 184
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 184,
+      "text": "MISR\nDivision13:SpecialConstruction\nDivislon\nResidential",
+      "line_count": 4
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

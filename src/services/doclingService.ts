@@ -23,7 +23,7 @@ export interface OcrResponse {
 }
 
 export class DoclingService {
-    private static readonly API_BASE = 'http://localhost:8000';
+    private static readonly API_BASE = 'http://localhost:8001';
     private static isAvailable: boolean | null = null;
 
     /**

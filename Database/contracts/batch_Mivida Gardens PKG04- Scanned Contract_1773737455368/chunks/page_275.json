@@ -1,0 +1,405 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## SECTION01090\n\n## REFERENCESTANDARDS\n\nThe codes and standards referred to in the documents shall be understood to form part of the Contract and all references thereto shall mean,and are intended to be, thelatest edition,amendmentor revisionofsuchreference codes andstandards. The codes and standards quoted are the minimum standards in addition, to and riot in lieu of, standards imposed on the Contractor by law and the Contract. The contractor shall provide access to a copy of the latest edition of all codes and standardsreferencedinthedocuments\n\nThe Works shall comply with the standards referred to in individual sections.\n\nUnless otherwise specified, the whole of the Work shall also comply with the requirements of all governing agencies.\n\nReferences to International Standard Specifications are given in order to indicate the quality of materials and workmanship required and do not preclude materials or workmanship that comply with Standard Specifications used by other countries providing these shall be at least equal to and pass all the tests prescribed by the standard specified.The Contract Administrator and the Supervision Consultant's decision as to the acceptability or otherwise of any such alternative specification shall be final.\n\nWhere \"relevant standards\" or \"appropriate standards\" are quoted, these shall be as deemed so by the Contract Administrator and the Supervision Consultant and the Contractor should seek guidance if in any doubt.\n\nThe most onerous requirement of Egyptian standard or the specified international standards shall apply.\n\n## DESCRIPTION\n\n## A. General\n\nCormply with all codes, regulations, specifications and standards referred to throughout the contract documents.\n\n## REFERENCESTANDARDS\n\n有限责任公司\n\nA. All references to codes, regulations, specifications and standards referred to in the Contract Documents shall, unless otherwise stated, mean the latest edition,amendmentorrevisionofsuchreferencestandardineffectasofthe literaturereferredtointheContractDocumentsandthesameshallbekept on the project site, properly indexed and maintained in good order and available to the Engineer at all times. Upon completion olthe works the said oodes, standards, etc., shallbe handed over to the Employer.\n\nErnauuMinfbrDevelopment\n\n<!-- image -->\n\nSpecificalions Div.01General Requirements\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          748.982187906901
+        ],
+        [
+          132.39977010091147,
+          748.982187906901
+        ],
+        [
+          132.39977010091147,
+          738.6159210205078
+        ],
+        [
+          109.57222493489583,
+          738.6159210205078
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "SECTION01090",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.02777099609375,
+          718.7126973470052
+        ],
+        [
+          334.1122639973958,
+          718.7126973470052
+        ],
+        [
+          334.1122639973958,
+          707.5171305338541
+        ],
+        [
+          249.02777099609375,
+          707.5171305338541
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "REFERENCESTANDARDS",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.55948893229166,
+          692.5897115071615
+        ],
+        [
+          363.16552734375,
+          692.5897115071615
+        ],
+        [
+          363.16552734375,
+          681.8087972005209
+        ],
+        [
+          219.55948893229166,
+          681.8087972005209
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "The codes and standards referred to in the documents shall be understood to form part of the Contract and all references thereto shall mean,and are intended to be, thelatest edition,amendmentor revisionofsuchreference codes andstandards. The codes and standards quoted are the minimum standards in addition, to and riot in lieu of, standards imposed on the Contractor by law and the Contract. The contractor shall provide access to a copy of the latest edition of all codes and standardsreferencedinthedocuments",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          653.1979166666666
+        ],
+        [
+          506.3564860026042,
+          653.1979166666666
+        ],
+        [
+          506.3564860026042,
+          562.8040974934895
+        ],
+        [
+          76.78356424967448,
+          562.8040974934895
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "The Works shall comply with the standards referred to in individual sections.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          548.2913411458333
+        ],
+        [
+          459.0412190755208,
+          548.2913411458333
+        ],
+        [
+          459.0412190755208,
+          535.851826985677
+        ],
+        [
+          78.02870178222656,
+          535.851826985677
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "Unless otherwise specified, the whole of the Work shall also comply with the requirements of all governing agencies.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          522.5830078125
+        ],
+        [
+          505.5263671875,
+          522.5830078125
+        ],
+        [
+          505.5263671875,
+          495.63071695963544
+        ],
+        [
+          77.61365763346355,
+          495.63071695963544
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "References to International Standard Specifications are given in order to indicate the quality of materials and workmanship required and do not preclude materials or workmanship that comply with Standard Specifications used by other countries providing these shall be at least equal to and pass all the tests prescribed by the standard specified.The Contract Administrator and the Supervision Consultant's decision as to the acceptability or otherwise of any such alternative specification shall be final.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          482.77655029296875
+        ],
+        [
+          505.9414469401042,
+          482.77655029296875
+        ],
+        [
+          505.9414469401042,
+          392.38275146484375
+        ],
+        [
+          76.78356424967448,
+          392.38275146484375
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "Where \"relevant standards\" or \"appropriate standards\" are quoted, these shall be as deemed so by the Contract Administrator and the Supervision Consultant and the Contractor should seek guidance if in any doubt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          378.69927978515625
+        ],
+        [
+          505.9414469401042,
+          378.69927978515625
+        ],
+        [
+          505.9414469401042,
+          339.30747477213544
+        ],
+        [
+          77.61365763346355,
+          339.30747477213544
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "The most onerous requirement of Egyptian standard or the specified international standards shall apply.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          327.28261311848956
+        ],
+        [
+          506.7715250651042,
+          327.28261311848956
+        ],
+        [
+          506.7715250651042,
+          299.50103759765625
+        ],
+        [
+          76.36852010091145,
+          299.50103759765625
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "DESCRIPTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          287.89080810546875
+        ],
+        [
+          156.47245279947916,
+          287.89080810546875
+        ],
+        [
+          156.47245279947916,
+          276.69525146484375
+        ],
+        [
+          78.02870178222656,
+          276.69525146484375
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "A. General",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.34652709960938,
+          263.4264119466146
+        ],
+        [
+          164.35833740234375,
+          263.4264119466146
+        ],
+        [
+          164.35833740234375,
+          252.23085530598962
+        ],
+        [
+          103.34652709960938,
+          252.23085530598962
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "Cormply with all codes, regulations, specifications and standards referred to throughout the contract documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          246.84039306640625
+        ],
+        [
+          505.5263671875,
+          246.84039306640625
+        ],
+        [
+          505.5263671875,
+          222.79066975911462
+        ],
+        [
+          120.36342366536458,
+          222.79066975911462
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "REFERENCESTANDARDS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          199.57025146484375
+        ],
+        [
+          222.04976399739584,
+          199.57025146484375
+        ],
+        [
+          222.04976399739584,
+          188.78932698567712
+        ],
+        [
+          78.44375101725261,
+          188.78932698567712
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "有限责任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          140.27520751953125
+        ],
+        [
+          89.23495483398438,
+          140.27520751953125
+        ],
+        [
+          89.23495483398438,
+          73.10182698567712
+        ],
+        [
+          89.23495483398438,
+          73.10182698567712
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "A. All references to codes, regulations, specifications and standards referred to in the Contract Documents shall, unless otherwise stated, mean the latest edition,amendmentorrevisionofsuchreferencestandardineffectasofthe literaturereferredtointheContractDocumentsandthesameshallbekept on the project site, properly indexed and maintained in good order and available to the Engineer at all times. Upon completion olthe works the said oodes, standards, etc., shallbe handed over to the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          183.39886474609375
+        ],
+        [
+          506.7715250651042,
+          183.39886474609375
+        ],
+        [
+          506.7715250651042,
+          78.90692138671875
+        ],
+        [
+          102.51643880208333,
+          78.90692138671875
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "ErnauuMinfbrDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          56.51580810546875
+        ],
+        [
+          163.94328816731772,
+          56.51580810546875
+        ],
+        [
+          163.94328816731772,
+          48.22283935546875
+        ],
+        [
+          77.61365763346355,
+          48.22283935546875
+        ]
+      ],
+      "page": 275
+    },
+    {
+      "text": "Specificalions Div.01General Requirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          49.46673583984375
+        ],
+        [
+          209.1833292643229,
+          49.46673583984375
+        ],
+        [
+          209.1833292643229,
+          40.34442138671875
+        ],
+        [
+          77.1986083984375,
+          40.34442138671875
+        ]
+      ],
+      "page": 275
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 275,
+      "text": "MISR\nSECTION01090\nREFERENCESTANDARDS\nThe codes and standards referred to in the documents shall be understood to form part of the Contract and all references thereto shall mean,and are intended to be, thelatest edition,amendmentor revisionofsuchreference codes andstandards. The codes and standards quoted are the minimum standards in addition, to and riot in lieu of, standards imposed on the Contractor by law and the Contract. The contractor shall provide access to a copy of the latest edition of all codes and standardsreferencedinthedocuments\nThe Works shall comply with the standards referred to in individual sections.\nUnless otherwise specified, the whole of the Work shall also comply with the requirements of all governing agencies.\nReferences to International Standard Specifications are given in order to indicate the quality of materials and workmanship required and do not preclude materials or workmanship that comply with Standard Specifications used by other countries providing these shall be at least equal to and pass all the tests prescribed by the standard specified.The Contract Administrator and the Supervision Consultant's decision as to the acceptability or otherwise of any such alternative specification shall be final.\nWhere \"relevant standards\" or \"appropriate standards\" are quoted, these shall be as deemed so by the Contract Administrator and the Supervision Consultant and the Contractor should seek guidance if in any doubt.\nThe most onerous requirement of Egyptian standard or the specified international standards shall apply.\nDESCRIPTION\nA. General\nCormply with all codes, regulations, specifications and standards referred to throughout the contract documents.\nREFERENCESTANDARDS\n有限责任公司\nA. All references to codes, regulations, specifications and standards referred to in the Contract Documents shall, unless otherwise stated, mean the latest edition,amendmentorrevisionofsuchreferencestandardineffectasofthe literaturereferredtointheContractDocumentsandthesameshallbekept on the project site, properly indexed and maintained in good order and available to the Engineer at all times. Upon completion olthe works the said oodes, standards, etc., shallbe handed over to the Employer.\nErnauuMinfbrDevelopment\nSpecificalions Div.01General Requirements",
+      "line_count": 17
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

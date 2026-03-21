@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- Buildings under construction and nearing completion must ensure that all combustible and flammablematerialsareremoved atthe endofeach shift.\n- Nails are to be removed from tinber as soon as possible, where this is not practical they are to be flattened and placed in a safe area (barrier and signs) until nails can be removed at a later time.\n- Materials are to be stored so as they do not pose a risk to personnel stacking, removing or walking by (further guidance is given in the materials storage and handling section).\n- All spills are to be cleaned up immediately using absorbent material.\n- A Cables/hoses/other leads are to be protected, buried or secured above head height to avoid a slip trip, fall hazard.\n- Waste is to be placed in designated containers and covered to protect against high winds, pests or risk of fire. Waste containers are to be emptied on a regular basis to prevent a build-up of material.\n- Loose or light materials that are stored on roofs or open spaces are to be secured to protect them from inclement weather.\n\n## 3.33. Night Works\n\n- Before any work at night commences authority is to be sought from EMAAR Misr and suitable arrangements are to be in place.\n- It is well known thatworking nightscan affect a person's health ifit is not managed correctly.A key factor to manage is fatigue,as a fatigucd pcrson will have reduced alertness,poor and slow perception and morelikely to suffer or cause and accident.\n- Therefore suitable arrangements must be in place to ensure night work is carried out safely and withoutrisk to thoseworking,the following areasmust be considered\n- ·The risks of shift work and the benefits of effective management\n- What systems will be introduced to manage the risk of shift work.\n- Assessing the risks associated with shift work\n- The actions tobe taken toreduce therisks\n- Area and task lighting is to be provided for all work areas and activities and the minimum illumination is shown in the section below.\n- All lights, including flashing beacons on plant and vehicles, are to be operational at all times they are working or moving around site. Plant and vehicles that have defective lighting are to be removed from use until repairs have been carried out.\n- Designated walking routes and work areas are to be adequately lit and personnel are to be excluded from work areas or be protected against being struck by plant or vehicles.\n- A bespoke risk assessment is required for all night works.\n\nToC58715-207-304\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          728.664306640625
+        ],
+        [
+          339.92291259765625,
+          728.664306640625
+        ],
+        [
+          339.92291259765625,
+          700.8827209472656
+        ],
+        [
+          190.92130533854166,
+          700.8827209472656
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          697.5655212402344
+        ],
+        [
+          216.2391153971354,
+          697.5655212402344
+        ],
+        [
+          216.2391153971354,
+          685.9553019205729
+        ],
+        [
+          75.95347086588542,
+          685.9553019205729
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Buildings under construction and nearing completion must ensure that all combustible and flammablematerialsareremoved atthe endofeach shift.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          672.6864929199219
+        ],
+        [
+          495.9803059895833,
+          672.6864929199219
+        ],
+        [
+          495.9803059895833,
+          649.8807169596354
+        ],
+        [
+          91.3101806640625,
+          649.8807169596354
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Nails are to be removed from tinber as soon as possible, where this is not practical they are to be flattened and placed in a safe area (barrier and signs) until nails can be removed at a later time.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          642.0023600260416
+        ],
+        [
+          495.5652669270833,
+          642.0023600260416
+        ],
+        [
+          495.5652669270833,
+          619.1965738932291
+        ],
+        [
+          91.3101806640625,
+          619.1965738932291
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Materials are to be stored so as they do not pose a risk to personnel stacking, removing or walking by (further guidance is given in the materials storage and handling section).",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          611.7328694661459
+        ],
+        [
+          495.5652669270833,
+          611.7328694661459
+        ],
+        [
+          495.5652669270833,
+          587.6831258138021
+        ],
+        [
+          91.72522989908855,
+          587.6831258138021
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "All spills are to be cleaned up immediately using absorbent material.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          580.2194213867188
+        ],
+        [
+          371.8814697265625,
+          580.2194213867188
+        ],
+        [
+          371.8814697265625,
+          569.0238647460938
+        ],
+        [
+          92.55532836914062,
+          569.0238647460938
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "A Cables/hoses/other leads are to be protected, buried or secured above head height to avoid a slip trip, fall hazard.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          562.3894449869792
+        ],
+        [
+          494.7351888020833,
+          562.3894449869792
+        ],
+        [
+          494.7351888020833,
+          537.925069173177
+        ],
+        [
+          77.1986083984375,
+          537.925069173177
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Waste is to be placed in designated containers and covered to protect against high winds, pests or risk of fire. Waste containers are to be emptied on a regular basis to prevent a build-up of material.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          530.8760172526042
+        ],
+        [
+          496.3953857421875,
+          530.8760172526042
+        ],
+        [
+          496.3953857421875,
+          508.48488362630206
+        ],
+        [
+          92.55532836914062,
+          508.48488362630206
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Loose or light materials that are stored on roofs or open spaces are to be secured to protect them from inclement weather.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          500.19187418619794
+        ],
+        [
+          495.9803059895833,
+          500.19187418619794
+        ],
+        [
+          495.9803059895833,
+          476.55678304036456
+        ],
+        [
+          91.72522989908855,
+          476.55678304036456
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "3.33. Night Works",
+      "confidence": 0.95,
+      "box": [
+        [
+          247.78263346354166,
+          469.50775146484375
+        ],
+        [
+          340.33795166015625,
+          469.50775146484375
+        ],
+        [
+          340.33795166015625,
+          458.31215413411456
+        ],
+        [
+          247.78263346354166,
+          458.31215413411456
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Before any work at night commences authority is to be sought from EMAAR Misr and suitable arrangements are to be in place.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          450.43381754557294
+        ],
+        [
+          496.8104248046875,
+          450.43381754557294
+        ],
+        [
+          496.8104248046875,
+          426.38409423828125
+        ],
+        [
+          91.72522989908855,
+          426.38409423828125
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "It is well known thatworking nightscan affect a person's health ifit is not managed correctly.A key factor to manage is fatigue,as a fatigucd pcrson will have reduced alertness,poor and slow perception and morelikely to suffer or cause and accident.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          419.74965413411456
+        ],
+        [
+          496.8104248046875,
+          419.74965413411456
+        ],
+        [
+          496.8104248046875,
+          383.67506917317706
+        ],
+        [
+          92.55532836914062,
+          383.67506917317706
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Therefore suitable arrangements must be in place to ensure night work is carried out safely and withoutrisk to thoseworking,the following areasmust be considered",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          376.62603759765625
+        ],
+        [
+          497.2254638671875,
+          376.62603759765625
+        ],
+        [
+          497.2254638671875,
+          352.99094645182294
+        ],
+        [
+          93.38541666666667,
+          352.99094645182294
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "·The risks of shift work and the benefits of effective management",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.365966796875,
+          345.11256917317706
+        ],
+        [
+          373.5416666666667,
+          345.11256917317706
+        ],
+        [
+          373.5416666666667,
+          335.16094970703125
+        ],
+        [
+          98.365966796875,
+          335.16094970703125
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "What systems will be introduced to manage the risk of shift work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          326.45330810546875
+        ],
+        [
+          378.522216796875,
+          326.45330810546875
+        ],
+        [
+          378.522216796875,
+          316.50168863932294
+        ],
+        [
+          109.98726399739583,
+          316.50168863932294
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Assessing the risks associated with shift work",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          308.62335205078125
+        ],
+        [
+          298.00323486328125,
+          308.62335205078125
+        ],
+        [
+          298.00323486328125,
+          297.8424275716146
+        ],
+        [
+          100.44120279947917,
+          297.8424275716146
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "The actions tobe taken toreduce therisks",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          290.37872314453125
+        ],
+        [
+          281.81642659505206,
+          290.37872314453125
+        ],
+        [
+          281.81642659505206,
+          279.5977986653646
+        ],
+        [
+          99.19606526692708,
+          279.5977986653646
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Area and task lighting is to be provided for all work areas and activities and the minimum illumination is shown in the section below.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          267.15826416015625
+        ],
+        [
+          498.0555419921875,
+          267.15826416015625
+        ],
+        [
+          498.0555419921875,
+          243.93784586588538
+        ],
+        [
+          93.8004659016927,
+          243.93784586588538
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "All lights, including flashing beacons on plant and vehicles, are to be operational at all times they are working or moving around site. Plant and vehicles that have defective lighting are to be removed from use until repairs have been carried out.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          236.47414143880212
+        ],
+        [
+          498.4705810546875,
+          236.47414143880212
+        ],
+        [
+          498.4705810546875,
+          200.81418863932288
+        ],
+        [
+          93.38541666666667,
+          200.81418863932288
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "Designated walking routes and work areas are to be adequately lit and personnel are to be excluded from work areas or be protected against being struck by plant or vehicles.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          193.35048421223962
+        ],
+        [
+          498.4705810546875,
+          193.35048421223962
+        ],
+        [
+          498.4705810546875,
+          170.13006591796875
+        ],
+        [
+          93.38541666666667,
+          170.13006591796875
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "A bespoke risk assessment is required for all night works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          162.25168863932288
+        ],
+        [
+          328.7166748046875,
+          162.25168863932288
+        ],
+        [
+          328.7166748046875,
+          151.88543701171875
+        ],
+        [
+          94.2155049641927,
+          151.88543701171875
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "ToC58715-207-304",
+      "confidence": 0.95,
+      "box": [
+        [
+          245.2923583984375,
+          54.44256591796875
+        ],
+        [
+          305.4740804036458,
+          54.44256591796875
+        ],
+        [
+          305.4740804036458,
+          54.44256591796875
+        ],
+        [
+          245.2923583984375,
+          54.44256591796875
+        ]
+      ],
+      "page": 465
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          736.5426737467448
+        ],
+        [
+          509.2618001302083,
+          736.5426737467448
+        ],
+        [
+          509.2618001302083,
+          723.6885070800781
+        ],
+        [
+          452.8155110677083,
+          723.6885070800781
+        ]
+      ],
+      "page": 465
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 465,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nBuildings under construction and nearing completion must ensure that all combustible and flammablematerialsareremoved atthe endofeach shift.\nNails are to be removed from tinber as soon as possible, where this is not practical they are to be flattened and placed in a safe area (barrier and signs) until nails can be removed at a later time.\nMaterials are to be stored so as they do not pose a risk to personnel stacking, removing or walking by (further guidance is given in the materials storage and handling section).\nAll spills are to be cleaned up immediately using absorbent material.\nA Cables/hoses/other leads are to be protected, buried or secured above head height to avoid a slip trip, fall hazard.\nWaste is to be placed in designated containers and covered to protect against high winds, pests or risk of fire. Waste containers are to be emptied on a regular basis to prevent a build-up of material.\nLoose or light materials that are stored on roofs or open spaces are to be secured to protect them from inclement weather.\n3.33. Night Works\nBefore any work at night commences authority is to be sought from EMAAR Misr and suitable arrangements are to be in place.\nIt is well known thatworking nightscan affect a person's health ifit is not managed correctly.A key factor to manage is fatigue,as a fatigucd pcrson will have reduced alertness,poor and slow perception and morelikely to suffer or cause and accident.\nTherefore suitable arrangements must be in place to ensure night work is carried out safely and withoutrisk to thoseworking,the following areasmust be considered\n·The risks of shift work and the benefits of effective management\nWhat systems will be introduced to manage the risk of shift work.\nAssessing the risks associated with shift work\nThe actions tobe taken toreduce therisks\nArea and task lighting is to be provided for all work areas and activities and the minimum illumination is shown in the section below.\nAll lights, including flashing beacons on plant and vehicles, are to be operational at all times they are working or moving around site. Plant and vehicles that have defective lighting are to be removed from use until repairs have been carried out.\nDesignated walking routes and work areas are to be adequately lit and personnel are to be excluded from work areas or be protected against being struck by plant or vehicles.\nA bespoke risk assessment is required for all night works.\nToC58715-207-304\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

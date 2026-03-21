@@ -1,0 +1,221 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## 2.02CODECOMPLIANCETESTING\n\n- Inspections and tests required by codes or ordinances, or by a plan approval authority, and which are made by a legally constituted authority, shall be the responsibility of and shali be paidfor by Contractor, unless otherwise provided in the Contract.\n\n## 2.03CONTRACTOR'S CONVENIENCE TESTING\n\n1. Inspecting and testing performed exclusively for the Contractor's convenience shall be the sole responsibility of the Contractor.\n\n## PART 3 - EXECUTION\n\n## 3.01 TAKINGSPECIMENS\n\n1. Contract, shall be taken by the testing personnel. All sampling equipment and personnel will be providedby the testing laboratory.All deliveriesof specimens and samples to the testing laboratory will be performed by the testing laboratory.\n\n## ENDOFSECTION01410\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          748.5675354003906
+        ],
+        [
+          132.8148193359375,
+          748.5675354003906
+        ],
+        [
+          132.8148193359375,
+          738.2012736002604
+        ],
+        [
+          109.57222493489583,
+          738.2012736002604
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "2.02CODECOMPLIANCETESTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          708.346435546875
+        ],
+        [
+          273.93056233723956,
+          708.346435546875
+        ],
+        [
+          273.93056233723956,
+          696.3215738932291
+        ],
+        [
+          77.61365763346355,
+          696.3215738932291
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "Inspections and tests required by codes or ordinances, or by a plan approval authority, and which are made by a legally constituted authority, shall be the responsibility of and shali be paidfor by Contractor, unless otherwise provided in the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          685.5406595865885
+        ],
+        [
+          505.5263671875,
+          685.5406595865885
+        ],
+        [
+          505.5263671875,
+          639.5144449869791
+        ],
+        [
+          111.23241170247395,
+          639.5144449869791
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "2.03CONTRACTOR'S CONVENIENCE TESTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          617.5379638671875
+        ],
+        [
+          337.84767659505206,
+          617.5379638671875
+        ],
+        [
+          337.84767659505206,
+          605.5131022135416
+        ],
+        [
+          77.1986083984375,
+          605.5131022135416
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "Inspecting and testing performed exclusively for the Contractor's convenience shall be the sole responsibility of the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          595.5615030924479
+        ],
+        [
+          505.9414469401042,
+          595.5615030924479
+        ],
+        [
+          505.9414469401042,
+          570.6824544270834
+        ],
+        [
+          94.63055419921875,
+          570.6824544270834
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "PART 3 - EXECUTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          548.7059936523438
+        ],
+        [
+          193.82661946614584,
+          548.7059936523438
+        ],
+        [
+          193.82661946614584,
+          537.0957641601562
+        ],
+        [
+          78.02870178222656,
+          537.0957641601562
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "3.01 TAKINGSPECIMENS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          525.9002075195312
+        ],
+        [
+          222.8798624674479,
+          525.9002075195312
+        ],
+        [
+          222.8798624674479,
+          514.7046508789062
+        ],
+        [
+          78.44375101725261,
+          514.7046508789062
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "Contract, shall be taken by the testing personnel. All sampling equipment and personnel will be providedby the testing laboratory.All deliveriesof specimens and samples to the testing laboratory will be performed by the testing laboratory.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          501.4358317057292
+        ],
+        [
+          507.6016031901042,
+          501.4358317057292
+        ],
+        [
+          507.6016031901042,
+          444.21405029296875
+        ],
+        [
+          97.12082926432292,
+          444.21405029296875
+        ]
+      ],
+      "page": 335
+    },
+    {
+      "text": "ENDOFSECTION01410",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.44537353515625,
+          423.48154703776044
+        ],
+        [
+          356.9398193359375,
+          423.48154703776044
+        ],
+        [
+          356.9398193359375,
+          412.28594970703125
+        ],
+        [
+          227.44537353515625,
+          412.28594970703125
+        ]
+      ],
+      "page": 335
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 335,
+      "text": "MISR\n2.02CODECOMPLIANCETESTING\nInspections and tests required by codes or ordinances, or by a plan approval authority, and which are made by a legally constituted authority, shall be the responsibility of and shali be paidfor by Contractor, unless otherwise provided in the Contract.\n2.03CONTRACTOR'S CONVENIENCE TESTING\nInspecting and testing performed exclusively for the Contractor's convenience shall be the sole responsibility of the Contractor.\nPART 3 - EXECUTION\n3.01 TAKINGSPECIMENS\nContract, shall be taken by the testing personnel. All sampling equipment and personnel will be providedby the testing laboratory.All deliveriesof specimens and samples to the testing laboratory will be performed by the testing laboratory.\nENDOFSECTION01410",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

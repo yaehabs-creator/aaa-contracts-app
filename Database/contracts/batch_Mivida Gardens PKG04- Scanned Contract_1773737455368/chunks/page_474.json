@@ -1,0 +1,244 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## 3.47. Site Visitors\n\n- In general, visiting sites, except for project-specific reasons, shall be discouraged by all parties. Visits are potentially disruptive to normal operations, and even when carefully managed,\n- However, when bona fide visitors are required to visit sites, subject to the security controls in place, visitors shall be required as a minimum to:\n- ·Attend a site visitors briefing (a shortened form of the workers induction)\n- ·Be provided by the hosting Contractor with appropriate PPE (indicating clearly the visitor status of the wearer), and advised in its necessary and correct use\n- Be accompanied at all times by a competent person, who is formally allocated responsibility for the visitor during normal working and also in the event of an emergency.\n\n## 3.48. HSE Penalties\n\n| HSE Penalties   | HSE Penalties                                                                                                          | HSE Penalties   | HSE Penalties                          |\n|-----------------|------------------------------------------------------------------------------------------------------------------------|-----------------|----------------------------------------|\n| S.N             | Violation                                                                                                              | Penalties       | Note                                   |\n| 01              | Any Unsecured holes on the roads, gas, sewage.electricity cte... Manhole without tproper protections (Hard Barricades) | 10,000 LE       | For each dayuntil corrected            |\n| 02              | Unprotected excavation                                                                                                 | 10,000 LE       | Per Incident /per day until corrected  |\n| 03              | In case of accident occurred regarding any unprotected , open holes on the roads , Manhole                             | 150,000 LE      | Per Incident                           |\n| 04              | Any Open holes on the roads, gas, sewage, Electricityetc.... notprovided with Warning Safety Signs.                    | 5,000 LE        | Per Incident / per day until corrected |\n\n<!-- image -->\n\nRef:EGY/PRJCTS/HSE/REQs\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          729.9082641601562
+        ],
+        [
+          341.1680501302083,
+          729.9082641601562
+        ],
+        [
+          341.1680501302083,
+          698.8094685872396
+        ],
+        [
+          190.92130533854166,
+          698.8094685872396
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "3.47. Site Visitors",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.85786946614584,
+          672.2718404134115
+        ],
+        [
+          337.84767659505206,
+          672.2718404134115
+        ],
+        [
+          337.84767659505206,
+          660.2469787597656
+        ],
+        [
+          249.85786946614584,
+          660.2469787597656
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "In general, visiting sites, except for project-specific reasons, shall be discouraged by all parties. Visits are potentially disruptive to normal operations, and even when carefully managed,",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          654.0272115071615
+        ],
+        [
+          495.5652669270833,
+          654.0272115071615
+        ],
+        [
+          495.5652669270833,
+          627.4895833333334
+        ],
+        [
+          91.3101806640625,
+          627.4895833333334
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "However, when bona fide visitors are required to visit sites, subject to the security controls in place, visitors shall be required as a minimum to:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          610.903564453125
+        ],
+        [
+          496.3953857421875,
+          610.903564453125
+        ],
+        [
+          496.3953857421875,
+          584.7805786132812
+        ],
+        [
+          90.8951416015625,
+          584.7805786132812
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "·Attend a site visitors briefing (a shortened form of the workers induction)",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          578.9754638671875
+        ],
+        [
+          407.160400390625,
+          578.9754638671875
+        ],
+        [
+          407.160400390625,
+          565.7066650390625
+        ],
+        [
+          95.46065266927083,
+          565.7066650390625
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "·Be provided by the hosting Contractor with appropriate PPE (indicating clearly the visitor status of the wearer), and advised in its necessary and correct use",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          560.3162027994792
+        ],
+        [
+          507.6016031901042,
+          560.3162027994792
+        ],
+        [
+          507.6016031901042,
+          529.632059733073
+        ],
+        [
+          97.12082926432292,
+          529.632059733073
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "Be accompanied at all times by a competent person, who is formally allocated responsibility for the visitor during normal working and also in the event of an emergency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.25185139973958,
+          524.65625
+        ],
+        [
+          507.1865641276042,
+          524.65625
+        ],
+        [
+          507.1865641276042,
+          493.55747477213544
+        ],
+        [
+          106.25185139973958,
+          493.55747477213544
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "3.48. HSE Penalties",
+      "confidence": 0.95,
+      "box": [
+        [
+          244.0472208658854,
+          482.77655029296875
+        ],
+        [
+          341.9981282552083,
+          482.77655029296875
+        ],
+        [
+          341.9981282552083,
+          471.58099365234375
+        ],
+        [
+          244.0472208658854,
+          471.58099365234375
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          685.5406595865885
+        ],
+        [
+          75.53842671712239,
+          685.5406595865885
+        ]
+      ],
+      "page": 474
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.6455891927083,
+          734.0547688802084
+        ],
+        [
+          511.3370361328125,
+          734.0547688802084
+        ],
+        [
+          511.3370361328125,
+          719.9566446940104
+        ],
+        [
+          453.6455891927083,
+          719.9566446940104
+        ]
+      ],
+      "page": 474
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 474,
+      "text": "Projects Department Health & Safety Standards\n3.47. Site Visitors\nIn general, visiting sites, except for project-specific reasons, shall be discouraged by all parties. Visits are potentially disruptive to normal operations, and even when carefully managed,\nHowever, when bona fide visitors are required to visit sites, subject to the security controls in place, visitors shall be required as a minimum to:\n·Attend a site visitors briefing (a shortened form of the workers induction)\n·Be provided by the hosting Contractor with appropriate PPE (indicating clearly the visitor status of the wearer), and advised in its necessary and correct use\nBe accompanied at all times by a competent person, who is formally allocated responsibility for the visitor during normal working and also in the event of an emergency.\n3.48. HSE Penalties\nRef:EGY/PRJCTS/HSE/REQs\nEMAAR",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

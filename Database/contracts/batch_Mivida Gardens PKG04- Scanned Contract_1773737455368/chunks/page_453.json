@@ -1,0 +1,428 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- ·An inspection of the pipelines fittings and couplings has taken place\n- The emergency shutdown systems are in order\n- Contingency planning for any break down of pump and need for replacement\n- The receiving hopper is suitably protected by a safety grille\n- Correct clean up procedures are in place (e.g. ball catchers available for use)\n- All persons involved in the concrete pumping operation and the concrete pour will be required to participate in a pre-start briefing into their respective SSOW and method statements conducted by the contractor supervisor.\n\n## 3.21. Piling / Drilling\n\n- For all types of piling/drilling it is essential that a suitable working platform is provided. Before a piling/drilling rig is set up a Working Platform Certificate is to be issued confirming that the platform has been properly designed and constructed. The integrity of the platform is to be preserved by regular maintenance.\n- Piling/drilling rigs and lifting accessories are to have a current certificate of thorough examination and test (12 monthly for piling rigs/lifting equipment and 6 monthly for lifting accessories).A thorough examination and test is also required for all pile test equipment and other equipment such as concrete pumps.\n- Personnel involved inpiling/drillingoperations are to be trained and competent in the type of piling being carried out.Piling/drilling rig operators are to have a certificate of competency for the piling rigbeingoperatedandallpilingoperations aretobeunder the supervisionofacompetentsupervisor.\n- A permit to dig/pile system is to be used and prior to any piling/drilling, a check of the area is to be carried out to ensure there arenobasements,cellars etc.and that all underground services havebeen located and marked.\n- Piles and other materials are to be stacked safely, circular materials such as pile casings and cages are to be chocked to prevent rolling.\n- Safe access is to be provided to all areas and work areas around piling rigs are to be cordoned off to prevent unauthorized access from personnel and vehicles.\n- Piling/drilling rig operators and others in the area may be at risk of serious injury or death through becoming entangledin the rotating drill-string andcrushedagainst thesupportingmast or neighboring structures. The risk is far higher when operators need to work close to,or approach, the machine such as when adding and removing sections of drill-string by hand, taking samples, removing spoil or simply walking close by on uneven or slippery ground. The rotating drill-string and drill head is a dangerous part of machinery and access to it must be prevented so far as practicable\n- Housekeeping around all piling areas including where pile cages are being constructed are to be kept clean and tidy at all times and arising from piling are to be removed at regular intervals.\n\n<!-- image -->\n\n## EMAAR\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          727.8350118001302
+        ],
+        [
+          340.33795166015625,
+          727.8350118001302
+        ],
+        [
+          340.33795166015625,
+          700.0534261067709
+        ],
+        [
+          190.92130533854166,
+          700.0534261067709
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          696.7362162272135
+        ],
+        [
+          216.2391153971354,
+          696.7362162272135
+        ],
+        [
+          216.2391153971354,
+          685.1260070800781
+        ],
+        [
+          76.36852010091145,
+          685.1260070800781
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "·An inspection of the pipelines fittings and couplings has taken place",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          670.6132405598959
+        ],
+        [
+          385.5780029296875,
+          670.6132405598959
+        ],
+        [
+          385.5780029296875,
+          660.2469787597656
+        ],
+        [
+          96.70579020182292,
+          660.2469787597656
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "The emergency shutdown systems are in order",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          652.3686116536459
+        ],
+        [
+          298.8333333333333,
+          652.3686116536459
+        ],
+        [
+          298.8333333333333,
+          642.0023600260416
+        ],
+        [
+          99.19606526692708,
+          642.0023600260416
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Contingency planning for any break down of pump and need for replacement",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          633.7093505859375
+        ],
+        [
+          423.3472086588542,
+          633.7093505859375
+        ],
+        [
+          423.3472086588542,
+          623.7577311197916
+        ],
+        [
+          100.44120279947917,
+          623.7577311197916
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "The receiving hopper is suitably protected by a safety grille",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          615.4647216796875
+        ],
+        [
+          351.129150390625,
+          615.4647216796875
+        ],
+        [
+          351.129150390625,
+          605.0984497070312
+        ],
+        [
+          96.70579020182292,
+          605.0984497070312
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Correct clean up procedures are in place (e.g. ball catchers available for use)",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          597.2200927734375
+        ],
+        [
+          419.61181640625,
+          597.2200927734375
+        ],
+        [
+          419.61181640625,
+          587.6831258138021
+        ],
+        [
+          96.70579020182292,
+          587.6831258138021
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "All persons involved in the concrete pumping operation and the concrete pour will be required to participate in a pre-start briefing into their respective SSOW and method statements conducted by the contractor supervisor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          579.3901163736979
+        ],
+        [
+          506.7715250651042,
+          579.3901163736979
+        ],
+        [
+          506.7715250651042,
+          533.3639119466145
+        ],
+        [
+          100.44120279947917,
+          533.3639119466145
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "3.21. Piling / Drilling",
+      "confidence": 0.95,
+      "box": [
+        [
+          241.97198486328125,
+          522.5830078125
+        ],
+        [
+          346.1486002604167,
+          522.5830078125
+        ],
+        [
+          346.1486002604167,
+          508.48488362630206
+        ],
+        [
+          241.97198486328125,
+          508.48488362630206
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "For all types of piling/drilling it is essential that a suitable working platform is provided. Before a piling/drilling rig is set up a Working Platform Certificate is to be issued confirming that the platform has been properly designed and constructed. The integrity of the platform is to be preserved by regular maintenance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          501.85048421223956
+        ],
+        [
+          496.8104248046875,
+          501.85048421223956
+        ],
+        [
+          496.8104248046875,
+          452.92173258463544
+        ],
+        [
+          90.06504313151042,
+          452.92173258463544
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Piling/drilling rigs and lifting accessories are to have a current certificate of thorough examination and test (12 monthly for piling rigs/lifting equipment and 6 monthly for lifting accessories).A thorough examination and test is also required for all pile test equipment and other equipment such as concrete pumps.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          446.28729248046875
+        ],
+        [
+          497.6405029296875,
+          446.28729248046875
+        ],
+        [
+          497.6405029296875,
+          396.11460367838544
+        ],
+        [
+          92.55532836914062,
+          396.11460367838544
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Personnel involved inpiling/drillingoperations are to be trained and competent in the type of piling being carried out.Piling/drilling rig operators are to have a certificate of competency for the piling rigbeingoperatedandallpilingoperations aretobeunder the supervisionofacompetentsupervisor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          390.30946858723956
+        ],
+        [
+          496.8104248046875,
+          390.30946858723956
+        ],
+        [
+          496.8104248046875,
+          355.06418863932294
+        ],
+        [
+          92.55532836914062,
+          355.06418863932294
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "A permit to dig/pile system is to be used and prior to any piling/drilling, a check of the area is to be carried out to ensure there arenobasements,cellars etc.and that all underground services havebeen located and marked.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          346.77117919921875
+        ],
+        [
+          497.2254638671875,
+          346.77117919921875
+        ],
+        [
+          497.2254638671875,
+          310.69659423828125
+        ],
+        [
+          93.38541666666667,
+          310.69659423828125
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Piles and other materials are to be stacked safely, circular materials such as pile casings and cages are to be chocked to prevent rolling.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          304.4768269856771
+        ],
+        [
+          496.8104248046875,
+          304.4768269856771
+        ],
+        [
+          496.8104248046875,
+          279.18316650390625
+        ],
+        [
+          92.97036743164062,
+          279.18316650390625
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Safe access is to be provided to all areas and work areas around piling rigs are to be cordoned off to prevent unauthorized access from personnel and vehicles.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          273.3780314127604
+        ],
+        [
+          497.2254638671875,
+          273.3780314127604
+        ],
+        [
+          497.2254638671875,
+          249.74294026692712
+        ],
+        [
+          93.38541666666667,
+          249.74294026692712
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Piling/drilling rig operators and others in the area may be at risk of serious injury or death through becoming entangledin the rotating drill-string andcrushedagainst thesupportingmast or neighboring structures. The risk is far higher when operators need to work close to,or approach, the machine such as when adding and removing sections of drill-string by hand, taking samples, removing spoil or simply walking close by on uneven or slippery ground. The rotating drill-string and drill head is a dangerous part of machinery and access to it must be prevented so far as practicable",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          242.69390869140625
+        ],
+        [
+          498.4705810546875,
+          242.69390869140625
+        ],
+        [
+          498.4705810546875,
+          155.61728922526038
+        ],
+        [
+          93.38541666666667,
+          155.61728922526038
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "Housekeeping around all piling areas including where pile cages are being constructed are to be kept clean and tidy at all times and arising from piling are to be removed at regular intervals.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          148.98288981119788
+        ],
+        [
+          498.4705810546875,
+          148.98288981119788
+        ],
+        [
+          498.4705810546875,
+          125.76247151692712
+        ],
+        [
+          93.8004659016927,
+          125.76247151692712
+        ]
+      ],
+      "page": 453
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.4004720052083,
+          735.2987162272135
+        ],
+        [
+          509.2618001302083,
+          735.2987162272135
+        ],
+        [
+          509.2618001302083,
+          722.4445495605469
+        ],
+        [
+          452.4004720052083,
+          722.4445495605469
+        ]
+      ],
+      "page": 453
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 453,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n·An inspection of the pipelines fittings and couplings has taken place\nThe emergency shutdown systems are in order\nContingency planning for any break down of pump and need for replacement\nThe receiving hopper is suitably protected by a safety grille\nCorrect clean up procedures are in place (e.g. ball catchers available for use)\nAll persons involved in the concrete pumping operation and the concrete pour will be required to participate in a pre-start briefing into their respective SSOW and method statements conducted by the contractor supervisor.\n3.21. Piling / Drilling\nFor all types of piling/drilling it is essential that a suitable working platform is provided. Before a piling/drilling rig is set up a Working Platform Certificate is to be issued confirming that the platform has been properly designed and constructed. The integrity of the platform is to be preserved by regular maintenance.\nPiling/drilling rigs and lifting accessories are to have a current certificate of thorough examination and test (12 monthly for piling rigs/lifting equipment and 6 monthly for lifting accessories).A thorough examination and test is also required for all pile test equipment and other equipment such as concrete pumps.\nPersonnel involved inpiling/drillingoperations are to be trained and competent in the type of piling being carried out.Piling/drilling rig operators are to have a certificate of competency for the piling rigbeingoperatedandallpilingoperations aretobeunder the supervisionofacompetentsupervisor.\nA permit to dig/pile system is to be used and prior to any piling/drilling, a check of the area is to be carried out to ensure there arenobasements,cellars etc.and that all underground services havebeen located and marked.\nPiles and other materials are to be stacked safely, circular materials such as pile casings and cages are to be chocked to prevent rolling.\nSafe access is to be provided to all areas and work areas around piling rigs are to be cordoned off to prevent unauthorized access from personnel and vehicles.\nPiling/drilling rig operators and others in the area may be at risk of serious injury or death through becoming entangledin the rotating drill-string andcrushedagainst thesupportingmast or neighboring structures. The risk is far higher when operators need to work close to,or approach, the machine such as when adding and removing sections of drill-string by hand, taking samples, removing spoil or simply walking close by on uneven or slippery ground. The rotating drill-string and drill head is a dangerous part of machinery and access to it must be prevented so far as practicable\nHousekeeping around all piling areas including where pile cages are being constructed are to be kept clean and tidy at all times and arising from piling are to be removed at regular intervals.\nEMAAR",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

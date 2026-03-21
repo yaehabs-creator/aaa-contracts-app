@@ -1,0 +1,589 @@
+{
+  "text": "<!-- image -->\n\n## 10.MasterEquipment List:\n\n- a)Include a master cquipment list in themanuals which shall detail all items ofequipmentwhichareinstalledinthePermanentWorks.Providethelist in a format approved by the Contract Administrator and/or the Supervision Consultant. The inforrmation required for each item on the list shall be as follows:\n- i. Tag Number.\n- iii. Installed Locatior.\n- i.Description/Nomenclature: Descriptive data such as dimensions and operating parameters shall be included where appropriate.\n- iv.Applicable Specification Section/Paragraph Reference.\n- V. Name, Address and other contact information of Manufacturer (Supplier).\n- vi. Model,Serial Number and Other Identification:Contractorshallenter informationrequired topositivelyidentify the equipment.\n- vii. Remarks:Contractor shall enter the manner in which any standard catalogueornormaldeliveryitemhasbeenmodifiedorisunique.\n- vili. Extended warranty, if applicable by Contract requirements, and warrantyexpirationdate.\n11. Design Criteria Sheets: A single design criteria sheet shall be prepared for each separate equipment item.identical items can be on the same sheet with separate tag or identifying numbers listed.The criteria shieet shall present in summary form the operating environments,functional requirements,design requirementsandreferencedrawingsandspecificationsforeachspecificpiece of equipment.The format of the sheets shall be as approved by the SupervisionConsultant.\n- 12.Guarantees and Warranties:Include original copies of specified guarantees and warrantiesand standardguarantees andwarrantiesprovidedby addressed to theEmployer.\n\n## 1.03 SPAREPARTSFOREQUIPMENT\n\n- Provide all spare parts required for installation, testing and commissioning of equipment to ensurc its complctc and propcr functioning in accordarice with SectionO1750titledSPAREPARTSANDMAINTENANCEMATERIALS.\n\n## 1.04 EXTRA STOCK\n\n1. Provide extra stock as required by various Sections of the Specification in MATERlALS, and hand over to Employer twenty-one (21) days prior to Contractor's request for inspection for the Taking Over of the Works.\n\n## 1.05 EQUIPMENTIDENTIFICATIONTAGS\n\n1. Provide for each item of equipment a plastic, or anodized aluminium, or stainless steel identification tag securely attached in a conspicuous location on ornear the itemofequipment.\n\nIndicate on each tag:\n\nTag number.\n\nNameofmanufactureroftheequipment.\n\nSerial number and model number of thc cquipmcnt.\n\nDateofmanufactureoftheequipment.\n\nOtherinformation that the manufacturer may deen necessary to completelyldentlfy theequlpment\n\nSpetilleationsDiv.01Gonoral Requirements\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "10.MasterEquipment List:",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          719.1273498535156
+        ],
+        [
+          227.44537353515625,
+          719.1273498535156
+        ],
+        [
+          227.44537353515625,
+          707.9317830403646
+        ],
+        [
+          97.12082926432292,
+          707.9317830403646
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "a)Include a master cquipment list in themanuals which shall detail all items ofequipmentwhichareinstalledinthePermanentWorks.Providethelist in a format approved by the Contract Administrator and/or the Supervision Consultant. The inforrmation required for each item on the list shall be as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          702.1266784667969
+        ],
+        [
+          506.3564860026042,
+          702.1266784667969
+        ],
+        [
+          506.3564860026042,
+          644.9049072265625
+        ],
+        [
+          112.47754923502605,
+          644.9049072265625
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Tag Number.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.62545776367188,
+          640.7584025065104
+        ],
+        [
+          221.63472493489584,
+          640.7584025065104
+        ],
+        [
+          221.63472493489584,
+          627.4895833333334
+        ],
+        [
+          138.62545776367188,
+          627.4895833333334
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Installed Locatior.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.13518269856772,
+          605.5131022135416
+        ],
+        [
+          244.4622599283854,
+          605.5131022135416
+        ],
+        [
+          244.4622599283854,
+          594.3175455729166
+        ],
+        [
+          136.13518269856772,
+          594.3175455729166
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "i.Description/Nomenclature: Descriptive data such as dimensions and operating parameters shall be included where appropriate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          628.7335408528646
+        ],
+        [
+          505.9414469401042,
+          628.7335408528646
+        ],
+        [
+          505.9414469401042,
+          605.0984497070312
+        ],
+        [
+          136.96528116861978,
+          605.0984497070312
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "iv.Applicable Specification Section/Paragraph Reference.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          594.3175455729166
+        ],
+        [
+          427.0826416015625,
+          594.3175455729166
+        ],
+        [
+          427.0826416015625,
+          582.7073364257812
+        ],
+        [
+          134.0599568684896,
+          582.7073364257812
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Name, Address and other contact information of Manufacturer (Supplier).",
+      "confidence": 0.95,
+      "box": [
+        [
+          137.79536946614584,
+          582.7073364257812
+        ],
+        [
+          505.9414469401042,
+          582.7073364257812
+        ],
+        [
+          505.9414469401042,
+          558.6575927734375
+        ],
+        [
+          137.79536946614584,
+          558.6575927734375
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Model,Serial Number and Other Identification:Contractorshallenter informationrequired topositivelyidentify the equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          135.72013346354166,
+          559.9015502929688
+        ],
+        [
+          505.9414469401042,
+          559.9015502929688
+        ],
+        [
+          505.9414469401042,
+          537.0957641601562
+        ],
+        [
+          135.72013346354166,
+          537.0957641601562
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Remarks:Contractor shall enter the manner in which any standard catalogueornormaldeliveryitemhasbeenmodifiedorisunique.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.64490763346353,
+          537.0957641601562
+        ],
+        [
+          505.5263671875,
+          537.0957641601562
+        ],
+        [
+          505.5263671875,
+          514.7046508789062
+        ],
+        [
+          133.64490763346353,
+          514.7046508789062
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Extended warranty, if applicable by Contract requirements, and warrantyexpirationdate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.56967163085938,
+          515.1192830403645
+        ],
+        [
+          506.7715250651042,
+          515.1192830403645
+        ],
+        [
+          506.7715250651042,
+          490.6549072265625
+        ],
+        [
+          131.56967163085938,
+          490.6549072265625
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Design Criteria Sheets: A single design criteria sheet shall be prepared for each separate equipment item.identical items can be on the same sheet with separate tag or identifying numbers listed.The criteria shieet shall present in summary form the operating environments,functional requirements,design requirementsandreferencedrawingsandspecificationsforeachspecificpiece of equipment.The format of the sheets shall be as approved by the SupervisionConsultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          486.09375
+        ],
+        [
+          506.3564860026042,
+          486.09375
+        ],
+        [
+          506.3564860026042,
+          406.06622314453125
+        ],
+        [
+          96.70579020182292,
+          406.06622314453125
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "12.Guarantees and Warranties:Include original copies of specified guarantees and warrantiesand standardguarantees andwarrantiesprovidedby addressed to theEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          400.67576090494794
+        ],
+        [
+          506.7715250651042,
+          400.67576090494794
+        ],
+        [
+          506.7715250651042,
+          354.64955647786456
+        ],
+        [
+          95.87569173177083,
+          354.64955647786456
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "1.03 SPAREPARTSFOREQUIPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          343.86863199869794
+        ],
+        [
+          289.7023111979167,
+          343.86863199869794
+        ],
+        [
+          289.7023111979167,
+          332.67307535807294
+        ],
+        [
+          78.85879516601562,
+          332.67307535807294
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Provide all spare parts required for installation, testing and commissioning of equipment to ensurc its complctc and propcr functioning in accordarice with SectionO1750titledSPAREPARTSANDMAINTENANCEMATERIALS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          327.28261311848956
+        ],
+        [
+          506.7715250651042,
+          327.28261311848956
+        ],
+        [
+          506.7715250651042,
+          293.6959025065104
+        ],
+        [
+          111.23241170247395,
+          293.6959025065104
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "1.04 EXTRA STOCK",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          281.25640869140625
+        ],
+        [
+          194.6567179361979,
+          281.25640869140625
+        ],
+        [
+          194.6567179361979,
+          270.06085205078125
+        ],
+        [
+          78.85879516601562,
+          270.06085205078125
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Provide extra stock as required by various Sections of the Specification in MATERlALS, and hand over to Employer twenty-one (21) days prior to Contractor's request for inspection for the Taking Over of the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          265.08502197265625
+        ],
+        [
+          506.7715250651042,
+          265.08502197265625
+        ],
+        [
+          506.7715250651042,
+          218.64418538411462
+        ],
+        [
+          95.87569173177083,
+          218.64418538411462
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "1.05 EQUIPMENTIDENTIFICATIONTAGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.68888854980469,
+          207.44858805338538
+        ],
+        [
+          306.71921793619794,
+          207.44858805338538
+        ],
+        [
+          306.71921793619794,
+          196.25303141276038
+        ],
+        [
+          79.68888854980469,
+          196.25303141276038
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Provide for each item of equipment a plastic, or anodized aluminium, or stainless steel identification tag securely attached in a conspicuous location on ornear the itemofequipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          190.86256917317712
+        ],
+        [
+          507.6016031901042,
+          190.86256917317712
+        ],
+        [
+          507.6016031901042,
+          156.03196207682288
+        ],
+        [
+          95.87569173177083,
+          156.03196207682288
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Indicate on each tag:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          150.22682698567712
+        ],
+        [
+          217.8993123372396,
+          150.22682698567712
+        ],
+        [
+          217.8993123372396,
+          137.78729248046875
+        ],
+        [
+          112.47754923502605,
+          137.78729248046875
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Tag number.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.3414306640625,
+          138.61663818359375
+        ],
+        [
+          211.2585652669271,
+          138.61663818359375
+        ],
+        [
+          211.2585652669271,
+          127.42108154296875
+        ],
+        [
+          147.3414306640625,
+          127.42108154296875
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Nameofmanufactureroftheequipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.9263916015625,
+          127.42108154296875
+        ],
+        [
+          346.1486002604167,
+          127.42108154296875
+        ],
+        [
+          346.1486002604167,
+          116.64015706380212
+        ],
+        [
+          146.9263916015625,
+          116.64015706380212
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Serial number and model number of thc cquipmcnt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.9263916015625,
+          116.64015706380212
+        ],
+        [
+          402.5948893229167,
+          116.64015706380212
+        ],
+        [
+          402.5948893229167,
+          105.44460042317712
+        ],
+        [
+          146.9263916015625,
+          105.44460042317712
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Dateofmanufactureoftheequipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.3414306640625,
+          104.61525472005212
+        ],
+        [
+          337.01759847005206,
+          104.61525472005212
+        ],
+        [
+          337.01759847005206,
+          93.83433024088538
+        ],
+        [
+          147.3414306640625,
+          93.83433024088538
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "Otherinformation that the manufacturer may deen necessary to completelyldentlfy theequlpment",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.75647989908853,
+          93.83433024088538
+        ],
+        [
+          506.7715250651042,
+          93.83433024088538
+        ],
+        [
+          506.7715250651042,
+          70.19932047526038
+        ],
+        [
+          147.75647989908853,
+          70.19932047526038
+        ]
+      ],
+      "page": 379
+    },
+    {
+      "text": "SpetilleationsDiv.01Gonoral Requirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          48.63747151692712
+        ],
+        [
+          210.428466796875,
+          48.63747151692712
+        ],
+        [
+          210.428466796875,
+          39.92978922526038
+        ],
+        [
+          78.85879516601562,
+          39.92978922526038
+        ]
+      ],
+      "page": 379
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 379,
+      "text": "10.MasterEquipment List:\na)Include a master cquipment list in themanuals which shall detail all items ofequipmentwhichareinstalledinthePermanentWorks.Providethelist in a format approved by the Contract Administrator and/or the Supervision Consultant. The inforrmation required for each item on the list shall be as follows:\nTag Number.\nInstalled Locatior.\ni.Description/Nomenclature: Descriptive data such as dimensions and operating parameters shall be included where appropriate.\niv.Applicable Specification Section/Paragraph Reference.\nName, Address and other contact information of Manufacturer (Supplier).\nModel,Serial Number and Other Identification:Contractorshallenter informationrequired topositivelyidentify the equipment.\nRemarks:Contractor shall enter the manner in which any standard catalogueornormaldeliveryitemhasbeenmodifiedorisunique.\nExtended warranty, if applicable by Contract requirements, and warrantyexpirationdate.\nDesign Criteria Sheets: A single design criteria sheet shall be prepared for each separate equipment item.identical items can be on the same sheet with separate tag or identifying numbers listed.The criteria shieet shall present in summary form the operating environments,functional requirements,design requirementsandreferencedrawingsandspecificationsforeachspecificpiece of equipment.The format of the sheets shall be as approved by the SupervisionConsultant.\n12.Guarantees and Warranties:Include original copies of specified guarantees and warrantiesand standardguarantees andwarrantiesprovidedby addressed to theEmployer.\n1.03 SPAREPARTSFOREQUIPMENT\nProvide all spare parts required for installation, testing and commissioning of equipment to ensurc its complctc and propcr functioning in accordarice with SectionO1750titledSPAREPARTSANDMAINTENANCEMATERIALS.\n1.04 EXTRA STOCK\nProvide extra stock as required by various Sections of the Specification in MATERlALS, and hand over to Employer twenty-one (21) days prior to Contractor's request for inspection for the Taking Over of the Works.\n1.05 EQUIPMENTIDENTIFICATIONTAGS\nProvide for each item of equipment a plastic, or anodized aluminium, or stainless steel identification tag securely attached in a conspicuous location on ornear the itemofequipment.\nIndicate on each tag:\nTag number.\nNameofmanufactureroftheequipment.\nSerial number and model number of thc cquipmcnt.\nDateofmanufactureoftheequipment.\nOtherinformation that the manufacturer may deen necessary to completelyldentlfy theequlpment\nSpetilleationsDiv.01Gonoral Requirements",
+      "line_count": 25
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

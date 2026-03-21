@@ -11,6 +11,8 @@ import {
   ensureContractHasSections,
 } from '@/services/contractMigrationService';
 import { getClausesWithProcessedLinks } from '@/utils/contractUtils';
+import { Brain } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 interface CompletedViewProps {
   persistCurrentProject: (clauses?: Clause[], name?: string, immediate?: boolean) => Promise<void>;
@@ -20,6 +22,27 @@ interface CompletedViewProps {
   handleReorder: (fromIndex: number, toIndex: number, sectionType?: SectionType) => Promise<void>;
   handleAskAI: (item: any) => void;
 }
+
+const CompletedViewSkeleton: React.FC = () => (
+    <div className="space-y-16 animate-pulse pb-20">
+        <div className="flex flex-col gap-6 border-b border-aaa-border pb-12">
+            <div className="flex items-center justify-between">
+                <div className="h-20 bg-aaa-bg/50 rounded-2xl w-2/3" />
+                <div className="h-12 bg-indigo-100 rounded-2xl w-40" />
+            </div>
+        </div>
+        <div className="space-y-8">
+            <div className="flex gap-4 mb-8">
+                {[1, 2, 3, 4].map(i => <div key={i} className="h-10 bg-aaa-bg/30 rounded-xl w-32" />)}
+            </div>
+            <div className="grid grid-cols-1 gap-6">
+                {[1, 2, 3].map(i => (
+                    <div key={i} className="h-40 bg-white border border-aaa-border rounded-[32px] p-8" />
+                ))}
+            </div>
+        </div>
+    </div>
+);
 
 export const CompletedView: React.FC<CompletedViewProps> = ({
   persistCurrentProject,
@@ -59,6 +82,44 @@ export const CompletedView: React.FC<CompletedViewProps> = ({
     // Reprocess clause links to ensure internal references work
     setContract(updatedContract);
     setClauses(getClausesWithProcessedLinks(updatedContract));
+  };
+
+  const handleDigestKnowledge = async () => {
+    if (!projectName) {
+      toast.error('Project name is required for digestion');
+      return;
+    }
+    
+    const loadingToast = toast.loading('Digesting contract into Knowledge Hub...');
+    try {
+        const { saveKnowledgeItem } = await import('@/services/dbService');
+        
+        await saveKnowledgeItem({
+            id: activeContractId || projectName.replace(/\s+/g, '_'),
+            name: projectName,
+            data: {
+                title: projectName,
+                timestamp: Date.now(),
+                clause_count: clauses.length,
+                text: clauses.map(c => `Clause ${c.clause_number}: ${c.clause_title}\n${c.clause_text}`).join('\n\n'),
+                structured_data: organizerExtractedData.map(d => ({
+                  key: d.field_key,
+                  value: d.value,
+                  source: d.doc_name
+                }))
+            }
+        });
+        
+        toast.dismiss(loadingToast);
+        toast.success('Successfully digested into Knowledge Hub!', {
+          icon: '🧠',
+          duration: 5000
+        });
+    } catch (err) {
+        toast.dismiss(loadingToast);
+        toast.error('Knowledge digestion failed.');
+        console.error(err);
+    }
   };
 
   // Fallback: if contract not set but clauses exist, create contract
@@ -111,10 +172,19 @@ export const CompletedView: React.FC<CompletedViewProps> = ({
               onChange={(e) => setProjectName(e.target.value)}
               onBlur={() => persistCurrentProject()}
               className="text-7xl font-black text-aaa-blue bg-transparent border-none focus:ring-0 w-full tracking-tighter hover:bg-aaa-bg/50 rounded-2xl transition-all cursor-text outline-none"
-              placeholder="Enter Project Name..."
             />
           </div>
 
+          <div className="flex items-center gap-4">
+            <button
+              onClick={handleDigestKnowledge}
+              className="flex items-center gap-3 px-6 py-3.5 bg-indigo-600 text-white rounded-2xl text-sm font-black hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 dark:shadow-none animate-pulse hover:animate-none group"
+              title="Save this analysis to the persistent AI Knowledge Hub"
+            >
+              <Brain className="w-5 h-5 group-hover:scale-125 transition-transform" />
+              DIGEST FOR AI
+            </button>
+          </div>
         </div>
       </div>
 
@@ -194,6 +264,8 @@ export const CompletedView: React.FC<CompletedViewProps> = ({
         />
       ) : clauses.length > 0 ? (
         renderFallbackContract()
+      ) : isSaving ? (
+        <CompletedViewSkeleton />
       ) : (
         <div className="bg-white border border-aaa-border rounded-3xl p-16 text-center">
           <p className="text-aaa-muted font-semibold">No contract data available</p>

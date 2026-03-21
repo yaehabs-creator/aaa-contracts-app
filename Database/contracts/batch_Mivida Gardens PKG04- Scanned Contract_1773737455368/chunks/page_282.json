@@ -1,0 +1,451 @@
+{
+  "text": "## EMAAR\n\n## Technical Specifications (Division I)\n\n- 11.2 All correspondence shall be made using A4 sheets. All other submittalsshallbeaccordingtotherelatedinternationalpaper standards.\n- 11.3 Only standard sizes of drawings shall be used. The maximum size used shall be A1. The format of the drawings such as title blocks, approval stamp blocks, rumbering system, etc., shall be subject to the approval of the Contract Administrator and the Supervision Consultant.\n- 11.4 The transmittal forms used for submittals shall be in a format designated by the Contract Administrator additionally the Contract Administrator's electronic system to be used.\n- 11.5 Only the following software shall be used for Contract related documents:\n- 11.5.1 Drawings - REVIT/CAD (Latest Release)\n- 11.5.2 Correspondence . Microsoft Word Version XP or later version\n- 11.5.3 Programme - Primavera Project Planner ( P3) for Windows Version3.1 or later version\n- 11.5.4 Programme related matrices, spreadsheets, and similar reports - Microsoft Excel Version XP, latest version\n- 11.5.5 Allcorrespondence should be referenced uniquely  to demonstrate contract, package, and location.\n\n## 12 PRIMAVERA UNIFIER\n\n- 12.1 The Contractor shalluse the Oracle PRIMAVERA UNIFIER \"Automated System\"\" or any other Automation application/software that may be instructed by the Employer, to carry out the Project management processes including online approvals (unless otherwise requested to be in form of signed / stamped Hard copy), submissions and tracking of the submissions across all project phases.\n- 12.2 The Employer will purchase and supply adequate number of licenses for Automation application for use by himself and his contractors' staff.\n- 12.3 The Contractor must assure that his staff has knowledge and experience on using the Automation application and any other system required for proper administration of the project. In case the Contractor's staff requires any training, then Contractor must arrange for training courses with Project Manager.\n\n## 13 BIM Model\n\n- 13.1 The initial BlM Model/s are to be utilized by the Contractor in reasonabletimeafterCommencementDate.TheContractorshall,at no cost to the Employer, review, further develop, revise, amend, modify, improve, vary, complete the BlM Models or create new-BIM Models to compy wlith the requiroments of the Project.\n- 13.2 The Contractor coordinatcd\n\nthe Project, a fully, elements from\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          82.17916870117188,
+          770.5440114339193
+        ],
+        [
+          155.2273152669271,
+          770.5440114339193
+        ],
+        [
+          155.2273152669271,
+          752.2993876139323
+        ],
+        [
+          82.17916870117188,
+          752.2993876139323
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "Technical Specifications (Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.50787353515625,
+          741.9331258138021
+        ],
+        [
+          502.2060139973958,
+          741.9331258138021
+        ],
+        [
+          502.2060139973958,
+          731.1522115071615
+        ],
+        [
+          339.50787353515625,
+          731.1522115071615
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.2 All correspondence shall be made using A4 sheets. All other submittalsshallbeaccordingtotherelatedinternationalpaper standards.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          718.7126973470052
+        ],
+        [
+          505.5263671875,
+          718.7126973470052
+        ],
+        [
+          505.5263671875,
+          679.7355448404948
+        ],
+        [
+          109.98726399739583,
+          679.7355448404948
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.3 Only standard sizes of drawings shall be used. The maximum size used shall be A1. The format of the drawings such as title blocks, approval stamp blocks, rumbering system, etc., shall be subject to the approval of the Contract Administrator and the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          673.1011454264323
+        ],
+        [
+          505.5263671875,
+          673.1011454264323
+        ],
+        [
+          505.5263671875,
+          608.0010172526041
+        ],
+        [
+          109.98726399739583,
+          608.0010172526041
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.4 The transmittal forms used for submittals shall be in a format designated by the Contract Administrator additionally the Contract Administrator's electronic system to be used.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          602.6105550130209
+        ],
+        [
+          505.9414469401042,
+          602.6105550130209
+        ],
+        [
+          505.9414469401042,
+          563.6334025065105
+        ],
+        [
+          109.98726399739583,
+          563.6334025065105
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.5 Only the following software shall be used for Contract related documents:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          556.999003092448
+        ],
+        [
+          505.111328125,
+          556.999003092448
+        ],
+        [
+          505.111328125,
+          530.8760172526042
+        ],
+        [
+          109.98726399739583,
+          530.8760172526042
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.5.1 Drawings - REVIT/CAD (Latest Release)",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          525.0709025065105
+        ],
+        [
+          404.2550862630208,
+          525.0709025065105
+        ],
+        [
+          404.2550862630208,
+          513.0460408528645
+        ],
+        [
+          153.1520792643229,
+          513.0460408528645
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.5.2 Correspondence . Microsoft Word Version XP or later version",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          511.8020833333333
+        ],
+        [
+          505.9414469401042,
+          511.8020833333333
+        ],
+        [
+          505.9414469401042,
+          486.9230550130208
+        ],
+        [
+          153.1520792643229,
+          486.9230550130208
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.5.3 Programme - Primavera Project Planner ( P3) for Windows Version3.1 or later version",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          485.67909749348956
+        ],
+        [
+          505.111328125,
+          485.67909749348956
+        ],
+        [
+          505.111328125,
+          460.38543701171875
+        ],
+        [
+          153.1520792643229,
+          460.38543701171875
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.5.4 Programme related matrices, spreadsheets, and similar reports - Microsoft Excel Version XP, latest version",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          459.55613199869794
+        ],
+        [
+          505.5263671875,
+          459.55613199869794
+        ],
+        [
+          505.5263671875,
+          434.67710367838544
+        ],
+        [
+          153.56712849934897,
+          434.67710367838544
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "11.5.5 Allcorrespondence should be referenced uniquely  to demonstrate contract, package, and location.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          433.43312581380206
+        ],
+        [
+          505.111328125,
+          433.43312581380206
+        ],
+        [
+          505.111328125,
+          407.72479248046875
+        ],
+        [
+          153.1520792643229,
+          407.72479248046875
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "12 PRIMAVERA UNIFIER",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          395.69993082682294
+        ],
+        [
+          227.86041259765625,
+          395.69993082682294
+        ],
+        [
+          227.86041259765625,
+          383.26043701171875
+        ],
+        [
+          75.12337748209636,
+          383.26043701171875
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "12.1 The Contractor shalluse the Oracle PRIMAVERA UNIFIER \"Automated System\"\" or any other Automation application/software that may be instructed by the Employer, to carry out the Project management processes including online approvals (unless otherwise requested to be in form of signed / stamped Hard copy), submissions and tracking of the submissions across all project phases.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          377.04066975911456
+        ],
+        [
+          505.9414469401042,
+          377.04066975911456
+        ],
+        [
+          505.9414469401042,
+          299.50103759765625
+        ],
+        [
+          109.57222493489583,
+          299.50103759765625
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "12.2 The Employer will purchase and supply adequate number of licenses for Automation application for use by himself and his contractors' staff.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          293.6959025065104
+        ],
+        [
+          505.5263671875,
+          293.6959025065104
+        ],
+        [
+          505.5263671875,
+          254.30409749348962
+        ],
+        [
+          109.98726399739583,
+          254.30409749348962
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "12.3 The Contractor must assure that his staff has knowledge and experience on using the Automation application and any other system required for proper administration of the project. In case the Contractor's staff requires any training, then Contractor must arrange for training courses with Project Manager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          247.66969807942712
+        ],
+        [
+          506.3564860026042,
+          247.66969807942712
+        ],
+        [
+          506.3564860026042,
+          182.56955973307288
+        ],
+        [
+          109.98726399739583,
+          182.56955973307288
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "13 BIM Model",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          176.76446533203125
+        ],
+        [
+          166.8486124674479,
+          176.76446533203125
+        ],
+        [
+          166.8486124674479,
+          164.32497151692712
+        ],
+        [
+          75.53842671712239,
+          164.32497151692712
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "13.1 The initial BlM Model/s are to be utilized by the Contractor in reasonabletimeafterCommencementDate.TheContractorshall,at no cost to the Employer, review, further develop, revise, amend, modify, improve, vary, complete the BlM Models or create new-BIM Models to compy wlith the requiroments of the Project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          159.34914143880212
+        ],
+        [
+          508.0166829427083,
+          159.34914143880212
+        ],
+        [
+          508.0166829427083,
+          91.34645589192712
+        ],
+        [
+          109.57222493489583,
+          91.34645589192712
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "13.2 The Contractor coordinatcd",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          87.61460367838538
+        ],
+        [
+          233.25602213541666,
+          87.61460367838538
+        ],
+        [
+          233.25602213541666,
+          62.73561604817712
+        ],
+        [
+          109.98726399739583,
+          62.73561604817712
+        ]
+      ],
+      "page": 282
+    },
+    {
+      "text": "the Project, a fully, elements from",
+      "confidence": 0.95,
+      "box": [
+        [
+          404.6701253255208,
+          90.51719156901038
+        ],
+        [
+          509.2618001302083,
+          90.51719156901038
+        ],
+        [
+          509.2618001302083,
+          62.32090250651038
+        ],
+        [
+          404.6701253255208,
+          62.32090250651038
+        ]
+      ],
+      "page": 282
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 282,
+      "text": "EMAAR\nTechnical Specifications (Division I)\n11.2 All correspondence shall be made using A4 sheets. All other submittalsshallbeaccordingtotherelatedinternationalpaper standards.\n11.3 Only standard sizes of drawings shall be used. The maximum size used shall be A1. The format of the drawings such as title blocks, approval stamp blocks, rumbering system, etc., shall be subject to the approval of the Contract Administrator and the Supervision Consultant.\n11.4 The transmittal forms used for submittals shall be in a format designated by the Contract Administrator additionally the Contract Administrator's electronic system to be used.\n11.5 Only the following software shall be used for Contract related documents:\n11.5.1 Drawings - REVIT/CAD (Latest Release)\n11.5.2 Correspondence . Microsoft Word Version XP or later version\n11.5.3 Programme - Primavera Project Planner ( P3) for Windows Version3.1 or later version\n11.5.4 Programme related matrices, spreadsheets, and similar reports - Microsoft Excel Version XP, latest version\n11.5.5 Allcorrespondence should be referenced uniquely  to demonstrate contract, package, and location.\n12 PRIMAVERA UNIFIER\n12.1 The Contractor shalluse the Oracle PRIMAVERA UNIFIER \"Automated System\"\" or any other Automation application/software that may be instructed by the Employer, to carry out the Project management processes including online approvals (unless otherwise requested to be in form of signed / stamped Hard copy), submissions and tracking of the submissions across all project phases.\n12.2 The Employer will purchase and supply adequate number of licenses for Automation application for use by himself and his contractors' staff.\n12.3 The Contractor must assure that his staff has knowledge and experience on using the Automation application and any other system required for proper administration of the project. In case the Contractor's staff requires any training, then Contractor must arrange for training courses with Project Manager.\n13 BIM Model\n13.1 The initial BlM Model/s are to be utilized by the Contractor in reasonabletimeafterCommencementDate.TheContractorshall,at no cost to the Employer, review, further develop, revise, amend, modify, improve, vary, complete the BlM Models or create new-BIM Models to compy wlith the requiroments of the Project.\n13.2 The Contractor coordinatcd\nthe Project, a fully, elements from",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

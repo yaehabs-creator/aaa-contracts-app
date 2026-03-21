@@ -1,0 +1,221 @@
+{
+  "text": "underthisClause23.2,theContractorshall give notice inwriting thereof to revisiontotheContractor'spreviousestimateastotheamountofthe aforesaidclaimanddetailsoftherevision.\n\n## ContemporaryRecords\n\n- s provided in Clause 23.1(Notice of Claims)the Contractorshall keep full and detailedcontemporaryrecordsof andrelatingtoallmattersrelevantto any suchclaimeitherontheSiteoratanotherlocationacceptabletotheProject Manager.TheProjectManagershallat anytimeduringnormal working hoursof theContractorbeentitledtoinspectsuchcontemporaryrecords\n\n## CurrentEstimates\n\n- Contractor todelivertotheProjectManager inwriting itsthenlatest estimateastotheamountofanyclaimofwhichnoticehasbeengivento theProject Managerunder Clause 23.1(Notice of Claims).\n\n## Comprehensive Claim\n\n- 23.5 Within twenty eight (28) days, or such extended time as the Project Manager may allow,of giving notice under Clause 23.1 (Notice of Claims), theContractorshallsubmit totheProjectManageracomprehensive accountof theclaimgivingfull anddetailedparticularsofandinformation concerning suchclaim.Suchparticulars andinformationshallwithout limitationincludethe groundsuponwhichtheclairn is based,the final amountof theclaimand thebuild-up thereof and thecontemporaryrecords requiredunderClause23.3(ContemporaryRecords).Suchparticularsand information shall incorporate as applicable the particulars and information previously submitted under Clause 23.1(Notice of Claims),Clause 23.2 (NoticeofFurtherParticularsorInformation)andClause23.3 (ContemporaryRecords).The Contractor shall thereafterpromptly submit suchfurtherparticulars andinformationof itsclaimastheProject Manager mayrequiretoassessthevalidityoftheclaim.\n\n## FailuretoComply\n\n<!-- image -->\n\n- 23.6If the Contractor fails to comply with any of the provisions of Clause 23.1 (Noticeof Claims)inrespectofanysuchclaim asisreferred totherein,the Contractorshallnotunderanycircumstancesbeentitled toanyadditional dischargedfromanyand all liabilityinconnectiontherewith.Otherwise,if theContractorfails tocomplywith anyof theprovisionsofClause23.2 (Noticeof FurtherParticulars orInformation),Clause23.3(Contemporary Records),Clause 23.4(CurrentEstimates),Clause 23.5(Comprehensive Claim)oranyother Clausesof theseConditionsof Contractwhichmay be applicableinrespectofanysuchclaimas isreferred totherein,then (without prejudiceto anyother rights the Employer may have in respect of thatfailure)theContractorshallbeentitled topaymentinrespectofthe\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "underthisClause23.2,theContractorshall give notice inwriting thereof to revisiontotheContractor'spreviousestimateastotheamountofthe aforesaidclaimanddetailsoftherevision.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          720.7752482096354
+        ],
+        [
+          487.9365234375,
+          720.7752482096354
+        ],
+        [
+          487.9365234375,
+          677.0798543294271
+        ],
+        [
+          158.55823771158853,
+          677.0798543294271
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "ContemporaryRecords",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          663.5045776367188
+        ],
+        [
+          201.68607584635416,
+          663.5045776367188
+        ],
+        [
+          201.68607584635416,
+          652.4746704101562
+        ],
+        [
+          97.671875,
+          652.4746704101562
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "s provided in Clause 23.1(Notice of Claims)the Contractorshall keep full and detailedcontemporaryrecordsof andrelatingtoallmattersrelevantto any suchclaimeitherontheSiteoratanotherlocationacceptabletotheProject Manager.TheProjectManagershallat anytimeduringnormal working hoursof theContractorbeentitledtoinspectsuchcontemporaryrecords",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          641.8689982096354
+        ],
+        [
+          488.359375,
+          641.8689982096354
+        ],
+        [
+          488.359375,
+          574.8411051432292
+        ],
+        [
+          127.2694091796875,
+          574.8411051432292
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "CurrentEstimates",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          549.8117065429688
+        ],
+        [
+          178.43086751302084,
+          549.8117065429688
+        ],
+        [
+          178.43086751302084,
+          540.0544840494792
+        ],
+        [
+          98.09469604492188,
+          540.0544840494792
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "Contractor todelivertotheProjectManager inwriting itsthenlatest estimateastotheamountofanyclaimofwhichnoticehasbeengivento theProject Managerunder Clause 23.1(Notice of Claims).",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          516.2977701822917
+        ],
+        [
+          489.2049967447917,
+          516.2977701822917
+        ],
+        [
+          489.2049967447917,
+          483.20802815755206
+        ],
+        [
+          158.9810587565104,
+          483.20802815755206
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "Comprehensive Claim",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          470.48122151692706
+        ],
+        [
+          197.45784505208334,
+          470.48122151692706
+        ],
+        [
+          197.45784505208334,
+          459.45131429036456
+        ],
+        [
+          98.09469604492188,
+          459.45131429036456
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "23.5 Within twenty eight (28) days, or such extended time as the Project Manager may allow,of giving notice under Clause 23.1 (Notice of Claims), theContractorshallsubmit totheProjectManageracomprehensive accountof theclaimgivingfull anddetailedparticularsofandinformation concerning suchclaim.Suchparticulars andinformationshallwithout limitationincludethe groundsuponwhichtheclairn is based,the final amountof theclaimand thebuild-up thereof and thecontemporaryrecords requiredunderClause23.3(ContemporaryRecords).Suchparticularsand information shall incorporate as applicable the particulars and information previously submitted under Clause 23.1(Notice of Claims),Clause 23.2 (NoticeofFurtherParticularsorInformation)andClause23.3 (ContemporaryRecords).The Contractor shall thereafterpromptly submit suchfurtherparticulars andinformationof itsclaimastheProject Manager mayrequiretoassessthevalidityoftheclaim.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          448.84564208984375
+        ],
+        [
+          489.6278483072917,
+          448.84564208984375
+        ],
+        [
+          489.6278483072917,
+          290.1846720377604
+        ],
+        [
+          127.2694091796875,
+          290.1846720377604
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "FailuretoComply",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          278.30633544921875
+        ],
+        [
+          177.16239420572916,
+          278.30633544921875
+        ],
+        [
+          177.16239420572916,
+          266.00372314453125
+        ],
+        [
+          97.671875,
+          266.00372314453125
+        ]
+      ],
+      "page": 90
+    },
+    {
+      "text": "23.6If the Contractor fails to comply with any of the provisions of Clause 23.1 (Noticeof Claims)inrespectofanysuchclaim asisreferred totherein,the Contractorshallnotunderanycircumstancesbeentitled toanyadditional dischargedfromanyand all liabilityinconnectiontherewith.Otherwise,if theContractorfails tocomplywith anyof theprovisionsofClause23.2 (Noticeof FurtherParticulars orInformation),Clause23.3(Contemporary Records),Clause 23.4(CurrentEstimates),Clause 23.5(Comprehensive Claim)oranyother Clausesof theseConditionsof Contractwhichmay be applicableinrespectofanysuchclaimas isreferred totherein,then (without prejudiceto anyother rights the Employer may have in respect of thatfailure)theContractorshallbeentitled topaymentinrespectofthe",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          256.24652099609375
+        ],
+        [
+          490.8962809244792,
+          256.24652099609375
+        ],
+        [
+          490.8962809244792,
+          120.91802978515625
+        ],
+        [
+          128.11505126953125,
+          120.91802978515625
+        ]
+      ],
+      "page": 90
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 90,
+      "text": "underthisClause23.2,theContractorshall give notice inwriting thereof to revisiontotheContractor'spreviousestimateastotheamountofthe aforesaidclaimanddetailsoftherevision.\nContemporaryRecords\ns provided in Clause 23.1(Notice of Claims)the Contractorshall keep full and detailedcontemporaryrecordsof andrelatingtoallmattersrelevantto any suchclaimeitherontheSiteoratanotherlocationacceptabletotheProject Manager.TheProjectManagershallat anytimeduringnormal working hoursof theContractorbeentitledtoinspectsuchcontemporaryrecords\nCurrentEstimates\nContractor todelivertotheProjectManager inwriting itsthenlatest estimateastotheamountofanyclaimofwhichnoticehasbeengivento theProject Managerunder Clause 23.1(Notice of Claims).\nComprehensive Claim\n23.5 Within twenty eight (28) days, or such extended time as the Project Manager may allow,of giving notice under Clause 23.1 (Notice of Claims), theContractorshallsubmit totheProjectManageracomprehensive accountof theclaimgivingfull anddetailedparticularsofandinformation concerning suchclaim.Suchparticulars andinformationshallwithout limitationincludethe groundsuponwhichtheclairn is based,the final amountof theclaimand thebuild-up thereof and thecontemporaryrecords requiredunderClause23.3(ContemporaryRecords).Suchparticularsand information shall incorporate as applicable the particulars and information previously submitted under Clause 23.1(Notice of Claims),Clause 23.2 (NoticeofFurtherParticularsorInformation)andClause23.3 (ContemporaryRecords).The Contractor shall thereafterpromptly submit suchfurtherparticulars andinformationof itsclaimastheProject Manager mayrequiretoassessthevalidityoftheclaim.\nFailuretoComply\n23.6If the Contractor fails to comply with any of the provisions of Clause 23.1 (Noticeof Claims)inrespectofanysuchclaim asisreferred totherein,the Contractorshallnotunderanycircumstancesbeentitled toanyadditional dischargedfromanyand all liabilityinconnectiontherewith.Otherwise,if theContractorfails tocomplywith anyof theprovisionsofClause23.2 (Noticeof FurtherParticulars orInformation),Clause23.3(Contemporary Records),Clause 23.4(CurrentEstimates),Clause 23.5(Comprehensive Claim)oranyother Clausesof theseConditionsof Contractwhichmay be applicableinrespectofanysuchclaimas isreferred totherein,then (without prejudiceto anyother rights the Employer may have in respect of thatfailure)theContractorshallbeentitled topaymentinrespectofthe",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,773 @@
+{
+  "text": "<!-- image -->\n\n## PART 1 - GENERAL\n\n## 1.01 REFERENCES\n\n- A. The publications listed below form a part of this specification to the extent referenced.\n\n## INTERNATIONALORGANIZATIONFORSTANDARDIZATION\n\nISO 9001:2000 Quality Management Systems -Kequirements\n\n## AMERICAN CONCRETEINSTITUTE(ACI)\n\nACI 117-06\n\nStandard Specifications   for   Tolerances  for   Concrete ConstructionandMaterials\n\nACI121R-08\n\nGuide for Concrete Construction QualitySystems in Conformance withISO 9001\n\n## AMERICAN SOCIETYFOR TESTING AND MATERIALS (ASTM)\n\nASTM D 3740(2004a) Minimum Requirements for Agencies Engaged in the Testing and/or Inspection of Soil and Rock as Used in Engineering Design and Construction.\n\nASTM E: 329 (2007a) Agencies Engaged in the Testing and/or Inspection of Materials Used in Construction.\n\n## 1.02 COST OF QUALITY CONTROL.\n\n- A. The cost of providing and maintaining the Quality Controi shall be included within the contractor's overall cost, no separate payment shall be made for providing the service.\n\n## 1.03 RELATED SECTIONS\n\n- A. Section 01200 - Project Meetings.\n- B. Section 01300 - Submittals.\n- C. Section 01600- Materials and Equipment.\n- D. Technical sections of the specifications as applicable.\n\n## 1.04 SUBMITTALS\n\n- A. Contractor's Quality Control Plan (QCP).\n1. Submit to Contract Administrator / Supervision Consultant no later than 30 calendar days from issue of the commencement date.\n2. No work covered by the Contractor's QCP shall begin until the plan has been approved.\n3. Plan shall describe all of the Contractor's quality control procedures that will be used throughout the project.\n- a. Minimum requirements shall be as specified herein.\n6. B.Quality Control Organization\n1. Show arganization of Contractor's quality control team.\n2. Provide the name, qualifications, and experience of the Quality Control\n- Manager and key support staff.\n\n有限资任公司\n\nSpecificationsDiv.01.Gerieral Rsquiremanls\n\n<!-- image -->\n\n## SECTION 01400 CONTRACTOR QUALITY CONTROL",
+  "results": [
+    {
+      "text": "PART 1 - GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          681.3941548665365
+        ],
+        [
+          185.11065673828125,
+          681.3941548665365
+        ],
+        [
+          185.11065673828125,
+          669.783935546875
+        ],
+        [
+          77.61365763346355,
+          669.783935546875
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "1.01 REFERENCES",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          656.1004740397135
+        ],
+        [
+          180.9601847330729,
+          656.1004740397135
+        ],
+        [
+          180.9601847330729,
+          645.3195597330729
+        ],
+        [
+          78.44375101725261,
+          645.3195597330729
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "The publications listed below form a part of this specification to the extent referenced.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          638.2704874674479
+        ],
+        [
+          505.5263671875,
+          638.2704874674479
+        ],
+        [
+          505.5263671875,
+          613.3914591471354
+        ],
+        [
+          100.02615356445312,
+          613.3914591471354
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "INTERNATIONALORGANIZATIONFORSTANDARDIZATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          605.9277547200521
+        ],
+        [
+          438.7039388020833,
+          605.9277547200521
+        ],
+        [
+          438.7039388020833,
+          595.9761352539062
+        ],
+        [
+          120.36342366536458,
+          595.9761352539062
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "ISO 9001:2000 Quality Management Systems -Kequirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          592.658935546875
+        ],
+        [
+          432.4782307942708,
+          592.658935546875
+        ],
+        [
+          432.4782307942708,
+          581.46337890625
+        ],
+        [
+          120.36342366536458,
+          581.46337890625
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "AMERICAN CONCRETEINSTITUTE(ACI)",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          574.8289591471354
+        ],
+        [
+          339.92291259765625,
+          574.8289591471354
+        ],
+        [
+          339.92291259765625,
+          562.3894449869792
+        ],
+        [
+          120.36342366536458,
+          562.3894449869792
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "ACI 117-06",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          560.3162027994792
+        ],
+        [
+          189.6761474609375,
+          560.3162027994792
+        ],
+        [
+          189.6761474609375,
+          549.949930826823
+        ],
+        [
+          120.77847290039062,
+          549.949930826823
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Standard Specifications   for   Tolerances  for   Concrete ConstructionandMaterials",
+      "confidence": 0.95,
+      "box": [
+        [
+          197.5620320638021,
+          561.9747924804688
+        ],
+        [
+          505.111328125,
+          561.9747924804688
+        ],
+        [
+          505.111328125,
+          536.6811116536458
+        ],
+        [
+          197.5620320638021,
+          536.6811116536458
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "ACI121R-08",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          534.6078694661458
+        ],
+        [
+          184.28055826822916,
+          534.6078694661458
+        ],
+        [
+          184.28055826822916,
+          523.4123128255208
+        ],
+        [
+          120.77847290039062,
+          523.4123128255208
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Guide for Concrete Construction QualitySystems in Conformance withISO 9001",
+      "confidence": 0.95,
+      "box": [
+        [
+          196.73193359375,
+          535.851826985677
+        ],
+        [
+          505.111328125,
+          535.851826985677
+        ],
+        [
+          505.111328125,
+          510.9727783203125
+        ],
+        [
+          196.73193359375,
+          510.9727783203125
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "AMERICAN SOCIETYFOR TESTING AND MATERIALS (ASTM)",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          503.5090738932292
+        ],
+        [
+          450.3252360026042,
+          503.5090738932292
+        ],
+        [
+          450.3252360026042,
+          491.89886474609375
+        ],
+        [
+          120.77847290039062,
+          491.89886474609375
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "ASTM D 3740(2004a) Minimum Requirements for Agencies Engaged in the Testing and/or Inspection of Soil and Rock as Used in Engineering Design and Construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          489.8256022135417
+        ],
+        [
+          505.5263671875,
+          489.8256022135417
+        ],
+        [
+          505.5263671875,
+          450.84844970703125
+        ],
+        [
+          120.36342366536458,
+          450.84844970703125
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "ASTM E: 329 (2007a) Agencies Engaged in the Testing and/or Inspection of Materials Used in Construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          451.26312255859375
+        ],
+        [
+          506.7715250651042,
+          451.26312255859375
+        ],
+        [
+          506.7715250651042,
+          426.38409423828125
+        ],
+        [
+          120.36342366536458,
+          426.38409423828125
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "1.02 COST OF QUALITY CONTROL.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          413.11525472005206
+        ],
+        [
+          267.28981526692706,
+          413.11525472005206
+        ],
+        [
+          267.28981526692706,
+          401.91969807942706
+        ],
+        [
+          78.85879516601562,
+          401.91969807942706
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "The cost of providing and maintaining the Quality Controi shall be included within the contractor's overall cost, no separate payment shall be made for providing the service.",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.76157633463542,
+          394.87062581380206
+        ],
+        [
+          506.7715250651042,
+          394.87062581380206
+        ],
+        [
+          506.7715250651042,
+          355.89349365234375
+        ],
+        [
+          103.76157633463542,
+          355.89349365234375
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "1.03 RELATED SECTIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          343.86863199869794
+        ],
+        [
+          219.55948893229166,
+          343.86863199869794
+        ],
+        [
+          219.55948893229166,
+          332.67307535807294
+        ],
+        [
+          78.85879516601562,
+          332.67307535807294
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Section 01200 - Project Meetings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.59166463216145,
+          324.79469807942706
+        ],
+        [
+          288.04213460286456,
+          324.79469807942706
+        ],
+        [
+          288.04213460286456,
+          312.76983642578125
+        ],
+        [
+          104.59166463216145,
+          312.76983642578125
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Section 01300 - Submittals.",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.17661539713542,
+          311.94053141276044
+        ],
+        [
+          258.15879313151044,
+          311.94053141276044
+        ],
+        [
+          258.15879313151044,
+          299.9156697591146
+        ],
+        [
+          104.17661539713542,
+          299.9156697591146
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Section 01600- Materials and Equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.0067138671875,
+          299.08636474609375
+        ],
+        [
+          329.96181233723956,
+          299.08636474609375
+        ],
+        [
+          329.96181233723956,
+          287.0615030924479
+        ],
+        [
+          105.0067138671875,
+          287.0615030924479
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Technical sections of the specifications as applicable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.76157633463542,
+          286.6468709309896
+        ],
+        [
+          387.2381998697917,
+          286.6468709309896
+        ],
+        [
+          387.2381998697917,
+          273.7927042643229
+        ],
+        [
+          103.76157633463542,
+          273.7927042643229
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "1.04 SUBMITTALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.68888854980469,
+          260.93853759765625
+        ],
+        [
+          178.46990966796875,
+          260.93853759765625
+        ],
+        [
+          178.46990966796875,
+          250.57224527994788
+        ],
+        [
+          79.68888854980469,
+          250.57224527994788
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Contractor's Quality Control Plan (QCP).",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.59166463216145,
+          243.10854085286462
+        ],
+        [
+          326.6414388020833,
+          243.10854085286462
+        ],
+        [
+          326.6414388020833,
+          231.08367919921875
+        ],
+        [
+          104.59166463216145,
+          231.08367919921875
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Submit to Contract Administrator / Supervision Consultant no later than 30 calendar days from issue of the commencement date.",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.0236104329427,
+          229.83974202473962
+        ],
+        [
+          506.7715250651042,
+          229.83974202473962
+        ],
+        [
+          506.7715250651042,
+          205.37534586588538
+        ],
+        [
+          122.0236104329427,
+          205.37534586588538
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "No work covered by the Contractor's QCP shall begin until the plan has been approved.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          204.13140869140625
+        ],
+        [
+          507.1865641276042,
+          204.13140869140625
+        ],
+        [
+          507.1865641276042,
+          178.00840250651038
+        ],
+        [
+          121.19352213541667,
+          178.00840250651038
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Plan shall describe all of the Contractor's quality control procedures that will be used throughout the project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          177.59377034505212
+        ],
+        [
+          508.0166829427083,
+          177.59377034505212
+        ],
+        [
+          508.0166829427083,
+          152.30006917317712
+        ],
+        [
+          121.19352213541667,
+          152.30006917317712
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Minimum requirements shall be as specified herein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.21041870117188,
+          150.64149983723962
+        ],
+        [
+          409.2356363932292,
+          150.64149983723962
+        ],
+        [
+          409.2356363932292,
+          140.27520751953125
+        ],
+        [
+          138.21041870117188,
+          140.27520751953125
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "B.Quality Control Organization",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.0067138671875,
+          132.39683024088538
+        ],
+        [
+          265.629638671875,
+          132.39683024088538
+        ],
+        [
+          265.629638671875,
+          120.37200927734375
+        ],
+        [
+          105.0067138671875,
+          120.37200927734375
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Show arganization of Contractor's quality control team.",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.43865966796875,
+          119.12803141276038
+        ],
+        [
+          410.0657552083333,
+          119.12803141276038
+        ],
+        [
+          410.0657552083333,
+          107.93247477213538
+        ],
+        [
+          122.43865966796875,
+          107.93247477213538
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Provide the name, qualifications, and experience of the Quality Control",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          107.10321044921875
+        ],
+        [
+          508.4317220052083,
+          107.10321044921875
+        ],
+        [
+          508.4317220052083,
+          94.24904378255212
+        ],
+        [
+          120.77847290039062,
+          94.24904378255212
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "Manager and key support staff.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          93.83433024088538
+        ],
+        [
+          297.17315673828125,
+          93.83433024088538
+        ],
+        [
+          297.17315673828125,
+          78.07765706380212
+        ],
+        [
+          127.41920979817708,
+          78.07765706380212
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "有限资任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.85115559895834,
+          78.07765706380212
+        ],
+        [
+          207.52315266927084,
+          78.07765706380212
+        ],
+        [
+          207.52315266927084,
+          56.10117594401038
+        ],
+        [
+          144.85115559895834,
+          56.10117594401038
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "SpecificationsDiv.01.Gerieral Rsquiremanls",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.68888854980469,
+          38.27117919921875
+        ],
+        [
+          212.50370279947916,
+          38.27117919921875
+        ],
+        [
+          212.50370279947916,
+          27.90496826171875
+        ],
+        [
+          79.68888854980469,
+          27.90496826171875
+        ]
+      ],
+      "page": 317
+    },
+    {
+      "text": "SECTION 01400 CONTRACTOR QUALITY CONTROL",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.6567179361979,
+          721.2006022135416
+        ],
+        [
+          388.0682779947917,
+          721.2006022135416
+        ],
+        [
+          388.0682779947917,
+          697.150868733724
+        ],
+        [
+          194.6567179361979,
+          697.150868733724
+        ]
+      ],
+      "page": 317
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 317,
+      "text": "PART 1 - GENERAL\n1.01 REFERENCES\nThe publications listed below form a part of this specification to the extent referenced.\nINTERNATIONALORGANIZATIONFORSTANDARDIZATION\nISO 9001:2000 Quality Management Systems -Kequirements\nAMERICAN CONCRETEINSTITUTE(ACI)\nACI 117-06\nStandard Specifications   for   Tolerances  for   Concrete ConstructionandMaterials\nACI121R-08\nGuide for Concrete Construction QualitySystems in Conformance withISO 9001\nAMERICAN SOCIETYFOR TESTING AND MATERIALS (ASTM)\nASTM D 3740(2004a) Minimum Requirements for Agencies Engaged in the Testing and/or Inspection of Soil and Rock as Used in Engineering Design and Construction.\nASTM E: 329 (2007a) Agencies Engaged in the Testing and/or Inspection of Materials Used in Construction.\n1.02 COST OF QUALITY CONTROL.\nThe cost of providing and maintaining the Quality Controi shall be included within the contractor's overall cost, no separate payment shall be made for providing the service.\n1.03 RELATED SECTIONS\nSection 01200 - Project Meetings.\nSection 01300 - Submittals.\nSection 01600- Materials and Equipment.\nTechnical sections of the specifications as applicable.\n1.04 SUBMITTALS\nContractor's Quality Control Plan (QCP).\nSubmit to Contract Administrator / Supervision Consultant no later than 30 calendar days from issue of the commencement date.\nNo work covered by the Contractor's QCP shall begin until the plan has been approved.\nPlan shall describe all of the Contractor's quality control procedures that will be used throughout the project.\nMinimum requirements shall be as specified herein.\nB.Quality Control Organization\nShow arganization of Contractor's quality control team.\nProvide the name, qualifications, and experience of the Quality Control\nManager and key support staff.\n有限资任公司\nSpecificationsDiv.01.Gerieral Rsquiremanls\nSECTION 01400 CONTRACTOR QUALITY CONTROL",
+      "line_count": 33
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

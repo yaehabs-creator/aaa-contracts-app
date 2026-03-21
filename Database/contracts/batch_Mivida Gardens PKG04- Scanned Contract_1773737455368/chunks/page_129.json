@@ -1,0 +1,267 @@
+{
+  "text": "<!-- image -->\n\nPeriod:EffectiveDateincludingPlantpriortoitsdeliverytoand duringitsunloadingattheSite and shallmaintain thisinsurance to providecoveruntil theissueof theTakingOverCertificate.\n\nCovering:Physical lossordamage toallPlantandContractor's Equipmentownedorrentedincludinganyitemshiredinby the Conlraclor.The Contractor shall also procure that its Subcontractors obtainand maintainsuchPlantandContractor's Equipment insurance in respect of their Plant.\n\nThe Contractor shallinsure the Plant, Construction Documents,and Contractor's Equipment for not less than the current replacement value,includingPlantprior toitsdeliverytoandunloading atthe Site.\n\nSum Insured:Current replacement value of Plant,Construction Documents,andContractor's Equipmentincludingalllabor charges,transportation charges,professional fees,cost ofremoval of debris,costofdemolition,andothercosts.\n\n## Conditions:\n\n- 1.“First Loss Payee\"for the Employer for Plant\n- 3.Inland transit Clause including Loading &amp; Unloading\n- 2.Cross Liability Clause\n4. Waiver of subrogationagainst Employer and\\or and any affiliated companies，whether constituted atinceptionor subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers and or all Suppliers and or all consultants and or all employees, managers,andallotherpartiesinvolved intheworkeachfor theirrespectiverights and interestin theProject.\n- b)Workmen's Compensation -being coverage as required by the laws and regulationsintheCountryinrespectofpersonal injuries(including death and including claimant's and defense costs) to employees of the Contractor anditsSubcontractors resultingfromor occurringin connection with the carrying out of the Works and/or the remedying of defects therein and/or the Contractor's observance or performance of orfailuretoobserveorperformitsotherobligationsunder theContract includingitsExtendedWarrantyobligations.Suchcoverageshallbe extended to include Employer's Liability of not less than the statuitory amountforeachaccidentor(ifnosuchstatutoryamount)notlessthan the amount stated in theParticular Conditionsfor each accident.The obligations of this paragraph (b) shall with respect to any employees of a Subcontractor be satisfied by a policy otherwise complying with this sub-paragraphbutbeinginthenameof theSubcontractorrather than of the Contractor,provided that theEmployer is indemnified under the policy;but theContractorshallbeliableforprocuring thecompliance by the Subcontractor with the provisions of thethree paragraphs immediately following paragraph (e) of this Clause 12.9.\n\nLocation: East Cairo, Cairo, Egypt.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Period:EffectiveDateincludingPlantpriortoitsdeliverytoand duringitsunloadingattheSite and shallmaintain thisinsurance to providecoveruntil theissueof theTakingOverCertificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.38399251302084,
+          697.4427591959635
+        ],
+        [
+          501.8896484375,
+          697.4427591959635
+        ],
+        [
+          501.8896484375,
+          660.959228515625
+        ],
+        [
+          192.38399251302084,
+          660.959228515625
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "Covering:Physical lossordamage toallPlantandContractor's Equipmentownedorrentedincludinganyitemshiredinby the Conlraclor.The Contractor shall also procure that its Subcontractors obtainand maintainsuchPlantandContractor's Equipment insurance in respect of their Plant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.11551920572916,
+          657.1411743164062
+        ],
+        [
+          502.3125,
+          657.1411743164062
+        ],
+        [
+          502.3125,
+          596.0524698893229
+        ],
+        [
+          191.11551920572916,
+          596.0524698893229
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "The Contractor shallinsure the Plant, Construction Documents,and Contractor's Equipment for not less than the current replacement value,includingPlantprior toitsdeliverytoandunloading atthe Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.11551920572916,
+          593.0828857421875
+        ],
+        [
+          501.8896484375,
+          593.0828857421875
+        ],
+        [
+          501.8896484375,
+          544.7209879557292
+        ],
+        [
+          191.11551920572916,
+          544.7209879557292
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "Sum Insured:Current replacement value of Plant,Construction Documents,andContractor's Equipmentincludingalllabor charges,transportation charges,professional fees,cost ofremoval of debris,costofdemolition,andothercosts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          540.0544840494792
+        ],
+        [
+          501.0440266927083,
+          540.0544840494792
+        ],
+        [
+          501.0440266927083,
+          491.69260660807294
+        ],
+        [
+          190.69270833333334,
+          491.69260660807294
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "Conditions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          488.29876708984375
+        ],
+        [
+          244.81392415364584,
+          488.29876708984375
+        ],
+        [
+          244.81392415364584,
+          475.99619547526044
+        ],
+        [
+          190.69270833333334,
+          475.99619547526044
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "1.“First Loss Payee\"for the Employer for Plant",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          475.99619547526044
+        ],
+        [
+          413.9427083333333,
+          475.99619547526044
+        ],
+        [
+          413.9427083333333,
+          463.69358317057294
+        ],
+        [
+          190.69270833333334,
+          463.69358317057294
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "3.Inland transit Clause including Loading & Unloading",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          452.66367594401044
+        ],
+        [
+          446.0771484375,
+          452.66367594401044
+        ],
+        [
+          446.0771484375,
+          438.66420491536456
+        ],
+        [
+          189.42423502604166,
+          438.66420491536456
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "2.Cross Liability Clause",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.8470662434896,
+          464.11781819661456
+        ],
+        [
+          308.23720296223956,
+          464.11781819661456
+        ],
+        [
+          308.23720296223956,
+          451.39101155598956
+        ],
+        [
+          189.8470662434896,
+          451.39101155598956
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "Waiver of subrogationagainst Employer and\\or and any affiliated companies，whether constituted atinceptionor subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers and or all Suppliers and or all consultants and or all employees, managers,andallotherpartiesinvolved intheworkeachfor theirrespectiverights and interestin theProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          440.36110432942706
+        ],
+        [
+          501.0440266927083,
+          440.36110432942706
+        ],
+        [
+          501.0440266927083,
+          355.51568603515625
+        ],
+        [
+          189.42423502604166,
+          355.51568603515625
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "b)Workmen's Compensation -being coverage as required by the laws and regulationsintheCountryinrespectofpersonal injuries(including death and including claimant's and defense costs) to employees of the Contractor anditsSubcontractors resultingfromor occurringin connection with the carrying out of the Works and/or the remedying of defects therein and/or the Contractor's observance or performance of orfailuretoobserveorperformitsotherobligationsunder theContract includingitsExtendedWarrantyobligations.Suchcoverageshallbe extended to include Employer's Liability of not less than the statuitory amountforeachaccidentor(ifnosuchstatutoryamount)notlessthan the amount stated in theParticular Conditionsfor each accident.The obligations of this paragraph (b) shall with respect to any employees of a Subcontractor be satisfied by a policy otherwise complying with this sub-paragraphbutbeinginthenameof theSubcontractorrather than of the Contractor,provided that theEmployer is indemnified under the policy;but theContractorshallbeliableforprocuring thecompliance by the Subcontractor with the provisions of thethree paragraphs immediately following paragraph (e) of this Clause 12.9.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          329.6377970377604
+        ],
+        [
+          500.6212158203125,
+          329.6377970377604
+        ],
+        [
+          500.6212158203125,
+          112.00925699869788
+        ],
+        [
+          158.55823771158853,
+          112.00925699869788
+        ]
+      ],
+      "page": 129
+    },
+    {
+      "text": "Location: East Cairo, Cairo, Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          351.69761149088544
+        ],
+        [
+          350.9422200520833,
+          351.69761149088544
+        ],
+        [
+          350.9422200520833,
+          338.54656982421875
+        ],
+        [
+          189.42423502604166,
+          338.54656982421875
+        ]
+      ],
+      "page": 129
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 129,
+      "text": "Period:EffectiveDateincludingPlantpriortoitsdeliverytoand duringitsunloadingattheSite and shallmaintain thisinsurance to providecoveruntil theissueof theTakingOverCertificate.\nCovering:Physical lossordamage toallPlantandContractor's Equipmentownedorrentedincludinganyitemshiredinby the Conlraclor.The Contractor shall also procure that its Subcontractors obtainand maintainsuchPlantandContractor's Equipment insurance in respect of their Plant.\nThe Contractor shallinsure the Plant, Construction Documents,and Contractor's Equipment for not less than the current replacement value,includingPlantprior toitsdeliverytoandunloading atthe Site.\nSum Insured:Current replacement value of Plant,Construction Documents,andContractor's Equipmentincludingalllabor charges,transportation charges,professional fees,cost ofremoval of debris,costofdemolition,andothercosts.\nConditions:\n1.“First Loss Payee\"for the Employer for Plant\n3.Inland transit Clause including Loading & Unloading\n2.Cross Liability Clause\nWaiver of subrogationagainst Employer and\\or and any affiliated companies，whether constituted atinceptionor subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers and or all Suppliers and or all consultants and or all employees, managers,andallotherpartiesinvolved intheworkeachfor theirrespectiverights and interestin theProject.\nb)Workmen's Compensation -being coverage as required by the laws and regulationsintheCountryinrespectofpersonal injuries(including death and including claimant's and defense costs) to employees of the Contractor anditsSubcontractors resultingfromor occurringin connection with the carrying out of the Works and/or the remedying of defects therein and/or the Contractor's observance or performance of orfailuretoobserveorperformitsotherobligationsunder theContract includingitsExtendedWarrantyobligations.Suchcoverageshallbe extended to include Employer's Liability of not less than the statuitory amountforeachaccidentor(ifnosuchstatutoryamount)notlessthan the amount stated in theParticular Conditionsfor each accident.The obligations of this paragraph (b) shall with respect to any employees of a Subcontractor be satisfied by a policy otherwise complying with this sub-paragraphbutbeinginthenameof theSubcontractorrather than of the Contractor,provided that theEmployer is indemnified under the policy;but theContractorshallbeliableforprocuring thecompliance by the Subcontractor with the provisions of thethree paragraphs immediately following paragraph (e) of this Clause 12.9.\nLocation: East Cairo, Cairo, Egypt.",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

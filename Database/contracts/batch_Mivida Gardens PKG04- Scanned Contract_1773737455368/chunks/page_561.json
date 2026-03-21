@@ -1,0 +1,37 @@
+{
+  "text": "The Hoarding Requirements\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "The Hoarding Requirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          71.28350830078125
+        ],
+        [
+          508.6548258463542,
+          71.28350830078125
+        ],
+        [
+          508.6548258463542,
+          40.73915608723962
+        ],
+        [
+          93.86647542317708,
+          40.73915608723962
+        ]
+      ],
+      "page": 561
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 561,
+      "text": "The Hoarding Requirements",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

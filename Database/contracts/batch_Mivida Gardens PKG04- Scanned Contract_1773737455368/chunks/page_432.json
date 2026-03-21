@@ -1,0 +1,451 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n- &gt;If equipment is operating at 230volts or higher a residual current device (RCD) is to be fitted. RCD's are to be built in to the main switchboard or the socket outlet.If RCD's trip it is a sign there is a fault and the system must be checked before resetting it.\n- Earth leakage circuit breakers (ELCB) are to be fitted in accordance with applicable codes and standards. As a minimum ELCB will be provided in all toilets,washrooms and changing rooms and all areas where there is a moist wet atmosphere where electrical equipment or portable electrical tools maybe used.\n- Cables are to be suitable and be rated for the conditions they will bc uscd for. Thcy arc to bc buricd orslung abovehead height toprotect themfrom damage and reduce thelikelihood of slipstrips and falls.Extension leads are tobe of three core construction and fitted with a separate earth conductor.\n- Electrical rooms, distribution boards, panels are to be locked at all times to prevent unauthorized access and suitable signs are to be displayed warning of the danger of electricity and where required who the competent person is tobe contacted in the event of a problem.\n- Work on electrical equipment will be only be carried out by competent electricians and before any work commences the electrical equipment is to be isolated, protected and a lock out tag out procedureimplemented as appropriate.\n- Work on exposed live parts of equipment is prohibited unless it is absolutely unavoidable. If it is unavoidable, a permit to work system and suitable prccautions arc to bc dcvcloped and implemented to prevent injury, both to the worker and anyone else who may be in the area.\n- Arrangements for commissioning permanent electrical systems and equipment will be developed by Contractors and utility owner and submitted to the relevant Construction Supervision Consultant for review.\n- &gt; A method statement and permit to work is required for all work on live electrical systems and during anystart up or energizationworks.\n\n## 3.7.UndergroundServices\n\n- Where possible underground services are to be diverted or isolated before work commences. Where this is not practical a safe system of work is to be developedl.\n- Services encased in concrete must be isolated by the utility owner prior to any breaking out works.\n- Before the commencement of any ground breaking activities, service drawings and information shall be obtained from relevant utility owners (i.e. Electricity, Water, Communications etc.). In addition, Contractors will need to ensure that all necessary permissions and non-objection certificates/permit arein placebeforeworkcommences.\n- The safe system ofworkwill includelocating and markingof known services,visuallylookingfor obvious signs such as previously dug trenches, presence of manholes, pits, sources of power such as street lighting transformers etc.and checking the area using a cable avoidance tool (CAT).\n- Users of a cable avoidance tool are to be trained and competent in their use. The CAT is to have an in date calibration certificate and a copy is to be available on site for inspection purposes.\n\nTheinformationcontainedinthesedocumentssconidentialprivilgedandmaynotbeusedulishedorredisribuedwithout\n\n<!-- image -->\n\nEMAAR\n\nC",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.5062459309896,
+          731.5668640136719
+        ],
+        [
+          340.33795166015625,
+          731.5668640136719
+        ],
+        [
+          340.33795166015625,
+          702.1266784667969
+        ],
+        [
+          190.5062459309896,
+          702.1266784667969
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          701.7120259602865
+        ],
+        [
+          216.6541748046875,
+          701.7120259602865
+        ],
+        [
+          216.6541748046875,
+          688.028554280599
+        ],
+        [
+          75.12337748209636,
+          688.028554280599
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": ">If equipment is operating at 230volts or higher a residual current device (RCD) is to be fitted. RCD's are to be built in to the main switchboard or the socket outlet.If RCD's trip it is a sign there is a fault and the system must be checked before resetting it.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          676.4183451334635
+        ],
+        [
+          496.3953857421875,
+          676.4183451334635
+        ],
+        [
+          496.3953857421875,
+          638.2704874674479
+        ],
+        [
+          75.12337748209636,
+          638.2704874674479
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Earth leakage circuit breakers (ELCB) are to be fitted in accordance with applicable codes and standards. As a minimum ELCB will be provided in all toilets,washrooms and changing rooms and all areas where there is a moist wet atmosphere where electrical equipment or portable electrical tools maybe used.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          632.0507405598959
+        ],
+        [
+          495.9803059895833,
+          632.0507405598959
+        ],
+        [
+          495.9803059895833,
+          582.7073364257812
+        ],
+        [
+          90.8951416015625,
+          582.7073364257812
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Cables are to be suitable and be rated for the conditions they will bc uscd for. Thcy arc to bc buricd orslung abovehead height toprotect themfrom damage and reduce thelikelihood of slipstrips and falls.Extension leads are tobe of three core construction and fitted with a separate earth conductor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          576.0729166666666
+        ],
+        [
+          495.5652669270833,
+          576.0729166666666
+        ],
+        [
+          495.5652669270833,
+          538.3397216796875
+        ],
+        [
+          91.3101806640625,
+          538.3397216796875
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Electrical rooms, distribution boards, panels are to be locked at all times to prevent unauthorized access and suitable signs are to be displayed warning of the danger of electricity and where required who the competent person is tobe contacted in the event of a problem.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          532.9492594401042
+        ],
+        [
+          495.5652669270833,
+          532.9492594401042
+        ],
+        [
+          495.5652669270833,
+          495.216064453125
+        ],
+        [
+          90.8951416015625,
+          495.216064453125
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Work on electrical equipment will be only be carried out by competent electricians and before any work commences the electrical equipment is to be isolated, protected and a lock out tag out procedureimplemented as appropriate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          489.8256022135417
+        ],
+        [
+          495.9803059895833,
+          489.8256022135417
+        ],
+        [
+          495.9803059895833,
+          451.67775472005206
+        ],
+        [
+          90.06504313151042,
+          451.67775472005206
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Work on exposed live parts of equipment is prohibited unless it is absolutely unavoidable. If it is unavoidable, a permit to work system and suitable prccautions arc to bc dcvcloped and implemented to prevent injury, both to the worker and anyone else who may be in the area.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          445.87266031901044
+        ],
+        [
+          495.5652669270833,
+          445.87266031901044
+        ],
+        [
+          495.5652669270833,
+          408.13946533203125
+        ],
+        [
+          90.48009236653645,
+          408.13946533203125
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Arrangements for commissioning permanent electrical systems and equipment will be developed by Contractors and utility owner and submitted to the relevant Construction Supervision Consultant for review.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          403.57830810546875
+        ],
+        [
+          494.7351888020833,
+          403.57830810546875
+        ],
+        [
+          494.7351888020833,
+          366.67441813151044
+        ],
+        [
+          89.23495483398438,
+          366.67441813151044
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "> A method statement and permit to work is required for all work on live electrical systems and during anystart up or energizationworks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          360.86928304036456
+        ],
+        [
+          495.5652669270833,
+          360.86928304036456
+        ],
+        [
+          495.5652669270833,
+          335.16094970703125
+        ],
+        [
+          73.0481465657552,
+          335.16094970703125
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "3.7.UndergroundServices",
+      "confidence": 0.95,
+      "box": [
+        [
+          225.7851765950521,
+          327.28261311848956
+        ],
+        [
+          353.2043863932292,
+          327.28261311848956
+        ],
+        [
+          353.2043863932292,
+          316.50168863932294
+        ],
+        [
+          225.7851765950521,
+          316.50168863932294
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Where possible underground services are to be diverted or isolated before work commences. Where this is not practical a safe system of work is to be developedl.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          309.8672892252604
+        ],
+        [
+          495.1502278645833,
+          309.8672892252604
+        ],
+        [
+          495.1502278645833,
+          284.1589558919271
+        ],
+        [
+          89.65000406901042,
+          284.1589558919271
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Services encased in concrete must be isolated by the utility owner prior to any breaking out works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          279.18316650390625
+        ],
+        [
+          490.999755859375,
+          279.18316650390625
+        ],
+        [
+          490.999755859375,
+          265.49969482421875
+        ],
+        [
+          89.23495483398438,
+          265.49969482421875
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Before the commencement of any ground breaking activities, service drawings and information shall be obtained from relevant utility owners (i.e. Electricity, Water, Communications etc.). In addition, Contractors will need to ensure that all necessary permissions and non-objection certificates/permit arein placebeforeworkcommences.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          260.93853759765625
+        ],
+        [
+          495.1502278645833,
+          260.93853759765625
+        ],
+        [
+          495.1502278645833,
+          210.76580810546875
+        ],
+        [
+          88.4048563639323,
+          210.76580810546875
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "The safe system ofworkwill includelocating and markingof known services,visuallylookingfor obvious signs such as previously dug trenches, presence of manholes, pits, sources of power such as street lighting transformers etc.and checking the area using a cable avoidance tool (CAT).",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          204.54604085286462
+        ],
+        [
+          494.7351888020833,
+          204.54604085286462
+        ],
+        [
+          494.7351888020833,
+          166.81284586588538
+        ],
+        [
+          88.4048563639323,
+          166.81284586588538
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Users of a cable avoidance tool are to be trained and competent in their use. The CAT is to have an in date calibration certificate and a copy is to be available on site for inspection purposes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          161.83705647786462
+        ],
+        [
+          494.7351888020833,
+          161.83705647786462
+        ],
+        [
+          494.7351888020833,
+          135.71405029296875
+        ],
+        [
+          87.9898173014323,
+          135.71405029296875
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "Theinformationcontainedinthesedocumentssconidentialprivilgedandmaynotbeusedulishedorredisribuedwithout",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.21805318196614,
+          104.20062255859375
+        ],
+        [
+          503.451171875,
+          104.20062255859375
+        ],
+        [
+          503.451171875,
+          90.93182373046875
+        ],
+        [
+          72.21805318196614,
+          90.93182373046875
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          736.5426737467448
+        ],
+        [
+          510.0918782552083,
+          736.5426737467448
+        ],
+        [
+          510.0918782552083,
+          724.1031494140625
+        ],
+        [
+          453.2305501302083,
+          724.1031494140625
+        ]
+      ],
+      "page": 432
+    },
+    {
+      "text": "C",
+      "confidence": 0.95,
+      "box": [
+        [
+          531.67431640625,
+          100.46877034505212
+        ],
+        [
+          538.3150634765625,
+          100.46877034505212
+        ],
+        [
+          538.3150634765625,
+          90.51719156901038
+        ],
+        [
+          531.67431640625,
+          90.51719156901038
+        ]
+      ],
+      "page": 432
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 432,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\n>If equipment is operating at 230volts or higher a residual current device (RCD) is to be fitted. RCD's are to be built in to the main switchboard or the socket outlet.If RCD's trip it is a sign there is a fault and the system must be checked before resetting it.\nEarth leakage circuit breakers (ELCB) are to be fitted in accordance with applicable codes and standards. As a minimum ELCB will be provided in all toilets,washrooms and changing rooms and all areas where there is a moist wet atmosphere where electrical equipment or portable electrical tools maybe used.\nCables are to be suitable and be rated for the conditions they will bc uscd for. Thcy arc to bc buricd orslung abovehead height toprotect themfrom damage and reduce thelikelihood of slipstrips and falls.Extension leads are tobe of three core construction and fitted with a separate earth conductor.\nElectrical rooms, distribution boards, panels are to be locked at all times to prevent unauthorized access and suitable signs are to be displayed warning of the danger of electricity and where required who the competent person is tobe contacted in the event of a problem.\nWork on electrical equipment will be only be carried out by competent electricians and before any work commences the electrical equipment is to be isolated, protected and a lock out tag out procedureimplemented as appropriate.\nWork on exposed live parts of equipment is prohibited unless it is absolutely unavoidable. If it is unavoidable, a permit to work system and suitable prccautions arc to bc dcvcloped and implemented to prevent injury, both to the worker and anyone else who may be in the area.\nArrangements for commissioning permanent electrical systems and equipment will be developed by Contractors and utility owner and submitted to the relevant Construction Supervision Consultant for review.\n> A method statement and permit to work is required for all work on live electrical systems and during anystart up or energizationworks.\n3.7.UndergroundServices\nWhere possible underground services are to be diverted or isolated before work commences. Where this is not practical a safe system of work is to be developedl.\nServices encased in concrete must be isolated by the utility owner prior to any breaking out works.\nBefore the commencement of any ground breaking activities, service drawings and information shall be obtained from relevant utility owners (i.e. Electricity, Water, Communications etc.). In addition, Contractors will need to ensure that all necessary permissions and non-objection certificates/permit arein placebeforeworkcommences.\nThe safe system ofworkwill includelocating and markingof known services,visuallylookingfor obvious signs such as previously dug trenches, presence of manholes, pits, sources of power such as street lighting transformers etc.and checking the area using a cable avoidance tool (CAT).\nUsers of a cable avoidance tool are to be trained and competent in their use. The CAT is to have an in date calibration certificate and a copy is to be available on site for inspection purposes.\nTheinformationcontainedinthesedocumentssconidentialprivilgedandmaynotbeusedulishedorredisribuedwithout\nEMAAR\nC",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

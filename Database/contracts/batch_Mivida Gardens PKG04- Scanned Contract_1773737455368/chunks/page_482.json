@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## Method Statement For Start New Trade Work NCI - Notice of Commencement of Installation\n\n<!-- image -->\n\nNew Work : new work means new type of work that the contractor has not carried out before .\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Method Statement For Start New Trade Work NCI - Notice of Commencement of Installation",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          643.6609497070312
+        ],
+        [
+          494.7351888020833,
+          643.6609497070312
+        ],
+        [
+          494.7351888020833,
+          596.3907877604166
+        ],
+        [
+          117.87314860026042,
+          596.3907877604166
+        ]
+      ],
+      "page": 482
+    },
+    {
+      "text": "New Work : new work means new type of work that the contractor has not carried out before .",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          156.03196207682288
+        ],
+        [
+          498.4705810546875,
+          156.03196207682288
+        ],
+        [
+          498.4705810546875,
+          126.59173583984375
+        ],
+        [
+          73.46319580078125,
+          126.59173583984375
+        ]
+      ],
+      "page": 482
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 482,
+      "text": "Method Statement For Start New Trade Work NCI - Notice of Commencement of Installation\nNew Work : new work means new type of work that the contractor has not carried out before .",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

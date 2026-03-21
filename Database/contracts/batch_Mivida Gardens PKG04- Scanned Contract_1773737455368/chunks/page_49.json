@@ -1,0 +1,221 @@
+{
+  "text": "## Setting-Out\n\n- 9.7 TheContractorshallberesponsiblefortheaccuratesetting-outofthe Works in relation to original points, lines, levels of reference and benchmarksgivenorprescribed by theSupervisionConsultantinwriting and for thecorrectnessof thepositions,levels,dimensions andalignmentof all partsof theWorksandfor theprovisionofallnecessaryinstruments, appliancesandlabourinconnectiontherewith.Beforecommencingthe carryingoutof theWorks,theContractor shallsatisfy itselfas tosuch original points,lines,levels of reference and bench-marks and shall give notice to theProject Manager(with a copy totheSupervisionConsultant) of anyerrorinsuchoriginalpoints,lines,levelsofreferenceandbench-marks. SupervisionConsultant torectifysuch errorand theSupervisionConsultant shall theninstruct theContractor thereon.If，at any time during the progress of the Works, any error shall appear or arise in the positions, levels, dimensions or alignment of any part of the Works, the Contractor, on being required so to doby the Supervision Consultant, shall, at its own Cost, rectifysucherror to thesatisfactionof theSupervisionConsultant.The checkingofanysettingoutorofanylineorlevelbytheSupervision Consultant shall not in any way relieve the Contractor of its responsibility for theaccuracyand correctnessthereof.The Contractorshallcarefullyprotect and preserve all bench-marks, sight-rails, pegs and other things used in setting-outtheWorks.\n\n## Photographs\n\n- 9.8 The Contractor shall not(saveasprovided in the Specification)take or permittobetakenanyphotographof theSiteortheWorkswithouttheprior writtenconsentof theProject Manager.Nophotographshall beused for purposes of publicitywithout thepriorwrittenconsent of theEmployer.\n\n## Existing Facilities\n\n- 9.9 TheContractorshallberesponsibleforanydisturbanceofanddamageto existing facilities,permanent or temporary,which may be caused by its carrying outof theWorks,remedyingof defectsthereinor other activities Contractor's responsibility and shall be carried out at the Contractor's Cost.\n\n## Fencing,Lighting,Guarding and Watching\n\n- 9.10 TheContractorshallberesponsibleatitsownCostfortheproperfencing, lighting,guardingandwatchingofalltheWorksontheSitewhenandwhere guards andfencestotheextentthatthesamemayberendered necessary by reason of the carryingout of theWorks.No naked flame shall without othercontractoror anydulyconstituted authority.\n\n<!-- image -->\n\nFIRSTEDITION2006",
+  "results": [
+    {
+      "text": "Setting-Out",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          726.2902018229166
+        ],
+        [
+          149.6789754231771,
+          726.2902018229166
+        ],
+        [
+          149.6789754231771,
+          713.5633951822916
+        ],
+        [
+          96.40340169270833,
+          713.5633951822916
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "9.7 TheContractorshallberesponsiblefortheaccuratesetting-outofthe Works in relation to original points, lines, levels of reference and benchmarksgivenorprescribed by theSupervisionConsultantinwriting and for thecorrectnessof thepositions,levels,dimensions andalignmentof all partsof theWorksandfor theprovisionofallnecessaryinstruments, appliancesandlabourinconnectiontherewith.Beforecommencingthe carryingoutof theWorks,theContractor shallsatisfy itselfas tosuch original points,lines,levels of reference and bench-marks and shall give notice to theProject Manager(with a copy totheSupervisionConsultant) of anyerrorinsuchoriginalpoints,lines,levelsofreferenceandbench-marks. SupervisionConsultant torectifysuch errorand theSupervisionConsultant shall theninstruct theContractor thereon.If，at any time during the progress of the Works, any error shall appear or arise in the positions, levels, dimensions or alignment of any part of the Works, the Contractor, on being required so to doby the Supervision Consultant, shall, at its own Cost, rectifysucherror to thesatisfactionof theSupervisionConsultant.The checkingofanysettingoutorofanylineorlevelbytheSupervision Consultant shall not in any way relieve the Contractor of its responsibility for theaccuracyand correctnessthereof.The Contractorshallcarefullyprotect and preserve all bench-marks, sight-rails, pegs and other things used in setting-outtheWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          702.5334879557291
+        ],
+        [
+          488.359375,
+          702.5334879557291
+        ],
+        [
+          488.359375,
+          451.39101155598956
+        ],
+        [
+          126.42376708984375,
+          451.39101155598956
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "Photographs",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          442.05800374348956
+        ],
+        [
+          153.06155395507812,
+          442.05800374348956
+        ],
+        [
+          153.06155395507812,
+          428.48272705078125
+        ],
+        [
+          93.86647542317708,
+          428.48272705078125
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "9.8 The Contractor shall not(saveasprovided in the Specification)take or permittobetakenanyphotographof theSiteortheWorkswithouttheprior writtenconsentof theProject Manager.Nophotographshall beused for purposes of publicitywithout thepriorwrittenconsent of theEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          418.30128987630206
+        ],
+        [
+          486.6680908203125,
+          418.30128987630206
+        ],
+        [
+          486.6680908203125,
+          371.21205647786456
+        ],
+        [
+          124.73248291015625,
+          371.21205647786456
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "Existing Facilities",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          362.30328369140625
+        ],
+        [
+          172.9341837565104,
+          362.30328369140625
+        ],
+        [
+          172.9341837565104,
+          350.00071207682294
+        ],
+        [
+          93.86647542317708,
+          350.00071207682294
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "9.9 TheContractorshallberesponsibleforanydisturbanceofanddamageto existing facilities,permanent or temporary,which may be caused by its carrying outof theWorks,remedyingof defectsthereinor other activities Contractor's responsibility and shall be carried out at the Contractor's Cost.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.30965169270833,
+          338.97080485026044
+        ],
+        [
+          486.2452392578125,
+          338.97080485026044
+        ],
+        [
+          486.2452392578125,
+          269.3975626627604
+        ],
+        [
+          124.30965169270833,
+          269.3975626627604
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "Fencing,Lighting,Guarding and Watching",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          259.64031982421875
+        ],
+        [
+          283.29071044921875,
+          259.64031982421875
+        ],
+        [
+          283.29071044921875,
+          246.91351318359375
+        ],
+        [
+          92.59801228841145,
+          246.91351318359375
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "9.10 TheContractorshallberesponsibleatitsownCostfortheproperfencing, lighting,guardingandwatchingofalltheWorksontheSitewhenandwhere guards andfencestotheextentthatthesamemayberendered necessary by reason of the carryingout of theWorks.No naked flame shall without othercontractoror anydulyconstituted authority.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          236.73207600911462
+        ],
+        [
+          486.2452392578125,
+          236.73207600911462
+        ],
+        [
+          486.2452392578125,
+          133.22060139973962
+        ],
+        [
+          124.73248291015625,
+          133.22060139973962
+        ]
+      ],
+      "page": 49
+    },
+    {
+      "text": "FIRSTEDITION2006",
+      "confidence": 0.95,
+      "box": [
+        [
+          413.9427083333333,
+          96.31288655598962
+        ],
+        [
+          484.553955078125,
+          96.31288655598962
+        ],
+        [
+          484.553955078125,
+          86.55564371744788
+        ],
+        [
+          413.9427083333333,
+          86.55564371744788
+        ]
+      ],
+      "page": 49
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 49,
+      "text": "Setting-Out\n9.7 TheContractorshallberesponsiblefortheaccuratesetting-outofthe Works in relation to original points, lines, levels of reference and benchmarksgivenorprescribed by theSupervisionConsultantinwriting and for thecorrectnessof thepositions,levels,dimensions andalignmentof all partsof theWorksandfor theprovisionofallnecessaryinstruments, appliancesandlabourinconnectiontherewith.Beforecommencingthe carryingoutof theWorks,theContractor shallsatisfy itselfas tosuch original points,lines,levels of reference and bench-marks and shall give notice to theProject Manager(with a copy totheSupervisionConsultant) of anyerrorinsuchoriginalpoints,lines,levelsofreferenceandbench-marks. SupervisionConsultant torectifysuch errorand theSupervisionConsultant shall theninstruct theContractor thereon.If，at any time during the progress of the Works, any error shall appear or arise in the positions, levels, dimensions or alignment of any part of the Works, the Contractor, on being required so to doby the Supervision Consultant, shall, at its own Cost, rectifysucherror to thesatisfactionof theSupervisionConsultant.The checkingofanysettingoutorofanylineorlevelbytheSupervision Consultant shall not in any way relieve the Contractor of its responsibility for theaccuracyand correctnessthereof.The Contractorshallcarefullyprotect and preserve all bench-marks, sight-rails, pegs and other things used in setting-outtheWorks.\nPhotographs\n9.8 The Contractor shall not(saveasprovided in the Specification)take or permittobetakenanyphotographof theSiteortheWorkswithouttheprior writtenconsentof theProject Manager.Nophotographshall beused for purposes of publicitywithout thepriorwrittenconsent of theEmployer.\nExisting Facilities\n9.9 TheContractorshallberesponsibleforanydisturbanceofanddamageto existing facilities,permanent or temporary,which may be caused by its carrying outof theWorks,remedyingof defectsthereinor other activities Contractor's responsibility and shall be carried out at the Contractor's Cost.\nFencing,Lighting,Guarding and Watching\n9.10 TheContractorshallberesponsibleatitsownCostfortheproperfencing, lighting,guardingandwatchingofalltheWorksontheSitewhenandwhere guards andfencestotheextentthatthesamemayberendered necessary by reason of the carryingout of theWorks.No naked flame shall without othercontractoror anydulyconstituted authority.\nFIRSTEDITION2006",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

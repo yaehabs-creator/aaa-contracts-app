@@ -1,0 +1,428 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nOF EGYPT all as more particularly described in the Tender Documents.\n\n- 2.2 Location: The project is part of Mivida Gardens Development in East Cairo, Cairo, Egypt.\n- 2.3 BasicScope:ConstructionofTownhomesVillasinParcel11&amp;Parcel12in MividaGardensProjectandinlightoftheTenderDocumentsandthe Conditions of Contract.\n- A.Scope Exclusions:\n\nWhere applicable to the package,the following work shall be out of Contractor'sScopeofWorks,howeverallprovisionsrequiredforinstallation aredeemedincludedintheTenderSum:\n\n1. Plantings &amp; Secondary lrrigation Items\n2. 2.CCTV\n3. 3.Active Devices\n4. 4.Fiber Optics Cables\n5. 5.Electric&amp;WaterMeters.\n6. 2.4 Where applicable to this package, the Employer shall provide the items stated in Annex (1) to the Form of Agreement, which for the purposes hereof is referred to as\"ScheduleofFreeIssueItems\".\n\nFurthermore, the Employer shall have the right to elect to supply part of, or all items listed inAnnex(2) to theForm ofAgreementreferred toas\"Scheduleof ItemsMayBeSupplied by theEmployer\";accordingly,and incase theEmployer elects to do so,the supply only uf lliese ilerns will be omitted from the Contractor's Scope of Work in accordance with the rates stated in the Bill of Quantities,and the impact of suchdecision by the Employer shall not be calculatedwithintheallowedpercentageforvariationordersinaccordancewith therequirementsofSub-Clause22.6ofConditionsofContract.\n\neach item,one forSupply and anotherforInstallation.\n\nIn case the Employer elects to supply the listed items in Annex 2 to the Form of any part thereof - along with those included in Annex 1 - shall be dealt with in accordancewithSub-Clause6Aof theConditionsofContract;andthe Contractor shall be responsible for installation including the supply and installationoftheentireneededaccessories/fittingsandprovisions/preparations in order to hand over such items in a functional and operable conditions as per therequirementsofContractinaccordancewithAnnexes1and2hereofwhich shall take precedence over the rest of the Contract Documents in case of any contradictiontherewithconcerning theFreeIssueItems.\n\n- 2.5 For Aluminium Work, Engineered Wood, HDF flooring, Wooden doors and Elevators:\n\nThe supply and installation of the above-mentioned work items shall be part of the Contractor's Basic Scope of Works. However, the Employer may, upon its sole discretion during the construction stage,omit the supplyand installation of any/or all of thesaidwork\\_items.from.the.Contractor's.ScopeofWorks.In such case,theContractorshall beentitled toreceive10%ofthe totalamountofthe\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          751.7438354492188
+        ],
+        [
+          164.90056355794272,
+          751.7438354492188
+        ],
+        [
+          164.90056355794272,
+          733.5020650227865
+        ],
+        [
+          97.24905395507812,
+          733.5020650227865
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.3499043782552,
+          731.3809305826823
+        ],
+        [
+          142.49099731445312,
+          731.3809305826823
+        ],
+        [
+          142.49099731445312,
+          720.7752482096354
+        ],
+        [
+          121.3499043782552,
+          720.7752482096354
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "OF EGYPT all as more particularly described in the Tender Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.03455607096353,
+          697.0185343424479
+        ],
+        [
+          469.3323567708333,
+          697.0185343424479
+        ],
+        [
+          469.3323567708333,
+          682.1705830891927
+        ],
+        [
+          134.03455607096353,
+          682.1705830891927
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "2.2 Location: The project is part of Mivida Gardens Development in East Cairo, Cairo, Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.20217895507812,
+          679.6252136230469
+        ],
+        [
+          506.1178792317708,
+          679.6252136230469
+        ],
+        [
+          506.1178792317708,
+          653.7473551432291
+        ],
+        [
+          111.20217895507812,
+          653.7473551432291
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "2.3 BasicScope:ConstructionofTownhomesVillasinParcel11&Parcel12in MividaGardensProjectandinlightoftheTenderDocumentsandthe Conditions of Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.77935791015625,
+          649.5050862630209
+        ],
+        [
+          505.695068359375,
+          649.5050862630209
+        ],
+        [
+          505.695068359375,
+          613.4457804361979
+        ],
+        [
+          110.77935791015625,
+          613.4457804361979
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "A.Scope Exclusions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.61173502604166,
+          608.3550618489584
+        ],
+        [
+          235.93465169270834,
+          608.3550618489584
+        ],
+        [
+          235.93465169270834,
+          596.0524698893229
+        ],
+        [
+          133.61173502604166,
+          596.0524698893229
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "Where applicable to the package,the following work shall be out of Contractor'sScopeofWorks,howeverallprovisionsrequiredforinstallation aredeemedincludedintheTenderSum:",
+      "confidence": 0.95,
+      "box": [
+        [
+          148.83333333333334,
+          594.77978515625
+        ],
+        [
+          506.9635416666667,
+          594.77978515625
+        ],
+        [
+          506.9635416666667,
+          557.8720296223958
+        ],
+        [
+          148.83333333333334,
+          557.8720296223958
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "Plantings & Secondary lrrigation Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          148.83333333333334,
+          557.0235595703125
+        ],
+        [
+          342.9086100260417,
+          557.0235595703125
+        ],
+        [
+          342.9086100260417,
+          543.4483032226562
+        ],
+        [
+          148.83333333333334,
+          543.4483032226562
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "2.CCTV",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.56486002604166,
+          543.4483032226562
+        ],
+        [
+          195.76656087239584,
+          543.4483032226562
+        ],
+        [
+          195.76656087239584,
+          530.7214762369792
+        ],
+        [
+          147.56486002604166,
+          530.7214762369792
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "3.Active Devices",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.56486002604166,
+          529.873026529948
+        ],
+        [
+          234.24336751302084,
+          529.873026529948
+        ],
+        [
+          234.24336751302084,
+          517.146219889323
+        ],
+        [
+          147.56486002604166,
+          517.146219889323
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "4.Fiber Optics Cables",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.56486002604166,
+          515.87353515625
+        ],
+        [
+          257.07574462890625,
+          515.87353515625
+        ],
+        [
+          257.07574462890625,
+          503.146728515625
+        ],
+        [
+          147.56486002604166,
+          503.146728515625
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "5.Electric&WaterMeters.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.56486002604166,
+          501.87404378255206
+        ],
+        [
+          278.21685791015625,
+          501.87404378255206
+        ],
+        [
+          278.21685791015625,
+          489.57143147786456
+        ],
+        [
+          147.56486002604166,
+          489.57143147786456
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "2.4 Where applicable to this package, the Employer shall provide the items stated in Annex (1) to the Form of Agreement, which for the purposes hereof is referred to as\"ScheduleofFreeIssueItems\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.0880635579427,
+          484.90496826171875
+        ],
+        [
+          505.2722574869792,
+          484.90496826171875
+        ],
+        [
+          505.2722574869792,
+          448.84564208984375
+        ],
+        [
+          109.0880635579427,
+          448.84564208984375
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "Furthermore, the Employer shall have the right to elect to supply part of, or all items listed inAnnex(2) to theForm ofAgreementreferred toas\"Scheduleof ItemsMayBeSupplied by theEmployer\";accordingly,and incase theEmployer elects to do so,the supply only uf lliese ilerns will be omitted from the Contractor's Scope of Work in accordance with the rates stated in the Bill of Quantities,and the impact of suchdecision by the Employer shall not be calculatedwithintheallowedpercentageforvariationordersinaccordancewith therequirementsofSub-Clause22.6ofConditionsofContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.34327189127603,
+          443.75490315755206
+        ],
+        [
+          506.1178792317708,
+          443.75490315755206
+        ],
+        [
+          506.1178792317708,
+          347.03110758463544
+        ],
+        [
+          132.34327189127603,
+          347.03110758463544
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "each item,one forSupply and anotherforInstallation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.34327189127603,
+          329.6377970377604
+        ],
+        [
+          380.9625651041667,
+          329.6377970377604
+        ],
+        [
+          380.9625651041667,
+          317.3352254231771
+        ],
+        [
+          132.34327189127603,
+          317.3352254231771
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "In case the Employer elects to supply the listed items in Annex 2 to the Form of any part thereof - along with those included in Annex 1 - shall be dealt with in accordancewithSub-Clause6Aof theConditionsofContract;andthe Contractor shall be responsible for installation including the supply and installationoftheentireneededaccessories/fittingsandprovisions/preparations in order to hand over such items in a functional and operable conditions as per therequirementsofContractinaccordancewithAnnexes1and2hereofwhich shall take precedence over the rest of the Contract Documents in case of any contradictiontherewithconcerning theFreeIssueItems.",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.0748087565104,
+          313.5171915690104
+        ],
+        [
+          506.1178792317708,
+          313.5171915690104
+        ],
+        [
+          506.1178792317708,
+          192.18821207682288
+        ],
+        [
+          131.0748087565104,
+          192.18821207682288
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "2.5 For Aluminium Work, Engineered Wood, HDF flooring, Wooden doors and Elevators:",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.81960042317708,
+          188.37017822265625
+        ],
+        [
+          504.0037841796875,
+          188.37017822265625
+        ],
+        [
+          504.0037841796875,
+          163.76499430338538
+        ],
+        [
+          107.81960042317708,
+          163.76499430338538
+        ]
+      ],
+      "page": 580
+    },
+    {
+      "text": "The supply and installation of the above-mentioned work items shall be part of the Contractor's Basic Scope of Works. However, the Employer may, upon its sole discretion during the construction stage,omit the supplyand installation of any/or all of thesaidwork_items.from.the.Contractor's.ScopeofWorks.In such case,theContractorshall beentitled toreceive10%ofthe totalamountofthe",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.65198771158853,
+          159.52272542317712
+        ],
+        [
+          504.8494059244792,
+          159.52272542317712
+        ],
+        [
+          504.8494059244792,
+          98.43398030598962
+        ],
+        [
+          130.65198771158853,
+          98.43398030598962
+        ]
+      ],
+      "page": 580
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 580,
+      "text": "EMAAR\nMISR\nOF EGYPT all as more particularly described in the Tender Documents.\n2.2 Location: The project is part of Mivida Gardens Development in East Cairo, Cairo, Egypt.\n2.3 BasicScope:ConstructionofTownhomesVillasinParcel11&Parcel12in MividaGardensProjectandinlightoftheTenderDocumentsandthe Conditions of Contract.\nA.Scope Exclusions:\nWhere applicable to the package,the following work shall be out of Contractor'sScopeofWorks,howeverallprovisionsrequiredforinstallation aredeemedincludedintheTenderSum:\nPlantings & Secondary lrrigation Items\n2.CCTV\n3.Active Devices\n4.Fiber Optics Cables\n5.Electric&WaterMeters.\n2.4 Where applicable to this package, the Employer shall provide the items stated in Annex (1) to the Form of Agreement, which for the purposes hereof is referred to as\"ScheduleofFreeIssueItems\".\nFurthermore, the Employer shall have the right to elect to supply part of, or all items listed inAnnex(2) to theForm ofAgreementreferred toas\"Scheduleof ItemsMayBeSupplied by theEmployer\";accordingly,and incase theEmployer elects to do so,the supply only uf lliese ilerns will be omitted from the Contractor's Scope of Work in accordance with the rates stated in the Bill of Quantities,and the impact of suchdecision by the Employer shall not be calculatedwithintheallowedpercentageforvariationordersinaccordancewith therequirementsofSub-Clause22.6ofConditionsofContract.\neach item,one forSupply and anotherforInstallation.\nIn case the Employer elects to supply the listed items in Annex 2 to the Form of any part thereof - along with those included in Annex 1 - shall be dealt with in accordancewithSub-Clause6Aof theConditionsofContract;andthe Contractor shall be responsible for installation including the supply and installationoftheentireneededaccessories/fittingsandprovisions/preparations in order to hand over such items in a functional and operable conditions as per therequirementsofContractinaccordancewithAnnexes1and2hereofwhich shall take precedence over the rest of the Contract Documents in case of any contradictiontherewithconcerning theFreeIssueItems.\n2.5 For Aluminium Work, Engineered Wood, HDF flooring, Wooden doors and Elevators:\nThe supply and installation of the above-mentioned work items shall be part of the Contractor's Basic Scope of Works. However, the Employer may, upon its sole discretion during the construction stage,omit the supplyand installation of any/or all of thesaidwork_items.from.the.Contractor's.ScopeofWorks.In such case,theContractorshall beentitled toreceive10%ofthe totalamountofthe",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

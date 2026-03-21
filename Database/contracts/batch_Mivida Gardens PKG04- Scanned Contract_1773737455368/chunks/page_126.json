@@ -1,0 +1,474 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- (b) The Contractor shall place the Employer name sign on all his equipmentandfacilitiesattheSite.\n- (c) The Contractor shall allow for the use of mechanical concrete placement methods as dictated by good modern practice. The Contractor may propose as an alternative, on-site batch plant facilities,\n- (d)TheContractor shallplanandallowforconcreteplacementona monolithic basis minimizing construction joints. All slabs, walls and columns shall beplaced monolithically,ateachlevel.Foundation footingsandgradebeamsshallsimilarlybeplacedmonolithically. Constructionjoints shall beminimized.Jointlocationsdesired areto be submitted and subject to approval as part of the shop drawing and technical submittal process.\n\n## 11.2 Inspection andTesting\n\nRename the existingparagraph as(a)\n\nAdd newparagraphs(b)&amp;(c)as follows:\n\n- (b)Testing and commissioning for all disciplines shall be carried out using temporarypower and water services provided by the Contractor.No temporary power or water services will be available from the Employer for the Scope of Works defined under this Contract.\n- (c)The Contractor shall allow for the supply, installation and removal of cabling, wiring, conduit, piping, fittings, valves, supports, etc. as may be required to complete the testing and commissioning of the various installations where applicable for each of the construction disciplines.\n- 11.3 Covering and Uncovering the Works.\n\nIn the second paragraph delete\"paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\"and substitute\"added to the ContractValue\".\n\n- 11.4 Cost of Testing\n\nIn the first line delete theword\"any test\"and replace with\"specified in the Contract or required by the codes and/orindustry standards\".\n\n## 12. TITLE,RISK,CARE,INDEMNITIES,AND INSURANCE\n\n- 12.5 Riskand Care\n\n<!-- image -->\n\nIn the fifth line of Sub-Clause b (i) after the word \"war” add \", terrorisms\".\n\n- 12.6 General Indemnity\n\nIn paragraph (b) of this Sub-Clause 12.6, 2nd line delete \"(whether direct orindirect actual or consequential).\n\nParcel 11,Parcel 12Townhomes&amp;GradingWorksforParccl 11 ContructPurtlcular Condltlons Page13of37\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.94033813476562,
+          750.4711507161459
+        ],
+        [
+          177.5852254231771,
+          750.4711507161459
+        ],
+        [
+          177.5852254231771,
+          731.8051554361979
+        ],
+        [
+          98.94033813476562,
+          731.8051554361979
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          727.5628865559896
+        ],
+        [
+          151.79308064778647,
+          727.5628865559896
+        ],
+        [
+          151.79308064778647,
+          715.6845296223959
+        ],
+        [
+          126.42376708984375,
+          715.6845296223959
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "(b) The Contractor shall place the Employer name sign on all his equipmentandfacilitiesattheSite.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          696.5943094889323
+        ],
+        [
+          502.3125,
+          696.5943094889323
+        ],
+        [
+          502.3125,
+          673.2618103027344
+        ],
+        [
+          166.16902669270834,
+          673.2618103027344
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "(c) The Contractor shall allow for the use of mechanical concrete placement methods as dictated by good modern practice. The Contractor may propose as an alternative, on-site batch plant facilities,",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          667.3226318359375
+        ],
+        [
+          503.5809733072917,
+          667.3226318359375
+        ],
+        [
+          503.5809733072917,
+          618.5364990234375
+        ],
+        [
+          165.74620564778647,
+          618.5364990234375
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "(d)TheContractor shallplanandallowforconcreteplacementona monolithic basis minimizing construction joints. All slabs, walls and columns shall beplaced monolithically,ateachlevel.Foundation footingsandgradebeamsshallsimilarlybeplacedmonolithically. Constructionjoints shall beminimized.Jointlocationsdesired areto be submitted and subject to approval as part of the shop drawing and technical submittal process.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          613.4457804361979
+        ],
+        [
+          502.7353108723958,
+          613.4457804361979
+        ],
+        [
+          502.7353108723958,
+          530.2972615559895
+        ],
+        [
+          166.59184773763022,
+          530.2972615559895
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "11.2 Inspection andTesting",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          523.933858235677
+        ],
+        [
+          272.72015380859375,
+          523.933858235677
+        ],
+        [
+          272.72015380859375,
+          512.479715983073
+        ],
+        [
+          127.69223022460938,
+          512.479715983073
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "Rename the existingparagraph as(a)",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          506.54054768880206
+        ],
+        [
+          341.2173258463542,
+          506.54054768880206
+        ],
+        [
+          341.2173258463542,
+          495.51064046223956
+        ],
+        [
+          166.59184773763022,
+          495.51064046223956
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "Add newparagraphs(b)&(c)as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          489.57143147786456
+        ],
+        [
+          355.59326171875,
+          489.57143147786456
+        ],
+        [
+          355.59326171875,
+          478.54156494140625
+        ],
+        [
+          167.0146687825521,
+          478.54156494140625
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "(b)Testing and commissioning for all disciplines shall be carried out using temporarypower and water services provided by the Contractor.No temporary power or water services will be available from the Employer for the Scope of Works defined under this Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          472.60235595703125
+        ],
+        [
+          504.4265950520833,
+          472.60235595703125
+        ],
+        [
+          504.4265950520833,
+          413.21055094401044
+        ],
+        [
+          166.59184773763022,
+          413.21055094401044
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "(c)The Contractor shall allow for the supply, installation and removal of cabling, wiring, conduit, piping, fittings, valves, supports, etc. as may be required to complete the testing and commissioning of the various installations where applicable for each of the construction disciplines.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          408.11985270182294
+        ],
+        [
+          504.4265950520833,
+          408.11985270182294
+        ],
+        [
+          504.4265950520833,
+          349.15224202473956
+        ],
+        [
+          166.59184773763022,
+          349.15224202473956
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "11.3 Covering and Uncovering the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          342.36464436848956
+        ],
+        [
+          339.5260416666667,
+          342.36464436848956
+        ],
+        [
+          339.5260416666667,
+          331.33473714192706
+        ],
+        [
+          127.69223022460938,
+          331.33473714192706
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "In the second paragraph delete\"paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\"and substitute\"added to the ContractValue\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          325.81976318359375
+        ],
+        [
+          503.5809733072917,
+          325.81976318359375
+        ],
+        [
+          503.5809733072917,
+          290.1846720377604
+        ],
+        [
+          167.0146687825521,
+          290.1846720377604
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "11.4 Cost of Testing",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          285.5181681315104
+        ],
+        [
+          239.31722005208334,
+          285.5181681315104
+        ],
+        [
+          239.31722005208334,
+          271.94293212890625
+        ],
+        [
+          128.11505126953125,
+          271.94293212890625
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "In the first line delete theword\"any test\"and replace with\"specified in the Contract or required by the codes and/orindustry standards\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          267.27642822265625
+        ],
+        [
+          503.1581217447917,
+          267.27642822265625
+        ],
+        [
+          503.1581217447917,
+          244.79237874348962
+        ],
+        [
+          167.0146687825521,
+          244.79237874348962
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "12. TITLE,RISK,CARE,INDEMNITIES,AND INSURANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          233.33823649088538
+        ],
+        [
+          390.2646484375,
+          233.33823649088538
+        ],
+        [
+          390.2646484375,
+          221.03566487630212
+        ],
+        [
+          97.24905395507812,
+          221.03566487630212
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "12.5 Riskand Care",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          215.94492594401038
+        ],
+        [
+          235.5118408203125,
+          215.94492594401038
+        ],
+        [
+          235.5118408203125,
+          203.64235432942712
+        ],
+        [
+          128.11505126953125,
+          203.64235432942712
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "In the fifth line of Sub-Clause b (i) after the word \"war” add \", terrorisms\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          198.97585042317712
+        ],
+        [
+          501.0440266927083,
+          198.97585042317712
+        ],
+        [
+          501.0440266927083,
+          187.94594319661462
+        ],
+        [
+          166.59184773763022,
+          187.94594319661462
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "12.6 General Indemnity",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.53787231445312,
+          182.00677490234375
+        ],
+        [
+          254.538818359375,
+          182.00677490234375
+        ],
+        [
+          254.538818359375,
+          169.27992757161462
+        ],
+        [
+          128.53787231445312,
+          169.27992757161462
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "In paragraph (b) of this Sub-Clause 12.6, 2nd line delete \"(whether direct orindirect actual or consequential).",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          164.18922932942712
+        ],
+        [
+          505.2722574869792,
+          164.18922932942712
+        ],
+        [
+          505.2722574869792,
+          140.85675048828125
+        ],
+        [
+          167.4375,
+          140.85675048828125
+        ]
+      ],
+      "page": 126
+    },
+    {
+      "text": "Parcel 11,Parcel 12Townhomes&GradingWorksforParccl 11 ContructPurtlcular Condltlons Page13of37",
+      "confidence": 0.95,
+      "box": [
+        [
+          311.6197916666667,
+          103.10048421223962
+        ],
+        [
+          504.4265950520833,
+          103.10048421223962
+        ],
+        [
+          504.4265950520833,
+          80.19228108723962
+        ],
+        [
+          311.6197916666667,
+          80.19228108723962
+        ]
+      ],
+      "page": 126
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 126,
+      "text": "EMAAR\nMISR\n(b) The Contractor shall place the Employer name sign on all his equipmentandfacilitiesattheSite.\n(c) The Contractor shall allow for the use of mechanical concrete placement methods as dictated by good modern practice. The Contractor may propose as an alternative, on-site batch plant facilities,\n(d)TheContractor shallplanandallowforconcreteplacementona monolithic basis minimizing construction joints. All slabs, walls and columns shall beplaced monolithically,ateachlevel.Foundation footingsandgradebeamsshallsimilarlybeplacedmonolithically. Constructionjoints shall beminimized.Jointlocationsdesired areto be submitted and subject to approval as part of the shop drawing and technical submittal process.\n11.2 Inspection andTesting\nRename the existingparagraph as(a)\nAdd newparagraphs(b)&(c)as follows:\n(b)Testing and commissioning for all disciplines shall be carried out using temporarypower and water services provided by the Contractor.No temporary power or water services will be available from the Employer for the Scope of Works defined under this Contract.\n(c)The Contractor shall allow for the supply, installation and removal of cabling, wiring, conduit, piping, fittings, valves, supports, etc. as may be required to complete the testing and commissioning of the various installations where applicable for each of the construction disciplines.\n11.3 Covering and Uncovering the Works.\nIn the second paragraph delete\"paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\"and substitute\"added to the ContractValue\".\n11.4 Cost of Testing\nIn the first line delete theword\"any test\"and replace with\"specified in the Contract or required by the codes and/orindustry standards\".\n12. TITLE,RISK,CARE,INDEMNITIES,AND INSURANCE\n12.5 Riskand Care\nIn the fifth line of Sub-Clause b (i) after the word \"war” add \", terrorisms\".\n12.6 General Indemnity\nIn paragraph (b) of this Sub-Clause 12.6, 2nd line delete \"(whether direct orindirect actual or consequential).\nParcel 11,Parcel 12Townhomes&GradingWorksforParccl 11 ContructPurtlcular Condltlons Page13of37",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

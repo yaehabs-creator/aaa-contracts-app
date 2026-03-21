@@ -82,7 +82,7 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
             const startTime = Date.now();
 
             try {
-                const response = await fetch('http://localhost:8000/process/base64', {
+                const response = await fetch('http://localhost:8001/process/base64', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

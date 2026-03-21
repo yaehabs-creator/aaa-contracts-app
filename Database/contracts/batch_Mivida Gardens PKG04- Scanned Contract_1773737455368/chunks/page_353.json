@@ -1,0 +1,290 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Technical Specifications (Division I)\n\n| VIOLATION                                                          | Penalty LE   | Notes                                    |\n|--------------------------------------------------------------------|--------------|------------------------------------------|\n| Emergency and safetyplan                                           | 3000/-       | For each day until corrected             |\n| VIOLATION                                                          | Penalty LE   | Notes                                    |\n| Appointment ofsafety engineer                                      | 6,500/-      | For Each Day of Delay                    |\n| General requirements and conditions                                | 1,500/-      | For any violation mentioned in this item |\n| Alarm bell and siren                                               | 1,500/       | For each incident                        |\n| Temporary electrical connections and Wiring                        | 1,500/-      | For any violation mentioned in this item |\n| Cleaning paths and roads                                           | 2,000/       | For each incident                        |\n| Precautionary measures for the protection and safety of the public | 3,500/-      | For any violation mentioned in this item |\n| Protection and safety of the workers and works on site.            | 3,500/-      | For any violation mentioned in this item |\n| Safety precautions outside the site                                | 2,000/-      | For any violation mentioned in this tem  |\n| Fencing panels                                                     | 2,000/       | For any violation                        |\n| Protective health care and precautions                             | 2,000/       | For any violation                        |\n| Pest and vermin control                                            | 1,500/       | For any violation.                       |\n| Non-potable Drinking water at site                                 | 3,000/-      | For any of the violations                |\n| W.C.'s at site                                                     | 3,500/-      | For any of the violations                |\n| SpeedingorReckless                                                 | 5,000        | Each Occurrence                          |\n| Driving Improper Maintained Equipment                              | 10,000       | Each Occurrence                          |\n| Special facilities for workers                                     | 3,500/       | For each incident                        |\n| First aid room                                                     | 3.500/       | For each day                             |\n| Protection of completed work                                       | 3,000/-      | For any violation                        |\n| Protection ofenvironment                                           | 6,500/-      | For each incident                        |\n| Not removing the wastes of cleaning theseweragein thesameday       | 6,000        | Daily                                    |\n| Insufficient portable breathing equipment                          | 3,000/-      | Daily                                    |\n| Violationyptin., raw sewage water disposar                         | 50,000/-     | Per Incident                             |\n\n17NON-COMPLIANCEWITHHSAFETYREQUUO\n\nEmaglirFor suudonag\n\nTxCf21-287-206\n\nCR13B61\n\n0 Bx 729, Matta\n\nCaElyn\n\n0\n\nMENIS\n\n<!-- image -->\n\nEmaarMigrforDevelopinnt\n\nRev.01",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          749.3968353271484
+        ],
+        [
+          131.9847208658854,
+          749.3968353271484
+        ],
+        [
+          131.9847208658854,
+          737.78662109375
+        ],
+        [
+          108.74212646484375,
+          737.78662109375
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "Technical Specifications (Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.50787353515625,
+          742.7624257405599
+        ],
+        [
+          502.2060139973958,
+          742.7624257405599
+        ],
+        [
+          502.2060139973958,
+          731.1522115071615
+        ],
+        [
+          339.50787353515625,
+          731.1522115071615
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "17NON-COMPLIANCEWITHHSAFETYREQUUO",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          77.66302490234375
+        ],
+        [
+          331.2069498697917,
+          77.66302490234375
+        ],
+        [
+          331.2069498697917,
+          64.80885823567712
+        ],
+        [
+          78.02870178222656,
+          64.80885823567712
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "EmaglirFor suudonag",
+      "confidence": 0.95,
+      "box": [
+        [
+          235.33125813802084,
+          59.00368245442712
+        ],
+        [
+          288.45717366536456,
+          59.00368245442712
+        ],
+        [
+          288.45717366536456,
+          57.75978597005212
+        ],
+        [
+          235.33125813802084,
+          57.75978597005212
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "TxCf21-287-206",
+      "confidence": 0.95,
+      "box": [
+        [
+          238.236572265625,
+          42.00303141276038
+        ],
+        [
+          299.66343180338544,
+          42.00303141276038
+        ],
+        [
+          299.66343180338544,
+          41.17376708984375
+        ],
+        [
+          238.236572265625,
+          41.17376708984375
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "CR13B61",
+      "confidence": 0.95,
+      "box": [
+        [
+          240.72684733072916,
+          34.95395914713538
+        ],
+        [
+          268.9499918619792,
+          34.95395914713538
+        ],
+        [
+          268.9499918619792,
+          29.97821044921875
+        ],
+        [
+          240.72684733072916,
+          29.97821044921875
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "0 Bx 729, Matta",
+      "confidence": 0.95,
+      "box": [
+        [
+          239.8967488606771,
+          29.14886474609375
+        ],
+        [
+          298.4182942708333,
+          29.14886474609375
+        ],
+        [
+          298.4182942708333,
+          28.73423258463538
+        ],
+        [
+          239.8967488606771,
+          28.73423258463538
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "CaElyn",
+      "confidence": 0.95,
+      "box": [
+        [
+          242.80208333333334,
+          22.51450602213538
+        ],
+        [
+          276.42083740234375,
+          22.51450602213538
+        ],
+        [
+          276.42083740234375,
+          18.36794026692712
+        ],
+        [
+          242.80208333333334,
+          18.36794026692712
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "0",
+      "confidence": 0.95,
+      "box": [
+        [
+          244.8773193359375,
+          13.392191569010379
+        ],
+        [
+          256.4986165364583,
+          13.392191569010379
+        ],
+        [
+          256.4986165364583,
+          2.1966349283853788
+        ],
+        [
+          244.8773193359375,
+          2.1966349283853788
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "MENIS",
+      "confidence": 0.95,
+      "box": [
+        [
+          338.2627360026042,
+          78.07765706380212
+        ],
+        [
+          378.522216796875,
+          78.07765706380212
+        ],
+        [
+          378.522216796875,
+          67.71136474609375
+        ],
+        [
+          338.2627360026042,
+          67.71136474609375
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "EmaarMigrforDevelopinnt",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          57.34515380859375
+        ],
+        [
+          169.3388875325521,
+          57.34515380859375
+        ],
+        [
+          169.3388875325521,
+          44.90561930338538
+        ],
+        [
+          77.1986083984375,
+          44.90561930338538
+        ]
+      ],
+      "page": 353
+    },
+    {
+      "text": "Rev.01",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          40.34442138671875
+        ],
+        [
+          101.2712910970052,
+          40.34442138671875
+        ],
+        [
+          101.2712910970052,
+          32.88071695963538
+        ],
+        [
+          78.85879516601562,
+          32.88071695963538
+        ]
+      ],
+      "page": 353
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 353,
+      "text": "MISR\nTechnical Specifications (Division I)\n17NON-COMPLIANCEWITHHSAFETYREQUUO\nEmaglirFor suudonag\nTxCf21-287-206\nCR13B61\n0 Bx 729, Matta\nCaElyn\n0\nMENIS\nEmaarMigrforDevelopinnt\nRev.01",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

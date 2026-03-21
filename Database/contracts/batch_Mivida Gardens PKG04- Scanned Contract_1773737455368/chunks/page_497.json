@@ -1,0 +1,198 @@
+{
+  "text": "<!-- image -->\n\n## Introduction toQuality Control Forms\n\n|   Control FormNo. | TitleofControlForm                                            | Description of Process                                                                                                                                                                                                                                                                                                                                               |\n|-------------------|---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n|              4.2  | HVAC Checklist                                                | 1TheContractorin coordinationwithConsultant to carryout thechecks required on HVAC system and fill the formforeachplannedphase of work prior to proceed next phase of work. 2Consultant shallgo through thechecklists and comment ifany. 3Copy of the signed form shallbe forwarded to CM and Consultant and otherrelevantparties.                                   |\n|              4.21 | DuctLeakageTestReport                                         | TheContractorincoordinationwithConsultant tocarryout thetests required and fill the form. 2Consultant shallwitness and confirm thattesthasbeen carriedout in accordingtothestandardspecified;commentsifanyshallbewritten and passed totherelevantpartiesforfurtheraction. 3Copy of the signed form shalibeforwarded to CM and Consultant and other relevant parties. |\n|              4.22 | AirflowTestReport                                             | 1TheContractorincoordinationwithConsultant tocarryout thetests required and fill the form. 2Consultant shall witness and confirm that lesthasbeen carried out In accordingtothe standardspecified;commentsif anyshallbewritten and passedtotherelevantpartiesforfurtheraction. 3 Copyof thesigned formshallbeforwarded toCMandConsultant and otherrelevantparties.   |\n|              4.23 | DrainagePipeWaterLine Pipe Checklist                          | 1TheContractorincoordinationwithConsultant to carryout thechecks requiredonDrainagePipeWaterLinePipeandfill theformforeach planned phase of work priortoproceed next phase of work. Consultantshall go throughthechecklists andcomment if any. 3 Copyof thesignedform shall beforwardedtoCMand Consuiltantand otherrelevantparties.                                  |\n|              4.24 | ChecklistElectrical UndergroundCondultsand (Electrical Ducts) | The Contractor in coordination with Consultant tocarry out the checks requlredonElectricalUndergroundConduits&ElectricalDuctsandfillthe formforeachplannedphaseof workpriortoproceednextphase of work. 2Consultant shallgo through the checklists and comment if any. 3Copyof thesignedformshall beforwarded toCMandConsultantand otherrelevantparties.              |\n|              4.25 | Protected Membrane RoofingRoofWater Proofing Checklist        | 1TheContractorincoordinationwith Consultanttocarryoutthechecks requiredonProtectedMembraneRoofing-RoofWaterProofing and fill the form foreachplanned phase of workprior toproceed next phase of work. 2 Consultant shall go through the checklists and comment if any. 3Copy of the signed form shallbe forwarded to CM and Consultant and otherrelevantparties.     |\n|              4.26 | MetalDoor/Frame Checklist                                     | 1TheContractorincoordinationwith Consultant to carryout thechecks requiredonMetalDoor/Frameand fill theformforeachplannedphase ofworkpriortoproceednextphaseofwork. 2Consultant shall go through thechecklists and comment if any. 3Copyof thesignedformshallbeforwarded toCM andConsultant and otherrelevantparties.                                                |\n|              4.27 | Pre Englneered Building Checklist                             | 1TheContractorincoordinationwith Consultant tocarryoutthechecks requiredonPre-EngineeredBuildingSystemandfill theformforeach plannedphase of workpriortoproceed next phaseof work. 2Consultant shall go throughthechecklists andcomment if any. 3Copyof thesignedformshall beforwarded toCM andConsultant and otherrelevantparties.                                  |\n\nEmsat hter fo\n\nDovotopfaen\n\n1021820\n\nCR12841\n\nP.0019,\n\nChukua\n\nL",
+  "results": [
+    {
+      "text": "Introduction toQuality Control Forms",
+      "confidence": 0.95,
+      "box": [
+        [
+          231.1807861328125,
+          716.6394449869791
+        ],
+        [
+          394.2939860026042,
+          716.6394449869791
+        ],
+        [
+          394.2939860026042,
+          707.1024780273438
+        ],
+        [
+          231.1807861328125,
+          707.1024780273438
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "Emsat hter fo",
+      "confidence": 0.95,
+      "box": [
+        [
+          282.2314860026042,
+          69.36997477213538
+        ],
+        [
+          332.45208740234375,
+          69.36997477213538
+        ],
+        [
+          332.45208740234375,
+          64.39414469401038
+        ],
+        [
+          282.2314860026042,
+          64.39414469401038
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "Dovotopfaen",
+      "confidence": 0.95,
+      "box": [
+        [
+          285.1368001302083,
+          60.66229248046875
+        ],
+        [
+          332.45208740234375,
+          60.66229248046875
+        ],
+        [
+          332.45208740234375,
+          55.27183024088538
+        ],
+        [
+          285.1368001302083,
+          55.27183024088538
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "1021820",
+      "confidence": 0.95,
+      "box": [
+        [
+          296.7580973307292,
+          55.68654378255212
+        ],
+        [
+          345.7335611979167,
+          55.68654378255212
+        ],
+        [
+          345.7335611979167,
+          49.46673583984375
+        ],
+        [
+          296.7580973307292,
+          49.46673583984375
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "CR12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          289.7023111979167,
+          40.75913492838538
+        ],
+        [
+          319.17059326171875,
+          40.75913492838538
+        ],
+        [
+          319.17059326171875,
+          40.34442138671875
+        ],
+        [
+          289.7023111979167,
+          40.34442138671875
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "P.0019,",
+      "confidence": 0.95,
+      "box": [
+        [
+          291.7775472005208,
+          36.19793701171875
+        ],
+        [
+          329.5467529296875,
+          36.19793701171875
+        ],
+        [
+          329.5467529296875,
+          34.95395914713538
+        ],
+        [
+          291.7775472005208,
+          34.95395914713538
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "Chukua",
+      "confidence": 0.95,
+      "box": [
+        [
+          294.267822265625,
+          29.14886474609375
+        ],
+        [
+          327.88657633463544,
+          29.14886474609375
+        ],
+        [
+          327.88657633463544,
+          28.73423258463538
+        ],
+        [
+          294.267822265625,
+          28.73423258463538
+        ]
+      ],
+      "page": 497
+    },
+    {
+      "text": "L",
+      "confidence": 0.95,
+      "box": [
+        [
+          298.8333333333333,
+          21.27052815755212
+        ],
+        [
+          310.0395914713542,
+          21.27052815755212
+        ],
+        [
+          310.0395914713542,
+          10.489603678385379
+        ],
+        [
+          298.8333333333333,
+          10.489603678385379
+        ]
+      ],
+      "page": 497
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 497,
+      "text": "Introduction toQuality Control Forms\nEmsat hter fo\nDovotopfaen\n1021820\nCR12841\nP.0019,\nChukua\nL",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

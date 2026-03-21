@@ -1,0 +1,635 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n| Fine craft work         | Joinery,all work with power tools and circular saws, plastering, painting,electrical,plumbing, brickwork   |   300 |\n|-------------------------|------------------------------------------------------------------------------------------------------------|-------|\n| Site offices            | On desks and reference tables,general lighting of drawing offices                                          |   500 |\n| Drawing offices on site | On drawing boards                                                                                          |   750 |\n\n## 3.35.Climatic Conditions\n\n- The arrangements for managing works in extremes of weather are to be included within the ContractorsHSP.Extremes ofweatherwillinclude as aminimum:\n- High temperatures and humidity\n- High winds\n- Dust storms\n- Heavy rain and flooding\n\nSee section 3.5.3.4.1 of this document for further details relating toworkingin high heat/humidity.\n\n## 3.36.Personal ProtectiveEquipment (PPE)\n\n- PPE should only be usedas alastresort butwhereariskhasbccn idcntificd by ariskassessment and it cannot be adequately controlled by other means which are equally or more effective, Contractors must provide and ensure that employees use suitable personal protective equipment.\n- Whenever PPE is to be issued, Contractors must ensure that their employees have been given adequate and appropriate information, instruction and training to enable them to understand the risks being protected against, the purpose of the PPE and the manner in which it is to be used.\n- PPE to be provided must be at no financial cost to the worker and it must comply with relevant legislation and meet recognized international standards such as those from Europe or America (i.e. BS EN or ANSI) and must be issued and replaced when no longer serviceable free of charge.\n- The following PPE is mandatory and is to be worn at all times on site (including visitors):\n- -Safety helmet\n- ·Safety glasses (shaded for outdoor work and clear inside structures and during non- daylight hours)\n- ·Safety boots\n- ·Hi-visibility vest\n\nAdditional PPE will be provided as required after risk assessment.\n\nDgvelopMsnt EA.H.\n\nTax Card 218-287-200\n\n2.0 Box 229, Muthl2m\n\nCR12841\n\nCaliu, Eeypt\n\n图\n\n<!-- image -->\n\nitsr\n\n## EMAAR\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          728.2496643066406
+        ],
+        [
+          341.1680501302083,
+          728.2496643066406
+        ],
+        [
+          341.1680501302083,
+          697.9801737467448
+        ],
+        [
+          190.92130533854166,
+          697.9801737467448
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          698.3948262532552
+        ],
+        [
+          217.8993123372396,
+          698.3948262532552
+        ],
+        [
+          217.8993123372396,
+          684.7113545735677
+        ],
+        [
+          75.12337748209636,
+          684.7113545735677
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "3.35.Climatic Conditions",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.3506876627604,
+          531.2906697591145
+        ],
+        [
+          355.6946614583333,
+          531.2906697591145
+        ],
+        [
+          355.6946614583333,
+          519.2657877604167
+        ],
+        [
+          230.3506876627604,
+          519.2657877604167
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "The arrangements for managing works in extremes of weather are to be included within the ContractorsHSP.Extremes ofweatherwillinclude as aminimum:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          513.0460408528645
+        ],
+        [
+          496.8104248046875,
+          513.0460408528645
+        ],
+        [
+          496.8104248046875,
+          488.16701253255206
+        ],
+        [
+          90.06504313151042,
+          488.16701253255206
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "High temperatures and humidity",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          480.70330810546875
+        ],
+        [
+          239.8967488606771,
+          480.70330810546875
+        ],
+        [
+          239.8967488606771,
+          469.09307861328125
+        ],
+        [
+          96.29074096679688,
+          469.09307861328125
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "High winds",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          463.70261637369794
+        ],
+        [
+          156.88750203450522,
+          463.70261637369794
+        ],
+        [
+          156.88750203450522,
+          450.43381754557294
+        ],
+        [
+          94.63055419921875,
+          450.43381754557294
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Dust storms",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.42176310221355,
+          445.04335530598956
+        ],
+        [
+          158.54768880208334,
+          445.04335530598956
+        ],
+        [
+          158.54768880208334,
+          432.60382080078125
+        ],
+        [
+          105.42176310221355,
+          432.60382080078125
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Heavy rain and flooding",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.25185139973958,
+          427.62803141276044
+        ],
+        [
+          208.35323079427084,
+          427.62803141276044
+        ],
+        [
+          208.35323079427084,
+          413.52992757161456
+        ],
+        [
+          106.25185139973958,
+          413.52992757161456
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "See section 3.5.3.4.1 of this document for further details relating toworkingin high heat/humidity.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          403.99294026692706
+        ],
+        [
+          487.6794026692708,
+          403.99294026692706
+        ],
+        [
+          487.6794026692708,
+          389.89483642578125
+        ],
+        [
+          73.0481465657552,
+          389.89483642578125
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "3.36.Personal ProtectiveEquipment (PPE)",
+      "confidence": 0.95,
+      "box": [
+        [
+          187.18587239583334,
+          384.50437418619794
+        ],
+        [
+          396.7842610677083,
+          384.50437418619794
+        ],
+        [
+          396.7842610677083,
+          371.23557535807294
+        ],
+        [
+          187.18587239583334,
+          371.23557535807294
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "PPE should only be usedas alastresort butwhereariskhasbccn idcntificd by ariskassessment and it cannot be adequately controlled by other means which are equally or more effective, Contractors must provide and ensure that employees use suitable personal protective equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          365.84511311848956
+        ],
+        [
+          496.3953857421875,
+          365.84511311848956
+        ],
+        [
+          496.3953857421875,
+          328.11191813151044
+        ],
+        [
+          90.06504313151042,
+          328.11191813151044
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Whenever PPE is to be issued, Contractors must ensure that their employees have been given adequate and appropriate information, instruction and training to enable them to understand the risks being protected against, the purpose of the PPE and the manner in which it is to be used.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          323.55076090494794
+        ],
+        [
+          495.9803059895833,
+          323.55076090494794
+        ],
+        [
+          495.9803059895833,
+          285.40289306640625
+        ],
+        [
+          90.06504313151042,
+          285.40289306640625
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "PPE to be provided must be at no financial cost to the worker and it must comply with relevant legislation and meet recognized international standards such as those from Europe or America (i.e. BS EN or ANSI) and must be issued and replaced when no longer serviceable free of charge.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          280.4271036783854
+        ],
+        [
+          495.9803059895833,
+          280.4271036783854
+        ],
+        [
+          495.9803059895833,
+          241.03529866536462
+        ],
+        [
+          89.23495483398438,
+          241.03529866536462
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "The following PPE is mandatory and is to be worn at all times on site (including visitors):",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          236.47414143880212
+        ],
+        [
+          456.9659830729167,
+          236.47414143880212
+        ],
+        [
+          456.9659830729167,
+          223.20534261067712
+        ],
+        [
+          89.65000406901042,
+          223.20534261067712
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "-Safety helmet",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          216.98557535807288
+        ],
+        [
+          164.77337646484375,
+          216.98557535807288
+        ],
+        [
+          164.77337646484375,
+          205.79001871744788
+        ],
+        [
+          94.2155049641927,
+          205.79001871744788
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "·Safety glasses (shaded for outdoor work and clear inside structures and during non- daylight hours)",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          199.57025146484375
+        ],
+        [
+          505.9414469401042,
+          199.57025146484375
+        ],
+        [
+          505.9414469401042,
+          185.47214762369788
+        ],
+        [
+          92.97036743164062,
+          185.47214762369788
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "·Safety boots",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          180.91099039713538
+        ],
+        [
+          158.96272786458334,
+          180.91099039713538
+        ],
+        [
+          158.96272786458334,
+          168.47145589192712
+        ],
+        [
+          93.38541666666667,
+          168.47145589192712
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "·Hi-visibility vest",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          163.49566650390625
+        ],
+        [
+          177.63981119791666,
+          163.49566650390625
+        ],
+        [
+          177.63981119791666,
+          150.22682698567712
+        ],
+        [
+          92.97036743164062,
+          150.22682698567712
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Additional PPE will be provided as required after risk assessment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          71.38796488444011,
+          145.66566975911462
+        ],
+        [
+          349.884033203125,
+          145.66566975911462
+        ],
+        [
+          349.884033203125,
+          131.98219807942712
+        ],
+        [
+          71.38796488444011,
+          131.98219807942712
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "DgvelopMsnt EA.H.",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.9356486002604,
+          79.32163492838538
+        ],
+        [
+          295.92799886067706,
+          79.32163492838538
+        ],
+        [
+          295.92799886067706,
+          70.19932047526038
+        ],
+        [
+          229.9356486002604,
+          70.19932047526038
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Tax Card 218-287-200",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.9356486002604,
+          69.78460693359375
+        ],
+        [
+          290.1173502604167,
+          69.78460693359375
+        ],
+        [
+          290.1173502604167,
+          61.49163818359375
+        ],
+        [
+          229.9356486002604,
+          61.49163818359375
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "2.0 Box 229, Muthl2m",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.9356486002604,
+          56.93044026692712
+        ],
+        [
+          292.1925862630208,
+          56.93044026692712
+        ],
+        [
+          292.1925862630208,
+          49.05210367838538
+        ],
+        [
+          229.9356486002604,
+          49.05210367838538
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "CR12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.7657470703125,
+          62.32090250651038
+        ],
+        [
+          256.9136555989583,
+          62.32090250651038
+        ],
+        [
+          256.9136555989583,
+          55.27183024088538
+        ],
+        [
+          230.7657470703125,
+          55.27183024088538
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "Caliu, Eeypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          231.1807861328125,
+          49.88144938151038
+        ],
+        [
+          263.13934326171875,
+          49.88144938151038
+        ],
+        [
+          263.13934326171875,
+          41.58839925130212
+        ],
+        [
+          231.1807861328125,
+          41.58839925130212
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "图",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.7657470703125,
+          40.75913492838538
+        ],
+        [
+          241.97198486328125,
+          40.75913492838538
+        ],
+        [
+          241.97198486328125,
+          29.14886474609375
+        ],
+        [
+          230.7657470703125,
+          29.14886474609375
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "itsr",
+      "confidence": 0.95,
+      "box": [
+        [
+          307.13425699869794,
+          49.05210367838538
+        ],
+        [
+          324.5662027994792,
+          49.05210367838538
+        ],
+        [
+          324.5662027994792,
+          39.92978922526038
+        ],
+        [
+          307.13425699869794,
+          39.92978922526038
+        ]
+      ],
+      "page": 468
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.6455891927083,
+          734.4694213867188
+        ],
+        [
+          511.7520751953125,
+          734.4694213867188
+        ],
+        [
+          511.7520751953125,
+          719.542002360026
+        ],
+        [
+          453.6455891927083,
+          719.542002360026
+        ]
+      ],
+      "page": 468
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 468,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n3.35.Climatic Conditions\nThe arrangements for managing works in extremes of weather are to be included within the ContractorsHSP.Extremes ofweatherwillinclude as aminimum:\nHigh temperatures and humidity\nHigh winds\nDust storms\nHeavy rain and flooding\nSee section 3.5.3.4.1 of this document for further details relating toworkingin high heat/humidity.\n3.36.Personal ProtectiveEquipment (PPE)\nPPE should only be usedas alastresort butwhereariskhasbccn idcntificd by ariskassessment and it cannot be adequately controlled by other means which are equally or more effective, Contractors must provide and ensure that employees use suitable personal protective equipment.\nWhenever PPE is to be issued, Contractors must ensure that their employees have been given adequate and appropriate information, instruction and training to enable them to understand the risks being protected against, the purpose of the PPE and the manner in which it is to be used.\nPPE to be provided must be at no financial cost to the worker and it must comply with relevant legislation and meet recognized international standards such as those from Europe or America (i.e. BS EN or ANSI) and must be issued and replaced when no longer serviceable free of charge.\nThe following PPE is mandatory and is to be worn at all times on site (including visitors):\n-Safety helmet\n·Safety glasses (shaded for outdoor work and clear inside structures and during non- daylight hours)\n·Safety boots\n·Hi-visibility vest\nAdditional PPE will be provided as required after risk assessment.\nDgvelopMsnt EA.H.\nTax Card 218-287-200\n2.0 Box 229, Muthl2m\nCR12841\nCaliu, Eeypt\n图\nitsr\nEMAAR",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

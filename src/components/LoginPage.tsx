@@ -329,11 +329,13 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ loading, children }) => (
 // ============================================
 
 export const LoginPage: React.FC = () => {
+  const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signIn } = useAuth();
+  const { signIn, signUp } = useAuth();
 
   // Check for error messages from auth state changes
   useEffect(() => {
@@ -350,11 +352,16 @@ export const LoginPage: React.FC = () => {
     setLoading(true);
 
     try {
-      await signIn(email, password);
+      if (isSignUp) {
+        await signUp(email, password, displayName || email.split('@')[0]);
+        setError('Success! Please check your email for a confirmation link.');
+      } else {
+        await signIn(email, password);
+      }
     } catch (err: any) {
       const errorMsg = err.message || err.toString();
 
-      let errorMessage = 'Failed to sign in';
+      let errorMessage = isSignUp ? 'Failed to sign up' : 'Failed to sign in';
 
       // Provide user-friendly error messages (Supabase errors)
       if (errorMsg.includes('Invalid login credentials') || errorMsg.includes('Invalid email or password')) {
@@ -365,6 +372,8 @@ export const LoginPage: React.FC = () => {
         errorMessage = 'No account found with this email.';
       } else if (errorMsg.includes('Invalid email')) {
         errorMessage = 'Please enter a valid email address.';
+      } else if (errorMsg.includes('User already registered')) {
+        errorMessage = 'An account already exists with this email.';
       } else if (errorMsg.includes('network') || errorMsg.includes('fetch')) {
         errorMessage = 'Network error. Please check your connection.';
       } else if (errorMsg) {
@@ -429,12 +438,23 @@ export const LoginPage: React.FC = () => {
               fontWeight: 400,
             }}
           >
-            Sign in to your account
+            {isSignUp ? 'Create your new account' : 'Sign in to your account'}
           </p>
         </div>
 
-        {/* Login Form */}
+        {/* Form */}
         <form onSubmit={handleSubmit}>
+          {isSignUp && (
+            <FloatingInput
+              id="displayName"
+              type="text"
+              label="Display Name"
+              value={displayName}
+              onChange={setDisplayName}
+              autoComplete="name"
+            />
+          )}
+
           <FloatingInput
             id="email"
             type="email"
@@ -452,16 +472,46 @@ export const LoginPage: React.FC = () => {
             value={password}
             onChange={setPassword}
             required
-            autoComplete="current-password"
+            autoComplete={isSignUp ? 'new-password' : 'current-password'}
             showPasswordToggle
           />
 
-          {error && <ErrorMessage message={error} />}
+          {error && (
+            <ErrorMessage 
+              message={error} 
+              onAnimationEnd={() => {}}
+            />
+          )}
 
           <SubmitButton loading={loading}>
-            Sign In
+            {isSignUp ? 'Create Account' : 'Sign In'}
           </SubmitButton>
         </form>
+
+        {/* Toggle Mode Link */}
+        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+          <button
+            type="button"
+            onClick={() => {
+              setIsSignUp(!isSignUp);
+              setError('');
+            }}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#1e3a8a',
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              cursor: 'pointer',
+              textDecoration: 'none',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
+          >
+            {isSignUp ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
+          </button>
+        </div>
 
         {/* Footer */}
         <div

@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { useChatContext } from '../context/ChatContext';
-import { chatWithDualAgents } from '@/services/aiBotService';
+import { chatWithSmartRouting } from '@/services/aiBotService';
 import { BotMessage, ContextPill } from '@/types';
+import { db } from '@/services/dbService';
 
 export const useChat = () => {
     const {
@@ -16,7 +17,8 @@ export const useChat = () => {
         conversationId,
         contractClauses,
         isGraphMode,
-        setIsGraphMode
+        setIsGraphMode,
+        uploadedContract
     } = useChatContext();
 
     const sendMessage = useCallback(async (content: string) => {
@@ -30,20 +32,19 @@ export const useChat = () => {
         };
 
         setMessages(prev => [...prev, userMessage]);
+        if (conversationId) {
+            db.messages.save(conversationId, userMessage);
+        }
         setIsThinkingOrStreaming(true);
 
         try {
             // In a real implementation, we would pass clauses and contractId from a higher context or prop
             // For now, we assume these are available or handled by the service
-            const response = await chatWithDualAgents(
+            const response = await chatWithSmartRouting(
                 [...messages, userMessage],
                 contractClauses,
                 conversationId,
-                {
-                    forceDocumentSearch: content.toLowerCase().startsWith('/search'),
-                    forceGraphSearch: isGraphMode,
-                    conversationHistory: messages
-                }
+                uploadedContract ?? undefined
             );
 
             const assistantMessage: BotMessage = {
@@ -53,10 +54,13 @@ export const useChat = () => {
                 timestamp: Date.now(),
                 // @ts-ignore - Adding extended fields for the new UI
                 agentsUsed: response.agentsUsed,
-                isDualMode: response.isDualMode
+                isDualMode: response.mode === 'dual'
             };
 
             setMessages(prev => [...prev, assistantMessage]);
+            if (conversationId) {
+                db.messages.save(conversationId, assistantMessage);
+            }
         } catch (error) {
             console.error('Chat error:', error);
             const errorMessage: BotMessage = {
@@ -69,7 +73,7 @@ export const useChat = () => {
         } finally {
             setIsThinkingOrStreaming(false);
         }
-    }, [messages, isThinkingOrStreaming, setMessages, setIsThinkingOrStreaming, conversationId, contractClauses]);
+    }, [messages, isThinkingOrStreaming, setMessages, setIsThinkingOrStreaming, conversationId, contractClauses, uploadedContract]);
 
     const cancelCurrent = useCallback(() => {
         // Logic to abort the current fetch/stream

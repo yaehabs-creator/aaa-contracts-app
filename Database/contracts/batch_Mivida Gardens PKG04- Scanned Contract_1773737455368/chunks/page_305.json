@@ -1,0 +1,497 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## SECTION01320 PROGRESS MONITORING AND REPORTING\n\n## PROGRISSRONTORINGAND REPORTING\n\n- 1.1 The Contractor shall update his current approved programme with actualexecutedinformationandsubmitintheformofperiodicreports. This section describes the requirements, the form and content of such reports.\n\n## DAILY CONSTRUCTION REPORT\n\n- 2.1 The Contractor shall submit a Daily Construction Report (DCR) on a shall describe the subcontractors working on site, the labour force and its allocation, material type and quantity, construction equipment and work to be carried out during the day. The format and the number of copies of this report shall be provided by the Contract Administrator prior to use. Diskette(s)/CD's containing the Daily Reports shall be provided if specifically requested by the Contract Administrator.\n\n## 3 WEEKLY REPORT\n\n- 3.1 The Contractor shall prepare weekly reports and submit to the Contract Administrator on each Saturday for the previous week, except for the last week of each month, which shall be covered in the monthly report. The cut-off date or data date for this report shall be the Thursday of the previous week. The weekly report shall consist as a minirnum, updates of actual progress information, actual utilisation of manpower and construction equipment, updated material delivery schedule and status ofsubmissions. TheformatfortheWceklyReportshallbeas described in the following Sub-clauses, such reports shall include but not limited to.\n- &gt;Updated E1 log for Shop Drawings.\n- A Updated E1 log for Material Submittals.\n- A Updated E2 log for procurement log.\n- &gt;Updated “Request for Information\" status.\n- 3.2 The outer cover of the report shall be titled with the following information:\n- a) Thc titlc of thc Projcct\n- b) The Bid Package number and title\n- c) The tile \"Weekly Report from [subject week's Saturday] to [subject week's FridayJ' and a report number in consecutive sequencing.\n\nThe name of the Employer “Emaar Misr\"\n\nhe name of the Contract Administrator \"Turner Construction thternational LLC\"\n\nname of the Supervision Consultant (Will be advised) nameoftheContractor\n\nEmaarMtorlorDevelopment\n\n<!-- image -->\n\nRov.01\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          749.3968353271484
+        ],
+        [
+          131.9847208658854,
+          749.3968353271484
+        ],
+        [
+          131.9847208658854,
+          738.6159210205078
+        ],
+        [
+          109.98726399739583,
+          738.6159210205078
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "SECTION01320 PROGRESS MONITORING AND REPORTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          170.99906412760416,
+          718.7126973470052
+        ],
+        [
+          411.3108723958333,
+          718.7126973470052
+        ],
+        [
+          411.3108723958333,
+          693.8336690266927
+        ],
+        [
+          170.99906412760416,
+          693.8336690266927
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "PROGRISSRONTORINGAND REPORTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          666.0520833333334
+        ],
+        [
+          351.5442301432292,
+          666.0520833333334
+        ],
+        [
+          351.5442301432292,
+          655.2711690266927
+        ],
+        [
+          111.23241170247395,
+          655.2711690266927
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "1.1 The Contractor shall update his current approved programme with actualexecutedinformationandsubmitintheformofperiodicreports. This section describes the requirements, the form and content of such reports.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          647.8074544270834
+        ],
+        [
+          505.111328125,
+          647.8074544270834
+        ],
+        [
+          505.111328125,
+          594.7321980794271
+        ],
+        [
+          111.23241170247395,
+          594.7321980794271
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "DAILY CONSTRUCTION REPORT",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          581.46337890625
+        ],
+        [
+          290.94744873046875,
+          581.46337890625
+        ],
+        [
+          290.94744873046875,
+          570.6824544270834
+        ],
+        [
+          112.0625,
+          570.6824544270834
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "2.1 The Contractor shall submit a Daily Construction Report (DCR) on a shall describe the subcontractors working on site, the labour force and its allocation, material type and quantity, construction equipment and work to be carried out during the day. The format and the number of copies of this report shall be provided by the Contract Administrator prior to use. Diskette(s)/CD's containing the Daily Reports shall be provided if specifically requested by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          563.6334025065105
+        ],
+        [
+          505.9414469401042,
+          563.6334025065105
+        ],
+        [
+          505.9414469401042,
+          459.14145914713544
+        ],
+        [
+          110.81736246744792,
+          459.14145914713544
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "3 WEEKLY REPORT",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          444.62872314453125
+        ],
+        [
+          210.428466796875,
+          444.62872314453125
+        ],
+        [
+          210.428466796875,
+          433.84779866536456
+        ],
+        [
+          77.1986083984375,
+          433.84779866536456
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "3.1 The Contractor shall prepare weekly reports and submit to the Contract Administrator on each Saturday for the previous week, except for the last week of each month, which shall be covered in the monthly report. The cut-off date or data date for this report shall be the Thursday of the previous week. The weekly report shall consist as a minirnum, updates of actual progress information, actual utilisation of manpower and construction equipment, updated material delivery schedule and status ofsubmissions. TheformatfortheWceklyReportshallbeas described in the following Sub-clauses, such reports shall include but not limited to.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          427.21339925130206
+        ],
+        [
+          506.3564860026042,
+          427.21339925130206
+        ],
+        [
+          506.3564860026042,
+          296.1838175455729
+        ],
+        [
+          110.40231323242188,
+          296.1838175455729
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": ">Updated E1 log for Shop Drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.85115559895834,
+          296.1838175455729
+        ],
+        [
+          341.5830891927083,
+          296.1838175455729
+        ],
+        [
+          341.5830891927083,
+          282.5003458658854
+        ],
+        [
+          144.85115559895834,
+          282.5003458658854
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "A Updated E1 log for Material Submittals.",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.51134236653647,
+          282.5003458658854
+        ],
+        [
+          361.0902913411458,
+          282.5003458658854
+        ],
+        [
+          361.0902913411458,
+          270.4754842122396
+        ],
+        [
+          146.51134236653647,
+          270.4754842122396
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "A Updated E2 log for procurement log.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.3414306640625,
+          268.8168741861979
+        ],
+        [
+          346.9787190755208,
+          268.8168741861979
+        ],
+        [
+          346.9787190755208,
+          256.7920125325521
+        ],
+        [
+          147.3414306640625,
+          256.7920125325521
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": ">Updated “Request for Information\" status.",
+      "confidence": 0.95,
+      "box": [
+        [
+          145.26620483398438,
+          255.96270751953125
+        ],
+        [
+          373.1266276041667,
+          255.96270751953125
+        ],
+        [
+          373.1266276041667,
+          243.52321370442712
+        ],
+        [
+          145.26620483398438,
+          243.52321370442712
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "3.2 The outer cover of the report shall be titled with the following information:",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          238.54738362630212
+        ],
+        [
+          504.6962890625,
+          238.54738362630212
+        ],
+        [
+          504.6962890625,
+          212.00974527994788
+        ],
+        [
+          110.81736246744792,
+          212.00974527994788
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "Thc titlc of thc Projcct",
+      "confidence": 0.95,
+      "box": [
+        [
+          145.26620483398438,
+          211.59511311848962
+        ],
+        [
+          270.19512939453125,
+          211.59511311848962
+        ],
+        [
+          270.19512939453125,
+          199.15557861328125
+        ],
+        [
+          145.26620483398438,
+          199.15557861328125
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "The Bid Package number and title",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.43610636393228,
+          198.74094645182288
+        ],
+        [
+          329.96181233723956,
+          198.74094645182288
+        ],
+        [
+          329.96181233723956,
+          185.88677978515625
+        ],
+        [
+          144.43610636393228,
+          185.88677978515625
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "The tile \"Weekly Report from [subject week's Saturday] to [subject week's FridayJ' and a report number in consecutive sequencing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.02106730143228,
+          185.47214762369788
+        ],
+        [
+          505.9414469401042,
+          185.47214762369788
+        ],
+        [
+          505.9414469401042,
+          158.93450927734375
+        ],
+        [
+          144.02106730143228,
+          158.93450927734375
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "The name of the Employer “Emaar Misr\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.47245279947916,
+          158.93450927734375
+        ],
+        [
+          364.82568359375,
+          158.93450927734375
+        ],
+        [
+          364.82568359375,
+          147.32427978515625
+        ],
+        [
+          156.47245279947916,
+          147.32427978515625
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "he name of the Contract Administrator \"Turner Construction thternational LLC\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.05740356445312,
+          146.08034261067712
+        ],
+        [
+          505.111328125,
+          146.08034261067712
+        ],
+        [
+          505.111328125,
+          119.54266357421875
+        ],
+        [
+          156.05740356445312,
+          119.54266357421875
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "name of the Supervision Consultant (Will be advised) nameoftheContractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.71504720052084,
+          120.78664143880212
+        ],
+        [
+          448.6650390625,
+          120.78664143880212
+        ],
+        [
+          448.6650390625,
+          95.49294026692712
+        ],
+        [
+          179.71504720052084,
+          95.49294026692712
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "EmaarMtorlorDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          55.68654378255212
+        ],
+        [
+          162.2831013997396,
+          55.68654378255212
+        ],
+        [
+          162.2831013997396,
+          48.63747151692712
+        ],
+        [
+          78.85879516601562,
+          48.63747151692712
+        ]
+      ],
+      "page": 305
+    },
+    {
+      "text": "Rov.01",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          41.17376708984375
+        ],
+        [
+          99.61111450195312,
+          41.17376708984375
+        ],
+        [
+          99.61111450195312,
+          32.46608479817712
+        ],
+        [
+          78.02870178222656,
+          32.46608479817712
+        ]
+      ],
+      "page": 305
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 305,
+      "text": "MISR\nSECTION01320 PROGRESS MONITORING AND REPORTING\nPROGRISSRONTORINGAND REPORTING\n1.1 The Contractor shall update his current approved programme with actualexecutedinformationandsubmitintheformofperiodicreports. This section describes the requirements, the form and content of such reports.\nDAILY CONSTRUCTION REPORT\n2.1 The Contractor shall submit a Daily Construction Report (DCR) on a shall describe the subcontractors working on site, the labour force and its allocation, material type and quantity, construction equipment and work to be carried out during the day. The format and the number of copies of this report shall be provided by the Contract Administrator prior to use. Diskette(s)/CD's containing the Daily Reports shall be provided if specifically requested by the Contract Administrator.\n3 WEEKLY REPORT\n3.1 The Contractor shall prepare weekly reports and submit to the Contract Administrator on each Saturday for the previous week, except for the last week of each month, which shall be covered in the monthly report. The cut-off date or data date for this report shall be the Thursday of the previous week. The weekly report shall consist as a minirnum, updates of actual progress information, actual utilisation of manpower and construction equipment, updated material delivery schedule and status ofsubmissions. TheformatfortheWceklyReportshallbeas described in the following Sub-clauses, such reports shall include but not limited to.\n>Updated E1 log for Shop Drawings.\nA Updated E1 log for Material Submittals.\nA Updated E2 log for procurement log.\n>Updated “Request for Information\" status.\n3.2 The outer cover of the report shall be titled with the following information:\nThc titlc of thc Projcct\nThe Bid Package number and title\nThe tile \"Weekly Report from [subject week's Saturday] to [subject week's FridayJ' and a report number in consecutive sequencing.\nThe name of the Employer “Emaar Misr\"\nhe name of the Contract Administrator \"Turner Construction thternational LLC\"\nname of the Supervision Consultant (Will be advised) nameoftheContractor\nEmaarMtorlorDevelopment\nRov.01",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

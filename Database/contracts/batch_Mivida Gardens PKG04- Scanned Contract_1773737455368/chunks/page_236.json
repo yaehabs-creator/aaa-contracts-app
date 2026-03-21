@@ -1,0 +1,244 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\nEmuerMlar Fa\n\n| ST           | AR.45                                                                                                                                                                                                                                                                                                                          | AR.44                                                                                            |                                                                                                                                                                                                                       | AR.42                                                                                                                                                                       | AR.41                              | AR.40                                      | AR.39                                                                                                                                                                                       |                         | AR.37 SIN              |\n|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|------------------------|\n| 3.Structural | bothparcels11&12. Please provide us with the ID\" Emaar Comments for villa types TH-01A & TH01-B\" for Please refer to the attached documents. underthewoodflooringsection. For vila typeTH0-02A &02B,02C\", Division 9, Kindly confirm adding terrazzo flooring Follow detailNo.(IE5-102/01), including Acoustical Layer P.E 2mm | AR.43 toDivision5. changed fromAluminum to galvanized.Steel withPowder coating finished andmoved | windows and doors.                                                                                                                                                                                                    | Lacquered Paint finish.                                                                                                                                                     | Roof access isNon-GalvanizedSteel. | thermal insulation is50mm thickForTerrace. | AR.38 membrane (APP) is a single layer. For villa type“TH0-02A, 02B&02C\", Division7,kindly confim that the waterproofing Please refer to specifications,Division 07-section 075213& 071356. | includedinourscopeornot | Item Description Reply |\n|              |                                                                                                                                                                                                                                                                                                                                |                                                                                                  | For villa type“TH0-02A 02B&02C”Division8,kindly provide the detailed drawings forFor doors details refer to dwg(IE5-103/02).Forwindows details refer to dwg AE5-102/11) and the updated drawing and BOQ are attached. | For villa type“TH0-02A,02B&02C\",Division8,kindly confim the interal door(D06)isPlease note that doortypeD06 has aCPLfinish,not lacquered paint, in accordance with the BOQ. |                                    |                                            |                                                                                                                                                                                             |                         |                        |\n\nTaCund214-287-208\n\nDevnloprnanst\n\nCE12841\n\nCalo.\n\nPOBx229\n\n四\n\n<!-- image -->\n\nMa\n\n## Package ID : PK#04\n\n## Subject:ConstructionofTownhomesVillasinParcels11&amp;12 Project : Mivida Gardens\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EmuerMlar Fa",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.259490966796875,
+          83.46811930338538
+        ],
+        [
+          88.81990559895833,
+          83.46811930338538
+        ],
+        [
+          88.81990559895833,
+          71.02858479817712
+        ],
+        [
+          40.259490966796875,
+          71.02858479817712
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "TaCund214-287-208",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.42939758300781,
+          65.22349039713538
+        ],
+        [
+          98.365966796875,
+          65.22349039713538
+        ],
+        [
+          98.365966796875,
+          54.02793375651038
+        ],
+        [
+          39.42939758300781,
+          54.02793375651038
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "Devnloprnanst",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.844444274902344,
+          74.34580485026038
+        ],
+        [
+          86.7446797688802,
+          74.34580485026038
+        ],
+        [
+          86.7446797688802,
+          63.56488037109375
+        ],
+        [
+          39.844444274902344,
+          63.56488037109375
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "CE12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.844444274902344,
+          59.00368245442712
+        ],
+        [
+          66.82245381673177,
+          59.00368245442712
+        ],
+        [
+          66.82245381673177,
+          48.22283935546875
+        ],
+        [
+          39.844444274902344,
+          48.22283935546875
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "Calo.",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.42939758300781,
+          46.97886149088538
+        ],
+        [
+          69.31272888183594,
+          46.97886149088538
+        ],
+        [
+          69.31272888183594,
+          35.36867268880212
+        ],
+        [
+          39.42939758300781,
+          35.36867268880212
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "POBx229",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.42939758300781,
+          51.95469156901038
+        ],
+        [
+          72.21805318196614,
+          51.95469156901038
+        ],
+        [
+          72.21805318196614,
+          42.41766357421875
+        ],
+        [
+          39.42939758300781,
+          42.41766357421875
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "四",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.844444274902344,
+          35.78330485026038
+        ],
+        [
+          48.9754638671875,
+          35.78330485026038
+        ],
+        [
+          48.9754638671875,
+          25.41701253255212
+        ],
+        [
+          39.844444274902344,
+          25.41701253255212
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "Ma",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.2129618326823,
+          43.24700927734375
+        ],
+        [
+          131.56967163085938,
+          43.24700927734375
+        ],
+        [
+          131.56967163085938,
+          32.46608479817712
+        ],
+        [
+          116.2129618326823,
+          32.46608479817712
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "Package ID : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          486.4342447916667,
+          701.297373453776
+        ],
+        [
+          497.6405029296875,
+          701.297373453776
+        ],
+        [
+          497.6405029296875,
+          625.8309733072916
+        ],
+        [
+          486.4342447916667,
+          625.8309733072916
+        ]
+      ],
+      "page": 236
+    },
+    {
+      "text": "Subject:ConstructionofTownhomesVillasinParcels11&12 Project : Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          502.6210530598958,
+          701.297373453776
+        ],
+        [
+          529.1840413411459,
+          701.297373453776
+        ],
+        [
+          529.1840413411459,
+          471.16632080078125
+        ],
+        [
+          502.6210530598958,
+          471.16632080078125
+        ]
+      ],
+      "page": 236
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 236,
+      "text": "EmuerMlar Fa\nTaCund214-287-208\nDevnloprnanst\nCE12841\nCalo.\nPOBx229\n四\nMa\nPackage ID : PK#04\nSubject:ConstructionofTownhomesVillasinParcels11&12 Project : Mivida Gardens",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

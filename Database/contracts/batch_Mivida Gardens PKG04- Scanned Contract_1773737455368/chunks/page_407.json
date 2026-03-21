@@ -1,0 +1,198 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs cases acombinationof'thesewillbcnecded:\n\n## Hierarchy of Controls\n\n- cElimination - The very first step in hazard control is elimination, as shown in Figure 2. If the hazard js not present then it cannot harm anyone. Most of the opportunities for climination come in the design phase of the project so it is important to have a risk rcview and hazard idcntification process that can identify potential construction hazards during this critical phase.\n- Substitution - The risk of injury or illness may be reduced by replacement/modification of an existing process, material, or equipment with a similar item having more limited hazard potential. Some examples include: brush painting instead of spray painting to reduce inhalation hazards, welding instead of riveting to reduce noise levels,use of safety cans instead of bottles to store flammablc liquids,etc.Care must be cxercised in any substitution to ensure that the substitute materials are tcchnically acccptable and to avoid introducing new or unforeseen hazards.\n\n## Engineering Controls:\n\n- Isolation - Hazards are controlled by isolation whenever an appropriate barrier or limiter is placcd bctwcen the hazard and an individual who may be affected by the hazard. This isolation can be in the form of physical barriers, time separation, or clistancc. Examples include machine guards, welding booth, electrical insulation, glove boxes, acoustical containment, and remote controlled equipment.\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          729.9082641601562
+        ],
+        [
+          340.33795166015625,
+          729.9082641601562
+        ],
+        [
+          340.33795166015625,
+          701.7120259602865
+        ],
+        [
+          190.92130533854166,
+          701.7120259602865
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs cases acombinationof'thesewillbcnecded:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          700.0534261067709
+        ],
+        [
+          217.0692138671875,
+          700.0534261067709
+        ],
+        [
+          217.0692138671875,
+          686.3699544270834
+        ],
+        [
+          75.12337748209636,
+          686.3699544270834
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "Hierarchy of Controls",
+      "confidence": 0.95,
+      "box": [
+        [
+          243.6321818033854,
+          433.43312581380206
+        ],
+        [
+          341.5830891927083,
+          433.43312581380206
+        ],
+        [
+          341.5830891927083,
+          423.06687418619794
+        ],
+        [
+          243.6321818033854,
+          423.06687418619794
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "cElimination - The very first step in hazard control is elimination, as shown in Figure 2. If the hazard js not present then it cannot harm anyone. Most of the opportunities for climination come in the design phase of the project so it is important to have a risk rcview and hazard idcntification process that can identify potential construction hazards during this critical phase.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          412.28594970703125
+        ],
+        [
+          496.8104248046875,
+          412.28594970703125
+        ],
+        [
+          496.8104248046875,
+          349.25909423828125
+        ],
+        [
+          76.78356424967448,
+          349.25909423828125
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "Substitution - The risk of injury or illness may be reduced by replacement/modification of an existing process, material, or equipment with a similar item having more limited hazard potential. Some examples include: brush painting instead of spray painting to reduce inhalation hazards, welding instead of riveting to reduce noise levels,use of safety cans instead of bottles to store flammablc liquids,etc.Care must be cxercised in any substitution to ensure that the substitute materials are tcchnically acccptable and to avoid introducing new or unforeseen hazards.",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          336.40492757161456
+        ],
+        [
+          496.8104248046875,
+          336.40492757161456
+        ],
+        [
+          496.8104248046875,
+          238.96205647786462
+        ],
+        [
+          79.27384440104167,
+          238.96205647786462
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "Engineering Controls:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          224.86391194661462
+        ],
+        [
+          191.33634440104166,
+          224.86391194661462
+        ],
+        [
+          191.33634440104166,
+          213.66835530598962
+        ],
+        [
+          94.2155049641927,
+          213.66835530598962
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "Isolation - Hazards are controlled by isolation whenever an appropriate barrier or limiter is placcd bctwcen the hazard and an individual who may be affected by the hazard. This isolation can be in the form of physical barriers, time separation, or clistancc. Examples include machine guards, welding booth, electrical insulation, glove boxes, acoustical containment, and remote controlled equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          207.44858805338538
+        ],
+        [
+          497.6405029296875,
+          207.44858805338538
+        ],
+        [
+          497.6405029296875,
+          125.76247151692712
+        ],
+        [
+          109.1571756998698,
+          125.76247151692712
+        ]
+      ],
+      "page": 407
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.4004720052083,
+          736.9573160807291
+        ],
+        [
+          509.2618001302083,
+          736.9573160807291
+        ],
+        [
+          509.2618001302083,
+          724.5178019205729
+        ],
+        [
+          452.4004720052083,
+          724.5178019205729
+        ]
+      ],
+      "page": 407
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 407,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs cases acombinationof'thesewillbcnecded:\nHierarchy of Controls\ncElimination - The very first step in hazard control is elimination, as shown in Figure 2. If the hazard js not present then it cannot harm anyone. Most of the opportunities for climination come in the design phase of the project so it is important to have a risk rcview and hazard idcntification process that can identify potential construction hazards during this critical phase.\nSubstitution - The risk of injury or illness may be reduced by replacement/modification of an existing process, material, or equipment with a similar item having more limited hazard potential. Some examples include: brush painting instead of spray painting to reduce inhalation hazards, welding instead of riveting to reduce noise levels,use of safety cans instead of bottles to store flammablc liquids,etc.Care must be cxercised in any substitution to ensure that the substitute materials are tcchnically acccptable and to avoid introducing new or unforeseen hazards.\nEngineering Controls:\nIsolation - Hazards are controlled by isolation whenever an appropriate barrier or limiter is placcd bctwcen the hazard and an individual who may be affected by the hazard. This isolation can be in the form of physical barriers, time separation, or clistancc. Examples include machine guards, welding booth, electrical insulation, glove boxes, acoustical containment, and remote controlled equipment.\nEMAAR",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

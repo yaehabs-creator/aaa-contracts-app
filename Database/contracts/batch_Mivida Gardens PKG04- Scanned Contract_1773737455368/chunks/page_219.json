@@ -1,0 +1,543 @@
+{
+  "text": "<!-- image -->\n\nconstrued as part of the Contract.\n\n- The Tender Sum is considered as based on the various Tender Documents being complimentary and interpreted on a collective basis. Unless otherwise is expressly stated in the Contract, no one part of the Contract Document shall have priority over any other part.\n- The TenderDocuments cover the following scope:\n1. Type 01 - TH01 A (H4 TH A).\n2. Type 02 - TH01 B (H4 TH B).\n3. Type 03 - TH02 A (SKAIA TH A) TH-23.\n4. Type 04 - TH02 B (SKAIA TH B) TH-26.\n5. Tender Report that is for guidance only which is not part of the Contract Documents.\n6. ID General Finishes which supersede the related ones under the aforementioned items from 1 to 4.\n- 7.ID Design Guidelines which supersede the related ones under the aforementioned items from 1 to 4.\n- 8.ID General Details which supersede the related ones under the aforementioned items from 1 to 4.\n- 9.Architecture General Details which supersede the related ones under the aforementioned items from 1 to 4.\n- 10.EMAAR Architecture&amp;StructureSpecs which supersede therelated ones under the aforementioned items from 1 to 4.\n- The following items are out of the Contractor's scope as follows:\n- oPlantings&amp; SecondaryIrigation Items\n- o CCTV\n- Active Devices Fiber Optics Cables Electric&amp;WaterMeters\n\nNoting that-for the aforementioned items, the Contractor scope is limited to all required all provisions for their proper installations.\n\naCd7.\n\n<!-- image -->\n\n<!-- image -->\n\nEmaarMisrforDevelopmentsS.A.E. P.O.Box229,Mokattam11571Cairo ArabRepublicofEgypt\n\nTel:+2 02 25032000\n\nFax:+20225032020\n\nwww.emaarmisr.com",
+  "results": [
+    {
+      "text": "construed as part of the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.51388549804688,
+          654.8565165201823
+        ],
+        [
+          290.1173502604167,
+          654.8565165201823
+        ],
+        [
+          290.1173502604167,
+          643.6609497070312
+        ],
+        [
+          124.51388549804688,
+          643.6609497070312
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "The Tender Sum is considered as based on the various Tender Documents being complimentary and interpreted on a collective basis. Unless otherwise is expressly stated in the Contract, no one part of the Contract Document shall have priority over any other part.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.68379720052083,
+          635.7825927734375
+        ],
+        [
+          506.7715250651042,
+          635.7825927734375
+        ],
+        [
+          506.7715250651042,
+          565.7066650390625
+        ],
+        [
+          123.68379720052083,
+          565.7066650390625
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "The TenderDocuments cover the following scope:",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.51388549804688,
+          559.9015502929688
+        ],
+        [
+          372.7115885416667,
+          559.9015502929688
+        ],
+        [
+          372.7115885416667,
+          547.876688639323
+        ],
+        [
+          124.51388549804688,
+          547.876688639323
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Type 01 - TH01 A (H4 TH A).",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          540.4129842122395
+        ],
+        [
+          294.267822265625,
+          540.4129842122395
+        ],
+        [
+          294.267822265625,
+          527.9734497070312
+        ],
+        [
+          134.0599568684896,
+          527.9734497070312
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Type 02 - TH01 B (H4 TH B).",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.39977010091147,
+          521.7537027994792
+        ],
+        [
+          294.267822265625,
+          521.7537027994792
+        ],
+        [
+          294.267822265625,
+          508.0702311197917
+        ],
+        [
+          132.39977010091147,
+          508.0702311197917
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Type 03 - TH02 A (SKAIA TH A) TH-23.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.8148193359375,
+          502.6797688802083
+        ],
+        [
+          346.9787190755208,
+          502.6797688802083
+        ],
+        [
+          346.9787190755208,
+          488.99631754557294
+        ],
+        [
+          132.8148193359375,
+          488.99631754557294
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Type 04 - TH02 B (SKAIA TH B) TH-26.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.8148193359375,
+          483.60585530598956
+        ],
+        [
+          346.5636393229167,
+          483.60585530598956
+        ],
+        [
+          346.5636393229167,
+          469.92238362630206
+        ],
+        [
+          132.8148193359375,
+          469.92238362630206
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Tender Report that is for guidance only which is not part of the Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.39977010091147,
+          464.94659423828125
+        ],
+        [
+          507.1865641276042,
+          464.94659423828125
+        ],
+        [
+          507.1865641276042,
+          432.60382080078125
+        ],
+        [
+          132.39977010091147,
+          432.60382080078125
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "ID General Finishes which supersede the related ones under the aforementioned items from 1 to 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.8148193359375,
+          427.21339925130206
+        ],
+        [
+          507.1865641276042,
+          427.21339925130206
+        ],
+        [
+          507.1865641276042,
+          394.87062581380206
+        ],
+        [
+          132.8148193359375,
+          394.87062581380206
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "7.ID Design Guidelines which supersede the related ones under the aforementioned items from 1 to 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.2298583984375,
+          387.82159423828125
+        ],
+        [
+          506.7715250651042,
+          387.82159423828125
+        ],
+        [
+          506.7715250651042,
+          357.55210367838544
+        ],
+        [
+          133.2298583984375,
+          357.55210367838544
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "8.ID General Details which supersede the related ones under the aforementioned items from 1 to 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.2298583984375,
+          349.67372639973956
+        ],
+        [
+          506.7715250651042,
+          349.67372639973956
+        ],
+        [
+          506.7715250651042,
+          318.57493082682294
+        ],
+        [
+          133.2298583984375,
+          318.57493082682294
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "9.Architecture General Details which supersede the related ones under the aforementioned items from 1 to 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          311.94053141276044
+        ],
+        [
+          506.7715250651042,
+          311.94053141276044
+        ],
+        [
+          506.7715250651042,
+          280.84173583984375
+        ],
+        [
+          134.0599568684896,
+          280.84173583984375
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "10.EMAAR Architecture&StructureSpecs which supersede therelated ones under the aforementioned items from 1 to 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.89004516601562,
+          273.3780314127604
+        ],
+        [
+          507.1865641276042,
+          273.3780314127604
+        ],
+        [
+          507.1865641276042,
+          243.10854085286462
+        ],
+        [
+          134.89004516601562,
+          243.10854085286462
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "The following items are out of the Contractor's scope as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          235.23020426432288
+        ],
+        [
+          439.9490559895833,
+          235.23020426432288
+        ],
+        [
+          439.9490559895833,
+          223.61997477213538
+        ],
+        [
+          126.174072265625,
+          223.61997477213538
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "oPlantings& SecondaryIrigation Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          216.15627034505212
+        ],
+        [
+          331.6219889322917,
+          216.15627034505212
+        ],
+        [
+          331.6219889322917,
+          204.13140869140625
+        ],
+        [
+          129.90949503580728,
+          204.13140869140625
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "o CCTV",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          202.88743082682288
+        ],
+        [
+          174.7344970703125,
+          202.88743082682288
+        ],
+        [
+          174.7344970703125,
+          191.27724202473962
+        ],
+        [
+          129.07939656575522,
+          191.27724202473962
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Active Devices Fiber Optics Cables Electric&WaterMeters",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.94583129882812,
+          190.03330485026038
+        ],
+        [
+          259.4039306640625,
+          190.03330485026038
+        ],
+        [
+          259.4039306640625,
+          153.95867919921875
+        ],
+        [
+          141.94583129882812,
+          153.95867919921875
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Noting that-for the aforementioned items, the Contractor scope is limited to all required all provisions for their proper installations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          139.44590250651038
+        ],
+        [
+          507.1865641276042,
+          139.44590250651038
+        ],
+        [
+          507.1865641276042,
+          114.98154703776038
+        ],
+        [
+          75.12337748209636,
+          114.98154703776038
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "aCd7.",
+      "confidence": 0.95,
+      "box": [
+        [
+          199.22222900390625,
+          42.41766357421875
+        ],
+        [
+          259.4039306640625,
+          42.41766357421875
+        ],
+        [
+          259.4039306640625,
+          42.41766357421875
+        ],
+        [
+          199.22222900390625,
+          42.41766357421875
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "EmaarMisrforDevelopmentsS.A.E. P.O.Box229,Mokattam11571Cairo ArabRepublicofEgypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.3548583984375,
+          728.664306640625
+        ],
+        [
+          481.8687337239583,
+          728.664306640625
+        ],
+        [
+          481.8687337239583,
+          699.22412109375
+        ],
+        [
+          357.3548583984375,
+          699.22412109375
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Tel:+2 02 25032000",
+      "confidence": 0.95,
+      "box": [
+        [
+          356.9398193359375,
+          698.8094685872396
+        ],
+        [
+          426.6676025390625,
+          698.8094685872396
+        ],
+        [
+          426.6676025390625,
+          689.2725118001302
+        ],
+        [
+          356.9398193359375,
+          689.2725118001302
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "Fax:+20225032020",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.3548583984375,
+          688.028554280599
+        ],
+        [
+          427.4976806640625,
+          688.028554280599
+        ],
+        [
+          427.4976806640625,
+          679.7355448404948
+        ],
+        [
+          357.3548583984375,
+          679.7355448404948
+        ]
+      ],
+      "page": 219
+    },
+    {
+      "text": "www.emaarmisr.com",
+      "confidence": 0.95,
+      "box": [
+        [
+          356.9398193359375,
+          677.2476501464844
+        ],
+        [
+          430.8180338541667,
+          677.2476501464844
+        ],
+        [
+          430.8180338541667,
+          669.783935546875
+        ],
+        [
+          356.9398193359375,
+          669.783935546875
+        ]
+      ],
+      "page": 219
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 219,
+      "text": "construed as part of the Contract.\nThe Tender Sum is considered as based on the various Tender Documents being complimentary and interpreted on a collective basis. Unless otherwise is expressly stated in the Contract, no one part of the Contract Document shall have priority over any other part.\nThe TenderDocuments cover the following scope:\nType 01 - TH01 A (H4 TH A).\nType 02 - TH01 B (H4 TH B).\nType 03 - TH02 A (SKAIA TH A) TH-23.\nType 04 - TH02 B (SKAIA TH B) TH-26.\nTender Report that is for guidance only which is not part of the Contract Documents.\nID General Finishes which supersede the related ones under the aforementioned items from 1 to 4.\n7.ID Design Guidelines which supersede the related ones under the aforementioned items from 1 to 4.\n8.ID General Details which supersede the related ones under the aforementioned items from 1 to 4.\n9.Architecture General Details which supersede the related ones under the aforementioned items from 1 to 4.\n10.EMAAR Architecture&StructureSpecs which supersede therelated ones under the aforementioned items from 1 to 4.\nThe following items are out of the Contractor's scope as follows:\noPlantings& SecondaryIrigation Items\no CCTV\nActive Devices Fiber Optics Cables Electric&WaterMeters\nNoting that-for the aforementioned items, the Contractor scope is limited to all required all provisions for their proper installations.\naCd7.\nEmaarMisrforDevelopmentsS.A.E. P.O.Box229,Mokattam11571Cairo ArabRepublicofEgypt\nTel:+2 02 25032000\nFax:+20225032020\nwww.emaarmisr.com",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,152 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n|                                            | 2.4.3.1.3.                                 | 2.4.3.1.3.                                   | Plant Opcrators and Drivcrs:                 | 28   |\n|--------------------------------------------|--------------------------------------------|----------------------------------------------|----------------------------------------------|------|\n|                                            | 2.4.3.1.4.                                 | 2.4.3.1.4.                                   | Opcratives/Workcrs:                          | 28   |\n|                                            | 2.4.3.2.                                   | 2.4.3.2.                                     | 'I'raining:....                              | 28   |\n|                                            | 2.4.3.2.1.                                 | 2.4.3.2.1.                                   | Site Induction and 'T'raining:               | 28   |\n|                                            | 2.4.3.2.2.                                 | 2.4.3.2.2.                                   | Induction:.                                  | .28  |\n|                                            | 2.4.3.2.3.                                 | 2.4.3.2.3.                                   | HSE Leadership Training:...                  | 29   |\n|                                            | 2.4.3.2.4.                                 | 2.4.3.2.4.                                   | Specialized Training:..                      | 29   |\n|                                            | 2.4.3.2.5.                                 | 2.4.3.2.5.                                   | Tool Box Talks:.                             | 30   |\n|                                            | 2.4.3.2.6.                                 | 2.4.3.2.6.                                   | Training Records:                            | 30   |\n|                                            | 2.4.3.3.                                   | 2.4.3.3.                                     | Behaviors:.                                  | 30   |\n|                                            | 2.4.3.4.                                   | 2.4.3.4.                                     | Health and Wellness:                         | 31   |\n|                                            | 2.4.3.4.1.                                 | 2.4.3.4.1.                                   | Heaith Surveillance:.                        | 32   |\n|                                            | 2.4.3.4.2.                                 | 2.4.3.4.2.                                   | Medical and FirstAid Provision:              | .32  |\n|                                            | 2.4.3.4.3.                                 | 2.4.3.4.3.                                   | Alcohol & Drugs: ...                         | 33   |\n|                                            | 2.4.3.4.4.                                 | 2.4.3.4.4.                                   | Working in the Heat:                         | 33   |\n|                                            | 2.4.3.5.                                   | 2.4.3.5.                                     | Welfare:.                                    | .33  |\n|                                            |                                            |                                              | 2.4.3.5.1. Welfare at Worksites:             | 33   |\n|                                            | 2.4.4.                                     | 2.4.4.                                       | Working Environment..                        | 35   |\n|                                            | 2.4.4.1.                                   | 2.4.4.1.                                     | Physical Sites and Work Areas:               | 35   |\n|                                            | 2.4.4.2.                                   | 2.4.4.2.                                     | Plant & Vehicles:.                           | ..35 |\n|                                            | 2.4.4.3.                                   | 2.4.4.3.                                     | Machinery, Tools & Equipment: .              | 36   |\n| 3. Site Standards for Operational Control. | 3. Site Standards for Operational Control. | 3. Site Standards for Operational Control.   | 3. Site Standards for Operational Control.   | .36  |\n| 3.1.                                       | 3.1.                                       | Construction Planning and Design Management. | Construction Planning and Design Management. | .36  |\n| 3.2.                                       | 3.2.                                       | Temporary Works                              | Temporary Works                              | .37  |\n| 3.3.                                       | 3.3.                                       | Fire....                                     | Fire....                                     | .37  |\n| 3.4.                                       | 3.4.                                       | Compressed Gas Cylinders                     | Compressed Gas Cylinders                     | 40   |\n| 3.5.                                       | 3.5.                                       | Welding.....                                 | Welding.....                                 | 40   |\n| 3.6.                                       | 3.6.                                       | Electricity....                              | Electricity....                              | 41   |\n| 3.7.                                       | 3.7.                                       | Underground Services                         | Underground Services                         | .42  |\n| 3.8.                                       | 3.8.                                       | Overhead Power Lines.                        | Overhead Power Lines.                        | 43   |\n| 3.9.                                       | 3.9.                                       | Excavations.                                 | Excavations.                                 | 44   |\n| 3.10.                                      | 3.10.                                      | Confined Spaces...                           | Confined Spaces...                           | 45   |\n| 3.11.                                      | 3.11.                                      | Demolition                                   | Demolition                                   |      |\n\nTheinformation contained in these documents iscon the priorwritten consent ofEmaarMisrS.A.E.\n\nhaemf,pReeged Dovetoplnuni SAL Tux Can718-287.20G CR12841 2C Box-229, Mcuw2l Caln, xipt\n\n<!-- image -->\n\nesed,published\n\n## EMAAR\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.0912068684896,
+          731.1522115071615
+        ],
+        [
+          341.1680501302083,
+          731.1522115071615
+        ],
+        [
+          341.1680501302083,
+          700.8827209472656
+        ],
+        [
+          190.0912068684896,
+          700.8827209472656
+        ]
+      ],
+      "page": 394
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          701.297373453776
+        ],
+        [
+          217.4842529296875,
+          701.297373453776
+        ],
+        [
+          217.4842529296875,
+          687.1992594401041
+        ],
+        [
+          75.12337748209636,
+          687.1992594401041
+        ]
+      ],
+      "page": 394
+    },
+    {
+      "text": "Theinformation contained in these documents iscon the priorwritten consent ofEmaarMisrS.A.E.",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.63310241699219,
+          102.95664469401038
+        ],
+        [
+          253.5932820638021,
+          102.95664469401038
+        ],
+        [
+          253.5932820638021,
+          83.05348714192712
+        ],
+        [
+          72.63310241699219,
+          83.05348714192712
+        ]
+      ],
+      "page": 394
+    },
+    {
+      "text": "haemf,pReeged Dovetoplnuni SAL Tux Can718-287.20G CR12841 2C Box-229, Mcuw2l Caln, xipt",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.95255533854166,
+          103.78599039713538
+        ],
+        [
+          315.85024007161456,
+          103.78599039713538
+        ],
+        [
+          315.85024007161456,
+          56.51580810546875
+        ],
+        [
+          246.95255533854166,
+          56.51580810546875
+        ]
+      ],
+      "page": 394
+    },
+    {
+      "text": "esed,published",
+      "confidence": 0.95,
+      "box": [
+        [
+          361.5053304036458,
+          100.46877034505212
+        ],
+        [
+          423.7622477213542,
+          100.46877034505212
+        ],
+        [
+          423.7622477213542,
+          91.76108805338538
+        ],
+        [
+          361.5053304036458,
+          91.76108805338538
+        ]
+      ],
+      "page": 394
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          737.3719685872396
+        ],
+        [
+          511.3370361328125,
+          737.3719685872396
+        ],
+        [
+          511.3370361328125,
+          722.4445495605469
+        ],
+        [
+          452.8155110677083,
+          722.4445495605469
+        ]
+      ],
+      "page": 394
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 394,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\nTheinformation contained in these documents iscon the priorwritten consent ofEmaarMisrS.A.E.\nhaemf,pReeged Dovetoplnuni SAL Tux Can718-287.20G CR12841 2C Box-229, Mcuw2l Caln, xipt\nesed,published\nEMAAR",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

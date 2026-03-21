@@ -1,0 +1,612 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- Emergency plans are to provide the arrangements and action to take in the event of a fire.\n- Adequate firefighting equipment approved by Civil Defense shall be provided and checked in accordance with their requirements.\n- Fire escape routes, exits and assembly areas will be provided for all enclosed temporary structures and permanent structures under construction.All such areas will be kept free from obstructions at all times. Wherever possible in permanent structures under construction the fire escape routes, exits and assembly areas used will be those designed for use in the occupied structure.\n- Temporary fire protection equipment for the worksite will be provided for the duration of the contract. Such equipment will be inspected and maintained in a serviceable condition and will include but is not limited to:\n- oPortable fire extinguishers\n- Fire sand buckets\n- Fire water storage and distribution systems (tanks, pumps, hoses etc.)\n- Fire/smoke/gasdetectionsystems\n- Firewarning/alarm/emergency evacuation systems\n- Emergency telephones/radios\n- Emergency lighting\n- Adequate and safe emergency exits\n- Warning signs andnotices\n- Assembly points\n- Portablefireextinguishers are tobeprovided as aminimum at thefollowinglocations:\n- Inside offices and stores\n- Inside accommodation units, kitchens, dining rooms etc.\n- At every electricalgenerator,transformer andmaindistribution panel\n- Inside or close to every piece of mobile plant and equipment\n- All locationswhereflammablematerialsarein use or beingstored\n- Where hot works is being carried out\n- At designated smoking areas\n- flammable or combustible materials. Smoking areas will be cleaned on a daily basis and a suitable means of extinguishing cigarettes is to be provided. Smoking out with any of these Designated Smoking Areas is strictly prohibited.\n\n<!-- image -->\n\n## EMAAR\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.0912068684896,
+          729.0789591471354
+        ],
+        [
+          340.33795166015625,
+          729.0789591471354
+        ],
+        [
+          340.33795166015625,
+          697.9801737467448
+        ],
+        [
+          190.0912068684896,
+          697.9801737467448
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          698.3948262532552
+        ],
+        [
+          216.2391153971354,
+          698.3948262532552
+        ],
+        [
+          216.2391153971354,
+          684.2967020670573
+        ],
+        [
+          75.12337748209636,
+          684.2967020670573
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Emergency plans are to provide the arrangements and action to take in the event of a fire.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          672.2718404134115
+        ],
+        [
+          454.0606282552083,
+          672.2718404134115
+        ],
+        [
+          454.0606282552083,
+          659.4176737467448
+        ],
+        [
+          90.06504313151042,
+          659.4176737467448
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Adequate firefighting equipment approved by Civil Defense shall be provided and checked in accordance with their requirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          654.0272115071615
+        ],
+        [
+          495.9803059895833,
+          654.0272115071615
+        ],
+        [
+          495.9803059895833,
+          628.7335408528646
+        ],
+        [
+          91.3101806640625,
+          628.7335408528646
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Fire escape routes, exits and assembly areas will be provided for all enclosed temporary structures and permanent structures under construction.All such areas will be kept free from obstructions at all times. Wherever possible in permanent structures under construction the fire escape routes, exits and assembly areas used will be those designed for use in the occupied structure.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          623.3430786132812
+        ],
+        [
+          496.3953857421875,
+          623.3430786132812
+        ],
+        [
+          496.3953857421875,
+          571.9264119466146
+        ],
+        [
+          90.48009236653645,
+          571.9264119466146
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Temporary fire protection equipment for the worksite will be provided for the duration of the contract. Such equipment will be inspected and maintained in a serviceable condition and will include but is not limited to:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          567.3652547200521
+        ],
+        [
+          495.1502278645833,
+          567.3652547200521
+        ],
+        [
+          495.1502278645833,
+          530.0467122395833
+        ],
+        [
+          90.48009236653645,
+          530.0467122395833
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "oPortable fire extinguishers",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          522.9976603190105
+        ],
+        [
+          215.40901692708334,
+          522.9976603190105
+        ],
+        [
+          215.40901692708334,
+          510.5581461588542
+        ],
+        [
+          95.0456034342448,
+          510.5581461588542
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Fire sand buckets",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          504.33837890625
+        ],
+        [
+          179.30000813802084,
+          504.33837890625
+        ],
+        [
+          179.30000813802084,
+          493.142822265625
+        ],
+        [
+          95.87569173177083,
+          493.142822265625
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Fire water storage and distribution systems (tanks, pumps, hoses etc.)",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.78101603190105,
+          486.9230550130208
+        ],
+        [
+          390.1435139973958,
+          486.9230550130208
+        ],
+        [
+          390.1435139973958,
+          472.82493082682294
+        ],
+        [
+          98.78101603190105,
+          472.82493082682294
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Fire/smoke/gasdetectionsystems",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.53587849934895,
+          468.26377360026044
+        ],
+        [
+          244.0472208658854,
+          468.26377360026044
+        ],
+        [
+          244.0472208658854,
+          455.82427978515625
+        ],
+        [
+          97.53587849934895,
+          455.82427978515625
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Firewarning/alarm/emergency evacuation systems",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.34652709960938,
+          450.01914469401044
+        ],
+        [
+          315.0201416015625,
+          450.01914469401044
+        ],
+        [
+          315.0201416015625,
+          436.75034586588544
+        ],
+        [
+          103.34652709960938,
+          436.75034586588544
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Emergency telephones/radios",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.25185139973958,
+          431.77455647786456
+        ],
+        [
+          227.86041259765625,
+          431.77455647786456
+        ],
+        [
+          227.86041259765625,
+          418.50571695963544
+        ],
+        [
+          106.25185139973958,
+          418.50571695963544
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Emergency lighting",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.83680216471355,
+          413.94455973307294
+        ],
+        [
+          188.4310099283854,
+          413.94455973307294
+        ],
+        [
+          188.4310099283854,
+          400.26108805338544
+        ],
+        [
+          105.83680216471355,
+          400.26108805338544
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Adequate and safe emergency exits",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.0067138671875,
+          395.28529866536456
+        ],
+        [
+          251.93310546875,
+          395.28529866536456
+        ],
+        [
+          251.93310546875,
+          382.43113199869794
+        ],
+        [
+          105.0067138671875,
+          382.43113199869794
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Warning signs andnotices",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.17661539713542,
+          376.21136474609375
+        ],
+        [
+          215.40901692708334,
+          376.21136474609375
+        ],
+        [
+          215.40901692708334,
+          365.01580810546875
+        ],
+        [
+          104.17661539713542,
+          365.01580810546875
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Assembly points",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          358.79604085286456
+        ],
+        [
+          175.5645751953125,
+          358.79604085286456
+        ],
+        [
+          175.5645751953125,
+          346.35654703776044
+        ],
+        [
+          94.2155049641927,
+          346.35654703776044
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Portablefireextinguishers are tobeprovided as aminimum at thefollowinglocations:",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          335.57562255859375
+        ],
+        [
+          442.0242919921875,
+          335.57562255859375
+        ],
+        [
+          442.0242919921875,
+          323.55076090494794
+        ],
+        [
+          88.4048563639323,
+          323.55076090494794
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Inside offices and stores",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          317.33099365234375
+        ],
+        [
+          205.86295572916666,
+          317.33099365234375
+        ],
+        [
+          205.86295572916666,
+          305.3061319986979
+        ],
+        [
+          94.2155049641927,
+          305.3061319986979
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Inside accommodation units, kitchens, dining rooms etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.34652709960938,
+          299.50103759765625
+        ],
+        [
+          336.1875,
+          299.50103759765625
+        ],
+        [
+          336.1875,
+          285.40289306640625
+        ],
+        [
+          103.34652709960938,
+          285.40289306640625
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "At every electricalgenerator,transformer andmaindistribution panel",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          280.0124308268229
+        ],
+        [
+          389.7284749348958,
+          280.0124308268229
+        ],
+        [
+          389.7284749348958,
+          268.4022420247396
+        ],
+        [
+          93.8004659016927,
+          268.4022420247396
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Inside or close to every piece of mobile plant and equipment",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.34652709960938,
+          262.59710693359375
+        ],
+        [
+          354.0345052083333,
+          262.59710693359375
+        ],
+        [
+          354.0345052083333,
+          248.91367594401038
+        ],
+        [
+          103.34652709960938,
+          248.91367594401038
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "All locationswhereflammablematerialsarein use or beingstored",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.76157633463542,
+          243.93784586588538
+        ],
+        [
+          377.277099609375,
+          243.93784586588538
+        ],
+        [
+          377.277099609375,
+          231.91298421223962
+        ],
+        [
+          103.76157633463542,
+          231.91298421223962
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "Where hot works is being carried out",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.76157633463542,
+          225.69321695963538
+        ],
+        [
+          257.74375406901044,
+          225.69321695963538
+        ],
+        [
+          257.74375406901044,
+          214.08302815755212
+        ],
+        [
+          103.76157633463542,
+          214.08302815755212
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "At designated smoking areas",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          206.61932373046875
+        ],
+        [
+          223.2949015299479,
+          206.61932373046875
+        ],
+        [
+          223.2949015299479,
+          195.42372639973962
+        ],
+        [
+          96.29074096679688,
+          195.42372639973962
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "flammable or combustible materials. Smoking areas will be cleaned on a daily basis and a suitable means of extinguishing cigarettes is to be provided. Smoking out with any of these Designated Smoking Areas is strictly prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          171.78867594401038
+        ],
+        [
+          494.3201497395833,
+          171.78867594401038
+        ],
+        [
+          494.3201497395833,
+          134.05544026692712
+        ],
+        [
+          87.9898173014323,
+          134.05544026692712
+        ]
+      ],
+      "page": 428
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          734.0547688802084
+        ],
+        [
+          510.9219970703125,
+          734.0547688802084
+        ],
+        [
+          510.9219970703125,
+          719.1273498535156
+        ],
+        [
+          452.8155110677083,
+          719.1273498535156
+        ]
+      ],
+      "page": 428
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 428,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nEmergency plans are to provide the arrangements and action to take in the event of a fire.\nAdequate firefighting equipment approved by Civil Defense shall be provided and checked in accordance with their requirements.\nFire escape routes, exits and assembly areas will be provided for all enclosed temporary structures and permanent structures under construction.All such areas will be kept free from obstructions at all times. Wherever possible in permanent structures under construction the fire escape routes, exits and assembly areas used will be those designed for use in the occupied structure.\nTemporary fire protection equipment for the worksite will be provided for the duration of the contract. Such equipment will be inspected and maintained in a serviceable condition and will include but is not limited to:\noPortable fire extinguishers\nFire sand buckets\nFire water storage and distribution systems (tanks, pumps, hoses etc.)\nFire/smoke/gasdetectionsystems\nFirewarning/alarm/emergency evacuation systems\nEmergency telephones/radios\nEmergency lighting\nAdequate and safe emergency exits\nWarning signs andnotices\nAssembly points\nPortablefireextinguishers are tobeprovided as aminimum at thefollowinglocations:\nInside offices and stores\nInside accommodation units, kitchens, dining rooms etc.\nAt every electricalgenerator,transformer andmaindistribution panel\nInside or close to every piece of mobile plant and equipment\nAll locationswhereflammablematerialsarein use or beingstored\nWhere hot works is being carried out\nAt designated smoking areas\nflammable or combustible materials. Smoking areas will be cleaned on a daily basis and a suitable means of extinguishing cigarettes is to be provided. Smoking out with any of these Designated Smoking Areas is strictly prohibited.\nEMAAR",
+      "line_count": 26
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

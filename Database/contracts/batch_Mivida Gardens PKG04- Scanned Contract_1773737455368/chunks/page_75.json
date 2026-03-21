@@ -1,0 +1,313 @@
+{
+  "text": "## 19. TIMEFORCOMPLETIONANDLIQUIDATEDDAMAGES\n\n## TimeforCompletion\n\n- 19.1 TheContractoracknowledges that time isof theessence.The Contractor shall completethewholeoftheWorksandeachSectionandPortionofthe Workswithinthe applicableTimeforCompletioninaccordancewith the provisionsofClause 20.1(Taking Over Certificate).Provided that in the circumstances setout inClause 19.2(Extensions of Time) theEmployer shallextendanysuchTimeforCompletioninaccordancewiththe provisionsofthatClause.\n\n## ExtensionsofTime\n\n- 19.2 2AfterdueconsultationwiththeProject Manager,theSupervisionConsultant and the Contractor the Employer shall grant and notify to the Contractor, the Project Manager and theSupervisionConsultant such extension,if any,of theTimeforCompletionofthewholeoftheWorksorofanySectionor Portionof theWorks asmayin his opinionbereasonable in respectof such partofanydelayincompleting thewholeof theWorksoranysuchSection or Portion of the Works as is caused solely by any of the following events or circumstances, namely:-\n- (a) anyvariationof theWorksmadepursuanttoaVariationOrder issuedunderClause22.1(VariationOrders)but inevaluating the reasonablenessoftheperiodofanyextensionrequiredasaresultof anysuchvariationaccountshallbetakenofanyothervariation which hascaused a decreaseintheWorksorhasotherwisereduced thetimetheContractorshouldreasonablyneedforcompletion thereof; or\n- (b) anySuspensionOrderunderClause18.1(SuspensionOrder) inclusiveofClause18.1;or\n- (c) anyof the exceptedrisks as defined in Clause12.5(RiskandCare); or\n- (d) anyothereventor circumstance(nototherwiseprovided forinthe Contract） for which the Employer，the Project Manager,the SupervisionConsultantorsomeothercontractoremployedbythe Employer is responsible,for which the Contractor is not directly or indirectlyresponsible,andwhichshouldnothavebeenforeseenand preventedbytheContractorandwhichisbeyond thereasonable controloftheContractor.\n\n## Provided that\n\n- (1) theContractorshall notunder any circumstancesbeentitled toany suchextensionof theTimeforCompletionofthewholeoftheWorks orofanySectionorPortionoftheWorksandtheEmployershallbe dischargedfromanyand alliabilityinconnectiontherewithunlessas\n\n<!-- image -->\n\n有限办任\n\nFIRST EDITION 2006 1E",
+  "results": [
+    {
+      "text": "19. TIMEFORCOMPLETIONANDLIQUIDATEDDAMAGES",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          726.2902018229166
+        ],
+        [
+          384.7679850260417,
+          726.2902018229166
+        ],
+        [
+          384.7679850260417,
+          715.2602945963541
+        ],
+        [
+          96.40340169270833,
+          715.2602945963541
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "TimeforCompletion",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          704.2303975423177
+        ],
+        [
+          187.73295084635416,
+          704.2303975423177
+        ],
+        [
+          187.73295084635416,
+          691.9278055826823
+        ],
+        [
+          96.40340169270833,
+          691.9278055826823
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "19.1 TheContractoracknowledges that time isof theessence.The Contractor shall completethewholeoftheWorksandeachSectionandPortionofthe Workswithinthe applicableTimeforCompletioninaccordancewith the provisionsofClause 20.1(Taking Over Certificate).Provided that in the circumstances setout inClause 19.2(Extensions of Time) theEmployer shallextendanysuchTimeforCompletioninaccordancewiththe provisionsofthatClause.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          680.8978983561198
+        ],
+        [
+          487.9365234375,
+          680.8978983561198
+        ],
+        [
+          487.9365234375,
+          600.7189737955729
+        ],
+        [
+          127.69223022460938,
+          600.7189737955729
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "ExtensionsofTime",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          590.5375162760416
+        ],
+        [
+          182.6590779622396,
+          590.5375162760416
+        ],
+        [
+          182.6590779622396,
+          578.2349243164062
+        ],
+        [
+          95.55775960286458,
+          578.2349243164062
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "19.2 2AfterdueconsultationwiththeProject Manager,theSupervisionConsultant and the Contractor the Employer shall grant and notify to the Contractor, the Project Manager and theSupervisionConsultant such extension,if any,of theTimeforCompletionofthewholeoftheWorksorofanySectionor Portionof theWorks asmayin his opinionbereasonable in respectof such partofanydelayincompleting thewholeof theWorksoranysuchSection or Portion of the Works as is caused solely by any of the following events or circumstances, namely:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          567.2050170898438
+        ],
+        [
+          487.9365234375,
+          567.2050170898438
+        ],
+        [
+          487.9365234375,
+          475.14772542317706
+        ],
+        [
+          127.2694091796875,
+          475.14772542317706
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "(a) anyvariationof theWorksmadepursuanttoaVariationOrder issuedunderClause22.1(VariationOrders)but inevaluating the reasonablenessoftheperiodofanyextensionrequiredasaresultof anysuchvariationaccountshallbetakenofanyothervariation which hascaused a decreaseintheWorksorhasotherwisereduced thetimetheContractorshouldreasonablyneedforcompletion thereof; or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          464.54205322265625
+        ],
+        [
+          487.5137125651042,
+          464.54205322265625
+        ],
+        [
+          487.5137125651042,
+          384.78733317057294
+        ],
+        [
+          156.44412231445312,
+          384.78733317057294
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "(b) anySuspensionOrderunderClause18.1(SuspensionOrder) inclusiveofClause18.1;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          373.75742594401044
+        ],
+        [
+          486.2452392578125,
+          373.75742594401044
+        ],
+        [
+          486.2452392578125,
+          338.97080485026044
+        ],
+        [
+          156.866943359375,
+          338.97080485026044
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "(c) anyof the exceptedrisks as defined in Clause12.5(RiskandCare); or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          328.78936767578125
+        ],
+        [
+          485.8224283854167,
+          328.78936767578125
+        ],
+        [
+          485.8224283854167,
+          305.8810831705729
+        ],
+        [
+          156.02130126953125,
+          305.8810831705729
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "(d) anyothereventor circumstance(nototherwiseprovided forinthe Contract） for which the Employer，the Project Manager,the SupervisionConsultantorsomeothercontractoremployedbythe Employer is responsible,for which the Contractor is not directly or indirectlyresponsible,andwhichshouldnothavebeenforeseenand preventedbytheContractorandwhichisbeyond thereasonable controloftheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          294.00274658203125
+        ],
+        [
+          485.8224283854167,
+          294.00274658203125
+        ],
+        [
+          485.8224283854167,
+          214.67226155598962
+        ],
+        [
+          156.44412231445312,
+          214.67226155598962
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "Provided that",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          204.49078369140625
+        ],
+        [
+          216.90767415364584,
+          204.49078369140625
+        ],
+        [
+          216.90767415364584,
+          192.18821207682288
+        ],
+        [
+          155.1756591796875,
+          192.18821207682288
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "theContractorshall notunder any circumstancesbeentitled toany suchextensionof theTimeforCompletionofthewholeoftheWorks orofanySectionorPortionoftheWorksandtheEmployershallbe dischargedfromanyand alliabilityinconnectiontherewithunlessas",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          181.58253987630212
+        ],
+        [
+          485.8224283854167,
+          181.58253987630212
+        ],
+        [
+          485.8224283854167,
+          134.49330647786462
+        ],
+        [
+          155.1756591796875,
+          134.49330647786462
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "有限办任",
+      "confidence": 0.95,
+      "box": [
+        [
+          479.4801025390625,
+          111.16078694661462
+        ],
+        [
+          523.8764241536459,
+          111.16078694661462
+        ],
+        [
+          523.8764241536459,
+          103.10048421223962
+        ],
+        [
+          479.4801025390625,
+          103.10048421223962
+        ]
+      ],
+      "page": 75
+    },
+    {
+      "text": "FIRST EDITION 2006 1E",
+      "confidence": 0.95,
+      "box": [
+        [
+          411.8285725911458,
+          98.85821533203125
+        ],
+        [
+          526.8361409505209,
+          98.85821533203125
+        ],
+        [
+          526.8361409505209,
+          84.85870361328125
+        ],
+        [
+          411.8285725911458,
+          84.85870361328125
+        ]
+      ],
+      "page": 75
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 75,
+      "text": "19. TIMEFORCOMPLETIONANDLIQUIDATEDDAMAGES\nTimeforCompletion\n19.1 TheContractoracknowledges that time isof theessence.The Contractor shall completethewholeoftheWorksandeachSectionandPortionofthe Workswithinthe applicableTimeforCompletioninaccordancewith the provisionsofClause 20.1(Taking Over Certificate).Provided that in the circumstances setout inClause 19.2(Extensions of Time) theEmployer shallextendanysuchTimeforCompletioninaccordancewiththe provisionsofthatClause.\nExtensionsofTime\n19.2 2AfterdueconsultationwiththeProject Manager,theSupervisionConsultant and the Contractor the Employer shall grant and notify to the Contractor, the Project Manager and theSupervisionConsultant such extension,if any,of theTimeforCompletionofthewholeoftheWorksorofanySectionor Portionof theWorks asmayin his opinionbereasonable in respectof such partofanydelayincompleting thewholeof theWorksoranysuchSection or Portion of the Works as is caused solely by any of the following events or circumstances, namely:-\n(a) anyvariationof theWorksmadepursuanttoaVariationOrder issuedunderClause22.1(VariationOrders)but inevaluating the reasonablenessoftheperiodofanyextensionrequiredasaresultof anysuchvariationaccountshallbetakenofanyothervariation which hascaused a decreaseintheWorksorhasotherwisereduced thetimetheContractorshouldreasonablyneedforcompletion thereof; or\n(b) anySuspensionOrderunderClause18.1(SuspensionOrder) inclusiveofClause18.1;or\n(c) anyof the exceptedrisks as defined in Clause12.5(RiskandCare); or\n(d) anyothereventor circumstance(nototherwiseprovided forinthe Contract） for which the Employer，the Project Manager,the SupervisionConsultantorsomeothercontractoremployedbythe Employer is responsible,for which the Contractor is not directly or indirectlyresponsible,andwhichshouldnothavebeenforeseenand preventedbytheContractorandwhichisbeyond thereasonable controloftheContractor.\nProvided that\ntheContractorshall notunder any circumstancesbeentitled toany suchextensionof theTimeforCompletionofthewholeoftheWorks orofanySectionorPortionoftheWorksandtheEmployershallbe dischargedfromanyand alliabilityinconnectiontherewithunlessas\n有限办任\nFIRST EDITION 2006 1E",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,267 @@
+{
+  "text": "Force Majeuremayincludebutis not limited to,exceptionalevents or circumstances of thekind listed below,provided that conditions (a)to(d) abovearesatisfied:\n\n- (i) (insofarastheydirectlyinterferewiththeprogressoftheWorksand relateto and directly affectthe Country)war,or(unlessitis solely restrictedtoemployeesoftheContractororofitsSubcontractors disorder in the Country;or\n- (ii) jonisingradiationorcontaminationbyradio-activityfrom anynuclear fuelorfromanynuclearwastefromthecombustionofnuclearfuel, radio-activetoxicexplosivesorotherhazardouspropertiesofany explosivenuclearassemblyornuclearcomponentsthereof.\n\n## NoticeofForceMajeure\n\n- 29.3If a party is or will be prevented from performing any of its obligations under the Contract by Force Majeure, then it shall give notice to the other party of theexceptionaleventorcircumstanceconstituting theForceMajeureand shallspecify the obligations，theperformance ofwhichis or will be prevented. The notice shall be given within fourteen (14) days after the party became aware，or should have become aware,of the relevant exceptionaleventorcircumstanceconstitutingForceMajeure.\n\n## EffectofForceMajeure\n\n- 29.4Neitherpartyshallbeconsidered tobeindefaultor inbreachof its obligationsundertheContracttotheextentthatperformanceofsuch constitutingForceMajeurewhicharisesafter thedateoftheContract providedthatithasgivennoticetotheotherpartyinaccordancewith Clause29.3(NoticeofForceMajeure).\n\n## Duty to MinimiseDelay\n\n- 29.5TheContractorshall atall timesuseallreasonableendeavourstoprevent constitutingForceMajeure,tominimise anysuchdelayasmaybecaused theProject Managerand theSupervisionConsultant,toproceedwith the Works.\n\n## ForceMajeureaffectingSubcontractor\n\n- IfanySubcontractoriscntitledunderanycontractoragreementrelatingto theWorkstorelieffromforcemajeureontermsadditional toorbroader than those specified inClauses29.1(Frustration),Clause 29.2(Definition of Majeure),29.5(DutytoMinimiseDelay),29.7(TerminationinConsequence of Force Majeure), 29.8 (Payment on Frustration or Force Majeure) and 29.9(DefinitionofWar),suchadditional orbroaderforcemajeureeventsor\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Force Majeuremayincludebutis not limited to,exceptionalevents or circumstances of thekind listed below,provided that conditions (a)to(d) abovearesatisfied:",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          722.8963928222656
+        ],
+        [
+          487.0909016927083,
+          722.8963928222656
+        ],
+        [
+          487.0909016927083,
+          690.2308959960938
+        ],
+        [
+          157.71259562174478,
+          690.2308959960938
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "(i) (insofarastheydirectlyinterferewiththeprogressoftheWorksand relateto and directly affectthe Country)war,or(unlessitis solely restrictedtoemployeesoftheContractororofitsSubcontractors disorder in the Country;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          677.0798543294271
+        ],
+        [
+          487.5137125651042,
+          677.0798543294271
+        ],
+        [
+          487.5137125651042,
+          620.6576334635416
+        ],
+        [
+          158.13541666666666,
+          620.6576334635416
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "(ii) jonisingradiationorcontaminationbyradio-activityfrom anynuclear fuelorfromanynuclearwastefromthecombustionofnuclearfuel, radio-activetoxicexplosivesorotherhazardouspropertiesofany explosivenuclearassemblyornuclearcomponentsthereof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          609.6277465820312
+        ],
+        [
+          487.5137125651042,
+          609.6277465820312
+        ],
+        [
+          487.5137125651042,
+          564.65966796875
+        ],
+        [
+          158.55823771158853,
+          564.65966796875
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "NoticeofForceMajeure",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          551.932840983073
+        ],
+        [
+          204.64583333333334,
+          551.932840983073
+        ],
+        [
+          204.64583333333334,
+          540.9029337565105
+        ],
+        [
+          96.82623291015625,
+          540.9029337565105
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "29.3If a party is or will be prevented from performing any of its obligations under the Contract by Force Majeure, then it shall give notice to the other party of theexceptionaleventorcircumstanceconstituting theForceMajeureand shallspecify the obligations，theperformance ofwhichis or will be prevented. The notice shall be given within fourteen (14) days after the party became aware，or should have become aware,of the relevant exceptionaleventorcircumstanceconstitutingForceMajeure.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          529.873026529948
+        ],
+        [
+          488.7821858723958,
+          529.873026529948
+        ],
+        [
+          488.7821858723958,
+          450.96677652994794
+        ],
+        [
+          126.42376708984375,
+          450.96677652994794
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "EffectofForceMajeure",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          438.23996988932294
+        ],
+        [
+          202.10888671875,
+          438.23996988932294
+        ],
+        [
+          202.10888671875,
+          427.21006266276044
+        ],
+        [
+          97.671875,
+          427.21006266276044
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "29.4Neitherpartyshallbeconsidered tobeindefaultor inbreachof its obligationsundertheContracttotheextentthatperformanceofsuch constitutingForceMajeurewhicharisesafter thedateoftheContract providedthatithasgivennoticetotheotherpartyinaccordancewith Clause29.3(NoticeofForceMajeure).",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          416.60439046223956
+        ],
+        [
+          488.7821858723958,
+          416.60439046223956
+        ],
+        [
+          488.7821858723958,
+          348.30381266276044
+        ],
+        [
+          126.84658813476562,
+          348.30381266276044
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "Duty to MinimiseDelay",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          336.84967041015625
+        ],
+        [
+          200.4176025390625,
+          336.84967041015625
+        ],
+        [
+          200.4176025390625,
+          324.5470987955729
+        ],
+        [
+          97.24905395507812,
+          324.5470987955729
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "29.5TheContractorshall atall timesuseallreasonableendeavourstoprevent constitutingForceMajeure,tominimise anysuchdelayasmaybecaused theProject Managerand theSupervisionConsultant,toproceedwith the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          313.9414265950521
+        ],
+        [
+          488.7821858723958,
+          313.9414265950521
+        ],
+        [
+          488.7821858723958,
+          245.64084879557288
+        ],
+        [
+          127.2694091796875,
+          245.64084879557288
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "ForceMajeureaffectingSubcontractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          234.61094156901038
+        ],
+        [
+          270.1832275390625,
+          234.61094156901038
+        ],
+        [
+          270.1832275390625,
+          223.58103434244788
+        ],
+        [
+          96.82623291015625,
+          223.58103434244788
+        ]
+      ],
+      "page": 104
+    },
+    {
+      "text": "IfanySubcontractoriscntitledunderanycontractoragreementrelatingto theWorkstorelieffromforcemajeureontermsadditional toorbroader than those specified inClauses29.1(Frustration),Clause 29.2(Definition of Majeure),29.5(DutytoMinimiseDelay),29.7(TerminationinConsequence of Force Majeure), 29.8 (Payment on Frustration or Force Majeure) and 29.9(DefinitionofWar),suchadditional orbroaderforcemajeureeventsor",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          212.12689208984375
+        ],
+        [
+          489.6278483072917,
+          212.12689208984375
+        ],
+        [
+          489.6278483072917,
+          134.06907145182288
+        ],
+        [
+          157.28976440429688,
+          134.06907145182288
+        ]
+      ],
+      "page": 104
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 104,
+      "text": "Force Majeuremayincludebutis not limited to,exceptionalevents or circumstances of thekind listed below,provided that conditions (a)to(d) abovearesatisfied:\n(i) (insofarastheydirectlyinterferewiththeprogressoftheWorksand relateto and directly affectthe Country)war,or(unlessitis solely restrictedtoemployeesoftheContractororofitsSubcontractors disorder in the Country;or\n(ii) jonisingradiationorcontaminationbyradio-activityfrom anynuclear fuelorfromanynuclearwastefromthecombustionofnuclearfuel, radio-activetoxicexplosivesorotherhazardouspropertiesofany explosivenuclearassemblyornuclearcomponentsthereof.\nNoticeofForceMajeure\n29.3If a party is or will be prevented from performing any of its obligations under the Contract by Force Majeure, then it shall give notice to the other party of theexceptionaleventorcircumstanceconstituting theForceMajeureand shallspecify the obligations，theperformance ofwhichis or will be prevented. The notice shall be given within fourteen (14) days after the party became aware，or should have become aware,of the relevant exceptionaleventorcircumstanceconstitutingForceMajeure.\nEffectofForceMajeure\n29.4Neitherpartyshallbeconsidered tobeindefaultor inbreachof its obligationsundertheContracttotheextentthatperformanceofsuch constitutingForceMajeurewhicharisesafter thedateoftheContract providedthatithasgivennoticetotheotherpartyinaccordancewith Clause29.3(NoticeofForceMajeure).\nDuty to MinimiseDelay\n29.5TheContractorshall atall timesuseallreasonableendeavourstoprevent constitutingForceMajeure,tominimise anysuchdelayasmaybecaused theProject Managerand theSupervisionConsultant,toproceedwith the Works.\nForceMajeureaffectingSubcontractor\nIfanySubcontractoriscntitledunderanycontractoragreementrelatingto theWorkstorelieffromforcemajeureontermsadditional toorbroader than those specified inClauses29.1(Frustration),Clause 29.2(Definition of Majeure),29.5(DutytoMinimiseDelay),29.7(TerminationinConsequence of Force Majeure), 29.8 (Payment on Frustration or Force Majeure) and 29.9(DefinitionofWar),suchadditional orbroaderforcemajeureeventsor",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

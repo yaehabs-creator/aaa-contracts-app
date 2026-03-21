@@ -1,0 +1,428 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n<!-- image -->\n\n- MaxDeductible.\n\n## Section 1:Material Damage\n\n- flood, water damage, earthquake, subsidence and collapse, testing andcommissioning,defectivematerialsworkmanship design plan or specification and during the MaintenancePeriod EGP100,000eachandeveryotherloss.\n\n## Section 2:ThirdParty liability\n\n- EGP 25,000 each and every other loss for Property Damage only.\n\n## 12.10 Inherent Defecls\n\nAt the beginning of the Sub-Clause add \"Without prejudice to any provisionofanywarrantyrequired under theContract,\"replace\"The\"with \"the\".\n\n## 17. COMMENCEMENTANDPROGRESS\n\n## 17.1 Commencement\n\nDelete this Sub-Clause entirely and substitute by the following:\n\nTheContractorshallcommcnce theWorksnotlaterthanseven(7)days after the Commencement Date and thereafter shall proceed with the same withdueexpeditionandwithoutdelay，CommencementofSectionor Portionof theWorksmust beinaccordancewiththeconstruction schedulemilestoncs andphasesofworkinaccordancewithAppendixD.\n\n## 17.3 Programme\n\nRename the existing paragraph as (a), and amend as follows:\n\nIn paragraph (a) of this Sub-Clause; the period referred to in Conditions of Contract is twenty-eight (28) days following the Efective Date. This defined period supersedes the stipulated period in the Gcncral requirements.\n\n## Add the following paraqraphs(b) &amp;(o):\n\n- (b) The Programme must represent and fully respect the milestones of theschedule issued underAppendixD (if exists) formingpartof the Contractdocuments and all therequirementsofDivision1(General requirements)of TechnicalSpecifications.\n- (c) Unless the Contract Administrator, within twenty-eight (28) days after receiving the Programme, gives notice to the Contractor stating the extenttowhichitdoesn'tcomplywiththeContract,theContractor shall proceed in accordance with the Programme, subject tohis other obligationsunder theContract.TheContractAdministratorpersonnel shall be entitled torely upon theProgramme whenplanning their activities.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          726.2902018229166
+        ],
+        [
+          151.79308064778647,
+          726.2902018229166
+        ],
+        [
+          151.79308064778647,
+          714.4118448893229
+        ],
+        [
+          126.00094604492188,
+          714.4118448893229
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "MaxDeductible.",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.45123291015625,
+          695.3216247558594
+        ],
+        [
+          283.29071044921875,
+          695.3216247558594
+        ],
+        [
+          283.29071044921875,
+          684.2917175292969
+        ],
+        [
+          208.45123291015625,
+          684.2917175292969
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "Section 1:Material Damage",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          671.5649007161459
+        ],
+        [
+          322.6131591796875,
+          671.5649007161459
+        ],
+        [
+          322.6131591796875,
+          659.6865437825521
+        ],
+        [
+          193.2296346028646,
+          659.6865437825521
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "flood, water damage, earthquake, subsidence and collapse, testing andcommissioning,defectivematerialsworkmanship design plan or specification and during the MaintenancePeriod EGP100,000eachandeveryotherloss.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.6524658203125,
+          646.9597371419271
+        ],
+        [
+          501.4668375651042,
+          646.9597371419271
+        ],
+        [
+          501.4668375651042,
+          599.0220540364584
+        ],
+        [
+          193.6524658203125,
+          599.0220540364584
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "Section 2:ThirdParty liability",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          597.7493693033854
+        ],
+        [
+          328.53265380859375,
+          597.7493693033854
+        ],
+        [
+          328.53265380859375,
+          586.2952473958334
+        ],
+        [
+          193.2296346028646,
+          586.2952473958334
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "EGP 25,000 each and every other loss for Property Damage only.",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.45123291015625,
+          585.8710123697916
+        ],
+        [
+          501.4668375651042,
+          585.8710123697916
+        ],
+        [
+          501.4668375651042,
+          559.9931640625
+        ],
+        [
+          208.45123291015625,
+          559.9931640625
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "12.10 Inherent Defecls",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          554.4782104492188
+        ],
+        [
+          243.96826171875,
+          554.4782104492188
+        ],
+        [
+          243.96826171875,
+          543.0240681966145
+        ],
+        [
+          127.69223022460938,
+          543.0240681966145
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "At the beginning of the Sub-Clause add \"Without prejudice to any provisionofanywarrantyrequired under theContract,\"replace\"The\"with \"the\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          537.5091145833333
+        ],
+        [
+          502.3125,
+          537.5091145833333
+        ],
+        [
+          502.3125,
+          501.0255940755208
+        ],
+        [
+          166.16902669270834,
+          501.0255940755208
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "17. COMMENCEMENTANDPROGRESS",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          490.41990152994794
+        ],
+        [
+          306.54591878255206,
+          490.41990152994794
+        ],
+        [
+          306.54591878255206,
+          479.38999430338544
+        ],
+        [
+          96.82623291015625,
+          479.38999430338544
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "17.1 Commencement",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          474.29925537109375
+        ],
+        [
+          245.6595662434896,
+          474.29925537109375
+        ],
+        [
+          245.6595662434896,
+          461.14821370442706
+        ],
+        [
+          127.2694091796875,
+          461.14821370442706
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "Delete this Sub-Clause entirely and substitute by the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          456.90594482421875
+        ],
+        [
+          455.8020833333333,
+          456.90594482421875
+        ],
+        [
+          455.8020833333333,
+          444.60337320963544
+        ],
+        [
+          166.59184773763022,
+          444.60337320963544
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "TheContractorshallcommcnce theWorksnotlaterthanseven(7)days after the Commencement Date and thereafter shall proceed with the same withdueexpeditionandwithoutdelay，CommencementofSectionor Portionof theWorksmust beinaccordancewiththeconstruction schedulemilestoncs andphasesofworkinaccordancewithAppendixD.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          439.08839925130206
+        ],
+        [
+          503.1581217447917,
+          439.08839925130206
+        ],
+        [
+          503.1581217447917,
+          380.96929931640625
+        ],
+        [
+          166.59184773763022,
+          380.96929931640625
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "17.3 Programme",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          373.33319091796875
+        ],
+        [
+          222.8271687825521,
+          373.33319091796875
+        ],
+        [
+          222.8271687825521,
+          361.87908935546875
+        ],
+        [
+          128.11505126953125,
+          361.87908935546875
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "Rename the existing paragraph as (a), and amend as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          357.21258544921875
+        ],
+        [
+          452.4195149739583,
+          357.21258544921875
+        ],
+        [
+          452.4195149739583,
+          345.75844319661456
+        ],
+        [
+          166.59184773763022,
+          345.75844319661456
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "In paragraph (a) of this Sub-Clause; the period referred to in Conditions of Contract is twenty-eight (28) days following the Efective Date. This defined period supersedes the stipulated period in the Gcncral requirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          339.39503987630206
+        ],
+        [
+          504.4265950520833,
+          339.39503987630206
+        ],
+        [
+          504.4265950520833,
+          291.8816121419271
+        ],
+        [
+          166.59184773763022,
+          291.8816121419271
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "Add the following paraqraphs(b) &(o):",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          286.7908732096354
+        ],
+        [
+          347.1368408203125,
+          286.7908732096354
+        ],
+        [
+          347.1368408203125,
+          274.4883015950521
+        ],
+        [
+          167.0146687825521,
+          274.4883015950521
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "(b) The Programme must represent and fully respect the milestones of theschedule issued underAppendixD (if exists) formingpartof the Contractdocuments and all therequirementsofDivision1(General requirements)of TechnicalSpecifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          269.3975626627604
+        ],
+        [
+          504.8494059244792,
+          269.3975626627604
+        ],
+        [
+          504.8494059244792,
+          222.73256429036462
+        ],
+        [
+          167.4375,
+          222.73256429036462
+        ]
+      ],
+      "page": 134
+    },
+    {
+      "text": "(c) Unless the Contract Administrator, within twenty-eight (28) days after receiving the Programme, gives notice to the Contractor stating the extenttowhichitdoesn'tcomplywiththeContract,theContractor shall proceed in accordance with the Programme, subject tohis other obligationsunder theContract.TheContractAdministratorpersonnel shall be entitled torely upon theProgramme whenplanning their activities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          215.94492594401038
+        ],
+        [
+          504.8494059244792,
+          215.94492594401038
+        ],
+        [
+          504.8494059244792,
+          132.37221272786462
+        ],
+        [
+          167.4375,
+          132.37221272786462
+        ]
+      ],
+      "page": 134
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 134,
+      "text": "MISR\nMaxDeductible.\nSection 1:Material Damage\nflood, water damage, earthquake, subsidence and collapse, testing andcommissioning,defectivematerialsworkmanship design plan or specification and during the MaintenancePeriod EGP100,000eachandeveryotherloss.\nSection 2:ThirdParty liability\nEGP 25,000 each and every other loss for Property Damage only.\n12.10 Inherent Defecls\nAt the beginning of the Sub-Clause add \"Without prejudice to any provisionofanywarrantyrequired under theContract,\"replace\"The\"with \"the\".\n17. COMMENCEMENTANDPROGRESS\n17.1 Commencement\nDelete this Sub-Clause entirely and substitute by the following:\nTheContractorshallcommcnce theWorksnotlaterthanseven(7)days after the Commencement Date and thereafter shall proceed with the same withdueexpeditionandwithoutdelay，CommencementofSectionor Portionof theWorksmust beinaccordancewiththeconstruction schedulemilestoncs andphasesofworkinaccordancewithAppendixD.\n17.3 Programme\nRename the existing paragraph as (a), and amend as follows:\nIn paragraph (a) of this Sub-Clause; the period referred to in Conditions of Contract is twenty-eight (28) days following the Efective Date. This defined period supersedes the stipulated period in the Gcncral requirements.\nAdd the following paraqraphs(b) &(o):\n(b) The Programme must represent and fully respect the milestones of theschedule issued underAppendixD (if exists) formingpartof the Contractdocuments and all therequirementsofDivision1(General requirements)of TechnicalSpecifications.\n(c) Unless the Contract Administrator, within twenty-eight (28) days after receiving the Programme, gives notice to the Contractor stating the extenttowhichitdoesn'tcomplywiththeContract,theContractor shall proceed in accordance with the Programme, subject tohis other obligationsunder theContract.TheContractAdministratorpersonnel shall be entitled torely upon theProgramme whenplanning their activities.",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,405 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## 3.34. Lighting\n\n- Every part of the site that is in use should, so far as possible, be arranged so that natural light is available for people to see to do their work and move about the site safely. Where natural light is inadequate or not available, low voltage artificial lighting should be provided. Portable lighting shall have appropriate plugs, handles, sockets, guards, and cords for the working conditions.\n- Where work will continue outside daylight hours or the building or structure is enclosed, artificial lighting will be required. Make sure that any artificial lighting does not change the apparent color or visibility of any safety signs or other safety-related items such as fire extinguishers.\n- making it difficult to see the blade of a cutting disc or a drill bit) and on the site generally (e.g. at stairwells). If necessary, provide extra lighting to illuminate shadow areas.\n- Where failure of the primary artificial lighting would be a risk to the health or safety of anyone (e.g. someone working on a tower scaffold in a basement may fall while trying to descend in the dark), provide emergency lighting.Where it is not possible tohave lighting that comes on automatically when the primary lighting fails, torchcs or other similar lights may provide suitable lighting.\n- In addition, emergency routes (the corridors, passageways ctc. that pcoplc must follow in an emergencytoescapefrom danger)shouldbekeptwell-litwhilethere areworkersonthesite.Where daylightprovides adequate lighting,nofurther action isrequired.Where emergencyroutesneed artificial light,provide emergency lighting that comes on if theprimary lighting fails(e.g,battery or emergency generator-powered lighting).Emergency lighting does not have to provide the same level of lighting as under normal circumstances;merely enough to enable escape.\n\n## 3.34.1.Planning\n\n- At planning stage, the Contractor shall carry out risk assessments to identify lighting requirements for general work locations, primary and secondary access routes, task lighting and for access during emergencies, takinginto account seasonal natural lightvariations.\n- When planning, consideration must be given to possible changes to access routes or work locations that will require frequent modifications to the lighting design.\n- If there are areas where there could be flammable gasses present, intrinsically safe systems must be chosen and expert assistancerequested.\n- Lightingsourcesmustbe suitablypositionedsothey canbeproperlymaintained and replaced\n- Artificial lighting must be selected to avoid flicker, glare or dazzle, and avoid color casts leading to inte miss identification of colors or excessive differences in light level.\n- Fluorescent sources are preferred as these give a wide light source, generate low levels of hcat and are economic to run.\n- Halogen lights are not favored particularly on tripod mounts, as they give a harsh light, leading to excessive contrast,runvery hotleading to risk of burns orfire and are expensive to run and replace. If Halogens are required to give general area lighting, it should be safely mounted or clamped on columns, crane masts etc.\n\n<!-- image -->\n\nRef: EGY/PRJCTS/HSE/REQs\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          730.3229166666666
+        ],
+        [
+          340.7530110677083,
+          730.3229166666666
+        ],
+        [
+          340.7530110677083,
+          700.0534261067709
+        ],
+        [
+          191.33634440104166,
+          700.0534261067709
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "3.34. Lighting",
+      "confidence": 0.95,
+      "box": [
+        [
+          258.15879313151044,
+          673.9304402669271
+        ],
+        [
+          329.1317138671875,
+          673.9304402669271
+        ],
+        [
+          329.1317138671875,
+          659.4176737467448
+        ],
+        [
+          258.15879313151044,
+          659.4176737467448
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Every part of the site that is in use should, so far as possible, be arranged so that natural light is available for people to see to do their work and move about the site safely. Where natural light is inadequate or not available, low voltage artificial lighting should be provided. Portable lighting shall have appropriate plugs, handles, sockets, guards, and cords for the working conditions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          654.8565165201823
+        ],
+        [
+          496.8104248046875,
+          654.8565165201823
+        ],
+        [
+          496.8104248046875,
+          603.0252075195312
+        ],
+        [
+          91.3101806640625,
+          603.0252075195312
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Where work will continue outside daylight hours or the building or structure is enclosed, artificial lighting will be required. Make sure that any artificial lighting does not change the apparent color or visibility of any safety signs or other safety-related items such as fire extinguishers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          599.2933553059896
+        ],
+        [
+          496.3953857421875,
+          599.2933553059896
+        ],
+        [
+          496.3953857421875,
+          559.9015502929688
+        ],
+        [
+          91.72522989908855,
+          559.9015502929688
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "making it difficult to see the blade of a cutting disc or a drill bit) and on the site generally (e.g. at stairwells). If necessary, provide extra lighting to illuminate shadow areas.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          542.4862263997395
+        ],
+        [
+          495.9803059895833,
+          542.4862263997395
+        ],
+        [
+          495.9803059895833,
+          516.3632405598958
+        ],
+        [
+          92.14027913411458,
+          516.3632405598958
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Where failure of the primary artificial lighting would be a risk to the health or safety of anyone (e.g. someone working on a tower scaffold in a basement may fall while trying to descend in the dark), provide emergency lighting.Where it is not possible tohave lighting that comes on automatically when the primary lighting fails, torchcs or other similar lights may provide suitable lighting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          512.2167358398438
+        ],
+        [
+          495.1502278645833,
+          512.2167358398438
+        ],
+        [
+          495.1502278645833,
+          459.97076416015625
+        ],
+        [
+          91.3101806640625,
+          459.97076416015625
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "In addition, emergency routes (the corridors, passageways ctc. that pcoplc must follow in an emergencytoescapefrom danger)shouldbekeptwell-litwhilethere areworkersonthesite.Where daylightprovides adequate lighting,nofurther action isrequired.Where emergencyroutesneed artificial light,provide emergency lighting that comes on if theprimary lighting fails(e.g,battery or emergency generator-powered lighting).Emergency lighting does not have to provide the same level of lighting as under normal circumstances;merely enough to enable escape.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          456.65358479817706
+        ],
+        [
+          496.3953857421875,
+          456.65358479817706
+        ],
+        [
+          496.3953857421875,
+          379.11391194661456
+        ],
+        [
+          89.65000406901042,
+          379.11391194661456
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "3.34.1.Planning",
+      "confidence": 0.95,
+      "box": [
+        [
+          251.1030069986979,
+          374.55275472005206
+        ],
+        [
+          328.7166748046875,
+          374.55275472005206
+        ],
+        [
+          328.7166748046875,
+          360.03997802734375
+        ],
+        [
+          251.1030069986979,
+          360.03997802734375
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "At planning stage, the Contractor shall carry out risk assessments to identify lighting requirements for general work locations, primary and secondary access routes, task lighting and for access during emergencies, takinginto account seasonal natural lightvariations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          355.89349365234375
+        ],
+        [
+          495.1502278645833,
+          355.89349365234375
+        ],
+        [
+          495.1502278645833,
+          317.74562581380206
+        ],
+        [
+          88.4048563639323,
+          317.74562581380206
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "When planning, consideration must be given to possible changes to access routes or work locations that will require frequent modifications to the lighting design.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          312.76983642578125
+        ],
+        [
+          494.7351888020833,
+          312.76983642578125
+        ],
+        [
+          494.7351888020833,
+          286.2321980794271
+        ],
+        [
+          90.06504313151042,
+          286.2321980794271
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "If there are areas where there could be flammable gasses present, intrinsically safe systems must be chosen and expert assistancerequested.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          282.0857137044271
+        ],
+        [
+          494.3201497395833,
+          282.0857137044271
+        ],
+        [
+          494.3201497395833,
+          256.37738037109375
+        ],
+        [
+          89.23495483398438,
+          256.37738037109375
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Lightingsourcesmustbe suitablypositionedsothey canbeproperlymaintained and replaced",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.81990559895833,
+          250.15761311848962
+        ],
+        [
+          471.9076334635417,
+          250.15761311848962
+        ],
+        [
+          471.9076334635417,
+          237.71807861328125
+        ],
+        [
+          88.81990559895833,
+          237.71807861328125
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Artificial lighting must be selected to avoid flicker, glare or dazzle, and avoid color casts leading to inte miss identification of colors or excessive differences in light level.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          234.40089925130212
+        ],
+        [
+          495.5652669270833,
+          234.40089925130212
+        ],
+        [
+          495.5652669270833,
+          207.86326090494788
+        ],
+        [
+          89.23495483398438,
+          207.86326090494788
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Fluorescent sources are preferred as these give a wide light source, generate low levels of hcat and are economic to run.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          202.47279866536462
+        ],
+        [
+          494.7351888020833,
+          202.47279866536462
+        ],
+        [
+          494.7351888020833,
+          177.17913818359375
+        ],
+        [
+          88.4048563639323,
+          177.17913818359375
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Halogen lights are not favored particularly on tripod mounts, as they give a harsh light, leading to excessive contrast,runvery hotleading to risk of burns orfire and are expensive to run and replace. If Halogens are required to give general area lighting, it should be safely mounted or clamped on columns, crane masts etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          173.44724527994788
+        ],
+        [
+          496.3953857421875,
+          173.44724527994788
+        ],
+        [
+          496.3953857421875,
+          120.37200927734375
+        ],
+        [
+          88.4048563639323,
+          120.37200927734375
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          700.4680786132812
+        ],
+        [
+          217.0692138671875,
+          700.4680786132812
+        ],
+        [
+          217.0692138671875,
+          686.3699544270834
+        ],
+        [
+          75.53842671712239,
+          686.3699544270834
+        ]
+      ],
+      "page": 466
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.6455891927083,
+          734.8840637207031
+        ],
+        [
+          511.3370361328125,
+          734.8840637207031
+        ],
+        [
+          511.3370361328125,
+          721.2006022135416
+        ],
+        [
+          453.6455891927083,
+          721.2006022135416
+        ]
+      ],
+      "page": 466
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 466,
+      "text": "Projects Department Health & Safety Standards\n3.34. Lighting\nEvery part of the site that is in use should, so far as possible, be arranged so that natural light is available for people to see to do their work and move about the site safely. Where natural light is inadequate or not available, low voltage artificial lighting should be provided. Portable lighting shall have appropriate plugs, handles, sockets, guards, and cords for the working conditions.\nWhere work will continue outside daylight hours or the building or structure is enclosed, artificial lighting will be required. Make sure that any artificial lighting does not change the apparent color or visibility of any safety signs or other safety-related items such as fire extinguishers.\nmaking it difficult to see the blade of a cutting disc or a drill bit) and on the site generally (e.g. at stairwells). If necessary, provide extra lighting to illuminate shadow areas.\nWhere failure of the primary artificial lighting would be a risk to the health or safety of anyone (e.g. someone working on a tower scaffold in a basement may fall while trying to descend in the dark), provide emergency lighting.Where it is not possible tohave lighting that comes on automatically when the primary lighting fails, torchcs or other similar lights may provide suitable lighting.\nIn addition, emergency routes (the corridors, passageways ctc. that pcoplc must follow in an emergencytoescapefrom danger)shouldbekeptwell-litwhilethere areworkersonthesite.Where daylightprovides adequate lighting,nofurther action isrequired.Where emergencyroutesneed artificial light,provide emergency lighting that comes on if theprimary lighting fails(e.g,battery or emergency generator-powered lighting).Emergency lighting does not have to provide the same level of lighting as under normal circumstances;merely enough to enable escape.\n3.34.1.Planning\nAt planning stage, the Contractor shall carry out risk assessments to identify lighting requirements for general work locations, primary and secondary access routes, task lighting and for access during emergencies, takinginto account seasonal natural lightvariations.\nWhen planning, consideration must be given to possible changes to access routes or work locations that will require frequent modifications to the lighting design.\nIf there are areas where there could be flammable gasses present, intrinsically safe systems must be chosen and expert assistancerequested.\nLightingsourcesmustbe suitablypositionedsothey canbeproperlymaintained and replaced\nArtificial lighting must be selected to avoid flicker, glare or dazzle, and avoid color casts leading to inte miss identification of colors or excessive differences in light level.\nFluorescent sources are preferred as these give a wide light source, generate low levels of hcat and are economic to run.\nHalogen lights are not favored particularly on tripod mounts, as they give a harsh light, leading to excessive contrast,runvery hotleading to risk of burns orfire and are expensive to run and replace. If Halogens are required to give general area lighting, it should be safely mounted or clamped on columns, crane masts etc.\nRef: EGY/PRJCTS/HSE/REQs\nEMAAR",
+      "line_count": 17
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,152 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n|   05 | Any Open holes on the roads, gas, sewage, electricity etc.... not provided with warning light system , in case work continue to night shift , of hard barricades will remain to night,   | 5,000 LE   | Per Incident / per day until corrected   |\n|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|------------------------------------------|\n|   06 | No construction & Safety Supervision all the time.                                                                                                                                       | 10,000 LE  | Per Incident per day until corrected     |\n|   07 | No traffic Control at the working area                                                                                                                                                   | 10,000 LE  | Per Incident per day until corrected     |\n|   08 | No proper / improper access for excavation Open holes on the roads, gas, sewage, electricity etc.... Manhole.                                                                            | 20,000 LE  | Per Incident / per day until corrected   |\n|   09 | Working insidemanholes / excavation1.2 meterwithout ConfinedSpacePermit,and takeall theHSE Rcquirementsasper SafetyStandard                                                              | 20,000 I.F | Per Incident /per day until corrected    |\n|   10 | No traffic warning signs and speed limit at excavated area or beside open manholes                                                                                                       | 5,000LE    | Per Incident per day until corrected     |\n|   11 | Workers involvedworkingwithout specific training for such job.                                                                                                                           | 5,000LE    | Per person                               |\n|   12 | Workers sinvolvedworkingwithout proper PPE                                                                                                                                               | 5,000LE    | Per incident                             |\n|   14 | Using improper damaged not color coded power / hand tools                                                                                                                                | 5,000LE    | Per incident                             |\n|   15 | Hotwork inside manholes excavations etc.... without specific hot wok permit                                                                                                              | 20,000 LE  | Per incident                             |\n|   16 | Store excavation Material close to excavation edges not les that 2.00 meter away.                                                                                                        | 20,000 LE  | For each day until corrected             |\n\n(S.S.C）\n\nThe information contained inthesedocumentsisconfidentialprivileged andmaynotbe usedpublshed orredistributed without the prior written consent of Emaar Misr S.A.E.\n\nToCd216-2y-200\n\n<!-- image -->\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          728.2496643066406
+        ],
+        [
+          340.7530110677083,
+          728.2496643066406
+        ],
+        [
+          340.7530110677083,
+          699.22412109375
+        ],
+        [
+          191.33634440104166,
+          699.22412109375
+        ]
+      ],
+      "page": 475
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          696.7362162272135
+        ],
+        [
+          217.4842529296875,
+          696.7362162272135
+        ],
+        [
+          217.4842529296875,
+          685.1260070800781
+        ],
+        [
+          76.36852010091145,
+          685.1260070800781
+        ]
+      ],
+      "page": 475
+    },
+    {
+      "text": "(S.S.C）",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          109.17645263671875
+        ],
+        [
+          177.22477213541666,
+          109.17645263671875
+        ],
+        [
+          177.22477213541666,
+          100.05413818359375
+        ],
+        [
+          136.96528116861978,
+          100.05413818359375
+        ]
+      ],
+      "page": 475
+    },
+    {
+      "text": "The information contained inthesedocumentsisconfidentialprivileged andmaynotbe usedpublshed orredistributed without the prior written consent of Emaar Misr S.A.E.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          100.05413818359375
+        ],
+        [
+          508.4317220052083,
+          100.05413818359375
+        ],
+        [
+          508.4317220052083,
+          79.32163492838538
+        ],
+        [
+          77.1986083984375,
+          79.32163492838538
+        ]
+      ],
+      "page": 475
+    },
+    {
+      "text": "ToCd216-2y-200",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          56.93044026692712
+        ],
+        [
+          313.3599446614583,
+          56.93044026692712
+        ],
+        [
+          313.3599446614583,
+          56.93044026692712
+        ],
+        [
+          252.34814453125,
+          56.93044026692712
+        ]
+      ],
+      "page": 475
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          734.8840637207031
+        ],
+        [
+          509.6768391927083,
+          734.8840637207031
+        ],
+        [
+          509.6768391927083,
+          722.0298970540365
+        ],
+        [
+          452.8155110677083,
+          722.0298970540365
+        ]
+      ],
+      "page": 475
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 475,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n(S.S.C）\nThe information contained inthesedocumentsisconfidentialprivileged andmaynotbe usedpublshed orredistributed without the prior written consent of Emaar Misr S.A.E.\nToCd216-2y-200\nEMAAR",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

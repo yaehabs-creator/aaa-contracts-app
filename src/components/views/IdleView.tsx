@@ -97,6 +97,21 @@ export const IdleView: React.FC<IdleViewProps> = ({
     reader.readAsText(file);
   };
 
+  const handleTxtImport = (file: File) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const text = reader.result as string;
+      if (text) {
+        setPdfEditText(text);
+        setExtractedPdfPages([]);
+        setCleanedPdfPages(null);
+        setStatus(AnalysisStatus.PDF_PREVIEW);
+        toast.success('Contract text loaded. Use "Process whole contract with OpenClaw" to analyze.');
+      }
+    };
+    reader.readAsText(file);
+  };
+
   const handleFixText = async () => {
     if (!textToFix.trim()) return;
 
@@ -266,13 +281,15 @@ export const IdleView: React.FC<IdleViewProps> = ({
                 type="file"
                 ref={fileInputRef}
                 className="hidden"
-                accept="application/pdf,application/json"
+                accept="application/pdf,application/json,.txt,text/plain"
                 onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (!file) return;
 
                   if (file.type === 'application/json' || file.name.endsWith('.json')) {
                     handleJsonImport(file);
+                  } else if (file.type === 'text/plain' || file.name.toLowerCase().endsWith('.txt')) {
+                    handleTxtImport(file);
                   } else {
                     processFile(file, handlePdfAnalysis);
                   }

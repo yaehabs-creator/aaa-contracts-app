@@ -1,0 +1,382 @@
+{
+  "text": "<!-- image -->\n\n- 5.1 Temporary work shall be installed in such a manner as not to interfere with permanent construction.\n- 5.2 The Contractor shall make his own arrangements for securing all water supplies for all his temporary facilities. The Contractor shall include, and provide necessarywater, sanitary and sewer facilities and shall install toilet stations, wash stations, water and drainage pipelines, valves, storage tanks, pumps, pressure reducing valves, etc to suit his reeds. This includes the provision of all materials, tools and equipment, labour, and miscellaneous appurtenances necessary to properly install and maintain in clean and perfect working order temporary services for construction purposes as described in thissection.\n\n## 6LEGAL\n\nB Municipality and Egypt requirements. The Contractor shall obtain and pay for any required permits or inspections pertaining to this work.\n\n## INSURANCE\n\nThe requirements are as specified in the Contract Documents.\n\n## FIRE PROTECTION\n\nThe Contractor shall provide all the necessary facilities, where applicable, for fire protection in their respective storage areas as well as in their areas of work. Contractor shall provide instructions to staff on evacuation procedures relating to theuseoftemporaryalarms.\n\nThe following are the minimum Fire Protection requirements to be implemented by theContractor:\n\nFire extinguishers not less than 2A (NFPA) shall be provided for each 300 square metres of protected building arca or major fraction thereof.Travel distance from any point of the protected area to the nearest fire extinguisher shallnotexceed30metres.\n\nOne 250-litreopendrum of water with two firepails shall beprovidedon each floor as a substitute for one (1) fire extinguisher having a 2A rating.\n\nAt least one fire extinguishershall be located adjacent to each stairway.\n\nWhen more than twenty litres of flammable or combustible liquids or two kilograms of flammable gas are being used, a fire extinguisher rated not less than 10B shall be provided within fifty feet unless required otherwise.\n\nPortable fire extinguishers shall be inspected periodically and maintained in accordance with Maintenance and Use of Portable Fire Extinguisher, NFPA No.10A.\n\nFire Extinguishers, which have been listed or approved by a nationally recognised testing laboratory, shall be used to meet the requirements herein.\n\nOnly Licensed operatives shall do recharging.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "5.1 Temporary work shall be installed in such a manner as not to interfere with permanent construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          716.6394449869791
+        ],
+        [
+          505.111328125,
+          716.6394449869791
+        ],
+        [
+          505.111328125,
+          692.1750691731771
+        ],
+        [
+          96.29074096679688,
+          692.1750691731771
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "5.2 The Contractor shall make his own arrangements for securing all water supplies for all his temporary facilities. The Contractor shall include, and provide necessarywater, sanitary and sewer facilities and shall install toilet stations, wash stations, water and drainage pipelines, valves, storage tanks, pumps, pressure reducing valves, etc to suit his reeds. This includes the provision of all materials, tools and equipment, labour, and miscellaneous appurtenances necessary to properly install and maintain in clean and perfect working order temporary services for construction purposes as described in thissection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          685.5406595865885
+        ],
+        [
+          506.7715250651042,
+          685.5406595865885
+        ],
+        [
+          506.7715250651042,
+          568.1945597330729
+        ],
+        [
+          96.70579020182292,
+          568.1945597330729
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "6LEGAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          556.169698079427
+        ],
+        [
+          136.13518269856772,
+          556.169698079427
+        ],
+        [
+          136.13518269856772,
+          543.7301839192708
+        ],
+        [
+          77.61365763346355,
+          543.7301839192708
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "B Municipality and Egypt requirements. The Contractor shall obtain and pay for any required permits or inspections pertaining to this work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          537.5104166666667
+        ],
+        [
+          506.7715250651042,
+          537.5104166666667
+        ],
+        [
+          506.7715250651042,
+          498.53326416015625
+        ],
+        [
+          94.63055419921875,
+          498.53326416015625
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "INSURANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          486.50840250651044
+        ],
+        [
+          163.94328816731772,
+          486.50840250651044
+        ],
+        [
+          163.94328816731772,
+          474.06890869140625
+        ],
+        [
+          95.46065266927083,
+          474.06890869140625
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "The requirements are as specified in the Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          467.43446858723956
+        ],
+        [
+          407.160400390625,
+          467.43446858723956
+        ],
+        [
+          407.160400390625,
+          454.99497477213544
+        ],
+        [
+          94.63055419921875,
+          454.99497477213544
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "FIRE PROTECTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          442.55544026692706
+        ],
+        [
+          199.63726806640625,
+          442.55544026692706
+        ],
+        [
+          199.63726806640625,
+          431.77455647786456
+        ],
+        [
+          95.87569173177083,
+          431.77455647786456
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "The Contractor shall provide all the necessary facilities, where applicable, for fire protection in their respective storage areas as well as in their areas of work. Contractor shall provide instructions to staff on evacuation procedures relating to theuseoftemporaryalarms.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          424.31081136067706
+        ],
+        [
+          505.5263671875,
+          424.31081136067706
+        ],
+        [
+          505.5263671875,
+          372.06488037109375
+        ],
+        [
+          95.46065266927083,
+          372.06488037109375
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "The following are the minimum Fire Protection requirements to be implemented by theContractor:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          367.08905029296875
+        ],
+        [
+          506.3564860026042,
+          367.08905029296875
+        ],
+        [
+          506.3564860026042,
+          340.96608479817706
+        ],
+        [
+          94.63055419921875,
+          340.96608479817706
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "Fire extinguishers not less than 2A (NFPA) shall be provided for each 300 square metres of protected building arca or major fraction thereof.Travel distance from any point of the protected area to the nearest fire extinguisher shallnotexceed30metres.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          335.16094970703125
+        ],
+        [
+          506.7715250651042,
+          335.16094970703125
+        ],
+        [
+          506.7715250651042,
+          283.32965087890625
+        ],
+        [
+          112.0625,
+          283.32965087890625
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "One 250-litreopendrum of water with two firepails shall beprovidedon each floor as a substitute for one (1) fire extinguisher having a 2A rating.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          276.69525146484375
+        ],
+        [
+          505.9414469401042,
+          276.69525146484375
+        ],
+        [
+          505.9414469401042,
+          250.98691813151038
+        ],
+        [
+          111.64745076497395,
+          250.98691813151038
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "At least one fire extinguishershall be located adjacent to each stairway.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          244.76715087890625
+        ],
+        [
+          472.3226725260417,
+          244.76715087890625
+        ],
+        [
+          472.3226725260417,
+          232.74228922526038
+        ],
+        [
+          112.47754923502605,
+          232.74228922526038
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "When more than twenty litres of flammable or combustible liquids or two kilograms of flammable gas are being used, a fire extinguisher rated not less than 10B shall be provided within fifty feet unless required otherwise.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          226.93719482421875
+        ],
+        [
+          506.3564860026042,
+          226.93719482421875
+        ],
+        [
+          506.3564860026042,
+          187.54538981119788
+        ],
+        [
+          111.23241170247395,
+          187.54538981119788
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "Portable fire extinguishers shall be inspected periodically and maintained in accordance with Maintenance and Use of Portable Fire Extinguisher, NFPA No.10A.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          181.32562255859375
+        ],
+        [
+          505.5263671875,
+          181.32562255859375
+        ],
+        [
+          505.5263671875,
+          143.17779541015625
+        ],
+        [
+          111.64745076497395,
+          143.17779541015625
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "Fire Extinguishers, which have been listed or approved by a nationally recognised testing laboratory, shall be used to meet the requirements herein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          136.12868245442712
+        ],
+        [
+          504.6962890625,
+          136.12868245442712
+        ],
+        [
+          504.6962890625,
+          111.24969482421875
+        ],
+        [
+          112.47754923502605,
+          111.24969482421875
+        ]
+      ],
+      "page": 343
+    },
+    {
+      "text": "Only Licensed operatives shall do recharging.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          104.61525472005212
+        ],
+        [
+          341.9981282552083,
+          104.61525472005212
+        ],
+        [
+          341.9981282552083,
+          91.34645589192712
+        ],
+        [
+          112.89258829752605,
+          91.34645589192712
+        ]
+      ],
+      "page": 343
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 343,
+      "text": "5.1 Temporary work shall be installed in such a manner as not to interfere with permanent construction.\n5.2 The Contractor shall make his own arrangements for securing all water supplies for all his temporary facilities. The Contractor shall include, and provide necessarywater, sanitary and sewer facilities and shall install toilet stations, wash stations, water and drainage pipelines, valves, storage tanks, pumps, pressure reducing valves, etc to suit his reeds. This includes the provision of all materials, tools and equipment, labour, and miscellaneous appurtenances necessary to properly install and maintain in clean and perfect working order temporary services for construction purposes as described in thissection.\n6LEGAL\nB Municipality and Egypt requirements. The Contractor shall obtain and pay for any required permits or inspections pertaining to this work.\nINSURANCE\nThe requirements are as specified in the Contract Documents.\nFIRE PROTECTION\nThe Contractor shall provide all the necessary facilities, where applicable, for fire protection in their respective storage areas as well as in their areas of work. Contractor shall provide instructions to staff on evacuation procedures relating to theuseoftemporaryalarms.\nThe following are the minimum Fire Protection requirements to be implemented by theContractor:\nFire extinguishers not less than 2A (NFPA) shall be provided for each 300 square metres of protected building arca or major fraction thereof.Travel distance from any point of the protected area to the nearest fire extinguisher shallnotexceed30metres.\nOne 250-litreopendrum of water with two firepails shall beprovidedon each floor as a substitute for one (1) fire extinguisher having a 2A rating.\nAt least one fire extinguishershall be located adjacent to each stairway.\nWhen more than twenty litres of flammable or combustible liquids or two kilograms of flammable gas are being used, a fire extinguisher rated not less than 10B shall be provided within fifty feet unless required otherwise.\nPortable fire extinguishers shall be inspected periodically and maintained in accordance with Maintenance and Use of Portable Fire Extinguisher, NFPA No.10A.\nFire Extinguishers, which have been listed or approved by a nationally recognised testing laboratory, shall be used to meet the requirements herein.\nOnly Licensed operatives shall do recharging.",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

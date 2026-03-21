@@ -1,0 +1,612 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n- Arrangements should be made for the rescue of personnel from the tower crane including:\n- ·From the cab of the crane in the event of a medical or other emergency\n- ·If a person wearing fall arrest equipment falls from the jib and is left suspended below the jib\n- Fire extinguishers should not be provided or used in thecabs of tower cranes as the confined nature of suchcabs exposes theuser totheriskof suffocation.\n- It is essential that tower cranes arefittedwith anemometers or other wind-speed monitoring devices. These should have their indicators located in clearviewof the crane operator\n- Aworkingspacelimitershouldbefittedtopreventafixed load attachment and/or partsofthecrane from entering a prohibited space.\n- An anti-collision device is tobefitted and used toprevent afixed load attachment and cranes or parts of cranesfrom collidingwhen they aremaneuvered simultaneouslyin the same space.\n\n## 3.15. Vehicle Loading Cranes (e.g. HIAB)\n\n- Vehicle loading cranes (*\"VLCs\") are mounted on a truck or trailer and used to shift heavy loads.\n- VLCs shall only be operated by a person holding a certificate of competence.\n- Contractors and operators should ensure:\n- Ground surfaces are sufficiently stable and compacted to support the VLC outriggers\n- Outriggers can withstand the load and forces applied during different lifting and slewing activities\n- Site is assessed for underground services or recently backfilled excavations that may affect the stability of the crane\n- . Outriggers are fully extended before operation and positioned in accordance with the manufacturer's specifications\n- ·Boom and outriggers are interlocked to prevent boom operation if the outriggers are not fully extended\n- Alternative machinery or equipment is used if obstacles or lack of space make it impossible to fully extend outriggers\n- Operators are trained and instructed not to operate the VLC outside its safe operating limits.\n\n## 3.16. Overhead Travelling Cranes\n\n- Overhead travelling cranes (OHT) includes overhead gantry and portal cranes.\n- 口 Operatorsfor OHT must be trained,competent and authorized to operate the type ofequipment in use.\n- Fixed stairways and proper platforms combined with safe walkways both on the crane andganuyis to be provided.\n\nTheinformationcontainedinthesedocumentsisconfidentialprivilegedandmaynotbeused.pubtstedorredistributedwihout the prior written consent of Emaar Misr S.A.E.\n\n<!-- image -->\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.75138346354166,
+          729.4936116536459
+        ],
+        [
+          340.7530110677083,
+          729.4936116536459
+        ],
+        [
+          340.7530110677083,
+          701.297373453776
+        ],
+        [
+          191.75138346354166,
+          701.297373453776
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          700.4680786132812
+        ],
+        [
+          217.8993123372396,
+          700.4680786132812
+        ],
+        [
+          217.8993123372396,
+          686.3699544270834
+        ],
+        [
+          75.95347086588542,
+          686.3699544270834
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Arrangements should be made for the rescue of personnel from the tower crane including:",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          674.7597452799479
+        ],
+        [
+          458.2111002604167,
+          674.7597452799479
+        ],
+        [
+          458.2111002604167,
+          661.0762736002604
+        ],
+        [
+          89.65000406901042,
+          661.0762736002604
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "·From the cab of the crane in the event of a medical or other emergency",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          656.5151163736979
+        ],
+        [
+          398.0293782552083,
+          656.5151163736979
+        ],
+        [
+          398.0293782552083,
+          641.5877075195312
+        ],
+        [
+          96.70579020182292,
+          641.5877075195312
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "·If a person wearing fall arrest equipment falls from the jib and is left suspended below the jib",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          637.4412027994791
+        ],
+        [
+          487.6794026692708,
+          637.4412027994791
+        ],
+        [
+          487.6794026692708,
+          623.7577311197916
+        ],
+        [
+          96.70579020182292,
+          623.7577311197916
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Fire extinguishers should not be provided or used in thecabs of tower cranes as the confined nature of suchcabs exposes theuser totheriskof suffocation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          613.8061116536459
+        ],
+        [
+          496.3953857421875,
+          613.8061116536459
+        ],
+        [
+          496.3953857421875,
+          588.9270833333334
+        ],
+        [
+          92.55532836914062,
+          588.9270833333334
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "It is essential that tower cranes arefittedwith anemometers or other wind-speed monitoring devices. These should have their indicators located in clearviewof the crane operator",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          583.1219685872396
+        ],
+        [
+          495.1502278645833,
+          583.1219685872396
+        ],
+        [
+          495.1502278645833,
+          557.8282877604167
+        ],
+        [
+          91.72522989908855,
+          557.8282877604167
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Aworkingspacelimitershouldbefittedtopreventafixed load attachment and/or partsofthecrane from entering a prohibited space.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          552.023193359375
+        ],
+        [
+          496.3953857421875,
+          552.023193359375
+        ],
+        [
+          496.3953857421875,
+          526.729512532552
+        ],
+        [
+          91.72522989908855,
+          526.729512532552
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "An anti-collision device is tobefitted and used toprevent afixed load attachment and cranes or parts of cranesfrom collidingwhen they aremaneuvered simultaneouslyin the same space.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          521.3390502929688
+        ],
+        [
+          496.8104248046875,
+          521.3390502929688
+        ],
+        [
+          496.8104248046875,
+          496.46002197265625
+        ],
+        [
+          91.72522989908855,
+          496.46002197265625
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "3.15. Vehicle Loading Cranes (e.g. HIAB)",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.16644287109375,
+          490.24025472005206
+        ],
+        [
+          394.2939860026042,
+          490.24025472005206
+        ],
+        [
+          394.2939860026042,
+          476.14215087890625
+        ],
+        [
+          192.16644287109375,
+          476.14215087890625
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Vehicle loading cranes (*\"VLCs\") are mounted on a truck or trailer and used to shift heavy loads.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          471.58099365234375
+        ],
+        [
+          483.9439697265625,
+          471.58099365234375
+        ],
+        [
+          483.9439697265625,
+          458.72682698567706
+        ],
+        [
+          91.3101806640625,
+          458.72682698567706
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "VLCs shall only be operated by a person holding a certificate of competence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          453.33636474609375
+        ],
+        [
+          406.330322265625,
+          453.33636474609375
+        ],
+        [
+          406.330322265625,
+          440.48219807942706
+        ],
+        [
+          91.3101806640625,
+          440.48219807942706
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Contractors and operators should ensure:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          435.09173583984375
+        ],
+        [
+          258.9888916015625,
+          435.09173583984375
+        ],
+        [
+          258.9888916015625,
+          423.48154703776044
+        ],
+        [
+          92.14027913411458,
+          423.48154703776044
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Ground surfaces are sufficiently stable and compacted to support the VLC outriggers",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          417.26177978515625
+        ],
+        [
+          454.8907470703125,
+          417.26177978515625
+        ],
+        [
+          454.8907470703125,
+          402.74900309244794
+        ],
+        [
+          95.0456034342448,
+          402.74900309244794
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Outriggers can withstand the load and forces applied during different lifting and slewing activities",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          398.18784586588544
+        ],
+        [
+          506.7715250651042,
+          398.18784586588544
+        ],
+        [
+          506.7715250651042,
+          384.91904703776044
+        ],
+        [
+          95.0456034342448,
+          384.91904703776044
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Site is assessed for underground services or recently backfilled excavations that may affect the stability of the crane",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          380.35788981119794
+        ],
+        [
+          506.7715250651042,
+          380.35788981119794
+        ],
+        [
+          506.7715250651042,
+          349.67372639973956
+        ],
+        [
+          97.12082926432292,
+          349.67372639973956
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": ". Outriggers are fully extended before operation and positioned in accordance with the manufacturer's specifications",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          344.28326416015625
+        ],
+        [
+          507.1865641276042,
+          344.28326416015625
+        ],
+        [
+          507.1865641276042,
+          315.25775146484375
+        ],
+        [
+          95.46065266927083,
+          315.25775146484375
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "·Boom and outriggers are interlocked to prevent boom operation if the outriggers are not fully extended",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          308.20867919921875
+        ],
+        [
+          505.111328125,
+          308.20867919921875
+        ],
+        [
+          505.111328125,
+          279.5977986653646
+        ],
+        [
+          95.46065266927083,
+          279.5977986653646
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Alternative machinery or equipment is used if obstacles or lack of space make it impossible to fully extend outriggers",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          272.9633992513021
+        ],
+        [
+          505.111328125,
+          272.9633992513021
+        ],
+        [
+          505.111328125,
+          242.27923583984375
+        ],
+        [
+          95.0456034342448,
+          242.27923583984375
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Operators are trained and instructed not to operate the VLC outside its safe operating limits.",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          236.88877360026038
+        ],
+        [
+          480.2085774739583,
+          236.88877360026038
+        ],
+        [
+          480.2085774739583,
+          223.61997477213538
+        ],
+        [
+          99.19606526692708,
+          223.61997477213538
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "3.16. Overhead Travelling Cranes",
+      "confidence": 0.95,
+      "box": [
+        [
+          209.1833292643229,
+          213.25372314453125
+        ],
+        [
+          375.6169026692708,
+          213.25372314453125
+        ],
+        [
+          375.6169026692708,
+          200.39955647786462
+        ],
+        [
+          209.1833292643229,
+          200.39955647786462
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Overhead travelling cranes (OHT) includes overhead gantry and portal cranes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.7446797688802,
+          195.00909423828125
+        ],
+        [
+          408.8205973307292,
+          195.00909423828125
+        ],
+        [
+          408.8205973307292,
+          181.32562255859375
+        ],
+        [
+          86.7446797688802,
+          181.32562255859375
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "口 Operatorsfor OHT must be trained,competent and authorized to operate the type ofequipment in use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          176.34983317057288
+        ],
+        [
+          495.1502278645833,
+          176.34983317057288
+        ],
+        [
+          495.1502278645833,
+          151.88543701171875
+        ],
+        [
+          75.12337748209636,
+          151.88543701171875
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Fixed stairways and proper platforms combined with safe walkways both on the crane andganuyis to be provided.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          146.49497477213538
+        ],
+        [
+          495.5652669270833,
+          146.49497477213538
+        ],
+        [
+          495.5652669270833,
+          121.61598714192712
+        ],
+        [
+          88.4048563639323,
+          121.61598714192712
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "Theinformationcontainedinthesedocumentsisconfidentialprivilegedandmaynotbeused.pubtstedorredistributedwihout the prior written consent of Emaar Misr S.A.E.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          102.54201253255212
+        ],
+        [
+          503.8662109375,
+          102.54201253255212
+        ],
+        [
+          503.8662109375,
+          81.39487711588538
+        ],
+        [
+          73.0481465657552,
+          81.39487711588538
+        ]
+      ],
+      "page": 448
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          454.0606282552083,
+          735.713368733724
+        ],
+        [
+          511.3370361328125,
+          735.713368733724
+        ],
+        [
+          511.3370361328125,
+          722.0298970540365
+        ],
+        [
+          454.0606282552083,
+          722.0298970540365
+        ]
+      ],
+      "page": 448
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 448,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\nArrangements should be made for the rescue of personnel from the tower crane including:\n·From the cab of the crane in the event of a medical or other emergency\n·If a person wearing fall arrest equipment falls from the jib and is left suspended below the jib\nFire extinguishers should not be provided or used in thecabs of tower cranes as the confined nature of suchcabs exposes theuser totheriskof suffocation.\nIt is essential that tower cranes arefittedwith anemometers or other wind-speed monitoring devices. These should have their indicators located in clearviewof the crane operator\nAworkingspacelimitershouldbefittedtopreventafixed load attachment and/or partsofthecrane from entering a prohibited space.\nAn anti-collision device is tobefitted and used toprevent afixed load attachment and cranes or parts of cranesfrom collidingwhen they aremaneuvered simultaneouslyin the same space.\n3.15. Vehicle Loading Cranes (e.g. HIAB)\nVehicle loading cranes (*\"VLCs\") are mounted on a truck or trailer and used to shift heavy loads.\nVLCs shall only be operated by a person holding a certificate of competence.\nContractors and operators should ensure:\nGround surfaces are sufficiently stable and compacted to support the VLC outriggers\nOutriggers can withstand the load and forces applied during different lifting and slewing activities\nSite is assessed for underground services or recently backfilled excavations that may affect the stability of the crane\n. Outriggers are fully extended before operation and positioned in accordance with the manufacturer's specifications\n·Boom and outriggers are interlocked to prevent boom operation if the outriggers are not fully extended\nAlternative machinery or equipment is used if obstacles or lack of space make it impossible to fully extend outriggers\nOperators are trained and instructed not to operate the VLC outside its safe operating limits.\n3.16. Overhead Travelling Cranes\nOverhead travelling cranes (OHT) includes overhead gantry and portal cranes.\n口 Operatorsfor OHT must be trained,competent and authorized to operate the type ofequipment in use.\nFixed stairways and proper platforms combined with safe walkways both on the crane andganuyis to be provided.\nTheinformationcontainedinthesedocumentsisconfidentialprivilegedandmaynotbeused.pubtstedorredistributedwihout the prior written consent of Emaar Misr S.A.E.\nEMAAR",
+      "line_count": 26
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

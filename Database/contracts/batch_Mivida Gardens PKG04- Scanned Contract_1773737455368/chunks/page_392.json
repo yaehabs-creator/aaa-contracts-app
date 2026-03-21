@@ -1,0 +1,175 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n<!-- image -->\n\n<!-- image -->\n\nZmrer Mier Fer\n\nTCand18287-308 CR12841 P0.Box729.0\n\nDuvoloprentsAE.\n\nTheinforimationcontainedin thesedocumentsGsoohfdenta.prvileg\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.6761474609375,
+          730.3229166666666
+        ],
+        [
+          340.7530110677083,
+          730.3229166666666
+        ],
+        [
+          340.7530110677083,
+          700.4680786132812
+        ],
+        [
+          189.6761474609375,
+          700.4680786132812
+        ]
+      ],
+      "page": 392
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          700.8827209472656
+        ],
+        [
+          217.0692138671875,
+          700.8827209472656
+        ],
+        [
+          217.0692138671875,
+          686.7846069335938
+        ],
+        [
+          74.70833333333333,
+          686.7846069335938
+        ]
+      ],
+      "page": 392
+    },
+    {
+      "text": "Zmrer Mier Fer",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.9356486002604,
+          138.61663818359375
+        ],
+        [
+          279.32615152994794,
+          138.61663818359375
+        ],
+        [
+          279.32615152994794,
+          127.83571370442712
+        ],
+        [
+          229.9356486002604,
+          127.83571370442712
+        ]
+      ],
+      "page": 392
+    },
+    {
+      "text": "TCand18287-308 CR12841 P0.Box729.0",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.86041259765625,
+          120.37200927734375
+        ],
+        [
+          292.1925862630208,
+          120.37200927734375
+        ],
+        [
+          292.1925862630208,
+          97.15155029296875
+        ],
+        [
+          227.86041259765625,
+          97.15155029296875
+        ]
+      ],
+      "page": 392
+    },
+    {
+      "text": "DuvoloprentsAE.",
+      "confidence": 0.95,
+      "box": [
+        [
+          228.69051106770834,
+          129.90895589192712
+        ],
+        [
+          294.267822265625,
+          129.90895589192712
+        ],
+        [
+          294.267822265625,
+          118.29876708984375
+        ],
+        [
+          228.69051106770834,
+          118.29876708984375
+        ]
+      ],
+      "page": 392
+    },
+    {
+      "text": "Theinforimationcontainedin thesedocumentsGsoohfdenta.prvileg",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          102.12738037109375
+        ],
+        [
+          307.96435546875,
+          102.12738037109375
+        ],
+        [
+          307.96435546875,
+          90.93182373046875
+        ],
+        [
+          73.87823994954427,
+          90.93182373046875
+        ]
+      ],
+      "page": 392
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          735.713368733724
+        ],
+        [
+          509.6768391927083,
+          735.713368733724
+        ],
+        [
+          509.6768391927083,
+          723.2738545735677
+        ],
+        [
+          453.2305501302083,
+          723.2738545735677
+        ]
+      ],
+      "page": 392
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 392,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nZmrer Mier Fer\nTCand18287-308 CR12841 P0.Box729.0\nDuvoloprentsAE.\nTheinforimationcontainedin thesedocumentsGsoohfdenta.prvileg\nEMAAR",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

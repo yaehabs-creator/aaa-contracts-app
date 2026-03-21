@@ -1,0 +1,428 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n## 9.19 Independent Site Survey and Progressive Surveys\n\nContractor shall allow for the provision of modern\"Total Station\" surveying equipment, properly calibrated, checked, and certified on a programmed basis.Copiesofcalibrationcertificatesshall beprovided.Surveyteam membersshallbeproperlytrained intheuseof thesaidequipment. Verificalioroftheinitialsitesurveyandeveryothermonthchecksof progressive surveysby theEmployer.Reportson said surveyverification shallbesubmittedeveryothermonth\n\n## 10. CONTRACTOR'SEMPLOYEES\n\n- 10.1 Contractor'sRepresentative\n\nIn thefirst linereplace\"lmmediately following the Commencement Date, ...\" with \"Immcdiately following the Effective Date, ..\n\n- 10.3 Employees\n\nRename the existing paragraph as (a).\n\nAddnew paragraph (b) as follows:\n\n- (b)For the purpose of maintaining and controlling the supervision and quality of Works. TheContractorshaliprovidetherelevant supervisionstafffor eachrespectivediscipline.Thesame shallbe applied to the subcontractors or specialists that the Contractor may consider designating to carry out any part of the Works.\n\nFailure of the Contractor to provide the required level of staff after 72 hours' notice shall subject Contractor to a daily fine to be calculated based on thc following monthly rates:\n\n| Position                 | Penalty per month (EGP)   |\n|--------------------------|---------------------------|\n| Project Manager          | 250,000                   |\n| ConstructionManager      | 125,000                   |\n| Q/CEngineer              | 100,000                   |\n| SiteEngineer             | 50,000                    |\n| Senior Planning Engineer | 80,000                    |\n| SeniorSpecialistEngineer | 80,000                    |\n| Technical OfficeManager  | 125,000                   |\n| Forman                   | 30,000                    |\n\nContractor shall assemble required staff within fourteen (14) days maximumfrom ContractAdministrator writtenrequest.\n\n## 11. PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT\n\n- 11.1 General\n\nRename the existingparagraph as(a)\n\nAddnew paragraphs (b)to(d)asfollows:\n\nonsuctionofParcel11Parcel12Townhoes&amp;GradingWosRsforParcel11\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          753.0165201822916
+        ],
+        [
+          177.5852254231771,
+          753.0165201822916
+        ],
+        [
+          177.5852254231771,
+          734.3505249023438
+        ],
+        [
+          98.51751708984375,
+          734.3505249023438
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          730.9567057291666
+        ],
+        [
+          151.3702596028646,
+          730.9567057291666
+        ],
+        [
+          151.3702596028646,
+          718.2298889160156
+        ],
+        [
+          125.578125,
+          718.2298889160156
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "9.19 Independent Site Survey and Progressive Surveys",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          699.1396687825521
+        ],
+        [
+          399.1439208984375,
+          699.1396687825521
+        ],
+        [
+          399.1439208984375,
+          685.1401672363281
+        ],
+        [
+          125.15530395507812,
+          685.1401672363281
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Contractor shall allow for the provision of modern\"Total Station\" surveying equipment, properly calibrated, checked, and certified on a programmed basis.Copiesofcalibrationcertificatesshall beprovided.Surveyteam membersshallbeproperlytrained intheuseof thesaidequipment. Verificalioroftheinitialsitesurveyandeveryothermonthchecksof progressive surveysby theEmployer.Reportson said surveyverification shallbesubmittedeveryothermonth",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          681.7463582356771
+        ],
+        [
+          502.3125,
+          681.7463582356771
+        ],
+        [
+          502.3125,
+          596.4767049153646
+        ],
+        [
+          164.47774251302084,
+          596.4767049153646
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "10. CONTRACTOR'SEMPLOYEES",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          587.5679321289062
+        ],
+        [
+          278.21685791015625,
+          587.5679321289062
+        ],
+        [
+          278.21685791015625,
+          574.8411051432292
+        ],
+        [
+          94.28929646809895,
+          574.8411051432292
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "10.1 Contractor'sRepresentative",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          570.1746215820312
+        ],
+        [
+          294.28407796223956,
+          570.1746215820312
+        ],
+        [
+          294.28407796223956,
+          557.0235595703125
+        ],
+        [
+          125.15530395507812,
+          557.0235595703125
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "In thefirst linereplace\"lmmediately following the Commencement Date, ...\" with \"Immcdiately following the Effective Date, ..",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          552.3570760091145
+        ],
+        [
+          501.0440266927083,
+          552.3570760091145
+        ],
+        [
+          501.0440266927083,
+          526.9034423828125
+        ],
+        [
+          164.05492146809897,
+          526.9034423828125
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "10.3 Employees",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          523.933858235677
+        ],
+        [
+          217.7533162434896,
+          523.933858235677
+        ],
+        [
+          217.7533162434896,
+          510.35858154296875
+        ],
+        [
+          125.15530395507812,
+          510.35858154296875
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Rename the existing paragraph as (a).",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          506.54054768880206
+        ],
+        [
+          342.4857991536458,
+          506.54054768880206
+        ],
+        [
+          342.4857991536458,
+          492.11680094401044
+        ],
+        [
+          163.6321004231771,
+          492.11680094401044
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Addnew paragraph (b) as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          489.57143147786456
+        ],
+        [
+          323.45880126953125,
+          489.57143147786456
+        ],
+        [
+          323.45880126953125,
+          475.14772542317706
+        ],
+        [
+          163.6321004231771,
+          475.14772542317706
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "(b)For the purpose of maintaining and controlling the supervision and quality of Works. TheContractorshaliprovidetherelevant supervisionstafffor eachrespectivediscipline.Thesame shallbe applied to the subcontractors or specialists that the Contractor may consider designating to carry out any part of the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          471.75392659505206
+        ],
+        [
+          501.8896484375,
+          471.75392659505206
+        ],
+        [
+          501.8896484375,
+          409.81675211588544
+        ],
+        [
+          164.05492146809897,
+          409.81675211588544
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Failure of the Contractor to provide the required level of staff after 72 hours' notice shall subject Contractor to a daily fine to be calculated based on thc following monthly rates:",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.6590779622396,
+          406.84714762369794
+        ],
+        [
+          501.0440266927083,
+          406.84714762369794
+        ],
+        [
+          501.0440266927083,
+          369.09092203776044
+        ],
+        [
+          182.6590779622396,
+          369.09092203776044
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Contractor shall assemble required staff within fourteen (14) days maximumfrom ContractAdministrator writtenrequest.",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.23626708984375,
+          236.73207600911462
+        ],
+        [
+          499.3527425130208,
+          236.73207600911462
+        ],
+        [
+          499.3527425130208,
+          210.85422770182288
+        ],
+        [
+          182.23626708984375,
+          210.85422770182288
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "11. PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.17519124348958,
+          201.52121988932288
+        ],
+        [
+          423.2447916666667,
+          201.52121988932288
+        ],
+        [
+          423.2447916666667,
+          189.21860758463538
+        ],
+        [
+          92.17519124348958,
+          189.21860758463538
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "11.1 General",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.46400960286458,
+          184.12790934244788
+        ],
+        [
+          202.10888671875,
+          184.12790934244788
+        ],
+        [
+          202.10888671875,
+          172.24953206380212
+        ],
+        [
+          123.46400960286458,
+          172.24953206380212
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Rename the existingparagraph as(a)",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.94080607096353,
+          166.73459879557288
+        ],
+        [
+          337.83473714192706,
+          166.73459879557288
+        ],
+        [
+          337.83473714192706,
+          154.00779215494788
+        ],
+        [
+          161.94080607096353,
+          154.00779215494788
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "Addnew paragraphs (b)to(d)asfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.94080607096353,
+          149.76552327473962
+        ],
+        [
+          354.3247884114583,
+          149.76552327473962
+        ],
+        [
+          354.3247884114583,
+          136.19024658203125
+        ],
+        [
+          161.94080607096353,
+          136.19024658203125
+        ]
+      ],
+      "page": 125
+    },
+    {
+      "text": "onsuctionofParcel11Parcel12Townhoes&GradingWosRsforParcel11",
+      "confidence": 0.95,
+      "box": [
+        [
+          257.07574462890625,
+          105.22165934244788
+        ],
+        [
+          499.7755533854167,
+          105.22165934244788
+        ],
+        [
+          499.7755533854167,
+          93.34332275390625
+        ],
+        [
+          257.07574462890625,
+          93.34332275390625
+        ]
+      ],
+      "page": 125
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 125,
+      "text": "EMAAR\nMISR\n9.19 Independent Site Survey and Progressive Surveys\nContractor shall allow for the provision of modern\"Total Station\" surveying equipment, properly calibrated, checked, and certified on a programmed basis.Copiesofcalibrationcertificatesshall beprovided.Surveyteam membersshallbeproperlytrained intheuseof thesaidequipment. Verificalioroftheinitialsitesurveyandeveryothermonthchecksof progressive surveysby theEmployer.Reportson said surveyverification shallbesubmittedeveryothermonth\n10. CONTRACTOR'SEMPLOYEES\n10.1 Contractor'sRepresentative\nIn thefirst linereplace\"lmmediately following the Commencement Date, ...\" with \"Immcdiately following the Effective Date, ..\n10.3 Employees\nRename the existing paragraph as (a).\nAddnew paragraph (b) as follows:\n(b)For the purpose of maintaining and controlling the supervision and quality of Works. TheContractorshaliprovidetherelevant supervisionstafffor eachrespectivediscipline.Thesame shallbe applied to the subcontractors or specialists that the Contractor may consider designating to carry out any part of the Works.\nFailure of the Contractor to provide the required level of staff after 72 hours' notice shall subject Contractor to a daily fine to be calculated based on thc following monthly rates:\nContractor shall assemble required staff within fourteen (14) days maximumfrom ContractAdministrator writtenrequest.\n11. PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT\n11.1 General\nRename the existingparagraph as(a)\nAddnew paragraphs (b)to(d)asfollows:\nonsuctionofParcel11Parcel12Townhoes&GradingWosRsforParcel11",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

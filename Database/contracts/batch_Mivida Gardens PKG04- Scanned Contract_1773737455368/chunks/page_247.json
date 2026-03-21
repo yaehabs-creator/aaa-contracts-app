@@ -1,0 +1,198 @@
+{
+  "text": "<!-- image -->\n\nEmaar Misr,\n\nMivida Gardens Project\n\nEast Cairo, Cairo, Egypt\n\nConstruction Package Pk#04\n\n## Construction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\n- &gt; Drawings as per list of drawings of Appendix E\n- &gt; Technical Specifications\n- &gt; Cut Sheets\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          242.38704427083334,
+          629.148193359375
+        ],
+        [
+          339.92291259765625,
+          629.148193359375
+        ],
+        [
+          339.92291259765625,
+          609.6596069335938
+        ],
+        [
+          242.38704427083334,
+          609.6596069335938
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "Mivida Gardens Project",
+      "confidence": 0.95,
+      "box": [
+        [
+          195.0717569986979,
+          566.9506022135416
+        ],
+        [
+          388.0682779947917,
+          566.9506022135416
+        ],
+        [
+          388.0682779947917,
+          550.3645833333333
+        ],
+        [
+          195.0717569986979,
+          550.3645833333333
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.58148193359375,
+          508.0702311197917
+        ],
+        [
+          391.388671875,
+          508.0702311197917
+        ],
+        [
+          391.388671875,
+          488.99631754557294
+        ],
+        [
+          192.58148193359375,
+          488.99631754557294
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "Construction Package Pk#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.41412353515625,
+          407.31016031901044
+        ],
+        [
+          412.9710693359375,
+          407.31016031901044
+        ],
+        [
+          412.9710693359375,
+          390.72414143880206
+        ],
+        [
+          171.41412353515625,
+          390.72414143880206
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          362.11326090494794
+        ],
+        [
+          492.6599527994792,
+          362.11326090494794
+        ],
+        [
+          492.6599527994792,
+          326.03863525390625
+        ],
+        [
+          91.3101806640625,
+          326.03863525390625
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "> Drawings as per list of drawings of Appendix E",
+      "confidence": 0.95,
+      "box": [
+        [
+          151.90694173177084,
+          263.8410847981771
+        ],
+        [
+          454.8907470703125,
+          263.8410847981771
+        ],
+        [
+          454.8907470703125,
+          248.91367594401038
+        ],
+        [
+          151.90694173177084,
+          248.91367594401038
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "> Technical Specifications",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.32199096679688,
+          247.25506591796875
+        ],
+        [
+          317.5104166666667,
+          247.25506591796875
+        ],
+        [
+          317.5104166666667,
+          232.74228922526038
+        ],
+        [
+          152.32199096679688,
+          232.74228922526038
+        ]
+      ],
+      "page": 247
+    },
+    {
+      "text": "> Cut Sheets",
+      "confidence": 0.95,
+      "box": [
+        [
+          151.90694173177084,
+          231.91298421223962
+        ],
+        [
+          237.4064737955729,
+          231.91298421223962
+        ],
+        [
+          237.4064737955729,
+          216.98557535807288
+        ],
+        [
+          151.90694173177084,
+          216.98557535807288
+        ]
+      ],
+      "page": 247
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 247,
+      "text": "Emaar Misr,\nMivida Gardens Project\nEast Cairo, Cairo, Egypt\nConstruction Package Pk#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\n> Drawings as per list of drawings of Appendix E\n> Technical Specifications\n> Cut Sheets",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

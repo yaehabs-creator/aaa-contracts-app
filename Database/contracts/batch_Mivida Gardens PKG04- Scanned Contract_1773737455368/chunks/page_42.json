@@ -1,0 +1,267 @@
+{
+  "text": "## Performance\n\n- 6.2 TheContractorwarrantsto theEmployer thattheContractorwill carryout andcompletetheWorksandremedydefectsthereinandperformallits otherobligationsundertheContractstrictlyinaccordancewiththeterms, conditions and provisionsof the Contract.\n\n## Operations andMethodsofExecution\n\n- 6.3 (a) The Contractor shall comply with all applicable rules, regulations and Siteoperations.\n- (b) Without prejudice to any other obligations under the Contract the Contractorshall takefullresponsibilityforthesupervision,adequacy, stabilityandsafetyofallSiteoperations,ofallmethodsofexecution and of alltheWorks,irrespectiveofany approvalorconsentby the Supervision Consultant or the Project Manager.\n- (c) Whenworking ontheSite,anyarea forthe timebeing occupied by the Employer or any area designated by theProject Manager the Contractorshallstrictlyobserveandperformeachandevery provisionof theEmployer'sandtheProjectManager'srules, regulationsandproceduresrelatingtosafetymattersforthetime being in force.\n- (d) TheContractor shalltake allnecessarysteps toprotect the environment(bothonandofftheSite)and toavoiddamageand nuisance lo people and property resulting from pollution, noise and otherresuitsof its operations.This shall include theContractor providing temporary roadways, footways, guards and fences which may be rendered necessary, by reason of the carrying out of the Works,fortheuseandprotectionofthepublicandofowners and occupiersofadjacentland.TheContractorshallensure that emissions,surfacedischargesandeffluentfrom theContractor's activitiesshallnotexceedthevaluesindicatedintheContractand shallnotexceed thevaluesprescribedbytheapplicablelaws.\n- (e) TheContractorshall not interferewith:\n- (i) theconvenienceofthepublic，or\n- (i) the accesstoanduse andoccupationof allroads and footpaths,irrespectiveofwhether theyarepublicor inthe possession of the Employer or of others.\n\n<!-- image -->\n\n<!-- image -->\n\nits employees and design Subcontractors have the experience and capabilitynecessaryforthedesign.TheContractorundertakesthat theemployeesanddesignSubcontractorsshallbeavailableto attenddiscussionswiththeSupervisionConsultantandtheProject ManagerbothonandofftheSiteasrequiredby theSupervision ConsultantortheProjectManager.",
+  "results": [
+    {
+      "text": "Performance",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          643.1416829427084
+        ],
+        [
+          155.59848022460938,
+          643.1416829427084
+        ],
+        [
+          155.59848022460938,
+          630.4148763020834
+        ],
+        [
+          95.1349385579427,
+          630.4148763020834
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "6.2 TheContractorwarrantsto theEmployer thattheContractorwill carryout andcompletetheWorksandremedydefectsthereinandperformallits otherobligationsundertheContractstrictlyinaccordancewiththeterms, conditions and provisionsof the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          619.8091837565104
+        ],
+        [
+          488.359375,
+          619.8091837565104
+        ],
+        [
+          488.359375,
+          575.6895548502605
+        ],
+        [
+          126.84658813476562,
+          575.6895548502605
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "Operations andMethodsofExecution",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          562.9627482096355
+        ],
+        [
+          265.95501708984375,
+          562.9627482096355
+        ],
+        [
+          265.95501708984375,
+          552.3570760091145
+        ],
+        [
+          97.24905395507812,
+          552.3570760091145
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "6.3 (a) The Contractor shall comply with all applicable rules, regulations and Siteoperations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          541.7513834635417
+        ],
+        [
+          488.7821858723958,
+          541.7513834635417
+        ],
+        [
+          488.7821858723958,
+          506.54054768880206
+        ],
+        [
+          126.84658813476562,
+          506.54054768880206
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "(b) Without prejudice to any other obligations under the Contract the Contractorshall takefullresponsibilityforthesupervision,adequacy, stabilityandsafetyofallSiteoperations,ofallmethodsofexecution and of alltheWorks,irrespectiveofany approvalorconsentby the Supervision Consultant or the Project Manager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          495.93487548828125
+        ],
+        [
+          488.359375,
+          495.93487548828125
+        ],
+        [
+          488.359375,
+          438.23996988932294
+        ],
+        [
+          158.55823771158853,
+          438.23996988932294
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "(c) Whenworking ontheSite,anyarea forthe timebeing occupied by the Employer or any area designated by theProject Manager the Contractorshallstrictlyobserveandperformeachandevery provisionof theEmployer'sandtheProjectManager'srules, regulationsandproceduresrelatingtosafetymattersforthetime being in force.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          427.63429768880206
+        ],
+        [
+          488.7821858723958,
+          427.63429768880206
+        ],
+        [
+          488.7821858723958,
+          358.48524983723956
+        ],
+        [
+          159.40387980143228,
+          358.48524983723956
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "(d) TheContractor shalltake allnecessarysteps toprotect the environment(bothonandofftheSite)and toavoiddamageand nuisance lo people and property resulting from pollution, noise and otherresuitsof its operations.This shall include theContractor providing temporary roadways, footways, guards and fences which may be rendered necessary, by reason of the carrying out of the Works,fortheuseandprotectionofthepublicandofowners and occupiersofadjacentland.TheContractorshallensure that emissions,surfacedischargesandeffluentfrom theContractor's activitiesshallnotexceedthevaluesindicatedintheContractand shallnotexceed thevaluesprescribedbytheapplicablelaws.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          348.30381266276044
+        ],
+        [
+          490.0506591796875,
+          348.30381266276044
+        ],
+        [
+          490.0506591796875,
+          224.00526936848962
+        ],
+        [
+          159.40387980143228,
+          224.00526936848962
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "(e) TheContractorshall not interferewith:",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          211.70265706380212
+        ],
+        [
+          363.2040608723958,
+          211.70265706380212
+        ],
+        [
+          363.2040608723958,
+          199.40008544921875
+        ],
+        [
+          159.40387980143228,
+          199.40008544921875
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "(i) theconvenienceofthepublic，or",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.8470662434896,
+          189.64284261067712
+        ],
+        [
+          367.4322916666667,
+          189.64284261067712
+        ],
+        [
+          367.4322916666667,
+          175.64337158203125
+        ],
+        [
+          189.8470662434896,
+          175.64337158203125
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "(i) the accesstoanduse andoccupationof allroads and footpaths,irrespectiveofwhether theyarepublicor inthe possession of the Employer or of others.",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.2698771158854,
+          166.73459879557288
+        ],
+        [
+          489.6278483072917,
+          166.73459879557288
+        ],
+        [
+          489.6278483072917,
+          132.79644775390625
+        ],
+        [
+          190.2698771158854,
+          132.79644775390625
+        ]
+      ],
+      "page": 42
+    },
+    {
+      "text": "its employees and design Subcontractors have the experience and capabilitynecessaryforthedesign.TheContractorundertakesthat theemployeesanddesignSubcontractorsshallbeavailableto attenddiscussionswiththeSupervisionConsultantandtheProject ManagerbothonandofftheSiteasrequiredby theSupervision ConsultantortheProjectManager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.5785929361979,
+          722.8963928222656
+        ],
+        [
+          487.9365234375,
+          722.8963928222656
+        ],
+        [
+          487.9365234375,
+          655.0200398763021
+        ],
+        [
+          188.5785929361979,
+          655.0200398763021
+        ]
+      ],
+      "page": 42
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 42,
+      "text": "Performance\n6.2 TheContractorwarrantsto theEmployer thattheContractorwill carryout andcompletetheWorksandremedydefectsthereinandperformallits otherobligationsundertheContractstrictlyinaccordancewiththeterms, conditions and provisionsof the Contract.\nOperations andMethodsofExecution\n6.3 (a) The Contractor shall comply with all applicable rules, regulations and Siteoperations.\n(b) Without prejudice to any other obligations under the Contract the Contractorshall takefullresponsibilityforthesupervision,adequacy, stabilityandsafetyofallSiteoperations,ofallmethodsofexecution and of alltheWorks,irrespectiveofany approvalorconsentby the Supervision Consultant or the Project Manager.\n(c) Whenworking ontheSite,anyarea forthe timebeing occupied by the Employer or any area designated by theProject Manager the Contractorshallstrictlyobserveandperformeachandevery provisionof theEmployer'sandtheProjectManager'srules, regulationsandproceduresrelatingtosafetymattersforthetime being in force.\n(d) TheContractor shalltake allnecessarysteps toprotect the environment(bothonandofftheSite)and toavoiddamageand nuisance lo people and property resulting from pollution, noise and otherresuitsof its operations.This shall include theContractor providing temporary roadways, footways, guards and fences which may be rendered necessary, by reason of the carrying out of the Works,fortheuseandprotectionofthepublicandofowners and occupiersofadjacentland.TheContractorshallensure that emissions,surfacedischargesandeffluentfrom theContractor's activitiesshallnotexceedthevaluesindicatedintheContractand shallnotexceed thevaluesprescribedbytheapplicablelaws.\n(e) TheContractorshall not interferewith:\n(i) theconvenienceofthepublic，or\n(i) the accesstoanduse andoccupationof allroads and footpaths,irrespectiveofwhether theyarepublicor inthe possession of the Employer or of others.\nits employees and design Subcontractors have the experience and capabilitynecessaryforthedesign.TheContractorundertakesthat theemployeesanddesignSubcontractorsshallbeavailableto attenddiscussionswiththeSupervisionConsultantandtheProject ManagerbothonandofftheSiteasrequiredby theSupervision ConsultantortheProjectManager.",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,129 @@
+{
+  "text": "|                              | AR.35                      | AR.34                                                                                                                                                                             | AR.33                                                                                                                                            | AR.32                        | AR.31                                                                                                                                            | AR.30                                                                                                                                                                                                                                                                                              | AR.29                                                                                                                                                                                                                                                         |                                      | SIN              |\n|------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|------------------|\n| AR.36 staircase are 900high. | Engineered wood            | vanityunitsshouldbemoved underthecountertopsection.                                                                                                                               | underthecountertopsection. For vila type “TH01A&TH01B\",Division 09, please clarify if SK-07 should bemoved&#124;Refer to the attached cut sheet. | flooringSK-07inthecut sheet. | flooring ST-02, ST-03 in the cut sheet                                                                                                           | plastering Allwalitilessize(1200x600)&(600x600)tobeinstalledwithTileadhesiveonCement -AllFloortilessize(600x600) tobe installedwithcementmortaronsandbedding -Allfloor tiles(1200x600)aretobe installedwith tile adhesiveonCementScreed Forvilla type“TH01A&TH01B\",Division09,kindly confirm that: | moved to theshedsection inDivision6. material is aluminum or WPC,and if it is WPC,please confirm whether it should be For villa type “TH01A & TH01B\", Division 08,kindly clarify whether the Shed 02 Shed 02 material is WPC and the updated BOQ is attached. | AR.28 windowsanddoors.               | Item Description |\n|                              | gypt 资任公司 Interne Snas | Forvilla typeTH01A&TH01B,Division09pleaseclarify ifST04lowerstone shelf forST-04Referto the toiletsledge and it should be ised underthelollesledge sectionsper thecutsheetandBOQ. |                                                                                                                                                  |                              | ForvillatypeTH1A&TH1BDivision9,pleasespecify thematerial tpeforstoneRefertoattached cut sheet.Additionally,leasenote thatST03isnotinduded inthep | Confirmed and followspecification093000forinstallation.                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                                               | theupdateddrawing andBoQareattached. | Reply            |\n\n.0Bg229,\n\nCal.Eot\n\n## Package ID : PK#04\n\n## Subject:Construction of TownhomesVillas inParcels11&amp;12\n\nProject : Mivida Gardens",
+  "results": [
+    {
+      "text": ".0Bg229,",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.56967163085938,
+          48.22283935546875
+        ],
+        [
+          166.8486124674479,
+          48.22283935546875
+        ],
+        [
+          166.8486124674479,
+          42.83237711588538
+        ],
+        [
+          131.56967163085938,
+          42.83237711588538
+        ]
+      ],
+      "page": 235
+    },
+    {
+      "text": "Cal.Eot",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.2298583984375,
+          41.17376708984375
+        ],
+        [
+          164.35833740234375,
+          41.17376708984375
+        ],
+        [
+          164.35833740234375,
+          36.19793701171875
+        ],
+        [
+          133.2298583984375,
+          36.19793701171875
+        ]
+      ],
+      "page": 235
+    },
+    {
+      "text": "Package ID : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          485.1891276041667,
+          702.9559733072916
+        ],
+        [
+          497.6405029296875,
+          702.9559733072916
+        ],
+        [
+          497.6405029296875,
+          627.0749308268229
+        ],
+        [
+          485.1891276041667,
+          627.0749308268229
+        ]
+      ],
+      "page": 235
+    },
+    {
+      "text": "Subject:Construction of TownhomesVillas inParcels11&12",
+      "confidence": 0.95,
+      "box": [
+        [
+          501.7909749348958,
+          703.3706258138021
+        ],
+        [
+          513.8273111979166,
+          703.3706258138021
+        ],
+        [
+          513.8273111979166,
+          471.99562581380206
+        ],
+        [
+          501.7909749348958,
+          471.99562581380206
+        ]
+      ],
+      "page": 235
+    },
+    {
+      "text": "Project : Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          517.1476643880209,
+          702.9559733072916
+        ],
+        [
+          529.1840413411459,
+          702.9559733072916
+        ],
+        [
+          529.1840413411459,
+          608.0010172526041
+        ],
+        [
+          517.1476643880209,
+          608.0010172526041
+        ]
+      ],
+      "page": 235
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 235,
+      "text": ".0Bg229,\nCal.Eot\nPackage ID : PK#04\nSubject:Construction of TownhomesVillas inParcels11&12\nProject : Mivida Gardens",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

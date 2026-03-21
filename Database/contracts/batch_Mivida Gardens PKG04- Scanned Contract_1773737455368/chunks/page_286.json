@@ -1,0 +1,750 @@
+{
+  "text": "<!-- image -->\n\n## PART 1 -GENERAL\n\n## 1.01 GENERAL\n\n1. Make submittals as specified in this Section only to Contract Administrator.\n2. Within fourteen (14) days after the Commencement Date, Cortractor shall submit to Contract Administrator for review and approval, a prelininary schedule for the submittal of shop drawings and samples.The schedule shall indicatethedatesonwhichContractorshallsubmitshopdrawingsandsamples for each of the various items of work.Submit final schedule of submittals for reviewwiththeContractSchedule.\n3. Contiact Administraior will transmit submissions to the Employer as necossary and to Supervision Consultant for review as required by other Sections.\n4. Submissions to Supervision Consultant's Offshore Home Office (Outside the Egypt):\n- a) Additional submissions to Supervision Consultant's Offshore Home office arespecifiedinvariousSections.\n6. 5.The Supervision Consultant's Representative may also direct that additional submissions be made to the Supervision Consultant's Offshore Home office in some instances.\n- a) The address of the Supervision Consultant's Offshore Home office will be provided by Contract Administrator.\n8. 6.Identification and Certification of Submissions:\n9. a)Each submission shall have a transmittal form.\n10. b)Provide on each shop drawing and sample a clear space for the review stamp (Action A, B, C or D) and commcnts of reviewer. Where a clear space cannot be provided, attach a tag or sticker to the drawing or sample.\n11. Submissions shali bear the Contractor's stamp and written certification that they have been coordinated, checked for compliance with the Contract and approved by the Contractor.\n12. d)Contractorshallberesponsibleforpaymentofallcostsfortransmissionof submittals to the Employer, Contract Administrator, Supervision Consultant and Supervision Consultant's Offshore Home office.\n\n## 1.02 SUBMISSIONTRANSMITTALPROCEDURES\n\n1. Accompany submissions by a transmittal form provided by the Contractor in A4 ContractAdministrator.\n2. Prcsonl submilttal data in metric (Sl) units.\n3. Present submittal information and data in the English language.\n4. 4.Provide the following printed or typed information on cach transmittal form:\n- a) Name of Project and Project number\n\n有限费\n\n- b) Name of·Contractor, and when appropriate the name of the Subcontraotor and/orsupplierormanufacttmerwhose\n\nT0210-207006\n\n2OD22,\n\nCE1241\n\n(tiru, ksAt bmittals\n\ngeNumber:1of10\n\n## SECTION 01300\n\n## SUBMITTALS\n\nMLS\n\nclan01300\n\n中建国际埃",
+  "results": [
+    {
+      "text": "PART 1 -GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          673.1011454264323
+        ],
+        [
+          182.205322265625,
+          673.1011454264323
+        ],
+        [
+          182.205322265625,
+          662.3202311197916
+        ],
+        [
+          77.1986083984375,
+          662.3202311197916
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "1.01 GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          650.7100219726562
+        ],
+        [
+          166.8486124674479,
+          650.7100219726562
+        ],
+        [
+          166.8486124674479,
+          638.6851399739584
+        ],
+        [
+          76.36852010091145,
+          638.6851399739584
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Make submittals as specified in this Section only to Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          633.2946980794271
+        ],
+        [
+          479.3784586588542,
+          633.2946980794271
+        ],
+        [
+          479.3784586588542,
+          621.2698160807291
+        ],
+        [
+          94.63055419921875,
+          621.2698160807291
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Within fourteen (14) days after the Commencement Date, Cortractor shall submit to Contract Administrator for review and approval, a prelininary schedule for the submittal of shop drawings and samples.The schedule shall indicatethedatesonwhichContractorshallsubmitshopdrawingsandsamples for each of the various items of work.Submit final schedule of submittals for reviewwiththeContractSchedule.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          616.2940266927084
+        ],
+        [
+          505.9414469401042,
+          616.2940266927084
+        ],
+        [
+          505.9414469401042,
+          547.876688639323
+        ],
+        [
+          94.63055419921875,
+          547.876688639323
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Contiact Administraior will transmit submissions to the Employer as necossary and to Supervision Consultant for review as required by other Sections.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          543.7301839192708
+        ],
+        [
+          505.9414469401042,
+          543.7301839192708
+        ],
+        [
+          505.9414469401042,
+          518.0218505859375
+        ],
+        [
+          94.63055419921875,
+          518.0218505859375
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Submissions to Supervision Consultant's Offshore Home Office (Outside the Egypt):",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          513.8753458658855
+        ],
+        [
+          505.111328125,
+          513.8753458658855
+        ],
+        [
+          505.111328125,
+          488.99631754557294
+        ],
+        [
+          94.2155049641927,
+          488.99631754557294
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Additional submissions to Supervision Consultant's Offshore Home office arespecifiedinvariousSections.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          485.2644449869792
+        ],
+        [
+          505.111328125,
+          485.2644449869792
+        ],
+        [
+          505.111328125,
+          461.62937418619794
+        ],
+        [
+          110.40231323242188,
+          461.62937418619794
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "5.The Supervision Consultant's Representative may also direct that additional submissions be made to the Supervision Consultant's Offshore Home office in some instances.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          457.06821695963544
+        ],
+        [
+          505.5263671875,
+          457.06821695963544
+        ],
+        [
+          505.5263671875,
+          421.82293701171875
+        ],
+        [
+          92.97036743164062,
+          421.82293701171875
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "The address of the Supervision Consultant's Offshore Home office will be provided by Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          416.84710693359375
+        ],
+        [
+          504.6962890625,
+          416.84710693359375
+        ],
+        [
+          504.6962890625,
+          393.21205647786456
+        ],
+        [
+          110.40231323242188,
+          393.21205647786456
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "6.Identification and Certification of Submissions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          388.23622639973956
+        ],
+        [
+          340.7530110677083,
+          388.23622639973956
+        ],
+        [
+          340.7530110677083,
+          376.21136474609375
+        ],
+        [
+          93.38541666666667,
+          376.21136474609375
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "a)Each submission shall have a transmittal form.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          370.82090250651044
+        ],
+        [
+          361.5053304036458,
+          370.82090250651044
+        ],
+        [
+          361.5053304036458,
+          359.62534586588544
+        ],
+        [
+          110.40231323242188,
+          359.62534586588544
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "b)Provide on each shop drawing and sample a clear space for the review stamp (Action A, B, C or D) and commcnts of reviewer. Where a clear space cannot be provided, attach a tag or sticker to the drawing or sample.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          354.23488362630206
+        ],
+        [
+          505.111328125,
+          354.23488362630206
+        ],
+        [
+          505.111328125,
+          318.98960367838544
+        ],
+        [
+          110.40231323242188,
+          318.98960367838544
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Submissions shali bear the Contractor's stamp and written certification that they have been coordinated, checked for compliance with the Contract and approved by the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          314.84307861328125
+        ],
+        [
+          505.9414469401042,
+          314.84307861328125
+        ],
+        [
+          505.9414469401042,
+          279.18316650390625
+        ],
+        [
+          126.174072265625,
+          279.18316650390625
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "d)Contractorshallberesponsibleforpaymentofallcostsfortransmissionof submittals to the Employer, Contract Administrator, Supervision Consultant and Supervision Consultant's Offshore Home office.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          274.20733642578125
+        ],
+        [
+          505.9414469401042,
+          274.20733642578125
+        ],
+        [
+          505.9414469401042,
+          239.79136149088538
+        ],
+        [
+          110.40231323242188,
+          239.79136149088538
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "1.02 SUBMISSIONTRANSMITTALPROCEDURES",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          212.00974527994788
+        ],
+        [
+          346.9787190755208,
+          212.00974527994788
+        ],
+        [
+          346.9787190755208,
+          200.39955647786462
+        ],
+        [
+          75.53842671712239,
+          200.39955647786462
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Accompany submissions by a transmittal form provided by the Contractor in A4 ContractAdministrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          195.00909423828125
+        ],
+        [
+          504.6962890625,
+          195.00909423828125
+        ],
+        [
+          504.6962890625,
+          160.59307861328125
+        ],
+        [
+          92.55532836914062,
+          160.59307861328125
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Prcsonl submilttal data in metric (Sl) units.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          156.03196207682288
+        ],
+        [
+          317.0953776041667,
+          156.03196207682288
+        ],
+        [
+          317.0953776041667,
+          142.76312255859375
+        ],
+        [
+          91.72522989908855,
+          142.76312255859375
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Present submittal information and data in the English language.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          139.44590250651038
+        ],
+        [
+          425.0074055989583,
+          139.44590250651038
+        ],
+        [
+          425.0074055989583,
+          124.51849365234375
+        ],
+        [
+          91.3101806640625,
+          124.51849365234375
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "4.Provide the following printed or typed information on cach transmittal form:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          121.20127360026038
+        ],
+        [
+          480.2085774739583,
+          121.20127360026038
+        ],
+        [
+          480.2085774739583,
+          108.76182047526038
+        ],
+        [
+          92.14027913411458,
+          108.76182047526038
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Name of Project and Project number",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          103.78599039713538
+        ],
+        [
+          309.20949300130206,
+          103.78599039713538
+        ],
+        [
+          309.20949300130206,
+          92.17580159505212
+        ],
+        [
+          109.57222493489583,
+          92.17580159505212
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "有限费",
+      "confidence": 0.95,
+      "box": [
+        [
+          491.414794921875,
+          137.78729248046875
+        ],
+        [
+          501.7909749348958,
+          137.78729248046875
+        ],
+        [
+          501.7909749348958,
+          101.71274820963538
+        ],
+        [
+          491.414794921875,
+          101.71274820963538
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "Name of·Contractor, and when appropriate the name of the Subcontraotor and/orsupplierormanufacttmerwhose",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          88.44386800130212
+        ],
+        [
+          505.5263671875,
+          88.44386800130212
+        ],
+        [
+          505.5263671875,
+          63.97951253255212
+        ],
+        [
+          109.57222493489583,
+          63.97951253255212
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "T0210-207006",
+      "confidence": 0.95,
+      "box": [
+        [
+          256.9136555989583,
+          57.34515380859375
+        ],
+        [
+          314.60508219401044,
+          57.34515380859375
+        ],
+        [
+          314.60508219401044,
+          49.05210367838538
+        ],
+        [
+          256.9136555989583,
+          49.05210367838538
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "2OD22,",
+      "confidence": 0.95,
+      "box": [
+        [
+          256.4986165364583,
+          45.32025146484375
+        ],
+        [
+          290.1173502604167,
+          45.32025146484375
+        ],
+        [
+          290.1173502604167,
+          37.02728271484375
+        ],
+        [
+          256.4986165364583,
+          37.02728271484375
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "CE1241",
+      "confidence": 0.95,
+      "box": [
+        [
+          256.9136555989583,
+          50.71071370442712
+        ],
+        [
+          282.6465250651042,
+          50.71071370442712
+        ],
+        [
+          282.6465250651042,
+          43.66164143880212
+        ],
+        [
+          256.9136555989583,
+          43.66164143880212
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "(tiru, ksAt bmittals",
+      "confidence": 0.95,
+      "box": [
+        [
+          255.25347900390625,
+          39.92978922526038
+        ],
+        [
+          288.45717366536456,
+          39.92978922526038
+        ],
+        [
+          288.45717366536456,
+          29.56349690755212
+        ],
+        [
+          255.25347900390625,
+          29.56349690755212
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "geNumber:1of10",
+      "confidence": 0.95,
+      "box": [
+        [
+          428.3277587890625,
+          40.75913492838538
+        ],
+        [
+          492.6599527994792,
+          40.75913492838538
+        ],
+        [
+          492.6599527994792,
+          32.05145263671875
+        ],
+        [
+          428.3277587890625,
+          32.05145263671875
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "SECTION 01300",
+      "confidence": 0.95,
+      "box": [
+        [
+          248.19769287109375,
+          719.542002360026
+        ],
+        [
+          333.6972249348958,
+          719.542002360026
+        ],
+        [
+          333.6972249348958,
+          707.9317830403646
+        ],
+        [
+          248.19769287109375,
+          707.9317830403646
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "SUBMITTALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          254.83841959635416,
+          695.9069213867188
+        ],
+        [
+          327.0564778645833,
+          695.9069213867188
+        ],
+        [
+          327.0564778645833,
+          684.7113545735677
+        ],
+        [
+          254.83841959635416,
+          684.7113545735677
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "MLS",
+      "confidence": 0.95,
+      "box": [
+        [
+          331.2069498697917,
+          36.19793701171875
+        ],
+        [
+          349.884033203125,
+          36.19793701171875
+        ],
+        [
+          349.884033203125,
+          25.41701253255212
+        ],
+        [
+          331.2069498697917,
+          25.41701253255212
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "clan01300",
+      "confidence": 0.95,
+      "box": [
+        [
+          430.8180338541667,
+          47.80812581380212
+        ],
+        [
+          469.4173583984375,
+          47.80812581380212
+        ],
+        [
+          469.4173583984375,
+          40.34442138671875
+        ],
+        [
+          430.8180338541667,
+          40.34442138671875
+        ]
+      ],
+      "page": 286
+    },
+    {
+      "text": "中建国际埃",
+      "confidence": 0.95,
+      "box": [
+        [
+          507.6016031901042,
+          137.37266031901038
+        ],
+        [
+          515.9025472005209,
+          137.37266031901038
+        ],
+        [
+          515.9025472005209,
+          77.24831136067712
+        ],
+        [
+          507.6016031901042,
+          77.24831136067712
+        ]
+      ],
+      "page": 286
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 286,
+      "text": "PART 1 -GENERAL\n1.01 GENERAL\nMake submittals as specified in this Section only to Contract Administrator.\nWithin fourteen (14) days after the Commencement Date, Cortractor shall submit to Contract Administrator for review and approval, a prelininary schedule for the submittal of shop drawings and samples.The schedule shall indicatethedatesonwhichContractorshallsubmitshopdrawingsandsamples for each of the various items of work.Submit final schedule of submittals for reviewwiththeContractSchedule.\nContiact Administraior will transmit submissions to the Employer as necossary and to Supervision Consultant for review as required by other Sections.\nSubmissions to Supervision Consultant's Offshore Home Office (Outside the Egypt):\nAdditional submissions to Supervision Consultant's Offshore Home office arespecifiedinvariousSections.\n5.The Supervision Consultant's Representative may also direct that additional submissions be made to the Supervision Consultant's Offshore Home office in some instances.\nThe address of the Supervision Consultant's Offshore Home office will be provided by Contract Administrator.\n6.Identification and Certification of Submissions:\na)Each submission shall have a transmittal form.\nb)Provide on each shop drawing and sample a clear space for the review stamp (Action A, B, C or D) and commcnts of reviewer. Where a clear space cannot be provided, attach a tag or sticker to the drawing or sample.\nSubmissions shali bear the Contractor's stamp and written certification that they have been coordinated, checked for compliance with the Contract and approved by the Contractor.\nd)Contractorshallberesponsibleforpaymentofallcostsfortransmissionof submittals to the Employer, Contract Administrator, Supervision Consultant and Supervision Consultant's Offshore Home office.\n1.02 SUBMISSIONTRANSMITTALPROCEDURES\nAccompany submissions by a transmittal form provided by the Contractor in A4 ContractAdministrator.\nPrcsonl submilttal data in metric (Sl) units.\nPresent submittal information and data in the English language.\n4.Provide the following printed or typed information on cach transmittal form:\nName of Project and Project number\n有限费\nName of·Contractor, and when appropriate the name of the Subcontraotor and/orsupplierormanufacttmerwhose\nT0210-207006\n2OD22,\nCE1241\n(tiru, ksAt bmittals\ngeNumber:1of10\nSECTION 01300\nSUBMITTALS\nMLS\nclan01300\n中建国际埃",
+      "line_count": 32
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

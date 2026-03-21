@@ -1,0 +1,336 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nwrittenconsentof theEmployer.\n\n- 7.5Tenderers shall submitpricesfor allBOQitems.TheBOQsummaryhighlights the items/scope only, meanwhile Contract price is considered as based on the various tender documents being complimentary and interpreted on a collective l      o  s part.\n- 7.6 Items with no rates entered next to them in the BOQ shall be deemed to be covered by the other prices in the BOQ and included in the Tender Sum.\n\n## 8 TENDERDOCUMENTATION\n\n- 8.1In order to tender, the Tenderer must submit all the tender documents as listed in paragraph 3 above, by the time and in the manner stated in paragraph 7 above,andas more detailed hereinafter.Suchdocumentsmustbear the stampof theTendererinthebottomright-handcornerofeachpageorDrawing (as applicable):\n- a）The Form of Tenderdulycompleted,signed,including the insertion of the TenderSum(both inwords and figures) forboth theBasicandBasic+ OptionalScopes(if any)and the insertion inItem8of thereference numbersanddateofissueofeachaddendum/AnswertoTenderQueries issuedbytheEmployerinaccordancewithparagraph5above.\n\nThe Form of Tender must be dated and signed by some person(s) authorisedtosigntendersforandonbehalfoftheTenderer.Eachpageof theForm of Tender istobe initialledby thesameperson.\n\nIf the Tenderer isa jointventurebetween two or more contractors,the Form of Tender must be signed by a representative of each such contractor, in each case by some person(s) authorised to sign tenders on behalfofthecontractorandthejointventure.\n\nSaveforinsertionoftheaboveinformation,theFormof Tendermustnot be amended, added to or otherwise modified in any manner whatsoever.\n\nTheTenderer'sattentionisalsodrawntothestipulationinItem5ofthe FormofTenderthatintheeventofadiscrepancybetweenanyamount statedin words and infigures inrelation toa single entry,the amount inserted inwordsshallprevail and beregarded as conclusive.\n\n- b)AsignatureauthorityintheformofacertifiedBoardResolutionofthe Tenderer or a sealed Power of Attorney granted by the Tenderer, in each accompanyingdocuments so to do.\n- c) The scanned as well as the excel files of the priced Bills of Quantities and the scanned Technical documents as listed in Paragraph 8.1(g) below,provided as part of the Tender documents including drawings, duly priced and completed in indelible ink,signed on the first page the Form of Tender.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          750.0469258626302
+        ],
+        [
+          164.90056355794272,
+          750.0469258626302
+        ],
+        [
+          164.90056355794272,
+          733.9262898763021
+        ],
+        [
+          98.09469604492188,
+          733.9262898763021
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.3499043782552,
+          730.532480875651
+        ],
+        [
+          142.913818359375,
+          730.532480875651
+        ],
+        [
+          142.913818359375,
+          719.9267985026041
+        ],
+        [
+          121.3499043782552,
+          719.9267985026041
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "writtenconsentof theEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.03455607096353,
+          683.8674926757812
+        ],
+        [
+          284.98199462890625,
+          683.8674926757812
+        ],
+        [
+          284.98199462890625,
+          670.7164510091146
+        ],
+        [
+          134.03455607096353,
+          670.7164510091146
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "7.5Tenderers shall submitpricesfor allBOQitems.TheBOQsummaryhighlights the items/scope only, meanwhile Contract price is considered as based on the various tender documents being complimentary and interpreted on a collective l      o  s part.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.35652669270833,
+          666.8983968098959
+        ],
+        [
+          506.9635416666667,
+          666.8983968098959
+        ],
+        [
+          506.9635416666667,
+          607.0823771158854
+        ],
+        [
+          110.35652669270833,
+          607.0823771158854
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "7.6 Items with no rates entered next to them in the BOQ shall be deemed to be covered by the other prices in the BOQ and included in the Tender Sum.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.0880635579427,
+          601.9916381835938
+        ],
+        [
+          506.9635416666667,
+          601.9916381835938
+        ],
+        [
+          506.9635416666667,
+          575.2653401692708
+        ],
+        [
+          109.0880635579427,
+          575.2653401692708
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "8 TENDERDOCUMENTATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          567.2050170898438
+        ],
+        [
+          250.31060791015625,
+          567.2050170898438
+        ],
+        [
+          250.31060791015625,
+          554.9024251302083
+        ],
+        [
+          96.40340169270833,
+          554.9024251302083
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "8.1In order to tender, the Tenderer must submit all the tender documents as listed in paragraph 3 above, by the time and in the manner stated in paragraph 7 above,andas more detailed hereinafter.Suchdocumentsmustbear the stampof theTendererinthebottomright-handcornerofeachpageorDrawing (as applicable):",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.51088460286458,
+          550.2359415690105
+        ],
+        [
+          506.5406901041667,
+          550.2359415690105
+        ],
+        [
+          506.5406901041667,
+          488.72300211588544
+        ],
+        [
+          109.51088460286458,
+          488.72300211588544
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "a）The Form of Tenderdulycompleted,signed,including the insertion of the TenderSum(both inwords and figures) forboth theBasicandBasic+ OptionalScopes(if any)and the insertion inItem8of thereference numbersanddateofissueofeachaddendum/AnswertoTenderQueries issuedbytheEmployerinaccordancewithparagraph5above.",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.37689208984375,
+          483.63226318359375
+        ],
+        [
+          505.695068359375,
+          483.63226318359375
+        ],
+        [
+          505.695068359375,
+          422.96779378255206
+        ],
+        [
+          140.37689208984375,
+          422.96779378255206
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "The Form of Tender must be dated and signed by some person(s) authorisedtosigntendersforandonbehalfoftheTenderer.Eachpageof theForm of Tender istobe initialledby thesameperson.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          419.57395426432294
+        ],
+        [
+          506.1178792317708,
+          419.57395426432294
+        ],
+        [
+          506.1178792317708,
+          381.39353434244794
+        ],
+        [
+          156.02130126953125,
+          381.39353434244794
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "If the Tenderer isa jointventurebetween two or more contractors,the Form of Tender must be signed by a representative of each such contractor, in each case by some person(s) authorised to sign tenders on behalfofthecontractorandthejointventure.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.59848022460938,
+          377.57550048828125
+        ],
+        [
+          506.1178792317708,
+          377.57550048828125
+        ],
+        [
+          506.1178792317708,
+          328.78936767578125
+        ],
+        [
+          155.59848022460938,
+          328.78936767578125
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "Saveforinsertionoftheaboveinformation,theFormof Tendermustnot be amended, added to or otherwise modified in any manner whatsoever.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          324.5470987955729
+        ],
+        [
+          506.1178792317708,
+          324.5470987955729
+        ],
+        [
+          506.1178792317708,
+          299.5176798502604
+        ],
+        [
+          156.02130126953125,
+          299.5176798502604
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "TheTenderer'sattentionisalsodrawntothestipulationinItem5ofthe FormofTenderthatintheeventofadiscrepancybetweenanyamount statedin words and infigures inrelation toa single entry,the amount inserted inwordsshallprevail and beregarded as conclusive.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          295.2754109700521
+        ],
+        [
+          506.1178792317708,
+          295.2754109700521
+        ],
+        [
+          506.1178792317708,
+          246.48927815755212
+        ],
+        [
+          155.1756591796875,
+          246.48927815755212
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "b)AsignatureauthorityintheformofacertifiedBoardResolutionofthe Tenderer or a sealed Power of Attorney granted by the Tenderer, in each accompanyingdocuments so to do.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.10842895507812,
+          241.82277425130212
+        ],
+        [
+          505.2722574869792,
+          241.82277425130212
+        ],
+        [
+          505.2722574869792,
+          193.46087646484375
+        ],
+        [
+          139.10842895507812,
+          193.46087646484375
+        ]
+      ],
+      "page": 584
+    },
+    {
+      "text": "The scanned as well as the excel files of the priced Bills of Quantities and the scanned Technical documents as listed in Paragraph 8.1(g) below,provided as part of the Tender documents including drawings, duly priced and completed in indelible ink,signed on the first page the Form of Tender.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.95407104492188,
+          189.21860758463538
+        ],
+        [
+          504.8494059244792,
+          189.21860758463538
+        ],
+        [
+          504.8494059244792,
+          117.09999593098962
+        ],
+        [
+          139.95407104492188,
+          117.09999593098962
+        ]
+      ],
+      "page": 584
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 584,
+      "text": "EMAAR\nMISR\nwrittenconsentof theEmployer.\n7.5Tenderers shall submitpricesfor allBOQitems.TheBOQsummaryhighlights the items/scope only, meanwhile Contract price is considered as based on the various tender documents being complimentary and interpreted on a collective l      o  s part.\n7.6 Items with no rates entered next to them in the BOQ shall be deemed to be covered by the other prices in the BOQ and included in the Tender Sum.\n8 TENDERDOCUMENTATION\n8.1In order to tender, the Tenderer must submit all the tender documents as listed in paragraph 3 above, by the time and in the manner stated in paragraph 7 above,andas more detailed hereinafter.Suchdocumentsmustbear the stampof theTendererinthebottomright-handcornerofeachpageorDrawing (as applicable):\na）The Form of Tenderdulycompleted,signed,including the insertion of the TenderSum(both inwords and figures) forboth theBasicandBasic+ OptionalScopes(if any)and the insertion inItem8of thereference numbersanddateofissueofeachaddendum/AnswertoTenderQueries issuedbytheEmployerinaccordancewithparagraph5above.\nThe Form of Tender must be dated and signed by some person(s) authorisedtosigntendersforandonbehalfoftheTenderer.Eachpageof theForm of Tender istobe initialledby thesameperson.\nIf the Tenderer isa jointventurebetween two or more contractors,the Form of Tender must be signed by a representative of each such contractor, in each case by some person(s) authorised to sign tenders on behalfofthecontractorandthejointventure.\nSaveforinsertionoftheaboveinformation,theFormof Tendermustnot be amended, added to or otherwise modified in any manner whatsoever.\nTheTenderer'sattentionisalsodrawntothestipulationinItem5ofthe FormofTenderthatintheeventofadiscrepancybetweenanyamount statedin words and infigures inrelation toa single entry,the amount inserted inwordsshallprevail and beregarded as conclusive.\nb)AsignatureauthorityintheformofacertifiedBoardResolutionofthe Tenderer or a sealed Power of Attorney granted by the Tenderer, in each accompanyingdocuments so to do.\nThe scanned as well as the excel files of the priced Bills of Quantities and the scanned Technical documents as listed in Paragraph 8.1(g) below,provided as part of the Tender documents including drawings, duly priced and completed in indelible ink,signed on the first page the Form of Tender.",
+      "line_count": 14
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

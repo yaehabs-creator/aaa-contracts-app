@@ -1,0 +1,566 @@
+{
+  "text": "<!-- image -->\n\n2. Orientation.\n3. Skill evaluation.\n3. 4.Certification credentials.\n- D. Contractor shall maintain records of personnel qualifications as quality records.\n\n## 2.14QUALITYCONTROL.REPORTS/AUDITS\n\n- A.The Contractor's Quality Control Manager shall provide a daily Quality Control Report to the Contract Administrator / Engineer. This report shall be comprehensive and it should include all Q.C. activities on the project.\n- B. Contractor shall perform regularly scheduled internal audits to verify that his quality control procedures ensure total compliance with the Specifications andreferencedstandards.\n1. Schedule quality control audits not less than monthly.\n2. Maintain records of internal audits as quality records and make them available to the Contract Administrator/ Engineer upon request.\n3. Provide the Contract Administrator / Engineer with access to the audit records upon request.\n4. Allow the Contract Administrator / Engineer to observe the Contractor's internal audit upon request.\n5. Provide the Contract Administrator / Engineer with a copy of the monthly audit report.\n\n## 2.15EQUIPMENT/MATERIALHANDLINGANDSTORAGE\n\n- A. Contractor shall be responsible for handling, storing and preserving equipment and material from the time of receipt to the time of acceptance by the Employer.\n- B. Contractor's storage and handling procedures shall be designed to prevent damage, deterioration, distortion of shape or dimension, loss, degradation, loss of identification,or substitution.\n- C. The handling procedurcs shall address the use, inspection and maintenance of special devices such as crates, boxes, containers, dividers, slings, material handling and transportation equipment and other facilities.\n- D. Contractor shall identify equipment and material requiring special handling or testing.\n\n## 2.16QUALITYCONTROLRECORDS\n\n- A. Contractor shall develop a complete records index based on the requirements for document and data submittals in each Section of these Specifications.\n1. Indicate all quality control records, documentation, submittals and data required by the Contract.\n2. Supplement these records as necessary to monitor quality throughout the project\n3. The. recordsidentified in the index shall provide objective evidence that quality control program activities conform to the contract requirements. Carlncluide evidence that required verifications have been performed\n\nbEstablish tnebasisfor keyproject decislons\n\n- B.Authonticate alf recarde.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Orientation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.62801106770833,
+          716.6394449869791
+        ],
+        [
+          188.4310099283854,
+          716.6394449869791
+        ],
+        [
+          188.4310099283854,
+          704.1999308268229
+        ],
+        [
+          116.62801106770833,
+          704.1999308268229
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Skill evaluation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.2129618326823,
+          703.3706258138021
+        ],
+        [
+          208.7682902018229,
+          703.3706258138021
+        ],
+        [
+          208.7682902018229,
+          691.7604166666666
+        ],
+        [
+          116.2129618326823,
+          691.7604166666666
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "4.Certification credentials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.2129618326823,
+          690.101806640625
+        ],
+        [
+          249.85786946614584,
+          690.101806640625
+        ],
+        [
+          249.85786946614584,
+          679.7355448404948
+        ],
+        [
+          116.2129618326823,
+          679.7355448404948
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Contractor shall maintain records of personnel qualifications as quality records.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          677.6622924804688
+        ],
+        [
+          502.6210530598958,
+          677.6622924804688
+        ],
+        [
+          502.6210530598958,
+          651.9539591471354
+        ],
+        [
+          100.44120279947917,
+          651.9539591471354
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "2.14QUALITYCONTROL.REPORTS/AUDITS",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          638.6851399739584
+        ],
+        [
+          313.77500406901044,
+          638.6851399739584
+        ],
+        [
+          313.77500406901044,
+          629.148193359375
+        ],
+        [
+          76.36852010091145,
+          629.148193359375
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "A.The Contractor's Quality Control Manager shall provide a daily Quality Control Report to the Contract Administrator / Engineer. This report shall be comprehensive and it should include all Q.C. activities on the project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          620.4405314127604
+        ],
+        [
+          503.451171875,
+          620.4405314127604
+        ],
+        [
+          503.451171875,
+          583.9512736002604
+        ],
+        [
+          101.2712910970052,
+          583.9512736002604
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Contractor shall perform regularly scheduled internal audits to verify that his quality control procedures ensure total compliance with the Specifications andreferencedstandards.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          581.0487263997396
+        ],
+        [
+          504.28125,
+          581.0487263997396
+        ],
+        [
+          504.28125,
+          544.1448364257812
+        ],
+        [
+          101.2712910970052,
+          544.1448364257812
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Schedule quality control audits not less than monthly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          541.6569213867188
+        ],
+        [
+          400.1046142578125,
+          541.6569213867188
+        ],
+        [
+          400.1046142578125,
+          531.2906697591145
+        ],
+        [
+          119.1182861328125,
+          531.2906697591145
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Maintain records of internal audits as quality records and make them available to the Contract Administrator/ Engineer upon request.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          528.3881022135417
+        ],
+        [
+          504.6962890625,
+          528.3881022135417
+        ],
+        [
+          504.6962890625,
+          505.1676839192708
+        ],
+        [
+          118.70323689778645,
+          505.1676839192708
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Provide the Contract Administrator / Engineer with access to the audit records upon request.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          502.6797688802083
+        ],
+        [
+          505.5263671875,
+          502.6797688802083
+        ],
+        [
+          505.5263671875,
+          477.80076090494794
+        ],
+        [
+          118.70323689778645,
+          477.80076090494794
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Allow the Contract Administrator / Engineer to observe the Contractor's internal audit upon request.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          476.55678304036456
+        ],
+        [
+          505.111328125,
+          476.55678304036456
+        ],
+        [
+          505.111328125,
+          451.67775472005206
+        ],
+        [
+          118.70323689778645,
+          451.67775472005206
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Provide the Contract Administrator / Engineer with a copy of the monthly audit report.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          450.84844970703125
+        ],
+        [
+          504.28125,
+          450.84844970703125
+        ],
+        [
+          504.28125,
+          424.31081136067706
+        ],
+        [
+          119.1182861328125,
+          424.31081136067706
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "2.15EQUIPMENT/MATERIALHANDLINGANDSTORAGE",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          412.28594970703125
+        ],
+        [
+          386.8231608072917,
+          412.28594970703125
+        ],
+        [
+          386.8231608072917,
+          402.33437093098956
+        ],
+        [
+          76.78356424967448,
+          402.33437093098956
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Contractor shall be responsible for handling, storing and preserving equipment and material from the time of receipt to the time of acceptance by the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          393.62668863932294
+        ],
+        [
+          505.111328125,
+          393.62668863932294
+        ],
+        [
+          505.111328125,
+          355.47886149088544
+        ],
+        [
+          102.51643880208333,
+          355.47886149088544
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Contractor's storage and handling procedures shall be designed to prevent damage, deterioration, distortion of shape or dimension, loss, degradation, loss of identification,or substitution.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          354.64955647786456
+        ],
+        [
+          507.1865641276042,
+          354.64955647786456
+        ],
+        [
+          507.1865641276042,
+          317.33099365234375
+        ],
+        [
+          102.51643880208333,
+          317.33099365234375
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "The handling procedurcs shall address the use, inspection and maintenance of special devices such as crates, boxes, containers, dividers, slings, material handling and transportation equipment and other facilities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.93147786458333,
+          315.67238362630206
+        ],
+        [
+          506.7715250651042,
+          315.67238362630206
+        ],
+        [
+          506.7715250651042,
+          279.18316650390625
+        ],
+        [
+          102.93147786458333,
+          279.18316650390625
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Contractor shall identify equipment and material requiring special handling or testing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.93147786458333,
+          277.1098836263021
+        ],
+        [
+          506.3564860026042,
+          277.1098836263021
+        ],
+        [
+          506.3564860026042,
+          248.91367594401038
+        ],
+        [
+          102.93147786458333,
+          248.91367594401038
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "2.16QUALITYCONTROLRECORDS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          237.71807861328125
+        ],
+        [
+          272.6854248046875,
+          237.71807861328125
+        ],
+        [
+          272.6854248046875,
+          228.18113199869788
+        ],
+        [
+          78.02870178222656,
+          228.18113199869788
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Contractor shall develop a complete records index based on the requirements for document and data submittals in each Section of these Specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.93147786458333,
+          219.88812255859375
+        ],
+        [
+          506.7715250651042,
+          219.88812255859375
+        ],
+        [
+          506.7715250651042,
+          181.32562255859375
+        ],
+        [
+          102.93147786458333,
+          181.32562255859375
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Indicate all quality control records, documentation, submittals and data required by the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          180.49631754557288
+        ],
+        [
+          506.7715250651042,
+          180.49631754557288
+        ],
+        [
+          506.7715250651042,
+          156.86122639973962
+        ],
+        [
+          121.19352213541667,
+          156.86122639973962
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "Supplement these records as necessary to monitor quality throughout the project",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.60856119791667,
+          153.95867919921875
+        ],
+        [
+          506.3564860026042,
+          153.95867919921875
+        ],
+        [
+          506.3564860026042,
+          129.07969156901038
+        ],
+        [
+          121.60856119791667,
+          129.07969156901038
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "The. recordsidentified in the index shall provide objective evidence that quality control program activities conform to the contract requirements. Carlncluide evidence that required verifications have been performed",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.0236104329427,
+          129.49432373046875
+        ],
+        [
+          508.8467610677083,
+          129.49432373046875
+        ],
+        [
+          508.8467610677083,
+          91.76108805338538
+        ],
+        [
+          122.0236104329427,
+          91.76108805338538
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "bEstablish tnebasisfor keyproject decislons",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.28564453125,
+          89.27321370442712
+        ],
+        [
+          375.2018636067708,
+          89.27321370442712
+        ],
+        [
+          375.2018636067708,
+          76.41904703776038
+        ],
+        [
+          140.28564453125,
+          76.41904703776038
+        ]
+      ],
+      "page": 330
+    },
+    {
+      "text": "B.Authonticate alf recarde.",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.17661539713542,
+          76.83367919921875
+        ],
+        [
+          240.72684733072916,
+          76.83367919921875
+        ],
+        [
+          240.72684733072916,
+          63.15024820963538
+        ],
+        [
+          104.17661539713542,
+          63.15024820963538
+        ]
+      ],
+      "page": 330
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 330,
+      "text": "Orientation.\nSkill evaluation.\n4.Certification credentials.\nContractor shall maintain records of personnel qualifications as quality records.\n2.14QUALITYCONTROL.REPORTS/AUDITS\nA.The Contractor's Quality Control Manager shall provide a daily Quality Control Report to the Contract Administrator / Engineer. This report shall be comprehensive and it should include all Q.C. activities on the project.\nContractor shall perform regularly scheduled internal audits to verify that his quality control procedures ensure total compliance with the Specifications andreferencedstandards.\nSchedule quality control audits not less than monthly.\nMaintain records of internal audits as quality records and make them available to the Contract Administrator/ Engineer upon request.\nProvide the Contract Administrator / Engineer with access to the audit records upon request.\nAllow the Contract Administrator / Engineer to observe the Contractor's internal audit upon request.\nProvide the Contract Administrator / Engineer with a copy of the monthly audit report.\n2.15EQUIPMENT/MATERIALHANDLINGANDSTORAGE\nContractor shall be responsible for handling, storing and preserving equipment and material from the time of receipt to the time of acceptance by the Employer.\nContractor's storage and handling procedures shall be designed to prevent damage, deterioration, distortion of shape or dimension, loss, degradation, loss of identification,or substitution.\nThe handling procedurcs shall address the use, inspection and maintenance of special devices such as crates, boxes, containers, dividers, slings, material handling and transportation equipment and other facilities.\nContractor shall identify equipment and material requiring special handling or testing.\n2.16QUALITYCONTROLRECORDS\nContractor shall develop a complete records index based on the requirements for document and data submittals in each Section of these Specifications.\nIndicate all quality control records, documentation, submittals and data required by the Contract.\nSupplement these records as necessary to monitor quality throughout the project\nThe. recordsidentified in the index shall provide objective evidence that quality control program activities conform to the contract requirements. Carlncluide evidence that required verifications have been performed\nbEstablish tnebasisfor keyproject decislons\nB.Authonticate alf recarde.",
+      "line_count": 24
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

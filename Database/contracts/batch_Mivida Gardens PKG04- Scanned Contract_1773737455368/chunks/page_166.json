@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\nMISR\n\n## Contents\n\n| Notes:                                 |\n|----------------------------------------|\n| Division 02:Site Constructions.        |\n| Division 03:Concrete.                  |\n| Division04:Masonry.                    |\n| Division 05:Metals.                    |\n| Division06:Wood&Plastic. 10            |\n| Division07:Thermal&MoistureProtection. |\n| Division 08: Openings. 13              |\n| Division 09:Finishes. 14               |\n| Division 10:Specialties. 18            |\n| Division13:SpecialConstruction 19      |\n| Division 14: Conveying System. 21      |\n| Division 15:Mechanical.. 22            |\n| Division 16:Electrical. 28             |\n\nConst\r\nInternational Co\r\n国\n\n<!-- image -->\n\n<!-- image -->\n\nEmaar isr P\n\n## Residential",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          768.4707590738932
+        ],
+        [
+          93.8004659016927,
+          768.4707590738932
+        ],
+        [
+          93.8004659016927,
+          759.7630971272787
+        ],
+        [
+          76.36852010091145,
+          759.7630971272787
+        ]
+      ],
+      "page": 166
+    },
+    {
+      "text": "Contents",
+      "confidence": 0.95,
+      "box": [
+        [
+          49.80555725097656,
+          680.1501973470052
+        ],
+        [
+          108.32708740234375,
+          680.1501973470052
+        ],
+        [
+          108.32708740234375,
+          664.8081258138021
+        ],
+        [
+          49.80555725097656,
+          664.8081258138021
+        ]
+      ],
+      "page": 166
+    },
+    {
+      "text": "Const\r\nInternational Co\r\n国",
+      "confidence": 0.95,
+      "box": [
+        [
+          348.3910827636719,
+          313.00274658203125
+        ],
+        [
+          432.3033447265625,
+          313.00274658203125
+        ],
+        [
+          432.3033447265625,
+          280.3695373535156
+        ],
+        [
+          348.3910827636719,
+          280.3695373535156
+        ]
+      ],
+      "page": 166
+    },
+    {
+      "text": "Emaar isr P",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.5950164794922,
+          151.79180908203125
+        ],
+        [
+          273.7861022949219,
+          151.79180908203125
+        ],
+        [
+          273.7861022949219,
+          143.57386779785156
+        ],
+        [
+          229.5950164794922,
+          143.57386779785156
+        ]
+      ],
+      "page": 166
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          432.4782307942708,
+          768.0561116536459
+        ],
+        [
+          513.4122721354166,
+          768.0561116536459
+        ],
+        [
+          513.4122721354166,
+          752.7140401204427
+        ],
+        [
+          432.4782307942708,
+          752.7140401204427
+        ]
+      ],
+      "page": 166
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 166,
+      "text": "MISR\nContents\nConst\r\nInternational Co\r\n国\nEmaar isr P\nResidential",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

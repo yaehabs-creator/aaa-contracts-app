@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n## JSI- Job Site Instruction\n\n<!-- image -->\n\nCS - Construction supervisor\n\nCA - Contract Administrator\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "JSI- Job Site Instruction",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.205322265625,
+          611.3182169596354
+        ],
+        [
+          417.1215413411458,
+          611.3182169596354
+        ],
+        [
+          417.1215413411458,
+          594.7321980794271
+        ],
+        [
+          182.205322265625,
+          594.7321980794271
+        ]
+      ],
+      "page": 481
+    },
+    {
+      "text": "CS - Construction supervisor",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          186.71608479817712
+        ],
+        [
+          243.6321818033854,
+          186.71608479817712
+        ],
+        [
+          243.6321818033854,
+          174.27655029296875
+        ],
+        [
+          73.46319580078125,
+          174.27655029296875
+        ]
+      ],
+      "page": 481
+    },
+    {
+      "text": "CA - Contract Administrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.21805318196614,
+          170.54469807942712
+        ],
+        [
+          244.4622599283854,
+          170.54469807942712
+        ],
+        [
+          244.4622599283854,
+          158.10520426432288
+        ],
+        [
+          72.21805318196614,
+          158.10520426432288
+        ]
+      ],
+      "page": 481
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 481,
+      "text": "JSI- Job Site Instruction\nCS - Construction supervisor\nCA - Contract Administrator",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

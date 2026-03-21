@@ -1,0 +1,175 @@
+{
+  "text": "<!-- image -->\n\nEmaar Misr,\n\n## Mivida Gardens Project\n\nEast Cairo,Egypt\n\n## Construction Package PK#04\n\nConstruction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\n## Conditions of Contract Appendices\n\nAppendix“D\" Master Construction Schedule\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.66666666666666,
+          465.0033162434896
+        ],
+        [
+          226.33333333333334,
+          465.0033162434896
+        ],
+        [
+          226.33333333333334,
+          453.66998291015625
+        ],
+        [
+          160.66666666666666,
+          453.66998291015625
+        ]
+      ],
+      "page": 157
+    },
+    {
+      "text": "Mivida Gardens Project",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.0,
+          425.3366495768229
+        ],
+        [
+          258.3333333333333,
+          425.3366495768229
+        ],
+        [
+          258.3333333333333,
+          413.66998291015625
+        ],
+        [
+          129.0,
+          413.66998291015625
+        ]
+      ],
+      "page": 157
+    },
+    {
+      "text": "East Cairo,Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.33333333333334,
+          385.3366495768229
+        ],
+        [
+          243.0,
+          385.3366495768229
+        ],
+        [
+          243.0,
+          373.0033162434896
+        ],
+        [
+          146.33333333333334,
+          373.0033162434896
+        ]
+      ],
+      "page": 157
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.66666666666667,
+          318.00331624348956
+        ],
+        [
+          275.0,
+          318.00331624348956
+        ],
+        [
+          275.0,
+          307.33664957682294
+        ],
+        [
+          114.66666666666667,
+          307.33664957682294
+        ]
+      ],
+      "page": 157
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.33333333333333,
+          291.00331624348956
+        ],
+        [
+          317.0,
+          291.00331624348956
+        ],
+        [
+          317.0,
+          268.66998291015625
+        ],
+        [
+          79.33333333333333,
+          268.66998291015625
+        ]
+      ],
+      "page": 157
+    },
+    {
+      "text": "Conditions of Contract Appendices",
+      "confidence": 0.95,
+      "box": [
+        [
+          142.66666666666666,
+          233.33664957682294
+        ],
+        [
+          256.6666666666667,
+          233.33664957682294
+        ],
+        [
+          256.6666666666667,
+          211.66998291015625
+        ],
+        [
+          142.66666666666666,
+          211.66998291015625
+        ]
+      ],
+      "page": 157
+    },
+    {
+      "text": "Appendix“D\" Master Construction Schedule",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.66666666666667,
+          199.33664957682294
+        ],
+        [
+          294.0,
+          199.33664957682294
+        ],
+        [
+          294.0,
+          192.33664957682294
+        ],
+        [
+          113.66666666666667,
+          192.33664957682294
+        ]
+      ],
+      "page": 157
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 157,
+      "text": "Emaar Misr,\nMivida Gardens Project\nEast Cairo,Egypt\nConstruction Package PK#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\nConditions of Contract Appendices\nAppendix“D\" Master Construction Schedule",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

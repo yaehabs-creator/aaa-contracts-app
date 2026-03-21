@@ -1,0 +1,60 @@
+{
+  "text": "11.9Delivery to Site\n\n<!-- image -->\n\n<!-- image -->\n\n30\n\n|       | 11.10 Import                            |                                                         | 31               |\n|-------|-----------------------------------------|---------------------------------------------------------|------------------|\n|       |                                         | 11.11 Contractor's Equipment - Records and Documents    | 31               |\n| 12.   | TITLE,RISK,CARE,INDEMNITIESANDINSURANCE | TITLE,RISK,CARE,INDEMNITIESANDINSURANCE                 |                  |\n|       | 12.1                                    | Passage of Title                                        | 31               |\n|       | 12.2                                    | Setting Aside and Marking                               | 32               |\n|       | 12.3                                    | Care andPossession;and Reversion                        | 32               |\n|       | 12.4                                    | Title toDocuments                                       | 32               |\n|       | 12.5                                    | Risk and Care                                           | 32               |\n|       | 12.6                                    | General Indemnity                                       | 34               |\n|       | 12.7                                    | Loss,InjuryorDamagetoWorkmen                            | 38               |\n|       | 12.8                                    | LossorDamage toContractor'sEquipment                    | 38               |\n|       | 12.9                                    | Insurance                                               | 38               |\n|       | 12.10I                                  | InherentDefects                                         | 40               |\n| 13.   | APPLICABLELAWS                          | APPLICABLELAWS                                          |                  |\n|       | 13.1                                    | Covenant to Comply                                      | 40               |\n|       | 13.2                                    | Contractor's Indemnity                                  | 40               |\n| 14.   | PATENTANDOTHERPROTECTEDRIGHTS           | PATENTANDOTHERPROTECTEDRIGHTS                           |                  |\n|       | 14.1                                    | Indemnity                                               | 41               |\n|       | 14.2                                    | Claims in Respect of Patents and Other Protected Rights | 41               |\n|       | 14.3                                    | PaymentinRespectofPlant                                 | 41               |\n| 15.   | SECRECY                                 | SECRECY                                                 |                  |\n|       | 15.1                                    | General Covenant                                        | 42               |\n|       | 15.2                                    | NoWaiverof Rights                                       | 42               |\n| 16.   | TRAFFICANDLOADS                         | TRAFFICANDLOADS                                         |                  |\n|       | 16.1                                    | Interference                                            | 42               |\n|       | 16.2                                    | Damage to Roads or Bridges                              | 43               |\n|       | 16.3                                    | Waterborne Traffic                                      | 43               |\n|       | 16.4                                    | Access Routes                                           | 43               |\n| 17.   | COMMENCEMENTANDPROGRESS                 | COMMENCEMENTANDPROGRESS                                 |                  |\n|       | 17.1                                    | Commencement                                            | 44               |\n|       | 17.2                                    | General Descriptions                                    | 44               |\n|       | 17.3                                    | Programme                                               | 44               |\n|       | 17.4                                    | RevisionofProgramme                                     | 44               |\n|       | 17.5                                    | No Relief                                               | 45               |\n| EMAAR | ITPMISCS+PMCCON                         | ITPMISCS+PMCCON                                         | FIRSTEDITION2006 |",
+  "results": [
+    {
+      "text": "11.9Delivery to Site",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          722.472157796224
+        ],
+        [
+          224.9412841796875,
+          722.472157796224
+        ],
+        [
+          224.9412841796875,
+          710.1695760091146
+        ],
+        [
+          126.00094604492188,
+          710.1695760091146
+        ]
+      ],
+      "page": 25
+    },
+    {
+      "text": "30",
+      "confidence": 0.95,
+      "box": [
+        [
+          460.453125,
+          721.6237080891927
+        ],
+        [
+          474.8290608723958,
+          721.6237080891927
+        ],
+        [
+          474.8290608723958,
+          709.745351155599
+        ],
+        [
+          460.453125,
+          709.745351155599
+        ]
+      ],
+      "page": 25
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 25,
+      "text": "11.9Delivery to Site\n30",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

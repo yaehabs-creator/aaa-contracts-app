@@ -1,0 +1,566 @@
+{
+  "text": "<!-- image -->\n\n## EMAAR\n\nAIISR\n\n## 1.Definitions\n\n## Letter of Acceptance (LoA)\n\n- InthisLetterofAcceptance,andexceptwhereotherwiseisstatedherein,wordsand expressionsshall have thesamemeaningsasarerespectivelyassigned to them in the Conditions of Contract included inthe TenderDocuments,or,wherenodefinition is included in the said documents, the meaning given to them by the context.\n- CommencementDate means three(3) days from the EffectiveDate,wherethe EffectiveDatemeans theearliesteventof thefollowing:\n- oThedateofthesignatureoftheAgreementbytheEmployer\n- oSevencalendardaysfromthedateoftheofficialissuanceoftheContract Documents-by theEmployer-to theContractorforsignature\n- oThe date of signing the Letter of Acceptance by the Employer.\n\n## 2. TheScopeofWorks\n\nTheScopeofWorkscomprisestheConstructionofParcel 11&amp;Parcel12Townhomes andGradingWorksforParcel 11inMividaGardensProject.\n\n## Optional Scope\n\n- AsmentionedundertheContractDocumentsincludingtheBillofQuantities.\n\n## 3. The Contract Sum\n\nThe Contract Sum is on lump sum price basis and theWorks shall not be subject to remeasurementexcepttheEarthWorks(Excavation,Backfilling and Soil Replacement), theInfrastructure andLandscapeWorks(if any)whichwillbesubject tore measurement.Therates&amp;pricesprovided in theBillsofQuantities shallbefixed and shall not be subject to any adjustment in respect of rise or fall in the cost of labor, costofexecutionoftheContractforanyreasonwhatsoevertheexceptwherethecost ofexecutingtheWorksorpartthereofisaffectedbythechangeoftheannouncedrate of thehereunderlistedmaterials(materialsbaserates&amp;adjustmentformula'sshallbe included intheFormof Agreement and its annexes),andexcept whereotherwise is explicitlystatedin theContract:\n\n- ·DieselratewithItemBaseRateof15.50EGP/Lit\n- ·Cement(Helwan)inReadyMixConcretewithItemBaseRateofEGP3.500(+/5%)on thebasisof Ex-Factory andexcludingVAT\n- ·Reinforcementsteel rebars(Ezz)with ItemBase Rate of EGP33,500(+/-5%)on thebasisofEx-FactoryandexcludingVAl\n\n## ThePerformanceBond\n\n<!-- image -->\n\nThe Performance Bond is ten percent (10%) of the Contract Sum for theBasicScopeof Worktobesubmittedintheformofanunconditionalirrevocablebanklettero guarantee in accordance with the Appendix B of the Conditions of Conract earming further increase/decrease during the contract period based on the adjustedContract\n\n<!-- image -->\n\nEmaarMisrforDevelopmentsS.A.E. P O.Box229,Mokattam 11571Cairo Arab Republic of Egypt\n\nFax: +2 02 25032020\n\nTel:+2 02 25032000\n\nww.emaannisr.com\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          720.3510233561198
+        ],
+        [
+          169.55160522460938,
+          720.3510233561198
+        ],
+        [
+          169.55160522460938,
+          701.6850280761719
+        ],
+        [
+          93.02083333333333,
+          701.6850280761719
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "AIISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.50426228841145,
+          697.0185343424479
+        ],
+        [
+          143.75947062174478,
+          697.0185343424479
+        ],
+        [
+          143.75947062174478,
+          687.685536702474
+        ],
+        [
+          120.50426228841145,
+          687.685536702474
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "1.Definitions",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48389689127605,
+          655.8684895833334
+        ],
+        [
+          152.63872273763022,
+          655.8684895833334
+        ],
+        [
+          152.63872273763022,
+          643.56591796875
+        ],
+        [
+          90.48389689127605,
+          643.56591796875
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "Letter of Acceptance (LoA)",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.14251708984375,
+          668.5953165690104
+        ],
+        [
+          370.3920491536458,
+          668.5953165690104
+        ],
+        [
+          370.3920491536458,
+          655.0200398763021
+        ],
+        [
+          210.14251708984375,
+          655.0200398763021
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "InthisLetterofAcceptance,andexceptwhereotherwiseisstatedherein,wordsand expressionsshall have thesamemeaningsasarerespectivelyassigned to them in the Conditions of Contract included inthe TenderDocuments,or,wherenodefinition is included in the said documents, the meaning given to them by the context.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.81296793619792,
+          643.1416829427084
+        ],
+        [
+          490.0506591796875,
+          643.1416829427084
+        ],
+        [
+          490.0506591796875,
+          596.0524698893229
+        ],
+        [
+          118.81296793619792,
+          596.0524698893229
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "CommencementDate means three(3) days from the EffectiveDate,wherethe EffectiveDatemeans theearliesteventof thefollowing:",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.2357889811198,
+          573.1442057291667
+        ],
+        [
+          489.6278483072917,
+          573.1442057291667
+        ],
+        [
+          489.6278483072917,
+          549.387471516927
+        ],
+        [
+          119.2357889811198,
+          549.387471516927
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "oThedateofthesignatureoftheAgreementbytheEmployer",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.10842895507812,
+          550.2359415690105
+        ],
+        [
+          410.9829508463542,
+          550.2359415690105
+        ],
+        [
+          410.9829508463542,
+          538.7817993164062
+        ],
+        [
+          139.10842895507812,
+          538.7817993164062
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "oSevencalendardaysfromthedateoftheofficialissuanceoftheContract Documents-by theEmployer-to theContractorforsignature",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.53125,
+          538.3575846354167
+        ],
+        [
+          490.4734700520833,
+          538.3575846354167
+        ],
+        [
+          490.4734700520833,
+          515.87353515625
+        ],
+        [
+          139.53125,
+          515.87353515625
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "oThe date of signing the Letter of Acceptance by the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.10842895507812,
+          516.7219848632812
+        ],
+        [
+          417.3252766927083,
+          516.7219848632812
+        ],
+        [
+          417.3252766927083,
+          503.99517822265625
+        ],
+        [
+          139.10842895507812,
+          503.99517822265625
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "2. TheScopeofWorks",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48389689127605,
+          498.05600992838544
+        ],
+        [
+          197.88067626953125,
+          498.05600992838544
+        ],
+        [
+          197.88067626953125,
+          485.75339762369794
+        ],
+        [
+          90.48389689127605,
+          485.75339762369794
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "TheScopeofWorkscomprisestheConstructionofParcel 11&Parcel12Townhomes andGradingWorksforParcel 11inMividaGardensProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.3967793782552,
+          485.75339762369794
+        ],
+        [
+          489.2049967447917,
+          485.75339762369794
+        ],
+        [
+          489.2049967447917,
+          463.26934814453125
+        ],
+        [
+          107.3967793782552,
+          463.26934814453125
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "Optional Scope",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.81960042317708,
+          453.08791097005206
+        ],
+        [
+          177.16239420572916,
+          453.08791097005206
+        ],
+        [
+          177.16239420572916,
+          440.36110432942706
+        ],
+        [
+          107.81960042317708,
+          440.36110432942706
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "AsmentionedundertheContractDocumentsincludingtheBillofQuantities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.03455607096353,
+          439.08839925130206
+        ],
+        [
+          480.7485758463542,
+          439.08839925130206
+        ],
+        [
+          480.7485758463542,
+          429.33119710286456
+        ],
+        [
+          134.03455607096353,
+          429.33119710286456
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "3. The Contract Sum",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.6382548014323,
+          421.27089436848956
+        ],
+        [
+          188.15576171875,
+          421.27089436848956
+        ],
+        [
+          188.15576171875,
+          410.24098714192706
+        ],
+        [
+          89.6382548014323,
+          410.24098714192706
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "The Contract Sum is on lump sum price basis and theWorks shall not be subject to remeasurementexcepttheEarthWorks(Excavation,Backfilling and Soil Replacement), theInfrastructure andLandscapeWorks(if any)whichwillbesubject tore measurement.Therates&pricesprovided in theBillsofQuantities shallbefixed and shall not be subject to any adjustment in respect of rise or fall in the cost of labor, costofexecutionoftheContractforanyreasonwhatsoevertheexceptwherethecost ofexecutingtheWorksorpartthereofisaffectedbythechangeoftheannouncedrate of thehereunderlistedmaterials(materialsbaserates&adjustmentformula'sshallbe included intheFormof Agreement and its annexes),andexcept whereotherwise is explicitlystatedin theContract:",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.70548502604167,
+          410.66518147786456
+        ],
+        [
+          489.2049967447917,
+          410.66518147786456
+        ],
+        [
+          489.2049967447917,
+          285.0939737955729
+        ],
+        [
+          105.70548502604167,
+          285.0939737955729
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "·DieselratewithItemBaseRateof15.50EGP/Lit",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.96732584635417,
+          273.63983154296875
+        ],
+        [
+          342.9086100260417,
+          273.63983154296875
+        ],
+        [
+          342.9086100260417,
+          262.1856892903646
+        ],
+        [
+          117.96732584635417,
+          262.1856892903646
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "·Cement(Helwan)inReadyMixConcretewithItemBaseRateofEGP3.500(+/5%)on thebasisof Ex-Factory andexcludingVAT",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.5445048014323,
+          261.3372599283854
+        ],
+        [
+          488.359375,
+          261.3372599283854
+        ],
+        [
+          488.359375,
+          238.00474039713538
+        ],
+        [
+          117.5445048014323,
+          238.00474039713538
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "·Reinforcementsteel rebars(Ezz)with ItemBase Rate of EGP33,500(+/-5%)on thebasisofEx-FactoryandexcludingVAl",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.5445048014323,
+          238.00474039713538
+        ],
+        [
+          487.5137125651042,
+          238.00474039713538
+        ],
+        [
+          487.5137125651042,
+          214.67226155598962
+        ],
+        [
+          117.5445048014323,
+          214.67226155598962
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "ThePerformanceBond",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.12831624348958,
+          194.73358154296875
+        ],
+        [
+          208.45123291015625,
+          194.73358154296875
+        ],
+        [
+          208.45123291015625,
+          184.97633870442712
+        ],
+        [
+          106.12831624348958,
+          184.97633870442712
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "The Performance Bond is ten percent (10%) of the Contract Sum for theBasicScopeof Worktobesubmittedintheformofanunconditionalirrevocablebanklettero guarantee in accordance with the Appendix B of the Conditions of Conract earming further increase/decrease during the contract period based on the adjustedContract",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.43702189127605,
+          185.40057373046875
+        ],
+        [
+          488.359375,
+          185.40057373046875
+        ],
+        [
+          488.359375,
+          126.00876871744788
+        ],
+        [
+          104.43702189127605,
+          126.00876871744788
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "EmaarMisrforDevelopmentsS.A.E. P O.Box229,Mokattam 11571Cairo Arab Republic of Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          370.3920491536458,
+          722.8963928222656
+        ],
+        [
+          489.2049967447917,
+          722.8963928222656
+        ],
+        [
+          489.2049967447917,
+          696.1700744628906
+        ],
+        [
+          370.3920491536458,
+          696.1700744628906
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "Fax: +2 02 25032020",
+      "confidence": 0.95,
+      "box": [
+        [
+          369.9691975911458,
+          689.3824462890625
+        ],
+        [
+          435.0837809244792,
+          689.3824462890625
+        ],
+        [
+          435.0837809244792,
+          679.6252136230469
+        ],
+        [
+          369.9691975911458,
+          679.6252136230469
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "Tel:+2 02 25032000",
+      "confidence": 0.95,
+      "box": [
+        [
+          370.8148600260417,
+          697.4427591959635
+        ],
+        [
+          433.8153483072917,
+          697.4427591959635
+        ],
+        [
+          433.8153483072917,
+          688.9582112630209
+        ],
+        [
+          370.8148600260417,
+          688.9582112630209
+        ]
+      ],
+      "page": 18
+    },
+    {
+      "text": "ww.emaannisr.com",
+      "confidence": 0.95,
+      "box": [
+        [
+          371.2376708984375,
+          679.2009887695312
+        ],
+        [
+          434.6609700520833,
+          679.2009887695312
+        ],
+        [
+          434.6609700520833,
+          671.9891255696615
+        ],
+        [
+          371.2376708984375,
+          671.9891255696615
+        ]
+      ],
+      "page": 18
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 18,
+      "text": "EMAAR\nAIISR\n1.Definitions\nLetter of Acceptance (LoA)\nInthisLetterofAcceptance,andexceptwhereotherwiseisstatedherein,wordsand expressionsshall have thesamemeaningsasarerespectivelyassigned to them in the Conditions of Contract included inthe TenderDocuments,or,wherenodefinition is included in the said documents, the meaning given to them by the context.\nCommencementDate means three(3) days from the EffectiveDate,wherethe EffectiveDatemeans theearliesteventof thefollowing:\noThedateofthesignatureoftheAgreementbytheEmployer\noSevencalendardaysfromthedateoftheofficialissuanceoftheContract Documents-by theEmployer-to theContractorforsignature\noThe date of signing the Letter of Acceptance by the Employer.\n2. TheScopeofWorks\nTheScopeofWorkscomprisestheConstructionofParcel 11&Parcel12Townhomes andGradingWorksforParcel 11inMividaGardensProject.\nOptional Scope\nAsmentionedundertheContractDocumentsincludingtheBillofQuantities.\n3. The Contract Sum\nThe Contract Sum is on lump sum price basis and theWorks shall not be subject to remeasurementexcepttheEarthWorks(Excavation,Backfilling and Soil Replacement), theInfrastructure andLandscapeWorks(if any)whichwillbesubject tore measurement.Therates&pricesprovided in theBillsofQuantities shallbefixed and shall not be subject to any adjustment in respect of rise or fall in the cost of labor, costofexecutionoftheContractforanyreasonwhatsoevertheexceptwherethecost ofexecutingtheWorksorpartthereofisaffectedbythechangeoftheannouncedrate of thehereunderlistedmaterials(materialsbaserates&adjustmentformula'sshallbe included intheFormof Agreement and its annexes),andexcept whereotherwise is explicitlystatedin theContract:\n·DieselratewithItemBaseRateof15.50EGP/Lit\n·Cement(Helwan)inReadyMixConcretewithItemBaseRateofEGP3.500(+/5%)on thebasisof Ex-Factory andexcludingVAT\n·Reinforcementsteel rebars(Ezz)with ItemBase Rate of EGP33,500(+/-5%)on thebasisofEx-FactoryandexcludingVAl\nThePerformanceBond\nThe Performance Bond is ten percent (10%) of the Contract Sum for theBasicScopeof Worktobesubmittedintheformofanunconditionalirrevocablebanklettero guarantee in accordance with the Appendix B of the Conditions of Conract earming further increase/decrease during the contract period based on the adjustedContract\nEmaarMisrforDevelopmentsS.A.E. P O.Box229,Mokattam 11571Cairo Arab Republic of Egypt\nFax: +2 02 25032020\nTel:+2 02 25032000\nww.emaannisr.com",
+      "line_count": 24
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

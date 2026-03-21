@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BotMessage } from '@/types';
 
+import Markdown from './Markdown';
+
 interface MessageItemProps {
     message: BotMessage;
     isLast: boolean;
@@ -21,16 +23,22 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, isLast }) => {
         >
             <div className={`max-w-[85%] flex flex-col ${isAssistant ? 'items-start' : 'items-end'}`}>
                 <div className={`
-          relative p-5 rounded-[2rem] text-sm leading-relaxed overflow-hidden
+          relative p-6 rounded-[2.5rem] text-sm leading-relaxed overflow-hidden
           ${isAssistant
-                        ? 'bg-white border border-black/[0.04] text-black shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-tl-none'
-                        : 'bg-black text-white shadow-[0_10px_30px_rgba(0,0,0,0.15)] rounded-tr-none'}
+                        ? 'bg-white border border-black/[0.04] text-black shadow-[0_10px_40px_rgba(0,0,0,0.04)] rounded-tl-none'
+                        : 'bg-black text-white shadow-[0_15px_45px_rgba(0,0,0,0.15)] rounded-tr-none'}
         `}>
                     {isAssistant && (
-                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-aaa-blue to-emerald-500 opacity-20" />
+                        <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-mac-blue to-emerald-500 opacity-30" />
                     )}
-                    <div className="relative z-10 whitespace-pre-wrap font-medium tracking-tight">
-                        {message.content}
+                    <div className="relative z-10">
+                        {isAssistant ? (
+                            <Markdown content={message.content} />
+                        ) : (
+                            <div className="whitespace-pre-wrap font-semibold tracking-tight">
+                                {message.content}
+                            </div>
+                        )}
                     </div>
                 </div>
 

@@ -1,0 +1,796 @@
+{
+  "text": "<!-- image -->\n\n1. Report inspection/test failures to the Contract Administrator / Engineer immediately upon receipt.\n2. Submit certificates of compliance 7 days prior to incorporating a product to the Works.\n- G. Inspections and tests conducted by persons or agencies other than the Contractor shall not in any way relieve the Contractor of his responsibility and obligation to meet all Specifications and referenced standards.\n- H. Inspection and test records shall, as a minimum, identify the following:\n1. Name of items inspected/tested.\n2. Quantity of items.\n3. Inspection/test procedure reference.\n4. Date.\n9. 5.Name of inspector/tester.\n10. 6.Observations/comments.\n11. 7.Specifiedrequirements.\n12. 8.Acceptability.\n9. Deviations/non-conformances.\n10. Corrective action.\n11. Evaluation of results.\n12. Signature of authorized evaluator.\n1. Inspection and Test Status\n1. Contractor shall clearly document and identify the inspections and test status of materials and equipment throughout construction.\n2. Identification may be by means of stamps, tags, or other control devices attached to, or accompanying, the material or equipment.\n\n## 2.11 MEASURING AND TEST EQUIPMENT\n\n- A. Provide measuring and test equipment necessary to ensure construction conforms to the requirements of this specification.\n- B. Maintain the accuracy of all measuring and test equipment.\n1. Provide a unique identification number or mark permanently affixed to each item of measuring and testequipment.\n2. Calibrate each item of measuring and test equipment at intervals recommended by the manufacturer and submit calibration certificates.\n3. Develop a log of all measuring and test equipment and record:\n6. a.Equipment description\n7. b.ldentificationnumber\n8. c.Date of the last calibration\n- d. Date that the next calibration is due.\n\n## 2.12NON-CONFORMANCESMONITORING\n\n- 有限责任公 nonconforming material and equipment.\n- eqotpment 1.Anon-conformanceexists when eithermaterialand documentation, or construction do not comply with the requirements of the Contract Documents.\n- documentation,installation and construction whiohfails to conform to the Contract Documents. Bw usr Auyr For iys uewdoerm\n\n<!-- image -->\n\nCSCEe",
+  "results": [
+    {
+      "text": "Report inspection/test failures to the Contract Administrator / Engineer immediately upon receipt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          718.2980448404948
+        ],
+        [
+          503.8662109375,
+          718.2980448404948
+        ],
+        [
+          503.8662109375,
+          691.3457641601562
+        ],
+        [
+          118.70323689778645,
+          691.3457641601562
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Submit certificates of compliance 7 days prior to incorporating a product to the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          691.7604166666666
+        ],
+        [
+          504.6962890625,
+          691.7604166666666
+        ],
+        [
+          504.6962890625,
+          666.8813781738281
+        ],
+        [
+          117.45809936523438,
+          666.8813781738281
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Inspections and tests conducted by persons or agencies other than the Contractor shall not in any way relieve the Contractor of his responsibility and obligation to meet all Specifications and referenced standards.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          665.6374308268229
+        ],
+        [
+          503.8662109375,
+          665.6374308268229
+        ],
+        [
+          503.8662109375,
+          627.0749308268229
+        ],
+        [
+          101.2712910970052,
+          627.0749308268229
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Inspection and test records shall, as a minimum, identify the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          626.2456258138021
+        ],
+        [
+          467.3421223958333,
+          626.2456258138021
+        ],
+        [
+          467.3421223958333,
+          613.3914591471354
+        ],
+        [
+          100.8562520345052,
+          613.3914591471354
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Name of items inspected/tested.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          612.5621744791666
+        ],
+        [
+          288.87221272786456,
+          612.5621744791666
+        ],
+        [
+          288.87221272786456,
+          600.5372924804688
+        ],
+        [
+          113.72268676757812,
+          600.5372924804688
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Quantity of items.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          598.8787027994791
+        ],
+        [
+          216.2391153971354,
+          598.8787027994791
+        ],
+        [
+          216.2391153971354,
+          587.6831258138021
+        ],
+        [
+          113.72268676757812,
+          587.6831258138021
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Inspection/test procedure reference.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          586.0245361328125
+        ],
+        [
+          307.96435546875,
+          586.0245361328125
+        ],
+        [
+          307.96435546875,
+          573.9996744791666
+        ],
+        [
+          113.30763753255208,
+          573.9996744791666
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Date.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          573.5850219726562
+        ],
+        [
+          154.81226603190103,
+          573.5850219726562
+        ],
+        [
+          154.81226603190103,
+          561.1455078125
+        ],
+        [
+          112.47754923502605,
+          561.1455078125
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "5.Name of inspector/tester.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          560.3162027994792
+        ],
+        [
+          253.1782430013021,
+          560.3162027994792
+        ],
+        [
+          253.1782430013021,
+          548.7059936523438
+        ],
+        [
+          112.89258829752605,
+          548.7059936523438
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "6.Observations/comments.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          547.047383626302
+        ],
+        [
+          251.93310546875,
+          547.047383626302
+        ],
+        [
+          251.93310546875,
+          535.4371744791667
+        ],
+        [
+          112.89258829752605,
+          535.4371744791667
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "7.Specifiedrequirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          532.9492594401042
+        ],
+        [
+          244.8773193359375,
+          532.9492594401042
+        ],
+        [
+          244.8773193359375,
+          522.1683553059895
+        ],
+        [
+          114.13773600260417,
+          522.1683553059895
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "8.Acceptability.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          520.509745279948
+        ],
+        [
+          193.41158040364584,
+          520.509745279948
+        ],
+        [
+          193.41158040364584,
+          508.48488362630206
+        ],
+        [
+          113.30763753255208,
+          508.48488362630206
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Deviations/non-conformances.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          508.48488362630206
+        ],
+        [
+          280.5712890625,
+          508.48488362630206
+        ],
+        [
+          280.5712890625,
+          495.216064453125
+        ],
+        [
+          112.47754923502605,
+          495.216064453125
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Corrective action.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          494.80141194661456
+        ],
+        [
+          215.40901692708334,
+          494.80141194661456
+        ],
+        [
+          215.40901692708334,
+          482.77655029296875
+        ],
+        [
+          107.08193969726562,
+          482.77655029296875
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Evaluation of results.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          481.11794026692706
+        ],
+        [
+          231.5958251953125,
+          481.11794026692706
+        ],
+        [
+          231.5958251953125,
+          469.92238362630206
+        ],
+        [
+          107.49698893229167,
+          469.92238362630206
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Signature of authorized evaluator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          468.26377360026044
+        ],
+        [
+          297.17315673828125,
+          468.26377360026044
+        ],
+        [
+          297.17315673828125,
+          456.23891194661456
+        ],
+        [
+          107.49698893229167,
+          456.23891194661456
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Inspection and Test Status",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          455.40960693359375
+        ],
+        [
+          246.1224568684896,
+          455.40960693359375
+        ],
+        [
+          246.1224568684896,
+          443.38474527994794
+        ],
+        [
+          100.44120279947917,
+          443.38474527994794
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Contractor shall clearly document and identify the inspections and test status of materials and equipment throughout construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          442.55544026692706
+        ],
+        [
+          504.6962890625,
+          442.55544026692706
+        ],
+        [
+          504.6962890625,
+          417.26177978515625
+        ],
+        [
+          109.57222493489583,
+          417.26177978515625
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Identification may be by means of stamps, tags, or other control devices attached to, or accompanying, the material or equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          416.84710693359375
+        ],
+        [
+          504.6962890625,
+          416.84710693359375
+        ],
+        [
+          504.6962890625,
+          390.30946858723956
+        ],
+        [
+          108.74212646484375,
+          390.30946858723956
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "2.11 MEASURING AND TEST EQUIPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          378.28460693359375
+        ],
+        [
+          301.7386474609375,
+          378.28460693359375
+        ],
+        [
+          301.7386474609375,
+          367.50372314453125
+        ],
+        [
+          75.53842671712239,
+          367.50372314453125
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Provide measuring and test equipment necessary to ensure construction conforms to the requirements of this specification.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          360.86928304036456
+        ],
+        [
+          504.28125,
+          360.86928304036456
+        ],
+        [
+          504.28125,
+          334.33168538411456
+        ],
+        [
+          100.44120279947917,
+          334.33168538411456
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Maintain the accuracy of all measuring and test equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          333.91701253255206
+        ],
+        [
+          411.7259114583333,
+          333.91701253255206
+        ],
+        [
+          411.7259114583333,
+          321.89215087890625
+        ],
+        [
+          100.44120279947917,
+          321.89215087890625
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Provide a unique identification number or mark permanently affixed to each item of measuring and testequipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          320.64821370442706
+        ],
+        [
+          503.8662109375,
+          320.64821370442706
+        ],
+        [
+          503.8662109375,
+          295.7691853841146
+        ],
+        [
+          117.45809936523438,
+          295.7691853841146
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Calibrate each item of measuring and test equipment at intervals recommended by the manufacturer and submit calibration certificates.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.62801106770833,
+          294.52520751953125
+        ],
+        [
+          504.28125,
+          294.52520751953125
+        ],
+        [
+          504.28125,
+          269.64617919921875
+        ],
+        [
+          116.62801106770833,
+          269.64617919921875
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Develop a log of all measuring and test equipment and record:",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.04305013020833,
+          267.9875691731771
+        ],
+        [
+          444.9296468098958,
+          267.9875691731771
+        ],
+        [
+          444.9296468098958,
+          256.37738037109375
+        ],
+        [
+          117.04305013020833,
+          256.37738037109375
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "a.Equipment description",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          254.30409749348962
+        ],
+        [
+          251.1030069986979,
+          254.30409749348962
+        ],
+        [
+          251.1030069986979,
+          243.10854085286462
+        ],
+        [
+          126.174072265625,
+          243.10854085286462
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "b.ldentificationnumber",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.75902303059895,
+          241.44993082682288
+        ],
+        [
+          244.8773193359375,
+          241.44993082682288
+        ],
+        [
+          244.8773193359375,
+          230.25437418619788
+        ],
+        [
+          125.75902303059895,
+          230.25437418619788
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "c.Date of the last calibration",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.34398396809895,
+          228.59576416015625
+        ],
+        [
+          270.19512939453125,
+          228.59576416015625
+        ],
+        [
+          270.19512939453125,
+          217.81488037109375
+        ],
+        [
+          125.34398396809895,
+          217.81488037109375
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "Date that the next calibration is due.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.92893473307292,
+          216.15627034505212
+        ],
+        [
+          320.4157307942708,
+          216.15627034505212
+        ],
+        [
+          320.4157307942708,
+          204.13140869140625
+        ],
+        [
+          124.92893473307292,
+          204.13140869140625
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "2.12NON-CONFORMANCESMONITORING",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          191.27724202473962
+        ],
+        [
+          305.4740804036458,
+          191.27724202473962
+        ],
+        [
+          305.4740804036458,
+          180.49631754557288
+        ],
+        [
+          74.70833333333333,
+          180.49631754557288
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "有限责任公 nonconforming material and equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          166.81284586588538
+        ],
+        [
+          511.7520751953125,
+          166.81284586588538
+        ],
+        [
+          511.7520751953125,
+          137.37266031901038
+        ],
+        [
+          117.87314860026042,
+          137.37266031901038
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "eqotpment 1.Anon-conformanceexists when eithermaterialand documentation, or construction do not comply with the requirements of the Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.04305013020833,
+          155.20265706380212
+        ],
+        [
+          508.0166829427083,
+          155.20265706380212
+        ],
+        [
+          508.0166829427083,
+          108.76182047526038
+        ],
+        [
+          117.04305013020833,
+          108.76182047526038
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "documentation,installation and construction whiohfails to conform to the Contract Documents. Bw usr Auyr For iys uewdoerm",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          94.66367594401038
+        ],
+        [
+          504.28125,
+          94.66367594401038
+        ],
+        [
+          504.28125,
+          59.83302815755212
+        ],
+        [
+          134.0599568684896,
+          59.83302815755212
+        ]
+      ],
+      "page": 328
+    },
+    {
+      "text": "CSCEe",
+      "confidence": 0.95,
+      "box": [
+        [
+          520.4680582682291,
+          163.91029866536462
+        ],
+        [
+          530.4291585286459,
+          163.91029866536462
+        ],
+        [
+          530.4291585286459,
+          129.07969156901038
+        ],
+        [
+          520.4680582682291,
+          129.07969156901038
+        ]
+      ],
+      "page": 328
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 328,
+      "text": "Report inspection/test failures to the Contract Administrator / Engineer immediately upon receipt.\nSubmit certificates of compliance 7 days prior to incorporating a product to the Works.\nInspections and tests conducted by persons or agencies other than the Contractor shall not in any way relieve the Contractor of his responsibility and obligation to meet all Specifications and referenced standards.\nInspection and test records shall, as a minimum, identify the following:\nName of items inspected/tested.\nQuantity of items.\nInspection/test procedure reference.\nDate.\n5.Name of inspector/tester.\n6.Observations/comments.\n7.Specifiedrequirements.\n8.Acceptability.\nDeviations/non-conformances.\nCorrective action.\nEvaluation of results.\nSignature of authorized evaluator.\nInspection and Test Status\nContractor shall clearly document and identify the inspections and test status of materials and equipment throughout construction.\nIdentification may be by means of stamps, tags, or other control devices attached to, or accompanying, the material or equipment.\n2.11 MEASURING AND TEST EQUIPMENT\nProvide measuring and test equipment necessary to ensure construction conforms to the requirements of this specification.\nMaintain the accuracy of all measuring and test equipment.\nProvide a unique identification number or mark permanently affixed to each item of measuring and testequipment.\nCalibrate each item of measuring and test equipment at intervals recommended by the manufacturer and submit calibration certificates.\nDevelop a log of all measuring and test equipment and record:\na.Equipment description\nb.ldentificationnumber\nc.Date of the last calibration\nDate that the next calibration is due.\n2.12NON-CONFORMANCESMONITORING\n有限责任公 nonconforming material and equipment.\neqotpment 1.Anon-conformanceexists when eithermaterialand documentation, or construction do not comply with the requirements of the Contract Documents.\ndocumentation,installation and construction whiohfails to conform to the Contract Documents. Bw usr Auyr For iys uewdoerm\nCSCEe",
+      "line_count": 34
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

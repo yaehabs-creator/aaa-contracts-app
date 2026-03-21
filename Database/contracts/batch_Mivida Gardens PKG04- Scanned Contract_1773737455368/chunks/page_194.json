@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## Residential\n\n| WhereOrApproved Equa ismentioned，please refer to the Notes in Page(1)of this document. Division16:Electrical   | WhereOrApproved Equa ismentioned，please refer to the Notes in Page(1)of this document. Division16:Electrical   | WhereOrApproved Equa ismentioned，please refer to the Notes in Page(1)of this document. Division16:Electrical                         | WhereOrApproved Equa ismentioned，please refer to the Notes in Page(1)of this document. Division16:Electrical                                                                                                                                        | WhereOrApproved Equa ismentioned，please refer to the Notes in Page(1)of this document. Division16:Electrical   | WhereOrApproved Equa ismentioned，please refer to the Notes in Page(1)of this document. Division16:Electrical   |\n|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|\n|                                                                                                                 | Specificntion Secton                                                                                            | Caterory                                                                                                                              |                                                                                                                                                                                                                                                      | Locit distributor                                                                                               | Countrynit origin                                                                                               |\n| 102 102                                                                                                         | 16140-Wiring Devices & Disconnections                                                                           | Switches&5ocket Industrial Sockets - Load Break Switch ( Fused -Non Fused)                                                            | EmaacMendor Legrand BuchJaeger Schneider Electric MK VIMAR Jung Bticino (type of series to be selected by ID only) Gewiss Legrand ABB General Electric MK                                                                                            |                                                                                                                 | Italy                                                                                                           |\n| 103                                                                                                             | 16230-Diesel-Engine- Driven Generator Sets                                                                      | Diesel-Engine-Driven Generator Sets                                                                                                   | Schneider Cummins Caterpiller Perkins Mitsubishi FJWILSON gensets MTU ABB                                                                                                                                                                            |                                                                                                                 |                                                                                                                 |\n| 104                                                                                                             | 16270-Dry-Type, Medium-Voltage Transformers 16340-Medium Voltage and                                            | Dry Type& Oiltransformers Compact PackageSusbtaion{including RMU,Transformer &LV Distribution Boards)                                 | Tesar ELMAcO(oil transfromer) ABB-Hitachi ElSewedy(EMAS) ABB                                                                                                                                                                                         |                                                                                                                 | Egypt Italy Egvpt Egvpt Egypt                                                                                   |\n| 105                                                                                                             | Switchgears                                                                                                     | Medium voltage switchgear- locally Switchboards (Main Distibution Boards)                                                             | Schneider Electric ABB(allCB to be imported) Schneider(allCBtobeimported) EMASSiemenssivaconseries(all CB tobe imported) Petrokima (Siemenscomponent)                                                                                                |                                                                                                                 | Egypt Eevot Egypt                                                                                               |\n| 106                                                                                                             | 16400-Low-Voltage Distribution                                                                                  | Motor control Center DistributionPanel boards Low-Voltage Busways                                                                     | ABB Schneider-Telemechanic ABB-Egvpt-orcertifiedpartner Schneider(all CB to be imported)or certifiedpartner Siemens(EMAS) Hager Schneider(Emaar Technical team approval shall be acquired) Elsewedy(Emaar Technical team approval shall be acquired) |                                                                                                                 | ERvul Eevpt Egypt Egypt Cgypt                                                                                   |\n| 107                                                                                                             | 16500-Lighting FxC-210-207-20                                                                                   | Interior Lighting,Architectural and Facade Lighting (If locallyassembled all component tobefromwell known international manufacturer) | Downlights: Onok, Indulez, Illuma, Emergency Lighting:Cooper). Wever&Ducre linea light Ivela TRS Luxiona Tridonic Modus LAMP Olympio electronics Fosnova Petridis nisann Rovasi                                                                      | Delta tgypt EGY.TRADE                                                                                           | imported Egypt                                                                                                  |\n\nMLSr",
+  "results": [
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          433.308349609375,
+          742.7624257405599
+        ],
+        [
+          512.1671142578125,
+          742.7624257405599
+        ],
+        [
+          512.1671142578125,
+          727.4203592936198
+        ],
+        [
+          433.308349609375,
+          727.4203592936198
+        ]
+      ],
+      "page": 194
+    },
+    {
+      "text": "MLSr",
+      "confidence": 0.95,
+      "box": [
+        [
+          195.90185546875,
+          47.80812581380212
+        ],
+        [
+          214.99397786458334,
+          47.80812581380212
+        ],
+        [
+          214.99397786458334,
+          36.19793701171875
+        ],
+        [
+          195.90185546875,
+          36.19793701171875
+        ]
+      ],
+      "page": 194
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 194,
+      "text": "Residential\nMLSr",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

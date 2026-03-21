@@ -1,0 +1,428 @@
+{
+  "text": "<!-- image -->\n\nnotspecificallyreferenced inthedocumentsbutnecessarytomeetthe intent of the Contract and complete theWorks as described therein shall be deemed a requirement of the Contract Document.\n\n- 4.4 Contract Sum is considered as based on the various Contract Documents being complimentary and interpreted on a collective basis.Unless otherwise is expressly stated in the Contract, no one part of the Contract Documents shall have priority over any other part.\n- 4.5 Any ambiguity or discrepancy shall be resolved by the Contract Administratorwhoshall thennotify theContractor thereon,withacopy to the Employer.\n- 4.6 In the Specification, all Drawings, all Contractors' Drawings, and all other documents relating to the Works,the metric systemshall be used throughout.\n\n## 5. DRAWINGSANDSPECIFICATIONS\n\n## 5.1 SubmissionandApproval\n\nThe periods referred to in Sub-Clause 5.1 of Conditions of Contract (Submission and Approval)areasfollows:\n\n- &gt;The period for the review (approve / disapprove) of drawings and / or materials submissions is 14 days.\n- &gt;The period for inspection requests is 24 hours in advance.\n- The period for the review (approve / disapprove) re-submission of drawings and / or materials is 7 days.\n\n## 5.7 As-builtDrawings,OperationsandMaintenanceManuals\n\nThe period referred to in Sub-Clause 5.7 of Conditions of Contract for Asbuilt Drawings, Operations and Maintenance Manuals is fourteen days (14) days.\n\nThe ContractorsubmittaltoAsBuilt drawings,Catalogues,Operation and Maintenance manuals must be in three hard copies and one Softcopy in itsoriginalProgramformat.Suchsubmittalshouldbeprior tothe ContractorrequestfortheTakingOverCertificateforeachphaseand/or part of the Works.Failure by the Contractor to fulfill this requirement, then the Employer shall have theright to withhold the issue of the Taking Over Certificate.\n\n## 6. OBLIGATIONSOFTHECONTRACTOR\n\n## 6.1 General Obligations\n\nIn paragraph (a) of this Sub-Clause 6.1\n\nIn the 7th line after \"...they are intended\" add \"in accordance with the Contractrequirements.\"\n\nAt the end of paragraph b of this Sub-Clause 6.1 add the following:\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "notspecificallyreferenced inthedocumentsbutnecessarytomeetthe intent of the Contract and complete theWorks as described therein shall be deemed a requirement of the Contract Document.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          697.0185343424479
+        ],
+        [
+          502.3125,
+          697.0185343424479
+        ],
+        [
+          502.3125,
+          659.6865437825521
+        ],
+        [
+          164.05492146809897,
+          659.6865437825521
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "4.4 Contract Sum is considered as based on the various Contract Documents being complimentary and interpreted on a collective basis.Unless otherwise is expressly stated in the Contract, no one part of the Contract Documents shall have priority over any other part.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          656.7169596354166
+        ],
+        [
+          502.7353108723958,
+          656.7169596354166
+        ],
+        [
+          502.7353108723958,
+          606.2339274088541
+        ],
+        [
+          125.15530395507812,
+          606.2339274088541
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "4.5 Any ambiguity or discrepancy shall be resolved by the Contract Administratorwhoshall thennotify theContractor thereon,withacopy to the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          603.2643229166666
+        ],
+        [
+          502.7353108723958,
+          603.2643229166666
+        ],
+        [
+          502.7353108723958,
+          566.3565673828125
+        ],
+        [
+          124.73248291015625,
+          566.3565673828125
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "4.6 In the Specification, all Drawings, all Contractors' Drawings, and all other documents relating to the Works,the metric systemshall be used throughout.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.30965169270833,
+          562.1142985026042
+        ],
+        [
+          502.3125,
+          562.1142985026042
+        ],
+        [
+          502.3125,
+          526.0549926757812
+        ],
+        [
+          124.30965169270833,
+          526.0549926757812
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "5. DRAWINGSANDSPECIFICATIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          515.4493001302083
+        ],
+        [
+          299.3579508463542,
+          515.4493001302083
+        ],
+        [
+          299.3579508463542,
+          503.57094319661456
+        ],
+        [
+          93.4436543782552,
+          503.57094319661456
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "5.1 SubmissionandApproval",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          498.05600992838544
+        ],
+        [
+          283.7135416666667,
+          498.05600992838544
+        ],
+        [
+          283.7135416666667,
+          485.75339762369794
+        ],
+        [
+          123.88683064778645,
+          485.75339762369794
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "The periods referred to in Sub-Clause 5.1 of Conditions of Contract (Submission and Approval)areasfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          481.08689371744794
+        ],
+        [
+          501.8896484375,
+          481.08689371744794
+        ],
+        [
+          501.8896484375,
+          455.63328043619794
+        ],
+        [
+          163.6321004231771,
+          455.63328043619794
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": ">The period for the review (approve / disapprove) of drawings and / or materials submissions is 14 days.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          451.81524658203125
+        ],
+        [
+          501.0440266927083,
+          451.81524658203125
+        ],
+        [
+          501.0440266927083,
+          425.93735758463544
+        ],
+        [
+          163.20927937825522,
+          425.93735758463544
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": ">The period for inspection requests is 24 hours in advance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          403.87758382161456
+        ],
+        [
+          447.7684733072917,
+          403.87758382161456
+        ],
+        [
+          447.7684733072917,
+          389.45383707682294
+        ],
+        [
+          162.78645833333334,
+          389.45383707682294
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "The period for the review (approve / disapprove) re-submission of drawings and / or materials is 7 days.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.0080362955729,
+          427.63429768880206
+        ],
+        [
+          501.4668375651042,
+          427.63429768880206
+        ],
+        [
+          501.4668375651042,
+          402.18064371744794
+        ],
+        [
+          178.0080362955729,
+          402.18064371744794
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "5.7 As-builtDrawings,OperationsandMaintenanceManuals",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.0411885579427,
+          386.90846761067706
+        ],
+        [
+          427.0501708984375,
+          386.90846761067706
+        ],
+        [
+          427.0501708984375,
+          373.75742594401044
+        ],
+        [
+          123.0411885579427,
+          373.75742594401044
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "The period referred to in Sub-Clause 5.7 of Conditions of Contract for Asbuilt Drawings, Operations and Maintenance Manuals is fourteen days (14) days.",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.94080607096353,
+          369.93939208984375
+        ],
+        [
+          500.1983642578125,
+          369.93939208984375
+        ],
+        [
+          500.1983642578125,
+          332.18316650390625
+        ],
+        [
+          161.94080607096353,
+          332.18316650390625
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "The ContractorsubmittaltoAsBuilt drawings,Catalogues,Operation and Maintenance manuals must be in three hard copies and one Softcopy in itsoriginalProgramformat.Suchsubmittalshouldbeprior tothe ContractorrequestfortheTakingOverCertificateforeachphaseand/or part of the Works.Failure by the Contractor to fulfill this requirement, then the Employer shall have theright to withhold the issue of the Taking Over Certificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.51798502604166,
+          328.3651326497396
+        ],
+        [
+          500.1983642578125,
+          328.3651326497396
+        ],
+        [
+          500.1983642578125,
+          243.94390869140625
+        ],
+        [
+          161.51798502604166,
+          243.94390869140625
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "6. OBLIGATIONSOFTHECONTRACTOR",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3295389811198,
+          234.61094156901038
+        ],
+        [
+          314.57952880859375,
+          234.61094156901038
+        ],
+        [
+          314.57952880859375,
+          221.45989990234375
+        ],
+        [
+          91.3295389811198,
+          221.45989990234375
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "6.1 General Obligations",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.19554646809895,
+          216.79339599609375
+        ],
+        [
+          255.80729166666666,
+          216.79339599609375
+        ],
+        [
+          255.80729166666666,
+          203.21811930338538
+        ],
+        [
+          122.19554646809895,
+          203.21811930338538
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "In paragraph (a) of this Sub-Clause 6.1",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.09516398111978,
+          199.82432047526038
+        ],
+        [
+          343.3314208984375,
+          199.82432047526038
+        ],
+        [
+          343.3314208984375,
+          186.24904378255212
+        ],
+        [
+          161.09516398111978,
+          186.24904378255212
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "In the 7th line after \"...they are intended\" add \"in accordance with the Contractrequirements.\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.6723429361979,
+          182.85520426432288
+        ],
+        [
+          498.929931640625,
+          182.85520426432288
+        ],
+        [
+          498.929931640625,
+          157.82582600911462
+        ],
+        [
+          160.6723429361979,
+          157.82582600911462
+        ]
+      ],
+      "page": 117
+    },
+    {
+      "text": "At the end of paragraph b of this Sub-Clause 6.1 add the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.6723429361979,
+          153.58355712890625
+        ],
+        [
+          470.600830078125,
+          153.58355712890625
+        ],
+        [
+          470.600830078125,
+          139.15981038411462
+        ],
+        [
+          160.6723429361979,
+          139.15981038411462
+        ]
+      ],
+      "page": 117
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 117,
+      "text": "notspecificallyreferenced inthedocumentsbutnecessarytomeetthe intent of the Contract and complete theWorks as described therein shall be deemed a requirement of the Contract Document.\n4.4 Contract Sum is considered as based on the various Contract Documents being complimentary and interpreted on a collective basis.Unless otherwise is expressly stated in the Contract, no one part of the Contract Documents shall have priority over any other part.\n4.5 Any ambiguity or discrepancy shall be resolved by the Contract Administratorwhoshall thennotify theContractor thereon,withacopy to the Employer.\n4.6 In the Specification, all Drawings, all Contractors' Drawings, and all other documents relating to the Works,the metric systemshall be used throughout.\n5. DRAWINGSANDSPECIFICATIONS\n5.1 SubmissionandApproval\nThe periods referred to in Sub-Clause 5.1 of Conditions of Contract (Submission and Approval)areasfollows:\n>The period for the review (approve / disapprove) of drawings and / or materials submissions is 14 days.\n>The period for inspection requests is 24 hours in advance.\nThe period for the review (approve / disapprove) re-submission of drawings and / or materials is 7 days.\n5.7 As-builtDrawings,OperationsandMaintenanceManuals\nThe period referred to in Sub-Clause 5.7 of Conditions of Contract for Asbuilt Drawings, Operations and Maintenance Manuals is fourteen days (14) days.\nThe ContractorsubmittaltoAsBuilt drawings,Catalogues,Operation and Maintenance manuals must be in three hard copies and one Softcopy in itsoriginalProgramformat.Suchsubmittalshouldbeprior tothe ContractorrequestfortheTakingOverCertificateforeachphaseand/or part of the Works.Failure by the Contractor to fulfill this requirement, then the Employer shall have theright to withhold the issue of the Taking Over Certificate.\n6. OBLIGATIONSOFTHECONTRACTOR\n6.1 General Obligations\nIn paragraph (a) of this Sub-Clause 6.1\nIn the 7th line after \"...they are intended\" add \"in accordance with the Contractrequirements.\"\nAt the end of paragraph b of this Sub-Clause 6.1 add the following:",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

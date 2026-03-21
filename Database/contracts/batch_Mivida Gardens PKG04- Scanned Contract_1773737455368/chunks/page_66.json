@@ -1,0 +1,129 @@
+{
+  "text": "Suchcoverageshall in thecaseof sub-paragraph(i)abovehave a limitofliabilityofnotlessthanonehundredandfifteenpercent (115%)ofthecurrentreplacementvalueof theWorksandtheFree IssueItemswhichtheContractorshallfor thetimebeing be responsiblefor thecareof.Suchcoverageshall inthecaseof sub-paragraph(i)abovehavea limitof liabilityofnotlessthanone hundred andfifteenpercent(115%)ofthecurrentreplacementvalue of thewholeof theWorks and theFreeIssueItems.Eachsuchlimit of liability as aforesaid shall apply for any one occurrence or series of occurrencesarisingoutofoneevent.Suchcoverageshallexclude thefirstpartofanylossordamagenotexceedingtheamountsstated in theParticular Conditions.Such coverage shall in all cases include all labour charges,transportation charges,professional fees,debris removalanddemolitionCosts,andotherCosts.\n\nThe insurance shall be in the joint names of the Employer and the Contractorand with theEmployer named as\"First LossPayee\".\n\n- (C) Public Liability - being coverage in respect of legal liability for loss, propertyformingpartoftheWorksand theFreeIssueItemsnotyet takenover),including ineachcase claimant's and defence costs, resultingfromor occurringinconnectionwith thecarryingoutof the Worksand/ortheremedyingofdefectsthereinand/orthe Contractor'sobservanceorperformanceoforfailuretoobserveor performitsotherobligationsunder theContract.Suchliabilityshall withoutlimitationincludeliabilitytoconsultants,servants,employees andagentsof theEmployer.Suchcoverageshallhavea limit of liabilityofnotlessthantheamountstatedintheParticular Conditions for any one occurrence or series of occurrences arising outof one event and may,inrespectonlyof thesaidlossordamage toproperty,excludethe first part of any loss or damage not exceedingtheamountstated intheParticularConditionsforanyone occurrenceorsuchseriesthereof.\n\nTheinsuranceshallbeinthejointnamesoftheEmployerandthe Contractorand with the Ermployel liamed as\"First LossPayee\".The insuranceshallincludeaCrossLiabilityClause.\n\n<!-- image -->\n\n- (d) Workmen's Compensation-being coverage as required by the laws andregulations intheCountryinrespectofpersonalinjuries (includingdeathandincludingclaimant'sanddefencecosts)to employeesoftheContractoranditsSubcontractorsresultingfromor occurringinconnectionwiththecarryingoutof theWorks and/orthe remedyingofdefectsthereinand/ortheContractor'sobservanceor performanceoforfailuretoobserveorperform itsotherobligations underthe Contractincluding itsExtendedWarrantyobligations.Such coverageshall beextendedtoincludeEmployer'sLiabilityofnot less thanthestatutory amountforeachaccidentor(ifnosuchstatutory amount)notlessthantheamountstatedintheParticularConditions for each accident. The obligations of this paragraph (d) shall with otherwisecomplyingwiththissub-paragraphbutbeinginthename\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Suchcoverageshall in thecaseof sub-paragraph(i)abovehave a limitofliabilityofnotlessthanonehundredandfifteenpercent (115%)ofthecurrentreplacementvalueof theWorksandtheFree IssueItemswhichtheContractorshallfor thetimebeing be responsiblefor thecareof.Suchcoverageshall inthecaseof sub-paragraph(i)abovehavea limitof liabilityofnotlessthanone hundred andfifteenpercent(115%)ofthecurrentreplacementvalue of thewholeof theWorks and theFreeIssueItems.Eachsuchlimit of liability as aforesaid shall apply for any one occurrence or series of occurrencesarisingoutofoneevent.Suchcoverageshallexclude thefirstpartofanylossordamagenotexceedingtheamountsstated in theParticular Conditions.Such coverage shall in all cases include all labour charges,transportation charges,professional fees,debris removalanddemolitionCosts,andotherCosts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.5785929361979,
+          722.472157796224
+        ],
+        [
+          489.6278483072917,
+          722.472157796224
+        ],
+        [
+          489.6278483072917,
+          565.0838826497395
+        ],
+        [
+          188.5785929361979,
+          565.0838826497395
+        ]
+      ],
+      "page": 66
+    },
+    {
+      "text": "The insurance shall be in the joint names of the Employer and the Contractorand with theEmployer named as\"First LossPayee\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.00142415364584,
+          552.3570760091145
+        ],
+        [
+          488.359375,
+          552.3570760091145
+        ],
+        [
+          488.359375,
+          531.1457112630208
+        ],
+        [
+          189.00142415364584,
+          531.1457112630208
+        ]
+      ],
+      "page": 66
+    },
+    {
+      "text": "(C) Public Liability - being coverage in respect of legal liability for loss, propertyformingpartoftheWorksand theFreeIssueItemsnotyet takenover),including ineachcase claimant's and defence costs, resultingfromor occurringinconnectionwith thecarryingoutof the Worksand/ortheremedyingofdefectsthereinand/orthe Contractor'sobservanceorperformanceoforfailuretoobserveor performitsotherobligationsunder theContract.Suchliabilityshall withoutlimitationincludeliabilitytoconsultants,servants,employees andagentsof theEmployer.Suchcoverageshallhavea limit of liabilityofnotlessthantheamountstatedintheParticular Conditions for any one occurrence or series of occurrences arising outof one event and may,inrespectonlyof thesaidlossordamage toproperty,excludethe first part of any loss or damage not exceedingtheamountstated intheParticularConditionsforanyone occurrenceorsuchseriesthereof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          517.9946695963542
+        ],
+        [
+          490.8962809244792,
+          517.9946695963542
+        ],
+        [
+          490.8962809244792,
+          338.12237548828125
+        ],
+        [
+          158.13541666666666,
+          338.12237548828125
+        ]
+      ],
+      "page": 66
+    },
+    {
+      "text": "TheinsuranceshallbeinthejointnamesoftheEmployerandthe Contractorand with the Ermployel liamed as\"First LossPayee\".The insuranceshallincludeaCrossLiabilityClause.",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          324.9713338216146
+        ],
+        [
+          489.6278483072917,
+          324.9713338216146
+        ],
+        [
+          489.6278483072917,
+          292.73004150390625
+        ],
+        [
+          190.69270833333334,
+          292.73004150390625
+        ]
+      ],
+      "page": 66
+    },
+    {
+      "text": "(d) Workmen's Compensation-being coverage as required by the laws andregulations intheCountryinrespectofpersonalinjuries (includingdeathandincludingclaimant'sanddefencecosts)to employeesoftheContractoranditsSubcontractorsresultingfromor occurringinconnectionwiththecarryingoutof theWorks and/orthe remedyingofdefectsthereinand/ortheContractor'sobservanceor performanceoforfailuretoobserveorperform itsotherobligations underthe Contractincluding itsExtendedWarrantyobligations.Such coverageshall beextendedtoincludeEmployer'sLiabilityofnot less thanthestatutory amountforeachaccidentor(ifnosuchstatutory amount)notlessthantheamountstatedintheParticularConditions for each accident. The obligations of this paragraph (d) shall with otherwisecomplyingwiththissub-paragraphbutbeinginthename",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.24952189127603,
+          280.4274698893229
+        ],
+        [
+          491.741943359375,
+          280.4274698893229
+        ],
+        [
+          491.741943359375,
+          123.03920491536462
+        ],
+        [
+          160.24952189127603,
+          123.03920491536462
+        ]
+      ],
+      "page": 66
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 66,
+      "text": "Suchcoverageshall in thecaseof sub-paragraph(i)abovehave a limitofliabilityofnotlessthanonehundredandfifteenpercent (115%)ofthecurrentreplacementvalueof theWorksandtheFree IssueItemswhichtheContractorshallfor thetimebeing be responsiblefor thecareof.Suchcoverageshall inthecaseof sub-paragraph(i)abovehavea limitof liabilityofnotlessthanone hundred andfifteenpercent(115%)ofthecurrentreplacementvalue of thewholeof theWorks and theFreeIssueItems.Eachsuchlimit of liability as aforesaid shall apply for any one occurrence or series of occurrencesarisingoutofoneevent.Suchcoverageshallexclude thefirstpartofanylossordamagenotexceedingtheamountsstated in theParticular Conditions.Such coverage shall in all cases include all labour charges,transportation charges,professional fees,debris removalanddemolitionCosts,andotherCosts.\nThe insurance shall be in the joint names of the Employer and the Contractorand with theEmployer named as\"First LossPayee\".\n(C) Public Liability - being coverage in respect of legal liability for loss, propertyformingpartoftheWorksand theFreeIssueItemsnotyet takenover),including ineachcase claimant's and defence costs, resultingfromor occurringinconnectionwith thecarryingoutof the Worksand/ortheremedyingofdefectsthereinand/orthe Contractor'sobservanceorperformanceoforfailuretoobserveor performitsotherobligationsunder theContract.Suchliabilityshall withoutlimitationincludeliabilitytoconsultants,servants,employees andagentsof theEmployer.Suchcoverageshallhavea limit of liabilityofnotlessthantheamountstatedintheParticular Conditions for any one occurrence or series of occurrences arising outof one event and may,inrespectonlyof thesaidlossordamage toproperty,excludethe first part of any loss or damage not exceedingtheamountstated intheParticularConditionsforanyone occurrenceorsuchseriesthereof.\nTheinsuranceshallbeinthejointnamesoftheEmployerandthe Contractorand with the Ermployel liamed as\"First LossPayee\".The insuranceshallincludeaCrossLiabilityClause.\n(d) Workmen's Compensation-being coverage as required by the laws andregulations intheCountryinrespectofpersonalinjuries (includingdeathandincludingclaimant'sanddefencecosts)to employeesoftheContractoranditsSubcontractorsresultingfromor occurringinconnectionwiththecarryingoutof theWorks and/orthe remedyingofdefectsthereinand/ortheContractor'sobservanceor performanceoforfailuretoobserveorperform itsotherobligations underthe Contractincluding itsExtendedWarrantyobligations.Such coverageshall beextendedtoincludeEmployer'sLiabilityofnot less thanthestatutory amountforeachaccidentor(ifnosuchstatutory amount)notlessthantheamountstatedintheParticularConditions for each accident. The obligations of this paragraph (d) shall with otherwisecomplyingwiththissub-paragraphbutbeinginthename",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,451 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n- Sufficicnt vcntilation is to be provided; this may be natural ventilation by increasing the number of openings or by mechanical ventilation to ensure an adequate supply of fresh air.\n- D Sufficient well-lit access/egress is to be provided. The access/egress must he wide enough to allow workers wearing all the necessary equipment to climb in and out easily and provide ready access and egress in the event of an emergency.\n- Confined spaces are to be checked before entry to ensure they are free from toxic and flammable vapors and that the air is fit to breathe. Testing is to be carried out by a competent person with a suitable gas detector that is correctly calibrated. Continuous monitoring is to be implemented where there is risk that the atmosphere inside the confined space may change. Records of monitoring are to be retained.\n- Breathing apparatus is to be provided when the air inside a confined space is unfit to breath. Personnel required towearbreathing apparatus are to be trained and competent in its use.\n- When working in flammable or potentially explosive atmospheres only non-sparking tools, specially protected lighting and intrinsically safe equipment is to be used.\n- Every person that enters into a confined space will be given a briefing by the appointed competent person covering the specific hazards of the work and the control measures to be implemented.\n- Persons entering into a confined space will wear a full body rescue harness that is attached to a rescueline or tripod winch anchored outside the confined space.\n- Adequate communication arrangements are provided; checked before entry and at regular intervals when anyone is inside a confined space.\n- Openings and areas around confined spaces are to be protected and suitable signs displayed warning others of the danger.\n- Arrangernents for emergency rescue and resuscitation of workers are to be included within the safe system of work.A first aider is to be on site at all times and rescuers are not to enter a confined space to rescue someone unless theyhave been trained and have the correct rescue equipment.A method statement and a Confined Space permit are required for all confined space working.\n\n## 3.11.Demolition\n\n- &gt;Alldemolitionwork is tobecarried outin accordancewithBS6187:2011CodeofPracticeforFull andPartial Demolition and be planned and carried out by trained demolition operatives under the supervision of a competent person.\n- Supervisors aretohaveknowledgeoftheparticulartypeofdemolitionbeingcarried out,itshazards and how to control them.\n- The demolition or dismantling of a structure or part of a structure shall be planned and carried out toprevent danger sofar as is reasonably practicable,or reduce the danger to aslow a level as is reasonablypracticable.\n- The arrangements for carrying out demolition or dismantling work shall be recorded in writing, prior to the commcnccmcnt ofthcwork.\n\nTheinformation contained in these documentsis confidential,privileged andmaynot be used,published orredistributed without thepriorwritten consent ofEmaarMisrAE\n\n<!-- image -->\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          729.4936116536459
+        ],
+        [
+          340.33795166015625,
+          729.4936116536459
+        ],
+        [
+          340.33795166015625,
+          700.8827209472656
+        ],
+        [
+          191.33634440104166,
+          700.8827209472656
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          699.6387736002604
+        ],
+        [
+          216.2391153971354,
+          699.6387736002604
+        ],
+        [
+          216.2391153971354,
+          686.3699544270834
+        ],
+        [
+          75.53842671712239,
+          686.3699544270834
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Sufficicnt vcntilation is to be provided; this may be natural ventilation by increasing the number of openings or by mechanical ventilation to ensure an adequate supply of fresh air.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          673.9304402669271
+        ],
+        [
+          498.0555419921875,
+          673.9304402669271
+        ],
+        [
+          498.0555419921875,
+          648.2221069335938
+        ],
+        [
+          91.3101806640625,
+          648.2221069335938
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "D Sufficient well-lit access/egress is to be provided. The access/egress must he wide enough to allow workers wearing all the necessary equipment to climb in and out easily and provide ready access and egress in the event of an emergency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          643.2462972005209
+        ],
+        [
+          496.3953857421875,
+          643.2462972005209
+        ],
+        [
+          496.3953857421875,
+          604.6837972005209
+        ],
+        [
+          77.1986083984375,
+          604.6837972005209
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Confined spaces are to be checked before entry to ensure they are free from toxic and flammable vapors and that the air is fit to breathe. Testing is to be carried out by a competent person with a suitable gas detector that is correctly calibrated. Continuous monitoring is to be implemented where there is risk that the atmosphere inside the confined space may change. Records of monitoring are to be retained.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          599.7080078125
+        ],
+        [
+          496.8104248046875,
+          599.7080078125
+        ],
+        [
+          496.8104248046875,
+          538.3397216796875
+        ],
+        [
+          90.48009236653645,
+          538.3397216796875
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Breathing apparatus is to be provided when the air inside a confined space is unfit to breath. Personnel required towearbreathing apparatus are to be trained and competent in its use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          530.8760172526042
+        ],
+        [
+          494.7351888020833,
+          530.8760172526042
+        ],
+        [
+          494.7351888020833,
+          505.58233642578125
+        ],
+        [
+          90.06504313151042,
+          505.58233642578125
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "When working in flammable or potentially explosive atmospheres only non-sparking tools, specially protected lighting and intrinsically safe equipment is to be used.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          500.19187418619794
+        ],
+        [
+          493.9051106770833,
+          500.19187418619794
+        ],
+        [
+          493.9051106770833,
+          475.31284586588544
+        ],
+        [
+          90.48009236653645,
+          475.31284586588544
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Every person that enters into a confined space will be given a briefing by the appointed competent person covering the specific hazards of the work and the control measures to be implemented.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          469.09307861328125
+        ],
+        [
+          495.9803059895833,
+          469.09307861328125
+        ],
+        [
+          495.9803059895833,
+          444.21405029296875
+        ],
+        [
+          90.06504313151042,
+          444.21405029296875
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Persons entering into a confined space will wear a full body rescue harness that is attached to a rescueline or tripod winch anchored outside the confined space.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          437.99428304036456
+        ],
+        [
+          495.9803059895833,
+          437.99428304036456
+        ],
+        [
+          495.9803059895833,
+          413.52992757161456
+        ],
+        [
+          90.06504313151042,
+          413.52992757161456
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Adequate communication arrangements are provided; checked before entry and at regular intervals when anyone is inside a confined space.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          407.72479248046875
+        ],
+        [
+          495.1502278645833,
+          407.72479248046875
+        ],
+        [
+          495.1502278645833,
+          382.84576416015625
+        ],
+        [
+          90.48009236653645,
+          382.84576416015625
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Openings and areas around confined spaces are to be protected and suitable signs displayed warning others of the danger.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          377.45530192057294
+        ],
+        [
+          495.5652669270833,
+          377.45530192057294
+        ],
+        [
+          495.5652669270833,
+          352.16164143880206
+        ],
+        [
+          90.06504313151042,
+          352.16164143880206
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Arrangernents for emergency rescue and resuscitation of workers are to be included within the safe system of work.A first aider is to be on site at all times and rescuers are not to enter a confined space to rescue someone unless theyhave been trained and have the correct rescue equipment.A method statement and a Confined Space permit are required for all confined space working.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          345.94187418619794
+        ],
+        [
+          495.5652669270833,
+          345.94187418619794
+        ],
+        [
+          495.5652669270833,
+          295.3545125325521
+        ],
+        [
+          89.65000406901042,
+          295.3545125325521
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "3.11.Demolition",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.5374959309896,
+          289.5494181315104
+        ],
+        [
+          333.6972249348958,
+          289.5494181315104
+        ],
+        [
+          333.6972249348958,
+          277.9391886393229
+        ],
+        [
+          246.5374959309896,
+          277.9391886393229
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": ">Alldemolitionwork is tobecarried outin accordancewithBS6187:2011CodeofPracticeforFull andPartial Demolition and be planned and carried out by trained demolition operatives under the supervision of a competent person.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          271.3047892252604
+        ],
+        [
+          495.1502278645833,
+          271.3047892252604
+        ],
+        [
+          495.1502278645833,
+          233.57159423828125
+        ],
+        [
+          73.46319580078125,
+          233.57159423828125
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Supervisors aretohaveknowledgeoftheparticulartypeofdemolitionbeingcarried out,itshazards and how to control them.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          227.35182698567712
+        ],
+        [
+          494.7351888020833,
+          227.35182698567712
+        ],
+        [
+          494.7351888020833,
+          203.71673583984375
+        ],
+        [
+          89.65000406901042,
+          203.71673583984375
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "The demolition or dismantling of a structure or part of a structure shall be planned and carried out toprevent danger sofar as is reasonably practicable,or reduce the danger to aslow a level as is reasonablypracticable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          197.08233642578125
+        ],
+        [
+          495.1502278645833,
+          197.08233642578125
+        ],
+        [
+          495.1502278645833,
+          159.76381429036462
+        ],
+        [
+          88.4048563639323,
+          159.76381429036462
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "The arrangements for carrying out demolition or dismantling work shall be recorded in writing, prior to the commcnccmcnt ofthcwork.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          153.95867919921875
+        ],
+        [
+          494.7351888020833,
+          153.95867919921875
+        ],
+        [
+          494.7351888020833,
+          129.90895589192712
+        ],
+        [
+          88.4048563639323,
+          129.90895589192712
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "Theinformation contained in these documentsis confidential,privileged andmaynot be used,published orredistributed without thepriorwritten consent ofEmaarMisrAE",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.21805318196614,
+          101.71274820963538
+        ],
+        [
+          504.28125,
+          101.71274820963538
+        ],
+        [
+          504.28125,
+          80.56553141276038
+        ],
+        [
+          72.21805318196614,
+          80.56553141276038
+        ]
+      ],
+      "page": 436
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.6455891927083,
+          734.8840637207031
+        ],
+        [
+          510.5069580078125,
+          734.8840637207031
+        ],
+        [
+          510.5069580078125,
+          722.4445495605469
+        ],
+        [
+          453.6455891927083,
+          722.4445495605469
+        ]
+      ],
+      "page": 436
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 436,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nSufficicnt vcntilation is to be provided; this may be natural ventilation by increasing the number of openings or by mechanical ventilation to ensure an adequate supply of fresh air.\nD Sufficient well-lit access/egress is to be provided. The access/egress must he wide enough to allow workers wearing all the necessary equipment to climb in and out easily and provide ready access and egress in the event of an emergency.\nConfined spaces are to be checked before entry to ensure they are free from toxic and flammable vapors and that the air is fit to breathe. Testing is to be carried out by a competent person with a suitable gas detector that is correctly calibrated. Continuous monitoring is to be implemented where there is risk that the atmosphere inside the confined space may change. Records of monitoring are to be retained.\nBreathing apparatus is to be provided when the air inside a confined space is unfit to breath. Personnel required towearbreathing apparatus are to be trained and competent in its use.\nWhen working in flammable or potentially explosive atmospheres only non-sparking tools, specially protected lighting and intrinsically safe equipment is to be used.\nEvery person that enters into a confined space will be given a briefing by the appointed competent person covering the specific hazards of the work and the control measures to be implemented.\nPersons entering into a confined space will wear a full body rescue harness that is attached to a rescueline or tripod winch anchored outside the confined space.\nAdequate communication arrangements are provided; checked before entry and at regular intervals when anyone is inside a confined space.\nOpenings and areas around confined spaces are to be protected and suitable signs displayed warning others of the danger.\nArrangernents for emergency rescue and resuscitation of workers are to be included within the safe system of work.A first aider is to be on site at all times and rescuers are not to enter a confined space to rescue someone unless theyhave been trained and have the correct rescue equipment.A method statement and a Confined Space permit are required for all confined space working.\n3.11.Demolition\n>Alldemolitionwork is tobecarried outin accordancewithBS6187:2011CodeofPracticeforFull andPartial Demolition and be planned and carried out by trained demolition operatives under the supervision of a competent person.\nSupervisors aretohaveknowledgeoftheparticulartypeofdemolitionbeingcarried out,itshazards and how to control them.\nThe demolition or dismantling of a structure or part of a structure shall be planned and carried out toprevent danger sofar as is reasonably practicable,or reduce the danger to aslow a level as is reasonablypracticable.\nThe arrangements for carrying out demolition or dismantling work shall be recorded in writing, prior to the commcnccmcnt ofthcwork.\nTheinformation contained in these documentsis confidential,privileged andmaynot be used,published orredistributed without thepriorwritten consent ofEmaarMisrAE\nEMAAR",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,543 @@
+{
+  "text": "## Elhussein ElEssawy\n\nFrom:\n\nElhussein ElEssawy\n\nSent:\n\nThursday,October16,202511:19AM\n\nCc:\n\nSarah Halawa; Muhammad Fekry El Farcy; Ahmed Mongy; Manar Ashraf;Marwa Sherif Abdelaziz;Mohamed Fathy ElZayat;Hala Mohamed Samy;Tamer Mohamed Salah;Rania ElKateb\n\nSubject:\n\nMVG.PK#04.ConstructionofTownhomesVillas inParcel 11&amp;Parcel 12\\_PostTender Addendum No.08\n\nDearTenderer,\n\nRegarding the a/m subject, you are kindly requested to submit your revised offer considering the following:\n\n- FuillcompliancewiththeConditionsof Contractwithout anydeviations theretonotingthatanydeviations are not accepted.\n- Full compliancewiththeRFTandanyupdatestheretoasissuedbytheEmployer.\n\nNotingthattherevisedoffersubmissiondateisSunday1gof0ctober2025.\n\nKind regards,\n\n## ElhusseinElessawy\n\n## EMAAR\n\nMISR\n\nCommercial Department-ContractsDivision Emaar Misr for Dovelopmnnt\n\nT:+20225032072\n\nM:+201227725844\n\nEmail:eelessawy@emaar.eg\n\nemaar.com\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Elhussein ElEssawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.91967519124349,
+          714.9808451334635
+        ],
+        [
+          138.62545776367188,
+          714.9808451334635
+        ],
+        [
+          138.62545776367188,
+          702.9559733072916
+        ],
+        [
+          41.91967519124349,
+          702.9559733072916
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "From:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.08958435058594,
+          688.028554280599
+        ],
+        [
+          68.48264058430989,
+          688.028554280599
+        ],
+        [
+          68.48264058430989,
+          677.6622924804688
+        ],
+        [
+          41.08958435058594,
+          677.6622924804688
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Elhussein ElEssawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.620361328125,
+          689.2725118001302
+        ],
+        [
+          258.15879313151044,
+          689.2725118001302
+        ],
+        [
+          258.15879313151044,
+          678.0769449869791
+        ],
+        [
+          182.620361328125,
+          678.0769449869791
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Sent:",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.674537658691406,
+          676.4183451334635
+        ],
+        [
+          66.40740966796875,
+          676.4183451334635
+        ],
+        [
+          66.40740966796875,
+          664.8081258138021
+        ],
+        [
+          40.674537658691406,
+          664.8081258138021
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Thursday,October16,202511:19AM",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          677.2476501464844
+        ],
+        [
+          336.1875,
+          677.2476501464844
+        ],
+        [
+          336.1875,
+          666.8813781738281
+        ],
+        [
+          181.790283203125,
+          666.8813781738281
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Cc:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.08958435058594,
+          663.9788309733073
+        ],
+        [
+          57.691436767578125,
+          663.9788309733073
+        ],
+        [
+          57.691436767578125,
+          652.7832641601562
+        ],
+        [
+          41.08958435058594,
+          652.7832641601562
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Sarah Halawa; Muhammad Fekry El Farcy; Ahmed Mongy; Manar Ashraf;Marwa Sherif Abdelaziz;Mohamed Fathy ElZayat;Hala Mohamed Samy;Tamer Mohamed Salah;Rania ElKateb",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.3752237955729,
+          665.6374308268229
+        ],
+        [
+          539.1451416015625,
+          665.6374308268229
+        ],
+        [
+          539.1451416015625,
+          629.9774780273438
+        ],
+        [
+          181.3752237955729,
+          629.9774780273438
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Subject:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.08958435058594,
+          628.3188883463541
+        ],
+        [
+          78.85879516601562,
+          628.3188883463541
+        ],
+        [
+          78.85879516601562,
+          615.4647216796875
+        ],
+        [
+          41.08958435058594,
+          615.4647216796875
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "MVG.PK#04.ConstructionofTownhomesVillas inParcel 11&Parcel 12_PostTender Addendum No.08",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          628.3188883463541
+        ],
+        [
+          517.1476643880209,
+          628.3188883463541
+        ],
+        [
+          517.1476643880209,
+          605.5131022135416
+        ],
+        [
+          181.790283203125,
+          605.5131022135416
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "DearTenderer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          579.3901163736979
+        ],
+        [
+          108.32708740234375,
+          579.3901163736979
+        ],
+        [
+          108.32708740234375,
+          568.1945597330729
+        ],
+        [
+          42.33472188313802,
+          568.1945597330729
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Regarding the a/m subject, you are kindly requested to submit your revised offer considering the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.50462849934896,
+          555.3403930664062
+        ],
+        [
+          503.0360921223958,
+          555.3403930664062
+        ],
+        [
+          503.0360921223958,
+          544.1448364257812
+        ],
+        [
+          41.50462849934896,
+          544.1448364257812
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "FuillcompliancewiththeConditionsof Contractwithout anydeviations theretonotingthatanydeviations are not accepted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          529.2174072265625
+        ],
+        [
+          531.67431640625,
+          529.2174072265625
+        ],
+        [
+          531.67431640625,
+          505.9969889322917
+        ],
+        [
+          73.87823994954427,
+          505.9969889322917
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Full compliancewiththeRFTandanyupdatestheretoasissuedbytheEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          503.5090738932292
+        ],
+        [
+          426.6676025390625,
+          503.5090738932292
+        ],
+        [
+          426.6676025390625,
+          493.97210693359375
+        ],
+        [
+          73.87823994954427,
+          493.97210693359375
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "NotingthattherevisedoffersubmissiondateisSunday1gof0ctober2025.",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          479.04469807942706
+        ],
+        [
+          380.1824137369792,
+          479.04469807942706
+        ],
+        [
+          380.1824137369792,
+          469.09307861328125
+        ],
+        [
+          42.33472188313802,
+          469.09307861328125
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Kind regards,",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          454.58030192057294
+        ],
+        [
+          98.365966796875,
+          454.58030192057294
+        ],
+        [
+          98.365966796875,
+          443.38474527994794
+        ],
+        [
+          42.33472188313802,
+          443.38474527994794
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "ElhusseinElessawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          433.84779866536456
+        ],
+        [
+          139.0405069986979,
+          433.84779866536456
+        ],
+        [
+          139.0405069986979,
+          421.82293701171875
+        ],
+        [
+          42.33472188313802,
+          421.82293701171875
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.50462849934896,
+          413.11525472005206
+        ],
+        [
+          97.950927734375,
+          413.11525472005206
+        ],
+        [
+          97.950927734375,
+          399.01715087890625
+        ],
+        [
+          41.50462849934896,
+          399.01715087890625
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          61.426849365234375,
+          397.35854085286456
+        ],
+        [
+          79.68888854980469,
+          397.35854085286456
+        ],
+        [
+          79.68888854980469,
+          388.23622639973956
+        ],
+        [
+          61.426849365234375,
+          388.23622639973956
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Commercial Department-ContractsDivision Emaar Misr for Dovelopmnnt",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          379.52858479817706
+        ],
+        [
+          239.0666707356771,
+          379.52858479817706
+        ],
+        [
+          239.0666707356771,
+          359.62534586588544
+        ],
+        [
+          43.164815266927086,
+          359.62534586588544
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "T:+20225032072",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          347.60048421223956
+        ],
+        [
+          117.04305013020833,
+          347.60048421223956
+        ],
+        [
+          117.04305013020833,
+          338.89280192057294
+        ],
+        [
+          42.33472188313802,
+          338.89280192057294
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "M:+201227725844",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          337.23423258463544
+        ],
+        [
+          124.09884643554688,
+          337.23423258463544
+        ],
+        [
+          124.09884643554688,
+          328.11191813151044
+        ],
+        [
+          42.33472188313802,
+          328.11191813151044
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "Email:eelessawy@emaar.eg",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          326.86794026692706
+        ],
+        [
+          164.77337646484375,
+          326.86794026692706
+        ],
+        [
+          164.77337646484375,
+          315.67238362630206
+        ],
+        [
+          43.164815266927086,
+          315.67238362630206
+        ]
+      ],
+      "page": 245
+    },
+    {
+      "text": "emaar.com",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.74976603190104,
+          303.64752197265625
+        ],
+        [
+          92.97036743164062,
+          303.64752197265625
+        ],
+        [
+          92.97036743164062,
+          295.7691853841146
+        ],
+        [
+          42.74976603190104,
+          295.7691853841146
+        ]
+      ],
+      "page": 245
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 245,
+      "text": "Elhussein ElEssawy\nFrom:\nElhussein ElEssawy\nSent:\nThursday,October16,202511:19AM\nCc:\nSarah Halawa; Muhammad Fekry El Farcy; Ahmed Mongy; Manar Ashraf;Marwa Sherif Abdelaziz;Mohamed Fathy ElZayat;Hala Mohamed Samy;Tamer Mohamed Salah;Rania ElKateb\nSubject:\nMVG.PK#04.ConstructionofTownhomesVillas inParcel 11&Parcel 12_PostTender Addendum No.08\nDearTenderer,\nRegarding the a/m subject, you are kindly requested to submit your revised offer considering the following:\nFuillcompliancewiththeConditionsof Contractwithout anydeviations theretonotingthatanydeviations are not accepted.\nFull compliancewiththeRFTandanyupdatestheretoasissuedbytheEmployer.\nNotingthattherevisedoffersubmissiondateisSunday1gof0ctober2025.\nKind regards,\nElhusseinElessawy\nEMAAR\nMISR\nCommercial Department-ContractsDivision Emaar Misr for Dovelopmnnt\nT:+20225032072\nM:+201227725844\nEmail:eelessawy@emaar.eg\nemaar.com",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

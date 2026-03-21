@@ -1,0 +1,175 @@
+{
+  "text": "## Projects Department Health &amp; Safety Slandards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n## EMAAR\n\nMISR\n\n## Minimum Construction Health &amp; Safety Standards\n\nedandmaynotbeuselpublishedorredistributedwithout\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Slandards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          728.664306640625
+        ],
+        [
+          340.7530110677083,
+          728.664306640625
+        ],
+        [
+          340.7530110677083,
+          700.8827209472656
+        ],
+        [
+          191.33634440104166,
+          700.8827209472656
+        ]
+      ],
+      "page": 391
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          697.9801737467448
+        ],
+        [
+          217.4842529296875,
+          697.9801737467448
+        ],
+        [
+          217.4842529296875,
+          685.9553019205729
+        ],
+        [
+          76.36852010091145,
+          685.9553019205729
+        ]
+      ],
+      "page": 391
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.86041259765625,
+          561.1455078125
+        ],
+        [
+          363.58056640625,
+          561.1455078125
+        ],
+        [
+          363.58056640625,
+          530.8760172526042
+        ],
+        [
+          227.86041259765625,
+          530.8760172526042
+        ]
+      ],
+      "page": 391
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          276.0057779947917,
+          520.9243977864583
+        ],
+        [
+          317.5104166666667,
+          520.9243977864583
+        ],
+        [
+          317.5104166666667,
+          505.1676839192708
+        ],
+        [
+          276.0057779947917,
+          505.1676839192708
+        ]
+      ],
+      "page": 391
+    },
+    {
+      "text": "Minimum Construction Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          427.21339925130206
+        ],
+        [
+          483.1138916015625,
+          427.21339925130206
+        ],
+        [
+          483.1138916015625,
+          378.69927978515625
+        ],
+        [
+          100.44120279947917,
+          378.69927978515625
+        ]
+      ],
+      "page": 391
+    },
+    {
+      "text": "edandmaynotbeuselpublishedorredistributedwithout",
+      "confidence": 0.95,
+      "box": [
+        [
+          293.43772379557294,
+          101.29803466796875
+        ],
+        [
+          508.0166829427083,
+          101.29803466796875
+        ],
+        [
+          508.0166829427083,
+          92.17580159505212
+        ],
+        [
+          293.43772379557294,
+          92.17580159505212
+        ]
+      ],
+      "page": 391
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          735.713368733724
+        ],
+        [
+          509.6768391927083,
+          735.713368733724
+        ],
+        [
+          509.6768391927083,
+          722.8592020670573
+        ],
+        [
+          452.8155110677083,
+          722.8592020670573
+        ]
+      ],
+      "page": 391
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 391,
+      "text": "Projects Department Health & Safety Slandards\nRef: EGY/PRJCTS/HSE/REQs\nEMAAR\nMISR\nMinimum Construction Health & Safety Standards\nedandmaynotbeuselpublishedorredistributedwithout\nEMAAR",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

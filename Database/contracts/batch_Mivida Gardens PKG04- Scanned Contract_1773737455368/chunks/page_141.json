@@ -1,0 +1,474 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nThe Employer may allow the submittal and accordingly, the related paymentfor anyof theinterimpaymentdoesnot satisfy theabove conditionsathisowndesire,suchallowance/rejectionshallnotrelieve theContractorfromhisobligationsanddoesnotwaivetheEmployerright to perform the appropriate action towards such default in accordance with Conditionsof Contract\n\n## 26.2 IssueofInterimCertificates\n\nThe percentage referred to in Sub-Clause 26.2 (b) of Conditions of Contract for retention is the percent stated in the Form of Agreement and/or the Letter of Acceptance (if any).\n\nModify percentage shown in paragraph sub-clause 26.2 (b) (i) to be as stated in Sub-Clause 26.1 (b) (i).\n\nIn Sub-Clause 26.2 (h), replace the 30 days with 15 days.\n\n## Addnewparagraph(J)asfollows:\n\n- () The Employer retains his right to withhold (15%) fifteen percent of the monthlypayment in the event theContractor failed to deliver the following documentation:\n- 1.Material submissions scheduled through the monthbased on the approved log for the Contract Administrator approval.\n2. Shopdrawingsscheduledthroughthemonthbasedonthe approved log for the Contract Administrator approval.\n- 3.Asbuiltdrawingsscheduledthroughthemonthbasedonthe approved log to be provided for the Contract Administrator approval.\n4. Progress update throughout the month based on the approved constructionschedule.\n- 5.Removal of faultyexecuted works.\n\nThe Employer, in addition to the above, retains his right to withhold thcmonthlypaymentcertificatein theevent theContractorfailedto submitandobtainapprovalforthefollowingdocumentation:\n\n- Submissionand approval ofthe completeconstructionbase line scheduleinaccordancewithsection01310ofDivisionIofGeneral requirements including butnot limited toMan-Power histogram, staff mobilizationchart,andWorkinPlacehistogram.\n- Submission and approvalof QualityControl and Quality Assurance program.\n- Submission and approval of Safety and SecurityPlan.\n- Submission and approvalof InsurancePoliciesas per the requirementsofSub-Clause12.9.\n\nSuspension of the monthly payment shall be lifted upon the submissionof thesaiddocumentby theContractor and approvalby payment due to the Contractor failure to meet this requirement will be thesoleresponsibilityof theContractor.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          750.0469258626302
+        ],
+        [
+          178.0080362955729,
+          750.0469258626302
+        ],
+        [
+          178.0080362955729,
+          730.1082458496094
+        ],
+        [
+          98.09469604492188,
+          730.1082458496094
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          725.865976969401
+        ],
+        [
+          150.94743855794272,
+          725.865976969401
+        ],
+        [
+          150.94743855794272,
+          715.2602945963541
+        ],
+        [
+          126.42376708984375,
+          715.2602945963541
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "The Employer may allow the submittal and accordingly, the related paymentfor anyof theinterimpaymentdoesnot satisfy theabove conditionsathisowndesire,suchallowance/rejectionshallnotrelieve theContractorfromhisobligationsanddoesnotwaivetheEmployerright to perform the appropriate action towards such default in accordance with Conditionsof Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.90056355794272,
+          695.3216247558594
+        ],
+        [
+          502.7353108723958,
+          695.3216247558594
+        ],
+        [
+          502.7353108723958,
+          622.3545532226562
+        ],
+        [
+          164.90056355794272,
+          622.3545532226562
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "26.2 IssueofInterimCertificates",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          617.6880493164062
+        ],
+        [
+          292.59279378255206,
+          617.6880493164062
+        ],
+        [
+          292.59279378255206,
+          605.8096923828125
+        ],
+        [
+          125.578125,
+          605.8096923828125
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "The percentage referred to in Sub-Clause 26.2 (b) of Conditions of Contract for retention is the percent stated in the Form of Agreement and/or the Letter of Acceptance (if any).",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          601.1431884765625
+        ],
+        [
+          502.7353108723958,
+          601.1431884765625
+        ],
+        [
+          502.7353108723958,
+          563.386983235677
+        ],
+        [
+          164.47774251302084,
+          563.386983235677
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Modify percentage shown in paragraph sub-clause 26.2 (b) (i) to be as stated in Sub-Clause 26.1 (b) (i).",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          559.5689290364583
+        ],
+        [
+          501.8896484375,
+          559.5689290364583
+        ],
+        [
+          501.8896484375,
+          533.6910807291667
+        ],
+        [
+          164.05492146809897,
+          533.6910807291667
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "In Sub-Clause 26.2 (h), replace the 30 days with 15 days.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          530.2972615559895
+        ],
+        [
+          430.8555908203125,
+          530.2972615559895
+        ],
+        [
+          430.8555908203125,
+          516.2977701822917
+        ],
+        [
+          164.05492146809897,
+          516.2977701822917
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Addnewparagraph(J)asfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          512.479715983073
+        ],
+        [
+          323.45880126953125,
+          512.479715983073
+        ],
+        [
+          323.45880126953125,
+          500.17714436848956
+        ],
+        [
+          164.47774251302084,
+          500.17714436848956
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "() The Employer retains his right to withhold (15%) fifteen percent of the monthlypayment in the event theContractor failed to deliver the following documentation:",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          495.51064046223956
+        ],
+        [
+          501.4668375651042,
+          495.51064046223956
+        ],
+        [
+          501.4668375651042,
+          458.60288492838544
+        ],
+        [
+          165.74620564778647,
+          458.60288492838544
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "1.Material submissions scheduled through the monthbased on the approved log for the Contract Administrator approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          183.92755126953125,
+          454.36061604817706
+        ],
+        [
+          501.0440266927083,
+          454.36061604817706
+        ],
+        [
+          501.0440266927083,
+          428.90696207682294
+        ],
+        [
+          183.92755126953125,
+          428.90696207682294
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Shopdrawingsscheduledthroughthemonthbasedonthe approved log for the Contract Administrator approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          184.35038248697916,
+          428.90696207682294
+        ],
+        [
+          500.6212158203125,
+          428.90696207682294
+        ],
+        [
+          500.6212158203125,
+          404.72601318359375
+        ],
+        [
+          184.35038248697916,
+          404.72601318359375
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "3.Asbuiltdrawingsscheduledthroughthemonthbasedonthe approved log to be provided for the Contract Administrator approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.6590779622396,
+          405.99871826171875
+        ],
+        [
+          501.4668375651042,
+          405.99871826171875
+        ],
+        [
+          501.4668375651042,
+          370.36362711588544
+        ],
+        [
+          182.6590779622396,
+          370.36362711588544
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Progress update throughout the month based on the approved constructionschedule.",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.6590779622396,
+          370.36362711588544
+        ],
+        [
+          501.0440266927083,
+          370.36362711588544
+        ],
+        [
+          501.0440266927083,
+          346.60691324869794
+        ],
+        [
+          182.6590779622396,
+          346.60691324869794
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "5.Removal of faultyexecuted works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.6590779622396,
+          346.18267822265625
+        ],
+        [
+          357.7073974609375,
+          346.18267822265625
+        ],
+        [
+          357.7073974609375,
+          333.88006591796875
+        ],
+        [
+          182.6590779622396,
+          333.88006591796875
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "The Employer, in addition to the above, retains his right to withhold thcmonthlypaymentcertificatein theevent theContractorfailedto submitandobtainapprovalforthefollowingdocumentation:",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.6590779622396,
+          329.6377970377604
+        ],
+        [
+          500.6212158203125,
+          329.6377970377604
+        ],
+        [
+          500.6212158203125,
+          292.73004150390625
+        ],
+        [
+          182.6590779622396,
+          292.73004150390625
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Submissionand approval ofthe completeconstructionbase line scheduleinaccordancewithsection01310ofDivisionIofGeneral requirements including butnot limited toMan-Power histogram, staff mobilizationchart,andWorkinPlacehistogram.",
+      "confidence": 0.95,
+      "box": [
+        [
+          197.0350341796875,
+          291.8816121419271
+        ],
+        [
+          500.1983642578125,
+          291.8816121419271
+        ],
+        [
+          500.1983642578125,
+          243.51971435546875
+        ],
+        [
+          197.0350341796875,
+          243.51971435546875
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Submission and approvalof QualityControl and Quality Assurance program.",
+      "confidence": 0.95,
+      "box": [
+        [
+          196.6122029622396,
+          231.21710205078125
+        ],
+        [
+          499.7755533854167,
+          231.21710205078125
+        ],
+        [
+          499.7755533854167,
+          206.18772379557288
+        ],
+        [
+          196.6122029622396,
+          206.18772379557288
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Submission and approval of Safety and SecurityPlan.",
+      "confidence": 0.95,
+      "box": [
+        [
+          196.18939208984375,
+          243.94390869140625
+        ],
+        [
+          448.1912841796875,
+          243.94390869140625
+        ],
+        [
+          448.1912841796875,
+          230.36867268880212
+        ],
+        [
+          196.18939208984375,
+          230.36867268880212
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Submission and approvalof InsurancePoliciesas per the requirementsofSub-Clause12.9.",
+      "confidence": 0.95,
+      "box": [
+        [
+          197.45784505208334,
+          205.76348876953125
+        ],
+        [
+          500.1983642578125,
+          205.76348876953125
+        ],
+        [
+          500.1983642578125,
+          182.43096923828125
+        ],
+        [
+          197.45784505208334,
+          182.43096923828125
+        ]
+      ],
+      "page": 141
+    },
+    {
+      "text": "Suspension of the monthly payment shall be lifted upon the submissionof thesaiddocumentby theContractor and approvalby payment due to the Contractor failure to meet this requirement will be thesoleresponsibilityof theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.9677937825521,
+          178.18870035807288
+        ],
+        [
+          499.7755533854167,
+          178.18870035807288
+        ],
+        [
+          499.7755533854167,
+          117.09999593098962
+        ],
+        [
+          180.9677937825521,
+          117.09999593098962
+        ]
+      ],
+      "page": 141
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 141,
+      "text": "EMAAR\nMISR\nThe Employer may allow the submittal and accordingly, the related paymentfor anyof theinterimpaymentdoesnot satisfy theabove conditionsathisowndesire,suchallowance/rejectionshallnotrelieve theContractorfromhisobligationsanddoesnotwaivetheEmployerright to perform the appropriate action towards such default in accordance with Conditionsof Contract\n26.2 IssueofInterimCertificates\nThe percentage referred to in Sub-Clause 26.2 (b) of Conditions of Contract for retention is the percent stated in the Form of Agreement and/or the Letter of Acceptance (if any).\nModify percentage shown in paragraph sub-clause 26.2 (b) (i) to be as stated in Sub-Clause 26.1 (b) (i).\nIn Sub-Clause 26.2 (h), replace the 30 days with 15 days.\nAddnewparagraph(J)asfollows:\n() The Employer retains his right to withhold (15%) fifteen percent of the monthlypayment in the event theContractor failed to deliver the following documentation:\n1.Material submissions scheduled through the monthbased on the approved log for the Contract Administrator approval.\nShopdrawingsscheduledthroughthemonthbasedonthe approved log for the Contract Administrator approval.\n3.Asbuiltdrawingsscheduledthroughthemonthbasedonthe approved log to be provided for the Contract Administrator approval.\nProgress update throughout the month based on the approved constructionschedule.\n5.Removal of faultyexecuted works.\nThe Employer, in addition to the above, retains his right to withhold thcmonthlypaymentcertificatein theevent theContractorfailedto submitandobtainapprovalforthefollowingdocumentation:\nSubmissionand approval ofthe completeconstructionbase line scheduleinaccordancewithsection01310ofDivisionIofGeneral requirements including butnot limited toMan-Power histogram, staff mobilizationchart,andWorkinPlacehistogram.\nSubmission and approvalof QualityControl and Quality Assurance program.\nSubmission and approval of Safety and SecurityPlan.\nSubmission and approvalof InsurancePoliciesas per the requirementsofSub-Clause12.9.\nSuspension of the monthly payment shall be lifted upon the submissionof thesaiddocumentby theContractor and approvalby payment due to the Contractor failure to meet this requirement will be thesoleresponsibilityof theContractor.",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

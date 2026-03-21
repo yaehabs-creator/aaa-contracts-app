@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\nPackageD:PK#04\n\nSubject: Ccnstruction of Townhomes Villas in Parcels 11 &amp;12\n\nProject:ivida Gardens\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "PackageD:PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          485.1891276041667,
+          702.5413309733073
+        ],
+        [
+          497.6405029296875,
+          702.5413309733073
+        ],
+        [
+          497.6405029296875,
+          626.6602783203125
+        ],
+        [
+          485.1891276041667,
+          626.6602783203125
+        ]
+      ],
+      "page": 237
+    },
+    {
+      "text": "Subject: Ccnstruction of Townhomes Villas in Parcels 11 &12",
+      "confidence": 0.95,
+      "box": [
+        [
+          501.7909749348958,
+          702.9559733072916
+        ],
+        [
+          513.8273111979166,
+          702.9559733072916
+        ],
+        [
+          513.8273111979166,
+          471.99562581380206
+        ],
+        [
+          501.7909749348958,
+          471.99562581380206
+        ]
+      ],
+      "page": 237
+    },
+    {
+      "text": "Project:ivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          517.562744140625,
+          702.5413309733073
+        ],
+        [
+          528.3539225260416,
+          702.5413309733073
+        ],
+        [
+          528.3539225260416,
+          608.0010172526041
+        ],
+        [
+          517.562744140625,
+          608.0010172526041
+        ]
+      ],
+      "page": 237
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 237,
+      "text": "PackageD:PK#04\nSubject: Ccnstruction of Townhomes Villas in Parcels 11 &12\nProject:ivida Gardens",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

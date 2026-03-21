@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n## 35. LIMITATIONOFLIABILITY\n\nInnoevent shall Contractororits Sub-Contractor(s)totalliability exceed the Contract Value or the Insurance coverage whichever is higher, provided such limitationshall not applyto:\n\n- a.Contractor's or its Sub-Contractor's obligations to indemnify Employer with respect to patent infringement,or\n- b. To gross negligence, fraud or wilful misconduct. The cap for Contractor's liability as stated herein shall not bereduced by proceeds of insurance provided by Employer or Contractor pursuant to this Contract.\n\n<!-- image -->\n\n<!-- image -->\n\nParcel 11,Parcel 12Townhomes&amp;GradingWorksforParcel11 Contract ParticularConditions Page37of 37",
+  "results": [
+    {
+      "text": "35. LIMITATIONOFLIABILITY",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          680.4736735026041
+        ],
+        [
+          258.76702880859375,
+          680.4736735026041
+        ],
+        [
+          258.76702880859375,
+          669.4437662760416
+        ],
+        [
+          98.51751708984375,
+          669.4437662760416
+        ]
+      ],
+      "page": 150
+    },
+    {
+      "text": "Innoevent shall Contractororits Sub-Contractor(s)totalliability exceed the Contract Value or the Insurance coverage whichever is higher, provided such limitationshall not applyto:",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          663.5045776367188
+        ],
+        [
+          502.7353108723958,
+          663.5045776367188
+        ],
+        [
+          502.7353108723958,
+          627.4452718098959
+        ],
+        [
+          127.69223022460938,
+          627.4452718098959
+        ]
+      ],
+      "page": 150
+    },
+    {
+      "text": "a.Contractor's or its Sub-Contractor's obligations to indemnify Employer with respect to patent infringement,or",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          622.3545532226562
+        ],
+        [
+          502.3125,
+          622.3545532226562
+        ],
+        [
+          502.3125,
+          598.5978393554688
+        ],
+        [
+          127.69223022460938,
+          598.5978393554688
+        ]
+      ],
+      "page": 150
+    },
+    {
+      "text": "To gross negligence, fraud or wilful misconduct. The cap for Contractor's liability as stated herein shall not bereduced by proceeds of insurance provided by Employer or Contractor pursuant to this Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          593.0828857421875
+        ],
+        [
+          503.1581217447917,
+          593.0828857421875
+        ],
+        [
+          503.1581217447917,
+          557.0235595703125
+        ],
+        [
+          127.69223022460938,
+          557.0235595703125
+        ]
+      ],
+      "page": 150
+    },
+    {
+      "text": "Parcel 11,Parcel 12Townhomes&GradingWorksforParcel11 Contract ParticularConditions Page37of 37",
+      "confidence": 0.95,
+      "box": [
+        [
+          315.84800211588544,
+          99.70668538411462
+        ],
+        [
+          506.1178792317708,
+          99.70668538411462
+        ],
+        [
+          506.1178792317708,
+          76.79840087890625
+        ],
+        [
+          315.84800211588544,
+          76.79840087890625
+        ]
+      ],
+      "page": 150
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 150,
+      "text": "35. LIMITATIONOFLIABILITY\nInnoevent shall Contractororits Sub-Contractor(s)totalliability exceed the Contract Value or the Insurance coverage whichever is higher, provided such limitationshall not applyto:\na.Contractor's or its Sub-Contractor's obligations to indemnify Employer with respect to patent infringement,or\nTo gross negligence, fraud or wilful misconduct. The cap for Contractor's liability as stated herein shall not bereduced by proceeds of insurance provided by Employer or Contractor pursuant to this Contract.\nParcel 11,Parcel 12Townhomes&GradingWorksforParcel11 Contract ParticularConditions Page37of 37",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

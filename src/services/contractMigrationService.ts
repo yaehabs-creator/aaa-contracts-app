@@ -401,15 +401,23 @@ export function getAllClausesFromContract(contract: SavedContract | LegacyContra
   }
 
   if (contract.sections) {
-    contract.sections.forEach(section => {
-      section.items.forEach(item => {
+    const processItems = (items: SectionItem[]) => {
+      items.forEach(item => {
         if (item.itemType === ItemType.CLAUSE) {
           const clause = sectionItemToClause(item);
           if (clause) {
             clauses.push(clause);
           }
         }
+        // Recursively process children
+        if (item.children && item.children.length > 0) {
+          processItems(item.children);
+        }
       });
+    };
+
+    contract.sections.forEach(section => {
+      processItems(section.items);
     });
   }
 

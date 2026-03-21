@@ -1,0 +1,451 @@
+{
+  "text": "<!-- image -->\n\n## EMAAR\n\nCoverage: Covering liability for damage to property or bodily injury tothird parties arising out of the ownership,the use and maintenance of motor vehicles owned,hired,leased or otherwise usedbytheContractor,forlimitof liabilitynotlessthan20,000,000 EGP as a limit in the aggregate and any one accident/occurrence. TheContractorshalialsoensurethatitsSubcontractorsobtainand maintain such insurance for vehicles used by them.\n\nSum Insured: not less than 500,000 EGP for each death of or injury to persons and full amount of indemnity for each loss of or damage to property.\n\n## Conditions:\n\n- 2.Passenger's liability\n- 1.Cross Liability Clause\n- 3.Waiver of subrogationagainst Employer andlor andany affiliated companies,whether constituted at inceptionor subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers and or all Suppliers and or all consultants and or all employees, managers,and allotherparties involved intheworkeachfor theirrespectiverights and interest intheProject.\n- d)Contractorsand/orErectionAll Riskinsurance-Contractorshould take outandmaintainathisownCostandliabilityContractorsand/or ErectionAllRisksinsuranceandPublicLiabilityinsurancefromthe commencement of theWorks on Site till the end date of the project and issuance of the Taking Over Certificate for the Works including any\n- Contractorsand /or ErectionAllRisksInsurance-Particular Requirements:\n\nLocation: East Cairo, Cairo, Egypt.\n\n## Insured:\n\n2. Contract Administrator\n1. The Principal (the Employer) and any subsidiary or affliated companies,whetherconstituted atinceptionorsubsequently.\n3. 3.Contractorsand/orSubcontractorsand/orConstruction Managersofeachandeverytire.\n4. 4.Allotherpartieswith an insurableinterestin theProjectfor their activitiesattheProlectSlte.\n5. 6.Policy must be issued in favor of Emaar Misrfor Development.\n5. Lenders and their technical advisors (if applicable)\n7. 7.The Contractor shall ensureissuing theinsurancepolicywith the Employer named as\"FirstLossPayee\".\n\nPeriod: From the Effective Date and during construction and erectionat theSiteand tobeextendedbasedonanychanges in project duration (Extension of Time or time delay).\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          752.59228515625
+        ],
+        [
+          177.5852254231771,
+          752.59228515625
+        ],
+        [
+          177.5852254231771,
+          733.9262898763021
+        ],
+        [
+          98.09469604492188,
+          733.9262898763021
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Coverage: Covering liability for damage to property or bodily injury tothird parties arising out of the ownership,the use and maintenance of motor vehicles owned,hired,leased or otherwise usedbytheContractor,forlimitof liabilitynotlessthan20,000,000 EGP as a limit in the aggregate and any one accident/occurrence. TheContractorshalialsoensurethatitsSubcontractorsobtainand maintain such insurance for vehicles used by them.",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.5383504231771,
+          698.2912089029948
+        ],
+        [
+          502.7353108723958,
+          698.2912089029948
+        ],
+        [
+          502.7353108723958,
+          612.5973307291666
+        ],
+        [
+          191.5383504231771,
+          612.5973307291666
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Sum Insured: not less than 500,000 EGP for each death of or injury to persons and full amount of indemnity for each loss of or damage to property.",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.11551920572916,
+          610.4761962890625
+        ],
+        [
+          501.8896484375,
+          610.4761962890625
+        ],
+        [
+          501.8896484375,
+          572.2957560221355
+        ],
+        [
+          191.11551920572916,
+          572.2957560221355
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Conditions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.5383504231771,
+          569.7503865559895
+        ],
+        [
+          245.6595662434896,
+          569.7503865559895
+        ],
+        [
+          245.6595662434896,
+          557.0235595703125
+        ],
+        [
+          191.5383504231771,
+          557.0235595703125
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "2.Passenger's liability",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.11551920572916,
+          545.1452026367188
+        ],
+        [
+          300.20359293619794,
+          545.1452026367188
+        ],
+        [
+          300.20359293619794,
+          532.8426310221355
+        ],
+        [
+          191.11551920572916,
+          532.8426310221355
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "1.Cross Liability Clause",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.9611612955729,
+          557.4477945963542
+        ],
+        [
+          308.6600341796875,
+          557.4477945963542
+        ],
+        [
+          308.6600341796875,
+          544.7209879557292
+        ],
+        [
+          191.9611612955729,
+          544.7209879557292
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "3.Waiver of subrogationagainst Employer andlor andany affiliated companies,whether constituted at inceptionor subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers and or all Suppliers and or all consultants and or all employees, managers,and allotherparties involved intheworkeachfor theirrespectiverights and interest intheProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          533.266845703125
+        ],
+        [
+          502.3125,
+          533.266845703125
+        ],
+        [
+          502.3125,
+          448.42140706380206
+        ],
+        [
+          190.69270833333334,
+          448.42140706380206
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "d)Contractorsand/orErectionAll Riskinsurance-Contractorshould take outandmaintainathisownCostandliabilityContractorsand/or ErectionAllRisksinsuranceandPublicLiabilityinsurancefromthe commencement of theWorks on Site till the end date of the project and issuance of the Taking Over Certificate for the Works including any",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.82670084635416,
+          422.54355875651044
+        ],
+        [
+          501.0440266927083,
+          422.54355875651044
+        ],
+        [
+          501.0440266927083,
+          360.60638427734375
+        ],
+        [
+          159.82670084635416,
+          360.60638427734375
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Contractorsand /or ErectionAllRisksInsurance-Particular Requirements:",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.2698771158854,
+          339.81927490234375
+        ],
+        [
+          500.6212158203125,
+          339.81927490234375
+        ],
+        [
+          500.6212158203125,
+          316.06256103515625
+        ],
+        [
+          190.2698771158854,
+          316.06256103515625
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Location: East Cairo, Cairo, Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.2698771158854,
+          445.87603759765625
+        ],
+        [
+          352.6335042317708,
+          445.87603759765625
+        ],
+        [
+          352.6335042317708,
+          431.45233154296875
+        ],
+        [
+          190.2698771158854,
+          431.45233154296875
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Insured:",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.2698771158854,
+          311.8202921549479
+        ],
+        [
+          229.59232584635416,
+          311.8202921549479
+        ],
+        [
+          229.59232584635416,
+          299.9419148763021
+        ],
+        [
+          190.2698771158854,
+          299.9419148763021
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Contract Administrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          275.7609659830729
+        ],
+        [
+          311.6197916666667,
+          275.7609659830729
+        ],
+        [
+          311.6197916666667,
+          263.8825887044271
+        ],
+        [
+          190.69270833333334,
+          263.8825887044271
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "The Principal (the Employer) and any subsidiary or affliated companies,whetherconstituted atinceptionorsubsequently.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.8470662434896,
+          300.7903849283854
+        ],
+        [
+          500.1983642578125,
+          300.7903849283854
+        ],
+        [
+          500.1983642578125,
+          274.9124959309896
+        ],
+        [
+          189.8470662434896,
+          274.9124959309896
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "3.Contractorsand/orSubcontractorsand/orConstruction Managersofeachandeverytire.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          263.8825887044271
+        ],
+        [
+          499.7755533854167,
+          263.8825887044271
+        ],
+        [
+          499.7755533854167,
+          239.70163981119788
+        ],
+        [
+          189.42423502604166,
+          239.70163981119788
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "4.Allotherpartieswith an insurableinterestin theProjectfor their activitiesattheProlectSlte.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          239.70163981119788
+        ],
+        [
+          499.7755533854167,
+          239.70163981119788
+        ],
+        [
+          499.7755533854167,
+          215.94492594401038
+        ],
+        [
+          189.42423502604166,
+          215.94492594401038
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "6.Policy must be issued in favor of Emaar Misrfor Development.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.00142415364584,
+          204.06658935546875
+        ],
+        [
+          494.2788899739583,
+          204.06658935546875
+        ],
+        [
+          494.2788899739583,
+          191.33974202473962
+        ],
+        [
+          189.00142415364584,
+          191.33974202473962
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Lenders and their technical advisors (if applicable)",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.5785929361979,
+          216.79339599609375
+        ],
+        [
+          439.31201171875,
+          216.79339599609375
+        ],
+        [
+          439.31201171875,
+          202.79388427734375
+        ],
+        [
+          188.5785929361979,
+          202.79388427734375
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "7.The Contractor shall ensureissuing theinsurancepolicywith the Employer named as\"FirstLossPayee\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.00142415364584,
+          191.76397705078125
+        ],
+        [
+          499.3527425130208,
+          191.76397705078125
+        ],
+        [
+          499.3527425130208,
+          167.58302815755212
+        ],
+        [
+          189.00142415364584,
+          167.58302815755212
+        ]
+      ],
+      "page": 131
+    },
+    {
+      "text": "Period: From the Effective Date and during construction and erectionat theSiteand tobeextendedbasedonanychanges in project duration (Extension of Time or time delay).",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.00142415364584,
+          163.76499430338538
+        ],
+        [
+          500.1983642578125,
+          163.76499430338538
+        ],
+        [
+          500.1983642578125,
+          126.00876871744788
+        ],
+        [
+          189.00142415364584,
+          126.00876871744788
+        ]
+      ],
+      "page": 131
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 131,
+      "text": "EMAAR\nCoverage: Covering liability for damage to property or bodily injury tothird parties arising out of the ownership,the use and maintenance of motor vehicles owned,hired,leased or otherwise usedbytheContractor,forlimitof liabilitynotlessthan20,000,000 EGP as a limit in the aggregate and any one accident/occurrence. TheContractorshalialsoensurethatitsSubcontractorsobtainand maintain such insurance for vehicles used by them.\nSum Insured: not less than 500,000 EGP for each death of or injury to persons and full amount of indemnity for each loss of or damage to property.\nConditions:\n2.Passenger's liability\n1.Cross Liability Clause\n3.Waiver of subrogationagainst Employer andlor andany affiliated companies,whether constituted at inceptionor subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers and or all Suppliers and or all consultants and or all employees, managers,and allotherparties involved intheworkeachfor theirrespectiverights and interest intheProject.\nd)Contractorsand/orErectionAll Riskinsurance-Contractorshould take outandmaintainathisownCostandliabilityContractorsand/or ErectionAllRisksinsuranceandPublicLiabilityinsurancefromthe commencement of theWorks on Site till the end date of the project and issuance of the Taking Over Certificate for the Works including any\nContractorsand /or ErectionAllRisksInsurance-Particular Requirements:\nLocation: East Cairo, Cairo, Egypt.\nInsured:\nContract Administrator\nThe Principal (the Employer) and any subsidiary or affliated companies,whetherconstituted atinceptionorsubsequently.\n3.Contractorsand/orSubcontractorsand/orConstruction Managersofeachandeverytire.\n4.Allotherpartieswith an insurableinterestin theProjectfor their activitiesattheProlectSlte.\n6.Policy must be issued in favor of Emaar Misrfor Development.\nLenders and their technical advisors (if applicable)\n7.The Contractor shall ensureissuing theinsurancepolicywith the Employer named as\"FirstLossPayee\".\nPeriod: From the Effective Date and during construction and erectionat theSiteand tobeextendedbasedonanychanges in project duration (Extension of Time or time delay).",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

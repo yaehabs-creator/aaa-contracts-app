@@ -1,0 +1,106 @@
+{
+  "text": "<!-- image -->\n\n## Inspection Request\n\n<!-- image -->\n\n## Contractor has to sign off the receipt of one copy of NCR sent by CS\n\nCS - Construction supervisor\n\nCA - Contract Administrator\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Inspection Request",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.61527506510416,
+          646.5635172526041
+        ],
+        [
+          409.2356363932292,
+          646.5635172526041
+        ],
+        [
+          409.2356363932292,
+          625.0016886393229
+        ],
+        [
+          226.61527506510416,
+          625.0016886393229
+        ]
+      ],
+      "page": 484
+    },
+    {
+      "text": "Contractor has to sign off the receipt of one copy of NCR sent by CS",
+      "confidence": 0.95,
+      "box": [
+        [
+          66.40740966796875,
+          174.69122314453125
+        ],
+        [
+          307.96435546875,
+          174.69122314453125
+        ],
+        [
+          307.96435546875,
+          144.42173258463538
+        ],
+        [
+          66.40740966796875,
+          144.42173258463538
+        ]
+      ],
+      "page": 484
+    },
+    {
+      "text": "CS - Construction supervisor",
+      "confidence": 0.95,
+      "box": [
+        [
+          67.2374979654948,
+          122.44525146484375
+        ],
+        [
+          239.4817097981771,
+          122.44525146484375
+        ],
+        [
+          239.4817097981771,
+          106.68849690755212
+        ],
+        [
+          67.2374979654948,
+          106.68849690755212
+        ]
+      ],
+      "page": 484
+    },
+    {
+      "text": "CA - Contract Administrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          67.2374979654948,
+          105.85923258463538
+        ],
+        [
+          239.4817097981771,
+          105.85923258463538
+        ],
+        [
+          239.4817097981771,
+          90.51719156901038
+        ],
+        [
+          67.2374979654948,
+          90.51719156901038
+        ]
+      ],
+      "page": 484
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 484,
+      "text": "Inspection Request\nContractor has to sign off the receipt of one copy of NCR sent by CS\nCS - Construction supervisor\nCA - Contract Administrator",
+      "line_count": 4
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

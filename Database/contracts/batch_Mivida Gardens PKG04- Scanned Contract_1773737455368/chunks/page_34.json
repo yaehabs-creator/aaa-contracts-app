@@ -1,0 +1,313 @@
+{
+  "text": "## 2.\n\n## ProjectManager'sPowersandDuties\n\n- 2.1 TheProject Manager shall have such powers,discretions,functions and authoritiesas arespecified intheContractand asmaybeimplied therefrom andshallcarry out suchduties(includingwithoutlimitationissuing instructions，decisions,certificates，orders，determinations，consents, notices and approvals)as arespecified in theContract.Provided that:\n- (a) the Project Manager shall have no authority to amend the Contract; and\n- (b) theProjectManagershallhavenoauthoritytorelievetheContractor of anyof itsduties,obligationsorresponsibilities undertheContract, paymentto theContractor bythc Employer nortomakeanyvariation to the Works.\n\n## Project Manager's Decisions, Orders and Instructions\n\n- 2.2 The Contractor shall complywith the decisions,orders and instructions givenby theProject Managerin accordancewith theContract.\n\n## UnwrittenDecisions\n\n- 2.3 IftheContractorshall,within(butnotafter) two(2)working days afterbeing than in writing, request the Project Manager in writing to confirm such decision，order or instruction in writing then that decision，order or instructionshallnotbeeffectiveuntilsuchwrittenconfirmationhasbeen received by the Contractor.\n\n## ReconfirmationofDecisions\n\n<!-- image -->\n\n- 2.4 If theContractor shall,bywrittennotice to theProject Managerwithin(but theProjectManagerinwritingorwrillenconflrmatlonunderClause2.3 (UnwrittenDecisions),dispute orquestion the decision,orderorinstruction giving itsreasonsforso doing it shall servenotice on theProject Manager inaccordancewithClause 32(Notices)and theProjectManagershall reconsiderhisdecision,orderorinstructionandwithinafurtherperiodof sevendaysbynoticeinwriting,withreasonstherefor,totheContractorand the Employer, confirm, reverse or vary such decision, order or instruction.\n\n## Project Manager's Representative\n\n- 2.5 The Project Manager's Representative shall be appointed in writing by and beresponsibletotheProject Manager andshall carryoutonlysuchduties and have suchpowers,discretions,functions and authorities as may be delegatedtohimby theProjectManagerunderClause2.6(Project Manager's Power to Delegate).\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "2.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          721.6237080891927
+        ],
+        [
+          105.70548502604167,
+          721.6237080891927
+        ],
+        [
+          105.70548502604167,
+          711.8664855957031
+        ],
+        [
+          96.40340169270833,
+          711.8664855957031
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "ProjectManager'sPowersandDuties",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          699.5638936360677
+        ],
+        [
+          265.109375,
+          699.5638936360677
+        ],
+        [
+          265.109375,
+          688.5339864095052
+        ],
+        [
+          97.24905395507812,
+          688.5339864095052
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "2.1 TheProject Manager shall have such powers,discretions,functions and authoritiesas arespecified intheContractand asmaybeimplied therefrom andshallcarry out suchduties(includingwithoutlimitationissuing instructions，decisions,certificates，orders，determinations，consents, notices and approvals)as arespecified in theContract.Provided that:",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          677.0798543294271
+        ],
+        [
+          487.5137125651042,
+          677.0798543294271
+        ],
+        [
+          487.5137125651042,
+          621.9303181966146
+        ],
+        [
+          126.42376708984375,
+          621.9303181966146
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "(a) the Project Manager shall have no authority to amend the Contract; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          609.6277465820312
+        ],
+        [
+          487.5137125651042,
+          609.6277465820312
+        ],
+        [
+          487.5137125651042,
+          585.446797688802
+        ],
+        [
+          157.71259562174478,
+          585.446797688802
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "(b) theProjectManagershallhavenoauthoritytorelievetheContractor of anyof itsduties,obligationsorresponsibilities undertheContract, paymentto theContractor bythc Employer nortomakeanyvariation to the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          574.4168904622395
+        ],
+        [
+          487.9365234375,
+          574.4168904622395
+        ],
+        [
+          487.9365234375,
+          518.4189046223958
+        ],
+        [
+          158.13541666666666,
+          518.4189046223958
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "Project Manager's Decisions, Orders and Instructions",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          506.9647623697917
+        ],
+        [
+          336.14345296223956,
+          506.9647623697917
+        ],
+        [
+          336.14345296223956,
+          494.66217041015625
+        ],
+        [
+          96.82623291015625,
+          494.66217041015625
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "2.2 The Contractor shall complywith the decisions,orders and instructions givenby theProject Managerin accordancewith theContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          484.05649820963544
+        ],
+        [
+          487.9365234375,
+          484.05649820963544
+        ],
+        [
+          487.9365234375,
+          462.42091878255206
+        ],
+        [
+          127.69223022460938,
+          462.42091878255206
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "UnwrittenDecisions",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          450.54254150390625
+        ],
+        [
+          186.8873087565104,
+          450.54254150390625
+        ],
+        [
+          186.8873087565104,
+          438.23996988932294
+        ],
+        [
+          97.24905395507812,
+          438.23996988932294
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "2.3 IftheContractorshall,within(butnotafter) two(2)working days afterbeing than in writing, request the Project Manager in writing to confirm such decision，order or instruction in writing then that decision，order or instructionshallnotbeeffectiveuntilsuchwrittenconfirmationhasbeen received by the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          427.21006266276044
+        ],
+        [
+          488.7821858723958,
+          427.21006266276044
+        ],
+        [
+          488.7821858723958,
+          358.90948486328125
+        ],
+        [
+          127.2694091796875,
+          358.90948486328125
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "ReconfirmationofDecisions",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          347.03110758463544
+        ],
+        [
+          223.67281087239584,
+          347.03110758463544
+        ],
+        [
+          223.67281087239584,
+          337.27390543619794
+        ],
+        [
+          97.671875,
+          337.27390543619794
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "2.4 If theContractor shall,bywrittennotice to theProject Managerwithin(but theProjectManagerinwritingorwrillenconflrmatlonunderClause2.3 (UnwrittenDecisions),dispute orquestion the decision,orderorinstruction giving itsreasonsforso doing it shall servenotice on theProject Manager inaccordancewithClause 32(Notices)and theProjectManagershall reconsiderhisdecision,orderorinstructionandwithinafurtherperiodof sevendaysbynoticeinwriting,withreasonstherefor,totheContractorand the Employer, confirm, reverse or vary such decision, order or instruction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          325.3955281575521
+        ],
+        [
+          489.6278483072917,
+          325.3955281575521
+        ],
+        [
+          489.6278483072917,
+          223.58103434244788
+        ],
+        [
+          128.11505126953125,
+          223.58103434244788
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "Project Manager's Representative",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          211.70265706380212
+        ],
+        [
+          250.7334187825521,
+          211.70265706380212
+        ],
+        [
+          250.7334187825521,
+          199.40008544921875
+        ],
+        [
+          97.671875,
+          199.40008544921875
+        ]
+      ],
+      "page": 34
+    },
+    {
+      "text": "2.5 The Project Manager's Representative shall be appointed in writing by and beresponsibletotheProject Manager andshall carryoutonlysuchduties and have suchpowers,discretions,functions and authorities as may be delegatedtohimby theProjectManagerunderClause2.6(Project Manager's Power to Delegate).",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          189.64284261067712
+        ],
+        [
+          489.6278483072917,
+          189.64284261067712
+        ],
+        [
+          489.6278483072917,
+          132.37221272786462
+        ],
+        [
+          127.69223022460938,
+          132.37221272786462
+        ]
+      ],
+      "page": 34
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 34,
+      "text": "2.\nProjectManager'sPowersandDuties\n2.1 TheProject Manager shall have such powers,discretions,functions and authoritiesas arespecified intheContractand asmaybeimplied therefrom andshallcarry out suchduties(includingwithoutlimitationissuing instructions，decisions,certificates，orders，determinations，consents, notices and approvals)as arespecified in theContract.Provided that:\n(a) the Project Manager shall have no authority to amend the Contract; and\n(b) theProjectManagershallhavenoauthoritytorelievetheContractor of anyof itsduties,obligationsorresponsibilities undertheContract, paymentto theContractor bythc Employer nortomakeanyvariation to the Works.\nProject Manager's Decisions, Orders and Instructions\n2.2 The Contractor shall complywith the decisions,orders and instructions givenby theProject Managerin accordancewith theContract.\nUnwrittenDecisions\n2.3 IftheContractorshall,within(butnotafter) two(2)working days afterbeing than in writing, request the Project Manager in writing to confirm such decision，order or instruction in writing then that decision，order or instructionshallnotbeeffectiveuntilsuchwrittenconfirmationhasbeen received by the Contractor.\nReconfirmationofDecisions\n2.4 If theContractor shall,bywrittennotice to theProject Managerwithin(but theProjectManagerinwritingorwrillenconflrmatlonunderClause2.3 (UnwrittenDecisions),dispute orquestion the decision,orderorinstruction giving itsreasonsforso doing it shall servenotice on theProject Manager inaccordancewithClause 32(Notices)and theProjectManagershall reconsiderhisdecision,orderorinstructionandwithinafurtherperiodof sevendaysbynoticeinwriting,withreasonstherefor,totheContractorand the Employer, confirm, reverse or vary such decision, order or instruction.\nProject Manager's Representative\n2.5 The Project Manager's Representative shall be appointed in writing by and beresponsibletotheProject Manager andshall carryoutonlysuchduties and have suchpowers,discretions,functions and authorities as may be delegatedtohimby theProjectManagerunderClause2.6(Project Manager's Power to Delegate).",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

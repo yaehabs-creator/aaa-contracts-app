@@ -1,0 +1,175 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Technical Specifications(Dlvision I)\n\n- 1.12 The Contractor shall propose a Garbage control Plan which shall describe the proposal to control garbage build-up and handle removal. The Plan shall at the minimum address the collection points distribution, vertical chutes, loading bays, skips/bins, dumpster access, spoil area for the shovel and/ any loading including redundant concrete. The Contractor shall submit a Garbage Management Plan for approval by the Contract Administrator.\n- 1.13 The Contractor must regularly, or as directed by the Contract Administrator, remove all debris attributable to his trade and maintain his work area in a neat and tidy manner, thereby minimising access problems and safety problems.\n- 1.14 The  Contractor  shall not dispose of any hazardous materials sor substances, dump oil or diesel fuel, and bury any toxic containers or contaminants at the Site.\n- 1.15 The Contractor must pay particular attention to prevent contamination of the Egyptian coastal waters from site generated debris, pollutants or marine plant discharges.\n\nENDOFSECTION01535\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          749.3968353271484
+        ],
+        [
+          131.15463256835938,
+          749.3968353271484
+        ],
+        [
+          131.15463256835938,
+          739.0305735270182
+        ],
+        [
+          108.32708740234375,
+          739.0305735270182
+        ]
+      ],
+      "page": 360
+    },
+    {
+      "text": "Technical Specifications(Dlvision I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.50787353515625,
+          742.7624257405599
+        ],
+        [
+          503.0360921223958,
+          742.7624257405599
+        ],
+        [
+          503.0360921223958,
+          730.737559000651
+        ],
+        [
+          339.50787353515625,
+          730.737559000651
+        ]
+      ],
+      "page": 360
+    },
+    {
+      "text": "1.12 The Contractor shall propose a Garbage control Plan which shall describe the proposal to control garbage build-up and handle removal. The Plan shall at the minimum address the collection points distribution, vertical chutes, loading bays, skips/bins, dumpster access, spoil area for the shovel and/ any loading including redundant concrete. The Contractor shall submit a Garbage Management Plan for approval by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          720.3712972005209
+        ],
+        [
+          506.3564860026042,
+          720.3712972005209
+        ],
+        [
+          506.3564860026042,
+          627.0749308268229
+        ],
+        [
+          92.97036743164062,
+          627.0749308268229
+        ]
+      ],
+      "page": 360
+    },
+    {
+      "text": "1.13 The Contractor must regularly, or as directed by the Contract Administrator, remove all debris attributable to his trade and maintain his work area in a neat and tidy manner, thereby minimising access problems and safety problems.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          622.09912109375
+        ],
+        [
+          506.7715250651042,
+          622.09912109375
+        ],
+        [
+          506.7715250651042,
+          569.0238647460938
+        ],
+        [
+          94.2155049641927,
+          569.0238647460938
+        ]
+      ],
+      "page": 360
+    },
+    {
+      "text": "1.14 The  Contractor  shall not dispose of any hazardous materials sor substances, dump oil or diesel fuel, and bury any toxic containers or contaminants at the Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          564.0480550130208
+        ],
+        [
+          505.9414469401042,
+          564.0480550130208
+        ],
+        [
+          505.9414469401042,
+          524.65625
+        ],
+        [
+          94.63055419921875,
+          524.65625
+        ]
+      ],
+      "page": 360
+    },
+    {
+      "text": "1.15 The Contractor must pay particular attention to prevent contamination of the Egyptian coastal waters from site generated debris, pollutants or marine plant discharges.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          518.8511555989583
+        ],
+        [
+          506.7715250651042,
+          518.8511555989583
+        ],
+        [
+          506.7715250651042,
+          478.21539306640625
+        ],
+        [
+          94.63055419921875,
+          478.21539306640625
+        ]
+      ],
+      "page": 360
+    },
+    {
+      "text": "ENDOFSECTION01535",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.5400390625,
+          452.09242757161456
+        ],
+        [
+          356.1097005208333,
+          452.09242757161456
+        ],
+        [
+          356.1097005208333,
+          440.89683024088544
+        ],
+        [
+          224.5400390625,
+          440.89683024088544
+        ]
+      ],
+      "page": 360
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 360,
+      "text": "MISR\nTechnical Specifications(Dlvision I)\n1.12 The Contractor shall propose a Garbage control Plan which shall describe the proposal to control garbage build-up and handle removal. The Plan shall at the minimum address the collection points distribution, vertical chutes, loading bays, skips/bins, dumpster access, spoil area for the shovel and/ any loading including redundant concrete. The Contractor shall submit a Garbage Management Plan for approval by the Contract Administrator.\n1.13 The Contractor must regularly, or as directed by the Contract Administrator, remove all debris attributable to his trade and maintain his work area in a neat and tidy manner, thereby minimising access problems and safety problems.\n1.14 The  Contractor  shall not dispose of any hazardous materials sor substances, dump oil or diesel fuel, and bury any toxic containers or contaminants at the Site.\n1.15 The Contractor must pay particular attention to prevent contamination of the Egyptian coastal waters from site generated debris, pollutants or marine plant discharges.\nENDOFSECTION01535",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

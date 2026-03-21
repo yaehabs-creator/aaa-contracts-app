@@ -1,0 +1,658 @@
+{
+  "text": "3.2\n\n- to be taken and describe emergency procedures.\n- 2.2.6 6 Identify the access routes and site logistics.\n- 2.2.7 Describe all temporary construction requirements including detailed locations of construction equipment, their capacities, clearances, etc. supplemented by relevant sketches.\n- 2.2.8ldentifyareasforstorageofmaterialsanddetailhandling procedures.\n- 2.2.9 Identify existing services, structures, etc. in the proximity of works to be carried out and detail the methods of execution.\n- 2.2.10Detail how theworksaretobeset-out.\n- 2.2.11 Describe the procedures for verification of construction and crcction tolerances, and the stages at which checking of constructed works shall be done.\n- 2.2.12 Detail the proposed construction cquipment and manpower to be utilised.\n- 2.2.13 ldentify the person1 designated to be in-charge of the specific work beinig addressed.\n- 2.2.14 Include contingency plans to be implemented to mitigate the effects of risks, which may occur.\n- 2.2.15 Make reference to the approved working drawings and materials.\n- 2.2.16 Include sufficient number of detailed sketches, diagrams, calculations, etc.， to render the method statements easily comprehensible.\n- 2.2.17 Relate to the approved Execution Programme activities.\n\n## 3.ADDITIONALREQUIREMENTS\n\n- 3.1 In addition to the above method statement, the Contractor shall submit to the Contract Administrator, when requested, more detailed method statementsforspecificportionsoftheworknotclearlyidentifiedpreviously and activity method statements asrequired or deemed necessaryby the Supervision Consultant. Activity Method Statement shall include but not limited to\n- WorkProcedures\n- Materials/Equipment used\n- Responsibilities and Personnel\n- SequenceofConstruction\n- Documentation and QualityAssurance\n- Inspection and Testing Plan\n- Activity Hazard Analysis.\n\nTaC0-18-287-200\n\nolstr Inprogramming t the works, the Contractor shall allow a sufficient period in accordance with Section 01300, Clause 3 for the review and approval of the Detelled Execution Method Statements.\n\n限责任公司\n\nEmaarMisrfoDeyolopment pt\n\nSpecilcationDiv01GralBqlremens\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "3.2",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          130.73822021484375
+        ],
+        [
+          114.13773600260417,
+          130.73822021484375
+        ],
+        [
+          114.13773600260417,
+          118.29876708984375
+        ],
+        [
+          95.0456034342448,
+          118.29876708984375
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "to be taken and describe emergency procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.2831013997396,
+          707.9317830403646
+        ],
+        [
+          410.8958333333333,
+          707.9317830403646
+        ],
+        [
+          410.8958333333333,
+          695.4922688802084
+        ],
+        [
+          162.2831013997396,
+          695.4922688802084
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.6 6 Identify the access routes and site logistics.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          689.2725118001302
+        ],
+        [
+          381.0124918619792,
+          689.2725118001302
+        ],
+        [
+          381.0124918619792,
+          677.6622924804688
+        ],
+        [
+          129.90949503580728,
+          677.6622924804688
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.7 Describe all temporary construction requirements including detailed locations of construction equipment, their capacities, clearances, etc. supplemented by relevant sketches.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          671.4425354003906
+        ],
+        [
+          505.5263671875,
+          671.4425354003906
+        ],
+        [
+          505.5263671875,
+          632.8800455729166
+        ],
+        [
+          127.41920979817708,
+          632.8800455729166
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.8ldentifyareasforstorageofmaterialsanddetailhandling procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.24930826822916,
+          625.4163208007812
+        ],
+        [
+          504.28125,
+          625.4163208007812
+        ],
+        [
+          504.28125,
+          600.1226399739584
+        ],
+        [
+          128.24930826822916,
+          600.1226399739584
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.9 Identify existing services, structures, etc. in the proximity of works to be carried out and detail the methods of execution.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          593.9028930664062
+        ],
+        [
+          505.111328125,
+          593.9028930664062
+        ],
+        [
+          505.111328125,
+          568.6092122395834
+        ],
+        [
+          127.83425903320312,
+          568.6092122395834
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.10Detail how theworksaretobeset-out.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          561.1455078125
+        ],
+        [
+          357.3548583984375,
+          561.1455078125
+        ],
+        [
+          357.3548583984375,
+          550.7792358398438
+        ],
+        [
+          129.49444580078125,
+          550.7792358398438
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.11 Describe the procedures for verification of construction and crcction tolerances, and the stages at which checking of constructed works shall be done.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          542.4862263997395
+        ],
+        [
+          505.5263671875,
+          542.4862263997395
+        ],
+        [
+          505.5263671875,
+          503.92372639973956
+        ],
+        [
+          129.07939656575522,
+          503.92372639973956
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.12 Detail the proposed construction cquipment and manpower to be utilised.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.66434733072916,
+          498.1186116536458
+        ],
+        [
+          505.111328125,
+          498.1186116536458
+        ],
+        [
+          505.111328125,
+          472.82493082682294
+        ],
+        [
+          128.66434733072916,
+          472.82493082682294
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.13 ldentify the person1 designated to be in-charge of the specific work beinig addressed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          466.19053141276044
+        ],
+        [
+          505.9414469401042,
+          466.19053141276044
+        ],
+        [
+          505.9414469401042,
+          440.48219807942706
+        ],
+        [
+          129.07939656575522,
+          440.48219807942706
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.14 Include contingency plans to be implemented to mitigate the effects of risks, which may occur.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          433.84779866536456
+        ],
+        [
+          505.111328125,
+          433.84779866536456
+        ],
+        [
+          505.111328125,
+          408.55409749348956
+        ],
+        [
+          129.07939656575522,
+          408.55409749348956
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.15 Make reference to the approved working drawings and materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.66434733072916,
+          402.74900309244794
+        ],
+        [
+          490.169677734375,
+          402.74900309244794
+        ],
+        [
+          490.169677734375,
+          390.30946858723956
+        ],
+        [
+          128.66434733072916,
+          390.30946858723956
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.16 Include sufficient number of detailed sketches, diagrams, calculations, etc.， to render the method statements easily comprehensible.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          384.08974202473956
+        ],
+        [
+          504.6962890625,
+          384.08974202473956
+        ],
+        [
+          504.6962890625,
+          344.69793701171875
+        ],
+        [
+          129.07939656575522,
+          344.69793701171875
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "2.2.17 Relate to the approved Execution Programme activities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          338.89280192057294
+        ],
+        [
+          442.8544108072917,
+          338.89280192057294
+        ],
+        [
+          442.8544108072917,
+          327.28261311848956
+        ],
+        [
+          129.49444580078125,
+          327.28261311848956
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "3.ADDITIONALREQUIREMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          314.01377360026044
+        ],
+        [
+          261.0641276041667,
+          314.01377360026044
+        ],
+        [
+          261.0641276041667,
+          303.2328898111979
+        ],
+        [
+          77.61365763346355,
+          303.2328898111979
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "3.1 In addition to the above method statement, the Contractor shall submit to the Contract Administrator, when requested, more detailed method statementsforspecificportionsoftheworknotclearlyidentifiedpreviously and activity method statements asrequired or deemed necessaryby the Supervision Consultant. Activity Method Statement shall include but not limited to",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          300.7449747721354
+        ],
+        [
+          507.6016031901042,
+          300.7449747721354
+        ],
+        [
+          507.6016031901042,
+          223.61997477213538
+        ],
+        [
+          95.46065266927083,
+          223.61997477213538
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "WorkProcedures",
+      "confidence": 0.95,
+      "box": [
+        [
+          213.74884033203125,
+          222.37603759765625
+        ],
+        [
+          302.56874593098956,
+          222.37603759765625
+        ],
+        [
+          302.56874593098956,
+          211.59511311848962
+        ],
+        [
+          213.74884033203125,
+          211.59511311848962
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "Materials/Equipment used",
+      "confidence": 0.95,
+      "box": [
+        [
+          213.33380126953125,
+          209.93650309244788
+        ],
+        [
+          345.7335611979167,
+          209.93650309244788
+        ],
+        [
+          345.7335611979167,
+          197.91164143880212
+        ],
+        [
+          213.33380126953125,
+          197.91164143880212
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "Responsibilities and Personnel",
+      "confidence": 0.95,
+      "box": [
+        [
+          213.74884033203125,
+          196.25303141276038
+        ],
+        [
+          370.2213134765625,
+          196.25303141276038
+        ],
+        [
+          370.2213134765625,
+          185.47214762369788
+        ],
+        [
+          213.74884033203125,
+          185.47214762369788
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "SequenceofConstruction",
+      "confidence": 0.95,
+      "box": [
+        [
+          214.57893880208334,
+          182.98423258463538
+        ],
+        [
+          344.9034830729167,
+          182.98423258463538
+        ],
+        [
+          344.9034830729167,
+          172.20330810546875
+        ],
+        [
+          214.57893880208334,
+          172.20330810546875
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "Documentation and QualityAssurance",
+      "confidence": 0.95,
+      "box": [
+        [
+          214.16387939453125,
+          170.54469807942712
+        ],
+        [
+          408.4055582682292,
+          170.54469807942712
+        ],
+        [
+          408.4055582682292,
+          158.51983642578125
+        ],
+        [
+          214.16387939453125,
+          158.51983642578125
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "Inspection and Testing Plan",
+      "confidence": 0.95,
+      "box": [
+        [
+          214.16387939453125,
+          157.27589925130212
+        ],
+        [
+          354.8645833333333,
+          157.27589925130212
+        ],
+        [
+          354.8645833333333,
+          145.66566975911462
+        ],
+        [
+          214.16387939453125,
+          145.66566975911462
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "Activity Hazard Analysis.",
+      "confidence": 0.95,
+      "box": [
+        [
+          213.74884033203125,
+          144.00705973307288
+        ],
+        [
+          339.50787353515625,
+          144.00705973307288
+        ],
+        [
+          339.50787353515625,
+          132.39683024088538
+        ],
+        [
+          213.74884033203125,
+          132.39683024088538
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "TaC0-18-287-200",
+      "confidence": 0.95,
+      "box": [
+        [
+          255.25347900390625,
+          28.31960042317712
+        ],
+        [
+          315.0201416015625,
+          28.31960042317712
+        ],
+        [
+          315.0201416015625,
+          28.31960042317712
+        ],
+        [
+          255.25347900390625,
+          28.31960042317712
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "olstr Inprogramming t the works, the Contractor shall allow a sufficient period in accordance with Section 01300, Clause 3 for the review and approval of the Detelled Execution Method Statements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          138.20200602213538
+        ],
+        [
+          507.6016031901042,
+          138.20200602213538
+        ],
+        [
+          507.6016031901042,
+          93.41969807942712
+        ],
+        [
+          127.83425903320312,
+          93.41969807942712
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "限责任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.87060546875,
+          83.88275146484375
+        ],
+        [
+          199.22222900390625,
+          83.88275146484375
+        ],
+        [
+          199.22222900390625,
+          83.88275146484375
+        ],
+        [
+          139.87060546875,
+          83.88275146484375
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "EmaarMisrfoDeyolopment pt",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          60.66229248046875
+        ],
+        [
+          165.18842569986978,
+          60.66229248046875
+        ],
+        [
+          165.18842569986978,
+          49.88144938151038
+        ],
+        [
+          78.44375101725261,
+          49.88144938151038
+        ]
+      ],
+      "page": 315
+    },
+    {
+      "text": "SpecilcationDiv01GralBqlremens",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          51.53997802734375
+        ],
+        [
+          210.428466796875,
+          51.53997802734375
+        ],
+        [
+          210.428466796875,
+          42.41766357421875
+        ],
+        [
+          78.02870178222656,
+          42.41766357421875
+        ]
+      ],
+      "page": 315
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 315,
+      "text": "3.2\nto be taken and describe emergency procedures.\n2.2.6 6 Identify the access routes and site logistics.\n2.2.7 Describe all temporary construction requirements including detailed locations of construction equipment, their capacities, clearances, etc. supplemented by relevant sketches.\n2.2.8ldentifyareasforstorageofmaterialsanddetailhandling procedures.\n2.2.9 Identify existing services, structures, etc. in the proximity of works to be carried out and detail the methods of execution.\n2.2.10Detail how theworksaretobeset-out.\n2.2.11 Describe the procedures for verification of construction and crcction tolerances, and the stages at which checking of constructed works shall be done.\n2.2.12 Detail the proposed construction cquipment and manpower to be utilised.\n2.2.13 ldentify the person1 designated to be in-charge of the specific work beinig addressed.\n2.2.14 Include contingency plans to be implemented to mitigate the effects of risks, which may occur.\n2.2.15 Make reference to the approved working drawings and materials.\n2.2.16 Include sufficient number of detailed sketches, diagrams, calculations, etc.， to render the method statements easily comprehensible.\n2.2.17 Relate to the approved Execution Programme activities.\n3.ADDITIONALREQUIREMENTS\n3.1 In addition to the above method statement, the Contractor shall submit to the Contract Administrator, when requested, more detailed method statementsforspecificportionsoftheworknotclearlyidentifiedpreviously and activity method statements asrequired or deemed necessaryby the Supervision Consultant. Activity Method Statement shall include but not limited to\nWorkProcedures\nMaterials/Equipment used\nResponsibilities and Personnel\nSequenceofConstruction\nDocumentation and QualityAssurance\nInspection and Testing Plan\nActivity Hazard Analysis.\nTaC0-18-287-200\nolstr Inprogramming t the works, the Contractor shall allow a sufficient period in accordance with Section 01300, Clause 3 for the review and approval of the Detelled Execution Method Statements.\n限责任公司\nEmaarMisrfoDeyolopment pt\nSpecilcationDiv01GralBqlremens",
+      "line_count": 28
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

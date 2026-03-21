@@ -1,0 +1,37 @@
+{
+  "text": "DavooprnemSAn\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "DavooprnemSAn",
+      "confidence": 0.95,
+      "box": [
+        [
+          275.1756998697917,
+          62.32090250651038
+        ],
+        [
+          341.9981282552083,
+          62.32090250651038
+        ],
+        [
+          341.9981282552083,
+          62.32090250651038
+        ],
+        [
+          275.1756998697917,
+          62.32090250651038
+        ]
+      ],
+      "page": 489
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 489,
+      "text": "DavooprnemSAn",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

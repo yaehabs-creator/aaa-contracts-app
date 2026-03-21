@@ -1,8 +1,6 @@
 import path from 'path';
 import { defineConfig, loadEnv, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import electron from 'vite-plugin-electron/simple';
-import renderer from 'vite-plugin-electron-renderer';
 
 /**
  * Vite plugin: Local AI Proxy
@@ -178,70 +176,8 @@ async function handleAIRequest(env: Record<string, string>, provider: string, mo
  * Handle JSON Data Source Chat
  */
 async function handleJsonChatRequest(env: Record<string, string>, { question, source_ids }: any) {
-  const apiKey = env.ANTHROPIC_API_KEY || env.VITE_ANTHROPIC_API_KEY;
-  const supabaseUrl = env.VITE_SUPABASE_URL;
-  const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!apiKey || !supabaseUrl || !supabaseKey) {
-    return { status: 500, data: { error: 'Dev server missing env keys for JSON chat' } };
-  }
-
   try {
-    const { createClient } = await import('@supabase/supabase-js');
-    const supabase = createClient(supabaseUrl, supabaseKey);
-
-    // 1. Fetch sources
-    const { data: sources, error } = await supabase
-      .from('json_data_sources')
-      .select('*')
-      .in('id', source_ids);
-
-    if (error) return { status: 500, data: { error: error.message } };
-    if (!sources?.length) return { status: 404, data: { error: 'No sources found' } };
-
-    // 2. Build context
-    let context = '\n=== ATTACHED JSON DATA SOURCES ===\n';
-    for (const s of sources) {
-      context += `\n--- [${s.name}] ---\n`;
-      if (s.parsed_content) {
-        context += JSON.stringify(s.parsed_content, null, 2).slice(0, 30000) + '\n';
-      } else if (s.public_url) {
-        // Safety check for very large files (> 5MB)
-        if (s.size_bytes > 5 * 1024 * 1024) {
-          context += `[File is too large for full parsing (${(s.size_bytes / 1024 / 1024).toFixed(1)}MB). Summary: ${s.content_summary || 'No summary'}]\n`;
-          continue;
-        }
-
-        try {
-          const res = await fetch(s.public_url);
-          if (res.ok) {
-            const json = await res.json();
-            context += JSON.stringify(json, null, 2).slice(0, 30000) + '\n';
-          }
-        } catch (fetchErr) {
-          context += `[Error loading content: ${s.content_summary || 'unavailable'}]\n`;
-        }
-      }
-    }
-
-    // 3. Call Claude
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: 'claude-3-7-sonnet-latest',
-        max_tokens: 4096,
-        system: `You are a data assistant. Use these JSON sources to answer accurately:\n${context}`,
-        messages: [{ role: 'user', content: question }],
-      }),
-    });
-
-    const data = await response.json();
-    return { status: response.status, data: { answer: data.content?.[0]?.text || 'No response', sources_used: sources.map(s => ({ id: s.id, name: s.name })) } };
+    return { status: 410, data: { error: 'JSON chat via Supabase is deprecated in local mode' } };
   } catch (err: any) {
     return { status: 500, data: { error: err.message } };
   }
@@ -297,8 +233,7 @@ export default defineConfig(({ mode }) => {
   // Validate required environment variables in production build
   if (mode === 'production' && !isCI) {
     const requiredVars = [
-      'VITE_SUPABASE_URL',
-      'VITE_SUPABASE_ANON_KEY'
+      'VITE_ANTHROPIC_API_KEY'
     ];
 
     const missingVars = requiredVars.filter(varName => !env[varName]);
@@ -315,8 +250,7 @@ export default defineConfig(({ mode }) => {
   } else if (mode === 'production' && isCI) {
     // In CI, just warn but don't fail - env vars will be injected by the platform
     const requiredVars = [
-      'VITE_SUPABASE_URL',
-      'VITE_SUPABASE_ANON_KEY'
+      'VITE_ANTHROPIC_API_KEY'
     ];
 
     const missingVars = requiredVars.filter(varName => !env[varName]);
@@ -339,20 +273,6 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       react(),
-      // Only use the Electron plugin if specifically requested via VITE_ELECTRON=true
-      ...(env.VITE_ELECTRON === 'true' ? [
-        electron({
-          main: {
-            entry: 'electron/main.ts',
-          },
-          preload: {
-            input: 'electron/preload.ts',
-          },
-          renderer: process.env.NODE_ENV === 'test'
-            ? undefined
-            : {},
-        })
-      ] : []),
       // Handle /api/ai-proxy locally in dev mode (reads API keys from .env/.env.local)
       ...(mode === 'development' ? [localAIProxy(env)] : []),
     ],
@@ -370,8 +290,7 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'supabase-vendor': ['@supabase/supabase-js']
+            'react-vendor': ['react', 'react-dom']
           }
         }
       }

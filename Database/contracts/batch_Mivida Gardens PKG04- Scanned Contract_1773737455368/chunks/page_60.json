@@ -1,0 +1,198 @@
+{
+  "text": "## SettingAsideandMarking\n\n- 12.2 WhereinaccordancewithClause12.1(Passageof Title)thelegal title to anyitemofPlantpassestotheEmployerpriortothedeliverytoSiteofsuch item,theContractorshallsofar asispracticable and tothesatisfactionof theProjectManagersetasideandmarktheitemand allcomponentparts thereofanddesignatedmaterialsthereforasthepropertyoftheEmployer. In theeventof theContractorfailingsotosetasideandmarkasaforesaid theProjectManagershallbeentitledtoexcludefromanyInterimCertificate the value of any such items (and all component parts thereof and designatedmaterialstherefor)whichtheContractormayotherwisebe entitled tohave included insuchInterimCertificate.\n\n## CareandPossession;and Reversion\n\n- 12.3Any itemofPlant thelegaltitletowhichhaspassedtotheEmployerin accordancewithClause12.1(Passageof Title)andFreeIssueItemsshall beinthecareandpossessionoftheContractorsolelyforthepurposesof theContractandshallnotbewithintheownershipordispositionofthe Contractor.AnyInterimCertificateissued bytheProject Managerpursuant to Clause 26.2(lssue of lnterim Certificates) shall be without prejudice to theexerciseof anypoweroftheSupervisionConsultantcontained inthe ContracttorejectanyitemofPlantcovered therebywhichisnot in therejected itemofPlantshallimmediatelyreverttotheContractor.The legal tile to any Plant removed from the Site in accordance with Clause 9.15 (RemovalofPlantandContractor'sEquipment)shallrevert tothe Contractorimmediatelyuponsuchremoval.\n\n## TitletoDocuments\n\n- 12.4 (a) The legal title to and any copyright in the Specification,the Drawings, the Contractor'sDrawings,and allmanuals,sourcecodes,computer programmes and other software, diskettes, samples, patterns, modelsandotherdocumentsandinformationofatechnicalnature shallatall timesremainvestedintheEmployerorshallbecomeso usedorcommunicated toa thirdpartyby theContractorexceptas necessaryforthepurposesoftheContract.\n- (b) The Contractor shall pass to the Employertheright to use,copy and communicate anyDrawings,manuals,samples,patterns,modelsor other technicaldocumentsor information(including makingand using modifications) for which the Contractor has a copyright, a patent orlegaltitle，for the operation，maintenance,dismantling, reassembly， adjustment, repair, refurbishment, modification, alterationandextensionoftheWorks.\n\nNotwithstanding theforegoing provisions concerninglegal title,the riskineachSectionandPortionoftheWorksandinallrelevant PlantandinallrelevantFreeIssuleItemsshallremainwiththe\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "SettingAsideandMarking",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          721.1994832356771
+        ],
+        [
+          213.52508544921875,
+          721.1994832356771
+        ],
+        [
+          213.52508544921875,
+          709.3211161295573
+        ],
+        [
+          95.55775960286458,
+          709.3211161295573
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "12.2 WhereinaccordancewithClause12.1(Passageof Title)thelegal title to anyitemofPlantpassestotheEmployerpriortothedeliverytoSiteofsuch item,theContractorshallsofar asispracticable and tothesatisfactionof theProjectManagersetasideandmarktheitemand allcomponentparts thereofanddesignatedmaterialsthereforasthepropertyoftheEmployer. In theeventof theContractorfailingsotosetasideandmarkasaforesaid theProjectManagershallbeentitledtoexcludefromanyInterimCertificate the value of any such items (and all component parts thereof and designatedmaterialstherefor)whichtheContractormayotherwisebe entitled tohave included insuchInterimCertificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          698.2912089029948
+        ],
+        [
+          487.9365234375,
+          698.2912089029948
+        ],
+        [
+          487.9365234375,
+          586.7194620768229
+        ],
+        [
+          127.2694091796875,
+          586.7194620768229
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "CareandPossession;and Reversion",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          572.719970703125
+        ],
+        [
+          263.41807047526044,
+          572.719970703125
+        ],
+        [
+          263.41807047526044,
+          562.9627482096355
+        ],
+        [
+          95.98058064778645,
+          562.9627482096355
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "12.3Any itemofPlant thelegaltitletowhichhaspassedtotheEmployerin accordancewithClause12.1(Passageof Title)andFreeIssueItemsshall beinthecareandpossessionoftheContractorsolelyforthepurposesof theContractandshallnotbewithintheownershipordispositionofthe Contractor.AnyInterimCertificateissued bytheProject Managerpursuant to Clause 26.2(lssue of lnterim Certificates) shall be without prejudice to theexerciseof anypoweroftheSupervisionConsultantcontained inthe ContracttorejectanyitemofPlantcovered therebywhichisnot in therejected itemofPlantshallimmediatelyreverttotheContractor.The legal tile to any Plant removed from the Site in accordance with Clause 9.15 (RemovalofPlantandContractor'sEquipment)shallrevert tothe Contractorimmediatelyuponsuchremoval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          550.2359415690105
+        ],
+        [
+          488.7821858723958,
+          550.2359415690105
+        ],
+        [
+          488.7821858723958,
+          403.87758382161456
+        ],
+        [
+          127.2694091796875,
+          403.87758382161456
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "TitletoDocuments",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          391.57497151692706
+        ],
+        [
+          181.81343587239584,
+          391.57497151692706
+        ],
+        [
+          181.81343587239584,
+          380.54506429036456
+        ],
+        [
+          96.82623291015625,
+          380.54506429036456
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "12.4 (a) The legal title to and any copyright in the Specification,the Drawings, the Contractor'sDrawings,and allmanuals,sourcecodes,computer programmes and other software, diskettes, samples, patterns, modelsandotherdocumentsandinformationofatechnicalnature shallatall timesremainvestedintheEmployerorshallbecomeso usedorcommunicated toa thirdpartyby theContractorexceptas necessaryforthepurposesoftheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          369.51515706380206
+        ],
+        [
+          489.2049967447917,
+          369.51515706380206
+        ],
+        [
+          489.2049967447917,
+          279.5789998372396
+        ],
+        [
+          127.69223022460938,
+          279.5789998372396
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "(b) The Contractor shall pass to the Employertheright to use,copy and communicate anyDrawings,manuals,samples,patterns,modelsor other technicaldocumentsor information(including makingand using modifications) for which the Contractor has a copyright, a patent orlegaltitle，for the operation，maintenance,dismantling, reassembly， adjustment, repair, refurbishment, modification, alterationandextensionoftheWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          267.27642822265625
+        ],
+        [
+          489.6278483072917,
+          267.27642822265625
+        ],
+        [
+          489.6278483072917,
+          189.64284261067712
+        ],
+        [
+          159.40387980143228,
+          189.64284261067712
+        ]
+      ],
+      "page": 60
+    },
+    {
+      "text": "Notwithstanding theforegoing provisions concerninglegal title,the riskineachSectionandPortionoftheWorksandinallrelevant PlantandinallrelevantFreeIssuleItemsshallremainwiththe",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.11551920572916,
+          154.00779215494788
+        ],
+        [
+          490.4734700520833,
+          154.00779215494788
+        ],
+        [
+          490.4734700520833,
+          122.19073486328125
+        ],
+        [
+          191.11551920572916,
+          122.19073486328125
+        ]
+      ],
+      "page": 60
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 60,
+      "text": "SettingAsideandMarking\n12.2 WhereinaccordancewithClause12.1(Passageof Title)thelegal title to anyitemofPlantpassestotheEmployerpriortothedeliverytoSiteofsuch item,theContractorshallsofar asispracticable and tothesatisfactionof theProjectManagersetasideandmarktheitemand allcomponentparts thereofanddesignatedmaterialsthereforasthepropertyoftheEmployer. In theeventof theContractorfailingsotosetasideandmarkasaforesaid theProjectManagershallbeentitledtoexcludefromanyInterimCertificate the value of any such items (and all component parts thereof and designatedmaterialstherefor)whichtheContractormayotherwisebe entitled tohave included insuchInterimCertificate.\nCareandPossession;and Reversion\n12.3Any itemofPlant thelegaltitletowhichhaspassedtotheEmployerin accordancewithClause12.1(Passageof Title)andFreeIssueItemsshall beinthecareandpossessionoftheContractorsolelyforthepurposesof theContractandshallnotbewithintheownershipordispositionofthe Contractor.AnyInterimCertificateissued bytheProject Managerpursuant to Clause 26.2(lssue of lnterim Certificates) shall be without prejudice to theexerciseof anypoweroftheSupervisionConsultantcontained inthe ContracttorejectanyitemofPlantcovered therebywhichisnot in therejected itemofPlantshallimmediatelyreverttotheContractor.The legal tile to any Plant removed from the Site in accordance with Clause 9.15 (RemovalofPlantandContractor'sEquipment)shallrevert tothe Contractorimmediatelyuponsuchremoval.\nTitletoDocuments\n12.4 (a) The legal title to and any copyright in the Specification,the Drawings, the Contractor'sDrawings,and allmanuals,sourcecodes,computer programmes and other software, diskettes, samples, patterns, modelsandotherdocumentsandinformationofatechnicalnature shallatall timesremainvestedintheEmployerorshallbecomeso usedorcommunicated toa thirdpartyby theContractorexceptas necessaryforthepurposesoftheContract.\n(b) The Contractor shall pass to the Employertheright to use,copy and communicate anyDrawings,manuals,samples,patterns,modelsor other technicaldocumentsor information(including makingand using modifications) for which the Contractor has a copyright, a patent orlegaltitle，for the operation，maintenance,dismantling, reassembly， adjustment, repair, refurbishment, modification, alterationandextensionoftheWorks.\nNotwithstanding theforegoing provisions concerninglegal title,the riskineachSectionandPortionoftheWorksandinallrelevant PlantandinallrelevantFreeIssuleItemsshallremainwiththe",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

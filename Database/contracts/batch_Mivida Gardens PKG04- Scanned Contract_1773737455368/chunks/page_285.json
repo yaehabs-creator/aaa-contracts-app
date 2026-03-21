@@ -1,0 +1,980 @@
+{
+  "text": "<!-- image -->\n\n10)The CS shall give to the Contract Administrator, his recommendations for the approval ofkey staffof contractors and subcontractors on a technical basis.\n\n## 18 Communications\n\nTo ensure effective and proper communications among the Project team members, the following general communications guidelines have been developed for application and implementation by all project entities.\n\n- 1)Contractors will communicate directly with the PM on site in connection with thefollowing matters.\n- i)Bonds and Guarantees and insurance policies.\n- ii) Interpreting or clarifying contract conditions in conjunction with the CS.\n- ii) )Payment Applications (following processing of applications by the CS).\n- iv) Project Scheduling and planning.\n- v) Coordination meetings among trade packages, jointly with the CS.\n- vi) Monitoring of material procurement manufacture, shipment and delivery, jointly with the CS.\n- vii) On-site logistics, jointly with the CS.\n- vili)Safety and security, jointly with the CS.\n\nThe Employer Representative and the CS are to be copied on the above with all related enclosures. (Exceptions: enclosures for technical submittals/shop drawings.\n\n- 2) The CS's Resident Engineer (RE) is to be contacted directly concerning thefollowing items.\n- i) Execution of the work in accordancewith the contract drawings and the specifications.\n- i) RecommendationsforVariations to theContract.\n4. iii) Processing of Variations to the Contract\n5. iv) Quality assurance and control.\n6. V Payment applications (first stage)\n7. vi) Submittals including samples, shop drawings and check lists.\n8. vii) As built drawings.\n9. viii) Supervision and inspection.\n10. ix) Surveys, levels and setting-out.\n- x) Operations and maintenance manuals.\n12. xi) Testing, inspection, commissioning and acceptance of the works.\n13. xii) Snag lists and re-inspections.\n14. xili) Substantial completion.\n15. xiv) Technical approval of key personnel and subcontractors.\n\nThe Employer Representative and the PM are to be copied on the abovewithallrelatedenclosures.\n\n## ENDOFSECTION01230\n\nernatl\n\nEinoer Mecr For\n\nDnopns\n\nEmaar Misr for Developneht SpetificailionsDiv.01CenoratRecqiratncnts Rev.01\n\nTuCa0216-281.700\n\nJobSie Administcation\n\nCRI2841\n\nMLS\n\nSeclinn01230\n\noeoxg\n\nCcho,Et\n\nFageNumber:6of 6\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "10)The CS shall give to the Contract Administrator, his recommendations for the approval ofkey staffof contractors and subcontractors on a technical basis.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.982177734375,
+          719.542002360026
+        ],
+        [
+          505.5263671875,
+          719.542002360026
+        ],
+        [
+          505.5263671875,
+          680.979502360026
+        ],
+        [
+          153.982177734375,
+          680.979502360026
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "18 Communications",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          667.710683186849
+        ],
+        [
+          203.3726806640625,
+          667.710683186849
+        ],
+        [
+          203.3726806640625,
+          655.6858215332031
+        ],
+        [
+          76.78356424967448,
+          655.6858215332031
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "To ensure effective and proper communications among the Project team members, the following general communications guidelines have been developed for application and implementation by all project entities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          649.8807169596354
+        ],
+        [
+          473.5678304036458,
+          649.8807169596354
+        ],
+        [
+          473.5678304036458,
+          596.8054402669271
+        ],
+        [
+          107.9120381673177,
+          596.8054402669271
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "1)Contractors will communicate directly with the PM on site in connection with thefollowing matters.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          590.585693359375
+        ],
+        [
+          504.6962890625,
+          590.585693359375
+        ],
+        [
+          504.6962890625,
+          565.7066650390625
+        ],
+        [
+          111.64745076497395,
+          565.7066650390625
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "i)Bonds and Guarantees and insurance policies.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          564.4627075195312
+        ],
+        [
+          381.0124918619792,
+          564.4627075195312
+        ],
+        [
+          381.0124918619792,
+          552.8524983723958
+        ],
+        [
+          127.41920979817708,
+          552.8524983723958
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "ii) Interpreting or clarifying contract conditions in conjunction with the CS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          551.1938883463542
+        ],
+        [
+          499.7157389322917,
+          551.1938883463542
+        ],
+        [
+          499.7157389322917,
+          540.4129842122395
+        ],
+        [
+          129.07939656575522,
+          540.4129842122395
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "ii) )Payment Applications (following processing of applications by the CS).",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          537.925069173177
+        ],
+        [
+          500.1307779947917,
+          537.925069173177
+        ],
+        [
+          500.1307779947917,
+          526.729512532552
+        ],
+        [
+          129.90949503580728,
+          526.729512532552
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "iv) Project Scheduling and planning.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          525.4855550130208
+        ],
+        [
+          312.5298665364583,
+          525.4855550130208
+        ],
+        [
+          312.5298665364583,
+          512.6313883463542
+        ],
+        [
+          127.83425903320312,
+          512.6313883463542
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Coordination meetings among trade packages, jointly with the CS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          512.6313883463542
+        ],
+        [
+          476.47314453125,
+          512.6313883463542
+        ],
+        [
+          476.47314453125,
+          500.19187418619794
+        ],
+        [
+          127.41920979817708,
+          500.19187418619794
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "vi) Monitoring of material procurement manufacture, shipment and delivery, jointly with the CS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.24930826822916,
+          498.9479166666667
+        ],
+        [
+          505.5263671875,
+          498.9479166666667
+        ],
+        [
+          505.5263671875,
+          474.06890869140625
+        ],
+        [
+          128.24930826822916,
+          474.06890869140625
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "vii) On-site logistics, jointly with the CS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          472.41029866536456
+        ],
+        [
+          324.9812418619792,
+          472.41029866536456
+        ],
+        [
+          324.9812418619792,
+          460.80006917317706
+        ],
+        [
+          129.07939656575522,
+          460.80006917317706
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "vili)Safety and security, jointly with the CS.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          459.14145914713544
+        ],
+        [
+          341.5830891927083,
+          459.14145914713544
+        ],
+        [
+          341.5830891927083,
+          447.53127034505206
+        ],
+        [
+          129.07939656575522,
+          447.53127034505206
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "The Employer Representative and the CS are to be copied on the above with all related enclosures. (Exceptions: enclosures for technical submittals/shop drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          433.84779866536456
+        ],
+        [
+          472.7377115885417,
+          433.84779866536456
+        ],
+        [
+          472.7377115885417,
+          394.87062581380206
+        ],
+        [
+          127.83425903320312,
+          394.87062581380206
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "The CS's Resident Engineer (RE) is to be contacted directly concerning thefollowing items.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          382.01645914713544
+        ],
+        [
+          451.1553141276042,
+          382.01645914713544
+        ],
+        [
+          451.1553141276042,
+          356.30812581380206
+        ],
+        [
+          110.81736246744792,
+          356.30812581380206
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Execution of the work in accordancewith the contract drawings and the specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          355.06418863932294
+        ],
+        [
+          504.6962890625,
+          355.06418863932294
+        ],
+        [
+          504.6962890625,
+          330.18516031901044
+        ],
+        [
+          127.41920979817708,
+          330.18516031901044
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "RecommendationsforVariations to theContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.24930826822916,
+          328.94122314453125
+        ],
+        [
+          400.1046142578125,
+          328.94122314453125
+        ],
+        [
+          400.1046142578125,
+          317.33099365234375
+        ],
+        [
+          128.24930826822916,
+          317.33099365234375
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "iii) Processing of Variations to the Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          316.08705647786456
+        ],
+        [
+          356.1097005208333,
+          316.08705647786456
+        ],
+        [
+          356.1097005208333,
+          304.06219482421875
+        ],
+        [
+          129.07939656575522,
+          304.06219482421875
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "iv) Quality assurance and control.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          302.8182169596354
+        ],
+        [
+          308.79443359375,
+          302.8182169596354
+        ],
+        [
+          308.79443359375,
+          290.7933553059896
+        ],
+        [
+          129.07939656575522,
+          290.7933553059896
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "V Payment applications (first stage)",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          289.5494181315104
+        ],
+        [
+          323.32106526692706,
+          289.5494181315104
+        ],
+        [
+          323.32106526692706,
+          277.5245564778646
+        ],
+        [
+          129.49444580078125,
+          277.5245564778646
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "vi) Submittals including samples, shop drawings and check lists.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          276.69525146484375
+        ],
+        [
+          460.7013753255208,
+          276.69525146484375
+        ],
+        [
+          460.7013753255208,
+          265.08502197265625
+        ],
+        [
+          129.49444580078125,
+          265.08502197265625
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "vii) As built drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          264.6703898111979
+        ],
+        [
+          245.7073974609375,
+          264.6703898111979
+        ],
+        [
+          245.7073974609375,
+          250.57224527994788
+        ],
+        [
+          129.07939656575522,
+          250.57224527994788
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "viii) Supervision and inspection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          250.57224527994788
+        ],
+        [
+          294.267822265625,
+          250.57224527994788
+        ],
+        [
+          294.267822265625,
+          238.54738362630212
+        ],
+        [
+          129.49444580078125,
+          238.54738362630212
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "ix) Surveys, levels and setting-out.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          237.71807861328125
+        ],
+        [
+          312.9449055989583,
+          237.71807861328125
+        ],
+        [
+          312.9449055989583,
+          225.27858479817712
+        ],
+        [
+          129.07939656575522,
+          225.27858479817712
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Operations and maintenance manuals.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          224.03464762369788
+        ],
+        [
+          349.468994140625,
+          224.03464762369788
+        ],
+        [
+          349.468994140625,
+          212.00974527994788
+        ],
+        [
+          129.07939656575522,
+          212.00974527994788
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "xi) Testing, inspection, commissioning and acceptance of the works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          212.00974527994788
+        ],
+        [
+          481.0386555989583,
+          212.00974527994788
+        ],
+        [
+          481.0386555989583,
+          199.15557861328125
+        ],
+        [
+          129.49444580078125,
+          199.15557861328125
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "xii) Snag lists and re-inspections.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          197.91164143880212
+        ],
+        [
+          304.64398193359375,
+          197.91164143880212
+        ],
+        [
+          304.64398193359375,
+          185.88677978515625
+        ],
+        [
+          129.07939656575522,
+          185.88677978515625
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "xili) Substantial completion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          184.64284261067712
+        ],
+        [
+          273.1004638671875,
+          184.64284261067712
+        ],
+        [
+          273.1004638671875,
+          173.44724527994788
+        ],
+        [
+          129.07939656575522,
+          173.44724527994788
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "xiv) Technical approval of key personnel and subcontractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          172.20330810546875
+        ],
+        [
+          439.5340169270833,
+          172.20330810546875
+        ],
+        [
+          439.5340169270833,
+          160.59307861328125
+        ],
+        [
+          129.49444580078125,
+          160.59307861328125
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "The Employer Representative and the PM are to be copied on the abovewithallrelatedenclosures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          158.93450927734375
+        ],
+        [
+          472.3226725260417,
+          158.93450927734375
+        ],
+        [
+          472.3226725260417,
+          134.47015380859375
+        ],
+        [
+          129.07939656575522,
+          134.47015380859375
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "ENDOFSECTION01230",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.61527506510416,
+          119.95737711588538
+        ],
+        [
+          357.7698974609375,
+          119.95737711588538
+        ],
+        [
+          357.7698974609375,
+          108.76182047526038
+        ],
+        [
+          226.61527506510416,
+          108.76182047526038
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "ernatl",
+      "confidence": 0.95,
+      "box": [
+        [
+          137.79536946614584,
+          100.88340250651038
+        ],
+        [
+          168.50879923502603,
+          100.88340250651038
+        ],
+        [
+          168.50879923502603,
+          86.37062581380212
+        ],
+        [
+          137.79536946614584,
+          86.37062581380212
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Einoer Mecr For",
+      "confidence": 0.95,
+      "box": [
+        [
+          264.3844807942708,
+          74.76043701171875
+        ],
+        [
+          315.4351806640625,
+          74.76043701171875
+        ],
+        [
+          315.4351806640625,
+          72.27256266276038
+        ],
+        [
+          264.3844807942708,
+          72.27256266276038
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Dnopns",
+      "confidence": 0.95,
+      "box": [
+        [
+          265.629638671875,
+          65.22349039713538
+        ],
+        [
+          322.075927734375,
+          65.22349039713538
+        ],
+        [
+          322.075927734375,
+          64.80885823567712
+        ],
+        [
+          265.629638671875,
+          64.80885823567712
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Emaar Misr for Developneht SpetificailionsDiv.01CenoratRecqiratncnts Rev.01",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          56.10117594401038
+        ],
+        [
+          209.1833292643229,
+          56.10117594401038
+        ],
+        [
+          209.1833292643229,
+          32.88071695963538
+        ],
+        [
+          78.02870178222656,
+          32.88071695963538
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "TuCa0216-281.700",
+      "confidence": 0.95,
+      "box": [
+        [
+          267.70485432942706,
+          57.34515380859375
+        ],
+        [
+          327.4715169270833,
+          57.34515380859375
+        ],
+        [
+          327.4715169270833,
+          55.27183024088538
+        ],
+        [
+          267.70485432942706,
+          55.27183024088538
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "JobSie Administcation",
+      "confidence": 0.95,
+      "box": [
+        [
+          426.6676025390625,
+          57.34515380859375
+        ],
+        [
+          496.8104248046875,
+          57.34515380859375
+        ],
+        [
+          496.8104248046875,
+          49.05210367838538
+        ],
+        [
+          426.6676025390625,
+          49.05210367838538
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "CRI2841",
+      "confidence": 0.95,
+      "box": [
+        [
+          270.19512939453125,
+          49.88144938151038
+        ],
+        [
+          298.4182942708333,
+          49.88144938151038
+        ],
+        [
+          298.4182942708333,
+          44.49098714192712
+        ],
+        [
+          270.19512939453125,
+          44.49098714192712
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "MLS",
+      "confidence": 0.95,
+      "box": [
+        [
+          346.9787190755208,
+          48.22283935546875
+        ],
+        [
+          366.0708414713542,
+          48.22283935546875
+        ],
+        [
+          366.0708414713542,
+          42.00303141276038
+        ],
+        [
+          346.9787190755208,
+          42.00303141276038
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Seclinn01230",
+      "confidence": 0.95,
+      "box": [
+        [
+          426.2525634765625,
+          49.88144938151038
+        ],
+        [
+          471.4925944010417,
+          49.88144938151038
+        ],
+        [
+          471.4925944010417,
+          41.58839925130212
+        ],
+        [
+          426.2525634765625,
+          41.58839925130212
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "oeoxg",
+      "confidence": 0.95,
+      "box": [
+        [
+          270.6101888020833,
+          43.66164143880212
+        ],
+        [
+          307.96435546875,
+          43.66164143880212
+        ],
+        [
+          307.96435546875,
+          39.92978922526038
+        ],
+        [
+          270.6101888020833,
+          39.92978922526038
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "Ccho,Et",
+      "confidence": 0.95,
+      "box": [
+        [
+          271.85532633463544,
+          37.44191487630212
+        ],
+        [
+          305.05902099609375,
+          37.44191487630212
+        ],
+        [
+          305.05902099609375,
+          33.29534912109375
+        ],
+        [
+          271.85532633463544,
+          33.29534912109375
+        ]
+      ],
+      "page": 285
+    },
+    {
+      "text": "FageNumber:6of 6",
+      "confidence": 0.95,
+      "box": [
+        [
+          425.8374837239583,
+          42.41766357421875
+        ],
+        [
+          490.584716796875,
+          42.41766357421875
+        ],
+        [
+          490.584716796875,
+          34.12469482421875
+        ],
+        [
+          425.8374837239583,
+          34.12469482421875
+        ]
+      ],
+      "page": 285
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 285,
+      "text": "10)The CS shall give to the Contract Administrator, his recommendations for the approval ofkey staffof contractors and subcontractors on a technical basis.\n18 Communications\nTo ensure effective and proper communications among the Project team members, the following general communications guidelines have been developed for application and implementation by all project entities.\n1)Contractors will communicate directly with the PM on site in connection with thefollowing matters.\ni)Bonds and Guarantees and insurance policies.\nii) Interpreting or clarifying contract conditions in conjunction with the CS.\nii) )Payment Applications (following processing of applications by the CS).\niv) Project Scheduling and planning.\nCoordination meetings among trade packages, jointly with the CS.\nvi) Monitoring of material procurement manufacture, shipment and delivery, jointly with the CS.\nvii) On-site logistics, jointly with the CS.\nvili)Safety and security, jointly with the CS.\nThe Employer Representative and the CS are to be copied on the above with all related enclosures. (Exceptions: enclosures for technical submittals/shop drawings.\nThe CS's Resident Engineer (RE) is to be contacted directly concerning thefollowing items.\nExecution of the work in accordancewith the contract drawings and the specifications.\nRecommendationsforVariations to theContract.\niii) Processing of Variations to the Contract\niv) Quality assurance and control.\nV Payment applications (first stage)\nvi) Submittals including samples, shop drawings and check lists.\nvii) As built drawings.\nviii) Supervision and inspection.\nix) Surveys, levels and setting-out.\nOperations and maintenance manuals.\nxi) Testing, inspection, commissioning and acceptance of the works.\nxii) Snag lists and re-inspections.\nxili) Substantial completion.\nxiv) Technical approval of key personnel and subcontractors.\nThe Employer Representative and the PM are to be copied on the abovewithallrelatedenclosures.\nENDOFSECTION01230\nernatl\nEinoer Mecr For\nDnopns\nEmaar Misr for Developneht SpetificailionsDiv.01CenoratRecqiratncnts Rev.01\nTuCa0216-281.700\nJobSie Administcation\nCRI2841\nMLS\nSeclinn01230\noeoxg\nCcho,Et\nFageNumber:6of 6",
+      "line_count": 42
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

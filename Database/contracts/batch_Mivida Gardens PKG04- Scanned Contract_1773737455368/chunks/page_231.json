@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n|                                                                                                                                                                                                                                                                                                        | AR.12                                                                                                                                                                    | AR.11                                                            | AR.10                      | AR.9                                                                                                                                                                                                              | AR.8                                                                                   | AR.7                                                                                                                                                                                                                               | S.N                             |\n|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|\n| AR.13 ormoistureresistantgypsumboard? betweenupdatedcutsheet anddrawings.Sokindly clarifywould itbeacementplaster,cutsheet. For vila types TH-02A, 02B & 02C, for maid's bathroom celing, there's a conflict (C03) and (C04)finish materia code is added, refer to updated attached drawing (IC1-00ayd | For threshold,for ID GENENRALDETAILS01,sheet no IE5-101,kincly confirm thatTHTH-001(marble polished cerma uno threshold) and refer to updated attached drawing (IE5-061) | Pleaseconfirm thatGRC-01istheonlyGRCcornichetypeforthisbuilding. | anydrawing,sopieaseadvise. | drawing, so please advise. For villa type “TH-01B', for drawing AE1-103, there is a conflict in penthouses walls Refer to the attached updated drawing (AE1-101).                                                 | Kindlyadvisewhethertheparapetsshallbe concrete orsolidmasonry.                         | AR.6 balcony,shouldwe addaluminumdoorGD-01? For Vila type\"TH-02A\",for Balcony,AREA code (PH 02e), there is no access for this We have added themissing doors to the drawings so please referto attached updated drawinc (AE1-003). | Item Description QueryLog No.01 |\n| 中建国际埃 有限责任公司                                                                                                                                                                                                                                                                                |                                                                                                                                                                          | Confirmed.                                                       |                            | Thereisno detail forthereinforcement ofupstandbelowterrace handrail.soplease adTheupstandbelowhandrail isconcrete andforreinforcement details,pleaserefer tostruural drawingSlo03,parapetreinforcementdetail. Miw | Si004. Parapets arefrom blockworkwithpostcolumns andbeamsas shown ingeneral drawingno. |                                                                                                                                                                                                                                    | Reply                           |\n\n## Package ID : PK#04\n\n## Subject:Construction of TownhomesVillas inParcels 11&amp;12\n\nProject : Mivida Gardens",
+  "results": [
+    {
+      "text": "Package ID : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          485.1891276041667,
+          702.9559733072916
+        ],
+        [
+          498.4705810546875,
+          702.9559733072916
+        ],
+        [
+          498.4705810546875,
+          625.8309733072916
+        ],
+        [
+          485.1891276041667,
+          625.8309733072916
+        ]
+      ],
+      "page": 231
+    },
+    {
+      "text": "Subject:Construction of TownhomesVillas inParcels 11&12",
+      "confidence": 0.95,
+      "box": [
+        [
+          502.2060139973958,
+          702.5413309733073
+        ],
+        [
+          514.2423502604166,
+          702.5413309733073
+        ],
+        [
+          514.2423502604166,
+          471.58099365234375
+        ],
+        [
+          502.2060139973958,
+          471.58099365234375
+        ]
+      ],
+      "page": 231
+    },
+    {
+      "text": "Project : Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          517.562744140625,
+          702.5413309733073
+        ],
+        [
+          530.0141194661459,
+          702.5413309733073
+        ],
+        [
+          530.0141194661459,
+          607.1717122395834
+        ],
+        [
+          517.562744140625,
+          607.1717122395834
+        ]
+      ],
+      "page": 231
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 231,
+      "text": "Package ID : PK#04\nSubject:Construction of TownhomesVillas inParcels 11&12\nProject : Mivida Gardens",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

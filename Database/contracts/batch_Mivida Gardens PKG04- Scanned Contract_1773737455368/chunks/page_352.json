@@ -1,0 +1,842 @@
+{
+  "text": "- 9)Arrange for doctor.\n- 10) Arrange for hospital.\n- 12) Post phone numbers for police, fire, medical and ambulance service at each of theonSitetelephonelocations.\n- 11) Arrange for emergency evacuation.\n- 13) Obtain claims forms.\n- 14) Submit a report form for reporting accidents and injuries for approval.\n- 15) Establish adequate first aid kit and stretcher facilities.\n- 16) Post chart to signify weekly checks of first aid kits.\n- 17) Hire qualified first aid personnel, if more than ten minutes from a medical facility with which an emergency medical service has been established.\n- 18) Prepare and post at each on Site telephone location \"off hours emergencynotification list\".\n- 19) Arrange for watchman service, if required.\n- 21) Obtain any required local authority forms and posters.\n- 20) Prepare a watchman's log.\n- 22) Verify insurance coverage for Contractor, their equipment, Mixing Trucks etc., prior to starting work at the Site and also prior to execution of Subcontracts.\n- 23) Procure and issue safety equipment appropriate to operations:\n\nHard hats\n\nSafety harness\n\nEar protection\n\nGoggles\n\nSafety shoes\n\nHigh visibility waistcoats\n\n- 24) Post sketch and signs showing escape routes,locations of fire alarm boxes, hydrants and first aid facilities.\n- 25) Arrange for and post, safety posters and warning signs.\n3. 26)Establishregular toolboxsafety talks.\n- 27) Set up an accident control chart.\n- 28) Establish monthly safety meetings.\n- 29) ) Appoint a safcty supervisor and set date for the first safety meeting.\n- 30) Establish Assembly Points in the Site for Contractor's personnel to meet in case of emergencies. Conduct fire drill and roll call to ensure all employees of Contractor have been accounted for.This shall be done at least once every 6 months.\n\n## 16.SAFETYMEASURES\n\n## PENALTIES\n\nThe following Penaltiesfor SafetyViolations will be imposed on the Contractor violations not mentioned on the list the Contract Administrator will apply an appropriate penalty. Penalties shallbe deducted fromtheContractor's Payment Requests.\n\n## LIST OF PENALTIES FORVIOLATING THESAFETY REGULATIONS\n\n<!-- image -->\n\nEvn ner Mhsh For Duveloprrene SA.d.\n\nTau Cam 21s.227.202 CR12841 Celu, Egna 0BoxZ9,Ae\n\nMir\n\n份\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "9)Arrange for doctor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          717.46875
+        ],
+        [
+          230.7657470703125,
+          717.46875
+        ],
+        [
+          230.7657470703125,
+          706.273183186849
+        ],
+        [
+          121.19352213541667,
+          706.273183186849
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Arrange for hospital.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.38287353515625,
+          704.6145833333334
+        ],
+        [
+          238.651611328125,
+          704.6145833333334
+        ],
+        [
+          238.651611328125,
+          692.1750691731771
+        ],
+        [
+          115.38287353515625,
+          692.1750691731771
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Post phone numbers for police, fire, medical and ambulance service at each of theonSitetelephonelocations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          678.90625
+        ],
+        [
+          505.5263671875,
+          678.90625
+        ],
+        [
+          505.5263671875,
+          653.1979166666666
+        ],
+        [
+          114.13773600260417,
+          653.1979166666666
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Arrange for emergency evacuation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          692.5897115071615
+        ],
+        [
+          314.19004313151044,
+          692.5897115071615
+        ],
+        [
+          314.19004313151044,
+          678.4915974934896
+        ],
+        [
+          114.13773600260417,
+          678.4915974934896
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Obtain claims forms.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          651.9539591471354
+        ],
+        [
+          240.72684733072916,
+          651.9539591471354
+        ],
+        [
+          240.72684733072916,
+          640.34375
+        ],
+        [
+          114.9678243001302,
+          640.34375
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Submit a report form for reporting accidents and injuries for approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          639.5144449869791
+        ],
+        [
+          483.9439697265625,
+          639.5144449869791
+        ],
+        [
+          483.9439697265625,
+          627.0749308268229
+        ],
+        [
+          114.13773600260417,
+          627.0749308268229
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Establish adequate first aid kit and stretcher facilities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          625.8309733072916
+        ],
+        [
+          404.2550862630208,
+          625.8309733072916
+        ],
+        [
+          404.2550862630208,
+          613.3914591471354
+        ],
+        [
+          114.9678243001302,
+          613.3914591471354
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Post chart to signify weekly checks of first aid kits.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          613.3914591471354
+        ],
+        [
+          388.4833170572917,
+          613.3914591471354
+        ],
+        [
+          388.4833170572917,
+          600.1226399739584
+        ],
+        [
+          113.72268676757812,
+          600.1226399739584
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Hire qualified first aid personnel, if more than ten minutes from a medical facility with which an emergency medical service has been established.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          600.5372924804688
+        ],
+        [
+          505.5263671875,
+          600.5372924804688
+        ],
+        [
+          505.5263671875,
+          573.9996744791666
+        ],
+        [
+          114.13773600260417,
+          573.9996744791666
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Prepare and post at each on Site telephone location \"off hours emergencynotification list\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          573.5850219726562
+        ],
+        [
+          505.111328125,
+          573.5850219726562
+        ],
+        [
+          505.111328125,
+          548.7059936523438
+        ],
+        [
+          114.9678243001302,
+          548.7059936523438
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Arrange for watchman service, if required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          547.876688639323
+        ],
+        [
+          347.3937581380208,
+          547.876688639323
+        ],
+        [
+          347.3937581380208,
+          534.6078694661458
+        ],
+        [
+          114.13773600260417,
+          534.6078694661458
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Obtain any required local authority forms and posters.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          520.9243977864583
+        ],
+        [
+          406.745361328125,
+          520.9243977864583
+        ],
+        [
+          406.745361328125,
+          509.31418863932294
+        ],
+        [
+          114.13773600260417,
+          509.31418863932294
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Prepare a watchman's log.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          535.0225219726562
+        ],
+        [
+          271.85532633463544,
+          535.0225219726562
+        ],
+        [
+          271.85532633463544,
+          520.509745279948
+        ],
+        [
+          113.72268676757812,
+          520.509745279948
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Verify insurance coverage for Contractor, their equipment, Mixing Trucks etc., prior to starting work at the Site and also prior to execution of Subcontracts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          507.65557861328125
+        ],
+        [
+          505.111328125,
+          507.65557861328125
+        ],
+        [
+          505.111328125,
+          469.92238362630206
+        ],
+        [
+          114.13773600260417,
+          469.92238362630206
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Procure and issue safety equipment appropriate to operations:",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          469.09307861328125
+        ],
+        [
+          451.1553141276042,
+          469.09307861328125
+        ],
+        [
+          451.1553141276042,
+          455.82427978515625
+        ],
+        [
+          113.72268676757812,
+          455.82427978515625
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Hard hats",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.13518269856772,
+          456.23891194661456
+        ],
+        [
+          186.77083333333334,
+          456.23891194661456
+        ],
+        [
+          186.77083333333334,
+          443.79941813151044
+        ],
+        [
+          136.13518269856772,
+          443.79941813151044
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Safety harness",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          442.97011311848956
+        ],
+        [
+          213.33380126953125,
+          442.97011311848956
+        ],
+        [
+          213.33380126953125,
+          428.87196858723956
+        ],
+        [
+          136.55023193359375,
+          428.87196858723956
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Ear protection",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.13518269856772,
+          416.43247477213544
+        ],
+        [
+          208.35323079427084,
+          416.43247477213544
+        ],
+        [
+          208.35323079427084,
+          403.99294026692706
+        ],
+        [
+          136.13518269856772,
+          403.99294026692706
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Goggles",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.13518269856772,
+          429.70127360026044
+        ],
+        [
+          180.13008626302084,
+          429.70127360026044
+        ],
+        [
+          180.13008626302084,
+          416.01780192057294
+        ],
+        [
+          136.13518269856772,
+          416.01780192057294
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Safety shoes",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          403.16363525390625
+        ],
+        [
+          203.7877400716146,
+          403.16363525390625
+        ],
+        [
+          203.7877400716146,
+          390.72414143880206
+        ],
+        [
+          136.55023193359375,
+          390.72414143880206
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "High visibility waistcoats",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          389.89483642578125
+        ],
+        [
+          258.57383219401044,
+          389.89483642578125
+        ],
+        [
+          258.57383219401044,
+          377.45530192057294
+        ],
+        [
+          136.55023193359375,
+          377.45530192057294
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Post sketch and signs showing escape routes,locations of fire alarm boxes, hydrants and first aid facilities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          377.04066975911456
+        ],
+        [
+          504.28125,
+          377.04066975911456
+        ],
+        [
+          504.28125,
+          351.74696858723956
+        ],
+        [
+          114.13773600260417,
+          351.74696858723956
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Arrange for and post, safety posters and warning signs.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          350.91770426432294
+        ],
+        [
+          415.0463053385417,
+          350.91770426432294
+        ],
+        [
+          415.0463053385417,
+          338.47816975911456
+        ],
+        [
+          113.72268676757812,
+          338.47816975911456
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "26)Establishregular toolboxsafety talks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          337.64886474609375
+        ],
+        [
+          324.9812418619792,
+          337.64886474609375
+        ],
+        [
+          324.9812418619792,
+          325.62400309244794
+        ],
+        [
+          114.13773600260417,
+          325.62400309244794
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Set up an accident control chart.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          324.79469807942706
+        ],
+        [
+          300.07847086588544,
+          324.79469807942706
+        ],
+        [
+          300.07847086588544,
+          312.76983642578125
+        ],
+        [
+          113.30763753255208,
+          312.76983642578125
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Establish monthly safety meetings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          311.52589925130206
+        ],
+        [
+          311.69976806640625,
+          311.52589925130206
+        ],
+        [
+          311.69976806640625,
+          299.08636474609375
+        ],
+        [
+          113.72268676757812,
+          299.08636474609375
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": ") Appoint a safcty supervisor and set date for the first safety meeting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          298.6717325846354
+        ],
+        [
+          476.88818359375,
+          298.6717325846354
+        ],
+        [
+          476.88818359375,
+          286.2321980794271
+        ],
+        [
+          114.9678243001302,
+          286.2321980794271
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Establish Assembly Points in the Site for Contractor's personnel to meet in case of emergencies. Conduct fire drill and roll call to ensure all employees of Contractor have been accounted for.This shall be done at least once every 6 months.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          285.40289306640625
+        ],
+        [
+          505.9414469401042,
+          285.40289306640625
+        ],
+        [
+          505.9414469401042,
+          233.15692138671875
+        ],
+        [
+          113.72268676757812,
+          233.15692138671875
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "16.SAFETYMEASURES",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          219.88812255859375
+        ],
+        [
+          206.27801513671875,
+          219.88812255859375
+        ],
+        [
+          206.27801513671875,
+          209.10719807942712
+        ],
+        [
+          76.78356424967448,
+          209.10719807942712
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "PENALTIES",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          201.64349365234375
+        ],
+        [
+          158.54768880208334,
+          201.64349365234375
+        ],
+        [
+          158.54768880208334,
+          189.20399983723962
+        ],
+        [
+          92.97036743164062,
+          189.20399983723962
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "The following Penaltiesfor SafetyViolations will be imposed on the Contractor violations not mentioned on the list the Contract Administrator will apply an appropriate penalty. Penalties shallbe deducted fromtheContractor's Payment Requests.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          182.15492757161462
+        ],
+        [
+          505.5263671875,
+          182.15492757161462
+        ],
+        [
+          505.5263671875,
+          117.05478922526038
+        ],
+        [
+          109.98726399739583,
+          117.05478922526038
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "LIST OF PENALTIES FORVIOLATING THESAFETY REGULATIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          104.61525472005212
+        ],
+        [
+          482.2838134765625,
+          104.61525472005212
+        ],
+        [
+          482.2838134765625,
+          93.00506591796875
+        ],
+        [
+          117.87314860026042,
+          93.00506591796875
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Evn ner Mhsh For Duveloprrene SA.d.",
+      "confidence": 0.95,
+      "box": [
+        [
+          209.598388671875,
+          82.63877360026038
+        ],
+        [
+          275.1756998697917,
+          82.63877360026038
+        ],
+        [
+          275.1756998697917,
+          61.90627034505212
+        ],
+        [
+          209.598388671875,
+          61.90627034505212
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Tau Cam 21s.227.202 CR12841 Celu, Egna 0BoxZ9,Ae",
+      "confidence": 0.95,
+      "box": [
+        [
+          209.598388671875,
+          64.80885823567712
+        ],
+        [
+          270.6101888020833,
+          64.80885823567712
+        ],
+        [
+          270.6101888020833,
+          34.53932698567712
+        ],
+        [
+          209.598388671875,
+          34.53932698567712
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "Mir",
+      "confidence": 0.95,
+      "box": [
+        [
+          284.30670166015625,
+          40.75913492838538
+        ],
+        [
+          302.98378499348956,
+          40.75913492838538
+        ],
+        [
+          302.98378499348956,
+          29.56349690755212
+        ],
+        [
+          284.30670166015625,
+          29.56349690755212
+        ]
+      ],
+      "page": 352
+    },
+    {
+      "text": "份",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.35323079427084,
+          34.12469482421875
+        ],
+        [
+          219.97452799479166,
+          34.12469482421875
+        ],
+        [
+          219.97452799479166,
+          23.34377034505212
+        ],
+        [
+          208.35323079427084,
+          23.34377034505212
+        ]
+      ],
+      "page": 352
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 352,
+      "text": "9)Arrange for doctor.\nArrange for hospital.\nPost phone numbers for police, fire, medical and ambulance service at each of theonSitetelephonelocations.\nArrange for emergency evacuation.\nObtain claims forms.\nSubmit a report form for reporting accidents and injuries for approval.\nEstablish adequate first aid kit and stretcher facilities.\nPost chart to signify weekly checks of first aid kits.\nHire qualified first aid personnel, if more than ten minutes from a medical facility with which an emergency medical service has been established.\nPrepare and post at each on Site telephone location \"off hours emergencynotification list\".\nArrange for watchman service, if required.\nObtain any required local authority forms and posters.\nPrepare a watchman's log.\nVerify insurance coverage for Contractor, their equipment, Mixing Trucks etc., prior to starting work at the Site and also prior to execution of Subcontracts.\nProcure and issue safety equipment appropriate to operations:\nHard hats\nSafety harness\nEar protection\nGoggles\nSafety shoes\nHigh visibility waistcoats\nPost sketch and signs showing escape routes,locations of fire alarm boxes, hydrants and first aid facilities.\nArrange for and post, safety posters and warning signs.\n26)Establishregular toolboxsafety talks.\nSet up an accident control chart.\nEstablish monthly safety meetings.\n) Appoint a safcty supervisor and set date for the first safety meeting.\nEstablish Assembly Points in the Site for Contractor's personnel to meet in case of emergencies. Conduct fire drill and roll call to ensure all employees of Contractor have been accounted for.This shall be done at least once every 6 months.\n16.SAFETYMEASURES\nPENALTIES\nThe following Penaltiesfor SafetyViolations will be imposed on the Contractor violations not mentioned on the list the Contract Administrator will apply an appropriate penalty. Penalties shallbe deducted fromtheContractor's Payment Requests.\nLIST OF PENALTIES FORVIOLATING THESAFETY REGULATIONS\nEvn ner Mhsh For Duveloprrene SA.d.\nTau Cam 21s.227.202 CR12841 Celu, Egna 0BoxZ9,Ae\nMir\n份",
+      "line_count": 36
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

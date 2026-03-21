@@ -1,0 +1,198 @@
+{
+  "text": "theEmployerhasincurredinexecutingsuchpartsorSectionsofthe works by others or by the Employer itself, and shall also continue issuing interim payment certificates to the Contractor in accordance with the Contract for the remaining parts or Sections of the Works which the Employerhas elected not to takefrom the Contractor andexecuteby othersorbyitself.AftercompletionofthewholeoftheWorksand issuanceof Taking-OverCertificateunderClause20.1(Taking-Over Certificate) the Contractor shall prepare and submit a draft final account inaccordancewithClause 20.4(Draft Final Account);theContract Administrator shall thereafter proceed by issuing Interim Certificate in accordancewithclause26.2(lssueofInterimCertificates)\n\n## 30.6 PaymentsafterEntryandExpulsion\n\nIn the 1oth line of the 1st paragraph delete\"together with damages for consequentialloss\"\n\n## Add new Sub-Clause 30.6(A)as follows:\n\n- 30.6(A) Where Clause 30.4(A) applies, the Employer shall not after entry upon any part of the Site and execution of any parts, activities or Sections of the Works by itself or by any other contractor or contractors employed by the Employer be liable to make any payment whatsoever to the Contractor,whetherinconnectionwiththeContractortheWorksorfor anyotherreasonof anykinduntilthe issuanceoflheTakiny-Over Certificatefor thewholeof theWorks,and thereafteruntil theCostof completingworkssotakenbytheEmployertobecompletedorexecuted by itself or by any other contractor or contractors and all other Costs incurredbytheEmployerinrelationtheretohavebeenascertainedand the amount thereof has been certified by the Contract Administrator.The Employer may (without prejudice to its right to recover from the Contractor damagesarisingoutoftheContractor'sdefault)thereafterpaytothe Contractor only as amount certified by the Contract Administrator and calculated as being:\n- a.theamountshownbytheInterimCertificatepreparedafterthe issuanceof theTaking-OverCertificateforthewholeof theWorksin accordancewithClause30.5(A);less\n- b. the total of all payments already made to the Contractor pursuant to InterimCertificatesorotherwiseandtoanyNominatedSubcontractor under Clause 24.2 (Delayed Payments to Nominated Subcontractors); less\n- C. anyamountbywhichtheCostsofcompletingorexecutingparts, activitiesorSectionsoftheWorksbytheEmployeroranyother contractororcontractorsemployedbytheEmployerandotherCosts incurredbytheEmployerinrelationtheretoexceedthedifference between the amount which would have beenpayable to the Contractor uponduecompletionoftheWorksbyitandtheamountsshowninthe lastinterimCertificateissued totheContractorinrespectofsuchparts, activitiesorSectionsoftheWorkssotaken;andless\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "theEmployerhasincurredinexecutingsuchpartsorSectionsofthe works by others or by the Employer itself, and shall also continue issuing interim payment certificates to the Contractor in accordance with the Contract for the remaining parts or Sections of the Works which the Employerhas elected not to takefrom the Contractor andexecuteby othersorbyitself.AftercompletionofthewholeoftheWorksand issuanceof Taking-OverCertificateunderClause20.1(Taking-Over Certificate) the Contractor shall prepare and submit a draft final account inaccordancewithClause 20.4(Draft Final Account);theContract Administrator shall thereafter proceed by issuing Interim Certificate in accordancewithclause26.2(lssueofInterimCertificates)",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.90056355794272,
+          696.5943094889323
+        ],
+        [
+          504.0037841796875,
+          696.5943094889323
+        ],
+        [
+          504.0037841796875,
+          563.386983235677
+        ],
+        [
+          164.90056355794272,
+          563.386983235677
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "30.6 PaymentsafterEntryandExpulsion",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          559.1447143554688
+        ],
+        [
+          332.3380533854167,
+          559.1447143554688
+        ],
+        [
+          332.3380533854167,
+          546.8421223958333
+        ],
+        [
+          126.00094604492188,
+          546.8421223958333
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "In the 1oth line of the 1st paragraph delete\"together with damages for consequentialloss\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          542.599853515625
+        ],
+        [
+          502.3125,
+          542.599853515625
+        ],
+        [
+          502.3125,
+          517.9946695963542
+        ],
+        [
+          164.47774251302084,
+          517.9946695963542
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "Add new Sub-Clause 30.6(A)as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          512.9039510091145
+        ],
+        [
+          325.5729166666667,
+          512.9039510091145
+        ],
+        [
+          325.5729166666667,
+          500.17714436848956
+        ],
+        [
+          126.42376708984375,
+          500.17714436848956
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "30.6(A) Where Clause 30.4(A) applies, the Employer shall not after entry upon any part of the Site and execution of any parts, activities or Sections of the Works by itself or by any other contractor or contractors employed by the Employer be liable to make any payment whatsoever to the Contractor,whetherinconnectionwiththeContractortheWorksorfor anyotherreasonof anykinduntilthe issuanceoflheTakiny-Over Certificatefor thewholeof theWorks,and thereafteruntil theCostof completingworkssotakenbytheEmployertobecompletedorexecuted by itself or by any other contractor or contractors and all other Costs incurredbytheEmployerinrelationtheretohavebeenascertainedand the amount thereof has been certified by the Contract Administrator.The Employer may (without prejudice to its right to recover from the Contractor damagesarisingoutoftheContractor'sdefault)thereafterpaytothe Contractor only as amount certified by the Contract Administrator and calculated as being:",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          496.35906982421875
+        ],
+        [
+          503.1581217447917,
+          496.35906982421875
+        ],
+        [
+          503.1581217447917,
+          315.2140909830729
+        ],
+        [
+          125.578125,
+          315.2140909830729
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "a.theamountshownbytheInterimCertificatepreparedafterthe issuanceof theTaking-OverCertificateforthewholeof theWorksin accordancewithClause30.5(A);less",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          313.09295654296875
+        ],
+        [
+          501.0440266927083,
+          313.09295654296875
+        ],
+        [
+          501.0440266927083,
+          276.60943603515625
+        ],
+        [
+          163.6321004231771,
+          276.60943603515625
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "the total of all payments already made to the Contractor pursuant to InterimCertificatesorotherwiseandtoanyNominatedSubcontractor under Clause 24.2 (Delayed Payments to Nominated Subcontractors); less",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          275.33673095703125
+        ],
+        [
+          501.0440266927083,
+          275.33673095703125
+        ],
+        [
+          501.0440266927083,
+          226.97483317057288
+        ],
+        [
+          162.78645833333334,
+          226.97483317057288
+        ]
+      ],
+      "page": 147
+    },
+    {
+      "text": "anyamountbywhichtheCostsofcompletingorexecutingparts, activitiesorSectionsoftheWorksbytheEmployeroranyother contractororcontractorsemployedbytheEmployerandotherCosts incurredbytheEmployerinrelationtheretoexceedthedifference between the amount which would have beenpayable to the Contractor uponduecompletionoftheWorksbyitandtheamountsshowninthe lastinterimCertificateissued totheContractorinrespectofsuchparts, activitiesorSectionsoftheWorkssotaken;andless",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.3233846028646,
+          223.58103434244788
+        ],
+        [
+          500.6212158203125,
+          223.58103434244788
+        ],
+        [
+          500.6212158203125,
+          127.28147379557288
+        ],
+        [
+          165.3233846028646,
+          127.28147379557288
+        ]
+      ],
+      "page": 147
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 147,
+      "text": "theEmployerhasincurredinexecutingsuchpartsorSectionsofthe works by others or by the Employer itself, and shall also continue issuing interim payment certificates to the Contractor in accordance with the Contract for the remaining parts or Sections of the Works which the Employerhas elected not to takefrom the Contractor andexecuteby othersorbyitself.AftercompletionofthewholeoftheWorksand issuanceof Taking-OverCertificateunderClause20.1(Taking-Over Certificate) the Contractor shall prepare and submit a draft final account inaccordancewithClause 20.4(Draft Final Account);theContract Administrator shall thereafter proceed by issuing Interim Certificate in accordancewithclause26.2(lssueofInterimCertificates)\n30.6 PaymentsafterEntryandExpulsion\nIn the 1oth line of the 1st paragraph delete\"together with damages for consequentialloss\"\nAdd new Sub-Clause 30.6(A)as follows:\n30.6(A) Where Clause 30.4(A) applies, the Employer shall not after entry upon any part of the Site and execution of any parts, activities or Sections of the Works by itself or by any other contractor or contractors employed by the Employer be liable to make any payment whatsoever to the Contractor,whetherinconnectionwiththeContractortheWorksorfor anyotherreasonof anykinduntilthe issuanceoflheTakiny-Over Certificatefor thewholeof theWorks,and thereafteruntil theCostof completingworkssotakenbytheEmployertobecompletedorexecuted by itself or by any other contractor or contractors and all other Costs incurredbytheEmployerinrelationtheretohavebeenascertainedand the amount thereof has been certified by the Contract Administrator.The Employer may (without prejudice to its right to recover from the Contractor damagesarisingoutoftheContractor'sdefault)thereafterpaytothe Contractor only as amount certified by the Contract Administrator and calculated as being:\na.theamountshownbytheInterimCertificatepreparedafterthe issuanceof theTaking-OverCertificateforthewholeof theWorksin accordancewithClause30.5(A);less\nthe total of all payments already made to the Contractor pursuant to InterimCertificatesorotherwiseandtoanyNominatedSubcontractor under Clause 24.2 (Delayed Payments to Nominated Subcontractors); less\nanyamountbywhichtheCostsofcompletingorexecutingparts, activitiesorSectionsoftheWorksbytheEmployeroranyother contractororcontractorsemployedbytheEmployerandotherCosts incurredbytheEmployerinrelationtheretoexceedthedifference between the amount which would have beenpayable to the Contractor uponduecompletionoftheWorksbyitandtheamountsshowninthe lastinterimCertificateissued totheContractorinrespectofsuchparts, activitiesorSectionsoftheWorkssotaken;andless",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

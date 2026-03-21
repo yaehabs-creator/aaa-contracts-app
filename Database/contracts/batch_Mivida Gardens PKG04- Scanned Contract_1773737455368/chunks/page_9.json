@@ -1,0 +1,681 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nInconsideration of thepayments tobemadeby theEmployer to theContractor as per this contract, the Contractor hereby covenants with the Employer to carry out and complete the Works and to remedy defects therein in conformity in all respects with the terms, conditions and provisions of the Contract.\n\n## 10.Employer'sPrincipalObligations\n\nThe Employer hereby covenants to pay the Contractor, in consideration of the carrying out and completion of the Works and the remedying of defects therein, such sum or sums as shall become payable under the Contract at the times and in the manner prescribed by the Contract.\n\nINWlTNESSwhereof thepartiesheretohavecaused thisAgreementtobeexecuted the day and yearfirst abovewritten.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\nName\n\nMr.Moustafa El Kady\n\nName:\n\nMr. Wael EI Menoufy\n\nPosition:\n\nChiefExecutiveOfficer\n\nPosition:\n\nChief  Technical  Commercial Officer\n\nSignature:\n\nSignature:\n\nDate:\n\nDate:\n\nSIGINEDBY:forandonbehalfofCSCECINTERNATIONALCONSTRUCTIONEGYPT CO. LTD “the Contractor\"\n\nName:\n\nMr.Wang\n\nPosition:\n\nGeneral Manager\n\nSignature:\n\nDate:\n\n限资任公司\n\nsvelopmnt S.A Car21-287-206 C12841 P00K233\n\n中建国际埃及\n\nMlsr\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.06770833333333,
+          749.198476155599
+        ],
+        [
+          149.6789754231771,
+          749.198476155599
+        ],
+        [
+          149.6789754231771,
+          731.8051554361979
+        ],
+        [
+          79.06770833333333,
+          731.8051554361979
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.5913798014323,
+          728.4113464355469
+        ],
+        [
+          126.42376708984375,
+          728.4113464355469
+        ],
+        [
+          126.42376708984375,
+          717.8056640625
+        ],
+        [
+          103.5913798014323,
+          717.8056640625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Inconsideration of thepayments tobemadeby theEmployer to theContractor as per this contract, the Contractor hereby covenants with the Employer to carry out and complete the Works and to remedy defects therein in conformity in all respects with the terms, conditions and provisions of the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          709.745351155599
+        ],
+        [
+          509.07763671875,
+          709.745351155599
+        ],
+        [
+          509.07763671875,
+          658.4138590494791
+        ],
+        [
+          95.55775960286458,
+          658.4138590494791
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "10.Employer'sPrincipalObligations",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.91335042317708,
+          647.8081868489584
+        ],
+        [
+          255.80729166666666,
+          647.8081868489584
+        ],
+        [
+          255.80729166666666,
+          634.23291015625
+        ],
+        [
+          79.91335042317708,
+          634.23291015625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "The Employer hereby covenants to pay the Contractor, in consideration of the carrying out and completion of the Works and the remedying of defects therein, such sum or sums as shall become payable under the Contract at the times and in the manner prescribed by the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          631.6875406901041
+        ],
+        [
+          508.2319742838542,
+          631.6875406901041
+        ],
+        [
+          508.2319742838542,
+          580.780293782552
+        ],
+        [
+          95.98058064778645,
+          580.780293782552
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "INWlTNESSwhereof thepartiesheretohavecaused thisAgreementtobeexecuted the day and yearfirst abovewritten.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.95359802246094,
+          557.0235595703125
+        ],
+        [
+          507.8091634114583,
+          557.0235595703125
+        ],
+        [
+          507.8091634114583,
+          531.5699462890625
+        ],
+        [
+          76.95359802246094,
+          531.5699462890625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Name",
+      "confidence": 0.95,
+      "box": [
+        [
+          80.75899251302083,
+          488.72300211588544
+        ],
+        [
+          112.89346313476562,
+          488.72300211588544
+        ],
+        [
+          112.89346313476562,
+          473.87506103515625
+        ],
+        [
+          80.75899251302083,
+          473.87506103515625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Mr.Moustafa El Kady",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.2225341796875,
+          488.29876708984375
+        ],
+        [
+          247.7736612955729,
+          488.29876708984375
+        ],
+        [
+          247.7736612955729,
+          475.14772542317706
+        ],
+        [
+          141.2225341796875,
+          475.14772542317706
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Name:",
+      "confidence": 0.95,
+      "box": [
+        [
+          284.98199462890625,
+          488.72300211588544
+        ],
+        [
+          321.76751708984375,
+          488.72300211588544
+        ],
+        [
+          321.76751708984375,
+          473.87506103515625
+        ],
+        [
+          284.98199462890625,
+          473.87506103515625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Mr. Wael EI Menoufy",
+      "confidence": 0.95,
+      "box": [
+        [
+          345.445556640625,
+          488.29876708984375
+        ],
+        [
+          449.4597574869792,
+          488.29876708984375
+        ],
+        [
+          449.4597574869792,
+          474.29925537109375
+        ],
+        [
+          345.445556640625,
+          474.29925537109375
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Position:",
+      "confidence": 0.95,
+      "box": [
+        [
+          81.1818135579427,
+          467.08742268880206
+        ],
+        [
+          125.578125,
+          467.08742268880206
+        ],
+        [
+          125.578125,
+          455.20904541015625
+        ],
+        [
+          81.1818135579427,
+          455.20904541015625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "ChiefExecutiveOfficer",
+      "confidence": 0.95,
+      "box": [
+        [
+          142.06817626953125,
+          466.66318766276044
+        ],
+        [
+          255.38446044921875,
+          466.66318766276044
+        ],
+        [
+          255.38446044921875,
+          455.20904541015625
+        ],
+        [
+          142.06817626953125,
+          455.20904541015625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Position:",
+      "confidence": 0.95,
+      "box": [
+        [
+          285.4048258463542,
+          467.08742268880206
+        ],
+        [
+          330.6467692057292,
+          467.08742268880206
+        ],
+        [
+          330.6467692057292,
+          455.20904541015625
+        ],
+        [
+          285.4048258463542,
+          455.20904541015625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Chief  Technical  Commercial Officer",
+      "confidence": 0.95,
+      "box": [
+        [
+          345.445556640625,
+          467.93585205078125
+        ],
+        [
+          503.5809733072917,
+          467.93585205078125
+        ],
+        [
+          503.5809733072917,
+          442.05800374348956
+        ],
+        [
+          345.445556640625,
+          442.05800374348956
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Signature:",
+      "confidence": 0.95,
+      "box": [
+        [
+          82.02746073404948,
+          436.54307047526044
+        ],
+        [
+          134.45738728841147,
+          436.54307047526044
+        ],
+        [
+          134.45738728841147,
+          423.39202880859375
+        ],
+        [
+          82.02746073404948,
+          423.39202880859375
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Signature:",
+      "confidence": 0.95,
+      "box": [
+        [
+          285.82763671875,
+          436.11883544921875
+        ],
+        [
+          338.6803792317708,
+          436.11883544921875
+        ],
+        [
+          338.6803792317708,
+          423.39202880859375
+        ],
+        [
+          285.82763671875,
+          423.39202880859375
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Date:",
+      "confidence": 0.95,
+      "box": [
+        [
+          80.75899251302083,
+          399.63527425130206
+        ],
+        [
+          110.35652669270833,
+          399.63527425130206
+        ],
+        [
+          110.35652669270833,
+          387.33270263671875
+        ],
+        [
+          80.75899251302083,
+          387.33270263671875
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Date:",
+      "confidence": 0.95,
+      "box": [
+        [
+          284.98199462890625,
+          399.63527425130206
+        ],
+        [
+          314.57952880859375,
+          399.63527425130206
+        ],
+        [
+          314.57952880859375,
+          387.33270263671875
+        ],
+        [
+          284.98199462890625,
+          387.33270263671875
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "SIGINEDBY:forandonbehalfofCSCECINTERNATIONALCONSTRUCTIONEGYPT CO. LTD “the Contractor\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.10795084635417,
+          374.18166097005206
+        ],
+        [
+          506.5406901041667,
+          374.18166097005206
+        ],
+        [
+          506.5406901041667,
+          349.57647705078125
+        ],
+        [
+          76.10795084635417,
+          349.57647705078125
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Name:",
+      "confidence": 0.95,
+      "box": [
+        [
+          80.33617146809895,
+          332.60740152994794
+        ],
+        [
+          115.8532206217448,
+          332.60740152994794
+        ],
+        [
+          115.8532206217448,
+          319.45635986328125
+        ],
+        [
+          80.33617146809895,
+          319.45635986328125
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Mr.Wang",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.90719604492188,
+          333.45587158203125
+        ],
+        [
+          205.06864420572916,
+          333.45587158203125
+        ],
+        [
+          205.06864420572916,
+          318.6078898111979
+        ],
+        [
+          153.90719604492188,
+          318.6078898111979
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Position:",
+      "confidence": 0.95,
+      "box": [
+        [
+          80.33617146809895,
+          306.3053181966146
+        ],
+        [
+          125.578125,
+          306.3053181966146
+        ],
+        [
+          125.578125,
+          292.73004150390625
+        ],
+        [
+          80.33617146809895,
+          292.73004150390625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "General Manager",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          305.45684814453125
+        ],
+        [
+          242.6998087565104,
+          305.45684814453125
+        ],
+        [
+          242.6998087565104,
+          291.8816121419271
+        ],
+        [
+          155.1756591796875,
+          291.8816121419271
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Signature:",
+      "confidence": 0.95,
+      "box": [
+        [
+          81.1818135579427,
+          273.63983154296875
+        ],
+        [
+          133.18891398111978,
+          273.63983154296875
+        ],
+        [
+          133.18891398111978,
+          257.94342041015625
+        ],
+        [
+          81.1818135579427,
+          257.94342041015625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Date:",
+      "confidence": 0.95,
+      "box": [
+        [
+          80.33617146809895,
+          240.97434488932288
+        ],
+        [
+          109.51088460286458,
+          240.97434488932288
+        ],
+        [
+          109.51088460286458,
+          225.27793375651038
+        ],
+        [
+          80.33617146809895,
+          225.27793375651038
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "限资任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          490.0506591796875,
+          210.42999267578125
+        ],
+        [
+          493.8560384114583,
+          210.42999267578125
+        ],
+        [
+          493.8560384114583,
+          156.97735595703125
+        ],
+        [
+          490.0506591796875,
+          156.97735595703125
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "svelopmnt S.A Car21-287-206 C12841 P00K233",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.01513671875,
+          154.85626220703125
+        ],
+        [
+          290.0558675130208,
+          154.85626220703125
+        ],
+        [
+          290.0558675130208,
+          126.85723876953125
+        ],
+        [
+          230.01513671875,
+          126.85723876953125
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "中建国际埃及",
+      "confidence": 0.95,
+      "box": [
+        [
+          461.2987467447917,
+          210.00575764973962
+        ],
+        [
+          487.5137125651042,
+          210.00575764973962
+        ],
+        [
+          487.5137125651042,
+          151.03814697265625
+        ],
+        [
+          461.2987467447917,
+          151.03814697265625
+        ]
+      ],
+      "page": 9
+    },
+    {
+      "text": "Mlsr",
+      "confidence": 0.95,
+      "box": [
+        [
+          308.23720296223956,
+          130.25103759765625
+        ],
+        [
+          325.9957275390625,
+          130.25103759765625
+        ],
+        [
+          325.9957275390625,
+          120.49379475911462
+        ],
+        [
+          308.23720296223956,
+          120.49379475911462
+        ]
+      ],
+      "page": 9
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 9,
+      "text": "EMAAR\nMISR\nInconsideration of thepayments tobemadeby theEmployer to theContractor as per this contract, the Contractor hereby covenants with the Employer to carry out and complete the Works and to remedy defects therein in conformity in all respects with the terms, conditions and provisions of the Contract.\n10.Employer'sPrincipalObligations\nThe Employer hereby covenants to pay the Contractor, in consideration of the carrying out and completion of the Works and the remedying of defects therein, such sum or sums as shall become payable under the Contract at the times and in the manner prescribed by the Contract.\nINWlTNESSwhereof thepartiesheretohavecaused thisAgreementtobeexecuted the day and yearfirst abovewritten.\nName\nMr.Moustafa El Kady\nName:\nMr. Wael EI Menoufy\nPosition:\nChiefExecutiveOfficer\nPosition:\nChief  Technical  Commercial Officer\nSignature:\nSignature:\nDate:\nDate:\nSIGINEDBY:forandonbehalfofCSCECINTERNATIONALCONSTRUCTIONEGYPT CO. LTD “the Contractor\"\nName:\nMr.Wang\nPosition:\nGeneral Manager\nSignature:\nDate:\n限资任公司\nsvelopmnt S.A Car21-287-206 C12841 P00K233\n中建国际埃及\nMlsr",
+      "line_count": 29
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

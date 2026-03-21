@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref: EGY/PRJCTS/HSE/REQs\n\n- Traffic lanes must never need to be crossed on foot by workers or members of the public or by site vehicles,suitableprovisions for saferoutesfor both must beprovided.\n- Work carried out at night must be under floodlights; floodlights must not dazzle or blind oncoming traffic.\n- Arrangements must be made to maintain both site safety and security outside working hours and all plant and vehicles are to be parked in a safe place and be immobilized when not in use.\n- All road works and work adjacent to live traffic routes will require a method statement as well as plansrequired by theTrafficPoliceandotherstatutory authorities.\n\n## 3.27. Lock Out Tag Out (LOTO)\n\n- &gt;LOTO procedures are to be developed to prevent injuries from unexpected energization, activation or unintentional release of energy during initial start-up,maintenance or repair of equipment or machinery. Procedures are to cover:\n- ·Preparation for shutdown\n- Shutdown\n- Isolation\n- ApplyingLOTOdevices\n- De-energization or release of stored energy\n- Verification\n- Release from lock out\n- Testingonenergizedequipment\n- All potential sources of hazardous energy such as gravity, electrical, mechanical, pneumatic, pressure etc. must be considered when determining LOTO procedures.\n- If an energy isolation device is capable of being locked out then it must be locked and tagged. If it is not capable of being locked out it must be tagged out.\n- Only authorized personnel are permitted to perform LOTO procedures and when locking out plant and equipment each person must apply their own lock and retain the key. Where more than one person is working on the same system each person must apply their own lock to a multi-lock hasp.\n- Locks are only to be removed by the person who attached the lock; procedures are to cover the arrangements for removing other people lock when they are unable to do it themselves.\n- Locks and tags are to be specific for the task. Locks are to be standardized for each department or trade and tags must be durable and include the words'Do Not Operate'. The use of'Out of Service' tags must not beused forLOTOpurposes.\n- &gt;A method statement and permit to work is required for all works involving LOTO.\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          729.9082641601562
+        ],
+        [
+          341.5830891927083,
+          729.9082641601562
+        ],
+        [
+          341.5830891927083,
+          699.6387736002604
+        ],
+        [
+          191.33634440104166,
+          699.6387736002604
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          699.6387736002604
+        ],
+        [
+          217.8993123372396,
+          699.6387736002604
+        ],
+        [
+          217.8993123372396,
+          685.5406595865885
+        ],
+        [
+          76.36852010091145,
+          685.5406595865885
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Traffic lanes must never need to be crossed on foot by workers or members of the public or by site vehicles,suitableprovisions for saferoutesfor both must beprovided.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          673.9304402669271
+        ],
+        [
+          496.8104248046875,
+          673.9304402669271
+        ],
+        [
+          496.8104248046875,
+          648.2221069335938
+        ],
+        [
+          91.72522989908855,
+          648.2221069335938
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Work carried out at night must be under floodlights; floodlights must not dazzle or blind oncoming traffic.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          643.2462972005209
+        ],
+        [
+          496.8104248046875,
+          643.2462972005209
+        ],
+        [
+          496.8104248046875,
+          618.7819213867188
+        ],
+        [
+          92.55532836914062,
+          618.7819213867188
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Arrangements must be made to maintain both site safety and security outside working hours and all plant and vehicles are to be parked in a safe place and be immobilized when not in use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          612.1475219726562
+        ],
+        [
+          496.8104248046875,
+          612.1475219726562
+        ],
+        [
+          496.8104248046875,
+          586.0245361328125
+        ],
+        [
+          91.72522989908855,
+          586.0245361328125
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "All road works and work adjacent to live traffic routes will require a method statement as well as plansrequired by theTrafficPoliceandotherstatutory authorities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          581.46337890625
+        ],
+        [
+          496.8104248046875,
+          581.46337890625
+        ],
+        [
+          496.8104248046875,
+          555.7550455729167
+        ],
+        [
+          91.3101806640625,
+          555.7550455729167
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "3.27. Lock Out Tag Out (LOTO)",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.91874186197916,
+          549.5352783203125
+        ],
+        [
+          373.5416666666667,
+          549.5352783203125
+        ],
+        [
+          373.5416666666667,
+          535.851826985677
+        ],
+        [
+          212.91874186197916,
+          535.851826985677
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": ">LOTO procedures are to be developed to prevent injuries from unexpected energization, activation or unintentional release of energy during initial start-up,maintenance or repair of equipment or machinery. Procedures are to cover:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          531.705322265625
+        ],
+        [
+          495.9803059895833,
+          531.705322265625
+        ],
+        [
+          495.9803059895833,
+          492.72816975911456
+        ],
+        [
+          75.53842671712239,
+          492.72816975911456
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "·Preparation for shutdown",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.53587849934895,
+          486.50840250651044
+        ],
+        [
+          212.91874186197916,
+          486.50840250651044
+        ],
+        [
+          212.91874186197916,
+          474.48354085286456
+        ],
+        [
+          97.53587849934895,
+          474.48354085286456
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Shutdown",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          468.26377360026044
+        ],
+        [
+          151.07685343424478,
+          468.26377360026044
+        ],
+        [
+          151.07685343424478,
+          457.06821695963544
+        ],
+        [
+          95.87569173177083,
+          457.06821695963544
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Isolation",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          450.01914469401044
+        ],
+        [
+          145.6812540690104,
+          450.01914469401044
+        ],
+        [
+          145.6812540690104,
+          438.82358805338544
+        ],
+        [
+          96.29074096679688,
+          438.82358805338544
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "ApplyingLOTOdevices",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          430.94525146484375
+        ],
+        [
+          210.013427734375,
+          430.94525146484375
+        ],
+        [
+          210.013427734375,
+          419.74965413411456
+        ],
+        [
+          108.74212646484375,
+          419.74965413411456
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "De-energization or release of stored energy",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.25185139973958,
+          414.77386474609375
+        ],
+        [
+          284.7217610677083,
+          414.77386474609375
+        ],
+        [
+          284.7217610677083,
+          400.26108805338544
+        ],
+        [
+          106.25185139973958,
+          400.26108805338544
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Verification",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.42176310221355,
+          396.11460367838544
+        ],
+        [
+          158.54768880208334,
+          396.11460367838544
+        ],
+        [
+          158.54768880208334,
+          383.67506917317706
+        ],
+        [
+          105.42176310221355,
+          383.67506917317706
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Release from lock out",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.42176310221355,
+          377.45530192057294
+        ],
+        [
+          199.22222900390625,
+          377.45530192057294
+        ],
+        [
+          199.22222900390625,
+          365.43044026692706
+        ],
+        [
+          105.42176310221355,
+          365.43044026692706
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Testingonenergizedequipment",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.53587849934895,
+          358.79604085286456
+        ],
+        [
+          239.0666707356771,
+          358.79604085286456
+        ],
+        [
+          239.0666707356771,
+          346.77117919921875
+        ],
+        [
+          97.53587849934895,
+          346.77117919921875
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "All potential sources of hazardous energy such as gravity, electrical, mechanical, pneumatic, pressure etc. must be considered when determining LOTO procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          336.40492757161456
+        ],
+        [
+          495.5652669270833,
+          336.40492757161456
+        ],
+        [
+          495.5652669270833,
+          310.28192138671875
+        ],
+        [
+          90.06504313151042,
+          310.28192138671875
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "If an energy isolation device is capable of being locked out then it must be locked and tagged. If it is not capable of being locked out it must be tagged out.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          305.72076416015625
+        ],
+        [
+          495.9803059895833,
+          305.72076416015625
+        ],
+        [
+          495.9803059895833,
+          280.0124308268229
+        ],
+        [
+          90.06504313151042,
+          280.0124308268229
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Only authorized personnel are permitted to perform LOTO procedures and when locking out plant and equipment each person must apply their own lock and retain the key. Where more than one person is working on the same system each person must apply their own lock to a multi-lock hasp.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          275.0366414388021
+        ],
+        [
+          495.5652669270833,
+          275.0366414388021
+        ],
+        [
+          495.5652669270833,
+          236.05950927734375
+        ],
+        [
+          90.06504313151042,
+          236.05950927734375
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Locks are only to be removed by the person who attached the lock; procedures are to cover the arrangements for removing other people lock when they are unable to do it themselves.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          231.91298421223962
+        ],
+        [
+          495.5652669270833,
+          231.91298421223962
+        ],
+        [
+          495.5652669270833,
+          206.20465087890625
+        ],
+        [
+          89.23495483398438,
+          206.20465087890625
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "Locks and tags are to be specific for the task. Locks are to be standardized for each department or trade and tags must be durable and include the words'Do Not Operate'. The use of'Out of Service' tags must not beused forLOTOpurposes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          200.81418863932288
+        ],
+        [
+          495.5652669270833,
+          200.81418863932288
+        ],
+        [
+          495.5652669270833,
+          163.08099365234375
+        ],
+        [
+          89.23495483398438,
+          163.08099365234375
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": ">A method statement and permit to work is required for all works involving LOTO.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          158.10520426432288
+        ],
+        [
+          426.6676025390625,
+          158.10520426432288
+        ],
+        [
+          426.6676025390625,
+          144.00705973307288
+        ],
+        [
+          73.46319580078125,
+          144.00705973307288
+        ]
+      ],
+      "page": 460
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.6455891927083,
+          735.2987162272135
+        ],
+        [
+          511.7520751953125,
+          735.2987162272135
+        ],
+        [
+          511.7520751953125,
+          720.3712972005209
+        ],
+        [
+          453.6455891927083,
+          720.3712972005209
+        ]
+      ],
+      "page": 460
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 460,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\nTraffic lanes must never need to be crossed on foot by workers or members of the public or by site vehicles,suitableprovisions for saferoutesfor both must beprovided.\nWork carried out at night must be under floodlights; floodlights must not dazzle or blind oncoming traffic.\nArrangements must be made to maintain both site safety and security outside working hours and all plant and vehicles are to be parked in a safe place and be immobilized when not in use.\nAll road works and work adjacent to live traffic routes will require a method statement as well as plansrequired by theTrafficPoliceandotherstatutory authorities.\n3.27. Lock Out Tag Out (LOTO)\n>LOTO procedures are to be developed to prevent injuries from unexpected energization, activation or unintentional release of energy during initial start-up,maintenance or repair of equipment or machinery. Procedures are to cover:\n·Preparation for shutdown\nShutdown\nIsolation\nApplyingLOTOdevices\nDe-energization or release of stored energy\nVerification\nRelease from lock out\nTestingonenergizedequipment\nAll potential sources of hazardous energy such as gravity, electrical, mechanical, pneumatic, pressure etc. must be considered when determining LOTO procedures.\nIf an energy isolation device is capable of being locked out then it must be locked and tagged. If it is not capable of being locked out it must be tagged out.\nOnly authorized personnel are permitted to perform LOTO procedures and when locking out plant and equipment each person must apply their own lock and retain the key. Where more than one person is working on the same system each person must apply their own lock to a multi-lock hasp.\nLocks are only to be removed by the person who attached the lock; procedures are to cover the arrangements for removing other people lock when they are unable to do it themselves.\nLocks and tags are to be specific for the task. Locks are to be standardized for each department or trade and tags must be durable and include the words'Do Not Operate'. The use of'Out of Service' tags must not beused forLOTOpurposes.\n>A method statement and permit to work is required for all works involving LOTO.\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

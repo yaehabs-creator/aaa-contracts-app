@@ -1,0 +1,198 @@
+{
+  "text": "<!-- image -->\n\n## 1.05 RE-INSPECTION\n\n1. Should status of  the Works require re-inspection by Contract Administrator,Operator or Supervision Consultanf due to failure of the Works to comply with the Contractor's claims for readiness\\_to receive inspection, the Employer will deduct the amount of the Supervision Consultant's compensation for re-inspection services from payment to the Contractor.\n\n## 1.06 LOCK CYLINDERS\n\n- 1.When the Works are completed in accordance with the Contract to Contract Administrator's satisfaction and are readyfor Operator's occupancy, replace all lock cylinders with final cylinders (if required) and arrange for delivery to the Employerpersonally or by registered mail, all keys to such cylinders together with all other keys for the entire Works. Tag keys and list as to location.\n\nPART 2 - PRODUCTS (Not Used)\n\nPART 3 - EXECUTION (Not Used)\n\nENDOFSECTION01770\n\n<!-- image -->\n\n<!-- image -->\n\n## TechnicalSpecifications(DivisionI)",
+  "results": [
+    {
+      "text": "1.05 RE-INSPECTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          720.3712972005209
+        ],
+        [
+          201.7125040690104,
+          720.3712972005209
+        ],
+        [
+          201.7125040690104,
+          708.7610880533854
+        ],
+        [
+          76.78356424967448,
+          708.7610880533854
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "Should status of  the Works require re-inspection by Contract Administrator,Operator or Supervision Consultanf due to failure of the Works to comply with the Contractor's claims for readiness_to receive inspection, the Employer will deduct the amount of the Supervision Consultant's compensation for re-inspection services from payment to the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          703.7852783203125
+        ],
+        [
+          505.9414469401042,
+          703.7852783203125
+        ],
+        [
+          505.9414469401042,
+          633.7093505859375
+        ],
+        [
+          110.81736246744792,
+          633.7093505859375
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "1.06 LOCK CYLINDERS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          622.9284261067709
+        ],
+        [
+          213.33380126953125,
+          622.9284261067709
+        ],
+        [
+          213.33380126953125,
+          612.1475219726562
+        ],
+        [
+          78.44375101725261,
+          612.1475219726562
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "1.When the Works are completed in accordance with the Contract to Contract Administrator's satisfaction and are readyfor Operator's occupancy, replace all lock cylinders with final cylinders (if required) and arrange for delivery to the Employerpersonally or by registered mail, all keys to such cylinders together with all other keys for the entire Works. Tag keys and list as to location.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          606.3424072265625
+        ],
+        [
+          505.9414469401042,
+          606.3424072265625
+        ],
+        [
+          505.9414469401042,
+          537.0957641601562
+        ],
+        [
+          111.64745076497395,
+          537.0957641601562
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "PART 2 - PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          517.1925455729167
+        ],
+        [
+          250.27290852864584,
+          517.1925455729167
+        ],
+        [
+          250.27290852864584,
+          502.26511637369794
+        ],
+        [
+          77.61365763346355,
+          502.26511637369794
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "PART 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          480.70330810546875
+        ],
+        [
+          252.34814453125,
+          480.70330810546875
+        ],
+        [
+          252.34814453125,
+          468.67844645182294
+        ],
+        [
+          78.02870178222656,
+          468.67844645182294
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "ENDOFSECTION01770",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.20023600260416,
+          447.11659749348956
+        ],
+        [
+          357.7698974609375,
+          447.11659749348956
+        ],
+        [
+          357.7698974609375,
+          435.92104085286456
+        ],
+        [
+          226.20023600260416,
+          435.92104085286456
+        ]
+      ],
+      "page": 387
+    },
+    {
+      "text": "TechnicalSpecifications(DivisionI)",
+      "confidence": 0.95,
+      "box": [
+        [
+          340.7530110677083,
+          743.1770782470703
+        ],
+        [
+          501.7909749348958,
+          743.1770782470703
+        ],
+        [
+          501.7909749348958,
+          732.3961690266927
+        ],
+        [
+          340.7530110677083,
+          732.3961690266927
+        ]
+      ],
+      "page": 387
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 387,
+      "text": "1.05 RE-INSPECTION\nShould status of  the Works require re-inspection by Contract Administrator,Operator or Supervision Consultanf due to failure of the Works to comply with the Contractor's claims for readiness_to receive inspection, the Employer will deduct the amount of the Supervision Consultant's compensation for re-inspection services from payment to the Contractor.\n1.06 LOCK CYLINDERS\n1.When the Works are completed in accordance with the Contract to Contract Administrator's satisfaction and are readyfor Operator's occupancy, replace all lock cylinders with final cylinders (if required) and arrange for delivery to the Employerpersonally or by registered mail, all keys to such cylinders together with all other keys for the entire Works. Tag keys and list as to location.\nPART 2 - PRODUCTS (Not Used)\nPART 3 - EXECUTION (Not Used)\nENDOFSECTION01770\nTechnicalSpecifications(DivisionI)",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

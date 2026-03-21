@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## IntroductiontoQualityControl Forms\n\n| Control Form No.   | TitleofControlForm              | DescriptionofProcess                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |\n|--------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| 4.05               | RecordofConcretePour            | 1TheContractorshallensure thatallworksarecompletedpriorto concreting andsubmit thisformtoConsultantforinspectionofconcrete area. 2Form4.06Pre-Concrete InspectionRecord tobeattached along with this form. 3Consultant inspects and commentsgivento theContractorandcopyto CM 4TheContractorshallcarry out thework aspertheinstructionfrom Consultant 5Contractorshallfill therecordofpourindicatingactualstart&finishof pour,cubes taken,slump,temperature record&type of curing etc;and                                                                                                           |\n| 4.05B              | ConcreteTruckInfo               | 1Contractortofillin theformwithdetailsof the concretepourinregardsto theconcrete,theconcretetrucksand thetemperatureetc.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |\n| 4.06               | Pre-concrete Inspection Record  | 1TheContractor'sQA/QCEngineertoensurethatallworksarecompleted priortoconcretingandfill thisform and attachwithForm4.05Record of ConcretePourandsend toConsultantforinspectionof thesame.                                                                                                                                                                                                                                                                                                                                                                                                            |\n| 4.07               | Recordof Testing On or Off-Site | 1TheContractorshall ensure thatspecifictests arecarried outby them in accordance with therequirementssuch as specifications,codes;other regulatoryauthorityandhewillflltheformandsendit totherelevant authorityforinspecting/witnessing the same. 2Afterinspection andcomments this should bedistributedto allrelevant parties.                                                                                                                                                                                                                                                                     |\n| 4.08               | Summaryof Testing Requirements  | 1TheContractorshall listoutall thetestingrequirementscalledforinthe specification，codesorotherrelevant technical standardswhetherit isOn orOff-site andsend thisreporttoConsultant andCMfortheirinformation andrecord                                                                                                                                                                                                                                                                                                                                                                              |\n| 4.09               | Off-SiteInspectionReport        | 1Thisformshallbefilled by anypartyconductinginspection(Offsite)for material,installationorservices etc;and commentsaretobepassedto Consultant,CM,Contractorandotherrelevantparties                                                                                                                                                                                                                                                                                                                                                                                                                  |\n| 4.10               | AdviceofDefects                 | 1Thisformshall beused byeitherConsultantorCMorany thirdparty andpassit to theContractorandcopytoCM,Consultant andother relevant parties 2Uponreceiptof suchreport,the Contractor shalltake necessary action to clearthedefectsidentifiedinthereportand advisethepartywhoinitiated the report. 3Thepartywhoinitiatedwill inspect thedefectiveitemsorservices and confirmwhetherthedefectsidentified arerectifiedor not.If yeshewill fill thedatewhenthedefectisrectifiedwithhissignatureandpassthecopy torelevantparties                                                                             |\n| 4.11               | Non-ConformanceReport (NCR)     | 1TheContractorwill initiate thisreport uponnoticing anymaterial or installationwhichisnon-complying tothestandardsspecifiedor as response toissuesraisedbyConsultant and CM. 2The Contractorproposes corrective actionrequired and is to send it to ConsultantandcopytoCMandotherrelevantparties 3Consultant will chcck the Contractor's proposal and advise on appropriate action required and send to the Contractor andcopy to CM and other relevant parties. 4CMreviewConsultant'scomments andadvise thefinalactionrequired andsendtotheContractorandcopytoConsultant. 5 Continued Next Page... |\n\n0.0y729.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "IntroductiontoQualityControl Forms",
+      "confidence": 0.95,
+      "box": [
+        [
+          231.5958251953125,
+          717.46875
+        ],
+        [
+          393.4638671875,
+          717.46875
+        ],
+        [
+          393.4638671875,
+          707.9317830403646
+        ],
+        [
+          231.5958251953125,
+          707.9317830403646
+        ]
+      ],
+      "page": 495
+    },
+    {
+      "text": "0.0y729.",
+      "confidence": 0.95,
+      "box": [
+        [
+          317.9254557291667,
+          46.56422932942712
+        ],
+        [
+          365.24072265625,
+          46.56422932942712
+        ],
+        [
+          365.24072265625,
+          46.56422932942712
+        ],
+        [
+          317.9254557291667,
+          46.56422932942712
+        ]
+      ],
+      "page": 495
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 495,
+      "text": "IntroductiontoQualityControl Forms\n0.0y729.",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

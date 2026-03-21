@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\n- 1.12 All shop drawings submittals (1st revision) are to be completed within the first quarter of the total duration of thie project.\n- 1.13 Failure of the Contractor to comply with the reauirements of this section shall be grounds for a recommendation by the ContractAdministrator that no further progress payments shall be made until the Contractor is in compliance. This shall be advised and administered in line with the form of contract.\n- 1.14 The Contractor must coordinate all schedules and programmes with his subcontractors and other affected package contractors. The Contract Administrator shall require evidence that schedules have been developed withclose coordination and the shop drawings submitted for approval/ informationhavebeen agreed with all affected parties.\n\n## 2. CONTRACTOR'S REPRESENTATVE\n\n- 2.1 The Contractor shall designate at least one full-time qualified and experienced \"Planner &amp; Scheduling Engineer with at least ten years of experience in the planning field\" who shall be responsible for the content and dcvclopment of the Contractor's Programme of Works, dedicated to CPM programming activity, time and cost control. The Contract Administrator shall approve the proposed planning staff.\n\n## 3.TENDERWORKSPROGRAMME\n\n- 3.11 The Tenderer shall submit with his Tender a programme (hereinafter referred to as the Indicative Summary Programme as required by the Tender Documents) in line with the Schedule and Milestone Requirements by elaborating and including all major activities in his scope of Works. The Tender Works Programme shall be prepared generally in line with the requirements under Clause 4 (below) and shall consist of:\n- a) Proposed Execution Programme\n- b)Cost LoadedProgramme\n- c) Schedule of manpower and supervision staff\n- d) Scheduleof Construction Equipment &amp;Vehicles\n- e) Execution Method Statement\n- f) Support Data\n- 3:2.The Proposed Execution Programme shall be prepared as per Clause 4 (below)which shall be broken down to meet the schedule and milestones requirements provided in the Tender Documents.The Proposed Execution Programme shall address all elements of the scope ofWorks slarting from 有任of theWorks.All constraints such as access requirement,information requirement, etc. shall be clearly indicated.\n- 3.3A·Cost Loaded Programme shall be prepared generally as explained under Clause 4 and shall be presented in graphical format with monthly planned cost plotted on Y1-axis and cumulative to month values onY2-axis with period on X-axis. The summary and breakdown of cost against each month to be tabulated.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "1.12 All shop drawings submittals (1st revision) are to be completed within the first quarter of the total duration of thie project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          718.2980448404948
+        ],
+        [
+          505.9414469401042,
+          718.2980448404948
+        ],
+        [
+          505.9414469401042,
+          692.1750691731771
+        ],
+        [
+          94.2155049641927,
+          692.1750691731771
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "1.13 Failure of the Contractor to comply with the reauirements of this section shall be grounds for a recommendation by the ContractAdministrator that no further progress payments shall be made until the Contractor is in compliance. This shall be advised and administered in line with the form of contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          685.9553019205729
+        ],
+        [
+          505.9414469401042,
+          685.9553019205729
+        ],
+        [
+          505.9414469401042,
+          621.6844685872396
+        ],
+        [
+          94.63055419921875,
+          621.6844685872396
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "1.14 The Contractor must coordinate all schedules and programmes with his subcontractors and other affected package contractors. The Contract Administrator shall require evidence that schedules have been developed withclose coordination and the shop drawings submitted for approval/ informationhavebeen agreed with all affected parties.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          615.0500691731771
+        ],
+        [
+          506.3564860026042,
+          615.0500691731771
+        ],
+        [
+          506.3564860026042,
+          549.949930826823
+        ],
+        [
+          94.2155049641927,
+          549.949930826823
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "2. CONTRACTOR'S REPRESENTATVE",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          537.5104166666667
+        ],
+        [
+          292.60764567057294,
+          537.5104166666667
+        ],
+        [
+          292.60764567057294,
+          526.729512532552
+        ],
+        [
+          77.1986083984375,
+          526.729512532552
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "2.1 The Contractor shall designate at least one full-time qualified and experienced \"Planner & Scheduling Engineer with at least ten years of experience in the planning field\" who shall be responsible for the content and dcvclopment of the Contractor's Programme of Works, dedicated to CPM programming activity, time and cost control. The Contract Administrator shall approve the proposed planning staff.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          519.2657877604167
+        ],
+        [
+          507.1865641276042,
+          519.2657877604167
+        ],
+        [
+          507.1865641276042,
+          440.89683024088544
+        ],
+        [
+          93.38541666666667,
+          440.89683024088544
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "3.TENDERWORKSPROGRAMME",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          428.04266357421875
+        ],
+        [
+          266.87477620442706,
+          428.04266357421875
+        ],
+        [
+          266.87477620442706,
+          418.50571695963544
+        ],
+        [
+          78.44375101725261,
+          418.50571695963544
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "3.11 The Tenderer shall submit with his Tender a programme (hereinafter referred to as the Indicative Summary Programme as required by the Tender Documents) in line with the Schedule and Milestone Requirements by elaborating and including all major activities in his scope of Works. The Tender Works Programme shall be prepared generally in line with the requirements under Clause 4 (below) and shall consist of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          410.62738037109375
+        ],
+        [
+          505.9414469401042,
+          410.62738037109375
+        ],
+        [
+          505.9414469401042,
+          333.08770751953125
+        ],
+        [
+          94.63055419921875,
+          333.08770751953125
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "Proposed Execution Programme",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.02106730143228,
+          331.42909749348956
+        ],
+        [
+          322.90602620442706,
+          331.42909749348956
+        ],
+        [
+          322.90602620442706,
+          319.81890869140625
+        ],
+        [
+          144.02106730143228,
+          319.81890869140625
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "b)Cost LoadedProgramme",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.43610636393228,
+          318.16029866536456
+        ],
+        [
+          285.1368001302083,
+          318.16029866536456
+        ],
+        [
+          285.1368001302083,
+          307.3793741861979
+        ],
+        [
+          144.43610636393228,
+          307.3793741861979
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "Schedule of manpower and supervision staff",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          305.3061319986979
+        ],
+        [
+          383.5027669270833,
+          305.3061319986979
+        ],
+        [
+          383.5027669270833,
+          294.1105753580729
+        ],
+        [
+          143.60601806640625,
+          294.1105753580729
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "Scheduleof Construction Equipment &Vehicles",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          292.45196533203125
+        ],
+        [
+          399.6895751953125,
+          292.45196533203125
+        ],
+        [
+          399.6895751953125,
+          281.25640869140625
+        ],
+        [
+          143.60601806640625,
+          281.25640869140625
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "Execution Method Statement",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          279.18316650390625
+        ],
+        [
+          305.8891194661458,
+          279.18316650390625
+        ],
+        [
+          305.8891194661458,
+          268.4022420247396
+        ],
+        [
+          143.60601806640625,
+          268.4022420247396
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "Support Data",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.02106730143228,
+          265.9143269856771
+        ],
+        [
+          226.20023600260416,
+          265.9143269856771
+        ],
+        [
+          226.20023600260416,
+          253.47483317057288
+        ],
+        [
+          144.02106730143228,
+          253.47483317057288
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "3:2.The Proposed Execution Programme shall be prepared as per Clause 4 (below)which shall be broken down to meet the schedule and milestones requirements provided in the Tender Documents.The Proposed Execution Programme shall address all elements of the scope ofWorks slarting from 有任of theWorks.All constraints such as access requirement,information requirement, etc. shall be clearly indicated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          247.66969807942712
+        ],
+        [
+          506.7715250651042,
+          247.66969807942712
+        ],
+        [
+          506.7715250651042,
+          157.27589925130212
+        ],
+        [
+          77.61365763346355,
+          157.27589925130212
+        ]
+      ],
+      "page": 297
+    },
+    {
+      "text": "3.3A·Cost Loaded Programme shall be prepared generally as explained under Clause 4 and shall be presented in graphical format with monthly planned cost plotted on Y1-axis and cumulative to month values onY2-axis with period on X-axis. The summary and breakdown of cost against each month to be tabulated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          150.64149983723962
+        ],
+        [
+          505.9414469401042,
+          150.64149983723962
+        ],
+        [
+          505.9414469401042,
+          86.78533935546875
+        ],
+        [
+          93.8004659016927,
+          86.78533935546875
+        ]
+      ],
+      "page": 297
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 297,
+      "text": "1.12 All shop drawings submittals (1st revision) are to be completed within the first quarter of the total duration of thie project.\n1.13 Failure of the Contractor to comply with the reauirements of this section shall be grounds for a recommendation by the ContractAdministrator that no further progress payments shall be made until the Contractor is in compliance. This shall be advised and administered in line with the form of contract.\n1.14 The Contractor must coordinate all schedules and programmes with his subcontractors and other affected package contractors. The Contract Administrator shall require evidence that schedules have been developed withclose coordination and the shop drawings submitted for approval/ informationhavebeen agreed with all affected parties.\n2. CONTRACTOR'S REPRESENTATVE\n2.1 The Contractor shall designate at least one full-time qualified and experienced \"Planner & Scheduling Engineer with at least ten years of experience in the planning field\" who shall be responsible for the content and dcvclopment of the Contractor's Programme of Works, dedicated to CPM programming activity, time and cost control. The Contract Administrator shall approve the proposed planning staff.\n3.TENDERWORKSPROGRAMME\n3.11 The Tenderer shall submit with his Tender a programme (hereinafter referred to as the Indicative Summary Programme as required by the Tender Documents) in line with the Schedule and Milestone Requirements by elaborating and including all major activities in his scope of Works. The Tender Works Programme shall be prepared generally in line with the requirements under Clause 4 (below) and shall consist of:\nProposed Execution Programme\nb)Cost LoadedProgramme\nSchedule of manpower and supervision staff\nScheduleof Construction Equipment &Vehicles\nExecution Method Statement\nSupport Data\n3:2.The Proposed Execution Programme shall be prepared as per Clause 4 (below)which shall be broken down to meet the schedule and milestones requirements provided in the Tender Documents.The Proposed Execution Programme shall address all elements of the scope ofWorks slarting from 有任of theWorks.All constraints such as access requirement,information requirement, etc. shall be clearly indicated.\n3.3A·Cost Loaded Programme shall be prepared generally as explained under Clause 4 and shall be presented in graphical format with monthly planned cost plotted on Y1-axis and cumulative to month values onY2-axis with period on X-axis. The summary and breakdown of cost against each month to be tabulated.",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

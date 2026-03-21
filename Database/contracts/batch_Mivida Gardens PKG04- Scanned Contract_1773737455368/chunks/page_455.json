@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n## 3.23. Hand and Power Tools\n\n## 3.23.1. Hand Tools\n\n- Hand tools are to be used for their intended purpose; be the correct tool, size and type for the job and beinspectedfor damage andwear before use.\n- Any damaged tools are not to be used and removed from use until repaired.\n- A Hand held tools such as chisels and saws are to be kept sharp, free from mushroom heads and placed in a safe place when not in use.\n- The manufacture and use of site-made tools is prohibited.\n\n## 3.23.2.Power Tools\n\n- Personnel using power tools are to carry a competency card showing they have been trained and are authorized to operate the type of power tool in use.\n- All power tools are tobeinspected beforeuse andevery 3 months by a competent person.Any power toolfound damaged is toberemoved fromservice andreturned tothe storeforrepair.Powertools are to be suitable stored in a dry well-ventilated areawhen not in use.\n- SuitablePPEis to be worn to prevent injuryfrom flying fragments,ejected material or ill health fromnoise,dust etc.Controls aretobein place to preventpersonneloperatingpower toolsfor long periods of time where there is arisk of hand arn vibration syndrome,\n- Guards are to be fitted to protect moving or exposed parts and are to be correctly adjusted,be able toreturn to the closed position (i.e.on circular saws)andnot removed whilst the tool isconnected orinoperation unlessdesigned todo so.Power tool shall beoperated on a workbench.\n- Handles are to be fitted where appropriate such as on drills and be held with hoth hands to prevent kick-back or an anti-twist device is to be fitted.\n- Power tools aretobe regularly maintained and before any maintenance is carried out they are to be switch off and where appropriate removed from their prime energy source (i.e. remove plug from electrical socket).\n- All electrically powered tools are to be double insulated.\n- An earth leakage device is to be used to protect electrical tools,with the device positioned at the supply source and are to have aportable appliance test every 3 months, the toolis to be tagged with a record of the test.\n- Portable tools such as hand held grinders; circular saw and drills are to be fitted with switches, levers, triggers that require constant pressure for operation and automatically stops when released. The use of a device that prevents the release (i.e. lockable trigger switch) is prohibited.\n- Anglegrinders and similar tools are tobefittedwith the correct bladefor the material tobe cut and therated speed of theblade/wheelistobe checkedbeforeusetoconfirm thatit is equalorgreater than the maximum speed of the grinder. Cutting blades are to be inspected for intcgrity bcforc use.\n- Tools are to be fitted with an extraction system or a wet cutting suppression system where there is a risk of harmful airborne dusts.\n\nConstruc\n\n<!-- image -->\n\nDof8d 218-207-20\n\n## EMAAR\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          726.591054280599
+        ],
+        [
+          340.33795166015625,
+          726.591054280599
+        ],
+        [
+          340.33795166015625,
+          698.8094685872396
+        ],
+        [
+          190.92130533854166,
+          698.8094685872396
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          695.4922688802084
+        ],
+        [
+          217.0692138671875,
+          695.4922688802084
+        ],
+        [
+          217.0692138671875,
+          683.8820495605469
+        ],
+        [
+          75.53842671712239,
+          683.8820495605469
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "3.23. Hand and Power Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.125,
+          670.1985880533854
+        ],
+        [
+          362.7504475911458,
+          670.1985880533854
+        ],
+        [
+          362.7504475911458,
+          659.8323262532552
+        ],
+        [
+          224.125,
+          659.8323262532552
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "3.23.1. Hand Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.95255533854166,
+          650.7100219726562
+        ],
+        [
+          336.1875,
+          650.7100219726562
+        ],
+        [
+          336.1875,
+          639.9290974934896
+        ],
+        [
+          246.95255533854166,
+          639.9290974934896
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Hand tools are to be used for their intended purpose; be the correct tool, size and type for the job and beinspectedfor damage andwear before use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          632.0507405598959
+        ],
+        [
+          495.5652669270833,
+          632.0507405598959
+        ],
+        [
+          495.5652669270833,
+          608.4156494140625
+        ],
+        [
+          91.3101806640625,
+          608.4156494140625
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Any damaged tools are not to be used and removed from use until repaired.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          601.3665974934896
+        ],
+        [
+          398.0293782552083,
+          601.3665974934896
+        ],
+        [
+          398.0293782552083,
+          589.7563883463541
+        ],
+        [
+          91.72522989908855,
+          589.7563883463541
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "A Hand held tools such as chisels and saws are to be kept sharp, free from mushroom heads and placed in a safe place when not in use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          583.1219685872396
+        ],
+        [
+          495.9803059895833,
+          583.1219685872396
+        ],
+        [
+          495.9803059895833,
+          558.6575927734375
+        ],
+        [
+          77.1986083984375,
+          558.6575927734375
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "The manufacture and use of site-made tools is prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          552.023193359375
+        ],
+        [
+          326.22637939453125,
+          552.023193359375
+        ],
+        [
+          326.22637939453125,
+          541.6569213867188
+        ],
+        [
+          91.72522989908855,
+          541.6569213867188
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "3.23.2.Power Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          245.2923583984375,
+          533.3639119466145
+        ],
+        [
+          338.6777750651042,
+          533.3639119466145
+        ],
+        [
+          338.6777750651042,
+          522.5830078125
+        ],
+        [
+          245.2923583984375,
+          522.5830078125
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Personnel using power tools are to carry a competency card showing they have been trained and are authorized to operate the type of power tool in use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          515.1192830403645
+        ],
+        [
+          496.8104248046875,
+          515.1192830403645
+        ],
+        [
+          496.8104248046875,
+          489.8256022135417
+        ],
+        [
+          91.3101806640625,
+          489.8256022135417
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "All power tools are tobeinspected beforeuse andevery 3 months by a competent person.Any power toolfound damaged is toberemoved fromservice andreturned tothe storeforrepair.Powertools are to be suitable stored in a dry well-ventilated areawhen not in use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          483.60585530598956
+        ],
+        [
+          496.3953857421875,
+          483.60585530598956
+        ],
+        [
+          496.3953857421875,
+          448.36057535807294
+        ],
+        [
+          92.97036743164062,
+          448.36057535807294
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "SuitablePPEis to be worn to prevent injuryfrom flying fragments,ejected material or ill health fromnoise,dust etc.Controls aretobein place to preventpersonneloperatingpower toolsfor long periods of time where there is arisk of hand arn vibration syndrome,",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          440.89683024088544
+        ],
+        [
+          496.8104248046875,
+          440.89683024088544
+        ],
+        [
+          496.8104248046875,
+          403.99294026692706
+        ],
+        [
+          92.55532836914062,
+          403.99294026692706
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Guards are to be fitted to protect moving or exposed parts and are to be correctly adjusted,be able toreturn to the closed position (i.e.on circular saws)andnot removed whilst the tool isconnected orinoperation unlessdesigned todo so.Power tool shall beoperated on a workbench.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          397.35854085286456
+        ],
+        [
+          496.8104248046875,
+          397.35854085286456
+        ],
+        [
+          496.8104248046875,
+          362.11326090494794
+        ],
+        [
+          92.14027913411458,
+          362.11326090494794
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Handles are to be fitted where appropriate such as on drills and be held with hoth hands to prevent kick-back or an anti-twist device is to be fitted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          354.23488362630206
+        ],
+        [
+          497.6405029296875,
+          354.23488362630206
+        ],
+        [
+          497.6405029296875,
+          330.59979248046875
+        ],
+        [
+          92.14027913411458,
+          330.59979248046875
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Power tools aretobe regularly maintained and before any maintenance is carried out they are to be switch off and where appropriate removed from their prime energy source (i.e. remove plug from electrical socket).",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          322.72145589192706
+        ],
+        [
+          496.3953857421875,
+          322.72145589192706
+        ],
+        [
+          496.3953857421875,
+          286.2321980794271
+        ],
+        [
+          92.14027913411458,
+          286.2321980794271
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "All electrically powered tools are to be double insulated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          279.5977986653646
+        ],
+        [
+          322.90602620442706,
+          279.5977986653646
+        ],
+        [
+          322.90602620442706,
+          269.64617919921875
+        ],
+        [
+          92.14027913411458,
+          269.64617919921875
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "An earth leakage device is to be used to protect electrical tools,with the device positioned at the supply source and are to have aportable appliance test every 3 months, the toolis to be tagged with a record of the test.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          261.7678426106771
+        ],
+        [
+          496.3953857421875,
+          261.7678426106771
+        ],
+        [
+          496.3953857421875,
+          225.27858479817712
+        ],
+        [
+          92.97036743164062,
+          225.27858479817712
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Portable tools such as hand held grinders; circular saw and drills are to be fitted with switches, levers, triggers that require constant pressure for operation and automatically stops when released. The use of a device that prevents the release (i.e. lockable trigger switch) is prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          219.05881754557288
+        ],
+        [
+          497.2254638671875,
+          219.05881754557288
+        ],
+        [
+          497.2254638671875,
+          182.15492757161462
+        ],
+        [
+          91.72522989908855,
+          182.15492757161462
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Anglegrinders and similar tools are tobefittedwith the correct bladefor the material tobe cut and therated speed of theblade/wheelistobe checkedbeforeusetoconfirm thatit is equalorgreater than the maximum speed of the grinder. Cutting blades are to be inspected for intcgrity bcforc use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          175.10585530598962
+        ],
+        [
+          497.2254638671875,
+          175.10585530598962
+        ],
+        [
+          497.2254638671875,
+          139.44590250651038
+        ],
+        [
+          93.38541666666667,
+          139.44590250651038
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Tools are to be fitted with an extraction system or a wet cutting suppression system where there is a risk of harmful airborne dusts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          131.98219807942712
+        ],
+        [
+          498.0555419921875,
+          131.98219807942712
+        ],
+        [
+          498.0555419921875,
+          108.34710693359375
+        ],
+        [
+          92.55532836914062,
+          108.34710693359375
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Construc",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          107.93247477213538
+        ],
+        [
+          162.2831013997396,
+          107.93247477213538
+        ],
+        [
+          162.2831013997396,
+          97.98089599609375
+        ],
+        [
+          117.87314860026042,
+          97.98089599609375
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "Dof8d 218-207-20",
+      "confidence": 0.95,
+      "box": [
+        [
+          254.83841959635416,
+          53.19858805338538
+        ],
+        [
+          315.0201416015625,
+          53.19858805338538
+        ],
+        [
+          315.0201416015625,
+          53.19858805338538
+        ],
+        [
+          254.83841959635416,
+          53.19858805338538
+        ]
+      ],
+      "page": 455
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          733.6401163736979
+        ],
+        [
+          509.6768391927083,
+          733.6401163736979
+        ],
+        [
+          509.6768391927083,
+          720.7859497070312
+        ],
+        [
+          453.2305501302083,
+          720.7859497070312
+        ]
+      ],
+      "page": 455
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 455,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n3.23. Hand and Power Tools\n3.23.1. Hand Tools\nHand tools are to be used for their intended purpose; be the correct tool, size and type for the job and beinspectedfor damage andwear before use.\nAny damaged tools are not to be used and removed from use until repaired.\nA Hand held tools such as chisels and saws are to be kept sharp, free from mushroom heads and placed in a safe place when not in use.\nThe manufacture and use of site-made tools is prohibited.\n3.23.2.Power Tools\nPersonnel using power tools are to carry a competency card showing they have been trained and are authorized to operate the type of power tool in use.\nAll power tools are tobeinspected beforeuse andevery 3 months by a competent person.Any power toolfound damaged is toberemoved fromservice andreturned tothe storeforrepair.Powertools are to be suitable stored in a dry well-ventilated areawhen not in use.\nSuitablePPEis to be worn to prevent injuryfrom flying fragments,ejected material or ill health fromnoise,dust etc.Controls aretobein place to preventpersonneloperatingpower toolsfor long periods of time where there is arisk of hand arn vibration syndrome,\nGuards are to be fitted to protect moving or exposed parts and are to be correctly adjusted,be able toreturn to the closed position (i.e.on circular saws)andnot removed whilst the tool isconnected orinoperation unlessdesigned todo so.Power tool shall beoperated on a workbench.\nHandles are to be fitted where appropriate such as on drills and be held with hoth hands to prevent kick-back or an anti-twist device is to be fitted.\nPower tools aretobe regularly maintained and before any maintenance is carried out they are to be switch off and where appropriate removed from their prime energy source (i.e. remove plug from electrical socket).\nAll electrically powered tools are to be double insulated.\nAn earth leakage device is to be used to protect electrical tools,with the device positioned at the supply source and are to have aportable appliance test every 3 months, the toolis to be tagged with a record of the test.\nPortable tools such as hand held grinders; circular saw and drills are to be fitted with switches, levers, triggers that require constant pressure for operation and automatically stops when released. The use of a device that prevents the release (i.e. lockable trigger switch) is prohibited.\nAnglegrinders and similar tools are tobefittedwith the correct bladefor the material tobe cut and therated speed of theblade/wheelistobe checkedbeforeusetoconfirm thatit is equalorgreater than the maximum speed of the grinder. Cutting blades are to be inspected for intcgrity bcforc use.\nTools are to be fitted with an extraction system or a wet cutting suppression system where there is a risk of harmful airborne dusts.\nConstruc\nDof8d 218-207-20\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

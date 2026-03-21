@@ -1,0 +1,658 @@
+{
+  "text": "<!-- image -->\n\n- 5.Provide all spare parts required for installation, testing and commissioning of equipment to ensure its complete and proper functioning.\n- 6.9 Six(6)monthsprior to Contractor's request for inspection for the Taking Over of theWorks,provide a listofrecommendedspareparts ina formatapproved by the Contract Administrator. The list shall include spare parts as recommendedbytheequipmentvendor,whichwill support therecommended routine maintenance of equipment for a one year and a two year period, and shall include the following information for each item of equipment.\n- a)Equipment tag number and description/nomenclature.\n- b）( Component/part, description/nomenclature:\n\nThe descriptions/nomenclatures of all recommended spare parts.\n\n- c) Service I.ife:\n\nThe anticipated operation of the component or part until it wcars out or is replaced.' Service life shall be cntered in cycles of operation (CY), operating hours (OP HRS), or installed hours (INST HRS).\n\n- d) Spare/Quantity/Unit:\n\nThe quantity of spares recommended by the manufacturer for 12 and 24 monthoperatingperiods.\n\n- e) Manufacturer (Supplier):\n\nThe spare part manufacturer's or supplier's name and address.\n\n- Unit Price:\n\nThe catalogue price per item.\n\n- Procurement Lead Time:\n- g\n\nEstimates of timebetween manufacturer's or supplier'sreceipt of purchase order, and delivery of spare part to the Employer.\n\n- h) Part Number:\n\nManufacturer's identification number for the recommended spare part. This may be a part number, catalogue number, or drawing number.\n\n- Remarks:\n\nExplanatory comments as required.\n\nEmployer will select items from a list of spare parts and issue instructions accordinglythroughContract Administrator. Contractorwillbe compensated in accordance with a Variation.\n\n## 1.07 TERIALS (EXTRA STOCK)\n\n1. jetoifcatc Vorks\n2. Provide itenas\n\nand extra materials in quantities specified in individual and hand over to Employer twenty-one (21) days prior for inspection for the Taking Over of the whole of the manufacture and quality as items in the Works.\n\n3. Secdrehypaokage extra stock toprevent damage,label each package and deliverttha Sfte, place and store as directed by Contract Administrator.\n4. Receive and catalogue all items, including description and quantity. Submit inventory listing to Contract Administrator in an approved format.Include listings in the Operating and Maintenance Manuals specified in Section 01730\n\nDrolopmuntsAe\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "5.Provide all spare parts required for installation, testing and commissioning of equipment to ensure its complete and proper functioning.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          720.3712972005209
+        ],
+        [
+          505.5263671875,
+          720.3712972005209
+        ],
+        [
+          505.5263671875,
+          696.3215738932291
+        ],
+        [
+          94.63055419921875,
+          696.3215738932291
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "6.9 Six(6)monthsprior to Contractor's request for inspection for the Taking Over of theWorks,provide a listofrecommendedspareparts ina formatapproved by the Contract Administrator. The list shall include spare parts as recommendedbytheequipmentvendor,whichwill support therecommended routine maintenance of equipment for a one year and a two year period, and shall include the following information for each item of equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          691.7604166666666
+        ],
+        [
+          506.3564860026042,
+          691.7604166666666
+        ],
+        [
+          506.3564860026042,
+          623.3430786132812
+        ],
+        [
+          95.87569173177083,
+          623.3430786132812
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "a)Equipment tag number and description/nomenclature.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          617.1233113606771
+        ],
+        [
+          400.9347330729167,
+          617.1233113606771
+        ],
+        [
+          400.9347330729167,
+          606.3424072265625
+        ],
+        [
+          112.0625,
+          606.3424072265625
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "b）( Component/part, description/nomenclature:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          599.7080078125
+        ],
+        [
+          348.2238362630208,
+          599.7080078125
+        ],
+        [
+          348.2238362630208,
+          588.5124308268229
+        ],
+        [
+          112.89258829752605,
+          588.5124308268229
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "The descriptions/nomenclatures of all recommended spare parts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          583.9512736002604
+        ],
+        [
+          454.8907470703125,
+          583.9512736002604
+        ],
+        [
+          454.8907470703125,
+          571.0971069335938
+        ],
+        [
+          129.07939656575522,
+          571.0971069335938
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Service I.ife:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          565.7066650390625
+        ],
+        [
+          192.16644287109375,
+          565.7066650390625
+        ],
+        [
+          192.16644287109375,
+          554.5110880533855
+        ],
+        [
+          112.47754923502605,
+          554.5110880533855
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "The anticipated operation of the component or part until it wcars out or is replaced.' Service life shall be cntered in cycles of operation (CY), operating hours (OP HRS), or installed hours (INST HRS).",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          548.7059936523438
+        ],
+        [
+          505.5263671875,
+          548.7059936523438
+        ],
+        [
+          505.5263671875,
+          515.1192830403645
+        ],
+        [
+          129.07939656575522,
+          515.1192830403645
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Spare/Quantity/Unit:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          508.48488362630206
+        ],
+        [
+          232.8409627278646,
+          508.48488362630206
+        ],
+        [
+          232.8409627278646,
+          497.28932698567706
+        ],
+        [
+          112.89258829752605,
+          497.28932698567706
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "The quantity of spares recommended by the manufacturer for 12 and 24 monthoperatingperiods.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          492.72816975911456
+        ],
+        [
+          505.5263671875,
+          492.72816975911456
+        ],
+        [
+          505.5263671875,
+          468.26377360026044
+        ],
+        [
+          129.49444580078125,
+          468.26377360026044
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Manufacturer (Supplier):",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          463.28798421223956
+        ],
+        [
+          252.76318359375,
+          463.28798421223956
+        ],
+        [
+          252.76318359375,
+          450.84844970703125
+        ],
+        [
+          114.9678243001302,
+          450.84844970703125
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "The spare part manufacturer's or supplier's name and address.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          446.70196533203125
+        ],
+        [
+          446.1747639973958,
+          446.70196533203125
+        ],
+        [
+          446.1747639973958,
+          435.09173583984375
+        ],
+        [
+          129.90949503580728,
+          435.09173583984375
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Unit Price:",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          429.28664143880206
+        ],
+        [
+          183.8654988606771,
+          429.28664143880206
+        ],
+        [
+          183.8654988606771,
+          416.84710693359375
+        ],
+        [
+          129.49444580078125,
+          416.84710693359375
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "The catalogue price per item.",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.32453409830728,
+          412.28594970703125
+        ],
+        [
+          276.83587646484375,
+          412.28594970703125
+        ],
+        [
+          276.83587646484375,
+          399.84645589192706
+        ],
+        [
+          130.32453409830728,
+          399.84645589192706
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Procurement Lead Time:",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          395.28529866536456
+        ],
+        [
+          255.25347900390625,
+          395.28529866536456
+        ],
+        [
+          255.25347900390625,
+          384.50437418619794
+        ],
+        [
+          129.90949503580728,
+          384.50437418619794
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "g",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          392.79738362630206
+        ],
+        [
+          123.2687479654948,
+          392.79738362630206
+        ],
+        [
+          123.2687479654948,
+          384.08974202473956
+        ],
+        [
+          113.72268676757812,
+          384.08974202473956
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Estimates of timebetween manufacturer's or supplier'sreceipt of purchase order, and delivery of spare part to the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          384.08974202473956
+        ],
+        [
+          505.111328125,
+          384.08974202473956
+        ],
+        [
+          505.111328125,
+          360.45465087890625
+        ],
+        [
+          129.49444580078125,
+          360.45465087890625
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Part Number:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          355.47886149088544
+        ],
+        [
+          198.80716959635416,
+          355.47886149088544
+        ],
+        [
+          198.80716959635416,
+          343.03932698567706
+        ],
+        [
+          112.47754923502605,
+          343.03932698567706
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Manufacturer's identification number for the recommended spare part. This may be a part number, catalogue number, or drawing number.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          338.89280192057294
+        ],
+        [
+          505.9414469401042,
+          338.89280192057294
+        ],
+        [
+          505.9414469401042,
+          315.67238362630206
+        ],
+        [
+          129.49444580078125,
+          315.67238362630206
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Remarks:",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.32453409830728,
+          309.4526163736979
+        ],
+        [
+          180.13008626302084,
+          309.4526163736979
+        ],
+        [
+          180.13008626302084,
+          298.2570597330729
+        ],
+        [
+          130.32453409830728,
+          298.2570597330729
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Explanatory comments as required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.73958333333334,
+          293.2812703450521
+        ],
+        [
+          307.96435546875,
+          293.2812703450521
+        ],
+        [
+          307.96435546875,
+          281.25640869140625
+        ],
+        [
+          130.73958333333334,
+          281.25640869140625
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Employer will select items from a list of spare parts and issue instructions accordinglythroughContract Administrator. Contractorwillbe compensated in accordance with a Variation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          276.28057861328125
+        ],
+        [
+          506.7715250651042,
+          276.28057861328125
+        ],
+        [
+          506.7715250651042,
+          242.27923583984375
+        ],
+        [
+          129.90949503580728,
+          242.27923583984375
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "1.07 TERIALS (EXTRA STOCK)",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          230.66904703776038
+        ],
+        [
+          358.1849365234375,
+          230.66904703776038
+        ],
+        [
+          358.1849365234375,
+          218.22951253255212
+        ],
+        [
+          78.44375101725261,
+          218.22951253255212
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "jetoifcatc Vorks",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          212.42441813151038
+        ],
+        [
+          170.58402506510416,
+          212.42441813151038
+        ],
+        [
+          170.58402506510416,
+          168.88612874348962
+        ],
+        [
+          96.29074096679688,
+          168.88612874348962
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Provide itenas",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          161.42238362630212
+        ],
+        [
+          181.3752237955729,
+          161.42238362630212
+        ],
+        [
+          181.3752237955729,
+          150.64149983723962
+        ],
+        [
+          96.70579020182292,
+          150.64149983723962
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "and extra materials in quantities specified in individual and hand over to Employer twenty-one (21) days prior for inspection for the Taking Over of the whole of the manufacture and quality as items in the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          225.3701375325521,
+          214.08302815755212
+        ],
+        [
+          506.7715250651042,
+          214.08302815755212
+        ],
+        [
+          506.7715250651042,
+          180.08168538411462
+        ],
+        [
+          225.3701375325521,
+          180.08168538411462
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Secdrehypaokage extra stock toprevent damage,label each package and deliverttha Sfte, place and store as directed by Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          145.25103759765625
+        ],
+        [
+          506.7715250651042,
+          145.25103759765625
+        ],
+        [
+          506.7715250651042,
+          122.44525146484375
+        ],
+        [
+          95.87569173177083,
+          122.44525146484375
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "Receive and catalogue all items, including description and quantity. Submit inventory listing to Contract Administrator in an approved format.Include listings in the Operating and Maintenance Manuals specified in Section 01730",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          117.46942138671875
+        ],
+        [
+          508.0166829427083,
+          117.46942138671875
+        ],
+        [
+          508.0166829427083,
+          83.05348714192712
+        ],
+        [
+          95.0456034342448,
+          83.05348714192712
+        ]
+      ],
+      "page": 383
+    },
+    {
+      "text": "DrolopmuntsAe",
+      "confidence": 0.95,
+      "box": [
+        [
+          251.1030069986979,
+          41.58839925130212
+        ],
+        [
+          314.19004313151044,
+          41.58839925130212
+        ],
+        [
+          314.19004313151044,
+          41.58839925130212
+        ],
+        [
+          251.1030069986979,
+          41.58839925130212
+        ]
+      ],
+      "page": 383
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 383,
+      "text": "5.Provide all spare parts required for installation, testing and commissioning of equipment to ensure its complete and proper functioning.\n6.9 Six(6)monthsprior to Contractor's request for inspection for the Taking Over of theWorks,provide a listofrecommendedspareparts ina formatapproved by the Contract Administrator. The list shall include spare parts as recommendedbytheequipmentvendor,whichwill support therecommended routine maintenance of equipment for a one year and a two year period, and shall include the following information for each item of equipment.\na)Equipment tag number and description/nomenclature.\nb）( Component/part, description/nomenclature:\nThe descriptions/nomenclatures of all recommended spare parts.\nService I.ife:\nThe anticipated operation of the component or part until it wcars out or is replaced.' Service life shall be cntered in cycles of operation (CY), operating hours (OP HRS), or installed hours (INST HRS).\nSpare/Quantity/Unit:\nThe quantity of spares recommended by the manufacturer for 12 and 24 monthoperatingperiods.\nManufacturer (Supplier):\nThe spare part manufacturer's or supplier's name and address.\nUnit Price:\nThe catalogue price per item.\nProcurement Lead Time:\ng\nEstimates of timebetween manufacturer's or supplier'sreceipt of purchase order, and delivery of spare part to the Employer.\nPart Number:\nManufacturer's identification number for the recommended spare part. This may be a part number, catalogue number, or drawing number.\nRemarks:\nExplanatory comments as required.\nEmployer will select items from a list of spare parts and issue instructions accordinglythroughContract Administrator. Contractorwillbe compensated in accordance with a Variation.\n1.07 TERIALS (EXTRA STOCK)\njetoifcatc Vorks\nProvide itenas\nand extra materials in quantities specified in individual and hand over to Employer twenty-one (21) days prior for inspection for the Taking Over of the whole of the manufacture and quality as items in the Works.\nSecdrehypaokage extra stock toprevent damage,label each package and deliverttha Sfte, place and store as directed by Contract Administrator.\nReceive and catalogue all items, including description and quantity. Submit inventory listing to Contract Administrator in an approved format.Include listings in the Operating and Maintenance Manuals specified in Section 01730\nDrolopmuntsAe",
+      "line_count": 28
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

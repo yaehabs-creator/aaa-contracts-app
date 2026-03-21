@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n- A Theuseofpetrol/fueldriven toolsisprohibitedwhenworkingin enclosed orconfined spaces.\n- A Fueldriven tools aretobere-fueledin an areaclear ofthework area andfreefrom otherflammable materials, using an appropriate fuel container. Fuel containers are to be re-sealed and returned to a safe storage area after re-fueling has heen completed.\n\n## 3.23.3.Pneumatic Tools\n\n- Compressed air used for cleaning purposes is to have a reduced pressure not exceeding 30psi. The use of compressed air for cleaning or blowing dust from any part of the body is prohibited.\n- Air lines are tohave'whip checks'fitted at all tool and hose connections toprotect the user and those in the immediate vicinity if connections become separated.\n- Air hoses with an internal diameter greater than 12.5mm (1/2 inch) must havc a safcty cxccss flow valve installed at the source of the air supply to reduce pressure in case of failure.\n- Adequate arrangements must be in place to protect personnel from the risk from noise and vibration when usingpneumatic tools.\n- A safety clip or retainer must be installed to prevent attachments such as chisels on a chipping hammer from being ejected during tool operation.\n\n## 3.23.4. Cartridge.Operated Tools\n\n- Cartridge operated tools are used to drive fixing devices into a base material using either cartridges or a gas canister providing the propellant. The tool, type of cartridge or fuel cell, type of fixing and the base material must all be compatible.\n- Cartridge operated tools are potentially lethal if they are used recklessly or incompetently and therefore Contractors are to ensure that users are provided with adequate information, instruction, training and supervision to be able to carry out any work safely.\n- The primary factors which will ensure the proper and safe use of cartridge tools are:\n- ·Competent and responsible users- all individuals who use cartridge operated tools require tohave evidence of training and certification on each tool they operate as provided by the supplier, manufacturer or authorized third party trainer.\n- The compatibility of the base material, the type of fixing and the cartridge strength\n- ·Restricting access to the work area during fixing activities\n- @The provision and use of appropriate PPE (high impact eye protection and hearing protection)\n- ·Carrying out activities in accordance with BS 4078-1,Code of practice for safe use\n- Using cartridge-operated tools that comply wlth BS 4078-2.\n\nNote:Cartridge tools must not be used in areas where a flammable atmosphere or risk of dust explosionmay exist.\n\nThe informationcontained inthese docunents is confidential,privileged andmaynot be used,published orredistributedwithout the priorwritten consent of EmaarMisr $.AEer hs\n\n<!-- image -->\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.75138346354166,
+          727.8350118001302
+        ],
+        [
+          341.1680501302083,
+          727.8350118001302
+        ],
+        [
+          341.1680501302083,
+          699.22412109375
+        ],
+        [
+          191.75138346354166,
+          699.22412109375
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          684.7113545735677
+        ],
+        [
+          75.95347086588542,
+          684.7113545735677
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "A Theuseofpetrol/fueldriven toolsisprohibitedwhenworkingin enclosed orconfined spaces.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          672.2718404134115
+        ],
+        [
+          473.9828694661458,
+          672.2718404134115
+        ],
+        [
+          473.9828694661458,
+          660.2469787597656
+        ],
+        [
+          77.61365763346355,
+          660.2469787597656
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "A Fueldriven tools aretobere-fueledin an areaclear ofthework area andfreefrom otherflammable materials, using an appropriate fuel container. Fuel containers are to be re-sealed and returned to a safe storage area after re-fueling has heen completed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          654.0272115071615
+        ],
+        [
+          497.6405029296875,
+          654.0272115071615
+        ],
+        [
+          497.6405029296875,
+          616.7086791992188
+        ],
+        [
+          77.61365763346355,
+          616.7086791992188
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "3.23.3.Pneumatic Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          234.91619873046875,
+          610.0742594401041
+        ],
+        [
+          348.6388753255208,
+          610.0742594401041
+        ],
+        [
+          348.6388753255208,
+          597.6347452799479
+        ],
+        [
+          234.91619873046875,
+          597.6347452799479
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Compressed air used for cleaning purposes is to have a reduced pressure not exceeding 30psi. The use of compressed air for cleaning or blowing dust from any part of the body is prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          591.8296305338541
+        ],
+        [
+          496.8104248046875,
+          591.8296305338541
+        ],
+        [
+          496.8104248046875,
+          566.1212972005208
+        ],
+        [
+          92.14027913411458,
+          566.1212972005208
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Air lines are tohave'whip checks'fitted at all tool and hose connections toprotect the user and those in the immediate vicinity if connections become separated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          560.7308553059895
+        ],
+        [
+          496.8104248046875,
+          560.7308553059895
+        ],
+        [
+          496.8104248046875,
+          535.0225219726562
+        ],
+        [
+          92.14027913411458,
+          535.0225219726562
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Air hoses with an internal diameter greater than 12.5mm (1/2 inch) must havc a safcty cxccss flow valve installed at the source of the air supply to reduce pressure in case of failure.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          530.4613647460938
+        ],
+        [
+          495.9803059895833,
+          530.4613647460938
+        ],
+        [
+          495.9803059895833,
+          504.33837890625
+        ],
+        [
+          91.3101806640625,
+          504.33837890625
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Adequate arrangements must be in place to protect personnel from the risk from noise and vibration when usingpneumatic tools.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          499.36256917317706
+        ],
+        [
+          496.3953857421875,
+          499.36256917317706
+        ],
+        [
+          496.3953857421875,
+          474.06890869140625
+        ],
+        [
+          91.3101806640625,
+          474.06890869140625
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "A safety clip or retainer must be installed to prevent attachments such as chisels on a chipping hammer from being ejected during tool operation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          469.09307861328125
+        ],
+        [
+          495.9803059895833,
+          469.09307861328125
+        ],
+        [
+          495.9803059895833,
+          442.55544026692706
+        ],
+        [
+          90.06504313151042,
+          442.55544026692706
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "3.23.4. Cartridge.Operated Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.50370279947916,
+          436.75034586588544
+        ],
+        [
+          370.6363525390625,
+          436.75034586588544
+        ],
+        [
+          370.6363525390625,
+          423.89617919921875
+        ],
+        [
+          212.50370279947916,
+          423.89617919921875
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Cartridge operated tools are used to drive fixing devices into a base material using either cartridges or a gas canister providing the propellant. The tool, type of cartridge or fuel cell, type of fixing and the base material must all be compatible.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          418.09108479817706
+        ],
+        [
+          495.9803059895833,
+          418.09108479817706
+        ],
+        [
+          495.9803059895833,
+          381.18719482421875
+        ],
+        [
+          91.3101806640625,
+          381.18719482421875
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Cartridge operated tools are potentially lethal if they are used recklessly or incompetently and therefore Contractors are to ensure that users are provided with adequate information, instruction, training and supervision to be able to carry out any work safely.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          375.79673258463544
+        ],
+        [
+          495.9803059895833,
+          375.79673258463544
+        ],
+        [
+          495.9803059895833,
+          336.81955973307294
+        ],
+        [
+          90.8951416015625,
+          336.81955973307294
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "The primary factors which will ensure the proper and safe use of cartridge tools are:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          332.25840250651044
+        ],
+        [
+          433.308349609375,
+          332.25840250651044
+        ],
+        [
+          433.308349609375,
+          318.98960367838544
+        ],
+        [
+          90.48009236653645,
+          318.98960367838544
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "·Competent and responsible users- all individuals who use cartridge operated tools require tohave evidence of training and certification on each tool they operate as provided by the supplier, manufacturer or authorized third party trainer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          312.76983642578125
+        ],
+        [
+          506.3564860026042,
+          312.76983642578125
+        ],
+        [
+          506.3564860026042,
+          265.9143269856771
+        ],
+        [
+          95.87569173177083,
+          265.9143269856771
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "The compatibility of the base material, the type of fixing and the cartridge strength",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          260.1092325846354
+        ],
+        [
+          444.5145670572917,
+          260.1092325846354
+        ],
+        [
+          444.5145670572917,
+          246.42576090494788
+        ],
+        [
+          97.12082926432292,
+          246.42576090494788
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "·Restricting access to the work area during fixing activities",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          241.03529866536462
+        ],
+        [
+          344.4884440104167,
+          241.03529866536462
+        ],
+        [
+          344.4884440104167,
+          229.42506917317712
+        ],
+        [
+          95.0456034342448,
+          229.42506917317712
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "@The provision and use of appropriate PPE (high impact eye protection and hearing protection)",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          224.03464762369788
+        ],
+        [
+          490.169677734375,
+          224.03464762369788
+        ],
+        [
+          490.169677734375,
+          209.10719807942712
+        ],
+        [
+          94.63055419921875,
+          209.10719807942712
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "·Carrying out activities in accordance with BS 4078-1,Code of practice for safe use",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          204.54604085286462
+        ],
+        [
+          446.5898030598958,
+          204.54604085286462
+        ],
+        [
+          446.5898030598958,
+          192.93585205078125
+        ],
+        [
+          95.0456034342448,
+          192.93585205078125
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Using cartridge-operated tools that comply wlth BS 4078-2.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.950927734375,
+          187.13071695963538
+        ],
+        [
+          351.5442301432292,
+          187.13071695963538
+        ],
+        [
+          351.5442301432292,
+          174.27655029296875
+        ],
+        [
+          97.950927734375,
+          174.27655029296875
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "Note:Cartridge tools must not be used in areas where a flammable atmosphere or risk of dust explosionmay exist.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          164.32497151692712
+        ],
+        [
+          495.1502278645833,
+          164.32497151692712
+        ],
+        [
+          495.1502278645833,
+          139.03127034505212
+        ],
+        [
+          73.87823994954427,
+          139.03127034505212
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "The informationcontained inthese docunents is confidential,privileged andmaynot be used,published orredistributedwithout the priorwritten consent of EmaarMisr $.AEer hs",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          100.88340250651038
+        ],
+        [
+          504.28125,
+          100.88340250651038
+        ],
+        [
+          504.28125,
+          88.44386800130212
+        ],
+        [
+          73.0481465657552,
+          88.44386800130212
+        ]
+      ],
+      "page": 456
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          454.0606282552083,
+          733.6401163736979
+        ],
+        [
+          510.9219970703125,
+          733.6401163736979
+        ],
+        [
+          510.9219970703125,
+          720.7859497070312
+        ],
+        [
+          454.0606282552083,
+          720.7859497070312
+        ]
+      ],
+      "page": 456
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 456,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nA Theuseofpetrol/fueldriven toolsisprohibitedwhenworkingin enclosed orconfined spaces.\nA Fueldriven tools aretobere-fueledin an areaclear ofthework area andfreefrom otherflammable materials, using an appropriate fuel container. Fuel containers are to be re-sealed and returned to a safe storage area after re-fueling has heen completed.\n3.23.3.Pneumatic Tools\nCompressed air used for cleaning purposes is to have a reduced pressure not exceeding 30psi. The use of compressed air for cleaning or blowing dust from any part of the body is prohibited.\nAir lines are tohave'whip checks'fitted at all tool and hose connections toprotect the user and those in the immediate vicinity if connections become separated.\nAir hoses with an internal diameter greater than 12.5mm (1/2 inch) must havc a safcty cxccss flow valve installed at the source of the air supply to reduce pressure in case of failure.\nAdequate arrangements must be in place to protect personnel from the risk from noise and vibration when usingpneumatic tools.\nA safety clip or retainer must be installed to prevent attachments such as chisels on a chipping hammer from being ejected during tool operation.\n3.23.4. Cartridge.Operated Tools\nCartridge operated tools are used to drive fixing devices into a base material using either cartridges or a gas canister providing the propellant. The tool, type of cartridge or fuel cell, type of fixing and the base material must all be compatible.\nCartridge operated tools are potentially lethal if they are used recklessly or incompetently and therefore Contractors are to ensure that users are provided with adequate information, instruction, training and supervision to be able to carry out any work safely.\nThe primary factors which will ensure the proper and safe use of cartridge tools are:\n·Competent and responsible users- all individuals who use cartridge operated tools require tohave evidence of training and certification on each tool they operate as provided by the supplier, manufacturer or authorized third party trainer.\nThe compatibility of the base material, the type of fixing and the cartridge strength\n·Restricting access to the work area during fixing activities\n@The provision and use of appropriate PPE (high impact eye protection and hearing protection)\n·Carrying out activities in accordance with BS 4078-1,Code of practice for safe use\nUsing cartridge-operated tools that comply wlth BS 4078-2.\nNote:Cartridge tools must not be used in areas where a flammable atmosphere or risk of dust explosionmay exist.\nThe informationcontained inthese docunents is confidential,privileged andmaynot be used,published orredistributedwithout the priorwritten consent of EmaarMisr $.AEer hs\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

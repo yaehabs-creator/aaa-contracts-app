@@ -1,0 +1,543 @@
+{
+  "text": "- 3.3 The first page of the report shall be the contents page. This page shall have the following sections listed, whether or not any information is present under each section. If no information is presented under any section, then this shall be clearly stated under that section.\n- Section 1 Contractor's Subni al Status Report. Soft copy is also required.\n- Section 2 Contractor's Procurement Status Report. Soft copy is also required.\n- Section3Status of Informationrequests\n- Section 4 Updated Critical Indicatorswith updated progress of works\n- Section 5 Safety Inspection checklist\n- Section 6Summary and Detailed statusofprogress\n\n## 3.4 SubmittalStatusReport\n\nThis report shall include details of submittals such as transmittal number, date submitted, description and reference number of the submittal, date returned by the Contract Administrator, approval code, planned submission dates, etc.\n\n## 3.5 Procurement Status Report\n\nThis report shall indicate information regarding ail materials for the Works such as description, quantity, name of supplier, expected and required delivery time, approval status, shipment status, etc.\n\n## 3.6 Statusof/nformation Reguests\n\nAn updated list of RFls (Requests for Information), SWls (Site Work Instructions), JSls (Job Site Instructions), NCRs (Non Conformance Reports), indicating their status.\n\n## 3.7 Updated Critical Indicators\n\nThe Critical Indicators identified and included in the Programme of Works shallbe updated with actual informationand presented in tabular and/or graphical, bar format. Updated progress of works shall clearly indicate the activities in delay.\n\n## 3.8 SafetyInspection Checklist\n\nThis report shall include all information regarding the review of all men, materials, equipment and job sile conditions from the safety point of view and shall be reported in the format provided by the Contract Administrator.\n\n## 3.9 Summary and Detailed status of progress\n\nThe Summary status of progress shall include a narrative describing the actual reported status with reference to causes and measures taken to mitigate delays.\n\nThe detailed status of progress shall include a tabular report with actual compared to Othe planned progress as of weokly cut off date.\n\nProgress Monitoring andR\n\nSection01320\n\nPage Number: 2 of 5\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "3.3 The first page of the report shall be the contents page. This page shall have the following sections listed, whether or not any information is present under each section. If no information is presented under any section, then this shall be clearly stated under that section.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          720.3712972005209
+        ],
+        [
+          505.5263671875,
+          720.3712972005209
+        ],
+        [
+          505.5263671875,
+          667.710683186849
+        ],
+        [
+          108.32708740234375,
+          667.710683186849
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section 1 Contractor's Subni al Status Report. Soft copy is also required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.19096883138022,
+          668.1253356933594
+        ],
+        [
+          505.111328125,
+          668.1253356933594
+        ],
+        [
+          505.111328125,
+          642.0023600260416
+        ],
+        [
+          143.19096883138022,
+          642.0023600260416
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section 2 Contractor's Procurement Status Report. Soft copy is also required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          641.1730550130209
+        ],
+        [
+          504.28125,
+          641.1730550130209
+        ],
+        [
+          504.28125,
+          615.0500691731771
+        ],
+        [
+          143.60601806640625,
+          615.0500691731771
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section3Status of Informationrequests",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.02106730143228,
+          615.0500691731771
+        ],
+        [
+          347.3937581380208,
+          615.0500691731771
+        ],
+        [
+          347.3937581380208,
+          602.1959025065104
+        ],
+        [
+          144.02106730143228,
+          602.1959025065104
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section 4 Updated Critical Indicatorswith updated progress of works",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.02106730143228,
+          601.78125
+        ],
+        [
+          490.169677734375,
+          601.78125
+        ],
+        [
+          490.169677734375,
+          588.9270833333334
+        ],
+        [
+          144.02106730143228,
+          588.9270833333334
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section 5 Safety Inspection checklist",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          588.5124308268229
+        ],
+        [
+          331.2069498697917,
+          588.5124308268229
+        ],
+        [
+          331.2069498697917,
+          575.6582641601562
+        ],
+        [
+          143.60601806640625,
+          575.6582641601562
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section 6Summary and Detailed statusofprogress",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.60601806640625,
+          575.6582641601562
+        ],
+        [
+          405.0851643880208,
+          575.6582641601562
+        ],
+        [
+          405.0851643880208,
+          562.3894449869792
+        ],
+        [
+          143.60601806640625,
+          562.3894449869792
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "3.4 SubmittalStatusReport",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          556.999003092448
+        ],
+        [
+          264.3844807942708,
+          556.999003092448
+        ],
+        [
+          264.3844807942708,
+          544.5594889322917
+        ],
+        [
+          107.9120381673177,
+          544.5594889322917
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "This report shall include details of submittals such as transmittal number, date submitted, description and reference number of the submittal, date returned by the Contract Administrator, approval code, planned submission dates, etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.94583129882812,
+          538.3397216796875
+        ],
+        [
+          504.6962890625,
+          538.3397216796875
+        ],
+        [
+          504.6962890625,
+          485.67909749348956
+        ],
+        [
+          141.94583129882812,
+          485.67909749348956
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "3.5 Procurement Status Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          480.28863525390625
+        ],
+        [
+          281.81642659505206,
+          480.28863525390625
+        ],
+        [
+          281.81642659505206,
+          467.43446858723956
+        ],
+        [
+          107.49698893229167,
+          467.43446858723956
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "This report shall indicate information regarding ail materials for the Works such as description, quantity, name of supplier, expected and required delivery time, approval status, shipment status, etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.1157430013021,
+          461.21474202473956
+        ],
+        [
+          505.111328125,
+          461.21474202473956
+        ],
+        [
+          505.111328125,
+          421.40826416015625
+        ],
+        [
+          141.1157430013021,
+          421.40826416015625
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "3.6 Statusof/nformation Reguests",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          416.43247477213544
+        ],
+        [
+          302.56874593098956,
+          416.43247477213544
+        ],
+        [
+          302.56874593098956,
+          403.16363525390625
+        ],
+        [
+          107.08193969726562,
+          403.16363525390625
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "An updated list of RFls (Requests for Information), SWls (Site Work Instructions), JSls (Job Site Instructions), NCRs (Non Conformance Reports), indicating their status.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.5307820638021,
+          397.35854085286456
+        ],
+        [
+          504.28125,
+          397.35854085286456
+        ],
+        [
+          504.28125,
+          357.96673583984375
+        ],
+        [
+          141.5307820638021,
+          357.96673583984375
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "3.7 Updated Critical Indicators",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          352.99094645182294
+        ],
+        [
+          276.42083740234375,
+          352.99094645182294
+        ],
+        [
+          276.42083740234375,
+          339.30747477213544
+        ],
+        [
+          107.49698893229167,
+          339.30747477213544
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "The Critical Indicators identified and included in the Programme of Works shallbe updated with actual informationand presented in tabular and/or graphical, bar format. Updated progress of works shall clearly indicate the activities in delay.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.1157430013021,
+          333.91701253255206
+        ],
+        [
+          505.111328125,
+          333.91701253255206
+        ],
+        [
+          505.111328125,
+          254.71877034505212
+        ],
+        [
+          141.1157430013021,
+          254.71877034505212
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "3.8 SafetyInspection Checklist",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          248.91367594401038
+        ],
+        [
+          279.7412109375,
+          248.91367594401038
+        ],
+        [
+          279.7412109375,
+          236.88877360026038
+        ],
+        [
+          107.08193969726562,
+          236.88877360026038
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "This report shall include all information regarding the review of all men, materials, equipment and job sile conditions from the safety point of view and shall be reported in the format provided by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.70069376627603,
+          230.66904703776038
+        ],
+        [
+          504.6962890625,
+          230.66904703776038
+        ],
+        [
+          504.6962890625,
+          178.83770751953125
+        ],
+        [
+          140.70069376627603,
+          178.83770751953125
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "3.9 Summary and Detailed status of progress",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          173.44724527994788
+        ],
+        [
+          352.3743082682292,
+          173.44724527994788
+        ],
+        [
+          352.3743082682292,
+          158.51983642578125
+        ],
+        [
+          106.66690063476562,
+          158.51983642578125
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "The Summary status of progress shall include a narrative describing the actual reported status with reference to causes and measures taken to mitigate delays.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.87060546875,
+          154.78798421223962
+        ],
+        [
+          503.451171875,
+          154.78798421223962
+        ],
+        [
+          503.451171875,
+          114.15220133463538
+        ],
+        [
+          139.87060546875,
+          114.15220133463538
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "The detailed status of progress shall include a tabular report with actual compared to Othe planned progress as of weokly cut off date.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.87060546875,
+          109.17645263671875
+        ],
+        [
+          503.8662109375,
+          109.17645263671875
+        ],
+        [
+          503.8662109375,
+          68.95534261067712
+        ],
+        [
+          139.87060546875,
+          68.95534261067712
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Progress Monitoring andR",
+      "confidence": 0.95,
+      "box": [
+        [
+          397.1993001302083,
+          58.17441813151038
+        ],
+        [
+          477.7183024088542,
+          58.17441813151038
+        ],
+        [
+          477.7183024088542,
+          47.80812581380212
+        ],
+        [
+          397.1993001302083,
+          47.80812581380212
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Section01320",
+      "confidence": 0.95,
+      "box": [
+        [
+          398.4444580078125,
+          48.63747151692712
+        ],
+        [
+          441.6092529296875,
+          48.63747151692712
+        ],
+        [
+          441.6092529296875,
+          41.58839925130212
+        ],
+        [
+          398.4444580078125,
+          41.58839925130212
+        ]
+      ],
+      "page": 306
+    },
+    {
+      "text": "Page Number: 2 of 5",
+      "confidence": 0.95,
+      "box": [
+        [
+          397.6143391927083,
+          41.58839925130212
+        ],
+        [
+          461.1164143880208,
+          41.58839925130212
+        ],
+        [
+          461.1164143880208,
+          33.29534912109375
+        ],
+        [
+          397.6143391927083,
+          33.29534912109375
+        ]
+      ],
+      "page": 306
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 306,
+      "text": "3.3 The first page of the report shall be the contents page. This page shall have the following sections listed, whether or not any information is present under each section. If no information is presented under any section, then this shall be clearly stated under that section.\nSection 1 Contractor's Subni al Status Report. Soft copy is also required.\nSection 2 Contractor's Procurement Status Report. Soft copy is also required.\nSection3Status of Informationrequests\nSection 4 Updated Critical Indicatorswith updated progress of works\nSection 5 Safety Inspection checklist\nSection 6Summary and Detailed statusofprogress\n3.4 SubmittalStatusReport\nThis report shall include details of submittals such as transmittal number, date submitted, description and reference number of the submittal, date returned by the Contract Administrator, approval code, planned submission dates, etc.\n3.5 Procurement Status Report\nThis report shall indicate information regarding ail materials for the Works such as description, quantity, name of supplier, expected and required delivery time, approval status, shipment status, etc.\n3.6 Statusof/nformation Reguests\nAn updated list of RFls (Requests for Information), SWls (Site Work Instructions), JSls (Job Site Instructions), NCRs (Non Conformance Reports), indicating their status.\n3.7 Updated Critical Indicators\nThe Critical Indicators identified and included in the Programme of Works shallbe updated with actual informationand presented in tabular and/or graphical, bar format. Updated progress of works shall clearly indicate the activities in delay.\n3.8 SafetyInspection Checklist\nThis report shall include all information regarding the review of all men, materials, equipment and job sile conditions from the safety point of view and shall be reported in the format provided by the Contract Administrator.\n3.9 Summary and Detailed status of progress\nThe Summary status of progress shall include a narrative describing the actual reported status with reference to causes and measures taken to mitigate delays.\nThe detailed status of progress shall include a tabular report with actual compared to Othe planned progress as of weokly cut off date.\nProgress Monitoring andR\nSection01320\nPage Number: 2 of 5",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

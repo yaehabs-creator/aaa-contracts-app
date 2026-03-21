@@ -1,0 +1,152 @@
+{
+  "text": "<!-- image -->\n\n## Technical Specifications(Division I)\n\n- 1.2.9 Contractors and  their  sub-contractors shall be restricted  to access areas relating to theirPackage zones.\n- 1.2.10 All Security issues shall be coordinated with the Contract Adrninistrator's designated representative.\n\n## ENDOFSECTION01530\n\n<!-- image -->\n\n<!-- image -->\n\nAccess and Security Section01530\n\nPage Number:2of 2",
+  "results": [
+    {
+      "text": "Technical Specifications(Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.50787353515625,
+          742.3477783203125
+        ],
+        [
+          502.6210530598958,
+          742.3477783203125
+        ],
+        [
+          502.6210530598958,
+          730.737559000651
+        ],
+        [
+          339.50787353515625,
+          730.737559000651
+        ]
+      ],
+      "page": 358
+    },
+    {
+      "text": "1.2.9 Contractors and  their  sub-contractors shall be restricted  to access areas relating to theirPackage zones.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          719.542002360026
+        ],
+        [
+          505.5263671875,
+          719.542002360026
+        ],
+        [
+          505.5263671875,
+          692.5897115071615
+        ],
+        [
+          136.55023193359375,
+          692.5897115071615
+        ]
+      ],
+      "page": 358
+    },
+    {
+      "text": "1.2.10 All Security issues shall be coordinated with the Contract Adrninistrator's designated representative.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          687.1992594401041
+        ],
+        [
+          505.9414469401042,
+          687.1992594401041
+        ],
+        [
+          505.9414469401042,
+          660.66162109375
+        ],
+        [
+          136.96528116861978,
+          660.66162109375
+        ]
+      ],
+      "page": 358
+    },
+    {
+      "text": "ENDOFSECTION01530",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.9550984700521,
+          634.1239827473959
+        ],
+        [
+          356.5247802734375,
+          634.1239827473959
+        ],
+        [
+          356.5247802734375,
+          622.9284261067709
+        ],
+        [
+          224.9550984700521,
+          622.9284261067709
+        ]
+      ],
+      "page": 358
+    },
+    {
+      "text": "Access and Security Section01530",
+      "confidence": 0.95,
+      "box": [
+        [
+          423.3472086588542,
+          57.75978597005212
+        ],
+        [
+          486.0192057291667,
+          57.75978597005212
+        ],
+        [
+          486.0192057291667,
+          40.34442138671875
+        ],
+        [
+          423.3472086588542,
+          40.34442138671875
+        ]
+      ],
+      "page": 358
+    },
+    {
+      "text": "Page Number:2of 2",
+      "confidence": 0.95,
+      "box": [
+        [
+          423.7622477213542,
+          40.75913492838538
+        ],
+        [
+          486.8492838541667,
+          40.75913492838538
+        ],
+        [
+          486.8492838541667,
+          32.46608479817712
+        ],
+        [
+          423.7622477213542,
+          32.46608479817712
+        ]
+      ],
+      "page": 358
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 358,
+      "text": "Technical Specifications(Division I)\n1.2.9 Contractors and  their  sub-contractors shall be restricted  to access areas relating to theirPackage zones.\n1.2.10 All Security issues shall be coordinated with the Contract Adrninistrator's designated representative.\nENDOFSECTION01530\nAccess and Security Section01530\nPage Number:2of 2",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,152 @@
+{
+  "text": "## Emaar Misr,\n\nMivida Gardens Project\n\nEast Cairo, Cairo, Egypt\n\n## Construction Package PK#04\n\nConstruction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\nForm of Agreement\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          243.12261962890625,
+          666.8983968098959
+        ],
+        [
+          340.79449462890625,
+          666.8983968098959
+        ],
+        [
+          340.79449462890625,
+          647.8081868489584
+        ],
+        [
+          243.12261962890625,
+          647.8081868489584
+        ]
+      ],
+      "page": 2
+    },
+    {
+      "text": "Mivida Gardens Project",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.9209187825521,
+          606.6581420898438
+        ],
+        [
+          389.4190266927083,
+          606.6581420898438
+        ],
+        [
+          389.4190266927083,
+          586.7194620768229
+        ],
+        [
+          194.9209187825521,
+          586.7194620768229
+        ]
+      ],
+      "page": 2
+    },
+    {
+      "text": "East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.38399251302084,
+          547.266337076823
+        ],
+        [
+          392.3787841796875,
+          547.266337076823
+        ],
+        [
+          392.3787841796875,
+          525.6307576497395
+        ],
+        [
+          192.38399251302084,
+          525.6307576497395
+        ]
+      ],
+      "page": 2
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.47111002604166,
+          447.14874267578125
+        ],
+        [
+          417.3252766927083,
+          447.14874267578125
+        ],
+        [
+          417.3252766927083,
+          427.63429768880206
+        ],
+        [
+          175.47111002604166,
+          427.63429768880206
+        ]
+      ],
+      "page": 2
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.69886271158855,
+          405.99871826171875
+        ],
+        [
+          473.9833984375,
+          405.99871826171875
+        ],
+        [
+          473.9833984375,
+          367.81825764973956
+        ],
+        [
+          116.69886271158855,
+          367.81825764973956
+        ]
+      ],
+      "page": 2
+    },
+    {
+      "text": "Form of Agreement",
+      "confidence": 0.95,
+      "box": [
+        [
+          215.21636962890625,
+          327.09246826171875
+        ],
+        [
+          377.5799967447917,
+          327.09246826171875
+        ],
+        [
+          377.5799967447917,
+          307.1537882486979
+        ],
+        [
+          215.21636962890625,
+          307.1537882486979
+        ]
+      ],
+      "page": 2
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 2,
+      "text": "Emaar Misr,\nMivida Gardens Project\nEast Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\nForm of Agreement",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

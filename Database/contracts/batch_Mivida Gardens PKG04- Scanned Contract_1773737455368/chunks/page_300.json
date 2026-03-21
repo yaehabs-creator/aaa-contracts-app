@@ -1,0 +1,313 @@
+{
+  "text": "<!-- image -->\n\n- i Allow for sufficient contingency to mitigate the delays which may arise due to problems associated with shipment, clearance etc.\n- i TheExecutionProgrammedeveloped above shallnot be changed throughout the duration of the Project without getting prior approval from the Employer.\n- k)Soft copies shall be provided in Primavera F'6 format.\n\n## 4.5 Schedule of value&amp;Cost LoadedProgramme\n\nAnticipated financial values of work(hereinafter referred to asPlanned Cost) shall be assigned to all activities of theExecutionProgramme in linewith the ScheduleofRatesandQuantitiesonthebasisofwhichanoverallcost loadingshallbeobtained.\n\n\"The Contractor shall submit to the PiM for his approval a cost loaded Construction Schedule with a fully detailed cchedule of values report and allnecessary supporting details of all activities in the cost loaded construction schedule based upon the priced Schedule of Rates and the totalsumequaltotheContractPrice\".\n\nThe Cost Loaded Programme shall be updated on a monthly basis, and shallbeupdatedwithactualvalueofwork(hereinafterreferredtoasActual Cost) as the work proceeds. The Cost Loaded Programme shall be represented in graphical and tabular formats.In preparing the Cost Loaded Programme, the Contractor shall:\n\n- a)Make sure that no single activity has a cost allocation greater than 2% (two percent) of the Contract Price, except procurement items, or where greater cost allocation for specific activities have been approved by the Contract Aaministrator.\n- b)Note that the amounts or values entered against the activities are as accurate as possible and the total amount tallies with the Contract Price.\n- c)Present the programmes in graphical format with monthly Flanned Cost histogram plotted onY1-axis and cumulative to month values onY2-axis (S-curve) with period on X-axis.The summary and breakdown of cost against each month to be tabulated.\n- d)Soft copy shall be provided in Primavera P6 and histogram in Excel File Format.\n\n## 4.6Schedule of Constructionresources\n\nThe Contractor shall providea fully resource loaded schedule of all his execution of Project. This schedule shall list all Manpower trades, major and minor construction equipment, a monthly distribution of the number of each resource anticipated to be used at site till the end of the Project.This Schedule of Construction Manpower and Equipment shall be presented on a* Weekly or monthly basis(as required) in a tabular format and shall be updated with actual data as the work proceeds and include Off-site, Pre建国际 fabrication, storage, workshops and logistics: 有限任公 LmLr MHtr Hr Dewanpient s.Al\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "i Allow for sufficient contingency to mitigate the delays which may arise due to problems associated with shipment, clearance etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          717.8833923339844
+        ],
+        [
+          505.111328125,
+          717.8833923339844
+        ],
+        [
+          505.111328125,
+          692.1750691731771
+        ],
+        [
+          120.36342366536458,
+          692.1750691731771
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "i TheExecutionProgrammedeveloped above shallnot be changed throughout the duration of the Project without getting prior approval from the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          685.9553019205729
+        ],
+        [
+          504.6962890625,
+          685.9553019205729
+        ],
+        [
+          504.6962890625,
+          646.9781494140625
+        ],
+        [
+          119.1182861328125,
+          646.9781494140625
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "k)Soft copies shall be provided in Primavera F'6 format.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          640.7584025065104
+        ],
+        [
+          404.6701253255208,
+          640.7584025065104
+        ],
+        [
+          404.6701253255208,
+          628.3188883463541
+        ],
+        [
+          118.70323689778645,
+          628.3188883463541
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "4.5 Schedule of value&Cost LoadedProgramme",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          622.9284261067709
+        ],
+        [
+          351.129150390625,
+          622.9284261067709
+        ],
+        [
+          351.129150390625,
+          609.2449544270834
+        ],
+        [
+          94.2155049641927,
+          609.2449544270834
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "Anticipated financial values of work(hereinafter referred to asPlanned Cost) shall be assigned to all activities of theExecutionProgramme in linewith the ScheduleofRatesandQuantitiesonthebasisofwhichanoverallcost loadingshallbeobtained.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          603.4398600260416
+        ],
+        [
+          505.111328125,
+          603.4398600260416
+        ],
+        [
+          505.111328125,
+          552.4378458658855
+        ],
+        [
+          118.70323689778645,
+          552.4378458658855
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "\"The Contractor shall submit to the PiM for his approval a cost loaded Construction Schedule with a fully detailed cchedule of values report and allnecessary supporting details of all activities in the cost loaded construction schedule based upon the priced Schedule of Rates and the totalsumequaltotheContractPrice\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          548.2913411458333
+        ],
+        [
+          505.111328125,
+          548.2913411458333
+        ],
+        [
+          505.111328125,
+          481.11794026692706
+        ],
+        [
+          118.28819783528645,
+          481.11794026692706
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "The Cost Loaded Programme shall be updated on a monthly basis, and shallbeupdatedwithactualvalueofwork(hereinafterreferredtoasActual Cost) as the work proceeds. The Cost Loaded Programme shall be represented in graphical and tabular formats.In preparing the Cost Loaded Programme, the Contractor shall:",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          474.06890869140625
+        ],
+        [
+          505.111328125,
+          474.06890869140625
+        ],
+        [
+          505.111328125,
+          408.96877034505206
+        ],
+        [
+          118.28819783528645,
+          408.96877034505206
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "a)Make sure that no single activity has a cost allocation greater than 2% (two percent) of the Contract Price, except procurement items, or where greater cost allocation for specific activities have been approved by the Contract Aaministrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          402.74900309244794
+        ],
+        [
+          504.28125,
+          402.74900309244794
+        ],
+        [
+          504.28125,
+          351.74696858723956
+        ],
+        [
+          118.70323689778645,
+          351.74696858723956
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "b)Note that the amounts or values entered against the activities are as accurate as possible and the total amount tallies with the Contract Price.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          344.69793701171875
+        ],
+        [
+          504.6962890625,
+          344.69793701171875
+        ],
+        [
+          504.6962890625,
+          319.81890869140625
+        ],
+        [
+          117.87314860026042,
+          319.81890869140625
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "c)Present the programmes in graphical format with monthly Flanned Cost histogram plotted onY1-axis and cumulative to month values onY2-axis (S-curve) with period on X-axis.The summary and breakdown of cost against each month to be tabulated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          313.18450927734375
+        ],
+        [
+          505.111328125,
+          313.18450927734375
+        ],
+        [
+          505.111328125,
+          261.7678426106771
+        ],
+        [
+          117.87314860026042,
+          261.7678426106771
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "d)Soft copy shall be provided in Primavera P6 and histogram in Excel File Format.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          254.71877034505212
+        ],
+        [
+          503.451171875,
+          254.71877034505212
+        ],
+        [
+          503.451171875,
+          229.83974202473962
+        ],
+        [
+          117.87314860026042,
+          229.83974202473962
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "4.6Schedule of Constructionresources",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          224.03464762369788
+        ],
+        [
+          299.2483723958333,
+          224.03464762369788
+        ],
+        [
+          299.2483723958333,
+          210.76580810546875
+        ],
+        [
+          91.3101806640625,
+          210.76580810546875
+        ]
+      ],
+      "page": 300
+    },
+    {
+      "text": "The Contractor shall providea fully resource loaded schedule of all his execution of Project. This schedule shall list all Manpower trades, major and minor construction equipment, a monthly distribution of the number of each resource anticipated to be used at site till the end of the Project.This Schedule of Construction Manpower and Equipment shall be presented on a* Weekly or monthly basis(as required) in a tabular format and shall be updated with actual data as the work proceeds and include Off-site, Pre建国际 fabrication, storage, workshops and logistics: 有限任公 LmLr MHtr Hr Dewanpient s.Al",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          204.54604085286462
+        ],
+        [
+          512.9972330729166,
+          204.54604085286462
+        ],
+        [
+          512.9972330729166,
+          56.10117594401038
+        ],
+        [
+          117.45809936523438,
+          56.10117594401038
+        ]
+      ],
+      "page": 300
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 300,
+      "text": "i Allow for sufficient contingency to mitigate the delays which may arise due to problems associated with shipment, clearance etc.\ni TheExecutionProgrammedeveloped above shallnot be changed throughout the duration of the Project without getting prior approval from the Employer.\nk)Soft copies shall be provided in Primavera F'6 format.\n4.5 Schedule of value&Cost LoadedProgramme\nAnticipated financial values of work(hereinafter referred to asPlanned Cost) shall be assigned to all activities of theExecutionProgramme in linewith the ScheduleofRatesandQuantitiesonthebasisofwhichanoverallcost loadingshallbeobtained.\n\"The Contractor shall submit to the PiM for his approval a cost loaded Construction Schedule with a fully detailed cchedule of values report and allnecessary supporting details of all activities in the cost loaded construction schedule based upon the priced Schedule of Rates and the totalsumequaltotheContractPrice\".\nThe Cost Loaded Programme shall be updated on a monthly basis, and shallbeupdatedwithactualvalueofwork(hereinafterreferredtoasActual Cost) as the work proceeds. The Cost Loaded Programme shall be represented in graphical and tabular formats.In preparing the Cost Loaded Programme, the Contractor shall:\na)Make sure that no single activity has a cost allocation greater than 2% (two percent) of the Contract Price, except procurement items, or where greater cost allocation for specific activities have been approved by the Contract Aaministrator.\nb)Note that the amounts or values entered against the activities are as accurate as possible and the total amount tallies with the Contract Price.\nc)Present the programmes in graphical format with monthly Flanned Cost histogram plotted onY1-axis and cumulative to month values onY2-axis (S-curve) with period on X-axis.The summary and breakdown of cost against each month to be tabulated.\nd)Soft copy shall be provided in Primavera P6 and histogram in Excel File Format.\n4.6Schedule of Constructionresources\nThe Contractor shall providea fully resource loaded schedule of all his execution of Project. This schedule shall list all Manpower trades, major and minor construction equipment, a monthly distribution of the number of each resource anticipated to be used at site till the end of the Project.This Schedule of Construction Manpower and Equipment shall be presented on a* Weekly or monthly basis(as required) in a tabular format and shall be updated with actual data as the work proceeds and include Off-site, Pre建国际 fabrication, storage, workshops and logistics: 有限任公 LmLr MHtr Hr Dewanpient s.Al",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

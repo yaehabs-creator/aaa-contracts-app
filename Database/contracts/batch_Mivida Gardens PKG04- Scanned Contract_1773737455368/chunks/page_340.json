@@ -1,0 +1,313 @@
+{
+  "text": "- 3.12.7 7The  Contractor  shallbe responsible  for  takingadditional precautions where portable hand-lamps are used in damp and confined situations. In this event, the hand-lamps shall be powered at either 25 volt single-phase SELV or 50 volt single phase, centrepoint earthed.\n- 3.12.8 The general lighting and power distribution boards located in all floors shall be complete with integral isolator, protection devices (MCB's and RCD's) and industrial IP44 socket outlets and plugs. The sockets and plugs shall be industrial type to meet lEC. 309 and BS EN. 60309/BS.4343, the sockets and plugs shall be mounted on the side of the purpose made distribution boards and shall act as the final connection to power circuits and transformers.\n- 3.12.9 Dedicated sub-distribution panels shall be provided for each major piece of equipment such as Dragline, Motors, Compressor, pumps etc. and provide remote emergency stops for all operating equipment.\n- 3.12.10 Dedicated sub-distribution panels and distribution boards shall be provided to serve all welding equipment.\n\n## 3.13 Water:\n\n- 3.13.1 There is no water supply on the project site. The Contractor shall provide all water required for the Contractor's operations.\n- 3.13.2 The Contractor shall make his own arrangements for water at no additional cost.\n- 3.13.3 The Contractor shall provide potable water at water coolers within hisworkarealocatedattheProjectSitesandtheofficefor the workmen and the office staff.The Contract Administrator shall approve the quantity and locations of the water coolers.\n- 3.13.4 All pipe work branches serving construction water supplies shall be fitted with a double checkvalve toprevent back-siphonage.\n\n## 3.14 Drainage:\n\n- 3.14.1 The Contractor shall be responsible for the temporary drainage and shall employ adequate equipment such as pumps, bowsers, and/or other necessary elements asrequired affording satisfactory working conditions for the execution andcompletion of the Project. Contractor shall avoid (at all times) operations that cause water flow into the ground, project excavation, adjoining site, roads etc. The Contractor shall ensure that equipment to handle emergencies is availablewhenrequired.\n- 3.14.2 The Contractor must also allow for the provision and maintenance of sewage/.wastewater holding tanks on site, and shall arrange for tankering and disposal off site.\n\nThe Contractors shall provide a first aid facility for his workforce to for industrial injunesmduring\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "3.12.7 7The  Contractor  shallbe responsible  for  takingadditional precautions where portable hand-lamps are used in damp and confined situations. In this event, the hand-lamps shall be powered at either 25 volt single-phase SELV or 50 volt single phase, centrepoint earthed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          717.8833923339844
+        ],
+        [
+          505.111328125,
+          717.8833923339844
+        ],
+        [
+          505.111328125,
+          653.1979166666666
+        ],
+        [
+          118.70323689778645,
+          653.1979166666666
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.12.8 The general lighting and power distribution boards located in all floors shall be complete with integral isolator, protection devices (MCB's and RCD's) and industrial IP44 socket outlets and plugs. The sockets and plugs shall be industrial type to meet lEC. 309 and BS EN. 60309/BS.4343, the sockets and plugs shall be mounted on the side of the purpose made distribution boards and shall act as the final connection to power circuits and transformers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          645.7342122395834
+        ],
+        [
+          505.111328125,
+          645.7342122395834
+        ],
+        [
+          505.111328125,
+          555.7550455729167
+        ],
+        [
+          118.70323689778645,
+          555.7550455729167
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.12.9 Dedicated sub-distribution panels shall be provided for each major piece of equipment such as Dragline, Motors, Compressor, pumps etc. and provide remote emergency stops for all operating equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          548.7059936523438
+        ],
+        [
+          504.28125,
+          548.7059936523438
+        ],
+        [
+          504.28125,
+          496.8746744791667
+        ],
+        [
+          118.28819783528645,
+          496.8746744791667
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.12.10 Dedicated sub-distribution panels and distribution boards shall be provided to serve all welding equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          491.06955973307294
+        ],
+        [
+          505.5263671875,
+          491.06955973307294
+        ],
+        [
+          505.5263671875,
+          465.77589925130206
+        ],
+        [
+          118.28819783528645,
+          465.77589925130206
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.13 Water:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          452.09242757161456
+        ],
+        [
+          155.64236450195312,
+          452.09242757161456
+        ],
+        [
+          155.64236450195312,
+          438.40895589192706
+        ],
+        [
+          93.38541666666667,
+          438.40895589192706
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.13.1 There is no water supply on the project site. The Contractor shall provide all water required for the Contractor's operations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          432.18918863932294
+        ],
+        [
+          505.111328125,
+          432.18918863932294
+        ],
+        [
+          505.111328125,
+          408.13946533203125
+        ],
+        [
+          118.70323689778645,
+          408.13946533203125
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.13.2 The Contractor shall make his own arrangements for water at no additional cost.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          406.48085530598956
+        ],
+        [
+          505.111328125,
+          406.48085530598956
+        ],
+        [
+          505.111328125,
+          381.60182698567706
+        ],
+        [
+          118.70323689778645,
+          381.60182698567706
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.13.3 The Contractor shall provide potable water at water coolers within hisworkarealocatedattheProjectSitesandtheofficefor the workmen and the office staff.The Contract Administrator shall approve the quantity and locations of the water coolers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          380.35788981119794
+        ],
+        [
+          506.3564860026042,
+          380.35788981119794
+        ],
+        [
+          506.3564860026042,
+          329.77052815755206
+        ],
+        [
+          119.1182861328125,
+          329.77052815755206
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.13.4 All pipe work branches serving construction water supplies shall be fitted with a double checkvalve toprevent back-siphonage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          327.28261311848956
+        ],
+        [
+          505.111328125,
+          327.28261311848956
+        ],
+        [
+          505.111328125,
+          302.8182169596354
+        ],
+        [
+          119.53333536783855,
+          302.8182169596354
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.14 Drainage:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          289.1347452799479
+        ],
+        [
+          173.4893595377604,
+          289.1347452799479
+        ],
+        [
+          173.4893595377604,
+          275.0366414388021
+        ],
+        [
+          93.8004659016927,
+          275.0366414388021
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.14.1 The Contractor shall be responsible for the temporary drainage and shall employ adequate equipment such as pumps, bowsers, and/or other necessary elements asrequired affording satisfactory working conditions for the execution andcompletion of the Project. Contractor shall avoid (at all times) operations that cause water flow into the ground, project excavation, adjoining site, roads etc. The Contractor shall ensure that equipment to handle emergencies is availablewhenrequired.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          270.06085205078125
+        ],
+        [
+          506.7715250651042,
+          270.06085205078125
+        ],
+        [
+          506.7715250651042,
+          166.39821370442712
+        ],
+        [
+          119.53333536783855,
+          166.39821370442712
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "3.14.2 The Contractor must also allow for the provision and maintenance of sewage/.wastewater holding tanks on site, and shall arrange for tankering and disposal off site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          159.34914143880212
+        ],
+        [
+          505.9414469401042,
+          159.34914143880212
+        ],
+        [
+          505.9414469401042,
+          120.78664143880212
+        ],
+        [
+          119.53333536783855,
+          120.78664143880212
+        ]
+      ],
+      "page": 340
+    },
+    {
+      "text": "The Contractors shall provide a first aid facility for his workforce to for industrial injunesmduring",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.62291463216147,
+          89.68784586588538
+        ],
+        [
+          507.1865641276042,
+          89.68784586588538
+        ],
+        [
+          507.1865641276042,
+          75.17506917317712
+        ],
+        [
+          160.62291463216147,
+          75.17506917317712
+        ]
+      ],
+      "page": 340
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 340,
+      "text": "3.12.7 7The  Contractor  shallbe responsible  for  takingadditional precautions where portable hand-lamps are used in damp and confined situations. In this event, the hand-lamps shall be powered at either 25 volt single-phase SELV or 50 volt single phase, centrepoint earthed.\n3.12.8 The general lighting and power distribution boards located in all floors shall be complete with integral isolator, protection devices (MCB's and RCD's) and industrial IP44 socket outlets and plugs. The sockets and plugs shall be industrial type to meet lEC. 309 and BS EN. 60309/BS.4343, the sockets and plugs shall be mounted on the side of the purpose made distribution boards and shall act as the final connection to power circuits and transformers.\n3.12.9 Dedicated sub-distribution panels shall be provided for each major piece of equipment such as Dragline, Motors, Compressor, pumps etc. and provide remote emergency stops for all operating equipment.\n3.12.10 Dedicated sub-distribution panels and distribution boards shall be provided to serve all welding equipment.\n3.13 Water:\n3.13.1 There is no water supply on the project site. The Contractor shall provide all water required for the Contractor's operations.\n3.13.2 The Contractor shall make his own arrangements for water at no additional cost.\n3.13.3 The Contractor shall provide potable water at water coolers within hisworkarealocatedattheProjectSitesandtheofficefor the workmen and the office staff.The Contract Administrator shall approve the quantity and locations of the water coolers.\n3.13.4 All pipe work branches serving construction water supplies shall be fitted with a double checkvalve toprevent back-siphonage.\n3.14 Drainage:\n3.14.1 The Contractor shall be responsible for the temporary drainage and shall employ adequate equipment such as pumps, bowsers, and/or other necessary elements asrequired affording satisfactory working conditions for the execution andcompletion of the Project. Contractor shall avoid (at all times) operations that cause water flow into the ground, project excavation, adjoining site, roads etc. The Contractor shall ensure that equipment to handle emergencies is availablewhenrequired.\n3.14.2 The Contractor must also allow for the provision and maintenance of sewage/.wastewater holding tanks on site, and shall arrange for tankering and disposal off site.\nThe Contractors shall provide a first aid facility for his workforce to for industrial injunesmduring",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

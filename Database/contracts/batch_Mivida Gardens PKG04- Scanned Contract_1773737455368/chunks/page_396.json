@@ -1,0 +1,129 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n| 3.27.                             | Lock Out Tag Out (LOTO)...                         |    70 |\n|-----------------------------------|----------------------------------------------------|-------|\n| 3.28.                             | Asbestos..                                         |  0.71 |\n| 3.29.                             | Permit to Work.                                    | 71    |\n| 3.30.                             | Control of Substances Hazardous to Health (COSHHl) |  0.72 |\n| 3.31.                             | Storageand HandlingofMaterials                     | 74    |\n| 3.32.                             | Housekeeping....                                   |  0.74 |\n| 3.33.                             | Night Works....                                    | 75    |\n| 3.34.                             | Lighting...                                        |  0.76 |\n| 3.34.1. Planning                  | 3.34.1. Planning                                   | 76    |\n| 3.34.2. Emergency lighting        | 3.34.2. Emergency lighting                         |  0.77 |\n| 3.34.3. Inspcction & maintcnancc. | 3.34.3. Inspcction & maintcnancc.                  | 77    |\n| 3.34.4. Lighting Levels           | 3.34.4. Lighting Levels                            | 77    |\n| 3.35.                             | Climatic Conditions                                | 78    |\n| 3.36.                             | Personal Protective Equipment (PPE).               |  0.78 |\n| 3.37.                             | Work Clothing....                                  |  0.79 |\n| 3.38.                             | Safety Signs and Signals                           | 79    |\n| 3.39.                             | Working Over or Adjacent to Water.                 | 80    |\n| 3.40.                             | Noise and Vibration                                | 81    |\n| 3.41.                             | Manual Handling                                    |  0.82 |\n| 3.42.                             | Lone Working...                                    | 82    |\n| 3.43.                             | Mobile Phones                                      | 83    |\n| 3.44.                             | Smoking                                            | 83    |\n| 3.45.                             | Accident Investigation..                           | 83    |\n| 3.46.                             | Emergency Preparedncss                             | 83    |\n| 3.47.                             | SiteVisitors..                                     | 84    |\n| 3.48.                             | HSE Penalties.                                     | 84    |\n\nzrlne Ribar Fn\n\nCd13.20 CR12341 2010x29,Mwk4 Cadau, byNh\n\n<!-- image -->\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.5062459309896,
+          731.5668640136719
+        ],
+        [
+          340.33795166015625,
+          731.5668640136719
+        ],
+        [
+          340.33795166015625,
+          701.297373453776
+        ],
+        [
+          190.5062459309896,
+          701.297373453776
+        ]
+      ],
+      "page": 396
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          701.7120259602865
+        ],
+        [
+          217.4842529296875,
+          701.7120259602865
+        ],
+        [
+          217.4842529296875,
+          687.6139119466146
+        ],
+        [
+          74.70833333333333,
+          687.6139119466146
+        ]
+      ],
+      "page": 396
+    },
+    {
+      "text": "zrlne Ribar Fn",
+      "confidence": 0.95,
+      "box": [
+        [
+          236.16133626302084,
+          111.24969482421875
+        ],
+        [
+          285.96689860026044,
+          111.24969482421875
+        ],
+        [
+          285.96689860026044,
+          100.88340250651038
+        ],
+        [
+          236.16133626302084,
+          100.88340250651038
+        ]
+      ],
+      "page": 396
+    },
+    {
+      "text": "Cd13.20 CR12341 2010x29,Mwk4 Cadau, byNh",
+      "confidence": 0.95,
+      "box": [
+        [
+          234.08610026041666,
+          93.41969807942712
+        ],
+        [
+          295.92799886067706,
+          93.41969807942712
+        ],
+        [
+          295.92799886067706,
+          64.39414469401038
+        ],
+        [
+          234.08610026041666,
+          64.39414469401038
+        ]
+      ],
+      "page": 396
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          736.1280212402344
+        ],
+        [
+          510.0918782552083,
+          736.1280212402344
+        ],
+        [
+          510.0918782552083,
+          723.2738545735677
+        ],
+        [
+          453.2305501302083,
+          723.2738545735677
+        ]
+      ],
+      "page": 396
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 396,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nzrlne Ribar Fn\nCd13.20 CR12341 2010x29,Mwk4 Cadau, byNh\nEMAAR",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

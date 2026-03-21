@@ -1,0 +1,382 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n<!-- image -->\n\n- Workmen'sCompensationInsurance(including temp.labor) ParticularRequirements:\n\nInsured:\\_Contractor, Employer, and Subcontractors (where applicable)\n\nPeriod:Thisinsuranceshallbemaintainedinfullforceandeffect during the whole-time personnel are engaged in the execution of the Works including any other obligations under the Contract.\n\nCoverage: Statutory worker's compensation coverage to include all activitiestocomplyfullywithallapplicablelawsandwithcontracts madewithemployees.\n\namount stated,notless than500,o00EGP for eachpersonand 5,00o,oooEGPper accidentor occurrenceof aneventand in aggregate.\n\n## Conditions:\n\n1. The obligations shall also extend to any cmployccg of a Suhcontractorbutheinginthenameof theSubcontraclorand extends to indemnify the Employer. The Contractor is liable for procuring complianceby theSubcontractor.\n2. 2.CrossLiabilityClause\n3. 3.Waiver of subrogationagainst Employer andlor andany affiliated companies，whether constituted at inception or subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers andorallSuppliersandorallconsultantsandorallemployees, managers,andallotherpartiesinvolved intheworkeachfor theirrespective rights and interest in theProject.\n4. c)Auto Liability Insurance-being coverage inrespect of death of or injury topersonsand/orlossofordamagewithintheProject/Development Sitetopropertyinrespectof motorvehiclesusedby theContractorin connectionwiththecarryingoutof theWorksortheremedyingof defectstherein.TheContractorshallensurethatSubcontractors maintainsuchinsuranceinrespectofmotorvehiclesusedbythem. Suchinsuranceshallprovideanunlimited indemnityfordeathofor injurytopersonsandtheequivalentofnotlessthantheamountstated in the Particular Conditions forloss of or damage to property which shall be extended as may be necessary to cover any additional cover required by statutory requirements in the Country.\n5. AutoLiability Insurance-ParticularRequirements:\n\nLocation: East Cairo, Cairo, Egypt.\n\nInsured:ContractorandEmployer.\n\nPeriod:Thisinsuranceshallbemaintainedinfullforceandeffect from theEffectiveDateandduring thewholeperiodofexecutingthe Worksincluding anyotherobligationsunder theContract.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          750.4711507161459
+        ],
+        [
+          178.43086751302084,
+          750.4711507161459
+        ],
+        [
+          178.43086751302084,
+          730.532480875651
+        ],
+        [
+          98.09469604492188,
+          730.532480875651
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          726.2902018229166
+        ],
+        [
+          151.3702596028646,
+          726.2902018229166
+        ],
+        [
+          151.3702596028646,
+          715.6845296223959
+        ],
+        [
+          127.2694091796875,
+          715.6845296223959
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Workmen'sCompensationInsurance(including temp.labor) ParticularRequirements:",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.80680338541666,
+          696.1700744628906
+        ],
+        [
+          502.3125,
+          696.1700744628906
+        ],
+        [
+          502.3125,
+          671.9891255696615
+        ],
+        [
+          192.80680338541666,
+          671.9891255696615
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Insured:_Contractor, Employer, and Subcontractors (where applicable)",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.80680338541666,
+          667.7468668619791
+        ],
+        [
+          502.7353108723958,
+          667.7468668619791
+        ],
+        [
+          502.7353108723958,
+          643.1416829427084
+        ],
+        [
+          192.80680338541666,
+          643.1416829427084
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Period:Thisinsuranceshallbemaintainedinfullforceandeffect during the whole-time personnel are engaged in the execution of the Works including any other obligations under the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          638.4751790364584
+        ],
+        [
+          502.7353108723958,
+          638.4751790364584
+        ],
+        [
+          502.7353108723958,
+          603.2643229166666
+        ],
+        [
+          193.2296346028646,
+          603.2643229166666
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Coverage: Statutory worker's compensation coverage to include all activitiestocomplyfullywithallapplicablelawsandwithcontracts madewithemployees.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          598.5978393554688
+        ],
+        [
+          503.1581217447917,
+          598.5978393554688
+        ],
+        [
+          503.1581217447917,
+          562.5385131835938
+        ],
+        [
+          193.2296346028646,
+          562.5385131835938
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "amount stated,notless than500,o00EGP for eachpersonand 5,00o,oooEGPper accidentor occurrenceof aneventand in aggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          545.993672688802
+        ],
+        [
+          503.1581217447917,
+          545.993672688802
+        ],
+        [
+          503.1581217447917,
+          510.35858154296875
+        ],
+        [
+          193.2296346028646,
+          510.35858154296875
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Conditions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.6524658203125,
+          506.54054768880206
+        ],
+        [
+          247.7736612955729,
+          506.54054768880206
+        ],
+        [
+          247.7736612955729,
+          493.81374104817706
+        ],
+        [
+          193.6524658203125,
+          493.81374104817706
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "The obligations shall also extend to any cmployccg of a Suhcontractorbutheinginthenameof theSubcontraclorand extends to indemnify the Employer. The Contractor is liable for procuring complianceby theSubcontractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.6524658203125,
+          494.66217041015625
+        ],
+        [
+          504.0037841796875,
+          494.66217041015625
+        ],
+        [
+          504.0037841796875,
+          447.57297770182294
+        ],
+        [
+          193.6524658203125,
+          447.57297770182294
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "2.CrossLiabilityClause",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.49810791015625,
+          445.02760823567706
+        ],
+        [
+          310.77414957682294,
+          445.02760823567706
+        ],
+        [
+          310.77414957682294,
+          435.27036539713544
+        ],
+        [
+          194.49810791015625,
+          435.27036539713544
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "3.Waiver of subrogationagainst Employer andlor andany affiliated companies，whether constituted at inception or subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers andorallSuppliersandorallconsultantsandorallemployees, managers,andallotherpartiesinvolved intheworkeachfor theirrespective rights and interest in theProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          434.42193603515625
+        ],
+        [
+          504.0037841796875,
+          434.42193603515625
+        ],
+        [
+          504.0037841796875,
+          351.27341715494794
+        ],
+        [
+          193.2296346028646,
+          351.27341715494794
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "c)Auto Liability Insurance-being coverage inrespect of death of or injury topersonsand/orlossofordamagewithintheProject/Development Sitetopropertyinrespectof motorvehiclesusedby theContractorin connectionwiththecarryingoutof theWorksortheremedyingof defectstherein.TheContractorshallensurethatSubcontractors maintainsuchinsuranceinrespectofmotorvehiclesusedbythem. Suchinsuranceshallprovideanunlimited indemnityfordeathofor injurytopersonsandtheequivalentofnotlessthantheamountstated in the Particular Conditions forloss of or damage to property which shall be extended as may be necessary to cover any additional cover required by statutory requirements in the Country.",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          323.6986287434896
+        ],
+        [
+          504.4265950520833,
+          323.6986287434896
+        ],
+        [
+          504.4265950520833,
+          192.18821207682288
+        ],
+        [
+          162.78645833333334,
+          192.18821207682288
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "AutoLiability Insurance-ParticularRequirements:",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.49810791015625,
+          181.15830485026038
+        ],
+        [
+          427.0501708984375,
+          181.15830485026038
+        ],
+        [
+          427.0501708984375,
+          170.97686767578125
+        ],
+        [
+          194.49810791015625,
+          170.97686767578125
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Location: East Cairo, Cairo, Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.49810791015625,
+          345.75844319661456
+        ],
+        [
+          354.7476399739583,
+          345.75844319661456
+        ],
+        [
+          354.7476399739583,
+          333.45587158203125
+        ],
+        [
+          194.49810791015625,
+          333.45587158203125
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Insured:ContractorandEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          195.34375,
+          164.61346435546875
+        ],
+        [
+          354.3247884114583,
+          164.61346435546875
+        ],
+        [
+          354.3247884114583,
+          153.58355712890625
+        ],
+        [
+          195.34375,
+          153.58355712890625
+        ]
+      ],
+      "page": 130
+    },
+    {
+      "text": "Period:Thisinsuranceshallbemaintainedinfullforceandeffect from theEffectiveDateandduring thewholeperiodofexecutingthe Worksincluding anyotherobligationsunder theContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.49810791015625,
+          148.49281819661462
+        ],
+        [
+          504.4265950520833,
+          148.49281819661462
+        ],
+        [
+          504.4265950520833,
+          114.13043212890625
+        ],
+        [
+          194.49810791015625,
+          114.13043212890625
+        ]
+      ],
+      "page": 130
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 130,
+      "text": "EMAAR\nMISR\nWorkmen'sCompensationInsurance(including temp.labor) ParticularRequirements:\nInsured:_Contractor, Employer, and Subcontractors (where applicable)\nPeriod:Thisinsuranceshallbemaintainedinfullforceandeffect during the whole-time personnel are engaged in the execution of the Works including any other obligations under the Contract.\nCoverage: Statutory worker's compensation coverage to include all activitiestocomplyfullywithallapplicablelawsandwithcontracts madewithemployees.\namount stated,notless than500,o00EGP for eachpersonand 5,00o,oooEGPper accidentor occurrenceof aneventand in aggregate.\nConditions:\nThe obligations shall also extend to any cmployccg of a Suhcontractorbutheinginthenameof theSubcontraclorand extends to indemnify the Employer. The Contractor is liable for procuring complianceby theSubcontractor.\n2.CrossLiabilityClause\n3.Waiver of subrogationagainst Employer andlor andany affiliated companies，whether constituted at inception or subsequentlyand/orMainContractorandorallcontractorsand orallthetenantsandorallsubcontractorsandorallengineers andorallSuppliersandorallconsultantsandorallemployees, managers,andallotherpartiesinvolved intheworkeachfor theirrespective rights and interest in theProject.\nc)Auto Liability Insurance-being coverage inrespect of death of or injury topersonsand/orlossofordamagewithintheProject/Development Sitetopropertyinrespectof motorvehiclesusedby theContractorin connectionwiththecarryingoutof theWorksortheremedyingof defectstherein.TheContractorshallensurethatSubcontractors maintainsuchinsuranceinrespectofmotorvehiclesusedbythem. Suchinsuranceshallprovideanunlimited indemnityfordeathofor injurytopersonsandtheequivalentofnotlessthantheamountstated in the Particular Conditions forloss of or damage to property which shall be extended as may be necessary to cover any additional cover required by statutory requirements in the Country.\nAutoLiability Insurance-ParticularRequirements:\nLocation: East Cairo, Cairo, Egypt.\nInsured:ContractorandEmployer.\nPeriod:Thisinsuranceshallbemaintainedinfullforceandeffect from theEffectiveDateandduring thewholeperiodofexecutingthe Worksincluding anyotherobligationsunder theContract.",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

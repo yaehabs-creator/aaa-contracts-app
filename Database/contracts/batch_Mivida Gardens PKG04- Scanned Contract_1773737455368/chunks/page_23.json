@@ -1,0 +1,60 @@
+{
+  "text": "4.\n\nCONTRACTDOCUMENTS\n\n<!-- image -->\n\n<!-- image -->\n\n|     | 4.1                        | Languages                                                                   | 10                         |\n|-----|----------------------------|-----------------------------------------------------------------------------|----------------------------|\n|     | 4.2                        | Governing Law                                                               | 10                         |\n| 5.  | DRAWINGSANDSPECIFICATIONS  | DRAWINGSANDSPECIFICATIONS                                                   | DRAWINGSANDSPECIFICATIONS  |\n|     | 5.1                        | Submission and Approval                                                     | 10                         |\n|     | 5.2                        | DeparturefromDrawings and Specification                                     | 11                         |\n|     | 5.3                        | Inspectionof Documents                                                      | 11                         |\n|     | 5.4                        | FurtherDrawings and SpecificationModifications                              | 12                         |\n|     | 5.5                        | Disruption of Progress                                                      | 12                         |\n|     | 5.6                        | Errors in Drawings                                                          | 12                         |\n|     | 5.7                        | As-built Drawings, Operations and Maintenance Manuals                       | 12                         |\n| 6.  | OBLIGATIONSOFTHECONTRACTOR | OBLIGATIONSOFTHECONTRACTOR                                                  | OBLIGATIONSOFTHECONTRACTOR |\n|     | 6.1                        | General Obligations                                                         | 13                         |\n|     | 6.2                        | Performance                                                                 | 14                         |\n|     | 6.3                        | OperationsandMethodsofExecution                                             | 14                         |\n|     | 6.4                        | WorktoSatisfaction of Supervision Consultant                                | 15                         |\n|     | 6.5                        | Sufficiency and Investigation                                               | 15                         |\n|     | 6.6                        | CashFlowEstimate                                                            | 15                         |\n|     | 6.7                        | Confidential Details                                                        | 15                         |\n|     | 6.8                        | QualityAssurance                                                            | 16                         |\n|     | 6.9                        | FutureEventsorCircumstances                                                 | 16                         |\n| 6A. | FREEISSUEITEMS             | FREEISSUEITEMS                                                              | FREEISSUEITEMS             |\n|     | 6A.1                       | Definition                                                                  | 16                         |\n|     | 6A.2                       | Collection and Taking Delivery                                              | 16                         |\n|     | 6A.3                       | Risk and Care                                                               | 17                         |\n|     | 6A.4                       | Installation                                                                | 17                         |\n|     | 6A.5                       | Notification of Damage                                                      | 17                         |\n|     | 6A.6 6A.7                  | Surplus Items Removal from Site                                             | 18                         |\n| 7.  | BONDS                      | BONDS                                                                       | BONDS                      |\n|     | 7.1                        | Provision of Bonds                                                          | 18                         |\n|     | 7.2                        | 任公司 Cost of Providing Bonds                                              | 18                         |\n|     | 7.3 7.4                    | 建国际埃及 ApportionmentofPerformanceBond Reduction of Advance Payment Bond | 18 18                      |\n| 8.  | ADVANCEPAYMENT             | ADVANCEPAYMENT                                                              | ADVANCEPAYMENT             |\n|     | 8.1                        | Pre-condition and Payment                                                   | 19                         |\n|     | 8.2                        | Employer's Cost                                                             | 19                         |\n|     |                            | 12841                                                                       |                            |\n|     | EMAARINTPM/SCS+PMCCONINDEX | EMAARINTPM/SCS+PMCCONINDEX                                                  | FUGLDIION2006              |",
+  "results": [
+    {
+      "text": "4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          724.1690673828125
+        ],
+        [
+          105.2826639811198,
+          724.1690673828125
+        ],
+        [
+          105.2826639811198,
+          714.8360697428385
+        ],
+        [
+          95.55775960286458,
+          714.8360697428385
+        ]
+      ],
+      "page": 23
+    },
+    {
+      "text": "CONTRACTDOCUMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          725.4417521158854
+        ],
+        [
+          249.4649658203125,
+          725.4417521158854
+        ],
+        [
+          249.4649658203125,
+          713.5633951822916
+        ],
+        [
+          126.42376708984375,
+          713.5633951822916
+        ]
+      ],
+      "page": 23
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 23,
+      "text": "4.\nCONTRACTDOCUMENTS",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

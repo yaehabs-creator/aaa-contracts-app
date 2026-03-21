@@ -1,0 +1,336 @@
+{
+  "text": "<!-- image -->\n\nutility companies, and authorities having jurisdiction over work involved in the project.\n\n- 2.2B Be responsible for all temporary work provided, and obtain any necessary permits and inspections for such work.\n- 2.3 Do not interfere with normal use of roads and highways in the vicinity of project site except as indicated or as absolutely necessary to execute required work, and then only after proper arrangements have been made with authorities having jurisdiction, including traffic control as applicable.\n\n## 3 ADDITIONALREQUIREMENTS\n\n## Installation and Relocation:\n\n- 3.1 The Contractor shall provide, maintain all temporary facilities as long as needed for the safe and proper executior of the work.Unless otherwise indicated, the Contractor shall remove all such temporary facilities and controls as soon as possible after the completion of his responsibilities under the Contract or as directed. Any such instruction shall be administered in accordance with the Contract conditions.\n- 3.2 Should anyrelocation of any ternporary facility herein specified become necessary in order to progress the work properly, each Contractor charged with the responsibility for such work shall remove and relocate such items as directed withoutadditional cost to the Employer.\n\n## 3.3 Hoarding / Fencing:\n\nHoarding shall be carried out in accordance with Emaar Standard, The Contractor shall submit all the details required subject to the approval of the Employer / Contract Administrator.\n\n## 3.4 Temporary Electrical Works:\n\nAll temporary electrical work shall be protected by a 1o0mA ELCB on main circuitsanda30mAELCBonfinalcircuitsandshallbeinaccordancewith the UK Construction Act and associated regulations and codes. All connections and installation shall be in compliance with all Regulations.\n\n- generators shall be grounded by the Contractor, in accordance with all requirements, and inspected for proper operation on a regular basis. Associated fuel tank installations shall be provided with water tight bunds. All temporary electrical work is to be inspected on a weekly basis.\n- 3.6 3phase415Vandsinglephase240VcablesshallbePVC/SWA/PVCand fastened to the structure above floor level and not obstructing corridors, escape routes or material transit routes.\n- 3.7 All lighting and hand tools shallbein good working order and cords length shall exceed 35m in length.AllGords shall be one piece, and shall not be field repaired or spliced. Plugs must be used on all cord ends. Any cords found to be defective shall be immediately removed from the project. The Contractor's Safety Coordinator and/or the Contract Administrator's Safety Engineers shall be authorized to remove any cords found to be defective or improperly connected.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "utility companies, and authorities having jurisdiction over work involved in the project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          716.6394449869791
+        ],
+        [
+          504.28125,
+          716.6394449869791
+        ],
+        [
+          504.28125,
+          690.9311116536459
+        ],
+        [
+          117.87314860026042,
+          690.9311116536459
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "2.2B Be responsible for all temporary work provided, and obtain any necessary permits and inspections for such work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          684.7113545735677
+        ],
+        [
+          503.8662109375,
+          684.7113545735677
+        ],
+        [
+          503.8662109375,
+          660.2469787597656
+        ],
+        [
+          93.38541666666667,
+          660.2469787597656
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "2.3 Do not interfere with normal use of roads and highways in the vicinity of project site except as indicated or as absolutely necessary to execute required work, and then only after proper arrangements have been made with authorities having jurisdiction, including traffic control as applicable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          653.1979166666666
+        ],
+        [
+          505.111328125,
+          653.1979166666666
+        ],
+        [
+          505.111328125,
+          602.6105550130209
+        ],
+        [
+          93.8004659016927,
+          602.6105550130209
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3 ADDITIONALREQUIREMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          586.8538411458334
+        ],
+        [
+          258.9888916015625,
+          586.8538411458334
+        ],
+        [
+          258.9888916015625,
+          576.9022216796875
+        ],
+        [
+          78.02870178222656,
+          576.9022216796875
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "Installation and Relocation:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          567.7799072265625
+        ],
+        [
+          242.38704427083334,
+          567.7799072265625
+        ],
+        [
+          242.38704427083334,
+          556.999003092448
+        ],
+        [
+          93.38541666666667,
+          556.999003092448
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3.1 The Contractor shall provide, maintain all temporary facilities as long as needed for the safe and proper executior of the work.Unless otherwise indicated, the Contractor shall remove all such temporary facilities and controls as soon as possible after the completion of his responsibilities under the Contract or as directed. Any such instruction shall be administered in accordance with the Contract conditions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          549.5352783203125
+        ],
+        [
+          505.5263671875,
+          549.5352783203125
+        ],
+        [
+          505.5263671875,
+          472.41029866536456
+        ],
+        [
+          92.97036743164062,
+          472.41029866536456
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3.2 Should anyrelocation of any ternporary facility herein specified become necessary in order to progress the work properly, each Contractor charged with the responsibility for such work shall remove and relocate such items as directed withoutadditional cost to the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          465.77589925130206
+        ],
+        [
+          505.5263671875,
+          465.77589925130206
+        ],
+        [
+          505.5263671875,
+          414.35923258463544
+        ],
+        [
+          94.63055419921875,
+          414.35923258463544
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3.3 Hoarding / Fencing:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          408.13946533203125
+        ],
+        [
+          227.86041259765625,
+          408.13946533203125
+        ],
+        [
+          227.86041259765625,
+          394.45599365234375
+        ],
+        [
+          94.2155049641927,
+          394.45599365234375
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "Hoarding shall be carried out in accordance with Emaar Standard, The Contractor shall submit all the details required subject to the approval of the Employer / Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          388.65089925130206
+        ],
+        [
+          505.111328125,
+          388.65089925130206
+        ],
+        [
+          505.111328125,
+          349.67372639973956
+        ],
+        [
+          119.1182861328125,
+          349.67372639973956
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3.4 Temporary Electrical Works:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          343.86863199869794
+        ],
+        [
+          274.76064046223956,
+          343.86863199869794
+        ],
+        [
+          274.76064046223956,
+          331.84377034505206
+        ],
+        [
+          94.63055419921875,
+          331.84377034505206
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "All temporary electrical work shall be protected by a 1o0mA ELCB on main circuitsanda30mAELCBonfinalcircuitsandshallbeinaccordancewith the UK Construction Act and associated regulations and codes. All connections and installation shall be in compliance with all Regulations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          324.79469807942706
+        ],
+        [
+          506.7715250651042,
+          324.79469807942706
+        ],
+        [
+          506.7715250651042,
+          275.0366414388021
+        ],
+        [
+          118.70323689778645,
+          275.0366414388021
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "generators shall be grounded by the Contractor, in accordance with all requirements, and inspected for proper operation on a regular basis. Associated fuel tank installations shall be provided with water tight bunds. All temporary electrical work is to be inspected on a weekly basis.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          253.47483317057288
+        ],
+        [
+          506.7715250651042,
+          253.47483317057288
+        ],
+        [
+          506.7715250651042,
+          203.30210367838538
+        ],
+        [
+          119.1182861328125,
+          203.30210367838538
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3.6 3phase415Vandsinglephase240VcablesshallbePVC/SWA/PVCand fastened to the structure above floor level and not obstructing corridors, escape routes or material transit routes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          195.00909423828125
+        ],
+        [
+          506.3564860026042,
+          195.00909423828125
+        ],
+        [
+          506.3564860026042,
+          158.10520426432288
+        ],
+        [
+          95.0456034342448,
+          158.10520426432288
+        ]
+      ],
+      "page": 338
+    },
+    {
+      "text": "3.7 All lighting and hand tools shallbein good working order and cords length shall exceed 35m in length.AllGords shall be one piece, and shall not be field repaired or spliced. Plugs must be used on all cord ends. Any cords found to be defective shall be immediately removed from the project. The Contractor's Safety Coordinator and/or the Contract Administrator's Safety Engineers shall be authorized to remove any cords found to be defective or improperly connected.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          150.64149983723962
+        ],
+        [
+          508.0166829427083,
+          150.64149983723962
+        ],
+        [
+          508.0166829427083,
+          59.83302815755212
+        ],
+        [
+          95.0456034342448,
+          59.83302815755212
+        ]
+      ],
+      "page": 338
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 338,
+      "text": "utility companies, and authorities having jurisdiction over work involved in the project.\n2.2B Be responsible for all temporary work provided, and obtain any necessary permits and inspections for such work.\n2.3 Do not interfere with normal use of roads and highways in the vicinity of project site except as indicated or as absolutely necessary to execute required work, and then only after proper arrangements have been made with authorities having jurisdiction, including traffic control as applicable.\n3 ADDITIONALREQUIREMENTS\nInstallation and Relocation:\n3.1 The Contractor shall provide, maintain all temporary facilities as long as needed for the safe and proper executior of the work.Unless otherwise indicated, the Contractor shall remove all such temporary facilities and controls as soon as possible after the completion of his responsibilities under the Contract or as directed. Any such instruction shall be administered in accordance with the Contract conditions.\n3.2 Should anyrelocation of any ternporary facility herein specified become necessary in order to progress the work properly, each Contractor charged with the responsibility for such work shall remove and relocate such items as directed withoutadditional cost to the Employer.\n3.3 Hoarding / Fencing:\nHoarding shall be carried out in accordance with Emaar Standard, The Contractor shall submit all the details required subject to the approval of the Employer / Contract Administrator.\n3.4 Temporary Electrical Works:\nAll temporary electrical work shall be protected by a 1o0mA ELCB on main circuitsanda30mAELCBonfinalcircuitsandshallbeinaccordancewith the UK Construction Act and associated regulations and codes. All connections and installation shall be in compliance with all Regulations.\ngenerators shall be grounded by the Contractor, in accordance with all requirements, and inspected for proper operation on a regular basis. Associated fuel tank installations shall be provided with water tight bunds. All temporary electrical work is to be inspected on a weekly basis.\n3.6 3phase415Vandsinglephase240VcablesshallbePVC/SWA/PVCand fastened to the structure above floor level and not obstructing corridors, escape routes or material transit routes.\n3.7 All lighting and hand tools shallbein good working order and cords length shall exceed 35m in length.AllGords shall be one piece, and shall not be field repaired or spliced. Plugs must be used on all cord ends. Any cords found to be defective shall be immediately removed from the project. The Contractor's Safety Coordinator and/or the Contract Administrator's Safety Engineers shall be authorized to remove any cords found to be defective or improperly connected.",
+      "line_count": 14
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

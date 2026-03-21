@@ -1,0 +1,37 @@
+{
+  "text": "4.12StatusSummary on Non-Conformance Notices:NCRSummary\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "4.12StatusSummary on Non-Conformance Notices:NCRSummary",
+      "confidence": 0.95,
+      "box": [
+        [
+          28.638193766276043,
+          724.1031494140625
+        ],
+        [
+          40.674537658691406,
+          724.1031494140625
+        ],
+        [
+          40.674537658691406,
+          509.7288411458333
+        ],
+        [
+          28.638193766276043,
+          509.7288411458333
+        ]
+      ],
+      "page": 517
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 517,
+      "text": "4.12StatusSummary on Non-Conformance Notices:NCRSummary",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

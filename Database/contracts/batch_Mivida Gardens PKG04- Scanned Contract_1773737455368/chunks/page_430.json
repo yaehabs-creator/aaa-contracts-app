@@ -1,0 +1,566 @@
+{
+  "text": "<!-- image -->\n\n## Projects Department Health &amp;. Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n## 3.4. Compressed Gas Cylinders\n\n- Both full and cmpty cylindcrs must bc storcd in a secure compound that provides protection from (he eleiments, outside and clear of any buildings or structures. They must be stored with their valves uppermost and have a coverfitted on thevalve.\n- Oxygen,LPG and acetylene cylinders are not to be stored togetherwithin3m of cach othcr unless separated by afireresistant structure.Gascylinders arenot tobe stored belowground level or near to drains orbasements.\n- The type of gas is to be clearly marked on cylinders; they are to be secured upright around the body using chains or other suitable material when being stored or transported and when beingused.\n- A Securing gas cylinders around the neck or cap is prohibited.\n- Gas cylinders are not to be transported with regulators, gauges and hoscs attachcd. Cylindcrs will only be lifted in racks or in specially designed containers. Cylinders are not to be lifted using the valve cap or by means of a magnet, rope of chain slings.\n- Gas cylinders are not to be placed where they may become part of any electrical circuit and they are tobeprotectedfrom extremeheat andfrom beingstruckbymovingequipment.\n- Non-return valves are to be provided at each blowpipe inlet connection and as a minimum a flame or flashback arrestors is to be fitted at the pressure regulator outlet valve. Valves are to be closed at all times when the cylinder is not in use.\n- Torches are to be ignited by friction lighters or other similar devices only.\n- A Before starting work, cylinders, hoses and connections are to be checked before use. Damaged or defective hoses or hose assemblies should only be replaccd or rcpaircd by a compctcnt person.\n- Oxygen cylinders are to be prevented for coming into contact or being contaminated with oils and greases.\n\n△\n\n- Arrangements must be put in place to control the risk of cylinder explosion in the event of a fire.\n\n## 3.5. Welding\n\n- Welding is only to be undertaken by certified persons who have been trained in the type of welding to be carried out.\n- Welders are to wear suitable personal protective equipment such as gauntlets, welding aprons, weldingface-shield,goggles or glasses.\n- Suitableprecautionssuchasensuring thewelding areaisfreeof flammableandcombustible materials are tobe taken to prevent fires during all welding operations.\n- The cutting or welding of tanks or drums that contained flammable materials is prohibited unless proper precautions have been taken (i.e. the tanks or drum have heen purged or is filled with water) and a suitable testhas been carried out toconfirm it is safe to cut orweld.\n- All gas cylinders are to be turned off when not in use and hoses are to be kept clear of sharp edgcs abrasive surfaces or where vehicles can run over them and damagc thcm. All conncctions and equipmentaretoberegularlycheckedforfaultsandleaks.\n\nthepriorwritten consent ofEmaarMisrS.A.H\n\n<!-- image -->\n\nrwaiopihn! aer. To 5n1d 218207.2D0 CR12841 2DAa 2OO, MHuan\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health &. Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.5062459309896,
+          730.3229166666666
+        ],
+        [
+          339.0928141276042,
+          730.3229166666666
+        ],
+        [
+          339.0928141276042,
+          700.0534261067709
+        ],
+        [
+          190.5062459309896,
+          700.0534261067709
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.29328918457031,
+          700.0534261067709
+        ],
+        [
+          215.8240763346354,
+          700.0534261067709
+        ],
+        [
+          215.8240763346354,
+          686.3699544270834
+        ],
+        [
+          74.29328918457031,
+          686.3699544270834
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "3.4. Compressed Gas Cylinders",
+      "confidence": 0.95,
+      "box": [
+        [
+          214.99397786458334,
+          673.1011454264323
+        ],
+        [
+          365.6558024088542,
+          673.1011454264323
+        ],
+        [
+          365.6558024088542,
+          659.4176737467448
+        ],
+        [
+          214.99397786458334,
+          659.4176737467448
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Both full and cmpty cylindcrs must bc storcd in a secure compound that provides protection from (he eleiments, outside and clear of any buildings or structures. They must be stored with their valves uppermost and have a coverfitted on thevalve.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          655.2711690266927
+        ],
+        [
+          495.5652669270833,
+          655.2711690266927
+        ],
+        [
+          495.5652669270833,
+          617.1233113606771
+        ],
+        [
+          89.65000406901042,
+          617.1233113606771
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Oxygen,LPG and acetylene cylinders are not to be stored togetherwithin3m of cach othcr unless separated by afireresistant structure.Gascylinders arenot tobe stored belowground level or near to drains orbasements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          610.903564453125
+        ],
+        [
+          495.1502278645833,
+          610.903564453125
+        ],
+        [
+          495.1502278645833,
+          573.9996744791666
+        ],
+        [
+          90.06504313151042,
+          573.9996744791666
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "The type of gas is to be clearly marked on cylinders; they are to be secured upright around the body using chains or other suitable material when being stored or transported and when beingused.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          568.1945597330729
+        ],
+        [
+          493.9051106770833,
+          568.1945597330729
+        ],
+        [
+          493.9051106770833,
+          542.0715738932292
+        ],
+        [
+          90.06504313151042,
+          542.0715738932292
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "A Securing gas cylinders around the neck or cap is prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          537.0957641601562
+        ],
+        [
+          333.6972249348958,
+          537.0957641601562
+        ],
+        [
+          333.6972249348958,
+          523.8269449869792
+        ],
+        [
+          75.12337748209636,
+          523.8269449869792
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Gas cylinders are not to be transported with regulators, gauges and hoscs attachcd. Cylindcrs will only be lifted in racks or in specially designed containers. Cylinders are not to be lifted using the valve cap or by means of a magnet, rope of chain slings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          519.680440266927
+        ],
+        [
+          495.5652669270833,
+          519.680440266927
+        ],
+        [
+          495.5652669270833,
+          480.70330810546875
+        ],
+        [
+          89.65000406901042,
+          480.70330810546875
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Gas cylinders are not to be placed where they may become part of any electrical circuit and they are tobeprotectedfrom extremeheat andfrom beingstruckbymovingequipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.23495483398438,
+          476.14215087890625
+        ],
+        [
+          494.7351888020833,
+          476.14215087890625
+        ],
+        [
+          494.7351888020833,
+          449.60451253255206
+        ],
+        [
+          89.23495483398438,
+          449.60451253255206
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Non-return valves are to be provided at each blowpipe inlet connection and as a minimum a flame or flashback arrestors is to be fitted at the pressure regulator outlet valve. Valves are to be closed at all times when the cylinder is not in use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          445.04335530598956
+        ],
+        [
+          495.1502278645833,
+          445.04335530598956
+        ],
+        [
+          495.1502278645833,
+          407.31016031901044
+        ],
+        [
+          88.4048563639323,
+          407.31016031901044
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Torches are to be ignited by friction lighters or other similar devices only.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.81990559895833,
+          401.50506591796875
+        ],
+        [
+          389.3134358723958,
+          401.50506591796875
+        ],
+        [
+          389.3134358723958,
+          388.65089925130206
+        ],
+        [
+          88.81990559895833,
+          388.65089925130206
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "A Before starting work, cylinders, hoses and connections are to be checked before use. Damaged or defective hoses or hose assemblies should only be replaccd or rcpaircd by a compctcnt person.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          383.67506917317706
+        ],
+        [
+          493.9051106770833,
+          383.67506917317706
+        ],
+        [
+          493.9051106770833,
+          357.13743082682294
+        ],
+        [
+          73.87823994954427,
+          357.13743082682294
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Oxygen cylinders are to be prevented for coming into contact or being contaminated with oils and greases.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.81990559895833,
+          352.99094645182294
+        ],
+        [
+          494.3201497395833,
+          352.99094645182294
+        ],
+        [
+          494.3201497395833,
+          328.94122314453125
+        ],
+        [
+          88.81990559895833,
+          328.94122314453125
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "△",
+      "confidence": 0.95,
+      "box": [
+        [
+          71.80300903320312,
+          316.91636149088544
+        ],
+        [
+          83.00925699869792,
+          316.91636149088544
+        ],
+        [
+          83.00925699869792,
+          316.91636149088544
+        ],
+        [
+          71.80300903320312,
+          316.91636149088544
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Arrangements must be put in place to control the risk of cylinder explosion in the event of a fire.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          322.30678304036456
+        ],
+        [
+          481.4536946614583,
+          322.30678304036456
+        ],
+        [
+          481.4536946614583,
+          308.20867919921875
+        ],
+        [
+          87.9898173014323,
+          308.20867919921875
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "3.5. Welding",
+      "confidence": 0.95,
+      "box": [
+        [
+          257.3286946614583,
+          303.64752197265625
+        ],
+        [
+          319.5856526692708,
+          303.64752197265625
+        ],
+        [
+          319.5856526692708,
+          289.5494181315104
+        ],
+        [
+          257.3286946614583,
+          289.5494181315104
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Welding is only to be undertaken by certified persons who have been trained in the type of welding to be carried out.",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.7446797688802,
+          284.9882609049479
+        ],
+        [
+          493.4900309244792,
+          284.9882609049479
+        ],
+        [
+          493.4900309244792,
+          260.1092325846354
+        ],
+        [
+          86.7446797688802,
+          260.1092325846354
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Welders are to wear suitable personal protective equipment such as gauntlets, welding aprons, weldingface-shield,goggles or glasses.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          254.30409749348962
+        ],
+        [
+          493.4900309244792,
+          254.30409749348962
+        ],
+        [
+          493.4900309244792,
+          228.59576416015625
+        ],
+        [
+          88.4048563639323,
+          228.59576416015625
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "Suitableprecautionssuchasensuring thewelding areaisfreeof flammableandcombustible materials are tobe taken to prevent fires during all welding operations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          222.79066975911462
+        ],
+        [
+          493.0749918619792,
+          222.79066975911462
+        ],
+        [
+          493.0749918619792,
+          197.49700927734375
+        ],
+        [
+          87.9898173014323,
+          197.49700927734375
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "The cutting or welding of tanks or drums that contained flammable materials is prohibited unless proper precautions have been taken (i.e. the tanks or drum have heen purged or is filled with water) and a suitable testhas been carried out toconfirm it is safe to cut orweld.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.1597188313802,
+          192.93585205078125
+        ],
+        [
+          493.0749918619792,
+          192.93585205078125
+        ],
+        [
+          493.0749918619792,
+          155.20265706380212
+        ],
+        [
+          87.1597188313802,
+          155.20265706380212
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "All gas cylinders are to be turned off when not in use and hoses are to be kept clear of sharp edgcs abrasive surfaces or where vehicles can run over them and damagc thcm. All conncctions and equipmentaretoberegularlycheckedforfaultsandleaks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.32963053385417,
+          150.22682698567712
+        ],
+        [
+          497.6405029296875,
+          150.22682698567712
+        ],
+        [
+          497.6405029296875,
+          111.66432698567712
+        ],
+        [
+          86.32963053385417,
+          111.66432698567712
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "thepriorwritten consent ofEmaarMisrS.A.H",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.97291564941406,
+          92.17580159505212
+        ],
+        [
+          226.61527506510416,
+          92.17580159505212
+        ],
+        [
+          226.61527506510416,
+          81.80950927734375
+        ],
+        [
+          70.97291564941406,
+          81.80950927734375
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "rwaiopihn! aer. To 5n1d 218207.2D0 CR12841 2DAa 2OO, MHuan",
+      "confidence": 0.95,
+      "box": [
+        [
+          228.27547200520834,
+          72.68719482421875
+        ],
+        [
+          294.682861328125,
+          72.68719482421875
+        ],
+        [
+          294.682861328125,
+          39.92978922526038
+        ],
+        [
+          228.27547200520834,
+          39.92978922526038
+        ]
+      ],
+      "page": 430
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          735.2987162272135
+        ],
+        [
+          510.0918782552083,
+          735.2987162272135
+        ],
+        [
+          510.0918782552083,
+          721.6152547200521
+        ],
+        [
+          452.8155110677083,
+          721.6152547200521
+        ]
+      ],
+      "page": 430
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 430,
+      "text": "Projects Department Health &. Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\n3.4. Compressed Gas Cylinders\nBoth full and cmpty cylindcrs must bc storcd in a secure compound that provides protection from (he eleiments, outside and clear of any buildings or structures. They must be stored with their valves uppermost and have a coverfitted on thevalve.\nOxygen,LPG and acetylene cylinders are not to be stored togetherwithin3m of cach othcr unless separated by afireresistant structure.Gascylinders arenot tobe stored belowground level or near to drains orbasements.\nThe type of gas is to be clearly marked on cylinders; they are to be secured upright around the body using chains or other suitable material when being stored or transported and when beingused.\nA Securing gas cylinders around the neck or cap is prohibited.\nGas cylinders are not to be transported with regulators, gauges and hoscs attachcd. Cylindcrs will only be lifted in racks or in specially designed containers. Cylinders are not to be lifted using the valve cap or by means of a magnet, rope of chain slings.\nGas cylinders are not to be placed where they may become part of any electrical circuit and they are tobeprotectedfrom extremeheat andfrom beingstruckbymovingequipment.\nNon-return valves are to be provided at each blowpipe inlet connection and as a minimum a flame or flashback arrestors is to be fitted at the pressure regulator outlet valve. Valves are to be closed at all times when the cylinder is not in use.\nTorches are to be ignited by friction lighters or other similar devices only.\nA Before starting work, cylinders, hoses and connections are to be checked before use. Damaged or defective hoses or hose assemblies should only be replaccd or rcpaircd by a compctcnt person.\nOxygen cylinders are to be prevented for coming into contact or being contaminated with oils and greases.\n△\nArrangements must be put in place to control the risk of cylinder explosion in the event of a fire.\n3.5. Welding\nWelding is only to be undertaken by certified persons who have been trained in the type of welding to be carried out.\nWelders are to wear suitable personal protective equipment such as gauntlets, welding aprons, weldingface-shield,goggles or glasses.\nSuitableprecautionssuchasensuring thewelding areaisfreeof flammableandcombustible materials are tobe taken to prevent fires during all welding operations.\nThe cutting or welding of tanks or drums that contained flammable materials is prohibited unless proper precautions have been taken (i.e. the tanks or drum have heen purged or is filled with water) and a suitable testhas been carried out toconfirm it is safe to cut orweld.\nAll gas cylinders are to be turned off when not in use and hoses are to be kept clear of sharp edgcs abrasive surfaces or where vehicles can run over them and damagc thcm. All conncctions and equipmentaretoberegularlycheckedforfaultsandleaks.\nthepriorwritten consent ofEmaarMisrS.A.H\nrwaiopihn! aer. To 5n1d 218207.2D0 CR12841 2DAa 2OO, MHuan\nEMAAR",
+      "line_count": 24
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

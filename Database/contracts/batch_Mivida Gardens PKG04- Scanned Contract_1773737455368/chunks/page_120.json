@@ -1,0 +1,382 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n## 6.8 QualityAssurance\n\nAdd the following paragraph at the beginning of Sub-Clause 6.8. The Contractor shali submit for the Contract Administrator approval within thirty (30) days from Effective Date a Quality Control Program defining how it intendstoestablish and implementhisproposedQCprogram.\n\n## 6A FREEISSUEITEMS\n\n- 6A.2 CollectionandTakingDelivery\n\nIn paragraph (c)\n\nIn the first line after\"shall\"add“visually\".\n\nIn the 1oth line hefore\"All additional\"add \"In respectof defects or damages that can be visually detected or any shortage in quantities,\". Delete\"All\" and substitute with\"all\".\n\n## 6A.5 NotificationofDamage\n\nDeletethisSub-Clauseentirely.\n\n- 6A.6 Surplus Items\n\nChange the titleof this Sub-Clause to read\"Quantities of Free Issue Items\".\n\nDelete paragraph (b) of this Sub-Clause and substitute by the following:\n\n- (b)TheContractorshallcalculatetheactualquantitiesof allFreeIssue Itemsrequiredfor theWorksandplaceawrittenapplicationtothe SupervisionConsultantwithacopytotheEmployerinatimely mannerrequesting the supply of required quantitiesof eachFree Issue Item. The Employer shall make the requested quantities of the FreeIssueItemsascalculatedandrequestedbytheContractor availableforcollectionbytheContractor.Theactualinstalled quantities shall be checked by the Supervision Consultant against the actual delivered quantitieshavingregards to the approvedpercent for wastage exclusively for MV cables item only; any surplus quantities shallbe theContractor'sresponsibilityand athis owncost.Incase thequantitiesdeliveredbytheEmployerbasedonthecalculations providedbytheContractorarefoundtobeinsufficientforthe executionandcompletionoftheWorksaspertheContract Documents,then the Contractor shall be obliged to procure and supplytherequiredmissingmaterialatitsowncostandunder its responsibility.FailurebytheContractor toprocure andsupply the ContractAdministratorshallgive theEmployer therighttoprocure and supply, or cause to be procured and supplied such missing quantities,andall additional Costs to the Employer as determined by theContractAdministrator arisingfromanyfailureby theContractor tosoprocure andsupply therequired missingmaterial shall beborne by theContractorandmaybedeductedby theEmployerfromany monies due ortobecome due to theContractor.Any delays in the\n\noetuetionof Parcel11,Parcel12Townhomes&amp;GradingWorksforParcel11 CnntractPartlclilarConditions Page7of 37\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          748.7742411295573
+        ],
+        [
+          177.5852254231771,
+          748.7742411295573
+        ],
+        [
+          177.5852254231771,
+          730.1082458496094
+        ],
+        [
+          98.51751708984375,
+          730.1082458496094
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          725.0175272623698
+        ],
+        [
+          151.3702596028646,
+          725.0175272623698
+        ],
+        [
+          151.3702596028646,
+          714.4118448893229
+        ],
+        [
+          126.84658813476562,
+          714.4118448893229
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "6.8 QualityAssurance",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          695.3216247558594
+        ],
+        [
+          252.00189208984375,
+          695.3216247558594
+        ],
+        [
+          252.00189208984375,
+          682.5948079427084
+        ],
+        [
+          125.578125,
+          682.5948079427084
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "Add the following paragraph at the beginning of Sub-Clause 6.8. The Contractor shali submit for the Contract Administrator approval within thirty (30) days from Effective Date a Quality Control Program defining how it intendstoestablish and implementhisproposedQCprogram.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          677.9283142089844
+        ],
+        [
+          502.3125,
+          677.9283142089844
+        ],
+        [
+          502.3125,
+          630.8390909830729
+        ],
+        [
+          165.74620564778647,
+          630.8390909830729
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "6A FREEISSUEITEMS",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          618.5364990234375
+        ],
+        [
+          224.9412841796875,
+          618.5364990234375
+        ],
+        [
+          224.9412841796875,
+          607.9308268229166
+        ],
+        [
+          96.40340169270833,
+          607.9308268229166
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "6A.2 CollectionandTakingDelivery",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          601.9916381835938
+        ],
+        [
+          308.23720296223956,
+          601.9916381835938
+        ],
+        [
+          308.23720296223956,
+          590.11328125
+        ],
+        [
+          127.2694091796875,
+          590.11328125
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "In paragraph (c)",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          585.0225626627605
+        ],
+        [
+          242.6998087565104,
+          585.0225626627605
+        ],
+        [
+          242.6998087565104,
+          571.447285970052
+        ],
+        [
+          165.74620564778647,
+          571.447285970052
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "In the first line after\"shall\"add“visually\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          568.053466796875
+        ],
+        [
+          354.3247884114583,
+          568.053466796875
+        ],
+        [
+          354.3247884114583,
+          557.8720296223958
+        ],
+        [
+          166.16902669270834,
+          557.8720296223958
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "In the 1oth line hefore\"All additional\"add \"In respectof defects or damages that can be visually detected or any shortage in quantities,\". Delete\"All\" and substitute with\"all\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          552.3570760091145
+        ],
+        [
+          502.3125,
+          552.3570760091145
+        ],
+        [
+          502.3125,
+          517.146219889323
+        ],
+        [
+          166.16902669270834,
+          517.146219889323
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "6A.5 NotificationofDamage",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          511.20703125
+        ],
+        [
+          273.98862711588544,
+          511.20703125
+        ],
+        [
+          273.98862711588544,
+          498.90443929036456
+        ],
+        [
+          128.11505126953125,
+          498.90443929036456
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "DeletethisSub-Clauseentirely.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          493.38950602213544
+        ],
+        [
+          312.88824462890625,
+          493.38950602213544
+        ],
+        [
+          312.88824462890625,
+          482.35959879557294
+        ],
+        [
+          167.0146687825521,
+          482.35959879557294
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "6A.6 Surplus Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.53787231445312,
+          475.99619547526044
+        ],
+        [
+          232.55208333333334,
+          475.99619547526044
+        ],
+        [
+          232.55208333333334,
+          464.54205322265625
+        ],
+        [
+          128.53787231445312,
+          464.54205322265625
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "Change the titleof this Sub-Clause to read\"Quantities of Free Issue Items\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          459.02707926432294
+        ],
+        [
+          503.1581217447917,
+          459.02707926432294
+        ],
+        [
+          503.1581217447917,
+          435.69460042317706
+        ],
+        [
+          167.4375,
+          435.69460042317706
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "Delete paragraph (b) of this Sub-Clause and substitute by the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          431.02809651692706
+        ],
+        [
+          497.6614583333333,
+          431.02809651692706
+        ],
+        [
+          497.6614583333333,
+          419.99818929036456
+        ],
+        [
+          167.4375,
+          419.99818929036456
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "(b)TheContractorshallcalculatetheactualquantitiesof allFreeIssue Itemsrequiredfor theWorksandplaceawrittenapplicationtothe SupervisionConsultantwithacopytotheEmployerinatimely mannerrequesting the supply of required quantitiesof eachFree Issue Item. The Employer shall make the requested quantities of the FreeIssueItemsascalculatedandrequestedbytheContractor availableforcollectionbytheContractor.Theactualinstalled quantities shall be checked by the Supervision Consultant against the actual delivered quantitieshavingregards to the approvedpercent for wastage exclusively for MV cables item only; any surplus quantities shallbe theContractor'sresponsibilityand athis owncost.Incase thequantitiesdeliveredbytheEmployerbasedonthecalculations providedbytheContractorarefoundtobeinsufficientforthe executionandcompletionoftheWorksaspertheContract Documents,then the Contractor shall be obliged to procure and supplytherequiredmissingmaterialatitsowncostandunder its responsibility.FailurebytheContractor toprocure andsupply the ContractAdministratorshallgive theEmployer therighttoprocure and supply, or cause to be procured and supplied such missing quantities,andall additional Costs to the Employer as determined by theContractAdministrator arisingfromanyfailureby theContractor tosoprocure andsupply therequired missingmaterial shall beborne by theContractorandmaybedeductedby theEmployerfromany monies due ortobecome due to theContractor.Any delays in the",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.28314208984375,
+          413.21055094401044
+        ],
+        [
+          505.695068359375,
+          413.21055094401044
+        ],
+        [
+          505.695068359375,
+          116.25152587890625
+        ],
+        [
+          168.28314208984375,
+          116.25152587890625
+        ]
+      ],
+      "page": 120
+    },
+    {
+      "text": "oetuetionof Parcel11,Parcel12Townhomes&GradingWorksforParcel11 CnntractPartlclilarConditions Page7of 37",
+      "confidence": 0.95,
+      "box": [
+        [
+          268.06911214192706,
+          101.40362548828125
+        ],
+        [
+          506.5406901041667,
+          101.40362548828125
+        ],
+        [
+          506.5406901041667,
+          78.91957600911462
+        ],
+        [
+          268.06911214192706,
+          78.91957600911462
+        ]
+      ],
+      "page": 120
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 120,
+      "text": "EMAAR\nMISR\n6.8 QualityAssurance\nAdd the following paragraph at the beginning of Sub-Clause 6.8. The Contractor shali submit for the Contract Administrator approval within thirty (30) days from Effective Date a Quality Control Program defining how it intendstoestablish and implementhisproposedQCprogram.\n6A FREEISSUEITEMS\n6A.2 CollectionandTakingDelivery\nIn paragraph (c)\nIn the first line after\"shall\"add“visually\".\nIn the 1oth line hefore\"All additional\"add \"In respectof defects or damages that can be visually detected or any shortage in quantities,\". Delete\"All\" and substitute with\"all\".\n6A.5 NotificationofDamage\nDeletethisSub-Clauseentirely.\n6A.6 Surplus Items\nChange the titleof this Sub-Clause to read\"Quantities of Free Issue Items\".\nDelete paragraph (b) of this Sub-Clause and substitute by the following:\n(b)TheContractorshallcalculatetheactualquantitiesof allFreeIssue Itemsrequiredfor theWorksandplaceawrittenapplicationtothe SupervisionConsultantwithacopytotheEmployerinatimely mannerrequesting the supply of required quantitiesof eachFree Issue Item. The Employer shall make the requested quantities of the FreeIssueItemsascalculatedandrequestedbytheContractor availableforcollectionbytheContractor.Theactualinstalled quantities shall be checked by the Supervision Consultant against the actual delivered quantitieshavingregards to the approvedpercent for wastage exclusively for MV cables item only; any surplus quantities shallbe theContractor'sresponsibilityand athis owncost.Incase thequantitiesdeliveredbytheEmployerbasedonthecalculations providedbytheContractorarefoundtobeinsufficientforthe executionandcompletionoftheWorksaspertheContract Documents,then the Contractor shall be obliged to procure and supplytherequiredmissingmaterialatitsowncostandunder its responsibility.FailurebytheContractor toprocure andsupply the ContractAdministratorshallgive theEmployer therighttoprocure and supply, or cause to be procured and supplied such missing quantities,andall additional Costs to the Employer as determined by theContractAdministrator arisingfromanyfailureby theContractor tosoprocure andsupply therequired missingmaterial shall beborne by theContractorandmaybedeductedby theEmployerfromany monies due ortobecome due to theContractor.Any delays in the\noetuetionof Parcel11,Parcel12Townhomes&GradingWorksforParcel11 CnntractPartlclilarConditions Page7of 37",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,290 @@
+{
+  "text": "## EMAAR\n\nthe Contract Administrator who shall then notify the Contractor thereon, with a copy to the Employer.\n\n- G.Both the Contractor's mobilization area (including storage &amp; workshops) and the workingsiteshallbesurroundedbythehordinginaccordancewiththehording design &amp; specifications included in the Contract Documents.\n- H. 20% of the subcontract price of any future Nominated Subcontractor by the Employer, will be paid to the Contractor to cover all its costs and profit.\n1. For Aluminium Work, Engineered Wood, HDF flooring, Wooden doors and Elevators:\n\nThe supply and installation of the above-mentioned work items shall be part of the Contractor's Basic Scope of Works.However, the Employer may,upon its sole discretion during the construction stage, omit the supply and installation of any/orallofthesaidworkitemsfromtheContractor'sScopeofWorks.Insuch case,theContractorshallbeentitledtoreceive10%of thetotalamountof the l coordination.\n\nThe coordination scope by the Contractor shall include, but not limited to, provide the quantities take off based on the approved shop drawing, builder work, levelling, civil work, site preparation, storage, security, temporary work and water and power sources.\n\nDuring construction, and without having any negative impact on the progress of Works as per the approved Programme, the Contractor shall not order any of the said work items before collecting the Employer's decision on direct supply. Any such order without prior approval shall be at the Contractor's risk.\n\nIn the event that the actual value of the omitted work (applied for each item separately)paid by the Employer (including the coordination percentage) exceeds the lump sum price of omitted work under the Contract priced BOQ as a sole result of an error in the quantities take-off submitted by the Contractor, thentheEmployershallhavetherighttorecovertheadditionalamountsthat Contractor's dues.\n\nSub-Clause22.6ofConditionsofContract.\n\n- The Contract sum is based on the List of Manufacturers (Appendix F) which shall be given the priority in selection of vendors provided that the selected vendor meets the Contract Specifications. The vendor list provided by the design consultant included in the Tender Documents (if any) is a complementary list that shall beusedonlyincaseofshortageinListof Manufacturers(AppendixF).In caseofcontradictionsbetweenthetwolists,TheListofAppendixFshalltake precedence.\n- K.The Contractor agrees to use the Oracle Primavera Unifier automated system to\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.79924011230469,
+          755.5618794759115
+        ],
+        [
+          148.83333333333334,
+          755.5618794759115
+        ],
+        [
+          148.83333333333334,
+          737.3201090494791
+        ],
+        [
+          77.79924011230469,
+          737.3201090494791
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "the Contract Administrator who shall then notify the Contractor thereon, with a copy to the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.27604166666667,
+          715.2602945963541
+        ],
+        [
+          506.9635416666667,
+          715.2602945963541
+        ],
+        [
+          506.9635416666667,
+          688.5339864095052
+        ],
+        [
+          116.27604166666667,
+          688.5339864095052
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "G.Both the Contractor's mobilization area (including storage & workshops) and the workingsiteshallbesurroundedbythehordinginaccordancewiththehording design & specifications included in the Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          684.2917175292969
+        ],
+        [
+          506.1178792317708,
+          684.2917175292969
+        ],
+        [
+          506.1178792317708,
+          644.8385823567709
+        ],
+        [
+          95.55775960286458,
+          644.8385823567709
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "20% of the subcontract price of any future Nominated Subcontractor by the Employer, will be paid to the Contractor to cover all its costs and profit.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          640.5963134765625
+        ],
+        [
+          506.5406901041667,
+          640.5963134765625
+        ],
+        [
+          506.5406901041667,
+          613.8700154622396
+        ],
+        [
+          95.98058064778645,
+          613.8700154622396
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "For Aluminium Work, Engineered Wood, HDF flooring, Wooden doors and Elevators:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          610.0519612630209
+        ],
+        [
+          506.9635416666667,
+          610.0519612630209
+        ],
+        [
+          506.9635416666667,
+          584.1741129557292
+        ],
+        [
+          95.55775960286458,
+          584.1741129557292
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "The supply and installation of the above-mentioned work items shall be part of the Contractor's Basic Scope of Works.However, the Employer may,upon its sole discretion during the construction stage, omit the supply and installation of any/orallofthesaidworkitemsfromtheContractor'sScopeofWorks.Insuch case,theContractorshallbeentitledtoreceive10%of thetotalamountof the l coordination.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          582.052978515625
+        ],
+        [
+          507.3863525390625,
+          582.052978515625
+        ],
+        [
+          507.3863525390625,
+          492.96527099609375
+        ],
+        [
+          115.8532206217448,
+          492.96527099609375
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "The coordination scope by the Contractor shall include, but not limited to, provide the quantities take off based on the approved shop drawing, builder work, levelling, civil work, site preparation, storage, security, temporary work and water and power sources.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.43039957682292,
+          491.26837158203125
+        ],
+        [
+          506.5406901041667,
+          491.26837158203125
+        ],
+        [
+          506.5406901041667,
+          439.08839925130206
+        ],
+        [
+          115.43039957682292,
+          439.08839925130206
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "During construction, and without having any negative impact on the progress of Works as per the approved Programme, the Contractor shall not order any of the said work items before collecting the Employer's decision on direct supply. Any such order without prior approval shall be at the Contractor's risk.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.43039957682292,
+          438.66420491536456
+        ],
+        [
+          507.3863525390625,
+          438.66420491536456
+        ],
+        [
+          507.3863525390625,
+          386.48423258463544
+        ],
+        [
+          115.43039957682292,
+          386.48423258463544
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "In the event that the actual value of the omitted work (applied for each item separately)paid by the Employer (including the coordination percentage) exceeds the lump sum price of omitted work under the Contract priced BOQ as a sole result of an error in the quantities take-off submitted by the Contractor, thentheEmployershallhavetherighttorecovertheadditionalamountsthat Contractor's dues.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.007568359375,
+          385.21156819661456
+        ],
+        [
+          506.1178792317708,
+          385.21156819661456
+        ],
+        [
+          506.1178792317708,
+          296.5480753580729
+        ],
+        [
+          115.007568359375,
+          296.5480753580729
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "Sub-Clause22.6ofConditionsofContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          268.5490926106771
+        ],
+        [
+          325.9957275390625,
+          268.5490926106771
+        ],
+        [
+          325.9957275390625,
+          256.6707560221354
+        ],
+        [
+          115.8532206217448,
+          256.6707560221354
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "The Contract sum is based on the List of Manufacturers (Appendix F) which shall be given the priority in selection of vendors provided that the selected vendor meets the Contract Specifications. The vendor list provided by the design consultant included in the Tender Documents (if any) is a complementary list that shall beusedonlyincaseofshortageinListof Manufacturers(AppendixF).In caseofcontradictionsbetweenthetwolists,TheListofAppendixFshalltake precedence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.73910522460938,
+          253.70115152994788
+        ],
+        [
+          506.1178792317708,
+          253.70115152994788
+        ],
+        [
+          506.1178792317708,
+          164.61346435546875
+        ],
+        [
+          113.73910522460938,
+          164.61346435546875
+        ]
+      ],
+      "page": 7
+    },
+    {
+      "text": "K.The Contractor agrees to use the Oracle Primavera Unifier automated system to",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          162.49232991536462
+        ],
+        [
+          504.8494059244792,
+          162.49232991536462
+        ],
+        [
+          504.8494059244792,
+          147.64434814453125
+        ],
+        [
+          93.02083333333333,
+          147.64434814453125
+        ]
+      ],
+      "page": 7
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 7,
+      "text": "EMAAR\nthe Contract Administrator who shall then notify the Contractor thereon, with a copy to the Employer.\nG.Both the Contractor's mobilization area (including storage & workshops) and the workingsiteshallbesurroundedbythehordinginaccordancewiththehording design & specifications included in the Contract Documents.\n20% of the subcontract price of any future Nominated Subcontractor by the Employer, will be paid to the Contractor to cover all its costs and profit.\nFor Aluminium Work, Engineered Wood, HDF flooring, Wooden doors and Elevators:\nThe supply and installation of the above-mentioned work items shall be part of the Contractor's Basic Scope of Works.However, the Employer may,upon its sole discretion during the construction stage, omit the supply and installation of any/orallofthesaidworkitemsfromtheContractor'sScopeofWorks.Insuch case,theContractorshallbeentitledtoreceive10%of thetotalamountof the l coordination.\nThe coordination scope by the Contractor shall include, but not limited to, provide the quantities take off based on the approved shop drawing, builder work, levelling, civil work, site preparation, storage, security, temporary work and water and power sources.\nDuring construction, and without having any negative impact on the progress of Works as per the approved Programme, the Contractor shall not order any of the said work items before collecting the Employer's decision on direct supply. Any such order without prior approval shall be at the Contractor's risk.\nIn the event that the actual value of the omitted work (applied for each item separately)paid by the Employer (including the coordination percentage) exceeds the lump sum price of omitted work under the Contract priced BOQ as a sole result of an error in the quantities take-off submitted by the Contractor, thentheEmployershallhavetherighttorecovertheadditionalamountsthat Contractor's dues.\nSub-Clause22.6ofConditionsofContract.\nThe Contract sum is based on the List of Manufacturers (Appendix F) which shall be given the priority in selection of vendors provided that the selected vendor meets the Contract Specifications. The vendor list provided by the design consultant included in the Tender Documents (if any) is a complementary list that shall beusedonlyincaseofshortageinListof Manufacturers(AppendixF).In caseofcontradictionsbetweenthetwolists,TheListofAppendixFshalltake precedence.\nK.The Contractor agrees to use the Oracle Primavera Unifier automated system to",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

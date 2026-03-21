@@ -1,0 +1,359 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- 2.4shall not, and shall use my/our best endeavours to procure that my/ourpersonnel do theconfidential informationtoor for anyperson,firmor company whomsoever or whatsoever,exceptwiththepriorwrittenconsentofEMAARinaccordancewiththis Agreementorwherethedisclosureismadeintheordinarycourseofbusinesstoa partyappointedbyEMAARinrespectof theproject.\n- 2.5 shall maintain，and at the request of EMAAR,immediately deliver the original acknowledgementofeachrelevantmemberofmy/ourpersonnelandanypartyto whom information is disclosed under clause 2.3 hereof to be bound by this Secrecy Agreement.\n3. Toensure the confidentialityattaching to the confidential information,I/we further undertakethatI/weshall:\n- 3.1 keepseparate allconfidentialinformationandallinformationgeneratedbyme/us basedthereonfrom allotherdocumentsandrecordsheldbyme/us.\n- 3.2 keepalldocumentsandanyother materialbearing or incorporatinganyof the confidential information at my/our usual place of business,namely innovo Build S.A.E.\n- 3.3 not use, reproduce,transform or storc any of tho confidential information in an externallyaccessiblecomputer or electronicinformationretrieval systemor transmit it in anyform orby any meanswhatsoever outside of my/ourusual placeofbusiness, excepttotheextentitisadvisable,infurtheranceoftheproject,totransmitconfidential informationbyelectronicdatacommunicationtoapartyappointedbyEMAARin respectof theprojectandapprovedpersonsunder2.3hereofortoalternatelocations ofmy/ourbusiness inwhichcase appropriatemeasuresshallbeimplementedto maintain confidentiality.\n- 3.4allowaccesstotheconfidentialinformationexclusivelytothoseemployeeswhohave reasonable need to see it and shall inform each of the said employees of the confidentialnatureoftheconfidentialinformationandofthcobligationsonme/usin respectthereufandshiallublainlheabove-mentionedSecrecyAgreement.\n- 3.5 makecopiesof theconfidential informationonlytotheAxtant thatthesameisstrictly requiredforthepurposesof itsevaluationbyme/us.\n- 3.6 ontherequestofEMAARmadeatanytime,deliver toEMAARalldocumentsand other material in my/our possession,custody or control that bear orincorporate the wholeof,oranypartof,theconfidential information.\n4. I/Weherebyacknowledgethatdamagesalonewouldnotbeanadequateremedyfor EMAARinrespectofthebreachofanyoftheprovisionsofthisAgreementand accordingly,withoutprejudicetoanyandall rightsEMAARmayhave,EMAARshallbe entitledbyorderofacompetentcourt,withoutproofofspecialdamage,totheremedies of injunction,attachment,specificperformance andotherrelief for any actual breachof thls Agreement.\n\n## 5. INDEMNITY\n\nThe Undertaking Party hereby agrees to hold and keep Emaar fully indemnified from and against any and all liability,losses，damages, costs,expenses(including but not limitedtolegalfeesandprofessional fees),suitsandclaimswhichEmaarmaysufferor incur as a result of anybreach of this Undertaking by the UndertakingParty,which indemnityshallbeenforceablebyorderof acourtofcompetent jurisdiction.\n\n6. EMAARPROJECTS Meansany and all packages ssued for Mivida GardensProject.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          752.1680603027344
+        ],
+        [
+          164.47774251302084,
+          752.1680603027344
+        ],
+        [
+          164.47774251302084,
+          733.9262898763021
+        ],
+        [
+          97.24905395507812,
+          733.9262898763021
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.3499043782552,
+          731.8051554361979
+        ],
+        [
+          142.49099731445312,
+          731.8051554361979
+        ],
+        [
+          142.49099731445312,
+          721.1994832356771
+        ],
+        [
+          121.3499043782552,
+          721.1994832356771
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "2.4shall not, and shall use my/our best endeavours to procure that my/ourpersonnel do theconfidential informationtoor for anyperson,firmor company whomsoever or whatsoever,exceptwiththepriorwrittenconsentofEMAARinaccordancewiththis Agreementorwherethedisclosureismadeintheordinarycourseofbusinesstoa partyappointedbyEMAARinrespectof theproject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          700.8365783691406
+        ],
+        [
+          489.2049967447917,
+          700.8365783691406
+        ],
+        [
+          489.2049967447917,
+          632.9602254231771
+        ],
+        [
+          95.1349385579427,
+          632.9602254231771
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "2.5 shall maintain，and at the request of EMAAR,immediately deliver the original acknowledgementofeachrelevantmemberofmy/ourpersonnelandanypartyto whom information is disclosed under clause 2.3 hereof to be bound by this Secrecy Agreement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          631.6875406901041
+        ],
+        [
+          488.359375,
+          631.6875406901041
+        ],
+        [
+          488.359375,
+          587.1436971028646
+        ],
+        [
+          96.40340169270833,
+          587.1436971028646
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "Toensure the confidentialityattaching to the confidential information,I/we further undertakethatI/weshall:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          576.9622395833333
+        ],
+        [
+          488.359375,
+          576.9622395833333
+        ],
+        [
+          488.359375,
+          554.4782104492188
+        ],
+        [
+          95.55775960286458,
+          554.4782104492188
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "3.1 keepseparate allconfidentialinformationandallinformationgeneratedbyme/us basedthereonfrom allotherdocumentsandrecordsheldbyme/us.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          551.5086263020833
+        ],
+        [
+          487.5137125651042,
+          551.5086263020833
+        ],
+        [
+          487.5137125651042,
+          528.1761271158855
+        ],
+        [
+          94.71211751302083,
+          528.1761271158855
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "3.2 keepalldocumentsandanyother materialbearing or incorporatinganyof the confidential information at my/our usual place of business,namely innovo Build S.A.E.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          527.3276774088542
+        ],
+        [
+          487.9365234375,
+          527.3276774088542
+        ],
+        [
+          487.9365234375,
+          494.23793538411456
+        ],
+        [
+          94.71211751302083,
+          494.23793538411456
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "3.3 not use, reproduce,transform or storc any of tho confidential information in an externallyaccessiblecomputer or electronicinformationretrieval systemor transmit it in anyform orby any meanswhatsoever outside of my/ourusual placeofbusiness, excepttotheextentitisadvisable,infurtheranceoftheproject,totransmitconfidential informationbyelectronicdatacommunicationtoapartyappointedbyEMAARin respectof theprojectandapprovedpersonsunder2.3hereofortoalternatelocations ofmy/ourbusiness inwhichcase appropriatemeasuresshallbeimplementedto maintain confidentiality.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          491.69260660807294
+        ],
+        [
+          488.359375,
+          491.69260660807294
+        ],
+        [
+          488.359375,
+          402.18064371744794
+        ],
+        [
+          95.1349385579427,
+          402.18064371744794
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "3.4allowaccesstotheconfidentialinformationexclusivelytothoseemployeeswhohave reasonable need to see it and shall inform each of the said employees of the confidentialnatureoftheconfidentialinformationandofthcobligationsonme/usin respectthereufandshiallublainlheabove-mentionedSecrecyAgreement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          401.33221435546875
+        ],
+        [
+          487.5137125651042,
+          401.33221435546875
+        ],
+        [
+          487.5137125651042,
+          355.93988037109375
+        ],
+        [
+          93.02083333333333,
+          355.93988037109375
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "3.5 makecopiesof theconfidential informationonlytotheAxtant thatthesameisstrictly requiredforthepurposesof itsevaluationbyme/us.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          354.24298095703125
+        ],
+        [
+          486.2452392578125,
+          354.24298095703125
+        ],
+        [
+          486.2452392578125,
+          330.91050211588544
+        ],
+        [
+          94.28929646809895,
+          330.91050211588544
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "3.6 ontherequestofEMAARmadeatanytime,deliver toEMAARalldocumentsand other material in my/our possession,custody or control that bear orincorporate the wholeof,oranypartof,theconfidential information.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          329.6377970377604
+        ],
+        [
+          487.0909016927083,
+          329.6377970377604
+        ],
+        [
+          487.0909016927083,
+          295.69964599609375
+        ],
+        [
+          93.86647542317708,
+          295.69964599609375
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "I/Weherebyacknowledgethatdamagesalonewouldnotbeanadequateremedyfor EMAARinrespectofthebreachofanyoftheprovisionsofthisAgreementand accordingly,withoutprejudicetoanyandall rightsEMAARmayhave,EMAARshallbe entitledbyorderofacompetentcourt,withoutproofofspecialdamage,totheremedies of injunction,attachment,specificperformance andotherrelief for any actual breachof thls Agreement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          285.9424031575521
+        ],
+        [
+          487.5137125651042,
+          285.9424031575521
+        ],
+        [
+          487.5137125651042,
+          218.91453043619788
+        ],
+        [
+          94.28929646809895,
+          218.91453043619788
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "5. INDEMNITY",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          208.73305257161462
+        ],
+        [
+          157.28976440429688,
+          208.73305257161462
+        ],
+        [
+          157.28976440429688,
+          198.55161539713538
+        ],
+        [
+          92.59801228841145,
+          198.55161539713538
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "The Undertaking Party hereby agrees to hold and keep Emaar fully indemnified from and against any and all liability,losses，damages, costs,expenses(including but not limitedtolegalfeesandprofessional fees),suitsandclaimswhichEmaarmaysufferor incur as a result of anybreach of this Undertaking by the UndertakingParty,which indemnityshallbeenforceablebyorderof acourtofcompetent jurisdiction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.20217895507812,
+          196.00624593098962
+        ],
+        [
+          487.5137125651042,
+          196.00624593098962
+        ],
+        [
+          487.5137125651042,
+          139.15981038411462
+        ],
+        [
+          111.20217895507812,
+          139.15981038411462
+        ]
+      ],
+      "page": 574
+    },
+    {
+      "text": "EMAARPROJECTS Meansany and all packages ssued for Mivida GardensProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          129.82680257161462
+        ],
+        [
+          382.6538899739583,
+          129.82680257161462
+        ],
+        [
+          382.6538899739583,
+          103.52471923828125
+        ],
+        [
+          92.59801228841145,
+          103.52471923828125
+        ]
+      ],
+      "page": 574
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 574,
+      "text": "EMAAR\nMISR\n2.4shall not, and shall use my/our best endeavours to procure that my/ourpersonnel do theconfidential informationtoor for anyperson,firmor company whomsoever or whatsoever,exceptwiththepriorwrittenconsentofEMAARinaccordancewiththis Agreementorwherethedisclosureismadeintheordinarycourseofbusinesstoa partyappointedbyEMAARinrespectof theproject.\n2.5 shall maintain，and at the request of EMAAR,immediately deliver the original acknowledgementofeachrelevantmemberofmy/ourpersonnelandanypartyto whom information is disclosed under clause 2.3 hereof to be bound by this Secrecy Agreement.\nToensure the confidentialityattaching to the confidential information,I/we further undertakethatI/weshall:\n3.1 keepseparate allconfidentialinformationandallinformationgeneratedbyme/us basedthereonfrom allotherdocumentsandrecordsheldbyme/us.\n3.2 keepalldocumentsandanyother materialbearing or incorporatinganyof the confidential information at my/our usual place of business,namely innovo Build S.A.E.\n3.3 not use, reproduce,transform or storc any of tho confidential information in an externallyaccessiblecomputer or electronicinformationretrieval systemor transmit it in anyform orby any meanswhatsoever outside of my/ourusual placeofbusiness, excepttotheextentitisadvisable,infurtheranceoftheproject,totransmitconfidential informationbyelectronicdatacommunicationtoapartyappointedbyEMAARin respectof theprojectandapprovedpersonsunder2.3hereofortoalternatelocations ofmy/ourbusiness inwhichcase appropriatemeasuresshallbeimplementedto maintain confidentiality.\n3.4allowaccesstotheconfidentialinformationexclusivelytothoseemployeeswhohave reasonable need to see it and shall inform each of the said employees of the confidentialnatureoftheconfidentialinformationandofthcobligationsonme/usin respectthereufandshiallublainlheabove-mentionedSecrecyAgreement.\n3.5 makecopiesof theconfidential informationonlytotheAxtant thatthesameisstrictly requiredforthepurposesof itsevaluationbyme/us.\n3.6 ontherequestofEMAARmadeatanytime,deliver toEMAARalldocumentsand other material in my/our possession,custody or control that bear orincorporate the wholeof,oranypartof,theconfidential information.\nI/Weherebyacknowledgethatdamagesalonewouldnotbeanadequateremedyfor EMAARinrespectofthebreachofanyoftheprovisionsofthisAgreementand accordingly,withoutprejudicetoanyandall rightsEMAARmayhave,EMAARshallbe entitledbyorderofacompetentcourt,withoutproofofspecialdamage,totheremedies of injunction,attachment,specificperformance andotherrelief for any actual breachof thls Agreement.\n5. INDEMNITY\nThe Undertaking Party hereby agrees to hold and keep Emaar fully indemnified from and against any and all liability,losses，damages, costs,expenses(including but not limitedtolegalfeesandprofessional fees),suitsandclaimswhichEmaarmaysufferor incur as a result of anybreach of this Undertaking by the UndertakingParty,which indemnityshallbeenforceablebyorderof acourtofcompetent jurisdiction.\nEMAARPROJECTS Meansany and all packages ssued for Mivida GardensProject.",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

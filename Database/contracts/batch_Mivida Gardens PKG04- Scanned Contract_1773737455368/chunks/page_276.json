@@ -1,0 +1,152 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\n- B. Proof of Compliance: Whenever the Contract Documents require that a product complies with Federal Specification, British Standard, ASTM Designation, ANSl Specification or other association, standards, etc., the Contractor shall present an affidavit from the manufacturer certifying that the product complies therewith. Where requested or specified, submit supporting test data to substantiate compliance.\n- C. Where reference standard referredto herein is inthe form of a recommendation or suggestion, such recommendation or suggestion shall be deemed to be mandatory under this Contract unless conflicting with particular specifications contained herein.\n\n## DEFINITIONS\n\n- A. Where \"as shown\", \"as indicated\", \"as detailed\", or words of similar import are used, it shall be understood that reference to the Drawings accompanying the Specifications is made unless otherwise state.Where\"as approved\", \"as reviewed\", \"as accepted\", or words of similar import are used, it shall be understood that the approval, direction, requirement, permission, authorization review, or acceptance of the Employer is intended, unlessotherwisestated.\n- B. As used in the Contract Documents, \"provide\" shall be understood to mean, \"provide complete in place\", that is, \"furnish and install\".\n\nENDOFSECTION01090\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Proof of Compliance: Whenever the Contract Documents require that a product complies with Federal Specification, British Standard, ASTM Designation, ANSl Specification or other association, standards, etc., the Contractor shall present an affidavit from the manufacturer certifying that the product complies therewith. Where requested or specified, submit supporting test data to substantiate compliance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          719.9566446940104
+        ],
+        [
+          505.5263671875,
+          719.9566446940104
+        ],
+        [
+          505.5263671875,
+          650.2953694661459
+        ],
+        [
+          101.2712910970052,
+          650.2953694661459
+        ]
+      ],
+      "page": 276
+    },
+    {
+      "text": "Where reference standard referredto herein is inthe form of a recommendation or suggestion, such recommendation or suggestion shall be deemed to be mandatory under this Contract unless conflicting with particular specifications contained herein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          645.7342122395834
+        ],
+        [
+          504.6962890625,
+          645.7342122395834
+        ],
+        [
+          504.6962890625,
+          599.2933553059896
+        ],
+        [
+          101.2712910970052,
+          599.2933553059896
+        ]
+      ],
+      "page": 276
+    },
+    {
+      "text": "DEFINITIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          574.8289591471354
+        ],
+        [
+          149.00161743164062,
+          574.8289591471354
+        ],
+        [
+          149.00161743164062,
+          563.6334025065105
+        ],
+        [
+          76.36852010091145,
+          563.6334025065105
+        ]
+      ],
+      "page": 276
+    },
+    {
+      "text": "Where \"as shown\", \"as indicated\", \"as detailed\", or words of similar import are used, it shall be understood that reference to the Drawings accompanying the Specifications is made unless otherwise state.Where\"as approved\", \"as reviewed\", \"as accepted\", or words of similar import are used, it shall be understood that the approval, direction, requirement, permission, authorization review, or acceptance of the Employer is intended, unlessotherwisestated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          547.047383626302
+        ],
+        [
+          505.111328125,
+          547.047383626302
+        ],
+        [
+          505.111328125,
+          467.01983642578125
+        ],
+        [
+          101.2712910970052,
+          467.01983642578125
+        ]
+      ],
+      "page": 276
+    },
+    {
+      "text": "As used in the Contract Documents, \"provide\" shall be understood to mean, \"provide complete in place\", that is, \"furnish and install\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.68634033203125,
+          444.21405029296875
+        ],
+        [
+          503.8662109375,
+          444.21405029296875
+        ],
+        [
+          503.8662109375,
+          421.40826416015625
+        ],
+        [
+          101.68634033203125,
+          421.40826416015625
+        ]
+      ],
+      "page": 276
+    },
+    {
+      "text": "ENDOFSECTION01090",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.5400390625,
+          394.04132080078125
+        ],
+        [
+          356.1097005208333,
+          394.04132080078125
+        ],
+        [
+          356.1097005208333,
+          383.26043701171875
+        ],
+        [
+          224.5400390625,
+          383.26043701171875
+        ]
+      ],
+      "page": 276
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 276,
+      "text": "Proof of Compliance: Whenever the Contract Documents require that a product complies with Federal Specification, British Standard, ASTM Designation, ANSl Specification or other association, standards, etc., the Contractor shall present an affidavit from the manufacturer certifying that the product complies therewith. Where requested or specified, submit supporting test data to substantiate compliance.\nWhere reference standard referredto herein is inthe form of a recommendation or suggestion, such recommendation or suggestion shall be deemed to be mandatory under this Contract unless conflicting with particular specifications contained herein.\nDEFINITIONS\nWhere \"as shown\", \"as indicated\", \"as detailed\", or words of similar import are used, it shall be understood that reference to the Drawings accompanying the Specifications is made unless otherwise state.Where\"as approved\", \"as reviewed\", \"as accepted\", or words of similar import are used, it shall be understood that the approval, direction, requirement, permission, authorization review, or acceptance of the Employer is intended, unlessotherwisestated.\nAs used in the Contract Documents, \"provide\" shall be understood to mean, \"provide complete in place\", that is, \"furnish and install\".\nENDOFSECTION01090",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

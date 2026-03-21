@@ -1,0 +1,244 @@
+{
+  "text": "<!-- image -->\n\nLtd.\n\nCo.,\n\n## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n1. Acronyms, Definitions and Abbreviations\n\n| Accident          | Any unplanned event that could have or did, result in injury, damage to assets, or damage to the environment.                                                                                                                                                                                                                                |\n|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| ALARP             | As low as reasonable practicable.                                                                                                                                                                                                                                                                                                            |\n| BS                | British Standards.                                                                                                                                                                                                                                                                                                                           |\n| BSI               | BritishInstituteforStandardization.                                                                                                                                                                                                                                                                                                          |\n| Construction work | The carrying out of any building, civil engineering or engincering construction work and includes the: Construction,alteration,conversion,fitting out,commissioning,renovation, repair,upkeep,redecoration or other maintenance (including cleaning which involves the use of water or an abrasive at high pressure, or the use of corrosive |\n| Contractor        | An organization Contracted toundertakeConstructionwork.                                                                                                                                                                                                                                                                                      |\n| DB(A) EAL         | Decibel (A-weighted).                                                                                                                                                                                                                                                                                                                        |\n| ELCB              | Exposure Action Level.                                                                                                                                                                                                                                                                                                                       |\n| ELV               | Earth Leakage CircuitBreakers. Exposure Limit Value.                                                                                                                                                                                                                                                                                         |\n| EN                | Euro Norm(s)                                                                                                                                                                                                                                                                                                                                 |\n|                   | Health and Safety Management System.                                                                                                                                                                                                                                                                                                         |\n| H&S               | Health and Safety.                                                                                                                                                                                                                                                                                                                           |\n| HSMS HSP          | Health and Safety Plan.                                                                                                                                                                                                                                                                                                                      |\n| Incident          |                                                                                                                                                                                                                                                                                                                                              |\n|                   | An undesired event which results or could have resulted in loss through injury, accidents, and dangerous occurrences as defined herein.                                                                                                                                                                                                      |\n| Km/h              | damage to assets, or damage to the environment. This includes near misses,                                                                                                                                                                                                                                                                   |\n|                   | Kilometers per hour.                                                                                                                                                                                                                                                                                                                         |\n| KPI               | Key Performance Indicator.                                                                                                                                                                                                                                                                                                                   |\n| LOTO              | Iost-time injury.                                                                                                                                                                                                                                                                                                                            |\n| M/Sec2            | Lock Out Tag Out. Metersper second squared                                                                                                                                                                                                                                                                                                   |\n| LTI               |                                                                                                                                                                                                                                                                                                                                              |\n\nnts is conel, beveaproatSA\n\nTyC0r015-287-28\n\nLDBn 9s, Nob t2kn\n\n<!-- image -->\n\nCshub\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Ltd.",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.0236104329427,
+          81.80950927734375
+        ],
+        [
+          134.4749959309896,
+          81.80950927734375
+        ],
+        [
+          134.4749959309896,
+          59.83302815755212
+        ],
+        [
+          122.0236104329427,
+          59.83302815755212
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "Co.,",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.34398396809895,
+          61.49163818359375
+        ],
+        [
+          138.21041870117188,
+          61.49163818359375
+        ],
+        [
+          138.21041870117188,
+          41.58839925130212
+        ],
+        [
+          125.34398396809895,
+          41.58839925130212
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          729.4936116536459
+        ],
+        [
+          340.7530110677083,
+          729.4936116536459
+        ],
+        [
+          340.7530110677083,
+          701.297373453776
+        ],
+        [
+          191.33634440104166,
+          701.297373453776
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          698.8094685872396
+        ],
+        [
+          217.4842529296875,
+          698.8094685872396
+        ],
+        [
+          217.4842529296875,
+          686.7846069335938
+        ],
+        [
+          76.36852010091145,
+          686.7846069335938
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "Acronyms, Definitions and Abbreviations",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.620361328125,
+          673.5157877604166
+        ],
+        [
+          400.1046142578125,
+          673.5157877604166
+        ],
+        [
+          400.1046142578125,
+          661.4909261067709
+        ],
+        [
+          182.620361328125,
+          661.4909261067709
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "nts is conel, beveaproatSA",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.63472493489584,
+          100.88340250651038
+        ],
+        [
+          286.7969970703125,
+          100.88340250651038
+        ],
+        [
+          286.7969970703125,
+          90.93182373046875
+        ],
+        [
+          221.63472493489584,
+          90.93182373046875
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "TyC0r015-287-28",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.3506876627604,
+          76.83367919921875
+        ],
+        [
+          291.3625081380208,
+          76.83367919921875
+        ],
+        [
+          291.3625081380208,
+          76.83367919921875
+        ],
+        [
+          230.3506876627604,
+          76.83367919921875
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "LDBn 9s, Nob t2kn",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.4259236653646,
+          66.46746826171875
+        ],
+        [
+          295.92799886067706,
+          66.46746826171875
+        ],
+        [
+          295.92799886067706,
+          64.39414469401038
+        ],
+        [
+          232.4259236653646,
+          64.39414469401038
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "Cshub",
+      "confidence": 0.95,
+      "box": [
+        [
+          233.25602213541666,
+          58.17441813151038
+        ],
+        [
+          268.5349527994792,
+          58.17441813151038
+        ],
+        [
+          268.5349527994792,
+          53.61330159505212
+        ],
+        [
+          233.25602213541666,
+          53.61330159505212
+        ]
+      ],
+      "page": 397
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          736.1280212402344
+        ],
+        [
+          510.0918782552083,
+          736.1280212402344
+        ],
+        [
+          510.0918782552083,
+          723.2738545735677
+        ],
+        [
+          453.2305501302083,
+          723.2738545735677
+        ]
+      ],
+      "page": 397
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 397,
+      "text": "Ltd.\nCo.,\nProjects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nAcronyms, Definitions and Abbreviations\nnts is conel, beveaproatSA\nTyC0r015-287-28\nLDBn 9s, Nob t2kn\nCshub\nEMAAR",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

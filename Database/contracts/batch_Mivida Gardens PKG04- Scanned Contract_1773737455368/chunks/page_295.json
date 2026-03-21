@@ -1,0 +1,106 @@
+{
+  "text": "<!-- image -->\n\nPART 2 - PRODUCTS (Not Used) PART 3 -- EXECUTION (Not Used)\n\nEND OFSECTION01300\n\n<!-- image -->\n\n<!-- image -->\n\nTechnical Specifications (Division !)\n\nSubmittals Section01300 Page Number:10 of 10",
+  "results": [
+    {
+      "text": "PART 2 - PRODUCTS (Not Used) PART 3 -- EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          722.0298970540365
+        ],
+        [
+          251.5180460611979,
+          722.0298970540365
+        ],
+        [
+          251.5180460611979,
+          685.1260070800781
+        ],
+        [
+          77.1986083984375,
+          685.1260070800781
+        ]
+      ],
+      "page": 295
+    },
+    {
+      "text": "END OFSECTION01300",
+      "confidence": 0.95,
+      "box": [
+        [
+          225.7851765950521,
+          663.1495259602865
+        ],
+        [
+          356.1097005208333,
+          663.1495259602865
+        ],
+        [
+          356.1097005208333,
+          652.3686116536459
+        ],
+        [
+          225.7851765950521,
+          652.3686116536459
+        ]
+      ],
+      "page": 295
+    },
+    {
+      "text": "Technical Specifications (Division !)",
+      "confidence": 0.95,
+      "box": [
+        [
+          340.33795166015625,
+          743.1770782470703
+        ],
+        [
+          501.7909749348958,
+          743.1770782470703
+        ],
+        [
+          501.7909749348958,
+          730.737559000651
+        ],
+        [
+          340.33795166015625,
+          730.737559000651
+        ]
+      ],
+      "page": 295
+    },
+    {
+      "text": "Submittals Section01300 Page Number:10 of 10",
+      "confidence": 0.95,
+      "box": [
+        [
+          425.8374837239583,
+          57.34515380859375
+        ],
+        [
+          495.9803059895833,
+          57.34515380859375
+        ],
+        [
+          495.9803059895833,
+          33.71006266276038
+        ],
+        [
+          425.8374837239583,
+          33.71006266276038
+        ]
+      ],
+      "page": 295
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 295,
+      "text": "PART 2 - PRODUCTS (Not Used) PART 3 -- EXECUTION (Not Used)\nEND OFSECTION01300\nTechnical Specifications (Division !)\nSubmittals Section01300 Page Number:10 of 10",
+      "line_count": 4
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

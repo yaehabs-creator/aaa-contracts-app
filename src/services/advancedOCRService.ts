@@ -198,7 +198,7 @@ export class AdvancedOCRService {
   async initialize(): Promise<void> {
     const isDoclingAvailable = await DoclingService.checkAvailability();
     if (!isDoclingAvailable) {
-      console.warn('Docling backend not detected at http://localhost:8000. Please start the docling_backend.py script.');
+      console.warn('Docling backend not detected at http://localhost:8001. Please start the docling_backend.py script.');
     }
   }
 

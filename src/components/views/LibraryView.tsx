@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDebounce } from '@/hooks/useDebounce';
 import {
   AnalysisStatus,
   SavedContract,
@@ -37,6 +38,8 @@ export const LibraryView: React.FC<LibraryViewProps> = ({
     setStatus,
     activeContractId,
   } = useAppStore();
+
+  const debouncedLibrarySearchQuery = useDebounce(librarySearchQuery, 300);
 
   const handleAddContract = () => {
     setContract(null);
@@ -119,7 +122,7 @@ export const LibraryView: React.FC<LibraryViewProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {library
-            .filter(c => c.name.toLowerCase().includes(librarySearchQuery.toLowerCase()))
+            .filter(c => c.name.toLowerCase().includes(debouncedLibrarySearchQuery.toLowerCase()))
             .map(c => (
               <div key={c.id} onClick={() => handleSelectContract(c)} className={`group bg-white p-10 rounded-3xl border shadow-premium cursor-pointer transition-all relative flex flex-col hover:-translate-y-1 ${activeContractId === c.id ? 'border-aaa-blue ring-2 ring-aaa-blue/10' : 'border-aaa-border hover:border-aaa-blue'}`}>
                 <div className="flex justify-between items-start mb-8">

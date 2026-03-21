@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n## IntroductiontoQualityControlForms\n\n|   Control FormNo. | TitleofControlForm                  | DescriptionofProcess                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |\n|-------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n|              4.28 | CalibrationofUnitWeight ofSand      | 1TheContractorincoordinationwithConsultant to carry out thechecks requiredonCalibrationofUnitWeightofSand andfilltheformforeach plannedphase of workpriortoproceednextphase of work. 2Consultantshall go through thechecklists andcomment if any. 3Copyof thesignedformshallbeforwarded toCMandConsultant and otherrelevant parties.                                                                                                                                                    |\n|              4.29 | SieveAnalysis                       | 1TheContractorincoordinationwithConsultant to carry out thechecks requiredonSieveAnalysisandfill theformforeachplannedphaseof workpriortoproceednextphaseof work. 2Consultant shall go through thechecklists andcomment if any. Copyof thesignedformshallbeforwarded toCM andConsultantand otherrelevant parties.                                                                                                                                                                       |\n|              4.3  | DeterminationofModified Proctor     | TheContractorincoordinationwithConsultanttocarryoutthechecks requiredonDeterminationofModifiedProctorofsoilandfilltheformfor 2Consultant shall go through the checklists and comment if any. 3 Copyof thesignedformshallbeforwardedtoCMandConsultantand otherrelevantparties.                                                                                                                                                                                                           |\n|              4.31 | SurveyWorksChecklist                | TheContractorincoordinationwithConsultant tocarryout the checks requiredonSurveyWorks andfill theformforeachplannedphaseof workpriortoproceednextphaseofwork. 2 Consultant shall go throughthechecklistsand comment if any. 3 CopyofthesignedformshallbeforwardedtoCMandConsultantand otherrelevantparties.                                                                                                                                                                             |\n|              4.32 | Request forAlternateor Substitution | TheContractorshall initiateandfillthisformandsubmitittoPMwithall submittal requirementsmentioned intheform. 2PM shall review and release to Consultant.If accepted Consultant shall reviewand commentstheproposalsubmittedbytheContractorandpass it to PM. 3PMwill reviewtheContractor'sproposalforalternativeorsubstitutionin coordinationwithConsultant'scomments 4PMwilladvisethefinal courseofactiontotheContractorandcopyshall beforwardedtoConsultantandCM.                       |\n|              4.33 | InspectionandTestPlan               | 1TheContractorshallprepareInspectionandTestPlan,whichdescribes theinspections,testsandverificationsrequiredforproducts,installation or assembled units etc. 2Contractor shall identify all the Inspection and Tests required per the specitication,codes andrelevantstandards andfllin thespecified form andsubmitit toCM andConsultant. 3The ContractorQCinspectors shallperform inspectionsinaccordance with the Inspection andTestPlans(ITP).                                        |\n|              4.34 | FieldMemorandum                     | 1ThisformshallbeusedbyeitherConsultantor CMandmayinclude itemsrequiringimmediateattentionbytheContractorrelatingtoSafety& QA/QCissues. 2TheformshouldbesenttotherelevantContractorforcorrectiveaction andcopytorelevantparties. 3The Contractor shall propose a required action or action taken to the initiatorof thisreportandcopytorelevantparties. 4The initiator of the report will verify that action hasbeen taken by the Contractorornot and accordinglycommentswillbeprovided. |\n\naerhibrFoy\n\nTaxd 115-247-20\n\n(17841\n\nCaiu, Lo.st\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "IntroductiontoQualityControlForms",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.4259236653646,
+          717.46875
+        ],
+        [
+          394.7090250651042,
+          717.46875
+        ],
+        [
+          394.7090250651042,
+          707.1024780273438
+        ],
+        [
+          232.4259236653646,
+          707.1024780273438
+        ]
+      ],
+      "page": 498
+    },
+    {
+      "text": "aerhibrFoy",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.21966552734375,
+          95.07830810546875
+        ],
+        [
+          271.4402669270833,
+          95.07830810546875
+        ],
+        [
+          271.4402669270833,
+          86.78533935546875
+        ],
+        [
+          221.21966552734375,
+          86.78533935546875
+        ]
+      ],
+      "page": 498
+    },
+    {
+      "text": "Taxd 115-247-20",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.21966552734375,
+          77.24831136067712
+        ],
+        [
+          279.7412109375,
+          77.24831136067712
+        ],
+        [
+          279.7412109375,
+          68.95534261067712
+        ],
+        [
+          221.21966552734375,
+          68.95534261067712
+        ]
+      ],
+      "page": 498
+    },
+    {
+      "text": "(17841",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.21966552734375,
+          70.19932047526038
+        ],
+        [
+          248.19769287109375,
+          70.19932047526038
+        ],
+        [
+          248.19769287109375,
+          63.15024820963538
+        ],
+        [
+          221.21966552734375,
+          63.15024820963538
+        ]
+      ],
+      "page": 498
+    },
+    {
+      "text": "Caiu, Lo.st",
+      "confidence": 0.95,
+      "box": [
+        [
+          220.80462646484375,
+          58.58905029296875
+        ],
+        [
+          253.5932820638021,
+          58.58905029296875
+        ],
+        [
+          253.5932820638021,
+          49.05210367838538
+        ],
+        [
+          220.80462646484375,
+          49.05210367838538
+        ]
+      ],
+      "page": 498
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 498,
+      "text": "IntroductiontoQualityControlForms\naerhibrFoy\nTaxd 115-247-20\n(17841\nCaiu, Lo.st",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

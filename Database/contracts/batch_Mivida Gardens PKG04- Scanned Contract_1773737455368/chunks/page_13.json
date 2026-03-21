@@ -1,0 +1,37 @@
+{
+  "text": "## Annex(2)toFormofAgreement Scheduleof ItemsMayBeSuppliedBy TheEmployer\n\n| #   | Item                                               | Supply rate include                                                                                                                                                                                                             | Contractor's Installation Rate Includes                                                                                                                                                                                                                                 |\n|-----|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| 1   | ToiletAccessories                                  | ToiletAccessories(Towelbar,Toiletpaperholder..etc)                                                                                                                                                                              | TheContractor'sinstallationrateincludes,without limitation,thesupplyand installationof allaccessories,fittings,sealant,builderwork,and anyother materialsorworksrequiredfortheproperinstallation.                                                                       |\n| 2   | IrrigationControllersandSolenoid ValvesandDecoders | ControllersandSolenoidValvesandDecorders                                                                                                                                                                                        | The Contractor'sinstallationrate includes,without limitation,the supply and installationofCabletermination,waterconnection,andAllaccessories,fittings, sealant,builderwork,footings,connectiontoutilities,andanyothermaterialsor worksrequiredfortheproperinstallation. |\n| 3   | ITrelated items(Wi-FiAccesspoints)                 | ITItem                                                                                                                                                                                                                          | TheContractor'sinstallationrateincludes,without limitation,thesupplyand installationfemination,cableglands,accessories,fittings,sealant,builder work,connection,andanyothermaterialsorworksrequiredfortheproper installation.                                           |\n|     | WoodenDoorsHardware                                | Supplyofwoodendoorshardwaresetsasperthewooden dcorshardwareschedules                                                                                                                                                            | The Contractor'sratesforsupply and installthewooden doorsareincluding the installationrate of thewooden doorshardwaresetswithout limitation,thesupply and installationof any othermaterialsorworksrequiredfor theproper installation.                                   |\n|     | RefrigerantPipes                                   | Supplyof liquid andvaporrefrigerant pipes,softcopper pipes,accordingtoASTMB280-20,TypeACR\"Annealed\"as specifiedaccordingtodrawingsandspecsincludingelectrical &controlcables,9mmthermal insulation,andtapsfor extrenal rapping. | Installation,testingandcommissioningofrefrigerantpipesincludingsupplyand etc.,eachunitmeterwill includeliquid andvaporpipes,insulation,andcontrol cables,allasperconsultantandmanufacturerrecommendationsand engineeringcommonpractice.                                 |\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Annex(2)toFormofAgreement Scheduleof ItemsMayBeSuppliedBy TheEmployer",
+      "confidence": 0.95,
+      "box": [
+        [
+          304.17087809244794,
+          496.2596740722656
+        ],
+        [
+          531.556640625,
+          496.2596740722656
+        ],
+        [
+          531.556640625,
+          470.89036051432294
+        ],
+        [
+          304.17087809244794,
+          470.89036051432294
+        ]
+      ],
+      "page": 13
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 13,
+      "text": "Annex(2)toFormofAgreement Scheduleof ItemsMayBeSuppliedBy TheEmployer",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

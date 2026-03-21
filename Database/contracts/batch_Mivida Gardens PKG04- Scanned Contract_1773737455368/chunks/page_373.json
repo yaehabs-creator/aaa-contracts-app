@@ -1,0 +1,221 @@
+{
+  "text": "<!-- image -->\n\n## Technical Specifications(Division I)\n\nmetal, porcelain, vitreous, and glass components.\n\n- Removing of visible labels left on materials, components, and equipment.\n- Replacement of burnt out light bulbs and lamps.\n- 5.All finishes in the completed Works shall match the quality of approved samples and/or mock-ups uponcompletion of cleaning;otherwise they shall beremovedandreplaced.\n6. Maintain cleaning until Employer has taken formal possession of the Works or portionsthereof.\n\nPART 2-PRODUCTS (Not Used)\n\nPART 3-EXECUTION (Not Used)\n\nENDOFSECTION01710\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Technical Specifications(Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          341.1680501302083,
+          742.7624257405599
+        ],
+        [
+          503.8662109375,
+          742.7624257405599
+        ],
+        [
+          503.8662109375,
+          730.737559000651
+        ],
+        [
+          341.1680501302083,
+          730.737559000651
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "metal, porcelain, vitreous, and glass components.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          719.9566446940104
+        ],
+        [
+          374.3717447916667,
+          719.9566446940104
+        ],
+        [
+          374.3717447916667,
+          707.9317830403646
+        ],
+        [
+          129.90949503580728,
+          707.9317830403646
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "Removing of visible labels left on materials, components, and equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          697.5655212402344
+        ],
+        [
+          489.339599609375,
+          697.5655212402344
+        ],
+        [
+          489.339599609375,
+          685.5406595865885
+        ],
+        [
+          129.90949503580728,
+          685.5406595865885
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "Replacement of burnt out light bulbs and lamps.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.90949503580728,
+          685.5406595865885
+        ],
+        [
+          366.4858805338542,
+          685.5406595865885
+        ],
+        [
+          366.4858805338542,
+          673.5157877604166
+        ],
+        [
+          129.90949503580728,
+          673.5157877604166
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "5.All finishes in the completed Works shall match the quality of approved samples and/or mock-ups uponcompletion of cleaning;otherwise they shall beremovedandreplaced.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          663.5641784667969
+        ],
+        [
+          506.3564860026042,
+          663.5641784667969
+        ],
+        [
+          506.3564860026042,
+          628.3188883463541
+        ],
+        [
+          95.46065266927083,
+          628.3188883463541
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "Maintain cleaning until Employer has taken formal possession of the Works or portionsthereof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          618.3672688802084
+        ],
+        [
+          506.7715250651042,
+          618.3672688802084
+        ],
+        [
+          506.7715250651042,
+          594.7321980794271
+        ],
+        [
+          95.0456034342448,
+          594.7321980794271
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "PART 2-PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          571.9264119466146
+        ],
+        [
+          250.27290852864584,
+          571.9264119466146
+        ],
+        [
+          250.27290852864584,
+          559.4868977864583
+        ],
+        [
+          78.85879516601562,
+          559.4868977864583
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "PART 3-EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          538.3397216796875
+        ],
+        [
+          252.34814453125,
+          538.3397216796875
+        ],
+        [
+          252.34814453125,
+          525.4855550130208
+        ],
+        [
+          78.02870178222656,
+          525.4855550130208
+        ]
+      ],
+      "page": 373
+    },
+    {
+      "text": "ENDOFSECTION01710",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.86041259765625,
+          503.5090738932292
+        ],
+        [
+          357.7698974609375,
+          503.5090738932292
+        ],
+        [
+          357.7698974609375,
+          492.72816975911456
+        ],
+        [
+          227.86041259765625,
+          492.72816975911456
+        ]
+      ],
+      "page": 373
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 373,
+      "text": "Technical Specifications(Division I)\nmetal, porcelain, vitreous, and glass components.\nRemoving of visible labels left on materials, components, and equipment.\nReplacement of burnt out light bulbs and lamps.\n5.All finishes in the completed Works shall match the quality of approved samples and/or mock-ups uponcompletion of cleaning;otherwise they shall beremovedandreplaced.\nMaintain cleaning until Employer has taken formal possession of the Works or portionsthereof.\nPART 2-PRODUCTS (Not Used)\nPART 3-EXECUTION (Not Used)\nENDOFSECTION01710",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

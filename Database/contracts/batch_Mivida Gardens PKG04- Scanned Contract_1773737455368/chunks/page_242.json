@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n| AR.78                                                                          | AR.77                                                                                                                                                                                                                                      |                                                                                                                       | AR.75                                                                                                                                                                                  | AR.74                                                                                                                                           | AR.73                                                              | AR.72                                                                  |                                                               |\n|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------------------|\n| We can't understand thiscomment,20250915_H4 stairs proposal 1,so please advise | Please advise. metalscreen(700*1200)? 3-Aluminum louverfor facade1700-1200，shouldwe consider it thenon-galvanized 2-Div 08,Door GD-04. 1-Div08,Accessdoorwithtwoleaves. ThebelowitemsareaddedinthenewBoQ,andwecan'tfindtheminthedrawings: | AR.76 advise The shaft size is diferent from thenewBOQ,should we follow drawingsorBOQ?Please Refertolast updated BCQ. | labled with the3newprofilesofGRC,soplease advise. Please provide us vith the large GRC at Ground Floor detail also the old elevation is not Pease refer to facades& sections drawings. | less than 1.4m. Please confirm that aluminium windows thickness is 1.6 mm for Windows with height Rejected, Follow Manufacturer Specifications. | PleaseconfirmthataluminiummainframeandSashmembersthicknessis1.8mm. | Pleaseconfirmthatallthresholdsarefixedwithadhesive.                    | AR.71 Pleaseconfirmthatall stairrisersarefixedwith2cmmortar.  |\n| Disregardthenote                                                               | 3- To be non-galvanized metal screen with PU coating 700*1200mm as per drawings 2-RefertolatestBOQ 1-Refertodrawingswithoneleaf                                                                                                            |                                                                                                                       |                                                                                                                                                                                        |                                                                                                                                                 | Rejected,FollowManufacturerSpecifications.                         | PleaserefertoProjectSpecificationSECTiON093000-TILING,fixedwithmortar. | PleaserefertoProjectSpecificationSECTION096340-STONEFLOORING. |\n\n## Package ID : PK#04\n\n## Subject: Construction of Townhomes Villas in Parcels 11&amp;12\n\n## Project:MividaGardens\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Package ID : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          485.6041666666667,
+          702.9559733072916
+        ],
+        [
+          498.8856608072917,
+          702.9559733072916
+        ],
+        [
+          498.8856608072917,
+          626.2456258138021
+        ],
+        [
+          485.6041666666667,
+          626.2456258138021
+        ]
+      ],
+      "page": 242
+    },
+    {
+      "text": "Subject: Construction of Townhomes Villas in Parcels 11&12",
+      "confidence": 0.95,
+      "box": [
+        [
+          502.6210530598958,
+          703.3706258138021
+        ],
+        [
+          514.2423502604166,
+          703.3706258138021
+        ],
+        [
+          514.2423502604166,
+          471.16632080078125
+        ],
+        [
+          502.6210530598958,
+          471.16632080078125
+        ]
+      ],
+      "page": 242
+    },
+    {
+      "text": "Project:MividaGardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          518.807861328125,
+          702.1266784667969
+        ],
+        [
+          529.5990804036459,
+          702.1266784667969
+        ],
+        [
+          529.5990804036459,
+          607.5863647460938
+        ],
+        [
+          518.807861328125,
+          607.5863647460938
+        ]
+      ],
+      "page": 242
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 242,
+      "text": "Package ID : PK#04\nSubject: Construction of Townhomes Villas in Parcels 11&12\nProject:MividaGardens",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

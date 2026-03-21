@@ -200,52 +200,42 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
 
     const keywords = searchQuery.trim().toLowerCase().split(/\s+/);
 
-    return items.filter(item => {
+    const isMatch = (item: SectionItem): boolean => {
+      let searchableText = '';
+      
       if (item.itemType === ItemType.CLAUSE) {
         const clause = sectionItemToClause(item);
-        if (!clause) return false;
-
-        const searchableText = [
-          clause.clause_number,
-          clause.clause_title,
-          clause.clause_text,
-          clause.general_condition || '',
-          clause.particular_condition || ''
-        ].join(' ').toLowerCase();
-
-        return keywords.every(keyword => searchableText.includes(keyword));
+        if (clause) {
+          searchableText = [
+            clause.clause_number,
+            clause.clause_title,
+            clause.clause_text,
+            clause.general_condition || '',
+            clause.particular_condition || ''
+          ].join(' ');
+        }
       } else if (item.itemType === ItemType.PARAGRAPH) {
-        const searchableText = [
-          item.heading || '',
-          item.text || ''
-        ].join(' ').toLowerCase();
-
-        return keywords.every(keyword => searchableText.includes(keyword));
+        searchableText = [item.heading || '', item.text || ''].join(' ');
       } else if (item.itemType === ItemType.FIELD) {
-        const searchableText = [
-          item.fieldKey || '',
-          item.fieldValue || ''
-        ].join(' ').toLowerCase();
-
-        return keywords.every(keyword => searchableText.includes(keyword));
+        searchableText = [item.fieldKey || '', item.fieldValue || ''].join(' ');
       } else if (item.itemType === ItemType.IMAGE) {
-        const searchableText = [
-          item.imageTitle || '',
-          item.imageAlt || '',
-          item.heading || ''
-        ].join(' ').toLowerCase();
-
-        return keywords.every(keyword => searchableText.includes(keyword));
+        searchableText = [item.imageTitle || '', item.imageAlt || '', item.heading || ''].join(' ');
       } else if (item.itemType === ItemType.PDF) {
-        const searchableText = [
-          item.doc_name || '',
-          item.heading || ''
-        ].join(' ').toLowerCase();
-
-        return keywords.every(keyword => searchableText.includes(keyword));
+        searchableText = [item.doc_name || '', item.heading || ''].join(' ');
       }
+
+      const selfMatch = keywords.every(keyword => searchableText.toLowerCase().includes(keyword));
+      if (selfMatch) return true;
+
+      // Check children recursively
+      if (item.children && item.children.length > 0) {
+        return item.children.some(child => isMatch(child));
+      }
+
       return false;
-    });
+    };
+
+    return items.filter(isMatch);
   }, [allIntegratedItems, searchQuery, section.title, section.sectionType]);
 
   const searchKeywords = searchQuery.trim().split(/\s+/).filter(k => k.length > 0);

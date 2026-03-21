@@ -1,0 +1,474 @@
+{
+  "text": "<!-- image -->\n\n- a.When required by law or for the safety of the Work; shore, brace, underpin, or otherwise protect those portions of adjacent structures that may be affected by the Work.\n\n## D. Utilities\n\n1. Known utilities and related facilities are shown on the drawings.\n- a. Location of these facilities are not guaranteed, nor is there any guarantee that other utilities are not present.\n- b. Unless otherwise specifically provided, protect utilities and related facilities from damage and cause no interruption of service.\n2. Establish and maintain direct contact with the Contract Administrator / Engineer or operator of each utility that may be affectedby theWork.\n5. a.Proceed with Work that may affect a utility only with the cooperation and approval of the Contract Administrator / Engineer or operator of the utility.\n- b. Immediately inform the Contract Administrator / Engineer of any agreement with the utility operatorconcerning the Work under this Contract.\n7. 3.Verifythelocationof allutilities in the vicinity of the work before commencingconstruction.\n- a. Submit a plan for performing the work to the Contract Administrator / Engineer for approval.\n- b. Include evidence of approval by the utility owner or operator.\n\n## E.NewWork\n\n- on      s  l the area.\n2. Do not permit traffic or material storage on finished surfaces.\n- a. Where some activity must take place on the finished surface in order to perform the Work, provide and maintain adequate protection.\n- 3.Provide and maintain adequate protection against the weather at all times so as to preserve Work, materials, equipment, apparatus, and fixtures free from injury or damage.\n4. Do not use items of equipment that are intended to from a part of the completed work as construction equipment without specific approval from the Contract Administrator/ Engineer in each instance.\n\n## ENDOFSECTION01400\n\nDeve'opnn SA\n\nTox Cnd118.207.20v\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "a.When required by law or for the safety of the Work; shore, brace, underpin, or otherwise protect those portions of adjacent structures that may be affected by the Work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          718.2980448404948
+        ],
+        [
+          506.3564860026042,
+          718.2980448404948
+        ],
+        [
+          506.3564860026042,
+          679.7355448404948
+        ],
+        [
+          121.19352213541667,
+          679.7355448404948
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "D. Utilities",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          679.7355448404948
+        ],
+        [
+          147.3414306640625,
+          679.7355448404948
+        ],
+        [
+          147.3414306640625,
+          666.8813781738281
+        ],
+        [
+          95.46065266927083,
+          666.8813781738281
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Known utilities and related facilities are shown on the drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          666.4667358398438
+        ],
+        [
+          450.7402750651042,
+          666.4667358398438
+        ],
+        [
+          450.7402750651042,
+          653.6125691731771
+        ],
+        [
+          120.77847290039062,
+          653.6125691731771
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Location of these facilities are not guaranteed, nor is there any guarantee that other utilities are not present.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          653.1979166666666
+        ],
+        [
+          505.111328125,
+          653.1979166666666
+        ],
+        [
+          505.111328125,
+          627.4895833333334
+        ],
+        [
+          136.96528116861978,
+          627.4895833333334
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Unless otherwise specifically provided, protect utilities and related facilities from damage and cause no interruption of service.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          626.6602783203125
+        ],
+        [
+          504.6962890625,
+          626.6602783203125
+        ],
+        [
+          504.6962890625,
+          600.9519449869791
+        ],
+        [
+          136.55023193359375,
+          600.9519449869791
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Establish and maintain direct contact with the Contract Administrator / Engineer or operator of each utility that may be affectedby theWork.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          600.5372924804688
+        ],
+        [
+          506.7715250651042,
+          600.5372924804688
+        ],
+        [
+          506.7715250651042,
+          575.2436116536459
+        ],
+        [
+          120.36342366536458,
+          575.2436116536459
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "a.Proceed with Work that may affect a utility only with the cooperation and approval of the Contract Administrator / Engineer or operator of the utility.",
+      "confidence": 0.95,
+      "box": [
+        [
+          137.38032023111978,
+          573.5850219726562
+        ],
+        [
+          505.9414469401042,
+          573.5850219726562
+        ],
+        [
+          505.9414469401042,
+          535.0225219726562
+        ],
+        [
+          137.38032023111978,
+          535.0225219726562
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Immediately inform the Contract Administrator / Engineer of any agreement with the utility operatorconcerning the Work under this Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.13518269856772,
+          536.6811116536458
+        ],
+        [
+          506.3564860026042,
+          536.6811116536458
+        ],
+        [
+          506.3564860026042,
+          496.8746744791667
+        ],
+        [
+          136.13518269856772,
+          496.8746744791667
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "3.Verifythelocationof allutilities in the vicinity of the work before commencingconstruction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          495.63071695963544
+        ],
+        [
+          505.111328125,
+          495.63071695963544
+        ],
+        [
+          505.111328125,
+          470.75168863932294
+        ],
+        [
+          120.77847290039062,
+          470.75168863932294
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Submit a plan for performing the work to the Contract Administrator / Engineer for approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          469.50775146484375
+        ],
+        [
+          506.3564860026042,
+          469.50775146484375
+        ],
+        [
+          506.3564860026042,
+          442.97011311848956
+        ],
+        [
+          136.96528116861978,
+          442.97011311848956
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Include evidence of approval by the utility owner or operator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.13518269856772,
+          444.21405029296875
+        ],
+        [
+          454.0606282552083,
+          444.21405029296875
+        ],
+        [
+          454.0606282552083,
+          430.11594645182294
+        ],
+        [
+          136.13518269856772,
+          430.11594645182294
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "E.NewWork",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          429.70127360026044
+        ],
+        [
+          162.2831013997396,
+          429.70127360026044
+        ],
+        [
+          162.2831013997396,
+          418.50571695963544
+        ],
+        [
+          95.87569173177083,
+          418.50571695963544
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "on      s  l the area.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          417.67641194661456
+        ],
+        [
+          506.3564860026042,
+          417.67641194661456
+        ],
+        [
+          506.3564860026042,
+          391.13877360026044
+        ],
+        [
+          119.94837443033855,
+          391.13877360026044
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Do not permit traffic or material storage on finished surfaces.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          391.13877360026044
+        ],
+        [
+          437.4587809244792,
+          391.13877360026044
+        ],
+        [
+          437.4587809244792,
+          379.11391194661456
+        ],
+        [
+          119.94837443033855,
+          379.11391194661456
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Where some activity must take place on the finished surface in order to perform the Work, provide and maintain adequate protection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          377.86997477213544
+        ],
+        [
+          505.5263671875,
+          377.86997477213544
+        ],
+        [
+          505.5263671875,
+          352.57627360026044
+        ],
+        [
+          136.55023193359375,
+          352.57627360026044
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "3.Provide and maintain adequate protection against the weather at all times so as to preserve Work, materials, equipment, apparatus, and fixtures free from injury or damage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          351.74696858723956
+        ],
+        [
+          505.5263671875,
+          351.74696858723956
+        ],
+        [
+          505.5263671875,
+          311.94053141276044
+        ],
+        [
+          119.94837443033855,
+          311.94053141276044
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Do not use items of equipment that are intended to from a part of the completed work as construction equipment without specific approval from the Contract Administrator/ Engineer in each instance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          312.35520426432294
+        ],
+        [
+          505.5263671875,
+          312.35520426432294
+        ],
+        [
+          505.5263671875,
+          274.20733642578125
+        ],
+        [
+          120.36342366536458,
+          274.20733642578125
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "ENDOFSECTION01400",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.20023600260416,
+          246.84039306640625
+        ],
+        [
+          357.3548583984375,
+          246.84039306640625
+        ],
+        [
+          357.3548583984375,
+          235.64483642578125
+        ],
+        [
+          226.20023600260416,
+          235.64483642578125
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Deve'opnn SA",
+      "confidence": 0.95,
+      "box": [
+        [
+          235.74629720052084,
+          103.78599039713538
+        ],
+        [
+          297.58819580078125,
+          103.78599039713538
+        ],
+        [
+          297.58819580078125,
+          103.78599039713538
+        ],
+        [
+          235.74629720052084,
+          103.78599039713538
+        ]
+      ],
+      "page": 333
+    },
+    {
+      "text": "Tox Cnd118.207.20v",
+      "confidence": 0.95,
+      "box": [
+        [
+          236.9914347330729,
+          94.66367594401038
+        ],
+        [
+          297.58819580078125,
+          94.66367594401038
+        ],
+        [
+          297.58819580078125,
+          94.66367594401038
+        ],
+        [
+          236.9914347330729,
+          94.66367594401038
+        ]
+      ],
+      "page": 333
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 333,
+      "text": "a.When required by law or for the safety of the Work; shore, brace, underpin, or otherwise protect those portions of adjacent structures that may be affected by the Work.\nD. Utilities\nKnown utilities and related facilities are shown on the drawings.\nLocation of these facilities are not guaranteed, nor is there any guarantee that other utilities are not present.\nUnless otherwise specifically provided, protect utilities and related facilities from damage and cause no interruption of service.\nEstablish and maintain direct contact with the Contract Administrator / Engineer or operator of each utility that may be affectedby theWork.\na.Proceed with Work that may affect a utility only with the cooperation and approval of the Contract Administrator / Engineer or operator of the utility.\nImmediately inform the Contract Administrator / Engineer of any agreement with the utility operatorconcerning the Work under this Contract.\n3.Verifythelocationof allutilities in the vicinity of the work before commencingconstruction.\nSubmit a plan for performing the work to the Contract Administrator / Engineer for approval.\nInclude evidence of approval by the utility owner or operator.\nE.NewWork\non      s  l the area.\nDo not permit traffic or material storage on finished surfaces.\nWhere some activity must take place on the finished surface in order to perform the Work, provide and maintain adequate protection.\n3.Provide and maintain adequate protection against the weather at all times so as to preserve Work, materials, equipment, apparatus, and fixtures free from injury or damage.\nDo not use items of equipment that are intended to from a part of the completed work as construction equipment without specific approval from the Contract Administrator/ Engineer in each instance.\nENDOFSECTION01400\nDeve'opnn SA\nTox Cnd118.207.20v",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

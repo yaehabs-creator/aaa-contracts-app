@@ -1,0 +1,198 @@
+{
+  "text": "TheextraCost incurredbytheContractoringivingeffect totheProject Manager'sinstructionsunder thisClauseshallbeborneandpaidbylhe Employerunless such suspension is:-\n\n- (a) otherwiseprovidedforintheContract,or\n- (b) necessarybyreasonofsomedefaultoforbreachofcontractbythe Contractor, or\n- (c) necessarybyreasonofani occurrenceoftheforcesofnaturewhich anexperiencedcontractorshouldhaveforeseenandprovidedforor insured against (for the purposes of this Sub-Clause (c) rainfall in anyquantityshallibedeemedtobesuchanoccurrence),or\n- (d) necessaryforthepropercarryingoutoftheWorksorforthesafety of the Works or any part thereof insofar as such necessity does not arisefromanyactordefaultbytheProjectManager,theSupervision Consuitantor theEmployerorfromanyof theexceptedrisks(as defined in Clause 12.5 (Risk and Care)).\n\nProvided thattheContractorshallnotbeentitled toclaimrecoveryof any suchextraCostunless,withintwenty eight(28)days after receiptof the SuspensionOrder,it gives to theProject Manager written notice of its intention tomakesuchclaim.Ifsuchnoticeis dulygiventhe extraCost recoverablebytheContractorshallbedeterminedbytheProjectManager andpaidto theContractorinaccordancewithClause26(Interim and Final Certificates).\n\nSuspensionExceeding90Days\n\n18.2If the Works or any part thereof is the subject of a Suspension Order and if writtenpermission(bearing thewrittenconsentoftheEmployer)toresume workisnotgivenbytheProject Managerwithinaperiodof ninety(90)days from the date ofsuspensionthen,unless suchsuspensioniswithinany of paragraphs (a) to (d) inclusive of Clause 18.1 (Suspension Order), the Contractor mayserve A wriller rulice un theProjectManagcr rcquiring permissionwithintwcntycight(28) dayefrom therecoiptthcrcoftoprocced withtheWorksorthatpartthereofthesubjectof theSuspensiunOrrlerand, if suchpermissionis notwithin that timegranted by theProject Manager in further written notice so served may,but is not bound to,elect to treat the suspensionwhereit affectspartonlyof theWorksasanomissionofsuch part pursuant to a Variation Order under Clause 22.1 (Variation Orders),or, whereit affectsthewholeoftheWorks,asa terminationoftheContractby lheErmploycr foritsconvenienceunder Clause 31.1(Termlnationfor Convenience) thereby giving the Contractorthe rightsconferred by Clause 31.3 (Payment on Termination).\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "TheextraCost incurredbytheContractoringivingeffect totheProject Manager'sinstructionsunder thisClauseshallbeborneandpaidbylhe Employerunless such suspension is:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          722.8963928222656
+        ],
+        [
+          486.6680908203125,
+          722.8963928222656
+        ],
+        [
+          486.6680908203125,
+          689.3824462890625
+        ],
+        [
+          158.13541666666666,
+          689.3824462890625
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "(a) otherwiseprovidedforintheContract,or",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          677.5040791829427
+        ],
+        [
+          372.928955078125,
+          677.5040791829427
+        ],
+        [
+          372.928955078125,
+          664.7772623697916
+        ],
+        [
+          157.28976440429688,
+          664.7772623697916
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "(b) necessarybyreasonofsomedefaultoforbreachofcontractbythe Contractor, or",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          654.5958251953125
+        ],
+        [
+          486.2452392578125,
+          654.5958251953125
+        ],
+        [
+          486.2452392578125,
+          632.1117757161459
+        ],
+        [
+          157.71259562174478,
+          632.1117757161459
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "(c) necessarybyreasonofani occurrenceoftheforcesofnaturewhich anexperiencedcontractorshouldhaveforeseenandprovidedforor insured against (for the purposes of this Sub-Clause (c) rainfall in anyquantityshallibedeemedtobesuchanoccurrence),or",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          620.6576334635416
+        ],
+        [
+          487.5137125651042,
+          620.6576334635416
+        ],
+        [
+          487.5137125651042,
+          576.9622395833333
+        ],
+        [
+          157.71259562174478,
+          576.9622395833333
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "(d) necessaryforthepropercarryingoutoftheWorksorforthesafety of the Works or any part thereof insofar as such necessity does not arisefromanyactordefaultbytheProjectManager,theSupervision Consuitantor theEmployerorfromanyof theexceptedrisks(as defined in Clause 12.5 (Risk and Care)).",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          563.386983235677
+        ],
+        [
+          488.7821858723958,
+          563.386983235677
+        ],
+        [
+          488.7821858723958,
+          507.3889973958333
+        ],
+        [
+          158.55823771158853,
+          507.3889973958333
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "Provided thattheContractorshallnotbeentitled toclaimrecoveryof any suchextraCostunless,withintwenty eight(28)days after receiptof the SuspensionOrder,it gives to theProject Manager written notice of its intention tomakesuchclaim.Ifsuchnoticeis dulygiventhe extraCost recoverablebytheContractorshallbedeterminedbytheProjectManager andpaidto theContractorinaccordancewithClause26(Interim and Final Certificates).",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          496.35906982421875
+        ],
+        [
+          488.7821858723958,
+          496.35906982421875
+        ],
+        [
+          488.7821858723958,
+          415.75592041015625
+        ],
+        [
+          158.55823771158853,
+          415.75592041015625
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "SuspensionExceeding90Days",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          404.72601318359375
+        ],
+        [
+          239.31722005208334,
+          404.72601318359375
+        ],
+        [
+          239.31722005208334,
+          392.42344156901044
+        ],
+        [
+          97.24905395507812,
+          392.42344156901044
+        ]
+      ],
+      "page": 74
+    },
+    {
+      "text": "18.2If the Works or any part thereof is the subject of a Suspension Order and if writtenpermission(bearing thewrittenconsentoftheEmployer)toresume workisnotgivenbytheProject Managerwithinaperiodof ninety(90)days from the date ofsuspensionthen,unless suchsuspensioniswithinany of paragraphs (a) to (d) inclusive of Clause 18.1 (Suspension Order), the Contractor mayserve A wriller rulice un theProjectManagcr rcquiring permissionwithintwcntycight(28) dayefrom therecoiptthcrcoftoprocced withtheWorksorthatpartthereofthesubjectof theSuspensiunOrrlerand, if suchpermissionis notwithin that timegranted by theProject Manager in further written notice so served may,but is not bound to,elect to treat the suspensionwhereit affectspartonlyof theWorksasanomissionofsuch part pursuant to a Variation Order under Clause 22.1 (Variation Orders),or, whereit affectsthewholeoftheWorks,asa terminationoftheContractby lheErmploycr foritsconvenienceunder Clause 31.1(Termlnationfor Convenience) thereby giving the Contractorthe rightsconferred by Clause 31.3 (Payment on Termination).",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          383.09043375651044
+        ],
+        [
+          489.6278483072917,
+          383.09043375651044
+        ],
+        [
+          489.6278483072917,
+          189.64284261067712
+        ],
+        [
+          127.2694091796875,
+          189.64284261067712
+        ]
+      ],
+      "page": 74
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 74,
+      "text": "TheextraCost incurredbytheContractoringivingeffect totheProject Manager'sinstructionsunder thisClauseshallbeborneandpaidbylhe Employerunless such suspension is:-\n(a) otherwiseprovidedforintheContract,or\n(b) necessarybyreasonofsomedefaultoforbreachofcontractbythe Contractor, or\n(c) necessarybyreasonofani occurrenceoftheforcesofnaturewhich anexperiencedcontractorshouldhaveforeseenandprovidedforor insured against (for the purposes of this Sub-Clause (c) rainfall in anyquantityshallibedeemedtobesuchanoccurrence),or\n(d) necessaryforthepropercarryingoutoftheWorksorforthesafety of the Works or any part thereof insofar as such necessity does not arisefromanyactordefaultbytheProjectManager,theSupervision Consuitantor theEmployerorfromanyof theexceptedrisks(as defined in Clause 12.5 (Risk and Care)).\nProvided thattheContractorshallnotbeentitled toclaimrecoveryof any suchextraCostunless,withintwenty eight(28)days after receiptof the SuspensionOrder,it gives to theProject Manager written notice of its intention tomakesuchclaim.Ifsuchnoticeis dulygiventhe extraCost recoverablebytheContractorshallbedeterminedbytheProjectManager andpaidto theContractorinaccordancewithClause26(Interim and Final Certificates).\nSuspensionExceeding90Days\n18.2If the Works or any part thereof is the subject of a Suspension Order and if writtenpermission(bearing thewrittenconsentoftheEmployer)toresume workisnotgivenbytheProject Managerwithinaperiodof ninety(90)days from the date ofsuspensionthen,unless suchsuspensioniswithinany of paragraphs (a) to (d) inclusive of Clause 18.1 (Suspension Order), the Contractor mayserve A wriller rulice un theProjectManagcr rcquiring permissionwithintwcntycight(28) dayefrom therecoiptthcrcoftoprocced withtheWorksorthatpartthereofthesubjectof theSuspensiunOrrlerand, if suchpermissionis notwithin that timegranted by theProject Manager in further written notice so served may,but is not bound to,elect to treat the suspensionwhereit affectspartonlyof theWorksasanomissionofsuch part pursuant to a Variation Order under Clause 22.1 (Variation Orders),or, whereit affectsthewholeoftheWorks,asa terminationoftheContractby lheErmploycr foritsconvenienceunder Clause 31.1(Termlnationfor Convenience) thereby giving the Contractorthe rightsconferred by Clause 31.3 (Payment on Termination).",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

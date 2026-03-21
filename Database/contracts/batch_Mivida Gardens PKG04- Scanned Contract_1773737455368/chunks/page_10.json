@@ -1,0 +1,37 @@
+{
+  "text": "## Annex(1)to FormofAgreement ScheduleofFreeIssue Items\n\n<!-- image -->\n\n| #   | Free Issue Items                                                                                                                                                      | Items to be Supplied by the Employer                                   | Contractor's Installation Rate Includes                                                                                                                                                                                                                                                                             |\n|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n|     | LightingFixtures                                                                                                                                                      | Lightingfixtureunit,transformer,lamps,pole,and starter.                | The Contractor'sinstallationrateincludes,without limitation,thesupply and installationofallaccessories,fittings,sealant,civil&builderwork,electric connection,and anyothermaterialsorworksrequiredfortheproperinstallation.                                                                                         |\n| 2   | 36000BTU\"                                                                                                                                                             | A/Cunits.“Onetoone split unitsuptoIndoor，outdoorunit&Metal Holderonly | TheContractor'sinstallationrateincludes,without limitation,thesupplyand instaltionof thepowerandcontrol cablingbetweenevaporatorandcondensing units,drainconnections,conduitsand allaccessories,fittings,sealant,builder work,concretebase,connection,and anyothermaterialsorworksrequiredor theproperinstallation. |\n| 3   | Mixers                                                                                                                                                                | Mixer                                                                  | TheContractor'sinstallationrateincludes,without limitation,thesupplyand installationofFlexiblehoses,anglevalves,allaccessories,fittings,sealant, builderwork,connection,and anyother materials orworksrequired forthe properinstallation.                                                                           |\n| 4   | Sanitaryfixtures                                                                                                                                                      | Fixtures                                                               | The Contractor'sinstallationrate includes,without limitation,thesupply and installation of Flexible,angle valves,popup,DrainageTrap Connection,rubber reducer,fixationboltsandall accessories,fittings,sealant,builderwork,and any othermaterialsorworksrequiredfortheproperinstallation.                           |\n| 5   | Transformers/PackageSubstations                                                                                                                                       | Transformers/PackageSubstations                                        | The Contractor's installationrate includes,without limitation,the supply and installationofCabletermination,accessories,fittings,sealant,civil&builder work,electricconnection,and anyothermaterialsorworksrequiredforthe properinstallation.                                                                       |\n| 6   | WiringDevices(Switches,enclosed switches,disconnectSwitches,Power Sockets&DataSockets)                                                                                | Wiringdevices(Excluding amyJunctionBoxes,FloorBoxes and Sensors)       | TheContractor'sinstaliationrateincludes,without limitation,thesupply and installationof all accessories,fittings,backboxes,sealant,civil&builderwork, electricconnection,andanyothermaterialsorworksrequiredfortheproper installation.                                                                              |\n|     | PanelBoardandDistributionPanel Board. ForResidentialbuildingsOnly.While non-residential buildingswill fall (supply and install) under the Contractor'sScope of Works. | Panel BoardandDistributionpanel board DistributionPillarsandCoffrehs   | The Contractor's installation rate includes,without limitation, the supply and installationofearthling,cableglands,cablesterminationandallaccessories, fittings,sealant,builderwork,electricconnection,andanyothermaterialsor worksrequiredfortheproperinstallation.                                                |\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Annex(1)to FormofAgreement ScheduleofFreeIssue Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          344.0482177734375,
+          496.6824951171875
+        ],
+        [
+          490.4065755208333,
+          496.6824951171875
+        ],
+        [
+          490.4065755208333,
+          472.15882364908856
+        ],
+        [
+          344.0482177734375,
+          472.15882364908856
+        ]
+      ],
+      "page": 10
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 10,
+      "text": "Annex(1)to FormofAgreement ScheduleofFreeIssue Items",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

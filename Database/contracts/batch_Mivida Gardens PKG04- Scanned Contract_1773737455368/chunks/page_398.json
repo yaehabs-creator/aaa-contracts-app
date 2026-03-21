@@ -1,0 +1,175 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref: EGY/PRJCTS/HSE/REQs\n\n| MEWP            | MobileElevatingWorkPlatforin.                                                                                                                                 |\n|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| MSDS            | Material Safety Data Sheet.                                                                                                                                   |\n| Near Miss       | An unsafe act orIncident which,in other circumstances,could have resulted in loss through injury,damage to assets, or damage to the environment.              |\n| NFPA            | National FireProtection Association.                                                                                                                          |\n| PAT             | Portable Appliance Test.                                                                                                                                      |\n| PMCM            | ProjectManagementConstructionManagement.                                                                                                                      |\n| PPE             | Personal Protective Equipment.                                                                                                                                |\n| Program Partner | A term referring to the key supply chain organizations including but not limited to PMCM, Construction Supervision Consultant Contractors and Subcontractors. |\n| PTW             | Permit to Work.                                                                                                                                               |\n| RCD             | Residual Current Device.                                                                                                                                      |\n| Site            | The area of any physical site where The Works are actually performed by a Contractor and/or its Subcontractors.                                               |\n| STARRT          | Safety Task Analysis Risk Reduction Talk - a pre-task briefing.                                                                                               |\n| Subcontractor   | ApartysubcontractedbyContractortoperform aportionoftheworks                                                                                                   |\n| SWL             | SafeWorkingLoad.                                                                                                                                              |\n| The Works       | The work to be perforimed by Contractor in accordance with the Scope of Work and other Contract requirements.                                                 |\n| TWC             | TemporaryWorks Coordinator                                                                                                                                    |\n| TWS             | TemporaryWorks Supervisors.                                                                                                                                   |\n\n3note yaedublishcd or redistributedwiout\n\n·\n\n<!-- image -->\n\n<!-- image -->\n\nToC016218-237-200 (128-) Cotn Een\n\nMlr\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.5062459309896,
+          730.3229166666666
+        ],
+        [
+          340.33795166015625,
+          730.3229166666666
+        ],
+        [
+          340.33795166015625,
+          700.4680786132812
+        ],
+        [
+          190.5062459309896,
+          700.4680786132812
+        ]
+      ],
+      "page": 398
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          700.8827209472656
+        ],
+        [
+          217.0692138671875,
+          700.8827209472656
+        ],
+        [
+          217.0692138671875,
+          686.3699544270834
+        ],
+        [
+          75.12337748209636,
+          686.3699544270834
+        ]
+      ],
+      "page": 398
+    },
+    {
+      "text": "3note yaedublishcd or redistributedwiout",
+      "confidence": 0.95,
+      "box": [
+        [
+          327.4715169270833,
+          101.71274820963538
+        ],
+        [
+          503.8662109375,
+          101.71274820963538
+        ],
+        [
+          503.8662109375,
+          89.27321370442712
+        ],
+        [
+          327.4715169270833,
+          89.27321370442712
+        ]
+      ],
+      "page": 398
+    },
+    {
+      "text": "·",
+      "confidence": 0.95,
+      "box": [
+        [
+          368.9761555989583,
+          61.49163818359375
+        ],
+        [
+          403.4250081380208,
+          61.49163818359375
+        ],
+        [
+          403.4250081380208,
+          53.19858805338538
+        ],
+        [
+          368.9761555989583,
+          53.19858805338538
+        ]
+      ],
+      "page": 398
+    },
+    {
+      "text": "ToC016218-237-200 (128-) Cotn Een",
+      "confidence": 0.95,
+      "box": [
+        [
+          234.50115966796875,
+          88.44386800130212
+        ],
+        [
+          293.43772379557294,
+          88.44386800130212
+        ],
+        [
+          293.43772379557294,
+          57.75978597005212
+        ],
+        [
+          234.50115966796875,
+          57.75978597005212
+        ]
+      ],
+      "page": 398
+    },
+    {
+      "text": "Mlr",
+      "confidence": 0.95,
+      "box": [
+        [
+          309.62453206380206,
+          64.80885823567712
+        ],
+        [
+          327.4715169270833,
+          64.80885823567712
+        ],
+        [
+          327.4715169270833,
+          51.95469156901038
+        ],
+        [
+          309.62453206380206,
+          51.95469156901038
+        ]
+      ],
+      "page": 398
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.4004720052083,
+          735.713368733724
+        ],
+        [
+          510.9219970703125,
+          735.713368733724
+        ],
+        [
+          510.9219970703125,
+          721.2006022135416
+        ],
+        [
+          452.4004720052083,
+          721.2006022135416
+        ]
+      ],
+      "page": 398
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 398,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\n3note yaedublishcd or redistributedwiout\n·\nToC016218-237-200 (128-) Cotn Een\nMlr\nEMAAR",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

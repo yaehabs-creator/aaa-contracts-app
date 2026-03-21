@@ -1,0 +1,497 @@
+{
+  "text": "<!-- image -->\n\nPackage #\n\nPackage Title\n\nContractor\n\nSupervision Consultant\n\nRelated CR #\n\nSubject:\n\nInstruction:\n\nThis site Work Instruction (SWl) is a notice to proceed with the scope of work described above and may involve a change inn cost and/or time. You are required to advise CS within 14 days of any additional cost and/or time required to comply with this instruction. All work done under this instruction shallcomplywiththecontractand thecurrentEgyptianCodeofPractice.\n\nNotes:\n\nApproved by: CS\n\nApproved by: CA\n\nApproved by: EMAAR\n\nReceived by CTR\n\nDate\n\nDate\n\nDate\n\nDate\n\n<!-- image -->\n\nProject: .......\n\n## SITE WORK INSTRUCTION (ORIGINAL)\n\nDate:dd/mm/yyyy\n\nSite Work Instruction No. # :",
+  "results": [
+    {
+      "text": "Package #",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.22206115722656,
+          628.2937418619791
+        ],
+        [
+          138.68559773763022,
+          628.2937418619791
+        ],
+        [
+          138.68559773763022,
+          615.1427001953125
+        ],
+        [
+          78.22206115722656,
+          615.1427001953125
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Package Title",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.22206115722656,
+          612.5973307291666
+        ],
+        [
+          149.25615437825522,
+          612.5973307291666
+        ],
+        [
+          149.25615437825522,
+          599.8705037434896
+        ],
+        [
+          78.22206115722656,
+          599.8705037434896
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Contractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.64488220214844,
+          597.3251546223959
+        ],
+        [
+          136.57149251302084,
+          597.3251546223959
+        ],
+        [
+          136.57149251302084,
+          584.5983276367188
+        ],
+        [
+          78.64488220214844,
+          584.5983276367188
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Supervision Consultant",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.64488220214844,
+          581.6287434895833
+        ],
+        [
+          202.10888671875,
+          581.6287434895833
+        ],
+        [
+          202.10888671875,
+          569.7503865559895
+        ],
+        [
+          78.64488220214844,
+          569.7503865559895
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Related CR #",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.22206115722656,
+          566.7808024088542
+        ],
+        [
+          148.41051228841147,
+          566.7808024088542
+        ],
+        [
+          148.41051228841147,
+          554.053975423177
+        ],
+        [
+          78.22206115722656,
+          554.053975423177
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Subject:",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.64488220214844,
+          516.7219848632812
+        ],
+        [
+          123.88683064778645,
+          516.7219848632812
+        ],
+        [
+          123.88683064778645,
+          501.87404378255206
+        ],
+        [
+          78.64488220214844,
+          501.87404378255206
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Instruction:",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.06770833333333,
+          465.39052327473956
+        ],
+        [
+          138.68559773763022,
+          465.39052327473956
+        ],
+        [
+          138.68559773763022,
+          452.66367594401044
+        ],
+        [
+          79.06770833333333,
+          452.66367594401044
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "This site Work Instruction (SWl) is a notice to proceed with the scope of work described above and may involve a change inn cost and/or time. You are required to advise CS within 14 days of any additional cost and/or time required to comply with this instruction. All work done under this instruction shallcomplywiththecontractand thecurrentEgyptianCodeofPractice.",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.06770833333333,
+          393.69610595703125
+        ],
+        [
+          533.601318359375,
+          393.69610595703125
+        ],
+        [
+          533.601318359375,
+          349.57647705078125
+        ],
+        [
+          79.06770833333333,
+          349.57647705078125
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Notes:",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.06770833333333,
+          325.3955281575521
+        ],
+        [
+          114.58474731445312,
+          325.3955281575521
+        ],
+        [
+          114.58474731445312,
+          311.39605712890625
+        ],
+        [
+          79.06770833333333,
+          311.39605712890625
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Approved by: CS",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.91335042317708,
+          244.79237874348962
+        ],
+        [
+          149.25615437825522,
+          244.79237874348962
+        ],
+        [
+          149.25615437825522,
+          219.33876546223962
+        ],
+        [
+          79.91335042317708,
+          219.33876546223962
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Approved by: CA",
+      "confidence": 0.95,
+      "box": [
+        [
+          199.1491495768229,
+          244.79237874348962
+        ],
+        [
+          250.7334187825521,
+          244.79237874348962
+        ],
+        [
+          250.7334187825521,
+          219.76295979817712
+        ],
+        [
+          199.1491495768229,
+          219.76295979817712
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Approved by: EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          336.14345296223956,
+          245.64084879557288
+        ],
+        [
+          404.640625,
+          245.64084879557288
+        ],
+        [
+          404.640625,
+          221.88409423828125
+        ],
+        [
+          336.14345296223956,
+          221.88409423828125
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Received by CTR",
+      "confidence": 0.95,
+      "box": [
+        [
+          451.9966634114583,
+          248.18621826171875
+        ],
+        [
+          514.9971516927084,
+          248.18621826171875
+        ],
+        [
+          514.9971516927084,
+          222.30832926432288
+        ],
+        [
+          451.9966634114583,
+          222.30832926432288
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          80.33617146809895,
+          194.73358154296875
+        ],
+        [
+          105.70548502604167,
+          194.73358154296875
+        ],
+        [
+          105.70548502604167,
+          181.15830485026038
+        ],
+        [
+          80.33617146809895,
+          181.15830485026038
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          199.1491495768229,
+          194.73358154296875
+        ],
+        [
+          225.36409505208334,
+          194.73358154296875
+        ],
+        [
+          225.36409505208334,
+          182.43096923828125
+        ],
+        [
+          199.1491495768229,
+          182.43096923828125
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          336.14345296223956,
+          195.58201090494788
+        ],
+        [
+          361.5127766927083,
+          195.58201090494788
+        ],
+        [
+          361.5127766927083,
+          183.27943929036462
+        ],
+        [
+          336.14345296223956,
+          183.27943929036462
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          438.0435384114583,
+          196.43048095703125
+        ],
+        [
+          463.835693359375,
+          196.43048095703125
+        ],
+        [
+          463.835693359375,
+          184.55214436848962
+        ],
+        [
+          438.0435384114583,
+          184.55214436848962
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Project: .......",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.632568359375,
+          757.6830139160156
+        ],
+        [
+          309.92848714192706,
+          757.6830139160156
+        ],
+        [
+          309.92848714192706,
+          743.6835225423177
+        ],
+        [
+          226.632568359375,
+          743.6835225423177
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "SITE WORK INSTRUCTION (ORIGINAL)",
+      "confidence": 0.95,
+      "box": [
+        [
+          257.92138671875,
+          717.8056640625
+        ],
+        [
+          415.211181640625,
+          717.8056640625
+        ],
+        [
+          415.211181640625,
+          689.8066711425781
+        ],
+        [
+          257.92138671875,
+          689.8066711425781
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Date:dd/mm/yyyy",
+      "confidence": 0.95,
+      "box": [
+        [
+          367.0094401041667,
+          677.9283142089844
+        ],
+        [
+          464.6813151041667,
+          677.9283142089844
+        ],
+        [
+          464.6813151041667,
+          663.5045776367188
+        ],
+        [
+          367.0094401041667,
+          663.5045776367188
+        ]
+      ],
+      "page": 557
+    },
+    {
+      "text": "Site Work Instruction No. # :",
+      "confidence": 0.95,
+      "box": [
+        [
+          367.4322916666667,
+          657.9896240234375
+        ],
+        [
+          514.9971516927084,
+          657.9896240234375
+        ],
+        [
+          514.9971516927084,
+          647.3839518229166
+        ],
+        [
+          367.4322916666667,
+          647.3839518229166
+        ]
+      ],
+      "page": 557
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 557,
+      "text": "Package #\nPackage Title\nContractor\nSupervision Consultant\nRelated CR #\nSubject:\nInstruction:\nThis site Work Instruction (SWl) is a notice to proceed with the scope of work described above and may involve a change inn cost and/or time. You are required to advise CS within 14 days of any additional cost and/or time required to comply with this instruction. All work done under this instruction shallcomplywiththecontractand thecurrentEgyptianCodeofPractice.\nNotes:\nApproved by: CS\nApproved by: CA\nApproved by: EMAAR\nReceived by CTR\nDate\nDate\nDate\nDate\nProject: .......\nSITE WORK INSTRUCTION (ORIGINAL)\nDate:dd/mm/yyyy\nSite Work Instruction No. # :",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

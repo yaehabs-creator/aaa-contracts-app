@@ -1,0 +1,198 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\nEmaarMisrforDevelopment\n\n## SECTION01575 TRAFFIC REGULATION\n\n## TRAFHIC REGULATION\n\n- 1.1 The Contractor shallascertainfromthe Municipality and other government departments  what restrictions and regulations exist concerning the flow of traffic to and from the Site, and shall pay any charges.\n- 1.2 'The Contractor shall obtain at his cost all permits required for oversize oscorts.\n- 1.3 Movements of materials and workmen into the site shall be scheduled and co-ordinated with the Contract Administrator in order to avoid traffic jamsnear theSite entrance.\n\nENDOFSECTION01575\n\n<!-- image -->\n\nTrafficRegulation Section 01575 Page Number: 1 of 1",
+  "results": [
+    {
+      "text": "EmaarMisrforDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          56.10117594401038
+        ],
+        [
+          164.77337646484375,
+          56.10117594401038
+        ],
+        [
+          164.77337646484375,
+          47.80812581380212
+        ],
+        [
+          78.85879516601562,
+          47.80812581380212
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "SECTION01575 TRAFFIC REGULATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.44537353515625,
+          718.2980448404948
+        ],
+        [
+          355.6946614583333,
+          718.2980448404948
+        ],
+        [
+          355.6946614583333,
+          694.2483215332031
+        ],
+        [
+          227.44537353515625,
+          694.2483215332031
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "TRAFHIC REGULATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          665.6374308268229
+        ],
+        [
+          239.0666707356771,
+          665.6374308268229
+        ],
+        [
+          239.0666707356771,
+          654.8565165201823
+        ],
+        [
+          111.64745076497395,
+          654.8565165201823
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "1.1 The Contractor shallascertainfromthe Municipality and other government departments  what restrictions and regulations exist concerning the flow of traffic to and from the Site, and shall pay any charges.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          639.9290974934896
+        ],
+        [
+          507.1865641276042,
+          639.9290974934896
+        ],
+        [
+          507.1865641276042,
+          586.4391886393229
+        ],
+        [
+          112.89258829752605,
+          586.4391886393229
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "1.2 'The Contractor shall obtain at his cost all permits required for oversize oscorts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          574.414306640625
+        ],
+        [
+          505.5263671875,
+          574.414306640625
+        ],
+        [
+          505.5263671875,
+          535.851826985677
+        ],
+        [
+          111.64745076497395,
+          535.851826985677
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "1.3 Movements of materials and workmen into the site shall be scheduled and co-ordinated with the Contract Administrator in order to avoid traffic jamsnear theSite entrance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          522.1683553059895
+        ],
+        [
+          506.3564860026042,
+          522.1683553059895
+        ],
+        [
+          506.3564860026042,
+          484.0205078125
+        ],
+        [
+          111.23241170247395,
+          484.0205078125
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "ENDOFSECTION01575",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.61527506510416,
+          456.23891194661456
+        ],
+        [
+          358.1849365234375,
+          456.23891194661456
+        ],
+        [
+          358.1849365234375,
+          445.04335530598956
+        ],
+        [
+          226.61527506510416,
+          445.04335530598956
+        ]
+      ],
+      "page": 361
+    },
+    {
+      "text": "TrafficRegulation Section 01575 Page Number: 1 of 1",
+      "confidence": 0.95,
+      "box": [
+        [
+          427.4976806640625,
+          57.75978597005212
+        ],
+        [
+          490.169677734375,
+          57.75978597005212
+        ],
+        [
+          490.169677734375,
+          34.12469482421875
+        ],
+        [
+          427.4976806640625,
+          34.12469482421875
+        ]
+      ],
+      "page": 361
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 361,
+      "text": "EmaarMisrforDevelopment\nSECTION01575 TRAFFIC REGULATION\nTRAFHIC REGULATION\n1.1 The Contractor shallascertainfromthe Municipality and other government departments  what restrictions and regulations exist concerning the flow of traffic to and from the Site, and shall pay any charges.\n1.2 'The Contractor shall obtain at his cost all permits required for oversize oscorts.\n1.3 Movements of materials and workmen into the site shall be scheduled and co-ordinated with the Contract Administrator in order to avoid traffic jamsnear theSite entrance.\nENDOFSECTION01575\nTrafficRegulation Section 01575 Page Number: 1 of 1",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

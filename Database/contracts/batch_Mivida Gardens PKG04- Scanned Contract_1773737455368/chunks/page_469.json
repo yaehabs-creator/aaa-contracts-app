@@ -1,0 +1,359 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n- The wearing of standard sunglasses and prescription glasses that do not meet safety standards are prohibited.\n- Where a risk asscssmcnt idcntifies additional hazards, for example working below ground, or in confined spaces, Contractors shall provide their staff with suitable safety equipment and training to ensurethattheycansafelyundertakethetask.\n- PPE is to be correctly worn at all times and the wearing of it is to be strictly enforced by managers and supervisors.\n- Contractors shall maintain, inspect and replace damaged PPE and provide suitable dry, clean and well ventilated areas for its storage.\n\n## 3.37. Work Clothing\n\n- All personnel are to wear clothing appropriate for the work being performed.\n- Clothing contaminated with grease, oils, fuels and other hazardous substances is not to be worn.\n\n## 3.38. Safety Signs and Signals\n\n- Safety signs are to be displayed where the risks to health and safety cannot be avoided by other means.\n- Safety signs are to be pictorial wherever possible and where lettering is used it must be in English, Arabic and thenative language of theworkers on site.\n- The colors and shapes of safety signs are to be consistent with BS5499:2006Code of Practice for Safety Signs including Fire Safety Signs.\n\n## Typical Sign Colors and Shape\n\n<!-- image -->\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.0912068684896,
+          726.591054280599
+        ],
+        [
+          339.92291259765625,
+          726.591054280599
+        ],
+        [
+          339.92291259765625,
+          698.8094685872396
+        ],
+        [
+          190.0912068684896,
+          698.8094685872396
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          695.4922688802084
+        ],
+        [
+          216.6541748046875,
+          695.4922688802084
+        ],
+        [
+          216.6541748046875,
+          683.4674072265625
+        ],
+        [
+          75.95347086588542,
+          683.4674072265625
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "The wearing of standard sunglasses and prescription glasses that do not meet safety standards are prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          670.6132405598959
+        ],
+        [
+          495.1502278645833,
+          670.6132405598959
+        ],
+        [
+          495.1502278645833,
+          646.9781494140625
+        ],
+        [
+          90.8951416015625,
+          646.9781494140625
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Where a risk asscssmcnt idcntifies additional hazards, for example working below ground, or in confined spaces, Contractors shall provide their staff with suitable safety equipment and training to ensurethattheycansafelyundertakethetask.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          640.34375
+        ],
+        [
+          495.5652669270833,
+          640.34375
+        ],
+        [
+          495.5652669270833,
+          603.4398600260416
+        ],
+        [
+          92.55532836914062,
+          603.4398600260416
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "PPE is to be correctly worn at all times and the wearing of it is to be strictly enforced by managers and supervisors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          596.3907877604166
+        ],
+        [
+          495.1502278645833,
+          596.3907877604166
+        ],
+        [
+          495.1502278645833,
+          571.5117594401041
+        ],
+        [
+          92.55532836914062,
+          571.5117594401041
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Contractors shall maintain, inspect and replace damaged PPE and provide suitable dry, clean and well ventilated areas for its storage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          565.7066650390625
+        ],
+        [
+          495.5652669270833,
+          565.7066650390625
+        ],
+        [
+          495.5652669270833,
+          541.2422688802083
+        ],
+        [
+          92.55532836914062,
+          541.2422688802083
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "3.37. Work Clothing",
+      "confidence": 0.95,
+      "box": [
+        [
+          241.55694580078125,
+          535.4371744791667
+        ],
+        [
+          345.3185221354167,
+          535.4371744791667
+        ],
+        [
+          345.3185221354167,
+          522.1683553059895
+        ],
+        [
+          241.55694580078125,
+          522.1683553059895
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "All personnel are to wear clothing appropriate for the work being performed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          515.533935546875
+        ],
+        [
+          404.6701253255208,
+          515.533935546875
+        ],
+        [
+          404.6701253255208,
+          504.33837890625
+        ],
+        [
+          91.3101806640625,
+          504.33837890625
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Clothing contaminated with grease, oils, fuels and other hazardous substances is not to be worn.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          497.7039794921875
+        ],
+        [
+          482.2838134765625,
+          497.7039794921875
+        ],
+        [
+          482.2838134765625,
+          486.50840250651044
+        ],
+        [
+          91.3101806640625,
+          486.50840250651044
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "3.38. Safety Signs and Signals",
+      "confidence": 0.95,
+      "box": [
+        [
+          220.38958740234375,
+          479.04469807942706
+        ],
+        [
+          366.0708414713542,
+          479.04469807942706
+        ],
+        [
+          366.0708414713542,
+          466.60516357421875
+        ],
+        [
+          220.38958740234375,
+          466.60516357421875
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Safety signs are to be displayed where the risks to health and safety cannot be avoided by other means.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          459.55613199869794
+        ],
+        [
+          495.9803059895833,
+          459.55613199869794
+        ],
+        [
+          495.9803059895833,
+          435.92104085286456
+        ],
+        [
+          92.14027913411458,
+          435.92104085286456
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Safety signs are to be pictorial wherever possible and where lettering is used it must be in English, Arabic and thenative language of theworkers on site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          430.11594645182294
+        ],
+        [
+          495.5652669270833,
+          430.11594645182294
+        ],
+        [
+          495.5652669270833,
+          405.23691813151044
+        ],
+        [
+          92.55532836914062,
+          405.23691813151044
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "The colors and shapes of safety signs are to be consistent with BS5499:2006Code of Practice for Safety Signs including Fire Safety Signs.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          399.43178304036456
+        ],
+        [
+          496.8104248046875,
+          399.43178304036456
+        ],
+        [
+          496.8104248046875,
+          373.72344970703125
+        ],
+        [
+          92.14027913411458,
+          373.72344970703125
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "Typical Sign Colors and Shape",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.86041259765625,
+          367.50372314453125
+        ],
+        [
+          361.9203694661458,
+          367.50372314453125
+        ],
+        [
+          361.9203694661458,
+          356.30812581380206
+        ],
+        [
+          227.86041259765625,
+          356.30812581380206
+        ]
+      ],
+      "page": 469
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.4004720052083,
+          733.6401163736979
+        ],
+        [
+          509.2618001302083,
+          733.6401163736979
+        ],
+        [
+          509.2618001302083,
+          720.7859497070312
+        ],
+        [
+          452.4004720052083,
+          720.7859497070312
+        ]
+      ],
+      "page": 469
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 469,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\nThe wearing of standard sunglasses and prescription glasses that do not meet safety standards are prohibited.\nWhere a risk asscssmcnt idcntifies additional hazards, for example working below ground, or in confined spaces, Contractors shall provide their staff with suitable safety equipment and training to ensurethattheycansafelyundertakethetask.\nPPE is to be correctly worn at all times and the wearing of it is to be strictly enforced by managers and supervisors.\nContractors shall maintain, inspect and replace damaged PPE and provide suitable dry, clean and well ventilated areas for its storage.\n3.37. Work Clothing\nAll personnel are to wear clothing appropriate for the work being performed.\nClothing contaminated with grease, oils, fuels and other hazardous substances is not to be worn.\n3.38. Safety Signs and Signals\nSafety signs are to be displayed where the risks to health and safety cannot be avoided by other means.\nSafety signs are to be pictorial wherever possible and where lettering is used it must be in English, Arabic and thenative language of theworkers on site.\nThe colors and shapes of safety signs are to be consistent with BS5499:2006Code of Practice for Safety Signs including Fire Safety Signs.\nTypical Sign Colors and Shape\nEMAAR",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

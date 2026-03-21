@@ -1,0 +1,382 @@
+{
+  "text": "<!-- image -->\n\ntape.Waiveworkinginarea.\n\n- d) Install plywood panels of minimum 6 mm thickness over clean, completed finish flooring materials on which further construction work is performed or delivery of products is made, or both. Seal joints between panels with reinforced pressure-sensitive tape, and maintain protection during the courseofworkinprogress.\n2. 22.Exposed Walls, Ceilings, Finish Metals, Glass, Fitments, and Equipment. Ensure that adequate protection to prevent damage, as specified above, to exposed surfaces of stonework, other exterior and interior wall and ceiling maintained during handling, storage, installation, and until removal is approved, to the satisfaction of the Supervision Consultant.\n3. SECURITYANDSAFETY.\n\n## 1.10 SPECIALSAFETYPRECAUTIONS\n\n## 1. General:\n\n- a) Where it is proposed that laser (light amplification by stimulated emission of radiation) equipment is to be used in connection with any work to these Specifications, details shall be supplied in advance to Contract Administrator for approval. Any safety precautions required by Contract Administrator or Supervision Consultant for the operation of laser equipment shallbeobserved.\n- b) When using certain materials referred to in these Specifications, the safety precautions contained in the following paragraphs should be observed.\n3. i.PVC Cementand Methylated Spirits:\n4. When using PvC Cement and/or methylated spirits,care should be taken to ensure thatworkingareasareadequatelyventilated.Naked flames should not be usedunder any circumstances and smoking should notbepermitted.\n5. iil.Resin Pack No. 6A: When mixing and/or using Resin Pack No. 6A:\n6. Barrler cream should be applied to the hands, and foreains if exposed, before handling the resin.\n7. Disposableglovesshouldbeworn.\n8. After use, all soiled containers, waste and gloves should be disposed of in arefusebin.\n9. The resin should always be mixed in a well ventilated place.\n10. c)Ensure that all Contractor personnel are wearing, at the Contractor's cost, personal protective equipment (PPE), which includes, as a minimum, safety glasses, hard hats and sturdy shoes.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "tape.Waiveworkinginarea.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.66434733072916,
+          721.2006022135416
+        ],
+        [
+          272.6854248046875,
+          721.2006022135416
+        ],
+        [
+          272.6854248046875,
+          710.419687906901
+        ],
+        [
+          128.66434733072916,
+          710.419687906901
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "Install plywood panels of minimum 6 mm thickness over clean, completed finish flooring materials on which further construction work is performed or delivery of products is made, or both. Seal joints between panels with reinforced pressure-sensitive tape, and maintain protection during the courseofworkinprogress.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          710.8343404134115
+        ],
+        [
+          504.6962890625,
+          710.8343404134115
+        ],
+        [
+          504.6962890625,
+          652.7832641601562
+        ],
+        [
+          110.81736246744792,
+          652.7832641601562
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "22.Exposed Walls, Ceilings, Finish Metals, Glass, Fitments, and Equipment. Ensure that adequate protection to prevent damage, as specified above, to exposed surfaces of stonework, other exterior and interior wall and ceiling maintained during handling, storage, installation, and until removal is approved, to the satisfaction of the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          642.4169921875
+        ],
+        [
+          504.6962890625,
+          642.4169921875
+        ],
+        [
+          504.6962890625,
+          573.9996744791666
+        ],
+        [
+          94.63055419921875,
+          573.9996744791666
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "SECURITYANDSAFETY.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          561.9747924804688
+        ],
+        [
+          245.2923583984375,
+          561.9747924804688
+        ],
+        [
+          245.2923583984375,
+          551.1938883463542
+        ],
+        [
+          111.64745076497395,
+          551.1938883463542
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "1.10 SPECIALSAFETYPRECAUTIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          528.3881022135417
+        ],
+        [
+          289.2872721354167,
+          528.3881022135417
+        ],
+        [
+          289.2872721354167,
+          517.1925455729167
+        ],
+        [
+          78.02870178222656,
+          517.1925455729167
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "1. General:",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          505.9969889322917
+        ],
+        [
+          156.05740356445312,
+          505.9969889322917
+        ],
+        [
+          156.05740356445312,
+          493.55747477213544
+        ],
+        [
+          97.12082926432292,
+          493.55747477213544
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "Where it is proposed that laser (light amplification by stimulated emission of radiation) equipment is to be used in connection with any work to these Specifications, details shall be supplied in advance to Contract Administrator for approval. Any safety precautions required by Contract Administrator or Supervision Consultant for the operation of laser equipment shallbeobserved.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          493.97210693359375
+        ],
+        [
+          506.3564860026042,
+          493.97210693359375
+        ],
+        [
+          506.3564860026042,
+          425.96942138671875
+        ],
+        [
+          110.81736246744792,
+          425.96942138671875
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "When using certain materials referred to in these Specifications, the safety precautions contained in the following paragraphs should be observed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          425.96942138671875
+        ],
+        [
+          504.6962890625,
+          425.96942138671875
+        ],
+        [
+          504.6962890625,
+          403.16363525390625
+        ],
+        [
+          110.81736246744792,
+          403.16363525390625
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "i.PVC Cementand Methylated Spirits:",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.0405069986979,
+          391.96807861328125
+        ],
+        [
+          336.6025390625,
+          391.96807861328125
+        ],
+        [
+          336.6025390625,
+          380.35788981119794
+        ],
+        [
+          139.0405069986979,
+          380.35788981119794
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "When using PvC Cement and/or methylated spirits,care should be taken to ensure thatworkingareasareadequatelyventilated.Naked flames should not be usedunder any circumstances and smoking should notbepermitted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          380.35788981119794
+        ],
+        [
+          505.111328125,
+          380.35788981119794
+        ],
+        [
+          505.111328125,
+          334.74631754557294
+        ],
+        [
+          153.56712849934897,
+          334.74631754557294
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "iil.Resin Pack No. 6A: When mixing and/or using Resin Pack No. 6A:",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          334.74631754557294
+        ],
+        [
+          483.5289306640625,
+          334.74631754557294
+        ],
+        [
+          483.5289306640625,
+          323.55076090494794
+        ],
+        [
+          136.55023193359375,
+          323.55076090494794
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "Barrler cream should be applied to the hands, and foreains if exposed, before handling the resin.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.7928263346354,
+          312.76983642578125
+        ],
+        [
+          506.7715250651042,
+          312.76983642578125
+        ],
+        [
+          506.7715250651042,
+          289.1347452799479
+        ],
+        [
+          159.7928263346354,
+          289.1347452799479
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "Disposableglovesshouldbeworn.",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.45301310221353,
+          288.7201131184896
+        ],
+        [
+          334.1122639973958,
+          288.7201131184896
+        ],
+        [
+          334.1122639973958,
+          278.76849365234375
+        ],
+        [
+          161.45301310221353,
+          278.76849365234375
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "After use, all soiled containers, waste and gloves should be disposed of in arefusebin.",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.2078653971354,
+          278.3538614908854
+        ],
+        [
+          505.5263671875,
+          278.3538614908854
+        ],
+        [
+          505.5263671875,
+          255.13340250651038
+        ],
+        [
+          160.2078653971354,
+          255.13340250651038
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "The resin should always be mixed in a well ventilated place.",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.62291463216147,
+          255.13340250651038
+        ],
+        [
+          456.1358642578125,
+          255.13340250651038
+        ],
+        [
+          456.1358642578125,
+          244.35251871744788
+        ],
+        [
+          160.62291463216147,
+          244.35251871744788
+        ]
+      ],
+      "page": 255
+    },
+    {
+      "text": "c)Ensure that all Contractor personnel are wearing, at the Contractor's cost, personal protective equipment (PPE), which includes, as a minimum, safety glasses, hard hats and sturdy shoes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          232.32765706380212
+        ],
+        [
+          504.6962890625,
+          232.32765706380212
+        ],
+        [
+          504.6962890625,
+          197.49700927734375
+        ],
+        [
+          111.23241170247395,
+          197.49700927734375
+        ]
+      ],
+      "page": 255
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 255,
+      "text": "tape.Waiveworkinginarea.\nInstall plywood panels of minimum 6 mm thickness over clean, completed finish flooring materials on which further construction work is performed or delivery of products is made, or both. Seal joints between panels with reinforced pressure-sensitive tape, and maintain protection during the courseofworkinprogress.\n22.Exposed Walls, Ceilings, Finish Metals, Glass, Fitments, and Equipment. Ensure that adequate protection to prevent damage, as specified above, to exposed surfaces of stonework, other exterior and interior wall and ceiling maintained during handling, storage, installation, and until removal is approved, to the satisfaction of the Supervision Consultant.\nSECURITYANDSAFETY.\n1.10 SPECIALSAFETYPRECAUTIONS\n1. General:\nWhere it is proposed that laser (light amplification by stimulated emission of radiation) equipment is to be used in connection with any work to these Specifications, details shall be supplied in advance to Contract Administrator for approval. Any safety precautions required by Contract Administrator or Supervision Consultant for the operation of laser equipment shallbeobserved.\nWhen using certain materials referred to in these Specifications, the safety precautions contained in the following paragraphs should be observed.\ni.PVC Cementand Methylated Spirits:\nWhen using PvC Cement and/or methylated spirits,care should be taken to ensure thatworkingareasareadequatelyventilated.Naked flames should not be usedunder any circumstances and smoking should notbepermitted.\niil.Resin Pack No. 6A: When mixing and/or using Resin Pack No. 6A:\nBarrler cream should be applied to the hands, and foreains if exposed, before handling the resin.\nDisposableglovesshouldbeworn.\nAfter use, all soiled containers, waste and gloves should be disposed of in arefusebin.\nThe resin should always be mixed in a well ventilated place.\nc)Ensure that all Contractor personnel are wearing, at the Contractor's cost, personal protective equipment (PPE), which includes, as a minimum, safety glasses, hard hats and sturdy shoes.",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

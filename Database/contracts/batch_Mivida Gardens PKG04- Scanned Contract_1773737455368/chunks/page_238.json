@@ -1,0 +1,773 @@
+{
+  "text": "## Elhussein ElEssawy\n\nFrom:\n\nEihussein ElEssawy\n\nSent:\n\nSunday,September21,20254:11PM\n\nCc:\n\nSarah Halawa;Muhammad Fekry El Farcy;Ahmed Mongy;Manar Ashraf;MarwaSherif Abdelaziz; Mohamed Fathy ElZayat;Hala Mohamed Samy;Tamer Mohamed Salah;Rania ElKateb\n\nSubject:\n\nMVG.PK#04.ConstructionofTownhomesVillasinParcel11&amp;Parcel12\\_PostTender AddendumNo.07\n\nAttachments:\n\nQuery Log No.03.pdf\n\nDear Tenderer,\n\nPleasefindtheattachedQueryLogNo.03alongwith its attachmentsforyourkindconsideration.\n\nPlease refer to the below link for Query Log No.03 attachments:\n\n## 20250921010547\n\nNoting that theTender submission due datehas been extended till Tuesday3othof September 2025.\n\nThisisforyourinformation andfurther action..\n\nKind regards,\n\n## Elhussein Elessawy\n\n## EMAAR\n\nMISR\n\nCommercial Department - Contracts Division EmaarMisrforDevelopment\n\nT:+20225032072\n\nM:+201227725844\n\n/Email:eelessawy@emaar.eg\n\n## emaar.com\n\nFrom:Elhussein ElEssawy\n\nSent:Tuesday,September16,20253:42PM\n\nCc:Sarah Halawa&lt;sahalawa@emaar.eg&gt;;Muhammad Fekry El Farcy &lt;MElfarcy@Emaar.eg&gt;; Ahmed Mongy &lt;AMongy@emaar.eg&gt;; Manar Ashraf &lt;MAAbdelGhaffar@Emaar.eg&gt;; Marwa Sherif Abdelaziz &lt;MSherif@Emaar.eg&gt;; MohamedFathy EIZayat&lt;MohElZayat@emaar.eg&gt;;HalaMohamed Samy&lt;HalaSamy@emaar.eg&gt;;TamerMohamed Salah&lt;Tamerm@emaar.eg&gt;;Rania EIKateb&lt;RElKateb@emaar.eg&gt;\n\nSubject:MVG.PK#04.ConstructionofTownhomesVillasinParcel11&amp;Parcel12\\_PostTenderAddendumNo.06\n\nDear Tenderer,\n\nPlease find the attached Query Log No.02 along with its attachments for your kind consideration.\n\nPleaserefertothebelowlinkforQueryLogNe.02attachments:\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Elhussein ElEssawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.50462849934896,
+          718.7126973470052
+        ],
+        [
+          139.0405069986979,
+          718.7126973470052
+        ],
+        [
+          139.0405069986979,
+          704.6145833333334
+        ],
+        [
+          41.50462849934896,
+          704.6145833333334
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "From:",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.674537658691406,
+          692.1750691731771
+        ],
+        [
+          68.48264058430989,
+          692.1750691731771
+        ],
+        [
+          68.48264058430989,
+          679.7355448404948
+        ],
+        [
+          40.674537658691406,
+          679.7355448404948
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Eihussein ElEssawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.620361328125,
+          691.7604166666666
+        ],
+        [
+          258.57383219401044,
+          691.7604166666666
+        ],
+        [
+          258.57383219401044,
+          679.3209025065104
+        ],
+        [
+          182.620361328125,
+          679.3209025065104
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Sent:",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.259490966796875,
+          680.1501973470052
+        ],
+        [
+          65.57731628417969,
+          680.1501973470052
+        ],
+        [
+          65.57731628417969,
+          667.710683186849
+        ],
+        [
+          40.259490966796875,
+          667.710683186849
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Sunday,September21,20254:11PM",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.620361328125,
+          678.90625
+        ],
+        [
+          334.1122639973958,
+          678.90625
+        ],
+        [
+          334.1122639973958,
+          667.2960306803385
+        ],
+        [
+          182.620361328125,
+          667.2960306803385
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Cc:",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.674537658691406,
+          668.1253356933594
+        ],
+        [
+          55.61620585123698,
+          668.1253356933594
+        ],
+        [
+          55.61620585123698,
+          655.2711690266927
+        ],
+        [
+          40.674537658691406,
+          655.2711690266927
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Sarah Halawa;Muhammad Fekry El Farcy;Ahmed Mongy;Manar Ashraf;MarwaSherif Abdelaziz; Mohamed Fathy ElZayat;Hala Mohamed Samy;Tamer Mohamed Salah;Rania ElKateb",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.3752237955729,
+          666.8813781738281
+        ],
+        [
+          539.9752197265625,
+          666.8813781738281
+        ],
+        [
+          539.9752197265625,
+          631.6360880533854
+        ],
+        [
+          181.3752237955729,
+          631.6360880533854
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Subject:",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.674537658691406,
+          631.6360880533854
+        ],
+        [
+          77.61365763346355,
+          631.6360880533854
+        ],
+        [
+          77.61365763346355,
+          617.9526163736979
+        ],
+        [
+          40.674537658691406,
+          617.9526163736979
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "MVG.PK#04.ConstructionofTownhomesVillasinParcel11&Parcel12_PostTender AddendumNo.07",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.620361328125,
+          629.9774780273438
+        ],
+        [
+          520.0530192057291,
+          629.9774780273438
+        ],
+        [
+          520.0530192057291,
+          606.7570597330729
+        ],
+        [
+          182.620361328125,
+          606.7570597330729
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Attachments:",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.674537658691406,
+          606.7570597330729
+        ],
+        [
+          100.8562520345052,
+          606.7570597330729
+        ],
+        [
+          100.8562520345052,
+          594.7321980794271
+        ],
+        [
+          40.674537658691406,
+          594.7321980794271
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Query Log No.03.pdf",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          605.5131022135416
+        ],
+        [
+          268.5349527994792,
+          605.5131022135416
+        ],
+        [
+          268.5349527994792,
+          593.9028930664062
+        ],
+        [
+          181.790283203125,
+          593.9028930664062
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Dear Tenderer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.674537658691406,
+          570.6824544270834
+        ],
+        [
+          107.49698893229167,
+          570.6824544270834
+        ],
+        [
+          107.49698893229167,
+          558.242940266927
+        ],
+        [
+          40.674537658691406,
+          558.242940266927
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "PleasefindtheattachedQueryLogNo.03alongwith its attachmentsforyourkindconsideration.",
+      "confidence": 0.95,
+      "box": [
+        [
+          40.259490966796875,
+          545.3887736002605
+        ],
+        [
+          461.1164143880208,
+          545.3887736002605
+        ],
+        [
+          461.1164143880208,
+          532.1199544270833
+        ],
+        [
+          40.259490966796875,
+          532.1199544270833
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Please refer to the below link for Query Log No.03 attachments:",
+      "confidence": 0.95,
+      "box": [
+        [
+          33.203704833984375,
+          524.2415974934895
+        ],
+        [
+          317.9254557291667,
+          524.2415974934895
+        ],
+        [
+          317.9254557291667,
+          504.75303141276044
+        ],
+        [
+          33.203704833984375,
+          504.75303141276044
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "20250921010547",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.844444274902344,
+          497.28932698567706
+        ],
+        [
+          138.21041870117188,
+          497.28932698567706
+        ],
+        [
+          138.21041870117188,
+          480.28863525390625
+        ],
+        [
+          39.844444274902344,
+          480.28863525390625
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Noting that theTender submission due datehas been extended till Tuesday3othof September 2025.",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.42939758300781,
+          468.67844645182294
+        ],
+        [
+          479.7934977213542,
+          468.67844645182294
+        ],
+        [
+          479.7934977213542,
+          454.58030192057294
+        ],
+        [
+          39.42939758300781,
+          454.58030192057294
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Thisisforyourinformation andfurther action..",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.844444274902344,
+          442.97011311848956
+        ],
+        [
+          242.80208333333334,
+          442.97011311848956
+        ],
+        [
+          242.80208333333334,
+          431.35988362630206
+        ],
+        [
+          39.844444274902344,
+          431.35988362630206
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Kind regards,",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.844444274902344,
+          418.92038981119794
+        ],
+        [
+          95.0456034342448,
+          418.92038981119794
+        ],
+        [
+          95.0456034342448,
+          407.72479248046875
+        ],
+        [
+          39.844444274902344,
+          407.72479248046875
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Elhussein Elessawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.42939758300781,
+          398.60247802734375
+        ],
+        [
+          137.38032023111978,
+          398.60247802734375
+        ],
+        [
+          137.38032023111978,
+          384.91904703776044
+        ],
+        [
+          39.42939758300781,
+          384.91904703776044
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.01435089111328,
+          377.04066975911456
+        ],
+        [
+          95.0456034342448,
+          377.04066975911456
+        ],
+        [
+          95.0456034342448,
+          362.94256591796875
+        ],
+        [
+          39.01435089111328,
+          362.94256591796875
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          57.691436767578125,
+          362.11326090494794
+        ],
+        [
+          76.78356424967448,
+          362.11326090494794
+        ],
+        [
+          76.78356424967448,
+          351.74696858723956
+        ],
+        [
+          57.691436767578125,
+          351.74696858723956
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Commercial Department - Contracts Division EmaarMisrforDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.01435089111328,
+          344.28326416015625
+        ],
+        [
+          237.4064737955729,
+          344.28326416015625
+        ],
+        [
+          237.4064737955729,
+          322.72145589192706
+        ],
+        [
+          39.01435089111328,
+          322.72145589192706
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "T:+20225032072",
+      "confidence": 0.95,
+      "box": [
+        [
+          38.59930419921875,
+          312.35520426432294
+        ],
+        [
+          114.13773600260417,
+          312.35520426432294
+        ],
+        [
+          114.13773600260417,
+          301.9889119466146
+        ],
+        [
+          38.59930419921875,
+          301.9889119466146
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "M:+201227725844",
+      "confidence": 0.95,
+      "box": [
+        [
+          31.54351806640625,
+          301.57427978515625
+        ],
+        [
+          120.36342366536458,
+          301.57427978515625
+        ],
+        [
+          120.36342366536458,
+          292.03729248046875
+        ],
+        [
+          31.54351806640625,
+          292.03729248046875
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "/Email:eelessawy@emaar.eg",
+      "confidence": 0.95,
+      "box": [
+        [
+          28.22314707438151,
+          291.6226603190104
+        ],
+        [
+          162.69815063476562,
+          291.6226603190104
+        ],
+        [
+          162.69815063476562,
+          278.76849365234375
+        ],
+        [
+          28.22314707438151,
+          278.76849365234375
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "emaar.com",
+      "confidence": 0.95,
+      "box": [
+        [
+          39.01435089111328,
+          267.57293701171875
+        ],
+        [
+          88.81990559895833,
+          267.57293701171875
+        ],
+        [
+          88.81990559895833,
+          259.2799275716146
+        ],
+        [
+          39.01435089111328,
+          259.2799275716146
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "From:Elhussein ElEssawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          38.18426005045573,
+          243.52321370442712
+        ],
+        [
+          145.26620483398438,
+          243.52321370442712
+        ],
+        [
+          145.26620483398438,
+          230.66904703776038
+        ],
+        [
+          38.18426005045573,
+          230.66904703776038
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Sent:Tuesday,September16,20253:42PM",
+      "confidence": 0.95,
+      "box": [
+        [
+          38.18426005045573,
+          230.25437418619788
+        ],
+        [
+          222.8798624674479,
+          230.25437418619788
+        ],
+        [
+          222.8798624674479,
+          218.22951253255212
+        ],
+        [
+          38.18426005045573,
+          218.22951253255212
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Cc:Sarah Halawa<sahalawa@emaar.eg>;Muhammad Fekry El Farcy <MElfarcy@Emaar.eg>; Ahmed Mongy <AMongy@emaar.eg>; Manar Ashraf <MAAbdelGhaffar@Emaar.eg>; Marwa Sherif Abdelaziz <MSherif@Emaar.eg>; MohamedFathy EIZayat<MohElZayat@emaar.eg>;HalaMohamed Samy<HalaSamy@emaar.eg>;TamerMohamed Salah<Tamerm@emaar.eg>;Rania EIKateb<RElKateb@emaar.eg>",
+      "confidence": 0.95,
+      "box": [
+        [
+          37.354166666666664,
+          218.22951253255212
+        ],
+        [
+          521.2981363932291,
+          218.22951253255212
+        ],
+        [
+          521.2981363932291,
+          167.22751871744788
+        ],
+        [
+          37.354166666666664,
+          167.22751871744788
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Subject:MVG.PK#04.ConstructionofTownhomesVillasinParcel11&Parcel12_PostTenderAddendumNo.06",
+      "confidence": 0.95,
+      "box": [
+        [
+          38.18426005045573,
+          168.05682373046875
+        ],
+        [
+          494.7351888020833,
+          168.05682373046875
+        ],
+        [
+          494.7351888020833,
+          155.61728922526038
+        ],
+        [
+          38.18426005045573,
+          155.61728922526038
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Dear Tenderer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          37.769213358561196,
+          144.42173258463538
+        ],
+        [
+          105.0067138671875,
+          144.42173258463538
+        ],
+        [
+          105.0067138671875,
+          131.98219807942712
+        ],
+        [
+          37.769213358561196,
+          131.98219807942712
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "Please find the attached Query Log No.02 along with its attachments for your kind consideration.",
+      "confidence": 0.95,
+      "box": [
+        [
+          36.93911997477213,
+          119.54266357421875
+        ],
+        [
+          461.1164143880208,
+          119.54266357421875
+        ],
+        [
+          461.1164143880208,
+          104.61525472005212
+        ],
+        [
+          36.93911997477213,
+          104.61525472005212
+        ]
+      ],
+      "page": 238
+    },
+    {
+      "text": "PleaserefertothebelowlinkforQueryLogNe.02attachments:",
+      "confidence": 0.95,
+      "box": [
+        [
+          37.354166666666664,
+          94.66367594401038
+        ],
+        [
+          314.19004313151044,
+          94.66367594401038
+        ],
+        [
+          314.19004313151044,
+          81.39487711588538
+        ],
+        [
+          37.354166666666664,
+          81.39487711588538
+        ]
+      ],
+      "page": 238
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 238,
+      "text": "Elhussein ElEssawy\nFrom:\nEihussein ElEssawy\nSent:\nSunday,September21,20254:11PM\nCc:\nSarah Halawa;Muhammad Fekry El Farcy;Ahmed Mongy;Manar Ashraf;MarwaSherif Abdelaziz; Mohamed Fathy ElZayat;Hala Mohamed Samy;Tamer Mohamed Salah;Rania ElKateb\nSubject:\nMVG.PK#04.ConstructionofTownhomesVillasinParcel11&Parcel12_PostTender AddendumNo.07\nAttachments:\nQuery Log No.03.pdf\nDear Tenderer,\nPleasefindtheattachedQueryLogNo.03alongwith its attachmentsforyourkindconsideration.\nPlease refer to the below link for Query Log No.03 attachments:\n20250921010547\nNoting that theTender submission due datehas been extended till Tuesday3othof September 2025.\nThisisforyourinformation andfurther action..\nKind regards,\nElhussein Elessawy\nEMAAR\nMISR\nCommercial Department - Contracts Division EmaarMisrforDevelopment\nT:+20225032072\nM:+201227725844\n/Email:eelessawy@emaar.eg\nemaar.com\nFrom:Elhussein ElEssawy\nSent:Tuesday,September16,20253:42PM\nCc:Sarah Halawa<sahalawa@emaar.eg>;Muhammad Fekry El Farcy <MElfarcy@Emaar.eg>; Ahmed Mongy <AMongy@emaar.eg>; Manar Ashraf <MAAbdelGhaffar@Emaar.eg>; Marwa Sherif Abdelaziz <MSherif@Emaar.eg>; MohamedFathy EIZayat<MohElZayat@emaar.eg>;HalaMohamed Samy<HalaSamy@emaar.eg>;TamerMohamed Salah<Tamerm@emaar.eg>;Rania EIKateb<RElKateb@emaar.eg>\nSubject:MVG.PK#04.ConstructionofTownhomesVillasinParcel11&Parcel12_PostTenderAddendumNo.06\nDear Tenderer,\nPlease find the attached Query Log No.02 along with its attachments for your kind consideration.\nPleaserefertothebelowlinkforQueryLogNe.02attachments:",
+      "line_count": 33
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

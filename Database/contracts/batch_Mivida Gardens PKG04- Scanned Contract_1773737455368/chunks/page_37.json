@@ -1,0 +1,198 @@
+{
+  "text": "- (c) if theContractorquestionsanycommunicationof theSupervision Consultant'sRepresentativetheContractorshall beentitledwithin (butnot after) four daysof thereceiptthereofby theContractor to SupervisionConsultant)whowillthereuponarrangeforthe SupervisionConsultant toconfirm,reverseorvary thecontent of suchcommunicationandsuchconfirmation,reversalorvariation bearing thesignatureoftheProjectManagershall(subjecttothe provisionsrelatingtotheresolutionofdisputescontainedinthe ParticularConditions)be final notwithstanding theprovisions of Clause2A.4(ReconfirmationofDecisions).\n\n## 3. ASSIGNMENTANDSUBLETTING\n\n## Assignment\n\n- 3.1 (a) ExceptasotherwiseprovidedintheContract,theContractorshall orinterestthereinorthereunder.IftheContractorwishestoobtain financingfortheperformanceofanyofitsobligationsunderthe Conlractand as a condition ofsuchfinancing itisrequired to assign orchargebywayofsecuritytoabankorotherfinancialinstitutionall or anyof themoniesdueortobecomeduetoit under theContractit shall obtaintheEmployer'spriorwrittenconsenttosuchassignment or charge.\n- (b) The Employer shall have the right to assign the Contract or any part thereof or anybenefit,obligationorinterest therein or thereunder.\n\nSubletting\n\n- 3.2 TheContractorshallnotsubletthewholeoftheWorks.Exceptinthecase ofsubcontractstoNominatedSubcontractorsandexceptinanycasewhere theContractspecificallypermitssubcontracting,the Contractorshall not subletanypartoftheWorks(whetherthatpartinvolvesthecarryingoutof without thepriorwrittenconsentof theProjectManagerand theSupervision Consultant and only(such prior written consent having been obtained)upon such terms as the Project Manager may require.The Contractor shall obtainthepriorwrittenconsentoftheProjectManagerand theSupervision Consultant to proposed Subcontractors.The Contractor shall give the Project Managernotlessthantwentyeight(28)days'noticeof theintended dateofthecommencementofeachSubcontractor'sworkandofthe commencementofsuchworkontheSite.Nosubcontractwhetherwitha Nominated Subcontractor,a Subcontractor to whomthe Contract specificallypermitssubcontractingoraSubcontractortowhose subcontract theProjectManagerand theSupervisionConsultanthavegivenpriorwritten consentshallrelievetheContractorfromanyliabilityorobligationunderthe Contract and theContractorshall beresponsibleforthe acts,defaults and neglectsofeachSubcontractor,itsagentsoremployeesasfullyasif they were the acts,defaults or neglects of the Contractor,its agents or employees.The Contractorshall beresponsiblefor the observanceby all Subcontractors ofall theprovisions of the Contract.Every subcontract shall\n\n<!-- image -->\n\n9\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(c) if theContractorquestionsanycommunicationof theSupervision Consultant'sRepresentativetheContractorshall beentitledwithin (butnot after) four daysof thereceiptthereofby theContractor to SupervisionConsultant)whowillthereuponarrangeforthe SupervisionConsultant toconfirm,reverseorvary thecontent of suchcommunicationandsuchconfirmation,reversalorvariation bearing thesignatureoftheProjectManagershall(subjecttothe provisionsrelatingtotheresolutionofdisputescontainedinthe ParticularConditions)be final notwithstanding theprovisions of Clause2A.4(ReconfirmationofDecisions).",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          725.4417521158854
+        ],
+        [
+          488.7821858723958,
+          725.4417521158854
+        ],
+        [
+          488.7821858723958,
+          599.4462890625
+        ],
+        [
+          157.71259562174478,
+          599.4462890625
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "3. ASSIGNMENTANDSUBLETTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          588.8405965169271
+        ],
+        [
+          282.86789957682294,
+          588.8405965169271
+        ],
+        [
+          282.86789957682294,
+          578.2349243164062
+        ],
+        [
+          94.71211751302083,
+          578.2349243164062
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "Assignment",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          565.9323323567708
+        ],
+        [
+          149.6789754231771,
+          565.9323323567708
+        ],
+        [
+          149.6789754231771,
+          554.4782104492188
+        ],
+        [
+          95.1349385579427,
+          554.4782104492188
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "3.1 (a) ExceptasotherwiseprovidedintheContract,theContractorshall orinterestthereinorthereunder.IftheContractorwishestoobtain financingfortheperformanceofanyofitsobligationsunderthe Conlractand as a condition ofsuchfinancing itisrequired to assign orchargebywayofsecuritytoabankorotherfinancialinstitutionall or anyof themoniesdueortobecomeduetoit under theContractit shall obtaintheEmployer'spriorwrittenconsenttosuchassignment or charge.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          543.4483032226562
+        ],
+        [
+          487.5137125651042,
+          543.4483032226562
+        ],
+        [
+          487.5137125651042,
+          439.93686930338544
+        ],
+        [
+          125.578125,
+          439.93686930338544
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "(b) The Employer shall have the right to assign the Contract or any part thereof or anybenefit,obligationorinterest therein or thereunder.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          430.17966715494794
+        ],
+        [
+          487.5137125651042,
+          430.17966715494794
+        ],
+        [
+          487.5137125651042,
+          405.99871826171875
+        ],
+        [
+          156.44412231445312,
+          405.99871826171875
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "Subletting",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          396.66571044921875
+        ],
+        [
+          140.37689208984375,
+          396.66571044921875
+        ],
+        [
+          140.37689208984375,
+          383.51466878255206
+        ],
+        [
+          94.28929646809895,
+          383.51466878255206
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "3.2 TheContractorshallnotsubletthewholeoftheWorks.Exceptinthecase ofsubcontractstoNominatedSubcontractorsandexceptinanycasewhere theContractspecificallypermitssubcontracting,the Contractorshall not subletanypartoftheWorks(whetherthatpartinvolvesthecarryingoutof without thepriorwrittenconsentof theProjectManagerand theSupervision Consultant and only(such prior written consent having been obtained)upon such terms as the Project Manager may require.The Contractor shall obtainthepriorwrittenconsentoftheProjectManagerand theSupervision Consultant to proposed Subcontractors.The Contractor shall give the Project Managernotlessthantwentyeight(28)days'noticeof theintended dateofthecommencementofeachSubcontractor'sworkandofthe commencementofsuchworkontheSite.Nosubcontractwhetherwitha Nominated Subcontractor,a Subcontractor to whomthe Contract specificallypermitssubcontractingoraSubcontractortowhose subcontract theProjectManagerand theSupervisionConsultanthavegivenpriorwritten consentshallrelievetheContractorfromanyliabilityorobligationunderthe Contract and theContractorshall beresponsibleforthe acts,defaults and neglectsofeachSubcontractor,itsagentsoremployeesasfullyasif they were the acts,defaults or neglects of the Contractor,its agents or employees.The Contractorshall beresponsiblefor the observanceby all Subcontractors ofall theprovisions of the Contract.Every subcontract shall",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          373.33319091796875
+        ],
+        [
+          487.5137125651042,
+          373.33319091796875
+        ],
+        [
+          487.5137125651042,
+          122.61496988932288
+        ],
+        [
+          124.73248291015625,
+          122.61496988932288
+        ]
+      ],
+      "page": 37
+    },
+    {
+      "text": "9",
+      "confidence": 0.95,
+      "box": [
+        [
+          286.67327880859375,
+          95.04018147786462
+        ],
+        [
+          292.16998291015625,
+          95.04018147786462
+        ],
+        [
+          292.16998291015625,
+          88.25258382161462
+        ],
+        [
+          286.67327880859375,
+          88.25258382161462
+        ]
+      ],
+      "page": 37
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 37,
+      "text": "(c) if theContractorquestionsanycommunicationof theSupervision Consultant'sRepresentativetheContractorshall beentitledwithin (butnot after) four daysof thereceiptthereofby theContractor to SupervisionConsultant)whowillthereuponarrangeforthe SupervisionConsultant toconfirm,reverseorvary thecontent of suchcommunicationandsuchconfirmation,reversalorvariation bearing thesignatureoftheProjectManagershall(subjecttothe provisionsrelatingtotheresolutionofdisputescontainedinthe ParticularConditions)be final notwithstanding theprovisions of Clause2A.4(ReconfirmationofDecisions).\n3. ASSIGNMENTANDSUBLETTING\nAssignment\n3.1 (a) ExceptasotherwiseprovidedintheContract,theContractorshall orinterestthereinorthereunder.IftheContractorwishestoobtain financingfortheperformanceofanyofitsobligationsunderthe Conlractand as a condition ofsuchfinancing itisrequired to assign orchargebywayofsecuritytoabankorotherfinancialinstitutionall or anyof themoniesdueortobecomeduetoit under theContractit shall obtaintheEmployer'spriorwrittenconsenttosuchassignment or charge.\n(b) The Employer shall have the right to assign the Contract or any part thereof or anybenefit,obligationorinterest therein or thereunder.\nSubletting\n3.2 TheContractorshallnotsubletthewholeoftheWorks.Exceptinthecase ofsubcontractstoNominatedSubcontractorsandexceptinanycasewhere theContractspecificallypermitssubcontracting,the Contractorshall not subletanypartoftheWorks(whetherthatpartinvolvesthecarryingoutof without thepriorwrittenconsentof theProjectManagerand theSupervision Consultant and only(such prior written consent having been obtained)upon such terms as the Project Manager may require.The Contractor shall obtainthepriorwrittenconsentoftheProjectManagerand theSupervision Consultant to proposed Subcontractors.The Contractor shall give the Project Managernotlessthantwentyeight(28)days'noticeof theintended dateofthecommencementofeachSubcontractor'sworkandofthe commencementofsuchworkontheSite.Nosubcontractwhetherwitha Nominated Subcontractor,a Subcontractor to whomthe Contract specificallypermitssubcontractingoraSubcontractortowhose subcontract theProjectManagerand theSupervisionConsultanthavegivenpriorwritten consentshallrelievetheContractorfromanyliabilityorobligationunderthe Contract and theContractorshall beresponsibleforthe acts,defaults and neglectsofeachSubcontractor,itsagentsoremployeesasfullyasif they were the acts,defaults or neglects of the Contractor,its agents or employees.The Contractorshall beresponsiblefor the observanceby all Subcontractors ofall theprovisions of the Contract.Every subcontract shall\n9",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

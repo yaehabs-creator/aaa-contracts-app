@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\n- b)The proposed nunber of working days per week.\n- c) Holidays, and other non-working days (except Fridays), including days lost due to diminished productivity during Ramadan, observed during the duration of the Contract  (by date).\n- d) 'The planned nunber of shifts per day.\n- e) Thenumberofhourspershift.\n- f) the Works considering the activities, durations and production rates.\n- g) Theplanned procurement and delivery of materialson a monthly basis.\n- h)Any other relevant details as considered appropriate by the Contractor or Contract Administrator.\n- 4.10 The complete Programme of Works shall be submitted in three (3) originals and any further copy(s) shall be submitted if and when required by the Contract Adnministrator. Diskette(s)/CD's containing the I:ogramme of Works shall be included with the submittal in Primavera F'6 File Extension format. Two (2) of the five (5) originals should be on A1 size sheets, printed in Colour.\n- 4.11 The Programme of Works, when approved, shall be the basis for proceeding with the works at site and the progress shall be monitored against this Programme of Works.\n- 4.12 Failure to include any elementof theWorks required for the performance of the Contract shall not excuse the Contractor from completing all work requiredwithin any applicablecompletion date ofeachphaseor thewhole of the Project, notwithstanding the Employer's approval of the Programme of Works.\n\n## 5. SHORT-TCRM &amp; CO-ORDINATION PROGRAMMES\n\n- 5.1 At monthly intervals, the Contractor shall submit for the Contract Administrator's approval, a detailed programme developed from the current weeks) and denoting the Contractor's dailywork activities in relation to those ofother contractors.\n- 5.2 Every week, the Contractor shall submit to the Contract Aaministrator, a detailed programme of the current activities, covering the next four (4) weeks,asrequiredbytheContractAdministrator.\n- s Administrator, from time to time, for the purposes of co-ordination between other trades and/or packagecontractors. These programmes shiall be submitted in sufficient number of copies for distribution to all related contractors and the Contract Administrator and his representatives.\n- 5.4 These programmes may need to be plotted in colour on to A1 or A2 size sheets with details, restraints, dates, etc. marked-up for clear understanding ofallconcerned. The Contractor shall also provide the Contract Administrator with the diskette(s)/CDs containing the relevant files.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "b)The proposed nunber of working days per week.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          719.1273498535156
+        ],
+        [
+          382.2576497395833,
+          719.1273498535156
+        ],
+        [
+          382.2576497395833,
+          706.6878356933594
+        ],
+        [
+          119.53333536783855,
+          706.6878356933594
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "Holidays, and other non-working days (except Fridays), including days lost due to diminished productivity during Ramadan, observed during the duration of the Contract  (by date).",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          706.273183186849
+        ],
+        [
+          504.6962890625,
+          706.273183186849
+        ],
+        [
+          504.6962890625,
+          667.2960306803385
+        ],
+        [
+          119.1182861328125,
+          667.2960306803385
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "'The planned nunber of shifts per day.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          667.710683186849
+        ],
+        [
+          328.7166748046875,
+          667.710683186849
+        ],
+        [
+          328.7166748046875,
+          653.1979166666666
+        ],
+        [
+          121.19352213541667,
+          653.1979166666666
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "Thenumberofhourspershift.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          652.7832641601562
+        ],
+        [
+          288.87221272786456,
+          652.7832641601562
+        ],
+        [
+          288.87221272786456,
+          642.0023600260416
+        ],
+        [
+          120.36342366536458,
+          642.0023600260416
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "the Works considering the activities, durations and production rates.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          639.5144449869791
+        ],
+        [
+          478.1333414713542,
+          639.5144449869791
+        ],
+        [
+          478.1333414713542,
+          615.0500691731771
+        ],
+        [
+          119.53333536783855,
+          615.0500691731771
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "Theplanned procurement and delivery of materialson a monthly basis.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          613.8061116536459
+        ],
+        [
+          493.0749918619792,
+          613.8061116536459
+        ],
+        [
+          493.0749918619792,
+          601.78125
+        ],
+        [
+          120.77847290039062,
+          601.78125
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "h)Any other relevant details as considered appropriate by the Contractor or Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          601.3665974934896
+        ],
+        [
+          504.6962890625,
+          601.3665974934896
+        ],
+        [
+          504.6962890625,
+          576.0729166666666
+        ],
+        [
+          118.70323689778645,
+          576.0729166666666
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "4.10 The complete Programme of Works shall be submitted in three (3) originals and any further copy(s) shall be submitted if and when required by the Contract Adnministrator. Diskette(s)/CD's containing the I:ogramme of Works shall be included with the submittal in Primavera F'6 File Extension format. Two (2) of the five (5) originals should be on A1 size sheets, printed in Colour.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          569.4385172526041
+        ],
+        [
+          505.9414469401042,
+          569.4385172526041
+        ],
+        [
+          505.9414469401042,
+          491.06955973307294
+        ],
+        [
+          93.8004659016927,
+          491.06955973307294
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "4.11 The Programme of Works, when approved, shall be the basis for proceeding with the works at site and the progress shall be monitored against this Programme of Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          486.09375
+        ],
+        [
+          504.28125,
+          486.09375
+        ],
+        [
+          504.28125,
+          446.28729248046875
+        ],
+        [
+          92.55532836914062,
+          446.28729248046875
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "4.12 Failure to include any elementof theWorks required for the performance of the Contract shall not excuse the Contractor from completing all work requiredwithin any applicablecompletion date ofeachphaseor thewhole of the Project, notwithstanding the Employer's approval of the Programme of Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          440.48219807942706
+        ],
+        [
+          505.9414469401042,
+          440.48219807942706
+        ],
+        [
+          505.9414469401042,
+          374.55275472005206
+        ],
+        [
+          92.97036743164062,
+          374.55275472005206
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "5. SHORT-TCRM & CO-ORDINATION PROGRAMMES",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          362.52789306640625
+        ],
+        [
+          363.99560546875,
+          362.52789306640625
+        ],
+        [
+          363.99560546875,
+          351.74696858723956
+        ],
+        [
+          76.36852010091145,
+          351.74696858723956
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "5.1 At monthly intervals, the Contractor shall submit for the Contract Administrator's approval, a detailed programme developed from the current weeks) and denoting the Contractor's dailywork activities in relation to those ofother contractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          345.11256917317706
+        ],
+        [
+          505.111328125,
+          345.11256917317706
+        ],
+        [
+          505.111328125,
+          280.0124308268229
+        ],
+        [
+          92.55532836914062,
+          280.0124308268229
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "5.2 Every week, the Contractor shall submit to the Contract Aaministrator, a detailed programme of the current activities, covering the next four (4) weeks,asrequiredbytheContractAdministrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          273.7927042643229
+        ],
+        [
+          505.111328125,
+          273.7927042643229
+        ],
+        [
+          505.111328125,
+          235.23020426432288
+        ],
+        [
+          93.38541666666667,
+          235.23020426432288
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "s Administrator, from time to time, for the purposes of co-ordination between other trades and/or packagecontractors. These programmes shiall be submitted in sufficient number of copies for distribution to all related contractors and the Contract Administrator and his representatives.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          229.42506917317712
+        ],
+        [
+          505.5263671875,
+          229.42506917317712
+        ],
+        [
+          505.5263671875,
+          163.49566650390625
+        ],
+        [
+          91.72522989908855,
+          163.49566650390625
+        ]
+      ],
+      "page": 302
+    },
+    {
+      "text": "5.4 These programmes may need to be plotted in colour on to A1 or A2 size sheets with details, restraints, dates, etc. marked-up for clear understanding ofallconcerned. The Contractor shall also provide the Contract Administrator with the diskette(s)/CDs containing the relevant files.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          157.69053141276038
+        ],
+        [
+          504.28125,
+          157.69053141276038
+        ],
+        [
+          504.28125,
+          105.44460042317712
+        ],
+        [
+          93.38541666666667,
+          105.44460042317712
+        ]
+      ],
+      "page": 302
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 302,
+      "text": "b)The proposed nunber of working days per week.\nHolidays, and other non-working days (except Fridays), including days lost due to diminished productivity during Ramadan, observed during the duration of the Contract  (by date).\n'The planned nunber of shifts per day.\nThenumberofhourspershift.\nthe Works considering the activities, durations and production rates.\nTheplanned procurement and delivery of materialson a monthly basis.\nh)Any other relevant details as considered appropriate by the Contractor or Contract Administrator.\n4.10 The complete Programme of Works shall be submitted in three (3) originals and any further copy(s) shall be submitted if and when required by the Contract Adnministrator. Diskette(s)/CD's containing the I:ogramme of Works shall be included with the submittal in Primavera F'6 File Extension format. Two (2) of the five (5) originals should be on A1 size sheets, printed in Colour.\n4.11 The Programme of Works, when approved, shall be the basis for proceeding with the works at site and the progress shall be monitored against this Programme of Works.\n4.12 Failure to include any elementof theWorks required for the performance of the Contract shall not excuse the Contractor from completing all work requiredwithin any applicablecompletion date ofeachphaseor thewhole of the Project, notwithstanding the Employer's approval of the Programme of Works.\n5. SHORT-TCRM & CO-ORDINATION PROGRAMMES\n5.1 At monthly intervals, the Contractor shall submit for the Contract Administrator's approval, a detailed programme developed from the current weeks) and denoting the Contractor's dailywork activities in relation to those ofother contractors.\n5.2 Every week, the Contractor shall submit to the Contract Aaministrator, a detailed programme of the current activities, covering the next four (4) weeks,asrequiredbytheContractAdministrator.\ns Administrator, from time to time, for the purposes of co-ordination between other trades and/or packagecontractors. These programmes shiall be submitted in sufficient number of copies for distribution to all related contractors and the Contract Administrator and his representatives.\n5.4 These programmes may need to be plotted in colour on to A1 or A2 size sheets with details, restraints, dates, etc. marked-up for clear understanding ofallconcerned. The Contractor shall also provide the Contract Administrator with the diskette(s)/CDs containing the relevant files.",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

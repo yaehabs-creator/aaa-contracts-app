@@ -1,0 +1,152 @@
+{
+  "text": "- (b) theexpression\"DefectsLiabilityPeriod\"shallmeanaperiodofone (1)yearcalculatedforeachSectionandPortionoftheWorksfrom thedateofitstakingoverasstatedintherelevantTaking-Over Certificatebut:-\n- (i) inrespectofanypartoftherelevantSectionorPortionofthe Worksreplaced,repaired or modifiedpursuantto a notice from theSupervisionConsuitantunderthisClause21.2,the DefectsLiabilityPeriodshallbeextendedsoastorunfora periodofone(1)yearcalculatedfromthedateofcompletion ofsuchreplacement,repairormodificationtothesatisfaction of theSupervisionConsultant;and\n- (i) inrespectofanypartoftheWorkswhichhasbeentaken over(whetherinthesameoranydifferentSectionorPortion oftheWorksasthedefectofwhichnoticehasbeengivenby theSupervision Consultant under thisClause 21.2)butwhich cannot atsome time during itsDefects LiabilityPeriod be usedforthepurposesforwhichitisintended byreasonofthe defectsonotifiedorofworktoremedythatdefect,itsDefects LiabililyPeriodshallbeextended byaperiod equal tothc timeduringwhichthesaidpartoftheWorkscouldnotbe used as aforesaid.\n\nTheProjectManagershall notify theContractor inwritingwitha copy to theEmployerand theSupervisionConsultantofanyextensionstothe Defects Liability Period arising pursuant to this Clause 21.2.\n\n## Costof RemedyingDefects\n\n- 21.3The Cost of all work to remedy any defect shall be borne by the Contractor if,intheopinionof theSupervisionConsultant,thedefectconcernedwas duetotheuseofPlantorworkmanshipnotinaccordancewith theContract, toanyotherneglect orfailureby theContractortocomplystrictlywith any obligation,expressedorimplied,ontheContractor'spartundertheContract or to the use of any designsupplied orspeclfledbytheContractor.If,in the opinionoftheSupervisionConsultant,thedefectconcernedwasduetoany othercausetheworkconcernedshallbevaluedasif itwereanadditionto theWorksunderClause 22.1(VariationOrders)andaccordinglythe ContractorshallbepaidsuchvalueinaccordancewithClause26(lnterim and Final Certificates).Provided thatif any steps takenbythe Contractorin meetingitsobligations toremedyanydefectduring theDefectsLiability Periodorthereafter(wheretheCostofallworktoremedysuchdefectisto bebornebytheContractorpursuanttothisClause21.3)involvesthe EmployerinadditionalCosts,suchCostsafterdueconsultationwiththe and theEmployermaydeduct theCostssoincurredfromanymoniesdueor whichmaybecomeduetotheContractororrecover thesamefromthe ContractorasadebtduefromtheContractor.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(b) theexpression\"DefectsLiabilityPeriod\"shallmeanaperiodofone (1)yearcalculatedforeachSectionandPortionoftheWorksfrom thedateofitstakingoverasstatedintherelevantTaking-Over Certificatebut:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          721.6237080891927
+        ],
+        [
+          487.0909016927083,
+          721.6237080891927
+        ],
+        [
+          487.0909016927083,
+          677.0798543294271
+        ],
+        [
+          157.71259562174478,
+          677.0798543294271
+        ]
+      ],
+      "page": 82
+    },
+    {
+      "text": "(i) inrespectofanypartoftherelevantSectionorPortionofthe Worksreplaced,repaired or modifiedpursuantto a notice from theSupervisionConsuitantunderthisClause21.2,the DefectsLiabilityPeriodshallbeextendedsoastorunfora periodofone(1)yearcalculatedfromthedateofcompletion ofsuchreplacement,repairormodificationtothesatisfaction of theSupervisionConsultant;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.5785929361979,
+          664.7772623697916
+        ],
+        [
+          488.359375,
+          664.7772623697916
+        ],
+        [
+          488.359375,
+          587.1436971028646
+        ],
+        [
+          188.5785929361979,
+          587.1436971028646
+        ]
+      ],
+      "page": 82
+    },
+    {
+      "text": "(i) inrespectofanypartoftheWorkswhichhasbeentaken over(whetherinthesameoranydifferentSectionorPortion oftheWorksasthedefectofwhichnoticehasbeengivenby theSupervision Consultant under thisClause 21.2)butwhich cannot atsome time during itsDefects LiabilityPeriod be usedforthepurposesforwhichitisintended byreasonofthe defectsonotifiedorofworktoremedythatdefect,itsDefects LiabililyPeriodshallbeextended byaperiod equal tothc timeduringwhichthesaidpartoftheWorkscouldnotbe used as aforesaid.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.42423502604166,
+          574.4168904622395
+        ],
+        [
+          488.359375,
+          574.4168904622395
+        ],
+        [
+          488.359375,
+          461.99668375651044
+        ],
+        [
+          189.42423502604166,
+          461.99668375651044
+        ]
+      ],
+      "page": 82
+    },
+    {
+      "text": "TheProjectManagershall notify theContractor inwritingwitha copy to theEmployerand theSupervisionConsultantofanyextensionstothe Defects Liability Period arising pursuant to this Clause 21.2.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.90056355794272,
+          448.84564208984375
+        ],
+        [
+          488.7821858723958,
+          448.84564208984375
+        ],
+        [
+          488.7821858723958,
+          416.18015543619794
+        ],
+        [
+          164.90056355794272,
+          416.18015543619794
+        ]
+      ],
+      "page": 82
+    },
+    {
+      "text": "Costof RemedyingDefects",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          403.02911376953125
+        ],
+        [
+          220.29024251302084,
+          403.02911376953125
+        ],
+        [
+          220.29024251302084,
+          391.99920654296875
+        ],
+        [
+          97.671875,
+          391.99920654296875
+        ]
+      ],
+      "page": 82
+    },
+    {
+      "text": "21.3The Cost of all work to remedy any defect shall be borne by the Contractor if,intheopinionof theSupervisionConsultant,thedefectconcernedwas duetotheuseofPlantorworkmanshipnotinaccordancewith theContract, toanyotherneglect orfailureby theContractortocomplystrictlywith any obligation,expressedorimplied,ontheContractor'spartundertheContract or to the use of any designsupplied orspeclfledbytheContractor.If,in the opinionoftheSupervisionConsultant,thedefectconcernedwasduetoany othercausetheworkconcernedshallbevaluedasif itwereanadditionto theWorksunderClause 22.1(VariationOrders)andaccordinglythe ContractorshallbepaidsuchvalueinaccordancewithClause26(lnterim and Final Certificates).Provided thatif any steps takenbythe Contractorin meetingitsobligations toremedyanydefectduring theDefectsLiability Periodorthereafter(wheretheCostofallworktoremedysuchdefectisto bebornebytheContractorpursuanttothisClause21.3)involvesthe EmployerinadditionalCosts,suchCostsafterdueconsultationwiththe and theEmployermaydeduct theCostssoincurredfromanymoniesdueor whichmaybecomeduetotheContractororrecover thesamefromthe ContractorasadebtduefromtheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          381.81776936848956
+        ],
+        [
+          490.4734700520833,
+          381.81776936848956
+        ],
+        [
+          490.4734700520833,
+          167.58302815755212
+        ],
+        [
+          126.84658813476562,
+          167.58302815755212
+        ]
+      ],
+      "page": 82
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 82,
+      "text": "(b) theexpression\"DefectsLiabilityPeriod\"shallmeanaperiodofone (1)yearcalculatedforeachSectionandPortionoftheWorksfrom thedateofitstakingoverasstatedintherelevantTaking-Over Certificatebut:-\n(i) inrespectofanypartoftherelevantSectionorPortionofthe Worksreplaced,repaired or modifiedpursuantto a notice from theSupervisionConsuitantunderthisClause21.2,the DefectsLiabilityPeriodshallbeextendedsoastorunfora periodofone(1)yearcalculatedfromthedateofcompletion ofsuchreplacement,repairormodificationtothesatisfaction of theSupervisionConsultant;and\n(i) inrespectofanypartoftheWorkswhichhasbeentaken over(whetherinthesameoranydifferentSectionorPortion oftheWorksasthedefectofwhichnoticehasbeengivenby theSupervision Consultant under thisClause 21.2)butwhich cannot atsome time during itsDefects LiabilityPeriod be usedforthepurposesforwhichitisintended byreasonofthe defectsonotifiedorofworktoremedythatdefect,itsDefects LiabililyPeriodshallbeextended byaperiod equal tothc timeduringwhichthesaidpartoftheWorkscouldnotbe used as aforesaid.\nTheProjectManagershall notify theContractor inwritingwitha copy to theEmployerand theSupervisionConsultantofanyextensionstothe Defects Liability Period arising pursuant to this Clause 21.2.\nCostof RemedyingDefects\n21.3The Cost of all work to remedy any defect shall be borne by the Contractor if,intheopinionof theSupervisionConsultant,thedefectconcernedwas duetotheuseofPlantorworkmanshipnotinaccordancewith theContract, toanyotherneglect orfailureby theContractortocomplystrictlywith any obligation,expressedorimplied,ontheContractor'spartundertheContract or to the use of any designsupplied orspeclfledbytheContractor.If,in the opinionoftheSupervisionConsultant,thedefectconcernedwasduetoany othercausetheworkconcernedshallbevaluedasif itwereanadditionto theWorksunderClause 22.1(VariationOrders)andaccordinglythe ContractorshallbepaidsuchvalueinaccordancewithClause26(lnterim and Final Certificates).Provided thatif any steps takenbythe Contractorin meetingitsobligations toremedyanydefectduring theDefectsLiability Periodorthereafter(wheretheCostofallworktoremedysuchdefectisto bebornebytheContractorpursuanttothisClause21.3)involvesthe EmployerinadditionalCosts,suchCostsafterdueconsultationwiththe and theEmployermaydeduct theCostssoincurredfromanymoniesdueor whichmaybecomeduetotheContractororrecover thesamefromthe ContractorasadebtduefromtheContractor.",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

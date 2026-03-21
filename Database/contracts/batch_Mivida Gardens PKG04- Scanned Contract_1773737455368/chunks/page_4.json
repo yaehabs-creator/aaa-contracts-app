@@ -1,0 +1,888 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nof Contract, or, where no definition is included in the said documents, the meaning given to them by the context.\n\n## 2. The Contract\n\nAll documents listed hereunder (the\"Contract Documents\") shall be deemed to form theContractandaretobeconsideredasoneindivisiblewholeandthevarious requirementsnotspecificallyreferencedinthedocumentsbutnecessarytomeetthe intentoftheContractandcompletetheWorksasdescribedthereinshallbedeemed Contract:\n\n- a) TheFormofAgreementand itsAnnexes:\n2. △ Annex 1:Scheduleof FreeIssue Items\n3. △ Annex 2: Schedule of Items May Be Supplied by the Employer\n- b) TheSigned letter of Acceptance dated 13th of November 2025.\n5. Annex3:PriceAdjustmentfortheBasicItems.\n- c) The Conditions of Contract and it's appendices:\n7. A Appendix A: The Particular Conditions.\n8. AppendixB:FormofPerformanceBond.\n9. Appendix C: Form of Advance Payment Bond.\n10. Appendix D: Master Construction Schedule and Phasing Layout.\n11. A Appendix E: List of Contract Drawings.\n12. A AppendixF:ListofManufacturers.\n13. △ AppendixG:CAROpen Insurance Cover.\n- d) IssuedTender&amp;PostTenderAddenda.\n- e) Soil Investigation Report.\n- g) Specifications including General Requirements \"Division 1\"\n- f) Contract Drawings as per list of drawings of Appendix E\n- h) CulSheels&amp;FinishSchedules.\n- i) PricedBillsofQuantitiesandMethodofMeasurement.\n- j) Non-Priced BillofQuantities.\n- k) EmaarMinimumConstructionHealth&amp;SafetyStandards.\n- 1) Indicative Control Forms.\n- m) Hoarding Requirements.\n- n) AutomationApplicationUserManual Guide.\n- o) ConfidentialityUndertakingForm.\n- p) InstructionToTenderers and itsappendices:\n27. Appendix (H) Form of Tender Letter\n28. Appendix (l) Form of Tender Bond\n29. A Appendix (K) Form of Site Visit Confirmation\n30. △ Appendix (J) Form of Agreement (Replaced by the Singed FOA)\n31. Appendix (L) Statement of Compliance with Tender Package.\n\n## Exceptasotherwise isexpresslystated intheContract:\n\n- a）In case of any contradictionor discrepancy between any of the Contract Documents and the tender/post tender Addenda including the Answers to Tender\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.64488220214844,
+          753.8649698893229
+        ],
+        [
+          149.6789754231771,
+          753.8649698893229
+        ],
+        [
+          149.6789754231771,
+          735.6231994628906
+        ],
+        [
+          78.64488220214844,
+          735.6231994628906
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.5913798014323,
+          733.0778401692709
+        ],
+        [
+          126.42376708984375,
+          733.0778401692709
+        ],
+        [
+          126.42376708984375,
+          720.7752482096354
+        ],
+        [
+          103.5913798014323,
+          720.7752482096354
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "of Contract, or, where no definition is included in the said documents, the meaning given to them by the context.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          713.9876200358073
+        ],
+        [
+          508.6548258463542,
+          713.9876200358073
+        ],
+        [
+          508.6548258463542,
+          687.685536702474
+        ],
+        [
+          95.55775960286458,
+          687.685536702474
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "2. The Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.4905293782552,
+          682.1705830891927
+        ],
+        [
+          161.51798502604166,
+          682.1705830891927
+        ],
+        [
+          161.51798502604166,
+          670.7164510091146
+        ],
+        [
+          79.4905293782552,
+          670.7164510091146
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "All documents listed hereunder (the\"Contract Documents\") shall be deemed to form theContractandaretobeconsideredasoneindivisiblewholeandthevarious requirementsnotspecificallyreferencedinthedocumentsbutnecessarytomeetthe intentoftheContractandcompletetheWorksasdescribedthereinshallbedeemed Contract:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          670.2922159830729
+        ],
+        [
+          508.2319742838542,
+          670.2922159830729
+        ],
+        [
+          508.2319742838542,
+          581.6287434895833
+        ],
+        [
+          95.98058064778645,
+          581.6287434895833
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "TheFormofAgreementand itsAnnexes:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          574.8411051432292
+        ],
+        [
+          325.15008544921875,
+          574.8411051432292
+        ],
+        [
+          325.15008544921875,
+          562.5385131835938
+        ],
+        [
+          95.98058064778645,
+          562.5385131835938
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "△ Annex 1:Scheduleof FreeIssue Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          561.6900634765625
+        ],
+        [
+          339.10321044921875,
+          561.6900634765625
+        ],
+        [
+          339.10321044921875,
+          549.8117065429688
+        ],
+        [
+          121.77272542317708,
+          549.8117065429688
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "△ Annex 2: Schedule of Items May Be Supplied by the Employer",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          549.8117065429688
+        ],
+        [
+          453.26513671875,
+          549.8117065429688
+        ],
+        [
+          453.26513671875,
+          535.3879801432292
+        ],
+        [
+          121.77272542317708,
+          535.3879801432292
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "TheSigned letter of Acceptance dated 13th of November 2025.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          524.7823079427083
+        ],
+        [
+          427.8958333333333,
+          524.7823079427083
+        ],
+        [
+          427.8958333333333,
+          510.78281656901044
+        ],
+        [
+          94.71211751302083,
+          510.78281656901044
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Annex3:PriceAdjustmentfortheBasicItems.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.14203898111978,
+          536.2364298502605
+        ],
+        [
+          376.734375,
+          536.2364298502605
+        ],
+        [
+          376.734375,
+          523.933858235677
+        ],
+        [
+          147.14203898111978,
+          523.933858235677
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "The Conditions of Contract and it's appendices:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          511.6312662760417
+        ],
+        [
+          354.3247884114583,
+          511.6312662760417
+        ],
+        [
+          354.3247884114583,
+          498.05600992838544
+        ],
+        [
+          95.1349385579427,
+          498.05600992838544
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "A Appendix A: The Particular Conditions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          498.48020426432294
+        ],
+        [
+          337.83473714192706,
+          498.48020426432294
+        ],
+        [
+          337.83473714192706,
+          485.32916259765625
+        ],
+        [
+          121.77272542317708,
+          485.32916259765625
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "AppendixB:FormofPerformanceBond.",
+      "confidence": 0.95,
+      "box": [
+        [
+          148.41051228841147,
+          484.48073323567706
+        ],
+        [
+          346.2911783854167,
+          484.48073323567706
+        ],
+        [
+          346.2911783854167,
+          473.45082600911456
+        ],
+        [
+          148.41051228841147,
+          473.45082600911456
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Appendix C: Form of Advance Payment Bond.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.98768107096353,
+          472.60235595703125
+        ],
+        [
+          373.7746175130208,
+          472.60235595703125
+        ],
+        [
+          373.7746175130208,
+          459.87554931640625
+        ],
+        [
+          147.98768107096353,
+          459.87554931640625
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Appendix D: Master Construction Schedule and Phasing Layout.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.56486002604166,
+          459.87554931640625
+        ],
+        [
+          462.1444091796875,
+          459.87554931640625
+        ],
+        [
+          462.1444091796875,
+          446.30027262369794
+        ],
+        [
+          147.56486002604166,
+          446.30027262369794
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "A Appendix E: List of Contract Drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          447.14874267578125
+        ],
+        [
+          337.83473714192706,
+          447.14874267578125
+        ],
+        [
+          337.83473714192706,
+          433.99770100911456
+        ],
+        [
+          121.77272542317708,
+          433.99770100911456
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "A AppendixF:ListofManufacturers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          433.99770100911456
+        ],
+        [
+          315.42519124348956,
+          433.99770100911456
+        ],
+        [
+          315.42519124348956,
+          422.54355875651044
+        ],
+        [
+          121.77272542317708,
+          422.54355875651044
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "△ AppendixG:CAROpen Insurance Cover.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          421.27089436848956
+        ],
+        [
+          352.6335042317708,
+          421.27089436848956
+        ],
+        [
+          352.6335042317708,
+          409.39251708984375
+        ],
+        [
+          121.77272542317708,
+          409.39251708984375
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "IssuedTender&PostTenderAddenda.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          408.96828206380206
+        ],
+        [
+          315.84800211588544,
+          408.96828206380206
+        ],
+        [
+          315.84800211588544,
+          396.66571044921875
+        ],
+        [
+          94.28929646809895,
+          396.66571044921875
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Soil Investigation Report.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          396.66571044921875
+        ],
+        [
+          244.81392415364584,
+          396.66571044921875
+        ],
+        [
+          244.81392415364584,
+          383.09043375651044
+        ],
+        [
+          94.71211751302083,
+          383.09043375651044
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Specifications including General Requirements \"Division 1\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          371.21205647786456
+        ],
+        [
+          408.8688151041667,
+          371.21205647786456
+        ],
+        [
+          408.8688151041667,
+          357.63682047526044
+        ],
+        [
+          94.28929646809895,
+          357.63682047526044
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Contract Drawings as per list of drawings of Appendix E",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          384.36309814453125
+        ],
+        [
+          394.4928792317708,
+          384.36309814453125
+        ],
+        [
+          394.4928792317708,
+          369.93939208984375
+        ],
+        [
+          94.28929646809895,
+          369.93939208984375
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "CulSheels&FinishSchedules.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          358.48524983723956
+        ],
+        [
+          278.63966878255206,
+          358.48524983723956
+        ],
+        [
+          278.63966878255206,
+          346.18267822265625
+        ],
+        [
+          94.28929646809895,
+          346.18267822265625
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "PricedBillsofQuantitiesandMethodofMeasurement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          345.75844319661456
+        ],
+        [
+          387.304931640625,
+          345.75844319661456
+        ],
+        [
+          387.304931640625,
+          333.45587158203125
+        ],
+        [
+          93.86647542317708,
+          333.45587158203125
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Non-Priced BillofQuantities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          333.03163655598956
+        ],
+        [
+          262.99525960286456,
+          333.03163655598956
+        ],
+        [
+          262.99525960286456,
+          321.15325927734375
+        ],
+        [
+          93.86647542317708,
+          321.15325927734375
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "EmaarMinimumConstructionHealth&SafetyStandards.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          320.7290242513021
+        ],
+        [
+          401.258056640625,
+          320.7290242513021
+        ],
+        [
+          401.258056640625,
+          308.0022176106771
+        ],
+        [
+          93.86647542317708,
+          308.0022176106771
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Indicative Control Forms.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          308.0022176106771
+        ],
+        [
+          244.81392415364584,
+          308.0022176106771
+        ],
+        [
+          244.81392415364584,
+          295.2754109700521
+        ],
+        [
+          93.86647542317708,
+          295.2754109700521
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Hoarding Requirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          294.42694091796875
+        ],
+        [
+          240.585693359375,
+          294.42694091796875
+        ],
+        [
+          240.585693359375,
+          282.5486043294271
+        ],
+        [
+          94.28929646809895,
+          282.5486043294271
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "AutomationApplicationUserManual Guide.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          282.5486043294271
+        ],
+        [
+          334.875,
+          282.5486043294271
+        ],
+        [
+          334.875,
+          269.3975626627604
+        ],
+        [
+          94.28929646809895,
+          269.3975626627604
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "ConfidentialityUndertakingForm.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          269.3975626627604
+        ],
+        [
+          284.98199462890625,
+          269.3975626627604
+        ],
+        [
+          284.98199462890625,
+          256.6707560221354
+        ],
+        [
+          93.86647542317708,
+          256.6707560221354
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "InstructionToTenderers and itsappendices:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          256.6707560221354
+        ],
+        [
+          339.9488525390625,
+          256.6707560221354
+        ],
+        [
+          339.9488525390625,
+          243.94390869140625
+        ],
+        [
+          94.28929646809895,
+          243.94390869140625
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Appendix (H) Form of Tender Letter",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.7192179361979,
+          243.94390869140625
+        ],
+        [
+          323.0359700520833,
+          243.94390869140625
+        ],
+        [
+          323.0359700520833,
+          231.21710205078125
+        ],
+        [
+          146.7192179361979,
+          231.21710205078125
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Appendix (l) Form of Tender Bond",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.7192179361979,
+          230.79286702473962
+        ],
+        [
+          315.42519124348956,
+          230.79286702473962
+        ],
+        [
+          315.42519124348956,
+          218.49029541015625
+        ],
+        [
+          146.7192179361979,
+          218.49029541015625
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "A Appendix (K) Form of Site Visit Confirmation",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.92708333333333,
+          205.33925374348962
+        ],
+        [
+          364.4725341796875,
+          205.33925374348962
+        ],
+        [
+          364.4725341796875,
+          193.03668212890625
+        ],
+        [
+          120.92708333333333,
+          193.03668212890625
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "△ Appendix (J) Form of Agreement (Replaced by the Singed FOA)",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.50426228841145,
+          218.91453043619788
+        ],
+        [
+          460.8759358723958,
+          218.91453043619788
+        ],
+        [
+          460.8759358723958,
+          204.91501871744788
+        ],
+        [
+          120.50426228841145,
+          204.91501871744788
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Appendix (L) Statement of Compliance with Tender Package.",
+      "confidence": 0.95,
+      "box": [
+        [
+          145.87357584635416,
+          193.46087646484375
+        ],
+        [
+          445.6543375651042,
+          193.46087646484375
+        ],
+        [
+          445.6543375651042,
+          179.46140543619788
+        ],
+        [
+          145.87357584635416,
+          179.46140543619788
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "Exceptasotherwise isexpresslystated intheContract:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          174.79490152994788
+        ],
+        [
+          365.7410074869792,
+          174.79490152994788
+        ],
+        [
+          365.7410074869792,
+          161.64385986328125
+        ],
+        [
+          93.86647542317708,
+          161.64385986328125
+        ]
+      ],
+      "page": 4
+    },
+    {
+      "text": "a）In case of any contradictionor discrepancy between any of the Contract Documents and the tender/post tender Addenda including the Answers to Tender",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          156.97735595703125
+        ],
+        [
+          506.9635416666667,
+          156.97735595703125
+        ],
+        [
+          506.9635416666667,
+          130.67527262369788
+        ],
+        [
+          93.4436543782552,
+          130.67527262369788
+        ]
+      ],
+      "page": 4
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 4,
+      "text": "EMAAR\nMISR\nof Contract, or, where no definition is included in the said documents, the meaning given to them by the context.\n2. The Contract\nAll documents listed hereunder (the\"Contract Documents\") shall be deemed to form theContractandaretobeconsideredasoneindivisiblewholeandthevarious requirementsnotspecificallyreferencedinthedocumentsbutnecessarytomeetthe intentoftheContractandcompletetheWorksasdescribedthereinshallbedeemed Contract:\nTheFormofAgreementand itsAnnexes:\n△ Annex 1:Scheduleof FreeIssue Items\n△ Annex 2: Schedule of Items May Be Supplied by the Employer\nTheSigned letter of Acceptance dated 13th of November 2025.\nAnnex3:PriceAdjustmentfortheBasicItems.\nThe Conditions of Contract and it's appendices:\nA Appendix A: The Particular Conditions.\nAppendixB:FormofPerformanceBond.\nAppendix C: Form of Advance Payment Bond.\nAppendix D: Master Construction Schedule and Phasing Layout.\nA Appendix E: List of Contract Drawings.\nA AppendixF:ListofManufacturers.\n△ AppendixG:CAROpen Insurance Cover.\nIssuedTender&PostTenderAddenda.\nSoil Investigation Report.\nSpecifications including General Requirements \"Division 1\"\nContract Drawings as per list of drawings of Appendix E\nCulSheels&FinishSchedules.\nPricedBillsofQuantitiesandMethodofMeasurement.\nNon-Priced BillofQuantities.\nEmaarMinimumConstructionHealth&SafetyStandards.\nIndicative Control Forms.\nHoarding Requirements.\nAutomationApplicationUserManual Guide.\nConfidentialityUndertakingForm.\nInstructionToTenderers and itsappendices:\nAppendix (H) Form of Tender Letter\nAppendix (l) Form of Tender Bond\nA Appendix (K) Form of Site Visit Confirmation\n△ Appendix (J) Form of Agreement (Replaced by the Singed FOA)\nAppendix (L) Statement of Compliance with Tender Package.\nExceptasotherwise isexpresslystated intheContract:\na）In case of any contradictionor discrepancy between any of the Contract Documents and the tender/post tender Addenda including the Answers to Tender",
+      "line_count": 38
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

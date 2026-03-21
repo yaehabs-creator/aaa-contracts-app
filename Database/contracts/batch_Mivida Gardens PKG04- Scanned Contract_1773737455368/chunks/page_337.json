@@ -1,0 +1,497 @@
+{
+  "text": "<!-- image -->\n\n## GENERAL\n\n- 1.1 The Contractor shall provide, relocate (if required) and maintain the temporary facilities as necessary to support the construction process and day-to-day operations. The Contractor shall be responsible for the removal of all temporary installations, performed by him as soon as possible after the completion of contract. As a minimum, the facilities thus provided shall be as specified herein.\n- 1.2 The Contractor shall include for all associated earthworks, including plinths, cable ducts,trenching,bedding materiais,excavation,backfill,compaction and final grading for the temporary facilities.\n- 1.3 The Contractor shall include for all types of temporary utilities supply for his works at no additional cost.\n- 1.4 The Contractor shall be assigned a staging area wherein he shall locate his site office, storage, workshops, fabrication, assembly yards etc. He shall make his own arrangements for all the utilities (Water, Power, Drainage, Material Storage, Project Site equipment, Truck, Pumps, other equipment, Accessories &amp; tools.The Contractor shall be responsible for providing his own office supplies, machines, materials, and equipment.\n- 1.5 The Contractor shall prepare and submit to the Contract Administrator for his approval a site layout organisation plan showing the Contractor's proposed layout of the facilities on the Site and shall resubmit the plan, for\n- 1.5.1 The plan shall provide clear full details of location, capacity etc., for the temporary facilities including Site office accommodation, plant, temporary utilities, sanitary facilities, materials storage areas fabrication/assembly yards and access routes.\n- 1.5.2 The above information shall be submitted within fifteen (15) days of receiving the Notification of Award.\n\n## 1.6Quality Assurance and Safety\n\n- 1.6.1 Applicable Egyptian Local, Regional, and National, Standards\n- 1.6.2 Occupational Safety and Health Administration (OSHA)\n- 1.6.3 National Fire Protection Agency (NF:PA)\n- 1.6.4 British Standard IEE Regulations B.S7671 1992 Section 604 \"Construction Site Installation.\"\n- British Standard Code of Practice for distribution of electricity on construction and building sites (B.S7375)\n- Applicablecodes of good practice\n- Satisfy all safety requirements per section 01520 of, Section 1 General Requirements - Division 1.\n\n<!-- image -->\n\n## REOUIREMENTS OF REGULATORY AGENCIES\n\n- 2.1  Provide and maintain all temporary  facilities in strict abcordance with governing rules, regulations, codes, @rdinancos and laws.o agencies and\n\nEmaar Misr for Developmant\n\n<!-- image -->\n\n## SECTION01510 TEMPORARYFACILITIES\n\nDevrioprarnt SAE",
+  "results": [
+    {
+      "text": "GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          678.4915974934896
+        ],
+        [
+          151.49189249674478,
+          678.4915974934896
+        ],
+        [
+          151.49189249674478,
+          667.2960306803385
+        ],
+        [
+          95.0456034342448,
+          667.2960306803385
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.1 The Contractor shall provide, relocate (if required) and maintain the temporary facilities as necessary to support the construction process and day-to-day operations. The Contractor shall be responsible for the removal of all temporary installations, performed by him as soon as possible after the completion of contract. As a minimum, the facilities thus provided shall be as specified herein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          659.8323262532552
+        ],
+        [
+          506.3564860026042,
+          659.8323262532552
+        ],
+        [
+          506.3564860026042,
+          582.7073364257812
+        ],
+        [
+          95.0456034342448,
+          582.7073364257812
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.2 The Contractor shall include for all associated earthworks, including plinths, cable ducts,trenching,bedding materiais,excavation,backfill,compaction and final grading for the temporary facilities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          580.6340738932291
+        ],
+        [
+          504.6962890625,
+          580.6340738932291
+        ],
+        [
+          504.6962890625,
+          542.4862263997395
+        ],
+        [
+          96.29074096679688,
+          542.4862263997395
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.3 The Contractor shall include for all types of temporary utilities supply for his works at no additional cost.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          542.4862263997395
+        ],
+        [
+          505.9414469401042,
+          542.4862263997395
+        ],
+        [
+          505.9414469401042,
+          517.1925455729167
+        ],
+        [
+          95.87569173177083,
+          517.1925455729167
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.4 The Contractor shall be assigned a staging area wherein he shall locate his site office, storage, workshops, fabrication, assembly yards etc. He shall make his own arrangements for all the utilities (Water, Power, Drainage, Material Storage, Project Site equipment, Truck, Pumps, other equipment, Accessories & tools.The Contractor shall be responsible for providing his own office supplies, machines, materials, and equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          515.533935546875
+        ],
+        [
+          506.3564860026042,
+          515.533935546875
+        ],
+        [
+          506.3564860026042,
+          424.72548421223956
+        ],
+        [
+          96.29074096679688,
+          424.72548421223956
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.5 The Contractor shall prepare and submit to the Contract Administrator for his approval a site layout organisation plan showing the Contractor's proposed layout of the facilities on the Site and shall resubmit the plan, for",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          423.89617919921875
+        ],
+        [
+          506.7715250651042,
+          423.89617919921875
+        ],
+        [
+          506.7715250651042,
+          386.57761637369794
+        ],
+        [
+          96.29074096679688,
+          386.57761637369794
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.5.1 The plan shall provide clear full details of location, capacity etc., for the temporary facilities including Site office accommodation, plant, temporary utilities, sanitary facilities, materials storage areas fabrication/assembly yards and access routes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          365.84511311848956
+        ],
+        [
+          506.7715250651042,
+          365.84511311848956
+        ],
+        [
+          506.7715250651042,
+          314.42844645182294
+        ],
+        [
+          120.36342366536458,
+          314.42844645182294
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.5.2 The above information shall be submitted within fifteen (15) days of receiving the Notification of Award.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          308.20867919921875
+        ],
+        [
+          507.1865641276042,
+          308.20867919921875
+        ],
+        [
+          507.1865641276042,
+          282.9150187174479
+        ],
+        [
+          120.36342366536458,
+          282.9150187174479
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.6Quality Assurance and Safety",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          275.8659464518229
+        ],
+        [
+          271.4402669270833,
+          275.8659464518229
+        ],
+        [
+          271.4402669270833,
+          263.4264119466146
+        ],
+        [
+          95.46065266927083,
+          263.4264119466146
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.6.1 Applicable Egyptian Local, Regional, and National, Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          258.0359903971354
+        ],
+        [
+          465.2668863932292,
+          258.0359903971354
+        ],
+        [
+          465.2668863932292,
+          245.18182373046875
+        ],
+        [
+          120.36342366536458,
+          245.18182373046875
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.6.2 Occupational Safety and Health Administration (OSHA)",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          245.18182373046875
+        ],
+        [
+          434.138427734375,
+          245.18182373046875
+        ],
+        [
+          434.138427734375,
+          231.91298421223962
+        ],
+        [
+          119.94837443033855,
+          231.91298421223962
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.6.3 National Fire Protection Agency (NF:PA)",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          231.08367919921875
+        ],
+        [
+          357.3548583984375,
+          231.08367919921875
+        ],
+        [
+          357.3548583984375,
+          219.05881754557288
+        ],
+        [
+          120.36342366536458,
+          219.05881754557288
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "1.6.4 British Standard IEE Regulations B.S7671 1992 Section 604 \"Construction Site Installation.\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          219.47349039713538
+        ],
+        [
+          507.1865641276042,
+          219.47349039713538
+        ],
+        [
+          507.1865641276042,
+          193.35048421223962
+        ],
+        [
+          119.1182861328125,
+          193.35048421223962
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "British Standard Code of Practice for distribution of electricity on construction and building sites (B.S7375)",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.397216796875,
+          192.52117919921875
+        ],
+        [
+          505.9414469401042,
+          192.52117919921875
+        ],
+        [
+          505.9414469401042,
+          167.22751871744788
+        ],
+        [
+          154.397216796875,
+          167.22751871744788
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "Applicablecodes of good practice",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.05740356445312,
+          165.15423583984375
+        ],
+        [
+          325.39630126953125,
+          165.15423583984375
+        ],
+        [
+          325.39630126953125,
+          153.95867919921875
+        ],
+        [
+          156.05740356445312,
+          153.95867919921875
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "Satisfy all safety requirements per section 01520 of, Section 1 General Requirements - Division 1.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.2273152669271,
+          152.71474202473962
+        ],
+        [
+          506.3564860026042,
+          152.71474202473962
+        ],
+        [
+          506.3564860026042,
+          127.83571370442712
+        ],
+        [
+          155.2273152669271,
+          127.83571370442712
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "REOUIREMENTS OF REGULATORY AGENCIES",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          114.98154703776038
+        ],
+        [
+          351.9592692057292,
+          114.98154703776038
+        ],
+        [
+          351.9592692057292,
+          101.71274820963538
+        ],
+        [
+          94.2155049641927,
+          101.71274820963538
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "2.1  Provide and maintain all temporary  facilities in strict abcordance with governing rules, regulations, codes, @rdinancos and laws.o agencies and",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          95.07830810546875
+        ],
+        [
+          507.1865641276042,
+          95.07830810546875
+        ],
+        [
+          507.1865641276042,
+          69.36997477213538
+        ],
+        [
+          94.63055419921875,
+          69.36997477213538
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "Emaar Misr for Developmant",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          57.34515380859375
+        ],
+        [
+          164.35833740234375,
+          57.34515380859375
+        ],
+        [
+          164.35833740234375,
+          46.56422932942712
+        ],
+        [
+          78.02870178222656,
+          46.56422932942712
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "SECTION01510 TEMPORARYFACILITIES",
+      "confidence": 0.95,
+      "box": [
+        [
+          223.2949015299479,
+          717.8833923339844
+        ],
+        [
+          360.2601725260417,
+          717.8833923339844
+        ],
+        [
+          360.2601725260417,
+          693.4190165201823
+        ],
+        [
+          223.2949015299479,
+          693.4190165201823
+        ]
+      ],
+      "page": 337
+    },
+    {
+      "text": "Devrioprarnt SAE",
+      "confidence": 0.95,
+      "box": [
+        [
+          257.3286946614583,
+          42.83237711588538
+        ],
+        [
+          320.83079020182294,
+          42.83237711588538
+        ],
+        [
+          320.83079020182294,
+          42.83237711588538
+        ],
+        [
+          257.3286946614583,
+          42.83237711588538
+        ]
+      ],
+      "page": 337
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 337,
+      "text": "GENERAL\n1.1 The Contractor shall provide, relocate (if required) and maintain the temporary facilities as necessary to support the construction process and day-to-day operations. The Contractor shall be responsible for the removal of all temporary installations, performed by him as soon as possible after the completion of contract. As a minimum, the facilities thus provided shall be as specified herein.\n1.2 The Contractor shall include for all associated earthworks, including plinths, cable ducts,trenching,bedding materiais,excavation,backfill,compaction and final grading for the temporary facilities.\n1.3 The Contractor shall include for all types of temporary utilities supply for his works at no additional cost.\n1.4 The Contractor shall be assigned a staging area wherein he shall locate his site office, storage, workshops, fabrication, assembly yards etc. He shall make his own arrangements for all the utilities (Water, Power, Drainage, Material Storage, Project Site equipment, Truck, Pumps, other equipment, Accessories & tools.The Contractor shall be responsible for providing his own office supplies, machines, materials, and equipment.\n1.5 The Contractor shall prepare and submit to the Contract Administrator for his approval a site layout organisation plan showing the Contractor's proposed layout of the facilities on the Site and shall resubmit the plan, for\n1.5.1 The plan shall provide clear full details of location, capacity etc., for the temporary facilities including Site office accommodation, plant, temporary utilities, sanitary facilities, materials storage areas fabrication/assembly yards and access routes.\n1.5.2 The above information shall be submitted within fifteen (15) days of receiving the Notification of Award.\n1.6Quality Assurance and Safety\n1.6.1 Applicable Egyptian Local, Regional, and National, Standards\n1.6.2 Occupational Safety and Health Administration (OSHA)\n1.6.3 National Fire Protection Agency (NF:PA)\n1.6.4 British Standard IEE Regulations B.S7671 1992 Section 604 \"Construction Site Installation.\"\nBritish Standard Code of Practice for distribution of electricity on construction and building sites (B.S7375)\nApplicablecodes of good practice\nSatisfy all safety requirements per section 01520 of, Section 1 General Requirements - Division 1.\nREOUIREMENTS OF REGULATORY AGENCIES\n2.1  Provide and maintain all temporary  facilities in strict abcordance with governing rules, regulations, codes, @rdinancos and laws.o agencies and\nEmaar Misr for Developmant\nSECTION01510 TEMPORARYFACILITIES\nDevrioprarnt SAE",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

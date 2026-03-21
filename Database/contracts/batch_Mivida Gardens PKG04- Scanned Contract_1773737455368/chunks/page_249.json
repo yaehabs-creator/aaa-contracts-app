@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n<!-- image -->\n\n## INDEX\n\n| Section                        | Description                       | No. of Pages   |\n|--------------------------------|-----------------------------------|----------------|\n| DIVISION1:GENERAL REQUIREMENTS | DIVISION1:GENERAL REQUIREMENTS    |                |\n| 01000                          | PREAMBLE                          | (1 Page)       |\n| 01010                          | SUMMARY OF WORK                   | (7 Pages)      |\n| 01025                          | MEASUREMENTANDPAYMENT             | (2 Pages)      |\n| 01030                          | ALTERNATIVES                      | (2 Pages)      |\n| 01040                          | CO-ORDINATION                     | (3 Pages)      |\n| 01045                          | CUTTINGANDPATCHING                | (2 Pages)      |\n| 01050                          | FIELD ENGINEERING                 | (3 Pages)      |\n| 01060                          | REGULATORYREQUIREMENTS            | (2 Page)       |\n| 01070                          | ABBREVIATIONSAND SYMBOLS          | (3 Page)       |\n| 01090                          | REFERENCESTANDARDS                | (2 Page)       |\n| 01200                          | PROJECT MEETINGS                  | (3 Pages)      |\n| 01230                          | JOBSITEADMINISTRATION             | (5 Pages)      |\n| 01300                          | SUBMITTALS                        | (9 Pages)      |\n| 01310                          | PROGRAMMES AND SCHEDULES          | (8 Pages)      |\n| 01320                          | PROGRESSMONITORINGANDREPORTING    | (5 Pages)      |\n| 01340                          | DRAWINGS                          | (3 Pages)      |\n| 01350                          | SAMPLES AND MOCK-UPS              | (1 Page)       |\n| 01370                          | EXECUTION METHOD STATEMENTS       | (2 Pages)      |\n| 01380                          | PROGRESS PHOTOGRAPHS              | (1 Page)       |\n| 01400                          | CONTRACTORQUALITYCONTROL          | (17 Pages)     |\n| 01410                          | TESTINGORLABORATORYSERVICES       | (2 Pages)      |\n| 01420                          | INSPECTIONSERVICES                | (1 Page)       |\n| 01510                          | TEMPORARY FACILITIES              | (8 Pages)      |\n| 01520                          | SAFETY                            | (12 Pages)     |\n| 01530                          | ACCESSANDSECURITY                 | (2 Pages)      |\n| 01535                          | ENVIRONMENTAL PROTECTION          | (2 Pages)      |\n| 01575                          | TRAFFICREGULATION                 | (1 Page)       |\n| 01600                          | MATERIALSANDEQUIPMENT             | (5 Pages)      |\n| 01630                          | PRODUCTOPTIONSANDSUBSTITUTIONS    | (2 Pages)      |\n| 01700                          | CONTRACTCLOSEOUT'                 | (2 Page)       |\n| 01710                          | FINALCLEANING                     | (2 Pages)      |\n| 01720                          | PROJECTRECORDDOCUMENTS            | (2. Pages)     |\n| 01730                          | OPERATIONS&MAINTENANCEDATA        | (5 Pages)      |\n| 01740                          | WARRANTIE                         | (1 Page)       |\n| 017500                         | SPAREPARTSANDMAINTENANCEMATERIALS | (3 Page)       |\n| 01770                          | TAKE-OVERPROCEDURES               | (3 Page)       |\n\nDirwalopment sA.R.\n\nDoxC21-27.20%\n\n<!-- image -->\n\n## Technical Specifications(Division I)",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          749.3968353271484
+        ],
+        [
+          130.73958333333334,
+          749.3968353271484
+        ],
+        [
+          130.73958333333334,
+          739.0305735270182
+        ],
+        [
+          107.9120381673177,
+          739.0305735270182
+        ]
+      ],
+      "page": 249
+    },
+    {
+      "text": "INDEX",
+      "confidence": 0.95,
+      "box": [
+        [
+          271.0252278645833,
+          719.9566446940104
+        ],
+        [
+          309.62453206380206,
+          719.9566446940104
+        ],
+        [
+          309.62453206380206,
+          707.1024780273438
+        ],
+        [
+          271.0252278645833,
+          707.1024780273438
+        ]
+      ],
+      "page": 249
+    },
+    {
+      "text": "Dirwalopment sA.R.",
+      "confidence": 0.95,
+      "box": [
+        [
+          173.07430013020834,
+          103.78599039713538
+        ],
+        [
+          239.4817097981771,
+          103.78599039713538
+        ],
+        [
+          239.4817097981771,
+          103.78599039713538
+        ],
+        [
+          173.07430013020834,
+          103.78599039713538
+        ]
+      ],
+      "page": 249
+    },
+    {
+      "text": "DoxC21-27.20%",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.3194376627604,
+          94.24904378255212
+        ],
+        [
+          234.50115966796875,
+          94.24904378255212
+        ],
+        [
+          234.50115966796875,
+          94.24904378255212
+        ],
+        [
+          174.3194376627604,
+          94.24904378255212
+        ]
+      ],
+      "page": 249
+    },
+    {
+      "text": "Technical Specifications(Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.50787353515625,
+          743.1770782470703
+        ],
+        [
+          501.3759358723958,
+          743.1770782470703
+        ],
+        [
+          501.3759358723958,
+          732.3961690266927
+        ],
+        [
+          339.50787353515625,
+          732.3961690266927
+        ]
+      ],
+      "page": 249
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 249,
+      "text": "MISR\nINDEX\nDirwalopment sA.R.\nDoxC21-27.20%\nTechnical Specifications(Division I)",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,83 @@
+{
+  "text": "## CONDITIONSOFCONTRACT\n\n## INDEX\n\n|                              |                                                                | Page No.   |\n|------------------------------|----------------------------------------------------------------|------------|\n| DEFINITIONSANDINTERPRETATION |                                                                |            |\n| 1.1                          | Definitions                                                    | 1          |\n| 1.2                          | Interpretation                                                 | 4          |\n| 1.3                          | Singular and Plural                                            | 4          |\n| 1.4                          | Headings                                                       | 4          |\n| 1.5                          | References toClauses                                           | 4          |\n| 1.6                          | Notices, Consents, Approvals and Agreements                    | 4          |\n| 1.7                          | Communications                                                 | 4          |\n| 1.8                          | GregorianCalendar                                              | 5          |\n| 1.9                          | Joint and Several                                              | 5          |\n| 1.10                         | Waiver                                                         | 5          |\n| 1.11                         | Entire Agreement                                               | 5          |\n| 1.12                         | Amendments                                                     | 5          |\n|                              | PROJECTMANAGERANDPROJECTMANAGER'SREPRESENTATIVE                |            |\n| 2.1                          | Project Manager's Powers and Duties                            | 6          |\n| 2.2                          | Project Manager's Decisions,Orders and Instructions            | 6          |\n| 2.3                          | UnwrittenDecisions                                             | 6          |\n| 2.4                          | ReconfirmationofDecisions                                      | 6          |\n| 2.5                          | Project Manager'sRepresentative                                | 6          |\n| 2.6                          | Project Manager'sPower to Delegate                             | 7          |\n|                              | SUPERVISIONCONSULTANTANDSUPERVISIONCONSULTANT'S REPRESENTATIVE |            |\n| 2A.1                         | Supervision Consultant's Powers and Duties                     | 7          |\n| 2A.2                         | Supervision Consultant'sDecisions,Orders and Instructions      | 7          |\n| 2A.3                         | UnwrittenDecisions                                             | 7          |\n| 2A.4                         | ReconfirmationofDecisions                                      | 8          |\n| 2A.5                         | SupervisionConsultant'sRepresentative                          | 8          |\n| 2A.6                         | Supervision Consultant's Power to Delegate                     | 8          |\n|                              | ASSIGNMENTANDSUBLETTING                                        |            |\n| 3.1                          | Assignment                                                     | 9          |\n| 3.2                          | Subletting                                                     | 9          |\n\n<!-- image -->\n\nFIRSTEDITION2006\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "CONDITIONSOFCONTRACT",
+      "confidence": 0.95,
+      "box": [
+        [
+          222.40435791015625,
+          724.5932922363281
+        ],
+        [
+          360.6671142578125,
+          724.5932922363281
+        ],
+        [
+          360.6671142578125,
+          713.5633951822916
+        ],
+        [
+          222.40435791015625,
+          713.5633951822916
+        ]
+      ],
+      "page": 22
+    },
+    {
+      "text": "INDEX",
+      "confidence": 0.95,
+      "box": [
+        [
+          274.8342692057292,
+          690.6551208496094
+        ],
+        [
+          308.6600341796875,
+          690.6551208496094
+        ],
+        [
+          308.6600341796875,
+          678.7767639160156
+        ],
+        [
+          274.8342692057292,
+          678.7767639160156
+        ]
+      ],
+      "page": 22
+    },
+    {
+      "text": "FIRSTEDITION2006",
+      "confidence": 0.95,
+      "box": [
+        [
+          419.8622233072917,
+          105.22165934244788
+        ],
+        [
+          488.7821858723958,
+          105.22165934244788
+        ],
+        [
+          488.7821858723958,
+          96.73712158203125
+        ],
+        [
+          419.8622233072917,
+          96.73712158203125
+        ]
+      ],
+      "page": 22
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 22,
+      "text": "CONDITIONSOFCONTRACT\nINDEX\nFIRSTEDITION2006",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

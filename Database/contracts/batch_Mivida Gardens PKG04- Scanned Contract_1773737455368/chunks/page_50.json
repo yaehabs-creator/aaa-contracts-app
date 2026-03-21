@@ -1,0 +1,198 @@
+{
+  "text": "## Urgent Repairs\n\n- 9.11 If, by reason of any accident, failure or other event occurring to, in or in connectionwiththeWorks,oranypart thereof,eitherduring thecarrying out oftheWorksorduringtheDefectsLiabilityPeriod(orto,inorinconnection withanypartoftheWorksthesubjectofanExtendedWarranty,duringits extensionbeyond theDefectsLiabilityPeriod),anyremedialorotherwork orrepair shall,inthe opinionoftheSupervisionConsultantor theProject Manager, be urgently necessary for the safety of the Works and the Contractor is unableor unwilling atonce todosuchworkorrepair,the Employermayitselfand/ormayemployanyothercontractororcontractors tocarry out suchworkorrepair(at theContractor's risk) astheSupervision Consultant or the Project Manager may consider necessary. If the work or repairsocarriedout isworkorrepairwhich,in theopinionof theProject Manager,theContractorwasliabletodoatitsownCostundertheContract, allCostsincurredbytheEmployerinsodoing asdeterminedbytheProject ManagershallberecoverablefromtheContractorbytheEmployerasa debtduefromtheContractor,ormaybededucted bytheEmployerfrom any moniesdueorwhich maybecomedue to theContractor.Provided always emergencyasmaybereasonablypracticable,notifytheContractorthereof in writing.\n\n## ElectricityandWater\n\n- 9.12 Subject toanyprovisionto thecontrarycontained intheContract,the Contractor shallprovide atits ownCost supplies ofelectricity,water (including potable water), gas, compressed air and other services required forthecarryingoutoftheWorks.\n\n## Fossils\n\n- 9.13Allfossils,coins,articles ofvalue or antiquity and structures andother remainsorthingsofgeologicalorarchaeologicalinterestdiscoveredonthe Siteshall,asbetweentheEmployerandtheContractor,bedeemed tobe the absolute property of the Employer.The Contractor shall take reasonableprecautionstopreventitsworkmenoranyotherpersonsfrom removing or damaging any sucharticleorthing and shall immediatelyupon discoverythereofand,beforeremoval,acquainttheProjectManagerof such discovery and carry out the Project Manager's instructions for dealing with the same.If by reason of such instructions,theContractor incurs additionalCoststheProjectManagershalldeterminesuchCostswhich shallbepaid to theContractorinaccordancewithClause26(Interimand Final Certificates).\n\nSite Clearancc-General\n\n- 9.141 TheContractorshall atall timeskeep theSiteand theWorksinaneat, cleanandsafeconditiontothereasonablesatisfactionoftheProject ManagerandshallfromtimetotimeclearawayandremovefromtheSiteall rubbish,wreckage,surplusPlantand anyContractor'sEquipmentnolonger requiredfor thecarryinyouloftheWorksandtheremedyingofdefects therein.If theContractorshallfailtocomplywiththeseobligationswithin\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Urgent Repairs",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          723.3206176757812
+        ],
+        [
+          164.47774251302084,
+          723.3206176757812
+        ],
+        [
+          164.47774251302084,
+          710.5938008626302
+        ],
+        [
+          96.40340169270833,
+          710.5938008626302
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "9.11 If, by reason of any accident, failure or other event occurring to, in or in connectionwiththeWorks,oranypart thereof,eitherduring thecarrying out oftheWorksorduringtheDefectsLiabilityPeriod(orto,inorinconnection withanypartoftheWorksthesubjectofanExtendedWarranty,duringits extensionbeyond theDefectsLiabilityPeriod),anyremedialorotherwork orrepair shall,inthe opinionoftheSupervisionConsultantor theProject Manager, be urgently necessary for the safety of the Works and the Contractor is unableor unwilling atonce todosuchworkorrepair,the Employermayitselfand/ormayemployanyothercontractororcontractors tocarry out suchworkorrepair(at theContractor's risk) astheSupervision Consultant or the Project Manager may consider necessary. If the work or repairsocarriedout isworkorrepairwhich,in theopinionof theProject Manager,theContractorwasliabletodoatitsownCostundertheContract, allCostsincurredbytheEmployerinsodoing asdeterminedbytheProject ManagershallberecoverablefromtheContractorbytheEmployerasa debtduefromtheContractor,ormaybededucted bytheEmployerfrom any moniesdueorwhich maybecomedue to theContractor.Provided always emergencyasmaybereasonablypracticable,notifytheContractorthereof in writing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          700.8365783691406
+        ],
+        [
+          489.2049967447917,
+          700.8365783691406
+        ],
+        [
+          489.2049967447917,
+          472.17812093098956
+        ],
+        [
+          125.15530395507812,
+          472.17812093098956
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "ElectricityandWater",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          461.57244873046875
+        ],
+        [
+          190.69270833333334,
+          461.57244873046875
+        ],
+        [
+          190.69270833333334,
+          450.54254150390625
+        ],
+        [
+          97.671875,
+          450.54254150390625
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "9.12 Subject toanyprovisionto thecontrarycontained intheContract,the Contractor shallprovide atits ownCost supplies ofelectricity,water (including potable water), gas, compressed air and other services required forthecarryingoutoftheWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          438.66420491536456
+        ],
+        [
+          488.7821858723958,
+          438.66420491536456
+        ],
+        [
+          488.7821858723958,
+          393.69610595703125
+        ],
+        [
+          127.69223022460938,
+          393.69610595703125
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "Fossils",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          382.24196370442706
+        ],
+        [
+          130.22916666666666,
+          382.24196370442706
+        ],
+        [
+          130.22916666666666,
+          370.78786214192706
+        ],
+        [
+          96.40340169270833,
+          370.78786214192706
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "9.13Allfossils,coins,articles ofvalue or antiquity and structures andother remainsorthingsofgeologicalorarchaeologicalinterestdiscoveredonthe Siteshall,asbetweentheEmployerandtheContractor,bedeemed tobe the absolute property of the Employer.The Contractor shall take reasonableprecautionstopreventitsworkmenoranyotherpersonsfrom removing or damaging any sucharticleorthing and shall immediatelyupon discoverythereofand,beforeremoval,acquainttheProjectManagerof such discovery and carry out the Project Manager's instructions for dealing with the same.If by reason of such instructions,theContractor incurs additionalCoststheProjectManagershalldeterminesuchCostswhich shallbepaid to theContractorinaccordancewithClause26(Interimand Final Certificates).",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          359.75795491536456
+        ],
+        [
+          490.0506591796875,
+          359.75795491536456
+        ],
+        [
+          490.0506591796875,
+          223.58103434244788
+        ],
+        [
+          127.2694091796875,
+          223.58103434244788
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "Site Clearancc-General",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          212.12689208984375
+        ],
+        [
+          210.9881591796875,
+          212.12689208984375
+        ],
+        [
+          210.9881591796875,
+          201.52121988932288
+        ],
+        [
+          95.1349385579427,
+          201.52121988932288
+        ]
+      ],
+      "page": 50
+    },
+    {
+      "text": "9.141 TheContractorshall atall timeskeep theSiteand theWorksinaneat, cleanandsafeconditiontothereasonablesatisfactionoftheProject ManagerandshallfromtimetotimeclearawayandremovefromtheSiteall rubbish,wreckage,surplusPlantand anyContractor'sEquipmentnolonger requiredfor thecarryinyouloftheWorksandtheremedyingofdefects therein.If theContractorshallfailtocomplywiththeseobligationswithin",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          190.06707763671875
+        ],
+        [
+          490.0506591796875,
+          190.06707763671875
+        ],
+        [
+          490.0506591796875,
+          123.88767496744788
+        ],
+        [
+          128.11505126953125,
+          123.88767496744788
+        ]
+      ],
+      "page": 50
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 50,
+      "text": "Urgent Repairs\n9.11 If, by reason of any accident, failure or other event occurring to, in or in connectionwiththeWorks,oranypart thereof,eitherduring thecarrying out oftheWorksorduringtheDefectsLiabilityPeriod(orto,inorinconnection withanypartoftheWorksthesubjectofanExtendedWarranty,duringits extensionbeyond theDefectsLiabilityPeriod),anyremedialorotherwork orrepair shall,inthe opinionoftheSupervisionConsultantor theProject Manager, be urgently necessary for the safety of the Works and the Contractor is unableor unwilling atonce todosuchworkorrepair,the Employermayitselfand/ormayemployanyothercontractororcontractors tocarry out suchworkorrepair(at theContractor's risk) astheSupervision Consultant or the Project Manager may consider necessary. If the work or repairsocarriedout isworkorrepairwhich,in theopinionof theProject Manager,theContractorwasliabletodoatitsownCostundertheContract, allCostsincurredbytheEmployerinsodoing asdeterminedbytheProject ManagershallberecoverablefromtheContractorbytheEmployerasa debtduefromtheContractor,ormaybededucted bytheEmployerfrom any moniesdueorwhich maybecomedue to theContractor.Provided always emergencyasmaybereasonablypracticable,notifytheContractorthereof in writing.\nElectricityandWater\n9.12 Subject toanyprovisionto thecontrarycontained intheContract,the Contractor shallprovide atits ownCost supplies ofelectricity,water (including potable water), gas, compressed air and other services required forthecarryingoutoftheWorks.\nFossils\n9.13Allfossils,coins,articles ofvalue or antiquity and structures andother remainsorthingsofgeologicalorarchaeologicalinterestdiscoveredonthe Siteshall,asbetweentheEmployerandtheContractor,bedeemed tobe the absolute property of the Employer.The Contractor shall take reasonableprecautionstopreventitsworkmenoranyotherpersonsfrom removing or damaging any sucharticleorthing and shall immediatelyupon discoverythereofand,beforeremoval,acquainttheProjectManagerof such discovery and carry out the Project Manager's instructions for dealing with the same.If by reason of such instructions,theContractor incurs additionalCoststheProjectManagershalldeterminesuchCostswhich shallbepaid to theContractorinaccordancewithClause26(Interimand Final Certificates).\nSite Clearancc-General\n9.141 TheContractorshall atall timeskeep theSiteand theWorksinaneat, cleanandsafeconditiontothereasonablesatisfactionoftheProject ManagerandshallfromtimetotimeclearawayandremovefromtheSiteall rubbish,wreckage,surplusPlantand anyContractor'sEquipmentnolonger requiredfor thecarryinyouloftheWorksandtheremedyingofdefects therein.If theContractorshallfailtocomplywiththeseobligationswithin",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

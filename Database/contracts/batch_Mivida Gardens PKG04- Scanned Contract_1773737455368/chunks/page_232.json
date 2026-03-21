@@ -1,0 +1,221 @@
+{
+  "text": "| ST.3                                                                                                                             | ST.2                                                                                                  | ST.1                                                                                                                                                                                               |                                                                                                                                | AR.18                                                                                                                                                                                                                                                                                                                                                                                                                                                           | AR.17                                | AR.16                                                                                                                                                                                                                                                                        |                                                                        | S/N                                    |\n|----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------|\n| concretewouldweapplydetailSl-003. Forvilla type\"TH-01\", kindlyclarifywhetherroofparapetsareconcreteorblockworkii no.SI003&SI004. | drawing is 2.6x1.4m while it is in the schedule as 2.4x1.4m, so please advise. For villa type TH-01A\" | is2.8x2.3m while the size in the schedule is 3.8x2.3m,so please advise. For villa typeTH-01A', for footing type F4, there is a conflict as the size in the drawingPlease follow the plan drawings. | 3Structural Consultant approval. provide full fixation details, shop drawings, structural calculations.etc.for the Supervision | \"GRCcomicefor terracecolumns\". For vila typeTH-01A-01B”please provide us with thelocatlonsand the sections oi Pleasereferto the attached updated drawing (AE5-102/13).Noting that the Contractorto vila type“TH-01B” drawings, should we apply it in TH01A? lowerfixedpanel tomatchrender,andweunderstandthatthismodificationisrelatedto Forvilla typeTH-01A\",there is a comment to removehandrall and add transomwithYes, to be applled for botn TH01A &TH01B. | the flooring material for this area. | AR.15 marble according to ID drawings or ct-02 porcelain 1200x600 according to cutsheet. Forvilla typeTH2Afortheground floorteracekindlyclarifyshouldweusestaThissconsideredasanexterioritmand isnotincluded intheIDcutsheetKindlyuseST0A marbleforallground floo- terraces. | AR.14 plaster? For villa type TH-02A\",for ceiling finish（powder room) | ltem Description Query Log No.01 Reply |\n\nDovalopmentLA.L\n\nLmtar iRler Nor\n\nTax21-217-308\n\nP.0A.729\n\nCR12841\n\nCNru,fips\n\n<!-- image -->\n\n## Package ID : PK#04\n\n## Subject: Construction of Townhomes Villas in Parcels 11 &amp;12\n\n## Project : Mivida Gardens\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "DovalopmentLA.L",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.56967163085938,
+          59.00368245442712
+        ],
+        [
+          196.31689453125,
+          59.00368245442712
+        ],
+        [
+          196.31689453125,
+          46.14951578776038
+        ],
+        [
+          131.56967163085938,
+          46.14951578776038
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "Lmtar iRler Nor",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.9847208658854,
+          67.71136474609375
+        ],
+        [
+          182.205322265625,
+          67.71136474609375
+        ],
+        [
+          182.205322265625,
+          56.10117594401038
+        ],
+        [
+          131.9847208658854,
+          56.10117594401038
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "Tax21-217-308",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.56967163085938,
+          49.88144938151038
+        ],
+        [
+          189.2611083984375,
+          49.88144938151038
+        ],
+        [
+          189.2611083984375,
+          37.44191487630212
+        ],
+        [
+          131.56967163085938,
+          37.44191487630212
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "P.0A.729",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.73958333333334,
+          37.02728271484375
+        ],
+        [
+          162.2831013997396,
+          37.02728271484375
+        ],
+        [
+          162.2831013997396,
+          26.66099039713538
+        ],
+        [
+          130.73958333333334,
+          26.66099039713538
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "CR12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.15463256835938,
+          43.24700927734375
+        ],
+        [
+          157.30254109700522,
+          43.24700927734375
+        ],
+        [
+          157.30254109700522,
+          33.29534912109375
+        ],
+        [
+          131.15463256835938,
+          33.29534912109375
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "CNru,fips",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.32453409830728,
+          30.80747477213538
+        ],
+        [
+          161.0379638671875,
+          30.80747477213538
+        ],
+        [
+          161.0379638671875,
+          20.02655029296875
+        ],
+        [
+          130.32453409830728,
+          20.02655029296875
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "Package ID : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          486.8492838541667,
+          698.8094685872396
+        ],
+        [
+          498.0555419921875,
+          698.8094685872396
+        ],
+        [
+          498.0555419921875,
+          623.3430786132812
+        ],
+        [
+          486.8492838541667,
+          623.3430786132812
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "Subject: Construction of Townhomes Villas in Parcels 11 &12",
+      "confidence": 0.95,
+      "box": [
+        [
+          502.6210530598958,
+          699.22412109375
+        ],
+        [
+          513.4122721354166,
+          699.22412109375
+        ],
+        [
+          513.4122721354166,
+          468.67844645182294
+        ],
+        [
+          502.6210530598958,
+          468.67844645182294
+        ]
+      ],
+      "page": 232
+    },
+    {
+      "text": "Project : Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          518.392822265625,
+          699.22412109375
+        ],
+        [
+          529.1840413411459,
+          699.22412109375
+        ],
+        [
+          529.1840413411459,
+          604.6837972005209
+        ],
+        [
+          518.392822265625,
+          604.6837972005209
+        ]
+      ],
+      "page": 232
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 232,
+      "text": "DovalopmentLA.L\nLmtar iRler Nor\nTax21-217-308\nP.0A.729\nCR12841\nCNru,fips\nPackage ID : PK#04\nSubject: Construction of Townhomes Villas in Parcels 11 &12\nProject : Mivida Gardens",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

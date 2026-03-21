@@ -257,6 +257,31 @@ export const SectionItemCard: React.FC<SectionItemCardProps> = React.memo(({
                   </div>
                 )}
 
+                {/* Recursive Children Rendering */}
+                {item.children && item.children.length > 0 && (
+                  <div className="mt-6 space-y-4 pl-4 border-l-2 border-aaa-blue/10">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-aaa-blue/30" />
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                        Sub-Clauses ({item.children.length})
+                      </span>
+                    </div>
+                    {item.children.map((child, idx) => (
+                      <SectionItemCard
+                        key={child.id || `child-${idx}`}
+                        item={child}
+                        onEdit={onEdit}
+                        onDelete={onDelete}
+                        onAskAI={onAskAI}
+                        onToggleVisibility={onToggleVisibility}
+                        searchKeywords={searchKeywords}
+                        hideMetadata={true}
+                        organizerExtractedData={organizerExtractedData}
+                      />
+                    ))}
+                  </div>
+                )}
+
                 {/* AI Interaction */}
                 {onAskAI && (
                   <div className="pt-4 border-t border-slate-100 flex justify-end">

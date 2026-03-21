@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { SavedContract, ContractSection, SectionType, SectionItem, Clause, ContractSubfolder, ExtractedData, FolderSchemaField } from '@/types';
 import { SectionEditor } from './SectionEditor';
 import { ensureContractHasSections } from '@/services/contractMigrationService';
-import { getCategoriesForContract, ContractCategory } from '@/services/supabaseService';
+import { getCategoriesForContract } from '@/services/supabaseService';
 import { useAppStore } from '@/store/useAppStore';
 import { buildDefaultLayout } from '@/utils/layoutUtils';
 
@@ -80,7 +80,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
 
 
   // Categories from Admin Editor
-  const [categories, setCategories] = useState<ContractCategory[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
   const [categoriesLoading, setCategoriesLoading] = useState(false);
 
   // Fetch categories when contract changes
@@ -164,7 +164,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
       // Create a map of category_id -> order_index
       const categoryOrderMap = new Map<string, number>();
       categories.forEach((cat, idx) => {
-        categoryOrderMap.set(cat.id, idx);
+        categoryOrderMap.set(cat, idx);
       });
 
       combinedItems.sort((a, b) => {

@@ -1,0 +1,244 @@
+{
+  "text": "## EMAAR\n\n- (i) The Contractor shall prepare all Contractor's Documents, and any otherdocumentsnecessarytocompleteandimplementthedesign duringexecutionoftheWorks.TheEmployer/Contract Administratorshallhavetherighttoinspectthepreparationof all these documents (including any investigation, modelling and testing),wherevertheyareprepared.\n- (ii) TheContractorshall submitcalculations,designs and modelling as reasonablyrequestedbytheSupervisionConsultantforitsreview and approval. Any such approval shall not relief the Contractor of its obligationundertheContract.\n- (ii) For the Designcarried out by the Contractor，theContractor undertakes that the design，the Contractor's Documents,the executionoftheWorksandthecompletedWorkswillbein accordance with:\n- The Laws of the Country,and\n- ThedocumentsformingtheContractasalteredormodifiedby variations.\n- (iv) ThecompletedWorksshallcomplywiththeapplicablecodes, technical standards,building,construction and environmental laws. Iferrors,omissions,ambiguities,inconsistencies,inadequacies or other defects are found intheContractor'sdesign，sucherrors, omissions，ambiguities,inconsistencies,inadequacies or other defectsandanyotherconsequencesthereof intheWorksshallbe corrected,remediedandre-executedattheContractor'sriskand cost, notwithstanding any consent or approval by the Supervision Consultant,and the Contractor shall be held responsible for any delay that may occur as a result thereof.\n- (v) Withrespect toEmployer'sRequirements included in theContract Documents, if errors, omissions, ambiguities, inconsistencies, inadequaciesorotherdefectsarefoundintheContractor'sproposal which renders such proposal inapplicable, they and the Works shall be corrected at the Contractor's risk.In such case,Contractor shall be bound to provide other proposal(s) that may be accepted by the Employer. This shall not constitute a ground for any claim to be raisedbytheContractorforanycostand/ortimewhatsoeverthat may result from any other proposal.\n\nTheEmployershallnotberesponsibleforanyerror,inaccuracyor omissionof anykind in theEmployer'sRequlrementsandshiall rul be deemed to have given any representation of accuracy or completenessofanydataorinformation,exceptforthedefinitionof intended purposes of the Works or any parts thereof.Any data or information received by the Contractor,from the Employer, shall not relieve theContractorfromhisresponsibilityforthedesignand execution of theWorks in accordance with (i) the applicable laws,(i) CodesandStandards&amp;(ii)Normsofpractice.\n\nnstruction of Parcel 11,Parcel 12Townhomes&amp;Grading Works forParcel11 ContractParticular Conditions Page5of37\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          750.4711507161459
+        ],
+        [
+          178.43086751302084,
+          750.4711507161459
+        ],
+        [
+          178.43086751302084,
+          730.532480875651
+        ],
+        [
+          98.51751708984375,
+          730.532480875651
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "(i) The Contractor shall prepare all Contractor's Documents, and any otherdocumentsnecessarytocompleteandimplementthedesign duringexecutionoftheWorks.TheEmployer/Contract Administratorshallhavetherighttoinspectthepreparationof all these documents (including any investigation, modelling and testing),wherevertheyareprepared.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          696.1700744628906
+        ],
+        [
+          503.1581217447917,
+          696.1700744628906
+        ],
+        [
+          503.1581217447917,
+          624.4756876627604
+        ],
+        [
+          166.16902669270834,
+          624.4756876627604
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "(ii) TheContractorshall submitcalculations,designs and modelling as reasonablyrequestedbytheSupervisionConsultantforitsreview and approval. Any such approval shall not relief the Contractor of its obligationundertheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          619.3849690755209
+        ],
+        [
+          502.7353108723958,
+          619.3849690755209
+        ],
+        [
+          502.7353108723958,
+          572.719970703125
+        ],
+        [
+          163.20927937825522,
+          572.719970703125
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "(ii) For the Designcarried out by the Contractor，theContractor undertakes that the design，the Contractor's Documents,the executionoftheWorksandthecompletedWorkswillbein accordance with:",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.51798502604166,
+          566.7808024088542
+        ],
+        [
+          503.1581217447917,
+          566.7808024088542
+        ],
+        [
+          503.1581217447917,
+          520.1158040364583
+        ],
+        [
+          161.51798502604166,
+          520.1158040364583
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "The Laws of the Country,and",
+      "confidence": 0.95,
+      "box": [
+        [
+          203.8001912434896,
+          515.0250854492188
+        ],
+        [
+          343.3314208984375,
+          515.0250854492188
+        ],
+        [
+          343.3314208984375,
+          503.99517822265625
+        ],
+        [
+          203.8001912434896,
+          503.99517822265625
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "ThedocumentsformingtheContractasalteredormodifiedby variations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          502.7224934895833
+        ],
+        [
+          501.8896484375,
+          502.7224934895833
+        ],
+        [
+          501.8896484375,
+          478.96575927734375
+        ],
+        [
+          205.4914754231771,
+          478.96575927734375
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "(iv) ThecompletedWorksshallcomplywiththeapplicablecodes, technical standards,building,construction and environmental laws. Iferrors,omissions,ambiguities,inconsistencies,inadequacies or other defects are found intheContractor'sdesign，sucherrors, omissions，ambiguities,inconsistencies,inadequacies or other defectsandanyotherconsequencesthereof intheWorksshallbe corrected,remediedandre-executedattheContractor'sriskand cost, notwithstanding any consent or approval by the Supervision Consultant,and the Contractor shall be held responsible for any delay that may occur as a result thereof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.24952189127603,
+          474.72349039713544
+        ],
+        [
+          504.0037841796875,
+          474.72349039713544
+        ],
+        [
+          504.0037841796875,
+          355.09145100911456
+        ],
+        [
+          160.24952189127603,
+          355.09145100911456
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "(v) Withrespect toEmployer'sRequirements included in theContract Documents, if errors, omissions, ambiguities, inconsistencies, inadequaciesorotherdefectsarefoundintheContractor'sproposal which renders such proposal inapplicable, they and the Works shall be corrected at the Contractor's risk.In such case,Contractor shall be bound to provide other proposal(s) that may be accepted by the Employer. This shall not constitute a ground for any claim to be raisedbytheContractorforanycostand/ortimewhatsoeverthat may result from any other proposal.",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          350.00071207682294
+        ],
+        [
+          504.8494059244792,
+          350.00071207682294
+        ],
+        [
+          504.8494059244792,
+          242.67124430338538
+        ],
+        [
+          163.6321004231771,
+          242.67124430338538
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "TheEmployershallnotberesponsibleforanyerror,inaccuracyor omissionof anykind in theEmployer'sRequlrementsandshiall rul be deemed to have given any representation of accuracy or completenessofanydataorinformation,exceptforthedefinitionof intended purposes of the Works or any parts thereof.Any data or information received by the Contractor,from the Employer, shall not relieve theContractorfromhisresponsibilityforthedesignand execution of theWorks in accordance with (i) the applicable laws,(i) CodesandStandards&(ii)Normsofpractice.",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.69270833333334,
+          237.58050537109375
+        ],
+        [
+          506.1178792317708,
+          237.58050537109375
+        ],
+        [
+          506.1178792317708,
+          131.09950764973962
+        ],
+        [
+          190.69270833333334,
+          131.09950764973962
+        ]
+      ],
+      "page": 118
+    },
+    {
+      "text": "nstruction of Parcel 11,Parcel 12Townhomes&Grading Works forParcel11 ContractParticular Conditions Page5of37",
+      "confidence": 0.95,
+      "box": [
+        [
+          277.7940266927083,
+          102.67624918619788
+        ],
+        [
+          504.8494059244792,
+          102.67624918619788
+        ],
+        [
+          504.8494059244792,
+          79.76804606119788
+        ],
+        [
+          277.7940266927083,
+          79.76804606119788
+        ]
+      ],
+      "page": 118
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 118,
+      "text": "EMAAR\n(i) The Contractor shall prepare all Contractor's Documents, and any otherdocumentsnecessarytocompleteandimplementthedesign duringexecutionoftheWorks.TheEmployer/Contract Administratorshallhavetherighttoinspectthepreparationof all these documents (including any investigation, modelling and testing),wherevertheyareprepared.\n(ii) TheContractorshall submitcalculations,designs and modelling as reasonablyrequestedbytheSupervisionConsultantforitsreview and approval. Any such approval shall not relief the Contractor of its obligationundertheContract.\n(ii) For the Designcarried out by the Contractor，theContractor undertakes that the design，the Contractor's Documents,the executionoftheWorksandthecompletedWorkswillbein accordance with:\nThe Laws of the Country,and\nThedocumentsformingtheContractasalteredormodifiedby variations.\n(iv) ThecompletedWorksshallcomplywiththeapplicablecodes, technical standards,building,construction and environmental laws. Iferrors,omissions,ambiguities,inconsistencies,inadequacies or other defects are found intheContractor'sdesign，sucherrors, omissions，ambiguities,inconsistencies,inadequacies or other defectsandanyotherconsequencesthereof intheWorksshallbe corrected,remediedandre-executedattheContractor'sriskand cost, notwithstanding any consent or approval by the Supervision Consultant,and the Contractor shall be held responsible for any delay that may occur as a result thereof.\n(v) Withrespect toEmployer'sRequirements included in theContract Documents, if errors, omissions, ambiguities, inconsistencies, inadequaciesorotherdefectsarefoundintheContractor'sproposal which renders such proposal inapplicable, they and the Works shall be corrected at the Contractor's risk.In such case,Contractor shall be bound to provide other proposal(s) that may be accepted by the Employer. This shall not constitute a ground for any claim to be raisedbytheContractorforanycostand/ortimewhatsoeverthat may result from any other proposal.\nTheEmployershallnotberesponsibleforanyerror,inaccuracyor omissionof anykind in theEmployer'sRequlrementsandshiall rul be deemed to have given any representation of accuracy or completenessofanydataorinformation,exceptforthedefinitionof intended purposes of the Works or any parts thereof.Any data or information received by the Contractor,from the Employer, shall not relieve theContractorfromhisresponsibilityforthedesignand execution of theWorks in accordance with (i) the applicable laws,(i) CodesandStandards&(ii)Normsofpractice.\nnstruction of Parcel 11,Parcel 12Townhomes&Grading Works forParcel11 ContractParticular Conditions Page5of37",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,888 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n## Action:\n\n## GROUP 3:\n\nItems:\n\nFirst Aid\n\nFacilities\n\nSanitation\n\nMaterial Storage\n\nFire Protection\n\nSiteCleanupand TrashRemoval\n\n## Action:\n\nGuard Ralls\n\nExcavationProtection\n\nSafeHand&amp;Power Tools\n\nTemporary ElectricGrounding\n\nMachinery &amp; Mechanical Equipment\n\n- 1) Contractor warned to rectify.\n- 2) If Contractor fails to rectify, Contractor is barred from working in exposed area.\n- 3) In the case of continuousbreach,employees and foreman responsible for exposed area shall be dismissed from Site.\n\n## GROUP 2:\n\n## Action:\n\nItems:\n\nHead Protection\n\nEye Protection\n\nHearing Protection\n\nProtective RespiratoryProtection Garments\n\nFootProtection\n\nBody Protection\n\n- 1) Responsible employeeprevented from continuing workuntil properly attired.\n- 2) When same employee is in breach a second time, he shall be dismissed from the Site.\n- 3) When more than two (2) employees are dismissed per week, then responsible foreman shall be warned.\n\n## Technical Specifications (Divislon I)\n\n- 1) Contractor warned to supply or perform.\n- 2) If Contractor fails to supply or perform, the Contract Administrator shall supply or perform and deduct the cost from the Contractor.\n\n## ENDOFSECTION01520\n\n<!-- image -->\n\nSpeclflcatlonsDlv.01General Requirements Rev.01\n\n<!-- image -->\n\nSafely Sectlon01520 Page Number:12 of 12",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          83.42430623372395,
+          770.9586639404297
+        ],
+        [
+          156.47245279947916,
+          770.9586639404297
+        ],
+        [
+          156.47245279947916,
+          752.7140401204427
+        ],
+        [
+          83.42430623372395,
+          752.7140401204427
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          749.3968353271484
+        ],
+        [
+          131.9847208658854,
+          749.3968353271484
+        ],
+        [
+          131.9847208658854,
+          738.6159210205078
+        ],
+        [
+          108.74212646484375,
+          738.6159210205078
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Action:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          653.6125691731771
+        ],
+        [
+          151.07685343424478,
+          653.6125691731771
+        ],
+        [
+          151.07685343424478,
+          639.9290974934896
+        ],
+        [
+          109.98726399739583,
+          639.9290974934896
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "GROUP 3:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          378.28460693359375
+        ],
+        [
+          150.24675496419272,
+          378.28460693359375
+        ],
+        [
+          150.24675496419272,
+          365.84511311848956
+        ],
+        [
+          93.38541666666667,
+          365.84511311848956
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Items:",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          365.01580810546875
+        ],
+        [
+          144.43610636393228,
+          365.01580810546875
+        ],
+        [
+          144.43610636393228,
+          350.91770426432294
+        ],
+        [
+          108.32708740234375,
+          350.91770426432294
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "First Aid",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.63981119791666,
+          365.43044026692706
+        ],
+        [
+          221.63472493489584,
+          365.43044026692706
+        ],
+        [
+          221.63472493489584,
+          352.57627360026044
+        ],
+        [
+          177.63981119791666,
+          352.57627360026044
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Facilities",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.22477213541666,
+          352.57627360026044
+        ],
+        [
+          224.125,
+          352.57627360026044
+        ],
+        [
+          224.125,
+          338.89280192057294
+        ],
+        [
+          177.22477213541666,
+          338.89280192057294
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Sanitation",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.22477213541666,
+          339.30747477213544
+        ],
+        [
+          230.3506876627604,
+          339.30747477213544
+        ],
+        [
+          230.3506876627604,
+          326.03863525390625
+        ],
+        [
+          177.22477213541666,
+          326.03863525390625
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Material Storage",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.22477213541666,
+          326.03863525390625
+        ],
+        [
+          262.72430419921875,
+          326.03863525390625
+        ],
+        [
+          262.72430419921875,
+          312.35520426432294
+        ],
+        [
+          177.22477213541666,
+          312.35520426432294
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Fire Protection",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.63981119791666,
+          312.76983642578125
+        ],
+        [
+          253.5932820638021,
+          312.76983642578125
+        ],
+        [
+          253.5932820638021,
+          299.50103759765625
+        ],
+        [
+          177.63981119791666,
+          299.50103759765625
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "SiteCleanupand TrashRemoval",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.46990966796875,
+          299.50103759765625
+        ],
+        [
+          350.299072265625,
+          299.50103759765625
+        ],
+        [
+          350.299072265625,
+          287.4761759440104
+        ],
+        [
+          178.46990966796875,
+          287.4761759440104
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Action:",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          287.0615030924479
+        ],
+        [
+          149.83171590169272,
+          287.0615030924479
+        ],
+        [
+          149.83171590169272,
+          272.9633992513021
+        ],
+        [
+          108.74212646484375,
+          272.9633992513021
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Guard Ralls",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.88494873046875,
+          718.7126973470052
+        ],
+        [
+          240.72684733072916,
+          718.7126973470052
+        ],
+        [
+          240.72684733072916,
+          706.273183186849
+        ],
+        [
+          178.88494873046875,
+          706.273183186849
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "ExcavationProtection",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.71504720052084,
+          704.6145833333334
+        ],
+        [
+          290.1173502604167,
+          704.6145833333334
+        ],
+        [
+          290.1173502604167,
+          693.4190165201823
+        ],
+        [
+          179.71504720052084,
+          693.4190165201823
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "SafeHand&Power Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.71504720052084,
+          691.7604166666666
+        ],
+        [
+          310.4546305338542,
+          691.7604166666666
+        ],
+        [
+          310.4546305338542,
+          680.5648498535156
+        ],
+        [
+          179.71504720052084,
+          680.5648498535156
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Temporary ElectricGrounding",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.30000813802084,
+          678.4915974934896
+        ],
+        [
+          331.2069498697917,
+          678.4915974934896
+        ],
+        [
+          331.2069498697917,
+          666.4667358398438
+        ],
+        [
+          179.30000813802084,
+          666.4667358398438
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Machinery & Mechanical Equipment",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.88494873046875,
+          665.6374308268229
+        ],
+        [
+          362.3354085286458,
+          665.6374308268229
+        ],
+        [
+          362.3354085286458,
+          653.1979166666666
+        ],
+        [
+          178.88494873046875,
+          653.1979166666666
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Contractor warned to rectify.",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.30000813802084,
+          640.34375
+        ],
+        [
+          335.35740152994794,
+          640.34375
+        ],
+        [
+          335.35740152994794,
+          627.0749308268229
+        ],
+        [
+          179.30000813802084,
+          627.0749308268229
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "If Contractor fails to rectify, Contractor is barred from working in exposed area.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.88494873046875,
+          626.6602783203125
+        ],
+        [
+          499.3006998697917,
+          626.6602783203125
+        ],
+        [
+          499.3006998697917,
+          600.1226399739584
+        ],
+        [
+          178.88494873046875,
+          600.1226399739584
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "In the case of continuousbreach,employees and foreman responsible for exposed area shall be dismissed from Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.71504720052084,
+          600.1226399739584
+        ],
+        [
+          487.2643636067708,
+          600.1226399739584
+        ],
+        [
+          487.2643636067708,
+          574.414306640625
+        ],
+        [
+          179.71504720052084,
+          574.414306640625
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "GROUP 2:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          561.9747924804688
+        ],
+        [
+          151.07685343424478,
+          561.9747924804688
+        ],
+        [
+          151.07685343424478,
+          548.2913411458333
+        ],
+        [
+          93.38541666666667,
+          548.2913411458333
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Action:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          470.33705647786456
+        ],
+        [
+          150.24675496419272,
+          470.33705647786456
+        ],
+        [
+          150.24675496419272,
+          456.23891194661456
+        ],
+        [
+          109.1571756998698,
+          456.23891194661456
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Items:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          548.7059936523438
+        ],
+        [
+          145.26620483398438,
+          548.7059936523438
+        ],
+        [
+          145.26620483398438,
+          534.6078694661458
+        ],
+        [
+          109.1571756998698,
+          534.6078694661458
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Head Protection",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.05485026041666,
+          548.7059936523438
+        ],
+        [
+          261.4791666666667,
+          548.7059936523438
+        ],
+        [
+          261.4791666666667,
+          535.4371744791667
+        ],
+        [
+          178.05485026041666,
+          535.4371744791667
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Eye Protection",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.30000813802084,
+          534.1932169596355
+        ],
+        [
+          254.42338053385416,
+          534.1932169596355
+        ],
+        [
+          254.42338053385416,
+          521.7537027994792
+        ],
+        [
+          179.30000813802084,
+          521.7537027994792
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Hearing Protection",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.05485026041666,
+          521.7537027994792
+        ],
+        [
+          273.93056233723956,
+          521.7537027994792
+        ],
+        [
+          273.93056233723956,
+          508.48488362630206
+        ],
+        [
+          178.05485026041666,
+          508.48488362630206
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Protective RespiratoryProtection Garments",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.46990966796875,
+          508.0702311197917
+        ],
+        [
+          398.8594970703125,
+          508.0702311197917
+        ],
+        [
+          398.8594970703125,
+          496.0453694661458
+        ],
+        [
+          178.46990966796875,
+          496.0453694661458
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "FootProtection",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.46990966796875,
+          495.216064453125
+        ],
+        [
+          256.9136555989583,
+          495.216064453125
+        ],
+        [
+          256.9136555989583,
+          483.1912027994792
+        ],
+        [
+          178.46990966796875,
+          483.1912027994792
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Body Protection",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.46990966796875,
+          481.94724527994794
+        ],
+        [
+          260.23402913411456,
+          481.94724527994794
+        ],
+        [
+          260.23402913411456,
+          469.50775146484375
+        ],
+        [
+          178.46990966796875,
+          469.50775146484375
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Responsible employeeprevented from continuing workuntil properly attired.",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.13008626302084,
+          455.82427978515625
+        ],
+        [
+          493.4900309244792,
+          455.82427978515625
+        ],
+        [
+          493.4900309244792,
+          431.35988362630206
+        ],
+        [
+          180.13008626302084,
+          431.35988362630206
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "When same employee is in breach a second time, he shall be dismissed from the Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.46990966796875,
+          429.28664143880206
+        ],
+        [
+          501.7909749348958,
+          429.28664143880206
+        ],
+        [
+          501.7909749348958,
+          404.82224527994794
+        ],
+        [
+          178.46990966796875,
+          404.82224527994794
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "When more than two (2) employees are dismissed per week, then responsible foreman shall be warned.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.05485026041666,
+          403.99294026692706
+        ],
+        [
+          497.2254638671875,
+          403.99294026692706
+        ],
+        [
+          497.2254638671875,
+          378.28460693359375
+        ],
+        [
+          178.05485026041666,
+          378.28460693359375
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Technical Specifications (Divislon I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.92291259765625,
+          742.7624257405599
+        ],
+        [
+          502.6210530598958,
+          742.7624257405599
+        ],
+        [
+          502.6210530598958,
+          729.4936116536459
+        ],
+        [
+          339.92291259765625,
+          729.4936116536459
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Contractor warned to supply or perform.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.05485026041666,
+          272.9633992513021
+        ],
+        [
+          393.4638671875,
+          272.9633992513021
+        ],
+        [
+          393.4638671875,
+          260.1092325846354
+        ],
+        [
+          178.05485026041666,
+          260.1092325846354
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "If Contractor fails to supply or perform, the Contract Administrator shall supply or perform and deduct the cost from the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          176.8097127278646,
+          260.52386474609375
+        ],
+        [
+          505.9414469401042,
+          260.52386474609375
+        ],
+        [
+          505.9414469401042,
+          221.96136474609375
+        ],
+        [
+          176.8097127278646,
+          221.96136474609375
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "ENDOFSECTION01520",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.5400390625,
+          194.17978922526038
+        ],
+        [
+          355.6946614583333,
+          194.17978922526038
+        ],
+        [
+          355.6946614583333,
+          182.98423258463538
+        ],
+        [
+          224.5400390625,
+          182.98423258463538
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "SpeclflcatlonsDlv.01General Requirements Rev.01",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          48.22283935546875
+        ],
+        [
+          206.27801513671875,
+          48.22283935546875
+        ],
+        [
+          206.27801513671875,
+          32.88071695963538
+        ],
+        [
+          75.12337748209636,
+          32.88071695963538
+        ]
+      ],
+      "page": 356
+    },
+    {
+      "text": "Safely Sectlon01520 Page Number:12 of 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          420.02685546875,
+          55.68654378255212
+        ],
+        [
+          490.584716796875,
+          55.68654378255212
+        ],
+        [
+          490.584716796875,
+          32.46608479817712
+        ],
+        [
+          420.02685546875,
+          32.46608479817712
+        ]
+      ],
+      "page": 356
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 356,
+      "text": "EMAAR\nMISR\nAction:\nGROUP 3:\nItems:\nFirst Aid\nFacilities\nSanitation\nMaterial Storage\nFire Protection\nSiteCleanupand TrashRemoval\nAction:\nGuard Ralls\nExcavationProtection\nSafeHand&Power Tools\nTemporary ElectricGrounding\nMachinery & Mechanical Equipment\nContractor warned to rectify.\nIf Contractor fails to rectify, Contractor is barred from working in exposed area.\nIn the case of continuousbreach,employees and foreman responsible for exposed area shall be dismissed from Site.\nGROUP 2:\nAction:\nItems:\nHead Protection\nEye Protection\nHearing Protection\nProtective RespiratoryProtection Garments\nFootProtection\nBody Protection\nResponsible employeeprevented from continuing workuntil properly attired.\nWhen same employee is in breach a second time, he shall be dismissed from the Site.\nWhen more than two (2) employees are dismissed per week, then responsible foreman shall be warned.\nTechnical Specifications (Divislon I)\nContractor warned to supply or perform.\nIf Contractor fails to supply or perform, the Contract Administrator shall supply or perform and deduct the cost from the Contractor.\nENDOFSECTION01520\nSpeclflcatlonsDlv.01General Requirements Rev.01\nSafely Sectlon01520 Page Number:12 of 12",
+      "line_count": 38
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

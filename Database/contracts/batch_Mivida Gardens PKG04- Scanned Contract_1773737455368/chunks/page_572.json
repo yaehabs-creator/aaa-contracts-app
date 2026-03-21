@@ -1,0 +1,152 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\n## Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt\n\n## Construction Package PK#04\n\n## Construction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\nConfidentiality Undertaking\n\nEmuar Atsr FOr Paenloprnant siAs TaxCxnt 21e-297-10, CR12841 PO Hox229, Molug\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\nCaln,Fgmt",
+  "results": [
+    {
+      "text": "Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.5383504231771,
+          645.2628173828125
+        ],
+        [
+          391.5331217447917,
+          645.2628173828125
+        ],
+        [
+          391.5331217447917,
+          504.8436279296875
+        ],
+        [
+          191.5383504231771,
+          504.8436279296875
+        ]
+      ],
+      "page": 572
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.55160522460938,
+          425.08892822265625
+        ],
+        [
+          411.8285725911458,
+          425.08892822265625
+        ],
+        [
+          411.8285725911458,
+          405.99871826171875
+        ],
+        [
+          169.55160522460938,
+          405.99871826171875
+        ]
+      ],
+      "page": 572
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.6382548014323,
+          379.27239990234375
+        ],
+        [
+          491.3191324869792,
+          379.27239990234375
+        ],
+        [
+          491.3191324869792,
+          341.51617431640625
+        ],
+        [
+          89.6382548014323,
+          341.51617431640625
+        ]
+      ],
+      "page": 572
+    },
+    {
+      "text": "Confidentiality Undertaking",
+      "confidence": 0.95,
+      "box": [
+        [
+          176.73958333333334,
+          280.4274698893229
+        ],
+        [
+          402.9493408203125,
+          280.4274698893229
+        ],
+        [
+          402.9493408203125,
+          260.0645548502604
+        ],
+        [
+          176.73958333333334,
+          260.0645548502604
+        ]
+      ],
+      "page": 572
+    },
+    {
+      "text": "Emuar Atsr FOr Paenloprnant siAs TaxCxnt 21e-297-10, CR12841 PO Hox229, Molug",
+      "confidence": 0.95,
+      "box": [
+        [
+          240.16288248697916,
+          137.03871663411462
+        ],
+        [
+          306.96875,
+          137.03871663411462
+        ],
+        [
+          306.96875,
+          96.73712158203125
+        ],
+        [
+          240.16288248697916,
+          96.73712158203125
+        ]
+      ],
+      "page": 572
+    },
+    {
+      "text": "Caln,Fgmt",
+      "confidence": 0.95,
+      "box": [
+        [
+          241.0085245768229,
+          99.28245035807288
+        ],
+        [
+          272.72015380859375,
+          99.28245035807288
+        ],
+        [
+          272.72015380859375,
+          89.52520751953125
+        ],
+        [
+          241.0085245768229,
+          89.52520751953125
+        ]
+      ],
+      "page": 572
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 572,
+      "text": "Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\nConfidentiality Undertaking\nEmuar Atsr FOr Paenloprnant siAs TaxCxnt 21e-297-10, CR12841 PO Hox229, Molug\nCaln,Fgmt",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,727 @@
+{
+  "text": "PART1-GENERAL\n\n## 1.01 JURISDICTIONALAUTHORITIES\n\n1. The Contractor shall be responsible for adherence to all requirements of jurisdictional authorities by his personnel, Subcontractors of any tier and suppliers.\n2. Where reference is made to \"local authorities\", or \"jurisdictional authorities\", or \"authorities s having jurisdiction\", or similar terminology it shall mean all authorities who have within their constituted powers the right to enforce the laws, regulations and codes where the Project is being built.\n3. Requirements of jurisdictional authorities shall apply to Works in precedence to the requirements of the Contract, except that more stringent requirements of the Contract shall take precedence over requirements of jurisdictional authorities.\n4. Jurisdictional authorities governing the Work shall include, but shall not be restricted to:\n- ii. City Council\n- i. Municipality\n7. i1i. Gas Company\n- V. TownPlanningDepartment\n- iv. Engineering Syndicate\n- vi. SewageDepartment\n- vili. Civil DefenceDepartment\n- vii. WaterDepartment\n- ix. TrafficDepartment\n- X. ElectricityDepartment\n- xi. Civil AviationDepartment\n- xili. MinistryofDefense\n- xii. National Telephone Company\n- xiv. Environmental Planning Department\n- XV. Building Department\n20. xvii.TheHigh Committee of AntiquesDepartment\n- xvi. Cultural Heritage Department\n5. Unless otherwise indicated in the Contract Documents, obtain and pay for all permits, licenses and certificates of inspection required by the jurisdictional authorities.\n\n## 1.02 FIREPREVENTIONANDSAFETY\n\n1. Contractor shall be responsible for providing the basic fire protection to the services and equipment.Enforce fireprotection methods,good housekeeping. and adherence to local and underwriter'sfireregulations.\n2. Maintain clear emergency exit paths for personnel at all times. ContracbrE 年 for each area, which shall be maintained and updated throughout the duration of the Contract.\n3. Use only fire resistant tarpaulins and similar protective coverings.\n4. Prohibit smoking on Site aall imes.\n\n<!-- image -->\n\n## SECTION01060\n\n## REGULATORYREQUIREMENTS",
+  "results": [
+    {
+      "text": "PART1-GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          677.6622924804688
+        ],
+        [
+          181.3752237955729,
+          677.6622924804688
+        ],
+        [
+          181.3752237955729,
+          666.8813781738281
+        ],
+        [
+          76.78356424967448,
+          666.8813781738281
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "1.01 JURISDICTIONALAUTHORITIES",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          654.8565165201823
+        ],
+        [
+          280.98634847005206,
+          654.8565165201823
+        ],
+        [
+          280.98634847005206,
+          643.2462972005209
+        ],
+        [
+          77.1986083984375,
+          643.2462972005209
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "The Contractor shall be responsible for adherence to all requirements of jurisdictional authorities by his personnel, Subcontractors of any tier and suppliers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          638.6851399739584
+        ],
+        [
+          505.9414469401042,
+          638.6851399739584
+        ],
+        [
+          505.9414469401042,
+          601.3665974934896
+        ],
+        [
+          92.14027913411458,
+          601.3665974934896
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Where reference is made to \"local authorities\", or \"jurisdictional authorities\", or \"authorities s having jurisdiction\", or similar terminology it shall mean all authorities who have within their constituted powers the right to enforce the laws, regulations and codes where the Project is being built.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          598.0493977864584
+        ],
+        [
+          505.111328125,
+          598.0493977864584
+        ],
+        [
+          505.111328125,
+          550.3645833333333
+        ],
+        [
+          92.55532836914062,
+          550.3645833333333
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Requirements of jurisdictional authorities shall apply to Works in precedence to the requirements of the Contract, except that more stringent requirements of the Contract shall take precedence over requirements of jurisdictional authorities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          547.047383626302
+        ],
+        [
+          505.111328125,
+          547.047383626302
+        ],
+        [
+          505.111328125,
+          499.7772216796875
+        ],
+        [
+          92.14027913411458,
+          499.7772216796875
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Jurisdictional authorities governing the Work shall include, but shall not be restricted to:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          496.0453694661458
+        ],
+        [
+          504.6962890625,
+          496.0453694661458
+        ],
+        [
+          504.6962890625,
+          470.75168863932294
+        ],
+        [
+          92.14027913411458,
+          470.75168863932294
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "City Council",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          459.97076416015625
+        ],
+        [
+          196.31689453125,
+          459.97076416015625
+        ],
+        [
+          196.31689453125,
+          448.77520751953125
+        ],
+        [
+          117.87314860026042,
+          448.77520751953125
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Municipality",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          472.41029866536456
+        ],
+        [
+          195.0717569986979,
+          472.41029866536456
+        ],
+        [
+          195.0717569986979,
+          458.72682698567706
+        ],
+        [
+          118.28819783528645,
+          458.72682698567706
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "i1i. Gas Company",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.2129618326823,
+          449.18983968098956
+        ],
+        [
+          208.7682902018229,
+          449.18983968098956
+        ],
+        [
+          208.7682902018229,
+          436.75034586588544
+        ],
+        [
+          116.2129618326823,
+          436.75034586588544
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "TownPlanningDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          425.96942138671875
+        ],
+        [
+          272.27036539713544,
+          425.96942138671875
+        ],
+        [
+          272.27036539713544,
+          414.35923258463544
+        ],
+        [
+          117.45809936523438,
+          414.35923258463544
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Engineering Syndicate",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.79791259765625,
+          437.57965087890625
+        ],
+        [
+          248.19769287109375,
+          437.57965087890625
+        ],
+        [
+          248.19769287109375,
+          423.89617919921875
+        ],
+        [
+          115.79791259765625,
+          423.89617919921875
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "SewageDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.79791259765625,
+          413.94455973307294
+        ],
+        [
+          239.0666707356771,
+          413.94455973307294
+        ],
+        [
+          239.0666707356771,
+          402.74900309244794
+        ],
+        [
+          115.79791259765625,
+          402.74900309244794
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Civil DefenceDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          391.96807861328125
+        ],
+        [
+          263.5544026692708,
+          391.96807861328125
+        ],
+        [
+          263.5544026692708,
+          380.35788981119794
+        ],
+        [
+          112.47754923502605,
+          380.35788981119794
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "WaterDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          403.16363525390625
+        ],
+        [
+          227.86041259765625,
+          403.16363525390625
+        ],
+        [
+          227.86041259765625,
+          391.55344645182294
+        ],
+        [
+          113.30763753255208,
+          391.55344645182294
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "TrafficDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.79791259765625,
+          380.35788981119794
+        ],
+        [
+          229.10555013020834,
+          380.35788981119794
+        ],
+        [
+          229.10555013020834,
+          369.57696533203125
+        ],
+        [
+          115.79791259765625,
+          369.57696533203125
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "ElectricityDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.04305013020833,
+          368.74766031901044
+        ],
+        [
+          246.1224568684896,
+          368.74766031901044
+        ],
+        [
+          246.1224568684896,
+          357.55210367838544
+        ],
+        [
+          117.04305013020833,
+          357.55210367838544
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Civil AviationDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          357.13743082682294
+        ],
+        [
+          261.8942057291667,
+          357.13743082682294
+        ],
+        [
+          261.8942057291667,
+          346.35654703776044
+        ],
+        [
+          114.9678243001302,
+          346.35654703776044
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "MinistryofDefense",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          334.74631754557294
+        ],
+        [
+          232.0108846028646,
+          334.74631754557294
+        ],
+        [
+          232.0108846028646,
+          323.55076090494794
+        ],
+        [
+          111.23241170247395,
+          323.55076090494794
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "National Telephone Company",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          347.60048421223956
+        ],
+        [
+          284.30670166015625,
+          347.60048421223956
+        ],
+        [
+          284.30670166015625,
+          333.50238037109375
+        ],
+        [
+          113.30763753255208,
+          333.50238037109375
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Environmental Planning Department",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          323.55076090494794
+        ],
+        [
+          316.26527913411456,
+          323.55076090494794
+        ],
+        [
+          316.26527913411456,
+          311.52589925130206
+        ],
+        [
+          109.57222493489583,
+          311.52589925130206
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Building Department",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          311.52589925130206
+        ],
+        [
+          238.651611328125,
+          311.52589925130206
+        ],
+        [
+          238.651611328125,
+          300.3303426106771
+        ],
+        [
+          111.23241170247395,
+          300.3303426106771
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "xvii.TheHigh Committee of AntiquesDepartment",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.25185139973958,
+          289.1347452799479
+        ],
+        [
+          359.8451334635417,
+          289.1347452799479
+        ],
+        [
+          359.8451334635417,
+          277.1098836263021
+        ],
+        [
+          106.25185139973958,
+          277.1098836263021
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Cultural Heritage Department",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          301.15960693359375
+        ],
+        [
+          282.2314860026042,
+          301.15960693359375
+        ],
+        [
+          282.2314860026042,
+          288.7201131184896
+        ],
+        [
+          109.1571756998698,
+          288.7201131184896
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Unless otherwise indicated in the Contract Documents, obtain and pay for all permits, licenses and certificates of inspection required by the jurisdictional authorities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          267.9875691731771
+        ],
+        [
+          504.28125,
+          267.9875691731771
+        ],
+        [
+          504.28125,
+          231.49835205078125
+        ],
+        [
+          91.72522989908855,
+          231.49835205078125
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "1.02 FIREPREVENTIONANDSAFETY",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          221.54673258463538
+        ],
+        [
+          284.30670166015625,
+          221.54673258463538
+        ],
+        [
+          284.30670166015625,
+          210.76580810546875
+        ],
+        [
+          75.12337748209636,
+          210.76580810546875
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Contractor shall be responsible for providing the basic fire protection to the services and equipment.Enforce fireprotection methods,good housekeeping. and adherence to local and underwriter'sfireregulations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          204.54604085286462
+        ],
+        [
+          504.6962890625,
+          204.54604085286462
+        ],
+        [
+          504.6962890625,
+          156.86122639973962
+        ],
+        [
+          92.55532836914062,
+          156.86122639973962
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Maintain clear emergency exit paths for personnel at all times. ContracbrE 年 for each area, which shall be maintained and updated throughout the duration of the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          153.95867919921875
+        ],
+        [
+          527.5238444010416,
+          153.95867919921875
+        ],
+        [
+          527.5238444010416,
+          107.10321044921875
+        ],
+        [
+          90.8951416015625,
+          107.10321044921875
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Use only fire resistant tarpaulins and similar protective coverings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          102.95664469401038
+        ],
+        [
+          437.8738606770833,
+          102.95664469401038
+        ],
+        [
+          437.8738606770833,
+          88.85858154296875
+        ],
+        [
+          90.48009236653645,
+          88.85858154296875
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "Prohibit smoking on Site aall imes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          87.61460367838538
+        ],
+        [
+          295.51295979817706,
+          87.61460367838538
+        ],
+        [
+          295.51295979817706,
+          70.61395263671875
+        ],
+        [
+          90.06504313151042,
+          70.61395263671875
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "SECTION01060",
+      "confidence": 0.95,
+      "box": [
+        [
+          248.61273193359375,
+          722.8592020670573
+        ],
+        [
+          332.86712646484375,
+          722.8592020670573
+        ],
+        [
+          332.86712646484375,
+          711.6636352539062
+        ],
+        [
+          248.61273193359375,
+          711.6636352539062
+        ]
+      ],
+      "page": 270
+    },
+    {
+      "text": "REGULATORYREQUIREMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          204.2027791341146,
+          700.4680786132812
+        ],
+        [
+          376.4469807942708,
+          700.4680786132812
+        ],
+        [
+          376.4469807942708,
+          688.8578592936198
+        ],
+        [
+          204.2027791341146,
+          688.8578592936198
+        ]
+      ],
+      "page": 270
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 270,
+      "text": "PART1-GENERAL\n1.01 JURISDICTIONALAUTHORITIES\nThe Contractor shall be responsible for adherence to all requirements of jurisdictional authorities by his personnel, Subcontractors of any tier and suppliers.\nWhere reference is made to \"local authorities\", or \"jurisdictional authorities\", or \"authorities s having jurisdiction\", or similar terminology it shall mean all authorities who have within their constituted powers the right to enforce the laws, regulations and codes where the Project is being built.\nRequirements of jurisdictional authorities shall apply to Works in precedence to the requirements of the Contract, except that more stringent requirements of the Contract shall take precedence over requirements of jurisdictional authorities.\nJurisdictional authorities governing the Work shall include, but shall not be restricted to:\nCity Council\nMunicipality\ni1i. Gas Company\nTownPlanningDepartment\nEngineering Syndicate\nSewageDepartment\nCivil DefenceDepartment\nWaterDepartment\nTrafficDepartment\nElectricityDepartment\nCivil AviationDepartment\nMinistryofDefense\nNational Telephone Company\nEnvironmental Planning Department\nBuilding Department\nxvii.TheHigh Committee of AntiquesDepartment\nCultural Heritage Department\nUnless otherwise indicated in the Contract Documents, obtain and pay for all permits, licenses and certificates of inspection required by the jurisdictional authorities.\n1.02 FIREPREVENTIONANDSAFETY\nContractor shall be responsible for providing the basic fire protection to the services and equipment.Enforce fireprotection methods,good housekeeping. and adherence to local and underwriter'sfireregulations.\nMaintain clear emergency exit paths for personnel at all times. ContracbrE 年 for each area, which shall be maintained and updated throughout the duration of the Contract.\nUse only fire resistant tarpaulins and similar protective coverings.\nProhibit smoking on Site aall imes.\nSECTION01060\nREGULATORYREQUIREMENTS",
+      "line_count": 31
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

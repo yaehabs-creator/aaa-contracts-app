@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n- 1.S Submit proposed Contract Programme in the format and within the time stipulated intheContract.\n- 2.Resubmit Contract Programme to incorporate revisions that Contract Administrator may consider desirable and reasonable.\n3. As construction progresses, submit paper and electroric copies of up-dated Contract Programmes each month to Contract Administrator.Up-dated programmes shall include further revisions that Contract Administrator may considerdesirableandreasonable.\n\n## 1.07 COORDINATIONANDCOMPOSITESHOPDRAWINCS\n\n1. The Contractor shallcoordinate  the shop drawings prepared by a Subcontractorwiththerequirementsof other Subcontractors before shop drawingsaresubmittedforreview /toensuretheproperandcomplete installationof allpartsoftheWorks.\n2. 2 Prepare coordinated interference and equipment placing drawings to ensure that all components will be properly accommodatedwithin the spaces provided.\n3. 3.F Frepare drawings to indicate coordination and methods of installation of a system with other systems where their relationship is critical. Ensure that all details of equipment, apparatus, and connections are coordinated.\n- A. E:nsure that clearance required by jurisdictional authorities and for proper maintenance are indicated on drawings.\n5. In addition to specified shop drawings, Contractor shall be responsible to prepare composite shop drawings showing coordination of the architectural, structural, mechanical and electrical work to ensure its proper, integrated and complete installation.Contractor shall prepare composite shop drawings to show dimensions, architectural and structural details, ductwork, piping, conduit, equipment, fixtures and other installations to ensure adequateclearances for atlessthan1:100scale. SubcontractorshallassistContractorinthe development of composite drawings, providing the necessary information in a format suitable for direct incorporation into Contractor's drawings.\n6. 6.Formally review composite shop drawings with subcontractors affected by the drawingsatameetingarrangedbytheContractor.EachSubcontractorshall indicate the extent of his work on the composite shop drawing and shall indicate his approval by signing the reproducible of the drawing.Contractor shall distribute approved composite shop drawings to Contract Administrator andSupervisionConsultantandtoeachconcernedSubcontractorfortheir information. Refer any unresolved conflict to Contract Administrator for resolution. Contract Administrator's decision shall be final and binding.\n7. 7.S Submit coordination and composite chop drawings to Supervision Consultant forreviewonlyincaseswhereconflictsaffecttheintentof theContract. coordination and composite shop drawings.\n8. Submit shop drawings for each Section following distribution of composite shop drawings.\n9. Distribute coordination and composite shop drawings well in advance of fabrication and installation of work affected.Place no orders for affected equipment without submission of coordination drawings to the supplier.\n\n## 1.08 3SHOPDRAWINGS\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          748.5675354003906
+        ],
+        [
+          131.9847208658854,
+          748.5675354003906
+        ],
+        [
+          131.9847208658854,
+          738.2012736002604
+        ],
+        [
+          108.74212646484375,
+          738.2012736002604
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "1.S Submit proposed Contract Programme in the format and within the time stipulated intheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          719.1273498535156
+        ],
+        [
+          505.111328125,
+          719.1273498535156
+        ],
+        [
+          505.111328125,
+          695.9069213867188
+        ],
+        [
+          95.87569173177083,
+          695.9069213867188
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "2.Resubmit Contract Programme to incorporate revisions that Contract Administrator may consider desirable and reasonable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          690.9311116536459
+        ],
+        [
+          505.9414469401042,
+          690.9311116536459
+        ],
+        [
+          505.9414469401042,
+          666.8813781738281
+        ],
+        [
+          93.8004659016927,
+          666.8813781738281
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "As construction progresses, submit paper and electroric copies of up-dated Contract Programmes each month to Contract Administrator.Up-dated programmes shall include further revisions that Contract Administrator may considerdesirableandreasonable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          663.1495259602865
+        ],
+        [
+          505.5263671875,
+          663.1495259602865
+        ],
+        [
+          505.5263671875,
+          616.2940266927084
+        ],
+        [
+          92.55532836914062,
+          616.2940266927084
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "1.07 COORDINATIONANDCOMPOSITESHOPDRAWINCS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          604.6837972005209
+        ],
+        [
+          397.1993001302083,
+          604.6837972005209
+        ],
+        [
+          397.1993001302083,
+          593.9028930664062
+        ],
+        [
+          77.1986083984375,
+          593.9028930664062
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "The Contractor shallcoordinate  the shop drawings prepared by a Subcontractorwiththerequirementsof other Subcontractors before shop drawingsaresubmittedforreview /toensuretheproperandcomplete installationof allpartsoftheWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          588.9270833333334
+        ],
+        [
+          505.5263671875,
+          588.9270833333334
+        ],
+        [
+          505.5263671875,
+          542.0715738932292
+        ],
+        [
+          95.46065266927083,
+          542.0715738932292
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "2 Prepare coordinated interference and equipment placing drawings to ensure that all components will be properly accommodatedwithin the spaces provided.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          536.2664591471355
+        ],
+        [
+          505.111328125,
+          536.2664591471355
+        ],
+        [
+          505.111328125,
+          513.0460408528645
+        ],
+        [
+          95.46065266927083,
+          513.0460408528645
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "3.F Frepare drawings to indicate coordination and methods of installation of a system with other systems where their relationship is critical. Ensure that all details of equipment, apparatus, and connections are coordinated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          508.0702311197917
+        ],
+        [
+          505.5263671875,
+          508.0702311197917
+        ],
+        [
+          505.5263671875,
+          471.99562581380206
+        ],
+        [
+          94.63055419921875,
+          471.99562581380206
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "E:nsure that clearance required by jurisdictional authorities and for proper maintenance are indicated on drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          469.09307861328125
+        ],
+        [
+          504.6962890625,
+          469.09307861328125
+        ],
+        [
+          504.6962890625,
+          443.79941813151044
+        ],
+        [
+          94.63055419921875,
+          443.79941813151044
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "In addition to specified shop drawings, Contractor shall be responsible to prepare composite shop drawings showing coordination of the architectural, structural, mechanical and electrical work to ensure its proper, integrated and complete installation.Contractor shall prepare composite shop drawings to show dimensions, architectural and structural details, ductwork, piping, conduit, equipment, fixtures and other installations to ensure adequateclearances for atlessthan1:100scale. SubcontractorshallassistContractorinthe development of composite drawings, providing the necessary information in a format suitable for direct incorporation into Contractor's drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          440.48219807942706
+        ],
+        [
+          505.111328125,
+          440.48219807942706
+        ],
+        [
+          505.111328125,
+          313.18450927734375
+        ],
+        [
+          92.55532836914062,
+          313.18450927734375
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "6.Formally review composite shop drawings with subcontractors affected by the drawingsatameetingarrangedbytheContractor.EachSubcontractorshall indicate the extent of his work on the composite shop drawing and shall indicate his approval by signing the reproducible of the drawing.Contractor shall distribute approved composite shop drawings to Contract Administrator andSupervisionConsultantandtoeachconcernedSubcontractorfortheir information. Refer any unresolved conflict to Contract Administrator for resolution. Contract Administrator's decision shall be final and binding.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          309.0379842122396
+        ],
+        [
+          505.111328125,
+          309.0379842122396
+        ],
+        [
+          505.111328125,
+          216.57090250651038
+        ],
+        [
+          92.97036743164062,
+          216.57090250651038
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "7.S Submit coordination and composite chop drawings to Supervision Consultant forreviewonlyincaseswhereconflictsaffecttheintentof theContract. coordination and composite shop drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          212.83905029296875
+        ],
+        [
+          505.111328125,
+          212.83905029296875
+        ],
+        [
+          505.111328125,
+          164.73960367838538
+        ],
+        [
+          93.8004659016927,
+          164.73960367838538
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "Submit shop drawings for each Section following distribution of composite shop drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          161.42238362630212
+        ],
+        [
+          503.8662109375,
+          161.42238362630212
+        ],
+        [
+          503.8662109375,
+          136.12868245442712
+        ],
+        [
+          92.97036743164062,
+          136.12868245442712
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "Distribute coordination and composite shop drawings well in advance of fabrication and installation of work affected.Place no orders for affected equipment without submission of coordination drawings to the supplier.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          133.22617594401038
+        ],
+        [
+          505.9414469401042,
+          133.22617594401038
+        ],
+        [
+          505.9414469401042,
+          97.15155029296875
+        ],
+        [
+          92.97036743164062,
+          97.15155029296875
+        ]
+      ],
+      "page": 290
+    },
+    {
+      "text": "1.08 3SHOPDRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          87.19997151692712
+        ],
+        [
+          207.10809326171875,
+          87.19997151692712
+        ],
+        [
+          207.10809326171875,
+          76.41904703776038
+        ],
+        [
+          75.95347086588542,
+          76.41904703776038
+        ]
+      ],
+      "page": 290
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 290,
+      "text": "MISR\n1.S Submit proposed Contract Programme in the format and within the time stipulated intheContract.\n2.Resubmit Contract Programme to incorporate revisions that Contract Administrator may consider desirable and reasonable.\nAs construction progresses, submit paper and electroric copies of up-dated Contract Programmes each month to Contract Administrator.Up-dated programmes shall include further revisions that Contract Administrator may considerdesirableandreasonable.\n1.07 COORDINATIONANDCOMPOSITESHOPDRAWINCS\nThe Contractor shallcoordinate  the shop drawings prepared by a Subcontractorwiththerequirementsof other Subcontractors before shop drawingsaresubmittedforreview /toensuretheproperandcomplete installationof allpartsoftheWorks.\n2 Prepare coordinated interference and equipment placing drawings to ensure that all components will be properly accommodatedwithin the spaces provided.\n3.F Frepare drawings to indicate coordination and methods of installation of a system with other systems where their relationship is critical. Ensure that all details of equipment, apparatus, and connections are coordinated.\nE:nsure that clearance required by jurisdictional authorities and for proper maintenance are indicated on drawings.\nIn addition to specified shop drawings, Contractor shall be responsible to prepare composite shop drawings showing coordination of the architectural, structural, mechanical and electrical work to ensure its proper, integrated and complete installation.Contractor shall prepare composite shop drawings to show dimensions, architectural and structural details, ductwork, piping, conduit, equipment, fixtures and other installations to ensure adequateclearances for atlessthan1:100scale. SubcontractorshallassistContractorinthe development of composite drawings, providing the necessary information in a format suitable for direct incorporation into Contractor's drawings.\n6.Formally review composite shop drawings with subcontractors affected by the drawingsatameetingarrangedbytheContractor.EachSubcontractorshall indicate the extent of his work on the composite shop drawing and shall indicate his approval by signing the reproducible of the drawing.Contractor shall distribute approved composite shop drawings to Contract Administrator andSupervisionConsultantandtoeachconcernedSubcontractorfortheir information. Refer any unresolved conflict to Contract Administrator for resolution. Contract Administrator's decision shall be final and binding.\n7.S Submit coordination and composite chop drawings to Supervision Consultant forreviewonlyincaseswhereconflictsaffecttheintentof theContract. coordination and composite shop drawings.\nSubmit shop drawings for each Section following distribution of composite shop drawings.\nDistribute coordination and composite shop drawings well in advance of fabrication and installation of work affected.Place no orders for affected equipment without submission of coordination drawings to the supplier.\n1.08 3SHOPDRAWINGS",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

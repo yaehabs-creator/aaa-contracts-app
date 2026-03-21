@@ -1,0 +1,267 @@
+{
+  "text": "- (c) insuchaformastobecapableofenforcementbytheContractoror anyassigneeoftheContractor.\n\nIn this event,immediately afterexpiry of the relevant Defects Liability Period andasaconditionprecedenttotheissueof theFinalCertificateunder Clause26.4(Issueof Fina!Certificates) inrespectof therelevantSection or Portionof theWorks,theContractorshallassigntotheEmployer absolutely thefullbenefitof theremainingperiodofsuchExtendedWarrantyand the ContractorshallatalltimesthereafteruponrequestoftheProjectManager benecessaryforvestingintheEmployerabsolutelyorforenforcingfor the Employer's benefit the aforesaid Extended Warranty.EachExtended Warranty shall be duly notarised prior to its delivery.\n\n## 26.INTERIMANDFINALCERTIFICATES\n\nApplication for Interim Certificates\n\n- 26.1 (a) After theCommencementDate,theContractorshall submitto the ProjectManagerintriplicate insuchform andwithsuchdetail asthe Prujocl Manager shall require anInterlm Certlflcate appllcatlon signed by theContractor'sRepresentativetoranInterimCertificate for theAdvancePayment.\n- (b) AftertheendofeachcalendarmonththeContractorshallsubmitto theProjectManagerintriplicateinsuchformandwithsuchdetailas theProjectManagershallrequireanInterimCertificateapplication signed by the Contractor's Representative foran Interim Certificate stating:-\n- (i) theestimatedContractvalueoftheWorkscarriedoutonSite uptotheendof thatmonth;\n- (ii) ninety per cent (90%) of the estimated net direct cost deliveredtoSiteofallPlantonSiteattheendofthatmonth intendedexclusivelyforincorporationintheWorksbutnot yet so incorporated; less however any such Plant which:\n- (1) hasbeendeliveredtoSiteinbreachofparagraph(b) of Clause 11.9(Delivery toSite)unless suchbreach hasbythattimebeenwaived bytheProjectManager in writing; or\n- (2) itwasnotreasonabletodelivertoSitebythattime having regard to the requirements of the Programme; or\n- (3) has notbythat timebeenplaced inappropriate storagcandproperlyprotected tothesatisfactionof theProjectManagerand theSupervisionConsultant;\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(c) insuchaformastobecapableofenforcementbytheContractoror anyassigneeoftheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          725.4417521158854
+        ],
+        [
+          487.9365234375,
+          725.4417521158854
+        ],
+        [
+          487.9365234375,
+          701.6850280761719
+        ],
+        [
+          157.71259562174478,
+          701.6850280761719
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "In this event,immediately afterexpiry of the relevant Defects Liability Period andasaconditionprecedenttotheissueof theFinalCertificateunder Clause26.4(Issueof Fina!Certificates) inrespectof therelevantSection or Portionof theWorks,theContractorshallassigntotheEmployer absolutely thefullbenefitof theremainingperiodofsuchExtendedWarrantyand the ContractorshallatalltimesthereafteruponrequestoftheProjectManager benecessaryforvestingintheEmployerabsolutelyorforenforcingfor the Employer's benefit the aforesaid Extended Warranty.EachExtended Warranty shall be duly notarised prior to its delivery.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          691.9278055826823
+        ],
+        [
+          487.9365234375,
+          691.9278055826823
+        ],
+        [
+          487.9365234375,
+          575.6895548502605
+        ],
+        [
+          156.44412231445312,
+          575.6895548502605
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "26.INTERIMANDFINALCERTIFICATES",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          566.3565673828125
+        ],
+        [
+          292.59279378255206,
+          566.3565673828125
+        ],
+        [
+          292.59279378255206,
+          554.9024251302083
+        ],
+        [
+          94.28929646809895,
+          554.9024251302083
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "Application for Interim Certificates",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          544.7209879557292
+        ],
+        [
+          246.50520833333334,
+          544.7209879557292
+        ],
+        [
+          246.50520833333334,
+          531.5699462890625
+        ],
+        [
+          94.71211751302083,
+          531.5699462890625
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "26.1 (a) After theCommencementDate,theContractorshall submitto the ProjectManagerintriplicate insuchform andwithsuchdetail asthe Prujocl Manager shall require anInterlm Certlflcate appllcatlon signed by theContractor'sRepresentativetoranInterimCertificate for theAdvancePayment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          520.9642537434895
+        ],
+        [
+          486.6680908203125,
+          520.9642537434895
+        ],
+        [
+          486.6680908203125,
+          462.84515380859375
+        ],
+        [
+          124.73248291015625,
+          462.84515380859375
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "(b) AftertheendofeachcalendarmonththeContractorshallsubmitto theProjectManagerintriplicateinsuchformandwithsuchdetailas theProjectManagershallrequireanInterimCertificateapplication signed by the Contractor's Representative foran Interim Certificate stating:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          452.66367594401044
+        ],
+        [
+          486.2452392578125,
+          452.66367594401044
+        ],
+        [
+          486.2452392578125,
+          394.54457600911456
+        ],
+        [
+          156.02130126953125,
+          394.54457600911456
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "(i) theestimatedContractvalueoftheWorkscarriedoutonSite uptotheendof thatmonth;",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.4644775390625,
+          384.36309814453125
+        ],
+        [
+          485.3996175130208,
+          384.36309814453125
+        ],
+        [
+          485.3996175130208,
+          361.03061930338544
+        ],
+        [
+          186.4644775390625,
+          361.03061930338544
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "(ii) ninety per cent (90%) of the estimated net direct cost deliveredtoSiteofallPlantonSiteattheendofthatmonth intendedexclusivelyforincorporationintheWorksbutnot yet so incorporated; less however any such Plant which:",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.04166666666666,
+          350.84918212890625
+        ],
+        [
+          487.0909016927083,
+          350.84918212890625
+        ],
+        [
+          487.0909016927083,
+          303.75994873046875
+        ],
+        [
+          186.04166666666666,
+          303.75994873046875
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "hasbeendeliveredtoSiteinbreachofparagraph(b) of Clause 11.9(Delivery toSite)unless suchbreach hasbythattimebeenwaived bytheProjectManager in writing; or",
+      "confidence": 0.95,
+      "box": [
+        [
+          218.1761271158854,
+          294.00274658203125
+        ],
+        [
+          484.976806640625,
+          294.00274658203125
+        ],
+        [
+          484.976806640625,
+          247.33774820963538
+        ],
+        [
+          218.1761271158854,
+          247.33774820963538
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "itwasnotreasonabletodelivertoSitebythattime having regard to the requirements of the Programme; or",
+      "confidence": 0.95,
+      "box": [
+        [
+          216.90767415364584,
+          236.73207600911462
+        ],
+        [
+          485.3996175130208,
+          236.73207600911462
+        ],
+        [
+          485.3996175130208,
+          202.79388427734375
+        ],
+        [
+          216.90767415364584,
+          202.79388427734375
+        ]
+      ],
+      "page": 95
+    },
+    {
+      "text": "has notbythat timebeenplaced inappropriate storagcandproperlyprotected tothesatisfactionof theProjectManagerand theSupervisionConsultant;",
+      "confidence": 0.95,
+      "box": [
+        [
+          216.90767415364584,
+          191.33974202473962
+        ],
+        [
+          485.8224283854167,
+          191.33974202473962
+        ],
+        [
+          485.8224283854167,
+          156.12888590494788
+        ],
+        [
+          216.90767415364584,
+          156.12888590494788
+        ]
+      ],
+      "page": 95
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 95,
+      "text": "(c) insuchaformastobecapableofenforcementbytheContractoror anyassigneeoftheContractor.\nIn this event,immediately afterexpiry of the relevant Defects Liability Period andasaconditionprecedenttotheissueof theFinalCertificateunder Clause26.4(Issueof Fina!Certificates) inrespectof therelevantSection or Portionof theWorks,theContractorshallassigntotheEmployer absolutely thefullbenefitof theremainingperiodofsuchExtendedWarrantyand the ContractorshallatalltimesthereafteruponrequestoftheProjectManager benecessaryforvestingintheEmployerabsolutelyorforenforcingfor the Employer's benefit the aforesaid Extended Warranty.EachExtended Warranty shall be duly notarised prior to its delivery.\n26.INTERIMANDFINALCERTIFICATES\nApplication for Interim Certificates\n26.1 (a) After theCommencementDate,theContractorshall submitto the ProjectManagerintriplicate insuchform andwithsuchdetail asthe Prujocl Manager shall require anInterlm Certlflcate appllcatlon signed by theContractor'sRepresentativetoranInterimCertificate for theAdvancePayment.\n(b) AftertheendofeachcalendarmonththeContractorshallsubmitto theProjectManagerintriplicateinsuchformandwithsuchdetailas theProjectManagershallrequireanInterimCertificateapplication signed by the Contractor's Representative foran Interim Certificate stating:-\n(i) theestimatedContractvalueoftheWorkscarriedoutonSite uptotheendof thatmonth;\n(ii) ninety per cent (90%) of the estimated net direct cost deliveredtoSiteofallPlantonSiteattheendofthatmonth intendedexclusivelyforincorporationintheWorksbutnot yet so incorporated; less however any such Plant which:\nhasbeendeliveredtoSiteinbreachofparagraph(b) of Clause 11.9(Delivery toSite)unless suchbreach hasbythattimebeenwaived bytheProjectManager in writing; or\nitwasnotreasonabletodelivertoSitebythattime having regard to the requirements of the Programme; or\nhas notbythat timebeenplaced inappropriate storagcandproperlyprotected tothesatisfactionof theProjectManagerand theSupervisionConsultant;",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

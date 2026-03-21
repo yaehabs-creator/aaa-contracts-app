@@ -1,0 +1,267 @@
+{
+  "text": "## QualityAssurance\n\n- 6.8 TheContractorshallimplementaqualityassurancesystemtodemonstrate compliancewith therequirementsof the Contract.The systemshall bein accordancewith thedetails(ifany)stated in theContract.TheProject Manager and the Supervision Consultant shall be entitled to audit any aspectofthe system.Detailsofallprocedures andcompliancedocuments shallbesubmittedtotheProjectManagerforinformationbeforeeach designandexecutionstageiscommenced.Whenanydocumentofa technicalnature isissuedto theProjectManager,evidenceof theprior approvalbytheContractorshallbeapparentonsuchdocument. Compliance with the quality assurance system shall not release the Contractorfrom any of itsobligations or liabilities under the Contract.\n\n## FutureEventsorCircumstances\n\n- 6.9 AssoonastheContractorbecomes awareofsucheventsorcircumstances, theContractorshall givewrittennoticetotheProject Manager,withacopy totheEmployer,ofspecificprobablefutureeventsorcircumstanceswhich mayadversely affecttheWorks,involve anextrapayment totheContractor by the Employer or delay completion.The Contractor shall within the period requiredbytheProjectManagerprovidedetailsofitsestimateofthe anticipatedeffectofthefutureeventorcircumstanceifrequestedbythe Project Manager.\n\n## 6A. FREEISSUE ITEMS\n\n## Definition\n\n- 6A.1 The expression\"Free Issue Items\"shall mean those items(if any)to be provided by theEmployerforincorporation intheWorksby theContractor undertheContract.\n\n## CollectionandTakingDelivery\n\n- 6A.2 (a) TheEmployershallmaketheFreelssueItemsavailablefor collectionbytheContractororshalldeliver(orshallarrangefor otherstodeliver)theFreeIssueItemstotheContractorasdescribed in the Specification.\n- (b) TheContractorshail collectortakedeliveryof(asapplicable) the FreeIssueltemsfrom theEmployeratthepointsofcollectionor deliverydescribedintheSpecification.\n- (c) TheContractorshallinspectFreeIssueItemsatthesaidpointsprior to collection or immediately upon taking delivery as applicable and ofany shortage,defect or damage.Suchnotification shall be After thereceiptofanysuchnotification,theProjectManagermay arrangefor theEmployerhimselftotakeallnecessarystepsto rectify the said shortage,defect ordamage or mayinstruct tho Contractor inwriting to carry out suchrectification as avariation\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "QualityAssurance",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          723.7448425292969
+        ],
+        [
+          178.0080362955729,
+          723.7448425292969
+        ],
+        [
+          178.0080362955729,
+          712.2907104492188
+        ],
+        [
+          96.82623291015625,
+          712.2907104492188
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "6.8 TheContractorshallimplementaqualityassurancesystemtodemonstrate compliancewith therequirementsof the Contract.The systemshall bein accordancewith thedetails(ifany)stated in theContract.TheProject Manager and the Supervision Consultant shall be entitled to audit any aspectofthe system.Detailsofallprocedures andcompliancedocuments shallbesubmittedtotheProjectManagerforinformationbeforeeach designandexecutionstageiscommenced.Whenanydocumentofa technicalnature isissuedto theProjectManager,evidenceof theprior approvalbytheContractorshallbeapparentonsuchdocument. Compliance with the quality assurance system shall not release the Contractorfrom any of itsobligations or liabilities under the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          701.2608032226562
+        ],
+        [
+          487.9365234375,
+          701.2608032226562
+        ],
+        [
+          487.9365234375,
+          577.8107096354167
+        ],
+        [
+          126.42376708984375,
+          577.8107096354167
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "FutureEventsorCircumstances",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          564.65966796875
+        ],
+        [
+          240.585693359375,
+          564.65966796875
+        ],
+        [
+          240.585693359375,
+          554.9024251302083
+        ],
+        [
+          96.82623291015625,
+          554.9024251302083
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "6.9 AssoonastheContractorbecomes awareofsucheventsorcircumstances, theContractorshall givewrittennoticetotheProject Manager,withacopy totheEmployer,ofspecificprobablefutureeventsorcircumstanceswhich mayadversely affecttheWorks,involve anextrapayment totheContractor by the Employer or delay completion.The Contractor shall within the period requiredbytheProjectManagerprovidedetailsofitsestimateofthe anticipatedeffectofthefutureeventorcircumstanceifrequestedbythe Project Manager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          542.1756184895833
+        ],
+        [
+          488.359375,
+          542.1756184895833
+        ],
+        [
+          488.359375,
+          450.54254150390625
+        ],
+        [
+          126.00094604492188,
+          450.54254150390625
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "6A. FREEISSUE ITEMS",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          439.93686930338544
+        ],
+        [
+          221.5587158203125,
+          439.93686930338544
+        ],
+        [
+          221.5587158203125,
+          429.33119710286456
+        ],
+        [
+          96.82623291015625,
+          429.33119710286456
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "Definition",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          417.45281982421875
+        ],
+        [
+          140.37689208984375,
+          417.45281982421875
+        ],
+        [
+          140.37689208984375,
+          405.99871826171875
+        ],
+        [
+          96.82623291015625,
+          405.99871826171875
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "6A.1 The expression\"Free Issue Items\"shall mean those items(if any)to be provided by theEmployerforincorporation intheWorksby theContractor undertheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          394.54457600911456
+        ],
+        [
+          488.359375,
+          394.54457600911456
+        ],
+        [
+          488.359375,
+          361.45485432942706
+        ],
+        [
+          128.11505126953125,
+          361.45485432942706
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "CollectionandTakingDelivery",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          349.57647705078125
+        ],
+        [
+          234.66617838541666,
+          349.57647705078125
+        ],
+        [
+          234.66617838541666,
+          337.69814046223956
+        ],
+        [
+          97.24905395507812,
+          337.69814046223956
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "6A.2 (a) TheEmployershallmaketheFreelssueItemsavailablefor collectionbytheContractororshalldeliver(orshallarrangefor otherstodeliver)theFreeIssueItemstotheContractorasdescribed in the Specification.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          327.51666259765625
+        ],
+        [
+          489.2049967447917,
+          327.51666259765625
+        ],
+        [
+          489.2049967447917,
+          281.70013427734375
+        ],
+        [
+          127.2694091796875,
+          281.70013427734375
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "(b) TheContractorshail collectortakedeliveryof(asapplicable) the FreeIssueltemsfrom theEmployeratthepointsofcollectionor deliverydescribedintheSpecification.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          270.67022705078125
+        ],
+        [
+          489.6278483072917,
+          270.67022705078125
+        ],
+        [
+          489.6278483072917,
+          236.73207600911462
+        ],
+        [
+          159.40387980143228,
+          236.73207600911462
+        ]
+      ],
+      "page": 44
+    },
+    {
+      "text": "(c) TheContractorshallinspectFreeIssueItemsatthesaidpointsprior to collection or immediately upon taking delivery as applicable and ofany shortage,defect or damage.Suchnotification shall be After thereceiptofanysuchnotification,theProjectManagermay arrangefor theEmployerhimselftotakeallnecessarystepsto rectify the said shortage,defect ordamage or mayinstruct tho Contractor inwriting to carry out suchrectification as avariation",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          225.27793375651038
+        ],
+        [
+          490.0506591796875,
+          225.27793375651038
+        ],
+        [
+          490.0506591796875,
+          124.31182861328125
+        ],
+        [
+          162.78645833333334,
+          124.31182861328125
+        ]
+      ],
+      "page": 44
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 44,
+      "text": "QualityAssurance\n6.8 TheContractorshallimplementaqualityassurancesystemtodemonstrate compliancewith therequirementsof the Contract.The systemshall bein accordancewith thedetails(ifany)stated in theContract.TheProject Manager and the Supervision Consultant shall be entitled to audit any aspectofthe system.Detailsofallprocedures andcompliancedocuments shallbesubmittedtotheProjectManagerforinformationbeforeeach designandexecutionstageiscommenced.Whenanydocumentofa technicalnature isissuedto theProjectManager,evidenceof theprior approvalbytheContractorshallbeapparentonsuchdocument. Compliance with the quality assurance system shall not release the Contractorfrom any of itsobligations or liabilities under the Contract.\nFutureEventsorCircumstances\n6.9 AssoonastheContractorbecomes awareofsucheventsorcircumstances, theContractorshall givewrittennoticetotheProject Manager,withacopy totheEmployer,ofspecificprobablefutureeventsorcircumstanceswhich mayadversely affecttheWorks,involve anextrapayment totheContractor by the Employer or delay completion.The Contractor shall within the period requiredbytheProjectManagerprovidedetailsofitsestimateofthe anticipatedeffectofthefutureeventorcircumstanceifrequestedbythe Project Manager.\n6A. FREEISSUE ITEMS\nDefinition\n6A.1 The expression\"Free Issue Items\"shall mean those items(if any)to be provided by theEmployerforincorporation intheWorksby theContractor undertheContract.\nCollectionandTakingDelivery\n6A.2 (a) TheEmployershallmaketheFreelssueItemsavailablefor collectionbytheContractororshalldeliver(orshallarrangefor otherstodeliver)theFreeIssueItemstotheContractorasdescribed in the Specification.\n(b) TheContractorshail collectortakedeliveryof(asapplicable) the FreeIssueltemsfrom theEmployeratthepointsofcollectionor deliverydescribedintheSpecification.\n(c) TheContractorshallinspectFreeIssueItemsatthesaidpointsprior to collection or immediately upon taking delivery as applicable and ofany shortage,defect or damage.Suchnotification shall be After thereceiptofanysuchnotification,theProjectManagermay arrangefor theEmployerhimselftotakeallnecessarystepsto rectify the said shortage,defect ordamage or mayinstruct tho Contractor inwriting to carry out suchrectification as avariation",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

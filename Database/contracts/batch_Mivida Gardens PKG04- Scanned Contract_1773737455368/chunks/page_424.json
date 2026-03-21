@@ -1,0 +1,520 @@
+{
+  "text": "## Washing Facilitics\n\n## Storage &amp; changing of clothing\n\n## Rest facilities\n\n## Transportation\n\n## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n- Minimum nunber of wash basins are the same as WCs above;\n- Washing facilities shall be available in both toilet and changing areas\n- Basins shall be large enough for people to wash their face, hands and forearms\n- Supply of hot and cold or warm running water plus soap, and towels or dryers\n- Hand-care stations are to be provided in washing facilities providing dispensers of liquid soap, degreasing cleanser, skin moisturizer and sun block.\n- Provision for storing personal clothing and footwear,proteetive clothing\n- Facilities shall be provided to allow clothing to dry\n- Lockers for securing personal items.\n- Provision shall be made for personnel to take breaks and shelter from the weather. Heating, cooling and lighting shall also be provided.\n- Rest facilities shall have a power source, tables and chairs, facilities for making/being served hot/cold drinks and consuming food and drink.\n- Non-smoking is to be allowed in the rest facility.\n- Provision of suitable transportationfor allworkforce including mainand subcontractor's workers.\n- The main contractor shall identify drop off and pickup points in the site mobilization plan.\n- No workers shall be allowed to leave the work premises on foot and the contractor must control the transportation of their workforce through security points, to avoid any disciplinary actions that might be imposed by Emaar.\n\nTheinformationcontainedinthesedocumentsisconfidentilprivilged andmaynotbeusedpublishedorreisuedwithou thepriorwrittenconsent ofEimaarMisrS.AE.\n\n<!-- image -->\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Washing Facilitics",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.68634033203125,
+          613.8061116536459
+        ],
+        [
+          144.02106730143228,
+          613.8061116536459
+        ],
+        [
+          144.02106730143228,
+          580.6340738932291
+        ],
+        [
+          101.68634033203125,
+          580.6340738932291
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Storage & changing of clothing",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          465.36122639973956
+        ],
+        [
+          150.24675496419272,
+          465.36122639973956
+        ],
+        [
+          150.24675496419272,
+          426.79872639973956
+        ],
+        [
+          95.46065266927083,
+          426.79872639973956
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Rest facilities",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          385.33367919921875
+        ],
+        [
+          152.32199096679688,
+          385.33367919921875
+        ],
+        [
+          152.32199096679688,
+          374.13812255859375
+        ],
+        [
+          92.55532836914062,
+          374.13812255859375
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Transportation",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.1597188313802,
+          314.42844645182294
+        ],
+        [
+          156.05740356445312,
+          314.42844645182294
+        ],
+        [
+          156.05740356445312,
+          301.57427978515625
+        ],
+        [
+          87.1597188313802,
+          301.57427978515625
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          731.1522115071615
+        ],
+        [
+          340.7530110677083,
+          731.1522115071615
+        ],
+        [
+          340.7530110677083,
+          701.7120259602865
+        ],
+        [
+          191.33634440104166,
+          701.7120259602865
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          701.297373453776
+        ],
+        [
+          217.8993123372396,
+          701.297373453776
+        ],
+        [
+          217.8993123372396,
+          686.7846069335938
+        ],
+        [
+          75.53842671712239,
+          686.7846069335938
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Minimum nunber of wash basins are the same as WCs above;",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.3194376627604,
+          665.6374308268229
+        ],
+        [
+          437.4587809244792,
+          665.6374308268229
+        ],
+        [
+          437.4587809244792,
+          653.1979166666666
+        ],
+        [
+          174.3194376627604,
+          653.1979166666666
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Washing facilities shall be available in both toilet and changing areas",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.3752237955729,
+          648.2221069335938
+        ],
+        [
+          466.9270833333333,
+          648.2221069335938
+        ],
+        [
+          466.9270833333333,
+          634.5386352539062
+        ],
+        [
+          181.3752237955729,
+          634.5386352539062
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Basins shall be large enough for people to wash their face, hands and forearms",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.205322265625,
+          629.5628458658854
+        ],
+        [
+          503.451171875,
+          629.5628458658854
+        ],
+        [
+          503.451171875,
+          617.1233113606771
+        ],
+        [
+          182.205322265625,
+          617.1233113606771
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Supply of hot and cold or warm running water plus soap, and towels or dryers",
+      "confidence": 0.95,
+      "box": [
+        [
+          183.0354207356771,
+          605.0984497070312
+        ],
+        [
+          500.5458170572917,
+          605.0984497070312
+        ],
+        [
+          500.5458170572917,
+          593.4882405598959
+        ],
+        [
+          183.0354207356771,
+          593.4882405598959
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Hand-care stations are to be provided in washing facilities providing dispensers of liquid soap, degreasing cleanser, skin moisturizer and sun block.",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.620361328125,
+          581.8780314127604
+        ],
+        [
+          528.3539225260416,
+          581.8780314127604
+        ],
+        [
+          528.3539225260416,
+          556.5843505859375
+        ],
+        [
+          182.620361328125,
+          556.5843505859375
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Provision for storing personal clothing and footwear,proteetive clothing",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.5451456705729,
+          479.87400309244794
+        ],
+        [
+          478.5483805338542,
+          479.87400309244794
+        ],
+        [
+          478.5483805338542,
+          464.53192138671875
+        ],
+        [
+          180.5451456705729,
+          464.53192138671875
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Facilities shall be provided to allow clothing to dry",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.9601847330729,
+          460.80006917317706
+        ],
+        [
+          391.388671875,
+          460.80006917317706
+        ],
+        [
+          391.388671875,
+          447.94590250651044
+        ],
+        [
+          180.9601847330729,
+          447.94590250651044
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Lockers for securing personal items.",
+      "confidence": 0.95,
+      "box": [
+        [
+          173.4893595377604,
+          442.97011311848956
+        ],
+        [
+          331.6219889322917,
+          442.97011311848956
+        ],
+        [
+          331.6219889322917,
+          429.70127360026044
+        ],
+        [
+          173.4893595377604,
+          429.70127360026044
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Provision shall be made for personnel to take breaks and shelter from the weather. Heating, cooling and lighting shall also be provided.",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.3194376627604,
+          398.60247802734375
+        ],
+        [
+          527.1088053385416,
+          398.60247802734375
+        ],
+        [
+          527.1088053385416,
+          375.38205973307294
+        ],
+        [
+          174.3194376627604,
+          375.38205973307294
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Rest facilities shall have a power source, tables and chairs, facilities for making/being served hot/cold drinks and consuming food and drink.",
+      "confidence": 0.95,
+      "box": [
+        [
+          173.4893595377604,
+          370.40627034505206
+        ],
+        [
+          526.6937662760416,
+          370.40627034505206
+        ],
+        [
+          526.6937662760416,
+          345.52724202473956
+        ],
+        [
+          173.4893595377604,
+          345.52724202473956
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Non-smoking is to be allowed in the rest facility.",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.82916259765625,
+          340.55141194661456
+        ],
+        [
+          381.8426106770833,
+          340.55141194661456
+        ],
+        [
+          381.8426106770833,
+          327.28261311848956
+        ],
+        [
+          171.82916259765625,
+          327.28261311848956
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Provision of suitable transportationfor allworkforce including mainand subcontractor's workers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.3752237955729,
+          307.7940470377604
+        ],
+        [
+          526.6937662760416,
+          307.7940470377604
+        ],
+        [
+          526.6937662760416,
+          284.5735880533854
+        ],
+        [
+          181.3752237955729,
+          284.5735880533854
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "The main contractor shall identify drop off and pickup points in the site mobilization plan.",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.5451456705729,
+          278.76849365234375
+        ],
+        [
+          526.6937662760416,
+          278.76849365234375
+        ],
+        [
+          526.6937662760416,
+          254.30409749348962
+        ],
+        [
+          180.5451456705729,
+          254.30409749348962
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "No workers shall be allowed to leave the work premises on foot and the contractor must control the transportation of their workforce through security points, to avoid any disciplinary actions that might be imposed by Emaar.",
+      "confidence": 0.95,
+      "box": [
+        [
+          173.9043986002604,
+          248.91367594401038
+        ],
+        [
+          526.6937662760416,
+          248.91367594401038
+        ],
+        [
+          526.6937662760416,
+          212.42441813151038
+        ],
+        [
+          173.9043986002604,
+          212.42441813151038
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "Theinformationcontainedinthesedocumentsisconfidentilprivilged andmaynotbeusedpublishedorreisuedwithou thepriorwrittenconsent ofEimaarMisrS.AE.",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.21805318196614,
+          102.95664469401038
+        ],
+        [
+          505.5263671875,
+          102.95664469401038
+        ],
+        [
+          505.5263671875,
+          82.63877360026038
+        ],
+        [
+          72.21805318196614,
+          82.63877360026038
+        ]
+      ],
+      "page": 424
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.6455891927083,
+          735.713368733724
+        ],
+        [
+          510.0918782552083,
+          735.713368733724
+        ],
+        [
+          510.0918782552083,
+          722.8592020670573
+        ],
+        [
+          453.6455891927083,
+          722.8592020670573
+        ]
+      ],
+      "page": 424
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 424,
+      "text": "Washing Facilitics\nStorage & changing of clothing\nRest facilities\nTransportation\nProjects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\nMinimum nunber of wash basins are the same as WCs above;\nWashing facilities shall be available in both toilet and changing areas\nBasins shall be large enough for people to wash their face, hands and forearms\nSupply of hot and cold or warm running water plus soap, and towels or dryers\nHand-care stations are to be provided in washing facilities providing dispensers of liquid soap, degreasing cleanser, skin moisturizer and sun block.\nProvision for storing personal clothing and footwear,proteetive clothing\nFacilities shall be provided to allow clothing to dry\nLockers for securing personal items.\nProvision shall be made for personnel to take breaks and shelter from the weather. Heating, cooling and lighting shall also be provided.\nRest facilities shall have a power source, tables and chairs, facilities for making/being served hot/cold drinks and consuming food and drink.\nNon-smoking is to be allowed in the rest facility.\nProvision of suitable transportationfor allworkforce including mainand subcontractor's workers.\nThe main contractor shall identify drop off and pickup points in the site mobilization plan.\nNo workers shall be allowed to leave the work premises on foot and the contractor must control the transportation of their workforce through security points, to avoid any disciplinary actions that might be imposed by Emaar.\nTheinformationcontainedinthesedocumentsisconfidentilprivilged andmaynotbeusedpublishedorreisuedwithou thepriorwrittenconsent ofEimaarMisrS.AE.\nEMAAR",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

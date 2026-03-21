@@ -1,0 +1,336 @@
+{
+  "text": "## EMAAR\n\nMISR\n\ndescribed in paragraph 8.1 above, may result in the Tender being rejected by theEmployerasbeinginvalidwithoutfurthernoticeto theTenderer.\n\n- 8.3 Thecompletionofalldocumentsshallbeinindelibleinkortypewrittenand, intheformer case,shall be incapital letters.Anyalteration orerasure must be initialled by the person(s) who signed the Form of Tender.\n\n## 9NOALTERATIONSTOTENDERDOCUMENTS\n\n- 9.1 Subject to any provision to the contrary contained in the Tender Documents, no erasure,alterationoradditionshallbemadebytheTenderertotheTender Documentsoranyaddendathereto/AnswertoTenderQueriesissued in accordance with paragraph 5 above other than completing the said Documents documents referred to in paragraph 8.1 above shall not include copies of the Tender Documents produced by scanning the originals thereof or re-typed versionsof theTenderDocuments inlieu of thesaidoriginals(orprintoutsof the Bills of Quantities).\n- 9.2 Noqualifications,Alteration toanytechnical requirementsprovidedwithin the TenderDocuments,andoranyconditionsshouldbeprovidedwiththetechnical offersubmitted.FailureofTenderertocomplywiththisrequirementmayleadto therejectionofhistenderotherwisesuchqualifications,alteration,conditions shallbeconsideredvoidandinvalid.\n- 9.3 In case the Tenderer is welling to propose any technical changes and or amendments, such should be submitted in a separate sealed envelope together wlth the flnanclalofferand marked clearly as\"Allernalive Offer\".\n\n## 10FIXEDRATESANDPRICES\n\n- 10.1TheContract Sum is on a lump sumbasis exceptfor theEarthWorks,the Infrastructure&amp;RoadsWorks andLandscapeWorks(as applicableto the package)whichwill be subjecttore-measurementand theratesand prices statedin theBillsofQuantitiesarefixedforthedurationof theContractand shall not be subject to any adjustment in respect of rise or fall in the cost of labour,materials,plant,contractor'sequipment,transportoranyothermatters affectingthecostofexecutionoftheContractexcepttheformulaelistedon Appendixj-FormofContractAgreementand it'sAnnexes.\n- 10.2 For the Lump sum Scope, The bill of quantities is provided as guidance and for computation of the interim payments, but Tenderers are to submit a lump sum interpretedonacollectivebasis.Noonepartof thetenderdocumentshall havepriorityoveranyotherpart.\n- 10.3The rates andprices submitted by theContractor shallbeinclusive of all applicable taxes, value added taxes, customs, levies, duties, stamps and all whateverisrequiredtocomplywiththeapplicablelaws.\n- 10.4Tendererswillbedeemed tohavefull andcompleteknowledgeof theentire contentof tender documents and site conditions and thatallsuchcontents have been taken into consideration and included in the tender sum.No claim on thegroundof lackofknowledgewillbeentertained.\n- 10.5 The contractor shall be deemed to have allowed in the unit rates and total prices inserted in the bills ofquantities for all costsincurredincarryingoutall\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          747.925791422526
+        ],
+        [
+          164.90056355794272,
+          747.925791422526
+        ],
+        [
+          164.90056355794272,
+          731.8051554361979
+        ],
+        [
+          98.09469604492188,
+          731.8051554361979
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          729.6840209960938
+        ],
+        [
+          142.49099731445312,
+          729.6840209960938
+        ],
+        [
+          142.49099731445312,
+          717.8056640625
+        ],
+        [
+          121.77272542317708,
+          717.8056640625
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "described in paragraph 8.1 above, may result in the Tender being rejected by theEmployerasbeinginvalidwithoutfurthernoticeto theTenderer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          694.4731648763021
+        ],
+        [
+          506.1178792317708,
+          694.4731648763021
+        ],
+        [
+          506.1178792317708,
+          671.5649007161459
+        ],
+        [
+          158.9810587565104,
+          671.5649007161459
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "8.3 Thecompletionofalldocumentsshallbeinindelibleinkortypewrittenand, intheformer case,shall be incapital letters.Anyalteration orerasure must be initialled by the person(s) who signed the Form of Tender.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          664.7772623697916
+        ],
+        [
+          506.5406901041667,
+          664.7772623697916
+        ],
+        [
+          506.5406901041667,
+          629.56640625
+        ],
+        [
+          126.84658813476562,
+          629.56640625
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "9NOALTERATIONSTOTENDERDOCUMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          618.1122843424479
+        ],
+        [
+          337.83473714192706,
+          618.1122843424479
+        ],
+        [
+          337.83473714192706,
+          607.9308268229166
+        ],
+        [
+          95.55775960286458,
+          607.9308268229166
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "9.1 Subject to any provision to the contrary contained in the Tender Documents, no erasure,alterationoradditionshallbemadebytheTenderertotheTender Documentsoranyaddendathereto/AnswertoTenderQueriesissued in accordance with paragraph 5 above other than completing the said Documents documents referred to in paragraph 8.1 above shall not include copies of the Tender Documents produced by scanning the originals thereof or re-typed versionsof theTenderDocuments inlieu of thesaidoriginals(orprintoutsof the Bills of Quantities).",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.04782104492188,
+          600.7189737955729
+        ],
+        [
+          507.8091634114583,
+          600.7189737955729
+        ],
+        [
+          507.8091634114583,
+          492.96527099609375
+        ],
+        [
+          112.04782104492188,
+          492.96527099609375
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "9.2 Noqualifications,Alteration toanytechnical requirementsprovidedwithin the TenderDocuments,andoranyconditionsshouldbeprovidedwiththetechnical offersubmitted.FailureofTenderertocomplywiththisrequirementmayleadto therejectionofhistenderotherwisesuchqualifications,alteration,conditions shallbeconsideredvoidandinvalid.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47064208984375,
+          487.45029703776044
+        ],
+        [
+          507.3863525390625,
+          487.45029703776044
+        ],
+        [
+          507.3863525390625,
+          428.90696207682294
+        ],
+        [
+          112.47064208984375,
+          428.90696207682294
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "9.3 In case the Tenderer is welling to propose any technical changes and or amendments, such should be submitted in a separate sealed envelope together wlth the flnanclalofferand marked clearly as\"Allernalive Offer\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47064208984375,
+          422.96779378255206
+        ],
+        [
+          507.3863525390625,
+          422.96779378255206
+        ],
+        [
+          507.3863525390625,
+          388.60540771484375
+        ],
+        [
+          112.47064208984375,
+          388.60540771484375
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "10FIXEDRATESANDPRICES",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          376.30279541015625
+        ],
+        [
+          249.4649658203125,
+          376.30279541015625
+        ],
+        [
+          249.4649658203125,
+          365.69712320963544
+        ],
+        [
+          97.24905395507812,
+          365.69712320963544
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "10.1TheContract Sum is on a lump sumbasis exceptfor theEarthWorks,the Infrastructure&RoadsWorks andLandscapeWorks(as applicableto the package)whichwill be subjecttore-measurementand theratesand prices statedin theBillsofQuantitiesarefixedforthedurationof theContractand shall not be subject to any adjustment in respect of rise or fall in the cost of labour,materials,plant,contractor'sequipment,transportoranyothermatters affectingthecostofexecutionoftheContractexcepttheformulaelistedon Appendixj-FormofContractAgreementand it'sAnnexes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89346313476562,
+          358.90948486328125
+        ],
+        [
+          509.07763671875,
+          358.90948486328125
+        ],
+        [
+          509.07763671875,
+          264.7310587565104
+        ],
+        [
+          112.89346313476562,
+          264.7310587565104
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "10.2 For the Lump sum Scope, The bill of quantities is provided as guidance and for computation of the interim payments, but Tenderers are to submit a lump sum interpretedonacollectivebasis.Noonepartof thetenderdocumentshall havepriorityoveranyotherpart.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89346313476562,
+          263.4583943684896
+        ],
+        [
+          508.6548258463542,
+          263.4583943684896
+        ],
+        [
+          508.6548258463542,
+          203.64235432942712
+        ],
+        [
+          112.89346313476562,
+          203.64235432942712
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "10.3The rates andprices submitted by theContractor shallbeinclusive of all applicable taxes, value added taxes, customs, levies, duties, stamps and all whateverisrequiredtocomplywiththeapplicablelaws.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          203.21811930338538
+        ],
+        [
+          509.07763671875,
+          203.21811930338538
+        ],
+        [
+          509.07763671875,
+          168.85573323567712
+        ],
+        [
+          113.3162841796875,
+          168.85573323567712
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "10.4Tendererswillbedeemed tohavefull andcompleteknowledgeof theentire contentof tender documents and site conditions and thatallsuchcontents have been taken into consideration and included in the tender sum.No claim on thegroundof lackofknowledgewillbeentertained.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          167.15879313151038
+        ],
+        [
+          508.6548258463542,
+          167.15879313151038
+        ],
+        [
+          508.6548258463542,
+          121.34226481119788
+        ],
+        [
+          113.3162841796875,
+          121.34226481119788
+        ]
+      ],
+      "page": 587
+    },
+    {
+      "text": "10.5 The contractor shall be deemed to have allowed in the unit rates and total prices inserted in the bills ofquantities for all costsincurredincarryingoutall",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89346313476562,
+          120.06955973307288
+        ],
+        [
+          509.9232991536458,
+          120.06955973307288
+        ],
+        [
+          509.9232991536458,
+          96.73712158203125
+        ],
+        [
+          112.89346313476562,
+          96.73712158203125
+        ]
+      ],
+      "page": 587
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 587,
+      "text": "EMAAR\nMISR\ndescribed in paragraph 8.1 above, may result in the Tender being rejected by theEmployerasbeinginvalidwithoutfurthernoticeto theTenderer.\n8.3 Thecompletionofalldocumentsshallbeinindelibleinkortypewrittenand, intheformer case,shall be incapital letters.Anyalteration orerasure must be initialled by the person(s) who signed the Form of Tender.\n9NOALTERATIONSTOTENDERDOCUMENTS\n9.1 Subject to any provision to the contrary contained in the Tender Documents, no erasure,alterationoradditionshallbemadebytheTenderertotheTender Documentsoranyaddendathereto/AnswertoTenderQueriesissued in accordance with paragraph 5 above other than completing the said Documents documents referred to in paragraph 8.1 above shall not include copies of the Tender Documents produced by scanning the originals thereof or re-typed versionsof theTenderDocuments inlieu of thesaidoriginals(orprintoutsof the Bills of Quantities).\n9.2 Noqualifications,Alteration toanytechnical requirementsprovidedwithin the TenderDocuments,andoranyconditionsshouldbeprovidedwiththetechnical offersubmitted.FailureofTenderertocomplywiththisrequirementmayleadto therejectionofhistenderotherwisesuchqualifications,alteration,conditions shallbeconsideredvoidandinvalid.\n9.3 In case the Tenderer is welling to propose any technical changes and or amendments, such should be submitted in a separate sealed envelope together wlth the flnanclalofferand marked clearly as\"Allernalive Offer\".\n10FIXEDRATESANDPRICES\n10.1TheContract Sum is on a lump sumbasis exceptfor theEarthWorks,the Infrastructure&RoadsWorks andLandscapeWorks(as applicableto the package)whichwill be subjecttore-measurementand theratesand prices statedin theBillsofQuantitiesarefixedforthedurationof theContractand shall not be subject to any adjustment in respect of rise or fall in the cost of labour,materials,plant,contractor'sequipment,transportoranyothermatters affectingthecostofexecutionoftheContractexcepttheformulaelistedon Appendixj-FormofContractAgreementand it'sAnnexes.\n10.2 For the Lump sum Scope, The bill of quantities is provided as guidance and for computation of the interim payments, but Tenderers are to submit a lump sum interpretedonacollectivebasis.Noonepartof thetenderdocumentshall havepriorityoveranyotherpart.\n10.3The rates andprices submitted by theContractor shallbeinclusive of all applicable taxes, value added taxes, customs, levies, duties, stamps and all whateverisrequiredtocomplywiththeapplicablelaws.\n10.4Tendererswillbedeemed tohavefull andcompleteknowledgeof theentire contentof tender documents and site conditions and thatallsuchcontents have been taken into consideration and included in the tender sum.No claim on thegroundof lackofknowledgewillbeentertained.\n10.5 The contractor shall be deemed to have allowed in the unit rates and total prices inserted in the bills ofquantities for all costsincurredincarryingoutall",
+      "line_count": 14
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

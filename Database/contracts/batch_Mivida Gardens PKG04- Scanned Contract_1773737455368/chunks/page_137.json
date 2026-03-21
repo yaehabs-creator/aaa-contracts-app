@@ -1,0 +1,520 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nHowever, should the Contractor incurs additional costs as a result of any damage thatmayoccurtosuchpartofanySectionorPortionof theWorks due to the usage of the Employer of such part, which the Contractor is not directly or indirectly responsible for, the Contractor shall in such case have theright toraise a claim to theContractAdministrator for reimbursement ofsuchcosts in accordancewith theConditions of Contract.\n\n## 20.4 DraftFinal Account\n\nThe period referred to in Sub-Clause 20.4 of the Conditions of Contract is fifteen (15) days after the date of issue of a Taking-Over Certificate\n\n## 21. DEFECTS\n\n- 21.1 Completionof OutstandingWork\n\nIn this Sub-Clause, replace the \"Supervision Consultant\"\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n\n- 21.2 Defects after Taking Over In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer,\n\nContract Administrator or the Supervision Consultant\".\n\n- 21.3 Cost of Remedying Defects\n\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or theSupervision Consultant\".\n\nDelete \"the Contractorshall be paid such value in accordance with Clause 26 (Interim and Final Certificates)\"and substitute\"such value shall be added to the Contract Sum\".\n\n- 21.4 Further Tests on Completion In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer,\n\nContract Administrator or theSupervision Consultant\".\n\n- 21.5 Access after Taking Over\n\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n\n- 21.6 Delay in Remedying Defects\n\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n\n## 21.7 Contractor to Search\n\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n\nDelete \"the Contractor shall be paid such Cost in accordance with Clause 26(Interim and Final Certificates)\"and substitute\"added to the Contract Sum\".\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.94033813476562,
+          752.1680603027344
+        ],
+        [
+          178.43086751302084,
+          752.1680603027344
+        ],
+        [
+          178.43086751302084,
+          733.5020650227865
+        ],
+        [
+          98.94033813476562,
+          733.5020650227865
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          729.2597961425781
+        ],
+        [
+          152.21590169270834,
+          729.2597961425781
+        ],
+        [
+          152.21590169270834,
+          717.3814392089844
+        ],
+        [
+          126.84658813476562,
+          717.3814392089844
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "However, should the Contractor incurs additional costs as a result of any damage thatmayoccurtosuchpartofanySectionorPortionof theWorks due to the usage of the Employer of such part, which the Contractor is not directly or indirectly responsible for, the Contractor shall in such case have theright toraise a claim to theContractAdministrator for reimbursement ofsuchcosts in accordancewith theConditions of Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          698.2912089029948
+        ],
+        [
+          503.5809733072917,
+          698.2912089029948
+        ],
+        [
+          503.5809733072917,
+          624.8999226888021
+        ],
+        [
+          165.74620564778647,
+          624.8999226888021
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "20.4 DraftFinal Account",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          620.6576334635416
+        ],
+        [
+          256.65293375651044,
+          620.6576334635416
+        ],
+        [
+          256.65293375651044,
+          608.3550618489584
+        ],
+        [
+          126.42376708984375,
+          608.3550618489584
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "The period referred to in Sub-Clause 20.4 of the Conditions of Contract is fifteen (15) days after the date of issue of a Taking-Over Certificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.90056355794272,
+          603.6885579427084
+        ],
+        [
+          502.7353108723958,
+          603.6885579427084
+        ],
+        [
+          502.7353108723958,
+          577.8107096354167
+        ],
+        [
+          164.90056355794272,
+          577.8107096354167
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21. DEFECTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          568.9019368489583
+        ],
+        [
+          176.73958333333334,
+          568.9019368489583
+        ],
+        [
+          176.73958333333334,
+          557.4477945963542
+        ],
+        [
+          94.28929646809895,
+          557.4477945963542
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.1 Completionof OutstandingWork",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          552.3570760091145
+        ],
+        [
+          317.11647542317706,
+          552.3570760091145
+        ],
+        [
+          317.11647542317706,
+          538.7817993164062
+        ],
+        [
+          125.578125,
+          538.7817993164062
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "In this Sub-Clause, replace the \"Supervision Consultant\"\" with \"Employer, Contract Administrator or the Supervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          535.3879801432292
+        ],
+        [
+          501.8896484375,
+          535.3879801432292
+        ],
+        [
+          501.8896484375,
+          508.66168212890625
+        ],
+        [
+          164.47774251302084,
+          508.66168212890625
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.2 Defects after Taking Over In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          505.69207763671875
+        ],
+        [
+          501.8896484375,
+          505.69207763671875
+        ],
+        [
+          501.8896484375,
+          473.87506103515625
+        ],
+        [
+          125.15530395507812,
+          473.87506103515625
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "Contract Administrator or the Supervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          476.42038981119794
+        ],
+        [
+          415.6339925130208,
+          476.42038981119794
+        ],
+        [
+          415.6339925130208,
+          462.42091878255206
+        ],
+        [
+          164.47774251302084,
+          462.42091878255206
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.3 Cost of Remedying Defects",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          459.02707926432294
+        ],
+        [
+          293.015625,
+          459.02707926432294
+        ],
+        [
+          293.015625,
+          445.02760823567706
+        ],
+        [
+          125.15530395507812,
+          445.02760823567706
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or theSupervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          442.05800374348956
+        ],
+        [
+          501.4668375651042,
+          442.05800374348956
+        ],
+        [
+          501.4668375651042,
+          417.02862548828125
+        ],
+        [
+          164.05492146809897,
+          417.02862548828125
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "Delete \"the Contractorshall be paid such value in accordance with Clause 26 (Interim and Final Certificates)\"and substitute\"such value shall be added to the Contract Sum\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          412.78631591796875
+        ],
+        [
+          501.8896484375,
+          412.78631591796875
+        ],
+        [
+          501.8896484375,
+          375.87856038411456
+        ],
+        [
+          164.05492146809897,
+          375.87856038411456
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.4 Further Tests on Completion In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          371.63629150390625
+        ],
+        [
+          501.0440266927083,
+          371.63629150390625
+        ],
+        [
+          501.0440266927083,
+          339.39503987630206
+        ],
+        [
+          123.88683064778645,
+          339.39503987630206
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "Contract Administrator or theSupervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          341.94040934244794
+        ],
+        [
+          415.6339925130208,
+          341.94040934244794
+        ],
+        [
+          415.6339925130208,
+          329.6377970377604
+        ],
+        [
+          164.47774251302084,
+          329.6377970377604
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.5 Access after Taking Over",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          325.3955281575521
+        ],
+        [
+          282.445068359375,
+          325.3955281575521
+        ],
+        [
+          282.445068359375,
+          312.2444864908854
+        ],
+        [
+          123.88683064778645,
+          312.2444864908854
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.3636271158854,
+          308.8506876627604
+        ],
+        [
+          501.0440266927083,
+          308.8506876627604
+        ],
+        [
+          501.0440266927083,
+          282.5486043294271
+        ],
+        [
+          162.3636271158854,
+          282.5486043294271
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.6 Delay in Remedying Defects",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          279.1547648111979
+        ],
+        [
+          296.82102457682294,
+          279.1547648111979
+        ],
+        [
+          296.82102457682294,
+          264.7310587565104
+        ],
+        [
+          123.88683064778645,
+          264.7310587565104
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          261.7614542643229
+        ],
+        [
+          500.6212158203125,
+          261.7614542643229
+        ],
+        [
+          500.6212158203125,
+          236.30784098307288
+        ],
+        [
+          162.78645833333334,
+          236.30784098307288
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "21.7 Contractor to Search",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          232.06557210286462
+        ],
+        [
+          261.30397542317706,
+          232.06557210286462
+        ],
+        [
+          261.30397542317706,
+          219.76295979817712
+        ],
+        [
+          123.88683064778645,
+          219.76295979817712
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          215.09649658203125
+        ],
+        [
+          499.7755533854167,
+          215.09649658203125
+        ],
+        [
+          499.7755533854167,
+          189.21860758463538
+        ],
+        [
+          162.78645833333334,
+          189.21860758463538
+        ]
+      ],
+      "page": 137
+    },
+    {
+      "text": "Delete \"the Contractor shall be paid such Cost in accordance with Clause 26(Interim and Final Certificates)\"and substitute\"added to the Contract Sum\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.78645833333334,
+          186.24904378255212
+        ],
+        [
+          500.6212158203125,
+          186.24904378255212
+        ],
+        [
+          500.6212158203125,
+          149.76552327473962
+        ],
+        [
+          162.78645833333334,
+          149.76552327473962
+        ]
+      ],
+      "page": 137
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 137,
+      "text": "EMAAR\nMISR\nHowever, should the Contractor incurs additional costs as a result of any damage thatmayoccurtosuchpartofanySectionorPortionof theWorks due to the usage of the Employer of such part, which the Contractor is not directly or indirectly responsible for, the Contractor shall in such case have theright toraise a claim to theContractAdministrator for reimbursement ofsuchcosts in accordancewith theConditions of Contract.\n20.4 DraftFinal Account\nThe period referred to in Sub-Clause 20.4 of the Conditions of Contract is fifteen (15) days after the date of issue of a Taking-Over Certificate\n21. DEFECTS\n21.1 Completionof OutstandingWork\nIn this Sub-Clause, replace the \"Supervision Consultant\"\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n21.2 Defects after Taking Over In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer,\nContract Administrator or the Supervision Consultant\".\n21.3 Cost of Remedying Defects\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or theSupervision Consultant\".\nDelete \"the Contractorshall be paid such value in accordance with Clause 26 (Interim and Final Certificates)\"and substitute\"such value shall be added to the Contract Sum\".\n21.4 Further Tests on Completion In this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer,\nContract Administrator or theSupervision Consultant\".\n21.5 Access after Taking Over\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n21.6 Delay in Remedying Defects\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".\n21.7 Contractor to Search\nIn this Sub-Clause, replace the \"Supervision Consultant\" with \"Employer, Contract Administrator or the Supervision Consultant\".\nDelete \"the Contractor shall be paid such Cost in accordance with Clause 26(Interim and Final Certificates)\"and substitute\"added to the Contract Sum\".",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

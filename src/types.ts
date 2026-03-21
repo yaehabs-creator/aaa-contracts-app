@@ -158,6 +158,7 @@ export interface SectionItem {
   imageUrl?: string;
   imageAlt?: string;
   imageTitle?: string;
+  children?: SectionItem[];
   // Clause-specific fields (for backward compatibility and when itemType is CLAUSE)
   clause_number?: string;
   clause_title?: string;
@@ -250,7 +251,9 @@ export enum AnalysisStatus {
   LIBRARY = 'LIBRARY',
   PDF_PREVIEW = 'PDF_PREVIEW',
   ORGANIZER = 'ORGANIZER',
-  INGESTION = 'INGESTION'
+  INGESTION = 'INGESTION',
+  KNOWLEDGE = 'KNOWLEDGE',
+  AI_CHAT = 'AI_CHAT'
 }
 
 export interface BotMessage {
@@ -636,4 +639,38 @@ export interface OrganizerFolderLayout {
   isVisible: boolean;
   order: number;
   customName?: string;
+}
+// ============================================
+// Search Result Types
+// ============================================
+
+export interface SearchResult {
+  clause_id: string;
+  clause_number: string;
+  title: string;
+  condition_type: ConditionType;
+  relevance_score: number;
+  reason: string;
+}
+
+export interface AnalysisStage {
+  label: string;
+  sub: string;
+}
+
+export interface TextFix {
+  original: string;
+  fixed: string;
+  reason: string;
+}
+
+export interface TextFixResult {
+  cleaned: string;
+  fixes: TextFix[];
+  removedLines: number;
+  corruptedLines?: Array<{
+    line: string;
+    reason: string;
+    index: number;
+  }>;
 }

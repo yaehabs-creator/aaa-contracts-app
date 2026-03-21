@@ -1,0 +1,704 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\nMISR\n\n## 5. AdvancePayment\n\nEmaar Misr for Developments S.A.E. PO Box229,Mokattam11571Cairo Arab Republic of Egypt Tel:+2 02 25032000 Fax +2 02 25032020\n\nwwwemaarmisrcom\n\n## Letter of Acceptance (LOA)\n\nThe Advance Payment, is ten Percent (10 %) of the Contract Sum for the Basic Scope. AdvancePaymentshallbemadeby theEmployerupon theContractorsubmissionof anunconditionalirrevocablebankletterofguaranteewiththesameamountin accordancewiththeAppendixCof theConditionsofContract.(Formingpartof the TenderDocumentsreceivedbytheContractor)\n\n## 6. Retention\n\nThe totalamountofRetentionMoney isfivePercent(5%)of theContractValuetobe withheldfromthecertifiedamountofeachinterimCertificatewiththesamepercentage.\n\n## 7. TimeforCompletion\n\nThe Time for Completion including mobilization, testing and commissioning and s          s CommencementDate.\n\n8. Contract Terms\n\nContractsterms&amp;conditionsshallbebasedontheterms&amp;conditionsstipulatedinthe Tender Documents and to the subsequent adjustments andmodifications approved in writing by the Employer, if any.\n\nContract signature. Meanwhile, it is requested that the Contractor:\n\n- 1) Attend a kickoff meeting and begins mobilization at the Mivida Gardens Pojecrsite\n- 2) Submit an Interim Certificate Application signed by the Contractor's Repiesentative fdr an InterimCertificateforAdvancePayment supportedwithbothPerforrandeBondand AdvancePaymentBondintheformacceptabletotheEmployer.\n\nPlease confirm your agreement to the provisions of this Letter of Acceptance bycompleting andslgnlngtheacknowledgementatthefootofthlsletter.\n\n<!-- image -->\n\nSIGNED BY: on behalf of Emaar Misr for Development, S.A.E “the Employer\"\n\nName\n\nMr.MoustafaEl Kady\n\nName:\n\nMr.Wael EI Menoufy\n\nPosition:\n\nChiefExecutive Officer\n\nPosition:\n\nChief Technical Commercial Officer\n\nSignature.\n\nSignature:\n\n2.3. N.V 2o.2.S.\n\nDate:\n\nDate:\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.50426228841145,
+          697.4427591959635
+        ],
+        [
+          145.0279337565104,
+          697.4427591959635
+        ],
+        [
+          145.0279337565104,
+          687.2613118489584
+        ],
+        [
+          120.50426228841145,
+          687.2613118489584
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "5. AdvancePayment",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.17519124348958,
+          655.4442749023438
+        ],
+        [
+          190.2698771158854,
+          655.4442749023438
+        ],
+        [
+          190.2698771158854,
+          643.56591796875
+        ],
+        [
+          92.17519124348958,
+          643.56591796875
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Emaar Misr for Developments S.A.E. PO Box229,Mokattam11571Cairo Arab Republic of Egypt Tel:+2 02 25032000 Fax +2 02 25032020",
+      "confidence": 0.95,
+      "box": [
+        [
+          370.3920491536458,
+          724.1690673828125
+        ],
+        [
+          490.4734700520833,
+          724.1690673828125
+        ],
+        [
+          490.4734700520833,
+          680.4736735026041
+        ],
+        [
+          370.3920491536458,
+          680.4736735026041
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "wwwemaarmisrcom",
+      "confidence": 0.95,
+      "box": [
+        [
+          371.6604817708333,
+          679.2009887695312
+        ],
+        [
+          435.5066324869792,
+          679.2009887695312
+        ],
+        [
+          435.5066324869792,
+          672.4133605957031
+        ],
+        [
+          371.6604817708333,
+          672.4133605957031
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Letter of Acceptance (LOA)",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.9881591796875,
+          669.01953125
+        ],
+        [
+          371.6604817708333,
+          669.01953125
+        ],
+        [
+          371.6604817708333,
+          655.0200398763021
+        ],
+        [
+          210.9881591796875,
+          655.0200398763021
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "The Advance Payment, is ten Percent (10 %) of the Contract Sum for the Basic Scope. AdvancePaymentshallbemadeby theEmployerupon theContractorsubmissionof anunconditionalirrevocablebankletterofguaranteewiththesameamountin accordancewiththeAppendixCof theConditionsofContract.(Formingpartof the TenderDocumentsreceivedbytheContractor)",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.3967793782552,
+          643.9901326497396
+        ],
+        [
+          491.3191324869792,
+          643.9901326497396
+        ],
+        [
+          491.3191324869792,
+          586.2952473958334
+        ],
+        [
+          107.3967793782552,
+          586.2952473958334
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "6. Retention",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3295389811198,
+          579.5076090494792
+        ],
+        [
+          152.21590169270834,
+          579.5076090494792
+        ],
+        [
+          152.21590169270834,
+          568.053466796875
+        ],
+        [
+          91.3295389811198,
+          568.053466796875
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "The totalamountofRetentionMoney isfivePercent(5%)of theContractValuetobe withheldfromthecertifiedamountofeachinterimCertificatewiththesamepercentage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.3967793782552,
+          568.053466796875
+        ],
+        [
+          490.4734700520833,
+          568.053466796875
+        ],
+        [
+          490.4734700520833,
+          544.7209879557292
+        ],
+        [
+          107.3967793782552,
+          544.7209879557292
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "7. TimeforCompletion",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.75236002604167,
+          538.3575846354167
+        ],
+        [
+          198.30350748697916,
+          538.3575846354167
+        ],
+        [
+          198.30350748697916,
+          526.0549926757812
+        ],
+        [
+          91.75236002604167,
+          526.0549926757812
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "The Time for Completion including mobilization, testing and commissioning and s          s CommencementDate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.3967793782552,
+          526.4792073567708
+        ],
+        [
+          490.4734700520833,
+          526.4792073567708
+        ],
+        [
+          490.4734700520833,
+          492.54103597005206
+        ],
+        [
+          107.3967793782552,
+          492.54103597005206
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Contract Terms",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.90671793619792,
+          485.75339762369794
+        ],
+        [
+          177.5852254231771,
+          485.75339762369794
+        ],
+        [
+          177.5852254231771,
+          473.45082600911456
+        ],
+        [
+          90.90671793619792,
+          473.45082600911456
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Contractsterms&conditionsshallbebasedontheterms&conditionsstipulatedinthe Tender Documents and to the subsequent adjustments andmodifications approved in writing by the Employer, if any.",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.97395833333333,
+          473.45082600911456
+        ],
+        [
+          489.6278483072917,
+          473.45082600911456
+        ],
+        [
+          489.6278483072917,
+          437.81573486328125
+        ],
+        [
+          106.97395833333333,
+          437.81573486328125
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Contract signature. Meanwhile, it is requested that the Contractor:",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.6382548014323,
+          421.27089436848956
+        ],
+        [
+          379.2712809244792,
+          421.27089436848956
+        ],
+        [
+          379.2712809244792,
+          408.54404703776044
+        ],
+        [
+          89.6382548014323,
+          408.54404703776044
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Attend a kickoff meeting and begins mobilization at the Mivida Gardens Pojecrsite",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3295389811198,
+          405.15024820963544
+        ],
+        [
+          470.600830078125,
+          405.15024820963544
+        ],
+        [
+          470.600830078125,
+          392.42344156901044
+        ],
+        [
+          91.3295389811198,
+          392.42344156901044
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Submit an Interim Certificate Application signed by the Contractor's Repiesentative fdr an InterimCertificateforAdvancePayment supportedwithbothPerforrandeBondand AdvancePaymentBondintheformacceptabletotheEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3295389811198,
+          388.60540771484375
+        ],
+        [
+          491.3191324869792,
+          388.60540771484375
+        ],
+        [
+          491.3191324869792,
+          353.39455159505206
+        ],
+        [
+          91.3295389811198,
+          353.39455159505206
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Please confirm your agreement to the provisions of this Letter of Acceptance bycompleting andslgnlngtheacknowledgementatthefootofthlsletter.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.79261271158855,
+          343.63730875651044
+        ],
+        [
+          489.6278483072917,
+          343.63730875651044
+        ],
+        [
+          489.6278483072917,
+          319.8805948893229
+        ],
+        [
+          88.79261271158855,
+          319.8805948893229
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "SIGNED BY: on behalf of Emaar Misr for Development, S.A.E “the Employer\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.36979166666667,
+          309.6991170247396
+        ],
+        [
+          488.7821858723958,
+          309.6991170247396
+        ],
+        [
+          488.7821858723958,
+          296.5480753580729
+        ],
+        [
+          88.36979166666667,
+          296.5480753580729
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Name",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9469706217448,
+          286.36663818359375
+        ],
+        [
+          117.5445048014323,
+          286.36663818359375
+        ],
+        [
+          117.5445048014323,
+          274.4883015950521
+        ],
+        [
+          87.9469706217448,
+          274.4883015950521
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Mr.MoustafaEl Kady",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.79971313476562,
+          286.36663818359375
+        ],
+        [
+          235.93465169270834,
+          286.36663818359375
+        ],
+        [
+          235.93465169270834,
+          274.4883015950521
+        ],
+        [
+          140.79971313476562,
+          274.4883015950521
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Name:",
+      "confidence": 0.95,
+      "box": [
+        [
+          276.1027425130208,
+          285.5181681315104
+        ],
+        [
+          308.23720296223956,
+          285.5181681315104
+        ],
+        [
+          308.23720296223956,
+          274.9124959309896
+        ],
+        [
+          276.1027425130208,
+          274.9124959309896
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Mr.Wael EI Menoufy",
+      "confidence": 0.95,
+      "box": [
+        [
+          329.80112711588544,
+          286.36663818359375
+        ],
+        [
+          422.3991292317708,
+          286.36663818359375
+        ],
+        [
+          422.3991292317708,
+          274.4883015950521
+        ],
+        [
+          329.80112711588544,
+          274.4883015950521
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Position:",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9469706217448,
+          257.0949503580729
+        ],
+        [
+          129.38351440429688,
+          257.0949503580729
+        ],
+        [
+          129.38351440429688,
+          244.79237874348962
+        ],
+        [
+          87.9469706217448,
+          244.79237874348962
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "ChiefExecutive Officer",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.79971313476562,
+          256.6707560221354
+        ],
+        [
+          241.85416666666666,
+          256.6707560221354
+        ],
+        [
+          241.85416666666666,
+          244.79237874348962
+        ],
+        [
+          140.79971313476562,
+          244.79237874348962
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Position:",
+      "confidence": 0.95,
+      "box": [
+        [
+          275.67991129557294,
+          257.0949503580729
+        ],
+        [
+          317.53928629557294,
+          257.0949503580729
+        ],
+        [
+          317.53928629557294,
+          244.79237874348962
+        ],
+        [
+          275.67991129557294,
+          244.79237874348962
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Chief Technical Commercial Officer",
+      "confidence": 0.95,
+      "box": [
+        [
+          329.80112711588544,
+          256.6707560221354
+        ],
+        [
+          485.3996175130208,
+          256.6707560221354
+        ],
+        [
+          485.3996175130208,
+          245.21661376953125
+        ],
+        [
+          329.80112711588544,
+          245.21661376953125
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Signature.",
+      "confidence": 0.95,
+      "box": [
+        [
+          84.56439208984375,
+          222.73256429036462
+        ],
+        [
+          131.92045084635416,
+          222.73256429036462
+        ],
+        [
+          131.92045084635416,
+          208.30885823567712
+        ],
+        [
+          84.56439208984375,
+          208.30885823567712
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Signature:",
+      "confidence": 0.95,
+      "box": [
+        [
+          277.37119547526044,
+          221.88409423828125
+        ],
+        [
+          324.304443359375,
+          221.88409423828125
+        ],
+        [
+          324.304443359375,
+          209.15728759765625
+        ],
+        [
+          277.37119547526044,
+          209.15728759765625
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "2.3. N.V 2o.2.S.",
+      "confidence": 0.95,
+      "box": [
+        [
+          347.5596516927083,
+          197.70318603515625
+        ],
+        [
+          440.5804850260417,
+          197.70318603515625
+        ],
+        [
+          440.5804850260417,
+          179.46140543619788
+        ],
+        [
+          347.5596516927083,
+          179.46140543619788
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Date:",
+      "confidence": 0.95,
+      "box": [
+        [
+          83.29592386881511,
+          192.61244710286462
+        ],
+        [
+          109.51088460286458,
+          192.61244710286462
+        ],
+        [
+          109.51088460286458,
+          179.88564046223962
+        ],
+        [
+          83.29592386881511,
+          179.88564046223962
+        ]
+      ],
+      "page": 19
+    },
+    {
+      "text": "Date:",
+      "confidence": 0.95,
+      "box": [
+        [
+          275.67991129557294,
+          191.76397705078125
+        ],
+        [
+          302.3177083333333,
+          191.76397705078125
+        ],
+        [
+          302.3177083333333,
+          179.88564046223962
+        ],
+        [
+          275.67991129557294,
+          179.88564046223962
+        ]
+      ],
+      "page": 19
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 19,
+      "text": "MISR\n5. AdvancePayment\nEmaar Misr for Developments S.A.E. PO Box229,Mokattam11571Cairo Arab Republic of Egypt Tel:+2 02 25032000 Fax +2 02 25032020\nwwwemaarmisrcom\nLetter of Acceptance (LOA)\nThe Advance Payment, is ten Percent (10 %) of the Contract Sum for the Basic Scope. AdvancePaymentshallbemadeby theEmployerupon theContractorsubmissionof anunconditionalirrevocablebankletterofguaranteewiththesameamountin accordancewiththeAppendixCof theConditionsofContract.(Formingpartof the TenderDocumentsreceivedbytheContractor)\n6. Retention\nThe totalamountofRetentionMoney isfivePercent(5%)of theContractValuetobe withheldfromthecertifiedamountofeachinterimCertificatewiththesamepercentage.\n7. TimeforCompletion\nThe Time for Completion including mobilization, testing and commissioning and s          s CommencementDate.\nContract Terms\nContractsterms&conditionsshallbebasedontheterms&conditionsstipulatedinthe Tender Documents and to the subsequent adjustments andmodifications approved in writing by the Employer, if any.\nContract signature. Meanwhile, it is requested that the Contractor:\nAttend a kickoff meeting and begins mobilization at the Mivida Gardens Pojecrsite\nSubmit an Interim Certificate Application signed by the Contractor's Repiesentative fdr an InterimCertificateforAdvancePayment supportedwithbothPerforrandeBondand AdvancePaymentBondintheformacceptabletotheEmployer.\nPlease confirm your agreement to the provisions of this Letter of Acceptance bycompleting andslgnlngtheacknowledgementatthefootofthlsletter.\nSIGNED BY: on behalf of Emaar Misr for Development, S.A.E “the Employer\"\nName\nMr.MoustafaEl Kady\nName:\nMr.Wael EI Menoufy\nPosition:\nChiefExecutive Officer\nPosition:\nChief Technical Commercial Officer\nSignature.\nSignature:\n2.3. N.V 2o.2.S.\nDate:\nDate:",
+      "line_count": 30
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

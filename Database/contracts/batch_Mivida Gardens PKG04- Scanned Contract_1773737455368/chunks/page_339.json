@@ -1,0 +1,313 @@
+{
+  "text": "<!-- image -->\n\n- 3.8 The Contractor shall provide and maintain in good working condition, Temporary Lighting for his entire work area so as to allow for a 24 hour a day operation. All lighting shall be installed in such a manner to prevent damage by cranes, trucks, and other project machines and equipment. Lighiting design shall be submitted to the Contract Administrator and Supervision Consultant for review and approval.\n- 3.9 Provide task lighting to all areas of the Works, as and when required. Task lighting sources shall be fluorescent lamps on stands with wire guards and on no account shall incandescent sources such as tungsten or tungsten halogen be used as they represent a fire risk.\n- 3.10 Contractor's tools must be in good working order and properly earth or doubleinsulated.Alltools shallbe testedbeforebeingdeliveredtosite. Where temporary power is difficult to achieve or where associated power leads may cause safety hazards the Contractor shall use portable battery operatedtools.\n- 3.11 The Contractor shall be responsible for providing power for all tools and equipment. Transformers shallgenerallybe located adjacent to the distribution panels and distribution boards. The distribution boards shall be provided with industrial plugs and colour coded sockets (BS.4343 type) to facilitatetheconnectiontotransformers.\n- 3.12 General Requirements: The Contractor shall observe the following guidelirnes for the installation of temporary electrical services:\n- 3.12.1 All temporary electrical supply systems shall be installed in compliancewith\n- a)Local Authority Regulations and Codes\n- b) Any other Local Authority Requirements and\n- C IEERegulations ·B.S7671:1992(lncorporating1994 Arnendment)Section604 \"ConstructionSiteInstallation\" includingreferences toB.S IENpublications.\n- 3.12.2 Supplies for welding equipment in accordance with BS 638.\n- 3.12.3 Code of practice for distribution of electricity on construction and building sites. Chartered Institute Building Services Engineers ns      o i sites.\n- 3.12.4 All temporary wiring is to be laid out, balanced and sized so as to thelinewhenoperatingatfull load.\n- 3.12.5 All final temporary lighting and power circuits shall be protected via residual circuit breakerrated at 30mA sensitivity.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "3.8 The Contractor shall provide and maintain in good working condition, Temporary Lighting for his entire work area so as to allow for a 24 hour a day operation. All lighting shall be installed in such a manner to prevent damage by cranes, trucks, and other project machines and equipment. Lighiting design shall be submitted to the Contract Administrator and Supervision Consultant for review and approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          718.2980448404948
+        ],
+        [
+          505.9414469401042,
+          718.2980448404948
+        ],
+        [
+          505.9414469401042,
+          640.7584025065104
+        ],
+        [
+          94.63055419921875,
+          640.7584025065104
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.9 Provide task lighting to all areas of the Works, as and when required. Task lighting sources shall be fluorescent lamps on stands with wire guards and on no account shall incandescent sources such as tungsten or tungsten halogen be used as they represent a fire risk.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          634.1239827473959
+        ],
+        [
+          505.5263671875,
+          634.1239827473959
+        ],
+        [
+          505.5263671875,
+          582.7073364257812
+        ],
+        [
+          96.29074096679688,
+          582.7073364257812
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.10 Contractor's tools must be in good working order and properly earth or doubleinsulated.Alltools shallbe testedbeforebeingdeliveredtosite. Where temporary power is difficult to achieve or where associated power leads may cause safety hazards the Contractor shall use portable battery operatedtools.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          576.0729166666666
+        ],
+        [
+          506.3564860026042,
+          576.0729166666666
+        ],
+        [
+          506.3564860026042,
+          511.38743082682294
+        ],
+        [
+          95.87569173177083,
+          511.38743082682294
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.11 The Contractor shall be responsible for providing power for all tools and equipment. Transformers shallgenerallybe located adjacent to the distribution panels and distribution boards. The distribution boards shall be provided with industrial plugs and colour coded sockets (BS.4343 type) to facilitatetheconnectiontotransformers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          504.75303141276044
+        ],
+        [
+          505.9414469401042,
+          504.75303141276044
+        ],
+        [
+          505.9414469401042,
+          440.89683024088544
+        ],
+        [
+          95.46065266927083,
+          440.89683024088544
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.12 General Requirements: The Contractor shall observe the following guidelirnes for the installation of temporary electrical services:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          434.26243082682294
+        ],
+        [
+          505.5263671875,
+          434.26243082682294
+        ],
+        [
+          505.5263671875,
+          408.55409749348956
+        ],
+        [
+          95.46065266927083,
+          408.55409749348956
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.12.1 All temporary electrical supply systems shall be installed in compliancewith",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          402.74900309244794
+        ],
+        [
+          507.1865641276042,
+          402.74900309244794
+        ],
+        [
+          507.1865641276042,
+          376.62603759765625
+        ],
+        [
+          119.53333536783855,
+          376.62603759765625
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "a)Local Authority Regulations and Codes",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.69815063476562,
+          375.38205973307294
+        ],
+        [
+          377.277099609375,
+          375.38205973307294
+        ],
+        [
+          377.277099609375,
+          364.18650309244794
+        ],
+        [
+          162.69815063476562,
+          364.18650309244794
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "Any other Local Authority Requirements and",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.77337646484375,
+          362.52789306640625
+        ],
+        [
+          404.2550862630208,
+          362.52789306640625
+        ],
+        [
+          404.2550862630208,
+          350.91770426432294
+        ],
+        [
+          164.77337646484375,
+          350.91770426432294
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "C IEERegulations ·B.S7671:1992(lncorporating1994 Arnendment)Section604 \"ConstructionSiteInstallation\" includingreferences toB.S IENpublications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.18842569986978,
+          349.67372639973956
+        ],
+        [
+          505.9414469401042,
+          349.67372639973956
+        ],
+        [
+          505.9414469401042,
+          311.94053141276044
+        ],
+        [
+          165.18842569986978,
+          311.94053141276044
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.12.2 Supplies for welding equipment in accordance with BS 638.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          304.8914591471354
+        ],
+        [
+          463.191650390625,
+          304.8914591471354
+        ],
+        [
+          463.191650390625,
+          292.03729248046875
+        ],
+        [
+          121.19352213541667,
+          292.03729248046875
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.12.3 Code of practice for distribution of electricity on construction and building sites. Chartered Institute Building Services Engineers ns      o i sites.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          286.2321980794271
+        ],
+        [
+          506.3564860026042,
+          286.2321980794271
+        ],
+        [
+          506.3564860026042,
+          233.98622639973962
+        ],
+        [
+          120.77847290039062,
+          233.98622639973962
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.12.4 All temporary wiring is to be laid out, balanced and sized so as to thelinewhenoperatingatfull load.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.60856119791667,
+          227.76649983723962
+        ],
+        [
+          506.3564860026042,
+          227.76649983723962
+        ],
+        [
+          506.3564860026042,
+          190.03330485026038
+        ],
+        [
+          121.60856119791667,
+          190.03330485026038
+        ]
+      ],
+      "page": 339
+    },
+    {
+      "text": "3.12.5 All final temporary lighting and power circuits shall be protected via residual circuit breakerrated at 30mA sensitivity.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          182.56955973307288
+        ],
+        [
+          505.9414469401042,
+          182.56955973307288
+        ],
+        [
+          505.9414469401042,
+          157.27589925130212
+        ],
+        [
+          121.19352213541667,
+          157.27589925130212
+        ]
+      ],
+      "page": 339
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 339,
+      "text": "3.8 The Contractor shall provide and maintain in good working condition, Temporary Lighting for his entire work area so as to allow for a 24 hour a day operation. All lighting shall be installed in such a manner to prevent damage by cranes, trucks, and other project machines and equipment. Lighiting design shall be submitted to the Contract Administrator and Supervision Consultant for review and approval.\n3.9 Provide task lighting to all areas of the Works, as and when required. Task lighting sources shall be fluorescent lamps on stands with wire guards and on no account shall incandescent sources such as tungsten or tungsten halogen be used as they represent a fire risk.\n3.10 Contractor's tools must be in good working order and properly earth or doubleinsulated.Alltools shallbe testedbeforebeingdeliveredtosite. Where temporary power is difficult to achieve or where associated power leads may cause safety hazards the Contractor shall use portable battery operatedtools.\n3.11 The Contractor shall be responsible for providing power for all tools and equipment. Transformers shallgenerallybe located adjacent to the distribution panels and distribution boards. The distribution boards shall be provided with industrial plugs and colour coded sockets (BS.4343 type) to facilitatetheconnectiontotransformers.\n3.12 General Requirements: The Contractor shall observe the following guidelirnes for the installation of temporary electrical services:\n3.12.1 All temporary electrical supply systems shall be installed in compliancewith\na)Local Authority Regulations and Codes\nAny other Local Authority Requirements and\nC IEERegulations ·B.S7671:1992(lncorporating1994 Arnendment)Section604 \"ConstructionSiteInstallation\" includingreferences toB.S IENpublications.\n3.12.2 Supplies for welding equipment in accordance with BS 638.\n3.12.3 Code of practice for distribution of electricity on construction and building sites. Chartered Institute Building Services Engineers ns      o i sites.\n3.12.4 All temporary wiring is to be laid out, balanced and sized so as to thelinewhenoperatingatfull load.\n3.12.5 All final temporary lighting and power circuits shall be protected via residual circuit breakerrated at 30mA sensitivity.",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

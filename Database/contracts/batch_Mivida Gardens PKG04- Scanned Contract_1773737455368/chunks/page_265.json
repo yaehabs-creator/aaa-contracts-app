@@ -1,0 +1,704 @@
+{
+  "text": "<!-- image -->\n\n## PART 1-GENERAL.\n\n## 1.01 SUMMARY\n\n1. This Section establishes general requirements pertaining to cutting (including excavating), fitting, and patching of work generally in respect to renovation work or work performed by others required to:\n2. a)Make the several parts fit properly;\n- b) Uncover work to provide for installing, inspecting, or both, of ill-timed work;\n4. Remove and replace work not conforming to requirements of the Contract Documents; and\n5. d)Remove and replace defectivework.\n\n## 2. Related work:\n\n- a） Documents affecting work of this Section include, but are not necessarily limited to, Conditions of Contract, and Sections in Division 1 of these Specifications.\n- b) In addition to other requirements specified, upon the Supervision Consultant'srequestuncover work to provide for inspection by the Supervision Consultant of covered work, and remove samples of installed materials for testing.\n\n## 1.02 SUBMITTALS\n\n- 1.Request for Supervision Consultant's consent:\n- a)Prior to cutting which effects structural safety, submit written request to Contract Administrator for permis sion to proceed with cutting.\n- b) Should conditions of the Works, or schedule, indicate a required change of materials or methods for cutting and patching, so notify Contract Administratorandsecurewrittenpermission.\n2. Notices to the Supervision Consultant:\n- a) Prior to cutting and patching performed pursuant to the Supervision Consultant's instructions, submit cost estimate to Contract Administrator in accordancewithClause13oftheContractConditionsshouldContractor determine the work to be a variation in the Contract scopeof work. Secure Contract Administrator approval of cost estimates and type of reimbursement before proceeding with cutting and patching.\n- CSubmit written notice to the Contract Administrator designating the time the Work will be uncovered, to provide for the Supervision Consultant's observation.\n\n## 1.03QUALITYASSURANCE\n\n1.Useadequate numbersofokiliedworkmen experienced in the necessary craftsand\n\nDawa'opiietr 显AE.\n\nTC21207-208\n\nT1241\n\nP.OWZ29,M\n\nCabu, Eyt\n\n## SECTION01045\n\n## CUTTING AND PATCHING\n\nwho are\\_thdroughly trainedand completoyfamiliar with the\n\nSuling and Patching eclion01045\n\nPogcNumber:1of 2\n\nML",
+  "results": [
+    {
+      "text": "PART 1-GENERAL.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          673.5157877604166
+        ],
+        [
+          182.205322265625,
+          673.5157877604166
+        ],
+        [
+          182.205322265625,
+          662.3202311197916
+        ],
+        [
+          77.61365763346355,
+          662.3202311197916
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "1.01 SUMMARY",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          650.7100219726562
+        ],
+        [
+          169.3388875325521,
+          650.7100219726562
+        ],
+        [
+          169.3388875325521,
+          638.6851399739584
+        ],
+        [
+          77.1986083984375,
+          638.6851399739584
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "This Section establishes general requirements pertaining to cutting (including excavating), fitting, and patching of work generally in respect to renovation work or work performed by others required to:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          633.7093505859375
+        ],
+        [
+          504.6962890625,
+          633.7093505859375
+        ],
+        [
+          504.6962890625,
+          598.4640502929688
+        ],
+        [
+          95.0456034342448,
+          598.4640502929688
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "a)Make the several parts fit properly;",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          593.0735880533854
+        ],
+        [
+          300.07847086588544,
+          593.0735880533854
+        ],
+        [
+          300.07847086588544,
+          581.0487263997396
+        ],
+        [
+          111.23241170247395,
+          581.0487263997396
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Uncover work to provide for installing, inspecting, or both, of ill-timed work;",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          576.4875691731771
+        ],
+        [
+          495.5652669270833,
+          576.4875691731771
+        ],
+        [
+          495.5652669270833,
+          564.8773600260417
+        ],
+        [
+          109.98726399739583,
+          564.8773600260417
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Remove and replace work not conforming to requirements of the Contract Documents; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          559.4868977864583
+        ],
+        [
+          506.7715250651042,
+          559.4868977864583
+        ],
+        [
+          506.7715250651042,
+          535.0225219726562
+        ],
+        [
+          127.00417073567708,
+          535.0225219726562
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "d)Remove and replace defectivework.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          530.4613647460938
+        ],
+        [
+          308.37939453125,
+          530.4613647460938
+        ],
+        [
+          308.37939453125,
+          519.2657877604167
+        ],
+        [
+          111.23241170247395,
+          519.2657877604167
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "2. Related work:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          508.48488362630206
+        ],
+        [
+          182.205322265625,
+          508.48488362630206
+        ],
+        [
+          182.205322265625,
+          496.0453694661458
+        ],
+        [
+          94.2155049641927,
+          496.0453694661458
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "a） Documents affecting work of this Section include, but are not necessarily limited to, Conditions of Contract, and Sections in Division 1 of these Specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          491.06955973307294
+        ],
+        [
+          505.111328125,
+          491.06955973307294
+        ],
+        [
+          505.111328125,
+          455.40960693359375
+        ],
+        [
+          112.47754923502605,
+          455.40960693359375
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "In addition to other requirements specified, upon the Supervision Consultant'srequestuncover work to provide for inspection by the Supervision Consultant of covered work, and remove samples of installed materials for testing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          451.67775472005206
+        ],
+        [
+          505.5263671875,
+          451.67775472005206
+        ],
+        [
+          505.5263671875,
+          403.99294026692706
+        ],
+        [
+          110.81736246744792,
+          403.99294026692706
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "1.02 SUBMITTALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          383.26043701171875
+        ],
+        [
+          182.620361328125,
+          383.26043701171875
+        ],
+        [
+          182.620361328125,
+          371.65020751953125
+        ],
+        [
+          78.44375101725261,
+          371.65020751953125
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "1.Request for Supervision Consultant's consent:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          355.06418863932294
+        ],
+        [
+          345.7335611979167,
+          355.06418863932294
+        ],
+        [
+          345.7335611979167,
+          343.03932698567706
+        ],
+        [
+          95.46065266927083,
+          343.03932698567706
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "a)Prior to cutting which effects structural safety, submit written request to Contract Administrator for permis sion to proceed with cutting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          337.23423258463544
+        ],
+        [
+          504.6962890625,
+          337.23423258463544
+        ],
+        [
+          504.6962890625,
+          314.01377360026044
+        ],
+        [
+          111.23241170247395,
+          314.01377360026044
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Should conditions of the Works, or schedule, indicate a required change of materials or methods for cutting and patching, so notify Contract Administratorandsecurewrittenpermission.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          309.8672892252604
+        ],
+        [
+          506.7715250651042,
+          309.8672892252604
+        ],
+        [
+          506.7715250651042,
+          275.0366414388021
+        ],
+        [
+          111.64745076497395,
+          275.0366414388021
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Notices to the Supervision Consultant:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          258.0359903971354
+        ],
+        [
+          305.8891194661458,
+          258.0359903971354
+        ],
+        [
+          305.8891194661458,
+          246.42576090494788
+        ],
+        [
+          94.63055419921875,
+          246.42576090494788
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Prior to cutting and patching performed pursuant to the Supervision Consultant's instructions, submit cost estimate to Contract Administrator in accordancewithClause13oftheContractConditionsshouldContractor determine the work to be a variation in the Contract scopeof work. Secure Contract Administrator approval of cost estimates and type of reimbursement before proceeding with cutting and patching.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          241.44993082682288
+        ],
+        [
+          507.6016031901042,
+          241.44993082682288
+        ],
+        [
+          507.6016031901042,
+          171.78867594401038
+        ],
+        [
+          111.64745076497395,
+          171.78867594401038
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "CSubmit written notice to the Contract Administrator designating the time the Work will be uncovered, to provide for the Supervision Consultant's observation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.43865966796875,
+          167.22751871744788
+        ],
+        [
+          506.7715250651042,
+          167.22751871744788
+        ],
+        [
+          506.7715250651042,
+          131.15293375651038
+        ],
+        [
+          122.43865966796875,
+          131.15293375651038
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "1.03QUALITYASSURANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          110.00571695963538
+        ],
+        [
+          234.50115966796875,
+          110.00571695963538
+        ],
+        [
+          234.50115966796875,
+          98.81016031901038
+        ],
+        [
+          78.02870178222656,
+          98.81016031901038
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "1.Useadequate numbersofokiliedworkmen experienced in the necessary craftsand",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          93.41969807942712
+        ],
+        [
+          339.50787353515625,
+          93.41969807942712
+        ],
+        [
+          339.50787353515625,
+          81.39487711588538
+        ],
+        [
+          95.46065266927083,
+          81.39487711588538
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Dawa'opiietr 显AE.",
+      "confidence": 0.95,
+      "box": [
+        [
+          251.1030069986979,
+          64.39414469401038
+        ],
+        [
+          316.68031819661456,
+          64.39414469401038
+        ],
+        [
+          316.68031819661456,
+          63.56488037109375
+        ],
+        [
+          251.1030069986979,
+          63.56488037109375
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "TC21207-208",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          55.27183024088538
+        ],
+        [
+          312.5298665364583,
+          55.27183024088538
+        ],
+        [
+          312.5298665364583,
+          53.19858805338538
+        ],
+        [
+          252.34814453125,
+          53.19858805338538
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "T1241",
+      "confidence": 0.95,
+      "box": [
+        [
+          254.00834147135416,
+          48.63747151692712
+        ],
+        [
+          281.81642659505206,
+          48.63747151692712
+        ],
+        [
+          281.81642659505206,
+          42.83237711588538
+        ],
+        [
+          254.00834147135416,
+          42.83237711588538
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "P.OWZ29,M",
+      "confidence": 0.95,
+      "box": [
+        [
+          254.83841959635416,
+          42.41766357421875
+        ],
+        [
+          297.17315673828125,
+          42.41766357421875
+        ],
+        [
+          297.17315673828125,
+          39.51515706380212
+        ],
+        [
+          254.83841959635416,
+          39.51515706380212
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Cabu, Eyt",
+      "confidence": 0.95,
+      "box": [
+        [
+          255.66851806640625,
+          36.19793701171875
+        ],
+        [
+          288.45717366536456,
+          36.19793701171875
+        ],
+        [
+          288.45717366536456,
+          31.63682047526038
+        ],
+        [
+          255.66851806640625,
+          31.63682047526038
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "SECTION01045",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.02777099609375,
+          719.542002360026
+        ],
+        [
+          333.6972249348958,
+          719.542002360026
+        ],
+        [
+          333.6972249348958,
+          708.346435546875
+        ],
+        [
+          249.02777099609375,
+          708.346435546875
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "CUTTING AND PATCHING",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.21966552734375,
+          695.9069213867188
+        ],
+        [
+          360.2601725260417,
+          695.9069213867188
+        ],
+        [
+          360.2601725260417,
+          685.9553019205729
+        ],
+        [
+          221.21966552734375,
+          685.9553019205729
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "who are_thdroughly trainedand completoyfamiliar with the",
+      "confidence": 0.95,
+      "box": [
+        [
+          332.86712646484375,
+          93.00506591796875
+        ],
+        [
+          507.1865641276042,
+          93.00506591796875
+        ],
+        [
+          507.1865641276042,
+          71.44321695963538
+        ],
+        [
+          332.86712646484375,
+          71.44321695963538
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "Suling and Patching eclion01045",
+      "confidence": 0.95,
+      "box": [
+        [
+          428.3277587890625,
+          57.34515380859375
+        ],
+        [
+          490.584716796875,
+          57.34515380859375
+        ],
+        [
+          490.584716796875,
+          47.80812581380212
+        ],
+        [
+          428.3277587890625,
+          47.80812581380212
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "PogcNumber:1of 2",
+      "confidence": 0.95,
+      "box": [
+        [
+          427.0826416015625,
+          41.58839925130212
+        ],
+        [
+          489.754638671875,
+          41.58839925130212
+        ],
+        [
+          489.754638671875,
+          33.71006266276038
+        ],
+        [
+          427.0826416015625,
+          33.71006266276038
+        ]
+      ],
+      "page": 265
+    },
+    {
+      "text": "ML",
+      "confidence": 0.95,
+      "box": [
+        [
+          332.0370279947917,
+          45.32025146484375
+        ],
+        [
+          349.0539143880208,
+          45.32025146484375
+        ],
+        [
+          349.0539143880208,
+          36.61256917317712
+        ],
+        [
+          332.0370279947917,
+          36.61256917317712
+        ]
+      ],
+      "page": 265
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 265,
+      "text": "PART 1-GENERAL.\n1.01 SUMMARY\nThis Section establishes general requirements pertaining to cutting (including excavating), fitting, and patching of work generally in respect to renovation work or work performed by others required to:\na)Make the several parts fit properly;\nUncover work to provide for installing, inspecting, or both, of ill-timed work;\nRemove and replace work not conforming to requirements of the Contract Documents; and\nd)Remove and replace defectivework.\n2. Related work:\na） Documents affecting work of this Section include, but are not necessarily limited to, Conditions of Contract, and Sections in Division 1 of these Specifications.\nIn addition to other requirements specified, upon the Supervision Consultant'srequestuncover work to provide for inspection by the Supervision Consultant of covered work, and remove samples of installed materials for testing.\n1.02 SUBMITTALS\n1.Request for Supervision Consultant's consent:\na)Prior to cutting which effects structural safety, submit written request to Contract Administrator for permis sion to proceed with cutting.\nShould conditions of the Works, or schedule, indicate a required change of materials or methods for cutting and patching, so notify Contract Administratorandsecurewrittenpermission.\nNotices to the Supervision Consultant:\nPrior to cutting and patching performed pursuant to the Supervision Consultant's instructions, submit cost estimate to Contract Administrator in accordancewithClause13oftheContractConditionsshouldContractor determine the work to be a variation in the Contract scopeof work. Secure Contract Administrator approval of cost estimates and type of reimbursement before proceeding with cutting and patching.\nCSubmit written notice to the Contract Administrator designating the time the Work will be uncovered, to provide for the Supervision Consultant's observation.\n1.03QUALITYASSURANCE\n1.Useadequate numbersofokiliedworkmen experienced in the necessary craftsand\nDawa'opiietr 显AE.\nTC21207-208\nT1241\nP.OWZ29,M\nCabu, Eyt\nSECTION01045\nCUTTING AND PATCHING\nwho are_thdroughly trainedand completoyfamiliar with the\nSuling and Patching eclion01045\nPogcNumber:1of 2\nML",
+      "line_count": 30
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

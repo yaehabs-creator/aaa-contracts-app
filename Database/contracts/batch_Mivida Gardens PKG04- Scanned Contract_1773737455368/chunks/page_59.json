@@ -1,0 +1,359 @@
+{
+  "text": "Import\n\n- 11.10TheContractor shall bear and pay all customs duties and all other import duties, harbour and port duties, wharfage, landing, pilotage and other dues inrelationtoallPlantandContractor'sEquipment.\n\n## Contractor'sEquipment-Recordsand Documents\n\n- 11.111he Contractor shall deliver to theProject Manager at hisSiteoffice,details in such form and at such intervals as the Project Manager may prescribe givingsuchinformationinrelationtoContractor'sEquipmentontheSiteas the Project Manager may require. The Contractor shall from time to time orotherdocumentrelatingtotheContractor'sEquipmentwhichbylawthe Contractorisrequired tohave.\n\n## 12. TITLE,RISK,CARE,INDEMNITIESANDINSURANCE\n\n## Passage of Title\n\n- 12.1 ThelegaltitletoanyitemofPlantprovidedortobeprovidedpursuant tothe Contract shall pass to the Employer upon the first to occur of the following events,namely\n- (a) deliveryofthatItemtotheSlte;and\n- (b) when theContractorbecomesentitled topaymentof anyportionof the value of thePlant;and\n- (c) that item otherwise becoming expressly or impliedly appropriated to the Contractwhetherornot theEmployerortheProjectManagerhas assentedtothatappropriation.\n\nTheContractorshall asbeneficial ownersignsuchdocumentsand doall suchthingsnecessary topasstotheEmployer absolutelegal titletosuch itemofPlantfreefromallcharges,liensandotherencumbrancesofany kindwhatsoever.\n\n<!-- image -->\n\n<!-- image -->\n\nresponsibleforthereceptiononSiteofallsuchPlantandContractor's Equipment.\n\n## Notwithstandingtheforegoing:-\n\n- (a) the Contractor shall apply in writing to the Project Manager for permissiontodeliveranyPlantand/or Contractor'sEquipmenttothe Site;and\n- (b) no Plant or Contractor's Equipment may be delivered to the Site withouttheProjectManager'swrittenpermission.",
+  "results": [
+    {
+      "text": "Import",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          587.5679321289062
+        ],
+        [
+          126.00094604492188,
+          587.5679321289062
+        ],
+        [
+          126.00094604492188,
+          575.2653401692708
+        ],
+        [
+          94.71211751302083,
+          575.2653401692708
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "11.10TheContractor shall bear and pay all customs duties and all other import duties, harbour and port duties, wharfage, landing, pilotage and other dues inrelationtoallPlantandContractor'sEquipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          565.0838826497395
+        ],
+        [
+          487.5137125651042,
+          565.0838826497395
+        ],
+        [
+          487.5137125651042,
+          529.4488118489583
+        ],
+        [
+          126.00094604492188,
+          529.4488118489583
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "Contractor'sEquipment-Recordsand Documents",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          519.6915893554688
+        ],
+        [
+          318.3849283854167,
+          519.6915893554688
+        ],
+        [
+          318.3849283854167,
+          506.9647623697917
+        ],
+        [
+          95.1349385579427,
+          506.9647623697917
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "11.111he Contractor shall deliver to theProject Manager at hisSiteoffice,details in such form and at such intervals as the Project Manager may prescribe givingsuchinformationinrelationtoContractor'sEquipmentontheSiteas the Project Manager may require. The Contractor shall from time to time orotherdocumentrelatingtotheContractor'sEquipmentwhichbylawthe Contractorisrequired tohave.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          496.78330485026044
+        ],
+        [
+          487.0909016927083,
+          496.78330485026044
+        ],
+        [
+          487.0909016927083,
+          415.75592041015625
+        ],
+        [
+          125.578125,
+          415.75592041015625
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "12. TITLE,RISK,CARE,INDEMNITIESANDINSURANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          405.99871826171875
+        ],
+        [
+          372.928955078125,
+          405.99871826171875
+        ],
+        [
+          372.928955078125,
+          394.12034098307294
+        ],
+        [
+          93.86647542317708,
+          394.12034098307294
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "Passage of Title",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          383.93890380859375
+        ],
+        [
+          167.86032104492188,
+          383.93890380859375
+        ],
+        [
+          167.86032104492188,
+          370.78786214192706
+        ],
+        [
+          93.4436543782552,
+          370.78786214192706
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "12.1 ThelegaltitletoanyitemofPlantprovidedortobeprovidedpursuant tothe Contract shall pass to the Employer upon the first to occur of the following events,namely",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          360.18214925130206
+        ],
+        [
+          485.8224283854167,
+          360.18214925130206
+        ],
+        [
+          485.8224283854167,
+          324.9713338216146
+        ],
+        [
+          125.578125,
+          324.9713338216146
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "(a) deliveryofthatItemtotheSlte;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          315.6383260091146
+        ],
+        [
+          346.7139892578125,
+          315.6383260091146
+        ],
+        [
+          346.7139892578125,
+          301.6388142903646
+        ],
+        [
+          155.1756591796875,
+          301.6388142903646
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "(b) when theContractorbecomesentitled topaymentof anyportionof the value of thePlant;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.59848022460938,
+          292.73004150390625
+        ],
+        [
+          486.2452392578125,
+          292.73004150390625
+        ],
+        [
+          486.2452392578125,
+          268.97332763671875
+        ],
+        [
+          155.59848022460938,
+          268.97332763671875
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "(c) that item otherwise becoming expressly or impliedly appropriated to the Contractwhetherornot theEmployerortheProjectManagerhas assentedtothatappropriation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          258.7918904622396
+        ],
+        [
+          485.3996175130208,
+          258.7918904622396
+        ],
+        [
+          485.3996175130208,
+          223.15679931640625
+        ],
+        [
+          155.1756591796875,
+          223.15679931640625
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "TheContractorshall asbeneficial ownersignsuchdocumentsand doall suchthingsnecessary topasstotheEmployer absolutelegal titletosuch itemofPlantfreefromallcharges,liensandotherencumbrancesofany kindwhatsoever.",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.75283813476562,
+          212.55112711588538
+        ],
+        [
+          485.8224283854167,
+          212.55112711588538
+        ],
+        [
+          485.8224283854167,
+          166.73459879557288
+        ],
+        [
+          154.75283813476562,
+          166.73459879557288
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "responsibleforthereceptiononSiteofallsuchPlantandContractor's Equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          723.7448425292969
+        ],
+        [
+          487.5137125651042,
+          723.7448425292969
+        ],
+        [
+          487.5137125651042,
+          700.412353515625
+        ],
+        [
+          157.71259562174478,
+          700.412353515625
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "Notwithstandingtheforegoing:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          690.2308959960938
+        ],
+        [
+          298.0894775390625,
+          690.2308959960938
+        ],
+        [
+          298.0894775390625,
+          677.0798543294271
+        ],
+        [
+          157.28976440429688,
+          677.0798543294271
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "(a) the Contractor shall apply in writing to the Project Manager for permissiontodeliveranyPlantand/or Contractor'sEquipmenttothe Site;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          667.7468668619791
+        ],
+        [
+          487.0909016927083,
+          667.7468668619791
+        ],
+        [
+          487.0909016927083,
+          632.9602254231771
+        ],
+        [
+          157.28976440429688,
+          632.9602254231771
+        ]
+      ],
+      "page": 59
+    },
+    {
+      "text": "(b) no Plant or Contractor's Equipment may be delivered to the Site withouttheProjectManager'swrittenpermission.",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          621.9303181966146
+        ],
+        [
+          487.5137125651042,
+          621.9303181966146
+        ],
+        [
+          487.5137125651042,
+          597.3251546223959
+        ],
+        [
+          157.28976440429688,
+          597.3251546223959
+        ]
+      ],
+      "page": 59
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 59,
+      "text": "Import\n11.10TheContractor shall bear and pay all customs duties and all other import duties, harbour and port duties, wharfage, landing, pilotage and other dues inrelationtoallPlantandContractor'sEquipment.\nContractor'sEquipment-Recordsand Documents\n11.111he Contractor shall deliver to theProject Manager at hisSiteoffice,details in such form and at such intervals as the Project Manager may prescribe givingsuchinformationinrelationtoContractor'sEquipmentontheSiteas the Project Manager may require. The Contractor shall from time to time orotherdocumentrelatingtotheContractor'sEquipmentwhichbylawthe Contractorisrequired tohave.\n12. TITLE,RISK,CARE,INDEMNITIESANDINSURANCE\nPassage of Title\n12.1 ThelegaltitletoanyitemofPlantprovidedortobeprovidedpursuant tothe Contract shall pass to the Employer upon the first to occur of the following events,namely\n(a) deliveryofthatItemtotheSlte;and\n(b) when theContractorbecomesentitled topaymentof anyportionof the value of thePlant;and\n(c) that item otherwise becoming expressly or impliedly appropriated to the Contractwhetherornot theEmployerortheProjectManagerhas assentedtothatappropriation.\nTheContractorshall asbeneficial ownersignsuchdocumentsand doall suchthingsnecessary topasstotheEmployer absolutelegal titletosuch itemofPlantfreefromallcharges,liensandotherencumbrancesofany kindwhatsoever.\nresponsibleforthereceptiononSiteofallsuchPlantandContractor's Equipment.\nNotwithstandingtheforegoing:-\n(a) the Contractor shall apply in writing to the Project Manager for permissiontodeliveranyPlantand/or Contractor'sEquipmenttothe Site;and\n(b) no Plant or Contractor's Equipment may be delivered to the Site withouttheProjectManager'swrittenpermission.",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

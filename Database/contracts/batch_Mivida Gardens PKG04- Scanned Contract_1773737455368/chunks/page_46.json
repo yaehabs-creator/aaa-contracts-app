@@ -1,0 +1,382 @@
+{
+  "text": "## Surplus Items\n\n- 6A.6 (a) The Contractorshall notuse theFree IssueItemsfor anypurpose other than the carrying out and completion of the Works.\n- (b) AnysurplusFreeIssueItemsshailbereturnedingoodconditionby the Contractor to the Employerto astorage area to be notified to the ContractorbytheProjectManager.\n\n## RemovalfromSite\n\n6A.7The Contractor shall not remove any of the Free Issue Items from the Site.\n\n## 7. BONDS\n\n## ProvisionofBonds\n\n- 7.1 TheContractorundertakes toobtainand delivertotheProjectManager within fourteen (14) days after the Commencement Date for approval by the Employer:\n- (a) aPerformanceBond,intheformattached totheseConditionsof Contract as AppendixB(the\"Performance Bond\"),which shallbe purpose. Such Bond shall be in the amount stated in the Particular Conditions; and\n- (b) anAdvancePaymentBondintheformattachedtotheseConditions of Contract as Appendix C (the \"Advance Payment Bond\") which shall be issued by a bank in the Country approved by the Employer for the purpose. Such Bond shall be in the amount equal to the AdvancePaymcnt.\n\n## CostofProvidingBonds\n\n- 7.2 All costs of obtaining and keeping in force the Performance Bond and the AdvancePaymentBondshall beborneandpaidbytheContractor.\n\n## ApportionmentofPerformanceBond\n\n- 7.3 An appropriate proportion of the Performance Bond as determined from timetotimebytheProjectManagerafterreferencetotheBillsofQuantities and thevaluationof theWorksunderClause25.2(WorkstobeMeasured) shall applytoeachSection andPortion of theWorks.Suchproportion as delerminedbytheProjectManagershallbenotified inwritingbythcProjcct Managerto theEmployerand theContractor.\n\n## ReductionofAdvancePaymentBond\n\n- 7.4 Thevalueof theAdvancePaymentBondshall bereducedbythe amountof the Advance Payment recovered under Clause 26.2 (lssue of Interim Certificates).\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Surplus Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          724.1690673828125
+        ],
+        [
+          158.55823771158853,
+          724.1690673828125
+        ],
+        [
+          158.55823771158853,
+          709.745351155599
+        ],
+        [
+          95.1349385579427,
+          709.745351155599
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "6A.6 (a) The Contractorshall notuse theFree IssueItemsfor anypurpose other than the carrying out and completion of the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          701.6850280761719
+        ],
+        [
+          485.8224283854167,
+          701.6850280761719
+        ],
+        [
+          485.8224283854167,
+          678.3525390625
+        ],
+        [
+          125.15530395507812,
+          678.3525390625
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "(b) AnysurplusFreeIssueItemsshailbereturnedingoodconditionby the Contractor to the Employerto astorage area to be notified to the ContractorbytheProjectManager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          666.4741821289062
+        ],
+        [
+          486.6680908203125,
+          666.4741821289062
+        ],
+        [
+          486.6680908203125,
+          632.5360107421875
+        ],
+        [
+          157.28976440429688,
+          632.5360107421875
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "RemovalfromSite",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          620.6576334635416
+        ],
+        [
+          179.2765096028646,
+          620.6576334635416
+        ],
+        [
+          179.2765096028646,
+          609.6277465820312
+        ],
+        [
+          95.55775960286458,
+          609.6277465820312
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "6A.7The Contractor shall not remove any of the Free Issue Items from the Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          599.0220540364584
+        ],
+        [
+          486.6680908203125,
+          599.0220540364584
+        ],
+        [
+          486.6680908203125,
+          587.9921468098959
+        ],
+        [
+          125.578125,
+          587.9921468098959
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "7. BONDS",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          575.2653401692708
+        ],
+        [
+          164.05492146809897,
+          575.2653401692708
+        ],
+        [
+          164.05492146809897,
+          564.2354329427083
+        ],
+        [
+          95.1349385579427,
+          564.2354329427083
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "ProvisionofBonds",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          552.3570760091145
+        ],
+        [
+          180.9677937825521,
+          552.3570760091145
+        ],
+        [
+          180.9677937825521,
+          541.7513834635417
+        ],
+        [
+          95.98058064778645,
+          541.7513834635417
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "7.1 TheContractorundertakes toobtainand delivertotheProjectManager within fourteen (14) days after the Commencement Date for approval by the Employer:",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          530.7214762369792
+        ],
+        [
+          487.0909016927083,
+          530.7214762369792
+        ],
+        [
+          487.0909016927083,
+          495.51064046223956
+        ],
+        [
+          126.42376708984375,
+          495.51064046223956
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "(a) aPerformanceBond,intheformattached totheseConditionsof Contract as AppendixB(the\"Performance Bond\"),which shallbe purpose. Such Bond shall be in the amount stated in the Particular Conditions; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          484.90496826171875
+        ],
+        [
+          488.359375,
+          484.90496826171875
+        ],
+        [
+          488.359375,
+          428.48272705078125
+        ],
+        [
+          158.13541666666666,
+          428.48272705078125
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "(b) anAdvancePaymentBondintheformattachedtotheseConditions of Contract as Appendix C (the \"Advance Payment Bond\") which shall be issued by a bank in the Country approved by the Employer for the purpose. Such Bond shall be in the amount equal to the AdvancePaymcnt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          417.02862548828125
+        ],
+        [
+          487.9365234375,
+          417.02862548828125
+        ],
+        [
+          487.9365234375,
+          360.60638427734375
+        ],
+        [
+          158.9810587565104,
+          360.60638427734375
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "CostofProvidingBonds",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          348.30381266276044
+        ],
+        [
+          205.9142862955729,
+          348.30381266276044
+        ],
+        [
+          205.9142862955729,
+          337.27390543619794
+        ],
+        [
+          97.671875,
+          337.27390543619794
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "7.2 All costs of obtaining and keeping in force the Performance Bond and the AdvancePaymentBondshall beborneandpaidbytheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          326.2439982096354
+        ],
+        [
+          488.359375,
+          326.2439982096354
+        ],
+        [
+          488.359375,
+          305.03265380859375
+        ],
+        [
+          127.2694091796875,
+          305.03265380859375
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "ApportionmentofPerformanceBond",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          291.4573771158854
+        ],
+        [
+          261.72678629557294,
+          291.4573771158854
+        ],
+        [
+          261.72678629557294,
+          280.8517049153646
+        ],
+        [
+          98.09469604492188,
+          280.8517049153646
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "7.3 An appropriate proportion of the Performance Bond as determined from timetotimebytheProjectManagerafterreferencetotheBillsofQuantities and thevaluationof theWorksunderClause25.2(WorkstobeMeasured) shall applytoeachSection andPortion of theWorks.Suchproportion as delerminedbytheProjectManagershallbenotified inwritingbythcProjcct Managerto theEmployerand theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          269.3975626627604
+        ],
+        [
+          489.2049967447917,
+          269.3975626627604
+        ],
+        [
+          489.2049967447917,
+          202.36964925130212
+        ],
+        [
+          127.2694091796875,
+          202.36964925130212
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "ReductionofAdvancePaymentBond",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          190.06707763671875
+        ],
+        [
+          265.5321858723958,
+          190.06707763671875
+        ],
+        [
+          265.5321858723958,
+          179.03717041015625
+        ],
+        [
+          97.671875,
+          179.03717041015625
+        ]
+      ],
+      "page": 46
+    },
+    {
+      "text": "7.4 Thevalueof theAdvancePaymentBondshall bereducedbythe amountof the Advance Payment recovered under Clause 26.2 (lssue of Interim Certificates).",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.38351440429688,
+          167.15879313151038
+        ],
+        [
+          489.6278483072917,
+          167.15879313151038
+        ],
+        [
+          489.6278483072917,
+          132.79644775390625
+        ],
+        [
+          129.38351440429688,
+          132.79644775390625
+        ]
+      ],
+      "page": 46
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 46,
+      "text": "Surplus Items\n6A.6 (a) The Contractorshall notuse theFree IssueItemsfor anypurpose other than the carrying out and completion of the Works.\n(b) AnysurplusFreeIssueItemsshailbereturnedingoodconditionby the Contractor to the Employerto astorage area to be notified to the ContractorbytheProjectManager.\nRemovalfromSite\n6A.7The Contractor shall not remove any of the Free Issue Items from the Site.\n7. BONDS\nProvisionofBonds\n7.1 TheContractorundertakes toobtainand delivertotheProjectManager within fourteen (14) days after the Commencement Date for approval by the Employer:\n(a) aPerformanceBond,intheformattached totheseConditionsof Contract as AppendixB(the\"Performance Bond\"),which shallbe purpose. Such Bond shall be in the amount stated in the Particular Conditions; and\n(b) anAdvancePaymentBondintheformattachedtotheseConditions of Contract as Appendix C (the \"Advance Payment Bond\") which shall be issued by a bank in the Country approved by the Employer for the purpose. Such Bond shall be in the amount equal to the AdvancePaymcnt.\nCostofProvidingBonds\n7.2 All costs of obtaining and keeping in force the Performance Bond and the AdvancePaymentBondshall beborneandpaidbytheContractor.\nApportionmentofPerformanceBond\n7.3 An appropriate proportion of the Performance Bond as determined from timetotimebytheProjectManagerafterreferencetotheBillsofQuantities and thevaluationof theWorksunderClause25.2(WorkstobeMeasured) shall applytoeachSection andPortion of theWorks.Suchproportion as delerminedbytheProjectManagershallbenotified inwritingbythcProjcct Managerto theEmployerand theContractor.\nReductionofAdvancePaymentBond\n7.4 Thevalueof theAdvancePaymentBondshall bereducedbythe amountof the Advance Payment recovered under Clause 26.2 (lssue of Interim Certificates).",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,428 @@
+{
+  "text": "## Annex3toFormofAgreement\n\n## PriceAdjustment FormulasfortheBasicItems\n\nincreaseordecreaseofthefactorycementprice\n\n- V2(EGP)=TheAdditional/DeductionValueduetotheincreaseordecreaseof the factory cement price.\n\n## For Reinforced Concrete:\n\nV2(EGP)=V1 X 0.35X [Cement new rate-Cement fixed rate].\n\n## Where:\n\n- V1(M3)=The totalquantitiesof theexecutedreinforcedConcreteaffected by the increaseor decreaseof thefactorycementprice\n- the factory cement price.\n\n## D. Reinforcement Steel Rebars\n\nIncase the Reinforced Steel Bars factorypublishedprice of EZZ steel ex-factory (excluding VAT) for large customers became greater / less than EGP 33.500 (+/5%)as a Base Rate per ton, the following formula for calculating the additional / deduction value shall be applied within for the affected payment certificate(s) based onthefollowingconditions:\n\n- The Contractor shall submit, for this specific month, the actual invoices, by the MaterialsInspection Requests.\n- The increase or decrease in the price of steel reinforcement as produced by the approved supplier and as proofed by price quotations shall trigger the utilization of therelevantadjustmentformulae.\n- the basis for calculating the actual quantities of Steel bars used (executed) during the month.\n\nV2(EGP)=V1X [Steel new rate-steel fixed rate]\n\n## Where:\n\n- V1 (ton) = The total quantity of steel executed and certified by the Supervision Consultant.\n- V2 (EGP)= The Additional/DeductionValue due to the increase or decrease of thefactorysteel Reinforcementprice\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Annex3toFormofAgreement",
+      "confidence": 0.95,
+      "box": [
+        [
+          211.83380126953125,
+          740.7139282226562
+        ],
+        [
+          373.7746175130208,
+          740.7139282226562
+        ],
+        [
+          373.7746175130208,
+          729.6840209960938
+        ],
+        [
+          211.83380126953125,
+          729.6840209960938
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "PriceAdjustment FormulasfortheBasicItems",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.55160522460938,
+          722.472157796224
+        ],
+        [
+          414.788330078125,
+          722.472157796224
+        ],
+        [
+          414.788330078125,
+          710.1695760091146
+        ],
+        [
+          169.55160522460938,
+          710.1695760091146
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "increaseordecreaseofthefactorycementprice",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.96732584635417,
+          697.0185343424479
+        ],
+        [
+          354.3247884114583,
+          697.0185343424479
+        ],
+        [
+          354.3247884114583,
+          685.1401672363281
+        ],
+        [
+          117.96732584635417,
+          685.1401672363281
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "V2(EGP)=TheAdditional/DeductionValueduetotheincreaseordecreaseof the factory cement price.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.12168375651042,
+          681.3221232096354
+        ],
+        [
+          508.6548258463542,
+          681.3221232096354
+        ],
+        [
+          508.6548258463542,
+          655.8684895833334
+        ],
+        [
+          117.12168375651042,
+          655.8684895833334
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "For Reinforced Concrete:",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.47727457682292,
+          644.8385823567709
+        ],
+        [
+          219.4446004231771,
+          644.8385823567709
+        ],
+        [
+          219.4446004231771,
+          630.8390909830729
+        ],
+        [
+          101.47727457682292,
+          630.8390909830729
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "V2(EGP)=V1 X 0.35X [Cement new rate-Cement fixed rate].",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.32291666666667,
+          627.8695068359375
+        ],
+        [
+          394.9156901041667,
+          627.8695068359375
+        ],
+        [
+          394.9156901041667,
+          615.5669148763021
+        ],
+        [
+          102.32291666666667,
+          615.5669148763021
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "Where:",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.054443359375,
+          612.173095703125
+        ],
+        [
+          137.4171346028646,
+          612.173095703125
+        ],
+        [
+          137.4171346028646,
+          600.2947387695312
+        ],
+        [
+          101.054443359375,
+          600.2947387695312
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "V1(M3)=The totalquantitiesof theexecutedreinforcedConcreteaffected by the increaseor decreaseof thefactorycementprice",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.16192626953125,
+          596.9009195963541
+        ],
+        [
+          507.3863525390625,
+          596.9009195963541
+        ],
+        [
+          507.3863525390625,
+          571.8715209960938
+        ],
+        [
+          114.16192626953125,
+          571.8715209960938
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "the factory cement price.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.12168375651042,
+          556.599344889323
+        ],
+        [
+          239.31722005208334,
+          556.599344889323
+        ],
+        [
+          239.31722005208334,
+          543.0240681966145
+        ],
+        [
+          117.12168375651042,
+          543.0240681966145
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "D. Reinforcement Steel Rebars",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.10795084635417,
+          535.3879801432292
+        ],
+        [
+          244.3910929361979,
+          535.3879801432292
+        ],
+        [
+          244.3910929361979,
+          521.812723795573
+        ],
+        [
+          76.10795084635417,
+          521.812723795573
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "Incase the Reinforced Steel Bars factorypublishedprice of EZZ steel ex-factory (excluding VAT) for large customers became greater / less than EGP 33.500 (+/5%)as a Base Rate per ton, the following formula for calculating the additional / deduction value shall be applied within for the affected payment certificate(s) based onthefollowingconditions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          516.7219848632812
+        ],
+        [
+          508.2319742838542,
+          516.7219848632812
+        ],
+        [
+          508.2319742838542,
+          452.66367594401044
+        ],
+        [
+          96.82623291015625,
+          452.66367594401044
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "The Contractor shall submit, for this specific month, the actual invoices, by the MaterialsInspection Requests.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          448.84564208984375
+        ],
+        [
+          506.5406901041667,
+          448.84564208984375
+        ],
+        [
+          506.5406901041667,
+          411.08941650390625
+        ],
+        [
+          115.8532206217448,
+          411.08941650390625
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "The increase or decrease in the price of steel reinforcement as produced by the approved supplier and as proofed by price quotations shall trigger the utilization of therelevantadjustmentformulae.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.12168375651042,
+          410.24098714192706
+        ],
+        [
+          509.07763671875,
+          410.24098714192706
+        ],
+        [
+          509.07763671875,
+          372.48476155598956
+        ],
+        [
+          117.12168375651042,
+          372.48476155598956
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "the basis for calculating the actual quantities of Steel bars used (executed) during the month.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.69886271158855,
+          355.93988037109375
+        ],
+        [
+          506.9635416666667,
+          355.93988037109375
+        ],
+        [
+          506.9635416666667,
+          330.06203206380206
+        ],
+        [
+          116.69886271158855,
+          330.06203206380206
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "V2(EGP)=V1X [Steel new rate-steel fixed rate]",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          324.9713338216146
+        ],
+        [
+          339.5260416666667,
+          324.9713338216146
+        ],
+        [
+          339.5260416666667,
+          312.2444864908854
+        ],
+        [
+          97.24905395507812,
+          312.2444864908854
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "Where:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          307.1537882486979
+        ],
+        [
+          134.45738728841147,
+          307.1537882486979
+        ],
+        [
+          134.45738728841147,
+          294.00274658203125
+        ],
+        [
+          96.40340169270833,
+          294.00274658203125
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "V1 (ton) = The total quantity of steel executed and certified by the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          291.03314208984375
+        ],
+        [
+          506.5406901041667,
+          291.03314208984375
+        ],
+        [
+          506.5406901041667,
+          266.4279581705729
+        ],
+        [
+          115.8532206217448,
+          266.4279581705729
+        ]
+      ],
+      "page": 16
+    },
+    {
+      "text": "V2 (EGP)= The Additional/DeductionValue due to the increase or decrease of thefactorysteel Reinforcementprice",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          263.0341593424479
+        ],
+        [
+          508.6548258463542,
+          263.0341593424479
+        ],
+        [
+          508.6548258463542,
+          238.00474039713538
+        ],
+        [
+          115.8532206217448,
+          238.00474039713538
+        ]
+      ],
+      "page": 16
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 16,
+      "text": "Annex3toFormofAgreement\nPriceAdjustment FormulasfortheBasicItems\nincreaseordecreaseofthefactorycementprice\nV2(EGP)=TheAdditional/DeductionValueduetotheincreaseordecreaseof the factory cement price.\nFor Reinforced Concrete:\nV2(EGP)=V1 X 0.35X [Cement new rate-Cement fixed rate].\nWhere:\nV1(M3)=The totalquantitiesof theexecutedreinforcedConcreteaffected by the increaseor decreaseof thefactorycementprice\nthe factory cement price.\nD. Reinforcement Steel Rebars\nIncase the Reinforced Steel Bars factorypublishedprice of EZZ steel ex-factory (excluding VAT) for large customers became greater / less than EGP 33.500 (+/5%)as a Base Rate per ton, the following formula for calculating the additional / deduction value shall be applied within for the affected payment certificate(s) based onthefollowingconditions:\nThe Contractor shall submit, for this specific month, the actual invoices, by the MaterialsInspection Requests.\nThe increase or decrease in the price of steel reinforcement as produced by the approved supplier and as proofed by price quotations shall trigger the utilization of therelevantadjustmentformulae.\nthe basis for calculating the actual quantities of Steel bars used (executed) during the month.\nV2(EGP)=V1X [Steel new rate-steel fixed rate]\nWhere:\nV1 (ton) = The total quantity of steel executed and certified by the Supervision Consultant.\nV2 (EGP)= The Additional/DeductionValue due to the increase or decrease of thefactorysteel Reinforcementprice",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

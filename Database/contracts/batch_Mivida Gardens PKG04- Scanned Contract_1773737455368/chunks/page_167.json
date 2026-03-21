@@ -1,0 +1,313 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Notes:\n\nOutofvendor list process\"Or Approved Equal\":\n\n- 1.Contractor shall send a justification letter for the reason of moving to other not listed vendors substantiatedwithevidenceasapplicable.\n- Certified Applicator Certificate\n- 3.AllAluminumWorksApplicatorsshouldprovide(CertifiedApplicator Certificate)fromManufactureris mandatoryPriorforfinal approval\n- 4.Factory visit shall be made when applicable and a report from SC to be submitted.\n- 5.Compliance / comparison sheet with all related technical data for the item to be submitted.\n- 6.Check for any cost saving opportunities if any. No additional cost or time impact at least.\n- 7.Final approval subject to mock-ups/samples.\n- 8.Approval by Design team is mandatory prior to final approval.\n- 9.Emaar shall always have the right to approve orrcject the\"Approved Equal\"without reasons as mentioned.\n\n<!-- image -->\n\n<!-- image -->\n\n## Residential",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          765.9828592936198
+        ],
+        [
+          92.97036743164062,
+          765.9828592936198
+        ],
+        [
+          92.97036743164062,
+          756.8605448404948
+        ],
+        [
+          75.53842671712239,
+          756.8605448404948
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "Notes:",
+      "confidence": 0.95,
+      "box": [
+        [
+          49.80555725097656,
+          702.1266784667969
+        ],
+        [
+          92.14027913411458,
+          702.1266784667969
+        ],
+        [
+          92.14027913411458,
+          686.3699544270834
+        ],
+        [
+          49.80555725097656,
+          686.3699544270834
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "Outofvendor list process\"Or Approved Equal\":",
+      "confidence": 0.95,
+      "box": [
+        [
+          50.6356455485026,
+          670.6132405598959
+        ],
+        [
+          252.76318359375,
+          670.6132405598959
+        ],
+        [
+          252.76318359375,
+          660.2469787597656
+        ],
+        [
+          50.6356455485026,
+          660.2469787597656
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "1.Contractor shall send a justification letter for the reason of moving to other not listed vendors substantiatedwithevidenceasapplicable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.97291564941406,
+          645.3195597330729
+        ],
+        [
+          477.30322265625,
+          645.3195597330729
+        ],
+        [
+          477.30322265625,
+          620.4405314127604
+        ],
+        [
+          70.97291564941406,
+          620.4405314127604
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "Certified Applicator Certificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          287.7195739746094,
+          606.9615478515625
+        ],
+        [
+          417.9305419921875,
+          606.9615478515625
+        ],
+        [
+          417.9305419921875,
+          598.1275634765625
+        ],
+        [
+          287.7195739746094,
+          598.1275634765625
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "3.AllAluminumWorksApplicatorsshouldprovide(CertifiedApplicator Certificate)fromManufactureris mandatoryPriorforfinal approval",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.97291564941406,
+          588.0977783203125
+        ],
+        [
+          516.3175862630209,
+          588.0977783203125
+        ],
+        [
+          516.3175862630209,
+          563.21875
+        ],
+        [
+          70.97291564941406,
+          563.21875
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "4.Factory visit shall be made when applicable and a report from SC to be submitted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.97291564941406,
+          554.5110880533855
+        ],
+        [
+          426.2525634765625,
+          554.5110880533855
+        ],
+        [
+          426.2525634765625,
+          543.3155314127605
+        ],
+        [
+          70.97291564941406,
+          543.3155314127605
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "5.Compliance / comparison sheet with all related technical data for the item to be submitted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.55787150065105,
+          532.9492594401042
+        ],
+        [
+          466.0970052083333,
+          532.9492594401042
+        ],
+        [
+          466.0970052083333,
+          522.1683553059895
+        ],
+        [
+          70.55787150065105,
+          522.1683553059895
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "6.Check for any cost saving opportunities if any. No additional cost or time impact at least.",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.55787150065105,
+          511.8020833333333
+        ],
+        [
+          454.0606282552083,
+          511.8020833333333
+        ],
+        [
+          454.0606282552083,
+          500.19187418619794
+        ],
+        [
+          70.55787150065105,
+          500.19187418619794
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "7.Final approval subject to mock-ups/samples.",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.97291564941406,
+          490.24025472005206
+        ],
+        [
+          268.5349527994792,
+          490.24025472005206
+        ],
+        [
+          268.5349527994792,
+          478.21539306640625
+        ],
+        [
+          70.97291564941406,
+          478.21539306640625
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "8.Approval by Design team is mandatory prior to final approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          71.38796488444011,
+          468.26377360026044
+        ],
+        [
+          341.5830891927083,
+          468.26377360026044
+        ],
+        [
+          341.5830891927083,
+          457.48288981119794
+        ],
+        [
+          71.38796488444011,
+          457.48288981119794
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "9.Emaar shall always have the right to approve orrcject the\"Approved Equal\"without reasons as mentioned.",
+      "confidence": 0.95,
+      "box": [
+        [
+          70.55787150065105,
+          447.53127034505206
+        ],
+        [
+          486.8492838541667,
+          447.53127034505206
+        ],
+        [
+          486.8492838541667,
+          421.82293701171875
+        ],
+        [
+          70.55787150065105,
+          421.82293701171875
+        ]
+      ],
+      "page": 167
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          431.6481526692708,
+          767.6414591471354
+        ],
+        [
+          511.3370361328125,
+          767.6414591471354
+        ],
+        [
+          511.3370361328125,
+          752.2993876139323
+        ],
+        [
+          431.6481526692708,
+          752.2993876139323
+        ]
+      ],
+      "page": 167
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 167,
+      "text": "MISR\nNotes:\nOutofvendor list process\"Or Approved Equal\":\n1.Contractor shall send a justification letter for the reason of moving to other not listed vendors substantiatedwithevidenceasapplicable.\nCertified Applicator Certificate\n3.AllAluminumWorksApplicatorsshouldprovide(CertifiedApplicator Certificate)fromManufactureris mandatoryPriorforfinal approval\n4.Factory visit shall be made when applicable and a report from SC to be submitted.\n5.Compliance / comparison sheet with all related technical data for the item to be submitted.\n6.Check for any cost saving opportunities if any. No additional cost or time impact at least.\n7.Final approval subject to mock-ups/samples.\n8.Approval by Design team is mandatory prior to final approval.\n9.Emaar shall always have the right to approve orrcject the\"Approved Equal\"without reasons as mentioned.\nResidential",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

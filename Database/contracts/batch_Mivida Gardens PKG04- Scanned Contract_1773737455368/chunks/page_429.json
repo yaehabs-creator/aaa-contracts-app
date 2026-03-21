@@ -1,0 +1,520 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n- Quantities of flammable materials on site and particularly in work areas shall be kept to an absolute minimum and shall be properly handled and stored. Only containers, cans or portable tanks designed for holding flammable liquids shall be used for the storage and handling of flammable liquids.\n- Flammablematerials aretobestoredindesignated storage areas thatarelocatedat least 20m away from other structures and areas where combustiblematerials are stored.\n- Storage areas aretobefreelyventilated toeliminate anypossiblebuild-upofflammablevapor or gas and tanks and containers are to be located in bund areas capable of containing any spillage or leak.\n- Static, portable and mobile plant and equipment is not to be refueled with the engine running. Fires and open typeheatingdevices areprohibitedon allsitesandwork areas.\n- All hot works and welding operations will be carried out under a permit to work system. The following controlswill beputin place:\n- ·All work activitywillbe coordinatedwith other activities inthe area\n- Workareasaretobeclearedofallcombustibleandflammablematerials\n- Fireblanket/fireretardantmaterialwillbeused tocover anycombustiblematerialsthatcannot be cleared\n- Fire extinguishersmust be at thework area at all times\n- A fire watch will remain in the work area of hot work activity for 30 minutes after work is completed\n- Regular inspections and monitoring of work sites, structures, accommodation units is to be carried out to ensure that fire protection arrangements are sufficient and being implemented. Firefighting equipment is to be checked monthly by a competent person and tested in accordance with manufacturers and Civil Defense requirements.\n- As a minimum afire drill is to be undertakenmonthly at eachworksite and at least once every 6 months for site offices. These drills shall be recorded and any improvement actions identified through the undertaking of the drills shall be assigned and acted upon in a timely manner.\n- Fire prevention training will be given to all employees; training will cover as a minimum:\n- Significantfinding of thefire risk assessment\n- Themeasures taken toreduce therisk\n- Whatpersonnelshould dointhe eventofafire\n- The identity of people who are responsible for fire safety\n- Any special arrangements for serious or imminent danger to persons from fire\n- Additional training will be required for those who are nominated as fire wardens, fire fighters, responsibleforcheckingfirefightingequipmentetc.\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.75138346354166,
+          726.591054280599
+        ],
+        [
+          340.7530110677083,
+          726.591054280599
+        ],
+        [
+          340.7530110677083,
+          698.8094685872396
+        ],
+        [
+          191.75138346354166,
+          698.8094685872396
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          695.0776163736979
+        ],
+        [
+          217.4842529296875,
+          695.0776163736979
+        ],
+        [
+          217.4842529296875,
+          684.2967020670573
+        ],
+        [
+          76.78356424967448,
+          684.2967020670573
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Quantities of flammable materials on site and particularly in work areas shall be kept to an absolute minimum and shall be properly handled and stored. Only containers, cans or portable tanks designed for holding flammable liquids shall be used for the storage and handling of flammable liquids.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          671.0278828938802
+        ],
+        [
+          496.3953857421875,
+          671.0278828938802
+        ],
+        [
+          496.3953857421875,
+          635.3679402669271
+        ],
+        [
+          92.55532836914062,
+          635.3679402669271
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Flammablematerials aretobestoredindesignated storage areas thatarelocatedat least 20m away from other structures and areas where combustiblematerials are stored.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          627.0749308268229
+        ],
+        [
+          495.9803059895833,
+          627.0749308268229
+        ],
+        [
+          495.9803059895833,
+          604.2691446940104
+        ],
+        [
+          92.14027913411458,
+          604.2691446940104
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Storage areas aretobefreelyventilated toeliminate anypossiblebuild-upofflammablevapor or gas and tanks and containers are to be located in bund areas capable of containing any spillage or leak.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          595.9761352539062
+        ],
+        [
+          496.3953857421875,
+          595.9761352539062
+        ],
+        [
+          496.3953857421875,
+          559.9015502929688
+        ],
+        [
+          92.14027913411458,
+          559.9015502929688
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Static, portable and mobile plant and equipment is not to be refueled with the engine running. Fires and open typeheatingdevices areprohibitedon allsitesandwork areas.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          552.8524983723958
+        ],
+        [
+          496.8104248046875,
+          552.8524983723958
+        ],
+        [
+          496.8104248046875,
+          530.0467122395833
+        ],
+        [
+          92.97036743164062,
+          530.0467122395833
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "All hot works and welding operations will be carried out under a permit to work system. The following controlswill beputin place:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          522.5830078125
+        ],
+        [
+          496.8104248046875,
+          522.5830078125
+        ],
+        [
+          496.8104248046875,
+          498.1186116536458
+        ],
+        [
+          92.55532836914062,
+          498.1186116536458
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "·All work activitywillbe coordinatedwith other activities inthe area",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.53587849934895,
+          490.24025472005206
+        ],
+        [
+          388.4833170572917,
+          490.24025472005206
+        ],
+        [
+          388.4833170572917,
+          480.70330810546875
+        ],
+        [
+          97.53587849934895,
+          480.70330810546875
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Workareasaretobeclearedofallcombustibleandflammablematerials",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          472.41029866536456
+        ],
+        [
+          404.6701253255208,
+          472.41029866536456
+        ],
+        [
+          404.6701253255208,
+          462.87331136067706
+        ],
+        [
+          109.57222493489583,
+          462.87331136067706
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Fireblanket/fireretardantmaterialwillbeused tocover anycombustiblematerialsthatcannot be cleared",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.1013895670573,
+          454.16566975911456
+        ],
+        [
+          508.0166829427083,
+          454.16566975911456
+        ],
+        [
+          508.0166829427083,
+          425.14011637369794
+        ],
+        [
+          102.1013895670573,
+          425.14011637369794
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Fire extinguishersmust be at thework area at all times",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          418.09108479817706
+        ],
+        [
+          332.86712646484375,
+          418.09108479817706
+        ],
+        [
+          332.86712646484375,
+          408.13946533203125
+        ],
+        [
+          100.8562520345052,
+          408.13946533203125
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "A fire watch will remain in the work area of hot work activity for 30 minutes after work is completed",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          400.26108805338544
+        ],
+        [
+          508.4317220052083,
+          400.26108805338544
+        ],
+        [
+          508.4317220052083,
+          371.65020751953125
+        ],
+        [
+          99.19606526692708,
+          371.65020751953125
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Regular inspections and monitoring of work sites, structures, accommodation units is to be carried out to ensure that fire protection arrangements are sufficient and being implemented. Firefighting equipment is to be checked monthly by a competent person and tested in accordance with manufacturers and Civil Defense requirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          360.03997802734375
+        ],
+        [
+          497.6405029296875,
+          360.03997802734375
+        ],
+        [
+          497.6405029296875,
+          310.69659423828125
+        ],
+        [
+          92.97036743164062,
+          310.69659423828125
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "As a minimum afire drill is to be undertakenmonthly at eachworksite and at least once every 6 months for site offices. These drills shall be recorded and any improvement actions identified through the undertaking of the drills shall be assigned and acted upon in a timely manner.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          304.06219482421875
+        ],
+        [
+          498.4705810546875,
+          304.06219482421875
+        ],
+        [
+          498.4705810546875,
+          268.8168741861979
+        ],
+        [
+          92.14027913411458,
+          268.8168741861979
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Fire prevention training will be given to all employees; training will cover as a minimum:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          260.52386474609375
+        ],
+        [
+          459.0412190755208,
+          260.52386474609375
+        ],
+        [
+          459.0412190755208,
+          250.15761311848962
+        ],
+        [
+          92.55532836914062,
+          250.15761311848962
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Significantfinding of thefire risk assessment",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          241.44993082682288
+        ],
+        [
+          296.3430582682292,
+          241.44993082682288
+        ],
+        [
+          296.3430582682292,
+          231.08367919921875
+        ],
+        [
+          99.19606526692708,
+          231.08367919921875
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Themeasures taken toreduce therisk",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          223.20534261067712
+        ],
+        [
+          265.21457926432294,
+          223.20534261067712
+        ],
+        [
+          265.21457926432294,
+          213.25372314453125
+        ],
+        [
+          100.8562520345052,
+          213.25372314453125
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Whatpersonnelshould dointhe eventofafire",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          204.96071370442712
+        ],
+        [
+          302.56874593098956,
+          204.96071370442712
+        ],
+        [
+          302.56874593098956,
+          195.42372639973962
+        ],
+        [
+          108.74212646484375,
+          195.42372639973962
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "The identity of people who are responsible for fire safety",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          187.13071695963538
+        ],
+        [
+          342.4132080078125,
+          187.13071695963538
+        ],
+        [
+          342.4132080078125,
+          175.93516031901038
+        ],
+        [
+          100.44120279947917,
+          175.93516031901038
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Any special arrangements for serious or imminent danger to persons from fire",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          169.30076090494788
+        ],
+        [
+          427.9127197265625,
+          169.30076090494788
+        ],
+        [
+          427.9127197265625,
+          158.51983642578125
+        ],
+        [
+          100.44120279947917,
+          158.51983642578125
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "Additional training will be required for those who are nominated as fire wardens, fire fighters, responsibleforcheckingfirefightingequipmentetc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          146.49497477213538
+        ],
+        [
+          497.6405029296875,
+          146.49497477213538
+        ],
+        [
+          497.6405029296875,
+          122.03061930338538
+        ],
+        [
+          91.72522989908855,
+          122.03061930338538
+        ]
+      ],
+      "page": 429
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          734.4694213867188
+        ],
+        [
+          509.6768391927083,
+          734.4694213867188
+        ],
+        [
+          509.6768391927083,
+          720.7859497070312
+        ],
+        [
+          452.8155110677083,
+          720.7859497070312
+        ]
+      ],
+      "page": 429
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 429,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nQuantities of flammable materials on site and particularly in work areas shall be kept to an absolute minimum and shall be properly handled and stored. Only containers, cans or portable tanks designed for holding flammable liquids shall be used for the storage and handling of flammable liquids.\nFlammablematerials aretobestoredindesignated storage areas thatarelocatedat least 20m away from other structures and areas where combustiblematerials are stored.\nStorage areas aretobefreelyventilated toeliminate anypossiblebuild-upofflammablevapor or gas and tanks and containers are to be located in bund areas capable of containing any spillage or leak.\nStatic, portable and mobile plant and equipment is not to be refueled with the engine running. Fires and open typeheatingdevices areprohibitedon allsitesandwork areas.\nAll hot works and welding operations will be carried out under a permit to work system. The following controlswill beputin place:\n·All work activitywillbe coordinatedwith other activities inthe area\nWorkareasaretobeclearedofallcombustibleandflammablematerials\nFireblanket/fireretardantmaterialwillbeused tocover anycombustiblematerialsthatcannot be cleared\nFire extinguishersmust be at thework area at all times\nA fire watch will remain in the work area of hot work activity for 30 minutes after work is completed\nRegular inspections and monitoring of work sites, structures, accommodation units is to be carried out to ensure that fire protection arrangements are sufficient and being implemented. Firefighting equipment is to be checked monthly by a competent person and tested in accordance with manufacturers and Civil Defense requirements.\nAs a minimum afire drill is to be undertakenmonthly at eachworksite and at least once every 6 months for site offices. These drills shall be recorded and any improvement actions identified through the undertaking of the drills shall be assigned and acted upon in a timely manner.\nFire prevention training will be given to all employees; training will cover as a minimum:\nSignificantfinding of thefire risk assessment\nThemeasures taken toreduce therisk\nWhatpersonnelshould dointhe eventofafire\nThe identity of people who are responsible for fire safety\nAny special arrangements for serious or imminent danger to persons from fire\nAdditional training will be required for those who are nominated as fire wardens, fire fighters, responsibleforcheckingfirefightingequipmentetc.\nEMAAR",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

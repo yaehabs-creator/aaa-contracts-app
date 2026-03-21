@@ -1,0 +1,543 @@
+{
+  "text": "## EMAAR\n\n<!-- image -->\n\nSumInsured:Contract Sumfor ConstructionWorks+ 15%,plus 2.5%with minimum 5M representing any additional items to the Contract Value (i.e.scaffoldings，tools,equipment,anything supplied to the Contractor by the principal and not included in the Contract Value, etc.\n\nCoverage:Constructionand/orErectionInsurancecoverforthe contract full value including 12-month maintenance and covering testing/commissioningscope.\n\nContractorshallconsiderinsuring anyVariationOrdersissuedby theEmployer/ContractAdministratortotheContractoronthesame packageandensureissuinganendorsementcoveringsuch VariationOrdervalue,scopeandlocation.\n\nTheEmployerhasavalid insurancepolicy(opencoverpolicy)covering the ContractorsAll Risk Insurance\"CAR\"issued through GlG&amp;AXA withanapproved terms&amp;conditionsasannexed totheConditionsof Contract underAppendix G\"Emaar CARopen insurancecover\"\n\n- AXApolicyNo.:Refer toappendixG\n- GIGpolicyNo.:RefertoappendixG\n\nContractorshallissueacertificate underanyof the twoabove listed policles(orjointly)withpackagedetailsandpayitsrelevantfeethat shall be deemed included in the ContractSum.\n\nNote:The samepolicies listed above shallbe applied onSouLproject which isdeveloped under the ownershipof\"Albeo NorthCoast forDevelopment\"\n\nBoth\"EmaarMisr\"and\"AlbeoNorthCoastforDevelopment\"shall be namedunder theInsured in theendorsement.\n\n- Note:The same policies listed above shall be applied on Marassi Red projectwhichisdeveloped undertheownershipof\"Skytower for RealEstateDevelopment\".\n\nBoth\"Emaar Misr\"and\"SkytowerforReal Estate Development\" shall benamedunder theInsuredintheendorsement.\n\nSuchcover(CARor EAR)shall includebut not limited to thefollowing asaminimumrequiredcoversandlimits:\n\n- WhenevertheContractValueExceeding 1.00BNto2.5BN.the followinglimitsshallbeapplied:\n- NaturalHazards100%\n- Thirdparty liability25%oftheprojectValuewithMax500MEGP\n- Cover for Loss or Damage due SRCC sub limited to 250M EGP\n- Cross liability\n- ExtendedMaintenanceperiod12months\n- OffsiteStoragesublimitedto250MEGPperstorageunitper storageunitandintheaggregate\n- Testingofmachineryand installations-3months\n- Underground cables, pipes and other facilities - within TPL limit\n\nConstructionofParcel11,Parcel 12Townhomes&amp;GradingWorks for Parcel11 ConilraclParlicularConditions Page19of 37\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          751.3196105957031
+        ],
+        [
+          178.43086751302084,
+          751.3196105957031
+        ],
+        [
+          178.43086751302084,
+          731.3809305826823
+        ],
+        [
+          98.51751708984375,
+          731.3809305826823
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "SumInsured:Contract Sumfor ConstructionWorks+ 15%,plus 2.5%with minimum 5M representing any additional items to the Contract Value (i.e.scaffoldings，tools,equipment,anything supplied to the Contractor by the principal and not included in the Contract Value, etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.80680338541666,
+          696.1700744628906
+        ],
+        [
+          502.7353108723958,
+          696.1700744628906
+        ],
+        [
+          502.7353108723958,
+          636.3540445963541
+        ],
+        [
+          192.80680338541666,
+          636.3540445963541
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Coverage:Constructionand/orErectionInsurancecoverforthe contract full value including 12-month maintenance and covering testing/commissioningscope.",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.80680338541666,
+          631.6875406901041
+        ],
+        [
+          502.7353108723958,
+          631.6875406901041
+        ],
+        [
+          502.7353108723958,
+          596.0524698893229
+        ],
+        [
+          192.80680338541666,
+          596.0524698893229
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Contractorshallconsiderinsuring anyVariationOrdersissuedby theEmployer/ContractAdministratortotheContractoronthesame packageandensureissuinganendorsementcoveringsuch VariationOrdervalue,scopeandlocation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          591.8102010091146
+        ],
+        [
+          502.7353108723958,
+          591.8102010091146
+        ],
+        [
+          502.7353108723958,
+          544.7209879557292
+        ],
+        [
+          193.2296346028646,
+          544.7209879557292
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "TheEmployerhasavalid insurancepolicy(opencoverpolicy)covering the ContractorsAll Risk Insurance\"CAR\"issued through GlG&AXA withanapproved terms&conditionsasannexed totheConditionsof Contract underAppendix G\"Emaar CARopen insurancecover\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.5852254231771,
+          537.933349609375
+        ],
+        [
+          503.1581217447917,
+          537.933349609375
+        ],
+        [
+          503.1581217447917,
+          492.11680094401044
+        ],
+        [
+          177.5852254231771,
+          492.11680094401044
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "AXApolicyNo.:Refer toappendixG",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.9611612955729,
+          489.57143147786456
+        ],
+        [
+          363.6268717447917,
+          489.57143147786456
+        ],
+        [
+          363.6268717447917,
+          478.54156494140625
+        ],
+        [
+          191.9611612955729,
+          478.54156494140625
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "GIGpolicyNo.:RefertoappendixG",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.9611612955729,
+          476.42038981119794
+        ],
+        [
+          361.9355875651042,
+          476.42038981119794
+        ],
+        [
+          361.9355875651042,
+          466.23895263671875
+        ],
+        [
+          191.9611612955729,
+          466.23895263671875
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Contractorshallissueacertificate underanyof the twoabove listed policles(orjointly)withpackagedetailsandpayitsrelevantfeethat shall be deemed included in the ContractSum.",
+      "confidence": 0.95,
+      "box": [
+        [
+          177.5852254231771,
+          459.45131429036456
+        ],
+        [
+          503.1581217447917,
+          459.45131429036456
+        ],
+        [
+          503.1581217447917,
+          424.66469319661456
+        ],
+        [
+          177.5852254231771,
+          424.66469319661456
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Note:The samepolicies listed above shallbe applied onSouLproject which isdeveloped under the ownershipof\"Albeo NorthCoast forDevelopment\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.0080362955729,
+          418.72552490234375
+        ],
+        [
+          503.1581217447917,
+          418.72552490234375
+        ],
+        [
+          503.1581217447917,
+          383.51466878255206
+        ],
+        [
+          178.0080362955729,
+          383.51466878255206
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Both\"EmaarMisr\"and\"AlbeoNorthCoastforDevelopment\"shall be namedunder theInsured in theendorsement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          377.57550048828125
+        ],
+        [
+          503.1581217447917,
+          377.57550048828125
+        ],
+        [
+          503.1581217447917,
+          354.66721598307294
+        ],
+        [
+          205.4914754231771,
+          354.66721598307294
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Note:The same policies listed above shall be applied on Marassi Red projectwhichisdeveloped undertheownershipof\"Skytower for RealEstateDevelopment\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.43086751302084,
+          348.30381266276044
+        ],
+        [
+          503.1581217447917,
+          348.30381266276044
+        ],
+        [
+          503.1581217447917,
+          313.09295654296875
+        ],
+        [
+          178.43086751302084,
+          313.09295654296875
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Both\"Emaar Misr\"and\"SkytowerforReal Estate Development\" shall benamedunder theInsuredintheendorsement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          307.5779825846354
+        ],
+        [
+          503.1581217447917,
+          307.5779825846354
+        ],
+        [
+          503.1581217447917,
+          284.66973876953125
+        ],
+        [
+          205.4914754231771,
+          284.66973876953125
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Suchcover(CARor EAR)shall includebut not limited to thefollowing asaminimumrequiredcoversandlimits:",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.0080362955729,
+          278.30633544921875
+        ],
+        [
+          502.7353108723958,
+          278.30633544921875
+        ],
+        [
+          502.7353108723958,
+          255.39805094401038
+        ],
+        [
+          178.0080362955729,
+          255.39805094401038
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "WhenevertheContractValueExceeding 1.00BNto2.5BN.the followinglimitsshallbeapplied:",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.2296346028646,
+          243.51971435546875
+        ],
+        [
+          503.5809733072917,
+          243.51971435546875
+        ],
+        [
+          503.5809733072917,
+          221.03566487630212
+        ],
+        [
+          193.2296346028646,
+          221.03566487630212
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "NaturalHazards100%",
+      "confidence": 0.95,
+      "box": [
+        [
+          209.71968587239584,
+          219.76295979817712
+        ],
+        [
+          315.84800211588544,
+          219.76295979817712
+        ],
+        [
+          315.84800211588544,
+          208.73305257161462
+        ],
+        [
+          209.71968587239584,
+          208.73305257161462
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Thirdparty liability25%oftheprojectValuewithMax500MEGP",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.5653279622396,
+          207.46038818359375
+        ],
+        [
+          503.1581217447917,
+          207.46038818359375
+        ],
+        [
+          503.1581217447917,
+          197.70318603515625
+        ],
+        [
+          210.5653279622396,
+          197.70318603515625
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Cover for Loss or Damage due SRCC sub limited to 250M EGP",
+      "confidence": 0.95,
+      "box": [
+        [
+          209.71968587239584,
+          196.43048095703125
+        ],
+        [
+          504.0037841796875,
+          196.43048095703125
+        ],
+        [
+          504.0037841796875,
+          184.97633870442712
+        ],
+        [
+          209.71968587239584,
+          184.97633870442712
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Cross liability",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.14251708984375,
+          184.12790934244788
+        ],
+        [
+          273.1429850260417,
+          184.12790934244788
+        ],
+        [
+          273.1429850260417,
+          171.82529703776038
+        ],
+        [
+          210.14251708984375,
+          171.82529703776038
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "ExtendedMaintenanceperiod12months",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.14251708984375,
+          171.82529703776038
+        ],
+        [
+          401.258056640625,
+          171.82529703776038
+        ],
+        [
+          401.258056640625,
+          161.21962483723962
+        ],
+        [
+          210.14251708984375,
+          161.21962483723962
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "OffsiteStoragesublimitedto250MEGPperstorageunitper storageunitandintheaggregate",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.14251708984375,
+          159.94696044921875
+        ],
+        [
+          504.0037841796875,
+          159.94696044921875
+        ],
+        [
+          504.0037841796875,
+          136.19024658203125
+        ],
+        [
+          210.14251708984375,
+          136.19024658203125
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Testingofmachineryand installations-3months",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.5653279622396,
+          135.34177652994788
+        ],
+        [
+          439.7348225911458,
+          135.34177652994788
+        ],
+        [
+          439.7348225911458,
+          125.58453369140625
+        ],
+        [
+          210.5653279622396,
+          125.58453369140625
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "Underground cables, pipes and other facilities - within TPL limit",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.14251708984375,
+          123.88767496744788
+        ],
+        [
+          505.2722574869792,
+          123.88767496744788
+        ],
+        [
+          505.2722574869792,
+          113.28196207682288
+        ],
+        [
+          210.14251708984375,
+          113.28196207682288
+        ]
+      ],
+      "page": 132
+    },
+    {
+      "text": "ConstructionofParcel11,Parcel 12Townhomes&GradingWorks for Parcel11 ConilraclParlicularConditions Page19of 37",
+      "confidence": 0.95,
+      "box": [
+        [
+          269.33758544921875,
+          103.10048421223962
+        ],
+        [
+          504.0037841796875,
+          103.10048421223962
+        ],
+        [
+          504.0037841796875,
+          79.34381103515625
+        ],
+        [
+          269.33758544921875,
+          79.34381103515625
+        ]
+      ],
+      "page": 132
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 132,
+      "text": "EMAAR\nSumInsured:Contract Sumfor ConstructionWorks+ 15%,plus 2.5%with minimum 5M representing any additional items to the Contract Value (i.e.scaffoldings，tools,equipment,anything supplied to the Contractor by the principal and not included in the Contract Value, etc.\nCoverage:Constructionand/orErectionInsurancecoverforthe contract full value including 12-month maintenance and covering testing/commissioningscope.\nContractorshallconsiderinsuring anyVariationOrdersissuedby theEmployer/ContractAdministratortotheContractoronthesame packageandensureissuinganendorsementcoveringsuch VariationOrdervalue,scopeandlocation.\nTheEmployerhasavalid insurancepolicy(opencoverpolicy)covering the ContractorsAll Risk Insurance\"CAR\"issued through GlG&AXA withanapproved terms&conditionsasannexed totheConditionsof Contract underAppendix G\"Emaar CARopen insurancecover\"\nAXApolicyNo.:Refer toappendixG\nGIGpolicyNo.:RefertoappendixG\nContractorshallissueacertificate underanyof the twoabove listed policles(orjointly)withpackagedetailsandpayitsrelevantfeethat shall be deemed included in the ContractSum.\nNote:The samepolicies listed above shallbe applied onSouLproject which isdeveloped under the ownershipof\"Albeo NorthCoast forDevelopment\"\nBoth\"EmaarMisr\"and\"AlbeoNorthCoastforDevelopment\"shall be namedunder theInsured in theendorsement.\nNote:The same policies listed above shall be applied on Marassi Red projectwhichisdeveloped undertheownershipof\"Skytower for RealEstateDevelopment\".\nBoth\"Emaar Misr\"and\"SkytowerforReal Estate Development\" shall benamedunder theInsuredintheendorsement.\nSuchcover(CARor EAR)shall includebut not limited to thefollowing asaminimumrequiredcoversandlimits:\nWhenevertheContractValueExceeding 1.00BNto2.5BN.the followinglimitsshallbeapplied:\nNaturalHazards100%\nThirdparty liability25%oftheprojectValuewithMax500MEGP\nCover for Loss or Damage due SRCC sub limited to 250M EGP\nCross liability\nExtendedMaintenanceperiod12months\nOffsiteStoragesublimitedto250MEGPperstorageunitper storageunitandintheaggregate\nTestingofmachineryand installations-3months\nUnderground cables, pipes and other facilities - within TPL limit\nConstructionofParcel11,Parcel 12Townhomes&GradingWorks for Parcel11 ConilraclParlicularConditions Page19of 37",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

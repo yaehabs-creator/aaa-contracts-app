@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n## SECTION 01380 PROGRESS PHOTOGRAPHS\n\n## PROGRESS PHOTOGRAPHS\n\n- 1.1 Within seven (7) days of the Contract signed and, prior to commencementof work atSite,theContractor shalltakesufficient number of photographs for record and submit a minimum of two (2) sets of twelve (12) photos 10 x 15 cm enclosed in a standard sized folder, to the Contract Administrator. The Contract Administrator shall identify the areas to be covered by a dilapidation survey.Progress Photographs shall be submitted with each Monthly Report. Actual quantity of photographs shallbe determined by  the Contract Administrator.\n- 1.2 No party is allowed to issue any photo, video or similar taken showing site progress or end product in any publication, media or similar without a prior written permission from the Owner.\n\nEND OFSECTION 01380\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "SECTION 01380 PROGRESS PHOTOGRAPHS",
+      "confidence": 0.95,
+      "box": [
+        [
+          211.6736043294271,
+          721.6152547200521
+        ],
+        [
+          368.5611165364583,
+          721.6152547200521
+        ],
+        [
+          368.5611165364583,
+          696.7362162272135
+        ],
+        [
+          211.6736043294271,
+          696.7362162272135
+        ]
+      ],
+      "page": 316
+    },
+    {
+      "text": "PROGRESS PHOTOGRAPHS",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          683.4674072265625
+        ],
+        [
+          267.28981526692706,
+          683.4674072265625
+        ],
+        [
+          267.28981526692706,
+          671.4425354003906
+        ],
+        [
+          110.40231323242188,
+          671.4425354003906
+        ]
+      ],
+      "page": 316
+    },
+    {
+      "text": "1.1 Within seven (7) days of the Contract signed and, prior to commencementof work atSite,theContractor shalltakesufficient number of photographs for record and submit a minimum of two (2) sets of twelve (12) photos 10 x 15 cm enclosed in a standard sized folder, to the Contract Administrator. The Contract Administrator shall identify the areas to be covered by a dilapidation survey.Progress Photographs shall be submitted with each Monthly Report. Actual quantity of photographs shallbe determined by  the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          657.7590738932291
+        ],
+        [
+          505.9414469401042,
+          657.7590738932291
+        ],
+        [
+          505.9414469401042,
+          539.5836791992188
+        ],
+        [
+          109.98726399739583,
+          539.5836791992188
+        ]
+      ],
+      "page": 316
+    },
+    {
+      "text": "1.2 No party is allowed to issue any photo, video or similar taken showing site progress or end product in any publication, media or similar without a prior written permission from the Owner.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          525.9002075195312
+        ],
+        [
+          505.111328125,
+          525.9002075195312
+        ],
+        [
+          505.111328125,
+          486.50840250651044
+        ],
+        [
+          109.1571756998698,
+          486.50840250651044
+        ]
+      ],
+      "page": 316
+    },
+    {
+      "text": "END OFSECTION 01380",
+      "confidence": 0.95,
+      "box": [
+        [
+          223.2949015299479,
+          460.80006917317706
+        ],
+        [
+          355.6946614583333,
+          460.80006917317706
+        ],
+        [
+          355.6946614583333,
+          447.53127034505206
+        ],
+        [
+          223.2949015299479,
+          447.53127034505206
+        ]
+      ],
+      "page": 316
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 316,
+      "text": "SECTION 01380 PROGRESS PHOTOGRAPHS\nPROGRESS PHOTOGRAPHS\n1.1 Within seven (7) days of the Contract signed and, prior to commencementof work atSite,theContractor shalltakesufficient number of photographs for record and submit a minimum of two (2) sets of twelve (12) photos 10 x 15 cm enclosed in a standard sized folder, to the Contract Administrator. The Contract Administrator shall identify the areas to be covered by a dilapidation survey.Progress Photographs shall be submitted with each Monthly Report. Actual quantity of photographs shallbe determined by  the Contract Administrator.\n1.2 No party is allowed to issue any photo, video or similar taken showing site progress or end product in any publication, media or similar without a prior written permission from the Owner.\nEND OFSECTION 01380",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

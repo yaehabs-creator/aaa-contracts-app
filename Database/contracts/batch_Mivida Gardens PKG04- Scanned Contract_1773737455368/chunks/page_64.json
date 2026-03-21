@@ -1,0 +1,267 @@
+{
+  "text": "Sitewhichhasnotbeentestedforandshowntobeclearofviruses or like agents.\n\n## Loss,InjuryorDamagetoWorkmen\n\n- 12.7 TheEmployer(includingwithout limitationanyconsultant,servant,agentor employeeof theEmployer)shallnotbeliablefor and theContractorshall indemnifyit againstanyand alllosses,liabilities,costs,claims,actions or demandswhichitmayincurorwhichmaybemadeagainstitasaresultof or in connection with any loss, injury (including death) or damage to any workmanorotherpersonintheemploymentoftheContractororanyofits Subcontractorssaveandexceptanysuchmatterswhichmayarisefromany actorneglectof theEmployer,itsconsultants,servants,agents,employees orothercontractorsnotbeingemployed bytheContractor.Theprovisions of thelastparagraphof Sub-Clause(a)of Clause 12.6(General Indemnity) shall also apply to the indemnity in this Clause 12.7.\n\n## LossorDamage to Conlraclur'sEquipment\n\n- 12.8TheEmployer(including without limitation any consultant,servant,agentor employeeof theEmployer)shall notinanycircumstancesbeliabletothe Contractorfor anylossofor damage to any of theContractor's Equipment or for anylosses,liabilities,costs,claims,actions or demands which the connectionwithanysuchlossordamage.Provided thatthisexclusionshall notapplyifand totheextentthatsuchlossordamagedirectlyresultsfrom any act or neglect of the Employer，its consultants,servants,agents,\n\n## Insurance\n\n- 12.9 Without in any way limiting or detracting from the Contractor's liabilities under Clauses 12.5 (Risk and Care), 12.6 (General Indemnity),or 12.7 ContracttheContractorshallatitsownCosttakeoutas fromthe commencementoftheWorksandmaintainuntiltheissuebytheProject ManagerofthelastFinalCertlflcateInaccordancewillClause26.4(Issue of Final Certificates) thefollowing insurances with insurers acceptable to the Employer and under one or more policies in such form and with only such exclusions and restrictions as the Employer may approve, namely:-\n- (a) Plant and Contractor's Equipment -being coverage in respect of all risksofphysical lossordamagewhichmayoccur:-\n- (i) to anyPlantpriortoitsdeliveryto andduringitsunloading at the Site; and\n- (ii) toanyContractor'sEquipment.\n\n<!-- image -->\n\nThesaidPlantandContractor'sEquipmentshallbecovered whereverintheworld thesamemayforthetimebeingbesituated andeven if thesamebeinstorageorintransitexceptthatPlant\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Sitewhichhasnotbeentestedforandshowntobeclearofviruses or like agents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.8470662434896,
+          722.472157796224
+        ],
+        [
+          487.0909016927083,
+          722.472157796224
+        ],
+        [
+          487.0909016927083,
+          699.5638936360677
+        ],
+        [
+          189.8470662434896,
+          699.5638936360677
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "Loss,InjuryorDamagetoWorkmen",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          687.685536702474
+        ],
+        [
+          258.76702880859375,
+          687.685536702474
+        ],
+        [
+          258.76702880859375,
+          676.6556294759115
+        ],
+        [
+          96.40340169270833,
+          676.6556294759115
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "12.7 TheEmployer(includingwithout limitationanyconsultant,servant,agentor employeeof theEmployer)shallnotbeliablefor and theContractorshall indemnifyit againstanyand alllosses,liabilities,costs,claims,actions or demandswhichitmayincurorwhichmaybemadeagainstitasaresultof or in connection with any loss, injury (including death) or damage to any workmanorotherpersonintheemploymentoftheContractororanyofits Subcontractorssaveandexceptanysuchmatterswhichmayarisefromany actorneglectof theEmployer,itsconsultants,servants,agents,employees orothercontractorsnotbeingemployed bytheContractor.Theprovisions of thelastparagraphof Sub-Clause(a)of Clause 12.6(General Indemnity) shall also apply to the indemnity in this Clause 12.7.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          665.2014973958334
+        ],
+        [
+          488.7821858723958,
+          665.2014973958334
+        ],
+        [
+          488.7821858723958,
+          540.4787190755208
+        ],
+        [
+          128.11505126953125,
+          540.4787190755208
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "LossorDamage to Conlraclur'sEquipment",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          528.600341796875
+        ],
+        [
+          291.32432047526044,
+          528.600341796875
+        ],
+        [
+          291.32432047526044,
+          517.5704345703125
+        ],
+        [
+          96.82623291015625,
+          517.5704345703125
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "12.8TheEmployer(including without limitation any consultant,servant,agentor employeeof theEmployer)shall notinanycircumstancesbeliabletothe Contractorfor anylossofor damage to any of theContractor's Equipment or for anylosses,liabilities,costs,claims,actions or demands which the connectionwithanysuchlossordamage.Provided thatthisexclusionshall notapplyifand totheextentthatsuchlossordamagedirectlyresultsfrom any act or neglect of the Employer，its consultants,servants,agents,",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          506.11631266276044
+        ],
+        [
+          489.2049967447917,
+          506.11631266276044
+        ],
+        [
+          489.2049967447917,
+          417.45281982421875
+        ],
+        [
+          127.2694091796875,
+          417.45281982421875
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "Insurance",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          391.57497151692706
+        ],
+        [
+          143.33663940429688,
+          391.57497151692706
+        ],
+        [
+          143.33663940429688,
+          381.39353434244794
+        ],
+        [
+          97.671875,
+          381.39353434244794
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "12.9 Without in any way limiting or detracting from the Contractor's liabilities under Clauses 12.5 (Risk and Care), 12.6 (General Indemnity),or 12.7 ContracttheContractorshallatitsownCosttakeoutas fromthe commencementoftheWorksandmaintainuntiltheissuebytheProject ManagerofthelastFinalCertlflcateInaccordancewillClause26.4(Issue of Final Certificates) thefollowing insurances with insurers acceptable to the Employer and under one or more policies in such form and with only such exclusions and restrictions as the Employer may approve, namely:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.38351440429688,
+          369.93939208984375
+        ],
+        [
+          489.6278483072917,
+          369.93939208984375
+        ],
+        [
+          489.6278483072917,
+          268.1248575846354
+        ],
+        [
+          129.38351440429688,
+          268.1248575846354
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "(a) Plant and Contractor's Equipment -being coverage in respect of all risksofphysical lossordamagewhichmayoccur:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.82670084635416,
+          257.5191853841146
+        ],
+        [
+          490.4734700520833,
+          257.5191853841146
+        ],
+        [
+          490.4734700520833,
+          235.03517659505212
+        ],
+        [
+          159.82670084635416,
+          235.03517659505212
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "(i) to anyPlantpriortoitsdeliveryto andduringitsunloading at the Site; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.5383504231771,
+          223.15679931640625
+        ],
+        [
+          490.4734700520833,
+          223.15679931640625
+        ],
+        [
+          490.4734700520833,
+          200.67274983723962
+        ],
+        [
+          191.5383504231771,
+          200.67274983723962
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "(ii) toanyContractor'sEquipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.9611612955729,
+          188.79441324869788
+        ],
+        [
+          361.0899658203125,
+          188.79441324869788
+        ],
+        [
+          361.0899658203125,
+          176.91603597005212
+        ],
+        [
+          191.9611612955729,
+          176.91603597005212
+        ]
+      ],
+      "page": 64
+    },
+    {
+      "text": "ThesaidPlantandContractor'sEquipmentshallbecovered whereverintheworld thesamemayforthetimebeingbesituated andeven if thesamebeinstorageorintransitexceptthatPlant",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.9611612955729,
+          166.31036376953125
+        ],
+        [
+          490.8962809244792,
+          166.31036376953125
+        ],
+        [
+          490.8962809244792,
+          133.64483642578125
+        ],
+        [
+          191.9611612955729,
+          133.64483642578125
+        ]
+      ],
+      "page": 64
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 64,
+      "text": "Sitewhichhasnotbeentestedforandshowntobeclearofviruses or like agents.\nLoss,InjuryorDamagetoWorkmen\n12.7 TheEmployer(includingwithout limitationanyconsultant,servant,agentor employeeof theEmployer)shallnotbeliablefor and theContractorshall indemnifyit againstanyand alllosses,liabilities,costs,claims,actions or demandswhichitmayincurorwhichmaybemadeagainstitasaresultof or in connection with any loss, injury (including death) or damage to any workmanorotherpersonintheemploymentoftheContractororanyofits Subcontractorssaveandexceptanysuchmatterswhichmayarisefromany actorneglectof theEmployer,itsconsultants,servants,agents,employees orothercontractorsnotbeingemployed bytheContractor.Theprovisions of thelastparagraphof Sub-Clause(a)of Clause 12.6(General Indemnity) shall also apply to the indemnity in this Clause 12.7.\nLossorDamage to Conlraclur'sEquipment\n12.8TheEmployer(including without limitation any consultant,servant,agentor employeeof theEmployer)shall notinanycircumstancesbeliabletothe Contractorfor anylossofor damage to any of theContractor's Equipment or for anylosses,liabilities,costs,claims,actions or demands which the connectionwithanysuchlossordamage.Provided thatthisexclusionshall notapplyifand totheextentthatsuchlossordamagedirectlyresultsfrom any act or neglect of the Employer，its consultants,servants,agents,\nInsurance\n12.9 Without in any way limiting or detracting from the Contractor's liabilities under Clauses 12.5 (Risk and Care), 12.6 (General Indemnity),or 12.7 ContracttheContractorshallatitsownCosttakeoutas fromthe commencementoftheWorksandmaintainuntiltheissuebytheProject ManagerofthelastFinalCertlflcateInaccordancewillClause26.4(Issue of Final Certificates) thefollowing insurances with insurers acceptable to the Employer and under one or more policies in such form and with only such exclusions and restrictions as the Employer may approve, namely:-\n(a) Plant and Contractor's Equipment -being coverage in respect of all risksofphysical lossordamagewhichmayoccur:-\n(i) to anyPlantpriortoitsdeliveryto andduringitsunloading at the Site; and\n(ii) toanyContractor'sEquipment.\nThesaidPlantandContractor'sEquipmentshallbecovered whereverintheworld thesamemayforthetimebeingbesituated andeven if thesamebeinstorageorintransitexceptthatPlant",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

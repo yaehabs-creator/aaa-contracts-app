@@ -1,0 +1,589 @@
+{
+  "text": "## EMAAR\n\nthat are a fire hazard in closed metal containers and remove them from the building every night.\n\n- 14.Where flammable materials are being applied, ensure that adequate ventilation is provided, spark-proof equipment is used, and smoking and open flames are prohibited.\n- 15.Ensurethatvolatilefluidwastesarenotdisposedofinstormorsanitarysewers authoritiesareutilized.\n- 16.ActivePublicUtilitiesandServices:\n- a) Verify location of and limitations imposed by, existing mechanical, electrical, telephone, communication and data and similar services, and protect them from damage. Provide layout of existing utilities on the Site and at perimeter of the Site showing clevations referenced to building datum, depth of utilities and alignment referenced to approve benchmark. If necessary, relocate activeservicestoensurethattheyfunctioncontinuouslyinsafetyand without risk of damage.Any active utility damaged by Contractor shiall be repaired byqualifiedpersonnel at Contractor'scost and to the satisfaction of jurisdictionalauthorities,SupervisionConsultantandContractAdministrator.\n- Coordinate the capping off, removal and reconnection of a utility with the utility concerned, and make payment for any costs involved.\n- b)Cap off and remove unused utility services encountered duringwork after approval is given by the utilities concerned or jurisdictional authorities, whichever may apply. Relocation, \\_ removal, protection and capping of existing utility services shall be performed only by qualified mechanics at Contractor's cost.\n- 17.Ensure that adequate precautions are taken to prevent leakage and spillage from plumbing and mechanical work or tests that may damage surfaces and materials.\n- 18.Ensure thatadequate controls areprovided andprecautions are taken during construction of the Works to prevent damage to work in progress, completed work and adjacent property. If requested by Contract Administrator, survey surroundingstructures,roadwaysandotherelements,andprovidephotosprior to start of work. Monitor structures, roadways and other elements on a routine basis and submit results to Contract Administrator.\n- 19.Give constant close supervision to roofing and/or waterproofing membranes following their installation, during the time they are temporarily protected or exposed, to ensure that no damage occurs to them before completion of building.\n\nEByPt\n\n12\n\n- 20.Ensure that physical protection and barriers to prevent traffic are installed for waterproofing membranes.Provide barricades or guards to prevent traffic over horizontal membranesuntil permanent protectionisprovided.Inspect membranesbeforetheyare finally covered.Makegood damaged membranes. Ensure thatpersonnel underthe control of Contractor respect all barriers.Pay forrepairor replacementof anyprotectionofothers damagedbyContractoi's personnel.\n\n## 21.Floors:\n\n- a)Adequately protecl trowelled concrete floors from damage.Take special measureswhenmovingheavyloadsorequipmentonthem.\n- c)Preventsoiling or damage to finish flooring where Contractor'swork occurs after the flogring has boen\\_installed.install and maintain 0.152mm polyethylene membrane or, reinforced kraft paper temporary protection, secured in plaeeandwith. Ssealad\\_byreinforcedpressure-sensitive\n- b)Keep trowelled concrete floors freefromoils,grease orother materials likely to damage them,discolour them or affect bond ofapplied finishes.Once the building is enclosed,keep floors as dry aspossible after curing.\n\ntmaarMisrforDevelopment\n\nTaCud218257.208\n\nP.O.Box.729,\n\nC12841\n\nSpeciticationsDiv.01General RequiremenCnE\n\n有限责任公\n\nMisr",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          83.00925699869792,
+          773.4465637207031
+        ],
+        [
+          155.2273152669271,
+          773.4465637207031
+        ],
+        [
+          155.2273152669271,
+          756.4458923339844
+        ],
+        [
+          83.00925699869792,
+          756.4458923339844
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "that are a fire hazard in closed metal containers and remove them from the building every night.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          723.2738545735677
+        ],
+        [
+          504.28125,
+          723.2738545735677
+        ],
+        [
+          504.28125,
+          698.3948262532552
+        ],
+        [
+          109.98726399739583,
+          698.3948262532552
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "14.Where flammable materials are being applied, ensure that adequate ventilation is provided, spark-proof equipment is used, and smoking and open flames are prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          700.4680786132812
+        ],
+        [
+          505.111328125,
+          700.4680786132812
+        ],
+        [
+          505.111328125,
+          666.0520833333334
+        ],
+        [
+          94.2155049641927,
+          666.0520833333334
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "15.Ensurethatvolatilefluidwastesarenotdisposedofinstormorsanitarysewers authoritiesareutilized.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          666.0520833333334
+        ],
+        [
+          504.28125,
+          666.0520833333334
+        ],
+        [
+          504.28125,
+          631.221435546875
+        ],
+        [
+          94.2155049641927,
+          631.221435546875
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "16.ActivePublicUtilitiesandServices:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          631.221435546875
+        ],
+        [
+          283.89166259765625,
+          631.221435546875
+        ],
+        [
+          283.89166259765625,
+          619.6112263997396
+        ],
+        [
+          94.2155049641927,
+          619.6112263997396
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "Verify location of and limitations imposed by, existing mechanical, electrical, telephone, communication and data and similar services, and protect them from damage. Provide layout of existing utilities on the Site and at perimeter of the Site showing clevations referenced to building datum, depth of utilities and alignment referenced to approve benchmark. If necessary, relocate activeservicestoensurethattheyfunctioncontinuouslyinsafetyand without risk of damage.Any active utility damaged by Contractor shiall be repaired byqualifiedpersonnel at Contractor'scost and to the satisfaction of jurisdictionalauthorities,SupervisionConsultantandContractAdministrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          608.8303019205729
+        ],
+        [
+          505.5263671875,
+          608.8303019205729
+        ],
+        [
+          505.5263671875,
+          505.58233642578125
+        ],
+        [
+          109.57222493489583,
+          505.58233642578125
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "Coordinate the capping off, removal and reconnection of a utility with the utility concerned, and make payment for any costs involved.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.09884643554688,
+          449.18983968098956
+        ],
+        [
+          503.451171875,
+          449.18983968098956
+        ],
+        [
+          503.451171875,
+          424.72548421223956
+        ],
+        [
+          124.09884643554688,
+          424.72548421223956
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "b)Cap off and remove unused utility services encountered duringwork after approval is given by the utilities concerned or jurisdictional authorities, whichever may apply. Relocation, _ removal, protection and capping of existing utility services shall be performed only by qualified mechanics at Contractor's cost.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          506.41164143880206
+        ],
+        [
+          505.5263671875,
+          506.41164143880206
+        ],
+        [
+          505.5263671875,
+          448.36057535807294
+        ],
+        [
+          108.74212646484375,
+          448.36057535807294
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "17.Ensure that adequate precautions are taken to prevent leakage and spillage from plumbing and mechanical work or tests that may damage surfaces and materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          415.60316975911456
+        ],
+        [
+          503.8662109375,
+          415.60316975911456
+        ],
+        [
+          503.8662109375,
+          381.18719482421875
+        ],
+        [
+          92.55532836914062,
+          381.18719482421875
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "18.Ensure thatadequate controls areprovided andprecautions are taken during construction of the Works to prevent damage to work in progress, completed work and adjacent property. If requested by Contract Administrator, survey surroundingstructures,roadwaysandotherelements,andprovidephotosprior to start of work. Monitor structures, roadways and other elements on a routine basis and submit results to Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          381.18719482421875
+        ],
+        [
+          504.28125,
+          381.18719482421875
+        ],
+        [
+          504.28125,
+          311.52589925130206
+        ],
+        [
+          91.72522989908855,
+          311.52589925130206
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "19.Give constant close supervision to roofing and/or waterproofing membranes following their installation, during the time they are temporarily protected or exposed, to ensure that no damage occurs to them before completion of building.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          313.18450927734375
+        ],
+        [
+          505.111328125,
+          313.18450927734375
+        ],
+        [
+          505.111328125,
+          265.9143269856771
+        ],
+        [
+          92.14027913411458,
+          265.9143269856771
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "EByPt",
+      "confidence": 0.95,
+      "box": [
+        [
+          500.1307779947917,
+          209.52187093098962
+        ],
+        [
+          532.50439453125,
+          209.52187093098962
+        ],
+        [
+          532.50439453125,
+          197.49700927734375
+        ],
+        [
+          500.1307779947917,
+          197.49700927734375
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "12",
+      "confidence": 0.95,
+      "box": [
+        [
+          512.5821940104166,
+          192.93585205078125
+        ],
+        [
+          520.8830973307291,
+          192.93585205078125
+        ],
+        [
+          520.8830973307291,
+          185.47214762369788
+        ],
+        [
+          512.5821940104166,
+          185.47214762369788
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "20.Ensure that physical protection and barriers to prevent traffic are installed for waterproofing membranes.Provide barricades or guards to prevent traffic over horizontal membranesuntil permanent protectionisprovided.Inspect membranesbeforetheyare finally covered.Makegood damaged membranes. Ensure thatpersonnel underthe control of Contractor respect all barriers.Pay forrepairor replacementof anyprotectionofothers damagedbyContractoi's personnel.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          267.15826416015625
+        ],
+        [
+          503.8662109375,
+          267.15826416015625
+        ],
+        [
+          503.8662109375,
+          186.71608479817712
+        ],
+        [
+          90.8951416015625,
+          186.71608479817712
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "21.Floors:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          187.54538981119788
+        ],
+        [
+          143.60601806640625,
+          187.54538981119788
+        ],
+        [
+          143.60601806640625,
+          175.10585530598962
+        ],
+        [
+          90.48009236653645,
+          175.10585530598962
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "a)Adequately protecl trowelled concrete floors from damage.Take special measureswhenmovingheavyloadsorequipmentonthem.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          175.10585530598962
+        ],
+        [
+          505.111328125,
+          175.10585530598962
+        ],
+        [
+          505.111328125,
+          151.88543701171875
+        ],
+        [
+          107.49698893229167,
+          151.88543701171875
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "c)Preventsoiling or damage to finish flooring where Contractor'swork occurs after the flogring has boen_installed.install and maintain 0.152mm polyethylene membrane or, reinforced kraft paper temporary protection, secured in plaeeandwith. Ssealad_byreinforcedpressure-sensitive",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          118.29876708984375
+        ],
+        [
+          503.8662109375,
+          118.29876708984375
+        ],
+        [
+          503.8662109375,
+          69.78460693359375
+        ],
+        [
+          107.49698893229167,
+          69.78460693359375
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "b)Keep trowelled concrete floors freefromoils,grease orother materials likely to damage them,discolour them or affect bond ofapplied finishes.Once the building is enclosed,keep floors as dry aspossible after curing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          153.54404703776038
+        ],
+        [
+          504.28125,
+          153.54404703776038
+        ],
+        [
+          504.28125,
+          117.05478922526038
+        ],
+        [
+          106.66690063476562,
+          117.05478922526038
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "tmaarMisrforDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          71.80300903320312,
+          60.24766031901038
+        ],
+        [
+          159.7928263346354,
+          60.24766031901038
+        ],
+        [
+          159.7928263346354,
+          49.88144938151038
+        ],
+        [
+          71.80300903320312,
+          49.88144938151038
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "TaCud218257.208",
+      "confidence": 0.95,
+      "box": [
+        [
+          198.80716959635416,
+          72.27256266276038
+        ],
+        [
+          257.3286946614583,
+          72.27256266276038
+        ],
+        [
+          257.3286946614583,
+          59.00368245442712
+        ],
+        [
+          198.80716959635416,
+          59.00368245442712
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "P.O.Box.729,",
+      "confidence": 0.95,
+      "box": [
+        [
+          198.39213053385416,
+          58.58905029296875
+        ],
+        [
+          231.1807861328125,
+          58.58905029296875
+        ],
+        [
+          231.1807861328125,
+          48.22283935546875
+        ],
+        [
+          198.39213053385416,
+          48.22283935546875
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "C12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          198.80716959635416,
+          65.22349039713538
+        ],
+        [
+          224.9550984700521,
+          65.22349039713538
+        ],
+        [
+          224.9550984700521,
+          54.85719807942712
+        ],
+        [
+          198.80716959635416,
+          54.85719807942712
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "SpeciticationsDiv.01General RequiremenCnE",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          51.53997802734375
+        ],
+        [
+          227.86041259765625,
+          51.53997802734375
+        ],
+        [
+          227.86041259765625,
+          42.00303141276038
+        ],
+        [
+          73.0481465657552,
+          42.00303141276038
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "有限责任公",
+      "confidence": 0.95,
+      "box": [
+        [
+          511.7520751953125,
+          184.22816975911462
+        ],
+        [
+          532.50439453125,
+          184.22816975911462
+        ],
+        [
+          532.50439453125,
+          132.39683024088538
+        ],
+        [
+          511.7520751953125,
+          132.39683024088538
+        ]
+      ],
+      "page": 254
+    },
+    {
+      "text": "Misr",
+      "confidence": 0.95,
+      "box": [
+        [
+          273.93056233723956,
+          46.97886149088538
+        ],
+        [
+          289.7023111979167,
+          46.97886149088538
+        ],
+        [
+          289.7023111979167,
+          35.36867268880212
+        ],
+        [
+          273.93056233723956,
+          35.36867268880212
+        ]
+      ],
+      "page": 254
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 254,
+      "text": "EMAAR\nthat are a fire hazard in closed metal containers and remove them from the building every night.\n14.Where flammable materials are being applied, ensure that adequate ventilation is provided, spark-proof equipment is used, and smoking and open flames are prohibited.\n15.Ensurethatvolatilefluidwastesarenotdisposedofinstormorsanitarysewers authoritiesareutilized.\n16.ActivePublicUtilitiesandServices:\nVerify location of and limitations imposed by, existing mechanical, electrical, telephone, communication and data and similar services, and protect them from damage. Provide layout of existing utilities on the Site and at perimeter of the Site showing clevations referenced to building datum, depth of utilities and alignment referenced to approve benchmark. If necessary, relocate activeservicestoensurethattheyfunctioncontinuouslyinsafetyand without risk of damage.Any active utility damaged by Contractor shiall be repaired byqualifiedpersonnel at Contractor'scost and to the satisfaction of jurisdictionalauthorities,SupervisionConsultantandContractAdministrator.\nCoordinate the capping off, removal and reconnection of a utility with the utility concerned, and make payment for any costs involved.\nb)Cap off and remove unused utility services encountered duringwork after approval is given by the utilities concerned or jurisdictional authorities, whichever may apply. Relocation, _ removal, protection and capping of existing utility services shall be performed only by qualified mechanics at Contractor's cost.\n17.Ensure that adequate precautions are taken to prevent leakage and spillage from plumbing and mechanical work or tests that may damage surfaces and materials.\n18.Ensure thatadequate controls areprovided andprecautions are taken during construction of the Works to prevent damage to work in progress, completed work and adjacent property. If requested by Contract Administrator, survey surroundingstructures,roadwaysandotherelements,andprovidephotosprior to start of work. Monitor structures, roadways and other elements on a routine basis and submit results to Contract Administrator.\n19.Give constant close supervision to roofing and/or waterproofing membranes following their installation, during the time they are temporarily protected or exposed, to ensure that no damage occurs to them before completion of building.\nEByPt\n12\n20.Ensure that physical protection and barriers to prevent traffic are installed for waterproofing membranes.Provide barricades or guards to prevent traffic over horizontal membranesuntil permanent protectionisprovided.Inspect membranesbeforetheyare finally covered.Makegood damaged membranes. Ensure thatpersonnel underthe control of Contractor respect all barriers.Pay forrepairor replacementof anyprotectionofothers damagedbyContractoi's personnel.\n21.Floors:\na)Adequately protecl trowelled concrete floors from damage.Take special measureswhenmovingheavyloadsorequipmentonthem.\nc)Preventsoiling or damage to finish flooring where Contractor'swork occurs after the flogring has boen_installed.install and maintain 0.152mm polyethylene membrane or, reinforced kraft paper temporary protection, secured in plaeeandwith. Ssealad_byreinforcedpressure-sensitive\nb)Keep trowelled concrete floors freefromoils,grease orother materials likely to damage them,discolour them or affect bond ofapplied finishes.Once the building is enclosed,keep floors as dry aspossible after curing.\ntmaarMisrforDevelopment\nTaCud218257.208\nP.O.Box.729,\nC12841\nSpeciticationsDiv.01General RequiremenCnE\n有限责任公\nMisr",
+      "line_count": 25
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

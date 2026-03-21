@@ -1,0 +1,681 @@
+{
+  "text": "<!-- image -->\n\nPART 1 - GENERAL\n\n## 1.01 FINAL. CLEANING\n\n1. The Contractor shall be responsible for final cleaning. Before final inspection, replace glass and mirrors that have been broken, damaged and/or etched during construction, or which are otherwise not in accordance with the Contract.\n2. In addition to requirements for cleaning-up specified elsewhere in the Contract Documents, including Section 01010, include final cleaning of the Works by Supervision Consultant/Operator, through the Contract Administrator.\n3. Remove Temporary Works as approved by local authorities having jurisdiction and Contract Administrator, and make good defects before commencement of final cleaning.\n4. Remove dust, stains from mortar, cement, sealants, adhesives, finishing and other materials; soil, grease, fingerprints; and accumulations of construction materials, debris and other rubbish; both interior and exterior to the building. Perform cleaning in accordance with installer's instructions for each material. Prior to Supervision Consultant/Operator's inspection for issuance of the Taking Over Certificate, cleaning shall include:\n- a) Washing of exterior paved surfaces at grade and on roofs, and interior concretefloors.\n- b) Cleaning out of:\n7. Elevator, pipe and duct shafts.\n8. Pavement, floor and roof drains.\n9. c)Sweeping cleanexposed roofing.\n- d) Cleaning and polishing of:\n11. Mirrors.\n12. Glasson both interior and exterior faces.\n13. Porcelain, enamel, and finish metals.\n14. Washroom accessories.\n- f) Cleaning of:\n16. Interior wall faces.\n17. Exterior wall and structure faces.\n18. Interior floors.\n19. Stairs.\n- g) Buffing and application of two light coats of wax, each buffed, onuvinyt compositionfloortile.\n21. h)Cleaning ofhardwafe,washroom accessories mechanical fixtures, lighting fixtures, cover platesand &amp;quipment jncluding polishing of their finish Dureiopmient LAE\n\n<!-- image -->\n\n(R12441\n\nCalu,bsyu\n\nP0 nx 229, Mekuuhu\n\n## SECTI0N01710\n\n## FINAL CLEANING\n\nMiy",
+  "results": [
+    {
+      "text": "PART 1 - GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          676.832997639974
+        ],
+        [
+          182.205322265625,
+          676.832997639974
+        ],
+        [
+          182.205322265625,
+          664.8081258138021
+        ],
+        [
+          77.1986083984375,
+          664.8081258138021
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "1.01 FINAL. CLEANING",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          653.6125691731771
+        ],
+        [
+          205.86295572916666,
+          653.6125691731771
+        ],
+        [
+          205.86295572916666,
+          642.0023600260416
+        ],
+        [
+          77.1986083984375,
+          642.0023600260416
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "The Contractor shall be responsible for final cleaning. Before final inspection, replace glass and mirrors that have been broken, damaged and/or etched during construction, or which are otherwise not in accordance with the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          631.221435546875
+        ],
+        [
+          505.5263671875,
+          631.221435546875
+        ],
+        [
+          505.5263671875,
+          583.9512736002604
+        ],
+        [
+          95.87569173177083,
+          583.9512736002604
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "In addition to requirements for cleaning-up specified elsewhere in the Contract Documents, including Section 01010, include final cleaning of the Works by Supervision Consultant/Operator, through the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          574.8289591471354
+        ],
+        [
+          506.7715250651042,
+          574.8289591471354
+        ],
+        [
+          506.7715250651042,
+          526.729512532552
+        ],
+        [
+          92.97036743164062,
+          526.729512532552
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Remove Temporary Works as approved by local authorities having jurisdiction and Contract Administrator, and make good defects before commencement of final cleaning.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          517.607198079427
+        ],
+        [
+          505.9414469401042,
+          517.607198079427
+        ],
+        [
+          505.9414469401042,
+          480.28863525390625
+        ],
+        [
+          92.55532836914062,
+          480.28863525390625
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Remove dust, stains from mortar, cement, sealants, adhesives, finishing and other materials; soil, grease, fingerprints; and accumulations of construction materials, debris and other rubbish; both interior and exterior to the building. Perform cleaning in accordance with installer's instructions for each material. Prior to Supervision Consultant/Operator's inspection for issuance of the Taking Over Certificate, cleaning shall include:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          471.58099365234375
+        ],
+        [
+          505.5263671875,
+          471.58099365234375
+        ],
+        [
+          505.5263671875,
+          401.50506591796875
+        ],
+        [
+          92.97036743164062,
+          401.50506591796875
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Washing of exterior paved surfaces at grade and on roofs, and interior concretefloors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          391.55344645182294
+        ],
+        [
+          504.6962890625,
+          391.55344645182294
+        ],
+        [
+          504.6962890625,
+          367.50372314453125
+        ],
+        [
+          109.98726399739583,
+          367.50372314453125
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Cleaning out of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          357.13743082682294
+        ],
+        [
+          206.69305419921875,
+          357.13743082682294
+        ],
+        [
+          206.69305419921875,
+          344.69793701171875
+        ],
+        [
+          109.98726399739583,
+          344.69793701171875
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Elevator, pipe and duct shafts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.3388875325521,
+          334.33168538411456
+        ],
+        [
+          321.24582926432294,
+          334.33168538411456
+        ],
+        [
+          321.24582926432294,
+          321.47751871744794
+        ],
+        [
+          169.3388875325521,
+          321.47751871744794
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Pavement, floor and roof drains.",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.75393676757812,
+          345.52724202473956
+        ],
+        [
+          329.5467529296875,
+          345.52724202473956
+        ],
+        [
+          329.5467529296875,
+          333.50238037109375
+        ],
+        [
+          169.75393676757812,
+          333.50238037109375
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "c)Sweeping cleanexposed roofing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          310.69659423828125
+        ],
+        [
+          291.7775472005208,
+          310.69659423828125
+        ],
+        [
+          291.7775472005208,
+          298.6717325846354
+        ],
+        [
+          110.40231323242188,
+          298.6717325846354
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Cleaning and polishing of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          288.7201131184896
+        ],
+        [
+          257.3286946614583,
+          288.7201131184896
+        ],
+        [
+          257.3286946614583,
+          276.28057861328125
+        ],
+        [
+          109.98726399739583,
+          276.28057861328125
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Mirrors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.3388875325521,
+          266.3289998372396
+        ],
+        [
+          209.598388671875,
+          266.3289998372396
+        ],
+        [
+          209.598388671875,
+          253.47483317057288
+        ],
+        [
+          169.3388875325521,
+          253.47483317057288
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Glasson both interior and exterior faces.",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.92383829752603,
+          277.5245564778646
+        ],
+        [
+          370.2213134765625,
+          277.5245564778646
+        ],
+        [
+          370.2213134765625,
+          265.08502197265625
+        ],
+        [
+          168.92383829752603,
+          265.08502197265625
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Porcelain, enamel, and finish metals.",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.92383829752603,
+          255.13340250651038
+        ],
+        [
+          353.2043863932292,
+          255.13340250651038
+        ],
+        [
+          353.2043863932292,
+          243.10854085286462
+        ],
+        [
+          168.92383829752603,
+          243.10854085286462
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Washroom accessories.",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.92383829752603,
+          243.52321370442712
+        ],
+        [
+          291.3625081380208,
+          243.52321370442712
+        ],
+        [
+          291.3625081380208,
+          230.25437418619788
+        ],
+        [
+          168.92383829752603,
+          230.25437418619788
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Cleaning of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          197.91164143880212
+        ],
+        [
+          188.0159708658854,
+          197.91164143880212
+        ],
+        [
+          188.0159708658854,
+          185.88677978515625
+        ],
+        [
+          110.40231323242188,
+          185.88677978515625
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Interior wall faces.",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.92383829752603,
+          175.10585530598962
+        ],
+        [
+          261.0641276041667,
+          175.10585530598962
+        ],
+        [
+          261.0641276041667,
+          163.08099365234375
+        ],
+        [
+          168.92383829752603,
+          163.08099365234375
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Exterior wall and structure faces.",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.3388875325521,
+          186.71608479817712
+        ],
+        [
+          331.2069498697917,
+          186.71608479817712
+        ],
+        [
+          331.2069498697917,
+          174.27655029296875
+        ],
+        [
+          169.3388875325521,
+          174.27655029296875
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Interior floors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.50879923502603,
+          164.32497151692712
+        ],
+        [
+          239.8967488606771,
+          164.32497151692712
+        ],
+        [
+          239.8967488606771,
+          150.64149983723962
+        ],
+        [
+          168.50879923502603,
+          150.64149983723962
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Stairs.",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.3388875325521,
+          152.71474202473962
+        ],
+        [
+          202.5425821940104,
+          152.71474202473962
+        ],
+        [
+          202.5425821940104,
+          139.44590250651038
+        ],
+        [
+          169.3388875325521,
+          139.44590250651038
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Buffing and application of two light coats of wax, each buffed, onuvinyt compositionfloortile.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          129.90895589192712
+        ],
+        [
+          505.9414469401042,
+          129.90895589192712
+        ],
+        [
+          505.9414469401042,
+          106.27386474609375
+        ],
+        [
+          108.74212646484375,
+          106.27386474609375
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "h)Cleaning ofhardwafe,washroom accessories mechanical fixtures, lighting fixtures, cover platesand &quipment jncluding polishing of their finish Dureiopmient LAE",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          95.90765380859375
+        ],
+        [
+          505.111328125,
+          95.90765380859375
+        ],
+        [
+          505.111328125,
+          60.66229248046875
+        ],
+        [
+          108.74212646484375,
+          60.66229248046875
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "(R12441",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.5206095377604,
+          57.34515380859375
+        ],
+        [
+          256.08355712890625,
+          57.34515380859375
+        ],
+        [
+          256.08355712890625,
+          47.80812581380212
+        ],
+        [
+          229.5206095377604,
+          47.80812581380212
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Calu,bsyu",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.5206095377604,
+          43.66164143880212
+        ],
+        [
+          261.0641276041667,
+          43.66164143880212
+        ],
+        [
+          261.0641276041667,
+          32.88071695963538
+        ],
+        [
+          229.5206095377604,
+          32.88071695963538
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "P0 nx 229, Mekuuhu",
+      "confidence": 0.95,
+      "box": [
+        [
+          229.10555013020834,
+          50.29608154296875
+        ],
+        [
+          290.94744873046875,
+          50.29608154296875
+        ],
+        [
+          290.94744873046875,
+          39.10052490234375
+        ],
+        [
+          229.10555013020834,
+          39.10052490234375
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "SECTI0N01710",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.44283040364584,
+          721.6152547200521
+        ],
+        [
+          334.1122639973958,
+          721.6152547200521
+        ],
+        [
+          334.1122639973958,
+          710.419687906901
+        ],
+        [
+          249.44283040364584,
+          710.419687906901
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "FINAL CLEANING",
+      "confidence": 0.95,
+      "box": [
+        [
+          244.0472208658854,
+          698.8094685872396
+        ],
+        [
+          338.6777750651042,
+          698.8094685872396
+        ],
+        [
+          338.6777750651042,
+          687.6139119466146
+        ],
+        [
+          244.0472208658854,
+          687.6139119466146
+        ]
+      ],
+      "page": 372
+    },
+    {
+      "text": "Miy",
+      "confidence": 0.95,
+      "box": [
+        [
+          305.05902099609375,
+          38.68581136067712
+        ],
+        [
+          322.490966796875,
+          38.68581136067712
+        ],
+        [
+          322.490966796875,
+          28.31960042317712
+        ],
+        [
+          305.05902099609375,
+          28.31960042317712
+        ]
+      ],
+      "page": 372
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 372,
+      "text": "PART 1 - GENERAL\n1.01 FINAL. CLEANING\nThe Contractor shall be responsible for final cleaning. Before final inspection, replace glass and mirrors that have been broken, damaged and/or etched during construction, or which are otherwise not in accordance with the Contract.\nIn addition to requirements for cleaning-up specified elsewhere in the Contract Documents, including Section 01010, include final cleaning of the Works by Supervision Consultant/Operator, through the Contract Administrator.\nRemove Temporary Works as approved by local authorities having jurisdiction and Contract Administrator, and make good defects before commencement of final cleaning.\nRemove dust, stains from mortar, cement, sealants, adhesives, finishing and other materials; soil, grease, fingerprints; and accumulations of construction materials, debris and other rubbish; both interior and exterior to the building. Perform cleaning in accordance with installer's instructions for each material. Prior to Supervision Consultant/Operator's inspection for issuance of the Taking Over Certificate, cleaning shall include:\nWashing of exterior paved surfaces at grade and on roofs, and interior concretefloors.\nCleaning out of:\nElevator, pipe and duct shafts.\nPavement, floor and roof drains.\nc)Sweeping cleanexposed roofing.\nCleaning and polishing of:\nMirrors.\nGlasson both interior and exterior faces.\nPorcelain, enamel, and finish metals.\nWashroom accessories.\nCleaning of:\nInterior wall faces.\nExterior wall and structure faces.\nInterior floors.\nStairs.\nBuffing and application of two light coats of wax, each buffed, onuvinyt compositionfloortile.\nh)Cleaning ofhardwafe,washroom accessories mechanical fixtures, lighting fixtures, cover platesand &quipment jncluding polishing of their finish Dureiopmient LAE\n(R12441\nCalu,bsyu\nP0 nx 229, Mekuuhu\nSECTI0N01710\nFINAL CLEANING\nMiy",
+      "line_count": 29
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

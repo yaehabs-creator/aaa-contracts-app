@@ -1,0 +1,635 @@
+{
+  "text": "<!-- image -->\n\n## PART 1-GENERAL\n\n## 1.01 SUMMARY\n\n1. This Section describes the testing and inspection requirements of the Contract. The Contractor shall appointed an accredited independent testing laboratory for the Supervision Consultant's approval,\n\n## 2.Related Work:\n\n- a) Other Contract documents affecting the work in this Section include, but are not necessarily limited to, Conditicns of Contract, and Sections in Division 1 to 16of theseSpecifications.\n- b) Requirements for testing may be described in various Sections of these Specifications.\n3. C Whereno testingrequirementsare described,buttheEmployerdecides that testing is required: the Employer may require such testing to be performed under current pertinent standards for testing.Payment for such testing will bemade as described in this Seclion.\n\n## 1.02QUALITY ASSURANCE\n\n1. The testing laboratory will be subject to the Supervision Consultant's approval. The Contractor shall 'submit in accordance withSection 01300 to the Contract Administrator for the Supervision Consultant's approval.\n\n## 1.03 DELIVERY,STORAGE,ANDHANDLING\n\n1. Comply with pertinent provisions of Section 01620.\n2. Promptly process and distribute required copies of test reports and related instructions toassure necessaryretesting and replacementof materialswith the least possible delay in the progress of the Works.\n\n## PART 2-PRODUCTS\n\n## 2.01 PAYMENTFORTESTING\n\n- 1.Initial services of testing laboratory:\n- a)All  tests required by  the Contract and requested by Contract Administrator/Supervision Consultant are deemed to be included in the Contract price.\n2. Retesting: When initiai tests indicate non-compliance with the Contract thereofwill becharged totheContractpr'saccount. 中娱 Ymuag A+hr for\n\nTaC1218280\n\nImreioprnent st?.\n\n1281\n\nCaleu, Euonat\n\n2.0 Bax 229, Mokmpn\n\n## SECTION 01410\n\n## TESTING OR LABORATORY SERVICES\n\ncton01410\n\nPageNumber1of\n\nMLr",
+  "results": [
+    {
+      "text": "PART 1-GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          672.2718404134115
+        ],
+        [
+          178.46990966796875,
+          672.2718404134115
+        ],
+        [
+          178.46990966796875,
+          661.9055786132812
+        ],
+        [
+          75.53842671712239,
+          661.9055786132812
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "1.01 SUMMARY",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          649.8807169596354
+        ],
+        [
+          167.26366170247397,
+          649.8807169596354
+        ],
+        [
+          167.26366170247397,
+          638.2704874674479
+        ],
+        [
+          75.95347086588542,
+          638.2704874674479
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "This Section describes the testing and inspection requirements of the Contract. The Contractor shall appointed an accredited independent testing laboratory for the Supervision Consultant's approval,",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          627.9042358398438
+        ],
+        [
+          503.8662109375,
+          627.9042358398438
+        ],
+        [
+          503.8662109375,
+          592.2442830403646
+        ],
+        [
+          94.63055419921875,
+          592.2442830403646
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "2.Related Work:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          581.46337890625
+        ],
+        [
+          181.3752237955729,
+          581.46337890625
+        ],
+        [
+          181.3752237955729,
+          569.8531697591146
+        ],
+        [
+          92.55532836914062,
+          569.8531697591146
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Other Contract documents affecting the work in this Section include, but are not necessarily limited to, Conditicns of Contract, and Sections in Division 1 to 16of theseSpecifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          558.242940266927
+        ],
+        [
+          504.6962890625,
+          558.242940266927
+        ],
+        [
+          504.6962890625,
+          524.2415974934895
+        ],
+        [
+          109.57222493489583,
+          524.2415974934895
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Requirements for testing may be described in various Sections of these Specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          513.0460408528645
+        ],
+        [
+          504.28125,
+          513.0460408528645
+        ],
+        [
+          504.28125,
+          488.16701253255206
+        ],
+        [
+          109.1571756998698,
+          488.16701253255206
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "C Whereno testingrequirementsare described,buttheEmployerdecides that testing is required: the Employer may require such testing to be performed under current pertinent standards for testing.Payment for such testing will bemade as described in this Seclion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          478.21539306640625
+        ],
+        [
+          505.111328125,
+          478.21539306640625
+        ],
+        [
+          505.111328125,
+          433.43312581380206
+        ],
+        [
+          112.0625,
+          433.43312581380206
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "1.02QUALITY ASSURANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          410.21270751953125
+        ],
+        [
+          232.4259236653646,
+          410.21270751953125
+        ],
+        [
+          232.4259236653646,
+          399.43178304036456
+        ],
+        [
+          76.36852010091145,
+          399.43178304036456
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "The testing laboratory will be subject to the Supervision Consultant's approval. The Contractor shall 'submit in accordance withSection 01300 to the Contract Administrator for the Supervision Consultant's approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          387.82159423828125
+        ],
+        [
+          506.7715250651042,
+          387.82159423828125
+        ],
+        [
+          506.7715250651042,
+          353.82025146484375
+        ],
+        [
+          93.38541666666667,
+          353.82025146484375
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "1.03 DELIVERY,STORAGE,ANDHANDLING",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          330.59979248046875
+        ],
+        [
+          318.75555419921875,
+          330.59979248046875
+        ],
+        [
+          318.75555419921875,
+          318.57493082682294
+        ],
+        [
+          76.78356424967448,
+          318.57493082682294
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Comply with pertinent provisions of Section 01620.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          307.7940470377604
+        ],
+        [
+          362.7504475911458,
+          307.7940470377604
+        ],
+        [
+          362.7504475911458,
+          297.01312255859375
+        ],
+        [
+          95.46065266927083,
+          297.01312255859375
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Promptly process and distribute required copies of test reports and related instructions toassure necessaryretesting and replacementof materialswith the least possible delay in the progress of the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          285.81756591796875
+        ],
+        [
+          505.9414469401042,
+          285.81756591796875
+        ],
+        [
+          505.9414469401042,
+          250.57224527994788
+        ],
+        [
+          92.55532836914062,
+          250.57224527994788
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "PART 2-PRODUCTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          228.18113199869788
+        ],
+        [
+          190.5062459309896,
+          228.18113199869788
+        ],
+        [
+          190.5062459309896,
+          216.98557535807288
+        ],
+        [
+          76.78356424967448,
+          216.98557535807288
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "2.01 PAYMENTFORTESTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          205.37534586588538
+        ],
+        [
+          244.8773193359375,
+          205.37534586588538
+        ],
+        [
+          244.8773193359375,
+          194.17978922526038
+        ],
+        [
+          77.61365763346355,
+          194.17978922526038
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "1.Initial services of testing laboratory:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          182.98423258463538
+        ],
+        [
+          287.2120361328125,
+          182.98423258463538
+        ],
+        [
+          287.2120361328125,
+          170.54469807942712
+        ],
+        [
+          95.0456034342448,
+          170.54469807942712
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "a)All  tests required by  the Contract and requested by Contract Administrator/Supervision Consultant are deemed to be included in the Contract price.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          159.76381429036462
+        ],
+        [
+          507.1865641276042,
+          159.76381429036462
+        ],
+        [
+          507.1865641276042,
+          124.93312581380212
+        ],
+        [
+          110.81736246744792,
+          124.93312581380212
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Retesting: When initiai tests indicate non-compliance with the Contract thereofwill becharged totheContractpr'saccount. 中娱 Ymuag A+hr for",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          115.39617919921875
+        ],
+        [
+          509.2618001302083,
+          115.39617919921875
+        ],
+        [
+          509.2618001302083,
+          69.36997477213538
+        ],
+        [
+          93.8004659016927,
+          69.36997477213538
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "TaC1218280",
+      "confidence": 0.95,
+      "box": [
+        [
+          306.71921793619794,
+          62.32090250651038
+        ],
+        [
+          365.6558024088542,
+          62.32090250651038
+        ],
+        [
+          365.6558024088542,
+          51.53997802734375
+        ],
+        [
+          306.71921793619794,
+          51.53997802734375
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Imreioprnent st?.",
+      "confidence": 0.95,
+      "box": [
+        [
+          307.54929606119794,
+          72.68719482421875
+        ],
+        [
+          373.5416666666667,
+          72.68719482421875
+        ],
+        [
+          373.5416666666667,
+          60.24766031901038
+        ],
+        [
+          307.54929606119794,
+          60.24766031901038
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "1281",
+      "confidence": 0.95,
+      "box": [
+        [
+          308.37939453125,
+          54.02793375651038
+        ],
+        [
+          333.6972249348958,
+          54.02793375651038
+        ],
+        [
+          333.6972249348958,
+          48.22283935546875
+        ],
+        [
+          308.37939453125,
+          48.22283935546875
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "Caleu, Euonat",
+      "confidence": 0.95,
+      "box": [
+        [
+          307.13425699869794,
+          43.66164143880212
+        ],
+        [
+          338.6777750651042,
+          43.66164143880212
+        ],
+        [
+          338.6777750651042,
+          33.29534912109375
+        ],
+        [
+          307.13425699869794,
+          33.29534912109375
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "2.0 Bax 229, Mokmpn",
+      "confidence": 0.95,
+      "box": [
+        [
+          307.54929606119794,
+          50.29608154296875
+        ],
+        [
+          364.41064453125,
+          50.29608154296875
+        ],
+        [
+          364.41064453125,
+          38.68581136067712
+        ],
+        [
+          307.54929606119794,
+          38.68581136067712
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "SECTION 01410",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.1224568684896,
+          719.542002360026
+        ],
+        [
+          332.45208740234375,
+          719.542002360026
+        ],
+        [
+          332.45208740234375,
+          707.9317830403646
+        ],
+        [
+          246.1224568684896,
+          707.9317830403646
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "TESTING OR LABORATORY SERVICES",
+      "confidence": 0.95,
+      "box": [
+        [
+          183.4504597981771,
+          696.3215738932291
+        ],
+        [
+          394.2939860026042,
+          696.3215738932291
+        ],
+        [
+          394.2939860026042,
+          685.5406595865885
+        ],
+        [
+          183.4504597981771,
+          685.5406595865885
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "cton01410",
+      "confidence": 0.95,
+      "box": [
+        [
+          410.4807942708333,
+          48.63747151692712
+        ],
+        [
+          447.8349609375,
+          48.63747151692712
+        ],
+        [
+          447.8349609375,
+          39.51515706380212
+        ],
+        [
+          410.4807942708333,
+          39.51515706380212
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "PageNumber1of",
+      "confidence": 0.95,
+      "box": [
+        [
+          400.1046142578125,
+          40.75913492838538
+        ],
+        [
+          459.8712972005208,
+          40.75913492838538
+        ],
+        [
+          459.8712972005208,
+          30.80747477213538
+        ],
+        [
+          400.1046142578125,
+          30.80747477213538
+        ]
+      ],
+      "page": 334
+    },
+    {
+      "text": "MLr",
+      "confidence": 0.95,
+      "box": [
+        [
+          383.9178059895833,
+          37.85654703776038
+        ],
+        [
+          402.5948893229167,
+          37.85654703776038
+        ],
+        [
+          402.5948893229167,
+          28.73423258463538
+        ],
+        [
+          383.9178059895833,
+          28.73423258463538
+        ]
+      ],
+      "page": 334
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 334,
+      "text": "PART 1-GENERAL\n1.01 SUMMARY\nThis Section describes the testing and inspection requirements of the Contract. The Contractor shall appointed an accredited independent testing laboratory for the Supervision Consultant's approval,\n2.Related Work:\nOther Contract documents affecting the work in this Section include, but are not necessarily limited to, Conditicns of Contract, and Sections in Division 1 to 16of theseSpecifications.\nRequirements for testing may be described in various Sections of these Specifications.\nC Whereno testingrequirementsare described,buttheEmployerdecides that testing is required: the Employer may require such testing to be performed under current pertinent standards for testing.Payment for such testing will bemade as described in this Seclion.\n1.02QUALITY ASSURANCE\nThe testing laboratory will be subject to the Supervision Consultant's approval. The Contractor shall 'submit in accordance withSection 01300 to the Contract Administrator for the Supervision Consultant's approval.\n1.03 DELIVERY,STORAGE,ANDHANDLING\nComply with pertinent provisions of Section 01620.\nPromptly process and distribute required copies of test reports and related instructions toassure necessaryretesting and replacementof materialswith the least possible delay in the progress of the Works.\nPART 2-PRODUCTS\n2.01 PAYMENTFORTESTING\n1.Initial services of testing laboratory:\na)All  tests required by  the Contract and requested by Contract Administrator/Supervision Consultant are deemed to be included in the Contract price.\nRetesting: When initiai tests indicate non-compliance with the Contract thereofwill becharged totheContractpr'saccount. 中娱 Ymuag A+hr for\nTaC1218280\nImreioprnent st?.\n1281\nCaleu, Euonat\n2.0 Bax 229, Mokmpn\nSECTION 01410\nTESTING OR LABORATORY SERVICES\ncton01410\nPageNumber1of\nMLr",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

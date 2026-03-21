@@ -1,0 +1,819 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- Camps and Stores limited to 25% from the contract value MaximumEGP500M\n- RemovalofDebrissublimited150Mperoccurrence&amp;300Min theaggregate\n- Inland Transits sub limited to 100 M EGP per shipment and in the aggregate.\n- Firefightingfacility and firesafetyonconstructionsites(valueper storage unit 15% of project value per storage unit and in the aggregate.\n- Contractworkstakenoverorputintoservice.\n- Existing property or property belonging to or held in care, custodyorcontrolbytheinsuredsublimitedto150MEGP\n- Fire-fighting expenses sub limited to 25% of project value\n- Vibration, removal or weakening of support within TPL Limit\n- Third partyliabilityduring themaintenanceperiod limited to25% with max500 M EGP of Project Value per occurrence and in the aggregate.\n- LEG3/06LondonEngineeringGroupModelImprovement DefectsExclusionwithsublimitedto15%withmax250MEGP ofprojectvalueperoccurrenceandintheaggregate.\n- 50/50MarineConcealedDamageLossSharing\n- Loss of Drawings sub limited to50M EGP.\n- Escalationclause-130%ofthecontractvalue.\n- Extraexpensessublimited to1ooMEGPanyoneoccurrence.\n- Loss minimization sub limited to 100 M EGP any one occurrence.\n- Public Authorities sub limited to 100 M EGP any one occurrence.\n- Claims preparation costs sub limited to 50 M EGP any one occurrence.\n- Reinstalemenl of surn insured.\n- Repeattests5oManyoneoccurrence.\n- Search and locate costs.\n- Pair and set.\n- Involuntarybetterment\n- Public Relations\n- Reinstatement to match-25%of loss.\n- Cessationofworkwithmaximum3months\n- Waiver of Subrogation against name insured\n- Cover of extra charges for overtime,night work,work in public holiday&amp;expressfreightsublimitedto15%ofprojectvalue\n- Automatic extension up to 6 months from original period expiry.\n- Sue&amp;Laborsublimitedto10%ofprojectvalueanyone occurrenceand intheaggregate.\n- FuelsandConsumables\n- Dewateringclause-10oMEGPanyoneoccurrence\n- Variationorder\n- Errors and omissions\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          752.1680603027344
+        ],
+        [
+          178.43086751302084,
+          752.1680603027344
+        ],
+        [
+          178.43086751302084,
+          731.3809305826823
+        ],
+        [
+          97.671875,
+          731.3809305826823
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          727.5628865559896
+        ],
+        [
+          151.3702596028646,
+          727.5628865559896
+        ],
+        [
+          151.3702596028646,
+          716.9572041829427
+        ],
+        [
+          126.42376708984375,
+          716.9572041829427
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Camps and Stores limited to 25% from the contract value MaximumEGP500M",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.45123291015625,
+          696.5943094889323
+        ],
+        [
+          502.7353108723958,
+          696.5943094889323
+        ],
+        [
+          502.7353108723958,
+          671.9891255696615
+        ],
+        [
+          208.45123291015625,
+          671.9891255696615
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "RemovalofDebrissublimited150Mperoccurrence&300Min theaggregate",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.02840169270834,
+          671.9891255696615
+        ],
+        [
+          502.3125,
+          671.9891255696615
+        ],
+        [
+          502.3125,
+          647.3839518229166
+        ],
+        [
+          208.02840169270834,
+          647.3839518229166
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Inland Transits sub limited to 100 M EGP per shipment and in the aggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.1827596028646,
+          612.5973307291666
+        ],
+        [
+          502.3125,
+          612.5973307291666
+        ],
+        [
+          502.3125,
+          586.7194620768229
+        ],
+        [
+          207.1827596028646,
+          586.7194620768229
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Firefightingfacility and firesafetyonconstructionsites(valueper storage unit 15% of project value per storage unit and in the aggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.6055908203125,
+          647.8081868489584
+        ],
+        [
+          503.1581217447917,
+          647.8081868489584
+        ],
+        [
+          503.1581217447917,
+          611.3246459960938
+        ],
+        [
+          207.6055908203125,
+          611.3246459960938
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Contractworkstakenoverorputintoservice.",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.02840169270834,
+          587.5679321289062
+        ],
+        [
+          416.9024658203125,
+          587.5679321289062
+        ],
+        [
+          416.9024658203125,
+          575.2653401692708
+        ],
+        [
+          208.02840169270834,
+          575.2653401692708
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Existing property or property belonging to or held in care, custodyorcontrolbytheinsuredsublimitedto150MEGP",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.02840169270834,
+          563.8111979166667
+        ],
+        [
+          502.7353108723958,
+          563.8111979166667
+        ],
+        [
+          502.7353108723958,
+          539.6302490234375
+        ],
+        [
+          208.02840169270834,
+          539.6302490234375
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Fire-fighting expenses sub limited to 25% of project value",
+      "confidence": 0.95,
+      "box": [
+        [
+          208.02840169270834,
+          575.6895548502605
+        ],
+        [
+          473.1377766927083,
+          575.6895548502605
+        ],
+        [
+          473.1377766927083,
+          562.5385131835938
+        ],
+        [
+          208.02840169270834,
+          562.5385131835938
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Vibration, removal or weakening of support within TPL Limit",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.1827596028646,
+          540.0544840494792
+        ],
+        [
+          484.1311442057292,
+          540.0544840494792
+        ],
+        [
+          484.1311442057292,
+          526.4792073567708
+        ],
+        [
+          207.1827596028646,
+          526.4792073567708
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Third partyliabilityduring themaintenanceperiod limited to25% with max500 M EGP of Project Value per occurrence and in the aggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.33711751302084,
+          491.26837158203125
+        ],
+        [
+          501.8896484375,
+          491.26837158203125
+        ],
+        [
+          501.8896484375,
+          456.05751546223956
+        ],
+        [
+          206.33711751302084,
+          456.05751546223956
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "LEG3/06LondonEngineeringGroupModelImprovement DefectsExclusionwithsublimitedto15%withmax250MEGP ofprojectvalueperoccurrenceandintheaggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.1827596028646,
+          527.7518920898438
+        ],
+        [
+          502.3125,
+          527.7518920898438
+        ],
+        [
+          502.3125,
+          490.84413655598956
+        ],
+        [
+          207.1827596028646,
+          490.84413655598956
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "50/50MarineConcealedDamageLossSharing",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.33711751302084,
+          456.48175048828125
+        ],
+        [
+          427.4729817708333,
+          456.48175048828125
+        ],
+        [
+          427.4729817708333,
+          442.48223876953125
+        ],
+        [
+          206.33711751302084,
+          442.48223876953125
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Loss of Drawings sub limited to50M EGP.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.75992838541666,
+          431.87656656901044
+        ],
+        [
+          406.7547200520833,
+          431.87656656901044
+        ],
+        [
+          406.7547200520833,
+          419.57395426432294
+        ],
+        [
+          206.75992838541666,
+          419.57395426432294
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Escalationclause-130%ofthecontractvalue.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.75992838541666,
+          443.75490315755206
+        ],
+        [
+          424.9360758463542,
+          443.75490315755206
+        ],
+        [
+          424.9360758463542,
+          431.45233154296875
+        ],
+        [
+          206.75992838541666,
+          431.45233154296875
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Extraexpensessublimited to1ooMEGPanyoneoccurrence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.75992838541666,
+          419.99818929036456
+        ],
+        [
+          499.3527425130208,
+          419.99818929036456
+        ],
+        [
+          499.3527425130208,
+          406.84714762369794
+        ],
+        [
+          206.75992838541666,
+          406.84714762369794
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Loss minimization sub limited to 100 M EGP any one occurrence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.06864420572916,
+          384.78733317057294
+        ],
+        [
+          502.3125,
+          384.78733317057294
+        ],
+        [
+          502.3125,
+          361.03061930338544
+        ],
+        [
+          205.06864420572916,
+          361.03061930338544
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Public Authorities sub limited to 100 M EGP any one occurrence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.33711751302084,
+          409.39251708984375
+        ],
+        [
+          502.3125,
+          409.39251708984375
+        ],
+        [
+          502.3125,
+          383.93890380859375
+        ],
+        [
+          206.33711751302084,
+          383.93890380859375
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Claims preparation costs sub limited to 50 M EGP any one occurrence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          360.60638427734375
+        ],
+        [
+          501.4668375651042,
+          360.60638427734375
+        ],
+        [
+          501.4668375651042,
+          336.42543538411456
+        ],
+        [
+          205.4914754231771,
+          336.42543538411456
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Reinstalemenl of surn insured.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.9142862955729,
+          336.00120035807294
+        ],
+        [
+          348.828125,
+          336.00120035807294
+        ],
+        [
+          348.828125,
+          324.12286376953125
+        ],
+        [
+          205.9142862955729,
+          324.12286376953125
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Repeattests5oManyoneoccurrence.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.33711751302084,
+          324.12286376953125
+        ],
+        [
+          387.304931640625,
+          324.12286376953125
+        ],
+        [
+          387.304931640625,
+          311.39605712890625
+        ],
+        [
+          206.33711751302084,
+          311.39605712890625
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Search and locate costs.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.9142862955729,
+          300.7903849283854
+        ],
+        [
+          320.49904378255206,
+          300.7903849283854
+        ],
+        [
+          320.49904378255206,
+          288.06353759765625
+        ],
+        [
+          205.9142862955729,
+          288.06353759765625
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Pair and set.",
+      "confidence": 0.95,
+      "box": [
+        [
+          206.33711751302084,
+          311.8202921549479
+        ],
+        [
+          266.37782796223956,
+          311.8202921549479
+        ],
+        [
+          266.37782796223956,
+          300.36614990234375
+        ],
+        [
+          206.33711751302084,
+          300.36614990234375
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Involuntarybetterment",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.9142862955729,
+          288.06353759765625
+        ],
+        [
+          312.46543375651044,
+          288.06353759765625
+        ],
+        [
+          312.46543375651044,
+          275.7609659830729
+        ],
+        [
+          205.9142862955729,
+          275.7609659830729
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Public Relations",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.9142862955729,
+          264.30682373046875
+        ],
+        [
+          282.445068359375,
+          264.30682373046875
+        ],
+        [
+          282.445068359375,
+          252.85268147786462
+        ],
+        [
+          205.9142862955729,
+          252.85268147786462
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Reinstatement to match-25%of loss.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          276.1852010091146
+        ],
+        [
+          383.49951171875,
+          276.1852010091146
+        ],
+        [
+          383.49951171875,
+          263.8825887044271
+        ],
+        [
+          205.4914754231771,
+          263.8825887044271
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Cessationofworkwithmaximum3months",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.9142862955729,
+          251.58001708984375
+        ],
+        [
+          404.640625,
+          251.58001708984375
+        ],
+        [
+          404.640625,
+          240.55010986328125
+        ],
+        [
+          205.9142862955729,
+          240.55010986328125
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Waiver of Subrogation against name insured",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.06864420572916,
+          240.55010986328125
+        ],
+        [
+          413.0970458984375,
+          240.55010986328125
+        ],
+        [
+          413.0970458984375,
+          227.39906819661462
+        ],
+        [
+          205.06864420572916,
+          227.39906819661462
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Cover of extra charges for overtime,night work,work in public holiday&expressfreightsublimitedto15%ofprojectvalue",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          215.94492594401038
+        ],
+        [
+          499.3527425130208,
+          215.94492594401038
+        ],
+        [
+          499.3527425130208,
+          191.33974202473962
+        ],
+        [
+          205.4914754231771,
+          191.33974202473962
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Automatic extension up to 6 months from original period expiry.",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.06864420572916,
+          229.09596761067712
+        ],
+        [
+          498.0842692057292,
+          229.09596761067712
+        ],
+        [
+          498.0842692057292,
+          214.24802652994788
+        ],
+        [
+          205.06864420572916,
+          214.24802652994788
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Sue&Laborsublimitedto10%ofprojectvalueanyone occurrenceand intheaggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          204.64583333333334,
+          192.18821207682288
+        ],
+        [
+          499.7755533854167,
+          192.18821207682288
+        ],
+        [
+          499.7755533854167,
+          167.58302815755212
+        ],
+        [
+          204.64583333333334,
+          167.58302815755212
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "FuelsandConsumables",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.4914754231771,
+          168.43149820963538
+        ],
+        [
+          319.23057047526044,
+          168.43149820963538
+        ],
+        [
+          319.23057047526044,
+          156.12888590494788
+        ],
+        [
+          205.4914754231771,
+          156.12888590494788
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Dewateringclause-10oMEGPanyoneoccurrence",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.06864420572916,
+          156.12888590494788
+        ],
+        [
+          452.4195149739583,
+          156.12888590494788
+        ],
+        [
+          452.4195149739583,
+          143.40207926432288
+        ],
+        [
+          205.06864420572916,
+          143.40207926432288
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Variationorder",
+      "confidence": 0.95,
+      "box": [
+        [
+          204.2230021158854,
+          132.79644775390625
+        ],
+        [
+          275.67991129557294,
+          132.79644775390625
+        ],
+        [
+          275.67991129557294,
+          120.49379475911462
+        ],
+        [
+          204.2230021158854,
+          120.49379475911462
+        ]
+      ],
+      "page": 133
+    },
+    {
+      "text": "Errors and omissions",
+      "confidence": 0.95,
+      "box": [
+        [
+          204.64583333333334,
+          144.25054931640625
+        ],
+        [
+          304.85463460286456,
+          144.25054931640625
+        ],
+        [
+          304.85463460286456,
+          132.37221272786462
+        ],
+        [
+          204.64583333333334,
+          132.37221272786462
+        ]
+      ],
+      "page": 133
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 133,
+      "text": "EMAAR\nMISR\nCamps and Stores limited to 25% from the contract value MaximumEGP500M\nRemovalofDebrissublimited150Mperoccurrence&300Min theaggregate\nInland Transits sub limited to 100 M EGP per shipment and in the aggregate.\nFirefightingfacility and firesafetyonconstructionsites(valueper storage unit 15% of project value per storage unit and in the aggregate.\nContractworkstakenoverorputintoservice.\nExisting property or property belonging to or held in care, custodyorcontrolbytheinsuredsublimitedto150MEGP\nFire-fighting expenses sub limited to 25% of project value\nVibration, removal or weakening of support within TPL Limit\nThird partyliabilityduring themaintenanceperiod limited to25% with max500 M EGP of Project Value per occurrence and in the aggregate.\nLEG3/06LondonEngineeringGroupModelImprovement DefectsExclusionwithsublimitedto15%withmax250MEGP ofprojectvalueperoccurrenceandintheaggregate.\n50/50MarineConcealedDamageLossSharing\nLoss of Drawings sub limited to50M EGP.\nEscalationclause-130%ofthecontractvalue.\nExtraexpensessublimited to1ooMEGPanyoneoccurrence.\nLoss minimization sub limited to 100 M EGP any one occurrence.\nPublic Authorities sub limited to 100 M EGP any one occurrence.\nClaims preparation costs sub limited to 50 M EGP any one occurrence.\nReinstalemenl of surn insured.\nRepeattests5oManyoneoccurrence.\nSearch and locate costs.\nPair and set.\nInvoluntarybetterment\nPublic Relations\nReinstatement to match-25%of loss.\nCessationofworkwithmaximum3months\nWaiver of Subrogation against name insured\nCover of extra charges for overtime,night work,work in public holiday&expressfreightsublimitedto15%ofprojectvalue\nAutomatic extension up to 6 months from original period expiry.\nSue&Laborsublimitedto10%ofprojectvalueanyone occurrenceand intheaggregate.\nFuelsandConsumables\nDewateringclause-10oMEGPanyoneoccurrence\nVariationorder\nErrors and omissions",
+      "line_count": 35
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,773 @@
+{
+  "text": "## Elhussein ElEssawy\n\nFrom:\n\nHala Mohamed Samy\n\nSent:\n\nTuesday, April 15, 2025 2:41 PM\n\nCc:\n\nSarahHalawa;Elhussein ElEssawy;MuhammadFekryEl Farcy;Ahmed Mongy;Manar\n\nAshraf:Marwa SherifAbdelazi7;Mohamed Fathy EIZayat\n\nSubject:\n\nMividaGardens-PK#04.Constructionof TownhomesVillasinParcel 11\\_RFT\n\nAttachments:\n\nMaster Query I og\\_Template.xisx;InvitationToTender(ITT).pdf\n\n## Dear Tenderer,\n\nthe following:\n\n- TheatlachedInvitationToTenderLetter\n- TheRequest toTender (RFT) documents that are located on the linksbelow:\n\n-RFT link:20250407023117\n\n## The abovementioned linkswill be expired very soon.\n\n- Submit a basicofferinfull compliancewith theConditions of Contract and theRFT'srequirements.\n- Submit Preliminaries fees as per the attached BOQ.\n- Any deviation to be submitted as an alternative offer along withits cost impact for the Employer sole discretion.\n- Submit any queries using the attached queriestemplateonTuesday2gthof April 2025,\n\nNoting that theTender submission due date isSunday18tlof May2025.\n\nThis is for your information and further action.\n\nKind regards,\n\nHala Samy\n\n## EMAAR\n\nContracts-Commercial Department\n\nT+20225032072\n\nM+201220044785\n\nc-mailhalasamy@emaar.eg\n\nMANAGE YOUR HOME 24/7 WITH THE NEW EMAAR.MISK APP\n\nDOWNLOAD NOW\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Elhussein ElEssawy",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          715.8101399739584
+        ],
+        [
+          138.62545776367188,
+          715.8101399739584
+        ],
+        [
+          138.62545776367188,
+          702.1266784667969
+        ],
+        [
+          42.33472188313802,
+          702.1266784667969
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "From:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.91967519124349,
+          689.2725118001302
+        ],
+        [
+          68.89768473307292,
+          689.2725118001302
+        ],
+        [
+          68.89768473307292,
+          677.2476501464844
+        ],
+        [
+          41.91967519124349,
+          677.2476501464844
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Hala Mohamed Samy",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          689.2725118001302
+        ],
+        [
+          270.19512939453125,
+          689.2725118001302
+        ],
+        [
+          270.19512939453125,
+          678.0769449869791
+        ],
+        [
+          181.790283203125,
+          678.0769449869791
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Sent:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.50462849934896,
+          676.832997639974
+        ],
+        [
+          66.82245381673177,
+          676.832997639974
+        ],
+        [
+          66.82245381673177,
+          665.2227783203125
+        ],
+        [
+          41.50462849934896,
+          665.2227783203125
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Tuesday, April 15, 2025 2:41 PM",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.3752237955729,
+          677.2476501464844
+        ],
+        [
+          312.9449055989583,
+          677.2476501464844
+        ],
+        [
+          312.9449055989583,
+          665.6374308268229
+        ],
+        [
+          181.3752237955729,
+          665.6374308268229
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Cc:",
+      "confidence": 0.95,
+      "box": [
+        [
+          41.91967519124349,
+          664.3934834798177
+        ],
+        [
+          57.691436767578125,
+          664.3934834798177
+        ],
+        [
+          57.691436767578125,
+          653.1979166666666
+        ],
+        [
+          41.91967519124349,
+          653.1979166666666
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "SarahHalawa;Elhussein ElEssawy;MuhammadFekryEl Farcy;Ahmed Mongy;Manar",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          664.8081258138021
+        ],
+        [
+          522.1282552083334,
+          664.8081258138021
+        ],
+        [
+          522.1282552083334,
+          655.2711690266927
+        ],
+        [
+          181.790283203125,
+          655.2711690266927
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Ashraf:Marwa SherifAbdelazi7;Mohamed Fathy EIZayat",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          652.7832641601562
+        ],
+        [
+          410.4807942708333,
+          652.7832641601562
+        ],
+        [
+          410.4807942708333,
+          642.0023600260416
+        ],
+        [
+          181.790283203125,
+          642.0023600260416
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Subject:",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          640.7584025065104
+        ],
+        [
+          79.27384440104167,
+          640.7584025065104
+        ],
+        [
+          79.27384440104167,
+          627.9042358398438
+        ],
+        [
+          42.33472188313802,
+          627.9042358398438
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "MividaGardens-PK#04.Constructionof TownhomesVillasinParcel 11_RFT",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          640.34375
+        ],
+        [
+          482.6988525390625,
+          640.34375
+        ],
+        [
+          482.6988525390625,
+          631.221435546875
+        ],
+        [
+          181.790283203125,
+          631.221435546875
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Attachments:",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.74976603190104,
+          627.0749308268229
+        ],
+        [
+          100.8562520345052,
+          627.0749308268229
+        ],
+        [
+          100.8562520345052,
+          617.1233113606771
+        ],
+        [
+          42.74976603190104,
+          617.1233113606771
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Master Query I og_Template.xisx;InvitationToTender(ITT).pdf",
+      "confidence": 0.95,
+      "box": [
+        [
+          181.790283203125,
+          627.9042358398438
+        ],
+        [
+          435.383544921875,
+          627.9042358398438
+        ],
+        [
+          435.383544921875,
+          617.9526163736979
+        ],
+        [
+          181.790283203125,
+          617.9526163736979
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Dear Tenderer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.74976603190104,
+          593.0735880533854
+        ],
+        [
+          115.38287353515625,
+          593.0735880533854
+        ],
+        [
+          115.38287353515625,
+          580.2194213867188
+        ],
+        [
+          42.74976603190104,
+          580.2194213867188
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.74976603190104,
+          557.4136352539062
+        ],
+        [
+          102.51643880208333,
+          557.4136352539062
+        ],
+        [
+          102.51643880208333,
+          544.97412109375
+        ],
+        [
+          42.74976603190104,
+          544.97412109375
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "TheatlachedInvitationToTenderLetter",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          544.5594889322917
+        ],
+        [
+          257.74375406901044,
+          544.5594889322917
+        ],
+        [
+          257.74375406901044,
+          534.1932169596355
+        ],
+        [
+          75.12337748209636,
+          534.1932169596355
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "TheRequest toTender (RFT) documents that are located on the linksbelow:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          532.1199544270833
+        ],
+        [
+          420.85693359375,
+          532.1199544270833
+        ],
+        [
+          420.85693359375,
+          522.5830078125
+        ],
+        [
+          75.95347086588542,
+          522.5830078125
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "-RFT link:20250407023117",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          509.31418863932294
+        ],
+        [
+          229.5206095377604,
+          509.31418863932294
+        ],
+        [
+          229.5206095377604,
+          494.3867594401042
+        ],
+        [
+          78.02870178222656,
+          494.3867594401042
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "The abovementioned linkswill be expired very soon.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          481.11794026692706
+        ],
+        [
+          329.5467529296875,
+          481.11794026692706
+        ],
+        [
+          329.5467529296875,
+          469.09307861328125
+        ],
+        [
+          75.95347086588542,
+          469.09307861328125
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Submit a basicofferinfull compliancewith theConditions of Contract and theRFT'srequirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          468.26377360026044
+        ],
+        [
+          518.392822265625,
+          468.26377360026044
+        ],
+        [
+          518.392822265625,
+          458.31215413411456
+        ],
+        [
+          75.95347086588542,
+          458.31215413411456
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Submit Preliminaries fees as per the attached BOQ.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          456.23891194661456
+        ],
+        [
+          311.28472900390625,
+          456.23891194661456
+        ],
+        [
+          311.28472900390625,
+          444.62872314453125
+        ],
+        [
+          75.53842671712239,
+          444.62872314453125
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Any deviation to be submitted as an alternative offer along withits cost impact for the Employer sole discretion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          443.79941813151044
+        ],
+        [
+          539.5601806640625,
+          443.79941813151044
+        ],
+        [
+          539.5601806640625,
+          420.99363199869794
+        ],
+        [
+          75.53842671712239,
+          420.99363199869794
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Submit any queries using the attached queriestemplateonTuesday2gthof April 2025,",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          419.74965413411456
+        ],
+        [
+          471.4925944010417,
+          419.74965413411456
+        ],
+        [
+          471.4925944010417,
+          409.38340250651044
+        ],
+        [
+          75.53842671712239,
+          409.38340250651044
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Noting that theTender submission due date isSunday18tlof May2025.",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.74976603190104,
+          396.52923583984375
+        ],
+        [
+          371.8814697265625,
+          396.52923583984375
+        ],
+        [
+          371.8814697265625,
+          385.33367919921875
+        ],
+        [
+          42.74976603190104,
+          385.33367919921875
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "This is for your information and further action.",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          361.28395589192706
+        ],
+        [
+          246.5374959309896,
+          361.28395589192706
+        ],
+        [
+          246.5374959309896,
+          350.50303141276044
+        ],
+        [
+          43.164815266927086,
+          350.50303141276044
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Kind regards,",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.74976603190104,
+          338.06353759765625
+        ],
+        [
+          97.53587849934895,
+          338.06353759765625
+        ],
+        [
+          97.53587849934895,
+          325.20937093098956
+        ],
+        [
+          42.74976603190104,
+          325.20937093098956
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Hala Samy",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          316.08705647786456
+        ],
+        [
+          90.8951416015625,
+          316.08705647786456
+        ],
+        [
+          90.8951416015625,
+          304.06219482421875
+        ],
+        [
+          42.33472188313802,
+          304.06219482421875
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          42.33472188313802,
+          299.08636474609375
+        ],
+        [
+          118.28819783528645,
+          299.08636474609375
+        ],
+        [
+          118.28819783528645,
+          280.84173583984375
+        ],
+        [
+          42.33472188313802,
+          280.84173583984375
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "Contracts-Commercial Department",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          274.20733642578125
+        ],
+        [
+          201.7125040690104,
+          274.20733642578125
+        ],
+        [
+          201.7125040690104,
+          263.4264119466146
+        ],
+        [
+          43.164815266927086,
+          263.4264119466146
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "T+20225032072",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          255.13340250651038
+        ],
+        [
+          114.55277506510417,
+          255.13340250651038
+        ],
+        [
+          114.55277506510417,
+          245.59645589192712
+        ],
+        [
+          43.164815266927086,
+          245.59645589192712
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "M+201220044785",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          244.35251871744788
+        ],
+        [
+          118.70323689778645,
+          244.35251871744788
+        ],
+        [
+          118.70323689778645,
+          235.23020426432288
+        ],
+        [
+          43.164815266927086,
+          235.23020426432288
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "c-mailhalasamy@emaar.eg",
+      "confidence": 0.95,
+      "box": [
+        [
+          43.164815266927086,
+          233.57159423828125
+        ],
+        [
+          160.62291463216147,
+          233.57159423828125
+        ],
+        [
+          160.62291463216147,
+          223.20534261067712
+        ],
+        [
+          43.164815266927086,
+          223.20534261067712
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "MANAGE YOUR HOME 24/7 WITH THE NEW EMAAR.MISK APP",
+      "confidence": 0.95,
+      "box": [
+        [
+          58.10648091634115,
+          207.86326090494788
+        ],
+        [
+          149.83171590169272,
+          207.86326090494788
+        ],
+        [
+          149.83171590169272,
+          192.93585205078125
+        ],
+        [
+          58.10648091634115,
+          192.93585205078125
+        ]
+      ],
+      "page": 217
+    },
+    {
+      "text": "DOWNLOAD NOW",
+      "confidence": 0.95,
+      "box": [
+        [
+          58.10648091634115,
+          189.20399983723962
+        ],
+        [
+          111.64745076497395,
+          189.20399983723962
+        ],
+        [
+          111.64745076497395,
+          182.15492757161462
+        ],
+        [
+          58.10648091634115,
+          182.15492757161462
+        ]
+      ],
+      "page": 217
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 217,
+      "text": "Elhussein ElEssawy\nFrom:\nHala Mohamed Samy\nSent:\nTuesday, April 15, 2025 2:41 PM\nCc:\nSarahHalawa;Elhussein ElEssawy;MuhammadFekryEl Farcy;Ahmed Mongy;Manar\nAshraf:Marwa SherifAbdelazi7;Mohamed Fathy EIZayat\nSubject:\nMividaGardens-PK#04.Constructionof TownhomesVillasinParcel 11_RFT\nAttachments:\nMaster Query I og_Template.xisx;InvitationToTender(ITT).pdf\nDear Tenderer,\nthe following:\nTheatlachedInvitationToTenderLetter\nTheRequest toTender (RFT) documents that are located on the linksbelow:\n-RFT link:20250407023117\nThe abovementioned linkswill be expired very soon.\nSubmit a basicofferinfull compliancewith theConditions of Contract and theRFT'srequirements.\nSubmit Preliminaries fees as per the attached BOQ.\nAny deviation to be submitted as an alternative offer along withits cost impact for the Employer sole discretion.\nSubmit any queries using the attached queriestemplateonTuesday2gthof April 2025,\nNoting that theTender submission due date isSunday18tlof May2025.\nThis is for your information and further action.\nKind regards,\nHala Samy\nEMAAR\nContracts-Commercial Department\nT+20225032072\nM+201220044785\nc-mailhalasamy@emaar.eg\nMANAGE YOUR HOME 24/7 WITH THE NEW EMAAR.MISK APP\nDOWNLOAD NOW",
+      "line_count": 33
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

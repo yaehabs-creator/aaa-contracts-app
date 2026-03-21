@@ -3,6 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { LoginPage } from './LoginPage';
 import { UserManagement } from './UserManagement';
 import { AppHeader } from './AppHeader';
+import { ErrorBoundary } from './common/ErrorBoundary';
 
 interface AppWrapperProps {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
     setHealthStatus('Checking connectivity...');
     try {
       const isHealthy = await checkHealth();
-      setHealthStatus(isHealthy ? '✅ Connection to vault is active.' : '❌ Vault is unreachable. Possible firewall block.');
+      setHealthStatus(isHealthy ? '✅ Local backend is active.' : '❌ Local backend is unreachable.');
     } catch (err) {
       setHealthStatus('❌ Error during health check.');
     } finally {
@@ -49,7 +50,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚠️</div>
               <h2 style={{ color: '#1A2333', marginBottom: '0.5rem' }}>Authentication Issue</h2>
               <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.5' }}>
-                The application encountered an issue while connecting to the secure vault.
+                The application encountered an issue while connecting to the local database.
               </p>
 
               <div style={{
@@ -122,8 +123,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
                       userAgent: navigator.userAgent,
                       timestamp: new Date().toISOString(),
                       error: authError,
-                      vaultHealthy: hStatus,
-                      supabaseUrl: (import.meta as any).env.VITE_SUPABASE_URL || 'Not Set',
+                      backendHealthy: hStatus,
                       isSecureContext: window.isSecureContext,
                       connection: (navigator as any).connection ? {
                         effectiveType: (navigator as any).connection.effectiveType,
@@ -168,7 +168,7 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
                 Loading AE Contract Department...
               </p>
               <p style={{ color: '#64748B', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-                Synchronizing with secure vault...
+                Synchronizing with local database...
               </p>
             </>
           )}
@@ -238,11 +238,13 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <AppHeader />
 
-      <main className="flex-1 flex overflow-hidden">
-        {showUserManagement ? <UserManagement /> : children}
+      <main className="flex-1 relative overflow-hidden">
+        <ErrorBoundary>
+          {showUserManagement ? <UserManagement /> : children}
+        </ErrorBoundary>
       </main>
     </div>
   );

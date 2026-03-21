@@ -1,0 +1,405 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n- Specific training is to be provided for boat operatives, rescue teams and supervisors. Personnel are to be instructed as to the means of raising the alarm and what to do in the event of an emergency.\n- Suitable security arrangements are to be in place to prevent the theft of rescue equipment and boats outside of working hours.\n- Adequate welfare and first aid facilities are to be provided and personnel must be provided instruction, information and training on the risks of biological hazards such as leptospirosis and tetanus.\n- A method statementisrequiredforall worksinvolvingworking on or adjacent towater.\n\n## 3.40. Noise and Vibration\n\n- Where there is a risk of exposure to high noise and vibration levels an assessment must be carried out and recorded.\n- Where noise and vibration levels exceed the statutory exposure action and limit levels, controls must beintroduced to mitigate thepotentialdamage topersons health.The tablebelowshows the exposure actionlevel and exposure limit valuesfor both noise and vibration.\n\n## Noise and VibrationExposure Action and LimitValues\n\n<!-- image -->\n\n| Activity   | Exposure Action Level (EAL)   | Exposure Limit Value (EAV)   |\n|------------|-------------------------------|------------------------------|\n| Noise      | 80dB(A)                       | 85dB(A)                      |\n| Vibration  | 2.5m/s2                       | 5.0m/s2                      |\n\nNote: The above figures are for an 8 hour working day. Where shifts are longer than 8 hours then the actionlevelsmust bereduced accordingly.\n\n- The exposure actionlevelis a level at which certain actions must be taken and the exposure limit value is thelevel at which personnel must not be exposed to.Therefore if noise or vibrationlevels are above the limit value, protection must be provided and the levels must be reduced below the limit value where possible.\n- Where the noise and vibration levels exceed the exposure action level an assessment is to be carried out andrecordedbyacompetentperson.\n- Instruments used for measuring noise and vibration levels are to be calibrated and operated by a competent person.\n- Exposure to noise is to be reduced in other ways other than by providing hearing protection.\n- When personnel are at risk of exposure to high noise and vibration levels they must be provided with suitable information, instruction and training and undergo health surveillancc to assess and determine any loss of function.\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          726.591054280599
+        ],
+        [
+          339.92291259765625,
+          726.591054280599
+        ],
+        [
+          339.92291259765625,
+          698.3948262532552
+        ],
+        [
+          190.92130533854166,
+          698.3948262532552
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          695.0776163736979
+        ],
+        [
+          216.6541748046875,
+          695.0776163736979
+        ],
+        [
+          216.6541748046875,
+          684.2967020670573
+        ],
+        [
+          76.36852010091145,
+          684.2967020670573
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Specific training is to be provided for boat operatives, rescue teams and supervisors. Personnel are to be instructed as to the means of raising the alarm and what to do in the event of an emergency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          670.1985880533854
+        ],
+        [
+          495.9803059895833,
+          670.1985880533854
+        ],
+        [
+          495.9803059895833,
+          646.9781494140625
+        ],
+        [
+          92.14027913411458,
+          646.9781494140625
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Suitable security arrangements are to be in place to prevent the theft of rescue equipment and boats outside of working hours.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          639.5144449869791
+        ],
+        [
+          495.9803059895833,
+          639.5144449869791
+        ],
+        [
+          495.9803059895833,
+          615.8793741861979
+        ],
+        [
+          92.97036743164062,
+          615.8793741861979
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Adequate welfare and first aid facilities are to be provided and personnel must be provided instruction, information and training on the risks of biological hazards such as leptospirosis and tetanus.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          609.2449544270834
+        ],
+        [
+          496.3953857421875,
+          609.2449544270834
+        ],
+        [
+          496.3953857421875,
+          572.7557169596354
+        ],
+        [
+          92.55532836914062,
+          572.7557169596354
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "A method statementisrequiredforall worksinvolvingworking on or adjacent towater.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          564.8773600260417
+        ],
+        [
+          450.3252360026042,
+          564.8773600260417
+        ],
+        [
+          450.3252360026042,
+          555.7550455729167
+        ],
+        [
+          90.48009236653645,
+          555.7550455729167
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "3.40. Noise and Vibration",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.7657470703125,
+          547.047383626302
+        ],
+        [
+          356.5247802734375,
+          547.047383626302
+        ],
+        [
+          356.5247802734375,
+          536.2664591471355
+        ],
+        [
+          230.7657470703125,
+          536.2664591471355
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Where there is a risk of exposure to high noise and vibration levels an assessment must be carried out and recorded.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          528.3881022135417
+        ],
+        [
+          496.8104248046875,
+          528.3881022135417
+        ],
+        [
+          496.8104248046875,
+          504.75303141276044
+        ],
+        [
+          92.97036743164062,
+          504.75303141276044
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Where noise and vibration levels exceed the statutory exposure action and limit levels, controls must beintroduced to mitigate thepotentialdamage topersons health.The tablebelowshows the exposure actionlevel and exposure limit valuesfor both noise and vibration.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          497.7039794921875
+        ],
+        [
+          497.2254638671875,
+          497.7039794921875
+        ],
+        [
+          497.2254638671875,
+          462.04400634765625
+        ],
+        [
+          92.55532836914062,
+          462.04400634765625
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Noise and VibrationExposure Action and LimitValues",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.3194376627604,
+          454.16566975911456
+        ],
+        [
+          415.4613444010417,
+          454.16566975911456
+        ],
+        [
+          415.4613444010417,
+          443.79941813151044
+        ],
+        [
+          174.3194376627604,
+          443.79941813151044
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Note: The above figures are for an 8 hour working day. Where shifts are longer than 8 hours then the actionlevelsmust bereduced accordingly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          357.96673583984375
+        ],
+        [
+          497.6405029296875,
+          357.96673583984375
+        ],
+        [
+          497.6405029296875,
+          333.08770751953125
+        ],
+        [
+          76.78356424967448,
+          333.08770751953125
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "The exposure actionlevelis a level at which certain actions must be taken and the exposure limit value is thelevel at which personnel must not be exposed to.Therefore if noise or vibrationlevels are above the limit value, protection must be provided and the levels must be reduced below the limit value where possible.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          326.86794026692706
+        ],
+        [
+          497.6405029296875,
+          326.86794026692706
+        ],
+        [
+          497.6405029296875,
+          278.3538614908854
+        ],
+        [
+          93.38541666666667,
+          278.3538614908854
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Where the noise and vibration levels exceed the exposure action level an assessment is to be carried out andrecordedbyacompetentperson.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          271.3047892252604
+        ],
+        [
+          498.4705810546875,
+          271.3047892252604
+        ],
+        [
+          498.4705810546875,
+          246.84039306640625
+        ],
+        [
+          93.38541666666667,
+          246.84039306640625
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Instruments used for measuring noise and vibration levels are to be calibrated and operated by a competent person.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          240.62066650390625
+        ],
+        [
+          498.4705810546875,
+          240.62066650390625
+        ],
+        [
+          498.4705810546875,
+          215.74159749348962
+        ],
+        [
+          93.8004659016927,
+          215.74159749348962
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "Exposure to noise is to be reduced in other ways other than by providing hearing protection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          209.93650309244788
+        ],
+        [
+          467.3421223958333,
+          209.93650309244788
+        ],
+        [
+          467.3421223958333,
+          199.15557861328125
+        ],
+        [
+          94.2155049641927,
+          199.15557861328125
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "When personnel are at risk of exposure to high noise and vibration levels they must be provided with suitable information, instruction and training and undergo health surveillancc to assess and determine any loss of function.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          191.69187418619788
+        ],
+        [
+          498.8856608072917,
+          191.69187418619788
+        ],
+        [
+          498.8856608072917,
+          155.20265706380212
+        ],
+        [
+          94.2155049641927,
+          155.20265706380212
+        ]
+      ],
+      "page": 471
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          734.0547688802084
+        ],
+        [
+          509.6768391927083,
+          734.0547688802084
+        ],
+        [
+          509.6768391927083,
+          721.6152547200521
+        ],
+        [
+          452.8155110677083,
+          721.6152547200521
+        ]
+      ],
+      "page": 471
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 471,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nSpecific training is to be provided for boat operatives, rescue teams and supervisors. Personnel are to be instructed as to the means of raising the alarm and what to do in the event of an emergency.\nSuitable security arrangements are to be in place to prevent the theft of rescue equipment and boats outside of working hours.\nAdequate welfare and first aid facilities are to be provided and personnel must be provided instruction, information and training on the risks of biological hazards such as leptospirosis and tetanus.\nA method statementisrequiredforall worksinvolvingworking on or adjacent towater.\n3.40. Noise and Vibration\nWhere there is a risk of exposure to high noise and vibration levels an assessment must be carried out and recorded.\nWhere noise and vibration levels exceed the statutory exposure action and limit levels, controls must beintroduced to mitigate thepotentialdamage topersons health.The tablebelowshows the exposure actionlevel and exposure limit valuesfor both noise and vibration.\nNoise and VibrationExposure Action and LimitValues\nNote: The above figures are for an 8 hour working day. Where shifts are longer than 8 hours then the actionlevelsmust bereduced accordingly.\nThe exposure actionlevelis a level at which certain actions must be taken and the exposure limit value is thelevel at which personnel must not be exposed to.Therefore if noise or vibrationlevels are above the limit value, protection must be provided and the levels must be reduced below the limit value where possible.\nWhere the noise and vibration levels exceed the exposure action level an assessment is to be carried out andrecordedbyacompetentperson.\nInstruments used for measuring noise and vibration levels are to be calibrated and operated by a competent person.\nExposure to noise is to be reduced in other ways other than by providing hearing protection.\nWhen personnel are at risk of exposure to high noise and vibration levels they must be provided with suitable information, instruction and training and undergo health surveillancc to assess and determine any loss of function.\nEMAAR",
+      "line_count": 17
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

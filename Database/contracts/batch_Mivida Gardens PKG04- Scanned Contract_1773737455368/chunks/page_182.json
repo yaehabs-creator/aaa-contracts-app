@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\nMJSR\n\n## Residential\n\n| Specification       | Specification                   | Specification               | Specification         | Specification       | Specification       |\n|---------------------|---------------------------------|-----------------------------|-----------------------|---------------------|---------------------|\n| Divisiono9:Finishes | Divisiono9:Finishes             | Divisiono9:Finishes         | Divisiono9:Finishes   | Divisiono9:Finishes | Divisiono9:Finishes |\n|                     |                                 |                             | EmaanVenoor           | tocal distibutor    | Country of origin   |\n| 49                  | 099726                          | ExteriorCementitiousPalnts  | DryMlx                | DryMix              | Egvpt               |\n| 49                  | 099726                          | ExteriorCementitiousPalnts  | Eamlc                 | Eamic               | Egvpt               |\n| 49                  | 099726                          | ExteriorCementitiousPalnts  | OrApproved Equal*     |                     |                     |\n| 50                  | 099600-Hlgh Performance Coating | CoatingsforConcretefloorlng | Sika                  | Sika Egypt          | Egypt               |\n| 50                  | 099600-Hlgh Performance Coating | CoatingsforConcretefloorlng | Mapei Egvpt           | Mapel Egvpt         | Italy,Dubal,Egypt   |\n| 50                  | 099600-Hlgh Performance Coating | CoatingsforConcretefloorlng | Fosroc                | Fosroc              | Egvpt               |\n| 50                  | 099600-Hlgh Performance Coating | CoatingsforConcretefloorlng | Jotun                 | Jotun               | Egypt               |\n| 50                  | 099600-Hlgh Performance Coating | CoatingsforConcretefloorlng | Dry Mix - Weber Egypt | Saint-Gobain Egypt  | Egypt-UAE- Lebanon  |\n| 50                  | 099600-Hlgh Performance Coating | CoatingsforConcretefloorlng | OrApproved Equal      |                     |                     |\n\n<!-- image -->\n\n<!-- image -->\n\nDivisio",
+  "results": [
+    {
+      "text": "MJSR",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          744.0063781738281
+        ],
+        [
+          93.8004659016927,
+          744.0063781738281
+        ],
+        [
+          93.8004659016927,
+          735.2987162272135
+        ],
+        [
+          75.95347086588542,
+          735.2987162272135
+        ]
+      ],
+      "page": 182
+    },
+    {
+      "text": "Residential",
+      "confidence": 0.95,
+      "box": [
+        [
+          432.8932698567708,
+          744.4210306803385
+        ],
+        [
+          511.7520751953125,
+          744.4210306803385
+        ],
+        [
+          511.7520751953125,
+          729.0789591471354
+        ],
+        [
+          432.8932698567708,
+          729.0789591471354
+        ]
+      ],
+      "page": 182
+    },
+    {
+      "text": "Divisio",
+      "confidence": 0.95,
+      "box": [
+        [
+          269.6966552734375,
+          732.9822998046875
+        ],
+        [
+          287.13751220703125,
+          732.9822998046875
+        ],
+        [
+          287.13751220703125,
+          727.1596069335938
+        ],
+        [
+          269.6966552734375,
+          727.1596069335938
+        ]
+      ],
+      "page": 182
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 182,
+      "text": "MJSR\nResidential\nDivisio",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,727 @@
+{
+  "text": "<!-- image -->\n\n- 1.Submit shop drawings for which submission is required in other Sections of the Specification. Include in final shop drawing submissions detailed information, templates and installation instructions required for incorporation and connection of the work concerned.\n2. In addition to shop drawings specificd in other Sections, submit shop drawinge required by jurisdictiorial authorities in accordance with their requirements.\n- 3.Contractor shall check and verify dimensions and conditions at the Site as Administrator, the Supervision Consultant or Subcontractors  for theii preparation of shop drawings. Such information shall be provided promptly to prevent delay in the Works and shall be submitted to Contract Administrator as a matter of record.\n4. Contractor shall review shop drawings prior to submission to the Contract Administrator, and he shall by stamp and signature so indicate that his review has been performed. In checking cach submission, Contractor shall annotate the shop drawings with matters relative to the Works.When checking shop drawings, Contractor shall verify all dimensions, quantities and field conditions.\n5. Indicate on each submission any deviations from the Contract that have been incorporated in the shop drawings. Contractor shall be responsible for changes made from the Contract Drawings and Specification which are not indicated or otherwisecommunicatedinwritingwiththesubmission.\n6. On each shop drawing, Contractor shall indicate on the aforementioned stamp under his signature thiat the drawing conforms to the requirements of the Contract.\n7. Incorporate only dimensional system utilized for drawings, except where substitutes are otherwise approved.Make soft conversions from imperial dimensionalsystemintoconstructionoftheother.\n8. Number shop drawings for each Section of the Works consecutively, and retain the numbering system for submission of all revisions.\n9. Produce shop drawings using the latest version of REVIT/CAD. Format, titles, drawing numbers, scales and extent of details shall be approved by the SupervisionConsultant.\n10. Information provided on shop drawings shall include but shall not be limited to the following:\n- a) Proposed methods of construction, manufacture and/or fabrication.\n- C Erectionlayout.\n- b Fabrication and erection dimensions.\n- d Installationdimensions.\n- e Provisions for allowable construction tolerances and deflections provided for liveloading.\n- Location and type of anchors,and exposed fastenings\n- Details to indicate construction arrangements of the parts and their connections,and interconnectionswithotherwork.\n- Materials and finishes.\n- Physical dimensionis of malerials including thickness and gauges.\n- 限青k) Suppliers' catalogues, brochures, data sheets, standard drawings, specifications,and otherdescriptivedata.\n- I) Schematic Diagrams and physical layouts of systems, equipment and controls.\n- .m) Piping, duct and conduit sytems.\n\nEmaarMisrfor Development\n\nTsCed218-27-30H\n\nCR12241\n\nC.0 1m 229.1debed\n\nCalru, sown\n\n...\n\nSubmttals etio\n\nPage 1umbor:6of 10\n\n01300",
+  "results": [
+    {
+      "text": "1.Submit shop drawings for which submission is required in other Sections of the Specification. Include in final shop drawing submissions detailed information, templates and installation instructions required for incorporation and connection of the work concerned.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          719.1273498535156
+        ],
+        [
+          504.6962890625,
+          719.1273498535156
+        ],
+        [
+          504.6962890625,
+          673.5157877604166
+        ],
+        [
+          94.63055419921875,
+          673.5157877604166
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "In addition to shop drawings specificd in other Sections, submit shop drawinge required by jurisdictiorial authorities in accordance with their requirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          668.1253356933594
+        ],
+        [
+          504.6962890625,
+          668.1253356933594
+        ],
+        [
+          504.6962890625,
+          644.4902547200521
+        ],
+        [
+          93.8004659016927,
+          644.4902547200521
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "3.Contractor shall check and verify dimensions and conditions at the Site as Administrator, the Supervision Consultant or Subcontractors  for theii preparation of shop drawings. Such information shall be provided promptly to prevent delay in the Works and shall be submitted to Contract Administrator as a matter of record.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          639.5144449869791
+        ],
+        [
+          505.111328125,
+          639.5144449869791
+        ],
+        [
+          505.111328125,
+          570.6824544270834
+        ],
+        [
+          93.38541666666667,
+          570.6824544270834
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Contractor shall review shop drawings prior to submission to the Contract Administrator, and he shall by stamp and signature so indicate that his review has been performed. In checking cach submission, Contractor shall annotate the shop drawings with matters relative to the Works.When checking shop drawings, Contractor shall verify all dimensions, quantities and field conditions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          566.1212972005208
+        ],
+        [
+          505.9414469401042,
+          566.1212972005208
+        ],
+        [
+          505.9414469401042,
+          508.0702311197917
+        ],
+        [
+          92.97036743164062,
+          508.0702311197917
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Indicate on each submission any deviations from the Contract that have been incorporated in the shop drawings. Contractor shall be responsible for changes made from the Contract Drawings and Specification which are not indicated or otherwisecommunicatedinwritingwiththesubmission.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          502.6797688802083
+        ],
+        [
+          505.9414469401042,
+          502.6797688802083
+        ],
+        [
+          505.9414469401042,
+          456.65358479817706
+        ],
+        [
+          95.46065266927083,
+          456.65358479817706
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "On each shop drawing, Contractor shall indicate on the aforementioned stamp under his signature thiat the drawing conforms to the requirements of the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          451.67775472005206
+        ],
+        [
+          505.111328125,
+          451.67775472005206
+        ],
+        [
+          505.111328125,
+          416.01780192057294
+        ],
+        [
+          92.97036743164062,
+          416.01780192057294
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Incorporate only dimensional system utilized for drawings, except where substitutes are otherwise approved.Make soft conversions from imperial dimensionalsystemintoconstructionoftheother.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          411.45664469401044
+        ],
+        [
+          505.5263671875,
+          411.45664469401044
+        ],
+        [
+          505.5263671875,
+          365.84511311848956
+        ],
+        [
+          94.2155049641927,
+          365.84511311848956
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Number shop drawings for each Section of the Works consecutively, and retain the numbering system for submission of all revisions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          360.45465087890625
+        ],
+        [
+          504.6962890625,
+          360.45465087890625
+        ],
+        [
+          504.6962890625,
+          336.81955973307294
+        ],
+        [
+          95.0456034342448,
+          336.81955973307294
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Produce shop drawings using the latest version of REVIT/CAD. Format, titles, drawing numbers, scales and extent of details shall be approved by the SupervisionConsultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          332.25840250651044
+        ],
+        [
+          505.111328125,
+          332.25840250651044
+        ],
+        [
+          505.111328125,
+          297.01312255859375
+        ],
+        [
+          93.38541666666667,
+          297.01312255859375
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Information provided on shop drawings shall include but shall not be limited to the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          292.45196533203125
+        ],
+        [
+          505.5263671875,
+          292.45196533203125
+        ],
+        [
+          505.5263671875,
+          267.9875691731771
+        ],
+        [
+          94.63055419921875,
+          267.9875691731771
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Proposed methods of construction, manufacture and/or fabrication.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          263.4264119466146
+        ],
+        [
+          459.0412190755208,
+          263.4264119466146
+        ],
+        [
+          459.0412190755208,
+          252.23085530598962
+        ],
+        [
+          112.0625,
+          252.23085530598962
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "C Erectionlayout.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          240.62066650390625
+        ],
+        [
+          205.44791666666666,
+          240.62066650390625
+        ],
+        [
+          205.44791666666666,
+          229.01043701171875
+        ],
+        [
+          112.47754923502605,
+          229.01043701171875
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "b Fabrication and erection dimensions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          252.64552815755212
+        ],
+        [
+          311.69976806640625,
+          252.64552815755212
+        ],
+        [
+          311.69976806640625,
+          240.20599365234375
+        ],
+        [
+          111.64745076497395,
+          240.20599365234375
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "d Installationdimensions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          229.01043701171875
+        ],
+        [
+          244.8773193359375,
+          229.01043701171875
+        ],
+        [
+          244.8773193359375,
+          218.22951253255212
+        ],
+        [
+          112.47754923502605,
+          218.22951253255212
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "e Provisions for allowable construction tolerances and deflections provided for liveloading.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          218.22951253255212
+        ],
+        [
+          505.111328125,
+          218.22951253255212
+        ],
+        [
+          505.111328125,
+          194.17978922526038
+        ],
+        [
+          112.0625,
+          194.17978922526038
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Location and type of anchors,and exposed fastenings",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          173.03261311848962
+        ],
+        [
+          396.3692220052083,
+          173.03261311848962
+        ],
+        [
+          396.3692220052083,
+          160.17844645182288
+        ],
+        [
+          127.00417073567708,
+          160.17844645182288
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Details to indicate construction arrangements of the parts and their connections,and interconnectionswithotherwork.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.24930826822916,
+          195.83839925130212
+        ],
+        [
+          506.3564860026042,
+          195.83839925130212
+        ],
+        [
+          506.3564860026042,
+          172.61798095703125
+        ],
+        [
+          128.24930826822916,
+          172.61798095703125
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Materials and finishes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.24930826822916,
+          160.59307861328125
+        ],
+        [
+          241.14190673828125,
+          160.59307861328125
+        ],
+        [
+          241.14190673828125,
+          149.39752197265625
+        ],
+        [
+          128.24930826822916,
+          149.39752197265625
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Physical dimensionis of malerials including thickness and gauges.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.24930826822916,
+          149.81219482421875
+        ],
+        [
+          452.4004720052083,
+          149.81219482421875
+        ],
+        [
+          452.4004720052083,
+          138.20200602213538
+        ],
+        [
+          128.24930826822916,
+          138.20200602213538
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "限青k) Suppliers' catalogues, brochures, data sheets, standard drawings, specifications,and otherdescriptivedata.",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          128.25034586588538
+        ],
+        [
+          503.8662109375,
+          128.25034586588538
+        ],
+        [
+          503.8662109375,
+          104.61525472005212
+        ],
+        [
+          79.27384440104167,
+          104.61525472005212
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Schematic Diagrams and physical layouts of systems, equipment and controls.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          105.44460042317712
+        ],
+        [
+          506.3564860026042,
+          105.44460042317712
+        ],
+        [
+          506.3564860026042,
+          81.39487711588538
+        ],
+        [
+          111.64745076497395,
+          81.39487711588538
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": ".m) Piping, duct and conduit sytems.",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.17661539713542,
+          80.98016357421875
+        ],
+        [
+          294.682861328125,
+          80.98016357421875
+        ],
+        [
+          294.682861328125,
+          69.78460693359375
+        ],
+        [
+          104.17661539713542,
+          69.78460693359375
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "EmaarMisrfor Development",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          55.27183024088538
+        ],
+        [
+          163.11318969726562,
+          55.27183024088538
+        ],
+        [
+          163.11318969726562,
+          46.97886149088538
+        ],
+        [
+          78.02870178222656,
+          46.97886149088538
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "TsCed218-27-30H",
+      "confidence": 0.95,
+      "box": [
+        [
+          270.19512939453125,
+          46.56422932942712
+        ],
+        [
+          329.96181233723956,
+          46.56422932942712
+        ],
+        [
+          329.96181233723956,
+          43.66164143880212
+        ],
+        [
+          270.19512939453125,
+          43.66164143880212
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "CR12241",
+      "confidence": 0.95,
+      "box": [
+        [
+          271.4402669270833,
+          39.10052490234375
+        ],
+        [
+          298.00323486328125,
+          39.10052490234375
+        ],
+        [
+          298.00323486328125,
+          34.12469482421875
+        ],
+        [
+          271.4402669270833,
+          34.12469482421875
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "C.0 1m 229.1debed",
+      "confidence": 0.95,
+      "box": [
+        [
+          271.4402669270833,
+          34.12469482421875
+        ],
+        [
+          322.90602620442706,
+          34.12469482421875
+        ],
+        [
+          322.90602620442706,
+          29.97821044921875
+        ],
+        [
+          271.4402669270833,
+          29.97821044921875
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Calru, sown",
+      "confidence": 0.95,
+      "box": [
+        [
+          272.6854248046875,
+          27.90496826171875
+        ],
+        [
+          304.64398193359375,
+          27.90496826171875
+        ],
+        [
+          304.64398193359375,
+          21.27052815755212
+        ],
+        [
+          272.6854248046875,
+          21.27052815755212
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "...",
+      "confidence": 0.95,
+      "box": [
+        [
+          407.5754801432292,
+          43.24700927734375
+        ],
+        [
+          425.0074055989583,
+          43.24700927734375
+        ],
+        [
+          425.0074055989583,
+          37.85654703776038
+        ],
+        [
+          407.5754801432292,
+          37.85654703776038
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Submttals etio",
+      "confidence": 0.95,
+      "box": [
+        [
+          427.4976806640625,
+          55.27183024088538
+        ],
+        [
+          459.0412190755208,
+          55.27183024088538
+        ],
+        [
+          459.0412190755208,
+          48.22283935546875
+        ],
+        [
+          427.4976806640625,
+          48.22283935546875
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "Page 1umbor:6of 10",
+      "confidence": 0.95,
+      "box": [
+        [
+          425.0074055989583,
+          42.00303141276038
+        ],
+        [
+          493.4900309244792,
+          42.00303141276038
+        ],
+        [
+          493.4900309244792,
+          31.63682047526038
+        ],
+        [
+          425.0074055989583,
+          31.63682047526038
+        ]
+      ],
+      "page": 291
+    },
+    {
+      "text": "01300",
+      "confidence": 0.95,
+      "box": [
+        [
+          448.6650390625,
+          49.46673583984375
+        ],
+        [
+          470.6625162760417,
+          49.46673583984375
+        ],
+        [
+          470.6625162760417,
+          40.75913492838538
+        ],
+        [
+          448.6650390625,
+          40.75913492838538
+        ]
+      ],
+      "page": 291
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 291,
+      "text": "1.Submit shop drawings for which submission is required in other Sections of the Specification. Include in final shop drawing submissions detailed information, templates and installation instructions required for incorporation and connection of the work concerned.\nIn addition to shop drawings specificd in other Sections, submit shop drawinge required by jurisdictiorial authorities in accordance with their requirements.\n3.Contractor shall check and verify dimensions and conditions at the Site as Administrator, the Supervision Consultant or Subcontractors  for theii preparation of shop drawings. Such information shall be provided promptly to prevent delay in the Works and shall be submitted to Contract Administrator as a matter of record.\nContractor shall review shop drawings prior to submission to the Contract Administrator, and he shall by stamp and signature so indicate that his review has been performed. In checking cach submission, Contractor shall annotate the shop drawings with matters relative to the Works.When checking shop drawings, Contractor shall verify all dimensions, quantities and field conditions.\nIndicate on each submission any deviations from the Contract that have been incorporated in the shop drawings. Contractor shall be responsible for changes made from the Contract Drawings and Specification which are not indicated or otherwisecommunicatedinwritingwiththesubmission.\nOn each shop drawing, Contractor shall indicate on the aforementioned stamp under his signature thiat the drawing conforms to the requirements of the Contract.\nIncorporate only dimensional system utilized for drawings, except where substitutes are otherwise approved.Make soft conversions from imperial dimensionalsystemintoconstructionoftheother.\nNumber shop drawings for each Section of the Works consecutively, and retain the numbering system for submission of all revisions.\nProduce shop drawings using the latest version of REVIT/CAD. Format, titles, drawing numbers, scales and extent of details shall be approved by the SupervisionConsultant.\nInformation provided on shop drawings shall include but shall not be limited to the following:\nProposed methods of construction, manufacture and/or fabrication.\nC Erectionlayout.\nb Fabrication and erection dimensions.\nd Installationdimensions.\ne Provisions for allowable construction tolerances and deflections provided for liveloading.\nLocation and type of anchors,and exposed fastenings\nDetails to indicate construction arrangements of the parts and their connections,and interconnectionswithotherwork.\nMaterials and finishes.\nPhysical dimensionis of malerials including thickness and gauges.\n限青k) Suppliers' catalogues, brochures, data sheets, standard drawings, specifications,and otherdescriptivedata.\nSchematic Diagrams and physical layouts of systems, equipment and controls.\n.m) Piping, duct and conduit sytems.\nEmaarMisrfor Development\nTsCed218-27-30H\nCR12241\nC.0 1m 229.1debed\nCalru, sown\n...\nSubmttals etio\nPage 1umbor:6of 10\n01300",
+      "line_count": 31
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

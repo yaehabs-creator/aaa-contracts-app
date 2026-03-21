@@ -1,0 +1,543 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Technical Specifications (Division I)\n\nAdministrator to any liability whatsoever from the Employer, Contractor, Subcontraclor of ariy tier, Surety or any othcr pcrson.\n\n## 1.05 PAYMENTSTOSUBCONTRACTORS\n\n1. Subcontractors shall notify the Contract Administrator in writing if the Contractor fails to make paymentswhen due toSubcontractorswho have contractswith theContractor.The ContractAdministratorwillconsider payments have been made if no such wrillen notice is received.\n2. Should the Contract Administrator find that the Contractor is not paying Subcontractorsthen theContractAdministratorwillrequire theContractor toprovide a legal declaration.With the legal declaration, the Contractor shallalsoprovidethe following information:\n3. b The name of the Contractor.\n- a) The Contract datewith the Employer.\n5. C The Project name and legal description.\n6. The date the Subcontractorwas completeon theProject.\n7. d The name and address of the Subcontractor and/or Subcontractors.\n8. The amount of money of the Contract with the Subcontractor(s).\n9. The last day ofworkon theProjectfor theSubcontractor.\n10. The amount of money of any approved extras to the Subcontract(s).\n11. Astatement summarizing reasonsfornon-payment.\n12. The amount of money owed to the Subcontractor(s).\n13. The itemized listing of payment dateswith amounts and amount of money paid to date to the Subcontractor(s).\n14. The date the money is due to be released to the Contractor and Subcontractor.\n- n) Person swearing the legal declaration must be an officer of the Contraclor.\n- m) The name of thepersonswearing the declaration and the nameof the jurisdictional authoritycertifying the legal declaration.\n\n## PART 2 - PRODUCTS (Not Used)\n\n## PART 3 - EXECUTION (Not Used)\n\n<!-- image -->\n\n## END OF SECTION 01025\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          757.6898447672526
+        ],
+        [
+          133.64490763346353,
+          757.6898447672526
+        ],
+        [
+          133.64490763346353,
+          746.9089304606119
+        ],
+        [
+          110.40231323242188,
+          746.9089304606119
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "Technical Specifications (Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          341.9981282552083,
+          749.3968353271484
+        ],
+        [
+          504.28125,
+          749.3968353271484
+        ],
+        [
+          504.28125,
+          736.9573160807291
+        ],
+        [
+          341.9981282552083,
+          736.9573160807291
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "Administrator to any liability whatsoever from the Employer, Contractor, Subcontraclor of ariy tier, Surety or any othcr pcrson.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.4749959309896,
+          729.0789591471354
+        ],
+        [
+          506.3564860026042,
+          729.0789591471354
+        ],
+        [
+          506.3564860026042,
+          702.5413309733073
+        ],
+        [
+          134.4749959309896,
+          702.5413309733073
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "1.05 PAYMENTSTOSUBCONTRACTORS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          683.4674072265625
+        ],
+        [
+          330.79189046223956,
+          683.4674072265625
+        ],
+        [
+          330.79189046223956,
+          670.6132405598959
+        ],
+        [
+          78.02870178222656,
+          670.6132405598959
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "Subcontractors shall notify the Contract Administrator in writing if the Contractor fails to make paymentswhen due toSubcontractorswho have contractswith theContractor.The ContractAdministratorwillconsider payments have been made if no such wrillen notice is received.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          660.66162109375
+        ],
+        [
+          506.3564860026042,
+          660.66162109375
+        ],
+        [
+          506.3564860026042,
+          612.1475219726562
+        ],
+        [
+          109.98726399739583,
+          612.1475219726562
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "Should the Contract Administrator find that the Contractor is not paying Subcontractorsthen theContractAdministratorwillrequire theContractor toprovide a legal declaration.With the legal declaration, the Contractor shallalsoprovidethe following information:",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          603.8545125325521
+        ],
+        [
+          505.5263671875,
+          603.8545125325521
+        ],
+        [
+          505.5263671875,
+          555.7550455729167
+        ],
+        [
+          109.1571756998698,
+          555.7550455729167
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "b The name of the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.2298583984375,
+          545.8034261067708
+        ],
+        [
+          298.00323486328125,
+          545.8034261067708
+        ],
+        [
+          298.00323486328125,
+          532.9492594401042
+        ],
+        [
+          133.2298583984375,
+          532.9492594401042
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The Contract datewith the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.8148193359375,
+          557.8282877604167
+        ],
+        [
+          343.2432861328125,
+          557.8282877604167
+        ],
+        [
+          343.2432861328125,
+          543.7301839192708
+        ],
+        [
+          132.8148193359375,
+          543.7301839192708
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "C The Project name and legal description.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          534.6078694661458
+        ],
+        [
+          354.4495442708333,
+          534.6078694661458
+        ],
+        [
+          354.4495442708333,
+          520.9243977864583
+        ],
+        [
+          134.0599568684896,
+          520.9243977864583
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The date the Subcontractorwas completeon theProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          511.8020833333333
+        ],
+        [
+          441.1942138671875,
+          511.8020833333333
+        ],
+        [
+          441.1942138671875,
+          497.7039794921875
+        ],
+        [
+          153.56712849934897,
+          497.7039794921875
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "d The name and address of the Subcontractor and/or Subcontractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          522.9976603190105
+        ],
+        [
+          494.3201497395833,
+          522.9976603190105
+        ],
+        [
+          494.3201497395833,
+          509.31418863932294
+        ],
+        [
+          134.0599568684896,
+          509.31418863932294
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The amount of money of the Contract with the Subcontractor(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          500.6065266927083
+        ],
+        [
+          474.3979085286458,
+          500.6065266927083
+        ],
+        [
+          474.3979085286458,
+          486.50840250651044
+        ],
+        [
+          153.56712849934897,
+          486.50840250651044
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The last day ofworkon theProjectfor theSubcontractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.397216796875,
+          477.80076090494794
+        ],
+        [
+          442.4393310546875,
+          477.80076090494794
+        ],
+        [
+          442.4393310546875,
+          463.70261637369794
+        ],
+        [
+          154.397216796875,
+          463.70261637369794
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The amount of money of any approved extras to the Subcontract(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          488.99631754557294
+        ],
+        [
+          495.5652669270833,
+          488.99631754557294
+        ],
+        [
+          495.5652669270833,
+          474.06890869140625
+        ],
+        [
+          153.56712849934897,
+          474.06890869140625
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "Astatement summarizing reasonsfornon-payment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          466.19053141276044
+        ],
+        [
+          415.0463053385417,
+          466.19053141276044
+        ],
+        [
+          415.0463053385417,
+          452.50705973307294
+        ],
+        [
+          153.56712849934897,
+          452.50705973307294
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The amount of money owed to the Subcontractor(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          432.18918863932294
+        ],
+        [
+          417.5365804036458,
+          432.18918863932294
+        ],
+        [
+          417.5365804036458,
+          418.09108479817706
+        ],
+        [
+          153.56712849934897,
+          418.09108479817706
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The itemized listing of payment dateswith amounts and amount of money paid to date to the Subcontractor(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          455.40960693359375
+        ],
+        [
+          506.7715250651042,
+          455.40960693359375
+        ],
+        [
+          506.7715250651042,
+          428.87196858723956
+        ],
+        [
+          153.1520792643229,
+          428.87196858723956
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The date the money is due to be released to the Contractor and Subcontractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          421.40826416015625
+        ],
+        [
+          504.6962890625,
+          421.40826416015625
+        ],
+        [
+          504.6962890625,
+          396.52923583984375
+        ],
+        [
+          153.56712849934897,
+          396.52923583984375
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "Person swearing the legal declaration must be an officer of the Contraclor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.8148193359375,
+          375.38205973307294
+        ],
+        [
+          503.8662109375,
+          375.38205973307294
+        ],
+        [
+          503.8662109375,
+          350.50303141276044
+        ],
+        [
+          132.8148193359375,
+          350.50303141276044
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "The name of thepersonswearing the declaration and the nameof the jurisdictional authoritycertifying the legal declaration.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.8148193359375,
+          397.77321370442706
+        ],
+        [
+          505.5263671875,
+          397.77321370442706
+        ],
+        [
+          505.5263671875,
+          372.47951253255206
+        ],
+        [
+          132.8148193359375,
+          372.47951253255206
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "PART 2 - PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          332.25840250651044
+        ],
+        [
+          249.44283040364584,
+          332.25840250651044
+        ],
+        [
+          249.44283040364584,
+          316.08705647786456
+        ],
+        [
+          75.53842671712239,
+          316.08705647786456
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "PART 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          297.4277547200521
+        ],
+        [
+          251.5180460611979,
+          297.4277547200521
+        ],
+        [
+          251.5180460611979,
+          282.0857137044271
+        ],
+        [
+          75.12337748209636,
+          282.0857137044271
+        ]
+      ],
+      "page": 259
+    },
+    {
+      "text": "END OF SECTION 01025",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.125,
+          261.7678426106771
+        ],
+        [
+          355.2796223958333,
+          261.7678426106771
+        ],
+        [
+          355.2796223958333,
+          248.91367594401038
+        ],
+        [
+          224.125,
+          248.91367594401038
+        ]
+      ],
+      "page": 259
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 259,
+      "text": "MISR\nTechnical Specifications (Division I)\nAdministrator to any liability whatsoever from the Employer, Contractor, Subcontraclor of ariy tier, Surety or any othcr pcrson.\n1.05 PAYMENTSTOSUBCONTRACTORS\nSubcontractors shall notify the Contract Administrator in writing if the Contractor fails to make paymentswhen due toSubcontractorswho have contractswith theContractor.The ContractAdministratorwillconsider payments have been made if no such wrillen notice is received.\nShould the Contract Administrator find that the Contractor is not paying Subcontractorsthen theContractAdministratorwillrequire theContractor toprovide a legal declaration.With the legal declaration, the Contractor shallalsoprovidethe following information:\nb The name of the Contractor.\nThe Contract datewith the Employer.\nC The Project name and legal description.\nThe date the Subcontractorwas completeon theProject.\nd The name and address of the Subcontractor and/or Subcontractors.\nThe amount of money of the Contract with the Subcontractor(s).\nThe last day ofworkon theProjectfor theSubcontractor.\nThe amount of money of any approved extras to the Subcontract(s).\nAstatement summarizing reasonsfornon-payment.\nThe amount of money owed to the Subcontractor(s).\nThe itemized listing of payment dateswith amounts and amount of money paid to date to the Subcontractor(s).\nThe date the money is due to be released to the Contractor and Subcontractor.\nPerson swearing the legal declaration must be an officer of the Contraclor.\nThe name of thepersonswearing the declaration and the nameof the jurisdictional authoritycertifying the legal declaration.\nPART 2 - PRODUCTS (Not Used)\nPART 3 - EXECUTION (Not Used)\nEND OF SECTION 01025",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

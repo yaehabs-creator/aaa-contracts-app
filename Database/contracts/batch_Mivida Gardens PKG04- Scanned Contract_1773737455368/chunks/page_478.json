@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n## RFI-Request forInformation\n\n<!-- image -->\n\nWhere RFl results in a response that is a change to the contract, A SWI (SITE WORK INSTRUCTION) and VO ( VARIATION ORDER)have to be issued\n\nCS - Construction supervisor CA - Contract Administrator\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "RFI-Request forInformation",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          643.2462972005209
+        ],
+        [
+          424.1773274739583,
+          643.2462972005209
+        ],
+        [
+          424.1773274739583,
+          621.2698160807291
+        ],
+        [
+          136.96528116861978,
+          621.2698160807291
+        ]
+      ],
+      "page": 478
+    },
+    {
+      "text": "Where RFl results in a response that is a change to the contract, A SWI (SITE WORK INSTRUCTION) and VO ( VARIATION ORDER)have to be issued",
+      "confidence": 0.95,
+      "box": [
+        [
+          55.20115661621094,
+          195.83839925130212
+        ],
+        [
+          494.3201497395833,
+          195.83839925130212
+        ],
+        [
+          494.3201497395833,
+          144.00705973307288
+        ],
+        [
+          55.20115661621094,
+          144.00705973307288
+        ]
+      ],
+      "page": 478
+    },
+    {
+      "text": "CS - Construction supervisor CA - Contract Administrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          65.16226704915364,
+          114.15220133463538
+        ],
+        [
+          239.0666707356771,
+          114.15220133463538
+        ],
+        [
+          239.0666707356771,
+          82.22414143880212
+        ],
+        [
+          65.16226704915364,
+          82.22414143880212
+        ]
+      ],
+      "page": 478
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 478,
+      "text": "RFI-Request forInformation\nWhere RFl results in a response that is a change to the contract, A SWI (SITE WORK INSTRUCTION) and VO ( VARIATION ORDER)have to be issued\nCS - Construction supervisor CA - Contract Administrator",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

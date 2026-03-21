@@ -1,0 +1,198 @@
+{
+  "text": "## 9. THE SITE\n\n<!-- image -->\n\nEMAINPMIS\n\n#1241\n\nPOX.209,\n\n| 9.1                                       | Information and Inspection                  | 19                                        |\n|-------------------------------------------|---------------------------------------------|-------------------------------------------|\n| 9.2                                       | PossessionofSite                            | 19                                        |\n| 9.3                                       | EntrytoSite                                 | 20                                        |\n| 9.4                                       | OpportunitiesforOther Contractors           | 20                                        |\n| 9.5                                       | FacilitiesoutsideSite                       | 20                                        |\n| 9.6                                       | Notices,Permits and Fees                    | 20                                        |\n| 9.7                                       | Setting-out                                 | 21                                        |\n| 9.8                                       | Photographs                                 | 21                                        |\n| 9.9                                       | ExistingFacilities                          | 21                                        |\n| 9.10                                      | Fencing, Lighting, Guarding and Watching    | 21                                        |\n| 9.11                                      | Urgent Repairs                              | 22                                        |\n| 9.12                                      | ElectricityandWater                         | 22                                        |\n| 9.13                                      | Fossils                                     | 22                                        |\n| 9.14                                      | Site Clearance-General                      | 22                                        |\n| 9.15                                      | Removal of Plant and Contractor's Equipment | 23                                        |\n| 9.16                                      | ClearanceonTakingOver                       | 23                                        |\n| 9.17                                      | ClearanceonFinal Certificate                | 23                                        |\n| 10. CONTRACTOR'SEMPLOYEES                 | 10. CONTRACTOR'SEMPLOYEES                   | 10. CONTRACTOR'SEMPLOYEES                 |\n| 10.1                                      | Contractor'sRepresentative                  | 24                                        |\n| 10.2                                      | Health andSafety                            | 24                                        |\n| 10.3                                      | Employees                                   | 25                                        |\n| 10.4                                      | Payment and Services                        | 26                                        |\n| 10.5                                      | AlcoholicLiquor orDrugs                     | 26                                        |\n| 10.6                                      | Arms and Ammunition                         | 26                                        |\n| 10.7                                      | Festivalsand ReligiousCustoms               | 26                                        |\n| 10.8                                      | Disorderly Conduct                          | 26                                        |\n| 10.9                                      | Medical Fitness                             | 27                                        |\n| 10.10                                     | Transportation                              | 27                                        |\n| 10.11                                     | Observance by Subcontractors                | 27                                        |\n|                                           | 10.12 Visas                                 | 27                                        |\n|                                           | 10.13RecordsofContractor'sEmployees         | 27                                        |\n| PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT | PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT   | PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT |\n| 11.1                                      | General                                     | 27                                        |\n| 11.2                                      | Inspection andTesting                       | 28                                        |\n| 11.3                                      | Covering and Uncovering theWorks            | 28                                        |\n| 11.4                                      | Cost of Testing                             | 29                                        |\n| 11.5                                      | Dates for Testing                           | 29                                        |\n| 11.6                                      | Test Certificates                           | 29                                        |\n| 11.7                                      | Rejectionand Remed                          | 29                                        |\n| 11.8                                      | No Release                                  | 30                                        |\n\nTLE\n\nONINO3\n\nMe\n\nFIRST EDITION2006",
+  "results": [
+    {
+      "text": "9. THE SITE",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          721.6237080891927
+        ],
+        [
+          172.9341837565104,
+          721.6237080891927
+        ],
+        [
+          172.9341837565104,
+          710.1695760091146
+        ],
+        [
+          93.86647542317708,
+          710.1695760091146
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "EMAINPMIS",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          102.67624918619788
+        ],
+        [
+          155.1756591796875,
+          102.67624918619788
+        ],
+        [
+          155.1756591796875,
+          92.49485270182288
+        ],
+        [
+          94.71211751302083,
+          92.49485270182288
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "#1241",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          71.70766194661462
+        ],
+        [
+          120.92708333333333,
+          71.70766194661462
+        ],
+        [
+          120.92708333333333,
+          69.16233317057288
+        ],
+        [
+          95.55775960286458,
+          69.16233317057288
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "POX.209,",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          66.61700439453125
+        ],
+        [
+          130.65198771158853,
+          66.61700439453125
+        ],
+        [
+          130.65198771158853,
+          63.22312418619788
+        ],
+        [
+          95.1349385579427,
+          63.22312418619788
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "TLE",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.5383504231771,
+          114.97890218098962
+        ],
+        [
+          217.7533162434896,
+          114.97890218098962
+        ],
+        [
+          217.7533162434896,
+          111.16078694661462
+        ],
+        [
+          191.5383504231771,
+          111.16078694661462
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "ONINO3",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.38399251302084,
+          102.25209554036462
+        ],
+        [
+          224.5184529622396,
+          102.25209554036462
+        ],
+        [
+          224.5184529622396,
+          93.76747639973962
+        ],
+        [
+          192.38399251302084,
+          93.76747639973962
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "Me",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.66571044921875,
+          71.70766194661462
+        ],
+        [
+          187.31011962890625,
+          71.70766194661462
+        ],
+        [
+          187.31011962890625,
+          66.61700439453125
+        ],
+        [
+          171.66571044921875,
+          66.61700439453125
+        ]
+      ],
+      "page": 24
+    },
+    {
+      "text": "FIRST EDITION2006",
+      "confidence": 0.95,
+      "box": [
+        [
+          421.1306559244792,
+          104.37318929036462
+        ],
+        [
+          490.4734700520833,
+          104.37318929036462
+        ],
+        [
+          490.4734700520833,
+          96.73712158203125
+        ],
+        [
+          421.1306559244792,
+          96.73712158203125
+        ]
+      ],
+      "page": 24
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 24,
+      "text": "9. THE SITE\nEMAINPMIS\n#1241\nPOX.209,\nTLE\nONINO3\nMe\nFIRST EDITION2006",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

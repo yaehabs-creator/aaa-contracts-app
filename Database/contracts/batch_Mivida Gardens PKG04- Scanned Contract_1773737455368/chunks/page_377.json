@@ -1,0 +1,681 @@
+{
+  "text": "<!-- image -->\n\nincorporated only if edited to delete inappropriate and irrelevant text.\n\n2. Arrange manuals involumes in the order and organization of the Specification. Provide tablesofcontents and indexesfor eachvolume,and cover and bind them as approved by Supervision Consultant through  the Contract Administrator.\n2. 3.Protect typewritten, drafted and photographic pages with clear plastic sleeves.\n4. Package manuals in suitable transfer cases indexed and marked for each divisionof theWorks.\n4. 5.Submit manuals witn signed certificate attached which states that the manuals arecompleteandaccurate.\n5. 6.Include in Manuals:\n6. a)Full information and instructions for operating and maintaining each item of operating equipment under:\n7. normal\n8. standby\n9. emergency operating conditions.\n- b) Maintenance erequirements, including weekly， monthly andannual schedules,forall mechanical systemsandotherproducts.\n11. C Originalcopiesof warranties which extendbeyond  thePeriodof Maintenance.\n- d) Schematic diagrams of control systems and other low voltage systems, including sequence of operations.\n13. Circuit directories for each electric and communications panel board.\n- f) Valve tags and schedule correlated to system diagrams, with location and functionofeachvalve.\n- g) Complete keying schedules and master keying hierarchy diagram(s) correlated to Supervision Consultant Drawings and Schedules.\n- h) Paint colour schedules and samples, including RAL numbers.\n- i) Product names and  sources  of  supply  of all proprietary  products incorporated in the Works.\n- i) Master equipment list.\n- k) Recommended spare parts list.\n20. D Directory of all suppliers and Subcontractors including name of firm, address,e-mail Iaddress, facsimile and telephone numbers, and a description of the work for which the firm has been responsible.\n21. m)Additional data required by variousSections of the Specification.\n- n) Test and balancing rcports.\n7. System Level Procedures:\n24. a)Include system level information in the manuals concerning procedures for ration and maintenanceof equipmentwhich is tobe performed by technicians.Thisinformation shall consistof thefollowing as cable:\n\nOperation: A description of the system theory of operation, operating parameters, interfaces with other systems, major and their physical and oporating characteristics.\n\nthe steps or tasks\n\n<!-- image -->\n\nEmaar\n\nSpeciicatialabw cments",
+  "results": [
+    {
+      "text": "incorporated only if edited to delete inappropriate and irrelevant text.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          719.542002360026
+        ],
+        [
+          448.25,
+          719.542002360026
+        ],
+        [
+          448.25,
+          707.9317830403646
+        ],
+        [
+          111.64745076497395,
+          707.9317830403646
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Arrange manuals involumes in the order and organization of the Specification. Provide tablesofcontents and indexesfor eachvolume,and cover and bind them as approved by Supervision Consultant through  the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          702.1266784667969
+        ],
+        [
+          506.3564860026042,
+          702.1266784667969
+        ],
+        [
+          506.3564860026042,
+          655.6858215332031
+        ],
+        [
+          95.87569173177083,
+          655.6858215332031
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "3.Protect typewritten, drafted and photographic pages with clear plastic sleeves.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          651.1246541341146
+        ],
+        [
+          495.9803059895833,
+          651.1246541341146
+        ],
+        [
+          495.9803059895833,
+          639.5144449869791
+        ],
+        [
+          94.63055419921875,
+          639.5144449869791
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Package manuals in suitable transfer cases indexed and marked for each divisionof theWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          633.7093505859375
+        ],
+        [
+          505.5263671875,
+          633.7093505859375
+        ],
+        [
+          505.5263671875,
+          610.4889119466146
+        ],
+        [
+          95.87569173177083,
+          610.4889119466146
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "5.Submit manuals witn signed certificate attached which states that the manuals arecompleteandaccurate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          605.9277547200521
+        ],
+        [
+          505.111328125,
+          605.9277547200521
+        ],
+        [
+          505.111328125,
+          582.2926839192709
+        ],
+        [
+          94.2155049641927,
+          582.2926839192709
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "6.Include in Manuals:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          576.4875691731771
+        ],
+        [
+          208.7682902018229,
+          576.4875691731771
+        ],
+        [
+          208.7682902018229,
+          565.292012532552
+        ],
+        [
+          95.46065266927083,
+          565.292012532552
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "a)Full information and instructions for operating and maintaining each item of operating equipment under:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          559.9015502929688
+        ],
+        [
+          506.7715250651042,
+          559.9015502929688
+        ],
+        [
+          506.7715250651042,
+          536.6811116536458
+        ],
+        [
+          112.47754923502605,
+          536.6811116536458
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "normal",
+      "confidence": 0.95,
+      "box": [
+        [
+          149.83171590169272,
+          535.4371744791667
+        ],
+        [
+          186.77083333333334,
+          535.4371744791667
+        ],
+        [
+          186.77083333333334,
+          525.0709025065105
+        ],
+        [
+          149.83171590169272,
+          525.0709025065105
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "standby",
+      "confidence": 0.95,
+      "box": [
+        [
+          150.66180419921875,
+          525.0709025065105
+        ],
+        [
+          190.5062459309896,
+          525.0709025065105
+        ],
+        [
+          190.5062459309896,
+          513.460693359375
+        ],
+        [
+          150.66180419921875,
+          513.460693359375
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "emergency operating conditions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          150.24675496419272,
+          513.0460408528645
+        ],
+        [
+          312.9449055989583,
+          513.0460408528645
+        ],
+        [
+          312.9449055989583,
+          502.6797688802083
+        ],
+        [
+          150.24675496419272,
+          502.6797688802083
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Maintenance erequirements, including weekly， monthly andannual schedules,forall mechanical systemsandotherproducts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          497.7039794921875
+        ],
+        [
+          505.5263671875,
+          497.7039794921875
+        ],
+        [
+          505.5263671875,
+          474.48354085286456
+        ],
+        [
+          114.13773600260417,
+          474.48354085286456
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "C Originalcopiesof warranties which extendbeyond  thePeriodof Maintenance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          468.67844645182294
+        ],
+        [
+          506.7715250651042,
+          468.67844645182294
+        ],
+        [
+          506.7715250651042,
+          445.04335530598956
+        ],
+        [
+          114.13773600260417,
+          445.04335530598956
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Schematic diagrams of control systems and other low voltage systems, including sequence of operations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          440.48219807942706
+        ],
+        [
+          505.5263671875,
+          440.48219807942706
+        ],
+        [
+          505.5263671875,
+          416.43247477213544
+        ],
+        [
+          114.13773600260417,
+          416.43247477213544
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Circuit directories for each electric and communications panel board.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.58912150065105,
+          411.87131754557294
+        ],
+        [
+          468.1722005208333,
+          411.87131754557294
+        ],
+        [
+          468.1722005208333,
+          400.67576090494794
+        ],
+        [
+          126.58912150065105,
+          400.67576090494794
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Valve tags and schedule correlated to system diagrams, with location and functionofeachvalve.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          395.69993082682294
+        ],
+        [
+          506.7715250651042,
+          395.69993082682294
+        ],
+        [
+          506.7715250651042,
+          372.06488037109375
+        ],
+        [
+          113.30763753255208,
+          372.06488037109375
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Complete keying schedules and master keying hierarchy diagram(s) correlated to Supervision Consultant Drawings and Schedules.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          367.08905029296875
+        ],
+        [
+          505.9414469401042,
+          367.08905029296875
+        ],
+        [
+          505.9414469401042,
+          343.45395914713544
+        ],
+        [
+          113.72268676757812,
+          343.45395914713544
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Paint colour schedules and samples, including RAL numbers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          338.06353759765625
+        ],
+        [
+          433.723388671875,
+          338.06353759765625
+        ],
+        [
+          433.723388671875,
+          326.03863525390625
+        ],
+        [
+          114.13773600260417,
+          326.03863525390625
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Product names and  sources  of  supply  of all proprietary  products incorporated in the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          321.89215087890625
+        ],
+        [
+          506.3564860026042,
+          321.89215087890625
+        ],
+        [
+          506.3564860026042,
+          297.8424275716146
+        ],
+        [
+          113.30763753255208,
+          297.8424275716146
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Master equipment list.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          292.45196533203125
+        ],
+        [
+          240.31180826822916,
+          292.45196533203125
+        ],
+        [
+          240.31180826822916,
+          279.5977986653646
+        ],
+        [
+          112.89258829752605,
+          279.5977986653646
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Recommended spare parts list.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          275.4512736002604
+        ],
+        [
+          284.7217610677083,
+          275.4512736002604
+        ],
+        [
+          284.7217610677083,
+          263.01177978515625
+        ],
+        [
+          113.72268676757812,
+          263.01177978515625
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "D Directory of all suppliers and Subcontractors including name of firm, address,e-mail Iaddress, facsimile and telephone numbers, and a description of the work for which the firm has been responsible.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.72268676757812,
+          258.0359903971354
+        ],
+        [
+          507.1865641276042,
+          258.0359903971354
+        ],
+        [
+          507.1865641276042,
+          223.61997477213538
+        ],
+        [
+          113.72268676757812,
+          223.61997477213538
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "m)Additional data required by variousSections of the Specification.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          218.22951253255212
+        ],
+        [
+          447.419921875,
+          218.22951253255212
+        ],
+        [
+          447.419921875,
+          207.44858805338538
+        ],
+        [
+          113.30763753255208,
+          207.44858805338538
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Test and balancing rcports.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          201.22886149088538
+        ],
+        [
+          265.21457926432294,
+          201.22886149088538
+        ],
+        [
+          265.21457926432294,
+          189.20399983723962
+        ],
+        [
+          112.89258829752605,
+          189.20399983723962
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "System Level Procedures:",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          183.81353759765625
+        ],
+        [
+          244.4622599283854,
+          183.81353759765625
+        ],
+        [
+          244.4622599283854,
+          171.78867594401038
+        ],
+        [
+          97.12082926432292,
+          171.78867594401038
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "a)Include system level information in the manuals concerning procedures for ration and maintenanceof equipmentwhich is tobe performed by technicians.Thisinformation shall consistof thefollowing as cable:",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          166.81284586588538
+        ],
+        [
+          506.3564860026042,
+          166.81284586588538
+        ],
+        [
+          506.3564860026042,
+          121.20127360026038
+        ],
+        [
+          113.30763753255208,
+          121.20127360026038
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Operation: A description of the system theory of operation, operating parameters, interfaces with other systems, major and their physical and oporating characteristics.",
+      "confidence": 0.95,
+      "box": [
+        [
+          204.6178181966146,
+          116.64015706380212
+        ],
+        [
+          506.3564860026042,
+          116.64015706380212
+        ],
+        [
+          506.3564860026042,
+          82.22414143880212
+        ],
+        [
+          204.6178181966146,
+          82.22414143880212
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "the steps or tasks",
+      "confidence": 0.95,
+      "box": [
+        [
+          406.745361328125,
+          82.22414143880212
+        ],
+        [
+          506.3564860026042,
+          82.22414143880212
+        ],
+        [
+          506.3564860026042,
+          71.85784912109375
+        ],
+        [
+          406.745361328125,
+          71.85784912109375
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Emaar",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.68888854980469,
+          54.85719807942712
+        ],
+        [
+          107.08193969726562,
+          54.85719807942712
+        ],
+        [
+          107.08193969726562,
+          47.80812581380212
+        ],
+        [
+          79.68888854980469,
+          47.80812581380212
+        ]
+      ],
+      "page": 377
+    },
+    {
+      "text": "Speciicatialabw cments",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          47.39349365234375
+        ],
+        [
+          132.8148193359375,
+          47.39349365234375
+        ],
+        [
+          132.8148193359375,
+          40.34442138671875
+        ],
+        [
+          79.27384440104167,
+          40.34442138671875
+        ]
+      ],
+      "page": 377
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 377,
+      "text": "incorporated only if edited to delete inappropriate and irrelevant text.\nArrange manuals involumes in the order and organization of the Specification. Provide tablesofcontents and indexesfor eachvolume,and cover and bind them as approved by Supervision Consultant through  the Contract Administrator.\n3.Protect typewritten, drafted and photographic pages with clear plastic sleeves.\nPackage manuals in suitable transfer cases indexed and marked for each divisionof theWorks.\n5.Submit manuals witn signed certificate attached which states that the manuals arecompleteandaccurate.\n6.Include in Manuals:\na)Full information and instructions for operating and maintaining each item of operating equipment under:\nnormal\nstandby\nemergency operating conditions.\nMaintenance erequirements, including weekly， monthly andannual schedules,forall mechanical systemsandotherproducts.\nC Originalcopiesof warranties which extendbeyond  thePeriodof Maintenance.\nSchematic diagrams of control systems and other low voltage systems, including sequence of operations.\nCircuit directories for each electric and communications panel board.\nValve tags and schedule correlated to system diagrams, with location and functionofeachvalve.\nComplete keying schedules and master keying hierarchy diagram(s) correlated to Supervision Consultant Drawings and Schedules.\nPaint colour schedules and samples, including RAL numbers.\nProduct names and  sources  of  supply  of all proprietary  products incorporated in the Works.\nMaster equipment list.\nRecommended spare parts list.\nD Directory of all suppliers and Subcontractors including name of firm, address,e-mail Iaddress, facsimile and telephone numbers, and a description of the work for which the firm has been responsible.\nm)Additional data required by variousSections of the Specification.\nTest and balancing rcports.\nSystem Level Procedures:\na)Include system level information in the manuals concerning procedures for ration and maintenanceof equipmentwhich is tobe performed by technicians.Thisinformation shall consistof thefollowing as cable:\nOperation: A description of the system theory of operation, operating parameters, interfaces with other systems, major and their physical and oporating characteristics.\nthe steps or tasks\nEmaar\nSpeciicatialabw cments",
+      "line_count": 29
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

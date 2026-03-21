@@ -1,0 +1,244 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref: EGY/PRJCTS/HSE/REQs\n\n|   17 | Decp Excavation (Trcnchcs 20 feet (6.11 meters）） without specific recorded soil test,to secure the trench by shoring, sloping or other safety precautions,   | 30,000 LE   | For each day until corrected   |\n|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------------|\n|   18 | Working at height without propet protection of workforce (no aecess, working platform,edge protection)                                                         | 10.000 LE   | Per incident                   |\n|   19 | Working on uninspeeted and/or untagged seaffold                                                                                                                | 10,000 LE   | Per incident/worker            |\n|   20 | Unprotected slab opening(greater than 30cmX30cm)                                                                                                               | 10.000 LE   | Per incident                   |\n|   21 | Unsafelifting operation                                                                                                                                        | 20,000 LE   | Per incident                   |\n|   22 | Movement of labors along public roads                                                                                                                          | 500LE       | Per incident/worker            |\n|   23 | Work inside of living community without issuing the related PTW                                                                                                | 50,000 LE   | Per incident                   |\n|   24 | Absence of welfare facilities (clean drinking water, Toilets, locker facilities,eating and resting area et,                                                    | 5000LE      | Per Day                        |\n\ncnuor MHlar For\n\nTax Cardl 218-287-209\n\nDoveloprnane SAt\n\nCR12841\n\nCalro,Egypt\n\nHO Box 229, Notadya\n\n<!-- image -->\n\nNilsr\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          730.3229166666666
+        ],
+        [
+          341.5830891927083,
+          730.3229166666666
+        ],
+        [
+          341.5830891927083,
+          699.6387736002604
+        ],
+        [
+          190.92130533854166,
+          699.6387736002604
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          700.8827209472656
+        ],
+        [
+          218.3143513997396,
+          700.8827209472656
+        ],
+        [
+          218.3143513997396,
+          686.7846069335938
+        ],
+        [
+          75.95347086588542,
+          686.7846069335938
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "cnuor MHlar For",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.61527506510416,
+          89.68784586588538
+        ],
+        [
+          272.6854248046875,
+          89.68784586588538
+        ],
+        [
+          272.6854248046875,
+          78.07765706380212
+        ],
+        [
+          226.61527506510416,
+          78.07765706380212
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "Tax Cardl 218-287-209",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.63472493489584,
+          71.44321695963538
+        ],
+        [
+          280.98634847005206,
+          71.44321695963538
+        ],
+        [
+          280.98634847005206,
+          60.24766031901038
+        ],
+        [
+          221.63472493489584,
+          60.24766031901038
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "Doveloprnane SAt",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.63472493489584,
+          80.56553141276038
+        ],
+        [
+          287.2120361328125,
+          80.56553141276038
+        ],
+        [
+          287.2120361328125,
+          69.78460693359375
+        ],
+        [
+          221.63472493489584,
+          69.78460693359375
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "CR12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          222.04976399739584,
+          63.56488037109375
+        ],
+        [
+          248.19769287109375,
+          63.56488037109375
+        ],
+        [
+          248.19769287109375,
+          55.27183024088538
+        ],
+        [
+          222.04976399739584,
+          55.27183024088538
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "Calro,Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.63472493489584,
+          51.53997802734375
+        ],
+        [
+          253.5932820638021,
+          51.53997802734375
+        ],
+        [
+          253.5932820638021,
+          41.17376708984375
+        ],
+        [
+          221.63472493489584,
+          41.17376708984375
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "HO Box 229, Notadya",
+      "confidence": 0.95,
+      "box": [
+        [
+          220.80462646484375,
+          58.17441813151038
+        ],
+        [
+          282.2314860026042,
+          58.17441813151038
+        ],
+        [
+          282.2314860026042,
+          47.39349365234375
+        ],
+        [
+          220.80462646484375,
+          47.39349365234375
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "Nilsr",
+      "confidence": 0.95,
+      "box": [
+        [
+          297.17315673828125,
+          46.56422932942712
+        ],
+        [
+          315.0201416015625,
+          46.56422932942712
+        ],
+        [
+          315.0201416015625,
+          37.44191487630212
+        ],
+        [
+          297.17315673828125,
+          37.44191487630212
+        ]
+      ],
+      "page": 476
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          736.1280212402344
+        ],
+        [
+          512.1671142578125,
+          736.1280212402344
+        ],
+        [
+          512.1671142578125,
+          721.2006022135416
+        ],
+        [
+          453.2305501302083,
+          721.2006022135416
+        ]
+      ],
+      "page": 476
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 476,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\ncnuor MHlar For\nTax Cardl 218-287-209\nDoveloprnane SAt\nCR12841\nCalro,Egypt\nHO Box 229, Notadya\nNilsr\nEMAAR",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

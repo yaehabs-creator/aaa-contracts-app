@@ -1,0 +1,129 @@
+{
+  "text": "## 32. NOTICES\n\n## Notices\n\n- 32.1 Anynotice,consent,approval,certificate,determinationrrequestrequired tobe given or issuedpursuant to theprovisions of the Contract shall be deliveredbyhand(againstreceipt),sentbymail,registered mail orcourier or transmittedbytelefaxtothatotherpartyat theaddressstatedinthe Particular Conditions(or to suchother addressas theotherpartyhas specified by giving fifteen (15) days' prior written notice). Provided that:\n- (a) if the recipient has not stated otherwise when requesting an approval orconsent,itmaybesenttotheaddressfromwhichtherequestwas issued; and\n- (b) if a notice, consent, approval, certificate, determination or request has beendelivered，sentortransmitted(asapplicable)in accordancewiththeabovebutreceivedonanon-workingdayor afterbusiness hours intheplace of receiptit will onlybe deemed to begivenorissuedonthenextworkingdayinthatplace.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "32. NOTICES",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          722.0479329427084
+        ],
+        [
+          172.9341837565104,
+          722.0479329427084
+        ],
+        [
+          172.9341837565104,
+          711.4422505696615
+        ],
+        [
+          95.55775960286458,
+          711.4422505696615
+        ]
+      ],
+      "page": 112
+    },
+    {
+      "text": "Notices",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          700.412353515625
+        ],
+        [
+          131.49762980143228,
+          700.412353515625
+        ],
+        [
+          131.49762980143228,
+          687.2613118489584
+        ],
+        [
+          95.55775960286458,
+          687.2613118489584
+        ]
+      ],
+      "page": 112
+    },
+    {
+      "text": "32.1 Anynotice,consent,approval,certificate,determinationrrequestrequired tobe given or issuedpursuant to theprovisions of the Contract shall be deliveredbyhand(againstreceipt),sentbymail,registered mail orcourier or transmittedbytelefaxtothatotherpartyat theaddressstatedinthe Particular Conditions(or to suchother addressas theotherpartyhas specified by giving fifteen (15) days' prior written notice). Provided that:",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          677.5040791829427
+        ],
+        [
+          488.7821858723958,
+          677.5040791829427
+        ],
+        [
+          488.7821858723958,
+          610.0519612630209
+        ],
+        [
+          127.69223022460938,
+          610.0519612630209
+        ]
+      ],
+      "page": 112
+    },
+    {
+      "text": "(a) if the recipient has not stated otherwise when requesting an approval orconsent,itmaybesenttotheaddressfromwhichtherequestwas issued; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          598.1736043294271
+        ],
+        [
+          488.7821858723958,
+          598.1736043294271
+        ],
+        [
+          488.7821858723958,
+          563.386983235677
+        ],
+        [
+          158.55823771158853,
+          563.386983235677
+        ]
+      ],
+      "page": 112
+    },
+    {
+      "text": "(b) if a notice, consent, approval, certificate, determination or request has beendelivered，sentortransmitted(asapplicable)in accordancewiththeabovebutreceivedonanon-workingdayor afterbusiness hours intheplace of receiptit will onlybe deemed to begivenorissuedonthenextworkingdayinthatplace.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.82670084635416,
+          552.7812906901042
+        ],
+        [
+          489.2049967447917,
+          552.7812906901042
+        ],
+        [
+          489.2049967447917,
+          496.35906982421875
+        ],
+        [
+          159.82670084635416,
+          496.35906982421875
+        ]
+      ],
+      "page": 112
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 112,
+      "text": "32. NOTICES\nNotices\n32.1 Anynotice,consent,approval,certificate,determinationrrequestrequired tobe given or issuedpursuant to theprovisions of the Contract shall be deliveredbyhand(againstreceipt),sentbymail,registered mail orcourier or transmittedbytelefaxtothatotherpartyat theaddressstatedinthe Particular Conditions(or to suchother addressas theotherpartyhas specified by giving fifteen (15) days' prior written notice). Provided that:\n(a) if the recipient has not stated otherwise when requesting an approval orconsent,itmaybesenttotheaddressfromwhichtherequestwas issued; and\n(b) if a notice, consent, approval, certificate, determination or request has beendelivered，sentortransmitted(asapplicable)in accordancewiththeabovebutreceivedonanon-workingdayor afterbusiness hours intheplace of receiptit will onlybe deemed to begivenorissuedonthenextworkingdayinthatplace.",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

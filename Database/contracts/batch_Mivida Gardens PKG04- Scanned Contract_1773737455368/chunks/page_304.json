@@ -1,0 +1,290 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## 7.TIMEEXTENSIONANALYSIS\n\n1. The claim for time extension should reflects the impact of the events or reasons for delays on the construction activities ACTUAL update (status) and also should reflects the concurrent delays and the delays occurred by the contractor.\n3. The claim for time extension should not based on any theoretical time impact methodology such as the \"Impacted as planned\" methodology.\n2. The claim for time extension schedule should be based on the APPROVED construction schedule UPDATEDas of the date ofeach event or reasonof delaysshowingtheACTUALconstructionstatusatthedateofeacheventor reasonofdelays.SuchscheduleshouldshowstheACTUALdatasuchas;the actual start &amp; completion dates and the actual progress % at this date.\n4. The claim for time extension should be addressed via ONE schedule \"not several schedules\"atacertaincutofdate,suchscheduleshouldcoversALL the overall time impact for ALL the events or reasons for delays at the claim submissioncut-offdate.\n6. A summary for the requested overall time and cost compensation should be submitted,such summary should show the extension of time claimed for each contractualmilestoneinadditiontotheassociatedclaimedcostforeach event.\n5. The claim for time extension hard copy should be attached and it should shows the requested prolongation duration for each contractual completion milestone verses the original contractual completion date. The supported documents for the events orreasons of delays should be organized by event for ease reference.\n\nEND OFSECTION 01310\n\n<!-- image -->\n\nEmaarMisrforDevelopment\n\nSpecificationsDiv.01General Requironc\n\nTechnical Specifications(Division l)\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          750.6407877604166
+        ],
+        [
+          131.15463256835938,
+          750.6407877604166
+        ],
+        [
+          131.15463256835938,
+          739.859873453776
+        ],
+        [
+          108.32708740234375,
+          739.859873453776
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "7.TIMEEXTENSIONANALYSIS",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          719.542002360026
+        ],
+        [
+          250.6879679361979,
+          719.542002360026
+        ],
+        [
+          250.6879679361979,
+          707.9317830403646
+        ],
+        [
+          76.36852010091145,
+          707.9317830403646
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "The claim for time extension should reflects the impact of the events or reasons for delays on the construction activities ACTUAL update (status) and also should reflects the concurrent delays and the delays occurred by the contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          702.9559733072916
+        ],
+        [
+          505.9414469401042,
+          702.9559733072916
+        ],
+        [
+          505.9414469401042,
+          656.9297688802084
+        ],
+        [
+          93.38541666666667,
+          656.9297688802084
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "The claim for time extension should not based on any theoretical time impact methodology such as the \"Impacted as planned\" methodology.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          600.1226399739584
+        ],
+        [
+          505.9414469401042,
+          600.1226399739584
+        ],
+        [
+          505.9414469401042,
+          573.9996744791666
+        ],
+        [
+          94.2155049641927,
+          573.9996744791666
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "The claim for time extension schedule should be based on the APPROVED construction schedule UPDATEDas of the date ofeach event or reasonof delaysshowingtheACTUALconstructionstatusatthedateofeacheventor reasonofdelays.SuchscheduleshouldshowstheACTUALdatasuchas;the actual start & completion dates and the actual progress % at this date.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          657.3444213867188
+        ],
+        [
+          505.9414469401042,
+          657.3444213867188
+        ],
+        [
+          505.9414469401042,
+          598.0493977864584
+        ],
+        [
+          92.14027913411458,
+          598.0493977864584
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "The claim for time extension should be addressed via ONE schedule \"not several schedules\"atacertaincutofdate,suchscheduleshouldcoversALL the overall time impact for ALL the events or reasons for delays at the claim submissioncut-offdate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          576.9022216796875
+        ],
+        [
+          504.6962890625,
+          576.9022216796875
+        ],
+        [
+          504.6962890625,
+          530.8760172526042
+        ],
+        [
+          93.38541666666667,
+          530.8760172526042
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "A summary for the requested overall time and cost compensation should be submitted,such summary should show the extension of time claimed for each contractualmilestoneinadditiontotheassociatedclaimedcostforeach event.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          474.89817301432294
+        ],
+        [
+          504.6962890625,
+          474.89817301432294
+        ],
+        [
+          504.6962890625,
+          428.45733642578125
+        ],
+        [
+          91.72522989908855,
+          428.45733642578125
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "The claim for time extension hard copy should be attached and it should shows the requested prolongation duration for each contractual completion milestone verses the original contractual completion date. The supported documents for the events orreasons of delays should be organized by event for ease reference.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          531.705322265625
+        ],
+        [
+          504.6962890625,
+          531.705322265625
+        ],
+        [
+          504.6962890625,
+          473.23960367838544
+        ],
+        [
+          91.72522989908855,
+          473.23960367838544
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "END OFSECTION 01310",
+      "confidence": 0.95,
+      "box": [
+        [
+          223.7099609375,
+          408.13946533203125
+        ],
+        [
+          355.2796223958333,
+          408.13946533203125
+        ],
+        [
+          355.2796223958333,
+          396.52923583984375
+        ],
+        [
+          223.7099609375,
+          396.52923583984375
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "EmaarMisrforDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          57.75978597005212
+        ],
+        [
+          160.2078653971354,
+          57.75978597005212
+        ],
+        [
+          160.2078653971354,
+          48.63747151692712
+        ],
+        [
+          73.46319580078125,
+          48.63747151692712
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "SpecificationsDiv.01General Requironc",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          50.29608154296875
+        ],
+        [
+          202.1275431315104,
+          50.29608154296875
+        ],
+        [
+          202.1275431315104,
+          40.34442138671875
+        ],
+        [
+          73.0481465657552,
+          40.34442138671875
+        ]
+      ],
+      "page": 304
+    },
+    {
+      "text": "Technical Specifications(Division l)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.0928141276042,
+          743.1770782470703
+        ],
+        [
+          503.0360921223958,
+          743.1770782470703
+        ],
+        [
+          503.0360921223958,
+          730.3229166666666
+        ],
+        [
+          339.0928141276042,
+          730.3229166666666
+        ]
+      ],
+      "page": 304
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 304,
+      "text": "MISR\n7.TIMEEXTENSIONANALYSIS\nThe claim for time extension should reflects the impact of the events or reasons for delays on the construction activities ACTUAL update (status) and also should reflects the concurrent delays and the delays occurred by the contractor.\nThe claim for time extension should not based on any theoretical time impact methodology such as the \"Impacted as planned\" methodology.\nThe claim for time extension schedule should be based on the APPROVED construction schedule UPDATEDas of the date ofeach event or reasonof delaysshowingtheACTUALconstructionstatusatthedateofeacheventor reasonofdelays.SuchscheduleshouldshowstheACTUALdatasuchas;the actual start & completion dates and the actual progress % at this date.\nThe claim for time extension should be addressed via ONE schedule \"not several schedules\"atacertaincutofdate,suchscheduleshouldcoversALL the overall time impact for ALL the events or reasons for delays at the claim submissioncut-offdate.\nA summary for the requested overall time and cost compensation should be submitted,such summary should show the extension of time claimed for each contractualmilestoneinadditiontotheassociatedclaimedcostforeach event.\nThe claim for time extension hard copy should be attached and it should shows the requested prolongation duration for each contractual completion milestone verses the original contractual completion date. The supported documents for the events orreasons of delays should be organized by event for ease reference.\nEND OFSECTION 01310\nEmaarMisrforDevelopment\nSpecificationsDiv.01General Requironc\nTechnical Specifications(Division l)",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

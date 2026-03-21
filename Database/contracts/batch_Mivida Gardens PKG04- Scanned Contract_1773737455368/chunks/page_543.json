@@ -1,0 +1,382 @@
+{
+  "text": "## INDICATIVE CONTROL FORMS\n\n## Index\n\n1. Request for Information\n2. Daily Construction Report\n3. 3.Contractor's Submittal Status Log/Material Submittals\n4. 4.Contractor's Procurement Schedule\n5. Job Site Instruction\n6. Non Conformance Report\n7. 28 Day look Ahead Schedule\n8. Transmission of Drawings, Documents, Samples, Etc.\n9. Interim Payment Application\n10. Interim Payment Certificate\n11. Payment Schedule Value Report\n12. Specification Comparison Sheet\n13. Site Work Instruction\n14. Variation Order\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "INDICATIVE CONTROL FORMS",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.97442626953125,
+          762.7737426757812
+        ],
+        [
+          401.258056640625,
+          762.7737426757812
+        ],
+        [
+          401.258056640625,
+          750.8953857421875
+        ],
+        [
+          169.97442626953125,
+          750.8953857421875
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Index",
+      "confidence": 0.95,
+      "box": [
+        [
+          254.1159871419271,
+          724.1690673828125
+        ],
+        [
+          286.67327880859375,
+          724.1690673828125
+        ],
+        [
+          286.67327880859375,
+          709.745351155599
+        ],
+        [
+          254.1159871419271,
+          709.745351155599
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Request for Information",
+      "confidence": 0.95,
+      "box": [
+        [
+          63.00047302246094,
+          697.8669840494791
+        ],
+        [
+          192.38399251302084,
+          697.8669840494791
+        ],
+        [
+          192.38399251302084,
+          685.1401672363281
+        ],
+        [
+          63.00047302246094,
+          685.1401672363281
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Daily Construction Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          63.00047302246094,
+          673.2618103027344
+        ],
+        [
+          203.37736002604166,
+          673.2618103027344
+        ],
+        [
+          203.37736002604166,
+          661.8076782226562
+        ],
+        [
+          63.00047302246094,
+          661.8076782226562
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "3.Contractor's Submittal Status Log/Material Submittals",
+      "confidence": 0.95,
+      "box": [
+        [
+          63.42329406738281,
+          649.9293212890625
+        ],
+        [
+          338.257568359375,
+          649.9293212890625
+        ],
+        [
+          338.257568359375,
+          639.3236287434896
+        ],
+        [
+          63.42329406738281,
+          639.3236287434896
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "4.Contractor's Procurement Schedule",
+      "confidence": 0.95,
+      "box": [
+        [
+          63.42329406738281,
+          626.5968221028646
+        ],
+        [
+          252.00189208984375,
+          626.5968221028646
+        ],
+        [
+          252.00189208984375,
+          614.7184651692709
+        ],
+        [
+          63.42329406738281,
+          614.7184651692709
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Job Site Instruction",
+      "confidence": 0.95,
+      "box": [
+        [
+          63.84611511230469,
+          601.9916381835938
+        ],
+        [
+          172.08854166666666,
+          601.9916381835938
+        ],
+        [
+          172.08854166666666,
+          590.11328125
+        ],
+        [
+          63.84611511230469,
+          590.11328125
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Non Conformance Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.26893615722656,
+          578.659159342448
+        ],
+        [
+          204.2230021158854,
+          578.659159342448
+        ],
+        [
+          204.2230021158854,
+          565.9323323567708
+        ],
+        [
+          64.26893615722656,
+          565.9323323567708
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "28 Day look Ahead Schedule",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.26893615722656,
+          554.4782104492188
+        ],
+        [
+          219.8674112955729,
+          554.4782104492188
+        ],
+        [
+          219.8674112955729,
+          543.0240681966145
+        ],
+        [
+          64.26893615722656,
+          543.0240681966145
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Transmission of Drawings, Documents, Samples, Etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.26893615722656,
+          531.1457112630208
+        ],
+        [
+          340.79449462890625,
+          531.1457112630208
+        ],
+        [
+          340.79449462890625,
+          518.8431193033855
+        ],
+        [
+          64.26893615722656,
+          518.8431193033855
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Interim Payment Application",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.26893615722656,
+          506.9647623697917
+        ],
+        [
+          215.63920084635416,
+          506.9647623697917
+        ],
+        [
+          215.63920084635416,
+          493.81374104817706
+        ],
+        [
+          64.26893615722656,
+          493.81374104817706
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Interim Payment Certificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.69175720214844,
+          482.78383382161456
+        ],
+        [
+          217.7533162434896,
+          482.78383382161456
+        ],
+        [
+          217.7533162434896,
+          471.32969156901044
+        ],
+        [
+          64.69175720214844,
+          471.32969156901044
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Payment Schedule Value Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.69175720214844,
+          459.45131429036456
+        ],
+        [
+          245.23673502604166,
+          459.45131429036456
+        ],
+        [
+          245.23673502604166,
+          446.72450764973956
+        ],
+        [
+          64.69175720214844,
+          446.72450764973956
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Specification Comparison Sheet",
+      "confidence": 0.95,
+      "box": [
+        [
+          64.69175720214844,
+          435.69460042317706
+        ],
+        [
+          243.12261962890625,
+          435.69460042317706
+        ],
+        [
+          243.12261962890625,
+          422.96779378255206
+        ],
+        [
+          64.69175720214844,
+          422.96779378255206
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Site Work Instruction",
+      "confidence": 0.95,
+      "box": [
+        [
+          65.11458333333333,
+          411.08941650390625
+        ],
+        [
+          186.8873087565104,
+          411.08941650390625
+        ],
+        [
+          186.8873087565104,
+          399.63527425130206
+        ],
+        [
+          65.11458333333333,
+          399.63527425130206
+        ]
+      ],
+      "page": 543
+    },
+    {
+      "text": "Variation Order",
+      "confidence": 0.95,
+      "box": [
+        [
+          65.11458333333333,
+          387.33270263671875
+        ],
+        [
+          160.6723429361979,
+          387.33270263671875
+        ],
+        [
+          160.6723429361979,
+          375.45436604817706
+        ],
+        [
+          65.11458333333333,
+          375.45436604817706
+        ]
+      ],
+      "page": 543
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 543,
+      "text": "INDICATIVE CONTROL FORMS\nIndex\nRequest for Information\nDaily Construction Report\n3.Contractor's Submittal Status Log/Material Submittals\n4.Contractor's Procurement Schedule\nJob Site Instruction\nNon Conformance Report\n28 Day look Ahead Schedule\nTransmission of Drawings, Documents, Samples, Etc.\nInterim Payment Application\nInterim Payment Certificate\nPayment Schedule Value Report\nSpecification Comparison Sheet\nSite Work Instruction\nVariation Order",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n## Daily Construction Report\n\n<!-- image -->\n\nCS - Construction supervisor\n\nCA - Contract Administrator\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Daily Construction Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.88750203450522,
+          649.466064453125
+        ],
+        [
+          412.9710693359375,
+          649.466064453125
+        ],
+        [
+          412.9710693359375,
+          623.7577311197916
+        ],
+        [
+          156.88750203450522,
+          623.7577311197916
+        ]
+      ],
+      "page": 488
+    },
+    {
+      "text": "CS - Construction supervisor",
+      "confidence": 0.95,
+      "box": [
+        [
+          67.65254720052083,
+          131.56756591796875
+        ],
+        [
+          239.4817097981771,
+          131.56756591796875
+        ],
+        [
+          239.4817097981771,
+          115.39617919921875
+        ],
+        [
+          67.65254720052083,
+          115.39617919921875
+        ]
+      ],
+      "page": 488
+    },
+    {
+      "text": "CA - Contract Administrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          67.2374979654948,
+          114.98154703776038
+        ],
+        [
+          240.72684733072916,
+          114.98154703776038
+        ],
+        [
+          240.72684733072916,
+          99.63950602213538
+        ],
+        [
+          67.2374979654948,
+          99.63950602213538
+        ]
+      ],
+      "page": 488
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 488,
+      "text": "Daily Construction Report\nCS - Construction supervisor\nCA - Contract Administrator",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

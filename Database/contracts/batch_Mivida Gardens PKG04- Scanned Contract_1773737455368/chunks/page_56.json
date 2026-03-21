@@ -1,0 +1,152 @@
+{
+  "text": "- (d) tothesatisfactionoftheSupervisionConsultantand theProject Manager.\n\n## InspectionandTesting\n\n- 11.2 TheSupervisionConsultantandtheProjectManagershallbeentitledatany time toinspect,examine,measure and/or testanyworkmanship and/or Plant,including thematerialsfor themanufactureorfabricationthereof and/orsamplesofsuchmaterials,whetherontheSite,ontheContractor's premisesoronoratanyotherpremisesorplaceswherethesamemaybe. Intheeventof theSupervisionConsultantwishing toinspect,examine, measureand/ortestonoratanysuchotherpremisesorplacesas aforesaid,theContractorshallobtainfortheSupervisionConsultantand anypersonauthorisedbyhimallsuchpermissionsandfacilitiesasthe Contractorwouldhavebeenbound toprovidewerethesamebeingcarried out on the Contractor's premises.The Contractor shall (at its own Cost save as provided in Clause 11.3 (Covering and Uncovering the Works)) provide orprocuretheprovisionof suchdocuments and otherinformation, assistance,instruments,apparatus,machines，labour，materials，fuel, measurementand/or testing asaforesaid.TheContractorshallafford full opportunityfor the SupervisionConsultant toinspect,examine,measure and/or testanyworkonSiteorwherevercarriedout.Noinspection, examination,measurementand/ortestingshallreleasetheContractorfrom anyofitsobligationsundertheContract.\n\n## CoveringandUncoveringtheWorks\n\n- 11.3NopartoftheWorksshallbecovereduporputoutofsightwithout the approval of theSupervisionConsultant and the Contractorshall afford full opportunityfor the Supervision Consultant to inspcct,cxamine,measure and/ortestanysuchpartoftheWorkswhichisabouttobecoveredupor putoutofviewand toexaminefoundationsbeforeanypartof theWorksis placedthereon.TheContractorshallgiveduenotice totheProject Manager (wlth a copy to the Supervision Curisullanl) whenever any such partof theWorksorfoundationsisor arereadyor abouttobereadyfor examinationand theSupervisionConsultantshall,withoutunreasonable delay,unless heconsidersit unnecessaryand advises theContractor accordingly in writing, attend for the purpose of inspecting, examining and (if he thinks appropriate) measuring and testing such part of the Works or of examiningsuchfoundations.\n\nThe Contractorshalluncoverany partof theWorks or make openingsin or through the sameastheSupervisionConsultant may fromtime to time instructandshallreinstateandmakegood thesametothesatisfactionof theSupervisionConsultant.If anysuchpartof theWorkshasbeen covereduporputoutofviewaftercompliancewiththerequirementsof the firstparagraphofthisClauseandisfound tohavebeencarriedoutin accordancewith theContract,theCostsofuncovering,making openingsin or through,reinstating and maklnggood the sameshall bedelermined by the Project Manager and paid to the Contractor in accordance with Clause\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(d) tothesatisfactionoftheSupervisionConsultantand theProject Manager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          711.0180257161459
+        ],
+        [
+          487.0909016927083,
+          711.0180257161459
+        ],
+        [
+          487.0909016927083,
+          688.1097615559896
+        ],
+        [
+          157.28976440429688,
+          688.1097615559896
+        ]
+      ],
+      "page": 56
+    },
+    {
+      "text": "InspectionandTesting",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          677.5040791829427
+        ],
+        [
+          197.88067626953125,
+          677.5040791829427
+        ],
+        [
+          197.88067626953125,
+          665.2014973958334
+        ],
+        [
+          95.98058064778645,
+          665.2014973958334
+        ]
+      ],
+      "page": 56
+    },
+    {
+      "text": "11.2 TheSupervisionConsultantandtheProjectManagershallbeentitledatany time toinspect,examine,measure and/or testanyworkmanship and/or Plant,including thematerialsfor themanufactureorfabricationthereof and/orsamplesofsuchmaterials,whetherontheSite,ontheContractor's premisesoronoratanyotherpremisesorplaceswherethesamemaybe. Intheeventof theSupervisionConsultantwishing toinspect,examine, measureand/ortestonoratanysuchotherpremisesorplacesas aforesaid,theContractorshallobtainfortheSupervisionConsultantand anypersonauthorisedbyhimallsuchpermissionsandfacilitiesasthe Contractorwouldhavebeenbound toprovidewerethesamebeingcarried out on the Contractor's premises.The Contractor shall (at its own Cost save as provided in Clause 11.3 (Covering and Uncovering the Works)) provide orprocuretheprovisionof suchdocuments and otherinformation, assistance,instruments,apparatus,machines，labour，materials，fuel, measurementand/or testing asaforesaid.TheContractorshallafford full opportunityfor the SupervisionConsultant toinspect,examine,measure and/or testanyworkonSiteorwherevercarriedout.Noinspection, examination,measurementand/ortestingshallreleasetheContractorfrom anyofitsobligationsundertheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          654.5958251953125
+        ],
+        [
+          488.359375,
+          654.5958251953125
+        ],
+        [
+          488.359375,
+          417.02862548828125
+        ],
+        [
+          127.69223022460938,
+          417.02862548828125
+        ]
+      ],
+      "page": 56
+    },
+    {
+      "text": "CoveringandUncoveringtheWorks",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          404.30177815755206
+        ],
+        [
+          260.4583333333333,
+          404.30177815755206
+        ],
+        [
+          260.4583333333333,
+          393.27187093098956
+        ],
+        [
+          97.24905395507812,
+          393.27187093098956
+        ]
+      ],
+      "page": 56
+    },
+    {
+      "text": "11.3NopartoftheWorksshallbecovereduporputoutofsightwithout the approval of theSupervisionConsultant and the Contractorshall afford full opportunityfor the Supervision Consultant to inspcct,cxamine,measure and/ortestanysuchpartoftheWorkswhichisabouttobecoveredupor putoutofviewand toexaminefoundationsbeforeanypartof theWorksis placedthereon.TheContractorshallgiveduenotice totheProject Manager (wlth a copy to the Supervision Curisullanl) whenever any such partof theWorksorfoundationsisor arereadyor abouttobereadyfor examinationand theSupervisionConsultantshall,withoutunreasonable delay,unless heconsidersit unnecessaryand advises theContractor accordingly in writing, attend for the purpose of inspecting, examining and (if he thinks appropriate) measuring and testing such part of the Works or of examiningsuchfoundations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          381.81776936848956
+        ],
+        [
+          490.0506591796875,
+          381.81776936848956
+        ],
+        [
+          490.0506591796875,
+          234.61094156901038
+        ],
+        [
+          127.2694091796875,
+          234.61094156901038
+        ]
+      ],
+      "page": 56
+    },
+    {
+      "text": "The Contractorshalluncoverany partof theWorks or make openingsin or through the sameastheSupervisionConsultant may fromtime to time instructandshallreinstateandmakegood thesametothesatisfactionof theSupervisionConsultant.If anysuchpartof theWorkshasbeen covereduporputoutofviewaftercompliancewiththerequirementsof the firstparagraphofthisClauseandisfound tohavebeencarriedoutin accordancewith theContract,theCostsofuncovering,making openingsin or through,reinstating and maklnggood the sameshall bedelermined by the Project Manager and paid to the Contractor in accordance with Clause",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          223.15679931640625
+        ],
+        [
+          490.0506591796875,
+          223.15679931640625
+        ],
+        [
+          490.0506591796875,
+          121.76649983723962
+        ],
+        [
+          158.55823771158853,
+          121.76649983723962
+        ]
+      ],
+      "page": 56
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 56,
+      "text": "(d) tothesatisfactionoftheSupervisionConsultantand theProject Manager.\nInspectionandTesting\n11.2 TheSupervisionConsultantandtheProjectManagershallbeentitledatany time toinspect,examine,measure and/or testanyworkmanship and/or Plant,including thematerialsfor themanufactureorfabricationthereof and/orsamplesofsuchmaterials,whetherontheSite,ontheContractor's premisesoronoratanyotherpremisesorplaceswherethesamemaybe. Intheeventof theSupervisionConsultantwishing toinspect,examine, measureand/ortestonoratanysuchotherpremisesorplacesas aforesaid,theContractorshallobtainfortheSupervisionConsultantand anypersonauthorisedbyhimallsuchpermissionsandfacilitiesasthe Contractorwouldhavebeenbound toprovidewerethesamebeingcarried out on the Contractor's premises.The Contractor shall (at its own Cost save as provided in Clause 11.3 (Covering and Uncovering the Works)) provide orprocuretheprovisionof suchdocuments and otherinformation, assistance,instruments,apparatus,machines，labour，materials，fuel, measurementand/or testing asaforesaid.TheContractorshallafford full opportunityfor the SupervisionConsultant toinspect,examine,measure and/or testanyworkonSiteorwherevercarriedout.Noinspection, examination,measurementand/ortestingshallreleasetheContractorfrom anyofitsobligationsundertheContract.\nCoveringandUncoveringtheWorks\n11.3NopartoftheWorksshallbecovereduporputoutofsightwithout the approval of theSupervisionConsultant and the Contractorshall afford full opportunityfor the Supervision Consultant to inspcct,cxamine,measure and/ortestanysuchpartoftheWorkswhichisabouttobecoveredupor putoutofviewand toexaminefoundationsbeforeanypartof theWorksis placedthereon.TheContractorshallgiveduenotice totheProject Manager (wlth a copy to the Supervision Curisullanl) whenever any such partof theWorksorfoundationsisor arereadyor abouttobereadyfor examinationand theSupervisionConsultantshall,withoutunreasonable delay,unless heconsidersit unnecessaryand advises theContractor accordingly in writing, attend for the purpose of inspecting, examining and (if he thinks appropriate) measuring and testing such part of the Works or of examiningsuchfoundations.\nThe Contractorshalluncoverany partof theWorks or make openingsin or through the sameastheSupervisionConsultant may fromtime to time instructandshallreinstateandmakegood thesametothesatisfactionof theSupervisionConsultant.If anysuchpartof theWorkshasbeen covereduporputoutofviewaftercompliancewiththerequirementsof the firstparagraphofthisClauseandisfound tohavebeencarriedoutin accordancewith theContract,theCostsofuncovering,making openingsin or through,reinstating and maklnggood the sameshall bedelermined by the Project Manager and paid to the Contractor in accordance with Clause",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

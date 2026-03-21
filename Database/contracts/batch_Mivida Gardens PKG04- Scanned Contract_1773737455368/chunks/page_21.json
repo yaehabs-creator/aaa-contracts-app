@@ -1,0 +1,313 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## Emaar Misr,\n\n## Mivida Gardens Project East Cairo, Cairo, Egypt\n\n## Construction Package PK#04\n\n## Construction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\n## Conditions of Contract Appendices\n\nAppendix A : Particular Conditions\n\nAppendix B : Form of Performance Bond\n\nAppendix C : Form of Advance Payment Bond\n\nAppendix D : Master Construction Schedule\n\nAppendix E : List of Contract Drawings\n\nAppendix F: List of Manufacturers\n\nAppendix G : Emaar CAR open insurance cover\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          729.6840209960938
+        ],
+        [
+          150.52461751302084,
+          729.6840209960938
+        ],
+        [
+          150.52461751302084,
+          717.3814392089844
+        ],
+        [
+          125.15530395507812,
+          717.3814392089844
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Emaar Misr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          233.3977254231771,
+          665.6257120768229
+        ],
+        [
+          331.9152425130208,
+          665.6257120768229
+        ],
+        [
+          331.9152425130208,
+          646.5355021158854
+        ],
+        [
+          233.3977254231771,
+          646.5355021158854
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Mivida Gardens Project East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          183.92755126953125,
+          604.9612426757812
+        ],
+        [
+          382.6538899739583,
+          604.9612426757812
+        ],
+        [
+          382.6538899739583,
+          545.1452026367188
+        ],
+        [
+          183.92755126953125,
+          545.1452026367188
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.09516398111978,
+          445.45184326171875
+        ],
+        [
+          403.3721516927083,
+          445.45184326171875
+        ],
+        [
+          403.3721516927083,
+          426.36159261067706
+        ],
+        [
+          161.09516398111978,
+          426.36159261067706
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.97395833333333,
+          403.87758382161456
+        ],
+        [
+          464.6813151041667,
+          403.87758382161456
+        ],
+        [
+          464.6813151041667,
+          367.39402262369794
+        ],
+        [
+          106.97395833333333,
+          367.39402262369794
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Conditions of Contract Appendices",
+      "confidence": 0.95,
+      "box": [
+        [
+          202.10888671875,
+          349.15224202473956
+        ],
+        [
+          372.5061442057292,
+          349.15224202473956
+        ],
+        [
+          372.5061442057292,
+          315.2140909830729
+        ],
+        [
+          202.10888671875,
+          315.2140909830729
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix A : Particular Conditions",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.66571044921875,
+          299.9419148763021
+        ],
+        [
+          390.2646484375,
+          299.9419148763021
+        ],
+        [
+          390.2646484375,
+          285.0939737955729
+        ],
+        [
+          171.66571044921875,
+          285.0939737955729
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix B : Form of Performance Bond",
+      "confidence": 0.95,
+      "box": [
+        [
+          170.820068359375,
+          283.8212687174479
+        ],
+        [
+          430.4327392578125,
+          283.8212687174479
+        ],
+        [
+          430.4327392578125,
+          268.97332763671875
+        ],
+        [
+          170.820068359375,
+          268.97332763671875
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix C : Form of Advance Payment Bond",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.2428995768229,
+          267.7006632486979
+        ],
+        [
+          462.9900309244792,
+          267.7006632486979
+        ],
+        [
+          462.9900309244792,
+          253.27691650390625
+        ],
+        [
+          171.2428995768229,
+          253.27691650390625
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix D : Master Construction Schedule",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.2428995768229,
+          251.58001708984375
+        ],
+        [
+          448.1912841796875,
+          251.58001708984375
+        ],
+        [
+          448.1912841796875,
+          237.15631103515625
+        ],
+        [
+          171.2428995768229,
+          237.15631103515625
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix E : List of Contract Drawings",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.97442626953125,
+          237.15631103515625
+        ],
+        [
+          417.3252766927083,
+          237.15631103515625
+        ],
+        [
+          417.3252766927083,
+          219.33876546223962
+        ],
+        [
+          169.97442626953125,
+          219.33876546223962
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix F: List of Manufacturers",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.66571044921875,
+          219.76295979817712
+        ],
+        [
+          392.3787841796875,
+          219.76295979817712
+        ],
+        [
+          392.3787841796875,
+          204.49078369140625
+        ],
+        [
+          171.66571044921875,
+          204.49078369140625
+        ]
+      ],
+      "page": 21
+    },
+    {
+      "text": "Appendix G : Emaar CAR open insurance cover",
+      "confidence": 0.95,
+      "box": [
+        [
+          171.2428995768229,
+          203.64235432942712
+        ],
+        [
+          473.9833984375,
+          203.64235432942712
+        ],
+        [
+          473.9833984375,
+          188.37017822265625
+        ],
+        [
+          171.2428995768229,
+          188.37017822265625
+        ]
+      ],
+      "page": 21
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 21,
+      "text": "MISR\nEmaar Misr,\nMivida Gardens Project East Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\nConditions of Contract Appendices\nAppendix A : Particular Conditions\nAppendix B : Form of Performance Bond\nAppendix C : Form of Advance Payment Bond\nAppendix D : Master Construction Schedule\nAppendix E : List of Contract Drawings\nAppendix F: List of Manufacturers\nAppendix G : Emaar CAR open insurance cover",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

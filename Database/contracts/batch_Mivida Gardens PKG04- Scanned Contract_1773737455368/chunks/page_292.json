@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\n- n Descriptive names of equipment.\n- d Relationships and installation details of mechanical and electrical equipment to the spaces in which they will be installed.\n- 0 Mechanical andelectrical characteristicswhen applicable.\n- (b Information to verify that superimposed loads will not affect function, appearance, arid safety of the work detailed as well asof intercorinected work.\n- Assumed design loadings, and dimensions and material specifications for load-bearing members.\n- (S Dimensions and dimensioned locations of proposed chases, sleeves, cuts, andholesinstructural members.\n- 11.Submit through Contract Administrator one reproducible shop drawing and one print copy to the Supervision Consultant's Representative who will review and return the reproducible to Contractor. The Supervision Consultant will mark up the reproducible with his comments, make a print for his records, and return the reproducibletotheContractorthiroughContractAdministrator.Contract Administrator will return the reviewed reproducible to Contractor who shall make a print and submit to Contract Administrator for Supervision Consultant's Representative record purposes.\n- 12.Four copies of brochures, engineering data sheets catalogue cuts and standard Consultant.\n- 13.Do not add new details or information to shop drawings after they have been finally reviewed, except when specific approval is solicited and is given. Follow made in letter form.\n- 14.Fabricate work exactly as shown on shop drawings. lf shop practice dictatos revisions, revise drawings and resubmit.\n- 15.File one reproducible copy of each finally revised and corrected shop drawing at Site.\n- 16.Shop Drawing Review: Shop drawing review is for the sole purpose of ascertaining general conformance with the design concept. This review shall not mean that Employer, Contract Administrator, or Supervision Consultant warrant orrepresentthattheinformationcontainedon theshop drawings is either accurate or complete,responsibility for which shall remain with Contractor submitting same, and such review shall not relieve Contractor of his responsibility for errors or omissions inthe shop drawings or of his responsibility for meeting design, details and all other requirements of the Contract.Contractoris responsiblefordimensionstobeconfirmedand correlatedattheSite,for informationthatpertainssolelytofabrication complete coordinationof the work of all Subcontractors, Nominated Subcontractors and other Employer Contractor(s).\n\n## 1.09 INSERT ANDSLEEVELOCATION DRAWINGS\n\n1. Submit insert and sleeve location drawings for Supervision Consultant's information\\_only where inserts and sleeves are required for installation of work. The Supervision Consultant may additionally request insert and sleeve locationdrawingsforhisreview.\n2. Indicateonlocationdrawingsthelocationandsizeofinserts,sleeves,anchor bolts, openings and miscellaneous items to be incorporated in the Works. Show type, size, load capacity, and working load which will be imposed on\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "n Descriptive names of equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          719.542002360026
+        ],
+        [
+          290.1173502604167,
+          719.542002360026
+        ],
+        [
+          290.1173502604167,
+          707.5171305338541
+        ],
+        [
+          109.1571756998698,
+          707.5171305338541
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "d Relationships and installation details of mechanical and electrical equipment to the spaces in which they will be installed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          696.7362162272135
+        ],
+        [
+          504.6962890625,
+          696.7362162272135
+        ],
+        [
+          504.6962890625,
+          673.1011454264323
+        ],
+        [
+          110.40231323242188,
+          673.1011454264323
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "0 Mechanical andelectrical characteristicswhen applicable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          708.346435546875
+        ],
+        [
+          412.9710693359375,
+          708.346435546875
+        ],
+        [
+          412.9710693359375,
+          696.3215738932291
+        ],
+        [
+          109.98726399739583,
+          696.3215738932291
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "(b Information to verify that superimposed loads will not affect function, appearance, arid safety of the work detailed as well asof intercorinected work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          673.9304402669271
+        ],
+        [
+          503.8662109375,
+          673.9304402669271
+        ],
+        [
+          503.8662109375,
+          639.5144449869791
+        ],
+        [
+          112.0625,
+          639.5144449869791
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "Assumed design loadings, and dimensions and material specifications for load-bearing members.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          639.5144449869791
+        ],
+        [
+          504.28125,
+          639.5144449869791
+        ],
+        [
+          504.28125,
+          616.2940266927084
+        ],
+        [
+          127.00417073567708,
+          616.2940266927084
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "(S Dimensions and dimensioned locations of proposed chases, sleeves, cuts, andholesinstructural members.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          616.7086791992188
+        ],
+        [
+          502.2060139973958,
+          616.7086791992188
+        ],
+        [
+          502.2060139973958,
+          593.4882405598959
+        ],
+        [
+          110.81736246744792,
+          593.4882405598959
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "11.Submit through Contract Administrator one reproducible shop drawing and one print copy to the Supervision Consultant's Representative who will review and return the reproducible to Contractor. The Supervision Consultant will mark up the reproducible with his comments, make a print for his records, and return the reproducibletotheContractorthiroughContractAdministrator.Contract Administrator will return the reviewed reproducible to Contractor who shall make a print and submit to Contract Administrator for Supervision Consultant's Representative record purposes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          588.9270833333334
+        ],
+        [
+          505.111328125,
+          588.9270833333334
+        ],
+        [
+          505.111328125,
+          495.63071695963544
+        ],
+        [
+          93.38541666666667,
+          495.63071695963544
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "12.Four copies of brochures, engineering data sheets catalogue cuts and standard Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          492.3135172526042
+        ],
+        [
+          504.6962890625,
+          492.3135172526042
+        ],
+        [
+          504.6962890625,
+          446.28729248046875
+        ],
+        [
+          92.97036743164062,
+          446.28729248046875
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "13.Do not add new details or information to shop drawings after they have been finally reviewed, except when specific approval is solicited and is given. Follow made in letter form.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          440.48219807942706
+        ],
+        [
+          504.28125,
+          440.48219807942706
+        ],
+        [
+          504.28125,
+          394.04132080078125
+        ],
+        [
+          92.97036743164062,
+          394.04132080078125
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "14.Fabricate work exactly as shown on shop drawings. lf shop practice dictatos revisions, revise drawings and resubmit.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          389.48020426432294
+        ],
+        [
+          503.8662109375,
+          389.48020426432294
+        ],
+        [
+          503.8662109375,
+          365.01580810546875
+        ],
+        [
+          92.97036743164062,
+          365.01580810546875
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "15.File one reproducible copy of each finally revised and corrected shop drawing at Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          360.45465087890625
+        ],
+        [
+          503.451171875,
+          360.45465087890625
+        ],
+        [
+          503.451171875,
+          336.81955973307294
+        ],
+        [
+          92.97036743164062,
+          336.81955973307294
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "16.Shop Drawing Review: Shop drawing review is for the sole purpose of ascertaining general conformance with the design concept. This review shall not mean that Employer, Contract Administrator, or Supervision Consultant warrant orrepresentthattheinformationcontainedon theshop drawings is either accurate or complete,responsibility for which shall remain with Contractor submitting same, and such review shall not relieve Contractor of his responsibility for errors or omissions inthe shop drawings or of his responsibility for meeting design, details and all other requirements of the Contract.Contractoris responsiblefordimensionstobeconfirmedand correlatedattheSite,for informationthatpertainssolelytofabrication complete coordinationof the work of all Subcontractors, Nominated Subcontractors and other Employer Contractor(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          331.84377034505206
+        ],
+        [
+          505.5263671875,
+          331.84377034505206
+        ],
+        [
+          505.5263671875,
+          182.56955973307288
+        ],
+        [
+          92.55532836914062,
+          182.56955973307288
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "1.09 INSERT ANDSLEEVELOCATION DRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          173.03261311848962
+        ],
+        [
+          352.7893473307292,
+          173.03261311848962
+        ],
+        [
+          352.7893473307292,
+          161.42238362630212
+        ],
+        [
+          74.70833333333333,
+          161.42238362630212
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "Submit insert and sleeve location drawings for Supervision Consultant's information_only where inserts and sleeves are required for installation of work. The Supervision Consultant may additionally request insert and sleeve locationdrawingsforhisreview.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          156.03196207682288
+        ],
+        [
+          505.111328125,
+          156.03196207682288
+        ],
+        [
+          505.111328125,
+          109.59108479817712
+        ],
+        [
+          93.38541666666667,
+          109.59108479817712
+        ]
+      ],
+      "page": 292
+    },
+    {
+      "text": "Indicateonlocationdrawingsthelocationandsizeofinserts,sleeves,anchor bolts, openings and miscellaneous items to be incorporated in the Works. Show type, size, load capacity, and working load which will be imposed on",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          103.78599039713538
+        ],
+        [
+          504.6962890625,
+          103.78599039713538
+        ],
+        [
+          504.6962890625,
+          69.36997477213538
+        ],
+        [
+          92.97036743164062,
+          69.36997477213538
+        ]
+      ],
+      "page": 292
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 292,
+      "text": "n Descriptive names of equipment.\nd Relationships and installation details of mechanical and electrical equipment to the spaces in which they will be installed.\n0 Mechanical andelectrical characteristicswhen applicable.\n(b Information to verify that superimposed loads will not affect function, appearance, arid safety of the work detailed as well asof intercorinected work.\nAssumed design loadings, and dimensions and material specifications for load-bearing members.\n(S Dimensions and dimensioned locations of proposed chases, sleeves, cuts, andholesinstructural members.\n11.Submit through Contract Administrator one reproducible shop drawing and one print copy to the Supervision Consultant's Representative who will review and return the reproducible to Contractor. The Supervision Consultant will mark up the reproducible with his comments, make a print for his records, and return the reproducibletotheContractorthiroughContractAdministrator.Contract Administrator will return the reviewed reproducible to Contractor who shall make a print and submit to Contract Administrator for Supervision Consultant's Representative record purposes.\n12.Four copies of brochures, engineering data sheets catalogue cuts and standard Consultant.\n13.Do not add new details or information to shop drawings after they have been finally reviewed, except when specific approval is solicited and is given. Follow made in letter form.\n14.Fabricate work exactly as shown on shop drawings. lf shop practice dictatos revisions, revise drawings and resubmit.\n15.File one reproducible copy of each finally revised and corrected shop drawing at Site.\n16.Shop Drawing Review: Shop drawing review is for the sole purpose of ascertaining general conformance with the design concept. This review shall not mean that Employer, Contract Administrator, or Supervision Consultant warrant orrepresentthattheinformationcontainedon theshop drawings is either accurate or complete,responsibility for which shall remain with Contractor submitting same, and such review shall not relieve Contractor of his responsibility for errors or omissions inthe shop drawings or of his responsibility for meeting design, details and all other requirements of the Contract.Contractoris responsiblefordimensionstobeconfirmedand correlatedattheSite,for informationthatpertainssolelytofabrication complete coordinationof the work of all Subcontractors, Nominated Subcontractors and other Employer Contractor(s).\n1.09 INSERT ANDSLEEVELOCATION DRAWINGS\nSubmit insert and sleeve location drawings for Supervision Consultant's information_only where inserts and sleeves are required for installation of work. The Supervision Consultant may additionally request insert and sleeve locationdrawingsforhisreview.\nIndicateonlocationdrawingsthelocationandsizeofinserts,sleeves,anchor bolts, openings and miscellaneous items to be incorporated in the Works. Show type, size, load capacity, and working load which will be imposed on",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

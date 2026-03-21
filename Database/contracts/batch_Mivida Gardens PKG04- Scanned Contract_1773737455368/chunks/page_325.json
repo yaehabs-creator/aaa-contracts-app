@@ -1,0 +1,474 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\nthere are changes in the applicable CQC staff, onsite production supervision or work crew; if work on a definable feature is resumed after a substantial period of inactivity; or if other problems develop.\n\n## 2.05 TOLERANCES FORINSTAL ATION OF WORK:\n\n- A. Unless specially indicated otherwise, work shall be installed plumb, level, square and straight.\n- B. Unless othor acceptable tolerance are otherwise specified in a Specification Section or are otherwise required for proper functioning of equipment as determined by themanufacturer or for functioning of Site Services and mechanical and electrical systems:\n1. \"Plumb and level\" shall mean plumb or level within 1mm in 1m.\n2. \"Square\" shall mean not in exccss of 10 seconds lesser or greater than 90 degrees.\n3. \"Straight\" shall mean within 1mm under &amp; 1m long straightedge.\n6. C.Allowable tolerance shall not be cumulative.\n- D. Unless otherwise noted, tolerances shall not be more than specified in ACi 117-06.\n\n## 2.06 SITE MOCKUPS:\n\nWithout contradict and in addition to the requirements of section 1350, thc Contractor has to fulfill the fellowing requirements:-\n\n- A. Required mockups are specified in applicable sections. Additional rnockups to the client.\n- B. Locate mockups were directed by Contract Administrator / Engineer unless otherwise specified.\n- C. Approved mockups will establish the.minimum acceptable quality (f workmanship and will serve as the standard by which subsequent work will be judged acceptable.\n- D. Resubmit mockups until approval is given by Supervision Consultant. Removemockupsthiataredesignated asunsuitable.\n- E. Do not proceed with work until mockup has been approved. Only work work.\n6. F.Retain each approved mockupfor duration of construction of the work and protect it from damage. Remove it upon completion or incorporate it in the work ifsodirected by theContract Administrator / Engineer.\n- G. The contractor will be held responsible for failure to prepare any mockup in ample time and no claim for an extension of the contract duration by reason of such default will be allowed.\n\n## 2.07 INSPECTION ANDTESPIREAN\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          751.0554402669271
+        ],
+        [
+          131.56967163085938,
+          751.0554402669271
+        ],
+        [
+          131.56967163085938,
+          740.2745259602865
+        ],
+        [
+          108.74212646484375,
+          740.2745259602865
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "there are changes in the applicable CQC staff, onsite production supervision or work crew; if work on a definable feature is resumed after a substantial period of inactivity; or if other problems develop.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          719.542002360026
+        ],
+        [
+          503.8662109375,
+          719.542002360026
+        ],
+        [
+          503.8662109375,
+          681.8087972005209
+        ],
+        [
+          119.1182861328125,
+          681.8087972005209
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "2.05 TOLERANCES FORINSTAL ATION OF WORK:",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          668.9546305338541
+        ],
+        [
+          354.8645833333333,
+          668.9546305338541
+        ],
+        [
+          354.8645833333333,
+          659.0030212402344
+        ],
+        [
+          76.78356424967448,
+          659.0030212402344
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Unless specially indicated otherwise, work shall be installed plumb, level, square and straight.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          650.7100219726562
+        ],
+        [
+          503.8662109375,
+          650.7100219726562
+        ],
+        [
+          503.8662109375,
+          624.5870361328125
+        ],
+        [
+          102.51643880208333,
+          624.5870361328125
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Unless othor acceptable tolerance are otherwise specified in a Specification Section or are otherwise required for proper functioning of equipment as determined by themanufacturer or for functioning of Site Services and mechanical and electrical systems:",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          618.3672688802084
+        ],
+        [
+          504.6962890625,
+          618.3672688802084
+        ],
+        [
+          504.6962890625,
+          566.9506022135416
+        ],
+        [
+          102.51643880208333,
+          566.9506022135416
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "\"Plumb and level\" shall mean plumb or level within 1mm in 1m.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          566.5359497070312
+        ],
+        [
+          447.8349609375,
+          566.5359497070312
+        ],
+        [
+          447.8349609375,
+          554.5110880533855
+        ],
+        [
+          119.53333536783855,
+          554.5110880533855
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "\"Square\" shall mean not in exccss of 10 seconds lesser or greater than 90 degrees.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          552.8524983723958
+        ],
+        [
+          504.28125,
+          552.8524983723958
+        ],
+        [
+          504.28125,
+          526.3148600260417
+        ],
+        [
+          119.1182861328125,
+          526.3148600260417
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "\"Straight\" shall mean within 1mm under & 1m long straightedge.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.1182861328125,
+          527.1441650390625
+        ],
+        [
+          451.1553141276042,
+          527.1441650390625
+        ],
+        [
+          451.1553141276042,
+          515.1192830403645
+        ],
+        [
+          119.1182861328125,
+          515.1192830403645
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "C.Allowable tolerance shall not be cumulative.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.93147786458333,
+          508.0702311197917
+        ],
+        [
+          340.33795166015625,
+          508.0702311197917
+        ],
+        [
+          340.33795166015625,
+          496.0453694661458
+        ],
+        [
+          102.93147786458333,
+          496.0453694661458
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Unless otherwise noted, tolerances shall not be more than specified in ACi 117-06.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.68634033203125,
+          490.24025472005206
+        ],
+        [
+          504.28125,
+          490.24025472005206
+        ],
+        [
+          504.28125,
+          464.11728922526044
+        ],
+        [
+          101.68634033203125,
+          464.11728922526044
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "2.06 SITE MOCKUPS:",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          451.26312255859375
+        ],
+        [
+          194.24165852864584,
+          451.26312255859375
+        ],
+        [
+          194.24165852864584,
+          440.48219807942706
+        ],
+        [
+          77.61365763346355,
+          440.48219807942706
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Without contradict and in addition to the requirements of section 1350, thc Contractor has to fulfill the fellowing requirements:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.68634033203125,
+          427.62803141276044
+        ],
+        [
+          505.111328125,
+          427.62803141276044
+        ],
+        [
+          505.111328125,
+          401.91969807942706
+        ],
+        [
+          101.68634033203125,
+          401.91969807942706
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Required mockups are specified in applicable sections. Additional rnockups to the client.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          395.69993082682294
+        ],
+        [
+          504.6962890625,
+          395.69993082682294
+        ],
+        [
+          504.6962890625,
+          357.13743082682294
+        ],
+        [
+          102.51643880208333,
+          357.13743082682294
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Locate mockups were directed by Contract Administrator / Engineer unless otherwise specified.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          356.30812581380206
+        ],
+        [
+          505.111328125,
+          356.30812581380206
+        ],
+        [
+          505.111328125,
+          331.84377034505206
+        ],
+        [
+          102.51643880208333,
+          331.84377034505206
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Approved mockups will establish the.minimum acceptable quality (f workmanship and will serve as the standard by which subsequent work will be judged acceptable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          103.34652709960938,
+          329.77052815755206
+        ],
+        [
+          505.9414469401042,
+          329.77052815755206
+        ],
+        [
+          505.9414469401042,
+          291.2080281575521
+        ],
+        [
+          103.34652709960938,
+          291.2080281575521
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Resubmit mockups until approval is given by Supervision Consultant. Removemockupsthiataredesignated asunsuitable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.1013895670573,
+          290.7933553059896
+        ],
+        [
+          504.6962890625,
+          290.7933553059896
+        ],
+        [
+          504.6962890625,
+          266.7436319986979
+        ],
+        [
+          102.1013895670573,
+          266.7436319986979
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "Do not proceed with work until mockup has been approved. Only work work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.68634033203125,
+          265.08502197265625
+        ],
+        [
+          505.9414469401042,
+          265.08502197265625
+        ],
+        [
+          505.9414469401042,
+          226.10788981119788
+        ],
+        [
+          101.68634033203125,
+          226.10788981119788
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "F.Retain each approved mockupfor duration of construction of the work and protect it from damage. Remove it upon completion or incorporate it in the work ifsodirected by theContract Administrator / Engineer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          225.27858479817712
+        ],
+        [
+          505.5263671875,
+          225.27858479817712
+        ],
+        [
+          505.5263671875,
+          187.96002197265625
+        ],
+        [
+          102.51643880208333,
+          187.96002197265625
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "The contractor will be held responsible for failure to prepare any mockup in ample time and no claim for an extension of the contract duration by reason of such default will be allowed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.93147786458333,
+          186.71608479817712
+        ],
+        [
+          505.9414469401042,
+          186.71608479817712
+        ],
+        [
+          505.9414469401042,
+          147.73891194661462
+        ],
+        [
+          102.93147786458333,
+          147.73891194661462
+        ]
+      ],
+      "page": 325
+    },
+    {
+      "text": "2.07 INSPECTION ANDTESPIREAN",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          140.27520751953125
+        ],
+        [
+          266.459716796875,
+          140.27520751953125
+        ],
+        [
+          266.459716796875,
+          119.54266357421875
+        ],
+        [
+          75.12337748209636,
+          119.54266357421875
+        ]
+      ],
+      "page": 325
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 325,
+      "text": "MISR\nthere are changes in the applicable CQC staff, onsite production supervision or work crew; if work on a definable feature is resumed after a substantial period of inactivity; or if other problems develop.\n2.05 TOLERANCES FORINSTAL ATION OF WORK:\nUnless specially indicated otherwise, work shall be installed plumb, level, square and straight.\nUnless othor acceptable tolerance are otherwise specified in a Specification Section or are otherwise required for proper functioning of equipment as determined by themanufacturer or for functioning of Site Services and mechanical and electrical systems:\n\"Plumb and level\" shall mean plumb or level within 1mm in 1m.\n\"Square\" shall mean not in exccss of 10 seconds lesser or greater than 90 degrees.\n\"Straight\" shall mean within 1mm under & 1m long straightedge.\nC.Allowable tolerance shall not be cumulative.\nUnless otherwise noted, tolerances shall not be more than specified in ACi 117-06.\n2.06 SITE MOCKUPS:\nWithout contradict and in addition to the requirements of section 1350, thc Contractor has to fulfill the fellowing requirements:-\nRequired mockups are specified in applicable sections. Additional rnockups to the client.\nLocate mockups were directed by Contract Administrator / Engineer unless otherwise specified.\nApproved mockups will establish the.minimum acceptable quality (f workmanship and will serve as the standard by which subsequent work will be judged acceptable.\nResubmit mockups until approval is given by Supervision Consultant. Removemockupsthiataredesignated asunsuitable.\nDo not proceed with work until mockup has been approved. Only work work.\nF.Retain each approved mockupfor duration of construction of the work and protect it from damage. Remove it upon completion or incorporate it in the work ifsodirected by theContract Administrator / Engineer.\nThe contractor will be held responsible for failure to prepare any mockup in ample time and no claim for an extension of the contract duration by reason of such default will be allowed.\n2.07 INSPECTION ANDTESPIREAN",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

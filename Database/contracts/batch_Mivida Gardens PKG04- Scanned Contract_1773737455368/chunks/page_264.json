@@ -1,0 +1,198 @@
+{
+  "text": "<!-- image -->\n\naccordance with the design intent, and the fire rating of fire separations is maintained.\n\n5. Cutting and drilling of work and the installation of sleeves shiall be performed only by the section who has installed the work. The Sub-contractor requiring sleeving shall supply the sleeves. The section requiring cutting, drilling, or sleeving for installation of its work shall inform the section who has installed the cutting, drilling and sleeving.\n6. Replace, and otherwise make good, damaged work to the satisfaction of the Supervision Consultant.\n3. 7.Make patches invisible in final assembly.\n\nPART 2 - PRODUCTS (Not Used)\n\nPART 3 - EXECUTION (Not Used)\n\nENDOFSECTION01040\n\nEmaar Misr for Development\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "accordance with the design intent, and the fire rating of fire separations is maintained.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          719.9566446940104
+        ],
+        [
+          505.5263671875,
+          719.9566446940104
+        ],
+        [
+          505.5263671875,
+          695.0776163736979
+        ],
+        [
+          111.23241170247395,
+          695.0776163736979
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "Cutting and drilling of work and the installation of sleeves shiall be performed only by the section who has installed the work. The Sub-contractor requiring sleeving shall supply the sleeves. The section requiring cutting, drilling, or sleeving for installation of its work shall inform the section who has installed the cutting, drilling and sleeving.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          693.8336690266927
+        ],
+        [
+          505.9414469401042,
+          693.8336690266927
+        ],
+        [
+          505.9414469401042,
+          613.8061116536459
+        ],
+        [
+          95.46065266927083,
+          613.8061116536459
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "Replace, and otherwise make good, damaged work to the satisfaction of the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          615.8793741861979
+        ],
+        [
+          505.5263671875,
+          615.8793741861979
+        ],
+        [
+          505.5263671875,
+          588.9270833333334
+        ],
+        [
+          92.97036743164062,
+          588.9270833333334
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "7.Make patches invisible in final assembly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          588.9270833333334
+        ],
+        [
+          315.0201416015625,
+          588.9270833333334
+        ],
+        [
+          315.0201416015625,
+          575.2436116536459
+        ],
+        [
+          93.38541666666667,
+          575.2436116536459
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "PART 2 - PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          551.1938883463542
+        ],
+        [
+          246.1224568684896,
+          551.1938883463542
+        ],
+        [
+          246.1224568684896,
+          535.4371744791667
+        ],
+        [
+          76.36852010091145,
+          535.4371744791667
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "PART 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          512.2167358398438
+        ],
+        [
+          248.61273193359375,
+          512.2167358398438
+        ],
+        [
+          248.61273193359375,
+          496.0453694661458
+        ],
+        [
+          75.95347086588542,
+          496.0453694661458
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "ENDOFSECTION01040",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.5400390625,
+          470.33705647786456
+        ],
+        [
+          355.6946614583333,
+          470.33705647786456
+        ],
+        [
+          355.6946614583333,
+          458.72682698567706
+        ],
+        [
+          224.5400390625,
+          458.72682698567706
+        ]
+      ],
+      "page": 264
+    },
+    {
+      "text": "Emaar Misr for Development",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          58.17441813151038
+        ],
+        [
+          159.37777709960938,
+          58.17441813151038
+        ],
+        [
+          159.37777709960938,
+          48.63747151692712
+        ],
+        [
+          73.0481465657552,
+          48.63747151692712
+        ]
+      ],
+      "page": 264
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 264,
+      "text": "accordance with the design intent, and the fire rating of fire separations is maintained.\nCutting and drilling of work and the installation of sleeves shiall be performed only by the section who has installed the work. The Sub-contractor requiring sleeving shall supply the sleeves. The section requiring cutting, drilling, or sleeving for installation of its work shall inform the section who has installed the cutting, drilling and sleeving.\nReplace, and otherwise make good, damaged work to the satisfaction of the Supervision Consultant.\n7.Make patches invisible in final assembly.\nPART 2 - PRODUCTS (Not Used)\nPART 3 - EXECUTION (Not Used)\nENDOFSECTION01040\nEmaar Misr for Development",
+      "line_count": 8
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

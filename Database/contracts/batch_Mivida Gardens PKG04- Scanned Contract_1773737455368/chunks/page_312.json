@@ -1,0 +1,267 @@
+{
+  "text": "## EMAAR\n\n## Technical Specifications (Division I)\n\n- 3.8 The Contractor shall submit three (3) copies of all catalogues, brochures, and technical data. OnecopywiththeSupervision Consultant's review stamp shall be returned to the Contractor.\n- 3.9 The Contractor must use a proprietary drawings' referencing system. The protocol must be approved by the Contract Administrator. The drawing number should indicate the package number, the discipline and work category, the block code indicating geographical location, the level number, the serial number and the revision number.\n- 3.10 The Contractor shall be responsible for producing, updating and issuing a drawing index monthly to the Contract Administrator.\n- 3.11 The Contractor shallbe responsible for and shall pay for the drawings needed for completion of the construction.\n- 3.12 The Contractor shallbe responsible for any design or design calculations that may be specified, or required by the Supervision Consultant, in order to establish or demonstrate that his submittal conforms to the requirements of the Contract for quality, performance or in any other respect.\n- 3.13 The Contractor shall be responsible for the correct location of his Works, irrespective of approval by the Supervision Consultant and shall pay all costs and expenses incurred by  the Employer as a consequence of the improper location of his Works.\n- 3.14 The Contractor shall be responsible for and shall pay (at no extra cost to the Employer) for any alterations to the Works due to discrepancies, errors or omissions in the drawings and other particulars supplied by him whether or not such drawings and particulars have been approved by the Supervision Consultant.\n- 3.15 After the Supervision Consultant has approved shop drawings and samples, thcy shall not be departed from unless modified by the approval of a revised shop drawing / sample.\n\nENDOFSECTION01340\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          82.17916870117188,
+          775.9344685872396
+        ],
+        [
+          156.05740356445312,
+          775.9344685872396
+        ],
+        [
+          156.05740356445312,
+          756.8605448404948
+        ],
+        [
+          82.17916870117188,
+          756.8605448404948
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "Technical Specifications (Division I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          339.50787353515625,
+          746.9089304606119
+        ],
+        [
+          503.451171875,
+          746.9089304606119
+        ],
+        [
+          503.451171875,
+          733.6401163736979
+        ],
+        [
+          339.50787353515625,
+          733.6401163736979
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.8 The Contractor shall submit three (3) copies of all catalogues, brochures, and technical data. OnecopywiththeSupervision Consultant's review stamp shall be returned to the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          724.1031494140625
+        ],
+        [
+          505.9414469401042,
+          724.1031494140625
+        ],
+        [
+          505.9414469401042,
+          683.0527547200521
+        ],
+        [
+          109.98726399739583,
+          683.0527547200521
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.9 The Contractor must use a proprietary drawings' referencing system. The protocol must be approved by the Contract Administrator. The drawing number should indicate the package number, the discipline and work category, the block code indicating geographical location, the level number, the serial number and the revision number.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          678.90625
+        ],
+        [
+          505.5263671875,
+          678.90625
+        ],
+        [
+          505.5263671875,
+          612.1475219726562
+        ],
+        [
+          109.1571756998698,
+          612.1475219726562
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.10 The Contractor shall be responsible for producing, updating and issuing a drawing index monthly to the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          606.7570597330729
+        ],
+        [
+          504.28125,
+          606.7570597330729
+        ],
+        [
+          504.28125,
+          580.2194213867188
+        ],
+        [
+          109.98726399739583,
+          580.2194213867188
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.11 The Contractor shallbe responsible for and shall pay for the drawings needed for completion of the construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          575.2436116536459
+        ],
+        [
+          504.6962890625,
+          575.2436116536459
+        ],
+        [
+          504.6962890625,
+          534.1932169596355
+        ],
+        [
+          109.57222493489583,
+          534.1932169596355
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.12 The Contractor shallbe responsible for any design or design calculations that may be specified, or required by the Supervision Consultant, in order to establish or demonstrate that his submittal conforms to the requirements of the Contract for quality, performance or in any other respect.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          530.0467122395833
+        ],
+        [
+          504.6962890625,
+          530.0467122395833
+        ],
+        [
+          504.6962890625,
+          464.11728922526044
+        ],
+        [
+          109.57222493489583,
+          464.11728922526044
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.13 The Contractor shall be responsible for the correct location of his Works, irrespective of approval by the Supervision Consultant and shall pay all costs and expenses incurred by  the Employer as a consequence of the improper location of his Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          458.72682698567706
+        ],
+        [
+          505.9414469401042,
+          458.72682698567706
+        ],
+        [
+          505.9414469401042,
+          406.06622314453125
+        ],
+        [
+          109.1571756998698,
+          406.06622314453125
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.14 The Contractor shall be responsible for and shall pay (at no extra cost to the Employer) for any alterations to the Works due to discrepancies, errors or omissions in the drawings and other particulars supplied by him whether or not such drawings and particulars have been approved by the Supervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          400.67576090494794
+        ],
+        [
+          505.111328125,
+          400.67576090494794
+        ],
+        [
+          505.111328125,
+          335.16094970703125
+        ],
+        [
+          109.1571756998698,
+          335.16094970703125
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "3.15 After the Supervision Consultant has approved shop drawings and samples, thcy shall not be departed from unless modified by the approval of a revised shop drawing / sample.",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          329.35585530598956
+        ],
+        [
+          503.8662109375,
+          329.35585530598956
+        ],
+        [
+          503.8662109375,
+          289.5494181315104
+        ],
+        [
+          108.74212646484375,
+          289.5494181315104
+        ]
+      ],
+      "page": 312
+    },
+    {
+      "text": "ENDOFSECTION01340",
+      "confidence": 0.95,
+      "box": [
+        [
+          222.8798624674479,
+          276.69525146484375
+        ],
+        [
+          354.8645833333333,
+          276.69525146484375
+        ],
+        [
+          354.8645833333333,
+          265.49969482421875
+        ],
+        [
+          222.8798624674479,
+          265.49969482421875
+        ]
+      ],
+      "page": 312
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 312,
+      "text": "EMAAR\nTechnical Specifications (Division I)\n3.8 The Contractor shall submit three (3) copies of all catalogues, brochures, and technical data. OnecopywiththeSupervision Consultant's review stamp shall be returned to the Contractor.\n3.9 The Contractor must use a proprietary drawings' referencing system. The protocol must be approved by the Contract Administrator. The drawing number should indicate the package number, the discipline and work category, the block code indicating geographical location, the level number, the serial number and the revision number.\n3.10 The Contractor shall be responsible for producing, updating and issuing a drawing index monthly to the Contract Administrator.\n3.11 The Contractor shallbe responsible for and shall pay for the drawings needed for completion of the construction.\n3.12 The Contractor shallbe responsible for any design or design calculations that may be specified, or required by the Supervision Consultant, in order to establish or demonstrate that his submittal conforms to the requirements of the Contract for quality, performance or in any other respect.\n3.13 The Contractor shall be responsible for the correct location of his Works, irrespective of approval by the Supervision Consultant and shall pay all costs and expenses incurred by  the Employer as a consequence of the improper location of his Works.\n3.14 The Contractor shall be responsible for and shall pay (at no extra cost to the Employer) for any alterations to the Works due to discrepancies, errors or omissions in the drawings and other particulars supplied by him whether or not such drawings and particulars have been approved by the Supervision Consultant.\n3.15 After the Supervision Consultant has approved shop drawings and samples, thcy shall not be departed from unless modified by the approval of a revised shop drawing / sample.\nENDOFSECTION01340",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

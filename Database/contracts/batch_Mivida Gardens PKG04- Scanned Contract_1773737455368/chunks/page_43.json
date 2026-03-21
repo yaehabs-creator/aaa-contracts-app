@@ -1,0 +1,221 @@
+{
+  "text": "TheContractorshallindemnifyandholdtheEmployerharmless fees and expenses) resulting from any such interference.\n\n## WorktoSatisfactionofSupervisionConsultant\n\n- 6.4 TheContractorshall carryoutandcompletetheWorksandremedydefects thereininstrictaccordancewiththeContracttothesatisfactionof the Supervision Consultant and, subject to provisos (a) and (b) in Clause 2.1 matter, whether mentioned in the Contract or not, touching or concerning the Works.\n\n## SufficiencyandInvestigation\n\n- 6.5 Regardless ofany informationprovided by the Employer，theProject ManagerortheSupervisionConsultant,theContractorshall bedeemed by itsownmeansand atitsownresponsibilitytohavesatisfied itselfas tothe affecting theContractSumand theratesandpricesstated intheBillsof Quantities,astotheSiteand itssurroundings,astoclimaticconditions,as totheextentandnatureoftheWorks,astothesuperintendence,the labour,thePlant andContractor'sEquipment and all otherthings,whether of a temporary or permanent nature, required in and for the carrying out and completionoftheWorksandtheremedyingofdefectstherein,astothe applicabielaws，statutes,ordinances and other laws,othor provisions having the force of law,bye-laws and regulations,as to the Time for CompletionforthewholeofLheWorksandforeachSectionof theWorks, as to themilestonedates (ifany)stated intheParticularConditionsand generally asto all othercircumstances,risks and contingencieswhich may berelevanttotheperformanceandobservanceofalltheContractor's obligations under the Contract (including those under Provisional Sums, if any) and to thepayments tobe made to theContractor in respect thereof.\n\n## CashFlowEstimate\n\n- 6.6 TheContractorshallwithintheperiodaftertheCommencementDatestated in the Particular Conditions provide to the Project Manager for his information a detailed cash flow estimate,in monthly periods,of all paymentstowhichtheContractorwillbeentitledundertheContractand the Contractorshall subsequentlysupplyatthe endofeachmonthrevisedcash flowestimates inmonthlyperiods.The cashflowestimates shall bein such form and in such detail as theProjcct Manager shall require.Theprovision ofsuchcstimatcsshallnotrelievetheContractorofanyofitsdutiesor responsibilitiesundertheContract.\n\n## Confidential Details\n\n- 6.7 TheContractorshall discloseallsuchconfidential andotherinformationas the Project Manager or the Employer may require to verify the Contractor's compliancewiththeContract.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "TheContractorshallindemnifyandholdtheEmployerharmless fees and expenses) resulting from any such interference.",
+      "confidence": 0.95,
+      "box": [
+        [
+          187.73295084635416,
+          725.4417521158854
+        ],
+        [
+          487.0909016927083,
+          725.4417521158854
+        ],
+        [
+          487.0909016927083,
+          690.2308959960938
+        ],
+        [
+          187.73295084635416,
+          690.2308959960938
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "WorktoSatisfactionofSupervisionConsultant",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          680.4736735026041
+        ],
+        [
+          305.27744547526044,
+          680.4736735026041
+        ],
+        [
+          305.27744547526044,
+          668.1710815429688
+        ],
+        [
+          95.1349385579427,
+          668.1710815429688
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "6.4 TheContractorshall carryoutandcompletetheWorksandremedydefects thereininstrictaccordancewiththeContracttothesatisfactionof the Supervision Consultant and, subject to provisos (a) and (b) in Clause 2.1 matter, whether mentioned in the Contract or not, touching or concerning the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          657.1411743164062
+        ],
+        [
+          486.6680908203125,
+          657.1411743164062
+        ],
+        [
+          486.6680908203125,
+          577.386474609375
+        ],
+        [
+          126.00094604492188,
+          577.386474609375
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "SufficiencyandInvestigation",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          566.3565673828125
+        ],
+        [
+          222.40435791015625,
+          566.3565673828125
+        ],
+        [
+          222.40435791015625,
+          554.4782104492188
+        ],
+        [
+          95.1349385579427,
+          554.4782104492188
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "6.5 Regardless ofany informationprovided by the Employer，theProject ManagerortheSupervisionConsultant,theContractorshall bedeemed by itsownmeansand atitsownresponsibilitytohavesatisfied itselfas tothe affecting theContractSumand theratesandpricesstated intheBillsof Quantities,astotheSiteand itssurroundings,astoclimaticconditions,as totheextentandnatureoftheWorks,astothesuperintendence,the labour,thePlant andContractor'sEquipment and all otherthings,whether of a temporary or permanent nature, required in and for the carrying out and completionoftheWorksandtheremedyingofdefectstherein,astothe applicabielaws，statutes,ordinances and other laws,othor provisions having the force of law,bye-laws and regulations,as to the Time for CompletionforthewholeofLheWorksandforeachSectionof theWorks, as to themilestonedates (ifany)stated intheParticularConditionsand generally asto all othercircumstances,risks and contingencieswhich may berelevanttotheperformanceandobservanceofalltheContractor's obligations under the Contract (including those under Provisional Sums, if any) and to thepayments tobe made to theContractor in respect thereof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          543.4483032226562
+        ],
+        [
+          487.5137125651042,
+          543.4483032226562
+        ],
+        [
+          487.5137125651042,
+          338.12237548828125
+        ],
+        [
+          124.73248291015625,
+          338.12237548828125
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "CashFlowEstimate",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          328.3651326497396
+        ],
+        [
+          183.92755126953125,
+          328.3651326497396
+        ],
+        [
+          183.92755126953125,
+          316.48675537109375
+        ],
+        [
+          93.4436543782552,
+          316.48675537109375
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "6.6 TheContractorshallwithintheperiodaftertheCommencementDatestated in the Particular Conditions provide to the Project Manager for his information a detailed cash flow estimate,in monthly periods,of all paymentstowhichtheContractorwillbeentitledundertheContractand the Contractorshall subsequentlysupplyatthe endofeachmonthrevisedcash flowestimates inmonthlyperiods.The cashflowestimates shall bein such form and in such detail as theProjcct Manager shall require.Theprovision ofsuchcstimatcsshallnotrelievetheContractorofanyofitsdutiesor responsibilitiesundertheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.46400960286458,
+          305.45684814453125
+        ],
+        [
+          485.8224283854167,
+          305.45684814453125
+        ],
+        [
+          485.8224283854167,
+          203.21811930338538
+        ],
+        [
+          123.46400960286458,
+          203.21811930338538
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "Confidential Details",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          191.76397705078125
+        ],
+        [
+          180.9677937825521,
+          191.76397705078125
+        ],
+        [
+          180.9677937825521,
+          180.73406982421875
+        ],
+        [
+          93.4436543782552,
+          180.73406982421875
+        ]
+      ],
+      "page": 43
+    },
+    {
+      "text": "6.7 TheContractorshall discloseallsuchconfidential andotherinformationas the Project Manager or the Employer may require to verify the Contractor's compliancewiththeContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.0411885579427,
+          169.27992757161462
+        ],
+        [
+          485.8224283854167,
+          169.27992757161462
+        ],
+        [
+          485.8224283854167,
+          134.49330647786462
+        ],
+        [
+          123.0411885579427,
+          134.49330647786462
+        ]
+      ],
+      "page": 43
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 43,
+      "text": "TheContractorshallindemnifyandholdtheEmployerharmless fees and expenses) resulting from any such interference.\nWorktoSatisfactionofSupervisionConsultant\n6.4 TheContractorshall carryoutandcompletetheWorksandremedydefects thereininstrictaccordancewiththeContracttothesatisfactionof the Supervision Consultant and, subject to provisos (a) and (b) in Clause 2.1 matter, whether mentioned in the Contract or not, touching or concerning the Works.\nSufficiencyandInvestigation\n6.5 Regardless ofany informationprovided by the Employer，theProject ManagerortheSupervisionConsultant,theContractorshall bedeemed by itsownmeansand atitsownresponsibilitytohavesatisfied itselfas tothe affecting theContractSumand theratesandpricesstated intheBillsof Quantities,astotheSiteand itssurroundings,astoclimaticconditions,as totheextentandnatureoftheWorks,astothesuperintendence,the labour,thePlant andContractor'sEquipment and all otherthings,whether of a temporary or permanent nature, required in and for the carrying out and completionoftheWorksandtheremedyingofdefectstherein,astothe applicabielaws，statutes,ordinances and other laws,othor provisions having the force of law,bye-laws and regulations,as to the Time for CompletionforthewholeofLheWorksandforeachSectionof theWorks, as to themilestonedates (ifany)stated intheParticularConditionsand generally asto all othercircumstances,risks and contingencieswhich may berelevanttotheperformanceandobservanceofalltheContractor's obligations under the Contract (including those under Provisional Sums, if any) and to thepayments tobe made to theContractor in respect thereof.\nCashFlowEstimate\n6.6 TheContractorshallwithintheperiodaftertheCommencementDatestated in the Particular Conditions provide to the Project Manager for his information a detailed cash flow estimate,in monthly periods,of all paymentstowhichtheContractorwillbeentitledundertheContractand the Contractorshall subsequentlysupplyatthe endofeachmonthrevisedcash flowestimates inmonthlyperiods.The cashflowestimates shall bein such form and in such detail as theProjcct Manager shall require.Theprovision ofsuchcstimatcsshallnotrelievetheContractorofanyofitsdutiesor responsibilitiesundertheContract.\nConfidential Details\n6.7 TheContractorshall discloseallsuchconfidential andotherinformationas the Project Manager or the Employer may require to verify the Contractor's compliancewiththeContract.",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

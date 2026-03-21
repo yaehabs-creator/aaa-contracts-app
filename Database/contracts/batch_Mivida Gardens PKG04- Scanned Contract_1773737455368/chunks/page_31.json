@@ -1,0 +1,290 @@
+{
+  "text": "- (W) under Clause2.5(Project Manager'sRepresentative).\n- (x) ni  is b  s  o (DefinitionofProvisional Sum).\n- (y) \"Site\" means the place or places provided or made available by the EmployerwhereworkistobedonebytheContractor,or towhich PlantorFreeIssueItems aretobedeliveredtogetherwithsomuch oftheareasurroundingthesameastheContractorshallwiththe writtenconsentof theProjectManageruseinconnectionwiththe Worksotherwise thanmerelyforthepurposes of access.\n- (z) \"Specification\"means the documententitied specificationforming a partoftheContracttogcthcrwithanymodificalionslhereufur additionstheretoordeletions therefromasmayfrom time totimebe madeinaccordancewiththeContract.\n- (aa) \"Subcontractor\"means anyNominated Subcontractororanyperson towhom anypartof theWorkshasbeensublet by theContractor with(where required inaccordancewith Clause 3.2(Subletting))the consentinwritingoftheProjectManagerandtheSupervision ConsultantandincludestheSubcontractor'slegal successorsbut not assigns.\n- (bb) \"Supervision Consultant'sRepresentative\"means anyrepresentative of the Supervision Consultant appointed from time to time by the SupervisionConsultantunderClause2A.5(SupervisionConsultant's Representative).\n- (cc) \"Su3pen3ion Order\" has the meaning assigned by Clause 18.1 (Suspension Order).\n- (dd) \"Taking-Over Certificate\"has the meaning assigned by Clause 20.1 (Taklng-Over Certlflcate).\n- (ee) \"Tender\"means the Contractor'spricedofferto theEmployerfor the carrying outandcompletionoftheWorksand theremedying of defects therein.\n- (ff) \"Teste on Complction\" mcanG such tosts to be made by the ContractorbeforetherelevantSectionorPortionof theWorksis taken over by lhe Employer as are provided for in the Contract or otherwiseagreedbetweentheEmployerortheSupervision Consultant and the Contractor.\n- (gg) \"Variation Order\" has the meaning assigned by Clause 22.1 (Variation Orders).\n- (hh) \"Works\"means all Plant tobeprovided and work to be done by the ContractorundertheContract.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(W) under Clause2.5(Project Manager'sRepresentative).",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          723.3206176757812
+        ],
+        [
+          431.7012125651042,
+          723.3206176757812
+        ],
+        [
+          431.7012125651042,
+          688.1097615559896
+        ],
+        [
+          156.866943359375,
+          688.1097615559896
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(x) ni  is b  s  o (DefinitionofProvisional Sum).",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          679.2009887695312
+        ],
+        [
+          486.2452392578125,
+          679.2009887695312
+        ],
+        [
+          486.2452392578125,
+          654.5958251953125
+        ],
+        [
+          156.02130126953125,
+          654.5958251953125
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(y) \"Site\" means the place or places provided or made available by the EmployerwhereworkistobedonebytheContractor,or towhich PlantorFreeIssueItems aretobedeliveredtogetherwithsomuch oftheareasurroundingthesameastheContractorshallwiththe writtenconsentof theProjectManageruseinconnectionwiththe Worksotherwise thanmerelyforthepurposes of access.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          644.8385823567709
+        ],
+        [
+          486.6680908203125,
+          644.8385823567709
+        ],
+        [
+          486.6680908203125,
+          573.992655436198
+        ],
+        [
+          156.44412231445312,
+          573.992655436198
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(z) \"Specification\"means the documententitied specificationforming a partoftheContracttogcthcrwithanymodificalionslhereufur additionstheretoordeletions therefromasmayfrom time totimebe madeinaccordancewiththeContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          564.65966796875
+        ],
+        [
+          485.8224283854167,
+          564.65966796875
+        ],
+        [
+          485.8224283854167,
+          517.9946695963542
+        ],
+        [
+          156.02130126953125,
+          517.9946695963542
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(aa) \"Subcontractor\"means anyNominated Subcontractororanyperson towhom anypartof theWorkshasbeensublet by theContractor with(where required inaccordancewith Clause 3.2(Subletting))the consentinwritingoftheProjectManagerandtheSupervision ConsultantandincludestheSubcontractor'slegal successorsbut not assigns.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          507.81321207682294
+        ],
+        [
+          486.6680908203125,
+          507.81321207682294
+        ],
+        [
+          486.6680908203125,
+          439.08839925130206
+        ],
+        [
+          156.02130126953125,
+          439.08839925130206
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(bb) \"Supervision Consultant'sRepresentative\"means anyrepresentative of the Supervision Consultant appointed from time to time by the SupervisionConsultantunderClause2A.5(SupervisionConsultant's Representative).",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          428.05853271484375
+        ],
+        [
+          485.8224283854167,
+          428.05853271484375
+        ],
+        [
+          485.8224283854167,
+          381.39353434244794
+        ],
+        [
+          156.866943359375,
+          381.39353434244794
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(cc) \"Su3pen3ion Order\" has the meaning assigned by Clause 18.1 (Suspension Order).",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          372.48476155598956
+        ],
+        [
+          485.3996175130208,
+          372.48476155598956
+        ],
+        [
+          485.3996175130208,
+          347.45534261067706
+        ],
+        [
+          155.1756591796875,
+          347.45534261067706
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(dd) \"Taking-Over Certificate\"has the meaning assigned by Clause 20.1 (Taklng-Over Certlflcate).",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          338.12237548828125
+        ],
+        [
+          484.976806640625,
+          338.12237548828125
+        ],
+        [
+          484.976806640625,
+          313.9414265950521
+        ],
+        [
+          155.1756591796875,
+          313.9414265950521
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(ee) \"Tender\"means the Contractor'spricedofferto theEmployerfor the carrying outandcompletionoftheWorksand theremedying of defects therein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          303.75994873046875
+        ],
+        [
+          485.3996175130208,
+          303.75994873046875
+        ],
+        [
+          485.3996175130208,
+          268.5490926106771
+        ],
+        [
+          155.1756591796875,
+          268.5490926106771
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(ff) \"Teste on Complction\" mcanG such tosts to be made by the ContractorbeforetherelevantSectionorPortionof theWorksis taken over by lhe Employer as are provided for in the Contract or otherwiseagreedbetweentheEmployerortheSupervision Consultant and the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.33001708984375,
+          258.3676554361979
+        ],
+        [
+          485.8224283854167,
+          258.3676554361979
+        ],
+        [
+          485.8224283854167,
+          200.24851481119788
+        ],
+        [
+          154.33001708984375,
+          200.24851481119788
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(gg) \"Variation Order\" has the meaning assigned by Clause 22.1 (Variation Orders).",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.90719604492188,
+          190.91554768880212
+        ],
+        [
+          484.1311442057292,
+          190.91554768880212
+        ],
+        [
+          484.1311442057292,
+          166.31036376953125
+        ],
+        [
+          153.90719604492188,
+          166.31036376953125
+        ]
+      ],
+      "page": 31
+    },
+    {
+      "text": "(hh) \"Works\"means all Plant tobeprovided and work to be done by the ContractorundertheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.33001708984375,
+          156.12888590494788
+        ],
+        [
+          483.7083333333333,
+          156.12888590494788
+        ],
+        [
+          483.7083333333333,
+          133.22060139973962
+        ],
+        [
+          154.33001708984375,
+          133.22060139973962
+        ]
+      ],
+      "page": 31
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 31,
+      "text": "(W) under Clause2.5(Project Manager'sRepresentative).\n(x) ni  is b  s  o (DefinitionofProvisional Sum).\n(y) \"Site\" means the place or places provided or made available by the EmployerwhereworkistobedonebytheContractor,or towhich PlantorFreeIssueItems aretobedeliveredtogetherwithsomuch oftheareasurroundingthesameastheContractorshallwiththe writtenconsentof theProjectManageruseinconnectionwiththe Worksotherwise thanmerelyforthepurposes of access.\n(z) \"Specification\"means the documententitied specificationforming a partoftheContracttogcthcrwithanymodificalionslhereufur additionstheretoordeletions therefromasmayfrom time totimebe madeinaccordancewiththeContract.\n(aa) \"Subcontractor\"means anyNominated Subcontractororanyperson towhom anypartof theWorkshasbeensublet by theContractor with(where required inaccordancewith Clause 3.2(Subletting))the consentinwritingoftheProjectManagerandtheSupervision ConsultantandincludestheSubcontractor'slegal successorsbut not assigns.\n(bb) \"Supervision Consultant'sRepresentative\"means anyrepresentative of the Supervision Consultant appointed from time to time by the SupervisionConsultantunderClause2A.5(SupervisionConsultant's Representative).\n(cc) \"Su3pen3ion Order\" has the meaning assigned by Clause 18.1 (Suspension Order).\n(dd) \"Taking-Over Certificate\"has the meaning assigned by Clause 20.1 (Taklng-Over Certlflcate).\n(ee) \"Tender\"means the Contractor'spricedofferto theEmployerfor the carrying outandcompletionoftheWorksand theremedying of defects therein.\n(ff) \"Teste on Complction\" mcanG such tosts to be made by the ContractorbeforetherelevantSectionorPortionof theWorksis taken over by lhe Employer as are provided for in the Contract or otherwiseagreedbetweentheEmployerortheSupervision Consultant and the Contractor.\n(gg) \"Variation Order\" has the meaning assigned by Clause 22.1 (Variation Orders).\n(hh) \"Works\"means all Plant tobeprovided and work to be done by the ContractorundertheContract.",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

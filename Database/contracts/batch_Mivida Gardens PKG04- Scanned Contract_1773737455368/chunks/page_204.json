@@ -1,0 +1,681 @@
+{
+  "text": "Sum Insured:\n\n## Natural hazard's\n\nDeductible(s):\n\n## Section 2:Third Party liability\n\n## Territorial Limits:\n\n## For Project Value exceeding EGP 1BN till EGP 3.5 BN\n\n## Section I:Material Damage\n\nFrom EGP 1,000,000,000 till EGP 2,500,000,000 Per Project 15%\n\n+ Addition of 2.5% of contract value with minimum 5M representing any additionalitems tothecontractvalue(i.e.scaffolding,tools,equipment,anything supplied to the contractorby the principal and not included in the contract value...etc\n\n## Section 2:Third Party liability\n\n25%withmax500M anyone occurrence and in theaggregate\n\nA. Injury suffered by any person or persons, loss of or damage to or destruction of property, including the loss of use thereof;\n\nB. Interference to property or the enjoyment of use thereof by obstruction, stoppage of traffic,trespass,lossofamenities,nuisance,infringement oflight orair,easement or quasieasement,interruption,denial ofaccess,loss of tradeorotherdeprivations caused by an Occurrencehappeningduring thePeriod ofinsurance,inconnection with theProject within theGeographicLimits.\n\nCovered 100%ofthe sum insured\n\n## Section I:Material Damage\n\n- -EGP 150,000 each and every loss in respect of storm, tempest, flood, water damage, earthquake, subsidence and collapse, testing and conmmissioning,defective materials workimanship design plan or specification and during the maintenance period -EGP 100,000 each and every loss\n- -EGP 25.000cach and every Occurrence inrespect of property damage only Arab Republic of Egypt\n\nLawandJurisdiction Law and exclusive jurisdiction of Egyptian Law and Worldwide excluding USA, Canada in respect to Third Party Claims. Endorsements: Asper attached Munich Re wording plus endorsenients as follows:\n\n<!-- image -->\n\n- MRe.001 Cover for Loss or Damage due to Strike,Riot and Civil Commotion (SRCC) sub limited to 250M anyone occurrence and in the aggregate\n\nMRe.002 Cross Liability.\n\nMRe.004ExtendedMaintenanceperiod12months\n\nMRe.006 Cover of Extra Charges for Overtime, Night Work,Work on PublicHolidays,ExpressFreight-sublimited toEGP50,000,000 MRe.007Extra charges for airfreight-sublimited toEGP50,000,000 any one occurrence and in the aggregate.\n\n- MRe.100:Testing of Machinery and installations--3 months.\n\nMRe.013OffsiteStorage sublimited toEGP250,000,000per storage unit and in the aggregate.\n\n- MRe.102 Underground cables, pipes and other facilities within TPL limit\n- MRe.106Warranty concerning sections- limit 1000 m any one section and maximum 4 section in all. (Not applied unless the project include embankments, cuttings and benchings, ditches, canals or road works.)\n\nMRe.107Camps andStoressublimited to25%with max500M anyone occurrence and in the aggregate\n\n<!-- image -->\n\nMRe. 1lQSafety mcnsures with respcct to precipitation, flood and inundation. MRc.11l:Rcmpvalof Dcbris3ub limitcd toEGP150,000,000pcr\n\n<!-- image -->\n\nOGcwrrane&amp;:EGna00000,000 in tbe aggregate.p. p.u 2nd Sector,North 9oth St,Sth Settlemenr,New Cairo, Egypt\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Sum Insured:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          655.2711690266927
+        ],
+        [
+          131.56967163085938,
+          655.2711690266927
+        ],
+        [
+          131.56967163085938,
+          644.0756022135416
+        ],
+        [
+          75.95347086588542,
+          644.0756022135416
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Natural hazard's",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          465.36122639973956
+        ],
+        [
+          144.85115559895834,
+          465.36122639973956
+        ],
+        [
+          144.85115559895834,
+          454.58030192057294
+        ],
+        [
+          75.53842671712239,
+          454.58030192057294
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Deductible(s):",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          440.48219807942706
+        ],
+        [
+          131.9847208658854,
+          440.48219807942706
+        ],
+        [
+          131.9847208658854,
+          429.28664143880206
+        ],
+        [
+          75.53842671712239,
+          429.28664143880206
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Section 2:Third Party liability",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          375.38205973307294
+        ],
+        [
+          198.80716959635416,
+          375.38205973307294
+        ],
+        [
+          198.80716959635416,
+          364.60113525390625
+        ],
+        [
+          75.12337748209636,
+          364.60113525390625
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Territorial Limits:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          353.40557861328125
+        ],
+        [
+          149.83171590169272,
+          353.40557861328125
+        ],
+        [
+          149.83171590169272,
+          343.86863199869794
+        ],
+        [
+          75.12337748209636,
+          343.86863199869794
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "For Project Value exceeding EGP 1BN till EGP 3.5 BN",
+      "confidence": 0.95,
+      "box": [
+        [
+          201.7125040690104,
+          680.1501973470052
+        ],
+        [
+          422.1020914713542,
+          680.1501973470052
+        ],
+        [
+          422.1020914713542,
+          667.710683186849
+        ],
+        [
+          201.7125040690104,
+          667.710683186849
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Section I:Material Damage",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.97452799479166,
+          656.1004740397135
+        ],
+        [
+          333.28216552734375,
+          656.1004740397135
+        ],
+        [
+          333.28216552734375,
+          643.6609497070312
+        ],
+        [
+          219.97452799479166,
+          643.6609497070312
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "From EGP 1,000,000,000 till EGP 2,500,000,000 Per Project 15%",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.97452799479166,
+          643.6609497070312
+        ],
+        [
+          474.8129475911458,
+          643.6609497070312
+        ],
+        [
+          474.8129475911458,
+          634.1239827473959
+        ],
+        [
+          219.97452799479166,
+          634.1239827473959
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Addition of 2.5% of contract value with minimum 5M representing any additionalitems tothecontractvalue(i.e.scaffolding,tools,equipment,anything supplied to the contractorby the principal and not included in the contract value...etc",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.14444986979166,
+          631.6360880533854
+        ],
+        [
+          547.446044921875,
+          631.6360880533854
+        ],
+        [
+          547.446044921875,
+          597.2200927734375
+        ],
+        [
+          219.14444986979166,
+          597.2200927734375
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Section 2:Third Party liability",
+      "confidence": 0.95,
+      "box": [
+        [
+          220.38958740234375,
+          585.1952311197916
+        ],
+        [
+          342.8282470703125,
+          585.1952311197916
+        ],
+        [
+          342.8282470703125,
+          575.6582641601562
+        ],
+        [
+          220.38958740234375,
+          575.6582641601562
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "25%withmax500M anyone occurrence and in theaggregate",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.55948893229166,
+          574.8289591471354
+        ],
+        [
+          449.9101969401042,
+          574.8289591471354
+        ],
+        [
+          449.9101969401042,
+          564.0480550130208
+        ],
+        [
+          219.55948893229166,
+          564.0480550130208
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "A. Injury suffered by any person or persons, loss of or damage to or destruction of property, including the loss of use thereof;",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.14444986979166,
+          554.096435546875
+        ],
+        [
+          532.91943359375,
+          554.096435546875
+        ],
+        [
+          532.91943359375,
+          532.1199544270833
+        ],
+        [
+          219.14444986979166,
+          532.1199544270833
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "B. Interference to property or the enjoyment of use thereof by obstruction, stoppage of traffic,trespass,lossofamenities,nuisance,infringement oflight orair,easement or quasieasement,interruption,denial ofaccess,loss of tradeorotherdeprivations caused by an Occurrencehappeningduring thePeriod ofinsurance,inconnection with theProject within theGeographicLimits.",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.55948893229166,
+          532.1199544270833
+        ],
+        [
+          539.9752197265625,
+          532.1199544270833
+        ],
+        [
+          539.9752197265625,
+          477.38608805338544
+        ],
+        [
+          219.55948893229166,
+          477.38608805338544
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Covered 100%ofthe sum insured",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.63472493489584,
+          465.36122639973956
+        ],
+        [
+          350.299072265625,
+          465.36122639973956
+        ],
+        [
+          350.299072265625,
+          454.99497477213544
+        ],
+        [
+          221.63472493489584,
+          454.99497477213544
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "Section I:Material Damage",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.21966552734375,
+          440.89683024088544
+        ],
+        [
+          335.35740152994794,
+          440.89683024088544
+        ],
+        [
+          335.35740152994794,
+          428.87196858723956
+        ],
+        [
+          221.21966552734375,
+          428.87196858723956
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "-EGP 150,000 each and every loss in respect of storm, tempest, flood, water damage, earthquake, subsidence and collapse, testing and conmmissioning,defective materials workimanship design plan or specification and during the maintenance period -EGP 100,000 each and every loss",
+      "confidence": 0.95,
+      "box": [
+        [
+          220.80462646484375,
+          427.21339925130206
+        ],
+        [
+          545.370849609375,
+          427.21339925130206
+        ],
+        [
+          545.370849609375,
+          375.38205973307294
+        ],
+        [
+          220.80462646484375,
+          375.38205973307294
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "-EGP 25.000cach and every Occurrence inrespect of property damage only Arab Republic of Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.55948893229166,
+          364.60113525390625
+        ],
+        [
+          480.6236165364583,
+          364.60113525390625
+        ],
+        [
+          480.6236165364583,
+          342.21002197265625
+        ],
+        [
+          219.55948893229166,
+          342.21002197265625
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "LawandJurisdiction Law and exclusive jurisdiction of Egyptian Law and Worldwide excluding USA, Canada in respect to Third Party Claims. Endorsements: Asper attached Munich Re wording plus endorsenients as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          329.35585530598956
+        ],
+        [
+          526.6937662760416,
+          329.35585530598956
+        ],
+        [
+          526.6937662760416,
+          296.1838175455729
+        ],
+        [
+          74.70833333333333,
+          296.1838175455729
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.001 Cover for Loss or Damage due to Strike,Riot and Civil Commotion (SRCC) sub limited to 250M anyone occurrence and in the aggregate",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.76318359375,
+          296.1838175455729
+        ],
+        [
+          502.6210530598958,
+          296.1838175455729
+        ],
+        [
+          502.6210530598958,
+          262.59710693359375
+        ],
+        [
+          252.76318359375,
+          262.59710693359375
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.002 Cross Liability.",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.76318359375,
+          263.4264119466146
+        ],
+        [
+          350.714111328125,
+          263.4264119466146
+        ],
+        [
+          350.714111328125,
+          252.64552815755212
+        ],
+        [
+          252.76318359375,
+          252.64552815755212
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.004ExtendedMaintenanceperiod12months",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          252.64552815755212
+        ],
+        [
+          445.7597249348958,
+          252.64552815755212
+        ],
+        [
+          445.7597249348958,
+          242.27923583984375
+        ],
+        [
+          252.34814453125,
+          242.27923583984375
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.006 Cover of Extra Charges for Overtime, Night Work,Work on PublicHolidays,ExpressFreight-sublimited toEGP50,000,000 MRe.007Extra charges for airfreight-sublimited toEGP50,000,000 any one occurrence and in the aggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          241.86460367838538
+        ],
+        [
+          520.4680582682291,
+          241.86460367838538
+        ],
+        [
+          520.4680582682291,
+          197.08233642578125
+        ],
+        [
+          252.34814453125,
+          197.08233642578125
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.100:Testing of Machinery and installations--3 months.",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          176.34983317057288
+        ],
+        [
+          486.8492838541667,
+          176.34983317057288
+        ],
+        [
+          486.8492838541667,
+          166.39821370442712
+        ],
+        [
+          252.34814453125,
+          166.39821370442712
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.013OffsiteStorage sublimited toEGP250,000,000per storage unit and in the aggregate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          251.93310546875,
+          198.32631429036462
+        ],
+        [
+          533.33447265625,
+          198.32631429036462
+        ],
+        [
+          533.33447265625,
+          175.52052815755212
+        ],
+        [
+          251.93310546875,
+          175.52052815755212
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.102 Underground cables, pipes and other facilities within TPL limit",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          165.56890869140625
+        ],
+        [
+          529.5990804036459,
+          165.56890869140625
+        ],
+        [
+          529.5990804036459,
+          154.78798421223962
+        ],
+        [
+          252.34814453125,
+          154.78798421223962
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.106Warranty concerning sections- limit 1000 m any one section and maximum 4 section in all. (Not applied unless the project include embankments, cuttings and benchings, ditches, canals or road works.)",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          154.37335205078125
+        ],
+        [
+          525.0335693359375,
+          154.37335205078125
+        ],
+        [
+          525.0335693359375,
+          118.71339925130212
+        ],
+        [
+          252.34814453125,
+          118.71339925130212
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe.107Camps andStoressublimited to25%with max500M anyone occurrence and in the aggregate",
+      "confidence": 0.95,
+      "box": [
+        [
+          252.34814453125,
+          116.64015706380212
+        ],
+        [
+          525.0335693359375,
+          116.64015706380212
+        ],
+        [
+          525.0335693359375,
+          106.27386474609375
+        ],
+        [
+          252.34814453125,
+          106.27386474609375
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "MRe. 1lQSafety mcnsures with respcct to precipitation, flood and inundation. MRc.11l:Rcmpvalof Dcbris3ub limitcd toEGP150,000,000pcr",
+      "confidence": 0.95,
+      "box": [
+        [
+          251.5180460611979,
+          92.59043375651038
+        ],
+        [
+          547.031005859375,
+          92.59043375651038
+        ],
+        [
+          547.031005859375,
+          68.54071044921875
+        ],
+        [
+          251.5180460611979,
+          68.54071044921875
+        ]
+      ],
+      "page": 204
+    },
+    {
+      "text": "OGcwrrane&:EGna00000,000 in tbe aggregate.p. p.u 2nd Sector,North 9oth St,Sth Settlemenr,New Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          251.5180460611979,
+          68.95534261067712
+        ],
+        [
+          460.2863362630208,
+          68.95534261067712
+        ],
+        [
+          460.2863362630208,
+          38.68581136067712
+        ],
+        [
+          251.5180460611979,
+          38.68581136067712
+        ]
+      ],
+      "page": 204
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 204,
+      "text": "Sum Insured:\nNatural hazard's\nDeductible(s):\nSection 2:Third Party liability\nTerritorial Limits:\nFor Project Value exceeding EGP 1BN till EGP 3.5 BN\nSection I:Material Damage\nFrom EGP 1,000,000,000 till EGP 2,500,000,000 Per Project 15%\nAddition of 2.5% of contract value with minimum 5M representing any additionalitems tothecontractvalue(i.e.scaffolding,tools,equipment,anything supplied to the contractorby the principal and not included in the contract value...etc\nSection 2:Third Party liability\n25%withmax500M anyone occurrence and in theaggregate\nA. Injury suffered by any person or persons, loss of or damage to or destruction of property, including the loss of use thereof;\nB. Interference to property or the enjoyment of use thereof by obstruction, stoppage of traffic,trespass,lossofamenities,nuisance,infringement oflight orair,easement or quasieasement,interruption,denial ofaccess,loss of tradeorotherdeprivations caused by an Occurrencehappeningduring thePeriod ofinsurance,inconnection with theProject within theGeographicLimits.\nCovered 100%ofthe sum insured\nSection I:Material Damage\n-EGP 150,000 each and every loss in respect of storm, tempest, flood, water damage, earthquake, subsidence and collapse, testing and conmmissioning,defective materials workimanship design plan or specification and during the maintenance period -EGP 100,000 each and every loss\n-EGP 25.000cach and every Occurrence inrespect of property damage only Arab Republic of Egypt\nLawandJurisdiction Law and exclusive jurisdiction of Egyptian Law and Worldwide excluding USA, Canada in respect to Third Party Claims. Endorsements: Asper attached Munich Re wording plus endorsenients as follows:\nMRe.001 Cover for Loss or Damage due to Strike,Riot and Civil Commotion (SRCC) sub limited to 250M anyone occurrence and in the aggregate\nMRe.002 Cross Liability.\nMRe.004ExtendedMaintenanceperiod12months\nMRe.006 Cover of Extra Charges for Overtime, Night Work,Work on PublicHolidays,ExpressFreight-sublimited toEGP50,000,000 MRe.007Extra charges for airfreight-sublimited toEGP50,000,000 any one occurrence and in the aggregate.\nMRe.100:Testing of Machinery and installations--3 months.\nMRe.013OffsiteStorage sublimited toEGP250,000,000per storage unit and in the aggregate.\nMRe.102 Underground cables, pipes and other facilities within TPL limit\nMRe.106Warranty concerning sections- limit 1000 m any one section and maximum 4 section in all. (Not applied unless the project include embankments, cuttings and benchings, ditches, canals or road works.)\nMRe.107Camps andStoressublimited to25%with max500M anyone occurrence and in the aggregate\nMRe. 1lQSafety mcnsures with respcct to precipitation, flood and inundation. MRc.11l:Rcmpvalof Dcbris3ub limitcd toEGP150,000,000pcr\nOGcwrrane&:EGna00000,000 in tbe aggregate.p. p.u 2nd Sector,North 9oth St,Sth Settlemenr,New Cairo, Egypt",
+      "line_count": 29
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

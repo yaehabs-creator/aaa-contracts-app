@@ -1,0 +1,451 @@
+{
+  "text": "<!-- image -->\n\n## 4.7 Critical Indicators\n\nThe major or critical items in the scope of the Contract shall be identified and presented in tabular and graphical formats, which can give progress details of each of these indicators over time.The Execution Programme should drive these.Depending on the scope of the Contract this shall indicate thelikes of:\n\n- a) Submittal and Approval - Planned number of drawings per week (on Y1 axis) and Cumulative number of drawings (on Y2 axis) against time in weeks (on X axis).\n2. b)Submittal and Approval -Planned number of materials per week (on Y1 axis) and Cumulative number of materials (on Y2 axis) against time in weeks (on X-axis).\n3. c)Place Orders - Planned number per week (on Y1 axis) and Cumulative number (on Y2 axis) against timc in weeks (on X-axis) for each of the major materials.\n- d) Fabrication complete - Planned quantity of materials per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis).\n- e) Delivered to site - Planned quantity per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis) for eachofthemajormaterials.\n6. Installation complete - Planned quantity of items per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis) for major work activities.\n7. Includeanytradeormaterialrestraintstoindicatethemovementof trades who are performing major works.\n8. h)Soft copy is required in Microsoft Excel format.\n\n## 4.8E Execution Method Statement\n\nThe Contractor shall provide with his Programme of Works, in accordance with Section 01370,detailed and descriptive narration of the methods he proposes for execution of the Works. This shall be exhaustive and cover all major components of execution, all to the approval of the Contract Administrator, the Supervision Consultant and/or Employer, to clearly demonstrate the Contractor's capabilities and expertise in executing the works.The Contractor shall be required to provide details of rnethods specifically requested by the Contract Administrator.\n\n## 4.9 9SupportData\n\nThe Contractor shall submit the following supporting data as a part of his Sregramme of Works and any successive updates and revisions in an apnyedton quested brthe ContractAdministrator.\n\n0元18Re\n\n有限责任公\n\ning.\n\nMisr alicalionsbiwu1GeneralRequirements\n\nRevO\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "4.7 Critical Indicators",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          718.2980448404948
+        ],
+        [
+          207.93819173177084,
+          718.2980448404948
+        ],
+        [
+          207.93819173177084,
+          705.4438781738281
+        ],
+        [
+          95.46065266927083,
+          705.4438781738281
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "The major or critical items in the scope of the Contract shall be identified and presented in tabular and graphical formats, which can give progress details of each of these indicators over time.The Execution Programme should drive these.Depending on the scope of the Contract this shall indicate thelikes of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          698.8094685872396
+        ],
+        [
+          505.5263671875,
+          698.8094685872396
+        ],
+        [
+          505.5263671875,
+          634.5386352539062
+        ],
+        [
+          119.94837443033855,
+          634.5386352539062
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "Submittal and Approval - Planned number of drawings per week (on Y1 axis) and Cumulative number of drawings (on Y2 axis) against time in weeks (on X axis).",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          628.3188883463541
+        ],
+        [
+          504.6962890625,
+          628.3188883463541
+        ],
+        [
+          504.6962890625,
+          588.5124308268229
+        ],
+        [
+          119.94837443033855,
+          588.5124308268229
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "b)Submittal and Approval -Planned number of materials per week (on Y1 axis) and Cumulative number of materials (on Y2 axis) against time in weeks (on X-axis).",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          582.2926839192709
+        ],
+        [
+          504.6962890625,
+          582.2926839192709
+        ],
+        [
+          504.6962890625,
+          543.3155314127605
+        ],
+        [
+          120.36342366536458,
+          543.3155314127605
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "c)Place Orders - Planned number per week (on Y1 axis) and Cumulative number (on Y2 axis) against timc in weeks (on X-axis) for each of the major materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          537.5104166666667
+        ],
+        [
+          505.111328125,
+          537.5104166666667
+        ],
+        [
+          505.111328125,
+          498.1186116536458
+        ],
+        [
+          120.77847290039062,
+          498.1186116536458
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "Fabrication complete - Planned quantity of materials per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis).",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          492.72816975911456
+        ],
+        [
+          505.9414469401042,
+          492.72816975911456
+        ],
+        [
+          505.9414469401042,
+          452.92173258463544
+        ],
+        [
+          120.36342366536458,
+          452.92173258463544
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "Delivered to site - Planned quantity per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis) for eachofthemajormaterials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          447.94590250651044
+        ],
+        [
+          505.5263671875,
+          447.94590250651044
+        ],
+        [
+          505.5263671875,
+          409.79807535807294
+        ],
+        [
+          120.36342366536458,
+          409.79807535807294
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "Installation complete - Planned quantity of items per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis) for major work activities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          137.38032023111978,
+          402.33437093098956
+        ],
+        [
+          505.111328125,
+          402.33437093098956
+        ],
+        [
+          505.111328125,
+          364.60113525390625
+        ],
+        [
+          137.38032023111978,
+          364.60113525390625
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "Includeanytradeormaterialrestraintstoindicatethemovementof trades who are performing major works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          357.13743082682294
+        ],
+        [
+          505.9414469401042,
+          357.13743082682294
+        ],
+        [
+          505.9414469401042,
+          332.25840250651044
+        ],
+        [
+          136.96528116861978,
+          332.25840250651044
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "h)Soft copy is required in Microsoft Excel format.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          325.20937093098956
+        ],
+        [
+          371.8814697265625,
+          325.20937093098956
+        ],
+        [
+          371.8814697265625,
+          314.42844645182294
+        ],
+        [
+          120.77847290039062,
+          314.42844645182294
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "4.8E Execution Method Statement",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          294.1105753580729
+        ],
+        [
+          267.70485432942706,
+          294.1105753580729
+        ],
+        [
+          267.70485432942706,
+          282.0857137044271
+        ],
+        [
+          95.46065266927083,
+          282.0857137044271
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "The Contractor shall provide with his Programme of Works, in accordance with Section 01370,detailed and descriptive narration of the methods he proposes for execution of the Works. This shall be exhaustive and cover all major components of execution, all to the approval of the Contract Administrator, the Supervision Consultant and/or Employer, to clearly demonstrate the Contractor's capabilities and expertise in executing the works.The Contractor shall be required to provide details of rnethods specifically requested by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          275.4512736002604
+        ],
+        [
+          507.1865641276042,
+          275.4512736002604
+        ],
+        [
+          507.1865641276042,
+          172.20330810546875
+        ],
+        [
+          119.94837443033855,
+          172.20330810546875
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "4.9 9SupportData",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          164.73960367838538
+        ],
+        [
+          188.8460693359375,
+          164.73960367838538
+        ],
+        [
+          188.8460693359375,
+          152.30006917317712
+        ],
+        [
+          96.29074096679688,
+          152.30006917317712
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "The Contractor shall submit the following supporting data as a part of his Sregramme of Works and any successive updates and revisions in an apnyedton quested brthe ContractAdministrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          146.90964762369788
+        ],
+        [
+          507.1865641276042,
+          146.90964762369788
+        ],
+        [
+          507.1865641276042,
+          105.85923258463538
+        ],
+        [
+          121.19352213541667,
+          105.85923258463538
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "0元18Re",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          99.22479248046875
+        ],
+        [
+          159.37777709960938,
+          99.22479248046875
+        ],
+        [
+          159.37777709960938,
+          89.68784586588538
+        ],
+        [
+          127.41920979817708,
+          89.68784586588538
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "有限责任公",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.21805318196614,
+          88.02923583984375
+        ],
+        [
+          161.45301310221353,
+          88.02923583984375
+        ],
+        [
+          161.45301310221353,
+          83.46811930338538
+        ],
+        [
+          72.21805318196614,
+          83.46811930338538
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "ing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13263956705728,
+          85.54136149088538
+        ],
+        [
+          179.30000813802084,
+          85.54136149088538
+        ],
+        [
+          179.30000813802084,
+          75.17506917317712
+        ],
+        [
+          158.13263956705728,
+          75.17506917317712
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "Misr alicalionsbiwu1GeneralRequirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          202.1275431315104,
+          83.05348714192712
+        ],
+        [
+          221.21966552734375,
+          83.05348714192712
+        ],
+        [
+          221.21966552734375,
+          72.27256266276038
+        ],
+        [
+          202.1275431315104,
+          72.27256266276038
+        ]
+      ],
+      "page": 301
+    },
+    {
+      "text": "RevO",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          39.10052490234375
+        ],
+        [
+          99.19606526692708,
+          39.10052490234375
+        ],
+        [
+          99.19606526692708,
+          32.05145263671875
+        ],
+        [
+          79.27384440104167,
+          32.05145263671875
+        ]
+      ],
+      "page": 301
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 301,
+      "text": "4.7 Critical Indicators\nThe major or critical items in the scope of the Contract shall be identified and presented in tabular and graphical formats, which can give progress details of each of these indicators over time.The Execution Programme should drive these.Depending on the scope of the Contract this shall indicate thelikes of:\nSubmittal and Approval - Planned number of drawings per week (on Y1 axis) and Cumulative number of drawings (on Y2 axis) against time in weeks (on X axis).\nb)Submittal and Approval -Planned number of materials per week (on Y1 axis) and Cumulative number of materials (on Y2 axis) against time in weeks (on X-axis).\nc)Place Orders - Planned number per week (on Y1 axis) and Cumulative number (on Y2 axis) against timc in weeks (on X-axis) for each of the major materials.\nFabrication complete - Planned quantity of materials per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis).\nDelivered to site - Planned quantity per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis) for eachofthemajormaterials.\nInstallation complete - Planned quantity of items per week (on Y1 axis) and Cumulative quantity (on Y2 axis) against time in weeks (on X-axis) for major work activities.\nIncludeanytradeormaterialrestraintstoindicatethemovementof trades who are performing major works.\nh)Soft copy is required in Microsoft Excel format.\n4.8E Execution Method Statement\nThe Contractor shall provide with his Programme of Works, in accordance with Section 01370,detailed and descriptive narration of the methods he proposes for execution of the Works. This shall be exhaustive and cover all major components of execution, all to the approval of the Contract Administrator, the Supervision Consultant and/or Employer, to clearly demonstrate the Contractor's capabilities and expertise in executing the works.The Contractor shall be required to provide details of rnethods specifically requested by the Contract Administrator.\n4.9 9SupportData\nThe Contractor shall submit the following supporting data as a part of his Sregramme of Works and any successive updates and revisions in an apnyedton quested brthe ContractAdministrator.\n0元18Re\n有限责任公\ning.\nMisr alicalionsbiwu1GeneralRequirements\nRevO",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

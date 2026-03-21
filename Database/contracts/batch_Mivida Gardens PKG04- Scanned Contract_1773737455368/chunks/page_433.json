@@ -1,0 +1,451 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n- Operative are to be trained in safe digging techniques and briefed on the hazards of digging around buried services.\n- Scrvices that have been detected must be positively located by digging trial holes at regular intervals so the alignment of services is clearly identified; trial holes are to be hand dug using insulated hand tools. In general the use of picks, pins or forks to dislodge stone and to break up hard layers rock are prohibited.\n- Once services are exposed they are to be treated as live and adequately protected. Markers/warning signs are to be installed to warn of undcrground scrvices and all exposed/located services are to be marked on plans/drawings/permits.\n- Rcstrictions on thc use of mechanical plant are to be strictly adhered to. Where mechanical digging is tobecarriedout this must be included in themethod statement and authorized by the utilityowner. Strict adherence to safe working distances from pipes and cables is to be observed.\n- Damage to any underground service is to be immediately reported to EMAAR Misr and the utility owner and an investigation carried out to determine the cause(s).\n- &gt;A method statement and permit to work is required for all works involving underground services.\n\n## 3.8. Overhead Power Lines\n\n- Where work must be carricd out close to overhead power lines or obstructions and it is not practical to divert or isolate them,a safe system or work must be implemented.It must be assumed unless proven otherwise that all overhead services are live.\n- Owners must be contacted to determine thevoltage the line carries and the minimum safe clearance Zone and their procedures for working in close proximity to overhead power lines.\n- When working or passing under/close tooverheadpower lines thefollowing controls are tobe implemented:\n- Barriers, signs and bunting is to be erected a minimum of 6 meters (or greater depending on owners rcquiroments) to warn personnel, operators and drivers they are approaching overhead power lines Designated routes undcr ovcrhcad power lines are to be kept to a minimum and have goalposts and signs on either approachwith barriersdelineating theroute.\n- minimum clearancerequired\n- Goalposts, barriers and signs are to be regularly inspected and maintained to ensure they remain effective\n- All plant andvehicles that pass under or arerequired towork under overhead power lines are to have clearly displayed in their cab the maximum height of their vehicles, and the safe clearance zone\n- The use of plant and equipment that may approach within the safety clearance zone is to be avoided (i.e.useadozer instead of an excavator tomove material)\n- Where plant and equipment such as crane jibs have tobe used they must be positioned so they cannot approach the safety clearance zone and if this is not possible, limit devices are to be fitted\n\n<!-- image -->\n\n## EMAAR\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.16644287109375,
+          730.3229166666666
+        ],
+        [
+          340.7530110677083,
+          730.3229166666666
+        ],
+        [
+          340.7530110677083,
+          702.5413309733073
+        ],
+        [
+          192.16644287109375,
+          702.5413309733073
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          699.22412109375
+        ],
+        [
+          217.4842529296875,
+          699.22412109375
+        ],
+        [
+          217.4842529296875,
+          687.6139119466146
+        ],
+        [
+          76.36852010091145,
+          687.6139119466146
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Operative are to be trained in safe digging techniques and briefed on the hazards of digging around buried services.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          674.7597452799479
+        ],
+        [
+          496.8104248046875,
+          674.7597452799479
+        ],
+        [
+          496.8104248046875,
+          649.8807169596354
+        ],
+        [
+          92.14027913411458,
+          649.8807169596354
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Scrvices that have been detected must be positively located by digging trial holes at regular intervals so the alignment of services is clearly identified; trial holes are to be hand dug using insulated hand tools. In general the use of picks, pins or forks to dislodge stone and to break up hard layers rock are prohibited.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          644.0756022135416
+        ],
+        [
+          497.2254638671875,
+          644.0756022135416
+        ],
+        [
+          497.2254638671875,
+          594.7321980794271
+        ],
+        [
+          92.14027913411458,
+          594.7321980794271
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Once services are exposed they are to be treated as live and adequately protected. Markers/warning signs are to be installed to warn of undcrground scrvices and all exposed/located services are to be marked on plans/drawings/permits.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          587.6831258138021
+        ],
+        [
+          497.2254638671875,
+          587.6831258138021
+        ],
+        [
+          497.2254638671875,
+          550.3645833333333
+        ],
+        [
+          92.55532836914062,
+          550.3645833333333
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Rcstrictions on thc use of mechanical plant are to be strictly adhered to. Where mechanical digging is tobecarriedout this must be included in themethod statement and authorized by the utilityowner. Strict adherence to safe working distances from pipes and cables is to be observed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          545.8034261067708
+        ],
+        [
+          495.9803059895833,
+          545.8034261067708
+        ],
+        [
+          495.9803059895833,
+          508.0702311197917
+        ],
+        [
+          92.14027913411458,
+          508.0702311197917
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Damage to any underground service is to be immediately reported to EMAAR Misr and the utility owner and an investigation carried out to determine the cause(s).",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          501.02117919921875
+        ],
+        [
+          496.3953857421875,
+          501.02117919921875
+        ],
+        [
+          496.3953857421875,
+          477.38608805338544
+        ],
+        [
+          92.55532836914062,
+          477.38608805338544
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": ">A method statement and permit to work is required for all works involving underground services.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          470.33705647786456
+        ],
+        [
+          488.0944417317708,
+          470.33705647786456
+        ],
+        [
+          488.0944417317708,
+          459.14145914713544
+        ],
+        [
+          76.78356424967448,
+          459.14145914713544
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "3.8. Overhead Power Lines",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.44537353515625,
+          451.26312255859375
+        ],
+        [
+          358.1849365234375,
+          451.26312255859375
+        ],
+        [
+          358.1849365234375,
+          440.48219807942706
+        ],
+        [
+          227.44537353515625,
+          440.48219807942706
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Where work must be carricd out close to overhead power lines or obstructions and it is not practical to divert or isolate them,a safe system or work must be implemented.It must be assumed unless proven otherwise that all overhead services are live.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          432.60382080078125
+        ],
+        [
+          496.8104248046875,
+          432.60382080078125
+        ],
+        [
+          496.8104248046875,
+          396.11460367838544
+        ],
+        [
+          92.55532836914062,
+          396.11460367838544
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Owners must be contacted to determine thevoltage the line carries and the minimum safe clearance Zone and their procedures for working in close proximity to overhead power lines.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          389.06553141276044
+        ],
+        [
+          496.8104248046875,
+          389.06553141276044
+        ],
+        [
+          496.8104248046875,
+          365.84511311848956
+        ],
+        [
+          93.38541666666667,
+          365.84511311848956
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "When working or passing under/close tooverheadpower lines thefollowing controls are tobe implemented:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          358.38140869140625
+        ],
+        [
+          497.2254638671875,
+          358.38140869140625
+        ],
+        [
+          497.2254638671875,
+          334.33168538411456
+        ],
+        [
+          93.8004659016927,
+          334.33168538411456
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Barriers, signs and bunting is to be erected a minimum of 6 meters (or greater depending on owners rcquiroments) to warn personnel, operators and drivers they are approaching overhead power lines Designated routes undcr ovcrhcad power lines are to be kept to a minimum and have goalposts and signs on either approachwith barriersdelineating theroute.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          328.11191813151044
+        ],
+        [
+          498.0555419921875,
+          328.11191813151044
+        ],
+        [
+          498.0555419921875,
+          279.18316650390625
+        ],
+        [
+          92.97036743164062,
+          279.18316650390625
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "minimum clearancerequired",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          258.8652547200521
+        ],
+        [
+          211.6736043294271,
+          258.8652547200521
+        ],
+        [
+          211.6736043294271,
+          248.08437093098962
+        ],
+        [
+          94.2155049641927,
+          248.08437093098962
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Goalposts, barriers and signs are to be regularly inspected and maintained to ensure they remain effective",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          241.44993082682288
+        ],
+        [
+          498.0555419921875,
+          241.44993082682288
+        ],
+        [
+          498.0555419921875,
+          216.98557535807288
+        ],
+        [
+          94.2155049641927,
+          216.98557535807288
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "All plant andvehicles that pass under or arerequired towork under overhead power lines are to have clearly displayed in their cab the maximum height of their vehicles, and the safe clearance zone",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          209.93650309244788
+        ],
+        [
+          498.0555419921875,
+          209.93650309244788
+        ],
+        [
+          498.0555419921875,
+          187.54538981119788
+        ],
+        [
+          93.8004659016927,
+          187.54538981119788
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "The use of plant and equipment that may approach within the safety clearance zone is to be avoided (i.e.useadozer instead of an excavator tomove material)",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          180.08168538411462
+        ],
+        [
+          498.4705810546875,
+          180.08168538411462
+        ],
+        [
+          498.4705810546875,
+          156.86122639973962
+        ],
+        [
+          93.38541666666667,
+          156.86122639973962
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "Where plant and equipment such as crane jibs have tobe used they must be positioned so they cannot approach the safety clearance zone and if this is not possible, limit devices are to be fitted",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          149.39752197265625
+        ],
+        [
+          498.8856608072917,
+          149.39752197265625
+        ],
+        [
+          498.8856608072917,
+          126.59173583984375
+        ],
+        [
+          94.2155049641927,
+          126.59173583984375
+        ]
+      ],
+      "page": 433
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          738.2012736002604
+        ],
+        [
+          509.6768391927083,
+          738.2012736002604
+        ],
+        [
+          509.6768391927083,
+          724.5178019205729
+        ],
+        [
+          453.2305501302083,
+          724.5178019205729
+        ]
+      ],
+      "page": 433
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 433,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nOperative are to be trained in safe digging techniques and briefed on the hazards of digging around buried services.\nScrvices that have been detected must be positively located by digging trial holes at regular intervals so the alignment of services is clearly identified; trial holes are to be hand dug using insulated hand tools. In general the use of picks, pins or forks to dislodge stone and to break up hard layers rock are prohibited.\nOnce services are exposed they are to be treated as live and adequately protected. Markers/warning signs are to be installed to warn of undcrground scrvices and all exposed/located services are to be marked on plans/drawings/permits.\nRcstrictions on thc use of mechanical plant are to be strictly adhered to. Where mechanical digging is tobecarriedout this must be included in themethod statement and authorized by the utilityowner. Strict adherence to safe working distances from pipes and cables is to be observed.\nDamage to any underground service is to be immediately reported to EMAAR Misr and the utility owner and an investigation carried out to determine the cause(s).\n>A method statement and permit to work is required for all works involving underground services.\n3.8. Overhead Power Lines\nWhere work must be carricd out close to overhead power lines or obstructions and it is not practical to divert or isolate them,a safe system or work must be implemented.It must be assumed unless proven otherwise that all overhead services are live.\nOwners must be contacted to determine thevoltage the line carries and the minimum safe clearance Zone and their procedures for working in close proximity to overhead power lines.\nWhen working or passing under/close tooverheadpower lines thefollowing controls are tobe implemented:\nBarriers, signs and bunting is to be erected a minimum of 6 meters (or greater depending on owners rcquiroments) to warn personnel, operators and drivers they are approaching overhead power lines Designated routes undcr ovcrhcad power lines are to be kept to a minimum and have goalposts and signs on either approachwith barriersdelineating theroute.\nminimum clearancerequired\nGoalposts, barriers and signs are to be regularly inspected and maintained to ensure they remain effective\nAll plant andvehicles that pass under or arerequired towork under overhead power lines are to have clearly displayed in their cab the maximum height of their vehicles, and the safe clearance zone\nThe use of plant and equipment that may approach within the safety clearance zone is to be avoided (i.e.useadozer instead of an excavator tomove material)\nWhere plant and equipment such as crane jibs have tobe used they must be positioned so they cannot approach the safety clearance zone and if this is not possible, limit devices are to be fitted\nEMAAR",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef: EGY/PRJCTS/HSE/REQs\n\n- ·Demolition work\n- Pressure testing of pipelines or systems\n- During any excavation or breaking ground\n- Controlling access to complete or specific areas\n- ·Any other clearly dangerous circumstances where formal coordination of people and precautions is necessary in order to secure safety\n- A competent person is to be assigned responsibility and ensure an appropriate PTW system is introduced and suitable procedures are to be established and maintained. Procedures are to cover as a minimum:\n- When aPTW is required\n- Work planning and risk assessment\n- Essentials of the PTW system (permit authorization, issue, display, suspension, hand- back)\n- Roles and responsibilities of those involved\n- Training and competence\n- Monitoring,auditandreview\n- Permits are to be numbered sequentially and recorded in aPTWRegister.\n- Personnel who are responsible forissuing,supervising and usingPTW systems are to be trained and competent in their use.\n- PTW are to be displayed at the site or in a recognized location near to the site (i.e. in the control room), a copy is also to be held with the issuing authority. Permits are to be closed out or suspended at the end of the duration specified on the permit, where work is to continue as new permit is to be issued.\n- Management is to ensure that the controls included in the PTW system are adequately implemented by undertaking regular monitoring and inspections of the workplace.\n- &gt; A method statement is required for all works where a permit will be issued.\n\n## 3.30. Control of Substances Hazardous to Health (COsHH)\n\n- The use of hazardous substances must be considered during the design stage by designers and by procurement staff before ordering. Designers and procurement staff must liaise with health and safety staff to determinewhether a safer alternative towhat is being proposed is available.\n- All hazardous substances that are to be used are to be recorded in an inventory, not to be brought ontosite unless a material safety data sheet (MSDs) has been provided and must not beused until a specific COsHH assessment hasbeen carried out.\n\n<!-- image -->\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.75138346354166,
+          729.0789591471354
+        ],
+        [
+          340.7530110677083,
+          729.0789591471354
+        ],
+        [
+          340.7530110677083,
+          699.22412109375
+        ],
+        [
+          191.75138346354166,
+          699.22412109375
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Ref: EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          699.22412109375
+        ],
+        [
+          217.8993123372396,
+          685.5406595865885
+        ],
+        [
+          75.53842671712239,
+          685.5406595865885
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "·Demolition work",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          671.857187906901
+        ],
+        [
+          180.9601847330729,
+          671.857187906901
+        ],
+        [
+          180.9601847330729,
+          661.0762736002604
+        ],
+        [
+          97.12082926432292,
+          661.0762736002604
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Pressure testing of pipelines or systems",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          653.6125691731771
+        ],
+        [
+          269.78009033203125,
+          653.6125691731771
+        ],
+        [
+          269.78009033203125,
+          641.5877075195312
+        ],
+        [
+          108.32708740234375,
+          641.5877075195312
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "During any excavation or breaking ground",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.44120279947917,
+          635.7825927734375
+        ],
+        [
+          283.0615641276042,
+          635.7825927734375
+        ],
+        [
+          283.0615641276042,
+          623.3430786132812
+        ],
+        [
+          100.44120279947917,
+          623.3430786132812
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Controlling access to complete or specific areas",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          617.5379638671875
+        ],
+        [
+          304.22894287109375,
+          617.5379638671875
+        ],
+        [
+          304.22894287109375,
+          604.6837972005209
+        ],
+        [
+          100.8562520345052,
+          604.6837972005209
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "·Any other clearly dangerous circumstances where formal coordination of people and precautions is necessary in order to secure safety",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          599.2933553059896
+        ],
+        [
+          508.0166829427083,
+          599.2933553059896
+        ],
+        [
+          508.0166829427083,
+          569.4385172526041
+        ],
+        [
+          97.12082926432292,
+          569.4385172526041
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "A competent person is to be assigned responsibility and ensure an appropriate PTW system is introduced and suitable procedures are to be established and maintained. Procedures are to cover as a minimum:",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          558.6575927734375
+        ],
+        [
+          497.2254638671875,
+          558.6575927734375
+        ],
+        [
+          497.2254638671875,
+          522.1683553059895
+        ],
+        [
+          90.06504313151042,
+          522.1683553059895
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "When aPTW is required",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          514.2899983723958
+        ],
+        [
+          210.8435262044271,
+          514.2899983723958
+        ],
+        [
+          210.8435262044271,
+          502.26511637369794
+        ],
+        [
+          107.08193969726562,
+          502.26511637369794
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Work planning and risk assessment",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          496.0453694661458
+        ],
+        [
+          254.42338053385416,
+          496.0453694661458
+        ],
+        [
+          254.42338053385416,
+          484.0205078125
+        ],
+        [
+          99.19606526692708,
+          484.0205078125
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Essentials of the PTW system (permit authorization, issue, display, suspension, hand- back)",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          478.21539306640625
+        ],
+        [
+          481.0386555989583,
+          478.21539306640625
+        ],
+        [
+          481.0386555989583,
+          464.53192138671875
+        ],
+        [
+          106.66690063476562,
+          464.53192138671875
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Roles and responsibilities of those involved",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          459.55613199869794
+        ],
+        [
+          286.7969970703125,
+          459.55613199869794
+        ],
+        [
+          286.7969970703125,
+          447.94590250651044
+        ],
+        [
+          106.66690063476562,
+          447.94590250651044
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Training and competence",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.61111450195312,
+          440.48219807942706
+        ],
+        [
+          213.33380126953125,
+          440.48219807942706
+        ],
+        [
+          213.33380126953125,
+          429.28664143880206
+        ],
+        [
+          99.61111450195312,
+          429.28664143880206
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Monitoring,auditandreview",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.365966796875,
+          423.06687418619794
+        ],
+        [
+          228.27547200520834,
+          423.06687418619794
+        ],
+        [
+          228.27547200520834,
+          411.04201253255206
+        ],
+        [
+          98.365966796875,
+          411.04201253255206
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Permits are to be numbered sequentially and recorded in aPTWRegister.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          400.67576090494794
+        ],
+        [
+          390.9735921223958,
+          400.67576090494794
+        ],
+        [
+          390.9735921223958,
+          386.99228922526044
+        ],
+        [
+          90.48009236653645,
+          386.99228922526044
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Personnel who are responsible forissuing,supervising and usingPTW systems are to be trained and competent in their use.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          382.84576416015625
+        ],
+        [
+          496.8104248046875,
+          382.84576416015625
+        ],
+        [
+          496.8104248046875,
+          357.13743082682294
+        ],
+        [
+          90.8951416015625,
+          357.13743082682294
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "PTW are to be displayed at the site or in a recognized location near to the site (i.e. in the control room), a copy is also to be held with the issuing authority. Permits are to be closed out or suspended at the end of the duration specified on the permit, where work is to continue as new permit is to be issued.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          351.74696858723956
+        ],
+        [
+          495.9803059895833,
+          351.74696858723956
+        ],
+        [
+          495.9803059895833,
+          302.8182169596354
+        ],
+        [
+          90.06504313151042,
+          302.8182169596354
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "Management is to ensure that the controls included in the PTW system are adequately implemented by undertaking regular monitoring and inspections of the workplace.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          295.7691853841146
+        ],
+        [
+          495.5652669270833,
+          295.7691853841146
+        ],
+        [
+          495.5652669270833,
+          269.64617919921875
+        ],
+        [
+          90.48009236653645,
+          269.64617919921875
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "> A method statement is required for all works where a permit will be issued.",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.46319580078125,
+          265.9143269856771
+        ],
+        [
+          397.6143391927083,
+          265.9143269856771
+        ],
+        [
+          397.6143391927083,
+          251.40155029296875
+        ],
+        [
+          73.46319580078125,
+          251.40155029296875
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "3.30. Control of Substances Hazardous to Health (COsHH)",
+      "confidence": 0.95,
+      "box": [
+        [
+          148.58657836914062,
+          246.42576090494788
+        ],
+        [
+          434.553466796875,
+          246.42576090494788
+        ],
+        [
+          434.553466796875,
+          232.74228922526038
+        ],
+        [
+          148.58657836914062,
+          232.74228922526038
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "The use of hazardous substances must be considered during the design stage by designers and by procurement staff before ordering. Designers and procurement staff must liaise with health and safety staff to determinewhether a safer alternative towhat is being proposed is available.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          228.18113199869788
+        ],
+        [
+          495.5652669270833,
+          228.18113199869788
+        ],
+        [
+          495.5652669270833,
+          189.61863199869788
+        ],
+        [
+          89.65000406901042,
+          189.61863199869788
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "All hazardous substances that are to be used are to be recorded in an inventory, not to be brought ontosite unless a material safety data sheet (MSDs) has been provided and must not beused until a specific COsHH assessment hasbeen carried out.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          184.64284261067712
+        ],
+        [
+          494.7351888020833,
+          184.64284261067712
+        ],
+        [
+          494.7351888020833,
+          146.90964762369788
+        ],
+        [
+          87.9898173014323,
+          146.90964762369788
+        ]
+      ],
+      "page": 462
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          454.4757080078125,
+          734.0547688802084
+        ],
+        [
+          511.3370361328125,
+          734.0547688802084
+        ],
+        [
+          511.3370361328125,
+          721.2006022135416
+        ],
+        [
+          454.4757080078125,
+          721.2006022135416
+        ]
+      ],
+      "page": 462
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 462,
+      "text": "Projects Department Health & Safety Standards\nRef: EGY/PRJCTS/HSE/REQs\n·Demolition work\nPressure testing of pipelines or systems\nDuring any excavation or breaking ground\nControlling access to complete or specific areas\n·Any other clearly dangerous circumstances where formal coordination of people and precautions is necessary in order to secure safety\nA competent person is to be assigned responsibility and ensure an appropriate PTW system is introduced and suitable procedures are to be established and maintained. Procedures are to cover as a minimum:\nWhen aPTW is required\nWork planning and risk assessment\nEssentials of the PTW system (permit authorization, issue, display, suspension, hand- back)\nRoles and responsibilities of those involved\nTraining and competence\nMonitoring,auditandreview\nPermits are to be numbered sequentially and recorded in aPTWRegister.\nPersonnel who are responsible forissuing,supervising and usingPTW systems are to be trained and competent in their use.\nPTW are to be displayed at the site or in a recognized location near to the site (i.e. in the control room), a copy is also to be held with the issuing authority. Permits are to be closed out or suspended at the end of the duration specified on the permit, where work is to continue as new permit is to be issued.\nManagement is to ensure that the controls included in the PTW system are adequately implemented by undertaking regular monitoring and inspections of the workplace.\n> A method statement is required for all works where a permit will be issued.\n3.30. Control of Substances Hazardous to Health (COsHH)\nThe use of hazardous substances must be considered during the design stage by designers and by procurement staff before ordering. Designers and procurement staff must liaise with health and safety staff to determinewhether a safer alternative towhat is being proposed is available.\nAll hazardous substances that are to be used are to be recorded in an inventory, not to be brought ontosite unless a material safety data sheet (MSDs) has been provided and must not beused until a specific COsHH assessment hasbeen carried out.\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

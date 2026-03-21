@@ -1,0 +1,152 @@
+{
+  "text": "## 2.4.2.4.1. Monitoring:\n\n- Monitoring of works to ensure that requirements are being complied with is a key feedback element to confirm, or otherwise, the successful implementation of the Program Partners H&amp;S Policy, HSMS, HSP etc.\n\n<!-- image -->\n\n## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n2.4.2.4. Monitoring and Measuring Performancc\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "2.4.2.4.1. Monitoring:",
+      "confidence": 0.95,
+      "box": [
+        [
+          71.38796488444011,
+          169.71539306640625
+        ],
+        [
+          168.09375,
+          169.71539306640625
+        ],
+        [
+          168.09375,
+          156.44659423828125
+        ],
+        [
+          71.38796488444011,
+          156.44659423828125
+        ]
+      ],
+      "page": 412
+    },
+    {
+      "text": "Monitoring of works to ensure that requirements are being complied with is a key feedback element to confirm, or otherwise, the successful implementation of the Program Partners H&S Policy, HSMS, HSP etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.32963053385417,
+          151.05613199869788
+        ],
+        [
+          494.3201497395833,
+          151.05613199869788
+        ],
+        [
+          494.3201497395833,
+          113.32293701171875
+        ],
+        [
+          86.32963053385417,
+          113.32293701171875
+        ]
+      ],
+      "page": 412
+    },
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.33634440104166,
+          729.9082641601562
+        ],
+        [
+          340.7530110677083,
+          729.9082641601562
+        ],
+        [
+          340.7530110677083,
+          699.6387736002604
+        ],
+        [
+          191.33634440104166,
+          699.6387736002604
+        ]
+      ],
+      "page": 412
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          699.22412109375
+        ],
+        [
+          217.4842529296875,
+          699.22412109375
+        ],
+        [
+          217.4842529296875,
+          686.3699544270834
+        ],
+        [
+          75.95347086588542,
+          686.3699544270834
+        ]
+      ],
+      "page": 412
+    },
+    {
+      "text": "2.4.2.4. Monitoring and Measuring Performancc",
+      "confidence": 0.95,
+      "box": [
+        [
+          182.205322265625,
+          186.30141194661462
+        ],
+        [
+          395.5391031901042,
+          186.30141194661462
+        ],
+        [
+          395.5391031901042,
+          173.86191813151038
+        ],
+        [
+          182.205322265625,
+          173.86191813151038
+        ]
+      ],
+      "page": 412
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          735.2987162272135
+        ],
+        [
+          510.9219970703125,
+          735.2987162272135
+        ],
+        [
+          510.9219970703125,
+          720.3712972005209
+        ],
+        [
+          452.8155110677083,
+          720.3712972005209
+        ]
+      ],
+      "page": 412
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 412,
+      "text": "2.4.2.4.1. Monitoring:\nMonitoring of works to ensure that requirements are being complied with is a key feedback element to confirm, or otherwise, the successful implementation of the Program Partners H&S Policy, HSMS, HSP etc.\nProjects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n2.4.2.4. Monitoring and Measuring Performancc\nEMAAR",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

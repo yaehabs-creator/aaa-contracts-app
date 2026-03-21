@@ -1,0 +1,589 @@
+{
+  "text": "<!-- image -->\n\n[Date]\n\nEMAAR MISR FOR DEVELOPMENT,H/Q atEmaar Misr Sales Center-\"Uptown Cairo\",P.O.Box229,MOKATTAM11571,CAIRO,EGYPT\n\nDear Sirs,\n\nMivida Gardens Project in East Cairo,Cairo - ARAB REPUBLIC OF EGYPT, construction,completion,maintenance,andguaranteeofPK#04:ConstructionofParcel 11,Parcel 12 Townhomes&amp;GradingWorks forParcel 11 inMividaGardensProject.\n\n## PERFORMANCEBONDNO.....\n\nWhereasourclient,... .(referredtohereinafteras\"theContractor\") hasenteredintoacontractwithyoudated .(referred tohereinafteras\"the Contract\") for the carrying out and completion of PK#04: Construction of Parcel 11, Parcel 12Townhomes&amp;GradingWorksforParcel 11,formingpartof theprojectknown as Mivida Gardens Project inEast Cairo, Cairo - Arab Republic of Egypt.\n\nAnd whereas the Contract contains, inter alia, an obligation on the part of the Contractor to obtain and deliver a Performance Bond in the amount of ten percent(10%) of the Contract Value in Egyptian pounds (LE.).\n\nWe,[nameofBankandaddress],herebyirrevocablyandunconditionallyundertakethat, forthwith uponour receiving writtennoticefrom your duly authorized representative statingthattheContractorhasfailed toobserveorperformanyof theterms,conditions orprovisionsof theContractonitspart tobeobservedorperformedwewill,withoutproof orconditions and without any right of set-offdeductionor counterclaimand notwithstandinganyobjectionwhichmaybemadebytheContractororanyotherperson, forthwith pay to you to such account as you may nominate in EGYPTIAN POUNDS such amount as you may in such notice require not exceeding (when aggregated with any amount(s)previouslysopaid) theamountforwhich thisBond is forthetimebeingvalid.\n\nThis Bond shall be valid from the date hereof in its full amount (save as may from time to time be reduced in accordance with the terms hereof) namely ten percent (10%) of the Contract Value in Egyptian pounds and shall continue to be so valid with respect to any suchwrittennoticetous asisreferred to aboveandasisreceivedbyusnotlater than the date upon which this Bond expires.\n\nThis Bond shall expire on the ninetieth day after the expiry of the Defects LiabilityPeriod whichis365calendardaysfromtheissueoftheTakingOverCertificateafterwhichthis Security shall be null and void.\n\ninwriting thatthedateninety(9o)daysfromtheissueunder theContractofaFinal\n\n中建国际埃及\n\nEnaar Mist\n\nMISR\n\nTaoCad718-287.306\n\nCR12841\n\nPOBo230，M\n\nCalm.Eo\n\nAikw\n\n## APPENDIXB\n\n## FORM OFPERFORMANCEBOND\n\nAppendixB\n\nrcel 11,Parcel 12Townhomes&amp;GradinigWoriksforParcel11\n\nPage 1 of 2\n\nAppendixBFormofPorformancoBond",
+  "results": [
+    {
+      "text": "[Date]",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.40387980143228,
+          645.6870524088541
+        ],
+        [
+          189.8470662434896,
+          645.6870524088541
+        ],
+        [
+          189.8470662434896,
+          635.0813598632812
+        ],
+        [
+          159.40387980143228,
+          635.0813598632812
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "EMAAR MISR FOR DEVELOPMENT,H/Q atEmaar Misr Sales Center-\"Uptown Cairo\",P.O.Box229,MOKATTAM11571,CAIRO,EGYPT",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.90671793619792,
+          624.4756876627604
+        ],
+        [
+          499.3527425130208,
+          624.4756876627604
+        ],
+        [
+          499.3527425130208,
+          603.6885579427084
+        ],
+        [
+          90.90671793619792,
+          603.6885579427084
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Dear Sirs,",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3295389811198,
+          589.2648315429688
+        ],
+        [
+          139.10842895507812,
+          589.2648315429688
+        ],
+        [
+          139.10842895507812,
+          577.8107096354167
+        ],
+        [
+          91.3295389811198,
+          577.8107096354167
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Mivida Gardens Project in East Cairo,Cairo - ARAB REPUBLIC OF EGYPT, construction,completion,maintenance,andguaranteeofPK#04:ConstructionofParcel 11,Parcel 12 Townhomes&GradingWorks forParcel 11 inMividaGardensProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48389689127605,
+          565.5081176757812
+        ],
+        [
+          495.12451171875,
+          565.5081176757812
+        ],
+        [
+          495.12451171875,
+          532.4183959960938
+        ],
+        [
+          90.48389689127605,
+          532.4183959960938
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "PERFORMANCEBONDNO.....",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.75236002604167,
+          516.7219848632812
+        ],
+        [
+          241.0085245768229,
+          516.7219848632812
+        ],
+        [
+          241.0085245768229,
+          507.81321207682294
+        ],
+        [
+          91.75236002604167,
+          507.81321207682294
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Whereasourclient,... .(referredtohereinafteras\"theContractor\") hasenteredintoacontractwithyoudated .(referred tohereinafteras\"the Contract\") for the carrying out and completion of PK#04: Construction of Parcel 11, Parcel 12Townhomes&GradingWorksforParcel 11,formingpartof theprojectknown as Mivida Gardens Project inEast Cairo, Cairo - Arab Republic of Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.90671793619792,
+          495.08640543619794
+        ],
+        [
+          495.9701741536458,
+          495.08640543619794
+        ],
+        [
+          495.9701741536458,
+          435.27036539713544
+        ],
+        [
+          90.90671793619792,
+          435.27036539713544
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "And whereas the Contract contains, inter alia, an obligation on the part of the Contractor to obtain and deliver a Performance Bond in the amount of ten percent(10%) of the Contract Value in Egyptian pounds (LE.).",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.90671793619792,
+          421.69508870442706
+        ],
+        [
+          496.3929850260417,
+          421.69508870442706
+        ],
+        [
+          496.3929850260417,
+          386.48423258463544
+        ],
+        [
+          90.90671793619792,
+          386.48423258463544
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "We,[nameofBankandaddress],herebyirrevocablyandunconditionallyundertakethat, forthwith uponour receiving writtennoticefrom your duly authorized representative statingthattheContractorhasfailed toobserveorperformanyof theterms,conditions orprovisionsof theContractonitspart tobeobservedorperformedwewill,withoutproof orconditions and without any right of set-offdeductionor counterclaimand notwithstandinganyobjectionwhichmaybemadebytheContractororanyotherperson, forthwith pay to you to such account as you may nominate in EGYPTIAN POUNDS such amount as you may in such notice require not exceeding (when aggregated with any amount(s)previouslysopaid) theamountforwhich thisBond is forthetimebeingvalid.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.75236002604167,
+          373.33319091796875
+        ],
+        [
+          497.6614583333333,
+          373.33319091796875
+        ],
+        [
+          497.6614583333333,
+          268.97332763671875
+        ],
+        [
+          91.75236002604167,
+          268.97332763671875
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "This Bond shall be valid from the date hereof in its full amount (save as may from time to time be reduced in accordance with the terms hereof) namely ten percent (10%) of the Contract Value in Egyptian pounds and shall continue to be so valid with respect to any suchwrittennoticetous asisreferred to aboveandasisreceivedbyusnotlater than the date upon which this Bond expires.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.17519124348958,
+          254.54962158203125
+        ],
+        [
+          497.6614583333333,
+          254.54962158203125
+        ],
+        [
+          497.6614583333333,
+          195.15781656901038
+        ],
+        [
+          92.17519124348958,
+          195.15781656901038
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "This Bond shall expire on the ninetieth day after the expiry of the Defects LiabilityPeriod whichis365calendardaysfromtheissueoftheTakingOverCertificateafterwhichthis Security shall be null and void.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          182.43096923828125
+        ],
+        [
+          497.2386067708333,
+          182.43096923828125
+        ],
+        [
+          497.2386067708333,
+          147.64434814453125
+        ],
+        [
+          93.4436543782552,
+          147.64434814453125
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "inwriting thatthedateninety(9o)daysfromtheissueunder theContractofaFinal",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          121.76649983723962
+        ],
+        [
+          498.507080078125,
+          121.76649983723962
+        ],
+        [
+          498.507080078125,
+          113.70619710286462
+        ],
+        [
+          92.59801228841145,
+          113.70619710286462
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "中建国际埃及",
+      "confidence": 0.95,
+      "box": [
+        [
+          58.77225240071615,
+          96.73712158203125
+        ],
+        [
+          123.0411885579427,
+          96.73712158203125
+        ],
+        [
+          123.0411885579427,
+          86.55564371744788
+        ],
+        [
+          58.77225240071615,
+          86.55564371744788
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Enaar Mist",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.32291666666667,
+          84.43454996744788
+        ],
+        [
+          138.68559773763022,
+          84.43454996744788
+        ],
+        [
+          138.68559773763022,
+          75.95001220703125
+        ],
+        [
+          102.32291666666667,
+          75.95001220703125
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.50426228841145,
+          725.865976969401
+        ],
+        [
+          146.29639689127603,
+          725.865976969401
+        ],
+        [
+          146.29639689127603,
+          713.9876200358073
+        ],
+        [
+          120.50426228841145,
+          713.9876200358073
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "TaoCad718-287.306",
+      "confidence": 0.95,
+      "box": [
+        [
+          149.25615437825522,
+          59.82932535807288
+        ],
+        [
+          209.296875,
+          59.82932535807288
+        ],
+        [
+          209.296875,
+          55.58705647786462
+        ],
+        [
+          149.25615437825522,
+          55.58705647786462
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "CR12841",
+      "confidence": 0.95,
+      "box": [
+        [
+          151.3702596028646,
+          53.04172770182288
+        ],
+        [
+          178.0080362955729,
+          53.04172770182288
+        ],
+        [
+          178.0080362955729,
+          46.67828369140625
+        ],
+        [
+          151.3702596028646,
+          46.67828369140625
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "POBo230，M",
+      "confidence": 0.95,
+      "box": [
+        [
+          150.94743855794272,
+          46.67828369140625
+        ],
+        [
+          194.07527669270834,
+          46.67828369140625
+        ],
+        [
+          194.07527669270834,
+          42.01177978515625
+        ],
+        [
+          150.94743855794272,
+          42.01177978515625
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Calm.Eo",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.21590169270834,
+          40.73915608723962
+        ],
+        [
+          183.92755126953125,
+          40.73915608723962
+        ],
+        [
+          183.92755126953125,
+          33.95147705078125
+        ],
+        [
+          152.21590169270834,
+          33.95147705078125
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Aikw",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.0553995768229,
+          45.40557861328125
+        ],
+        [
+          246.92801920572916,
+          45.40557861328125
+        ],
+        [
+          246.92801920572916,
+          36.49680582682288
+        ],
+        [
+          227.0553995768229,
+          36.49680582682288
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "APPENDIXB",
+      "confidence": 0.95,
+      "box": [
+        [
+          260.03550211588544,
+          695.745849609375
+        ],
+        [
+          325.15008544921875,
+          695.745849609375
+        ],
+        [
+          325.15008544921875,
+          684.2917175292969
+        ],
+        [
+          260.03550211588544,
+          684.2917175292969
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "FORM OFPERFORMANCEBOND",
+      "confidence": 0.95,
+      "box": [
+        [
+          209.296875,
+          671.1406758626302
+        ],
+        [
+          374.6202392578125,
+          671.1406758626302
+        ],
+        [
+          374.6202392578125,
+          661.8076782226562
+        ],
+        [
+          209.296875,
+          661.8076782226562
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "AppendixB",
+      "confidence": 0.95,
+      "box": [
+        [
+          393.6472574869792,
+          717.3814392089844
+        ],
+        [
+          434.2381591796875,
+          717.3814392089844
+        ],
+        [
+          434.2381591796875,
+          707.6242065429688
+        ],
+        [
+          393.6472574869792,
+          707.6242065429688
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "rcel 11,Parcel 12Townhomes&GradinigWoriksforParcel11",
+      "confidence": 0.95,
+      "box": [
+        [
+          323.0359700520833,
+          86.55564371744788
+        ],
+        [
+          501.0440266927083,
+          86.55564371744788
+        ],
+        [
+          501.0440266927083,
+          78.49534098307288
+        ],
+        [
+          323.0359700520833,
+          78.49534098307288
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "Page 1 of 2",
+      "confidence": 0.95,
+      "box": [
+        [
+          468.0639241536458,
+          72.98036702473962
+        ],
+        [
+          501.0440266927083,
+          72.98036702473962
+        ],
+        [
+          501.0440266927083,
+          64.49582926432288
+        ],
+        [
+          468.0639241536458,
+          64.49582926432288
+        ]
+      ],
+      "page": 152
+    },
+    {
+      "text": "AppendixBFormofPorformancoBond",
+      "confidence": 0.95,
+      "box": [
+        [
+          388.1505533854167,
+          79.34381103515625
+        ],
+        [
+          500.6212158203125,
+          79.34381103515625
+        ],
+        [
+          500.6212158203125,
+          72.13189697265625
+        ],
+        [
+          388.1505533854167,
+          72.13189697265625
+        ]
+      ],
+      "page": 152
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 152,
+      "text": "[Date]\nEMAAR MISR FOR DEVELOPMENT,H/Q atEmaar Misr Sales Center-\"Uptown Cairo\",P.O.Box229,MOKATTAM11571,CAIRO,EGYPT\nDear Sirs,\nMivida Gardens Project in East Cairo,Cairo - ARAB REPUBLIC OF EGYPT, construction,completion,maintenance,andguaranteeofPK#04:ConstructionofParcel 11,Parcel 12 Townhomes&GradingWorks forParcel 11 inMividaGardensProject.\nPERFORMANCEBONDNO.....\nWhereasourclient,... .(referredtohereinafteras\"theContractor\") hasenteredintoacontractwithyoudated .(referred tohereinafteras\"the Contract\") for the carrying out and completion of PK#04: Construction of Parcel 11, Parcel 12Townhomes&GradingWorksforParcel 11,formingpartof theprojectknown as Mivida Gardens Project inEast Cairo, Cairo - Arab Republic of Egypt.\nAnd whereas the Contract contains, inter alia, an obligation on the part of the Contractor to obtain and deliver a Performance Bond in the amount of ten percent(10%) of the Contract Value in Egyptian pounds (LE.).\nWe,[nameofBankandaddress],herebyirrevocablyandunconditionallyundertakethat, forthwith uponour receiving writtennoticefrom your duly authorized representative statingthattheContractorhasfailed toobserveorperformanyof theterms,conditions orprovisionsof theContractonitspart tobeobservedorperformedwewill,withoutproof orconditions and without any right of set-offdeductionor counterclaimand notwithstandinganyobjectionwhichmaybemadebytheContractororanyotherperson, forthwith pay to you to such account as you may nominate in EGYPTIAN POUNDS such amount as you may in such notice require not exceeding (when aggregated with any amount(s)previouslysopaid) theamountforwhich thisBond is forthetimebeingvalid.\nThis Bond shall be valid from the date hereof in its full amount (save as may from time to time be reduced in accordance with the terms hereof) namely ten percent (10%) of the Contract Value in Egyptian pounds and shall continue to be so valid with respect to any suchwrittennoticetous asisreferred to aboveandasisreceivedbyusnotlater than the date upon which this Bond expires.\nThis Bond shall expire on the ninetieth day after the expiry of the Defects LiabilityPeriod whichis365calendardaysfromtheissueoftheTakingOverCertificateafterwhichthis Security shall be null and void.\ninwriting thatthedateninety(9o)daysfromtheissueunder theContractofaFinal\n中建国际埃及\nEnaar Mist\nMISR\nTaoCad718-287.306\nCR12841\nPOBo230，M\nCalm.Eo\nAikw\nAPPENDIXB\nFORM OFPERFORMANCEBOND\nAppendixB\nrcel 11,Parcel 12Townhomes&GradinigWoriksforParcel11\nPage 1 of 2\nAppendixBFormofPorformancoBond",
+      "line_count": 25
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,267 @@
+{
+  "text": "## Payment and Services\n\n- 10.4 (a)\n- TheContractorshall befullyandexclusivelyliableforthepaymentof allsalaries,wages andotherremunerationandbenefitsofeverykind whichmaybecomeduetoorpayableinrespectofallpersons employedbytheContractorinconnectionwiththecarryingoutand completionoftheWorksandtheremedyingofdefectstherein,and for the provision to such persons of all housing,transportation, feedingandsupportservices.Intheeventofanyfailureby the Contractortocarryoutinfull itsobligationsunder thisSub-Clause 10.4(a), the Employer may (without prejudice to any other rights) itself make such payment or provision as aforesaid and deduct the CostthereofasdeterminedbytheProjectManagerfromanymonies dueorwhichmaybecomeduetotheContractororrecoverthesame as a debtduefrom theContractor.\n- (b) TheContractorshallpayratesofwages,andobserveconditionsof labour,whicharenotlowerthanthoseestablishedforthetradeor industrywheretheworkiscarriedout.Ifnoestablishedratesor conditionsareapplicable,theContractorshallpayratesofwages andobserveconditionswhicharenotlowerthanthegenerallevel of industry is similar to thatof theContractor.\n\n## AlcoholicLiquororDrugs\n\n- 10.5TheContractorshall not,otherwise thaninaccordancewith the laws and regulations for the time being in force in the Country,import, sell,give, barterorotherwisedisposeofanyalcoholicliquorordrugs.TheContractor shalluseall reasonableendeavourstopreventanysuchimportation,sale, gift, barter or disposal by its employees or agents.\n\n## Armsand Ammunition\n\n- 10.6 The Contractor shall not in respect of the Country,import, sell, give,barter or otherwise dispose of to any person or persons, any arms or ammunition ofanykind.TheContractorshalluseall reasonableendeavourstoprevent any such importation,sale,gift,barteror disposal by its employees or agents.\n\n## FestivalsandReligiousCustoms\n\n- 10.7 The Contractor shall respect allrecognised festivals,days of rest and religious or other customs in the Country.\n- 10.8 TheContractorshallatalltimestakeallreasonableprecautionstoprevent and near the Site.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Payment and Services",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          724.1690673828125
+        ],
+        [
+          197.88067626953125,
+          724.1690673828125
+        ],
+        [
+          197.88067626953125,
+          710.1695760091146
+        ],
+        [
+          95.55775960286458,
+          710.1695760091146
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "10.4 (a)",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          702.5334879557291
+        ],
+        [
+          172.5113525390625,
+          702.5334879557291
+        ],
+        [
+          172.5113525390625,
+          688.1097615559896
+        ],
+        [
+          126.42376708984375,
+          688.1097615559896
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "TheContractorshall befullyandexclusivelyliableforthepaymentof allsalaries,wages andotherremunerationandbenefitsofeverykind whichmaybecomeduetoorpayableinrespectofallpersons employedbytheContractorinconnectionwiththecarryingoutand completionoftheWorksandtheremedyingofdefectstherein,and for the provision to such persons of all housing,transportation, feedingandsupportservices.Intheeventofanyfailureby the Contractortocarryoutinfull itsobligationsunder thisSub-Clause 10.4(a), the Employer may (without prejudice to any other rights) itself make such payment or provision as aforesaid and deduct the CostthereofasdeterminedbytheProjectManagerfromanymonies dueorwhichmaybecomeduetotheContractororrecoverthesame as a debtduefrom theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.5785929361979,
+          700.8365783691406
+        ],
+        [
+          487.9365234375,
+          700.8365783691406
+        ],
+        [
+          487.9365234375,
+          554.053975423177
+        ],
+        [
+          188.5785929361979,
+          554.053975423177
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "(b) TheContractorshallpayratesofwages,andobserveconditionsof labour,whicharenotlowerthanthoseestablishedforthetradeor industrywheretheworkiscarriedout.Ifnoestablishedratesor conditionsareapplicable,theContractorshallpayratesofwages andobserveconditionswhicharenotlowerthanthegenerallevel of industry is similar to thatof theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          541.7513834635417
+        ],
+        [
+          488.7821858723958,
+          541.7513834635417
+        ],
+        [
+          488.7821858723958,
+          462.84515380859375
+        ],
+        [
+          158.13541666666666,
+          462.84515380859375
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "AlcoholicLiquororDrugs",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          450.96677652994794
+        ],
+        [
+          210.5653279622396,
+          450.96677652994794
+        ],
+        [
+          210.5653279622396,
+          438.66420491536456
+        ],
+        [
+          96.40340169270833,
+          438.66420491536456
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "10.5TheContractorshall not,otherwise thaninaccordancewith the laws and regulations for the time being in force in the Country,import, sell,give, barterorotherwisedisposeofanyalcoholicliquorordrugs.TheContractor shalluseall reasonableendeavourstopreventanysuchimportation,sale, gift, barter or disposal by its employees or agents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          428.05853271484375
+        ],
+        [
+          488.359375,
+          428.05853271484375
+        ],
+        [
+          488.359375,
+          371.63629150390625
+        ],
+        [
+          127.2694091796875,
+          371.63629150390625
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "Armsand Ammunition",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          359.75795491536456
+        ],
+        [
+          197.0350341796875,
+          359.75795491536456
+        ],
+        [
+          197.0350341796875,
+          348.72804768880206
+        ],
+        [
+          96.82623291015625,
+          348.72804768880206
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "10.6 The Contractor shall not in respect of the Country,import, sell, give,barter or otherwise dispose of to any person or persons, any arms or ammunition ofanykind.TheContractorshalluseall reasonableendeavourstoprevent any such importation,sale,gift,barteror disposal by its employees or agents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          337.69814046223956
+        ],
+        [
+          489.2049967447917,
+          337.69814046223956
+        ],
+        [
+          489.2049967447917,
+          280.8517049153646
+        ],
+        [
+          128.11505126953125,
+          280.8517049153646
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "FestivalsandReligiousCustoms",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          268.97332763671875
+        ],
+        [
+          244.81392415364584,
+          268.97332763671875
+        ],
+        [
+          244.81392415364584,
+          257.94342041015625
+        ],
+        [
+          97.24905395507812,
+          257.94342041015625
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "10.7 The Contractor shall respect allrecognised festivals,days of rest and religious or other customs in the Country.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          246.91351318359375
+        ],
+        [
+          488.7821858723958,
+          246.91351318359375
+        ],
+        [
+          488.7821858723958,
+          223.15679931640625
+        ],
+        [
+          128.11505126953125,
+          223.15679931640625
+        ]
+      ],
+      "page": 54
+    },
+    {
+      "text": "10.8 TheContractorshallatalltimestakeallreasonableprecautionstoprevent and near the Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.11505126953125,
+          190.06707763671875
+        ],
+        [
+          490.0506591796875,
+          190.06707763671875
+        ],
+        [
+          490.0506591796875,
+          145.52325439453125
+        ],
+        [
+          128.11505126953125,
+          145.52325439453125
+        ]
+      ],
+      "page": 54
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 54,
+      "text": "Payment and Services\n10.4 (a)\nTheContractorshall befullyandexclusivelyliableforthepaymentof allsalaries,wages andotherremunerationandbenefitsofeverykind whichmaybecomeduetoorpayableinrespectofallpersons employedbytheContractorinconnectionwiththecarryingoutand completionoftheWorksandtheremedyingofdefectstherein,and for the provision to such persons of all housing,transportation, feedingandsupportservices.Intheeventofanyfailureby the Contractortocarryoutinfull itsobligationsunder thisSub-Clause 10.4(a), the Employer may (without prejudice to any other rights) itself make such payment or provision as aforesaid and deduct the CostthereofasdeterminedbytheProjectManagerfromanymonies dueorwhichmaybecomeduetotheContractororrecoverthesame as a debtduefrom theContractor.\n(b) TheContractorshallpayratesofwages,andobserveconditionsof labour,whicharenotlowerthanthoseestablishedforthetradeor industrywheretheworkiscarriedout.Ifnoestablishedratesor conditionsareapplicable,theContractorshallpayratesofwages andobserveconditionswhicharenotlowerthanthegenerallevel of industry is similar to thatof theContractor.\nAlcoholicLiquororDrugs\n10.5TheContractorshall not,otherwise thaninaccordancewith the laws and regulations for the time being in force in the Country,import, sell,give, barterorotherwisedisposeofanyalcoholicliquorordrugs.TheContractor shalluseall reasonableendeavourstopreventanysuchimportation,sale, gift, barter or disposal by its employees or agents.\nArmsand Ammunition\n10.6 The Contractor shall not in respect of the Country,import, sell, give,barter or otherwise dispose of to any person or persons, any arms or ammunition ofanykind.TheContractorshalluseall reasonableendeavourstoprevent any such importation,sale,gift,barteror disposal by its employees or agents.\nFestivalsandReligiousCustoms\n10.7 The Contractor shall respect allrecognised festivals,days of rest and religious or other customs in the Country.\n10.8 TheContractorshallatalltimestakeallreasonableprecautionstoprevent and near the Site.",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

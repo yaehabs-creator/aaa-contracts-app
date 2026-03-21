@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './src/App';
 import { AuthProvider } from './src/contexts/AuthContext';
 import { AppRouter } from './src/components/AppRouter';
 import './index.css';
@@ -107,7 +107,6 @@ class ErrorBoundary extends React.Component<
                 <li style={{ marginBottom: '0.5rem' }}>{instructions}</li>
                 <li style={{ marginBottom: '0.5rem' }}>Check browser console (F12) for detailed error messages</li>
                 <li style={{ marginBottom: '0.5rem' }}>Verify <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>.env.local</code> exists and contains all required variables</li>
-                <li style={{ marginBottom: '0.5rem' }}>Run <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>npm run build:check</code> to verify environment variables</li>
                 <li style={{ marginBottom: '0.5rem' }}>Rebuild and redeploy: <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>npm run build</code> then deploy on your hosting provider</li>
                 <li>See docs in <code style={{ background: '#FDE68A', padding: '2px 6px', borderRadius: '4px' }}>docs/</code> for setup/troubleshooting</li>
               </ol>
@@ -162,9 +161,7 @@ if (missing.length > 0) {
     <React.StrictMode>
       <ErrorBoundary>
         <AuthProvider>
-          <AppRouter>
-            <App />
-          </AppRouter>
+          <App />
         </AuthProvider>
       </ErrorBoundary>
     </React.StrictMode>

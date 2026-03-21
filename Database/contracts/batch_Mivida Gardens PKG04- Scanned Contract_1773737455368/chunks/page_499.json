@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## Introduction to QualityControl Forms\n\n<!-- image -->\n\n|   Control Form No. | Titleof Control Form                  | Description of Process                                                                                                                                                                                                                                                                                                                                                                                                |\n|--------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n|               4.35 | HandingOverBetween PackageContractors | Thisformshallbeusedforinterfacingbetweenthepackagecontractors. Theoriginatorof theform shouldsendrequest to thereceivingpackage contractorandcopytoCM 2Anycommentsduringtheinspectionandrespectiveactionregardlngthe workstoproceedbythereceivingcontractoraretobenotedonthe form. 3Once the originatorandreceiving contractorshave completed and signed theform,CMistoreviewandaddconfirmationofauthoritysignatureto |\n|               4.36 | Request For Coring                    |                                                                                                                                                                                                                                                                                                                                                                                                                       |\n|               4.37 | Taking Over Certificate               |                                                                                                                                                                                                                                                                                                                                                                                                                       |\n\nPowasopmadt Sa DxCod0207.0 CX12B41 POBoy 9, Catro.ksp\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Introduction to QualityControl Forms",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.4259236653646,
+          717.8833923339844
+        ],
+        [
+          395.1240641276042,
+          717.8833923339844
+        ],
+        [
+          395.1240641276042,
+          707.5171305338541
+        ],
+        [
+          232.4259236653646,
+          707.5171305338541
+        ]
+      ],
+      "page": 499
+    },
+    {
+      "text": "Powasopmadt Sa DxCod0207.0 CX12B41 POBoy 9, Catro.ksp",
+      "confidence": 0.95,
+      "box": [
+        [
+          278.49607340494794,
+          85.12672932942712
+        ],
+        [
+          345.7335611979167,
+          85.12672932942712
+        ],
+        [
+          345.7335611979167,
+          51.95469156901038
+        ],
+        [
+          278.49607340494794,
+          51.95469156901038
+        ]
+      ],
+      "page": 499
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 499,
+      "text": "Introduction to QualityControl Forms\nPowasopmadt Sa DxCod0207.0 CX12B41 POBoy 9, Catro.ksp",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

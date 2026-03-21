@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import {
   AnalysisStatus,
   SectionType,
@@ -9,12 +9,14 @@ interface PdfPreviewViewProps {
   handleAICleanPdf: () => Promise<void>;
   handleDownloadOcrJson: () => void;
   handleAddPdfToContract: () => Promise<void>;
+  handleProcessFullContractWithOpenClaw: () => Promise<string>;
 }
 
 export const PdfPreviewView: React.FC<PdfPreviewViewProps> = ({
   handleAICleanPdf,
   handleDownloadOcrJson,
   handleAddPdfToContract,
+  handleProcessFullContractWithOpenClaw,
 }) => {
   const {
     extractedPdfPages,
@@ -33,6 +35,10 @@ export const PdfPreviewView: React.FC<PdfPreviewViewProps> = ({
     setContract,
     setClauses,
   } = useAppStore();
+
+  const [isProcessingOpenClaw, setIsProcessingOpenClaw] = useState(false);
+  const [openClawResult, setOpenClawResult] = useState<string | null>(null);
+  const txtFileInputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
@@ -100,6 +106,65 @@ export const PdfPreviewView: React.FC<PdfPreviewViewProps> = ({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               JSON
+            </button>
+            <input
+              ref={txtFileInputRef}
+              type="file"
+              accept=".txt,text/plain"
+              className="hidden"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = () => {
+                  const text = reader.result as string;
+                  if (text) setPdfEditText(text);
+                };
+                reader.readAsText(file);
+                e.target.value = '';
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => txtFileInputRef.current?.click()}
+              className="px-5 py-2.5 bg-white border border-aaa-border text-aaa-navy rounded-xl text-sm font-bold hover:bg-gray-50 transition-all flex items-center gap-2"
+              title="Load contract from .txt file"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              Load .txt
+            </button>
+            <button
+              onClick={async () => {
+                if (!pdfEditText?.trim()) return;
+                setIsProcessingOpenClaw(true);
+                setOpenClawResult(null);
+                try {
+                  const analysis = await handleProcessFullContractWithOpenClaw();
+                  setOpenClawResult(analysis);
+                } finally {
+                  setIsProcessingOpenClaw(false);
+                }
+              }}
+              disabled={isProcessingOpenClaw || !pdfEditText?.trim()}
+              className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${isProcessingOpenClaw || !pdfEditText?.trim()
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                : 'bg-aaa-navy text-white hover:bg-aaa-navy/90 shadow-lg'
+                }`}
+              title="Analyze the whole contract with OpenClaw"
+            >
+              {isProcessingOpenClaw ? (
+                <>
+                  <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                  OpenClaw...
+                </>
+              ) : (
+                <>Process whole contract with OpenClaw</>
+              )}
             </button>
           </div>
         </div>
@@ -183,6 +248,33 @@ export const PdfPreviewView: React.FC<PdfPreviewViewProps> = ({
           <p className="mt-3 text-xs text-amber-600 font-medium">⚠ Select a contract from the dropdown above, or go to Archive to load one</p>
         )}
       </div>
+
+      {/* OpenClaw full-contract analysis result modal */}
+      {openClawResult !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setOpenClawResult(null)}>
+          <div
+            className="bg-white rounded-2xl shadow-xl max-w-4xl w-full max-h-[85vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-6 py-4 border-b border-aaa-border">
+              <h3 className="text-lg font-black text-aaa-navy">OpenClaw – Full contract analysis</h3>
+              <button
+                type="button"
+                onClick={() => setOpenClawResult(null)}
+                className="p-2 rounded-lg hover:bg-gray-100 text-aaa-muted"
+                aria-label="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-1 overflow-auto px-6 py-4">
+              <pre className="whitespace-pre-wrap text-sm text-aaa-navy font-sans leading-relaxed">{openClawResult}</pre>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

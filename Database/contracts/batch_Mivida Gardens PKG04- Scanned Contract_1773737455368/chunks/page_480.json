@@ -1,0 +1,83 @@
+{
+  "text": "<!-- image -->\n\n## Technical Submittals &amp; Shop Drawings E1 Logs Procurement Schedules E2 Logs\n\n<!-- image -->\n\n- CS - Construction supervisor\n\nCA - Contract Administrator\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Technical Submittals & Shop Drawings E1 Logs Procurement Schedules E2 Logs",
+      "confidence": 0.95,
+      "box": [
+        [
+          65.16226704915364,
+          651.1246541341146
+        ],
+        [
+          521.7131754557291,
+          651.1246541341146
+        ],
+        [
+          521.7131754557291,
+          596.3907877604166
+        ],
+        [
+          65.16226704915364,
+          596.3907877604166
+        ]
+      ],
+      "page": 480
+    },
+    {
+      "text": "CS - Construction supervisor",
+      "confidence": 0.95,
+      "box": [
+        [
+          66.82245381673177,
+          123.68922932942712
+        ],
+        [
+          239.4817097981771,
+          123.68922932942712
+        ],
+        [
+          239.4817097981771,
+          107.51784261067712
+        ],
+        [
+          66.82245381673177,
+          107.51784261067712
+        ]
+      ],
+      "page": 480
+    },
+    {
+      "text": "CA - Contract Administrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          66.40740966796875,
+          107.10321044921875
+        ],
+        [
+          239.4817097981771,
+          107.10321044921875
+        ],
+        [
+          239.4817097981771,
+          92.59043375651038
+        ],
+        [
+          66.40740966796875,
+          92.59043375651038
+        ]
+      ],
+      "page": 480
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 480,
+      "text": "Technical Submittals & Shop Drawings E1 Logs Procurement Schedules E2 Logs\nCS - Construction supervisor\nCA - Contract Administrator",
+      "line_count": 3
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

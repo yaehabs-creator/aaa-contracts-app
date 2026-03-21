@@ -1,0 +1,290 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- (vi) The Works shall include any work which is necessary to satisfy the Contract requirements, whether expressly provided or implied by the ContractDocuments,and all workswhich arenecessaryforstability, completion,safeand properoperation,of theWorks.\n- (vii) TheContractorwarrantsthatthecompletedWorksandanypart thereof shallbefitfor thepurpose intended by theEmployer.The Contractor acknowledges that theEmployerreliesontheContractor expertise and judgment in selecting appropriate Plants.\n\n## 6.4 Work to Satisfaction of Supervision Consultant\n\nRename the existing paragraph as (a).\n\n## Addnewparagraphs(b)&amp;(c)asfollows:\n\n- (b) ShouldtheContractordisregardorfail toactwithinareasonableor stipulated time frame upon receipt of such Instructions, the Employer upon recommendation from the Contract Administrator, shall have the right to implement remedies or measures deemed essentialornecessaryand theContractorshallbearthecostof such remedies or measures. Said costs shall be substantiated by theEmployerinadvanceofcostdeductions.Saidcostsshailbe deducted from monthly progress payment certificates.\n- (c) The Contractor shall take full responsibility for the adequacy, stability and safety of allSite operations and methods of construction.Provided that,the Contractorshallnotberesponsible (exceptasstatedhereunderorasmaybeotherwiseagreed)forthe designor specificationof PermanentWorks,orfor thedesignor specificationofanyTemporaryWorksnotpreparedbythe Contractor.\n\nWithout prejudice to any other design obligations under the Contract Documents,the Contractor shall within fifty-six(56) days after the CommencementDatereview theSpecificationand theDrawings (excluding Contractor's Drawings approved by the Supervision Consultant in writing) and notify the Contract Administrator of any errorsor omissions found therein.Should theContractorfail to so notifytheContractAdministratorofanyerrororomissioninthe SpecificationsortheDrawingswhicherrororomissioncouldhave beendiscoveredbyanexperiencedcontractorwithinthespecified duration,the Contractor shallbear the cost of the consultancy servicesrequired torectifysucherrororomission in additionto any other cost the Employer may incur as a result of any abortive works thatcouldhavebeenavoidedshouldsucherrororomissionbeen reportedinatimelymanneraspertheprovisionsofthisSubClause.\n\n## 6.6 CashFlowEstimate\n\nThe period referred to is thirty (30) days from the Effective Date and any furtherContractValueadjustment.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          751.3196105957031
+        ],
+        [
+          177.5852254231771,
+          751.3196105957031
+        ],
+        [
+          177.5852254231771,
+          731.3809305826823
+        ],
+        [
+          97.24905395507812,
+          731.3809305826823
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.15530395507812,
+          727.5628865559896
+        ],
+        [
+          150.52461751302084,
+          727.5628865559896
+        ],
+        [
+          150.52461751302084,
+          715.6845296223959
+        ],
+        [
+          125.15530395507812,
+          715.6845296223959
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "(vi) The Works shall include any work which is necessary to satisfy the Contract requirements, whether expressly provided or implied by the ContractDocuments,and all workswhich arenecessaryforstability, completion,safeand properoperation,of theWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          696.5943094889323
+        ],
+        [
+          501.4668375651042,
+          696.5943094889323
+        ],
+        [
+          501.4668375651042,
+          647.3839518229166
+        ],
+        [
+          158.13541666666666,
+          647.3839518229166
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "(vii) TheContractorwarrantsthatthecompletedWorksandanypart thereof shallbefitfor thepurpose intended by theEmployer.The Contractor acknowledges that theEmployerreliesontheContractor expertise and judgment in selecting appropriate Plants.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          643.56591796875
+        ],
+        [
+          501.8896484375,
+          643.56591796875
+        ],
+        [
+          501.8896484375,
+          594.3555501302084
+        ],
+        [
+          156.02130126953125,
+          594.3555501302084
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "6.4 Work to Satisfaction of Supervision Consultant",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          590.9617513020834
+        ],
+        [
+          380.9625651041667,
+          590.9617513020834
+        ],
+        [
+          380.9625651041667,
+          577.386474609375
+        ],
+        [
+          124.73248291015625,
+          577.386474609375
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "Rename the existing paragraph as (a).",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.6321004231771,
+          573.5684204101562
+        ],
+        [
+          342.9086100260417,
+          573.5684204101562
+        ],
+        [
+          342.9086100260417,
+          559.5689290364583
+        ],
+        [
+          163.6321004231771,
+          559.5689290364583
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "Addnewparagraphs(b)&(c)asfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.47774251302084,
+          555.7508951822917
+        ],
+        [
+          353.4791666666667,
+          555.7508951822917
+        ],
+        [
+          353.4791666666667,
+          543.0240681966145
+        ],
+        [
+          164.47774251302084,
+          543.0240681966145
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "(b) ShouldtheContractordisregardorfail toactwithinareasonableor stipulated time frame upon receipt of such Instructions, the Employer upon recommendation from the Contract Administrator, shall have the right to implement remedies or measures deemed essentialornecessaryand theContractorshallbearthecostof such remedies or measures. Said costs shall be substantiated by theEmployerinadvanceofcostdeductions.Saidcostsshailbe deducted from monthly progress payment certificates.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.3233846028646,
+          538.3575846354167
+        ],
+        [
+          501.8896484375,
+          538.3575846354167
+        ],
+        [
+          501.8896484375,
+          441.20957438151044
+        ],
+        [
+          165.3233846028646,
+          441.20957438151044
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "(c) The Contractor shall take full responsibility for the adequacy, stability and safety of allSite operations and methods of construction.Provided that,the Contractorshallnotberesponsible (exceptasstatedhereunderorasmaybeotherwiseagreed)forthe designor specificationof PermanentWorks,orfor thedesignor specificationofanyTemporaryWorksnotpreparedbythe Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.05492146809897,
+          438.23996988932294
+        ],
+        [
+          502.3125,
+          438.23996988932294
+        ],
+        [
+          502.3125,
+          353.39455159505206
+        ],
+        [
+          164.05492146809897,
+          353.39455159505206
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "Without prejudice to any other design obligations under the Contract Documents,the Contractor shall within fifty-six(56) days after the CommencementDatereview theSpecificationand theDrawings (excluding Contractor's Drawings approved by the Supervision Consultant in writing) and notify the Contract Administrator of any errorsor omissions found therein.Should theContractorfail to so notifytheContractAdministratorofanyerrororomissioninthe SpecificationsortheDrawingswhicherrororomissioncouldhave beendiscoveredbyanexperiencedcontractorwithinthespecified duration,the Contractor shallbear the cost of the consultancy servicesrequired torectifysucherrororomission in additionto any other cost the Employer may incur as a result of any abortive works thatcouldhavebeenavoidedshouldsucherrororomissionbeen reportedinatimelymanneraspertheprovisionsofthisSubClause.",
+      "confidence": 0.95,
+      "box": [
+        [
+          189.00142415364584,
+          348.72804768880206
+        ],
+        [
+          501.0440266927083,
+          348.72804768880206
+        ],
+        [
+          501.0440266927083,
+          168.00726318359375
+        ],
+        [
+          189.00142415364584,
+          168.00726318359375
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "6.6 CashFlowEstimate",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.19554646809895,
+          164.18922932942712
+        ],
+        [
+          256.2301025390625,
+          164.18922932942712
+        ],
+        [
+          256.2301025390625,
+          151.46238199869788
+        ],
+        [
+          122.19554646809895,
+          151.46238199869788
+        ]
+      ],
+      "page": 119
+    },
+    {
+      "text": "The period referred to is thirty (30) days from the Effective Date and any furtherContractValueadjustment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.94080607096353,
+          146.79587809244788
+        ],
+        [
+          499.3527425130208,
+          146.79587809244788
+        ],
+        [
+          499.3527425130208,
+          121.76649983723962
+        ],
+        [
+          161.94080607096353,
+          121.76649983723962
+        ]
+      ],
+      "page": 119
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 119,
+      "text": "EMAAR\nMISR\n(vi) The Works shall include any work which is necessary to satisfy the Contract requirements, whether expressly provided or implied by the ContractDocuments,and all workswhich arenecessaryforstability, completion,safeand properoperation,of theWorks.\n(vii) TheContractorwarrantsthatthecompletedWorksandanypart thereof shallbefitfor thepurpose intended by theEmployer.The Contractor acknowledges that theEmployerreliesontheContractor expertise and judgment in selecting appropriate Plants.\n6.4 Work to Satisfaction of Supervision Consultant\nRename the existing paragraph as (a).\nAddnewparagraphs(b)&(c)asfollows:\n(b) ShouldtheContractordisregardorfail toactwithinareasonableor stipulated time frame upon receipt of such Instructions, the Employer upon recommendation from the Contract Administrator, shall have the right to implement remedies or measures deemed essentialornecessaryand theContractorshallbearthecostof such remedies or measures. Said costs shall be substantiated by theEmployerinadvanceofcostdeductions.Saidcostsshailbe deducted from monthly progress payment certificates.\n(c) The Contractor shall take full responsibility for the adequacy, stability and safety of allSite operations and methods of construction.Provided that,the Contractorshallnotberesponsible (exceptasstatedhereunderorasmaybeotherwiseagreed)forthe designor specificationof PermanentWorks,orfor thedesignor specificationofanyTemporaryWorksnotpreparedbythe Contractor.\nWithout prejudice to any other design obligations under the Contract Documents,the Contractor shall within fifty-six(56) days after the CommencementDatereview theSpecificationand theDrawings (excluding Contractor's Drawings approved by the Supervision Consultant in writing) and notify the Contract Administrator of any errorsor omissions found therein.Should theContractorfail to so notifytheContractAdministratorofanyerrororomissioninthe SpecificationsortheDrawingswhicherrororomissioncouldhave beendiscoveredbyanexperiencedcontractorwithinthespecified duration,the Contractor shallbear the cost of the consultancy servicesrequired torectifysucherrororomission in additionto any other cost the Employer may incur as a result of any abortive works thatcouldhavebeenavoidedshouldsucherrororomissionbeen reportedinatimelymanneraspertheprovisionsofthisSubClause.\n6.6 CashFlowEstimate\nThe period referred to is thirty (30) days from the Effective Date and any furtherContractValueadjustment.",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

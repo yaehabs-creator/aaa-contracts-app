@@ -1,0 +1,290 @@
+{
+  "text": "<!-- image -->\n\n- (k) \"FinalCertificate\"meansthecertificatereferred toinClause26.4 (Issue ofFinal Certificates).\n- (1) \"Form of Tender\"means the completed,priced and signed form of tendersubmittedbytheContractoraspartofitsTenderandforming a part of the Contract.\n- (m) \"Free Issue Items\" has the meaning assigned by Clause 6A (Free (ssue Items).\n- (n) \"InstructionstoTenderers\"meansthe documententitled instructions totenderersformingapartof theContract.\n- (0) \"InterimCertificate\"means the certificatereferred toinClause26.2 (Issue of Interim Certificates).\n- (d) \"Local Currency\"means the currency of the Country.\n- (q) \"Nominated Subcontractor\" means any person nominated by the Employer (whether in the Contract,pursuant to a power to make suchnominationsspecificallyreserved intheContractorbywayofa Variation Order issued pursuant toClause 22.1(Variation Orders))to receive a subcontract from the Contractor for any specified part of theWorks when acting within the scopeof such subcontract.\n- (r) \"Particular Conditions\"means the terms,conditions and provisions set down inAppendixA to these Conditions of Contract.\n- (s) \"Performance Bond\" means the bond named in Clause 7.1 (Provision ofBonds)as thePerformanceBond.\n- (t) \"Plant\" means machinery, apparatus, materials and all other things tobeprovided bytheContractorunder the Contractforincorporation in the Works including the supply-only items (if any) to be supplied by the Contractor under the Contract.\n- (u) \"Portion of the Works\" means a part of a Section of the Works or a part of another Portion of the Works which part, in each case, may fromtimetotimebedesignatedassuchbytheEmployerand notified inwritingtotheProjectManager,theSupervisionConsultant and the Contractor.Theresidue of the saidSection of theWorksor saidotherPortionof theWorksshallitselfautomaticallyconstitutea Portionof theWorks.\n- (v) \"Programme\" means the programme submitted by the Contractor in accordancewithClause 17.3(Programme)and approved by the Project Manager and any revised programme which may be submittedbythcContractortothoProjectManagerandapprovedby theProject Managerfrom time to time and whichshall,uponsuch approval, be substituted for the previous programme.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "(k) \"FinalCertificate\"meansthecertificatereferred toinClause26.4 (Issue ofFinal Certificates).",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          712.7149353027344
+        ],
+        [
+          486.6680908203125,
+          712.7149353027344
+        ],
+        [
+          486.6680908203125,
+          691.079355875651
+        ],
+        [
+          158.13541666666666,
+          691.079355875651
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "\"Form of Tender\"means the completed,priced and signed form of tendersubmittedbytheContractoraspartofitsTenderandforming a part of the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          679.2009887695312
+        ],
+        [
+          487.9365234375,
+          679.2009887695312
+        ],
+        [
+          487.9365234375,
+          645.2628173828125
+        ],
+        [
+          158.13541666666666,
+          645.2628173828125
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(m) \"Free Issue Items\" has the meaning assigned by Clause 6A (Free (ssue Items).",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          633.8086751302084
+        ],
+        [
+          487.5137125651042,
+          633.8086751302084
+        ],
+        [
+          487.5137125651042,
+          610.0519612630209
+        ],
+        [
+          158.55823771158853,
+          610.0519612630209
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(n) \"InstructionstoTenderers\"meansthe documententitled instructions totenderersformingapartof theContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          599.0220540364584
+        ],
+        [
+          487.5137125651042,
+          599.0220540364584
+        ],
+        [
+          487.5137125651042,
+          577.386474609375
+        ],
+        [
+          158.13541666666666,
+          577.386474609375
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "\"InterimCertificate\"means the certificatereferred toinClause26.2 (Issue of Interim Certificates).",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          565.5081176757812
+        ],
+        [
+          487.9365234375,
+          565.5081176757812
+        ],
+        [
+          487.9365234375,
+          542.599853515625
+        ],
+        [
+          158.13541666666666,
+          542.599853515625
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(d) \"Local Currency\"means the currency of the Country.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          531.5699462890625
+        ],
+        [
+          425.7816975911458,
+          531.5699462890625
+        ],
+        [
+          425.7816975911458,
+          517.146219889323
+        ],
+        [
+          158.13541666666666,
+          517.146219889323
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(q) \"Nominated Subcontractor\" means any person nominated by the Employer (whether in the Contract,pursuant to a power to make suchnominationsspecificallyreserved intheContractorbywayofa Variation Order issued pursuant toClause 22.1(Variation Orders))to receive a subcontract from the Contractor for any specified part of theWorks when acting within the scopeof such subcontract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          508.66168212890625
+        ],
+        [
+          490.0506591796875,
+          508.66168212890625
+        ],
+        [
+          490.0506591796875,
+          441.63376871744794
+        ],
+        [
+          158.9810587565104,
+          441.63376871744794
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(r) \"Particular Conditions\"means the terms,conditions and provisions set down inAppendixA to these Conditions of Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          428.90696207682294
+        ],
+        [
+          488.7821858723958,
+          428.90696207682294
+        ],
+        [
+          488.7821858723958,
+          407.69561767578125
+        ],
+        [
+          158.9810587565104,
+          407.69561767578125
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(s) \"Performance Bond\" means the bond named in Clause 7.1 (Provision ofBonds)as thePerformanceBond.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          395.81724039713544
+        ],
+        [
+          488.7821858723958,
+          395.81724039713544
+        ],
+        [
+          488.7821858723958,
+          373.33319091796875
+        ],
+        [
+          158.9810587565104,
+          373.33319091796875
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(t) \"Plant\" means machinery, apparatus, materials and all other things tobeprovided bytheContractorunder the Contractforincorporation in the Works including the supply-only items (if any) to be supplied by the Contractor under the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.82670084635416,
+          362.30328369140625
+        ],
+        [
+          489.6278483072917,
+          362.30328369140625
+        ],
+        [
+          489.6278483072917,
+          316.06256103515625
+        ],
+        [
+          159.82670084635416,
+          316.06256103515625
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(u) \"Portion of the Works\" means a part of a Section of the Works or a part of another Portion of the Works which part, in each case, may fromtimetotimebedesignatedassuchbytheEmployerand notified inwritingtotheProjectManager,theSupervisionConsultant and the Contractor.Theresidue of the saidSection of theWorksor saidotherPortionof theWorksshallitselfautomaticallyconstitutea Portionof theWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          159.82670084635416,
+          305.03265380859375
+        ],
+        [
+          490.8962809244792,
+          305.03265380859375
+        ],
+        [
+          490.8962809244792,
+          225.27793375651038
+        ],
+        [
+          159.82670084635416,
+          225.27793375651038
+        ]
+      ],
+      "page": 30
+    },
+    {
+      "text": "(v) \"Programme\" means the programme submitted by the Contractor in accordancewithClause 17.3(Programme)and approved by the Project Manager and any revised programme which may be submittedbythcContractortothoProjectManagerandapprovedby theProject Managerfrom time to time and whichshall,uponsuch approval, be substituted for the previous programme.",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.51798502604166,
+          213.39955647786462
+        ],
+        [
+          490.8962809244792,
+          213.39955647786462
+        ],
+        [
+          490.8962809244792,
+          145.52325439453125
+        ],
+        [
+          161.51798502604166,
+          145.52325439453125
+        ]
+      ],
+      "page": 30
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 30,
+      "text": "(k) \"FinalCertificate\"meansthecertificatereferred toinClause26.4 (Issue ofFinal Certificates).\n\"Form of Tender\"means the completed,priced and signed form of tendersubmittedbytheContractoraspartofitsTenderandforming a part of the Contract.\n(m) \"Free Issue Items\" has the meaning assigned by Clause 6A (Free (ssue Items).\n(n) \"InstructionstoTenderers\"meansthe documententitled instructions totenderersformingapartof theContract.\n\"InterimCertificate\"means the certificatereferred toinClause26.2 (Issue of Interim Certificates).\n(d) \"Local Currency\"means the currency of the Country.\n(q) \"Nominated Subcontractor\" means any person nominated by the Employer (whether in the Contract,pursuant to a power to make suchnominationsspecificallyreserved intheContractorbywayofa Variation Order issued pursuant toClause 22.1(Variation Orders))to receive a subcontract from the Contractor for any specified part of theWorks when acting within the scopeof such subcontract.\n(r) \"Particular Conditions\"means the terms,conditions and provisions set down inAppendixA to these Conditions of Contract.\n(s) \"Performance Bond\" means the bond named in Clause 7.1 (Provision ofBonds)as thePerformanceBond.\n(t) \"Plant\" means machinery, apparatus, materials and all other things tobeprovided bytheContractorunder the Contractforincorporation in the Works including the supply-only items (if any) to be supplied by the Contractor under the Contract.\n(u) \"Portion of the Works\" means a part of a Section of the Works or a part of another Portion of the Works which part, in each case, may fromtimetotimebedesignatedassuchbytheEmployerand notified inwritingtotheProjectManager,theSupervisionConsultant and the Contractor.Theresidue of the saidSection of theWorksor saidotherPortionof theWorksshallitselfautomaticallyconstitutea Portionof theWorks.\n(v) \"Programme\" means the programme submitted by the Contractor in accordancewithClause 17.3(Programme)and approved by the Project Manager and any revised programme which may be submittedbythcContractortothoProjectManagerandapprovedby theProject Managerfrom time to time and whichshall,uponsuch approval, be substituted for the previous programme.",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

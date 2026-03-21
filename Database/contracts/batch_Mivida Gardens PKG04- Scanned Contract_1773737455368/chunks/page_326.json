@@ -1,0 +1,727 @@
+{
+  "text": "<!-- image -->\n\n- a. All inspections and tests required by that Specification Section including breakdownforstatus ofrequiredinspectionofeachactivitywith respect to the contractor, the Engineer or any Third Party.\n- b. Required testing frequency.\n- c. The accept/rejcct criteria.\n- d. Records required to document compliance.\n- e. Procedures or instruction to be used for control of each activity.\n- B. Provide sufficient detail to allow the Contract Administrator / Engineer and otheragencieshavingjurisdictionalauthorityover thework toidentify operations tobe inspected by that organization.\n1. Such operations shall not be bypassed by the Contractor, unless a written waiver is given by the witnessing organization.\n\n## 2.08 DOCUMENT AND SUBMITTAL CONTROL.\n\n- A. Establish written procedures for processing all documents and submittals associated with this project.\n2. Establish procedures to ensure documents are prepared and transmitted or distributed in a timely manner.\n1. Procedures shall address receipt, filing, safe guarding, processing and transmitting.\n3. Procedures shall also ensure documents contain the required technical information.\n4. Procedures shall ensure that only latest revision documents are being used in work execution.\n- B. Provide quality control procedures, methods, and current documents at the locations where they are to be used.\n- C. Maintain separate files for quality related documents and make such files available to the Contract Administrator / Engineer upon request.\n1. Maintain all quality related records.\n2. Protect all records from damage, deterioration, and loss.\n- D. Contractor shall not change or alter approved submittals, procedures, shop drawings or any other pertinent documentation without the Contract Administrator written authorization.\n\n## 2.09 IDENTIFICATION AND CONTROL OF ITEMS AND MATERIALS\n\n- A.Contractor shall establish control procedures to ensure that items or materials accepted through shipping or receiving inspection are properly used and installed.\n- B. Contractor shall identify all items and materials so that they are traceable throughout all inspections, test activities, and records.\n1. For stored items, the identification method shall be consistent with the expected duration and type of storage.\n- D. Contractor shall develop and maintain a receiving/inspection log containing at lcast theinformation itcmizcd hclowioe os 1. Purchase order number. A'rs ruetdeem]\n- C. Contractor shall record equipment and material identifications and ensure that they are traceable to the location where they are incorporated into the work.\n\nTx6216-237-20\n\nCntru Eonu\n\n01\n\nColacbuualyCoritrol\n\nPageMibr:10.of17\n\nSelorioon\n\n<!-- image -->\n\nMlur",
+  "results": [
+    {
+      "text": "All inspections and tests required by that Specification Section including breakdownforstatus ofrequiredinspectionofeachactivitywith respect to the contractor, the Engineer or any Third Party.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          718.2980448404948
+        ],
+        [
+          503.8662109375,
+          718.2980448404948
+        ],
+        [
+          503.8662109375,
+          678.4915974934896
+        ],
+        [
+          127.41920979817708,
+          678.4915974934896
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Required testing frequency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          679.3209025065104
+        ],
+        [
+          279.7412109375,
+          679.3209025065104
+        ],
+        [
+          279.7412109375,
+          665.2227783203125
+        ],
+        [
+          127.41920979817708,
+          665.2227783203125
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "The accept/rejcct criteria.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          665.2227783203125
+        ],
+        [
+          268.1199137369792,
+          665.2227783203125
+        ],
+        [
+          268.1199137369792,
+          653.6125691731771
+        ],
+        [
+          127.83425903320312,
+          653.6125691731771
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Records required to document compliance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          651.9539591471354
+        ],
+        [
+          356.5247802734375,
+          651.9539591471354
+        ],
+        [
+          356.5247802734375,
+          639.9290974934896
+        ],
+        [
+          127.41920979817708,
+          639.9290974934896
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Procedures or instruction to be used for control of each activity.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.58912150065105,
+          639.9290974934896
+        ],
+        [
+          457.3810221354167,
+          639.9290974934896
+        ],
+        [
+          457.3810221354167,
+          626.2456258138021
+        ],
+        [
+          126.58912150065105,
+          626.2456258138021
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Provide sufficient detail to allow the Contract Administrator / Engineer and otheragencieshavingjurisdictionalauthorityover thework toidentify operations tobe inspected by that organization.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          613.8061116536459
+        ],
+        [
+          504.6962890625,
+          613.8061116536459
+        ],
+        [
+          504.6962890625,
+          573.9996744791666
+        ],
+        [
+          101.2712910970052,
+          573.9996744791666
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Such operations shall not be bypassed by the Contractor, unless a written waiver is given by the witnessing organization.",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.70323689778645,
+          573.9996744791666
+        ],
+        [
+          504.28125,
+          573.9996744791666
+        ],
+        [
+          504.28125,
+          547.4620361328125
+        ],
+        [
+          118.70323689778645,
+          547.4620361328125
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "2.08 DOCUMENT AND SUBMITTAL CONTROL.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          536.6811116536458
+        ],
+        [
+          322.90602620442706,
+          536.6811116536458
+        ],
+        [
+          322.90602620442706,
+          523.8269449869792
+        ],
+        [
+          75.12337748209636,
+          523.8269449869792
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Establish written procedures for processing all documents and submittals associated with this project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          517.607198079427
+        ],
+        [
+          503.451171875,
+          517.607198079427
+        ],
+        [
+          503.451171875,
+          491.4842122395833
+        ],
+        [
+          101.2712910970052,
+          491.4842122395833
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Establish procedures to ensure documents are prepared and transmitted or distributed in a timely manner.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          465.36122639973956
+        ],
+        [
+          503.451171875,
+          465.36122639973956
+        ],
+        [
+          503.451171875,
+          439.23826090494794
+        ],
+        [
+          117.45809936523438,
+          439.23826090494794
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Procedures shall address receipt, filing, safe guarding, processing and transmitting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          492.72816975911456
+        ],
+        [
+          504.6962890625,
+          492.72816975911456
+        ],
+        [
+          504.6962890625,
+          464.94659423828125
+        ],
+        [
+          117.45809936523438,
+          464.94659423828125
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Procedures shall also ensure documents contain the required technical information.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          439.23826090494794
+        ],
+        [
+          503.8662109375,
+          439.23826090494794
+        ],
+        [
+          503.8662109375,
+          413.52992757161456
+        ],
+        [
+          117.45809936523438,
+          413.52992757161456
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Procedures shall ensure that only latest revision documents are being used in work execution.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.04305013020833,
+          413.52992757161456
+        ],
+        [
+          503.451171875,
+          413.52992757161456
+        ],
+        [
+          503.451171875,
+          386.99228922526044
+        ],
+        [
+          117.04305013020833,
+          386.99228922526044
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Provide quality control procedures, methods, and current documents at the locations where they are to be used.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          386.16298421223956
+        ],
+        [
+          503.451171875,
+          386.16298421223956
+        ],
+        [
+          503.451171875,
+          361.28395589192706
+        ],
+        [
+          100.8562520345052,
+          361.28395589192706
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Maintain separate files for quality related documents and make such files available to the Contract Administrator / Engineer upon request.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.8562520345052,
+          360.45465087890625
+        ],
+        [
+          503.8662109375,
+          360.45465087890625
+        ],
+        [
+          503.8662109375,
+          334.33168538411456
+        ],
+        [
+          100.8562520345052,
+          334.33168538411456
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Maintain all quality related records.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          333.50238037109375
+        ],
+        [
+          307.13425699869794,
+          333.50238037109375
+        ],
+        [
+          307.13425699869794,
+          321.47751871744794
+        ],
+        [
+          117.45809936523438,
+          321.47751871744794
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Protect all records from damage, deterioration, and loss.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.04305013020833,
+          321.06284586588544
+        ],
+        [
+          413.3861083984375,
+          321.06284586588544
+        ],
+        [
+          413.3861083984375,
+          308.20867919921875
+        ],
+        [
+          117.04305013020833,
+          308.20867919921875
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Contractor shall not change or alter approved submittals, procedures, shop drawings or any other pertinent documentation without the Contract Administrator written authorization.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          295.3545125325521
+        ],
+        [
+          504.6962890625,
+          295.3545125325521
+        ],
+        [
+          504.6962890625,
+          255.96270751953125
+        ],
+        [
+          100.02615356445312,
+          255.96270751953125
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "2.09 IDENTIFICATION AND CONTROL OF ITEMS AND MATERIALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.87823994954427,
+          244.76715087890625
+        ],
+        [
+          433.308349609375,
+          244.76715087890625
+        ],
+        [
+          433.308349609375,
+          231.91298421223962
+        ],
+        [
+          73.87823994954427,
+          231.91298421223962
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "A.Contractor shall establish control procedures to ensure that items or materials accepted through shipping or receiving inspection are properly used and installed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          225.69321695963538
+        ],
+        [
+          503.8662109375,
+          225.69321695963538
+        ],
+        [
+          503.8662109375,
+          187.54538981119788
+        ],
+        [
+          100.02615356445312,
+          187.54538981119788
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Contractor shall identify all items and materials so that they are traceable throughout all inspections, test activities, and records.",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          186.71608479817712
+        ],
+        [
+          502.6210530598958,
+          186.71608479817712
+        ],
+        [
+          502.6210530598958,
+          160.59307861328125
+        ],
+        [
+          99.19606526692708,
+          160.59307861328125
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "For stored items, the identification method shall be consistent with the expected duration and type of storage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.62801106770833,
+          160.17844645182288
+        ],
+        [
+          509.6768391927083,
+          160.17844645182288
+        ],
+        [
+          509.6768391927083,
+          133.64080810546875
+        ],
+        [
+          116.62801106770833,
+          133.64080810546875
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Contractor shall develop and maintain a receiving/inspection log containing at lcast theinformation itcmizcd hclowioe os 1. Purchase order number. A'rs ruetdeem]",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.78101603190105,
+          95.90765380859375
+        ],
+        [
+          503.451171875,
+          95.90765380859375
+        ],
+        [
+          503.451171875,
+          52.36932373046875
+        ],
+        [
+          98.78101603190105,
+          52.36932373046875
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Contractor shall record equipment and material identifications and ensure that they are traceable to the location where they are incorporated into the work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.19606526692708,
+          134.47015380859375
+        ],
+        [
+          505.5263671875,
+          134.47015380859375
+        ],
+        [
+          505.5263671875,
+          95.49294026692712
+        ],
+        [
+          99.19606526692708,
+          95.49294026692712
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Tx6216-237-20",
+      "confidence": 0.95,
+      "box": [
+        [
+          280.5712890625,
+          57.34515380859375
+        ],
+        [
+          339.0928141276042,
+          57.34515380859375
+        ],
+        [
+          339.0928141276042,
+          44.07627360026038
+        ],
+        [
+          280.5712890625,
+          44.07627360026038
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Cntru Eonu",
+      "confidence": 0.95,
+      "box": [
+        [
+          279.7412109375,
+          38.68581136067712
+        ],
+        [
+          311.69976806640625,
+          38.68581136067712
+        ],
+        [
+          311.69976806640625,
+          26.66099039713538
+        ],
+        [
+          279.7412109375,
+          26.66099039713538
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "01",
+      "confidence": 0.95,
+      "box": [
+        [
+          278.0810139973958,
+          27.90496826171875
+        ],
+        [
+          289.7023111979167,
+          27.90496826171875
+        ],
+        [
+          289.7023111979167,
+          16.70933024088538
+        ],
+        [
+          278.0810139973958,
+          16.70933024088538
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "ColacbuualyCoritrol",
+      "confidence": 0.95,
+      "box": [
+        [
+          403.8400472005208,
+          41.58839925130212
+        ],
+        [
+          484.7740885416667,
+          41.58839925130212
+        ],
+        [
+          484.7740885416667,
+          33.29534912109375
+        ],
+        [
+          403.8400472005208,
+          33.29534912109375
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "PageMibr:10.of17",
+      "confidence": 0.95,
+      "box": [
+        [
+          405.915283203125,
+          27.07562255859375
+        ],
+        [
+          477.30322265625,
+          27.07562255859375
+        ],
+        [
+          477.30322265625,
+          17.95330810546875
+        ],
+        [
+          405.915283203125,
+          17.95330810546875
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Selorioon",
+      "confidence": 0.95,
+      "box": [
+        [
+          406.745361328125,
+          34.12469482421875
+        ],
+        [
+          450.3252360026042,
+          34.12469482421875
+        ],
+        [
+          450.3252360026042,
+          25.83164469401038
+        ],
+        [
+          406.745361328125,
+          25.83164469401038
+        ]
+      ],
+      "page": 326
+    },
+    {
+      "text": "Mlur",
+      "confidence": 0.95,
+      "box": [
+        [
+          354.8645833333333,
+          31.22210693359375
+        ],
+        [
+          373.9567057291667,
+          31.22210693359375
+        ],
+        [
+          373.9567057291667,
+          19.61191813151038
+        ],
+        [
+          354.8645833333333,
+          19.61191813151038
+        ]
+      ],
+      "page": 326
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 326,
+      "text": "All inspections and tests required by that Specification Section including breakdownforstatus ofrequiredinspectionofeachactivitywith respect to the contractor, the Engineer or any Third Party.\nRequired testing frequency.\nThe accept/rejcct criteria.\nRecords required to document compliance.\nProcedures or instruction to be used for control of each activity.\nProvide sufficient detail to allow the Contract Administrator / Engineer and otheragencieshavingjurisdictionalauthorityover thework toidentify operations tobe inspected by that organization.\nSuch operations shall not be bypassed by the Contractor, unless a written waiver is given by the witnessing organization.\n2.08 DOCUMENT AND SUBMITTAL CONTROL.\nEstablish written procedures for processing all documents and submittals associated with this project.\nEstablish procedures to ensure documents are prepared and transmitted or distributed in a timely manner.\nProcedures shall address receipt, filing, safe guarding, processing and transmitting.\nProcedures shall also ensure documents contain the required technical information.\nProcedures shall ensure that only latest revision documents are being used in work execution.\nProvide quality control procedures, methods, and current documents at the locations where they are to be used.\nMaintain separate files for quality related documents and make such files available to the Contract Administrator / Engineer upon request.\nMaintain all quality related records.\nProtect all records from damage, deterioration, and loss.\nContractor shall not change or alter approved submittals, procedures, shop drawings or any other pertinent documentation without the Contract Administrator written authorization.\n2.09 IDENTIFICATION AND CONTROL OF ITEMS AND MATERIALS\nA.Contractor shall establish control procedures to ensure that items or materials accepted through shipping or receiving inspection are properly used and installed.\nContractor shall identify all items and materials so that they are traceable throughout all inspections, test activities, and records.\nFor stored items, the identification method shall be consistent with the expected duration and type of storage.\nContractor shall develop and maintain a receiving/inspection log containing at lcast theinformation itcmizcd hclowioe os 1. Purchase order number. A'rs ruetdeem]\nContractor shall record equipment and material identifications and ensure that they are traceable to the location where they are incorporated into the work.\nTx6216-237-20\nCntru Eonu\n01\nColacbuualyCoritrol\nPageMibr:10.of17\nSelorioon\nMlur",
+      "line_count": 31
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

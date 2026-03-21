@@ -1,0 +1,497 @@
+{
+  "text": "<!-- image -->\n\n<!-- image -->\n\n## EMAAR\n\nMISR\n\n- 17.1 The Tenders will be opened in private by the Tender Committee of the Employer.\n\n## 18EVALUATIONOFTENDERS\n\n- 18.1 The Tenderer may be required, at its own cost, to visit the Employer's offices or other offices after the delivery of its Tender in order to discuss any aspect of its Employer and its consultants.\n- 18.2 TheTenderershalltakecarenottomakeerrorsinthecomputationofits Tender.If such errors are made then the Employer shall make the following adjustments:\n- a.Theerrorsshallbeamended throughto thetotalof theBillsofQuantities.\n- b.If the amended totalof theBillsofQuantitiesishigherthantheTenderSum acorrectingamountshallthenbedeductedfromtheamendedtotalofthe said Bills to bring it back to the Tender Sum and allrates and prices insertedbytheTendererintheBillsofQuantities(excludingProvisional Sums) shall be decreased in the same proportion as the amended total of the said Bills (excluding Provisional Sums) exceeds the Tender Sum (excluding Provisional Sums).\n- c.If theamended totalof thesaidBillsislower thantheTenderSum then the saidamendedtotalshallbedeemedtobecometheTenderSum.\n\nTheEmployershallnotifytheTendererof thesaidadjustments/corrections and theTenderer shallconfirm its agreement inwriting tobeboundby its Tender, adjusted as aforesaid. The Employer reserves the right to call upon confirm.\n\n## 19ACCEPTANCEORREJECTIONOFTENDERS\n\n- 19.1 hi h  o s       s  a receive and shall not be bound to give any reasons for non-acceptance of any such Tender.\n- 19.2 AnyTendersubmitted thatisnot inaccordancewiththeseInstructions to Tenderers may be rejected at the Employer's discretion.\n- 19.3 Any Tender may be accepted during the period of its validity by despatch to the Tenderer of an invitation for contract signature in writing from the Employer of such acceptance.\n- 19.4 Thereafter, the Tenderer concerned shall, forthwith upon an engrossment of the FormofAgreement(togetherwiththedocumentsreferred to therein)attached to these Instructions to Tenderers as Appendix J being presented to it, duly execute and deliver the same to the Employer within fourteen (14) days. Such comply with paragraph 8.1 (b) above.\n- 19.5 Until the said Form of Agreement (together with the documents referred to therein)is soexecutedanddelivered,the-Formof Tenderandthe accompanying documents and (if and to, the extent applicable) in paragraph 16\n\nTv.can 213297.005\n\nMividaGardensProject,EastCairo,Egypt.\n\nCtlo, latt lpuConstructlohofTownhomesVllasinParcel11&amp;Parcel 12\n\nInstruction toTenderers-Appendixes\n\nConstructionPackagePK#04",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          750.4711507161459
+        ],
+        [
+          164.47774251302084,
+          750.4711507161459
+        ],
+        [
+          164.47774251302084,
+          732.6536153157552
+        ],
+        [
+          97.24905395507812,
+          732.6536153157552
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.92708333333333,
+          730.1082458496094
+        ],
+        [
+          142.49099731445312,
+          730.1082458496094
+        ],
+        [
+          142.49099731445312,
+          719.5025736490885
+        ],
+        [
+          120.92708333333333,
+          719.5025736490885
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "17.1 The Tenders will be opened in private by the Tender Committee of the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.81960042317708,
+          695.745849609375
+        ],
+        [
+          506.9635416666667,
+          695.745849609375
+        ],
+        [
+          506.9635416666667,
+          669.8680013020834
+        ],
+        [
+          107.81960042317708,
+          669.8680013020834
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "18EVALUATIONOFTENDERS",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          660.959228515625
+        ],
+        [
+          249.0421346028646,
+          660.959228515625
+        ],
+        [
+          249.0421346028646,
+          649.0808715820312
+        ],
+        [
+          95.55775960286458,
+          649.0808715820312
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "18.1 The Tenderer may be required, at its own cost, to visit the Employer's offices or other offices after the delivery of its Tender in order to discuss any aspect of its Employer and its consultants.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.3967793782552,
+          643.9901326497396
+        ],
+        [
+          506.9635416666667,
+          643.9901326497396
+        ],
+        [
+          506.9635416666667,
+          595.2040201822916
+        ],
+        [
+          107.3967793782552,
+          595.2040201822916
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "18.2 TheTenderershalltakecarenottomakeerrorsinthecomputationofits Tender.If such errors are made then the Employer shall make the following adjustments:",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.3967793782552,
+          590.11328125
+        ],
+        [
+          506.1178792317708,
+          590.11328125
+        ],
+        [
+          506.1178792317708,
+          553.6297607421875
+        ],
+        [
+          107.3967793782552,
+          553.6297607421875
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "a.Theerrorsshallbeamended throughto thetotalof theBillsofQuantities.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.2225341796875,
+          548.5390218098958
+        ],
+        [
+          496.3929850260417,
+          548.5390218098958
+        ],
+        [
+          496.3929850260417,
+          535.8122151692708
+        ],
+        [
+          141.2225341796875,
+          535.8122151692708
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "b.If the amended totalof theBillsofQuantitiesishigherthantheTenderSum acorrectingamountshallthenbedeductedfromtheamendedtotalofthe said Bills to bring it back to the Tender Sum and allrates and prices insertedbytheTendererintheBillsofQuantities(excludingProvisional Sums) shall be decreased in the same proportion as the amended total of the said Bills (excluding Provisional Sums) exceeds the Tender Sum (excluding Provisional Sums).",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.2225341796875,
+          531.5699462890625
+        ],
+        [
+          506.5406901041667,
+          531.5699462890625
+        ],
+        [
+          506.5406901041667,
+          446.72450764973956
+        ],
+        [
+          141.2225341796875,
+          446.72450764973956
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "c.If theamended totalof thesaidBillsislower thantheTenderSum then the saidamendedtotalshallbedeemedtobecometheTenderSum.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.2225341796875,
+          442.48223876953125
+        ],
+        [
+          505.2722574869792,
+          442.48223876953125
+        ],
+        [
+          505.2722574869792,
+          417.45281982421875
+        ],
+        [
+          141.2225341796875,
+          417.45281982421875
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "TheEmployershallnotifytheTendererof thesaidadjustments/corrections and theTenderer shallconfirm its agreement inwriting tobeboundby its Tender, adjusted as aforesaid. The Employer reserves the right to call upon confirm.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.95407104492188,
+          413.21055094401044
+        ],
+        [
+          504.8494059244792,
+          413.21055094401044
+        ],
+        [
+          504.8494059244792,
+          352.97031656901044
+        ],
+        [
+          139.95407104492188,
+          352.97031656901044
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "19ACCEPTANCEORREJECTIONOFTENDERS",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          343.21307373046875
+        ],
+        [
+          333.18369547526044,
+          343.21307373046875
+        ],
+        [
+          333.18369547526044,
+          330.91050211588544
+        ],
+        [
+          93.4436543782552,
+          330.91050211588544
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "19.1 hi h  o s       s  a receive and shall not be bound to give any reasons for non-acceptance of any such Tender.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.70548502604167,
+          326.2439982096354
+        ],
+        [
+          504.8494059244792,
+          326.2439982096354
+        ],
+        [
+          504.8494059244792,
+          289.7604777018229
+        ],
+        [
+          105.70548502604167,
+          289.7604777018229
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "19.2 AnyTendersubmitted thatisnot inaccordancewiththeseInstructions to Tenderers may be rejected at the Employer's discretion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.2826639811198,
+          284.66973876953125
+        ],
+        [
+          504.4265950520833,
+          284.66973876953125
+        ],
+        [
+          504.4265950520833,
+          258.7918904622396
+        ],
+        [
+          105.2826639811198,
+          258.7918904622396
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "19.3 Any Tender may be accepted during the period of its validity by despatch to the Tenderer of an invitation for contract signature in writing from the Employer of such acceptance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.2826639811198,
+          255.39805094401038
+        ],
+        [
+          505.2722574869792,
+          255.39805094401038
+        ],
+        [
+          505.2722574869792,
+          218.49029541015625
+        ],
+        [
+          105.2826639811198,
+          218.49029541015625
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "19.4 Thereafter, the Tenderer concerned shall, forthwith upon an engrossment of the FormofAgreement(togetherwiththedocumentsreferred to therein)attached to these Instructions to Tenderers as Appendix J being presented to it, duly execute and deliver the same to the Employer within fourteen (14) days. Such comply with paragraph 8.1 (b) above.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.2826639811198,
+          214.24802652994788
+        ],
+        [
+          504.4265950520833,
+          214.24802652994788
+        ],
+        [
+          504.4265950520833,
+          140.85675048828125
+        ],
+        [
+          105.2826639811198,
+          140.85675048828125
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "19.5 Until the said Form of Agreement (together with the documents referred to therein)is soexecutedanddelivered,the-Formof Tenderandthe accompanying documents and (if and to, the extent applicable) in paragraph 16",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.43702189127605,
+          137.46287027994788
+        ],
+        [
+          504.4265950520833,
+          137.46287027994788
+        ],
+        [
+          504.4265950520833,
+          98.85821533203125
+        ],
+        [
+          104.43702189127605,
+          98.85821533203125
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "Tv.can 213297.005",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.49810791015625,
+          91.64638264973962
+        ],
+        [
+          254.1159871419271,
+          91.64638264973962
+        ],
+        [
+          254.1159871419271,
+          81.04066975911462
+        ],
+        [
+          194.49810791015625,
+          81.04066975911462
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "MividaGardensProject,EastCairo,Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          85.28293863932288
+        ],
+        [
+          221.98152669270834,
+          85.28293863932288
+        ],
+        [
+          221.98152669270834,
+          74.25307210286462
+        ],
+        [
+          95.55775960286458,
+          74.25307210286462
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "Ctlo, latt lpuConstructlohofTownhomesVllasinParcel11&Parcel 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          195.34375,
+          72.55613199869788
+        ],
+        [
+          226.20975748697916,
+          72.55613199869788
+        ],
+        [
+          226.20975748697916,
+          62.37473551432288
+        ],
+        [
+          195.34375,
+          62.37473551432288
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "Instruction toTenderers-Appendixes",
+      "confidence": 0.95,
+      "box": [
+        [
+          388.1505533854167,
+          83.16184488932288
+        ],
+        [
+          498.929931640625,
+          83.16184488932288
+        ],
+        [
+          498.929931640625,
+          73.82883707682288
+        ],
+        [
+          388.1505533854167,
+          73.82883707682288
+        ]
+      ],
+      "page": 590
+    },
+    {
+      "text": "ConstructionPackagePK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          76.79840087890625
+        ],
+        [
+          183.0819091796875,
+          76.79840087890625
+        ],
+        [
+          183.0819091796875,
+          67.88962809244788
+        ],
+        [
+          95.98058064778645,
+          67.88962809244788
+        ]
+      ],
+      "page": 590
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 590,
+      "text": "EMAAR\nMISR\n17.1 The Tenders will be opened in private by the Tender Committee of the Employer.\n18EVALUATIONOFTENDERS\n18.1 The Tenderer may be required, at its own cost, to visit the Employer's offices or other offices after the delivery of its Tender in order to discuss any aspect of its Employer and its consultants.\n18.2 TheTenderershalltakecarenottomakeerrorsinthecomputationofits Tender.If such errors are made then the Employer shall make the following adjustments:\na.Theerrorsshallbeamended throughto thetotalof theBillsofQuantities.\nb.If the amended totalof theBillsofQuantitiesishigherthantheTenderSum acorrectingamountshallthenbedeductedfromtheamendedtotalofthe said Bills to bring it back to the Tender Sum and allrates and prices insertedbytheTendererintheBillsofQuantities(excludingProvisional Sums) shall be decreased in the same proportion as the amended total of the said Bills (excluding Provisional Sums) exceeds the Tender Sum (excluding Provisional Sums).\nc.If theamended totalof thesaidBillsislower thantheTenderSum then the saidamendedtotalshallbedeemedtobecometheTenderSum.\nTheEmployershallnotifytheTendererof thesaidadjustments/corrections and theTenderer shallconfirm its agreement inwriting tobeboundby its Tender, adjusted as aforesaid. The Employer reserves the right to call upon confirm.\n19ACCEPTANCEORREJECTIONOFTENDERS\n19.1 hi h  o s       s  a receive and shall not be bound to give any reasons for non-acceptance of any such Tender.\n19.2 AnyTendersubmitted thatisnot inaccordancewiththeseInstructions to Tenderers may be rejected at the Employer's discretion.\n19.3 Any Tender may be accepted during the period of its validity by despatch to the Tenderer of an invitation for contract signature in writing from the Employer of such acceptance.\n19.4 Thereafter, the Tenderer concerned shall, forthwith upon an engrossment of the FormofAgreement(togetherwiththedocumentsreferred to therein)attached to these Instructions to Tenderers as Appendix J being presented to it, duly execute and deliver the same to the Employer within fourteen (14) days. Such comply with paragraph 8.1 (b) above.\n19.5 Until the said Form of Agreement (together with the documents referred to therein)is soexecutedanddelivered,the-Formof Tenderandthe accompanying documents and (if and to, the extent applicable) in paragraph 16\nTv.can 213297.005\nMividaGardensProject,EastCairo,Egypt.\nCtlo, latt lpuConstructlohofTownhomesVllasinParcel11&Parcel 12\nInstruction toTenderers-Appendixes\nConstructionPackagePK#04",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

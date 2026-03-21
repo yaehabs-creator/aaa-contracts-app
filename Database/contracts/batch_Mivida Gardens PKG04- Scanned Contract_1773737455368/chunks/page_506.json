@@ -1,0 +1,106 @@
+{
+  "text": "<!-- image -->\n\nNote: All inspection schedule shall be submitted before 3:00 pm the day before.\n\n<!-- image -->\n\n## INSPECTIONSCHEDULE\n\n## PROJECT\n\nConsultant\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Note: All inspection schedule shall be submitted before 3:00 pm the day before.",
+      "confidence": 0.95,
+      "box": [
+        [
+          83.00925699869792,
+          763.0803019205729
+        ],
+        [
+          92.55532836914062,
+          763.0803019205729
+        ],
+        [
+          92.55532836914062,
+          406.89548746744794
+        ],
+        [
+          83.00925699869792,
+          406.89548746744794
+        ]
+      ],
+      "page": 506
+    },
+    {
+      "text": "INSPECTIONSCHEDULE",
+      "confidence": 0.95,
+      "box": [
+        [
+          498.4705810546875,
+          474.48354085286456
+        ],
+        [
+          510.0918782552083,
+          474.48354085286456
+        ],
+        [
+          510.0918782552083,
+          338.47816975911456
+        ],
+        [
+          498.4705810546875,
+          338.47816975911456
+        ]
+      ],
+      "page": 506
+    },
+    {
+      "text": "PROJECT",
+      "confidence": 0.95,
+      "box": [
+        [
+          516.7326253255209,
+          413.11525472005206
+        ],
+        [
+          531.25927734375,
+          413.11525472005206
+        ],
+        [
+          531.25927734375,
+          340.13677978515625
+        ],
+        [
+          516.7326253255209,
+          340.13677978515625
+        ]
+      ],
+      "page": 506
+    },
+    {
+      "text": "Consultant",
+      "confidence": 0.95,
+      "box": [
+        [
+          469.8323974609375,
+          217.81488037109375
+        ],
+        [
+          480.6236165364583,
+          217.81488037109375
+        ],
+        [
+          480.6236165364583,
+          164.32497151692712
+        ],
+        [
+          469.8323974609375,
+          164.32497151692712
+        ]
+      ],
+      "page": 506
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 506,
+      "text": "Note: All inspection schedule shall be submitted before 3:00 pm the day before.\nINSPECTIONSCHEDULE\nPROJECT\nConsultant",
+      "line_count": 4
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

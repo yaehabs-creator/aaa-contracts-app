@@ -1,0 +1,382 @@
+{
+  "text": "## 27.PAYMENT\n\n## Time of Payment\n\n- 27.1Subject to Clause 27.2 (Employer's Right of Set-Off):\n- (a) within fourteen (14) days after the date of issue by the Project Manager of an Interim Certificate in accordance with Sub-Clause(g) of Clause 26.2 (lssue of Interim Certificates);or\n- (b) within thirty(30) days after the dateofissueby theProject Manager of any InterimCertificate in accordance with Sub-Clause (h) of Clause26.2(Issueof InterimCertificates)or anyFinal Certiflcate in accordancewithClause26.4(lssue of Final Certificates);\n\nthe EmployershallpaytotheContractoror theContractorshall payto the Employer (as the circumstances may require) the nett amount or final nett amount(s)shownby therelevantInterimCertificateorFinal Certificate\n\n## Employer'sRightofSet-Off\n\n- 27.2 The Employer shall be entitled to deduct and recover from any payment underClause27.1(TimeofPayment)any amountsdue to theEmployer fromtheContractor\n\nCurrency of Payment\n\n- 27.3All payments to the Contractor by the Employer and to the Employer by the Contractor shall be made in the Local Currency.\n\nPlace ofPayment\n\n- 27.4 All payments to be made under or in accordance with the Contract or otherwiseinrelationtotheWorksoranySectionorPortion thereof shall be madetosuchbankaccountoftherelevantpayeein theCountry as the payee may designate.\n\n## Third Party Payments\n\n27.5\n\n<!-- image -->\n\n- (a) No commission, fee, payment, gift or other benefit of a like or similar kindhasbeen orwill in thefuturebemadeby theContractor to any thirdparty(which expression shall without limitationincludeany consultant, servant, agent,employee, sponsor or distributor of the Employer) in connection with or arising out of the Contract.\n- (b) The provisions of Sub-Clause (a) above constitute a fundamental condition of the Contractand anybreachwhatsoeverthereofshall (notwithstanding theprovisionsofClause30(Defaultof Contractor) and Clause 31 (Termination for Convenience and Default of Employer)by thetermsofwhich in thisinstance theEmployershall not be bound) entitle the Employer at will and entirely in its discretion (and subject to no appeal), to terminate the Contract forthwith and\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "27.PAYMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          695.3216247558594
+        ],
+        [
+          169.97442626953125,
+          695.3216247558594
+        ],
+        [
+          169.97442626953125,
+          685.1401672363281
+        ],
+        [
+          96.82623291015625,
+          685.1401672363281
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "Time of Payment",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          673.68603515625
+        ],
+        [
+          172.9341837565104,
+          673.68603515625
+        ],
+        [
+          172.9341837565104,
+          662.2319132486979
+        ],
+        [
+          97.671875,
+          662.2319132486979
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "27.1Subject to Clause 27.2 (Employer's Right of Set-Off):",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          652.0504557291666
+        ],
+        [
+          384.3451741536458,
+          652.0504557291666
+        ],
+        [
+          384.3451741536458,
+          641.4447835286459
+        ],
+        [
+          127.2694091796875,
+          641.4447835286459
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "(a) within fourteen (14) days after the date of issue by the Project Manager of an Interim Certificate in accordance with Sub-Clause(g) of Clause 26.2 (lssue of Interim Certificates);or",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.71259562174478,
+          630.8390909830729
+        ],
+        [
+          474.40625,
+          630.8390909830729
+        ],
+        [
+          474.40625,
+          597.7493693033854
+        ],
+        [
+          157.71259562174478,
+          597.7493693033854
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "(b) within thirty(30) days after the dateofissueby theProject Manager of any InterimCertificate in accordance with Sub-Clause (h) of Clause26.2(Issueof InterimCertificates)or anyFinal Certiflcate in accordancewithClause26.4(lssue of Final Certificates);",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          586.7194620768229
+        ],
+        [
+          474.40625,
+          586.7194620768229
+        ],
+        [
+          474.40625,
+          543.4483032226562
+        ],
+        [
+          158.55823771158853,
+          543.4483032226562
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "the EmployershallpaytotheContractoror theContractorshall payto the Employer (as the circumstances may require) the nett amount or final nett amount(s)shownby therelevantInterimCertificateorFinal Certificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          164.90056355794272,
+          531.994160970052
+        ],
+        [
+          475.6747233072917,
+          531.994160970052
+        ],
+        [
+          475.6747233072917,
+          500.6013590494792
+        ],
+        [
+          164.90056355794272,
+          500.6013590494792
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "Employer'sRightofSet-Off",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.78598022460938,
+          487.87453206380206
+        ],
+        [
+          217.33048502604166,
+          487.87453206380206
+        ],
+        [
+          217.33048502604166,
+          476.42038981119794
+        ],
+        [
+          99.78598022460938,
+          476.42038981119794
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "27.2 The Employer shall be entitled to deduct and recover from any payment underClause27.1(TimeofPayment)any amountsdue to theEmployer fromtheContractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.960693359375,
+          467.08742268880206
+        ],
+        [
+          474.8290608723958,
+          467.08742268880206
+        ],
+        [
+          474.8290608723958,
+          433.99770100911456
+        ],
+        [
+          128.960693359375,
+          433.99770100911456
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "Currency of Payment",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.20880126953125,
+          422.54355875651044
+        ],
+        [
+          191.5383504231771,
+          422.54355875651044
+        ],
+        [
+          191.5383504231771,
+          411.08941650390625
+        ],
+        [
+          100.20880126953125,
+          411.08941650390625
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "27.3All payments to the Contractor by the Employer and to the Employer by the Contractor shall be made in the Local Currency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.53787231445312,
+          401.75644938151044
+        ],
+        [
+          474.8290608723958,
+          401.75644938151044
+        ],
+        [
+          474.8290608723958,
+          378.42392985026044
+        ],
+        [
+          128.53787231445312,
+          378.42392985026044
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "Place ofPayment",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.78598022460938,
+          367.81825764973956
+        ],
+        [
+          177.5852254231771,
+          367.81825764973956
+        ],
+        [
+          177.5852254231771,
+          356.78835042317706
+        ],
+        [
+          99.78598022460938,
+          356.78835042317706
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "27.4 All payments to be made under or in accordance with the Contract or otherwiseinrelationtotheWorksoranySectionorPortion thereof shall be madetosuchbankaccountoftherelevantpayeein theCountry as the payee may designate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.960693359375,
+          347.03110758463544
+        ],
+        [
+          475.6747233072917,
+          347.03110758463544
+        ],
+        [
+          475.6747233072917,
+          302.9115193684896
+        ],
+        [
+          128.960693359375,
+          302.9115193684896
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "Third Party Payments",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.63162231445312,
+          291.4573771158854
+        ],
+        [
+          194.07527669270834,
+          291.4573771158854
+        ],
+        [
+          194.07527669270834,
+          280.00323486328125
+        ],
+        [
+          100.63162231445312,
+          280.00323486328125
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "27.5",
+      "confidence": 0.95,
+      "box": [
+        [
+          130.22916666666666,
+          269.8217976888021
+        ],
+        [
+          152.21590169270834,
+          269.8217976888021
+        ],
+        [
+          152.21590169270834,
+          259.2160847981771
+        ],
+        [
+          130.22916666666666,
+          259.2160847981771
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "(a) No commission, fee, payment, gift or other benefit of a like or similar kindhasbeen orwill in thefuturebemadeby theContractor to any thirdparty(which expression shall without limitationincludeany consultant, servant, agent,employee, sponsor or distributor of the Employer) in connection with or arising out of the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          270.67022705078125
+        ],
+        [
+          476.5203450520833,
+          270.67022705078125
+        ],
+        [
+          476.5203450520833,
+          215.94492594401038
+        ],
+        [
+          158.9810587565104,
+          215.94492594401038
+        ]
+      ],
+      "page": 102
+    },
+    {
+      "text": "(b) The provisions of Sub-Clause (a) above constitute a fundamental condition of the Contractand anybreachwhatsoeverthereofshall (notwithstanding theprovisionsofClause30(Defaultof Contractor) and Clause 31 (Termination for Convenience and Default of Employer)by thetermsofwhich in thisinstance theEmployershall not be bound) entitle the Employer at will and entirely in its discretion (and subject to no appeal), to terminate the Contract forthwith and",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.6723429361979,
+          204.91501871744788
+        ],
+        [
+          477.788818359375,
+          204.91501871744788
+        ],
+        [
+          477.788818359375,
+          129.82680257161462
+        ],
+        [
+          160.6723429361979,
+          129.82680257161462
+        ]
+      ],
+      "page": 102
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 102,
+      "text": "27.PAYMENT\nTime of Payment\n27.1Subject to Clause 27.2 (Employer's Right of Set-Off):\n(a) within fourteen (14) days after the date of issue by the Project Manager of an Interim Certificate in accordance with Sub-Clause(g) of Clause 26.2 (lssue of Interim Certificates);or\n(b) within thirty(30) days after the dateofissueby theProject Manager of any InterimCertificate in accordance with Sub-Clause (h) of Clause26.2(Issueof InterimCertificates)or anyFinal Certiflcate in accordancewithClause26.4(lssue of Final Certificates);\nthe EmployershallpaytotheContractoror theContractorshall payto the Employer (as the circumstances may require) the nett amount or final nett amount(s)shownby therelevantInterimCertificateorFinal Certificate\nEmployer'sRightofSet-Off\n27.2 The Employer shall be entitled to deduct and recover from any payment underClause27.1(TimeofPayment)any amountsdue to theEmployer fromtheContractor\nCurrency of Payment\n27.3All payments to the Contractor by the Employer and to the Employer by the Contractor shall be made in the Local Currency.\nPlace ofPayment\n27.4 All payments to be made under or in accordance with the Contract or otherwiseinrelationtotheWorksoranySectionorPortion thereof shall be madetosuchbankaccountoftherelevantpayeein theCountry as the payee may designate.\nThird Party Payments\n27.5\n(a) No commission, fee, payment, gift or other benefit of a like or similar kindhasbeen orwill in thefuturebemadeby theContractor to any thirdparty(which expression shall without limitationincludeany consultant, servant, agent,employee, sponsor or distributor of the Employer) in connection with or arising out of the Contract.\n(b) The provisions of Sub-Clause (a) above constitute a fundamental condition of the Contractand anybreachwhatsoeverthereofshall (notwithstanding theprovisionsofClause30(Defaultof Contractor) and Clause 31 (Termination for Convenience and Default of Employer)by thetermsofwhich in thisinstance theEmployershall not be bound) entitle the Employer at will and entirely in its discretion (and subject to no appeal), to terminate the Contract forthwith and",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

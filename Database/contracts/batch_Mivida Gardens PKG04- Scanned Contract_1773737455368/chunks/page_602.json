@@ -1,0 +1,474 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n## APPENDIXL STATEMENTOFCOMPLIANCEWITHTENDERPACKAGE\n\nMivida Gardens Project, East Cairo, Cairo, Egypt\n\n## [PK#04] Constructionof TownhomesVillas inParcel 11&amp;Parcel 12\n\nWith respect to our submitted Technical &amp; Financial offer for the a/m project, we acknowledgethatwehavereadandunderstand theTenderdocuments(including theissuedAddenda,Answer toTenderQueries)andhave taken into accountinthe preparation of our Tender all information which may affect or influence our Tender Price in any way and confirm the following:\n\n- Comply withall Tender Documents including,butnot limited to,the termsand conditions andtechnicalspecification.Incaseofcontradictionbetweenthe Tender documents and our offer, Tender documents shall prevail.\n- Submitted vendors / manufacturers during tender stage are for evaluation purpose only. However vendors / manufacturers shall be subject to Supervision consultantshallhavetherighttorejectanyvendor/manufacturer thatinthe opinionoftheEmployer/supervisionconsultantnotfulfillingthetechnical specificationrequirements.\n- We hereby agree to waive any technical / financial clarifications in contrary to the Tenderdocuments.\n\n<!-- image -->\n\n.C\n\n<!-- image -->\n\nSigned by\n\nIn the capacity of\n\nduly authorized to sign tenders forand on behalf of:\n\nSignature\n\nDate\n\n中建国际埃及\n\n有限责任公司\n\nDevolopineotSaz. Tax Canc218-287-209 CR12841 2.0Po2m, Ceroop\n\nEmaarMisr, Mivida GardensProject,EastCairo,Egypt ConstructionPackagePK#U4\n\nConstructionofTownhomesVillasinParcel11&amp;Parcel12 Instructlon toTenderers-Appendlxes Page 1of 1",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          750.8953857421875
+        ],
+        [
+          165.74620564778647,
+          750.8953857421875
+        ],
+        [
+          165.74620564778647,
+          733.5020650227865
+        ],
+        [
+          98.09469604492188,
+          733.5020650227865
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.19554646809895,
+          730.9567057291666
+        ],
+        [
+          143.75947062174478,
+          730.9567057291666
+        ],
+        [
+          143.75947062174478,
+          720.3510233561198
+        ],
+        [
+          122.19554646809895,
+          720.3510233561198
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "APPENDIXL STATEMENTOFCOMPLIANCEWITHTENDERPACKAGE",
+      "confidence": 0.95,
+      "box": [
+        [
+          150.10179646809897,
+          691.5035807291666
+        ],
+        [
+          433.8153483072917,
+          691.5035807291666
+        ],
+        [
+          433.8153483072917,
+          655.8684895833334
+        ],
+        [
+          150.10179646809897,
+          655.8684895833334
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "Mivida Gardens Project, East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          631.6875406901041
+        ],
+        [
+          358.1302083333333,
+          631.6875406901041
+        ],
+        [
+          358.1302083333333,
+          618.5364990234375
+        ],
+        [
+          95.55775960286458,
+          618.5364990234375
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "[PK#04] Constructionof TownhomesVillas inParcel 11&Parcel 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          618.5364990234375
+        ],
+        [
+          387.304931640625,
+          618.5364990234375
+        ],
+        [
+          387.304931640625,
+          595.6282348632812
+        ],
+        [
+          96.40340169270833,
+          595.6282348632812
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "With respect to our submitted Technical & Financial offer for the a/m project, we acknowledgethatwehavereadandunderstand theTenderdocuments(including theissuedAddenda,Answer toTenderQueries)andhave taken into accountinthe preparation of our Tender all information which may affect or influence our Tender Price in any way and confirm the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          583.7498779296875
+        ],
+        [
+          488.7821858723958,
+          583.7498779296875
+        ],
+        [
+          488.7821858723958,
+          522.2369384765625
+        ],
+        [
+          95.98058064778645,
+          522.2369384765625
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "Comply withall Tender Documents including,butnot limited to,the termsand conditions andtechnicalspecification.Incaseofcontradictionbetweenthe Tender documents and our offer, Tender documents shall prevail.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.625,
+          509.5101318359375
+        ],
+        [
+          487.9365234375,
+          509.5101318359375
+        ],
+        [
+          487.9365234375,
+          473.87506103515625
+        ],
+        [
+          111.625,
+          473.87506103515625
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "Submitted vendors / manufacturers during tender stage are for evaluation purpose only. However vendors / manufacturers shall be subject to Supervision consultantshallhavetherighttorejectanyvendor/manufacturer thatinthe opinionoftheEmployer/supervisionconsultantnotfulfillingthetechnical specificationrequirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.20217895507812,
+          473.45082600911456
+        ],
+        [
+          488.359375,
+          473.45082600911456
+        ],
+        [
+          488.359375,
+          401.75644938151044
+        ],
+        [
+          111.20217895507812,
+          401.75644938151044
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "We hereby agree to waive any technical / financial clarifications in contrary to the Tenderdocuments.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.35652669270833,
+          401.33221435546875
+        ],
+        [
+          487.5137125651042,
+          401.33221435546875
+        ],
+        [
+          487.5137125651042,
+          376.72703043619794
+        ],
+        [
+          110.35652669270833,
+          376.72703043619794
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": ".C",
+      "confidence": 0.95,
+      "box": [
+        [
+          486.6680908203125,
+          187.09747314453125
+        ],
+        [
+          486.6680908203125,
+          187.09747314453125
+        ],
+        [
+          486.6680908203125,
+          169.70416259765625
+        ],
+        [
+          486.6680908203125,
+          169.70416259765625
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "Signed by",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          342.78883870442706
+        ],
+        [
+          143.75947062174478,
+          342.78883870442706
+        ],
+        [
+          143.75947062174478,
+          327.9408976236979
+        ],
+        [
+          95.98058064778645,
+          327.9408976236979
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "In the capacity of",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          321.15325927734375
+        ],
+        [
+          176.73958333333334,
+          321.15325927734375
+        ],
+        [
+          176.73958333333334,
+          307.5779825846354
+        ],
+        [
+          95.55775960286458,
+          307.5779825846354
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "duly authorized to sign tenders forand on behalf of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          296.5480753580729
+        ],
+        [
+          336.14345296223956,
+          296.5480753580729
+        ],
+        [
+          336.14345296223956,
+          283.8212687174479
+        ],
+        [
+          96.40340169270833,
+          283.8212687174479
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "Signature",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          260.91302490234375
+        ],
+        [
+          142.06817626953125,
+          260.91302490234375
+        ],
+        [
+          142.06817626953125,
+          247.76198323567712
+        ],
+        [
+          95.98058064778645,
+          247.76198323567712
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          238.00474039713538
+        ],
+        [
+          119.2357889811198,
+          238.00474039713538
+        ],
+        [
+          119.2357889811198,
+          224.42946370442712
+        ],
+        [
+          95.1349385579427,
+          224.42946370442712
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "中建国际埃及",
+      "confidence": 0.95,
+      "box": [
+        [
+          441.4261067708333,
+          240.55010986328125
+        ],
+        [
+          446.0771484375,
+          240.55010986328125
+        ],
+        [
+          446.0771484375,
+          173.52223714192712
+        ],
+        [
+          441.4261067708333,
+          173.52223714192712
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "有限责任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          454.9564208984375,
+          240.55010986328125
+        ],
+        [
+          464.2585042317708,
+          240.55010986328125
+        ],
+        [
+          464.2585042317708,
+          170.55263264973962
+        ],
+        [
+          454.9564208984375,
+          170.55263264973962
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "DevolopineotSaz. Tax Canc218-287-209 CR12841 2.0Po2m, Ceroop",
+      "confidence": 0.95,
+      "box": [
+        [
+          205.9142862955729,
+          168.43149820963538
+        ],
+        [
+          273.56581624348956,
+          168.43149820963538
+        ],
+        [
+          273.56581624348956,
+          133.64483642578125
+        ],
+        [
+          205.9142862955729,
+          133.64483642578125
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "EmaarMisr, Mivida GardensProject,EastCairo,Egypt ConstructionPackagePK#U4",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.20880126953125,
+          92.49485270182288
+        ],
+        [
+          224.09564208984375,
+          92.49485270182288
+        ],
+        [
+          224.09564208984375,
+          69.16233317057288
+        ],
+        [
+          100.20880126953125,
+          69.16233317057288
+        ]
+      ],
+      "page": 602
+    },
+    {
+      "text": "ConstructionofTownhomesVillasinParcel11&Parcel12 Instructlon toTenderers-Appendlxes Page 1of 1",
+      "confidence": 0.95,
+      "box": [
+        [
+          341.64013671875,
+          92.91908772786462
+        ],
+        [
+          502.3125,
+          92.91908772786462
+        ],
+        [
+          502.3125,
+          69.16233317057288
+        ],
+        [
+          341.64013671875,
+          69.16233317057288
+        ]
+      ],
+      "page": 602
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 602,
+      "text": "EMAAR\nMISR\nAPPENDIXL STATEMENTOFCOMPLIANCEWITHTENDERPACKAGE\nMivida Gardens Project, East Cairo, Cairo, Egypt\n[PK#04] Constructionof TownhomesVillas inParcel 11&Parcel 12\nWith respect to our submitted Technical & Financial offer for the a/m project, we acknowledgethatwehavereadandunderstand theTenderdocuments(including theissuedAddenda,Answer toTenderQueries)andhave taken into accountinthe preparation of our Tender all information which may affect or influence our Tender Price in any way and confirm the following:\nComply withall Tender Documents including,butnot limited to,the termsand conditions andtechnicalspecification.Incaseofcontradictionbetweenthe Tender documents and our offer, Tender documents shall prevail.\nSubmitted vendors / manufacturers during tender stage are for evaluation purpose only. However vendors / manufacturers shall be subject to Supervision consultantshallhavetherighttorejectanyvendor/manufacturer thatinthe opinionoftheEmployer/supervisionconsultantnotfulfillingthetechnical specificationrequirements.\nWe hereby agree to waive any technical / financial clarifications in contrary to the Tenderdocuments.\n.C\nSigned by\nIn the capacity of\nduly authorized to sign tenders forand on behalf of:\nSignature\nDate\n中建国际埃及\n有限责任公司\nDevolopineotSaz. Tax Canc218-287-209 CR12841 2.0Po2m, Ceroop\nEmaarMisr, Mivida GardensProject,EastCairo,Egypt ConstructionPackagePK#U4\nConstructionofTownhomesVillasinParcel11&Parcel12 Instructlon toTenderers-Appendlxes Page 1of 1",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,451 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n## SECTION 01770\n\n## TAKE-OVERPROCEDURES\n\nPART 1--GENERAL\n\n## 1.01 SECTIONINCLUDES\n\n1. Administrative procedures preceding the issuance of the Taking Over and PerformanceCertificatesasoutlinedinSection01700.\n\n## 1.02 TAKINGOVER\n\n1. In order to provide for an orderly transition period, Contractor shall complete areas and systems on or prior to theMilestoneDates. Contractor shall include in his Contract Price all costs involved to ensure suchMilestoneDatesareachieved.Noadditionalcompensationshall be paid by Employer to achieve such dates.\n2. 2.System completion shall mean complete,tested,commissioned and operational in accordance with the provisions of the Contract,ready to start specialized training ofEmployer's designated personnel.Submission andapproval of OperationsandMaintenance manuals in accordancewith Section 01730 is a prerequisite to system completion\n3. 3.Area completion shall mean complete with all non-conformance listed items satisfactorily repaired, touched-up or replaced to conform to the Contract Documents, and OperationsandMaintenancemanuals submitted and approved in accordance with Section 01730.\n\n## 1.03 INSPECTIONANDDECLARATIONPROCEDURES\n\n- 1.Contractor's Inspection: Contractor shall conduct an inspection of the Works; identify work which is defective or otherwise not in accordance with the Contract; repair as required to conform to Contract Documents. Notify ContractAdministrator inwriting thatcorrectionshavebeenmade. Provide Contractor's remaining defects list to Supervision Consultant through Contract Administrator and request Supervision Consultant Inspcction.\n- 2.S Supervision Consultant Inspection: They will perform an inspection of the Workstoidentifyworkwhichisdefectiveorotherwisenotinaccordance withtheContract.TheContractor shallcorrect Workandadvise the Contract Administrator accordingly.\n3. Taking Over: Cortractor will suhmit a written certificate that the following havebeenperformed:\n- a) The whole of the Works has beeri completed, passed the Tests on Completion and inspectedforcompliancewiththe Contract Documents,\n\nDefectshavebeencorrectedanddeficiencieshavebeencompleted to conform to the Contract Documents, quipment and systems have passed the Tests on Completion, djusted and balanced and are fully operational,\n\nbeen submitted.\n\n- e)Operation of systemshave been demonstrated toEmployer and/or Operator'spersonnel,and\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          83.83935038248698,
+          771.3733113606771
+        ],
+        [
+          156.88750203450522,
+          771.3733113606771
+        ],
+        [
+          156.88750203450522,
+          753.1286926269531
+        ],
+        [
+          83.83935038248698,
+          753.1286926269531
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          748.982187906901
+        ],
+        [
+          132.39977010091147,
+          748.982187906901
+        ],
+        [
+          132.39977010091147,
+          738.6159210205078
+        ],
+        [
+          109.98726399739583,
+          738.6159210205078
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "SECTION 01770",
+      "confidence": 0.95,
+      "box": [
+        [
+          249.02777099609375,
+          719.9566446940104
+        ],
+        [
+          334.94236246744794,
+          719.9566446940104
+        ],
+        [
+          334.94236246744794,
+          709.5903828938802
+        ],
+        [
+          249.02777099609375,
+          709.5903828938802
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "TAKE-OVERPROCEDURES",
+      "confidence": 0.95,
+      "box": [
+        [
+          217.4842529296875,
+          697.150868733724
+        ],
+        [
+          366.9009195963542,
+          697.150868733724
+        ],
+        [
+          366.9009195963542,
+          686.3699544270834
+        ],
+        [
+          217.4842529296875,
+          686.3699544270834
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "PART 1--GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          673.9304402669271
+        ],
+        [
+          185.11065673828125,
+          673.9304402669271
+        ],
+        [
+          185.11065673828125,
+          663.1495259602865
+        ],
+        [
+          78.85879516601562,
+          663.1495259602865
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "1.01 SECTIONINCLUDES",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          651.539306640625
+        ],
+        [
+          224.125,
+          651.539306640625
+        ],
+        [
+          224.125,
+          640.7584025065104
+        ],
+        [
+          79.27384440104167,
+          640.7584025065104
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "Administrative procedures preceding the issuance of the Taking Over and PerformanceCertificatesasoutlinedinSection01700.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          635.3679402669271
+        ],
+        [
+          506.7715250651042,
+          635.3679402669271
+        ],
+        [
+          506.7715250651042,
+          612.5621744791666
+        ],
+        [
+          111.64745076497395,
+          612.5621744791666
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "1.02 TAKINGOVER",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          600.1226399739584
+        ],
+        [
+          192.58148193359375,
+          600.1226399739584
+        ],
+        [
+          192.58148193359375,
+          589.3417358398438
+        ],
+        [
+          79.27384440104167,
+          589.3417358398438
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "In order to provide for an orderly transition period, Contractor shall complete areas and systems on or prior to theMilestoneDates. Contractor shall include in his Contract Price all costs involved to ensure suchMilestoneDatesareachieved.Noadditionalcompensationshall be paid by Employer to achieve such dates.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          583.53662109375
+        ],
+        [
+          506.7715250651042,
+          583.53662109375
+        ],
+        [
+          506.7715250651042,
+          525.9002075195312
+        ],
+        [
+          112.0625,
+          525.9002075195312
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "2.System completion shall mean complete,tested,commissioned and operational in accordance with the provisions of the Contract,ready to start specialized training ofEmployer's designated personnel.Submission andapproval of OperationsandMaintenance manuals in accordancewith Section 01730 is a prerequisite to system completion",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          520.509745279948
+        ],
+        [
+          506.7715250651042,
+          520.509745279948
+        ],
+        [
+          506.7715250651042,
+          462.87331136067706
+        ],
+        [
+          111.64745076497395,
+          462.87331136067706
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "3.Area completion shall mean complete with all non-conformance listed items satisfactorily repaired, touched-up or replaced to conform to the Contract Documents, and OperationsandMaintenancemanuals submitted and approved in accordance with Section 01730.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          458.31215413411456
+        ],
+        [
+          506.7715250651042,
+          458.31215413411456
+        ],
+        [
+          506.7715250651042,
+          412.70062255859375
+        ],
+        [
+          111.64745076497395,
+          412.70062255859375
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "1.03 INSPECTIONANDDECLARATIONPROCEDURES",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          400.67576090494794
+        ],
+        [
+          378.937255859375,
+          400.67576090494794
+        ],
+        [
+          378.937255859375,
+          389.89483642578125
+        ],
+        [
+          79.27384440104167,
+          389.89483642578125
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "1.Contractor's Inspection: Contractor shall conduct an inspection of the Works; identify work which is defective or otherwise not in accordance with the Contract; repair as required to conform to Contract Documents. Notify ContractAdministrator inwriting thatcorrectionshavebeenmade. Provide Contractor's remaining defects list to Supervision Consultant through Contract Administrator and request Supervision Consultant Inspcction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          384.91904703776044
+        ],
+        [
+          508.8467610677083,
+          384.91904703776044
+        ],
+        [
+          508.8467610677083,
+          303.64752197265625
+        ],
+        [
+          113.30763753255208,
+          303.64752197265625
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "2.S Supervision Consultant Inspection: They will perform an inspection of the Workstoidentifyworkwhichisdefectiveorotherwisenotinaccordance withtheContract.TheContractor shallcorrect Workandadvise the Contract Administrator accordingly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          299.08636474609375
+        ],
+        [
+          506.7715250651042,
+          299.08636474609375
+        ],
+        [
+          506.7715250651042,
+          252.23085530598962
+        ],
+        [
+          113.30763753255208,
+          252.23085530598962
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "Taking Over: Cortractor will suhmit a written certificate that the following havebeenperformed:",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          248.08437093098962
+        ],
+        [
+          506.7715250651042,
+          248.08437093098962
+        ],
+        [
+          506.7715250651042,
+          224.86391194661462
+        ],
+        [
+          112.47754923502605,
+          224.86391194661462
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "The whole of the Works has beeri completed, passed the Tests on Completion and inspectedforcompliancewiththe Contract Documents,",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          219.47349039713538
+        ],
+        [
+          508.0166829427083,
+          219.47349039713538
+        ],
+        [
+          508.0166829427083,
+          184.22816975911462
+        ],
+        [
+          129.07939656575522,
+          184.22816975911462
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "Defectshavebeencorrectedanddeficiencieshavebeencompleted to conform to the Contract Documents, quipment and systems have passed the Tests on Completion, djusted and balanced and are fully operational,",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.75647989908853,
+          178.83770751953125
+        ],
+        [
+          506.7715250651042,
+          178.83770751953125
+        ],
+        [
+          506.7715250651042,
+          156.03196207682288
+        ],
+        [
+          147.75647989908853,
+          156.03196207682288
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "been submitted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          147.75647989908853,
+          110.42034912109375
+        ],
+        [
+          229.5206095377604,
+          110.42034912109375
+        ],
+        [
+          229.5206095377604,
+          99.63950602213538
+        ],
+        [
+          147.75647989908853,
+          99.63950602213538
+        ]
+      ],
+      "page": 385
+    },
+    {
+      "text": "e)Operation of systemshave been demonstrated toEmployer and/or Operator'spersonnel,and",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          94.24904378255212
+        ],
+        [
+          507.6016031901042,
+          94.24904378255212
+        ],
+        [
+          507.6016031901042,
+          71.02858479817712
+        ],
+        [
+          129.49444580078125,
+          71.02858479817712
+        ]
+      ],
+      "page": 385
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 385,
+      "text": "EMAAR\nMISR\nSECTION 01770\nTAKE-OVERPROCEDURES\nPART 1--GENERAL\n1.01 SECTIONINCLUDES\nAdministrative procedures preceding the issuance of the Taking Over and PerformanceCertificatesasoutlinedinSection01700.\n1.02 TAKINGOVER\nIn order to provide for an orderly transition period, Contractor shall complete areas and systems on or prior to theMilestoneDates. Contractor shall include in his Contract Price all costs involved to ensure suchMilestoneDatesareachieved.Noadditionalcompensationshall be paid by Employer to achieve such dates.\n2.System completion shall mean complete,tested,commissioned and operational in accordance with the provisions of the Contract,ready to start specialized training ofEmployer's designated personnel.Submission andapproval of OperationsandMaintenance manuals in accordancewith Section 01730 is a prerequisite to system completion\n3.Area completion shall mean complete with all non-conformance listed items satisfactorily repaired, touched-up or replaced to conform to the Contract Documents, and OperationsandMaintenancemanuals submitted and approved in accordance with Section 01730.\n1.03 INSPECTIONANDDECLARATIONPROCEDURES\n1.Contractor's Inspection: Contractor shall conduct an inspection of the Works; identify work which is defective or otherwise not in accordance with the Contract; repair as required to conform to Contract Documents. Notify ContractAdministrator inwriting thatcorrectionshavebeenmade. Provide Contractor's remaining defects list to Supervision Consultant through Contract Administrator and request Supervision Consultant Inspcction.\n2.S Supervision Consultant Inspection: They will perform an inspection of the Workstoidentifyworkwhichisdefectiveorotherwisenotinaccordance withtheContract.TheContractor shallcorrect Workandadvise the Contract Administrator accordingly.\nTaking Over: Cortractor will suhmit a written certificate that the following havebeenperformed:\nThe whole of the Works has beeri completed, passed the Tests on Completion and inspectedforcompliancewiththe Contract Documents,\nDefectshavebeencorrectedanddeficiencieshavebeencompleted to conform to the Contract Documents, quipment and systems have passed the Tests on Completion, djusted and balanced and are fully operational,\nbeen submitted.\ne)Operation of systemshave been demonstrated toEmployer and/or Operator'spersonnel,and",
+      "line_count": 19
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

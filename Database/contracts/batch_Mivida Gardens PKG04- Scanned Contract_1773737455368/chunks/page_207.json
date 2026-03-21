@@ -1,0 +1,175 @@
+{
+  "text": "<!-- image -->\n\nPolicy no.: P-CAR-A0+1-24\n\nProduction:Connect Insurance Brokerage\n\nRegistration num ber: 29\n\n<!-- image -->\n\n<!-- image -->\n\nAXA General Insurance Egypt(AxA insurance) S.A.E. TwlrTowets,Plot15,South90slret, FourthandmunPder Fifth Settlement,NewCairo,Cairo,E 0 P.O.Box:146ElGazira CH13941 Fax:27599333 229 Website:www.axa-egypt.com D Regulatedunderno.83970,Cairolnvestme Regulatedunderlawno.10&amp;159foryear1981\n\nContractorsAll Risks Open Cover\n\n<!-- image -->\n\n<!-- image -->\n\n： rvoqr\n\n1\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Policy no.: P-CAR-A0+1-24",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          646.1488647460938
+        ],
+        [
+          183.8654988606771,
+          646.1488647460938
+        ],
+        [
+          183.8654988606771,
+          635.3679402669271
+        ],
+        [
+          88.4048563639323,
+          635.3679402669271
+        ]
+      ],
+      "page": 207
+    },
+    {
+      "text": "Production:Connect Insurance Brokerage",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.4048563639323,
+          634.9532877604166
+        ],
+        [
+          229.5206095377604,
+          634.9532877604166
+        ],
+        [
+          229.5206095377604,
+          625.4163208007812
+        ],
+        [
+          88.4048563639323,
+          625.4163208007812
+        ]
+      ],
+      "page": 207
+    },
+    {
+      "text": "Registration num ber: 29",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.9898173014323,
+          624.1723836263021
+        ],
+        [
+          175.1495361328125,
+          624.1723836263021
+        ],
+        [
+          175.1495361328125,
+          615.0500691731771
+        ],
+        [
+          87.9898173014323,
+          615.0500691731771
+        ]
+      ],
+      "page": 207
+    },
+    {
+      "text": "AXA General Insurance Egypt(AxA insurance) S.A.E. TwlrTowets,Plot15,South90slret, FourthandmunPder Fifth Settlement,NewCairo,Cairo,E 0 P.O.Box:146ElGazira CH13941 Fax:27599333 229 Website:www.axa-egypt.com D Regulatedunderno.83970,Cairolnvestme Regulatedunderlawno.10&159foryear1981",
+      "confidence": 0.95,
+      "box": [
+        [
+          24.48773193359375,
+          107.93247477213538
+        ],
+        [
+          203.7877400716146,
+          107.93247477213538
+        ],
+        [
+          203.7877400716146,
+          14.221455891927121
+        ],
+        [
+          24.48773193359375,
+          14.221455891927121
+        ]
+      ],
+      "page": 207
+    },
+    {
+      "text": "ContractorsAll Risks Open Cover",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.8409627278646,
+          677.6622924804688
+        ],
+        [
+          353.2043863932292,
+          677.6622924804688
+        ],
+        [
+          353.2043863932292,
+          668.1253356933594
+        ],
+        [
+          232.8409627278646,
+          668.1253356933594
+        ]
+      ],
+      "page": 207
+    },
+    {
+      "text": "： rvoqr",
+      "confidence": 0.95,
+      "box": [
+        [
+          476.88818359375,
+          66.88210042317712
+        ],
+        [
+          539.1451416015625,
+          66.88210042317712
+        ],
+        [
+          539.1451416015625,
+          46.97886149088538
+        ],
+        [
+          476.88818359375,
+          46.97886149088538
+        ]
+      ],
+      "page": 207
+    },
+    {
+      "text": "1",
+      "confidence": 0.95,
+      "box": [
+        [
+          415.4613444010417,
+          24.17311604817712
+        ],
+        [
+          538.3150634765625,
+          24.17311604817712
+        ],
+        [
+          538.3150634765625,
+          15.050801595052121
+        ],
+        [
+          415.4613444010417,
+          15.050801595052121
+        ]
+      ],
+      "page": 207
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 207,
+      "text": "Policy no.: P-CAR-A0+1-24\nProduction:Connect Insurance Brokerage\nRegistration num ber: 29\nAXA General Insurance Egypt(AxA insurance) S.A.E. TwlrTowets,Plot15,South90slret, FourthandmunPder Fifth Settlement,NewCairo,Cairo,E 0 P.O.Box:146ElGazira CH13941 Fax:27599333 229 Website:www.axa-egypt.com D Regulatedunderno.83970,Cairolnvestme Regulatedunderlawno.10&159foryear1981\nContractorsAll Risks Open Cover\n： rvoqr\n1",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

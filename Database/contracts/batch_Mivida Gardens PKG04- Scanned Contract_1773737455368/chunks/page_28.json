@@ -1,0 +1,60 @@
+{
+  "text": "28.\n\nFIXEDRATESANDPRICES\n\n|     | 28.1                       | Fixed RatesandPrices                          | 75   |\n|-----|----------------------------|-----------------------------------------------|------|\n| 29. | FRUSTRATIONANDFORCEMAJEURE |                                               |      |\n|     | 29.1                       | Frustration                                   | 75   |\n|     | 29.2                       | DefinitionofForceMajeure                      | 75   |\n|     | 29.3                       | Noticeof ForceMajeure                         | 76   |\n|     | 29.4                       | EffectofForceMajeure                          | 76   |\n|     | 29.5                       | Duty to Minimise Delay                        | 76   |\n|     | 29.6                       | ForceMajeure affectingSubcontractor           | 76   |\n|     | 29.7                       | TerminationinConsequenceofForceMajeure        | 77   |\n|     | 29.8                       | PaymentonFrustrationorForceMajeure            | 77   |\n|     | 29.9                       | DefinitionofWar                               | 78   |\n| 30. |                            | DEFAULTOFCONTRACTOR                           |      |\n|     | 30.1                       | Notice to Correct                             | 78   |\n|     | 30.2                       | Definition of Default                         | 79   |\n|     | 30.3                       | TerminationfollowingDefault                   | 80   |\n|     | 30.4                       | ContinuationfollowingDefault                  | 80   |\n|     | 30.5                       | Valuation at Entry and Expulsion              | 81   |\n|     | 30.6                       | Payments afterEntryand Expulsion              | 81   |\n|     | 30.7                       | AssignmentofBenefitofAgreement                | 82   |\n| 31. |                            | TERMINATIONFORCONVENIENCEANDDEFAULTOFEMPLOYER |      |\n|     | 31.1                       | TerminationforConvenience                     | 82   |\n|     | 31.2                       | Defaultof Employer                            | 82   |\n|     | 31.3                       | Payment on Termination                        | 83   |\n| 32. | NOTICES                    |                                               |      |\n|     | 32.1                       | Notices                                       | 84   |\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "28.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          719.5025736490885
+        ],
+        [
+          112.04782104492188,
+          719.5025736490885
+        ],
+        [
+          112.04782104492188,
+          709.745351155599
+        ],
+        [
+          95.98058064778645,
+          709.745351155599
+        ]
+      ],
+      "page": 28
+    },
+    {
+      "text": "FIXEDRATESANDPRICES",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          720.7752482096354
+        ],
+        [
+          255.80729166666666,
+          720.7752482096354
+        ],
+        [
+          255.80729166666666,
+          710.5938008626302
+        ],
+        [
+          126.00094604492188,
+          710.5938008626302
+        ]
+      ],
+      "page": 28
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 28,
+      "text": "28.\nFIXEDRATESANDPRICES",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

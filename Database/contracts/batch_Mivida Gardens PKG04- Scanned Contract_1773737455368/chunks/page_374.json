@@ -1,0 +1,382 @@
+{
+  "text": "<!-- image -->\n\n## PART 1 -GENERAL\n\n## 1.01 PROJECT RECORD DRAWINGS\n\n- 1.F Record, as work progresses, the permanent works constructed differently than shown in the Contract Documents.Record all changes in the Works caused by Site conditions; by the Employer, Supervision Consultant and Contractor originated changes; and by site instructions, supplementary instructions, field orders, Variations, amendments, correspondence, and directions of jurisdictional authorities.Accurately record location of concealed structure, and mechanical and electrical services, piping, valves, detectors and sensors,conduits,pull boxes,junctionboxesand similarworknotclearly in view, the position of which is required for maintenance, alteration work, and future additions. Do not conceal critical work until its location has been recorded.\n\n## 2.Maintenance of Records during Construction:\n\n- a) Maintain current recording on these documents by each Section. Record changes in the Works on these prints in red ink.\n2. b)Dimension locations of concealed work in reference to building walls, and elevations in reference to floor elevation.Indicate at which point dimension is taken to concealed work.Dimension all terminations and offsets of ruris of concealed work.\n3. C Keep marked up record documents at the Site at all times for inspection by the Employer, Contract Administrator, Supervision Consultant/Operator and theirrepresentatives.\n4. d)Identify each record drawing and specifications as \"Project Record Copy\". Maintain drawings and specifications in good condition and do not use them tor construction purposes.\n5. e)MaintainProjectrecorddrawingsandspecificationsinastatecurrentto progress of work.Review by Supervision Consultant of the state of such documentsshallbeconsideredaconditionprecedentforvalidationof applications for Payment Certificates by the Contract Administrator.\n6. At thecompletionoftheWorkstheContractorshallcertifythatthemarked up drawings and record documents are complete and accurate\\_and he shall produceconsolidatedreproduciblecopiesofthedocumentsasspecified following.Delivery of such documents shall be consideredaa( cendition precedent to the release of anyretention or final payment.\n\n## 3.Final Project Record Documents:\n\n有限费任公司\n\n- a) The Contractor shall fteen (15) days prior to his request forinspectio Taking Over of the whole of theWorks, submit to theContraot Administrator for the Supervision  Consultant's review copies of reproducible Tecord documents.\n- b) Prepare drawings\n\n<!-- image -->\n\n## SECTION 01720\n\n## PROJECT RECORD DOCUMENTS",
+  "results": [
+    {
+      "text": "PART 1 -GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          675.5890401204427
+        ],
+        [
+          183.0354207356771,
+          675.5890401204427
+        ],
+        [
+          183.0354207356771,
+          664.8081258138021
+        ],
+        [
+          76.78356424967448,
+          664.8081258138021
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "1.01 PROJECT RECORD DRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          652.3686116536459
+        ],
+        [
+          280.5712890625,
+          652.3686116536459
+        ],
+        [
+          280.5712890625,
+          641.5877075195312
+        ],
+        [
+          77.1986083984375,
+          641.5877075195312
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "1.F Record, as work progresses, the permanent works constructed differently than shown in the Contract Documents.Record all changes in the Works caused by Site conditions; by the Employer, Supervision Consultant and Contractor originated changes; and by site instructions, supplementary instructions, field orders, Variations, amendments, correspondence, and directions of jurisdictional authorities.Accurately record location of concealed structure, and mechanical and electrical services, piping, valves, detectors and sensors,conduits,pull boxes,junctionboxesand similarworknotclearly in view, the position of which is required for maintenance, alteration work, and future additions. Do not conceal critical work until its location has been recorded.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          629.9774780273438
+        ],
+        [
+          505.111328125,
+          629.9774780273438
+        ],
+        [
+          505.111328125,
+          504.33837890625
+        ],
+        [
+          94.63055419921875,
+          504.33837890625
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "2.Maintenance of Records during Construction:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          493.55747477213544
+        ],
+        [
+          339.50787353515625,
+          493.55747477213544
+        ],
+        [
+          339.50787353515625,
+          480.70330810546875
+        ],
+        [
+          92.97036743164062,
+          480.70330810546875
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "Maintain current recording on these documents by each Section. Record changes in the Works on these prints in red ink.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          470.33705647786456
+        ],
+        [
+          504.6962890625,
+          470.33705647786456
+        ],
+        [
+          504.6962890625,
+          446.70196533203125
+        ],
+        [
+          109.57222493489583,
+          446.70196533203125
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "b)Dimension locations of concealed work in reference to building walls, and elevations in reference to floor elevation.Indicate at which point dimension is taken to concealed work.Dimension all terminations and offsets of ruris of concealed work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          436.33571370442706
+        ],
+        [
+          505.111328125,
+          436.33571370442706
+        ],
+        [
+          505.111328125,
+          390.30946858723956
+        ],
+        [
+          109.98726399739583,
+          390.30946858723956
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "C Keep marked up record documents at the Site at all times for inspection by the Employer, Contract Administrator, Supervision Consultant/Operator and theirrepresentatives.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          379.94321695963544
+        ],
+        [
+          504.28125,
+          379.94321695963544
+        ],
+        [
+          504.28125,
+          344.28326416015625
+        ],
+        [
+          111.64745076497395,
+          344.28326416015625
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "d)Identify each record drawing and specifications as \"Project Record Copy\". Maintain drawings and specifications in good condition and do not use them tor construction purposes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          334.33168538411456
+        ],
+        [
+          505.111328125,
+          334.33168538411456
+        ],
+        [
+          505.111328125,
+          297.8424275716146
+        ],
+        [
+          109.1571756998698,
+          297.8424275716146
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "e)MaintainProjectrecorddrawingsandspecificationsinastatecurrentto progress of work.Review by Supervision Consultant of the state of such documentsshallbeconsideredaconditionprecedentforvalidationof applications for Payment Certificates by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          287.4761759440104
+        ],
+        [
+          505.111328125,
+          287.4761759440104
+        ],
+        [
+          505.111328125,
+          241.86460367838538
+        ],
+        [
+          110.40231323242188,
+          241.86460367838538
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "At thecompletionoftheWorkstheContractorshallcertifythatthemarked up drawings and record documents are complete and accurate_and he shall produceconsolidatedreproduciblecopiesofthedocumentsasspecified following.Delivery of such documents shall be consideredaa( cendition precedent to the release of anyretention or final payment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.75902303059895,
+          231.08367919921875
+        ],
+        [
+          504.6962890625,
+          231.08367919921875
+        ],
+        [
+          504.6962890625,
+          173.44724527994788
+        ],
+        [
+          125.75902303059895,
+          173.44724527994788
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "3.Final Project Record Documents:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          163.08099365234375
+        ],
+        [
+          277.25091552734375,
+          163.08099365234375
+        ],
+        [
+          277.25091552734375,
+          151.05613199869788
+        ],
+        [
+          92.97036743164062,
+          151.05613199869788
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "有限费任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          422.9321695963542,
+          156.44659423828125
+        ],
+        [
+          490.584716796875,
+          156.44659423828125
+        ],
+        [
+          490.584716796875,
+          150.64149983723962
+        ],
+        [
+          422.9321695963542,
+          150.64149983723962
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "The Contractor shall fteen (15) days prior to his request forinspectio Taking Over of the whole of theWorks, submit to theContraot Administrator for the Supervision  Consultant's review copies of reproducible Tecord documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          142.76312255859375
+        ],
+        [
+          505.111328125,
+          142.76312255859375
+        ],
+        [
+          505.111328125,
+          94.24904378255212
+        ],
+        [
+          106.66690063476562,
+          94.24904378255212
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "Prepare drawings",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          85.12672932942712
+        ],
+        [
+          217.8993123372396,
+          85.12672932942712
+        ],
+        [
+          217.8993123372396,
+          70.19932047526038
+        ],
+        [
+          108.74212646484375,
+          70.19932047526038
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "SECTION 01720",
+      "confidence": 0.95,
+      "box": [
+        [
+          248.61273193359375,
+          721.2006022135416
+        ],
+        [
+          333.28216552734375,
+          721.2006022135416
+        ],
+        [
+          333.28216552734375,
+          710.0050354003906
+        ],
+        [
+          248.61273193359375,
+          710.0050354003906
+        ]
+      ],
+      "page": 374
+    },
+    {
+      "text": "PROJECT RECORD DOCUMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          200.05230712890625,
+          698.8094685872396
+        ],
+        [
+          381.0124918619792,
+          698.8094685872396
+        ],
+        [
+          381.0124918619792,
+          687.1992594401041
+        ],
+        [
+          200.05230712890625,
+          687.1992594401041
+        ]
+      ],
+      "page": 374
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 374,
+      "text": "PART 1 -GENERAL\n1.01 PROJECT RECORD DRAWINGS\n1.F Record, as work progresses, the permanent works constructed differently than shown in the Contract Documents.Record all changes in the Works caused by Site conditions; by the Employer, Supervision Consultant and Contractor originated changes; and by site instructions, supplementary instructions, field orders, Variations, amendments, correspondence, and directions of jurisdictional authorities.Accurately record location of concealed structure, and mechanical and electrical services, piping, valves, detectors and sensors,conduits,pull boxes,junctionboxesand similarworknotclearly in view, the position of which is required for maintenance, alteration work, and future additions. Do not conceal critical work until its location has been recorded.\n2.Maintenance of Records during Construction:\nMaintain current recording on these documents by each Section. Record changes in the Works on these prints in red ink.\nb)Dimension locations of concealed work in reference to building walls, and elevations in reference to floor elevation.Indicate at which point dimension is taken to concealed work.Dimension all terminations and offsets of ruris of concealed work.\nC Keep marked up record documents at the Site at all times for inspection by the Employer, Contract Administrator, Supervision Consultant/Operator and theirrepresentatives.\nd)Identify each record drawing and specifications as \"Project Record Copy\". Maintain drawings and specifications in good condition and do not use them tor construction purposes.\ne)MaintainProjectrecorddrawingsandspecificationsinastatecurrentto progress of work.Review by Supervision Consultant of the state of such documentsshallbeconsideredaconditionprecedentforvalidationof applications for Payment Certificates by the Contract Administrator.\nAt thecompletionoftheWorkstheContractorshallcertifythatthemarked up drawings and record documents are complete and accurate_and he shall produceconsolidatedreproduciblecopiesofthedocumentsasspecified following.Delivery of such documents shall be consideredaa( cendition precedent to the release of anyretention or final payment.\n3.Final Project Record Documents:\n有限费任公司\nThe Contractor shall fteen (15) days prior to his request forinspectio Taking Over of the whole of theWorks, submit to theContraot Administrator for the Supervision  Consultant's review copies of reproducible Tecord documents.\nPrepare drawings\nSECTION 01720\nPROJECT RECORD DOCUMENTS",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

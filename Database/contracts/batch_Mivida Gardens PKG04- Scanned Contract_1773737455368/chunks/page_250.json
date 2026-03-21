@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n## SECTION 01000\n\n## PREAMBLE\n\n- 1.1 This division of the Specification contains general requirements relating to the Works as a whole and where the requirements contained herein conflict with the particular requirements contained in other divisions of the particular Specification, the more stringent shall take precedence. The Contractor shall identify any conflict with regard to content or number reference to the Contract Administrator.\n- 1.2 In examining the requirements: of any section of the Specification the Contractor shall examine all other sections of the Specification, other relevant documents and drawings, which affect the work of that section.\n\nEND OF SECTION 01000\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "SECTION 01000",
+      "confidence": 0.95,
+      "box": [
+        [
+          248.61273193359375,
+          707.1024780273438
+        ],
+        [
+          334.94236246744794,
+          707.1024780273438
+        ],
+        [
+          334.94236246744794,
+          695.9069213867188
+        ],
+        [
+          248.61273193359375,
+          695.9069213867188
+        ]
+      ],
+      "page": 250
+    },
+    {
+      "text": "PREAMBLE",
+      "confidence": 0.95,
+      "box": [
+        [
+          259.4039306640625,
+          680.5648498535156
+        ],
+        [
+          323.73610432942706,
+          680.5648498535156
+        ],
+        [
+          323.73610432942706,
+          669.3692830403646
+        ],
+        [
+          259.4039306640625,
+          669.3692830403646
+        ]
+      ],
+      "page": 250
+    },
+    {
+      "text": "1.1 This division of the Specification contains general requirements relating to the Works as a whole and where the requirements contained herein conflict with the particular requirements contained in other divisions of the particular Specification, the more stringent shall take precedence. The Contractor shall identify any conflict with regard to content or number reference to the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          643.2462972005209
+        ],
+        [
+          507.1865641276042,
+          643.2462972005209
+        ],
+        [
+          507.1865641276042,
+          564.0480550130208
+        ],
+        [
+          77.1986083984375,
+          564.0480550130208
+        ]
+      ],
+      "page": 250
+    },
+    {
+      "text": "1.2 In examining the requirements: of any section of the Specification the Contractor shall examine all other sections of the Specification, other relevant documents and drawings, which affect the work of that section.",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          552.023193359375
+        ],
+        [
+          505.9414469401042,
+          552.023193359375
+        ],
+        [
+          505.9414469401042,
+          510.5581461588542
+        ],
+        [
+          76.36852010091145,
+          510.5581461588542
+        ]
+      ],
+      "page": 250
+    },
+    {
+      "text": "END OF SECTION 01000",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.5400390625,
+          472.41029866536456
+        ],
+        [
+          355.6946614583333,
+          472.41029866536456
+        ],
+        [
+          355.6946614583333,
+          459.55613199869794
+        ],
+        [
+          224.5400390625,
+          459.55613199869794
+        ]
+      ],
+      "page": 250
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 250,
+      "text": "SECTION 01000\nPREAMBLE\n1.1 This division of the Specification contains general requirements relating to the Works as a whole and where the requirements contained herein conflict with the particular requirements contained in other divisions of the particular Specification, the more stringent shall take precedence. The Contractor shall identify any conflict with regard to content or number reference to the Contract Administrator.\n1.2 In examining the requirements: of any section of the Specification the Contractor shall examine all other sections of the Specification, other relevant documents and drawings, which affect the work of that section.\nEND OF SECTION 01000",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

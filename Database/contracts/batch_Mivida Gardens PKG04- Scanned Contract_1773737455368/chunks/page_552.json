@@ -1,0 +1,543 @@
+{
+  "text": "|                                                      |                                                      |                                                      |                                                      | Transmittal No.    | Transmittal No.    | Rev.   |\n|------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|--------------------|--------------------|--------|\n| Contract Name:                                       | Contract Name:                                       | Contract Name:                                       | Contract Name:                                       | Date:              | Date:              |        |\n|                                                      |                                                      |                                                      |                                                      | SUBMITTEDFOR       | SUBMITTEDFOR       | CODE   |\n| TRANSMISSIONOFDRAWINGS,DOCUMENTS,SAMPLES,ETC.        | TRANSMISSIONOFDRAWINGS,DOCUMENTS,SAMPLES,ETC.        | TRANSMISSIONOFDRAWINGS,DOCUMENTS,SAMPLES,ETC.        | TRANSMISSIONOFDRAWINGS,DOCUMENTS,SAMPLES,ETC.        | APPROVAL           | APPROVAL           |        |\n|                                                      |                                                      |                                                      |                                                      | YOURINFORMATION    | YOURINFORMATION    | 2      |\n| Contract CONTRACTCODE                                | Contract CONTRACTCODE                                | Contract CONTRACTCODE                                | Contract CONTRACTCODE                                |                    |                    | 3      |\n|                                                      |                                                      |                                                      |                                                      | ACTION             | ACTION             |        |\n| TO CS :                                              | TO CS :                                              | TO CS :                                              | TO CS :                                              | APPROVED           | APPROVED           | A      |\n| SITEOFFICE                                           | SITEOFFICE                                           | SITEOFFICE                                           | SITEOFFICE                                           | APPROVEDASNOTED    | APPROVEDASNOTED    | B      |\n| WEARFSENDINGHEREWITH/UNDERSEPARATECOVER,THEDRAWINGS/ | WEARFSENDINGHEREWITH/UNDERSEPARATECOVER,THEDRAWINGS/ | WEARFSENDINGHEREWITH/UNDERSEPARATECOVER,THEDRAWINGS/ | WEARFSENDINGHEREWITH/UNDERSEPARATECOVER,THEDRAWINGS/ | NOTEDFORRESUBMITTA | NOTEDFORRESUBMITTA | C      |\n| DOCUMENTS/SAMPLESLISTEDBELOW.(DELETEASNECESSARY)     | DOCUMENTS/SAMPLESLISTEDBELOW.(DELETEASNECESSARY)     | DOCUMENTS/SAMPLESLISTEDBELOW.(DELETEASNECESSARY)     | DOCUMENTS/SAMPLESLISTEDBELOW.(DELETEASNECESSARY)     | NOTAPPROVED        | NOTAPPROVED        | D      |\n| QTY                                                  | DRWS.,SPEC.OR                                        | ITEMSEQ                                              | DESCRIPTION                                          | +TYPE              | CODE               |        |\n|                                                      | BOO.REF.                                             | NUMBER                                               |                                                      |                    | Submittal          | Action |\n\nCONTRACTOR'SSIGNATURE\n\nRFCEIVFDRYCS:\n\n## CC:PROJECTMANAGER\n\nCS to enterAction Codes andRemarks.andreturn to Contractor\n\nCONSTRUCTIONSUPERVISIONREMARKS:\n\nCorrections or comments made relative to submittals during this revicw do not relieve the contractor from compliance with the requirements of the drawings and specifications. This check is only for review of general conformance with the design concept of the project and general compliance with the information given in the contract docurments. The contractor is respousible for conflrming and correlating all quantities and dimensions selecting fabrication processes and techniques of construction; coordinating hiswork with that of other trades,and performing his work in a safe and satisfactorymanner.\n\n- CS SIGNATURE\n\nRECEIVEDBYCONTRACTOR\n\n## CC:PROJECTMANAGER\n\n-TYPE:SD-Shop drawings\n\nSM-Sample\n\nGT-Guarantee\n\nMD-Manufacturer's Data\n\n- CT-Certificates\n- OT-Other\n\nDATE\n\nDATE\n\nDATE\n\nDATE\n\n## SUBMITTALCODE\n\n- 1:Submittad for Approval\n- 2:Submittcd forinformation\n- 3:others\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "CONTRACTOR'SSIGNATURE",
+      "confidence": 0.95,
+      "box": [
+        [
+          25.792139689127605,
+          413.21055094401044
+        ],
+        [
+          144.60511271158853,
+          413.21055094401044
+        ],
+        [
+          144.60511271158853,
+          404.72601318359375
+        ],
+        [
+          25.792139689127605,
+          404.72601318359375
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "RFCEIVFDRYCS:",
+      "confidence": 0.95,
+      "box": [
+        [
+          25.36931864420573,
+          392.84767659505206
+        ],
+        [
+          102.32291666666667,
+          392.84767659505206
+        ],
+        [
+          102.32291666666667,
+          384.36309814453125
+        ],
+        [
+          25.36931864420573,
+          384.36309814453125
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "CC:PROJECTMANAGER",
+      "confidence": 0.95,
+      "box": [
+        [
+          25.36931864420573,
+          373.33319091796875
+        ],
+        [
+          126.42376708984375,
+          373.33319091796875
+        ],
+        [
+          126.42376708984375,
+          363.15175374348956
+        ],
+        [
+          25.36931864420573,
+          363.15175374348956
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "CS to enterAction Codes andRemarks.andreturn to Contractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          24.100850423177082,
+          360.18214925130206
+        ],
+        [
+          232.55208333333334,
+          360.18214925130206
+        ],
+        [
+          232.55208333333334,
+          349.57647705078125
+        ],
+        [
+          24.100850423177082,
+          349.57647705078125
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "CONSTRUCTIONSUPERVISIONREMARKS:",
+      "confidence": 0.95,
+      "box": [
+        [
+          24.100850423177082,
+          347.87957763671875
+        ],
+        [
+          155.1756591796875,
+          347.87957763671875
+        ],
+        [
+          155.1756591796875,
+          338.97080485026044
+        ],
+        [
+          24.100850423177082,
+          338.97080485026044
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "Corrections or comments made relative to submittals during this revicw do not relieve the contractor from compliance with the requirements of the drawings and specifications. This check is only for review of general conformance with the design concept of the project and general compliance with the information given in the contract docurments. The contractor is respousible for conflrming and correlating all quantities and dimensions selecting fabrication processes and techniques of construction; coordinating hiswork with that of other trades,and performing his work in a safe and satisfactorymanner.",
+      "confidence": 0.95,
+      "box": [
+        [
+          23.255208333333332,
+          274.9124959309896
+        ],
+        [
+          507.8091634114583,
+          274.9124959309896
+        ],
+        [
+          507.8091634114583,
+          231.64133707682288
+        ],
+        [
+          23.255208333333332,
+          231.64133707682288
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "CS SIGNATURE",
+      "confidence": 0.95,
+      "box": [
+        [
+          23.678029378255207,
+          226.55059814453125
+        ],
+        [
+          90.90671793619792,
+          226.55059814453125
+        ],
+        [
+          90.90671793619792,
+          216.79339599609375
+        ],
+        [
+          23.678029378255207,
+          216.79339599609375
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "RECEIVEDBYCONTRACTOR",
+      "confidence": 0.95,
+      "box": [
+        [
+          23.255208333333332,
+          206.61191813151038
+        ],
+        [
+          145.45075480143228,
+          206.61191813151038
+        ],
+        [
+          145.45075480143228,
+          196.00624593098962
+        ],
+        [
+          23.255208333333332,
+          196.00624593098962
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "CC:PROJECTMANAGER",
+      "confidence": 0.95,
+      "box": [
+        [
+          24.100850423177082,
+          185.40057373046875
+        ],
+        [
+          124.73248291015625,
+          185.40057373046875
+        ],
+        [
+          124.73248291015625,
+          176.91603597005212
+        ],
+        [
+          24.100850423177082,
+          176.91603597005212
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "-TYPE:SD-Shop drawings",
+      "confidence": 0.95,
+      "box": [
+        [
+          21.563919067382812,
+          174.37066650390625
+        ],
+        [
+          122.19554646809895,
+          174.37066650390625
+        ],
+        [
+          122.19554646809895,
+          162.91652425130212
+        ],
+        [
+          21.563919067382812,
+          162.91652425130212
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "SM-Sample",
+      "confidence": 0.95,
+      "box": [
+        [
+          55.389678955078125,
+          162.49232991536462
+        ],
+        [
+          99.78598022460938,
+          162.49232991536462
+        ],
+        [
+          99.78598022460938,
+          151.03814697265625
+        ],
+        [
+          55.389678955078125,
+          151.03814697265625
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "GT-Guarantee",
+      "confidence": 0.95,
+      "box": [
+        [
+          54.96685282389323,
+          151.03814697265625
+        ],
+        [
+          108.24242146809895,
+          151.03814697265625
+        ],
+        [
+          108.24242146809895,
+          140.43251546223962
+        ],
+        [
+          54.96685282389323,
+          140.43251546223962
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "MD-Manufacturer's Data",
+      "confidence": 0.95,
+      "box": [
+        [
+          54.54403177897135,
+          139.58404541015625
+        ],
+        [
+          142.06817626953125,
+          139.58404541015625
+        ],
+        [
+          142.06817626953125,
+          128.97833251953125
+        ],
+        [
+          54.54403177897135,
+          128.97833251953125
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "CT-Certificates",
+      "confidence": 0.95,
+      "box": [
+        [
+          55.389678955078125,
+          127.28147379557288
+        ],
+        [
+          111.625,
+          127.28147379557288
+        ],
+        [
+          111.625,
+          117.52423095703125
+        ],
+        [
+          55.389678955078125,
+          117.52423095703125
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "OT-Other",
+      "confidence": 0.95,
+      "box": [
+        [
+          56.65814208984375,
+          116.25152587890625
+        ],
+        [
+          94.71211751302083,
+          116.25152587890625
+        ],
+        [
+          94.71211751302083,
+          105.22165934244788
+        ],
+        [
+          56.65814208984375,
+          105.22165934244788
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "DATE",
+      "confidence": 0.95,
+      "box": [
+        [
+          358.975830078125,
+          225.27793375651038
+        ],
+        [
+          386.0364583333333,
+          225.27793375651038
+        ],
+        [
+          386.0364583333333,
+          215.09649658203125
+        ],
+        [
+          358.975830078125,
+          215.09649658203125
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "DATE",
+      "confidence": 0.95,
+      "box": [
+        [
+          358.975830078125,
+          205.33925374348962
+        ],
+        [
+          385.1907958984375,
+          205.33925374348962
+        ],
+        [
+          385.1907958984375,
+          193.88511149088538
+        ],
+        [
+          358.975830078125,
+          193.88511149088538
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "DATE",
+      "confidence": 0.95,
+      "box": [
+        [
+          360.2443033854167,
+          412.78631591796875
+        ],
+        [
+          386.882080078125,
+          412.78631591796875
+        ],
+        [
+          386.882080078125,
+          402.18064371744794
+        ],
+        [
+          360.2443033854167,
+          402.18064371744794
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "DATE",
+      "confidence": 0.95,
+      "box": [
+        [
+          359.8214925130208,
+          391.99920654296875
+        ],
+        [
+          386.4592692057292,
+          391.99920654296875
+        ],
+        [
+          386.4592692057292,
+          381.81776936848956
+        ],
+        [
+          359.8214925130208,
+          381.81776936848956
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "SUBMITTALCODE",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.6524658203125,
+          173.09800211588538
+        ],
+        [
+          272.72015380859375,
+          173.09800211588538
+        ],
+        [
+          272.72015380859375,
+          163.34075927734375
+        ],
+        [
+          193.6524658203125,
+          163.34075927734375
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "1:Submittad for Approval",
+      "confidence": 0.95,
+      "box": [
+        [
+          200.8404337565104,
+          161.64385986328125
+        ],
+        [
+          287.0961100260417,
+          161.64385986328125
+        ],
+        [
+          287.0961100260417,
+          150.61391194661462
+        ],
+        [
+          200.8404337565104,
+          150.61391194661462
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "2:Submittcd forinformation",
+      "confidence": 0.95,
+      "box": [
+        [
+          200.4176025390625,
+          150.18975830078125
+        ],
+        [
+          295.55255126953125,
+          150.18975830078125
+        ],
+        [
+          295.55255126953125,
+          139.58404541015625
+        ],
+        [
+          200.4176025390625,
+          139.58404541015625
+        ]
+      ],
+      "page": 552
+    },
+    {
+      "text": "3:others",
+      "confidence": 0.95,
+      "box": [
+        [
+          201.26324462890625,
+          137.88710530598962
+        ],
+        [
+          232.1292521158854,
+          137.88710530598962
+        ],
+        [
+          232.1292521158854,
+          128.97833251953125
+        ],
+        [
+          201.26324462890625,
+          128.97833251953125
+        ]
+      ],
+      "page": 552
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 552,
+      "text": "CONTRACTOR'SSIGNATURE\nRFCEIVFDRYCS:\nCC:PROJECTMANAGER\nCS to enterAction Codes andRemarks.andreturn to Contractor\nCONSTRUCTIONSUPERVISIONREMARKS:\nCorrections or comments made relative to submittals during this revicw do not relieve the contractor from compliance with the requirements of the drawings and specifications. This check is only for review of general conformance with the design concept of the project and general compliance with the information given in the contract docurments. The contractor is respousible for conflrming and correlating all quantities and dimensions selecting fabrication processes and techniques of construction; coordinating hiswork with that of other trades,and performing his work in a safe and satisfactorymanner.\nCS SIGNATURE\nRECEIVEDBYCONTRACTOR\nCC:PROJECTMANAGER\n-TYPE:SD-Shop drawings\nSM-Sample\nGT-Guarantee\nMD-Manufacturer's Data\nCT-Certificates\nOT-Other\nDATE\nDATE\nDATE\nDATE\nSUBMITTALCODE\n1:Submittad for Approval\n2:Submittcd forinformation\n3:others",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

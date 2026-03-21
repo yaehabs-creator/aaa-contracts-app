@@ -1,0 +1,359 @@
+{
+  "text": "## Repeat Tests and Rejection\n\n- 19A.4If theresultsofanyTestsonCompletionforanySectionorPortionof the Works show the same not to have been duly passed to the satisfaction of theSupervisionConsultant,hemay,notwithstanding anyearlierinspection, examination and/ortestoranyinterimpayment:-\n- (a) order the Contractor in writing to repeat the Test or Tests concerned; and/or\n- (b) order the Contractorin writing to take at the Contractor'sCost all suchsteps asmaybenecessarytoensure that therelevantSection orPortionof theWorkscomplieswiththeContract inallrespects Contract may contain. The aforesaid steps may,without limitation, includetheremovalfromSiteofanyPlantwhichintheSupervision Consultant's opinion is defectiveorotherwise notin accordancewith theContract and thesubstitutionofproper and suitablePlant.\n\nIf the Contractor should default in carrying out any such order of the Supervision Consultant as is referred to in paragraphs(a) or(b)above,then (without prejudicetoany other rights theEmployermay have byvirtueof the saiddefault)theEmployershallbeentitledtoemployandpayanyother Costsconsequentthereonorincidental theretoshallbedeterminedbythe ProjectManagerandtheEmployermaydeducttheCostssoincurredfrom anymoniesdueorwhichmaybecomeduetotheContractororrecoverthe sameasadebtduefrom theContractor.\n\n## NoRelease\n\n19A.5 The due passing of any Tests on Completion shall not release the Contractorfrom anyof itsother obligations under theContract.\n\n## 20. TAKINGOVER\n\nTaking-OverCertificate\n\n## 20.1 When:-\n\n- (a) anySectionorPortionoftheWorkshasbeencompletedin accordancewiththeContract,exceptforanyminoroutstandingwork anddefectswhichwill notaffecttheuseofthatSectionorPortionof the Works for its intended purpose (either until or whilst such work is completed and suchdefectsareremedied);and\n- (b) all TestsonCompletioninrespectofthatSectionorPortionof the Workshavebeendulypassed tothesatisfactionoftheSupervision Consultant; and\n- (c) paragraph(a)of Clause 5.7(As-builtDrawings,Operations and MaintenanceManuals)hasbeenfullycompliedwithinrespectof that SectionorPortionof theWorks;and\n\n<!-- image -->\n\n51\n\nFIRST EDITION 2006",
+  "results": [
+    {
+      "text": "Repeat Tests and Rejection",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          726.2902018229166
+        ],
+        [
+          220.71305338541666,
+          726.2902018229166
+        ],
+        [
+          220.71305338541666,
+          712.7149353027344
+        ],
+        [
+          95.1349385579427,
+          712.7149353027344
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "19A.4If theresultsofanyTestsonCompletionforanySectionorPortionof the Works show the same not to have been duly passed to the satisfaction of theSupervisionConsultant,hemay,notwithstanding anyearlierinspection, examination and/ortestoranyinterimpayment:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          702.9577128092448
+        ],
+        [
+          488.7821858723958,
+          702.9577128092448
+        ],
+        [
+          488.7821858723958,
+          656.292724609375
+        ],
+        [
+          126.00094604492188,
+          656.292724609375
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "(a) order the Contractor in writing to repeat the Test or Tests concerned; and/or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          646.5355021158854
+        ],
+        [
+          487.5137125651042,
+          646.5355021158854
+        ],
+        [
+          487.5137125651042,
+          623.2030029296875
+        ],
+        [
+          156.44412231445312,
+          623.2030029296875
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "(b) order the Contractorin writing to take at the Contractor'sCost all suchsteps asmaybenecessarytoensure that therelevantSection orPortionof theWorkscomplieswiththeContract inallrespects Contract may contain. The aforesaid steps may,without limitation, includetheremovalfromSiteofanyPlantwhichintheSupervision Consultant's opinion is defectiveorotherwise notin accordancewith theContract and thesubstitutionofproper and suitablePlant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          612.173095703125
+        ],
+        [
+          487.0909016927083,
+          612.173095703125
+        ],
+        [
+          487.0909016927083,
+          519.6915893554688
+        ],
+        [
+          156.02130126953125,
+          519.6915893554688
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "If the Contractor should default in carrying out any such order of the Supervision Consultant as is referred to in paragraphs(a) or(b)above,then (without prejudicetoany other rights theEmployermay have byvirtueof the saiddefault)theEmployershallbeentitledtoemployandpayanyother Costsconsequentthereonorincidental theretoshallbedeterminedbythe ProjectManagerandtheEmployermaydeducttheCostssoincurredfrom anymoniesdueorwhichmaybecomeduetotheContractororrecoverthe sameasadebtduefrom theContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          509.93434651692706
+        ],
+        [
+          486.6680908203125,
+          509.93434651692706
+        ],
+        [
+          486.6680908203125,
+          406.42291259765625
+        ],
+        [
+          155.1756591796875,
+          406.42291259765625
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "NoRelease",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          396.66571044921875
+        ],
+        [
+          147.56486002604166,
+          396.66571044921875
+        ],
+        [
+          147.56486002604166,
+          384.78733317057294
+        ],
+        [
+          92.59801228841145,
+          384.78733317057294
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "19A.5 The due passing of any Tests on Completion shall not release the Contractorfrom anyof itsother obligations under theContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          374.18166097005206
+        ],
+        [
+          486.2452392578125,
+          374.18166097005206
+        ],
+        [
+          486.2452392578125,
+          349.57647705078125
+        ],
+        [
+          123.88683064778645,
+          349.57647705078125
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "20. TAKINGOVER",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          338.97080485026044
+        ],
+        [
+          193.2296346028646,
+          338.97080485026044
+        ],
+        [
+          193.2296346028646,
+          329.2136027018229
+        ],
+        [
+          93.02083333333333,
+          329.2136027018229
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "Taking-OverCertificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          317.3352254231771
+        ],
+        [
+          197.88067626953125,
+          317.3352254231771
+        ],
+        [
+          197.88067626953125,
+          305.03265380859375
+        ],
+        [
+          93.02083333333333,
+          305.03265380859375
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "20.1 When:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          294.00274658203125
+        ],
+        [
+          189.42423502604166,
+          294.00274658203125
+        ],
+        [
+          189.42423502604166,
+          282.97283935546875
+        ],
+        [
+          123.88683064778645,
+          282.97283935546875
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "(a) anySectionorPortionoftheWorkshasbeencompletedin accordancewiththeContract,exceptforanyminoroutstandingwork anddefectswhichwill notaffecttheuseofthatSectionorPortionof the Works for its intended purpose (either until or whilst such work is completed and suchdefectsareremedied);and",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.33001708984375,
+          271.0944620768229
+        ],
+        [
+          485.8224283854167,
+          271.0944620768229
+        ],
+        [
+          485.8224283854167,
+          213.82379150390625
+        ],
+        [
+          154.33001708984375,
+          213.82379150390625
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "(b) all TestsonCompletioninrespectofthatSectionorPortionof the Workshavebeendulypassed tothesatisfactionoftheSupervision Consultant; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.33001708984375,
+          203.21811930338538
+        ],
+        [
+          484.976806640625,
+          203.21811930338538
+        ],
+        [
+          484.976806640625,
+          168.85573323567712
+        ],
+        [
+          154.33001708984375,
+          168.85573323567712
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "(c) paragraph(a)of Clause 5.7(As-builtDrawings,Operations and MaintenanceManuals)hasbeenfullycompliedwithinrespectof that SectionorPortionof theWorks;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          154.33001708984375,
+          158.25006103515625
+        ],
+        [
+          485.8224283854167,
+          158.25006103515625
+        ],
+        [
+          485.8224283854167,
+          123.46343994140625
+        ],
+        [
+          154.33001708984375,
+          123.46343994140625
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "51",
+      "confidence": 0.95,
+      "box": [
+        [
+          282.445068359375,
+          96.31288655598962
+        ],
+        [
+          293.015625,
+          96.31288655598962
+        ],
+        [
+          293.015625,
+          86.97987874348962
+        ],
+        [
+          282.445068359375,
+          86.97987874348962
+        ]
+      ],
+      "page": 79
+    },
+    {
+      "text": "FIRST EDITION 2006",
+      "confidence": 0.95,
+      "box": [
+        [
+          406.7547200520833,
+          97.58559163411462
+        ],
+        [
+          484.553955078125,
+          97.58559163411462
+        ],
+        [
+          484.553955078125,
+          86.55564371744788
+        ],
+        [
+          406.7547200520833,
+          86.55564371744788
+        ]
+      ],
+      "page": 79
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 79,
+      "text": "Repeat Tests and Rejection\n19A.4If theresultsofanyTestsonCompletionforanySectionorPortionof the Works show the same not to have been duly passed to the satisfaction of theSupervisionConsultant,hemay,notwithstanding anyearlierinspection, examination and/ortestoranyinterimpayment:-\n(a) order the Contractor in writing to repeat the Test or Tests concerned; and/or\n(b) order the Contractorin writing to take at the Contractor'sCost all suchsteps asmaybenecessarytoensure that therelevantSection orPortionof theWorkscomplieswiththeContract inallrespects Contract may contain. The aforesaid steps may,without limitation, includetheremovalfromSiteofanyPlantwhichintheSupervision Consultant's opinion is defectiveorotherwise notin accordancewith theContract and thesubstitutionofproper and suitablePlant.\nIf the Contractor should default in carrying out any such order of the Supervision Consultant as is referred to in paragraphs(a) or(b)above,then (without prejudicetoany other rights theEmployermay have byvirtueof the saiddefault)theEmployershallbeentitledtoemployandpayanyother Costsconsequentthereonorincidental theretoshallbedeterminedbythe ProjectManagerandtheEmployermaydeducttheCostssoincurredfrom anymoniesdueorwhichmaybecomeduetotheContractororrecoverthe sameasadebtduefrom theContractor.\nNoRelease\n19A.5 The due passing of any Tests on Completion shall not release the Contractorfrom anyof itsother obligations under theContract.\n20. TAKINGOVER\nTaking-OverCertificate\n20.1 When:-\n(a) anySectionorPortionoftheWorkshasbeencompletedin accordancewiththeContract,exceptforanyminoroutstandingwork anddefectswhichwill notaffecttheuseofthatSectionorPortionof the Works for its intended purpose (either until or whilst such work is completed and suchdefectsareremedied);and\n(b) all TestsonCompletioninrespectofthatSectionorPortionof the Workshavebeendulypassed tothesatisfactionoftheSupervision Consultant; and\n(c) paragraph(a)of Clause 5.7(As-builtDrawings,Operations and MaintenanceManuals)hasbeenfullycompliedwithinrespectof that SectionorPortionof theWorks;and\n51\nFIRST EDITION 2006",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

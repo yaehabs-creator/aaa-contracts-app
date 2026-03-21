@@ -1,0 +1,106 @@
+{
+  "text": "## Employees\n\n10.3 The Contractor shall provide and employ (or cause to be employed) in connectionwiththecarryingoutoftheWorksandtheremedyingofdefects thereinallsuchqualifiedandexperiencedsuperintending andtechnicalstaff and allsuchskilled,semi-skilled andunskilled labourasmaybenecessary for theperformanceanddischargeby theContractorofall itsobligations undertheContractwithskill,careanddiligenceandwithintherequiredtime all as provided herein.The Contractor shall not recruit,or attempttorecruit, his staff and labour from amongst persons in the service of the Employer, theProject Manager or the Supervision Consultant.TheEmployer and the ProjectManagershall individuallybe at libertytoobject toandrequire the Contractortoremove(orcausetoberemoved)forthwithfrom theSiteany personemployedbytheContractorinorabout thecarryingoutof theWorks or theremedyingofdefectsthereinwho,intheopinionoftheEmployer or theProject Manager,misconducts himself,orisincompetentornegligentin theproperperformanceof his duties,orfailstoconform with any provisions of theContract,or conducts himself in a manner which is prejudicial to safety,healthortheprotectionoftheenvironment,orwhoseemploymentis undesirable;andsuchperson shall not be again employed upon theWorks withoutthepriorwrittenpermissionoftheEmployerandtheProject Manager.lf appropriate,the Contractorshall thenprovide and employ(or causetobeemployed)asuitablereplacementperson.Suchremovaland subsequentreplacementshallbeattheContractor'sCostandnoextension of timeshall begranted totheContractorfor any delaywhichhasbeen or maybecausedbysuchremovaland anysuchreplacement.TheContractor shallcomplywithallrelevantlabourlawsapplicabletoitsemployees includingwithoutlimitationlawsrelatingtotheiremployment,health,safety, welfare,immigrationandemigrationandshallalowthemalltheirlegal rights.TheContractor shallrequire its employeestocomplywith all applicable laws,statues,ordinances and otherlaws,otherprovisionshaving theforceoflaw,bye-laws and regulations,including those concerningsafety atwork.\n\n<!-- image -->\n\n<!-- image -->\n\nTheContractor shallsendto theProject Manager,witha copy to the Employer，details of any accident as soonas practicable after its occurrence.Inthecaseofanyfatalityorseriousaccident,theContractor shall,inaddition,notifytheProjectManagerand theEmployerimmediately by thequickestavailablemeans.TheContractorshallmaintainsuch recordsandmakesuchreportsconcerninghealth,safetyandwelfareof persons,anddamagetoproperty,astheProjectManagerortheEmployer mayfromtimetotimerequire.\n\nIn theeventofanyoutbreakofillnessofanepidemicnature,theContractor shallcomplywithandcarryoutsuchregulations,ordersandrequirements as maybemadeby theGovernment,orthelocalmedicalor sanitary authoritiesforthepurposeofdealingwithandovercomingthesame.",
+  "results": [
+    {
+      "text": "Employees",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          565.5081176757812
+        ],
+        [
+          145.87357584635416,
+          565.5081176757812
+        ],
+        [
+          145.87357584635416,
+          552.7812906901042
+        ],
+        [
+          94.71211751302083,
+          552.7812906901042
+        ]
+      ],
+      "page": 53
+    },
+    {
+      "text": "10.3 The Contractor shall provide and employ (or cause to be employed) in connectionwiththecarryingoutoftheWorksandtheremedyingofdefects thereinallsuchqualifiedandexperiencedsuperintending andtechnicalstaff and allsuchskilled,semi-skilled andunskilled labourasmaybenecessary for theperformanceanddischargeby theContractorofall itsobligations undertheContractwithskill,careanddiligenceandwithintherequiredtime all as provided herein.The Contractor shall not recruit,or attempttorecruit, his staff and labour from amongst persons in the service of the Employer, theProject Manager or the Supervision Consultant.TheEmployer and the ProjectManagershall individuallybe at libertytoobject toandrequire the Contractortoremove(orcausetoberemoved)forthwithfrom theSiteany personemployedbytheContractorinorabout thecarryingoutof theWorks or theremedyingofdefectsthereinwho,intheopinionoftheEmployer or theProject Manager,misconducts himself,orisincompetentornegligentin theproperperformanceof his duties,orfailstoconform with any provisions of theContract,or conducts himself in a manner which is prejudicial to safety,healthortheprotectionoftheenvironment,orwhoseemploymentis undesirable;andsuchperson shall not be again employed upon theWorks withoutthepriorwrittenpermissionoftheEmployerandtheProject Manager.lf appropriate,the Contractorshall thenprovide and employ(or causetobeemployed)asuitablereplacementperson.Suchremovaland subsequentreplacementshallbeattheContractor'sCostandnoextension of timeshall begranted totheContractorfor any delaywhichhasbeen or maybecausedbysuchremovaland anysuchreplacement.TheContractor shallcomplywithallrelevantlabourlawsapplicabletoitsemployees includingwithoutlimitationlawsrelatingtotheiremployment,health,safety, welfare,immigrationandemigrationandshallalowthemalltheirlegal rights.TheContractor shallrequire its employeestocomplywith all applicable laws,statues,ordinances and otherlaws,otherprovisionshaving theforceoflaw,bye-laws and regulations,including those concerningsafety atwork.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          542.599853515625
+        ],
+        [
+          487.5137125651042,
+          542.599853515625
+        ],
+        [
+          487.5137125651042,
+          179.88564046223962
+        ],
+        [
+          126.42376708984375,
+          179.88564046223962
+        ]
+      ],
+      "page": 53
+    },
+    {
+      "text": "TheContractor shallsendto theProject Manager,witha copy to the Employer，details of any accident as soonas practicable after its occurrence.Inthecaseofanyfatalityorseriousaccident,theContractor shall,inaddition,notifytheProjectManagerand theEmployerimmediately by thequickestavailablemeans.TheContractorshallmaintainsuch recordsandmakesuchreportsconcerninghealth,safetyandwelfareof persons,anddamagetoproperty,astheProjectManagerortheEmployer mayfromtimetotimerequire.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          724.1690673828125
+        ],
+        [
+          487.9365234375,
+          724.1690673828125
+        ],
+        [
+          487.9365234375,
+          632.9602254231771
+        ],
+        [
+          156.44412231445312,
+          632.9602254231771
+        ]
+      ],
+      "page": 53
+    },
+    {
+      "text": "In theeventofanyoutbreakofillnessofanepidemicnature,theContractor shallcomplywithandcarryoutsuchregulations,ordersandrequirements as maybemadeby theGovernment,orthelocalmedicalor sanitary authoritiesforthepurposeofdealingwithandovercomingthesame.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          621.0818684895834
+        ],
+        [
+          486.6680908203125,
+          621.0818684895834
+        ],
+        [
+          486.6680908203125,
+          575.2653401692708
+        ],
+        [
+          156.866943359375,
+          575.2653401692708
+        ]
+      ],
+      "page": 53
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 53,
+      "text": "Employees\n10.3 The Contractor shall provide and employ (or cause to be employed) in connectionwiththecarryingoutoftheWorksandtheremedyingofdefects thereinallsuchqualifiedandexperiencedsuperintending andtechnicalstaff and allsuchskilled,semi-skilled andunskilled labourasmaybenecessary for theperformanceanddischargeby theContractorofall itsobligations undertheContractwithskill,careanddiligenceandwithintherequiredtime all as provided herein.The Contractor shall not recruit,or attempttorecruit, his staff and labour from amongst persons in the service of the Employer, theProject Manager or the Supervision Consultant.TheEmployer and the ProjectManagershall individuallybe at libertytoobject toandrequire the Contractortoremove(orcausetoberemoved)forthwithfrom theSiteany personemployedbytheContractorinorabout thecarryingoutof theWorks or theremedyingofdefectsthereinwho,intheopinionoftheEmployer or theProject Manager,misconducts himself,orisincompetentornegligentin theproperperformanceof his duties,orfailstoconform with any provisions of theContract,or conducts himself in a manner which is prejudicial to safety,healthortheprotectionoftheenvironment,orwhoseemploymentis undesirable;andsuchperson shall not be again employed upon theWorks withoutthepriorwrittenpermissionoftheEmployerandtheProject Manager.lf appropriate,the Contractorshall thenprovide and employ(or causetobeemployed)asuitablereplacementperson.Suchremovaland subsequentreplacementshallbeattheContractor'sCostandnoextension of timeshall begranted totheContractorfor any delaywhichhasbeen or maybecausedbysuchremovaland anysuchreplacement.TheContractor shallcomplywithallrelevantlabourlawsapplicabletoitsemployees includingwithoutlimitationlawsrelatingtotheiremployment,health,safety, welfare,immigrationandemigrationandshallalowthemalltheirlegal rights.TheContractor shallrequire its employeestocomplywith all applicable laws,statues,ordinances and otherlaws,otherprovisionshaving theforceoflaw,bye-laws and regulations,including those concerningsafety atwork.\nTheContractor shallsendto theProject Manager,witha copy to the Employer，details of any accident as soonas practicable after its occurrence.Inthecaseofanyfatalityorseriousaccident,theContractor shall,inaddition,notifytheProjectManagerand theEmployerimmediately by thequickestavailablemeans.TheContractorshallmaintainsuch recordsandmakesuchreportsconcerninghealth,safetyandwelfareof persons,anddamagetoproperty,astheProjectManagerortheEmployer mayfromtimetotimerequire.\nIn theeventofanyoutbreakofillnessofanepidemicnature,theContractor shallcomplywithandcarryoutsuchregulations,ordersandrequirements as maybemadeby theGovernment,orthelocalmedicalor sanitary authoritiesforthepurposeofdealingwithandovercomingthesame.",
+      "line_count": 4
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

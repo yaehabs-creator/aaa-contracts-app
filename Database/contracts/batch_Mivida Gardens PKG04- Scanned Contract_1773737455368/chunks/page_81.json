@@ -1,0 +1,244 @@
+{
+  "text": "<!-- image -->\n\n## DesignationofPortion\n\n- 20.3 3TheEmployermay at itsowndiscretion(provided thatit notifies thesame to the Project Manager, the Supervision Consultant and the Contractor in writing) designate any part of the Works as being a Portion of the Works as herein defined.\n\n## DraftFinalAccount\n\n- 20.4 WithintheperiodafterthedateofissueofaTaking-OverCertificateunder Clause20.1(Taking-Over Certificate)foraSectionorPortionof theWorks statedintheParticularConditionstheContractorshallprepare andsubmit totheProjectManagerintriplicateadraftfinal account(togetherwith all such documents and evidence as the Project Manager may require in order tosubstantiate thesame)inrespectof thesaidSectionorPortionof the Workswhichshows andbreaksdowninsuchform andwithsuchdetailas the Project Manager may require all amounts which in the Contractor's opinionarepayableunder theContractinrespectofthesaidSectionor PortionoftheWorks.\n\n## 21. DEFECTS\n\n## CompletionofOutstandingWork\n\n- 21.1The Contractor shall with due expedition and without delay complete during theDefectsLiabilityPeriodforanySectionorPortionof theWorks anywork whichisoutstandinginrespectof thatSectionorPortiononthedateofits takingoverstatedintherelevantTaking-OverCertificatewithinsuch reasonabletime asisnotified inwritingto theContractorbytheSupervision Consultant.\n\n## DefectsafterTakingOver\n\n- 21.2 The Contractor shall as soon as practicable commence and thereafter carry outwithdueexpeditionandwithoutdelayallsuchworkasmaybe necessarytoremedytothesatisfactionof theSupervisionConsultant any defectofanykindwhatsoeverinanySectionorPortionoftheWorksof whichtheContractormaybenotifiedinwritingby theSupervision LiabilityPeriodforthatSectionorPortionoftheWorksorwithinfourteen (14)daysafter its expirationbut(inthelattercase)therelevantdefect having been found bythe Supervision Consultant upon an inspectionmade byhimoronhisbehalfpriortotheexpirationof theDefectsLiabilityPeriod. For this purpose:-\n- (a) theword\"defect\"shall beconstrued tocover anymanner inwhich therelevantSectionorPortionoftheWorksisnotinaccordance withtheContracttothesatisfactionof theSupervisionConsultant; and\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "DesignationofPortion",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          723.7448425292969
+        ],
+        [
+          196.18939208984375,
+          723.7448425292969
+        ],
+        [
+          196.18939208984375,
+          711.0180257161459
+        ],
+        [
+          95.55775960286458,
+          711.0180257161459
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "20.3 3TheEmployermay at itsowndiscretion(provided thatit notifies thesame to the Project Manager, the Supervision Consultant and the Contractor in writing) designate any part of the Works as being a Portion of the Works as herein defined.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          700.412353515625
+        ],
+        [
+          488.359375,
+          700.412353515625
+        ],
+        [
+          488.359375,
+          654.5958251953125
+        ],
+        [
+          127.2694091796875,
+          654.5958251953125
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "DraftFinalAccount",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          643.9901326497396
+        ],
+        [
+          183.0819091796875,
+          643.9901326497396
+        ],
+        [
+          183.0819091796875,
+          631.6875406901041
+        ],
+        [
+          94.71211751302083,
+          631.6875406901041
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "20.4 WithintheperiodafterthedateofissueofaTaking-OverCertificateunder Clause20.1(Taking-Over Certificate)foraSectionorPortionof theWorks statedintheParticularConditionstheContractorshallprepare andsubmit totheProjectManagerintriplicateadraftfinal account(togetherwith all such documents and evidence as the Project Manager may require in order tosubstantiate thesame)inrespectof thesaidSectionorPortionof the Workswhichshows andbreaksdowninsuchform andwithsuchdetailas the Project Manager may require all amounts which in the Contractor's opinionarepayableunder theContractinrespectofthesaidSectionor PortionoftheWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          620.6576334635416
+        ],
+        [
+          487.9365234375,
+          620.6576334635416
+        ],
+        [
+          487.9365234375,
+          506.9647623697917
+        ],
+        [
+          126.84658813476562,
+          506.9647623697917
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "21. DEFECTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          495.51064046223956
+        ],
+        [
+          173.35699462890625,
+          495.51064046223956
+        ],
+        [
+          173.35699462890625,
+          484.90496826171875
+        ],
+        [
+          94.28929646809895,
+          484.90496826171875
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "CompletionofOutstandingWork",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          473.45082600911456
+        ],
+        [
+          241.85416666666666,
+          473.45082600911456
+        ],
+        [
+          241.85416666666666,
+          461.14821370442706
+        ],
+        [
+          94.71211751302083,
+          461.14821370442706
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "21.1The Contractor shall with due expedition and without delay complete during theDefectsLiabilityPeriodforanySectionorPortionof theWorks anywork whichisoutstandinginrespectof thatSectionorPortiononthedateofits takingoverstatedintherelevantTaking-OverCertificatewithinsuch reasonabletime asisnotified inwritingto theContractorbytheSupervision Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          451.39101155598956
+        ],
+        [
+          487.0909016927083,
+          451.39101155598956
+        ],
+        [
+          487.0909016927083,
+          383.09043375651044
+        ],
+        [
+          123.88683064778645,
+          383.09043375651044
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "DefectsafterTakingOver",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          371.21205647786456
+        ],
+        [
+          210.14251708984375,
+          371.21205647786456
+        ],
+        [
+          210.14251708984375,
+          358.48524983723956
+        ],
+        [
+          93.4436543782552,
+          358.48524983723956
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "21.2 The Contractor shall as soon as practicable commence and thereafter carry outwithdueexpeditionandwithoutdelayallsuchworkasmaybe necessarytoremedytothesatisfactionof theSupervisionConsultant any defectofanykindwhatsoeverinanySectionorPortionoftheWorksof whichtheContractormaybenotifiedinwritingby theSupervision LiabilityPeriodforthatSectionorPortionoftheWorksorwithinfourteen (14)daysafter its expirationbut(inthelattercase)therelevantdefect having been found bythe Supervision Consultant upon an inspectionmade byhimoronhisbehalfpriortotheexpirationof theDefectsLiabilityPeriod. For this purpose:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          348.72804768880206
+        ],
+        [
+          487.0909016927083,
+          348.72804768880206
+        ],
+        [
+          487.0909016927083,
+          222.30832926432288
+        ],
+        [
+          124.73248291015625,
+          222.30832926432288
+        ]
+      ],
+      "page": 81
+    },
+    {
+      "text": "(a) theword\"defect\"shall beconstrued tocover anymanner inwhich therelevantSectionorPortionoftheWorksisnotinaccordance withtheContracttothesatisfactionof theSupervisionConsultant; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          211.70265706380212
+        ],
+        [
+          485.8224283854167,
+          211.70265706380212
+        ],
+        [
+          485.8224283854167,
+          166.73459879557288
+        ],
+        [
+          156.02130126953125,
+          166.73459879557288
+        ]
+      ],
+      "page": 81
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 81,
+      "text": "DesignationofPortion\n20.3 3TheEmployermay at itsowndiscretion(provided thatit notifies thesame to the Project Manager, the Supervision Consultant and the Contractor in writing) designate any part of the Works as being a Portion of the Works as herein defined.\nDraftFinalAccount\n20.4 WithintheperiodafterthedateofissueofaTaking-OverCertificateunder Clause20.1(Taking-Over Certificate)foraSectionorPortionof theWorks statedintheParticularConditionstheContractorshallprepare andsubmit totheProjectManagerintriplicateadraftfinal account(togetherwith all such documents and evidence as the Project Manager may require in order tosubstantiate thesame)inrespectof thesaidSectionorPortionof the Workswhichshows andbreaksdowninsuchform andwithsuchdetailas the Project Manager may require all amounts which in the Contractor's opinionarepayableunder theContractinrespectofthesaidSectionor PortionoftheWorks.\n21. DEFECTS\nCompletionofOutstandingWork\n21.1The Contractor shall with due expedition and without delay complete during theDefectsLiabilityPeriodforanySectionorPortionof theWorks anywork whichisoutstandinginrespectof thatSectionorPortiononthedateofits takingoverstatedintherelevantTaking-OverCertificatewithinsuch reasonabletime asisnotified inwritingto theContractorbytheSupervision Consultant.\nDefectsafterTakingOver\n21.2 The Contractor shall as soon as practicable commence and thereafter carry outwithdueexpeditionandwithoutdelayallsuchworkasmaybe necessarytoremedytothesatisfactionof theSupervisionConsultant any defectofanykindwhatsoeverinanySectionorPortionoftheWorksof whichtheContractormaybenotifiedinwritingby theSupervision LiabilityPeriodforthatSectionorPortionoftheWorksorwithinfourteen (14)daysafter its expirationbut(inthelattercase)therelevantdefect having been found bythe Supervision Consultant upon an inspectionmade byhimoronhisbehalfpriortotheexpirationof theDefectsLiabilityPeriod. For this purpose:-\n(a) theword\"defect\"shall beconstrued tocover anymanner inwhich therelevantSectionorPortionoftheWorksisnotinaccordance withtheContracttothesatisfactionof theSupervisionConsultant; and",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

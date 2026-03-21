@@ -1,0 +1,267 @@
+{
+  "text": "<!-- image -->\n\nIn the 3rd line after the word, \"permits\" add “except for building permits\".\n\nAt the endof thisSub-Clause add thefollowing:\n\nFor any partdesigned by the Conlraclor,theContractor shallbe responsible for preparing，submitting to the meant authorities for,and obtainingallpermitsrequiredfortheWorkswhetherofpermanentor temporarynatureincluding,withoutlimitationBuildingPermits,excavation licenses,utilities,noobjectioncertificatesand thelike.\n\nTheEmployershallpaythefeesofthebuildingpermitsonlyafterbeing collectedbytheContractoragainstContractorsubmissionoftheofficial Invoices.\n\nThe Employer shall (where he is in a position to do so) provide reasonable assistancetotheContractorattherequestoftheContractor,providedthat anyassistanceprovided,orrequiredtobeprovidedbytheEmployerto the Contractor under this Sub-Clause shall notrelease the Contractor fromanyofitsobligationsordutiesundertheContract.\n\n## 9.13 Fossils:\n\nChange the title of the Sub-Clause tobe\"Fossils,RemnantofWars\"and substitutebythefollowing:\n\nAllfossils,coins,articles ofvalue or antiquity,and structures and other remainsorthingsofgeologicalorarchaeologicalinterestdiscoveredon theSiteshall,asbetweentheEmployerandtheContractor,bedeemed to be the absolute property of the Employer. If the Contractor, during the course ofWork,discovers anyof the aforesaiditems,inadditionto any remnant ofwars such as ammunition,weapons,firearms，explosive，or anyotherdangerousitemsofthesamenature,theContractorshalltake reasonableprecautionstopreventitsworkmenoranyotherpersonsfrom upondiscoverythereofand，beforeremoval，acquainttheContract AdministratorofsuchdiscoveryandcarryouttheContractAdministrator's instructionsfor dealingwith thesame.If byreasonofsuch instructions, theContractorsuffersdelaysand incursadditionalCoststheContract Administratorshall determine suchdelays and Costs,and suchcostswill be paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\n\n## Add newSub-Clauses 9.18&amp; 9.19 as follows:\n\n## 9.18 Mobilization\n\n<!-- image -->\n\nMobilization period as stipulated in Appendix(D) (if exist) commences from the contract'sCommencement Date.Mobilizationis themaking availableand/ordeliveryandinstallationon-siteand/orreallocation，if resources,and all thepreparatoryworks includingbut not limited toshop drawings time schedule, etc.., necessary to enable construction to start andbemaintained at thestipulatedratesofprogressaccording toterms andconditionsgoverning theexecutionof theWorks.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "In the 3rd line after the word, \"permits\" add “except for building permits\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          696.1700744628906
+        ],
+        [
+          494.2788899739583,
+          696.1700744628906
+        ],
+        [
+          494.2788899739583,
+          685.1401672363281
+        ],
+        [
+          165.74620564778647,
+          685.1401672363281
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "At the endof thisSub-Clause add thefollowing:",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          678.3525390625
+        ],
+        [
+          386.0364583333333,
+          678.3525390625
+        ],
+        [
+          386.0364583333333,
+          667.3226318359375
+        ],
+        [
+          166.16902669270834,
+          667.3226318359375
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "For any partdesigned by the Conlraclor,theContractor shallbe responsible for preparing，submitting to the meant authorities for,and obtainingallpermitsrequiredfortheWorkswhetherofpermanentor temporarynatureincluding,withoutlimitationBuildingPermits,excavation licenses,utilities,noobjectioncertificatesand thelike.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          660.1107788085938
+        ],
+        [
+          502.7353108723958,
+          660.1107788085938
+        ],
+        [
+          502.7353108723958,
+          602.8401082356771
+        ],
+        [
+          166.16902669270834,
+          602.8401082356771
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "TheEmployershallpaythefeesofthebuildingpermitsonlyafterbeing collectedbytheContractoragainstContractorsubmissionoftheofficial Invoices.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          595.2040201822916
+        ],
+        [
+          502.3125,
+          595.2040201822916
+        ],
+        [
+          502.3125,
+          559.9931640625
+        ],
+        [
+          167.0146687825521,
+          559.9931640625
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "The Employer shall (where he is in a position to do so) provide reasonable assistancetotheContractorattherequestoftheContractor,providedthat anyassistanceprovided,orrequiredtobeprovidedbytheEmployerto the Contractor under this Sub-Clause shall notrelease the Contractor fromanyofitsobligationsordutiesundertheContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          554.4782104492188
+        ],
+        [
+          503.1581217447917,
+          554.4782104492188
+        ],
+        [
+          503.1581217447917,
+          496.35906982421875
+        ],
+        [
+          166.59184773763022,
+          496.35906982421875
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "9.13 Fossils:",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.69223022460938,
+          489.14723714192706
+        ],
+        [
+          204.64583333333334,
+          489.14723714192706
+        ],
+        [
+          204.64583333333334,
+          477.69309488932294
+        ],
+        [
+          127.69223022460938,
+          477.69309488932294
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "Change the title of the Sub-Clause tobe\"Fossils,RemnantofWars\"and substitutebythefollowing:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          471.75392659505206
+        ],
+        [
+          503.1581217447917,
+          471.75392659505206
+        ],
+        [
+          503.1581217447917,
+          447.99717203776044
+        ],
+        [
+          167.0146687825521,
+          447.99717203776044
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "Allfossils,coins,articles ofvalue or antiquity,and structures and other remainsorthingsofgeologicalorarchaeologicalinterestdiscoveredon theSiteshall,asbetweentheEmployerandtheContractor,bedeemed to be the absolute property of the Employer. If the Contractor, during the course ofWork,discovers anyof the aforesaiditems,inadditionto any remnant ofwars such as ammunition,weapons,firearms，explosive，or anyotherdangerousitemsofthesamenature,theContractorshalltake reasonableprecautionstopreventitsworkmenoranyotherpersonsfrom upondiscoverythereofand，beforeremoval，acquainttheContract AdministratorofsuchdiscoveryandcarryouttheContractAdministrator's instructionsfor dealingwith thesame.If byreasonofsuch instructions, theContractorsuffersdelaysand incursadditionalCoststheContract Administratorshall determine suchdelays and Costs,and suchcostswill be paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          442.48223876953125
+        ],
+        [
+          505.2722574869792,
+          442.48223876953125
+        ],
+        [
+          505.2722574869792,
+          251.58001708984375
+        ],
+        [
+          166.59184773763022,
+          251.58001708984375
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "Add newSub-Clauses 9.18& 9.19 as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.38351440429688,
+          246.06504313151038
+        ],
+        [
+          353.4791666666667,
+          246.06504313151038
+        ],
+        [
+          353.4791666666667,
+          235.45937093098962
+        ],
+        [
+          129.38351440429688,
+          235.45937093098962
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "9.18 Mobilization",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.960693359375,
+          228.24753824869788
+        ],
+        [
+          224.5184529622396,
+          228.24753824869788
+        ],
+        [
+          224.5184529622396,
+          217.64182535807288
+        ],
+        [
+          128.960693359375,
+          217.64182535807288
+        ]
+      ],
+      "page": 124
+    },
+    {
+      "text": "Mobilization period as stipulated in Appendix(D) (if exist) commences from the contract'sCommencement Date.Mobilizationis themaking availableand/ordeliveryandinstallationon-siteand/orreallocation，if resources,and all thepreparatoryworks includingbut not limited toshop drawings time schedule, etc.., necessary to enable construction to start andbemaintained at thestipulatedratesofprogressaccording toterms andconditionsgoverning theexecutionof theWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.28314208984375,
+          211.70265706380212
+        ],
+        [
+          506.5406901041667,
+          211.70265706380212
+        ],
+        [
+          506.5406901041667,
+          117.94846598307288
+        ],
+        [
+          168.28314208984375,
+          117.94846598307288
+        ]
+      ],
+      "page": 124
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 124,
+      "text": "In the 3rd line after the word, \"permits\" add “except for building permits\".\nAt the endof thisSub-Clause add thefollowing:\nFor any partdesigned by the Conlraclor,theContractor shallbe responsible for preparing，submitting to the meant authorities for,and obtainingallpermitsrequiredfortheWorkswhetherofpermanentor temporarynatureincluding,withoutlimitationBuildingPermits,excavation licenses,utilities,noobjectioncertificatesand thelike.\nTheEmployershallpaythefeesofthebuildingpermitsonlyafterbeing collectedbytheContractoragainstContractorsubmissionoftheofficial Invoices.\nThe Employer shall (where he is in a position to do so) provide reasonable assistancetotheContractorattherequestoftheContractor,providedthat anyassistanceprovided,orrequiredtobeprovidedbytheEmployerto the Contractor under this Sub-Clause shall notrelease the Contractor fromanyofitsobligationsordutiesundertheContract.\n9.13 Fossils:\nChange the title of the Sub-Clause tobe\"Fossils,RemnantofWars\"and substitutebythefollowing:\nAllfossils,coins,articles ofvalue or antiquity,and structures and other remainsorthingsofgeologicalorarchaeologicalinterestdiscoveredon theSiteshall,asbetweentheEmployerandtheContractor,bedeemed to be the absolute property of the Employer. If the Contractor, during the course ofWork,discovers anyof the aforesaiditems,inadditionto any remnant ofwars such as ammunition,weapons,firearms，explosive，or anyotherdangerousitemsofthesamenature,theContractorshalltake reasonableprecautionstopreventitsworkmenoranyotherpersonsfrom upondiscoverythereofand，beforeremoval，acquainttheContract AdministratorofsuchdiscoveryandcarryouttheContractAdministrator's instructionsfor dealingwith thesame.If byreasonofsuch instructions, theContractorsuffersdelaysand incursadditionalCoststheContract Administratorshall determine suchdelays and Costs,and suchcostswill be paid to the Contractor in accordance with Clause 26 (Interim and Final Certificates)\nAdd newSub-Clauses 9.18& 9.19 as follows:\n9.18 Mobilization\nMobilization period as stipulated in Appendix(D) (if exist) commences from the contract'sCommencement Date.Mobilizationis themaking availableand/ordeliveryandinstallationon-siteand/orreallocation，if resources,and all thepreparatoryworks includingbut not limited toshop drawings time schedule, etc.., necessary to enable construction to start andbemaintained at thestipulatedratesofprogressaccording toterms andconditionsgoverning theexecutionof theWorks.",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

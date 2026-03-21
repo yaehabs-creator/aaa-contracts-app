@@ -1,0 +1,704 @@
+{
+  "text": "<!-- image -->\n\n5. A test and inspection schedule keyed to the construction schedule and following the order of the Specification.\n- a. Indicate the following:\n1. Inspections and tests required.\n2. Names of responsible personnel for each segment of the Work.\n3. Schedule for each inspection and test.\n4. Specification paragraph requiring test, feature of work to be tested and test frequency.\n6. Procedures for tracking Preparatory, Initial and Follow-up Control phases and control, verification, and acceptance tests including documentation.\n7. Document and submittal control procedures.\n8. Procedures to identify and control use of items and materials.\n10. 9.Procedures and samples for Quality Records.\n11. 10.Sample forms to be used (Stop Work Order, NCR, etc.)\n12. 11.A list of definable features of work.A definable feature of work is a task which is separate and distinct from other tasks, has separate control requirements, and may be identified by different trades or disciplines, or itmaybeworkbythesametradeinadifferentenvironment.Although each section of the specifications may generally be considered as a definable feature of work, there are frequently more than orie definable feature under a particular section.\n\n## 2.04 INSPECTION CONTROL PROCEDURES\n\nContractor Quality Control (CQC) is the means by which the Contractor ensures that the construction, to include that of subcontractors and suppliers, complies with the requirements of the contract. At least three phases of control shall be conducted by the CQC SystemManager for each definable feature ofwork as follows:\n\n## A.PreparatoryPhase\n\nThis phase shall be performed prior to beginning work on each definable fcaturc of work, aftor all required  plans/documents/materials are approved/accepted, and after copies are at the work site. This phase shall include:\n\n1. A review of each paragraph of applicable specifications, reference codes, and standards. A copy of those sections of referenced codes and standards applicable to that portion of the work to be accomplishcd in thc fieldshallbe made available bythe Contractorat the Preparatory for use by Employer until final acceptance of the work.\n2. 2.A review of the contract drawings.\n3. A check to assure that all materials and/or equipment have been tested, submitted, and approved.\n4. Review of provisions that have been made to provide required control inspectionandtesting.\n5. Examination of the work area to assure that all required preliminary work has been completed and is in compliance with the contract.\n\nexamination of required materials, equipment, and sample that they are on hand.conforr fo approved shop\n\nTievoipjaveni ToCig218-247.0m 奖13841\n\nCondmeto\n\nSeclion01100\n\nQually Conul\n\nPageNumbor:7of 17\n\n<!-- image -->\n\nSpecificationsBiv.q GeneralRequiremeris\n\nRev.01\n\nMLx",
+  "results": [
+    {
+      "text": "A test and inspection schedule keyed to the construction schedule and following the order of the Specification.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          719.1273498535156
+        ],
+        [
+          505.111328125,
+          719.1273498535156
+        ],
+        [
+          505.111328125,
+          694.2483215332031
+        ],
+        [
+          119.94837443033855,
+          694.2483215332031
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Indicate the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          137.38032023111978,
+          693.4190165201823
+        ],
+        [
+          260.64906819661456,
+          693.4190165201823
+        ],
+        [
+          260.64906819661456,
+          679.7355448404948
+        ],
+        [
+          137.38032023111978,
+          679.7355448404948
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Inspections and tests required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          146.0962931315104,
+          679.7355448404948
+        ],
+        [
+          313.77500406901044,
+          679.7355448404948
+        ],
+        [
+          313.77500406901044,
+          667.710683186849
+        ],
+        [
+          146.0962931315104,
+          667.710683186849
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Names of responsible personnel for each segment of the Work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          145.26620483398438,
+          666.4667358398438
+        ],
+        [
+          476.05810546875,
+          666.4667358398438
+        ],
+        [
+          476.05810546875,
+          655.2711690266927
+        ],
+        [
+          145.26620483398438,
+          655.2711690266927
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Schedule for each inspection and test.",
+      "confidence": 0.95,
+      "box": [
+        [
+          145.6812540690104,
+          653.1979166666666
+        ],
+        [
+          351.9592692057292,
+          653.1979166666666
+        ],
+        [
+          351.9592692057292,
+          641.5877075195312
+        ],
+        [
+          145.6812540690104,
+          641.5877075195312
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Specification paragraph requiring test, feature of work to be tested and test frequency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          145.26620483398438,
+          640.7584025065104
+        ],
+        [
+          505.111328125,
+          640.7584025065104
+        ],
+        [
+          505.111328125,
+          614.6354166666666
+        ],
+        [
+          145.26620483398438,
+          614.6354166666666
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Procedures for tracking Preparatory, Initial and Follow-up Control phases and control, verification, and acceptance tests including documentation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          613.8061116536459
+        ],
+        [
+          505.111328125,
+          613.8061116536459
+        ],
+        [
+          505.111328125,
+          589.7563883463541
+        ],
+        [
+          119.94837443033855,
+          589.7563883463541
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Document and submittal control procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          588.0977783203125
+        ],
+        [
+          362.7504475911458,
+          588.0977783203125
+        ],
+        [
+          362.7504475911458,
+          576.0729166666666
+        ],
+        [
+          119.53333536783855,
+          576.0729166666666
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Procedures to identify and control use of items and materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.53333536783855,
+          574.8289591471354
+        ],
+        [
+          446.1747639973958,
+          574.8289591471354
+        ],
+        [
+          446.1747639973958,
+          563.6334025065105
+        ],
+        [
+          119.53333536783855,
+          563.6334025065105
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "9.Procedures and samples for Quality Records.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          561.5601603190105
+        ],
+        [
+          367.3159586588542,
+          561.5601603190105
+        ],
+        [
+          367.3159586588542,
+          549.949930826823
+        ],
+        [
+          120.36342366536458,
+          549.949930826823
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "10.Sample forms to be used (Stop Work Order, NCR, etc.)",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          548.2913411458333
+        ],
+        [
+          417.1215413411458,
+          548.2913411458333
+        ],
+        [
+          417.1215413411458,
+          537.0957641601562
+        ],
+        [
+          121.19352213541667,
+          537.0957641601562
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "11.A list of definable features of work.A definable feature of work is a task which is separate and distinct from other tasks, has separate control requirements, and may be identified by different trades or disciplines, or itmaybeworkbythesametradeinadifferentenvironment.Although each section of the specifications may generally be considered as a definable feature of work, there are frequently more than orie definable feature under a particular section.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          535.4371744791667
+        ],
+        [
+          506.7715250651042,
+          535.4371744791667
+        ],
+        [
+          506.7715250651042,
+          444.21405029296875
+        ],
+        [
+          121.19352213541667,
+          444.21405029296875
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "2.04 INSPECTION CONTROL PROCEDURES",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          432.18918863932294
+        ],
+        [
+          315.4351806640625,
+          432.18918863932294
+        ],
+        [
+          315.4351806640625,
+          421.40826416015625
+        ],
+        [
+          78.85879516601562,
+          421.40826416015625
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Contractor Quality Control (CQC) is the means by which the Contractor ensures that the construction, to include that of subcontractors and suppliers, complies with the requirements of the contract. At least three phases of control shall be conducted by the CQC SystemManager for each definable feature ofwork as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.17661539713542,
+          413.52992757161456
+        ],
+        [
+          506.3564860026042,
+          413.52992757161456
+        ],
+        [
+          506.3564860026042,
+          348.84442138671875
+        ],
+        [
+          104.17661539713542,
+          348.84442138671875
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "A.PreparatoryPhase",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.0067138671875,
+          342.21002197265625
+        ],
+        [
+          215.8240763346354,
+          342.21002197265625
+        ],
+        [
+          215.8240763346354,
+          331.01446533203125
+        ],
+        [
+          105.0067138671875,
+          331.01446533203125
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "This phase shall be performed prior to beginning work on each definable fcaturc of work, aftor all required  plans/documents/materials are approved/accepted, and after copies are at the work site. This phase shall include:",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          328.94122314453125
+        ],
+        [
+          506.7715250651042,
+          328.94122314453125
+        ],
+        [
+          506.7715250651042,
+          278.76849365234375
+        ],
+        [
+          121.19352213541667,
+          278.76849365234375
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "A review of each paragraph of applicable specifications, reference codes, and standards. A copy of those sections of referenced codes and standards applicable to that portion of the work to be accomplishcd in thc fieldshallbe made available bythe Contractorat the Preparatory for use by Employer until final acceptance of the work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          277.1098836263021
+        ],
+        [
+          507.1865641276042,
+          277.1098836263021
+        ],
+        [
+          507.1865641276042,
+          199.15557861328125
+        ],
+        [
+          121.19352213541667,
+          199.15557861328125
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "2.A review of the contract drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.19352213541667,
+          198.32631429036462
+        ],
+        [
+          311.28472900390625,
+          198.32631429036462
+        ],
+        [
+          311.28472900390625,
+          186.30141194661462
+        ],
+        [
+          121.19352213541667,
+          186.30141194661462
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "A check to assure that all materials and/or equipment have been tested, submitted, and approved.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          185.05747477213538
+        ],
+        [
+          506.3564860026042,
+          185.05747477213538
+        ],
+        [
+          506.3564860026042,
+          160.59307861328125
+        ],
+        [
+          120.77847290039062,
+          160.59307861328125
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Review of provisions that have been made to provide required control inspectionandtesting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          158.93450927734375
+        ],
+        [
+          506.7715250651042,
+          158.93450927734375
+        ],
+        [
+          506.7715250651042,
+          134.05544026692712
+        ],
+        [
+          120.77847290039062,
+          134.05544026692712
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Examination of the work area to assure that all required preliminary work has been completed and is in compliance with the contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          133.64080810546875
+        ],
+        [
+          507.6016031901042,
+          133.64080810546875
+        ],
+        [
+          507.6016031901042,
+          109.17645263671875
+        ],
+        [
+          120.77847290039062,
+          109.17645263671875
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "examination of required materials, equipment, and sample that they are on hand.conforr fo approved shop",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.0912068684896,
+          106.68849690755212
+        ],
+        [
+          506.7715250651042,
+          106.68849690755212
+        ],
+        [
+          506.7715250651042,
+          82.63877360026038
+        ],
+        [
+          190.0912068684896,
+          82.63877360026038
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Tievoipjaveni ToCig218-247.0m 奖13841",
+      "confidence": 0.95,
+      "box": [
+        [
+          264.3844807942708,
+          47.39349365234375
+        ],
+        [
+          325.39630126953125,
+          47.39349365234375
+        ],
+        [
+          325.39630126953125,
+          26.66099039713538
+        ],
+        [
+          264.3844807942708,
+          26.66099039713538
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Condmeto",
+      "confidence": 0.95,
+      "box": [
+        [
+          410.4807942708333,
+          42.41766357421875
+        ],
+        [
+          442.0242919921875,
+          42.41766357421875
+        ],
+        [
+          442.0242919921875,
+          37.44191487630212
+        ],
+        [
+          410.4807942708333,
+          37.44191487630212
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Seclion01100",
+      "confidence": 0.95,
+      "box": [
+        [
+          411.3108723958333,
+          37.02728271484375
+        ],
+        [
+          456.5509440104167,
+          37.02728271484375
+        ],
+        [
+          456.5509440104167,
+          28.73423258463538
+        ],
+        [
+          411.3108723958333,
+          28.73423258463538
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Qually Conul",
+      "confidence": 0.95,
+      "box": [
+        [
+          444.5145670572917,
+          44.07627360026038
+        ],
+        [
+          489.754638671875,
+          44.07627360026038
+        ],
+        [
+          489.754638671875,
+          35.78330485026038
+        ],
+        [
+          444.5145670572917,
+          35.78330485026038
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "PageNumbor:7of 17",
+      "confidence": 0.95,
+      "box": [
+        [
+          410.8958333333333,
+          29.56349690755212
+        ],
+        [
+          478.1333414713542,
+          29.56349690755212
+        ],
+        [
+          478.1333414713542,
+          21.27052815755212
+        ],
+        [
+          410.8958333333333,
+          21.27052815755212
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "SpecificationsBiv.q GeneralRequiremeris",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          36.19793701171875
+        ],
+        [
+          212.50370279947916,
+          36.19793701171875
+        ],
+        [
+          212.50370279947916,
+          26.24635823567712
+        ],
+        [
+          78.85879516601562,
+          26.24635823567712
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "Rev.01",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          27.90496826171875
+        ],
+        [
+          101.68634033203125,
+          27.90496826171875
+        ],
+        [
+          101.68634033203125,
+          19.19728597005212
+        ],
+        [
+          79.27384440104167,
+          19.19728597005212
+        ]
+      ],
+      "page": 323
+    },
+    {
+      "text": "MLx",
+      "confidence": 0.95,
+      "box": [
+        [
+          344.9034830729167,
+          29.14886474609375
+        ],
+        [
+          362.7504475911458,
+          29.14886474609375
+        ],
+        [
+          362.7504475911458,
+          22.09979248046875
+        ],
+        [
+          344.9034830729167,
+          22.09979248046875
+        ]
+      ],
+      "page": 323
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 323,
+      "text": "A test and inspection schedule keyed to the construction schedule and following the order of the Specification.\nIndicate the following:\nInspections and tests required.\nNames of responsible personnel for each segment of the Work.\nSchedule for each inspection and test.\nSpecification paragraph requiring test, feature of work to be tested and test frequency.\nProcedures for tracking Preparatory, Initial and Follow-up Control phases and control, verification, and acceptance tests including documentation.\nDocument and submittal control procedures.\nProcedures to identify and control use of items and materials.\n9.Procedures and samples for Quality Records.\n10.Sample forms to be used (Stop Work Order, NCR, etc.)\n11.A list of definable features of work.A definable feature of work is a task which is separate and distinct from other tasks, has separate control requirements, and may be identified by different trades or disciplines, or itmaybeworkbythesametradeinadifferentenvironment.Although each section of the specifications may generally be considered as a definable feature of work, there are frequently more than orie definable feature under a particular section.\n2.04 INSPECTION CONTROL PROCEDURES\nContractor Quality Control (CQC) is the means by which the Contractor ensures that the construction, to include that of subcontractors and suppliers, complies with the requirements of the contract. At least three phases of control shall be conducted by the CQC SystemManager for each definable feature ofwork as follows:\nA.PreparatoryPhase\nThis phase shall be performed prior to beginning work on each definable fcaturc of work, aftor all required  plans/documents/materials are approved/accepted, and after copies are at the work site. This phase shall include:\nA review of each paragraph of applicable specifications, reference codes, and standards. A copy of those sections of referenced codes and standards applicable to that portion of the work to be accomplishcd in thc fieldshallbe made available bythe Contractorat the Preparatory for use by Employer until final acceptance of the work.\n2.A review of the contract drawings.\nA check to assure that all materials and/or equipment have been tested, submitted, and approved.\nReview of provisions that have been made to provide required control inspectionandtesting.\nExamination of the work area to assure that all required preliminary work has been completed and is in compliance with the contract.\nexamination of required materials, equipment, and sample that they are on hand.conforr fo approved shop\nTievoipjaveni ToCig218-247.0m 奖13841\nCondmeto\nSeclion01100\nQually Conul\nPageNumbor:7of 17\nSpecificationsBiv.q GeneralRequiremeris\nRev.01\nMLx",
+      "line_count": 30
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

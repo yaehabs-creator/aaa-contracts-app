@@ -1,0 +1,336 @@
+{
+  "text": "<!-- image -->\n\n## C.Time of Completion\n\n- (To be advised)\n\n## D. Tender Documents\n\n- ·Tenderer is requested to download the Tender Documents using the link included in the Invitation to Tender email.\n\n## E.Base Material Rates\n\n- Refer to Annex (3) in the ITT\n\n## F. Tender Submission Due Date\n\n- Please use the Master Query Log Template attached to the Invitation To Tender email, to communicate any queries on Tuesday 2gth of April 2025, which to be addressed to the following email: halasamy@emaar.eg, CC: eelessawy@emaar.eg\n- The due date to receive your offer for this package is Sunday 18th of May 2025. addressed only to Emaar Tender Committee at Ermaar Misr via the following email: tendersemaarmisr@emaar.eg\n\nIf you have any questions orconcerns,please letusknow.\n\n<!-- image -->\n\nEmaarMisrforDevelopmentsS.A.E. P.0.Box229,Mokattam11571Cairo ArabRepublic of Egypt\n\nTel:+20225032000\n\nFax:+2 0225032020\n\nwww.emaarmisr.com\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "C.Time of Completion",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          655.6858215332031
+        ],
+        [
+          212.08866373697916,
+          655.6858215332031
+        ],
+        [
+          212.08866373697916,
+          642.0023600260416
+        ],
+        [
+          91.72522989908855,
+          642.0023600260416
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "(To be advised)",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.49698893229167,
+          636.1972452799479
+        ],
+        [
+          202.5425821940104,
+          636.1972452799479
+        ],
+        [
+          202.5425821940104,
+          622.9284261067709
+        ],
+        [
+          107.49698893229167,
+          622.9284261067709
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "D. Tender Documents",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          617.5379638671875
+        ],
+        [
+          208.7682902018229,
+          617.5379638671875
+        ],
+        [
+          208.7682902018229,
+          603.8545125325521
+        ],
+        [
+          91.72522989908855,
+          603.8545125325521
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "·Tenderer is requested to download the Tender Documents using the link included in the Invitation to Tender email.",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          598.0493977864584
+        ],
+        [
+          506.7715250651042,
+          598.0493977864584
+        ],
+        [
+          506.7715250651042,
+          566.5359497070312
+        ],
+        [
+          107.08193969726562,
+          566.5359497070312
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "E.Base Material Rates",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          559.4868977864583
+        ],
+        [
+          215.8240763346354,
+          559.4868977864583
+        ],
+        [
+          215.8240763346354,
+          547.4620361328125
+        ],
+        [
+          91.72522989908855,
+          547.4620361328125
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "Refer to Annex (3) in the ITT",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.85369873046875,
+          539.9983317057292
+        ],
+        [
+          265.21457926432294,
+          539.9983317057292
+        ],
+        [
+          265.21457926432294,
+          527.9734497070312
+        ],
+        [
+          122.85369873046875,
+          527.9734497070312
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "F. Tender Submission Due Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          521.7537027994792
+        ],
+        [
+          262.72430419921875,
+          521.7537027994792
+        ],
+        [
+          262.72430419921875,
+          508.48488362630206
+        ],
+        [
+          91.3101806640625,
+          508.48488362630206
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "Please use the Master Query Log Template attached to the Invitation To Tender email, to communicate any queries on Tuesday 2gth of April 2025, which to be addressed to the following email: halasamy@emaar.eg, CC: eelessawy@emaar.eg",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.68379720052083,
+          502.26511637369794
+        ],
+        [
+          506.7715250651042,
+          502.26511637369794
+        ],
+        [
+          506.7715250651042,
+          430.11594645182294
+        ],
+        [
+          123.68379720052083,
+          430.11594645182294
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "The due date to receive your offer for this package is Sunday 18th of May 2025. addressed only to Emaar Tender Committee at Ermaar Misr via the following email: tendersemaarmisr@emaar.eg",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.2687479654948,
+          425.96942138671875
+        ],
+        [
+          507.6016031901042,
+          425.96942138671875
+        ],
+        [
+          507.6016031901042,
+          374.55275472005206
+        ],
+        [
+          123.2687479654948,
+          374.55275472005206
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "If you have any questions orconcerns,please letusknow.",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          348.84442138671875
+        ],
+        [
+          362.7504475911458,
+          348.84442138671875
+        ],
+        [
+          362.7504475911458,
+          336.40492757161456
+        ],
+        [
+          74.70833333333333,
+          336.40492757161456
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "EmaarMisrforDevelopmentsS.A.E. P.0.Box229,Mokattam11571Cairo ArabRepublic of Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          356.9398193359375,
+          727.4203592936198
+        ],
+        [
+          483.1138916015625,
+          727.4203592936198
+        ],
+        [
+          483.1138916015625,
+          697.5655212402344
+        ],
+        [
+          356.9398193359375,
+          697.5655212402344
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "Tel:+20225032000",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.3548583984375,
+          697.150868733724
+        ],
+        [
+          427.4976806640625,
+          697.150868733724
+        ],
+        [
+          427.4976806640625,
+          688.8578592936198
+        ],
+        [
+          357.3548583984375,
+          688.8578592936198
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "Fax:+2 0225032020",
+      "confidence": 0.95,
+      "box": [
+        [
+          356.5247802734375,
+          688.028554280599
+        ],
+        [
+          428.7428385416667,
+          688.028554280599
+        ],
+        [
+          428.7428385416667,
+          677.6622924804688
+        ],
+        [
+          356.5247802734375,
+          677.6622924804688
+        ]
+      ],
+      "page": 220
+    },
+    {
+      "text": "www.emaarmisr.com",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.3548583984375,
+          676.0036926269531
+        ],
+        [
+          431.6481526692708,
+          676.0036926269531
+        ],
+        [
+          431.6481526692708,
+          668.1253356933594
+        ],
+        [
+          357.3548583984375,
+          668.1253356933594
+        ]
+      ],
+      "page": 220
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 220,
+      "text": "C.Time of Completion\n(To be advised)\nD. Tender Documents\n·Tenderer is requested to download the Tender Documents using the link included in the Invitation to Tender email.\nE.Base Material Rates\nRefer to Annex (3) in the ITT\nF. Tender Submission Due Date\nPlease use the Master Query Log Template attached to the Invitation To Tender email, to communicate any queries on Tuesday 2gth of April 2025, which to be addressed to the following email: halasamy@emaar.eg, CC: eelessawy@emaar.eg\nThe due date to receive your offer for this package is Sunday 18th of May 2025. addressed only to Emaar Tender Committee at Ermaar Misr via the following email: tendersemaarmisr@emaar.eg\nIf you have any questions orconcerns,please letusknow.\nEmaarMisrforDevelopmentsS.A.E. P.0.Box229,Mokattam11571Cairo ArabRepublic of Egypt\nTel:+20225032000\nFax:+2 0225032020\nwww.emaarmisr.com",
+      "line_count": 14
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

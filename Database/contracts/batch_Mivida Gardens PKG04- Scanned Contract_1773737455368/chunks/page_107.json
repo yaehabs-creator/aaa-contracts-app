@@ -1,0 +1,336 @@
+{
+  "text": "## DefinitionofDefault\n\n- 30.2 If the Project Manager shall certify in writing that in his opinion the Contractor:-\n- (a) has failed to comply with a notice under Clause 30.1 (Notice to Correct); or\n- (b) has failedtocomplywithClause7(Bonds)inrespectofthe PerformanceBond:or\n- (c) isinbreachofanyof theprovisionsofSub-Clause27.5(a)(Third PartyPayments):or\n- (d) has abandoned orrepudiated theContract;or\n- (e) withoutreasonableexcusehasfailedtocommencetheWorkswithin seven(7)daysafter theCommencementDateorthereafterhas suspended theprogressof theWorksor anySectionorPortion thereof for anaggregate of not less than twenty eight(28) days; or\n- (f) despite previous written warnings from the Project Manager, is not carrying out the Works or any Section or Portion thereof in accordance with the Contract or is refusing or failing to observe or perform any other term, provision or condition of the Contract; or\n- (g) (i) withoutthepriorwrittenconsentoftheEmployerhas (otherwise than as permitted by Clause 3.1 (Assignment)) assignedorpurported to assigntheContract or anypart thereofor anybenefit,obligationor interestthereinor thereunder;or\n- (ii) hasorhaspurported tosublet thewholeoftheWorks;or\n- (ii) withoutthepriorwrittenconsentoftheProjectManagerand theSupervisionConsultantinanycasewhereinaccordance withClause3.2(Subletting)suchconsentisrequisitehas or haspurported to subletanypartof theWorks;or\n- (h) hasforaperiodof not less than twenty eight(28) daysrefused or failedtoactinaccordancewithanyorderoftheSupervision Consultant under Clause 11.7 (Rejection and Remedy);or\n- (i) hassofailedtocompletewithintheTimeforCompletionthatthe aggregate amount of all such payments asare due by the Contractor to the Employer under paragraph (a)(i) of Clause 19.3 (Liquidated Damages)shallatanytimehavereached theamountstated inthe Particular Conditions;or\n- (!) hascompoundedwithornegotiatedforanycompositionwithor called anymeetingofitscreditorsgenerally.hashadareceiverofall oranyof itsassetsappointed,hascommittedanyactofbankruptcy orinsolvency,hashad areceiving ordermade againstit,hashadan\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "DefinitionofDefault",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          725.0175272623698
+        ],
+        [
+          185.61883544921875,
+          725.0175272623698
+        ],
+        [
+          185.61883544921875,
+          713.13916015625
+        ],
+        [
+          95.1349385579427,
+          713.13916015625
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "30.2 If the Project Manager shall certify in writing that in his opinion the Contractor:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          702.1092529296875
+        ],
+        [
+          487.0909016927083,
+          702.1092529296875
+        ],
+        [
+          487.0909016927083,
+          679.6252136230469
+        ],
+        [
+          126.84658813476562,
+          679.6252136230469
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(a) has failed to comply with a notice under Clause 30.1 (Notice to Correct); or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          668.1710815429688
+        ],
+        [
+          487.0909016927083,
+          668.1710815429688
+        ],
+        [
+          487.0909016927083,
+          643.56591796875
+        ],
+        [
+          156.02130126953125,
+          643.56591796875
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(b) has failedtocomplywithClause7(Bonds)inrespectofthe PerformanceBond:or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          633.3844604492188
+        ],
+        [
+          487.5137125651042,
+          633.3844604492188
+        ],
+        [
+          487.5137125651042,
+          609.2035115559896
+        ],
+        [
+          156.866943359375,
+          609.2035115559896
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(c) isinbreachofanyof theprovisionsofSub-Clause27.5(a)(Third PartyPayments):or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          600.2947387695312
+        ],
+        [
+          487.5137125651042,
+          600.2947387695312
+        ],
+        [
+          487.5137125651042,
+          575.2653401692708
+        ],
+        [
+          156.02130126953125,
+          575.2653401692708
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(d) has abandoned orrepudiated theContract;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.59848022460938,
+          565.9323323567708
+        ],
+        [
+          397.0298258463542,
+          565.9323323567708
+        ],
+        [
+          397.0298258463542,
+          551.932840983073
+        ],
+        [
+          155.59848022460938,
+          551.932840983073
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(e) withoutreasonableexcusehasfailedtocommencetheWorkswithin seven(7)daysafter theCommencementDateorthereafterhas suspended theprogressof theWorksor anySectionorPortion thereof for anaggregate of not less than twenty eight(28) days; or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          542.599853515625
+        ],
+        [
+          486.2452392578125,
+          542.599853515625
+        ],
+        [
+          486.2452392578125,
+          495.51064046223956
+        ],
+        [
+          156.02130126953125,
+          495.51064046223956
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(f) despite previous written warnings from the Project Manager, is not carrying out the Works or any Section or Portion thereof in accordance with the Contract or is refusing or failing to observe or perform any other term, provision or condition of the Contract; or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          486.60186767578125
+        ],
+        [
+          487.0909016927083,
+          486.60186767578125
+        ],
+        [
+          487.0909016927083,
+          438.66420491536456
+        ],
+        [
+          156.44412231445312,
+          438.66420491536456
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(g) (i) withoutthepriorwrittenconsentoftheEmployerhas (otherwise than as permitted by Clause 3.1 (Assignment)) assignedorpurported to assigntheContract or anypart thereofor anybenefit,obligationor interestthereinor thereunder;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          428.90696207682294
+        ],
+        [
+          486.6680908203125,
+          428.90696207682294
+        ],
+        [
+          486.6680908203125,
+          371.21205647786456
+        ],
+        [
+          156.02130126953125,
+          371.21205647786456
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(ii) hasorhaspurported tosublet thewholeoftheWorks;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.4644775390625,
+          361.03061930338544
+        ],
+        [
+          477.3660074869792,
+          361.03061930338544
+        ],
+        [
+          477.3660074869792,
+          347.87957763671875
+        ],
+        [
+          186.4644775390625,
+          347.87957763671875
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(ii) withoutthepriorwrittenconsentoftheProjectManagerand theSupervisionConsultantinanycasewhereinaccordance withClause3.2(Subletting)suchconsentisrequisitehas or haspurported to subletanypartof theWorks;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.4644775390625,
+          338.12237548828125
+        ],
+        [
+          485.8224283854167,
+          338.12237548828125
+        ],
+        [
+          485.8224283854167,
+          291.03314208984375
+        ],
+        [
+          186.4644775390625,
+          291.03314208984375
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(h) hasforaperiodof not less than twenty eight(28) daysrefused or failedtoactinaccordancewithanyorderoftheSupervision Consultant under Clause 11.7 (Rejection and Remedy);or",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          281.2758992513021
+        ],
+        [
+          484.976806640625,
+          281.2758992513021
+        ],
+        [
+          484.976806640625,
+          245.64084879557288
+        ],
+        [
+          155.1756591796875,
+          245.64084879557288
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(i) hassofailedtocompletewithintheTimeforCompletionthatthe aggregate amount of all such payments asare due by the Contractor to the Employer under paragraph (a)(i) of Clause 19.3 (Liquidated Damages)shallatanytimehavereached theamountstated inthe Particular Conditions;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          235.88360595703125
+        ],
+        [
+          485.3996175130208,
+          235.88360595703125
+        ],
+        [
+          485.3996175130208,
+          178.61293538411462
+        ],
+        [
+          155.1756591796875,
+          178.61293538411462
+        ]
+      ],
+      "page": 107
+    },
+    {
+      "text": "(!) hascompoundedwithornegotiatedforanycompositionwithor called anymeetingofitscreditorsgenerally.hashadareceiverofall oranyof itsassetsappointed,hascommittedanyactofbankruptcy orinsolvency,hashad areceiving ordermade againstit,hashadan",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.1756591796875,
+          168.00726318359375
+        ],
+        [
+          485.8224283854167,
+          168.00726318359375
+        ],
+        [
+          485.8224283854167,
+          121.34226481119788
+        ],
+        [
+          155.1756591796875,
+          121.34226481119788
+        ]
+      ],
+      "page": 107
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 107,
+      "text": "DefinitionofDefault\n30.2 If the Project Manager shall certify in writing that in his opinion the Contractor:-\n(a) has failed to comply with a notice under Clause 30.1 (Notice to Correct); or\n(b) has failedtocomplywithClause7(Bonds)inrespectofthe PerformanceBond:or\n(c) isinbreachofanyof theprovisionsofSub-Clause27.5(a)(Third PartyPayments):or\n(d) has abandoned orrepudiated theContract;or\n(e) withoutreasonableexcusehasfailedtocommencetheWorkswithin seven(7)daysafter theCommencementDateorthereafterhas suspended theprogressof theWorksor anySectionorPortion thereof for anaggregate of not less than twenty eight(28) days; or\n(f) despite previous written warnings from the Project Manager, is not carrying out the Works or any Section or Portion thereof in accordance with the Contract or is refusing or failing to observe or perform any other term, provision or condition of the Contract; or\n(g) (i) withoutthepriorwrittenconsentoftheEmployerhas (otherwise than as permitted by Clause 3.1 (Assignment)) assignedorpurported to assigntheContract or anypart thereofor anybenefit,obligationor interestthereinor thereunder;or\n(ii) hasorhaspurported tosublet thewholeoftheWorks;or\n(ii) withoutthepriorwrittenconsentoftheProjectManagerand theSupervisionConsultantinanycasewhereinaccordance withClause3.2(Subletting)suchconsentisrequisitehas or haspurported to subletanypartof theWorks;or\n(h) hasforaperiodof not less than twenty eight(28) daysrefused or failedtoactinaccordancewithanyorderoftheSupervision Consultant under Clause 11.7 (Rejection and Remedy);or\n(i) hassofailedtocompletewithintheTimeforCompletionthatthe aggregate amount of all such payments asare due by the Contractor to the Employer under paragraph (a)(i) of Clause 19.3 (Liquidated Damages)shallatanytimehavereached theamountstated inthe Particular Conditions;or\n(!) hascompoundedwithornegotiatedforanycompositionwithor called anymeetingofitscreditorsgenerally.hashadareceiverofall oranyof itsassetsappointed,hascommittedanyactofbankruptcy orinsolvency,hashad areceiving ordermade againstit,hashadan",
+      "line_count": 14
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

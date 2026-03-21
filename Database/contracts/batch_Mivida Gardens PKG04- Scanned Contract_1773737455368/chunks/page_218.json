@@ -1,0 +1,543 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\nEmaarMisrforDevelopmentsS.A.E. P.O.Box229,Mokattam11571Cairo ArabRepublicof Egypt\n\nTel:+2 02 25032000\n\nFax:+20225032020\n\nwww.emaarmisr.com\n\nProject:\n\nMivida Gardens Project MVG.PK#04 Construction of Townhomes Villas in Parcel 11\n\nPackage ID:\n\nSubject:\n\n## Dear Tenderer,\n\nEMAAR MISR is pleased to inviteyou to submit your offer for MVG.PK#O4\"Construction of Townhomes Villas in Parcel 11\", in Mivida Gardens Project and considering the following:\n\n## A. Tender Details\n\n- This package is on a fast-track basis, hence Tenderer's strict adherence to the queries and Tender submission due dates is highly required.\n- Reading the full Instruction To Tenderers (ITT) and its appendices is of high importance to ensure that the Tenderer submits a complete and accurate offer\n- Tenderer is requested to submit its basic offer in full compliance with all RFT requirements and Conditions of Contract, however, and for any deviations which maylead to cost saving,arebe submitted as alternative offers along with its cost impact, to be decided on by the Employer.\n- All queries to be submitted in the Queries template and on its due time, as any queries that will be received after its duewill not be considered.\n- Any deviations from the Conditions of Contract in the basic offer will not be accepted.\n\n## B. Scope of Services\n\n- The scope of work covers the Construction of TownhomesVillas in Parcel 11, in Mivida GardensProject.\n- Tenderer's attention is drawn that the Tender Documents shall be deemed to form the Contract and are tobeconsldered asone Indlvlslblewholeand the to meet the intent of the Contract and complete the Works as described shall be deemed a requirement of the Contract Document and be read and\n\n<!-- image -->\n\n新团际埃及\n\n有限责任公司\n\nEgyp",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          700.8827209472656
+        ],
+        [
+          134.89004516601562,
+          700.8827209472656
+        ],
+        [
+          134.89004516601562,
+          689.2725118001302
+        ],
+        [
+          107.9120381673177,
+          689.2725118001302
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "EmaarMisrforDevelopmentsS.A.E. P.O.Box229,Mokattam11571Cairo ArabRepublicof Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.7698974609375,
+          729.0789591471354
+        ],
+        [
+          484.3590087890625,
+          729.0789591471354
+        ],
+        [
+          484.3590087890625,
+          698.3948262532552
+        ],
+        [
+          357.7698974609375,
+          698.3948262532552
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Tel:+2 02 25032000",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.7698974609375,
+          698.3948262532552
+        ],
+        [
+          427.9127197265625,
+          698.3948262532552
+        ],
+        [
+          427.9127197265625,
+          688.8578592936198
+        ],
+        [
+          357.7698974609375,
+          688.8578592936198
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Fax:+20225032020",
+      "confidence": 0.95,
+      "box": [
+        [
+          358.6000162760417,
+          687.6139119466146
+        ],
+        [
+          428.7428385416667,
+          687.6139119466146
+        ],
+        [
+          428.7428385416667,
+          679.3209025065104
+        ],
+        [
+          358.6000162760417,
+          679.3209025065104
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "www.emaarmisr.com",
+      "confidence": 0.95,
+      "box": [
+        [
+          357.3548583984375,
+          678.0769449869791
+        ],
+        [
+          432.4782307942708,
+          678.0769449869791
+        ],
+        [
+          432.4782307942708,
+          667.710683186849
+        ],
+        [
+          357.3548583984375,
+          667.710683186849
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Project:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.12337748209636,
+          658.1737263997396
+        ],
+        [
+          117.87314860026042,
+          658.1737263997396
+        ],
+        [
+          117.87314860026042,
+          642.8316446940104
+        ],
+        [
+          75.12337748209636,
+          642.8316446940104
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Mivida Gardens Project MVG.PK#04 Construction of Townhomes Villas in Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.7344970703125,
+          656.5151163736979
+        ],
+        [
+          403.8400472005208,
+          656.5151163736979
+        ],
+        [
+          403.8400472005208,
+          618.3672688802084
+        ],
+        [
+          174.7344970703125,
+          618.3672688802084
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Package ID:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          643.6609497070312
+        ],
+        [
+          139.45555623372397,
+          643.6609497070312
+        ],
+        [
+          139.45555623372397,
+          630.8067830403646
+        ],
+        [
+          75.53842671712239,
+          630.8067830403646
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Subject:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          630.8067830403646
+        ],
+        [
+          120.77847290039062,
+          630.8067830403646
+        ],
+        [
+          120.77847290039062,
+          617.9526163736979
+        ],
+        [
+          75.53842671712239,
+          617.9526163736979
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Dear Tenderer,",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          606.3424072265625
+        ],
+        [
+          157.71759033203125,
+          606.3424072265625
+        ],
+        [
+          157.71759033203125,
+          592.658935546875
+        ],
+        [
+          78.02870178222656,
+          592.658935546875
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "EMAAR MISR is pleased to inviteyou to submit your offer for MVG.PK#O4\"Construction of Townhomes Villas in Parcel 11\", in Mivida Gardens Project and considering the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.29328918457031,
+          586.4391886393229
+        ],
+        [
+          507.1865641276042,
+          586.4391886393229
+        ],
+        [
+          507.1865641276042,
+          534.6078694661458
+        ],
+        [
+          74.29328918457031,
+          534.6078694661458
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "A. Tender Details",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          529.2174072265625
+        ],
+        [
+          185.11065673828125,
+          529.2174072265625
+        ],
+        [
+          185.11065673828125,
+          515.9485880533855
+        ],
+        [
+          90.8951416015625,
+          515.9485880533855
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "This package is on a fast-track basis, hence Tenderer's strict adherence to the queries and Tender submission due dates is highly required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.68379720052083,
+          508.8995361328125
+        ],
+        [
+          507.1865641276042,
+          508.8995361328125
+        ],
+        [
+          507.1865641276042,
+          476.55678304036456
+        ],
+        [
+          123.68379720052083,
+          476.55678304036456
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Reading the full Instruction To Tenderers (ITT) and its appendices is of high importance to ensure that the Tenderer submits a complete and accurate offer",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.2687479654948,
+          471.16632080078125
+        ],
+        [
+          506.7715250651042,
+          471.16632080078125
+        ],
+        [
+          506.7715250651042,
+          438.40895589192706
+        ],
+        [
+          123.2687479654948,
+          438.40895589192706
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Tenderer is requested to submit its basic offer in full compliance with all RFT requirements and Conditions of Contract, however, and for any deviations which maylead to cost saving,arebe submitted as alternative offers along with its cost impact, to be decided on by the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.2687479654948,
+          433.01849365234375
+        ],
+        [
+          506.7715250651042,
+          433.01849365234375
+        ],
+        [
+          506.7715250651042,
+          362.11326090494794
+        ],
+        [
+          123.2687479654948,
+          362.11326090494794
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "All queries to be submitted in the Queries template and on its due time, as any queries that will be received after its duewill not be considered.",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.43865966796875,
+          356.72279866536456
+        ],
+        [
+          506.3564860026042,
+          356.72279866536456
+        ],
+        [
+          506.3564860026042,
+          324.79469807942706
+        ],
+        [
+          122.43865966796875,
+          324.79469807942706
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Any deviations from the Conditions of Contract in the basic offer will not be accepted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.60856119791667,
+          318.16029866536456
+        ],
+        [
+          505.9414469401042,
+          318.16029866536456
+        ],
+        [
+          505.9414469401042,
+          285.81756591796875
+        ],
+        [
+          121.60856119791667,
+          285.81756591796875
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "B. Scope of Services",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          281.25640869140625
+        ],
+        [
+          203.7877400716146,
+          281.25640869140625
+        ],
+        [
+          203.7877400716146,
+          267.15826416015625
+        ],
+        [
+          89.65000406901042,
+          267.15826416015625
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "The scope of work covers the Construction of TownhomesVillas in Parcel 11, in Mivida GardensProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          261.3531697591146
+        ],
+        [
+          506.3564860026042,
+          261.3531697591146
+        ],
+        [
+          506.3564860026042,
+          229.01043701171875
+        ],
+        [
+          111.23241170247395,
+          229.01043701171875
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Tenderer's attention is drawn that the Tender Documents shall be deemed to form the Contract and are tobeconsldered asone Indlvlslblewholeand the to meet the intent of the Contract and complete the Works as described shall be deemed a requirement of the Contract Document and be read and",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          223.61997477213538
+        ],
+        [
+          506.3564860026042,
+          223.61997477213538
+        ],
+        [
+          506.3564860026042,
+          114.56691487630212
+        ],
+        [
+          120.77847290039062,
+          114.56691487630212
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "新团际埃及",
+      "confidence": 0.95,
+      "box": [
+        [
+          417.1215413411458,
+          74.76043701171875
+        ],
+        [
+          473.5678304036458,
+          74.76043701171875
+        ],
+        [
+          473.5678304036458,
+          67.71136474609375
+        ],
+        [
+          417.1215413411458,
+          67.71136474609375
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "有限责任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          412.1409505208333,
+          57.75978597005212
+        ],
+        [
+          474.8129475911458,
+          57.75978597005212
+        ],
+        [
+          474.8129475911458,
+          51.53997802734375
+        ],
+        [
+          412.1409505208333,
+          51.53997802734375
+        ]
+      ],
+      "page": 218
+    },
+    {
+      "text": "Egyp",
+      "confidence": 0.95,
+      "box": [
+        [
+          479.7934977213542,
+          74.34580485026038
+        ],
+        [
+          489.754638671875,
+          74.34580485026038
+        ],
+        [
+          489.754638671875,
+          46.56422932942712
+        ],
+        [
+          479.7934977213542,
+          46.56422932942712
+        ]
+      ],
+      "page": 218
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 218,
+      "text": "MISR\nEmaarMisrforDevelopmentsS.A.E. P.O.Box229,Mokattam11571Cairo ArabRepublicof Egypt\nTel:+2 02 25032000\nFax:+20225032020\nwww.emaarmisr.com\nProject:\nMivida Gardens Project MVG.PK#04 Construction of Townhomes Villas in Parcel 11\nPackage ID:\nSubject:\nDear Tenderer,\nEMAAR MISR is pleased to inviteyou to submit your offer for MVG.PK#O4\"Construction of Townhomes Villas in Parcel 11\", in Mivida Gardens Project and considering the following:\nA. Tender Details\nThis package is on a fast-track basis, hence Tenderer's strict adherence to the queries and Tender submission due dates is highly required.\nReading the full Instruction To Tenderers (ITT) and its appendices is of high importance to ensure that the Tenderer submits a complete and accurate offer\nTenderer is requested to submit its basic offer in full compliance with all RFT requirements and Conditions of Contract, however, and for any deviations which maylead to cost saving,arebe submitted as alternative offers along with its cost impact, to be decided on by the Employer.\nAll queries to be submitted in the Queries template and on its due time, as any queries that will be received after its duewill not be considered.\nAny deviations from the Conditions of Contract in the basic offer will not be accepted.\nB. Scope of Services\nThe scope of work covers the Construction of TownhomesVillas in Parcel 11, in Mivida GardensProject.\nTenderer's attention is drawn that the Tender Documents shall be deemed to form the Contract and are tobeconsldered asone Indlvlslblewholeand the to meet the intent of the Contract and complete the Works as described shall be deemed a requirement of the Contract Document and be read and\n新团际埃及\n有限责任公司\nEgyp",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

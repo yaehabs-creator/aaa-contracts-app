@@ -1,0 +1,175 @@
+{
+  "text": "## Projccts Dcpartment Hcalth &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- Supervisor/Managers need to facilitatc the provision of the correct instruction, training and equipment.\n- Management need to bc uncompromising in applying the Rules. If a breach of a Golden Rule is discovered then action must be taken The action required will depend on the circumstanccs. Thorough investigation must be undertaken and judgment applied to determinc the appropriate action. To help consistency in decision making simple guidance is provided below.\n- Disciplinary action would normally onlybe takenifit can be shown that certain criteria have been met.\n- Disciplinary action may nced to be taken against both the worker and their Manager/Supervisor depending on the investigation finGings. lf disciplinary action is considered this should follow agrccd Disciplinary Procedures. 'The fiull range of outcomes should he considered depending on the seriousness of thebreacli and could lcad to dismmissal.\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projccts Dcpartment Hcalth & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          727.8350118001302
+        ],
+        [
+          339.92291259765625,
+          727.8350118001302
+        ],
+        [
+          339.92291259765625,
+          700.0534261067709
+        ],
+        [
+          190.92130533854166,
+          700.0534261067709
+        ]
+      ],
+      "page": 411
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          695.9069213867188
+        ],
+        [
+          217.0692138671875,
+          695.9069213867188
+        ],
+        [
+          217.0692138671875,
+          685.1260070800781
+        ],
+        [
+          75.95347086588542,
+          685.1260070800781
+        ]
+      ],
+      "page": 411
+    },
+    {
+      "text": "Supervisor/Managers need to facilitatc the provision of the correct instruction, training and equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          671.4425354003906
+        ],
+        [
+          496.3953857421875,
+          671.4425354003906
+        ],
+        [
+          496.3953857421875,
+          646.9781494140625
+        ],
+        [
+          92.55532836914062,
+          646.9781494140625
+        ]
+      ],
+      "page": 411
+    },
+    {
+      "text": "Management need to bc uncompromising in applying the Rules. If a breach of a Golden Rule is discovered then action must be taken The action required will depend on the circumstanccs. Thorough investigation must be undertaken and judgment applied to determinc the appropriate action. To help consistency in decision making simple guidance is provided below.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          640.7584025065104
+        ],
+        [
+          496.3953857421875,
+          640.7584025065104
+        ],
+        [
+          496.3953857421875,
+          592.2442830403646
+        ],
+        [
+          91.72522989908855,
+          592.2442830403646
+        ]
+      ],
+      "page": 411
+    },
+    {
+      "text": "Disciplinary action would normally onlybe takenifit can be shown that certain criteria have been met.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          584.3659261067709
+        ],
+        [
+          495.9803059895833,
+          584.3659261067709
+        ],
+        [
+          495.9803059895833,
+          560.3162027994792
+        ],
+        [
+          91.72522989908855,
+          560.3162027994792
+        ]
+      ],
+      "page": 411
+    },
+    {
+      "text": "Disciplinary action may nced to be taken against both the worker and their Manager/Supervisor depending on the investigation finGings. lf disciplinary action is considered this should follow agrccd Disciplinary Procedures. 'The fiull range of outcomes should he considered depending on the seriousness of thebreacli and could lcad to dismmissal.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          553.6817830403645
+        ],
+        [
+          495.9803059895833,
+          553.6817830403645
+        ],
+        [
+          495.9803059895833,
+          505.9969889322917
+        ],
+        [
+          92.14027913411458,
+          505.9969889322917
+        ]
+      ],
+      "page": 411
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          735.2987162272135
+        ],
+        [
+          509.2618001302083,
+          735.2987162272135
+        ],
+        [
+          509.2618001302083,
+          722.4445495605469
+        ],
+        [
+          452.8155110677083,
+          722.4445495605469
+        ]
+      ],
+      "page": 411
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 411,
+      "text": "Projccts Dcpartment Hcalth & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\nSupervisor/Managers need to facilitatc the provision of the correct instruction, training and equipment.\nManagement need to bc uncompromising in applying the Rules. If a breach of a Golden Rule is discovered then action must be taken The action required will depend on the circumstanccs. Thorough investigation must be undertaken and judgment applied to determinc the appropriate action. To help consistency in decision making simple guidance is provided below.\nDisciplinary action would normally onlybe takenifit can be shown that certain criteria have been met.\nDisciplinary action may nced to be taken against both the worker and their Manager/Supervisor depending on the investigation finGings. lf disciplinary action is considered this should follow agrccd Disciplinary Procedures. 'The fiull range of outcomes should he considered depending on the seriousness of thebreacli and could lcad to dismmissal.\nEMAAR",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

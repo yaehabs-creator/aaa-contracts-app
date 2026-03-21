@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## NCR -Non Conformance Report\n\n<!-- image -->\n\n## Contractor has to sign off the receipt of one copy of NCR sent by CS\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "NCR -Non Conformance Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          639.5144449869791
+        ],
+        [
+          440.3641357421875,
+          639.5144449869791
+        ],
+        [
+          440.3641357421875,
+          622.09912109375
+        ],
+        [
+          127.83425903320312,
+          622.09912109375
+        ]
+      ],
+      "page": 483
+    },
+    {
+      "text": "Contractor has to sign off the receipt of one copy of NCR sent by CS",
+      "confidence": 0.95,
+      "box": [
+        [
+          68.06759134928386,
+          175.93516031901038
+        ],
+        [
+          309.20949300130206,
+          175.93516031901038
+        ],
+        [
+          309.20949300130206,
+          147.32427978515625
+        ],
+        [
+          68.06759134928386,
+          147.32427978515625
+        ]
+      ],
+      "page": 483
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 483,
+      "text": "NCR -Non Conformance Report\nContractor has to sign off the receipt of one copy of NCR sent by CS",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

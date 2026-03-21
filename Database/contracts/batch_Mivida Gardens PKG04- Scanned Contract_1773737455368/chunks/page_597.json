@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## APPENDIXI\n\n## FORMOFTENDERBOND\n\n## AppendixI is Not Applicable TheTenderBondshallbesubmittedin theformofasignatureverifiedcheque\n\n[Date]\n\nEMAAR MISR FOR DEVELOPMENT, H/Q at Emaar Misr Sales Center - \"Uptown Cairo\",P.O.Box229,MOKATTAM11571,CAIRO,EGYPT\n\nDear Sirs,\n\nProject -in ARAB REPUBLIC OF EGYPT, construction, completion, maintenance, and dguaranteeot[PK#..]for\n\n## TENDERBONDNO....\n\nWhereas our client ...(referred to hereinafter as\"the Tenderer\"), in response to your InvitationtoTenderdated[ ], is tendering for the carrying out and completion of [PK#...]....... ，formingpartof theprojectknownas... Project - in -ARABREPUBLICOFEGYPT.\n\nAnd whereas the Instructions to Tenderers accompanying the Invitation to Tender provide that the Form of Tender shall be accompanied, inter alia, by a Tender Bond in an amount of 2% of the Tender value for the Basic Scope.\n\nWe, [name of Bank and address], hereby irrevocably and unconditionally undertake representative stating that in your sole and absolute judgement, the Tenderer has failed to observe or perform any of the terms, conditions or provisions of the InstructionstoTenderersonitsparttobeobservedorperformedoroneofthe circumstances described in paragraph[8.1] of the Instructions to Tenderers has occurred, we will, without proof or conditions and without any right of set-off deduction or counterclaim and notwithstanding any objection which may be made by the Tenderer or any other person, forthwith pay to you, to such account as you may nominate in EGYPTIAN POUNDS such amount as you may in such notice require forwhichthisBondisforthetimebeingvalid.\n\nThisBondshallbevalidfromthedatehereofinitsfullamount,andshallcontinueto referred toaboveandas isreceivedbyusnotlater than[insertthedateninety(90) days after the latest date for submission of the Tender stated in the Instructions to Tenderers]or,if itbeearlierand theTenderer's Tenderhasbeenaccepted,thedate 毂中\n\n有\n\nEmaarMisr. ConstructionPackagePK#04\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          728.4113464355469
+        ],
+        [
+          143.33663940429688,
+          728.4113464355469
+        ],
+        [
+          143.33663940429688,
+          717.8056640625
+        ],
+        [
+          121.77272542317708,
+          717.8056640625
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "APPENDIXI",
+      "confidence": 0.95,
+      "box": [
+        [
+          261.72678629557294,
+          699.9881184895834
+        ],
+        [
+          323.0359700520833,
+          699.9881184895834
+        ],
+        [
+          323.0359700520833,
+          688.5339864095052
+        ],
+        [
+          261.72678629557294,
+          688.5339864095052
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "FORMOFTENDERBOND",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.90104166666666,
+          675.3829447428385
+        ],
+        [
+          355.1704508463542,
+          675.3829447428385
+        ],
+        [
+          355.1704508463542,
+          665.2014973958334
+        ],
+        [
+          227.90104166666666,
+          665.2014973958334
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "AppendixI is Not Applicable TheTenderBondshallbesubmittedin theformofasignatureverifiedcheque",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.94033813476562,
+          651.2020060221354
+        ],
+        [
+          484.976806640625,
+          651.2020060221354
+        ],
+        [
+          484.976806640625,
+          628.7179565429688
+        ],
+        [
+          98.94033813476562,
+          628.7179565429688
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "[Date]",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.94033813476562,
+          603.2643229166666
+        ],
+        [
+          129.80634562174478,
+          603.2643229166666
+        ],
+        [
+          129.80634562174478,
+          589.6890665690104
+        ],
+        [
+          98.94033813476562,
+          589.6890665690104
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "EMAAR MISR FOR DEVELOPMENT, H/Q at Emaar Misr Sales Center - \"Uptown Cairo\",P.O.Box229,MOKATTAM11571,CAIRO,EGYPT",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          567.6292521158855
+        ],
+        [
+          488.359375,
+          567.6292521158855
+        ],
+        [
+          488.359375,
+          544.7209879557292
+        ],
+        [
+          96.40340169270833,
+          544.7209879557292
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "Dear Sirs,",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          531.5699462890625
+        ],
+        [
+          145.0279337565104,
+          531.5699462890625
+        ],
+        [
+          145.0279337565104,
+          518.8431193033855
+        ],
+        [
+          96.82623291015625,
+          518.8431193033855
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "Project -in ARAB REPUBLIC OF EGYPT, construction, completion, maintenance, and dguaranteeot[PK#..]for",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          508.23744710286456
+        ],
+        [
+          490.0506591796875,
+          508.23744710286456
+        ],
+        [
+          490.0506591796875,
+          482.35959879557294
+        ],
+        [
+          97.24905395507812,
+          482.35959879557294
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "TENDERBONDNO....",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          458.60288492838544
+        ],
+        [
+          202.5317179361979,
+          458.60288492838544
+        ],
+        [
+          202.5317179361979,
+          447.99717203776044
+        ],
+        [
+          97.671875,
+          447.99717203776044
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "Whereas our client ...(referred to hereinafter as\"the Tenderer\"), in response to your InvitationtoTenderdated[ ], is tendering for the carrying out and completion of [PK#...]....... ，formingpartof theprojectknownas... Project - in -ARABREPUBLICOFEGYPT.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          434.84613037109375
+        ],
+        [
+          490.4734700520833,
+          434.84613037109375
+        ],
+        [
+          490.4734700520833,
+          386.90846761067706
+        ],
+        [
+          96.82623291015625,
+          386.90846761067706
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "And whereas the Instructions to Tenderers accompanying the Invitation to Tender provide that the Form of Tender shall be accompanied, inter alia, by a Tender Bond in an amount of 2% of the Tender value for the Basic Scope.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          375.03013102213544
+        ],
+        [
+          490.0506591796875,
+          375.03013102213544
+        ],
+        [
+          490.0506591796875,
+          339.39503987630206
+        ],
+        [
+          96.82623291015625,
+          339.39503987630206
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "We, [name of Bank and address], hereby irrevocably and unconditionally undertake representative stating that in your sole and absolute judgement, the Tenderer has failed to observe or perform any of the terms, conditions or provisions of the InstructionstoTenderersonitsparttobeobservedorperformedoroneofthe circumstances described in paragraph[8.1] of the Instructions to Tenderers has occurred, we will, without proof or conditions and without any right of set-off deduction or counterclaim and notwithstanding any objection which may be made by the Tenderer or any other person, forthwith pay to you, to such account as you may nominate in EGYPTIAN POUNDS such amount as you may in such notice require forwhichthisBondisforthetimebeingvalid.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.24905395507812,
+          327.09246826171875
+        ],
+        [
+          491.741943359375,
+          327.09246826171875
+        ],
+        [
+          491.741943359375,
+          184.55214436848962
+        ],
+        [
+          97.24905395507812,
+          184.55214436848962
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "ThisBondshallbevalidfromthedatehereofinitsfullamount,andshallcontinueto referred toaboveandas isreceivedbyusnotlater than[insertthedateninety(90) days after the latest date for submission of the Tender stated in the Instructions to Tenderers]or,if itbeearlierand theTenderer's Tenderhasbeenaccepted,thedate 毂中",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.10795084635417,
+          170.97686767578125
+        ],
+        [
+          491.741943359375,
+          170.97686767578125
+        ],
+        [
+          491.741943359375,
+          96.31288655598962
+        ],
+        [
+          76.10795084635417,
+          96.31288655598962
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "有",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.90671793619792,
+          85.70717366536462
+        ],
+        [
+          103.5913798014323,
+          85.70717366536462
+        ],
+        [
+          103.5913798014323,
+          78.49534098307288
+        ],
+        [
+          90.90671793619792,
+          78.49534098307288
+        ]
+      ],
+      "page": 597
+    },
+    {
+      "text": "EmaarMisr. ConstructionPackagePK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.20880126953125,
+          92.07061767578125
+        ],
+        [
+          191.5383504231771,
+          92.07061767578125
+        ],
+        [
+          191.5383504231771,
+          66.61700439453125
+        ],
+        [
+          100.20880126953125,
+          66.61700439453125
+        ]
+      ],
+      "page": 597
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 597,
+      "text": "MISR\nAPPENDIXI\nFORMOFTENDERBOND\nAppendixI is Not Applicable TheTenderBondshallbesubmittedin theformofasignatureverifiedcheque\n[Date]\nEMAAR MISR FOR DEVELOPMENT, H/Q at Emaar Misr Sales Center - \"Uptown Cairo\",P.O.Box229,MOKATTAM11571,CAIRO,EGYPT\nDear Sirs,\nProject -in ARAB REPUBLIC OF EGYPT, construction, completion, maintenance, and dguaranteeot[PK#..]for\nTENDERBONDNO....\nWhereas our client ...(referred to hereinafter as\"the Tenderer\"), in response to your InvitationtoTenderdated[ ], is tendering for the carrying out and completion of [PK#...]....... ，formingpartof theprojectknownas... Project - in -ARABREPUBLICOFEGYPT.\nAnd whereas the Instructions to Tenderers accompanying the Invitation to Tender provide that the Form of Tender shall be accompanied, inter alia, by a Tender Bond in an amount of 2% of the Tender value for the Basic Scope.\nWe, [name of Bank and address], hereby irrevocably and unconditionally undertake representative stating that in your sole and absolute judgement, the Tenderer has failed to observe or perform any of the terms, conditions or provisions of the InstructionstoTenderersonitsparttobeobservedorperformedoroneofthe circumstances described in paragraph[8.1] of the Instructions to Tenderers has occurred, we will, without proof or conditions and without any right of set-off deduction or counterclaim and notwithstanding any objection which may be made by the Tenderer or any other person, forthwith pay to you, to such account as you may nominate in EGYPTIAN POUNDS such amount as you may in such notice require forwhichthisBondisforthetimebeingvalid.\nThisBondshallbevalidfromthedatehereofinitsfullamount,andshallcontinueto referred toaboveandas isreceivedbyusnotlater than[insertthedateninety(90) days after the latest date for submission of the Tender stated in the Instructions to Tenderers]or,if itbeearlierand theTenderer's Tenderhasbeenaccepted,thedate 毂中\n有\nEmaarMisr. ConstructionPackagePK#04",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,221 @@
+{
+  "text": "<!-- image -->\n\nEmaar Misr,\n\nMivida Gardens Project\n\nEast Cairo, Egypt\n\nConstruction Package PK#04\n\nConstruction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\n\n## Conditions of Contract Appendices\n\nAppendix \"G\" Emaar CAR open Insurance cover\n\n- GIG Policy:P-9-2022-ENG-CAR-73\n\n- AXA Policy: P-CAR-A041-24\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr,",
+      "confidence": 0.95,
+      "box": [
+        [
+          240.72684733072916,
+          637.8558553059896
+        ],
+        [
+          339.0928141276042,
+          637.8558553059896
+        ],
+        [
+          339.0928141276042,
+          619.1965738932291
+        ],
+        [
+          240.72684733072916,
+          619.1965738932291
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "Mivida Gardens Project",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.99652099609375,
+          578.1461791992188
+        ],
+        [
+          387.6532389322917,
+          578.1461791992188
+        ],
+        [
+          387.6532389322917,
+          558.6575927734375
+        ],
+        [
+          192.99652099609375,
+          558.6575927734375
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "East Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          218.3143513997396,
+          517.607198079427
+        ],
+        [
+          363.58056640625,
+          517.607198079427
+        ],
+        [
+          363.58056640625,
+          498.1186116536458
+        ],
+        [
+          218.3143513997396,
+          498.1186116536458
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.92383829752603,
+          417.67641194661456
+        ],
+        [
+          410.8958333333333,
+          417.67641194661456
+        ],
+        [
+          410.8958333333333,
+          399.01715087890625
+        ],
+        [
+          168.92383829752603,
+          399.01715087890625
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.9678243001302,
+          376.21136474609375
+        ],
+        [
+          471.9076334635417,
+          376.21136474609375
+        ],
+        [
+          471.9076334635417,
+          338.89280192057294
+        ],
+        [
+          114.9678243001302,
+          338.89280192057294
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "Conditions of Contract Appendices",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.013427734375,
+          269.64617919921875
+        ],
+        [
+          380.1824137369792,
+          269.64617919921875
+        ],
+        [
+          380.1824137369792,
+          236.47414143880212
+        ],
+        [
+          210.013427734375,
+          236.47414143880212
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "Appendix \"G\" Emaar CAR open Insurance cover",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.21041870117188,
+          220.71742757161462
+        ],
+        [
+          437.4587809244792,
+          220.71742757161462
+        ],
+        [
+          437.4587809244792,
+          204.96071370442712
+        ],
+        [
+          138.21041870117188,
+          204.96071370442712
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "GIG Policy:P-9-2022-ENG-CAR-73",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.47245279947916,
+          195.00909423828125
+        ],
+        [
+          350.714111328125,
+          195.00909423828125
+        ],
+        [
+          350.714111328125,
+          181.32562255859375
+        ],
+        [
+          156.47245279947916,
+          181.32562255859375
+        ]
+      ],
+      "page": 198
+    },
+    {
+      "text": "AXA Policy: P-CAR-A041-24",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.30254109700522,
+          180.08168538411462
+        ],
+        [
+          312.11480712890625,
+          180.08168538411462
+        ],
+        [
+          312.11480712890625,
+          167.64215087890625
+        ],
+        [
+          157.30254109700522,
+          167.64215087890625
+        ]
+      ],
+      "page": 198
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 198,
+      "text": "Emaar Misr,\nMivida Gardens Project\nEast Cairo, Egypt\nConstruction Package PK#04\nConstruction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\nConditions of Contract Appendices\nAppendix \"G\" Emaar CAR open Insurance cover\nGIG Policy:P-9-2022-ENG-CAR-73\nAXA Policy: P-CAR-A041-24",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

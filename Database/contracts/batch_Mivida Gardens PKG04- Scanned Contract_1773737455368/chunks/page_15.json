@@ -1,0 +1,520 @@
+{
+  "text": "## Annex3 toForm ofAgreement\n\n## PriceAdjustmentFormulasfortheBasicItems\n\nand/or any other charges) became greater / less than EGP 49.00 / USD 1.00 (+/5%) as a Base Rate, the following formula shall be applied on the affected payment certificate/s:\n\na  x o x (   -  x  =(o) exchange new rate/ Us Dollars fixed exchange rate) -1].\n\n## Where:\n\n- V1(EGP) = the gross value for all the certified works done for this particular payment certificate - the gross value of the certified work done for all plain, reinforcedconcreteandrebarbill itemsforthisparticularpaymentcertificate.\n- V2(EGP)=theadditional/deductionvalueduetotheincreaseordecreaseof the Us Dollars fixed exchange rate based on the selling rate announced by the Central Bank of Egypt.\n\n## B. Diesel Rate\n\nIn case theprice of diesel became greater /less thanEGP 15.50 as a Base Rate per liter, the following formula shall be applied only when a new governmental decreeisissuedofficiallyenforcingthisincrease.\n\nV2 (EGP) = V1 X (1 - Advance Payment Percentage) X 0.04 X [(Diesel new rate/ Diesel fixed rate) -1].\n\nWhere:\n\n- V1(EGP) = the gross value for all the certified work done for this particular payment certificate - the gross value of the certified work done for all plain, reinforced concrete and rebar bill items for this particular payment certificate.\n- V2(EGP) = the additional/deduction value due to the increase or decrease of the Diesel rates.\n\n## C. Cement Rate:\n\nIn case the price of Helwan Cement ex-factory (excluding VAT) became greater / less than EGP 3.500 (+/-5%) as a Base Rate per ton, the following formulas for calculatingtheadditionalordeductionvalueduetotheincreaseordecreaseofthe based onthe following conditions:\n\n- Based on the actual invoices issued by an approved supplier.\n- TheincreaseordecreaseinthepriceofcementasproducedbyHelwanCement (or similar plants) and as proofed by price quotations shall trigger the utilization of therelevant adjustment formulae.\n\n## For Plain Concrete:\n\nV2 (EGP) = V1 X 0.25 X [Cement new rate-Cement fixed rate].\n\nWhere:\n\n- ·V1 (M3) = the total quantities of the executed plain Concrete affected by the\n\n<!-- image -->\n\nPage2of3\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Annex3 toForm ofAgreement",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.9881591796875,
+          739.865478515625
+        ],
+        [
+          373.351806640625,
+          739.865478515625
+        ],
+        [
+          373.351806640625,
+          727.5628865559896
+        ],
+        [
+          210.9881591796875,
+          727.5628865559896
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "PriceAdjustmentFormulasfortheBasicItems",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.1287841796875,
+          721.1994832356771
+        ],
+        [
+          414.3655192057292,
+          721.1994832356771
+        ],
+        [
+          414.3655192057292,
+          708.472666422526
+        ],
+        [
+          169.1287841796875,
+          708.472666422526
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "and/or any other charges) became greater / less than EGP 49.00 / USD 1.00 (+/5%) as a Base Rate, the following formula shall be applied on the affected payment certificate/s:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          695.745849609375
+        ],
+        [
+          508.2319742838542,
+          695.745849609375
+        ],
+        [
+          508.2319742838542,
+          658.4138590494791
+        ],
+        [
+          96.40340169270833,
+          658.4138590494791
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "a  x o x (   -  x  =(o) exchange new rate/ Us Dollars fixed exchange rate) -1].",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          653.3231404622396
+        ],
+        [
+          507.8091634114583,
+          653.3231404622396
+        ],
+        [
+          507.8091634114583,
+          626.1725870768229
+        ],
+        [
+          95.1349385579427,
+          626.1725870768229
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "Where:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          621.0818684895834
+        ],
+        [
+          131.49762980143228,
+          621.0818684895834
+        ],
+        [
+          131.49762980143228,
+          609.2035115559896
+        ],
+        [
+          95.55775960286458,
+          609.2035115559896
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "V1(EGP) = the gross value for all the certified works done for this particular payment certificate - the gross value of the certified work done for all plain, reinforcedconcreteandrebarbill itemsforthisparticularpaymentcertificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.43039957682292,
+          605.3854573567709
+        ],
+        [
+          506.9635416666667,
+          605.3854573567709
+        ],
+        [
+          506.9635416666667,
+          567.6292521158855
+        ],
+        [
+          115.43039957682292,
+          567.6292521158855
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "V2(EGP)=theadditional/deductionvalueduetotheincreaseordecreaseof the Us Dollars fixed exchange rate based on the selling rate announced by the Central Bank of Egypt.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          564.65966796875
+        ],
+        [
+          507.8091634114583,
+          564.65966796875
+        ],
+        [
+          507.8091634114583,
+          526.0549926757812
+        ],
+        [
+          115.8532206217448,
+          526.0549926757812
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "B. Diesel Rate",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.83948771158855,
+          518.8431193033855
+        ],
+        [
+          156.44412231445312,
+          518.8431193033855
+        ],
+        [
+          156.44412231445312,
+          504.8436279296875
+        ],
+        [
+          74.83948771158855,
+          504.8436279296875
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "In case theprice of diesel became greater /less thanEGP 15.50 as a Base Rate per liter, the following formula shall be applied only when a new governmental decreeisissuedofficiallyenforcingthisincrease.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          499.75290934244794
+        ],
+        [
+          507.3863525390625,
+          499.75290934244794
+        ],
+        [
+          507.3863525390625,
+          460.72401936848956
+        ],
+        [
+          94.71211751302083,
+          460.72401936848956
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "V2 (EGP) = V1 X (1 - Advance Payment Percentage) X 0.04 X [(Diesel new rate/ Diesel fixed rate) -1].",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          456.05751546223956
+        ],
+        [
+          506.5406901041667,
+          456.05751546223956
+        ],
+        [
+          506.5406901041667,
+          429.75543212890625
+        ],
+        [
+          94.71211751302083,
+          429.75543212890625
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "Where:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          428.05853271484375
+        ],
+        [
+          132.7660929361979,
+          428.05853271484375
+        ],
+        [
+          132.7660929361979,
+          416.18015543619794
+        ],
+        [
+          95.1349385579427,
+          416.18015543619794
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "V1(EGP) = the gross value for all the certified work done for this particular payment certificate - the gross value of the certified work done for all plain, reinforced concrete and rebar bill items for this particular payment certificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.43039957682292,
+          412.78631591796875
+        ],
+        [
+          505.695068359375,
+          412.78631591796875
+        ],
+        [
+          505.695068359375,
+          374.60589599609375
+        ],
+        [
+          115.43039957682292,
+          374.60589599609375
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "V2(EGP) = the additional/deduction value due to the increase or decrease of the Diesel rates.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.58474731445312,
+          372.48476155598956
+        ],
+        [
+          507.8091634114583,
+          372.48476155598956
+        ],
+        [
+          507.8091634114583,
+          347.45534261067706
+        ],
+        [
+          114.58474731445312,
+          347.45534261067706
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "C. Cement Rate:",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.10795084635417,
+          338.54656982421875
+        ],
+        [
+          167.4375,
+          338.54656982421875
+        ],
+        [
+          167.4375,
+          324.9713338216146
+        ],
+        [
+          76.10795084635417,
+          324.9713338216146
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "In case the price of Helwan Cement ex-factory (excluding VAT) became greater / less than EGP 3.500 (+/-5%) as a Base Rate per ton, the following formulas for calculatingtheadditionalordeductionvalueduetotheincreaseordecreaseofthe based onthe following conditions:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          319.8805948893229
+        ],
+        [
+          506.9635416666667,
+          319.8805948893229
+        ],
+        [
+          506.9635416666667,
+          255.82228597005212
+        ],
+        [
+          94.28929646809895,
+          255.82228597005212
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "Based on the actual invoices issued by an approved supplier.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          252.85268147786462
+        ],
+        [
+          400.4123942057292,
+          252.85268147786462
+        ],
+        [
+          400.4123942057292,
+          238.85321044921875
+        ],
+        [
+          115.8532206217448,
+          238.85321044921875
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "TheincreaseordecreaseinthepriceofcementasproducedbyHelwanCement (or similar plants) and as proofed by price quotations shall trigger the utilization of therelevant adjustment formulae.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.8532206217448,
+          238.42897542317712
+        ],
+        [
+          507.3863525390625,
+          238.42897542317712
+        ],
+        [
+          507.3863525390625,
+          200.67274983723962
+        ],
+        [
+          115.8532206217448,
+          200.67274983723962
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "For Plain Concrete:",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.94033813476562,
+          190.49131266276038
+        ],
+        [
+          195.76656087239584,
+          190.49131266276038
+        ],
+        [
+          195.76656087239584,
+          176.49180094401038
+        ],
+        [
+          98.94033813476562,
+          176.49180094401038
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "V2 (EGP) = V1 X 0.25 X [Cement new rate-Cement fixed rate].",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.78598022460938,
+          174.37066650390625
+        ],
+        [
+          393.2244059244792,
+          174.37066650390625
+        ],
+        [
+          393.2244059244792,
+          160.37119547526038
+        ],
+        [
+          99.78598022460938,
+          160.37119547526038
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "Where:",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.78598022460938,
+          159.09849039713538
+        ],
+        [
+          135.30302937825522,
+          159.09849039713538
+        ],
+        [
+          135.30302937825522,
+          146.37164306640625
+        ],
+        [
+          99.78598022460938,
+          146.37164306640625
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "·V1 (M3) = the total quantities of the executed plain Concrete affected by the",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.3631591796875,
+          143.40207926432288
+        ],
+        [
+          505.2722574869792,
+          143.40207926432288
+        ],
+        [
+          505.2722574869792,
+          130.25103759765625
+        ],
+        [
+          99.3631591796875,
+          130.25103759765625
+        ]
+      ],
+      "page": 15
+    },
+    {
+      "text": "Page2of3",
+      "confidence": 0.95,
+      "box": [
+        [
+          265.5321858723958,
+          123.88767496744788
+        ],
+        [
+          314.15671793619794,
+          123.88767496744788
+        ],
+        [
+          314.15671793619794,
+          112.43349202473962
+        ],
+        [
+          265.5321858723958,
+          112.43349202473962
+        ]
+      ],
+      "page": 15
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 15,
+      "text": "Annex3 toForm ofAgreement\nPriceAdjustmentFormulasfortheBasicItems\nand/or any other charges) became greater / less than EGP 49.00 / USD 1.00 (+/5%) as a Base Rate, the following formula shall be applied on the affected payment certificate/s:\na  x o x (   -  x  =(o) exchange new rate/ Us Dollars fixed exchange rate) -1].\nWhere:\nV1(EGP) = the gross value for all the certified works done for this particular payment certificate - the gross value of the certified work done for all plain, reinforcedconcreteandrebarbill itemsforthisparticularpaymentcertificate.\nV2(EGP)=theadditional/deductionvalueduetotheincreaseordecreaseof the Us Dollars fixed exchange rate based on the selling rate announced by the Central Bank of Egypt.\nB. Diesel Rate\nIn case theprice of diesel became greater /less thanEGP 15.50 as a Base Rate per liter, the following formula shall be applied only when a new governmental decreeisissuedofficiallyenforcingthisincrease.\nV2 (EGP) = V1 X (1 - Advance Payment Percentage) X 0.04 X [(Diesel new rate/ Diesel fixed rate) -1].\nWhere:\nV1(EGP) = the gross value for all the certified work done for this particular payment certificate - the gross value of the certified work done for all plain, reinforced concrete and rebar bill items for this particular payment certificate.\nV2(EGP) = the additional/deduction value due to the increase or decrease of the Diesel rates.\nC. Cement Rate:\nIn case the price of Helwan Cement ex-factory (excluding VAT) became greater / less than EGP 3.500 (+/-5%) as a Base Rate per ton, the following formulas for calculatingtheadditionalordeductionvalueduetotheincreaseordecreaseofthe based onthe following conditions:\nBased on the actual invoices issued by an approved supplier.\nTheincreaseordecreaseinthepriceofcementasproducedbyHelwanCement (or similar plants) and as proofed by price quotations shall trigger the utilization of therelevant adjustment formulae.\nFor Plain Concrete:\nV2 (EGP) = V1 X 0.25 X [Cement new rate-Cement fixed rate].\nWhere:\n·V1 (M3) = the total quantities of the executed plain Concrete affected by the\nPage2of3",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

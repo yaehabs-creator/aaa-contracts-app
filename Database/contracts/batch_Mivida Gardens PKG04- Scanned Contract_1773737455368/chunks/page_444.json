@@ -1,0 +1,520 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n- 口 Ladders aretobeinspectedbefore use andhave an identificationplate showing the asset number and date of last quarterly inspection.\n\n## 3.12.12.Suspcndcd Acccss Cradlcs\n\n- Suspended access cradles are to be installed and thoroughly examined and tested every six months to ensure that they are suitable for their intended purpose. A certificate of thorough examination and test is to be on site before any cradle is used.\n- Cradles are only to be used by suitably trained and certified competent persons and are to display its safeworking load; loads are to uniformly distributed and not be overloaded.\n- Before use checks are to be carried out by the operator and a weekly inspection by a competent person is to be carried out and recorded.\n- Operators are towear and attach safetyharnesses to an independently anchored safety line.\n- A rescue plan is to be developed and be in place for rescuing the operator(s) if there is a fault whilst at high level.\n- Cradles are not to be operated where there are expected high winds or other extremes of weather that would cause a safety hazard.\n- and isolated and the cradle secured to prevent access to vandals or trespassers.\n\n## 3.12.13. Roof Work\n\n- Work on roofs and leading edges requires careful planning. A safe system of work is to be developed, including measures to mitigate the distance and consequences of a fall.\n- A safe and secure mean of access is to be provided onto roofs. General access scaffolds or mobile tower stairways will provide a suitable access.\n- a fall occurring.\n- Where the provision of edge protection or adequate platforms cannot be provided safety nets or other soft landing systems such as inflatable bags are to be used to minimize the consequences of a fall.\n- If nets are used they must be installed by a competent rigger and fitted as close under the work surface as possible.\n- Materials are to be securely stored to prevent them falling or introducing a slip, trip and fall hazard and areas below roof works are to be cordoned off and warning signs erected to prevent personnel being injured from falling materials.\n- No materials are tobe thrown from roofs.Only enclosed shuts or containers lowered to the ground are to be used to dispose of materials from roofs.\n- When work is required to be carried out on fragile roofs,the work should be carried outfrom underneath.Wherethisisnot possible theuseof aMEWPwill allowwork tobe carried out without the need to stand on the roof.\n\nThe informationcontained in thesedocuments isconfidential privileged andmaynotbeused.publishedorredistibuted without the prior written consent of Emaar MisrS.A.E. M\n\n<!-- image -->\n\n<!-- image -->\n\nEMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          728.2496643066406
+        ],
+        [
+          340.7530110677083,
+          728.2496643066406
+        ],
+        [
+          340.7530110677083,
+          698.8094685872396
+        ],
+        [
+          190.92130533854166,
+          698.8094685872396
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          697.150868733724
+        ],
+        [
+          216.6541748046875,
+          697.150868733724
+        ],
+        [
+          216.6541748046875,
+          684.7113545735677
+        ],
+        [
+          75.95347086588542,
+          684.7113545735677
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "口 Ladders aretobeinspectedbefore use andhave an identificationplate showing the asset number and date of last quarterly inspection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          671.4425354003906
+        ],
+        [
+          495.9803059895833,
+          671.4425354003906
+        ],
+        [
+          495.9803059895833,
+          646.9781494140625
+        ],
+        [
+          78.02870178222656,
+          646.9781494140625
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "3.12.12.Suspcndcd Acccss Cradlcs",
+      "confidence": 0.95,
+      "box": [
+        [
+          207.52315266927084,
+          639.9290974934896
+        ],
+        [
+          375.2018636067708,
+          639.9290974934896
+        ],
+        [
+          375.2018636067708,
+          628.3188883463541
+        ],
+        [
+          207.52315266927084,
+          628.3188883463541
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Suspended access cradles are to be installed and thoroughly examined and tested every six months to ensure that they are suitable for their intended purpose. A certificate of thorough examination and test is to be on site before any cradle is used.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          622.09912109375
+        ],
+        [
+          496.8104248046875,
+          622.09912109375
+        ],
+        [
+          496.8104248046875,
+          584.3659261067709
+        ],
+        [
+          90.8951416015625,
+          584.3659261067709
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Cradles are only to be used by suitably trained and certified competent persons and are to display its safeworking load; loads are to uniformly distributed and not be overloaded.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          578.5608317057291
+        ],
+        [
+          495.9803059895833,
+          578.5608317057291
+        ],
+        [
+          495.9803059895833,
+          553.6817830403645
+        ],
+        [
+          91.72522989908855,
+          553.6817830403645
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Before use checks are to be carried out by the operator and a weekly inspection by a competent person is to be carried out and recorded.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          547.4620361328125
+        ],
+        [
+          495.9803059895833,
+          547.4620361328125
+        ],
+        [
+          495.9803059895833,
+          523.4123128255208
+        ],
+        [
+          91.72522989908855,
+          523.4123128255208
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Operators are towear and attach safetyharnesses to an independently anchored safety line.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          515.9485880533855
+        ],
+        [
+          460.7013753255208,
+          515.9485880533855
+        ],
+        [
+          460.7013753255208,
+          504.33837890625
+        ],
+        [
+          91.72522989908855,
+          504.33837890625
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "A rescue plan is to be developed and be in place for rescuing the operator(s) if there is a fault whilst at high level.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.48009236653645,
+          499.36256917317706
+        ],
+        [
+          497.2254638671875,
+          499.36256917317706
+        ],
+        [
+          497.2254638671875,
+          474.48354085286456
+        ],
+        [
+          90.48009236653645,
+          474.48354085286456
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Cradles are not to be operated where there are expected high winds or other extremes of weather that would cause a safety hazard.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          468.67844645182294
+        ],
+        [
+          496.3953857421875,
+          468.67844645182294
+        ],
+        [
+          496.3953857421875,
+          442.97011311848956
+        ],
+        [
+          90.8951416015625,
+          442.97011311848956
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "and isolated and the cradle secured to prevent access to vandals or trespassers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          424.31081136067706
+        ],
+        [
+          410.0657552083333,
+          424.31081136067706
+        ],
+        [
+          410.0657552083333,
+          411.87131754557294
+        ],
+        [
+          91.72522989908855,
+          411.87131754557294
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "3.12.13. Roof Work",
+      "confidence": 0.95,
+      "box": [
+        [
+          242.38704427083334,
+          404.82224527994794
+        ],
+        [
+          339.50787353515625,
+          404.82224527994794
+        ],
+        [
+          339.50787353515625,
+          394.04132080078125
+        ],
+        [
+          242.38704427083334,
+          394.04132080078125
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Work on roofs and leading edges requires careful planning. A safe system of work is to be developed, including measures to mitigate the distance and consequences of a fall.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          387.40692138671875
+        ],
+        [
+          495.5652669270833,
+          387.40692138671875
+        ],
+        [
+          495.5652669270833,
+          362.52789306640625
+        ],
+        [
+          90.8951416015625,
+          362.52789306640625
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "A safe and secure mean of access is to be provided onto roofs. General access scaffolds or mobile tower stairways will provide a suitable access.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          356.72279866536456
+        ],
+        [
+          495.5652669270833,
+          356.72279866536456
+        ],
+        [
+          495.5652669270833,
+          331.84377034505206
+        ],
+        [
+          89.65000406901042,
+          331.84377034505206
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "a fall occurring.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          313.59914143880206
+        ],
+        [
+          155.2273152669271,
+          313.59914143880206
+        ],
+        [
+          155.2273152669271,
+          300.3303426106771
+        ],
+        [
+          90.8951416015625,
+          300.3303426106771
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Where the provision of edge protection or adequate platforms cannot be provided safety nets or other soft landing systems such as inflatable bags are to be used to minimize the consequences of a fall.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          294.93988037109375
+        ],
+        [
+          495.1502278645833,
+          294.93988037109375
+        ],
+        [
+          495.1502278645833,
+          270.06085205078125
+        ],
+        [
+          91.3101806640625,
+          270.06085205078125
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "If nets are used they must be installed by a competent rigger and fitted as close under the work surface as possible.",
+      "confidence": 0.95,
+      "box": [
+        [
+          89.65000406901042,
+          264.6703898111979
+        ],
+        [
+          495.5652669270833,
+          264.6703898111979
+        ],
+        [
+          495.5652669270833,
+          240.20599365234375
+        ],
+        [
+          89.65000406901042,
+          240.20599365234375
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "Materials are to be securely stored to prevent them falling or introducing a slip, trip and fall hazard and areas below roof works are to be cordoned off and warning signs erected to prevent personnel being injured from falling materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          233.98622639973962
+        ],
+        [
+          495.5652669270833,
+          233.98622639973962
+        ],
+        [
+          495.5652669270833,
+          196.25303141276038
+        ],
+        [
+          90.06504313151042,
+          196.25303141276038
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "No materials are tobe thrown from roofs.Only enclosed shuts or containers lowered to the ground are to be used to dispose of materials from roofs.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.81990559895833,
+          190.03330485026038
+        ],
+        [
+          495.1502278645833,
+          190.03330485026038
+        ],
+        [
+          495.1502278645833,
+          165.56890869140625
+        ],
+        [
+          88.81990559895833,
+          165.56890869140625
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "When work is required to be carried out on fragile roofs,the work should be carried outfrom underneath.Wherethisisnot possible theuseof aMEWPwill allowwork tobe carried out without the need to stand on the roof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          159.34914143880212
+        ],
+        [
+          495.1502278645833,
+          159.34914143880212
+        ],
+        [
+          495.1502278645833,
+          122.85988362630212
+        ],
+        [
+          90.06504313151042,
+          122.85988362630212
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "The informationcontained in thesedocuments isconfidential privileged andmaynotbeused.publishedorredistibuted without the prior written consent of Emaar MisrS.A.E. M",
+      "confidence": 0.95,
+      "box": [
+        [
+          73.0481465657552,
+          100.46877034505212
+        ],
+        [
+          505.111328125,
+          100.46877034505212
+        ],
+        [
+          505.111328125,
+          78.07765706380212
+        ],
+        [
+          73.0481465657552,
+          78.07765706380212
+        ]
+      ],
+      "page": 444
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          733.6401163736979
+        ],
+        [
+          510.5069580078125,
+          733.6401163736979
+        ],
+        [
+          510.5069580078125,
+          720.3712972005209
+        ],
+        [
+          453.2305501302083,
+          720.3712972005209
+        ]
+      ],
+      "page": 444
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 444,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n口 Ladders aretobeinspectedbefore use andhave an identificationplate showing the asset number and date of last quarterly inspection.\n3.12.12.Suspcndcd Acccss Cradlcs\nSuspended access cradles are to be installed and thoroughly examined and tested every six months to ensure that they are suitable for their intended purpose. A certificate of thorough examination and test is to be on site before any cradle is used.\nCradles are only to be used by suitably trained and certified competent persons and are to display its safeworking load; loads are to uniformly distributed and not be overloaded.\nBefore use checks are to be carried out by the operator and a weekly inspection by a competent person is to be carried out and recorded.\nOperators are towear and attach safetyharnesses to an independently anchored safety line.\nA rescue plan is to be developed and be in place for rescuing the operator(s) if there is a fault whilst at high level.\nCradles are not to be operated where there are expected high winds or other extremes of weather that would cause a safety hazard.\nand isolated and the cradle secured to prevent access to vandals or trespassers.\n3.12.13. Roof Work\nWork on roofs and leading edges requires careful planning. A safe system of work is to be developed, including measures to mitigate the distance and consequences of a fall.\nA safe and secure mean of access is to be provided onto roofs. General access scaffolds or mobile tower stairways will provide a suitable access.\na fall occurring.\nWhere the provision of edge protection or adequate platforms cannot be provided safety nets or other soft landing systems such as inflatable bags are to be used to minimize the consequences of a fall.\nIf nets are used they must be installed by a competent rigger and fitted as close under the work surface as possible.\nMaterials are to be securely stored to prevent them falling or introducing a slip, trip and fall hazard and areas below roof works are to be cordoned off and warning signs erected to prevent personnel being injured from falling materials.\nNo materials are tobe thrown from roofs.Only enclosed shuts or containers lowered to the ground are to be used to dispose of materials from roofs.\nWhen work is required to be carried out on fragile roofs,the work should be carried outfrom underneath.Wherethisisnot possible theuseof aMEWPwill allowwork tobe carried out without the need to stand on the roof.\nThe informationcontained in thesedocuments isconfidential privileged andmaynotbeused.publishedorredistibuted without the prior written consent of Emaar MisrS.A.E. M\nEMAAR",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

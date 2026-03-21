@@ -1,0 +1,313 @@
+{
+  "text": "<!-- image -->\n\nThe Contractor shall indemnify the Employer against any amount which wouldotherwisebeclaimablebytheEmployerunderanyof the insurancesrequired tobeaffectedunderthisClause12.9butwhichthe Employer is unable to claim by virtue of the amount concerned falling withinanydeductible(lnsured'sRetainedLiability）applicabletothe relevantinsurance cover.\n\nAllInsurancePoliciesshallbesubmitted inbothArabic andEnglish includingtheparagraphmentionedbelowasfollows:\n\n\"This policy is issued in favor of the Employer, and no cancelation, amendments,orchangesshallbeallowedunlessreceivingwritten stampedandsignedletterfromtheEmployer\"\n\nEachof theinsurancesoutlinedbelowshall indemnifytheEmployeror anyof itsconsultants,servants,employees oragentsasthough they are theInsured and containsa waiverofsubrogation clause.\n\n- a)Plant and Contractor's Equipment-being coverage inrespect of all risksofphysical lossordamagewhichmayoccur:\n- i. To any Plant prior to its delivery to and during its unloading at the Site; and\n- i. To any Contractor's Equipment.\n\nThe said Plant and Contractor's Equipment shall be covered wherever in the world the same may, for the time being, be situated and even if thesamebe in storageor in transitexcept thatPlant shall cease tobe unloadedattheSite.\n\nSuchcoverageshallhavealimitofliabilityofnotlessthanthecurrent replacement value of all relevant Plant and Contractor's Equipment, and shall include all labor charges, transportation charges, professional fees,debrisremoval,anddemolitionCosts,andotherCosts.\n\nIn the case of physical loss or damage occurring to any Plant prior to its deliverytoand during itsunloading at theSite,thepolicyof insurance shallbeanall-risksmarineinsurancepolicyinaccordancewiththe InstituteCargoClauses\"A\".\n\nTheinsuranceonPlantshall beinthejoint namesof theEmployer and the Contractor and with the Employer named as \"First Loss Payee\".\n\nFollowing the delivery toand unloading at theSite of anyPlant, the ContractorshallpromptlyinspectsuchPlanttodeterminewhether any physical lossordamagehasoccurred theretoandshallimmediately notifytheContractAdministratorinwritingwithacopytotheEmployer of any such loss or damage that has so occurred. Such notification shall be accompanied byfulldetailsof thesaidlossordamage.\n\n- Plantand Contractor'sEquipment-ParticularRequirements:\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "The Contractor shall indemnify the Employer against any amount which wouldotherwisebeclaimablebytheEmployerunderanyof the insurancesrequired tobeaffectedunderthisClause12.9butwhichthe Employer is unable to claim by virtue of the amount concerned falling withinanydeductible(lnsured'sRetainedLiability）applicabletothe relevantinsurance cover.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          695.3216247558594
+        ],
+        [
+          502.3125,
+          695.3216247558594
+        ],
+        [
+          502.3125,
+          623.2030029296875
+        ],
+        [
+          165.74620564778647,
+          623.2030029296875
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "AllInsurancePoliciesshallbesubmitted inbothArabic andEnglish includingtheparagraphmentionedbelowasfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          617.2638346354166
+        ],
+        [
+          502.3125,
+          617.2638346354166
+        ],
+        [
+          502.3125,
+          595.2040201822916
+        ],
+        [
+          167.0146687825521,
+          595.2040201822916
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "\"This policy is issued in favor of the Employer, and no cancelation, amendments,orchangesshallbeallowedunlessreceivingwritten stampedandsignedletterfromtheEmployer\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          589.2648315429688
+        ],
+        [
+          479.0572916666667,
+          589.2648315429688
+        ],
+        [
+          479.0572916666667,
+          553.6297607421875
+        ],
+        [
+          175.04829915364584,
+          553.6297607421875
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "Eachof theinsurancesoutlinedbelowshall indemnifytheEmployeror anyof itsconsultants,servants,employees oragentsasthough they are theInsured and containsa waiverofsubrogation clause.",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          547.266337076823
+        ],
+        [
+          502.3125,
+          547.266337076823
+        ],
+        [
+          502.3125,
+          512.479715983073
+        ],
+        [
+          167.0146687825521,
+          512.479715983073
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "a)Plant and Contractor's Equipment-being coverage inrespect of all risksofphysical lossordamagewhichmayoccur:",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          501.0255940755208
+        ],
+        [
+          504.0037841796875,
+          501.0255940755208
+        ],
+        [
+          504.0037841796875,
+          478.11732991536456
+        ],
+        [
+          163.20927937825522,
+          478.11732991536456
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "To any Plant prior to its delivery to and during its unloading at the Site; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.9677937825521,
+          476.42038981119794
+        ],
+        [
+          503.1581217447917,
+          476.42038981119794
+        ],
+        [
+          503.1581217447917,
+          453.08791097005206
+        ],
+        [
+          180.9677937825521,
+          453.08791097005206
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "To any Contractor's Equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.2765096028646,
+          452.66367594401044
+        ],
+        [
+          349.6737467447917,
+          452.66367594401044
+        ],
+        [
+          349.6737467447917,
+          441.20957438151044
+        ],
+        [
+          179.2765096028646,
+          441.20957438151044
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "The said Plant and Contractor's Equipment shall be covered wherever in the world the same may, for the time being, be situated and even if thesamebe in storageor in transitexcept thatPlant shall cease tobe unloadedattheSite.",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.43086751302084,
+          436.54307047526044
+        ],
+        [
+          504.8494059244792,
+          436.54307047526044
+        ],
+        [
+          504.8494059244792,
+          377.99969482421875
+        ],
+        [
+          178.43086751302084,
+          377.99969482421875
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "Suchcoverageshallhavealimitofliabilityofnotlessthanthecurrent replacement value of all relevant Plant and Contractor's Equipment, and shall include all labor charges, transportation charges, professional fees,debrisremoval,anddemolitionCosts,andotherCosts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.2765096028646,
+          371.63629150390625
+        ],
+        [
+          505.2722574869792,
+          371.63629150390625
+        ],
+        [
+          505.2722574869792,
+          326.2439982096354
+        ],
+        [
+          179.2765096028646,
+          326.2439982096354
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "In the case of physical loss or damage occurring to any Plant prior to its deliverytoand during itsunloading at theSite,thepolicyof insurance shallbeanall-risksmarineinsurancepolicyinaccordancewiththe InstituteCargoClauses\"A\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.2765096028646,
+          320.3048299153646
+        ],
+        [
+          504.0037841796875,
+          320.3048299153646
+        ],
+        [
+          504.0037841796875,
+          273.2155965169271
+        ],
+        [
+          179.2765096028646,
+          273.2155965169271
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "TheinsuranceonPlantshall beinthejoint namesof theEmployer and the Contractor and with the Employer named as \"First Loss Payee\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.6993408203125,
+          267.7006632486979
+        ],
+        [
+          504.0037841796875,
+          267.7006632486979
+        ],
+        [
+          504.0037841796875,
+          245.21661376953125
+        ],
+        [
+          179.6993408203125,
+          245.21661376953125
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "Following the delivery toand unloading at theSite of anyPlant, the ContractorshallpromptlyinspectsuchPlanttodeterminewhether any physical lossordamagehasoccurred theretoandshallimmediately notifytheContractAdministratorinwritingwithacopytotheEmployer of any such loss or damage that has so occurred. Such notification shall be accompanied byfulldetailsof thesaidlossordamage.",
+      "confidence": 0.95,
+      "box": [
+        [
+          180.12215169270834,
+          239.27744547526038
+        ],
+        [
+          506.1178792317708,
+          239.27744547526038
+        ],
+        [
+          506.1178792317708,
+          169.27992757161462
+        ],
+        [
+          180.12215169270834,
+          169.27992757161462
+        ]
+      ],
+      "page": 128
+    },
+    {
+      "text": "Plantand Contractor'sEquipment-ParticularRequirements:",
+      "confidence": 0.95,
+      "box": [
+        [
+          195.34375,
+          156.97735595703125
+        ],
+        [
+          475.6747233072917,
+          156.97735595703125
+        ],
+        [
+          475.6747233072917,
+          147.22011311848962
+        ],
+        [
+          195.34375,
+          147.22011311848962
+        ]
+      ],
+      "page": 128
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 128,
+      "text": "The Contractor shall indemnify the Employer against any amount which wouldotherwisebeclaimablebytheEmployerunderanyof the insurancesrequired tobeaffectedunderthisClause12.9butwhichthe Employer is unable to claim by virtue of the amount concerned falling withinanydeductible(lnsured'sRetainedLiability）applicabletothe relevantinsurance cover.\nAllInsurancePoliciesshallbesubmitted inbothArabic andEnglish includingtheparagraphmentionedbelowasfollows:\n\"This policy is issued in favor of the Employer, and no cancelation, amendments,orchangesshallbeallowedunlessreceivingwritten stampedandsignedletterfromtheEmployer\"\nEachof theinsurancesoutlinedbelowshall indemnifytheEmployeror anyof itsconsultants,servants,employees oragentsasthough they are theInsured and containsa waiverofsubrogation clause.\na)Plant and Contractor's Equipment-being coverage inrespect of all risksofphysical lossordamagewhichmayoccur:\nTo any Plant prior to its delivery to and during its unloading at the Site; and\nTo any Contractor's Equipment.\nThe said Plant and Contractor's Equipment shall be covered wherever in the world the same may, for the time being, be situated and even if thesamebe in storageor in transitexcept thatPlant shall cease tobe unloadedattheSite.\nSuchcoverageshallhavealimitofliabilityofnotlessthanthecurrent replacement value of all relevant Plant and Contractor's Equipment, and shall include all labor charges, transportation charges, professional fees,debrisremoval,anddemolitionCosts,andotherCosts.\nIn the case of physical loss or damage occurring to any Plant prior to its deliverytoand during itsunloading at theSite,thepolicyof insurance shallbeanall-risksmarineinsurancepolicyinaccordancewiththe InstituteCargoClauses\"A\".\nTheinsuranceonPlantshall beinthejoint namesof theEmployer and the Contractor and with the Employer named as \"First Loss Payee\".\nFollowing the delivery toand unloading at theSite of anyPlant, the ContractorshallpromptlyinspectsuchPlanttodeterminewhether any physical lossordamagehasoccurred theretoandshallimmediately notifytheContractAdministratorinwritingwithacopytotheEmployer of any such loss or damage that has so occurred. Such notification shall be accompanied byfulldetailsof thesaidlossordamage.\nPlantand Contractor'sEquipment-ParticularRequirements:",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

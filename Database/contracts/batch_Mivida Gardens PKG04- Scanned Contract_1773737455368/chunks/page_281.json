@@ -1,0 +1,336 @@
+{
+  "text": "<!-- image -->\n\nM1SR\n\nprovided by the Contract Administrator, showing the number and description of craftsmen, labourers and other persons employed on or In connection with the Works, including those ermployed by subcontractors. This record shall be incorporated in the \"Daily Report\" (hereinafter referred to as Daily Report) in section 01320.\n\n## 8 PLANT RECORD\n\n- 8.1 All mechanlcal and power operated plant shall be employed on the works must be submitted tor the approval of the Consultant prior engagement. Such plant shall be in a good conditions and the Contractor shall be fully responsible to maintain such Conditions otherwise shall be replacea immediately upon the issued instructions of the Consultant.\n- 8.2 In case of such replacement were issued, the Contractor shall be responsible to comply with immediate effect, and shall be responsible for any delay may be occurred due to the absence of replacement.\n- 8.3 A daily record shall be provided by the Contractor to the Contract Administrator on the following morning as part of the DcR, showing the type, model and capacity of all mechanical and power operated plant employed on the works.The Contractor shall not be permitted to remove any plant or matorial unless written approval is obtained from the Contract Administrator.This record shall be incorporated in the Daily Report in Section 01320.\n\n## 9 VISITORS RECORD\n\n- 9.1 The Contractor shall maintain a record ofvisitors to the Site in a format to be decided by the Contract Administrator.\n\n## 10 OVERTIMEWORKING\n\n- 10.1 Whenever working outeide normal hours is proposed, the Contractor shall advise the Contract Administrator, specifying times, types and locations of work and approximate number of men involved.All costs of overtime for the Contract Administrator and Supervision Consultant staffshallbebornebytheContractor\n- 10.2 Concealed work executed beyond normal hours for which approval has not been given may be required to be opened up for inspection or demolished and reinstated at the Contractor's expense.\n\nIn case the work requires the presence of the Supervision Consultant beyond the normal working hours,a prior notice shall be given by the Engineer.\n\nCORRESPONDENCE/ SUBMITTALS\n\nThe Contractorshall use only themetrtcsystem.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "M1SR",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          749.3968353271484
+        ],
+        [
+          131.15463256835938,
+          749.3968353271484
+        ],
+        [
+          131.15463256835938,
+          740.2745259602865
+        ],
+        [
+          109.1571756998698,
+          740.2745259602865
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "provided by the Contract Administrator, showing the number and description of craftsmen, labourers and other persons employed on or In connection with the Works, including those ermployed by subcontractors. This record shall be incorporated in the \"Daily Report\" (hereinafter referred to as Daily Report) in section 01320.",
+      "confidence": 0.95,
+      "box": [
+        [
+          142.36088053385416,
+          719.1273498535156
+        ],
+        [
+          505.111328125,
+          719.1273498535156
+        ],
+        [
+          505.111328125,
+          654.4418640136719
+        ],
+        [
+          142.36088053385416,
+          654.4418640136719
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "8 PLANT RECORD",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          642.4169921875
+        ],
+        [
+          201.7125040690104,
+          642.4169921875
+        ],
+        [
+          201.7125040690104,
+          631.221435546875
+        ],
+        [
+          76.78356424967448,
+          631.221435546875
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "8.1 All mechanlcal and power operated plant shall be employed on the works must be submitted tor the approval of the Consultant prior engagement. Such plant shall be in a good conditions and the Contractor shall be fully responsible to maintain such Conditions otherwise shall be replacea immediately upon the issued instructions of the Consultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          623.7577311197916
+        ],
+        [
+          505.5263671875,
+          623.7577311197916
+        ],
+        [
+          505.5263671875,
+          546.6327311197917
+        ],
+        [
+          109.98726399739583,
+          546.6327311197917
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "8.2 In case of such replacement were issued, the Contractor shall be responsible to comply with immediate effect, and shall be responsible for any delay may be occurred due to the absence of replacement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          539.5836791992188
+        ],
+        [
+          505.111328125,
+          539.5836791992188
+        ],
+        [
+          505.111328125,
+          501.02117919921875
+        ],
+        [
+          109.98726399739583,
+          501.02117919921875
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "8.3 A daily record shall be provided by the Contractor to the Contract Administrator on the following morning as part of the DcR, showing the type, model and capacity of all mechanical and power operated plant employed on the works.The Contractor shall not be permitted to remove any plant or matorial unless written approval is obtained from the Contract Administrator.This record shall be incorporated in the Daily Report in Section 01320.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          494.3867594401042
+        ],
+        [
+          505.9414469401042,
+          494.3867594401042
+        ],
+        [
+          505.9414469401042,
+          403.16363525390625
+        ],
+        [
+          109.98726399739583,
+          403.16363525390625
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "9 VISITORS RECORD",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          391.13877360026044
+        ],
+        [
+          216.6541748046875,
+          391.13877360026044
+        ],
+        [
+          216.6541748046875,
+          379.94321695963544
+        ],
+        [
+          77.61365763346355,
+          379.94321695963544
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "9.1 The Contractor shall maintain a record ofvisitors to the Site in a format to be decided by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          372.89414469401044
+        ],
+        [
+          505.9414469401042,
+          372.89414469401044
+        ],
+        [
+          505.9414469401042,
+          347.60048421223956
+        ],
+        [
+          109.57222493489583,
+          347.60048421223956
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "10 OVERTIMEWORKING",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          335.16094970703125
+        ],
+        [
+          229.9356486002604,
+          335.16094970703125
+        ],
+        [
+          229.9356486002604,
+          323.13608805338544
+        ],
+        [
+          76.78356424967448,
+          323.13608805338544
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "10.1 Whenever working outeide normal hours is proposed, the Contractor shall advise the Contract Administrator, specifying times, types and locations of work and approximate number of men involved.All costs of overtime for the Contract Administrator and Supervision Consultant staffshallbebornebytheContractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          316.50168863932294
+        ],
+        [
+          506.7715250651042,
+          316.50168863932294
+        ],
+        [
+          506.7715250651042,
+          252.23085530598962
+        ],
+        [
+          111.23241170247395,
+          252.23085530598962
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "10.2 Concealed work executed beyond normal hours for which approval has not been given may be required to be opened up for inspection or demolished and reinstated at the Contractor's expense.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          245.59645589192712
+        ],
+        [
+          505.5263671875,
+          245.59645589192712
+        ],
+        [
+          505.5263671875,
+          206.61932373046875
+        ],
+        [
+          111.23241170247395,
+          206.61932373046875
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "In case the work requires the presence of the Supervision Consultant beyond the normal working hours,a prior notice shall be given by the Engineer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.43610636393228,
+          200.39955647786462
+        ],
+        [
+          506.3564860026042,
+          200.39955647786462
+        ],
+        [
+          506.3564860026042,
+          146.49497477213538
+        ],
+        [
+          144.43610636393228,
+          146.49497477213538
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "CORRESPONDENCE/ SUBMITTALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          136.12868245442712
+        ],
+        [
+          307.54929606119794,
+          136.12868245442712
+        ],
+        [
+          307.54929606119794,
+          124.10386149088538
+        ],
+        [
+          110.81736246744792,
+          124.10386149088538
+        ]
+      ],
+      "page": 281
+    },
+    {
+      "text": "The Contractorshall use only themetrtcsystem.",
+      "confidence": 0.95,
+      "box": [
+        [
+          149.00161743164062,
+          117.46942138671875
+        ],
+        [
+          396.3692220052083,
+          117.46942138671875
+        ],
+        [
+          396.3692220052083,
+          105.44460042317712
+        ],
+        [
+          149.00161743164062,
+          105.44460042317712
+        ]
+      ],
+      "page": 281
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 281,
+      "text": "M1SR\nprovided by the Contract Administrator, showing the number and description of craftsmen, labourers and other persons employed on or In connection with the Works, including those ermployed by subcontractors. This record shall be incorporated in the \"Daily Report\" (hereinafter referred to as Daily Report) in section 01320.\n8 PLANT RECORD\n8.1 All mechanlcal and power operated plant shall be employed on the works must be submitted tor the approval of the Consultant prior engagement. Such plant shall be in a good conditions and the Contractor shall be fully responsible to maintain such Conditions otherwise shall be replacea immediately upon the issued instructions of the Consultant.\n8.2 In case of such replacement were issued, the Contractor shall be responsible to comply with immediate effect, and shall be responsible for any delay may be occurred due to the absence of replacement.\n8.3 A daily record shall be provided by the Contractor to the Contract Administrator on the following morning as part of the DcR, showing the type, model and capacity of all mechanical and power operated plant employed on the works.The Contractor shall not be permitted to remove any plant or matorial unless written approval is obtained from the Contract Administrator.This record shall be incorporated in the Daily Report in Section 01320.\n9 VISITORS RECORD\n9.1 The Contractor shall maintain a record ofvisitors to the Site in a format to be decided by the Contract Administrator.\n10 OVERTIMEWORKING\n10.1 Whenever working outeide normal hours is proposed, the Contractor shall advise the Contract Administrator, specifying times, types and locations of work and approximate number of men involved.All costs of overtime for the Contract Administrator and Supervision Consultant staffshallbebornebytheContractor\n10.2 Concealed work executed beyond normal hours for which approval has not been given may be required to be opened up for inspection or demolished and reinstated at the Contractor's expense.\nIn case the work requires the presence of the Supervision Consultant beyond the normal working hours,a prior notice shall be given by the Engineer.\nCORRESPONDENCE/ SUBMITTALS\nThe Contractorshall use only themetrtcsystem.",
+      "line_count": 14
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

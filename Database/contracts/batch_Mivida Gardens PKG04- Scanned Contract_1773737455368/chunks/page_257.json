@@ -1,0 +1,520 @@
+{
+  "text": "<!-- image -->\n\nhazardous manner. Sprinkle dusty accumulations with water. Collect waste material and debris in approved containers.\n\n8. Ensure that cleaning operations are scheduled to avoid deposit of dust or other foreign matter on surfaces during finishing work and until wet or tacky surfaces are cured.\n7. Control lowering of materials. Use as few handlings as possible. Do not drop or throw materials from stories above grade unless they are contained within a chute provided for the purpose.\n9. Each Section shall provide the Contractor with instructions for final cleaning and for inclusion in a project data book as specified in each Section and in Sections 01710and01730.\n4. 11.Should Contract Administrator determine that Contractor is not adequately maintaining the proper cleanliness of the Site,Contract Administrator may to Contractor if in ContractAdministrator's opinion Contractor isnotadequately fulfilling his obligations under this section of the Specifications.\n10. Contractor shall be responsible for carting off and suitably disposing of all waste materialsfrom theSite.\n\n## 1.15 DUST CONTROL\n\n1. Provide suitable measures to prevent accumulation of rnaterials generating dust at Site and to prevent the spread of dust on the Works, the Site, and adjacent property.\n\n## 1.16 PEST CONTROL\n\n1. Monitor the Site and the Works at all times to prevent an infestation of the Worksby insects,rodents and similar pests.\n2. Employ suitable extermination methods approved by the ContractAdministrator topreventpotential infestation of theWorksbypests.\n3. Employ an approved extermination to inspecl the site monthly and recommcnd extermination method forimplementation.Contractorshallpayall costs\n\n## 1.17 ADJUSTING\n\n1. Ensure that all components of assemblies fit snugly, accurately and in true planes, and that moving parts operate positively and freely, without binding and scraping.\n2. Verify that work functions properly, and adjust it accordingly to ensure satisfactoryoperation.\n\nLubricate products as recommended by the supplier.\n\n## 1.18CONTRACTOR'SEQUIPMENT\n\n1. Ensure that all equipments and tools used on site are in good conditions throughout all the contract duration.\n\nPART2-PRODUCTS (Not Used)\n\nPART 3PEXECUTON (Not Used)\n\n<!-- image -->\n\nSpecificatiorsDiypiCeneralRequirements\n\nRev.01\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "hazardous manner. Sprinkle dusty accumulations with water. Collect waste material and debris in approved containers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          719.542002360026
+        ],
+        [
+          503.0360921223958,
+          719.542002360026
+        ],
+        [
+          503.0360921223958,
+          695.9069213867188
+        ],
+        [
+          109.98726399739583,
+          695.9069213867188
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Ensure that cleaning operations are scheduled to avoid deposit of dust or other foreign matter on surfaces during finishing work and until wet or tacky surfaces are cured.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          663.1495259602865
+        ],
+        [
+          504.28125,
+          663.1495259602865
+        ],
+        [
+          504.28125,
+          628.7335408528646
+        ],
+        [
+          94.2155049641927,
+          628.7335408528646
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Control lowering of materials. Use as few handlings as possible. Do not drop or throw materials from stories above grade unless they are contained within a chute provided for the purpose.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          697.150868733724
+        ],
+        [
+          504.28125,
+          697.150868733724
+        ],
+        [
+          504.28125,
+          661.9055786132812
+        ],
+        [
+          94.2155049641927,
+          661.9055786132812
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Each Section shall provide the Contractor with instructions for final cleaning and for inclusion in a project data book as specified in each Section and in Sections 01710and01730.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          628.7335408528646
+        ],
+        [
+          504.28125,
+          628.7335408528646
+        ],
+        [
+          504.28125,
+          594.3175455729166
+        ],
+        [
+          94.2155049641927,
+          594.3175455729166
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "11.Should Contract Administrator determine that Contractor is not adequately maintaining the proper cleanliness of the Site,Contract Administrator may to Contractor if in ContractAdministrator's opinion Contractor isnotadequately fulfilling his obligations under this section of the Specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          571.9264119466146
+        ],
+        [
+          504.6962890625,
+          571.9264119466146
+        ],
+        [
+          504.6962890625,
+          514.7046508789062
+        ],
+        [
+          93.8004659016927,
+          514.7046508789062
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Contractor shall be responsible for carting off and suitably disposing of all waste materialsfrom theSite.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          595.1468505859375
+        ],
+        [
+          503.451171875,
+          595.1468505859375
+        ],
+        [
+          503.451171875,
+          571.5117594401041
+        ],
+        [
+          93.8004659016927,
+          571.5117594401041
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "1.15 DUST CONTROL",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          503.09442138671875
+        ],
+        [
+          200.05230712890625,
+          503.09442138671875
+        ],
+        [
+          200.05230712890625,
+          491.4842122395833
+        ],
+        [
+          76.78356424967448,
+          491.4842122395833
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Provide suitable measures to prevent accumulation of rnaterials generating dust at Site and to prevent the spread of dust on the Works, the Site, and adjacent property.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          481.94724527994794
+        ],
+        [
+          503.8662109375,
+          481.94724527994794
+        ],
+        [
+          503.8662109375,
+          444.21405029296875
+        ],
+        [
+          92.97036743164062,
+          444.21405029296875
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "1.16 PEST CONTROL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          435.50640869140625
+        ],
+        [
+          198.80716959635416,
+          435.50640869140625
+        ],
+        [
+          198.80716959635416,
+          423.06687418619794
+        ],
+        [
+          77.1986083984375,
+          423.06687418619794
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Monitor the Site and the Works at all times to prevent an infestation of the Worksby insects,rodents and similar pests.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          412.28594970703125
+        ],
+        [
+          504.28125,
+          412.28594970703125
+        ],
+        [
+          504.28125,
+          388.65089925130206
+        ],
+        [
+          95.46065266927083,
+          388.65089925130206
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Employ suitable extermination methods approved by the ContractAdministrator topreventpotential infestation of theWorksbypests.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          388.65089925130206
+        ],
+        [
+          504.6962890625,
+          388.65089925130206
+        ],
+        [
+          504.6962890625,
+          366.25974527994794
+        ],
+        [
+          95.0456034342448,
+          366.25974527994794
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Employ an approved extermination to inspecl the site monthly and recommcnd extermination method forimplementation.Contractorshallpayall costs",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          366.67441813151044
+        ],
+        [
+          505.111328125,
+          366.67441813151044
+        ],
+        [
+          505.111328125,
+          344.28326416015625
+        ],
+        [
+          95.0456034342448,
+          344.28326416015625
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "1.17 ADJUSTING",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          332.67307535807294
+        ],
+        [
+          175.1495361328125,
+          332.67307535807294
+        ],
+        [
+          175.1495361328125,
+          321.47751871744794
+        ],
+        [
+          78.02870178222656,
+          321.47751871744794
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Ensure that all components of assemblies fit snugly, accurately and in true planes, and that moving parts operate positively and freely, without binding and scraping.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          310.28192138671875
+        ],
+        [
+          505.111328125,
+          310.28192138671875
+        ],
+        [
+          505.111328125,
+          274.20733642578125
+        ],
+        [
+          95.0456034342448,
+          274.20733642578125
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Verify that work functions properly, and adjust it accordingly to ensure satisfactoryoperation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          276.28057861328125
+        ],
+        [
+          505.5263671875,
+          276.28057861328125
+        ],
+        [
+          505.5263671875,
+          252.64552815755212
+        ],
+        [
+          95.0456034342448,
+          252.64552815755212
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Lubricate products as recommended by the supplier.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          241.86460367838538
+        ],
+        [
+          354.4495442708333,
+          241.86460367838538
+        ],
+        [
+          354.4495442708333,
+          229.83974202473962
+        ],
+        [
+          94.2155049641927,
+          229.83974202473962
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "1.18CONTRACTOR'SEQUIPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          219.05881754557288
+        ],
+        [
+          270.6101888020833,
+          219.05881754557288
+        ],
+        [
+          270.6101888020833,
+          207.86326090494788
+        ],
+        [
+          76.78356424967448,
+          207.86326090494788
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Ensure that all equipments and tools used on site are in good conditions throughout all the contract duration.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          197.08233642578125
+        ],
+        [
+          505.5263671875,
+          197.08233642578125
+        ],
+        [
+          505.5263671875,
+          173.03261311848962
+        ],
+        [
+          94.2155049641927,
+          173.03261311848962
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "PART2-PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          150.22682698567712
+        ],
+        [
+          249.85786946614584,
+          150.22682698567712
+        ],
+        [
+          249.85786946614584,
+          137.78729248046875
+        ],
+        [
+          77.1986083984375,
+          137.78729248046875
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "PART 3PEXECUTON (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          133.64080810546875
+        ],
+        [
+          254.00834147135416,
+          133.64080810546875
+        ],
+        [
+          254.00834147135416,
+          113.32293701171875
+        ],
+        [
+          76.36852010091145,
+          113.32293701171875
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "SpecificatiorsDiypiCeneralRequirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          48.22283935546875
+        ],
+        [
+          209.1833292643229,
+          48.22283935546875
+        ],
+        [
+          209.1833292643229,
+          39.92978922526038
+        ],
+        [
+          77.1986083984375,
+          39.92978922526038
+        ]
+      ],
+      "page": 257
+    },
+    {
+      "text": "Rev.01",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          39.92978922526038
+        ],
+        [
+          100.02615356445312,
+          39.92978922526038
+        ],
+        [
+          100.02615356445312,
+          32.46608479817712
+        ],
+        [
+          78.02870178222656,
+          32.46608479817712
+        ]
+      ],
+      "page": 257
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 257,
+      "text": "hazardous manner. Sprinkle dusty accumulations with water. Collect waste material and debris in approved containers.\nEnsure that cleaning operations are scheduled to avoid deposit of dust or other foreign matter on surfaces during finishing work and until wet or tacky surfaces are cured.\nControl lowering of materials. Use as few handlings as possible. Do not drop or throw materials from stories above grade unless they are contained within a chute provided for the purpose.\nEach Section shall provide the Contractor with instructions for final cleaning and for inclusion in a project data book as specified in each Section and in Sections 01710and01730.\n11.Should Contract Administrator determine that Contractor is not adequately maintaining the proper cleanliness of the Site,Contract Administrator may to Contractor if in ContractAdministrator's opinion Contractor isnotadequately fulfilling his obligations under this section of the Specifications.\nContractor shall be responsible for carting off and suitably disposing of all waste materialsfrom theSite.\n1.15 DUST CONTROL\nProvide suitable measures to prevent accumulation of rnaterials generating dust at Site and to prevent the spread of dust on the Works, the Site, and adjacent property.\n1.16 PEST CONTROL\nMonitor the Site and the Works at all times to prevent an infestation of the Worksby insects,rodents and similar pests.\nEmploy suitable extermination methods approved by the ContractAdministrator topreventpotential infestation of theWorksbypests.\nEmploy an approved extermination to inspecl the site monthly and recommcnd extermination method forimplementation.Contractorshallpayall costs\n1.17 ADJUSTING\nEnsure that all components of assemblies fit snugly, accurately and in true planes, and that moving parts operate positively and freely, without binding and scraping.\nVerify that work functions properly, and adjust it accordingly to ensure satisfactoryoperation.\nLubricate products as recommended by the supplier.\n1.18CONTRACTOR'SEQUIPMENT\nEnsure that all equipments and tools used on site are in good conditions throughout all the contract duration.\nPART2-PRODUCTS (Not Used)\nPART 3PEXECUTON (Not Used)\nSpecificatiorsDiypiCeneralRequirements\nRev.01",
+      "line_count": 22
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,635 @@
+{
+  "text": "<!-- image -->\n\n- 3.4TheTenderer shallsubmit aScheduleofConstructionEquipment&amp; Vehicles he proposes to use for the Project. This shall be in the form described under Clause 4.\n- 3.5 Tender in accordance with section 01370, to cover major aspects of construction.This shall address clearly all major components of the Tenderer's scope and this shallbeused to evaluate the technical capabilities of the Tenderer.\n- 3.6 Allnecessary support data details as applicable shall be providedby thie Tenderer as described under Clause 4.\n\n## 4. PROGRAMME OF WORKS (Baselinc Construction Schedule)\n\n- 4.1 Within seven (7) days after the Letter of Acceptance, the Contractor shall meetwiththeContractAdministratortoreviewtheMasterProgrammeofthe Project. This review shallinclude the specific requirements of the Contractor regarding restraints and milestones, including the interrelaticn with other contractors, as they relate to the Detailed Programme of Works. Subsequently, within fourteen (14) days after the Letter of Acceptance, the Contractor shall submit the detailed cost and resource loaded Programme of Works, complete in all respects, to the Contract Administrator for review and approval.\n- 4.2 TheoutercoveroftheDetailedProgrammeofWorksshallbetitledwiththe following information:\n- a) The titleof theProject\n- c) The title \"Cost and resource loaded Programme of Works\" -\"Rev.\" [rev.no.] -\"Date\": [date of submission]\n- b) The Bid Package number and title\n- d) The name of theEmployer\"EMAAR Misr\"\n- e) The name of the Contract Administrator \"Turner Construction International LLC\"\n- f) The name of the Contractor\n- 4.3 The first page of the document shall be the contents page. The Detailed Programme of Works shall comprise the following sections, which are to be listed in this page.\n- 4.4Execution Programme\n\nSection 1 Work Breakdown Structure(Detailed list of work structure in each major location of the project)\n\nSection 2 Execution Programme (soft copy is also required)\n\nSection3 Resource Loaded Schedule and resources histograms\n\nSection 4 Schedule ofValues &amp; Cost Loaded Programme and cash flow histogram (soft copy is also required)\n\n中建国际\n\nSection5 Scheduleofsupervisionstaff\n\n有限贸任公司\n\nSection 6 Schedule of ConstructionEquipment &amp;Vehicles\n\nSection 7 Major materials usage histograms (Monthly and Cumulative)\n\nSection 8 Critical Indicators\n\nSection9 ExecutionMethod Statement\n\nSection10SupportData\n\nSpecifications Div.01 General Requirements.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "3.4TheTenderer shallsubmit aScheduleofConstructionEquipment& Vehicles he proposes to use for the Project. This shall be in the form described under Clause 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          718.2980448404948
+        ],
+        [
+          505.111328125,
+          718.2980448404948
+        ],
+        [
+          505.111328125,
+          679.7355448404948
+        ],
+        [
+          93.38541666666667,
+          679.7355448404948
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "3.5 Tender in accordance with section 01370, to cover major aspects of construction.This shall address clearly all major components of the Tenderer's scope and this shallbeused to evaluate the technical capabilities of the Tenderer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          671.4425354003906
+        ],
+        [
+          505.5263671875,
+          671.4425354003906
+        ],
+        [
+          505.5263671875,
+          607.5863647460938
+        ],
+        [
+          94.2155049641927,
+          607.5863647460938
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "3.6 Allnecessary support data details as applicable shall be providedby thie Tenderer as described under Clause 4.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          601.3665974934896
+        ],
+        [
+          503.451171875,
+          601.3665974934896
+        ],
+        [
+          503.451171875,
+          575.6582641601562
+        ],
+        [
+          92.55532836914062,
+          575.6582641601562
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "4. PROGRAMME OF WORKS (Baselinc Construction Schedule)",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          564.0480550130208
+        ],
+        [
+          420.85693359375,
+          564.0480550130208
+        ],
+        [
+          420.85693359375,
+          551.1938883463542
+        ],
+        [
+          75.53842671712239,
+          551.1938883463542
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "4.1 Within seven (7) days after the Letter of Acceptance, the Contractor shall meetwiththeContractAdministratortoreviewtheMasterProgrammeofthe Project. This review shallinclude the specific requirements of the Contractor regarding restraints and milestones, including the interrelaticn with other contractors, as they relate to the Detailed Programme of Works. Subsequently, within fourteen (14) days after the Letter of Acceptance, the Contractor shall submit the detailed cost and resource loaded Programme of Works, complete in all respects, to the Contract Administrator for review and approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          545.8034261067708
+        ],
+        [
+          505.5263671875,
+          545.8034261067708
+        ],
+        [
+          505.5263671875,
+          427.62803141276044
+        ],
+        [
+          91.72522989908855,
+          427.62803141276044
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "4.2 TheoutercoveroftheDetailedProgrammeofWorksshallbetitledwiththe following information:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          420.57895914713544
+        ],
+        [
+          503.8662109375,
+          420.57895914713544
+        ],
+        [
+          503.8662109375,
+          396.11460367838544
+        ],
+        [
+          92.97036743164062,
+          396.11460367838544
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "The titleof theProject",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          394.45599365234375
+        ],
+        [
+          264.3844807942708,
+          394.45599365234375
+        ],
+        [
+          264.3844807942708,
+          382.01645914713544
+        ],
+        [
+          126.174072265625,
+          382.01645914713544
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "The title \"Cost and resource loaded Programme of Works\" -\"Rev.\" [rev.no.] -\"Date\": [date of submission]",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          369.57696533203125
+        ],
+        [
+          504.6962890625,
+          369.57696533203125
+        ],
+        [
+          504.6962890625,
+          343.03932698567706
+        ],
+        [
+          126.174072265625,
+          343.03932698567706
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "The Bid Package number and title",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.75902303059895,
+          382.43113199869794
+        ],
+        [
+          324.1511637369792,
+          382.43113199869794
+        ],
+        [
+          324.1511637369792,
+          369.16229248046875
+        ],
+        [
+          125.75902303059895,
+          369.16229248046875
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "The name of theEmployer\"EMAAR Misr\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.58912150065105,
+          342.62469482421875
+        ],
+        [
+          362.7504475911458,
+          342.62469482421875
+        ],
+        [
+          362.7504475911458,
+          330.59979248046875
+        ],
+        [
+          126.58912150065105,
+          330.59979248046875
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "The name of the Contract Administrator \"Turner Construction International LLC\"",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.174072265625,
+          329.77052815755206
+        ],
+        [
+          504.28125,
+          329.77052815755206
+        ],
+        [
+          504.28125,
+          304.8914591471354
+        ],
+        [
+          126.174072265625,
+          304.8914591471354
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "The name of the Contractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.34398396809895,
+          303.64752197265625
+        ],
+        [
+          293.02268473307294,
+          303.64752197265625
+        ],
+        [
+          293.02268473307294,
+          291.2080281575521
+        ],
+        [
+          125.34398396809895,
+          291.2080281575521
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "4.3 The first page of the document shall be the contents page. The Detailed Programme of Works shall comprise the following sections, which are to be listed in this page.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          285.40289306640625
+        ],
+        [
+          504.28125,
+          285.40289306640625
+        ],
+        [
+          504.28125,
+          245.59645589192712
+        ],
+        [
+          92.97036743164062,
+          245.59645589192712
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "4.4Execution Programme",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          83.46811930338538
+        ],
+        [
+          231.5958251953125,
+          83.46811930338538
+        ],
+        [
+          231.5958251953125,
+          69.78460693359375
+        ],
+        [
+          90.06504313151042,
+          69.78460693359375
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section 1 Work Breakdown Structure(Detailed list of work structure in each major location of the project)",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          246.01108805338538
+        ],
+        [
+          504.28125,
+          246.01108805338538
+        ],
+        [
+          504.28125,
+          219.05881754557288
+        ],
+        [
+          118.28819783528645,
+          219.05881754557288
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section 2 Execution Programme (soft copy is also required)",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          219.47349039713538
+        ],
+        [
+          427.4976806640625,
+          219.47349039713538
+        ],
+        [
+          427.4976806640625,
+          205.79001871744788
+        ],
+        [
+          118.28819783528645,
+          205.79001871744788
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section3 Resource Loaded Schedule and resources histograms",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          206.61932373046875
+        ],
+        [
+          453.6455891927083,
+          206.61932373046875
+        ],
+        [
+          453.6455891927083,
+          193.76515706380212
+        ],
+        [
+          118.28819783528645,
+          193.76515706380212
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section 4 Schedule ofValues & Cost Loaded Programme and cash flow histogram (soft copy is also required)",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          193.35048421223962
+        ],
+        [
+          507.6016031901042,
+          193.35048421223962
+        ],
+        [
+          507.6016031901042,
+          166.81284586588538
+        ],
+        [
+          117.87314860026042,
+          166.81284586588538
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "中建国际",
+      "confidence": 0.95,
+      "box": [
+        [
+          463.6067301432292,
+          175.10585530598962
+        ],
+        [
+          514.2423502604166,
+          175.10585530598962
+        ],
+        [
+          514.2423502604166,
+          136.12868245442712
+        ],
+        [
+          463.6067301432292,
+          136.12868245442712
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section5 Scheduleofsupervisionstaff",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          166.81284586588538
+        ],
+        [
+          324.5662027994792,
+          166.81284586588538
+        ],
+        [
+          324.5662027994792,
+          154.78798421223962
+        ],
+        [
+          118.28819783528645,
+          154.78798421223962
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "有限贸任公司",
+      "confidence": 0.95,
+      "box": [
+        [
+          458.2111002604167,
+          163.08099365234375
+        ],
+        [
+          507.6016031901042,
+          163.08099365234375
+        ],
+        [
+          507.6016031901042,
+          116.64015706380212
+        ],
+        [
+          458.2111002604167,
+          116.64015706380212
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section 6 Schedule of ConstructionEquipment &Vehicles",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          154.37335205078125
+        ],
+        [
+          420.02685546875,
+          154.37335205078125
+        ],
+        [
+          420.02685546875,
+          140.68988037109375
+        ],
+        [
+          117.45809936523438,
+          140.68988037109375
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section 7 Major materials usage histograms (Monthly and Cumulative)",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.04305013020833,
+          141.10451253255212
+        ],
+        [
+          483.5289306640625,
+          141.10451253255212
+        ],
+        [
+          483.5289306640625,
+          127.00636800130212
+        ],
+        [
+          117.04305013020833,
+          127.00636800130212
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section 8 Critical Indicators",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.45809936523438,
+          127.83571370442712
+        ],
+        [
+          266.459716796875,
+          127.83571370442712
+        ],
+        [
+          266.459716796875,
+          115.81081136067712
+        ],
+        [
+          117.45809936523438,
+          115.81081136067712
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section9 ExecutionMethod Statement",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          114.56691487630212
+        ],
+        [
+          324.9812418619792,
+          114.56691487630212
+        ],
+        [
+          324.9812418619792,
+          102.95664469401038
+        ],
+        [
+          117.87314860026042,
+          102.95664469401038
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Section10SupportData",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.87314860026042,
+          100.88340250651038
+        ],
+        [
+          245.7073974609375,
+          100.88340250651038
+        ],
+        [
+          245.7073974609375,
+          89.68784586588538
+        ],
+        [
+          117.87314860026042,
+          89.68784586588538
+        ]
+      ],
+      "page": 298
+    },
+    {
+      "text": "Specifications Div.01 General Requirements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.29328918457031,
+          48.22283935546875
+        ],
+        [
+          207.93819173177084,
+          48.22283935546875
+        ],
+        [
+          207.93819173177084,
+          38.68581136067712
+        ],
+        [
+          74.29328918457031,
+          38.68581136067712
+        ]
+      ],
+      "page": 298
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 298,
+      "text": "3.4TheTenderer shallsubmit aScheduleofConstructionEquipment& Vehicles he proposes to use for the Project. This shall be in the form described under Clause 4.\n3.5 Tender in accordance with section 01370, to cover major aspects of construction.This shall address clearly all major components of the Tenderer's scope and this shallbeused to evaluate the technical capabilities of the Tenderer.\n3.6 Allnecessary support data details as applicable shall be providedby thie Tenderer as described under Clause 4.\n4. PROGRAMME OF WORKS (Baselinc Construction Schedule)\n4.1 Within seven (7) days after the Letter of Acceptance, the Contractor shall meetwiththeContractAdministratortoreviewtheMasterProgrammeofthe Project. This review shallinclude the specific requirements of the Contractor regarding restraints and milestones, including the interrelaticn with other contractors, as they relate to the Detailed Programme of Works. Subsequently, within fourteen (14) days after the Letter of Acceptance, the Contractor shall submit the detailed cost and resource loaded Programme of Works, complete in all respects, to the Contract Administrator for review and approval.\n4.2 TheoutercoveroftheDetailedProgrammeofWorksshallbetitledwiththe following information:\nThe titleof theProject\nThe title \"Cost and resource loaded Programme of Works\" -\"Rev.\" [rev.no.] -\"Date\": [date of submission]\nThe Bid Package number and title\nThe name of theEmployer\"EMAAR Misr\"\nThe name of the Contract Administrator \"Turner Construction International LLC\"\nThe name of the Contractor\n4.3 The first page of the document shall be the contents page. The Detailed Programme of Works shall comprise the following sections, which are to be listed in this page.\n4.4Execution Programme\nSection 1 Work Breakdown Structure(Detailed list of work structure in each major location of the project)\nSection 2 Execution Programme (soft copy is also required)\nSection3 Resource Loaded Schedule and resources histograms\nSection 4 Schedule ofValues & Cost Loaded Programme and cash flow histogram (soft copy is also required)\n中建国际\nSection5 Scheduleofsupervisionstaff\n有限贸任公司\nSection 6 Schedule of ConstructionEquipment &Vehicles\nSection 7 Major materials usage histograms (Monthly and Cumulative)\nSection 8 Critical Indicators\nSection9 ExecutionMethod Statement\nSection10SupportData\nSpecifications Div.01 General Requirements.",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

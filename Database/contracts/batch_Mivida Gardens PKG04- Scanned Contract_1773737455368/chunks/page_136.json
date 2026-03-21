@@ -1,0 +1,359 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nThe amount of Liquidated Damages for delay beyond the Time for CompletionoftheWorksorofanyContractual MilestoneforeachSection of the Works is equal to ten per cent (10%) of the Contract Value of the WorksorofsuchSectionasthecasemaybe.\n\nSuchLiquidatedDamagesshallbeappliedonaweeklybasisasfollows:\n\n- The Liquidated Damages ( LDs) to be applied at 0.5% for the 1st week, 1%for the 2nd week，1.5%for the 3rd week,2%for the 4th week, 2.5%forthe5thweekand2.5%forthe6thweektoreachmaximum LDsof10%after6weeks.\n\nIn addition,should the Contractor fail to meet any other intermediate milcstoncg for any given phaseas shown in Appendix(D) due to his own default, then the Employer is entitled to apply a penalty with a value of 25,000 EGP/Day to be deducted from any amounts that are or to be due to the Contractor.This penalty is recoverable by the Contractor,in the eventadelaythatmayoccurinrespectofoneparticularmilestoneis recovereduponreachingasubsequentmilestone.\n\nThetotal amountof LiquidatedDamagesand thePenaltiestogethershall notexceed10%of theContractValue.\n\n## 20 TAKINGOVER\n\n- 20.1 Taking-OverCertificate\n\nDelete paragraph (a) of this Sub-Clause 20.1 entirely and substitute by the following:\n\n- (a)any Section or Portion of the Works (as per the Construction Schedule ContractualmilestonesandphasesofWorksinaccordancewith AppendixD)hasbeencompletedinaccordancewiththeContract, exceptforanyminoroutstandingworkanddefeclswhichiwillmul affecttheuseofthatSectionorPortionof theWorksforitsintended defectsareremedied);and\n- 20.2 UseBeforeTaking Over\n\nDeletethisSub-Clause20.2entirelyandsubstitutebythefollowing:\n\n<!-- image -->\n\nIt may be necessary for the Employer to use a part or parts of any Section orPortionoftheWorksbeforeissuanceoftheapplicableTaking-Over Certificate as a temporary measure but not for its intended purpose (where a jointworkdonestatusreportshall bedulysignedbyContractor, Contract Administrator,and Supervision Consultant prior such use by Employer).In suchinstance the Contractor shall, for all purposes, continue tohave thefull responsibility for theWorks and alloutstanding worktobedoneinrespectoftheWorkspriortotheissueoftherelevant Taking-OverCertificate.Nevertheless,theusebytheEmployerofany part of the Works as a temporary measure shall in no way be construed astakingoverofsuchpartbytheEmployer.\n\nC74-27.70\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          750.8953857421875
+        ],
+        [
+          177.5852254231771,
+          750.8953857421875
+        ],
+        [
+          177.5852254231771,
+          732.2293904622396
+        ],
+        [
+          98.51751708984375,
+          732.2293904622396
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          727.138661702474
+        ],
+        [
+          150.94743855794272,
+          727.138661702474
+        ],
+        [
+          150.94743855794272,
+          716.5329793294271
+        ],
+        [
+          126.84658813476562,
+          716.5329793294271
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "The amount of Liquidated Damages for delay beyond the Time for CompletionoftheWorksorofanyContractual MilestoneforeachSection of the Works is equal to ten per cent (10%) of the Contract Value of the WorksorofsuchSectionasthecasemaybe.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.3233846028646,
+          697.0185343424479
+        ],
+        [
+          501.8896484375,
+          697.0185343424479
+        ],
+        [
+          501.8896484375,
+          648.6566365559896
+        ],
+        [
+          165.3233846028646,
+          648.6566365559896
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "SuchLiquidatedDamagesshallbeappliedonaweeklybasisasfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          642.7174479166666
+        ],
+        [
+          499.7755533854167,
+          642.7174479166666
+        ],
+        [
+          499.7755533854167,
+          631.6875406901041
+        ],
+        [
+          167.0146687825521,
+          631.6875406901041
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "The Liquidated Damages ( LDs) to be applied at 0.5% for the 1st week, 1%for the 2nd week，1.5%for the 3rd week,2%for the 4th week, 2.5%forthe5thweekand2.5%forthe6thweektoreachmaximum LDsof10%after6weeks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.6993408203125,
+          625.7483723958334
+        ],
+        [
+          501.4668375651042,
+          625.7483723958334
+        ],
+        [
+          501.4668375651042,
+          577.8107096354167
+        ],
+        [
+          179.6993408203125,
+          577.8107096354167
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "In addition,should the Contractor fail to meet any other intermediate milcstoncg for any given phaseas shown in Appendix(D) due to his own default, then the Employer is entitled to apply a penalty with a value of 25,000 EGP/Day to be deducted from any amounts that are or to be due to the Contractor.This penalty is recoverable by the Contractor,in the eventadelaythatmayoccurinrespectofoneparticularmilestoneis recovereduponreachingasubsequentmilestone.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.3233846028646,
+          571.8715209960938
+        ],
+        [
+          502.7353108723958,
+          571.8715209960938
+        ],
+        [
+          502.7353108723958,
+          488.72300211588544
+        ],
+        [
+          165.3233846028646,
+          488.72300211588544
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "Thetotal amountof LiquidatedDamagesand thePenaltiestogethershall notexceed10%of theContractValue.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          482.78383382161456
+        ],
+        [
+          501.8896484375,
+          482.78383382161456
+        ],
+        [
+          501.8896484375,
+          459.45131429036456
+        ],
+        [
+          165.74620564778647,
+          459.45131429036456
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "20 TAKINGOVER",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          448.42140706380206
+        ],
+        [
+          200.8404337565104,
+          448.42140706380206
+        ],
+        [
+          200.8404337565104,
+          437.39149983723956
+        ],
+        [
+          95.98058064778645,
+          437.39149983723956
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "20.1 Taking-OverCertificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          430.60386149088544
+        ],
+        [
+          273.98862711588544,
+          430.60386149088544
+        ],
+        [
+          273.98862711588544,
+          419.57395426432294
+        ],
+        [
+          126.42376708984375,
+          419.57395426432294
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "Delete paragraph (a) of this Sub-Clause 20.1 entirely and substitute by the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          414.05902099609375
+        ],
+        [
+          501.4668375651042,
+          414.05902099609375
+        ],
+        [
+          501.4668375651042,
+          389.87807210286456
+        ],
+        [
+          165.74620564778647,
+          389.87807210286456
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "(a)any Section or Portion of the Works (as per the Construction Schedule ContractualmilestonesandphasesofWorksinaccordancewith AppendixD)hasbeencompletedinaccordancewiththeContract, exceptforanyminoroutstandingworkanddefeclswhichiwillmul affecttheuseofthatSectionorPortionof theWorksforitsintended defectsareremedied);and",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.3233846028646,
+          384.78733317057294
+        ],
+        [
+          502.7353108723958,
+          384.78733317057294
+        ],
+        [
+          502.7353108723958,
+          302.06304931640625
+        ],
+        [
+          165.3233846028646,
+          302.06304931640625
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "20.2 UseBeforeTaking Over",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          296.1238810221354
+        ],
+        [
+          279.4853108723958,
+          296.1238810221354
+        ],
+        [
+          279.4853108723958,
+          283.8212687174479
+        ],
+        [
+          126.42376708984375,
+          283.8212687174479
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "DeletethisSub-Clause20.2entirelyandsubstitutebythefollowing:",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          278.30633544921875
+        ],
+        [
+          477.788818359375,
+          278.30633544921875
+        ],
+        [
+          477.788818359375,
+          267.27642822265625
+        ],
+        [
+          166.59184773763022,
+          267.27642822265625
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "It may be necessary for the Employer to use a part or parts of any Section orPortionoftheWorksbeforeissuanceoftheapplicableTaking-Over Certificate as a temporary measure but not for its intended purpose (where a jointworkdonestatusreportshall bedulysignedbyContractor, Contract Administrator,and Supervision Consultant prior such use by Employer).In suchinstance the Contractor shall, for all purposes, continue tohave thefull responsibility for theWorks and alloutstanding worktobedoneinrespectoftheWorkspriortotheissueoftherelevant Taking-OverCertificate.Nevertheless,theusebytheEmployerofany part of the Works as a temporary measure shall in no way be construed astakingoverofsuchpartbytheEmployer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.74620564778647,
+          261.3372599283854
+        ],
+        [
+          503.1581217447917,
+          261.3372599283854
+        ],
+        [
+          503.1581217447917,
+          129.82680257161462
+        ],
+        [
+          165.74620564778647,
+          129.82680257161462
+        ]
+      ],
+      "page": 136
+    },
+    {
+      "text": "C74-27.70",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.64535522460938,
+          57.28399658203125
+        ],
+        [
+          194.07527669270834,
+          57.28399658203125
+        ],
+        [
+          194.07527669270834,
+          57.28399658203125
+        ],
+        [
+          141.64535522460938,
+          57.28399658203125
+        ]
+      ],
+      "page": 136
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 136,
+      "text": "EMAAR\nMISR\nThe amount of Liquidated Damages for delay beyond the Time for CompletionoftheWorksorofanyContractual MilestoneforeachSection of the Works is equal to ten per cent (10%) of the Contract Value of the WorksorofsuchSectionasthecasemaybe.\nSuchLiquidatedDamagesshallbeappliedonaweeklybasisasfollows:\nThe Liquidated Damages ( LDs) to be applied at 0.5% for the 1st week, 1%for the 2nd week，1.5%for the 3rd week,2%for the 4th week, 2.5%forthe5thweekand2.5%forthe6thweektoreachmaximum LDsof10%after6weeks.\nIn addition,should the Contractor fail to meet any other intermediate milcstoncg for any given phaseas shown in Appendix(D) due to his own default, then the Employer is entitled to apply a penalty with a value of 25,000 EGP/Day to be deducted from any amounts that are or to be due to the Contractor.This penalty is recoverable by the Contractor,in the eventadelaythatmayoccurinrespectofoneparticularmilestoneis recovereduponreachingasubsequentmilestone.\nThetotal amountof LiquidatedDamagesand thePenaltiestogethershall notexceed10%of theContractValue.\n20 TAKINGOVER\n20.1 Taking-OverCertificate\nDelete paragraph (a) of this Sub-Clause 20.1 entirely and substitute by the following:\n(a)any Section or Portion of the Works (as per the Construction Schedule ContractualmilestonesandphasesofWorksinaccordancewith AppendixD)hasbeencompletedinaccordancewiththeContract, exceptforanyminoroutstandingworkanddefeclswhichiwillmul affecttheuseofthatSectionorPortionof theWorksforitsintended defectsareremedied);and\n20.2 UseBeforeTaking Over\nDeletethisSub-Clause20.2entirelyandsubstitutebythefollowing:\nIt may be necessary for the Employer to use a part or parts of any Section orPortionoftheWorksbeforeissuanceoftheapplicableTaking-Over Certificate as a temporary measure but not for its intended purpose (where a jointworkdonestatusreportshall bedulysignedbyContractor, Contract Administrator,and Supervision Consultant prior such use by Employer).In suchinstance the Contractor shall, for all purposes, continue tohave thefull responsibility for theWorks and alloutstanding worktobedoneinrespectoftheWorkspriortotheissueoftherelevant Taking-OverCertificate.Nevertheless,theusebytheEmployerofany part of the Works as a temporary measure shall in no way be construed astakingoverofsuchpartbytheEmployer.\nC74-27.70",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

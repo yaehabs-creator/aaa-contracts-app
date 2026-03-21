@@ -1,0 +1,37 @@
+{
+  "text": "## Annex(1)toFormofAgreement ScheduleofFreeIssue Items\n\n| #   | Free Issue Items                                | Items to be Supplied by the Employer                                                                                                                                                                                                                       | Coriractor'sInstallation Rate lncludes                                                                                                                                                                                                                                                                |\n|-----|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| 8   | ITrelatedItemswhicharePatch panels,Racks.       | ITItem                                                                                                                                                                                                                                                     | TheContrac:or'sinstallationrateincludes,without limitation,thesupply and installationoTemination,cableglands,accessories,fittings,sealant,builder work,connection,andanyothermaterialsorworksrequiredfortheproper installation.                                                                       |\n| 9   | MVCablesOnly                                    | Cables(MV CablesOnly)                                                                                                                                                                                                                                      | TheContrac.or'sinstallationrateincludes,without limitation,thesupplyand installation oEarth work(excavation &backfill), termination kit, warning tape, joints,concrete tiles and all accessories,fittings,sealant,builderwork, installation.                                                          |\n|     | 10LVCablesOnly                                  | Only:(3x240+120)&（3×185+95)AL/XLPE/STA/PVC& (4x16)mm2AL/XLPE/STA/PVC+10CU/PVC[E]                                                                                                                                                                          | TheContractor'sinstallationrate includes,without limitation,thesupplyand installationoEarthwork(excavation&backfill),terminationkit,warningtape, joints,concretetilesand allaccessories,fittings,sealant,builderwork, connection，and anyothermaterialsorworksrequiredfortheproper installation       |\n| 11  | ForLandscapeWorksOnly: Powercables600/1000volt. | CU/PVC/RUBBER(3x2.5)mm2and(3x4)mm2                                                                                                                                                                                                                         | TheContractor'sinstallationrateincludes,without limitation,thesupplyand installationoEarthwork(excavation&backfill),terminationkit,warningtape, joints,concrete tiles and allaccessories,fittings,sealant,builderwork, connection，and any other materials orworksrequired fortheproper installation. |\n|     | 12Generators                                    | Generatorset,ATS,controlpanels,batteries,dailyfuel tank, exhaust andsilencer.                                                                                                                                                                              | TheContractor'sinstallationrateincludes,without limitation,thesupplyand installationoallaccessories,fittings,sealant,civil&builderwork,electric connection,andanyothermaterialsorworksrequiredfortheproperinstallation.                                                                               |\n|     | 13MediumVoltageSwitchGear                       | All incoming and outgcing 22KV Cells, circuit breakers, buscoupler/busriser,meteringdevices,indicatinglamps, RMU,auxiliarytransformerwithmaindistributionboard, batteries,batterycharger,heaterwithPP-Dpanelboard，DC panelboardasperEDCcompanyrequirement | TheContraclor'sinstallationrateincludes,withoutlimitation,thesupplyand installationofcabletermination,accessories,fittings,sealant,civil&builder work,electricconnection,andanyothermaterialsorworksrequiredforthe properinstallation.AccordingtoEDCrequirements                                      |\n|     | 14RMU                                           | RingMainUnitwithallprotections,loadbreakswitch,switch fuse,indicatinglamps                                                                                                                                                                                 | TheContractor'sinstallationrateincludes,without limitation,thesupplyand installationofTermination,cableglands,accessories,fittings,sealant,civil& builderwork,electricconnection,and anyothermaterialsorworksrequiredfcr theproperinstallation.                                                       |\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Annex(1)toFormofAgreement ScheduleofFreeIssue Items",
+      "confidence": 0.95,
+      "box": [
+        [
+          345.7451171875,
+          495.4140319824219
+        ],
+        [
+          491.6792805989583,
+          495.4140319824219
+        ],
+        [
+          491.6792805989583,
+          471.3131815592448
+        ],
+        [
+          345.7451171875,
+          471.3131815592448
+        ]
+      ],
+      "page": 11
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 11,
+      "text": "Annex(1)toFormofAgreement ScheduleofFreeIssue Items",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

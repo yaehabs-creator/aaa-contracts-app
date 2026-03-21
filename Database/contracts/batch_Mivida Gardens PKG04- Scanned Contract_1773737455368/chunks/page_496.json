@@ -1,0 +1,175 @@
+{
+  "text": "<!-- image -->\n\n## Introduction toQualityControl Forms\n\n| Control FormNo.   | TitleofControl Form                      | Description ofProcess                                                                                                                                                                                                                                                                                                                                                                                                            |\n|-------------------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n|                   | Non-ConformanceReport (NCR) continued... | 5AfterdispositionofNCR,ContractorshouldrequestConsultant toverify the same.After Consultant's signature,copy should be distributed to all relevantparties.                                                                                                                                                                                                                                                                       |\n| 4.12              | StatusSummary onNon- Conformance Notices | 1TheContractorshallsubmittheStatusSummaryOnNon-conformance noticestoConsultantandCMforinformation,recordoraction.This should be regularly updated and submltted by the Contractor wlthln weeklyreports.                                                                                                                                                                                                                          |\n| 4.13              | Maintenance Inspection Check List        | The Contractor shallprepare a list of activitiestobe checked for the runningequipmentsuchasHVAC,AirHandlingUnits(AHU),FanCoil Units,Generators,Pumps,Cranes,Concrete equipments etc.He shall be conducting suchinspectionsand submit thereport toConsultant and CM for information, record or necessary action required. 2Datafilled inthesampleformatisforreferenceonly.Contractorto detail theactivities asrequired/specified. |\n| 4.14              | Recordof CeilingSpace Closure            | 1TheContractorshall submit therequest to Consultant,enclosing all clearanceformsobtainedfromother tradessuchasMEP,Civil, Architectural andotherdisciplinesandcopytoCMandotherparties. 2Consultantshall inspect,commentand advisetheContractortoproceed withtheworksoradvise actionrequiredfrom theContractortoproceed with theworks.Commented copy shallbepassed toCM,Contractorand relevantparties.                             |\n| 4.15              | InternalProcedures                       | ThisformshallbeusedbyCM,Consultantand Employertoinitiateanew /add / modify a procedurerequired during the progress of work tohave effectivecontrol onongoingactivities.Theinitiatorwould identifythe existingprocedure andchangesrequiredand copy shallbegivento all relevantpartiesinvolved.TheContractorshallbeadvisedifneeded.                                                                                                |\n| 4.16              | ConcreteCubeTestReport                   | 1TheContractorshallcoordinatewiththelaboratorytechniciantoperform the concretecube test and fill thedata(results)required andsubmit to Consultantand copy to CM.Such concrete cube testwillbewitnessed by Consultant toverify the datafilled iniscorrect. 2Thereportswill bereviewedby Consultant and action confirmed.                                                                                                          |\n| 4.17              | MortarCubeTestReport                     | 1TheContractorshallcoordinatewiththelaboratorytechniciantoperform theMortar Cube Test and fill the data(results)required and submit it to Consultant andcopytoCM.SuchMortarCubeTestwillbewitnessed by Consultant toverify thedatafilled iniscorrect. 2Thereportswill bereviewedby Consultant and action confirmed                                                                                                                |\n| 4.18              | BlockWorksChecklist                      | 1The Contractorin coordinationwith Consultant to carry out thechecks requiredonBlockWorksandfill theformforeachplannedphaseof work priortoproceednextphaseofwork. 2Consultant shallgo through the checklists and comments if any. 3Copyof thesignedformshallbeforwarded toCMandConsultantand otherrelevantparties.                                                                                                               |\n| 4.19              | CertificateofHydrostatic/ PneumaticTest  | TheContractorincoordinationwithConsultant tocarryout thetests required andfill the form. 2 Consultantshallwitnessandconfirmthattesthasbeencarriedoutin accordingtothestandardspecified;commentsif anyshall bewrittenand passed totherelevantpartiesforfurtheraction. 3 Copyof thesignedformshallbeforwarded toCMand Consultant and otherrelevantparties.                                                                         |\n\nSmnnrSuerFon\n\nDuruiopnonsA\n\nTa01d.21-287209\n\n0OD229.M\n\nCoim,Esyot\n\n10\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Introduction toQualityControl Forms",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.8409627278646,
+          718.2980448404948
+        ],
+        [
+          395.9541829427083,
+          718.2980448404948
+        ],
+        [
+          395.9541829427083,
+          706.6878356933594
+        ],
+        [
+          232.8409627278646,
+          706.6878356933594
+        ]
+      ],
+      "page": 496
+    },
+    {
+      "text": "SmnnrSuerFon",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.1224568684896,
+          97.56618245442712
+        ],
+        [
+          296.3430582682292,
+          97.56618245442712
+        ],
+        [
+          296.3430582682292,
+          89.27321370442712
+        ],
+        [
+          246.1224568684896,
+          89.27321370442712
+        ]
+      ],
+      "page": 496
+    },
+    {
+      "text": "DuruiopnonsA",
+      "confidence": 0.95,
+      "box": [
+        [
+          245.2923583984375,
+          89.68784586588538
+        ],
+        [
+          306.71921793619794,
+          89.68784586588538
+        ],
+        [
+          306.71921793619794,
+          79.32163492838538
+        ],
+        [
+          245.2923583984375,
+          79.32163492838538
+        ]
+      ],
+      "page": 496
+    },
+    {
+      "text": "Ta01d.21-287209",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.5374959309896,
+          79.32163492838538
+        ],
+        [
+          303.8138834635417,
+          79.32163492838538
+        ],
+        [
+          303.8138834635417,
+          72.27256266276038
+        ],
+        [
+          246.5374959309896,
+          72.27256266276038
+        ]
+      ],
+      "page": 496
+    },
+    {
+      "text": "0OD229.M",
+      "confidence": 0.95,
+      "box": [
+        [
+          246.5374959309896,
+          67.29673258463538
+        ],
+        [
+          296.3430582682292,
+          67.29673258463538
+        ],
+        [
+          296.3430582682292,
+          59.00368245442712
+        ],
+        [
+          246.5374959309896,
+          59.00368245442712
+        ]
+      ],
+      "page": 496
+    },
+    {
+      "text": "Coim,Esyot",
+      "confidence": 0.95,
+      "box": [
+        [
+          245.2923583984375,
+          61.49163818359375
+        ],
+        [
+          278.49607340494794,
+          61.49163818359375
+        ],
+        [
+          278.49607340494794,
+          51.95469156901038
+        ],
+        [
+          245.2923583984375,
+          51.95469156901038
+        ]
+      ],
+      "page": 496
+    },
+    {
+      "text": "10",
+      "confidence": 0.95,
+      "box": [
+        [
+          244.8773193359375,
+          51.12534586588538
+        ],
+        [
+          257.3286946614583,
+          51.12534586588538
+        ],
+        [
+          257.3286946614583,
+          40.75913492838538
+        ],
+        [
+          244.8773193359375,
+          40.75913492838538
+        ]
+      ],
+      "page": 496
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 496,
+      "text": "Introduction toQualityControl Forms\nSmnnrSuerFon\nDuruiopnonsA\nTa01d.21-287209\n0OD229.M\nCoim,Esyot\n10",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

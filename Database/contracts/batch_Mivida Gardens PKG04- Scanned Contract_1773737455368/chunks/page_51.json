@@ -1,0 +1,290 @@
+{
+  "text": "forty eight (48) hours after written notice from the Project Manager Employer mayitself and/ormay employ anyother contractororcontractors to takesuchaction(at thcContractor'srisk) inrcgard tosuchobligationsa3 theProject Manager considers necessary.The Costs incurred by the Managerand theEmployermaydeducttheCostsincurredfromanymonies dueorwhichmaybecomeduetotheContractororrecoverthesameasa debtduefromtheContractor.\n\n## RemovalofPlantandContractor'sEquipment\n\n- 9.15 5AllPlant and all Contractor'sEquipmentshall whenbroughtonto theSitebe deemedtobeintendedexclusivelyforthecarryingoutof theWorksand the remedyingofdefectstherein.NoPlantshallberemovedfrom theSite without thepriorwrittenconsentof theProject Managerbutthisshall notbe refused ifintheSupervisionConsultant'sopinion:-\n- (a) therelevantPlant is not inaccordancewith theContractand itis necessarytoremovethesameforthepurposeofmodificationor replacement;or\n- (b) therelevantPlantissurplustotherequirementsoftheWorks.\n\nTheContractorshall notremove anyContractor'sEquipmentfromtheSite without thepriorwrittenconsentof theProject Managerbutthisshall notbe refused if intheProjectManager'sopinion therelevant item isnolonger requiredfor thecarryingoutof theWorksandtheremedyingofdefects therein.\n\n## ClearanceonTakingOver\n\n- 9.16 Prior toand as aconditionprecedenttotheissueby theSupervision Consultantof theTaking-OverCertificateforanySectionorPortionof the Works inaccordance withClause 20.1(Taking-Over Certificate)the Contractor shall to the satistaction ot theProject Manager:-\n- (a) clearawayandremovefromthatpartoftheSiteandtheWorksto whichsuchTaking-OverCertificaterelates allrubbishand wreckage and all Contractor'sEquipment,surplusPlant andsurplusFree Issue Itemsotherthansuchasmaybenecessaryfortheproper performanceof theContractor'sobligationstoremedy defectsinand otherwiseinrelationtotheapplicableSectionorPortionof the Works; and\n- (b) leavesuchpartoftheSiteand theWorks in acleanandsafe condition.\n\n## ClearanceonFinalCertificate\n\n9.17 Priortoand as a conditionprecedent to theissuebytheProjectManager theFinalCertificateforanySectionorPortionof theWorksinaccordanc withClause26.4(IssueofFinal Certificates),theContractorshall to the\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "forty eight (48) hours after written notice from the Project Manager Employer mayitself and/ormay employ anyother contractororcontractors to takesuchaction(at thcContractor'srisk) inrcgard tosuchobligationsa3 theProject Manager considers necessary.The Costs incurred by the Managerand theEmployermaydeducttheCostsincurredfromanymonies dueorwhichmaybecomeduetotheContractororrecoverthesameasa debtduefromtheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          722.8963928222656
+        ],
+        [
+          488.7821858723958,
+          722.8963928222656
+        ],
+        [
+          488.7821858723958,
+          619.3849690755209
+        ],
+        [
+          156.866943359375,
+          619.3849690755209
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "RemovalofPlantandContractor'sEquipment",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          609.2035115559896
+        ],
+        [
+          301.0492350260417,
+          609.2035115559896
+        ],
+        [
+          301.0492350260417,
+          596.4767049153646
+        ],
+        [
+          95.1349385579427,
+          596.4767049153646
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "9.15 5AllPlant and all Contractor'sEquipmentshall whenbroughtonto theSitebe deemedtobeintendedexclusivelyforthecarryingoutof theWorksand the remedyingofdefectstherein.NoPlantshallberemovedfrom theSite without thepriorwrittenconsentof theProject Managerbutthisshall notbe refused ifintheSupervisionConsultant'sopinion:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          585.8710123697916
+        ],
+        [
+          487.5137125651042,
+          585.8710123697916
+        ],
+        [
+          487.5137125651042,
+          528.1761271158855
+        ],
+        [
+          126.42376708984375,
+          528.1761271158855
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "(a) therelevantPlant is not inaccordancewith theContractand itis necessarytoremovethesameforthepurposeofmodificationor replacement;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.28976440429688,
+          517.9946695963542
+        ],
+        [
+          487.5137125651042,
+          517.9946695963542
+        ],
+        [
+          487.5137125651042,
+          482.35959879557294
+        ],
+        [
+          157.28976440429688,
+          482.35959879557294
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "(b) therelevantPlantissurplustotherequirementsoftheWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          472.17812093098956
+        ],
+        [
+          465.9497884114583,
+          472.17812093098956
+        ],
+        [
+          465.9497884114583,
+          459.87554931640625
+        ],
+        [
+          156.44412231445312,
+          459.87554931640625
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "TheContractorshall notremove anyContractor'sEquipmentfromtheSite without thepriorwrittenconsentof theProject Managerbutthisshall notbe refused if intheProjectManager'sopinion therelevant item isnolonger requiredfor thecarryingoutof theWorksandtheremedyingofdefects therein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.02130126953125,
+          449.69411214192706
+        ],
+        [
+          487.5137125651042,
+          449.69411214192706
+        ],
+        [
+          487.5137125651042,
+          391.99920654296875
+        ],
+        [
+          156.02130126953125,
+          391.99920654296875
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "ClearanceonTakingOver",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          381.81776936848956
+        ],
+        [
+          213.94791666666666,
+          381.81776936848956
+        ],
+        [
+          213.94791666666666,
+          369.51515706380206
+        ],
+        [
+          94.28929646809895,
+          369.51515706380206
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "9.16 Prior toand as aconditionprecedenttotheissueby theSupervision Consultantof theTaking-OverCertificateforanySectionorPortionof the Works inaccordance withClause 20.1(Taking-Over Certificate)the Contractor shall to the satistaction ot theProject Manager:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          358.90948486328125
+        ],
+        [
+          486.6680908203125,
+          358.90948486328125
+        ],
+        [
+          486.6680908203125,
+          311.8202921549479
+        ],
+        [
+          124.73248291015625,
+          311.8202921549479
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "(a) clearawayandremovefromthatpartoftheSiteandtheWorksto whichsuchTaking-OverCertificaterelates allrubbishand wreckage and all Contractor'sEquipment,surplusPlant andsurplusFree Issue Itemsotherthansuchasmaybenecessaryfortheproper performanceof theContractor'sobligationstoremedy defectsinand otherwiseinrelationtotheapplicableSectionorPortionof the Works; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.59848022460938,
+          302.06304931640625
+        ],
+        [
+          486.6680908203125,
+          302.06304931640625
+        ],
+        [
+          486.6680908203125,
+          221.88409423828125
+        ],
+        [
+          155.59848022460938,
+          221.88409423828125
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "(b) leavesuchpartoftheSiteand theWorks in acleanandsafe condition.",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.59848022460938,
+          211.27842203776038
+        ],
+        [
+          486.6680908203125,
+          211.27842203776038
+        ],
+        [
+          486.6680908203125,
+          187.94594319661462
+        ],
+        [
+          155.59848022460938,
+          187.94594319661462
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "ClearanceonFinalCertificate",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          176.49180094401038
+        ],
+        [
+          227.47821044921875,
+          176.49180094401038
+        ],
+        [
+          227.47821044921875,
+          166.73459879557288
+        ],
+        [
+          94.28929646809895,
+          166.73459879557288
+        ]
+      ],
+      "page": 51
+    },
+    {
+      "text": "9.17 Priortoand as a conditionprecedent to theissuebytheProjectManager theFinalCertificateforanySectionorPortionof theWorksinaccordanc withClause26.4(IssueofFinal Certificates),theContractorshall to the",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.30965169270833,
+          154.43202718098962
+        ],
+        [
+          484.553955078125,
+          154.43202718098962
+        ],
+        [
+          484.553955078125,
+          120.06955973307288
+        ],
+        [
+          124.30965169270833,
+          120.06955973307288
+        ]
+      ],
+      "page": 51
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 51,
+      "text": "forty eight (48) hours after written notice from the Project Manager Employer mayitself and/ormay employ anyother contractororcontractors to takesuchaction(at thcContractor'srisk) inrcgard tosuchobligationsa3 theProject Manager considers necessary.The Costs incurred by the Managerand theEmployermaydeducttheCostsincurredfromanymonies dueorwhichmaybecomeduetotheContractororrecoverthesameasa debtduefromtheContractor.\nRemovalofPlantandContractor'sEquipment\n9.15 5AllPlant and all Contractor'sEquipmentshall whenbroughtonto theSitebe deemedtobeintendedexclusivelyforthecarryingoutof theWorksand the remedyingofdefectstherein.NoPlantshallberemovedfrom theSite without thepriorwrittenconsentof theProject Managerbutthisshall notbe refused ifintheSupervisionConsultant'sopinion:-\n(a) therelevantPlant is not inaccordancewith theContractand itis necessarytoremovethesameforthepurposeofmodificationor replacement;or\n(b) therelevantPlantissurplustotherequirementsoftheWorks.\nTheContractorshall notremove anyContractor'sEquipmentfromtheSite without thepriorwrittenconsentof theProject Managerbutthisshall notbe refused if intheProjectManager'sopinion therelevant item isnolonger requiredfor thecarryingoutof theWorksandtheremedyingofdefects therein.\nClearanceonTakingOver\n9.16 Prior toand as aconditionprecedenttotheissueby theSupervision Consultantof theTaking-OverCertificateforanySectionorPortionof the Works inaccordance withClause 20.1(Taking-Over Certificate)the Contractor shall to the satistaction ot theProject Manager:-\n(a) clearawayandremovefromthatpartoftheSiteandtheWorksto whichsuchTaking-OverCertificaterelates allrubbishand wreckage and all Contractor'sEquipment,surplusPlant andsurplusFree Issue Itemsotherthansuchasmaybenecessaryfortheproper performanceof theContractor'sobligationstoremedy defectsinand otherwiseinrelationtotheapplicableSectionorPortionof the Works; and\n(b) leavesuchpartoftheSiteand theWorks in acleanandsafe condition.\nClearanceonFinalCertificate\n9.17 Priortoand as a conditionprecedent to theissuebytheProjectManager theFinalCertificateforanySectionorPortionof theWorksinaccordanc withClause26.4(IssueofFinal Certificates),theContractorshall to the",
+      "line_count": 12
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,221 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nContract. This Bond shall not be valid with respect to any written notice received by us after [90 days] (or if it be earlier the date of delivery to you of the Performance Bond tobedelivered toyouunder theContract) and shall thereafter benull andvoid. When thevalidityof thisBondhasexpired,it mustbereturned tousforcancellation, butweshallbereleasedfromanysuchobligationhereunderevenif,inbreachof this provision,suchreturnhasnottakenplace.\n\nAny payment by us hereunder shall be in immediately available and freely transferableEGYPTIANPOUNDSfreeandclearofandwithoutanydeductionforor on account of any present or future taxes, levies, imposts, duties, charges, fees, deductionsorwithholdingsofanynaturewhatsoeverandbywhomsoeverimposed.\n\nOur obligations hereunder are of a continuing nature, constitute direct, primary, irrevocableandunconditionalobligationswhichshallnotrequireanypreviousnotice to or claim against the Tenderer or any other person, and shall not be discharged or otherwiseprejudicedoradverselyaffectedbyanytime,indulgenceorforbearance which you may grant to the Tenderer, or by any unenforceability or invalidity of, or anyamendment,modificationorextensionwhichmaybemadetotheFormof Tender or the Contract or the work to be performed thereunder, or by any intermediatepaymentorothersatisfactionmadebyus,orbyanychangeinthe theabsenceof thisprovisionwouldormighthavethateffectexceptadischargeor amendmenthereofexpresslymadeoragreedtobyyouinwriting.\n\nThis Bond shall be governed by and construed in accordance with the laws and regulationsof,and from timeto time applicableinEGYPT.\n\nWe hereby submit to the jurisdiction of the courts of EGYPT in connection with this Bond, which jurisdiction shall be exclusive save in respect of the enforcement of any judgmentororderofsuchcourts.\n\n## Yours faithfully\n\nDuly authorizedrepresentative For and behalf of [Bank]\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          751.3196105957031
+        ],
+        [
+          164.47774251302084,
+          751.3196105957031
+        ],
+        [
+          164.47774251302084,
+          733.9262898763021
+        ],
+        [
+          96.82623291015625,
+          733.9262898763021
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.92708333333333,
+          730.532480875651
+        ],
+        [
+          141.2225341796875,
+          730.532480875651
+        ],
+        [
+          141.2225341796875,
+          721.1994832356771
+        ],
+        [
+          120.92708333333333,
+          721.1994832356771
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "Contract. This Bond shall not be valid with respect to any written notice received by us after [90 days] (or if it be earlier the date of delivery to you of the Performance Bond tobedelivered toyouunder theContract) and shall thereafter benull andvoid. When thevalidityof thisBondhasexpired,it mustbereturned tousforcancellation, butweshallbereleasedfromanysuchobligationhereunderevenif,inbreachof this provision,suchreturnhasnottakenplace.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          701.6850280761719
+        ],
+        [
+          487.9365234375,
+          701.6850280761719
+        ],
+        [
+          487.9365234375,
+          628.2937418619791
+        ],
+        [
+          94.28929646809895,
+          628.2937418619791
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "Any payment by us hereunder shall be in immediately available and freely transferableEGYPTIANPOUNDSfreeandclearofandwithoutanydeductionforor on account of any present or future taxes, levies, imposts, duties, charges, fees, deductionsorwithholdingsofanynaturewhatsoeverandbywhomsoeverimposed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          617.2638346354166
+        ],
+        [
+          487.5137125651042,
+          617.2638346354166
+        ],
+        [
+          487.5137125651042,
+          568.053466796875
+        ],
+        [
+          93.86647542317708,
+          568.053466796875
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "Our obligations hereunder are of a continuing nature, constitute direct, primary, irrevocableandunconditionalobligationswhichshallnotrequireanypreviousnotice to or claim against the Tenderer or any other person, and shall not be discharged or otherwiseprejudicedoradverselyaffectedbyanytime,indulgenceorforbearance which you may grant to the Tenderer, or by any unenforceability or invalidity of, or anyamendment,modificationorextensionwhichmaybemadetotheFormof Tender or the Contract or the work to be performed thereunder, or by any intermediatepaymentorothersatisfactionmadebyus,orbyanychangeinthe theabsenceof thisprovisionwouldormighthavethateffectexceptadischargeor amendmenthereofexpresslymadeoragreedtobyyouinwriting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          557.0235595703125
+        ],
+        [
+          487.9365234375,
+          557.0235595703125
+        ],
+        [
+          487.9365234375,
+          423.81622314453125
+        ],
+        [
+          93.02083333333333,
+          423.81622314453125
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "This Bond shall be governed by and construed in accordance with the laws and regulationsof,and from timeto time applicableinEGYPT.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.4436543782552,
+          413.63478597005206
+        ],
+        [
+          487.0909016927083,
+          413.63478597005206
+        ],
+        [
+          487.0909016927083,
+          388.60540771484375
+        ],
+        [
+          93.4436543782552,
+          388.60540771484375
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "We hereby submit to the jurisdiction of the courts of EGYPT in connection with this Bond, which jurisdiction shall be exclusive save in respect of the enforcement of any judgmentororderofsuchcourts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.02083333333333,
+          377.57550048828125
+        ],
+        [
+          486.6680908203125,
+          377.57550048828125
+        ],
+        [
+          486.6680908203125,
+          340.66770426432294
+        ],
+        [
+          93.02083333333333,
+          340.66770426432294
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "Yours faithfully",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          317.75946044921875
+        ],
+        [
+          162.3636271158854,
+          317.75946044921875
+        ],
+        [
+          162.3636271158854,
+          304.1841837565104
+        ],
+        [
+          92.59801228841145,
+          304.1841837565104
+        ]
+      ],
+      "page": 598
+    },
+    {
+      "text": "Duly authorizedrepresentative For and behalf of [Bank]",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          281.70013427734375
+        ],
+        [
+          235.0890096028646,
+          281.70013427734375
+        ],
+        [
+          235.0890096028646,
+          255.39805094401038
+        ],
+        [
+          92.59801228841145,
+          255.39805094401038
+        ]
+      ],
+      "page": 598
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 598,
+      "text": "EMAAR\nMISR\nContract. This Bond shall not be valid with respect to any written notice received by us after [90 days] (or if it be earlier the date of delivery to you of the Performance Bond tobedelivered toyouunder theContract) and shall thereafter benull andvoid. When thevalidityof thisBondhasexpired,it mustbereturned tousforcancellation, butweshallbereleasedfromanysuchobligationhereunderevenif,inbreachof this provision,suchreturnhasnottakenplace.\nAny payment by us hereunder shall be in immediately available and freely transferableEGYPTIANPOUNDSfreeandclearofandwithoutanydeductionforor on account of any present or future taxes, levies, imposts, duties, charges, fees, deductionsorwithholdingsofanynaturewhatsoeverandbywhomsoeverimposed.\nOur obligations hereunder are of a continuing nature, constitute direct, primary, irrevocableandunconditionalobligationswhichshallnotrequireanypreviousnotice to or claim against the Tenderer or any other person, and shall not be discharged or otherwiseprejudicedoradverselyaffectedbyanytime,indulgenceorforbearance which you may grant to the Tenderer, or by any unenforceability or invalidity of, or anyamendment,modificationorextensionwhichmaybemadetotheFormof Tender or the Contract or the work to be performed thereunder, or by any intermediatepaymentorothersatisfactionmadebyus,orbyanychangeinthe theabsenceof thisprovisionwouldormighthavethateffectexceptadischargeor amendmenthereofexpresslymadeoragreedtobyyouinwriting.\nThis Bond shall be governed by and construed in accordance with the laws and regulationsof,and from timeto time applicableinEGYPT.\nWe hereby submit to the jurisdiction of the courts of EGYPT in connection with this Bond, which jurisdiction shall be exclusive save in respect of the enforcement of any judgmentororderofsuchcourts.\nYours faithfully\nDuly authorizedrepresentative For and behalf of [Bank]",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

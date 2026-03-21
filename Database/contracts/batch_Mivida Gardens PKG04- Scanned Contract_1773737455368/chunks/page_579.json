@@ -1,0 +1,428 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## INSTRUCTIONSTOTENDERERS\n\nThe following instructions shall be carefullynoted by intendingTenderers,asfailure to Documents.\n\n## DEFINITIONS\n\n- 1.1In the Tender Documents and any addenda thereto issued in accordance with paragraph 5 below words and expressions shall have the same meanings as are respectivelyassigned to themintheConditionsofContract.\n- 1.2 \"Tenderer\" means each party to which an Invitation to Tender is issued for the purpose of submitting a Tender regardless of whether or not any particular such party completes and submits a Tender.\n- 1.3 \"Invitation toTender\"means the letterdescribed assuch from theEmployer to theTendererinviting ittosubmitaTender.\n- 1.4 \"Tender\" means the Tenderer's priced offer to the Employer for the carrying out andcompletionof the Works and the remedying of defectsthereinin accordancewithTenderDocuments.\n- 1.5 \"TenderSum\"means the amount inserted intheFormofTender.\n- 1.6 \"Tender Documents\" means the documents accompanying the Invitation to Tender as listed in paragraph 3.1 below.\n- 1.7 \"TenderPeriod\"meanstheperiodfrom thedateofissuebytheEmployertothe Terdererof thelnvitationtoTenderand theTenderDocumentsto thelatcst datesetforthedeliveryof theTendersasstated inparagraph7.1below.\n- 1.8 TheheadingsusedintheseInstructionstoTenderersshallnotbedeemedtobe a part hereof or be taken into consideration in the interpretation or construction hereof.\n- 1.9 All dates and periods of time referred to in the Tender Documents, in any addendum thereto issued in accordancewithparagraph 5below and in the documents referredto  in paragraph8.1below shallbe ascertainedin accordancewiththeGregoriancalendar.\n- 1.10Employer'saddress:EMAARMISRFORDEVELOPMENT,H/QatEmaarMisr Sales Center -\"Uptown Cairo\", P.O.Box 229, MOKATTAM 11571, CAIRO, EGYPT.\n- 1.11\"Contract Documents\"means the documents issued by the Employer/Contract AdministratortoContractoraslisted intheFormofContractAgreement.\n- 1.12\"Section/Part of Works\" means the scope of work identified by a separate individualcontractualmillstoneforhandingover.\n\n## 2SCOPEOFWORKSANDLOCATION\n\n- 2.1Tenders are invited for the carrying out of the Works comprising the carrying out, completion and guarantee of Construction Package (PK#04): \"Construction of Townhomes Villas in Parcel 11 &amp; Parcel 12\",forming part of the project known asMivida GardensProject-East Cairo,Cairo-ARAB REPUBLIC\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          729.2597961425781
+        ],
+        [
+          142.913818359375,
+          729.2597961425781
+        ],
+        [
+          142.913818359375,
+          718.6541137695312
+        ],
+        [
+          121.77272542317708,
+          718.6541137695312
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "INSTRUCTIONSTOTENDERERS",
+      "confidence": 0.95,
+      "box": [
+        [
+          223.25,
+          694.8973999023438
+        ],
+        [
+          378.8484700520833,
+          694.8973999023438
+        ],
+        [
+          378.8484700520833,
+          685.5644022623698
+        ],
+        [
+          223.25,
+          685.5644022623698
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "The following instructions shall be carefullynoted by intendingTenderers,asfailure to Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          670.7164510091146
+        ],
+        [
+          505.695068359375,
+          670.7164510091146
+        ],
+        [
+          505.695068359375,
+          623.6272379557291
+        ],
+        [
+          96.82623291015625,
+          623.6272379557291
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "DEFINITIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.625,
+          616.839599609375
+        ],
+        [
+          178.43086751302084,
+          616.839599609375
+        ],
+        [
+          178.43086751302084,
+          606.6581420898438
+        ],
+        [
+          111.625,
+          606.6581420898438
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.1In the Tender Documents and any addenda thereto issued in accordance with paragraph 5 below words and expressions shall have the same meanings as are respectivelyassigned to themintheConditionsofContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.625,
+          601.1431884765625
+        ],
+        [
+          506.5406901041667,
+          601.1431884765625
+        ],
+        [
+          506.5406901041667,
+          566.7808024088542
+        ],
+        [
+          111.625,
+          566.7808024088542
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.2 \"Tenderer\" means each party to which an Invitation to Tender is issued for the purpose of submitting a Tender regardless of whether or not any particular such party completes and submits a Tender.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          559.5689290364583
+        ],
+        [
+          507.3863525390625,
+          559.5689290364583
+        ],
+        [
+          507.3863525390625,
+          524.3580729166667
+        ],
+        [
+          113.3162841796875,
+          524.3580729166667
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.3 \"Invitation toTender\"means the letterdescribed assuch from theEmployer to theTendererinviting ittosubmitaTender.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          517.9946695963542
+        ],
+        [
+          506.5406901041667,
+          517.9946695963542
+        ],
+        [
+          506.5406901041667,
+          495.51064046223956
+        ],
+        [
+          113.3162841796875,
+          495.51064046223956
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.4 \"Tender\" means the Tenderer's priced offer to the Employer for the carrying out andcompletionof the Works and the remedying of defectsthereinin accordancewithTenderDocuments.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          489.14723714192706
+        ],
+        [
+          508.2319742838542,
+          489.14723714192706
+        ],
+        [
+          508.2319742838542,
+          454.36061604817706
+        ],
+        [
+          113.3162841796875,
+          454.36061604817706
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.5 \"TenderSum\"means the amount inserted intheFormofTender.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          447.57297770182294
+        ],
+        [
+          436.7750651041667,
+          447.57297770182294
+        ],
+        [
+          436.7750651041667,
+          436.96726481119794
+        ],
+        [
+          113.3162841796875,
+          436.96726481119794
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.6 \"Tender Documents\" means the documents accompanying the Invitation to Tender as listed in paragraph 3.1 below.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          431.02809651692706
+        ],
+        [
+          507.8091634114583,
+          431.02809651692706
+        ],
+        [
+          507.8091634114583,
+          407.27138264973956
+        ],
+        [
+          113.3162841796875,
+          407.27138264973956
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.7 \"TenderPeriod\"meanstheperiodfrom thedateofissuebytheEmployertothe Terdererof thelnvitationtoTenderand theTenderDocumentsto thelatcst datesetforthedeliveryof theTendersasstated inparagraph7.1below.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.16192626953125,
+          400.90797932942706
+        ],
+        [
+          508.6548258463542,
+          400.90797932942706
+        ],
+        [
+          508.6548258463542,
+          367.39402262369794
+        ],
+        [
+          114.16192626953125,
+          367.39402262369794
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.8 TheheadingsusedintheseInstructionstoTenderersshallnotbedeemedtobe a part hereof or be taken into consideration in the interpretation or construction hereof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.58474731445312,
+          359.75795491536456
+        ],
+        [
+          507.8091634114583,
+          359.75795491536456
+        ],
+        [
+          507.8091634114583,
+          324.5470987955729
+        ],
+        [
+          114.58474731445312,
+          324.5470987955729
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.9 All dates and periods of time referred to in the Tender Documents, in any addendum thereto issued in accordancewithparagraph 5below and in the documents referredto  in paragraph8.1below shallbe ascertainedin accordancewiththeGregoriancalendar.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.3162841796875,
+          319.45635986328125
+        ],
+        [
+          509.5004475911458,
+          319.45635986328125
+        ],
+        [
+          509.5004475911458,
+          271.5186971028646
+        ],
+        [
+          113.3162841796875,
+          271.5186971028646
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.10Employer'saddress:EMAARMISRFORDEVELOPMENT,H/QatEmaarMisr Sales Center -\"Uptown Cairo\", P.O.Box 229, MOKATTAM 11571, CAIRO, EGYPT.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.58474731445312,
+          265.57952880859375
+        ],
+        [
+          509.07763671875,
+          265.57952880859375
+        ],
+        [
+          509.07763671875,
+          230.36867268880212
+        ],
+        [
+          114.58474731445312,
+          230.36867268880212
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.11\"Contract Documents\"means the documents issued by the Employer/Contract AdministratortoContractoraslisted intheFormofContractAgreement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.58474731445312,
+          224.85369873046875
+        ],
+        [
+          509.5004475911458,
+          224.85369873046875
+        ],
+        [
+          509.5004475911458,
+          202.79388427734375
+        ],
+        [
+          114.58474731445312,
+          202.79388427734375
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "1.12\"Section/Part of Works\" means the scope of work identified by a separate individualcontractualmillstoneforhandingover.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.16192626953125,
+          195.58201090494788
+        ],
+        [
+          509.07763671875,
+          195.58201090494788
+        ],
+        [
+          509.07763671875,
+          173.09800211588538
+        ],
+        [
+          114.16192626953125,
+          173.09800211588538
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "2SCOPEOFWORKSANDLOCATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          161.21962483723962
+        ],
+        [
+          294.7069091796875,
+          161.21962483723962
+        ],
+        [
+          294.7069091796875,
+          151.03814697265625
+        ],
+        [
+          98.51751708984375,
+          151.03814697265625
+        ]
+      ],
+      "page": 579
+    },
+    {
+      "text": "2.1Tenders are invited for the carrying out of the Works comprising the carrying out, completion and guarantee of Construction Package (PK#04): \"Construction of Townhomes Villas in Parcel 11 & Parcel 12\",forming part of the project known asMivida GardensProject-East Cairo,Cairo-ARAB REPUBLIC",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.16192626953125,
+          144.25054931640625
+        ],
+        [
+          509.9232991536458,
+          144.25054931640625
+        ],
+        [
+          509.9232991536458,
+          98.85821533203125
+        ],
+        [
+          114.16192626953125,
+          98.85821533203125
+        ]
+      ],
+      "page": 579
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 579,
+      "text": "MISR\nINSTRUCTIONSTOTENDERERS\nThe following instructions shall be carefullynoted by intendingTenderers,asfailure to Documents.\nDEFINITIONS\n1.1In the Tender Documents and any addenda thereto issued in accordance with paragraph 5 below words and expressions shall have the same meanings as are respectivelyassigned to themintheConditionsofContract.\n1.2 \"Tenderer\" means each party to which an Invitation to Tender is issued for the purpose of submitting a Tender regardless of whether or not any particular such party completes and submits a Tender.\n1.3 \"Invitation toTender\"means the letterdescribed assuch from theEmployer to theTendererinviting ittosubmitaTender.\n1.4 \"Tender\" means the Tenderer's priced offer to the Employer for the carrying out andcompletionof the Works and the remedying of defectsthereinin accordancewithTenderDocuments.\n1.5 \"TenderSum\"means the amount inserted intheFormofTender.\n1.6 \"Tender Documents\" means the documents accompanying the Invitation to Tender as listed in paragraph 3.1 below.\n1.7 \"TenderPeriod\"meanstheperiodfrom thedateofissuebytheEmployertothe Terdererof thelnvitationtoTenderand theTenderDocumentsto thelatcst datesetforthedeliveryof theTendersasstated inparagraph7.1below.\n1.8 TheheadingsusedintheseInstructionstoTenderersshallnotbedeemedtobe a part hereof or be taken into consideration in the interpretation or construction hereof.\n1.9 All dates and periods of time referred to in the Tender Documents, in any addendum thereto issued in accordancewithparagraph 5below and in the documents referredto  in paragraph8.1below shallbe ascertainedin accordancewiththeGregoriancalendar.\n1.10Employer'saddress:EMAARMISRFORDEVELOPMENT,H/QatEmaarMisr Sales Center -\"Uptown Cairo\", P.O.Box 229, MOKATTAM 11571, CAIRO, EGYPT.\n1.11\"Contract Documents\"means the documents issued by the Employer/Contract AdministratortoContractoraslisted intheFormofContractAgreement.\n1.12\"Section/Part of Works\" means the scope of work identified by a separate individualcontractualmillstoneforhandingover.\n2SCOPEOFWORKSANDLOCATION\n2.1Tenders are invited for the carrying out of the Works comprising the carrying out, completion and guarantee of Construction Package (PK#04): \"Construction of Townhomes Villas in Parcel 11 & Parcel 12\",forming part of the project known asMivida GardensProject-East Cairo,Cairo-ARAB REPUBLIC",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

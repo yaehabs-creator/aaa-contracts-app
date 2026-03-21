@@ -1,0 +1,497 @@
+{
+  "text": "<!-- image -->\n\n## 1. GENERAL\n\n- a.Where the Contractor violates any of the safety provisions described within this division, the Contract Administrator shall take the appropriate remedial action, as outlined in paragraph 16 above, and all costs associated therewith shall be at the Contractor's expense.\n- b.On the occurrence of the first violation, the Contractor shall be warned in writing by the Contract Administrator, and shall be instructed to remedy the violation within a specified time.Where the Contractor fails to remedy the violation within the time stipulated, the Contractor shall be prohibited from carrying out any further work within the affected area until the specific exposurehasbeencorrected.\n- c.On the occurrence of all further violations,the ContractAdministrator shall consider the severity of eachviolationand theContractor chall be instructed accordingly.Where theContractor unreasonably ignores the instructions, then the foreman responsible for operations in the area where the safetyviolations are occurring shall be dismissed from the site.\n\n## 2.SAFEWORKINGCONDITIONS\n\n- a. The Contractor's Safety Plan shall address scaffolding, guard rails, ladders, appropriate connections for power tools, grounding of temporary guards for blades of saws, including other similar items which are required to ensure that the Siteworking area is safe for carrying out theworks withoutrisktohumanlife.\n2. b.Where any of theContractor'semployeesviolate anyof thesafety provisions within this category, the offending employee shall be warned and prevented from continuing working until he is properly attired. Should the same employed person be caught a second time, he shall be dismissed from the Site. In each case of a warning or dismissal, the responsibleforemanshallbenotified. Should more than two (2) employees be sent off the Site during any week, then the responsible foreman shall also be issued a warning.\n- C. Utility Shutdowns: The Contractor shall coordinate with the Contract Administrator for anyutility shutdowns (temporary/permanent connections) during the construction phase. All requests for shutdowns shall be issued at least 48 hours in advance. The Contractor shall proceed with the shutdown only after obtaining approval in writing from the Contract Administrator.\n\n## 3.FACILITIES\n\n- a. The Contractor shall provide all emergency facilities such as first aid and accessible sanitation facilities for employees in compliance with municipalrequirements\n2. bythe Contractor.Should these facilities not be provided within the time specified by the Contract Administrator, then the Contract Administrator shall provide these facilities and the costs incurred by theEmployermay\n\n<!-- image -->\n\nDYaopment SAL\n\n(R1241\n\nToC718-287.20\n\nP.0 Box Z'y, HoNA\n\nCslnEsi\n\n10\n\nSafety\n\nPage Number:10 of 12\n\nSection01520\n\nMisT",
+  "results": [
+    {
+      "text": "1. GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          717.46875
+        ],
+        [
+          166.8486124674479,
+          717.46875
+        ],
+        [
+          166.8486124674479,
+          706.6878356933594
+        ],
+        [
+          94.63055419921875,
+          706.6878356933594
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "a.Where the Contractor violates any of the safety provisions described within this division, the Contract Administrator shall take the appropriate remedial action, as outlined in paragraph 16 above, and all costs associated therewith shall be at the Contractor's expense.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          699.22412109375
+        ],
+        [
+          505.111328125,
+          699.22412109375
+        ],
+        [
+          505.111328125,
+          646.9781494140625
+        ],
+        [
+          109.98726399739583,
+          646.9781494140625
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "b.On the occurrence of the first violation, the Contractor shall be warned in writing by the Contract Administrator, and shall be instructed to remedy the violation within a specified time.Where the Contractor fails to remedy the violation within the time stipulated, the Contractor shall be prohibited from carrying out any further work within the affected area until the specific exposurehasbeencorrected.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          640.7584025065104
+        ],
+        [
+          505.111328125,
+          640.7584025065104
+        ],
+        [
+          505.111328125,
+          563.6334025065105
+        ],
+        [
+          110.40231323242188,
+          563.6334025065105
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "c.On the occurrence of all further violations,the ContractAdministrator shall consider the severity of eachviolationand theContractor chall be instructed accordingly.Where theContractor unreasonably ignores the instructions, then the foreman responsible for operations in the area where the safetyviolations are occurring shall be dismissed from the site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          555.7550455729167
+        ],
+        [
+          505.5263671875,
+          555.7550455729167
+        ],
+        [
+          505.5263671875,
+          491.4842122395833
+        ],
+        [
+          109.98726399739583,
+          491.4842122395833
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "2.SAFEWORKINGCONDITIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          484.0205078125
+        ],
+        [
+          274.34560139973956,
+          484.0205078125
+        ],
+        [
+          274.34560139973956,
+          474.48354085286456
+        ],
+        [
+          94.2155049641927,
+          474.48354085286456
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "The Contractor's Safety Plan shall address scaffolding, guard rails, ladders, appropriate connections for power tools, grounding of temporary guards for blades of saws, including other similar items which are required to ensure that the Siteworking area is safe for carrying out theworks withoutrisktohumanlife.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          466.60516357421875
+        ],
+        [
+          505.111328125,
+          466.60516357421875
+        ],
+        [
+          505.111328125,
+          389.06553141276044
+        ],
+        [
+          109.98726399739583,
+          389.06553141276044
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "b.Where any of theContractor'semployeesviolate anyof thesafety provisions within this category, the offending employee shall be warned and prevented from continuing working until he is properly attired. Should the same employed person be caught a second time, he shall be dismissed from the Site. In each case of a warning or dismissal, the responsibleforemanshallbenotified. Should more than two (2) employees be sent off the Site during any week, then the responsible foreman shall also be issued a warning.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          382.01645914713544
+        ],
+        [
+          505.5263671875,
+          382.01645914713544
+        ],
+        [
+          505.5263671875,
+          277.1098836263021
+        ],
+        [
+          109.57222493489583,
+          277.1098836263021
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "Utility Shutdowns: The Contractor shall coordinate with the Contract Administrator for anyutility shutdowns (temporary/permanent connections) during the construction phase. All requests for shutdowns shall be issued at least 48 hours in advance. The Contractor shall proceed with the shutdown only after obtaining approval in writing from the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          271.71942138671875
+        ],
+        [
+          506.3564860026042,
+          271.71942138671875
+        ],
+        [
+          506.3564860026042,
+          193.76515706380212
+        ],
+        [
+          110.81736246744792,
+          193.76515706380212
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "3.FACILITIES",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          187.54538981119788
+        ],
+        [
+          172.65926106770834,
+          187.54538981119788
+        ],
+        [
+          172.65926106770834,
+          176.34983317057288
+        ],
+        [
+          93.38541666666667,
+          176.34983317057288
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "The Contractor shall provide all emergency facilities such as first aid and accessible sanitation facilities for employees in compliance with municipalrequirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          168.88612874348962
+        ],
+        [
+          505.111328125,
+          168.88612874348962
+        ],
+        [
+          505.111328125,
+          117.46942138671875
+        ],
+        [
+          109.57222493489583,
+          117.46942138671875
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "bythe Contractor.Should these facilities not be provided within the time specified by the Contract Administrator, then the Contract Administrator shall provide these facilities and the costs incurred by theEmployermay",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.92893473307292,
+          97.15155029296875
+        ],
+        [
+          506.3564860026042,
+          97.15155029296875
+        ],
+        [
+          506.3564860026042,
+          59.41839599609375
+        ],
+        [
+          124.92893473307292,
+          59.41839599609375
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "DYaopment SAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          211.6736043294271,
+          54.85719807942712
+        ],
+        [
+          277.6659749348958,
+          54.85719807942712
+        ],
+        [
+          277.6659749348958,
+          44.49098714192712
+        ],
+        [
+          211.6736043294271,
+          44.49098714192712
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "(R1241",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.08866373697916,
+          37.85654703776038
+        ],
+        [
+          239.0666707356771,
+          37.85654703776038
+        ],
+        [
+          239.0666707356771,
+          29.56349690755212
+        ],
+        [
+          212.08866373697916,
+          29.56349690755212
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "ToC718-287.20",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.08866373697916,
+          44.90561930338538
+        ],
+        [
+          271.4402669270833,
+          44.90561930338538
+        ],
+        [
+          271.4402669270833,
+          35.78330485026038
+        ],
+        [
+          212.08866373697916,
+          35.78330485026038
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "P.0 Box Z'y, HoNA",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.08866373697916,
+          31.63682047526038
+        ],
+        [
+          273.1004638671875,
+          31.63682047526038
+        ],
+        [
+          273.1004638671875,
+          23.34377034505212
+        ],
+        [
+          212.08866373697916,
+          23.34377034505212
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "CslnEsi",
+      "confidence": 0.95,
+      "box": [
+        [
+          211.2585652669271,
+          25.83164469401038
+        ],
+        [
+          244.0472208658854,
+          25.83164469401038
+        ],
+        [
+          244.0472208658854,
+          16.70933024088538
+        ],
+        [
+          211.2585652669271,
+          16.70933024088538
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "10",
+      "confidence": 0.95,
+      "box": [
+        [
+          210.8435262044271,
+          15.88006591796875
+        ],
+        [
+          222.4648234049479,
+          15.88006591796875
+        ],
+        [
+          222.4648234049479,
+          5.513773600260379
+        ],
+        [
+          210.8435262044271,
+          5.513773600260379
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "Safety",
+      "confidence": 0.95,
+      "box": [
+        [
+          420.85693359375,
+          55.68654378255212
+        ],
+        [
+          441.6092529296875,
+          55.68654378255212
+        ],
+        [
+          441.6092529296875,
+          46.56422932942712
+        ],
+        [
+          420.85693359375,
+          46.56422932942712
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "Page Number:10 of 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          420.85693359375,
+          41.17376708984375
+        ],
+        [
+          491.8298746744792,
+          41.17376708984375
+        ],
+        [
+          491.8298746744792,
+          31.63682047526038
+        ],
+        [
+          420.85693359375,
+          31.63682047526038
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "Section01520",
+      "confidence": 0.95,
+      "box": [
+        [
+          420.85693359375,
+          49.05210367838538
+        ],
+        [
+          465.2668863932292,
+          49.05210367838538
+        ],
+        [
+          465.2668863932292,
+          39.51515706380212
+        ],
+        [
+          420.85693359375,
+          39.51515706380212
+        ]
+      ],
+      "page": 354
+    },
+    {
+      "text": "MisT",
+      "confidence": 0.95,
+      "box": [
+        [
+          288.04213460286456,
+          21.68516031901038
+        ],
+        [
+          305.8891194661458,
+          21.68516031901038
+        ],
+        [
+          305.8891194661458,
+          12.148213704427121
+        ],
+        [
+          288.04213460286456,
+          12.148213704427121
+        ]
+      ],
+      "page": 354
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 354,
+      "text": "1. GENERAL\na.Where the Contractor violates any of the safety provisions described within this division, the Contract Administrator shall take the appropriate remedial action, as outlined in paragraph 16 above, and all costs associated therewith shall be at the Contractor's expense.\nb.On the occurrence of the first violation, the Contractor shall be warned in writing by the Contract Administrator, and shall be instructed to remedy the violation within a specified time.Where the Contractor fails to remedy the violation within the time stipulated, the Contractor shall be prohibited from carrying out any further work within the affected area until the specific exposurehasbeencorrected.\nc.On the occurrence of all further violations,the ContractAdministrator shall consider the severity of eachviolationand theContractor chall be instructed accordingly.Where theContractor unreasonably ignores the instructions, then the foreman responsible for operations in the area where the safetyviolations are occurring shall be dismissed from the site.\n2.SAFEWORKINGCONDITIONS\nThe Contractor's Safety Plan shall address scaffolding, guard rails, ladders, appropriate connections for power tools, grounding of temporary guards for blades of saws, including other similar items which are required to ensure that the Siteworking area is safe for carrying out theworks withoutrisktohumanlife.\nb.Where any of theContractor'semployeesviolate anyof thesafety provisions within this category, the offending employee shall be warned and prevented from continuing working until he is properly attired. Should the same employed person be caught a second time, he shall be dismissed from the Site. In each case of a warning or dismissal, the responsibleforemanshallbenotified. Should more than two (2) employees be sent off the Site during any week, then the responsible foreman shall also be issued a warning.\nUtility Shutdowns: The Contractor shall coordinate with the Contract Administrator for anyutility shutdowns (temporary/permanent connections) during the construction phase. All requests for shutdowns shall be issued at least 48 hours in advance. The Contractor shall proceed with the shutdown only after obtaining approval in writing from the Contract Administrator.\n3.FACILITIES\nThe Contractor shall provide all emergency facilities such as first aid and accessible sanitation facilities for employees in compliance with municipalrequirements\nbythe Contractor.Should these facilities not be provided within the time specified by the Contract Administrator, then the Contract Administrator shall provide these facilities and the costs incurred by theEmployermay\nDYaopment SAL\n(R1241\nToC718-287.20\nP.0 Box Z'y, HoNA\nCslnEsi\n10\nSafety\nPage Number:10 of 12\nSection01520\nMisT",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,612 @@
+{
+  "text": "<!-- image -->\n\n## 2.02MEETING LOCATION\n\n1. Contract Administrator will establish meeting location. To the maximum extent practicable, meetings will be held at the Site.\n\n## 2.03PRECONSTRUCTIONMEETING\n\n- 1.A preconstruction meeting agenda will be prepared by Contract Administrator and the meeting scheduled within fifteen (i5) days after issuance of the Letter of Acceptance.\n- the Contractor.\n- b) Contract Administrator will advise other interested parties, including the Employer, and request their attendance.\n- 2.Minimum agenda: :Datawillbedistributedanddiscussedonatleast the following items.\n- a)Safety standards expected and Contractor'sprocedures for safety and first aid, security, quality control, housekeeping, and related matters.\n- b) Organizational arrangement of Contractor's forces and personnel, and those of Subcontractors, materials suppliers, Contract Administrator and SupervisionConsultant.\n- Channels and procedures for communication.\n- d) Contract Programme, including sequence of critical work.\n- e) Contract Documents, including distribution of required copies of original document andrevisions.\n- f Invoicing procedures.\n- g) Processing of shop drawings and other data submitted for review.\n- h) Quality standards expected.\n- i) Processing of bulletins, field decisions, and Variations.\n- i Rules and regulations governing performance of the Works; and\n\n## 2.04PROJECTMEETINGS\n\n- 1.Attendance\n- a) To the maximum extent practicable, assign the same person or persons to represent the Contractor at Project meetings throughout progress of the Works.\n- b) Subcontractors,materials suppliers,and others may be invited to attend those Project meetings in which their aspect of the Works is involved,.c) cs\n\n## 2. Minimum agenda:\n\n- a) Review, revise as necessary, and approve minutes of previous meetings.\n- b) Review Safety issues.\n3. C Review 90-day schedule and progress of the Works since last meeting, including status of submittals for approval.\n4. d)Identify problemswhich impede planned progress including RFl's.\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "2.02MEETING LOCATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          709.5903828938802
+        ],
+        [
+          223.2949015299479,
+          709.5903828938802
+        ],
+        [
+          223.2949015299479,
+          698.3948262532552
+        ],
+        [
+          75.53842671712239,
+          698.3948262532552
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Contract Administrator will establish meeting location. To the maximum extent practicable, meetings will be held at the Site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          693.4190165201823
+        ],
+        [
+          504.6962890625,
+          693.4190165201823
+        ],
+        [
+          504.6962890625,
+          668.5399881998698
+        ],
+        [
+          92.14027913411458,
+          668.5399881998698
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "2.03PRECONSTRUCTIONMEETING",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          646.5635172526041
+        ],
+        [
+          278.91111246744794,
+          646.5635172526041
+        ],
+        [
+          278.91111246744794,
+          635.3679402669271
+        ],
+        [
+          75.53842671712239,
+          635.3679402669271
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "1.A preconstruction meeting agenda will be prepared by Contract Administrator and the meeting scheduled within fifteen (i5) days after issuance of the Letter of Acceptance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          629.9774780273438
+        ],
+        [
+          505.111328125,
+          629.9774780273438
+        ],
+        [
+          505.111328125,
+          593.9028930664062
+        ],
+        [
+          92.97036743164062,
+          593.9028930664062
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.58912150065105,
+          578.9754638671875
+        ],
+        [
+          205.03287760416666,
+          578.9754638671875
+        ],
+        [
+          205.03287760416666,
+          565.7066650390625
+        ],
+        [
+          126.58912150065105,
+          565.7066650390625
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Contract Administrator will advise other interested parties, including the Employer, and request their attendance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          561.1455078125
+        ],
+        [
+          504.6962890625,
+          561.1455078125
+        ],
+        [
+          504.6962890625,
+          536.6811116536458
+        ],
+        [
+          109.57222493489583,
+          536.6811116536458
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "2.Minimum agenda: :Datawillbedistributedanddiscussedonatleast the following items.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          532.5346069335938
+        ],
+        [
+          504.28125,
+          532.5346069335938
+        ],
+        [
+          504.28125,
+          508.8995361328125
+        ],
+        [
+          93.8004659016927,
+          508.8995361328125
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "a)Safety standards expected and Contractor'sprocedures for safety and first aid, security, quality control, housekeeping, and related matters.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          503.92372639973956
+        ],
+        [
+          505.111328125,
+          503.92372639973956
+        ],
+        [
+          505.111328125,
+          481.11794026692706
+        ],
+        [
+          110.40231323242188,
+          481.11794026692706
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Organizational arrangement of Contractor's forces and personnel, and those of Subcontractors, materials suppliers, Contract Administrator and SupervisionConsultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          475.31284586588544
+        ],
+        [
+          505.111328125,
+          475.31284586588544
+        ],
+        [
+          505.111328125,
+          440.89683024088544
+        ],
+        [
+          110.40231323242188,
+          440.89683024088544
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Channels and procedures for communication.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          435.50640869140625
+        ],
+        [
+          353.6194254557292,
+          435.50640869140625
+        ],
+        [
+          353.6194254557292,
+          424.31081136067706
+        ],
+        [
+          127.41920979817708,
+          424.31081136067706
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Contract Programme, including sequence of critical work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          418.09108479817706
+        ],
+        [
+          409.6506754557292,
+          418.09108479817706
+        ],
+        [
+          409.6506754557292,
+          407.31016031901044
+        ],
+        [
+          112.0625,
+          407.31016031901044
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Contract Documents, including distribution of required copies of original document andrevisions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          402.33437093098956
+        ],
+        [
+          504.6962890625,
+          402.33437093098956
+        ],
+        [
+          504.6962890625,
+          378.69927978515625
+        ],
+        [
+          111.23241170247395,
+          378.69927978515625
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "f Invoicing procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          372.89414469401044
+        ],
+        [
+          234.91619873046875,
+          372.89414469401044
+        ],
+        [
+          234.91619873046875,
+          360.86928304036456
+        ],
+        [
+          111.23241170247395,
+          360.86928304036456
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Processing of shop drawings and other data submitted for review.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          355.89349365234375
+        ],
+        [
+          452.4004720052083,
+          355.89349365234375
+        ],
+        [
+          452.4004720052083,
+          344.69793701171875
+        ],
+        [
+          111.64745076497395,
+          344.69793701171875
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Quality standards expected.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          338.47816975911456
+        ],
+        [
+          266.459716796875,
+          338.47816975911456
+        ],
+        [
+          266.459716796875,
+          326.86794026692706
+        ],
+        [
+          111.64745076497395,
+          326.86794026692706
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Processing of bulletins, field decisions, and Variations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          321.47751871744794
+        ],
+        [
+          396.3692220052083,
+          321.47751871744794
+        ],
+        [
+          396.3692220052083,
+          310.69659423828125
+        ],
+        [
+          111.23241170247395,
+          310.69659423828125
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "i Rules and regulations governing performance of the Works; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          305.3061319986979
+        ],
+        [
+          445.3446858723958,
+          305.3061319986979
+        ],
+        [
+          445.3446858723958,
+          292.8665974934896
+        ],
+        [
+          110.81736246744792,
+          292.8665974934896
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "2.04PROJECTMEETINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          270.8901163736979
+        ],
+        [
+          225.3701375325521,
+          270.8901163736979
+        ],
+        [
+          225.3701375325521,
+          258.8652547200521
+        ],
+        [
+          75.95347086588542,
+          258.8652547200521
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "1.Attendance",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          253.88946533203125
+        ],
+        [
+          168.50879923502603,
+          253.88946533203125
+        ],
+        [
+          168.50879923502603,
+          241.44993082682288
+        ],
+        [
+          93.38541666666667,
+          241.44993082682288
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "To the maximum extent practicable, assign the same person or persons to represent the Contractor at Project meetings throughout progress of the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          236.47414143880212
+        ],
+        [
+          505.111328125,
+          236.47414143880212
+        ],
+        [
+          505.111328125,
+          201.64349365234375
+        ],
+        [
+          109.98726399739583,
+          201.64349365234375
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Subcontractors,materials suppliers,and others may be invited to attend those Project meetings in which their aspect of the Works is involved,.c) cs",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          197.08233642578125
+        ],
+        [
+          505.9414469401042,
+          197.08233642578125
+        ],
+        [
+          505.9414469401042,
+          169.30076090494788
+        ],
+        [
+          109.98726399739583,
+          169.30076090494788
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "2. Minimum agenda:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          168.05682373046875
+        ],
+        [
+          200.46736653645834,
+          168.05682373046875
+        ],
+        [
+          200.46736653645834,
+          155.61728922526038
+        ],
+        [
+          93.38541666666667,
+          155.61728922526038
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Review, revise as necessary, and approve minutes of previous meetings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          151.88543701171875
+        ],
+        [
+          490.169677734375,
+          151.88543701171875
+        ],
+        [
+          490.169677734375,
+          136.95802815755212
+        ],
+        [
+          109.57222493489583,
+          136.95802815755212
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "Review Safety issues.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          134.05544026692712
+        ],
+        [
+          238.651611328125,
+          134.05544026692712
+        ],
+        [
+          238.651611328125,
+          121.61598714192712
+        ],
+        [
+          109.98726399739583,
+          121.61598714192712
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "C Review 90-day schedule and progress of the Works since last meeting, including status of submittals for approval.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          117.88413492838538
+        ],
+        [
+          504.28125,
+          117.88413492838538
+        ],
+        [
+          504.28125,
+          93.00506591796875
+        ],
+        [
+          111.23241170247395,
+          93.00506591796875
+        ]
+      ],
+      "page": 278
+    },
+    {
+      "text": "d)Identify problemswhich impede planned progress including RFl's.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          88.85858154296875
+        ],
+        [
+          452.8155110677083,
+          88.85858154296875
+        ],
+        [
+          452.8155110677083,
+          76.83367919921875
+        ],
+        [
+          110.40231323242188,
+          76.83367919921875
+        ]
+      ],
+      "page": 278
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 278,
+      "text": "2.02MEETING LOCATION\nContract Administrator will establish meeting location. To the maximum extent practicable, meetings will be held at the Site.\n2.03PRECONSTRUCTIONMEETING\n1.A preconstruction meeting agenda will be prepared by Contract Administrator and the meeting scheduled within fifteen (i5) days after issuance of the Letter of Acceptance.\nthe Contractor.\nContract Administrator will advise other interested parties, including the Employer, and request their attendance.\n2.Minimum agenda: :Datawillbedistributedanddiscussedonatleast the following items.\na)Safety standards expected and Contractor'sprocedures for safety and first aid, security, quality control, housekeeping, and related matters.\nOrganizational arrangement of Contractor's forces and personnel, and those of Subcontractors, materials suppliers, Contract Administrator and SupervisionConsultant.\nChannels and procedures for communication.\nContract Programme, including sequence of critical work.\nContract Documents, including distribution of required copies of original document andrevisions.\nf Invoicing procedures.\nProcessing of shop drawings and other data submitted for review.\nQuality standards expected.\nProcessing of bulletins, field decisions, and Variations.\ni Rules and regulations governing performance of the Works; and\n2.04PROJECTMEETINGS\n1.Attendance\nTo the maximum extent practicable, assign the same person or persons to represent the Contractor at Project meetings throughout progress of the Works.\nSubcontractors,materials suppliers,and others may be invited to attend those Project meetings in which their aspect of the Works is involved,.c) cs\n2. Minimum agenda:\nReview, revise as necessary, and approve minutes of previous meetings.\nReview Safety issues.\nC Review 90-day schedule and progress of the Works since last meeting, including status of submittals for approval.\nd)Identify problemswhich impede planned progress including RFl's.",
+      "line_count": 26
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

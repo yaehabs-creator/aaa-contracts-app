@@ -1,0 +1,658 @@
+{
+  "text": "<!-- image -->\n\n- necessary to completely check out the system and prepare it for operationfollowinginstallationandashutdowncondition.\n- iv. Fault Isolation: A description of the procedures to be followed in determining the cause of a failure or malfunction.Fault identification shall be based on both monitoring devices and visual observations. Fault isolation shall be arranged in progressive order with the most likely fault listed first.\n- ill.Preventive Maintenance: A description of all maintenance to be performed on a periodic basis; e.g., inspection, lubrication, calibration andpartsreplacement.\n- v.Maintenance:This information shall includeall maintenance that can be performed on the installed equipment (including removal and replacement) and repairs thatcanbeperformed with the equipment installed.\n\n## 8.Vendor Data:\n\n- a)Include original informationincluded in purchase order documents and obtained frorn veridors of equipment by the Contractor in the manuals as follows:\n- i. Manufacturers' brochures, catalogues, charts and performance curves.\n- i1. Service bulletins.\n- ii. Installation, operation and service instructions and drawings.\n- iv. Special drawings such as wiring diagrams, systems cchematics, and pneumatic and liquid flow diagrams.\n- vi. Performance data; e.g., maximum, minimum and recommended speeds, capacities, voltage, amperage, wattage, pressure, flow rate, pump curves, pressure drop, temperatures, and other related operatinginformation.\n- V. Illustratedpartsbreakdown.\n- vii. Operating procedures including emergency operating procedures.\n- ix. Removal and installatiorprocedures.\n- vii. Preventive maintenance and inspection requirements and procedures.\n- X. Disassemblyandassemblyprocedures.\n- xii. Troubleshootingprocedures.\n- xi.( Calibration instructions, including points of application, frequency, method of calibration, and special tools required.\n- xili.Repair and overhaul instructions.\n- xv. Lubrication instructions, including points of application, frequency, typesof lubricantsandmethodsof lubrication.\n- xiv. Scale and corrosion control.\n- xvi. Cleaning instructions.\n- xvii. Recommended spare parts, special tools and test equipment.\n\n## 9.Maintenance Criteria:\n\n- a)Thebasicmaintenancecriteriaforfacilityandsystemdesignieoensure thatallcritical preventive maintenance activitiesmay be.adcomplished withoutInterferencetooperations. The design shall emphaske accessibility,ease of equipment or component removafahdreplacenieni Visual indications of components deterioration, and localzatongfniuirts Where practical, sub-systems shall be configured CSO tailec componentsmay be removed and operablereplaceMonts nstalled Requirements for repair-in-place activities shall be miniiRized.\n- b)All likeassemblies s  having identical . characteristfesuosshall be interchangeable without altering the unit or adjacent equipment,except for adjustment.Assemblies shall be interchangeable withoutselection for fit orperformanceandwithout modification. Etin uar HWiEr For\n\nOporating and Maintonanco\n\nGecion 01730\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "necessary to completely check out the system and prepare it for operationfollowinginstallationandashutdowncondition.",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          720.3712972005209
+        ],
+        [
+          506.3564860026042,
+          720.3712972005209
+        ],
+        [
+          506.3564860026042,
+          697.5655212402344
+        ],
+        [
+          153.1520792643229,
+          697.5655212402344
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Fault Isolation: A description of the procedures to be followed in determining the cause of a failure or malfunction.Fault identification shall be based on both monitoring devices and visual observations. Fault isolation shall be arranged in progressive order with the most likely fault listed first.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.64490763346353,
+          664.3934834798177
+        ],
+        [
+          507.1865641276042,
+          664.3934834798177
+        ],
+        [
+          507.1865641276042,
+          605.9277547200521
+        ],
+        [
+          133.64490763346353,
+          605.9277547200521
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "ill.Preventive Maintenance: A description of all maintenance to be performed on a periodic basis; e.g., inspection, lubrication, calibration andpartsreplacement.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.4749959309896,
+          698.3948262532552
+        ],
+        [
+          506.3564860026042,
+          698.3948262532552
+        ],
+        [
+          506.3564860026042,
+          663.1495259602865
+        ],
+        [
+          134.4749959309896,
+          663.1495259602865
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "v.Maintenance:This information shall includeall maintenance that can be performed on the installed equipment (including removal and replacement) and repairs thatcanbeperformed with the equipment installed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          606.3424072265625
+        ],
+        [
+          506.3564860026042,
+          606.3424072265625
+        ],
+        [
+          506.3564860026042,
+          560.7308553059895
+        ],
+        [
+          136.55023193359375,
+          560.7308553059895
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "8.Vendor Data:",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          555.7550455729167
+        ],
+        [
+          177.63981119791666,
+          555.7550455729167
+        ],
+        [
+          177.63981119791666,
+          543.7301839192708
+        ],
+        [
+          94.2155049641927,
+          543.7301839192708
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "a)Include original informationincluded in purchase order documents and obtained frorn veridors of equipment by the Contractor in the manuals as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          537.925069173177
+        ],
+        [
+          505.5263671875,
+          537.925069173177
+        ],
+        [
+          505.5263671875,
+          503.09442138671875
+        ],
+        [
+          111.23241170247395,
+          503.09442138671875
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Manufacturers' brochures, catalogues, charts and performance curves.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          499.36256917317706
+        ],
+        [
+          503.8662109375,
+          499.36256917317706
+        ],
+        [
+          503.8662109375,
+          484.8498128255208
+        ],
+        [
+          136.55023193359375,
+          484.8498128255208
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "i1. Service bulletins.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.0599568684896,
+          475.72747802734375
+        ],
+        [
+          237.821533203125,
+          475.72747802734375
+        ],
+        [
+          237.821533203125,
+          463.70261637369794
+        ],
+        [
+          134.0599568684896,
+          463.70261637369794
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Installation, operation and service instructions and drawings.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          487.33770751953125
+        ],
+        [
+          452.4004720052083,
+          487.33770751953125
+        ],
+        [
+          452.4004720052083,
+          473.23960367838544
+        ],
+        [
+          136.55023193359375,
+          473.23960367838544
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Special drawings such as wiring diagrams, systems cchematics, and pneumatic and liquid flow diagrams.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.64490763346353,
+          464.53192138671875
+        ],
+        [
+          505.5263671875,
+          464.53192138671875
+        ],
+        [
+          505.5263671875,
+          439.65289306640625
+        ],
+        [
+          133.64490763346353,
+          439.65289306640625
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Performance data; e.g., maximum, minimum and recommended speeds, capacities, voltage, amperage, wattage, pressure, flow rate, pump curves, pressure drop, temperatures, and other related operatinginformation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.64490763346353,
+          430.53057861328125
+        ],
+        [
+          505.111328125,
+          430.53057861328125
+        ],
+        [
+          505.111328125,
+          383.67506917317706
+        ],
+        [
+          133.64490763346353,
+          383.67506917317706
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Illustratedpartsbreakdown.",
+      "confidence": 0.95,
+      "box": [
+        [
+          135.30509440104166,
+          441.31150309244794
+        ],
+        [
+          291.7775472005208,
+          441.31150309244794
+        ],
+        [
+          291.7775472005208,
+          428.87196858723956
+        ],
+        [
+          135.30509440104166,
+          428.87196858723956
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Operating procedures including emergency operating procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.15463256835938,
+          384.08974202473956
+        ],
+        [
+          478.9634195963542,
+          384.08974202473956
+        ],
+        [
+          478.9634195963542,
+          371.65020751953125
+        ],
+        [
+          131.15463256835938,
+          371.65020751953125
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Removal and installatiorprocedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          132.39977010091147,
+          361.69858805338544
+        ],
+        [
+          337.43263753255206,
+          361.69858805338544
+        ],
+        [
+          337.43263753255206,
+          349.67372639973956
+        ],
+        [
+          132.39977010091147,
+          349.67372639973956
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Preventive maintenance and inspection requirements and procedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          373.30881754557294
+        ],
+        [
+          500.5458170572917,
+          373.30881754557294
+        ],
+        [
+          500.5458170572917,
+          360.03997802734375
+        ],
+        [
+          129.07939656575522,
+          360.03997802734375
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Disassemblyandassemblyprocedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.89004516601562,
+          350.08839925130206
+        ],
+        [
+          352.3743082682292,
+          350.08839925130206
+        ],
+        [
+          352.3743082682292,
+          338.06353759765625
+        ],
+        [
+          134.89004516601562,
+          338.06353759765625
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Troubleshootingprocedures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.15463256835938,
+          316.08705647786456
+        ],
+        [
+          293.43772379557294,
+          316.08705647786456
+        ],
+        [
+          293.43772379557294,
+          303.64752197265625
+        ],
+        [
+          131.15463256835938,
+          303.64752197265625
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "xi.( Calibration instructions, including points of application, frequency, method of calibration, and special tools required.",
+      "confidence": 0.95,
+      "box": [
+        [
+          133.2298583984375,
+          340.13677978515625
+        ],
+        [
+          504.28125,
+          340.13677978515625
+        ],
+        [
+          504.28125,
+          314.84307861328125
+        ],
+        [
+          133.2298583984375,
+          314.84307861328125
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "xili.Repair and overhaul instructions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          304.4768269856771
+        ],
+        [
+          314.19004313151044,
+          304.4768269856771
+        ],
+        [
+          314.19004313151044,
+          292.8665974934896
+        ],
+        [
+          127.83425903320312,
+          292.8665974934896
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Lubrication instructions, including points of application, frequency, typesof lubricantsandmethodsof lubrication.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          282.5003458658854
+        ],
+        [
+          503.8662109375,
+          282.5003458658854
+        ],
+        [
+          503.8662109375,
+          258.45062255859375
+        ],
+        [
+          127.83425903320312,
+          258.45062255859375
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Scale and corrosion control.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          293.2812703450521
+        ],
+        [
+          289.7023111979167,
+          293.2812703450521
+        ],
+        [
+          289.7023111979167,
+          281.6710408528646
+        ],
+        [
+          127.00417073567708,
+          281.6710408528646
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Cleaning instructions.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.75902303059895,
+          259.6945597330729
+        ],
+        [
+          258.57383219401044,
+          259.6945597330729
+        ],
+        [
+          258.57383219401044,
+          246.42576090494788
+        ],
+        [
+          125.75902303059895,
+          246.42576090494788
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Recommended spare parts, special tools and test equipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.68379720052083,
+          247.66969807942712
+        ],
+        [
+          453.6455891927083,
+          247.66969807942712
+        ],
+        [
+          453.6455891927083,
+          235.23020426432288
+        ],
+        [
+          123.68379720052083,
+          235.23020426432288
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "9.Maintenance Criteria:",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          231.08367919921875
+        ],
+        [
+          216.6541748046875,
+          231.08367919921875
+        ],
+        [
+          216.6541748046875,
+          219.05881754557288
+        ],
+        [
+          92.97036743164062,
+          219.05881754557288
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "a)Thebasicmaintenancecriteriaforfacilityandsystemdesignieoensure thatallcritical preventive maintenance activitiesmay be.adcomplished withoutInterferencetooperations. The design shall emphaske accessibility,ease of equipment or component removafahdreplacenieni Visual indications of components deterioration, and localzatongfniuirts Where practical, sub-systems shall be configured CSO tailec componentsmay be removed and operablereplaceMonts nstalled Requirements for repair-in-place activities shall be miniiRized.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          213.66835530598962
+        ],
+        [
+          503.8662109375,
+          213.66835530598962
+        ],
+        [
+          503.8662109375,
+          121.61598714192712
+        ],
+        [
+          109.98726399739583,
+          121.61598714192712
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "b)All likeassemblies s  having identical . characteristfesuosshall be interchangeable without altering the unit or adjacent equipment,except for adjustment.Assemblies shall be interchangeable withoutselection for fit orperformanceandwithout modification. Etin uar HWiEr For",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          117.88413492838538
+        ],
+        [
+          504.6962890625,
+          117.88413492838538
+        ],
+        [
+          504.6962890625,
+          63.15024820963538
+        ],
+        [
+          109.57222493489583,
+          63.15024820963538
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Oporating and Maintonanco",
+      "confidence": 0.95,
+      "box": [
+        [
+          407.9905192057292,
+          56.10117594401038
+        ],
+        [
+          489.754638671875,
+          56.10117594401038
+        ],
+        [
+          489.754638671875,
+          47.80812581380212
+        ],
+        [
+          407.9905192057292,
+          47.80812581380212
+        ]
+      ],
+      "page": 378
+    },
+    {
+      "text": "Gecion 01730",
+      "confidence": 0.95,
+      "box": [
+        [
+          407.160400390625,
+          47.80812581380212
+        ],
+        [
+          450.7402750651042,
+          47.80812581380212
+        ],
+        [
+          450.7402750651042,
+          40.75913492838538
+        ],
+        [
+          407.160400390625,
+          40.75913492838538
+        ]
+      ],
+      "page": 378
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 378,
+      "text": "necessary to completely check out the system and prepare it for operationfollowinginstallationandashutdowncondition.\nFault Isolation: A description of the procedures to be followed in determining the cause of a failure or malfunction.Fault identification shall be based on both monitoring devices and visual observations. Fault isolation shall be arranged in progressive order with the most likely fault listed first.\nill.Preventive Maintenance: A description of all maintenance to be performed on a periodic basis; e.g., inspection, lubrication, calibration andpartsreplacement.\nv.Maintenance:This information shall includeall maintenance that can be performed on the installed equipment (including removal and replacement) and repairs thatcanbeperformed with the equipment installed.\n8.Vendor Data:\na)Include original informationincluded in purchase order documents and obtained frorn veridors of equipment by the Contractor in the manuals as follows:\nManufacturers' brochures, catalogues, charts and performance curves.\ni1. Service bulletins.\nInstallation, operation and service instructions and drawings.\nSpecial drawings such as wiring diagrams, systems cchematics, and pneumatic and liquid flow diagrams.\nPerformance data; e.g., maximum, minimum and recommended speeds, capacities, voltage, amperage, wattage, pressure, flow rate, pump curves, pressure drop, temperatures, and other related operatinginformation.\nIllustratedpartsbreakdown.\nOperating procedures including emergency operating procedures.\nRemoval and installatiorprocedures.\nPreventive maintenance and inspection requirements and procedures.\nDisassemblyandassemblyprocedures.\nTroubleshootingprocedures.\nxi.( Calibration instructions, including points of application, frequency, method of calibration, and special tools required.\nxili.Repair and overhaul instructions.\nLubrication instructions, including points of application, frequency, typesof lubricantsandmethodsof lubrication.\nScale and corrosion control.\nCleaning instructions.\nRecommended spare parts, special tools and test equipment.\n9.Maintenance Criteria:\na)Thebasicmaintenancecriteriaforfacilityandsystemdesignieoensure thatallcritical preventive maintenance activitiesmay be.adcomplished withoutInterferencetooperations. The design shall emphaske accessibility,ease of equipment or component removafahdreplacenieni Visual indications of components deterioration, and localzatongfniuirts Where practical, sub-systems shall be configured CSO tailec componentsmay be removed and operablereplaceMonts nstalled Requirements for repair-in-place activities shall be miniiRized.\nb)All likeassemblies s  having identical . characteristfesuosshall be interchangeable without altering the unit or adjacent equipment,except for adjustment.Assemblies shall be interchangeable withoutselection for fit orperformanceandwithout modification. Etin uar HWiEr For\nOporating and Maintonanco\nGecion 01730",
+      "line_count": 28
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

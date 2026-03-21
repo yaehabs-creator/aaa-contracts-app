@@ -1,0 +1,221 @@
+{
+  "text": "circumstancesshall notexcuse theContractor'snon-performanceorentitle it torelief under such Clauses.\n\n## TerminationinConsequenceofForceMajeure\n\n- 29.7 (a) If the carryingoutof substantiallyalltheWorksinprogress is preventedforacontinuousperiodofnotlessthanonehundredand eightytwo(182)daysbyreasonofForceMajeureofwhichnotice hasbeengiven underClause29.3(NoticeofForceMajeure) then, beengrantedanextensionoftheTimeforCompletion,eitherparty shallbeentitledtoserveupon theother twentyeight(28)days notice to terminate the Contract.\n- (b) In the event that either party gives notice of termination for Force Majeureinaccordancewiththeprovisionsof Sub-Clause(a)of this Clause29.7(andprovided thattheContracthasnotbeenterminated forfrustrationinaccordancewiththeprovisionsofClause29.1 (Frustration))suchnoticeshalloperateto terminatetheContractat theendofthe twentyeight(28)dayperiodreferred tointhesaid Sub-Clause(a)butwithout prejudiceto:-\n- (i) theobligationoftheEmployertopayto theContractorasum determinedinaccordancewithClause29.8(Paymenton FrustrationorForceMajeure);and\n- (i) anyrightsorobligationswhichmayhaveaccrueddue between thepartiesprior to such termination.\n\n## PaymentonFrustrationorForceMajeure\n\n- 29.8If theContractisterminatedordeemedterminatedunderClause29.7 (TerminationinConsequenceofForceMajeure)orClause29.1 (Frustration)theContractorshallpromptlycease allfurtherwork,exceptfor suchworkasmaybeinstructedbytheEmployerfortheprotectionof lifeor propertyorforthesafetyof theWorks,submit totheProjectManager all Contractor's Drawings, comply with any instructions of the Employer in relationtoPlantnotyetdeliveredtoSite,removefromtheSite,withtheprior writtenconsentof theProjectManager,allContractor'sEquipment and submittotheProjectManagerintriplicateanInterimCertificateapplication prepared and accompaniedinaccordancewithClause26.1(Applicationfor InterimCertificates)uptothetimeof terminationordeemedtermination. TheProjectManagershallconsider theInterimCertificateapplication, prepareanInterimCertificateuptosuchtimeandissuethesamein accordancewithClause26.2(lssueofInterimCertificates)andpayment thereof shall be made in accordancewith Clause 27 (Paymcnt).\n\nThereafter,assoonastherequired documentsandevidencehavebecome availabletheContractorshallprepareandsubmittotheProjectManagerin triplicateafinal account(togetherwith allsuchdocumentsandevidenceas the Project Manager may require in order to substantiate the same) which\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "circumstancesshall notexcuse theContractor'snon-performanceorentitle it torelief under such Clauses.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.44412231445312,
+          724.5932922363281
+        ],
+        [
+          487.5137125651042,
+          724.5932922363281
+        ],
+        [
+          487.5137125651042,
+          701.2608032226562
+        ],
+        [
+          156.44412231445312,
+          701.2608032226562
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "TerminationinConsequenceofForceMajeure",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          691.079355875651
+        ],
+        [
+          304.4318033854167,
+          691.079355875651
+        ],
+        [
+          304.4318033854167,
+          678.7767639160156
+        ],
+        [
+          94.71211751302083,
+          678.7767639160156
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "29.7 (a) If the carryingoutof substantiallyalltheWorksinprogress is preventedforacontinuousperiodofnotlessthanonehundredand eightytwo(182)daysbyreasonofForceMajeureofwhichnotice hasbeengiven underClause29.3(NoticeofForceMajeure) then, beengrantedanextensionoftheTimeforCompletion,eitherparty shallbeentitledtoserveupon theother twentyeight(28)days notice to terminate the Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          669.01953125
+        ],
+        [
+          487.5137125651042,
+          669.01953125
+        ],
+        [
+          487.5137125651042,
+          576.5380249023438
+        ],
+        [
+          124.73248291015625,
+          576.5380249023438
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "(b) In the event that either party gives notice of termination for Force Majeureinaccordancewiththeprovisionsof Sub-Clause(a)of this Clause29.7(andprovided thattheContracthasnotbeenterminated forfrustrationinaccordancewiththeprovisionsofClause29.1 (Frustration))suchnoticeshalloperateto terminatetheContractat theendofthe twentyeight(28)dayperiodreferred tointhesaid Sub-Clause(a)butwithout prejudiceto:-",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          565.9323323567708
+        ],
+        [
+          487.9365234375,
+          565.9323323567708
+        ],
+        [
+          487.9365234375,
+          484.48073323567706
+        ],
+        [
+          156.866943359375,
+          484.48073323567706
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "(i) theobligationoftheEmployertopayto theContractorasum determinedinaccordancewithClause29.8(Paymenton FrustrationorForceMajeure);and",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.4644775390625,
+          474.72349039713544
+        ],
+        [
+          486.2452392578125,
+          474.72349039713544
+        ],
+        [
+          486.2452392578125,
+          439.51263427734375
+        ],
+        [
+          186.4644775390625,
+          439.51263427734375
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "(i) anyrightsorobligationswhichmayhaveaccrueddue between thepartiesprior to such termination.",
+      "confidence": 0.95,
+      "box": [
+        [
+          187.31011962890625,
+          428.48272705078125
+        ],
+        [
+          486.2452392578125,
+          428.48272705078125
+        ],
+        [
+          486.2452392578125,
+          405.15024820963544
+        ],
+        [
+          187.31011962890625,
+          405.15024820963544
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "PaymentonFrustrationorForceMajeure",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          395.39300537109375
+        ],
+        [
+          279.0625,
+          395.39300537109375
+        ],
+        [
+          279.0625,
+          383.09043375651044
+        ],
+        [
+          93.86647542317708,
+          383.09043375651044
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "29.8If theContractisterminatedordeemedterminatedunderClause29.7 (TerminationinConsequenceofForceMajeure)orClause29.1 (Frustration)theContractorshallpromptlycease allfurtherwork,exceptfor suchworkasmaybeinstructedbytheEmployerfortheprotectionof lifeor propertyorforthesafetyof theWorks,submit totheProjectManager all Contractor's Drawings, comply with any instructions of the Employer in relationtoPlantnotyetdeliveredtoSite,removefromtheSite,withtheprior writtenconsentof theProjectManager,allContractor'sEquipment and submittotheProjectManagerintriplicateanInterimCertificateapplication prepared and accompaniedinaccordancewithClause26.1(Applicationfor InterimCertificates)uptothetimeof terminationordeemedtermination. TheProjectManagershallconsider theInterimCertificateapplication, prepareanInterimCertificateuptosuchtimeandissuethesamein accordancewithClause26.2(lssueofInterimCertificates)andpayment thereof shall be made in accordancewith Clause 27 (Paymcnt).",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          372.90899658203125
+        ],
+        [
+          486.6680908203125,
+          372.90899658203125
+        ],
+        [
+          486.6680908203125,
+          200.67274983723962
+        ],
+        [
+          123.88683064778645,
+          200.67274983723962
+        ]
+      ],
+      "page": 105
+    },
+    {
+      "text": "Thereafter,assoonastherequired documentsandevidencehavebecome availabletheContractorshallprepareandsubmittotheProjectManagerin triplicateafinal account(togetherwith allsuchdocumentsandevidenceas the Project Manager may require in order to substantiate the same) which",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.90719604492188,
+          190.91554768880212
+        ],
+        [
+          485.8224283854167,
+          190.91554768880212
+        ],
+        [
+          485.8224283854167,
+          143.40207926432288
+        ],
+        [
+          153.90719604492188,
+          143.40207926432288
+        ]
+      ],
+      "page": 105
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 105,
+      "text": "circumstancesshall notexcuse theContractor'snon-performanceorentitle it torelief under such Clauses.\nTerminationinConsequenceofForceMajeure\n29.7 (a) If the carryingoutof substantiallyalltheWorksinprogress is preventedforacontinuousperiodofnotlessthanonehundredand eightytwo(182)daysbyreasonofForceMajeureofwhichnotice hasbeengiven underClause29.3(NoticeofForceMajeure) then, beengrantedanextensionoftheTimeforCompletion,eitherparty shallbeentitledtoserveupon theother twentyeight(28)days notice to terminate the Contract.\n(b) In the event that either party gives notice of termination for Force Majeureinaccordancewiththeprovisionsof Sub-Clause(a)of this Clause29.7(andprovided thattheContracthasnotbeenterminated forfrustrationinaccordancewiththeprovisionsofClause29.1 (Frustration))suchnoticeshalloperateto terminatetheContractat theendofthe twentyeight(28)dayperiodreferred tointhesaid Sub-Clause(a)butwithout prejudiceto:-\n(i) theobligationoftheEmployertopayto theContractorasum determinedinaccordancewithClause29.8(Paymenton FrustrationorForceMajeure);and\n(i) anyrightsorobligationswhichmayhaveaccrueddue between thepartiesprior to such termination.\nPaymentonFrustrationorForceMajeure\n29.8If theContractisterminatedordeemedterminatedunderClause29.7 (TerminationinConsequenceofForceMajeure)orClause29.1 (Frustration)theContractorshallpromptlycease allfurtherwork,exceptfor suchworkasmaybeinstructedbytheEmployerfortheprotectionof lifeor propertyorforthesafetyof theWorks,submit totheProjectManager all Contractor's Drawings, comply with any instructions of the Employer in relationtoPlantnotyetdeliveredtoSite,removefromtheSite,withtheprior writtenconsentof theProjectManager,allContractor'sEquipment and submittotheProjectManagerintriplicateanInterimCertificateapplication prepared and accompaniedinaccordancewithClause26.1(Applicationfor InterimCertificates)uptothetimeof terminationordeemedtermination. TheProjectManagershallconsider theInterimCertificateapplication, prepareanInterimCertificateuptosuchtimeandissuethesamein accordancewithClause26.2(lssueofInterimCertificates)andpayment thereof shall be made in accordancewith Clause 27 (Paymcnt).\nThereafter,assoonastherequired documentsandevidencehavebecome availabletheContractorshallprepareandsubmittotheProjectManagerin triplicateafinal account(togetherwith allsuchdocumentsandevidenceas the Project Manager may require in order to substantiate the same) which",
+      "line_count": 9
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

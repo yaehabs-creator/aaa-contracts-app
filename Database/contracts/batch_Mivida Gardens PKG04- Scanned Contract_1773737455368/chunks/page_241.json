@@ -1,0 +1,129 @@
+{
+  "text": "<!-- image -->\n\n|                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                |                                                                                                                         |                                                                                                                                                                                                                                                                                   | AR.66                                                                                                                                                                  |                                                                                        |                                                                                                                                                                |                                                                                                                                                                                                                                                  |                                                                                                                           |                                                                    |                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |\n|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| AR.70 (engineered wood underlayment as HDF terrazzo please confirm) For BOQ,BillTH01-A,TH01-B,TH02-A,TH02-B,TH02-C SECTION H -wood flooringKindiy refer to IE5-102,detail #01 | AR.69 please advisethicknessforscreed and adhesive Porcelain fioor Size (1200x600) to be installed with Tile adhesive on Cement Screed withID Sheets #IE5-101-104-ID GENERAL DETAILS-1E5-101 ancproject speciicatios For BOQ,Bill TH01-A, TH01-B, TH02-A, TH02-B， division 09,section 093000. | AR.68 please advise thicknessforsand andmortar division09,section093000. GENERAL DETAILS-IE5-101 and project speciatons | AR.67 one is required under wood floor terrazzo or screed. at DWG(IE5-101DETAIL 03)andDWG(IE5-10DETA!L 01).thereisa conflict which For BOQ,BillTH01-A,TH01-B,TH02-A,THO2-B,TH02-C SECTION H -wood flooring Terrazzo Tile,follow detail No.(IE5-102/01),attached Updated drawings. | sand. TILE at DWG (AE5-101 DETAIL 12, 13), please confirm that there is a 30 mm clean For BOQ,Bill TH01-A,TH01-B,TH02-A, ，TH02-B,TH02-C SECTION H -TERRAZO Confirmed. | AR.65 at DWG (IE5-102 DETAIL 05) piease confirm there is no bulkhead at wet area (C03) | AR.64 fixation2cm. Please confirm that ST-02 crema uno for internal stairs and landincs are fixed with wet Refer to specifications division09, section 096340. | AR.63 wet fixation2cmasperdetail 11and14DWGAE5-101. Please confirm that ST-01 facade skirtings,claddings and external stairs are fixed with Confirmed to be wet fixatior: in compliance with project specifications division 04, section 044200. | AR.62 Please provide us with D02 drawing and details and its location for TH01-A and TH01-B. This type has beencancelled. | AR.61 Please provide us with specs for GRC. Referto attachedspecs. | AR.60 thesevillas. ForBOQ,BillTH01-A,TH01-BHardware,pleaseprovideuswith the hardwareset3BforUpdatedBOQis attached. | AR.59 Please specify which one to follow. laminat MDF floating shelfixed on a round hollow galvanized steei floating shelf bracket.countertop shef. Refer to shef attached drawing (IE5-102). indicates that the shelf in stone while in detail 09 DWG IE5-102, it is a 18mm thick hollow galvanized steel floating shelf bracket.ST-04 For niche shelf and (JF-01). Far uncer For BOQ,BillTH01-A and TH01-B,items11.1,ST-04 lower stone shelf forvanity unitsPlease follow BOQ.Vanity shelf is 50mm thick laminat MDFfloating shelf fixed onaround |\n\n中建国际坊\n\n有限责任\n\n## Package iD : PK#04\n\n## Subject: Construction of Townhomes Villas n Parcels 11 &amp;12\n\nProject:Mivida Gardens",
+  "results": [
+    {
+      "text": "中建国际坊",
+      "confidence": 0.95,
+      "box": [
+        [
+          148.1715291341146,
+          67.71136474609375
+        ],
+        [
+          150.24675496419272,
+          67.71136474609375
+        ],
+        [
+          150.24675496419272,
+          12.148213704427121
+        ],
+        [
+          148.1715291341146,
+          12.148213704427121
+        ]
+      ],
+      "page": 241
+    },
+    {
+      "text": "有限责任",
+      "confidence": 0.95,
+      "box": [
+        [
+          165.18842569986978,
+          69.36997477213538
+        ],
+        [
+          165.60347493489584,
+          69.36997477213538
+        ],
+        [
+          165.60347493489584,
+          16.29469807942712
+        ],
+        [
+          165.18842569986978,
+          16.29469807942712
+        ]
+      ],
+      "page": 241
+    },
+    {
+      "text": "Package iD : PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          484.7740885416667,
+          705.8585306803385
+        ],
+        [
+          498.4705810546875,
+          705.8585306803385
+        ],
+        [
+          498.4705810546875,
+          628.7335408528646
+        ],
+        [
+          484.7740885416667,
+          628.7335408528646
+        ]
+      ],
+      "page": 241
+    },
+    {
+      "text": "Subject: Construction of Townhomes Villas n Parcels 11 &12",
+      "confidence": 0.95,
+      "box": [
+        [
+          501.3759358723958,
+          705.8585306803385
+        ],
+        [
+          514.6573893229166,
+          705.8585306803385
+        ],
+        [
+          514.6573893229166,
+          474.48354085286456
+        ],
+        [
+          501.3759358723958,
+          474.48354085286456
+        ]
+      ],
+      "page": 241
+    },
+    {
+      "text": "Project:Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          517.562744140625,
+          705.4438781738281
+        ],
+        [
+          528.3539225260416,
+          705.4438781738281
+        ],
+        [
+          528.3539225260416,
+          610.4889119466146
+        ],
+        [
+          517.562744140625,
+          610.4889119466146
+        ]
+      ],
+      "page": 241
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 241,
+      "text": "中建国际坊\n有限责任\nPackage iD : PK#04\nSubject: Construction of Townhomes Villas n Parcels 11 &12\nProject:Mivida Gardens",
+      "line_count": 5
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

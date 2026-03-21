@@ -1,0 +1,313 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n## 7. TERM OFUNDERTAKING\n\nThisAgreement shallbevalidforaperiodof five(5)years from thedateof this Agreement or the maximum period as may be permitted by Egyptian law, whichever is longer.\n\n## 8. ENTIRE AGREEMENT\n\nThisUndertakingconstitutes the entire agreementbetween theParties and supersedes and extinguishes all previous drafts,arrangements,understandings or agreements betweenthem,whetherwrittenororal,relatingtothesubjectmatterof thisUndertaking.\n\n## 9. SEVERANCE\n\nIf acourtor anyother competent authority finds that anyclause(orpart thereof)of this Undertakingis invalid,illegal orunenforceable,that clause orpart-clauseshall,to the extentrequired，bedeemeddeleted，andthevalidityandenforceabilityoftheother clausesof thisUndertakingshall notbeaffected.\n\n## 10.GOVERNINGLAW\n\nThisagreement isgovernedbyandshall beconstrued inaccordancewithEgyptianLaw andwehereby irrevocablysubmit to theexclusivejurisdictionof theCourtsof theArab Republic of Egypt\n\nYours faithfully,\n\nForCSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD\n\nMr.WangZhi-GeneralManager\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          749.198476155599
+        ],
+        [
+          164.05492146809897,
+          749.198476155599
+        ],
+        [
+          164.05492146809897,
+          733.0778401692709
+        ],
+        [
+          97.671875,
+          733.0778401692709
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.50426228841145,
+          729.6840209960938
+        ],
+        [
+          142.913818359375,
+          729.6840209960938
+        ],
+        [
+          142.913818359375,
+          719.0783487955729
+        ],
+        [
+          120.50426228841145,
+          719.0783487955729
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "7. TERM OFUNDERTAKING",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          698.2912089029948
+        ],
+        [
+          213.52508544921875,
+          698.2912089029948
+        ],
+        [
+          213.52508544921875,
+          687.2613118489584
+        ],
+        [
+          96.40340169270833,
+          687.2613118489584
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "ThisAgreement shallbevalidforaperiodof five(5)years from thedateof this Agreement or the maximum period as may be permitted by Egyptian law, whichever is longer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.58474731445312,
+          685.1401672363281
+        ],
+        [
+          488.359375,
+          685.1401672363281
+        ],
+        [
+          488.359375,
+          650.7777709960938
+        ],
+        [
+          114.58474731445312,
+          650.7777709960938
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "8. ENTIRE AGREEMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          640.1720987955729
+        ],
+        [
+          199.99479166666666,
+          640.1720987955729
+        ],
+        [
+          199.99479166666666,
+          630.4148763020834
+        ],
+        [
+          96.40340169270833,
+          630.4148763020834
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "ThisUndertakingconstitutes the entire agreementbetween theParties and supersedes and extinguishes all previous drafts,arrangements,understandings or agreements betweenthem,whetherwrittenororal,relatingtothesubjectmatterof thisUndertaking.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.007568359375,
+          627.4452718098959
+        ],
+        [
+          487.9365234375,
+          627.4452718098959
+        ],
+        [
+          487.9365234375,
+          595.2040201822916
+        ],
+        [
+          115.007568359375,
+          595.2040201822916
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "9. SEVERANCE",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          582.052978515625
+        ],
+        [
+          166.59184773763022,
+          582.052978515625
+        ],
+        [
+          166.59184773763022,
+          572.2957560221355
+        ],
+        [
+          96.82623291015625,
+          572.2957560221355
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "If acourtor anyother competent authority finds that anyclause(orpart thereof)of this Undertakingis invalid,illegal orunenforceable,that clause orpart-clauseshall,to the extentrequired，bedeemeddeleted，andthevalidityandenforceabilityoftheother clausesof thisUndertakingshall notbeaffected.",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.007568359375,
+          569.7503865559895
+        ],
+        [
+          488.359375,
+          569.7503865559895
+        ],
+        [
+          488.359375,
+          526.0549926757812
+        ],
+        [
+          115.007568359375,
+          526.0549926757812
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "10.GOVERNINGLAW",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          513.7524007161458
+        ],
+        [
+          187.31011962890625,
+          513.7524007161458
+        ],
+        [
+          187.31011962890625,
+          503.99517822265625
+        ],
+        [
+          96.40340169270833,
+          503.99517822265625
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "Thisagreement isgovernedbyandshall beconstrued inaccordancewithEgyptianLaw andwehereby irrevocablysubmit to theexclusivejurisdictionof theCourtsof theArab Republic of Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          115.43039957682292,
+          500.6013590494792
+        ],
+        [
+          488.359375,
+          500.6013590494792
+        ],
+        [
+          488.359375,
+          467.08742268880206
+        ],
+        [
+          115.43039957682292,
+          467.08742268880206
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "Yours faithfully,",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          458.60288492838544
+        ],
+        [
+          163.20927937825522,
+          458.60288492838544
+        ],
+        [
+          163.20927937825522,
+          444.60337320963544
+        ],
+        [
+          95.1349385579427,
+          444.60337320963544
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "ForCSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.98058064778645,
+          435.27036539713544
+        ],
+        [
+          381.3854166666667,
+          435.27036539713544
+        ],
+        [
+          381.3854166666667,
+          425.51316324869794
+        ],
+        [
+          95.98058064778645,
+          425.51316324869794
+        ]
+      ],
+      "page": 575
+    },
+    {
+      "text": "Mr.WangZhi-GeneralManager",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          412.78631591796875
+        ],
+        [
+          237.203125,
+          412.78631591796875
+        ],
+        [
+          237.203125,
+          402.18064371744794
+        ],
+        [
+          96.40340169270833,
+          402.18064371744794
+        ]
+      ],
+      "page": 575
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 575,
+      "text": "EMAAR\nMISR\n7. TERM OFUNDERTAKING\nThisAgreement shallbevalidforaperiodof five(5)years from thedateof this Agreement or the maximum period as may be permitted by Egyptian law, whichever is longer.\n8. ENTIRE AGREEMENT\nThisUndertakingconstitutes the entire agreementbetween theParties and supersedes and extinguishes all previous drafts,arrangements,understandings or agreements betweenthem,whetherwrittenororal,relatingtothesubjectmatterof thisUndertaking.\n9. SEVERANCE\nIf acourtor anyother competent authority finds that anyclause(orpart thereof)of this Undertakingis invalid,illegal orunenforceable,that clause orpart-clauseshall,to the extentrequired，bedeemeddeleted，andthevalidityandenforceabilityoftheother clausesof thisUndertakingshall notbeaffected.\n10.GOVERNINGLAW\nThisagreement isgovernedbyandshall beconstrued inaccordancewithEgyptianLaw andwehereby irrevocablysubmit to theexclusivejurisdictionof theCourtsof theArab Republic of Egypt\nYours faithfully,\nForCSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD\nMr.WangZhi-GeneralManager",
+      "line_count": 13
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,635 @@
+{
+  "text": "<!-- image -->\n\n## SECTION 01025\n\n## MEASUREMENTANDPAYMENT\n\n## PART 1 - GENERAL\n\n## 1.01 SECTION INCLUDES\n\n1. Payments.\n3. Payments to Subcontractors.\n2. Payments Withheld.\n\n## 1.02 RELATEDSECTIONS\n\n1. Conditions of Contract\n\n## 1.03 PAYMENTS\n\n1. Application forpaymentto theContractorwillbemade inaccordancewith the Conditions of Contract.\n2. Payments to the Contractor will be made in accordance with the Conditions of Contract.\n\n## 1.04 PAYMENTSWITHHELD\n\n1. The ContractAdministratormaywithholdornullify thewholeor apartof any application for paymentrepresented by the Contractor's estimate or anyPayment Certificate to such extent as maybe necessary to protect theEmployerfrom lossbecause of:\n2. Defective worknotremedied;\n3. Claims filed or reasonable evidence indicating probable filing of claims;\n4. Failure of the Contractor to make payments properly to Subcontractors C） or for material orlabour;\n5. d)A reasonable doubt that the Contract can be completed,and all unpaid claims, charges,liens and encumbrances satisfied,for the balance then unpaid;\n6. Damage to another contractor,\n- g) Unauthorized deviations by the Contractor  from the Contract Documents;\n8. e f Erroneous estimates by theContractor of the value of the Work performed;\n9. Unsatisfactory progress of the Works by the Contractor;\n- h) Contractor not complying with instructions issued to him in accordance\n11. withtheterms ofthe Contract.\n2. When the above grounds are removed, payments will be made for amounts withheld because of them. No interest will be paid onpayments withheld.The Contract Administrator's determination as to theissuance ur withhulding of, or the' amount of payment reflected by certifioales for payment, shall be linal and binding and shall not subject the Contract\n\n<!-- image -->\n\nsypt\n\nLta",
+  "results": [
+    {
+      "text": "SECTION 01025",
+      "confidence": 0.95,
+      "box": [
+        [
+          241.97198486328125,
+          723.6885070800781
+        ],
+        [
+          329.1317138671875,
+          723.6885070800781
+        ],
+        [
+          329.1317138671875,
+          713.7368876139323
+        ],
+        [
+          241.97198486328125,
+          713.7368876139323
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "MEASUREMENTANDPAYMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          197.5620320638021,
+          699.22412109375
+        ],
+        [
+          373.5416666666667,
+          699.22412109375
+        ],
+        [
+          373.5416666666667,
+          692.5897115071615
+        ],
+        [
+          197.5620320638021,
+          692.5897115071615
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "PART 1 - GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.63310241699219,
+          673.9304402669271
+        ],
+        [
+          178.05485026041666,
+          673.9304402669271
+        ],
+        [
+          178.05485026041666,
+          664.3934834798177
+        ],
+        [
+          72.63310241699219,
+          664.3934834798177
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "1.01 SECTION INCLUDES",
+      "confidence": 0.95,
+      "box": [
+        [
+          72.21805318196614,
+          652.7832641601562
+        ],
+        [
+          241.55694580078125,
+          652.7832641601562
+        ],
+        [
+          241.55694580078125,
+          637.8558553059896
+        ],
+        [
+          72.21805318196614,
+          637.8558553059896
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Payments.",
+      "confidence": 0.95,
+      "box": [
+        [
+          101.2712910970052,
+          629.5628458658854
+        ],
+        [
+          183.8654988606771,
+          629.5628458658854
+        ],
+        [
+          183.8654988606771,
+          616.2940266927084
+        ],
+        [
+          101.2712910970052,
+          616.2940266927084
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Payments to Subcontractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.51643880208333,
+          605.9277547200521
+        ],
+        [
+          278.0810139973958,
+          605.9277547200521
+        ],
+        [
+          278.0810139973958,
+          593.9028930664062
+        ],
+        [
+          102.51643880208333,
+          593.9028930664062
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Payments Withheld.",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.1013895670573,
+          617.9526163736979
+        ],
+        [
+          232.4259236653646,
+          617.9526163736979
+        ],
+        [
+          232.4259236653646,
+          604.6837972005209
+        ],
+        [
+          102.1013895670573,
+          604.6837972005209
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "1.02 RELATEDSECTIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.70833333333333,
+          572.341064453125
+        ],
+        [
+          246.1224568684896,
+          572.341064453125
+        ],
+        [
+          246.1224568684896,
+          558.6575927734375
+        ],
+        [
+          74.70833333333333,
+          558.6575927734375
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Conditions of Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.59166463216145,
+          549.5352783203125
+        ],
+        [
+          246.1224568684896,
+          549.5352783203125
+        ],
+        [
+          246.1224568684896,
+          537.925069173177
+        ],
+        [
+          104.59166463216145,
+          537.925069173177
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "1.03 PAYMENTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          515.533935546875
+        ],
+        [
+          196.73193359375,
+          515.533935546875
+        ],
+        [
+          196.73193359375,
+          501.02117919921875
+        ],
+        [
+          75.95347086588542,
+          501.02117919921875
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Application forpaymentto theContractorwillbemade inaccordancewith the Conditions of Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.0067138671875,
+          491.89886474609375
+        ],
+        [
+          504.6962890625,
+          491.89886474609375
+        ],
+        [
+          504.6962890625,
+          471.99562581380206
+        ],
+        [
+          105.0067138671875,
+          471.99562581380206
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Payments to the Contractor will be made in accordance with the Conditions of Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          105.42176310221355,
+          458.31215413411456
+        ],
+        [
+          505.9414469401042,
+          458.31215413411456
+        ],
+        [
+          505.9414469401042,
+          437.99428304036456
+        ],
+        [
+          105.42176310221355,
+          437.99428304036456
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "1.04 PAYMENTSWITHHELD",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          412.70062255859375
+        ],
+        [
+          261.0641276041667,
+          412.70062255859375
+        ],
+        [
+          261.0641276041667,
+          398.60247802734375
+        ],
+        [
+          78.02870178222656,
+          398.60247802734375
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "The ContractAdministratormaywithholdornullify thewholeor apartof any application for paymentrepresented by the Contractor's estimate or anyPayment Certificate to such extent as maybe necessary to protect theEmployerfrom lossbecause of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.9120381673177,
+          389.89483642578125
+        ],
+        [
+          508.8467610677083,
+          389.89483642578125
+        ],
+        [
+          508.8467610677083,
+          347.60048421223956
+        ],
+        [
+          107.9120381673177,
+          347.60048421223956
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Defective worknotremedied;",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          333.50238037109375
+        ],
+        [
+          301.3236083984375,
+          333.50238037109375
+        ],
+        [
+          301.3236083984375,
+          325.20937093098956
+        ],
+        [
+          152.7370402018229,
+          325.20937093098956
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Claims filed or reasonable evidence indicating probable filing of claims;",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.1520792643229,
+          322.72145589192706
+        ],
+        [
+          510.5069580078125,
+          322.72145589192706
+        ],
+        [
+          510.5069580078125,
+          298.6717325846354
+        ],
+        [
+          153.1520792643229,
+          298.6717325846354
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Failure of the Contractor to make payments properly to Subcontractors C） or for material orlabour;",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.0405069986979,
+          299.9156697591146
+        ],
+        [
+          510.5069580078125,
+          299.9156697591146
+        ],
+        [
+          510.5069580078125,
+          278.3538614908854
+        ],
+        [
+          139.0405069986979,
+          278.3538614908854
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "d)A reasonable doubt that the Contract can be completed,and all unpaid claims, charges,liens and encumbrances satisfied,for the balance then unpaid;",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.55023193359375,
+          276.28057861328125
+        ],
+        [
+          511.7520751953125,
+          276.28057861328125
+        ],
+        [
+          511.7520751953125,
+          243.52321370442712
+        ],
+        [
+          136.55023193359375,
+          243.52321370442712
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Damage to another contractor,",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.05740356445312,
+          241.86460367838538
+        ],
+        [
+          310.4546305338542,
+          241.86460367838538
+        ],
+        [
+          310.4546305338542,
+          233.98622639973962
+        ],
+        [
+          156.05740356445312,
+          233.98622639973962
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Unauthorized deviations by the Contractor  from the Contract Documents;",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.0405069986979,
+          211.18048095703125
+        ],
+        [
+          513.8273111979166,
+          211.18048095703125
+        ],
+        [
+          513.8273111979166,
+          185.47214762369788
+        ],
+        [
+          139.0405069986979,
+          185.47214762369788
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "e f Erroneous estimates by theContractor of the value of the Work performed;",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.0405069986979,
+          238.96205647786462
+        ],
+        [
+          512.1671142578125,
+          238.96205647786462
+        ],
+        [
+          512.1671142578125,
+          208.27789306640625
+        ],
+        [
+          139.0405069986979,
+          208.27789306640625
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Unsatisfactory progress of the Works by the Contractor;",
+      "confidence": 0.95,
+      "box": [
+        [
+          155.64236450195312,
+          186.30141194661462
+        ],
+        [
+          439.5340169270833,
+          186.30141194661462
+        ],
+        [
+          439.5340169270833,
+          179.25238037109375
+        ],
+        [
+          155.64236450195312,
+          179.25238037109375
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Contractor not complying with instructions issued to him in accordance",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.87060546875,
+          183.81353759765625
+        ],
+        [
+          514.6573893229166,
+          183.81353759765625
+        ],
+        [
+          514.6573893229166,
+          170.13006591796875
+        ],
+        [
+          139.87060546875,
+          170.13006591796875
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "withtheterms ofthe Contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.88750203450522,
+          162.25168863932288
+        ],
+        [
+          310.8696695963542,
+          162.25168863932288
+        ],
+        [
+          310.8696695963542,
+          154.37335205078125
+        ],
+        [
+          156.88750203450522,
+          154.37335205078125
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "When the above grounds are removed, payments will be made for amounts withheld because of them. No interest will be paid onpayments withheld.The Contract Administrator's determination as to theissuance ur withhulding of, or the' amount of payment reflected by certifioales for payment, shall be linal and binding and shall not subject the Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          139.86053466796875
+        ],
+        [
+          519.6379801432291,
+          139.86053466796875
+        ],
+        [
+          519.6379801432291,
+          83.05348714192712
+        ],
+        [
+          113.30763753255208,
+          83.05348714192712
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "sypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          519.222900390625,
+          186.30141194661462
+        ],
+        [
+          534.5796305338541,
+          186.30141194661462
+        ],
+        [
+          534.5796305338541,
+          168.47145589192712
+        ],
+        [
+          519.222900390625,
+          168.47145589192712
+        ]
+      ],
+      "page": 258
+    },
+    {
+      "text": "Lta",
+      "confidence": 0.95,
+      "box": [
+        [
+          544.9557698567709,
+          151.47080485026038
+        ],
+        [
+          553.2567138671875,
+          151.47080485026038
+        ],
+        [
+          553.2567138671875,
+          134.47015380859375
+        ],
+        [
+          544.9557698567709,
+          134.47015380859375
+        ]
+      ],
+      "page": 258
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 258,
+      "text": "SECTION 01025\nMEASUREMENTANDPAYMENT\nPART 1 - GENERAL\n1.01 SECTION INCLUDES\nPayments.\nPayments to Subcontractors.\nPayments Withheld.\n1.02 RELATEDSECTIONS\nConditions of Contract\n1.03 PAYMENTS\nApplication forpaymentto theContractorwillbemade inaccordancewith the Conditions of Contract.\nPayments to the Contractor will be made in accordance with the Conditions of Contract.\n1.04 PAYMENTSWITHHELD\nThe ContractAdministratormaywithholdornullify thewholeor apartof any application for paymentrepresented by the Contractor's estimate or anyPayment Certificate to such extent as maybe necessary to protect theEmployerfrom lossbecause of:\nDefective worknotremedied;\nClaims filed or reasonable evidence indicating probable filing of claims;\nFailure of the Contractor to make payments properly to Subcontractors C） or for material orlabour;\nd)A reasonable doubt that the Contract can be completed,and all unpaid claims, charges,liens and encumbrances satisfied,for the balance then unpaid;\nDamage to another contractor,\nUnauthorized deviations by the Contractor  from the Contract Documents;\ne f Erroneous estimates by theContractor of the value of the Work performed;\nUnsatisfactory progress of the Works by the Contractor;\nContractor not complying with instructions issued to him in accordance\nwiththeterms ofthe Contract.\nWhen the above grounds are removed, payments will be made for amounts withheld because of them. No interest will be paid onpayments withheld.The Contract Administrator's determination as to theissuance ur withhulding of, or the' amount of payment reflected by certifioales for payment, shall be linal and binding and shall not subject the Contract\nsypt\nLta",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

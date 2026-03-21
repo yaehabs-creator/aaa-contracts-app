@@ -1,10 +1,13 @@
+
 import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChatProvider } from '../../context/ChatContext';
 import { useChat } from '@/hooks/useChat';
+import { useAppStore } from '@/store/useAppStore';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 import TypingIndicator from './TypingIndicator';
+import KnowledgeContextPicker from './KnowledgeContextPicker';
 import { ContextPill } from '@/types';
 
 
@@ -42,7 +45,8 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
         setIsGraphMode
     } = useChat();
 
-
+    const { activeChatContextIds } = useAppStore();
+    const [isKnowledgePickerOpen, setIsKnowledgePickerOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -70,6 +74,8 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
         hidden: { opacity: 0 },
         visible: { opacity: 1 }
     };
+
+    const activeSourceCount = activeChatContextIds.length;
 
     return (
         <AnimatePresence>
@@ -99,14 +105,14 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
               shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-[2.5rem]`}
                     >
                         {/* ── Header ── */}
-                        <header className="h-20 px-8 flex items-center justify-between border-b border-black/[0.03] bg-white/30 flex-shrink-0">
+                        <header className="px-8 py-5 flex items-center justify-between border-b border-black/[0.03] bg-white/30 flex-shrink-0">
                             <div className="flex flex-col">
                                 <h2 className="text-xl font-black text-black tracking-tight leading-none">{title}</h2>
                                 <div className="flex items-center gap-3 mt-1.5">
                                     <div className="flex items-center gap-2">
-                                        <div className={`w-1.5 h-1.5 rounded-full ${isGraphMode ? 'bg-purple-500' : 'bg-emerald-500'} animate-pulse`} />
+                                        <div className={`w-1.5 h-1.5 rounded-full ${activeSourceCount > 0 ? 'bg-emerald-500' : 'bg-amber-400'} animate-pulse`} />
                                         <span className="text-[10px] font-bold text-black/40 uppercase tracking-widest">
-                                            {isGraphMode ? 'Graph Analysis' : 'Neural Analysis'} Active
+                                            {activeSourceCount > 0 ? `${activeSourceCount} Source${activeSourceCount > 1 ? 's' : ''}` : 'No Sources'}
                                         </span>
                                     </div>
                                     <button
@@ -114,22 +120,52 @@ const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractC
                                         className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-tighter transition-all border
                                             ${isGraphMode
                                                 ? 'bg-purple-500/10 border-purple-500/20 text-purple-600'
-                                                : 'bg-black/[0.03] border-transparent text-black/30 hover:text-black/60'}`}
+                                                : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600'}`}
                                     >
-                                        {isGraphMode ? 'Graph On' : 'Graph Off'}
+                                        {isGraphMode ? 'Agentic' : 'Standard'}
                                     </button>
                                 </div>
                             </div>
-                            <button
-                                onClick={onClose}
-                                className="w-10 h-10 rounded-full flex items-center justify-center bg-black/[0.03] hover:bg-black/[0.08] transition-colors group"
-                            >
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-black/60 group-hover:text-black">
-                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                </svg>
-                            </button>
+                            <div className="flex items-center gap-2">
+                                {/* Knowledge Hub Toggle Button */}
+                                <button
+                                    onClick={() => setIsKnowledgePickerOpen(!isKnowledgePickerOpen)}
+                                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all group relative ${
+                                        isKnowledgePickerOpen
+                                            ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-200'
+                                            : 'bg-black/[0.03] hover:bg-black/[0.08] text-black/50 hover:text-black/70'
+                                    }`}
+                                    title="Knowledge Context"
+                                >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                                    </svg>
+                                    {/* Active indicator badge */}
+                                    {activeSourceCount > 0 && !isKnowledgePickerOpen && (
+                                        <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-indigo-600 text-white text-[8px] font-black flex items-center justify-center shadow-md">
+                                            {activeSourceCount}
+                                        </span>
+                                    )}
+                                </button>
+                                {/* Close Button */}
+                                <button
+                                    onClick={onClose}
+                                    className="w-10 h-10 rounded-full flex items-center justify-center bg-black/[0.03] hover:bg-black/[0.08] transition-colors group"
+                                >
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-black/60 group-hover:text-black">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
                         </header>
+
+                        {/* ── Knowledge Context Picker ── */}
+                        <KnowledgeContextPicker
+                            isOpen={isKnowledgePickerOpen}
+                            onClose={() => setIsKnowledgePickerOpen(false)}
+                        />
 
                         {/* ── Contract AI Chat ── */}
                         <main className="flex-1 flex flex-col min-h-0 bg-gradient-to-b from-transparent to-black/[0.01]">

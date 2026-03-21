@@ -1,0 +1,106 @@
+{
+  "text": "<!-- image -->\n\n## Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt\n\n## Construction Package PK#04\n\n## Construction of Townhomes Villas in Parcel 11 &amp; Parcel 12\n\n<!-- image -->\n\n## Instructions to Tenderers\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt",
+      "confidence": 0.95,
+      "box": [
+        [
+          199.1491495768229,
+          655.0200398763021
+        ],
+        [
+          398.2982991536458,
+          655.0200398763021
+        ],
+        [
+          398.2982991536458,
+          534.9637654622395
+        ],
+        [
+          199.1491495768229,
+          534.9637654622395
+        ]
+      ],
+      "page": 577
+    },
+    {
+      "text": "Construction Package PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.43086751302084,
+          453.08791097005206
+        ],
+        [
+          419.0165608723958,
+          453.08791097005206
+        ],
+        [
+          419.0165608723958,
+          436.96726481119794
+        ],
+        [
+          178.43086751302084,
+          436.96726481119794
+        ]
+      ],
+      "page": 577
+    },
+    {
+      "text": "Construction of Townhomes Villas in Parcel 11 & Parcel 12",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.51798502604166,
+          412.36212158203125
+        ],
+        [
+          445.6543375651042,
+          412.36212158203125
+        ],
+        [
+          445.6543375651042,
+          378.42392985026044
+        ],
+        [
+          161.51798502604166,
+          378.42392985026044
+        ]
+      ],
+      "page": 577
+    },
+    {
+      "text": "Instructions to Tenderers",
+      "confidence": 0.95,
+      "box": [
+        [
+          195.34375,
+          292.73004150390625
+        ],
+        [
+          403.3721516927083,
+          292.73004150390625
+        ],
+        [
+          403.3721516927083,
+          277.4578653971354
+        ],
+        [
+          195.34375,
+          277.4578653971354
+        ]
+      ],
+      "page": 577
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 577,
+      "text": "Emaar Misr, Mivida Gardens Project East Cairo, Cairo, Egypt\nConstruction Package PK#04\nConstruction of Townhomes Villas in Parcel 11 & Parcel 12\nInstructions to Tenderers",
+      "line_count": 4
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,175 @@
+{
+  "text": "<!-- image -->\n\n## Technical Specifications(DivisionI)\n\nlocation but visible and accessible. The Contractor shall inspect each extinguisher weekly and replace any discharged or missing extinguishers. Supply one 10 kg. fire extinguisher to each elevated platform adjoining the site. The Contractor shall relocate fire extinguishers as necessary where they interfere with his operations.\n\n## 9 MISCELLANEOUS\n\nThe Contractor shall only use tools suitable for their purpose. All tools shall be fully tested prior to use and at routine intervals. Logs of the tool tests shall be kept on Site and be available for inspection.\n\nProvide for proper uniforms and identification of Contractor's and subcontractor's workforce and supervisors.\n\nThe Contractor shall not use any portions of the Site or completed work areas as living accommodation.He shall make his own arrangernentsaway from the Site for the housing of hispersonnel and include costs for these arrangements.\n\nENDOFSECTION01510\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Technical Specifications(DivisionI)",
+      "confidence": 0.95,
+      "box": [
+        [
+          338.6777750651042,
+          742.7624257405599
+        ],
+        [
+          501.7909749348958,
+          742.7624257405599
+        ],
+        [
+          501.7909749348958,
+          731.1522115071615
+        ],
+        [
+          338.6777750651042,
+          731.1522115071615
+        ]
+      ],
+      "page": 344
+    },
+    {
+      "text": "location but visible and accessible. The Contractor shall inspect each extinguisher weekly and replace any discharged or missing extinguishers. Supply one 10 kg. fire extinguisher to each elevated platform adjoining the site. The Contractor shall relocate fire extinguishers as necessary where they interfere with his operations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.57222493489583,
+          718.7126973470052
+        ],
+        [
+          504.6962890625,
+          718.7126973470052
+        ],
+        [
+          504.6962890625,
+          653.1979166666666
+        ],
+        [
+          109.57222493489583,
+          653.1979166666666
+        ]
+      ],
+      "page": 344
+    },
+    {
+      "text": "9 MISCELLANEOUS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          641.1730550130209
+        ],
+        [
+          192.16644287109375,
+          641.1730550130209
+        ],
+        [
+          192.16644287109375,
+          629.9774780273438
+        ],
+        [
+          77.61365763346355,
+          629.9774780273438
+        ]
+      ],
+      "page": 344
+    },
+    {
+      "text": "The Contractor shall only use tools suitable for their purpose. All tools shall be fully tested prior to use and at routine intervals. Logs of the tool tests shall be kept on Site and be available for inspection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          623.3430786132812
+        ],
+        [
+          505.111328125,
+          623.3430786132812
+        ],
+        [
+          505.111328125,
+          583.9512736002604
+        ],
+        [
+          92.14027913411458,
+          583.9512736002604
+        ]
+      ],
+      "page": 344
+    },
+    {
+      "text": "Provide for proper uniforms and identification of Contractor's and subcontractor's workforce and supervisors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          577.3168741861979
+        ],
+        [
+          504.6962890625,
+          577.3168741861979
+        ],
+        [
+          504.6962890625,
+          551.6085408528645
+        ],
+        [
+          92.97036743164062,
+          551.6085408528645
+        ]
+      ],
+      "page": 344
+    },
+    {
+      "text": "The Contractor shall not use any portions of the Site or completed work areas as living accommodation.He shall make his own arrangernentsaway from the Site for the housing of hispersonnel and include costs for these arrangements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          545.8034261067708
+        ],
+        [
+          505.5263671875,
+          545.8034261067708
+        ],
+        [
+          505.5263671875,
+          493.55747477213544
+        ],
+        [
+          92.14027913411458,
+          493.55747477213544
+        ]
+      ],
+      "page": 344
+    },
+    {
+      "text": "ENDOFSECTION01510",
+      "confidence": 0.95,
+      "box": [
+        [
+          225.3701375325521,
+          479.87400309244794
+        ],
+        [
+          356.1097005208333,
+          479.87400309244794
+        ],
+        [
+          356.1097005208333,
+          468.67844645182294
+        ],
+        [
+          225.3701375325521,
+          468.67844645182294
+        ]
+      ],
+      "page": 344
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 344,
+      "text": "Technical Specifications(DivisionI)\nlocation but visible and accessible. The Contractor shall inspect each extinguisher weekly and replace any discharged or missing extinguishers. Supply one 10 kg. fire extinguisher to each elevated platform adjoining the site. The Contractor shall relocate fire extinguishers as necessary where they interfere with his operations.\n9 MISCELLANEOUS\nThe Contractor shall only use tools suitable for their purpose. All tools shall be fully tested prior to use and at routine intervals. Logs of the tool tests shall be kept on Site and be available for inspection.\nProvide for proper uniforms and identification of Contractor's and subcontractor's workforce and supervisors.\nThe Contractor shall not use any portions of the Site or completed work areas as living accommodation.He shall make his own arrangernentsaway from the Site for the housing of hispersonnel and include costs for these arrangements.\nENDOFSECTION01510",
+      "line_count": 7
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

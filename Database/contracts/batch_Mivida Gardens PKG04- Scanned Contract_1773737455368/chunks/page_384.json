@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\ntitled OPERATINGANDMAINTENANCEDATA AND MANUALS andprovide an electronic copy.\n\n5. Obtain receipt for delivered products and submit prior to final payment.\n\n## 1.08 SPECIALTOOLSAND TESTEQUIPMENT REQUIREDFOREQUIPMENT\n\n1. Provide for each equipment item tools and test equipment which is designed to maintenance personnel but which are required for operation, maintenance andrepairoftheequipment.\n2. Provide with special tools and test equipment a list and quantity of the tools and equipment supplied including the following information for each item:\n- a) Facility or system: name: major system: sub system.\n4. CS Special tools/test equipment: nomenclature: purpose: rnanufacturer's part number or drawing number: manufacturer's name and address: quantity recommendedbymanufacturer:unitprice:recommendedsourceof supply: estimate lead time.\n- d) Other pertinent data (e.g., calibration tolerance or storage requirements).\n6. Sections.\n4. Provide items with tags identifying their function and equipment to which they areassociated.\n5. Deliver to the Site, place and store as directed by Contract Administrator.\n6. Receive and catalogue all items.S Submit inventorylisting toContract Administrator in an approved format. Include listings in the Operating and Maintenance Manuals specified in Section 01730 titled OPERATINGAND\n\nPART 2 - PRODUCTS (Not Used)\n\nPARI 3 - EXECUTION (Not Used)\n\nENDOFSECTION01750\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "titled OPERATINGANDMAINTENANCEDATA AND MANUALS andprovide an electronic copy.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          722.0298970540365
+        ],
+        [
+          505.9414469401042,
+          722.0298970540365
+        ],
+        [
+          505.9414469401042,
+          696.3215738932291
+        ],
+        [
+          111.23241170247395,
+          696.3215738932291
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Obtain receipt for delivered products and submit prior to final payment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          695.0776163736979
+        ],
+        [
+          466.9270833333333,
+          695.0776163736979
+        ],
+        [
+          466.9270833333333,
+          678.4915974934896
+        ],
+        [
+          92.97036743164062,
+          678.4915974934896
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "1.08 SPECIALTOOLSAND TESTEQUIPMENT REQUIREDFOREQUIPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          670.1985880533854
+        ],
+        [
+          495.9803059895833,
+          670.1985880533854
+        ],
+        [
+          495.9803059895833,
+          658.1737263997396
+        ],
+        [
+          78.44375101725261,
+          658.1737263997396
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Provide for each equipment item tools and test equipment which is designed to maintenance personnel but which are required for operation, maintenance andrepairoftheequipment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          654.0272115071615
+        ],
+        [
+          505.9414469401042,
+          654.0272115071615
+        ],
+        [
+          505.9414469401042,
+          606.3424072265625
+        ],
+        [
+          93.8004659016927,
+          606.3424072265625
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Provide with special tools and test equipment a list and quantity of the tools and equipment supplied including the following information for each item:",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          602.1959025065104
+        ],
+        [
+          505.111328125,
+          602.1959025065104
+        ],
+        [
+          505.111328125,
+          576.4875691731771
+        ],
+        [
+          93.8004659016927,
+          576.4875691731771
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Facility or system: name: major system: sub system.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.40231323242188,
+          573.1703694661459
+        ],
+        [
+          393.4638671875,
+          573.1703694661459
+        ],
+        [
+          393.4638671875,
+          559.072245279948
+        ],
+        [
+          110.40231323242188,
+          559.072245279948
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "CS Special tools/test equipment: nomenclature: purpose: rnanufacturer's part number or drawing number: manufacturer's name and address: quantity recommendedbymanufacturer:unitprice:recommendedsourceof supply: estimate lead time.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          538.754374186198
+        ],
+        [
+          506.3564860026042,
+          538.754374186198
+        ],
+        [
+          506.3564860026042,
+          491.4842122395833
+        ],
+        [
+          112.0625,
+          491.4842122395833
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Other pertinent data (e.g., calibration tolerance or storage requirements).",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          487.33770751953125
+        ],
+        [
+          494.3201497395833,
+          487.33770751953125
+        ],
+        [
+          494.3201497395833,
+          474.06890869140625
+        ],
+        [
+          110.81736246744792,
+          474.06890869140625
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Sections.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          459.55613199869794
+        ],
+        [
+          159.7928263346354,
+          459.55613199869794
+        ],
+        [
+          159.7928263346354,
+          446.70196533203125
+        ],
+        [
+          110.81736246744792,
+          446.70196533203125
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Provide items with tags identifying their function and equipment to which they areassociated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          443.38474527994794
+        ],
+        [
+          505.111328125,
+          443.38474527994794
+        ],
+        [
+          505.111328125,
+          418.50571695963544
+        ],
+        [
+          92.55532836914062,
+          418.50571695963544
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Deliver to the Site, place and store as directed by Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          414.77386474609375
+        ],
+        [
+          478.9634195963542,
+          414.77386474609375
+        ],
+        [
+          478.9634195963542,
+          399.84645589192706
+        ],
+        [
+          92.55532836914062,
+          399.84645589192706
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "Receive and catalogue all items.S Submit inventorylisting toContract Administrator in an approved format. Include listings in the Operating and Maintenance Manuals specified in Section 01730 titled OPERATINGAND",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          397.35854085286456
+        ],
+        [
+          505.9414469401042,
+          397.35854085286456
+        ],
+        [
+          505.9414469401042,
+          360.45465087890625
+        ],
+        [
+          92.55532836914062,
+          360.45465087890625
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "PART 2 - PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          330.59979248046875
+        ],
+        [
+          248.61273193359375,
+          330.59979248046875
+        ],
+        [
+          248.61273193359375,
+          314.84307861328125
+        ],
+        [
+          75.95347086588542,
+          314.84307861328125
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "PARI 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          294.93988037109375
+        ],
+        [
+          250.6879679361979,
+          294.93988037109375
+        ],
+        [
+          250.6879679361979,
+          281.25640869140625
+        ],
+        [
+          75.95347086588542,
+          281.25640869140625
+        ]
+      ],
+      "page": 384
+    },
+    {
+      "text": "ENDOFSECTION01750",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.125,
+          259.6945597330729
+        ],
+        [
+          356.1097005208333,
+          259.6945597330729
+        ],
+        [
+          356.1097005208333,
+          248.08437093098962
+        ],
+        [
+          224.125,
+          248.08437093098962
+        ]
+      ],
+      "page": 384
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 384,
+      "text": "titled OPERATINGANDMAINTENANCEDATA AND MANUALS andprovide an electronic copy.\nObtain receipt for delivered products and submit prior to final payment.\n1.08 SPECIALTOOLSAND TESTEQUIPMENT REQUIREDFOREQUIPMENT\nProvide for each equipment item tools and test equipment which is designed to maintenance personnel but which are required for operation, maintenance andrepairoftheequipment.\nProvide with special tools and test equipment a list and quantity of the tools and equipment supplied including the following information for each item:\nFacility or system: name: major system: sub system.\nCS Special tools/test equipment: nomenclature: purpose: rnanufacturer's part number or drawing number: manufacturer's name and address: quantity recommendedbymanufacturer:unitprice:recommendedsourceof supply: estimate lead time.\nOther pertinent data (e.g., calibration tolerance or storage requirements).\nSections.\nProvide items with tags identifying their function and equipment to which they areassociated.\nDeliver to the Site, place and store as directed by Contract Administrator.\nReceive and catalogue all items.S Submit inventorylisting toContract Administrator in an approved format. Include listings in the Operating and Maintenance Manuals specified in Section 01730 titled OPERATINGAND\nPART 2 - PRODUCTS (Not Used)\nPARI 3 - EXECUTION (Not Used)\nENDOFSECTION01750",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

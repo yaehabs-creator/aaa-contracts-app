@@ -1,0 +1,244 @@
+{
+  "text": "<!-- image -->\n\n## Technlcal Speclflcatlons(Dlvlslon I)\n\n- e)Develop corrective measures and procedures to regain planned schedule.\n- f) Maintenance of quality standards.\n- g)  Complete other current business.\n\n## 3.Revisions to minutes:\n\n- a) Unless published minutes are challenged in writing within five days of receipt or prior to the next regularly scheduled progress meeting, whichever is less, they will be accepted as properly stating the activities and decisions of the meeting.\n- b) Persons challenging published minutes shall reproduce and distribute copies of the challenge to all indicated recipients of the particular set of minutes.\n3. C Challenge to minutes shall be settled as priority portion of \"old business\" at the next regularly scheduled meeting.\n\n## PART 3 - EXECUTION (Not Used)\n\nENDOFSECTION01200\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Technlcal Speclflcatlons(Dlvlslon I)",
+      "confidence": 0.95,
+      "box": [
+        [
+          340.7530110677083,
+          743.5917307535807
+        ],
+        [
+          502.6210530598958,
+          743.5917307535807
+        ],
+        [
+          502.6210530598958,
+          732.8108113606771
+        ],
+        [
+          340.7530110677083,
+          732.8108113606771
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "e)Develop corrective measures and procedures to regain planned schedule.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          722.0298970540365
+        ],
+        [
+          493.4900309244792,
+          722.0298970540365
+        ],
+        [
+          493.4900309244792,
+          708.7610880533854
+        ],
+        [
+          112.0625,
+          708.7610880533854
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "Maintenance of quality standards.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          704.1999308268229
+        ],
+        [
+          296.3430582682292,
+          704.1999308268229
+        ],
+        [
+          296.3430582682292,
+          692.1750691731771
+        ],
+        [
+          112.89258829752605,
+          692.1750691731771
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": " Complete other current business.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          688.028554280599
+        ],
+        [
+          294.682861328125,
+          688.028554280599
+        ],
+        [
+          294.682861328125,
+          675.1743977864584
+        ],
+        [
+          110.81736246744792,
+          675.1743977864584
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "3.Revisions to minutes:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          658.588368733724
+        ],
+        [
+          218.7293904622396,
+          658.588368733724
+        ],
+        [
+          218.7293904622396,
+          647.3928019205729
+        ],
+        [
+          95.87569173177083,
+          647.3928019205729
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "Unless published minutes are challenged in writing within five days of receipt or prior to the next regularly scheduled progress meeting, whichever is less, they will be accepted as properly stating the activities and decisions of the meeting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          641.5877075195312
+        ],
+        [
+          505.9414469401042,
+          641.5877075195312
+        ],
+        [
+          505.9414469401042,
+          594.7321980794271
+        ],
+        [
+          112.0625,
+          594.7321980794271
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "Persons challenging published minutes shall reproduce and distribute copies of the challenge to all indicated recipients of the particular set of minutes.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          591.0003458658854
+        ],
+        [
+          506.7715250651042,
+          591.0003458658854
+        ],
+        [
+          506.7715250651042,
+          555.3403930664062
+        ],
+        [
+          111.23241170247395,
+          555.3403930664062
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "C Challenge to minutes shall be settled as priority portion of \"old business\" at the next regularly scheduled meeting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          551.1938883463542
+        ],
+        [
+          506.7715250651042,
+          551.1938883463542
+        ],
+        [
+          506.7715250651042,
+          526.3148600260417
+        ],
+        [
+          114.13773600260417,
+          526.3148600260417
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "PART 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          506.82627360026044
+        ],
+        [
+          251.93310546875,
+          506.82627360026044
+        ],
+        [
+          251.93310546875,
+          491.89886474609375
+        ],
+        [
+          77.1986083984375,
+          491.89886474609375
+        ]
+      ],
+      "page": 279
+    },
+    {
+      "text": "ENDOFSECTION01200",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.03031412760416,
+          470.75168863932294
+        ],
+        [
+          356.1097005208333,
+          470.75168863932294
+        ],
+        [
+          356.1097005208333,
+          459.55613199869794
+        ],
+        [
+          227.03031412760416,
+          459.55613199869794
+        ]
+      ],
+      "page": 279
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 279,
+      "text": "Technlcal Speclflcatlons(Dlvlslon I)\ne)Develop corrective measures and procedures to regain planned schedule.\nMaintenance of quality standards.\n Complete other current business.\n3.Revisions to minutes:\nUnless published minutes are challenged in writing within five days of receipt or prior to the next regularly scheduled progress meeting, whichever is less, they will be accepted as properly stating the activities and decisions of the meeting.\nPersons challenging published minutes shall reproduce and distribute copies of the challenge to all indicated recipients of the particular set of minutes.\nC Challenge to minutes shall be settled as priority portion of \"old business\" at the next regularly scheduled meeting.\nPART 3 - EXECUTION (Not Used)\nENDOFSECTION01200",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

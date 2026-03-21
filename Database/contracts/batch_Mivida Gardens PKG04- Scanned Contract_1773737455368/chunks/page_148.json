@@ -1,0 +1,497 @@
+{
+  "text": "MISR\n\n<!-- image -->\n\n- d. any amount which is or becomes payable under Clause 19.3 (Liquidated Damages).\n\nIf the foregoing calculation should produce a negative result then the Contractorshallupondemandpayasumequal tothatresultto the Employer andsuchsumshallbedeemed adebtduefrom theContractor totheEmployerandberecoverableaccordinglyfromanyamountsdueor tobecomeduetotheContractororfromtheBondssubmittedby the Contractor.\n\n## 31. TERMINATIONFORCONVENIENCEANDDEFAULTOFTHEEMPLOYER\n\n- 31.2 DefaultoftheEmployer\n\nRename paragraphs (a) &amp; (b) to become (b)&amp; (c)\n\nAddnewparagraph (a)asfollows:\n\n- (a)has failed to pay the Contractor the amount due under any Interim Certificateissuedby theContractAdministrator inaccordancewith Sub-Clause (h)of Clause 26.2(Issue of InterimCertificates)within30 days after the expiry of the time stated in Sub-Clause 27.1(A) (c), subjecttoanydeductionthattheEmployerisentitledtomakeunder the Contract,the Contractor may,without prejudice to its right for interestsunderSub-Clause 27.1(A)(a),or\n\nDeleteparagraph(b)of thisSub-Clause31.2 entirelyand substituteby the following:\n\n- s u      n  s ( Final Certificatewithin thirty(30) days after the expiry of theperiod of thirty (30) days under Sub-Clause (b) of Clause 27.1 (Time for Payment) and such failure is not due to the making by the Employer ofanydeductionorrecoveryfrom theContractororotherwise;or\n\n## 32 NOTICES\n\n- 32.1 Notices\n\nThe addressesreferred to inSub-Clause32.1(Notices)are set down below:\n\n- Employer:EMAARMISRFORDEVELOPMENT\n\nDelivery Address: H/Q at Emaar Misr Sales Center, P.O. Box 229, MOKATTAM11585,CAIRO,EGYPT\n\nFax No.:\n\nMarkedfortheattentionoftheEmployer'sRepresentative\n\n- ContractAdministrator:tobeadvised\n\nDelivery Address:H/Q at\n\nFax No.:\n\nMarkedfortheattentionoftheContractAdministrator'sRepresentative\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          725.4417521158854
+        ],
+        [
+          152.21590169270834,
+          725.4417521158854
+        ],
+        [
+          152.21590169270834,
+          714.8360697428385
+        ],
+        [
+          127.2694091796875,
+          714.8360697428385
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "any amount which is or becomes payable under Clause 19.3 (Liquidated Damages).",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          695.3216247558594
+        ],
+        [
+          504.0037841796875,
+          695.3216247558594
+        ],
+        [
+          504.0037841796875,
+          670.7164510091146
+        ],
+        [
+          166.16902669270834,
+          670.7164510091146
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "If the foregoing calculation should produce a negative result then the Contractorshallupondemandpayasumequal tothatresultto the Employer andsuchsumshallbedeemed adebtduefrom theContractor totheEmployerandberecoverableaccordinglyfromanyamountsdueor tobecomeduetotheContractororfromtheBondssubmittedby the Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.16902669270834,
+          666.0499471028646
+        ],
+        [
+          504.0037841796875,
+          666.0499471028646
+        ],
+        [
+          504.0037841796875,
+          593.9313354492188
+        ],
+        [
+          166.16902669270834,
+          593.9313354492188
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "31. TERMINATIONFORCONVENIENCEANDDEFAULTOFTHEEMPLOYER",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          582.9014282226562
+        ],
+        [
+          484.1311442057292,
+          582.9014282226562
+        ],
+        [
+          484.1311442057292,
+          571.447285970052
+        ],
+        [
+          96.40340169270833,
+          571.447285970052
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "31.2 DefaultoftheEmployer",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.2694091796875,
+          566.7808024088542
+        ],
+        [
+          278.21685791015625,
+          566.7808024088542
+        ],
+        [
+          278.21685791015625,
+          553.6297607421875
+        ],
+        [
+          127.2694091796875,
+          553.6297607421875
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Rename paragraphs (a) & (b) to become (b)& (c)",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          548.5390218098958
+        ],
+        [
+          395.3385416666667,
+          548.5390218098958
+        ],
+        [
+          395.3385416666667,
+          536.660664876302
+        ],
+        [
+          166.59184773763022,
+          536.660664876302
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Addnewparagraph (a)asfollows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          531.994160970052
+        ],
+        [
+          327.2642008463542,
+          531.994160970052
+        ],
+        [
+          327.2642008463542,
+          519.6915893554688
+        ],
+        [
+          167.4375,
+          519.6915893554688
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "(a)has failed to pay the Contractor the amount due under any Interim Certificateissuedby theContractAdministrator inaccordancewith Sub-Clause (h)of Clause 26.2(Issue of InterimCertificates)within30 days after the expiry of the time stated in Sub-Clause 27.1(A) (c), subjecttoanydeductionthattheEmployerisentitledtomakeunder the Contract,the Contractor may,without prejudice to its right for interestsunderSub-Clause 27.1(A)(a),or",
+      "confidence": 0.95,
+      "box": [
+        [
+          166.59184773763022,
+          514.1766357421875
+        ],
+        [
+          504.0037841796875,
+          514.1766357421875
+        ],
+        [
+          504.0037841796875,
+          430.60386149088544
+        ],
+        [
+          166.59184773763022,
+          430.60386149088544
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Deleteparagraph(b)of thisSub-Clause31.2 entirelyand substituteby the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          425.08892822265625
+        ],
+        [
+          503.1581217447917,
+          425.08892822265625
+        ],
+        [
+          503.1581217447917,
+          400.48374430338544
+        ],
+        [
+          167.4375,
+          400.48374430338544
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "s u      n  s ( Final Certificatewithin thirty(30) days after the expiry of theperiod of thirty (30) days under Sub-Clause (b) of Clause 27.1 (Time for Payment) and such failure is not due to the making by the Employer ofanydeductionorrecoveryfrom theContractororotherwise;or",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          396.24147542317706
+        ],
+        [
+          504.4265950520833,
+          396.24147542317706
+        ],
+        [
+          504.4265950520833,
+          337.27390543619794
+        ],
+        [
+          167.4375,
+          337.27390543619794
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "32 NOTICES",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.82623291015625,
+          326.2439982096354
+        ],
+        [
+          176.73958333333334,
+          326.2439982096354
+        ],
+        [
+          176.73958333333334,
+          313.9414265950521
+        ],
+        [
+          96.82623291015625,
+          313.9414265950521
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "32.1 Notices",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.53787231445312,
+          309.2749226888021
+        ],
+        [
+          204.64583333333334,
+          309.2749226888021
+        ],
+        [
+          204.64583333333334,
+          297.39654541015625
+        ],
+        [
+          128.53787231445312,
+          297.39654541015625
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "The addressesreferred to inSub-Clause32.1(Notices)are set down below:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          291.8816121419271
+        ],
+        [
+          503.5809733072917,
+          291.8816121419271
+        ],
+        [
+          503.5809733072917,
+          267.27642822265625
+        ],
+        [
+          167.4375,
+          267.27642822265625
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Employer:EMAARMISRFORDEVELOPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          262.1856892903646
+        ],
+        [
+          390.6875,
+          262.1856892903646
+        ],
+        [
+          390.6875,
+          251.58001708984375
+        ],
+        [
+          167.4375,
+          251.58001708984375
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Delivery Address: H/Q at Emaar Misr Sales Center, P.O. Box 229, MOKATTAM11585,CAIRO,EGYPT",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          245.64084879557288
+        ],
+        [
+          505.2722574869792,
+          245.64084879557288
+        ],
+        [
+          505.2722574869792,
+          222.73256429036462
+        ],
+        [
+          167.86032104492188,
+          222.73256429036462
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Fax No.:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.0146687825521,
+          215.94492594401038
+        ],
+        [
+          210.14251708984375,
+          215.94492594401038
+        ],
+        [
+          210.14251708984375,
+          204.49078369140625
+        ],
+        [
+          167.0146687825521,
+          204.49078369140625
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "MarkedfortheattentionoftheEmployer'sRepresentative",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          198.55161539713538
+        ],
+        [
+          434.6609700520833,
+          198.55161539713538
+        ],
+        [
+          434.6609700520833,
+          188.37017822265625
+        ],
+        [
+          167.4375,
+          188.37017822265625
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "ContractAdministrator:tobeadvised",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.4375,
+          181.15830485026038
+        ],
+        [
+          340.37168375651044,
+          181.15830485026038
+        ],
+        [
+          340.37168375651044,
+          171.40110270182288
+        ],
+        [
+          167.4375,
+          171.40110270182288
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Delivery Address:H/Q at",
+      "confidence": 0.95,
+      "box": [
+        [
+          168.70596313476562,
+          164.18922932942712
+        ],
+        [
+          284.98199462890625,
+          164.18922932942712
+        ],
+        [
+          284.98199462890625,
+          152.73508707682288
+        ],
+        [
+          168.70596313476562,
+          152.73508707682288
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "Fax No.:",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          147.22011311848962
+        ],
+        [
+          210.14251708984375,
+          147.22011311848962
+        ],
+        [
+          210.14251708984375,
+          135.76601155598962
+        ],
+        [
+          167.86032104492188,
+          135.76601155598962
+        ]
+      ],
+      "page": 148
+    },
+    {
+      "text": "MarkedfortheattentionoftheContractAdministrator'sRepresentative",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.86032104492188,
+          130.25103759765625
+        ],
+        [
+          494.2788899739583,
+          130.25103759765625
+        ],
+        [
+          494.2788899739583,
+          120.06955973307288
+        ],
+        [
+          167.86032104492188,
+          120.06955973307288
+        ]
+      ],
+      "page": 148
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 148,
+      "text": "MISR\nany amount which is or becomes payable under Clause 19.3 (Liquidated Damages).\nIf the foregoing calculation should produce a negative result then the Contractorshallupondemandpayasumequal tothatresultto the Employer andsuchsumshallbedeemed adebtduefrom theContractor totheEmployerandberecoverableaccordinglyfromanyamountsdueor tobecomeduetotheContractororfromtheBondssubmittedby the Contractor.\n31. TERMINATIONFORCONVENIENCEANDDEFAULTOFTHEEMPLOYER\n31.2 DefaultoftheEmployer\nRename paragraphs (a) & (b) to become (b)& (c)\nAddnewparagraph (a)asfollows:\n(a)has failed to pay the Contractor the amount due under any Interim Certificateissuedby theContractAdministrator inaccordancewith Sub-Clause (h)of Clause 26.2(Issue of InterimCertificates)within30 days after the expiry of the time stated in Sub-Clause 27.1(A) (c), subjecttoanydeductionthattheEmployerisentitledtomakeunder the Contract,the Contractor may,without prejudice to its right for interestsunderSub-Clause 27.1(A)(a),or\nDeleteparagraph(b)of thisSub-Clause31.2 entirelyand substituteby the following:\ns u      n  s ( Final Certificatewithin thirty(30) days after the expiry of theperiod of thirty (30) days under Sub-Clause (b) of Clause 27.1 (Time for Payment) and such failure is not due to the making by the Employer ofanydeductionorrecoveryfrom theContractororotherwise;or\n32 NOTICES\n32.1 Notices\nThe addressesreferred to inSub-Clause32.1(Notices)are set down below:\nEmployer:EMAARMISRFORDEVELOPMENT\nDelivery Address: H/Q at Emaar Misr Sales Center, P.O. Box 229, MOKATTAM11585,CAIRO,EGYPT\nFax No.:\nMarkedfortheattentionoftheEmployer'sRepresentative\nContractAdministrator:tobeadvised\nDelivery Address:H/Q at\nFax No.:\nMarkedfortheattentionoftheContractAdministrator'sRepresentative",
+      "line_count": 21
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

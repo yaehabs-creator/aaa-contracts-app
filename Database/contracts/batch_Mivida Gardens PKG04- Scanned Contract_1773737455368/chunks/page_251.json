@@ -1,0 +1,405 @@
+{
+  "text": "<!-- image -->\n\n## PART 1- GENERAL\n\n## 1.01 SPECIFICATIONS\n\n1. Division 1, General Requirements of the Specifications generally specifies workandcoordinationthatrelatestotheWorksasawhole.Workinthe SpecificationsisdividedintodescriptiveDivisionsand/orSectionswhichare notintendedtoidentifyabsolutecontractuallimitsbetweenSubcontractors, norbetweentheContractor andhisSubcontractors.TheContractor shall examine all Sections, other documents and Drawings in order to organize the division of labour and supply of materials essential to complete the Works in all its parts.\n2. Ensure that Subcontractors understand that the Conditions of Contract, and Division 1, General Requirements, apply to all Sections of the Specifications.\n\n## 1.02 SPECIFICATIONDEFINITIONS\n\n1. Wherever in the Specifications the words \"approval\", \"approved\", \"direction\", \"directed\", \"selection\", \"selected\", \"request\", \"requested\", \"report\", and similar words are used, such approvals, directions, selections, requests and reports shallbe giventhroughContractAdministrator unlessspecificallystated otherwise.\n2. Wherever in the Specifications the word\"provide\"is used in any form,it shall mean that the Permanent Works and Temporary Works concerned shall includebothsupplyand installation of theproductsrequired forcompletionof specifiedworktowhichreferenceismade.\n3. Wherever in the Specifications the word \"include\" is used in any form, the items of work listed following shall not be interpreted to be restricted to only those items thatarelisted.\n4. 5.Wherever in the Specifications it is required that work shall proceed or shall meet direction, selection or request of jurisdictional authorities or others, such direction, selection or request shall be in writing.\n4. Wherever in the Specifications the terms \"Division of the Specifications\" or \"Section of the Specifications\"or \"Section\" are used, thiey shall have the same meaning..\n6. Wherever in the Specifications it is specified that work shall be repaired, made o   o Employer.\n7. Whereverin theSpecifications the term\"exposed toview\"isused,it shall refer to surfaces that are within the line of vision of persons from any accessible viewpoint（excludingmechanicaland electrical rooms),both within and without ofthatsurfaceshall alsobeconsideredas exposed toview.\n8. Wherever in the Specifications the term \"Contract\" is used it shall mean this contract.\n\n<!-- image -->\n\n## DRAWINGS\n\nDrawings are intended to convey scope of the Works and indicate general ahd approximatelocation,arrangementand sizeoffixtures,equipment,ducts piping,conduit and outlets. Obtain more accurate information about locations, arrangement and sizes from study and coordination of Drawings,and shop drawings,including architectural,structtra. mechanical andelectrical\n\n<!-- image -->\n\n## SECTION01010\n\n## SUMMARYOFWORK",
+  "results": [
+    {
+      "text": "PART 1- GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          674.3450927734375
+        ],
+        [
+          180.9601847330729,
+          674.3450927734375
+        ],
+        [
+          180.9601847330729,
+          663.5641784667969
+        ],
+        [
+          77.1986083984375,
+          663.5641784667969
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "1.01 SPECIFICATIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          651.9539591471354
+        ],
+        [
+          204.2027791341146,
+          651.9539591471354
+        ],
+        [
+          204.2027791341146,
+          640.34375
+        ],
+        [
+          77.1986083984375,
+          640.34375
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Division 1, General Requirements of the Specifications generally specifies workandcoordinationthatrelatestotheWorksasawhole.Workinthe SpecificationsisdividedintodescriptiveDivisionsand/orSectionswhichare notintendedtoidentifyabsolutecontractuallimitsbetweenSubcontractors, norbetweentheContractor andhisSubcontractors.TheContractor shall examine all Sections, other documents and Drawings in order to organize the division of labour and supply of materials essential to complete the Works in all its parts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          629.5628458658854
+        ],
+        [
+          504.28125,
+          629.5628458658854
+        ],
+        [
+          504.28125,
+          537.0957641601562
+        ],
+        [
+          93.38541666666667,
+          537.0957641601562
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Ensure that Subcontractors understand that the Conditions of Contract, and Division 1, General Requirements, apply to all Sections of the Specifications.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          538.3397216796875
+        ],
+        [
+          504.6962890625,
+          538.3397216796875
+        ],
+        [
+          504.6962890625,
+          514.7046508789062
+        ],
+        [
+          92.97036743164062,
+          514.7046508789062
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "1.02 SPECIFICATIONDEFINITIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          503.92372639973956
+        ],
+        [
+          270.6101888020833,
+          503.92372639973956
+        ],
+        [
+          270.6101888020833,
+          492.3135172526042
+        ],
+        [
+          77.61365763346355,
+          492.3135172526042
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Wherever in the Specifications the words \"approval\", \"approved\", \"direction\", \"directed\", \"selection\", \"selected\", \"request\", \"requested\", \"report\", and similar words are used, such approvals, directions, selections, requests and reports shallbe giventhroughContractAdministrator unlessspecificallystated otherwise.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          481.5325927734375
+        ],
+        [
+          504.6962890625,
+          481.5325927734375
+        ],
+        [
+          504.6962890625,
+          424.31081136067706
+        ],
+        [
+          95.87569173177083,
+          424.31081136067706
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Wherever in the Specifications the word\"provide\"is used in any form,it shall mean that the Permanent Works and Temporary Works concerned shall includebothsupplyand installation of theproductsrequired forcompletionof specifiedworktowhichreferenceismade.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          423.89617919921875
+        ],
+        [
+          505.9414469401042,
+          423.89617919921875
+        ],
+        [
+          505.9414469401042,
+          379.11391194661456
+        ],
+        [
+          94.63055419921875,
+          379.11391194661456
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Wherever in the Specifications the word \"include\" is used in any form, the items of work listed following shall not be interpreted to be restricted to only those items thatarelisted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          378.69927978515625
+        ],
+        [
+          505.111328125,
+          378.69927978515625
+        ],
+        [
+          505.111328125,
+          344.28326416015625
+        ],
+        [
+          95.46065266927083,
+          344.28326416015625
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "5.Wherever in the Specifications it is required that work shall proceed or shall meet direction, selection or request of jurisdictional authorities or others, such direction, selection or request shall be in writing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          310.69659423828125
+        ],
+        [
+          505.111328125,
+          310.69659423828125
+        ],
+        [
+          505.111328125,
+          275.4512736002604
+        ],
+        [
+          93.8004659016927,
+          275.4512736002604
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Wherever in the Specifications the terms \"Division of the Specifications\" or \"Section of the Specifications\"or \"Section\" are used, thiey shall have the same meaning..",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          345.11256917317706
+        ],
+        [
+          505.5263671875,
+          345.11256917317706
+        ],
+        [
+          505.5263671875,
+          309.8672892252604
+        ],
+        [
+          93.38541666666667,
+          309.8672892252604
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Wherever in the Specifications it is specified that work shall be repaired, made o   o Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          275.8659464518229
+        ],
+        [
+          505.5263671875,
+          275.8659464518229
+        ],
+        [
+          505.5263671875,
+          240.20599365234375
+        ],
+        [
+          95.46065266927083,
+          240.20599365234375
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Whereverin theSpecifications the term\"exposed toview\"isused,it shall refer to surfaces that are within the line of vision of persons from any accessible viewpoint（excludingmechanicaland electrical rooms),both within and without ofthatsurfaceshall alsobeconsideredas exposed toview.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          241.86460367838538
+        ],
+        [
+          506.3564860026042,
+          241.86460367838538
+        ],
+        [
+          506.3564860026042,
+          185.05747477213538
+        ],
+        [
+          96.29074096679688,
+          185.05747477213538
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Wherever in the Specifications the term \"Contract\" is used it shall mean this contract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          185.05747477213538
+        ],
+        [
+          505.5263671875,
+          185.05747477213538
+        ],
+        [
+          505.5263671875,
+          161.42238362630212
+        ],
+        [
+          111.23241170247395,
+          161.42238362630212
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "DRAWINGS",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.98726399739583,
+          151.47080485026038
+        ],
+        [
+          174.7344970703125,
+          151.47080485026038
+        ],
+        [
+          174.7344970703125,
+          139.86053466796875
+        ],
+        [
+          109.98726399739583,
+          139.86053466796875
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "Drawings are intended to convey scope of the Works and indicate general ahd approximatelocation,arrangementand sizeoffixtures,equipment,ducts piping,conduit and outlets. Obtain more accurate information about locations, arrangement and sizes from study and coordination of Drawings,and shop drawings,including architectural,structtra. mechanical andelectrical",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          128.66497802734375
+        ],
+        [
+          505.9414469401042,
+          128.66497802734375
+        ],
+        [
+          505.9414469401042,
+          71.44321695963538
+        ],
+        [
+          110.81736246744792,
+          71.44321695963538
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "SECTION01010",
+      "confidence": 0.95,
+      "box": [
+        [
+          247.78263346354166,
+          720.3712972005209
+        ],
+        [
+          333.6972249348958,
+          720.3712972005209
+        ],
+        [
+          333.6972249348958,
+          709.5903828938802
+        ],
+        [
+          247.78263346354166,
+          709.5903828938802
+        ]
+      ],
+      "page": 251
+    },
+    {
+      "text": "SUMMARYOFWORK",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.4259236653646,
+          697.5655212402344
+        ],
+        [
+          349.468994140625,
+          697.5655212402344
+        ],
+        [
+          349.468994140625,
+          686.7846069335938
+        ],
+        [
+          232.4259236653646,
+          686.7846069335938
+        ]
+      ],
+      "page": 251
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 251,
+      "text": "PART 1- GENERAL\n1.01 SPECIFICATIONS\nDivision 1, General Requirements of the Specifications generally specifies workandcoordinationthatrelatestotheWorksasawhole.Workinthe SpecificationsisdividedintodescriptiveDivisionsand/orSectionswhichare notintendedtoidentifyabsolutecontractuallimitsbetweenSubcontractors, norbetweentheContractor andhisSubcontractors.TheContractor shall examine all Sections, other documents and Drawings in order to organize the division of labour and supply of materials essential to complete the Works in all its parts.\nEnsure that Subcontractors understand that the Conditions of Contract, and Division 1, General Requirements, apply to all Sections of the Specifications.\n1.02 SPECIFICATIONDEFINITIONS\nWherever in the Specifications the words \"approval\", \"approved\", \"direction\", \"directed\", \"selection\", \"selected\", \"request\", \"requested\", \"report\", and similar words are used, such approvals, directions, selections, requests and reports shallbe giventhroughContractAdministrator unlessspecificallystated otherwise.\nWherever in the Specifications the word\"provide\"is used in any form,it shall mean that the Permanent Works and Temporary Works concerned shall includebothsupplyand installation of theproductsrequired forcompletionof specifiedworktowhichreferenceismade.\nWherever in the Specifications the word \"include\" is used in any form, the items of work listed following shall not be interpreted to be restricted to only those items thatarelisted.\n5.Wherever in the Specifications it is required that work shall proceed or shall meet direction, selection or request of jurisdictional authorities or others, such direction, selection or request shall be in writing.\nWherever in the Specifications the terms \"Division of the Specifications\" or \"Section of the Specifications\"or \"Section\" are used, thiey shall have the same meaning..\nWherever in the Specifications it is specified that work shall be repaired, made o   o Employer.\nWhereverin theSpecifications the term\"exposed toview\"isused,it shall refer to surfaces that are within the line of vision of persons from any accessible viewpoint（excludingmechanicaland electrical rooms),both within and without ofthatsurfaceshall alsobeconsideredas exposed toview.\nWherever in the Specifications the term \"Contract\" is used it shall mean this contract.\nDRAWINGS\nDrawings are intended to convey scope of the Works and indicate general ahd approximatelocation,arrangementand sizeoffixtures,equipment,ducts piping,conduit and outlets. Obtain more accurate information about locations, arrangement and sizes from study and coordination of Drawings,and shop drawings,including architectural,structtra. mechanical andelectrical\nSECTION01010\nSUMMARYOFWORK",
+      "line_count": 17
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

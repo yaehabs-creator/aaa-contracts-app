@@ -1,0 +1,244 @@
+{
+  "text": "receiptofaVariationOrderoraSuspensionOrderorofthe occurrenceofarelevantexceptedriskorofanyothereventor circumstancebeyond thereasonablecontrolof theContractor(as thecasemaybe)it giveswritten noticetotheProject Manager(with acopytotheEmployer)withfullanddetailedparticularsofany extensionoftimetowhichitmayconsideritselfentitledtogetherwith any othernoticerequired bytheContract andrelevant to suchevent orcircumstance;and\n\n- (2) itshallbethedutyoftheContractoratall timestouseallreasonable orcircumstances mentioned inparagraphs(a)to(d)inclusive ofthis Clause,to minimise any such delay as maybe caused thereby,and to do all that may be reasonably required, to the satisfaction of the Project Managerand theSupervision Consuitant,toproceedwith the Works.\n\nLiquidated Damages\n\n- 19.3 (a) (i)\n\nWithout prejudice to any other rights or remedies available to theEmployerinrespectofsuchfailure andsubjecttoSubClause(a)(ii)belowif theContractorshallfail tocomplete anySectionorPortionoftheWorkswithinitsTimefor Completion,theContractorshallpaytotheEmployerforeach day or part of a day of the delay as liquidated damages:\n\n- (1) inrespectofadelayinthecompletionofanySection of the Works, the applicable amount stated in the ParticularConditions;and\n- (2) inrespectofadelayinthecompletionofanyPortion of theWorks,theamountcalculatedbymuitiplyingthe amountof liquidateddamagesperdaystated inthe ParticularConditionsforthatSectionoftheWorksof whichthesaidPortionwasprevlouslyapartby the percentage thatthcfinallydeterminedContractvalue of thesaidPortionisofthefinallydeterminedContract valueofthesaidSection.\n\n<!-- image -->\n\nFor thispurpose aSectionor Portionof theWorks shall be deemedtohavebeencompletedonthedateofitstaking over asstated in itsTaking-Over Certificate.\n\n(ii)\n\n<!-- image -->\n\nPaymentsshall bemadeat theendofeachweekorpartof a weekof suchdelay.In thecaseofsuchpayments tobemade in respectof Portions of theWorks,the aforesaid Contract valuesshallbeasthendeterminedbytheProjectManager and thebalancedue,if any,shallbepaidforthwithuponfinal determinationofsuchContractvaluesbytheProject Manager.",
+  "results": [
+    {
+      "text": "receiptofaVariationOrderoraSuspensionOrderorofthe occurrenceofarelevantexceptedriskorofanyothereventor circumstancebeyond thereasonablecontrolof theContractor(as thecasemaybe)it giveswritten noticetotheProject Manager(with acopytotheEmployer)withfullanddetailedparticularsofany extensionoftimetowhichitmayconsideritselfentitledtogetherwith any othernoticerequired bytheContract andrelevant to suchevent orcircumstance;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.5785929361979,
+          724.1690673828125
+        ],
+        [
+          488.359375,
+          724.1690673828125
+        ],
+        [
+          488.359375,
+          633.8086751302084
+        ],
+        [
+          188.5785929361979,
+          633.8086751302084
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "itshallbethedutyoftheContractoratall timestouseallreasonable orcircumstances mentioned inparagraphs(a)to(d)inclusive ofthis Clause,to minimise any such delay as maybe caused thereby,and to do all that may be reasonably required, to the satisfaction of the Project Managerand theSupervision Consuitant,toproceedwith the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          621.506103515625
+        ],
+        [
+          487.9365234375,
+          621.506103515625
+        ],
+        [
+          487.9365234375,
+          542.1756184895833
+        ],
+        [
+          158.55823771158853,
+          542.1756184895833
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "Liquidated Damages",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          531.5699462890625
+        ],
+        [
+          190.2698771158854,
+          531.5699462890625
+        ],
+        [
+          190.2698771158854,
+          517.5704345703125
+        ],
+        [
+          96.40340169270833,
+          517.5704345703125
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "19.3 (a) (i)",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          509.0858968098958
+        ],
+        [
+          200.4176025390625,
+          509.0858968098958
+        ],
+        [
+          200.4176025390625,
+          495.51064046223956
+        ],
+        [
+          126.84658813476562,
+          495.51064046223956
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "Without prejudice to any other rights or remedies available to theEmployerinrespectofsuchfailure andsubjecttoSubClause(a)(ii)belowif theContractorshallfail tocomplete anySectionorPortionoftheWorkswithinitsTimefor Completion,theContractorshallpaytotheEmployerforeach day or part of a day of the delay as liquidated damages:",
+      "confidence": 0.95,
+      "box": [
+        [
+          220.29024251302084,
+          508.66168212890625
+        ],
+        [
+          488.359375,
+          508.66168212890625
+        ],
+        [
+          488.359375,
+          440.36110432942706
+        ],
+        [
+          220.29024251302084,
+          440.36110432942706
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "inrespectofadelayinthecompletionofanySection of the Works, the applicable amount stated in the ParticularConditions;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.1358846028646,
+          428.90696207682294
+        ],
+        [
+          488.7821858723958,
+          428.90696207682294
+        ],
+        [
+          488.7821858723958,
+          395.81724039713544
+        ],
+        [
+          221.1358846028646,
+          395.81724039713544
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "inrespectofadelayinthecompletionofanyPortion of theWorks,theamountcalculatedbymuitiplyingthe amountof liquidateddamagesperdaystated inthe ParticularConditionsforthatSectionoftheWorksof whichthesaidPortionwasprevlouslyapartby the percentage thatthcfinallydeterminedContractvalue of thesaidPortionisofthefinallydeterminedContract valueofthesaidSection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.1358846028646,
+          383.51466878255206
+        ],
+        [
+          490.0506591796875,
+          383.51466878255206
+        ],
+        [
+          490.0506591796875,
+          293.1542765299479
+        ],
+        [
+          221.1358846028646,
+          293.1542765299479
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "For thispurpose aSectionor Portionof theWorks shall be deemedtohavebeencompletedonthedateofitstaking over asstated in itsTaking-Over Certificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.5587158203125,
+          282.1243693033854
+        ],
+        [
+          488.7821858723958,
+          282.1243693033854
+        ],
+        [
+          488.7821858723958,
+          248.18621826171875
+        ],
+        [
+          221.5587158203125,
+          248.18621826171875
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "(ii)",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.11551920572916,
+          235.03517659505212
+        ],
+        [
+          203.37736002604166,
+          235.03517659505212
+        ],
+        [
+          203.37736002604166,
+          224.42946370442712
+        ],
+        [
+          191.11551920572916,
+          224.42946370442712
+        ]
+      ],
+      "page": 76
+    },
+    {
+      "text": "Paymentsshall bemadeat theendofeachweekorpartof a weekof suchdelay.In thecaseofsuchpayments tobemade in respectof Portions of theWorks,the aforesaid Contract valuesshallbeasthendeterminedbytheProjectManager and thebalancedue,if any,shallbepaidforthwithuponfinal determinationofsuchContractvaluesbytheProject Manager.",
+      "confidence": 0.95,
+      "box": [
+        [
+          221.5587158203125,
+          236.30784098307288
+        ],
+        [
+          490.4734700520833,
+          236.30784098307288
+        ],
+        [
+          490.4734700520833,
+          155.70465087890625
+        ],
+        [
+          221.5587158203125,
+          155.70465087890625
+        ]
+      ],
+      "page": 76
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 76,
+      "text": "receiptofaVariationOrderoraSuspensionOrderorofthe occurrenceofarelevantexceptedriskorofanyothereventor circumstancebeyond thereasonablecontrolof theContractor(as thecasemaybe)it giveswritten noticetotheProject Manager(with acopytotheEmployer)withfullanddetailedparticularsofany extensionoftimetowhichitmayconsideritselfentitledtogetherwith any othernoticerequired bytheContract andrelevant to suchevent orcircumstance;and\nitshallbethedutyoftheContractoratall timestouseallreasonable orcircumstances mentioned inparagraphs(a)to(d)inclusive ofthis Clause,to minimise any such delay as maybe caused thereby,and to do all that may be reasonably required, to the satisfaction of the Project Managerand theSupervision Consuitant,toproceedwith the Works.\nLiquidated Damages\n19.3 (a) (i)\nWithout prejudice to any other rights or remedies available to theEmployerinrespectofsuchfailure andsubjecttoSubClause(a)(ii)belowif theContractorshallfail tocomplete anySectionorPortionoftheWorkswithinitsTimefor Completion,theContractorshallpaytotheEmployerforeach day or part of a day of the delay as liquidated damages:\ninrespectofadelayinthecompletionofanySection of the Works, the applicable amount stated in the ParticularConditions;and\ninrespectofadelayinthecompletionofanyPortion of theWorks,theamountcalculatedbymuitiplyingthe amountof liquidateddamagesperdaystated inthe ParticularConditionsforthatSectionoftheWorksof whichthesaidPortionwasprevlouslyapartby the percentage thatthcfinallydeterminedContractvalue of thesaidPortionisofthefinallydeterminedContract valueofthesaidSection.\nFor thispurpose aSectionor Portionof theWorks shall be deemedtohavebeencompletedonthedateofitstaking over asstated in itsTaking-Over Certificate.\n(ii)\nPaymentsshall bemadeat theendofeachweekorpartof a weekof suchdelay.In thecaseofsuchpayments tobemade in respectof Portions of theWorks,the aforesaid Contract valuesshallbeasthendeterminedbytheProjectManager and thebalancedue,if any,shallbepaidforthwithuponfinal determinationofsuchContractvaluesbytheProject Manager.",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

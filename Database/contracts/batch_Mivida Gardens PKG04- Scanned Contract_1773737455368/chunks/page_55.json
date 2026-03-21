@@ -1,0 +1,382 @@
+{
+  "text": "## Medical Fitness\n\n- 10.9 All Contractor's employees engaged on the Works shall be medically fit and freefromdiseases.Atany timeduring theContractperiod theProject Manager shall,at his absolute discretion，be entitled to direct any Contractor'semployeetobemedicallyexamined.\n\n## Transportation\n\n- 10.10TheContractorshallberesponsiblefor thetransportationtoSiteof all persons employed by the Contractor in connection with the carrying out and completionof theWorks.Thevehiclestobeused in suchtransportation shall be subject to the prior approval of the Project Manager. The Contractorshallcomplywithallapplicablelawsandregulationsforthetime beinginforce intheCountry inrelationto the transportationof such persons.\n\n## ObservancebySubcontractors\n\n- 10.11 The Contractor shall (without limiting the generality of the requirements of Clause3.2(Subletting)）beresponsibleforobservancebyits Subcontractors of the provisions of Clauses 10.2 to 10.10 inclusive and\n\n## Visas\n\n- 10.12The Contractor shall obtain the visas and otherpermits needed by its and its Subcontractors'personneltoenterintoandresideandworkintheCountry defects therein.\n\n## Records of Contractor'sEmployees\n\n- 10.13The Contractorshall deliverto theProject Manager at hisSiteoffice,details in such form and at such intervals as the Project Manager may prescribe showingthenamesandnumbersofthesuperintendingand technicalstaff andthenumbersoftheseveralclassesoflabourfromtimetotime employedbytheContractorand itsSubcontractorsontheSite.\n\n## 11. PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT\n\n## General\n\n- 11.1 AllPlanttobeprovidedshallbemanufacturedandallworktobedone under theContractshallbe carried out\n- (a) inthemannersetoutin theContract;\n- (b) in a proper,workmanlike and careful manner in accordance with recognised goodpractices;\n- (c) theContract)non-hazardousmaterials;and\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Medical Fitness",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          725.0175272623698
+        ],
+        [
+          166.59184773763022,
+          725.0175272623698
+        ],
+        [
+          166.59184773763022,
+          713.13916015625
+        ],
+        [
+          94.71211751302083,
+          713.13916015625
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "10.9 All Contractor's employees engaged on the Works shall be medically fit and freefromdiseases.Atany timeduring theContractperiod theProject Manager shall,at his absolute discretion，be entitled to direct any Contractor'semployeetobemedicallyexamined.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          702.1092529296875
+        ],
+        [
+          487.5137125651042,
+          702.1092529296875
+        ],
+        [
+          487.5137125651042,
+          655.0200398763021
+        ],
+        [
+          126.42376708984375,
+          655.0200398763021
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "Transportation",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          644.8385823567709
+        ],
+        [
+          161.09516398111978,
+          644.8385823567709
+        ],
+        [
+          161.09516398111978,
+          633.3844604492188
+        ],
+        [
+          94.71211751302083,
+          633.3844604492188
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "10.10TheContractorshallberesponsiblefor thetransportationtoSiteof all persons employed by the Contractor in connection with the carrying out and completionof theWorks.Thevehiclestobeused in suchtransportation shall be subject to the prior approval of the Project Manager. The Contractorshallcomplywithallapplicablelawsandregulationsforthetime beinginforce intheCountry inrelationto the transportationof such persons.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          622.3545532226562
+        ],
+        [
+          487.0909016927083,
+          622.3545532226562
+        ],
+        [
+          487.0909016927083,
+          541.7513834635417
+        ],
+        [
+          126.00094604492188,
+          541.7513834635417
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "ObservancebySubcontractors",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.28929646809895,
+          531.1457112630208
+        ],
+        [
+          233.3977254231771,
+          531.1457112630208
+        ],
+        [
+          233.3977254231771,
+          519.267354329427
+        ],
+        [
+          94.28929646809895,
+          519.267354329427
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "10.11 The Contractor shall (without limiting the generality of the requirements of Clause3.2(Subletting)）beresponsibleforobservancebyits Subcontractors of the provisions of Clauses 10.2 to 10.10 inclusive and",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.30965169270833,
+          509.0858968098958
+        ],
+        [
+          487.5137125651042,
+          509.0858968098958
+        ],
+        [
+          487.5137125651042,
+          472.17812093098956
+        ],
+        [
+          124.30965169270833,
+          472.17812093098956
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "Visas",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          453.08791097005206
+        ],
+        [
+          119.65861002604167,
+          453.08791097005206
+        ],
+        [
+          119.65861002604167,
+          439.51263427734375
+        ],
+        [
+          92.59801228841145,
+          439.51263427734375
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "10.12The Contractor shall obtain the visas and otherpermits needed by its and its Subcontractors'personneltoenterintoandresideandworkintheCountry defects therein.",
+      "confidence": 0.95,
+      "box": [
+        [
+          124.73248291015625,
+          429.33119710286456
+        ],
+        [
+          485.3996175130208,
+          429.33119710286456
+        ],
+        [
+          485.3996175130208,
+          382.66619873046875
+        ],
+        [
+          124.73248291015625,
+          382.66619873046875
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "Records of Contractor'sEmployees",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.59801228841145,
+          373.33319091796875
+        ],
+        [
+          252.4247029622396,
+          373.33319091796875
+        ],
+        [
+          252.4247029622396,
+          359.33371988932294
+        ],
+        [
+          92.59801228841145,
+          359.33371988932294
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "10.13The Contractorshall deliverto theProject Manager at hisSiteoffice,details in such form and at such intervals as the Project Manager may prescribe showingthenamesandnumbersofthesuperintendingand technicalstaff andthenumbersoftheseveralclassesoflabourfromtimetotime employedbytheContractorand itsSubcontractorsontheSite.",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.88683064778645,
+          350.00071207682294
+        ],
+        [
+          486.2452392578125,
+          350.00071207682294
+        ],
+        [
+          486.2452392578125,
+          291.8816121419271
+        ],
+        [
+          123.88683064778645,
+          291.8816121419271
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "11. PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.17519124348958,
+          281.70013427734375
+        ],
+        [
+          409.7144775390625,
+          281.70013427734375
+        ],
+        [
+          409.7144775390625,
+          269.8217976888021
+        ],
+        [
+          92.17519124348958,
+          269.8217976888021
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "General",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.75236002604167,
+          259.2160847981771
+        ],
+        [
+          130.65198771158853,
+          259.2160847981771
+        ],
+        [
+          130.65198771158853,
+          247.76198323567712
+        ],
+        [
+          91.75236002604167,
+          247.76198323567712
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "11.1 AllPlanttobeprovidedshallbemanufacturedandallworktobedone under theContractshallbe carried out",
+      "confidence": 0.95,
+      "box": [
+        [
+          123.46400960286458,
+          236.30784098307288
+        ],
+        [
+          484.976806640625,
+          236.30784098307288
+        ],
+        [
+          484.976806640625,
+          213.39955647786462
+        ],
+        [
+          123.46400960286458,
+          213.39955647786462
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "(a) inthemannersetoutin theContract;",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.63872273763022,
+          202.36964925130212
+        ],
+        [
+          353.4791666666667,
+          202.36964925130212
+        ],
+        [
+          353.4791666666667,
+          188.79441324869788
+        ],
+        [
+          152.63872273763022,
+          188.79441324869788
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "(b) in a proper,workmanlike and careful manner in accordance with recognised goodpractices;",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.63872273763022,
+          179.88564046223962
+        ],
+        [
+          484.976806640625,
+          179.88564046223962
+        ],
+        [
+          484.976806640625,
+          155.28041585286462
+        ],
+        [
+          152.63872273763022,
+          155.28041585286462
+        ]
+      ],
+      "page": 55
+    },
+    {
+      "text": "(c) theContract)non-hazardousmaterials;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.06155395507812,
+          145.52325439453125
+        ],
+        [
+          381.8082275390625,
+          145.52325439453125
+        ],
+        [
+          381.8082275390625,
+          121.76649983723962
+        ],
+        [
+          153.06155395507812,
+          121.76649983723962
+        ]
+      ],
+      "page": 55
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 55,
+      "text": "Medical Fitness\n10.9 All Contractor's employees engaged on the Works shall be medically fit and freefromdiseases.Atany timeduring theContractperiod theProject Manager shall,at his absolute discretion，be entitled to direct any Contractor'semployeetobemedicallyexamined.\nTransportation\n10.10TheContractorshallberesponsiblefor thetransportationtoSiteof all persons employed by the Contractor in connection with the carrying out and completionof theWorks.Thevehiclestobeused in suchtransportation shall be subject to the prior approval of the Project Manager. The Contractorshallcomplywithallapplicablelawsandregulationsforthetime beinginforce intheCountry inrelationto the transportationof such persons.\nObservancebySubcontractors\n10.11 The Contractor shall (without limiting the generality of the requirements of Clause3.2(Subletting)）beresponsibleforobservancebyits Subcontractors of the provisions of Clauses 10.2 to 10.10 inclusive and\nVisas\n10.12The Contractor shall obtain the visas and otherpermits needed by its and its Subcontractors'personneltoenterintoandresideandworkintheCountry defects therein.\nRecords of Contractor'sEmployees\n10.13The Contractorshall deliverto theProject Manager at hisSiteoffice,details in such form and at such intervals as the Project Manager may prescribe showingthenamesandnumbersofthesuperintendingand technicalstaff andthenumbersoftheseveralclassesoflabourfromtimetotime employedbytheContractorand itsSubcontractorsontheSite.\n11. PLANT,WORKMANSHIPANDCONTRACTOR'SEQUIPMENT\nGeneral\n11.1 AllPlanttobeprovidedshallbemanufacturedandallworktobedone under theContractshallbe carried out\n(a) inthemannersetoutin theContract;\n(b) in a proper,workmanlike and careful manner in accordance with recognised goodpractices;\n(c) theContract)non-hazardousmaterials;and",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,37 @@
+{
+  "text": "## 22A.PROVISIONAL SUMS\n\n|      |                                               | 22A.1DefinitionofProvisional Sum              | 59   |\n|------|-----------------------------------------------|-----------------------------------------------|------|\n|      |                                               | 22A.2ValuationofProvisionalSums               | 60   |\n|      |                                               | 22A.3 Nomination                              | 60   |\n|      |                                               | 22A.4 Competitive Tendering                   | 60   |\n| 23.  | CLAIMS                                        | CLAIMS                                        |      |\n|      | 23.1                                          | Notice of Claims                              | 61   |\n|      | 23.2                                          | Notice of Further Particulars or Information  | 61   |\n|      | 23.3                                          | ContemporaryRecords                           | 62   |\n|      | 23.4                                          | CurrentEstimates                              | 62   |\n|      | 23.5                                          | Comprehensive Claim                           | 62   |\n|      | 23.6                                          | Failure to Comply                             | 62   |\n|      | 23.7                                          | DeterminationofClaims                         | 63   |\n|      | 23.8                                          | ExclusionofSmallClaims                        | 63   |\n| 24.  | NOMINATEDSUBCONTRACTORS                       | NOMINATEDSUBCONTRACTORS                       |      |\n|      | 24.1                                          | Obligation and Objection                      | 63   |\n|      | 24.2                                          | DelayedPaymentstoNominatedSubcontractors      | 64   |\n| 25.  | MEASUREMENT                                   | MEASUREMENT                                   |      |\n|      | 25.1                                          | Quantities                                    | 65   |\n|      | 25.2                                          | Works to beMeasured                           | 65   |\n|      | 25.3                                          | MethodofMeasurement                           | 66   |\n|      | 25.4                                          | Valuation                                     | 66   |\n| 25A. | EXTENDEDWARRANTIESFROMSUBCONTRACTORS          | EXTENDEDWARRANTIESFROMSUBCONTRACTORS          |      |\n|      | 25A.1 Extended Warranties from Subcontractors | 25A.1 Extended Warranties from Subcontractors | 66   |\n| 26.  | INTERIMANDFINALCERTIFICATES                   | INTERIMANDFINALCERTIFICATES                   |      |\n|      | 26.1                                          | ApplicationforInterimCertificates             | 67   |\n|      | 26.2                                          | Issue of Interim Certificates                 | 68   |\n|      | 26.3                                          | ApplicationforFinal Certificates              | 71   |\n|      | 26.4                                          | IssueofFinal Certificates                     | 72   |\n| 27.  | PAYMENT                                       | PAYMENT                                       |      |\n|      | 27.1                                          | Time of Payment                               | 74   |\n|      | 27.2                                          | Employer'sRightofSet-Off 中建国际埃及         | 74   |\n|      | 27.3                                          | Currency of Payment 有限费任公司              | 74   |\n|      | 27.4                                          | Place of Payment                              | 74   |\n|      | 27.5                                          | Third Party Payments                          | 74   |\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "22A.PROVISIONAL SUMS",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          722.8963928222656
+        ],
+        [
+          226.632568359375,
+          722.8963928222656
+        ],
+        [
+          226.632568359375,
+          711.0180257161459
+        ],
+        [
+          95.1349385579427,
+          711.0180257161459
+        ]
+      ],
+      "page": 27
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 27,
+      "text": "22A.PROVISIONAL SUMS",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,428 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n- 6.Expediting the processing of VO's to an agreed schedule and expediting approval for payment.\n- 7.F Pre-qualification of Supervision Consultants, contractors and suppliers for approval\n8. Tendering activities including negotiated contracts with Contractors andSuppliers.\n9. Receive, assess and advise the Owner on all claims submitted by the contractors.\n\n## 17 Supervision Consultant (CS)\n\n- 17.1 The Supervision Consultant (CS) shall be responsible to the Contract Administrator for lechnical compliance and performance verification of the contractor's work on the project.\n- 17.2 He shall be responsible for thc rcvicw and clarification of design matters and addressing design related RFl's.\n- 17.3 In conjunction with the provisions as stipulated in the Cs Contract with the Owner, the Supervisor (CS) is delegated the following authorities and responsibilities by the Managing Director.\n- 1) The CS shall issue all drawings, sketches, documentation, instructions, and clarifications to the Contractors, to execute the worksin accordancewith theContract Documents.\n- 2) The CS shall deal directly with the Design Supervision Consultant (AE) on all matters relating to design and of a technical nature, including obtaining when necessary, the A/E's response to technical RFl's from contractors.\n- 3) The CS shall supervise and inspect the works to ensure the contractors are proceeding in accordance with the contract documents.\n- 4)The CS shallcheck construction locations and levels established by the contractor\n- 5)The CS shall issue drawings arid documents for variations in the work but shall not authorize variations or issue such documents without the prior written authority of the PM and the Owner's Representative.\n- 6) The CS shall review, check, approve and process the contractor's submittals of shop drawings, material samples and product data.\n- 7) The CS shall process VO's to an agreed schedule, expedite current VO's and pass same to the PM, for processing to the Owner's Representative for authorization.\n- contractors to ensure that only work of acceptable quality'is included, and then forward same to the FM, for processing to.the Owner's Representative for approval and payment.\n- 9) The CS shall review the list of pre-qualified Contractors and Suppliers produced by the PM and give to the Owner's Representative, his advice on the preferred companies from technical standpoint. Emue auiar For\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          748.982187906901
+        ],
+        [
+          130.73958333333334,
+          748.982187906901
+        ],
+        [
+          130.73958333333334,
+          738.6159210205078
+        ],
+        [
+          108.32708740234375,
+          738.6159210205078
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "6.Expediting the processing of VO's to an agreed schedule and expediting approval for payment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          718.2980448404948
+        ],
+        [
+          504.6962890625,
+          718.2980448404948
+        ],
+        [
+          504.6962890625,
+          693.0043640136719
+        ],
+        [
+          152.7370402018229,
+          693.0043640136719
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "7.F Pre-qualification of Supervision Consultants, contractors and suppliers for approval",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.982177734375,
+          691.7604166666666
+        ],
+        [
+          505.111328125,
+          691.7604166666666
+        ],
+        [
+          505.111328125,
+          666.8813781738281
+        ],
+        [
+          153.982177734375,
+          666.8813781738281
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "Tendering activities including negotiated contracts with Contractors andSuppliers.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.32199096679688,
+          666.0520833333334
+        ],
+        [
+          504.28125,
+          666.0520833333334
+        ],
+        [
+          504.28125,
+          640.7584025065104
+        ],
+        [
+          152.32199096679688,
+          640.7584025065104
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "Receive, assess and advise the Owner on all claims submitted by the contractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          151.90694173177084,
+          640.34375
+        ],
+        [
+          504.6962890625,
+          640.34375
+        ],
+        [
+          504.6962890625,
+          614.6354166666666
+        ],
+        [
+          151.90694173177084,
+          614.6354166666666
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "17 Supervision Consultant (CS)",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          602.1959025065104
+        ],
+        [
+          264.3844807942708,
+          602.1959025065104
+        ],
+        [
+          264.3844807942708,
+          588.9270833333334
+        ],
+        [
+          76.78356424967448,
+          588.9270833333334
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "17.1 The Supervision Consultant (CS) shall be responsible to the Contract Administrator for lechnical compliance and performance verification of the contractor's work on the project.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          583.53662109375
+        ],
+        [
+          504.6962890625,
+          583.53662109375
+        ],
+        [
+          504.6962890625,
+          544.1448364257812
+        ],
+        [
+          110.81736246744792,
+          544.1448364257812
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "17.2 He shall be responsible for thc rcvicw and clarification of design matters and addressing design related RFl's.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          538.3397216796875
+        ],
+        [
+          502.2060139973958,
+          538.3397216796875
+        ],
+        [
+          502.2060139973958,
+          512.6313883463542
+        ],
+        [
+          110.81736246744792,
+          512.6313883463542
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "17.3 In conjunction with the provisions as stipulated in the Cs Contract with the Owner, the Supervisor (CS) is delegated the following authorities and responsibilities by the Managing Director.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          505.9969889322917
+        ],
+        [
+          503.451171875,
+          505.9969889322917
+        ],
+        [
+          503.451171875,
+          467.43446858723956
+        ],
+        [
+          110.81736246744792,
+          467.43446858723956
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "The CS shall issue all drawings, sketches, documentation, instructions, and clarifications to the Contractors, to execute the worksin accordancewith theContract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          467.01983642578125
+        ],
+        [
+          504.6962890625,
+          467.01983642578125
+        ],
+        [
+          504.6962890625,
+          429.28664143880206
+        ],
+        [
+          152.7370402018229,
+          429.28664143880206
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "The CS shall deal directly with the Design Supervision Consultant (AE) on all matters relating to design and of a technical nature, including obtaining when necessary, the A/E's response to technical RFl's from contractors.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          427.62803141276044
+        ],
+        [
+          505.9414469401042,
+          427.62803141276044
+        ],
+        [
+          505.9414469401042,
+          376.21136474609375
+        ],
+        [
+          152.7370402018229,
+          376.21136474609375
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "The CS shall supervise and inspect the works to ensure the contractors are proceeding in accordance with the contract documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          375.38205973307294
+        ],
+        [
+          505.111328125,
+          375.38205973307294
+        ],
+        [
+          505.111328125,
+          337.23423258463544
+        ],
+        [
+          152.7370402018229,
+          337.23423258463544
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "4)The CS shallcheck construction locations and levels established by the contractor",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.56712849934897,
+          335.99025472005206
+        ],
+        [
+          504.28125,
+          335.99025472005206
+        ],
+        [
+          504.28125,
+          310.28192138671875
+        ],
+        [
+          153.56712849934897,
+          310.28192138671875
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "5)The CS shall issue drawings arid documents for variations in the work but shall not authorize variations or issue such documents without the prior written authority of the PM and the Owner's Representative.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          309.4526163736979
+        ],
+        [
+          505.5263671875,
+          309.4526163736979
+        ],
+        [
+          505.5263671875,
+          258.8652547200521
+        ],
+        [
+          152.7370402018229,
+          258.8652547200521
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "The CS shall review, check, approve and process the contractor's submittals of shop drawings, material samples and product data.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.32199096679688,
+          257.6213175455729
+        ],
+        [
+          505.5263671875,
+          257.6213175455729
+        ],
+        [
+          505.5263671875,
+          232.32765706380212
+        ],
+        [
+          152.32199096679688,
+          232.32765706380212
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "The CS shall process VO's to an agreed schedule, expedite current VO's and pass same to the PM, for processing to the Owner's Representative for authorization.",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.7370402018229,
+          231.49835205078125
+        ],
+        [
+          504.6962890625,
+          231.49835205078125
+        ],
+        [
+          504.6962890625,
+          193.35048421223962
+        ],
+        [
+          152.7370402018229,
+          193.35048421223962
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "contractors to ensure that only work of acceptable quality'is included, and then forward same to the FM, for processing to.the Owner's Representative for approval and payment.",
+      "confidence": 0.95,
+      "box": [
+        [
+          169.3388875325521,
+          178.83770751953125
+        ],
+        [
+          505.111328125,
+          178.83770751953125
+        ],
+        [
+          505.111328125,
+          140.68988037109375
+        ],
+        [
+          169.3388875325521,
+          140.68988037109375
+        ]
+      ],
+      "page": 284
+    },
+    {
+      "text": "The CS shall review the list of pre-qualified Contractors and Suppliers produced by the PM and give to the Owner's Representative, his advice on the preferred companies from technical standpoint. Emue auiar For",
+      "confidence": 0.95,
+      "box": [
+        [
+          152.32199096679688,
+          140.68988037109375
+        ],
+        [
+          510.5069580078125,
+          140.68988037109375
+        ],
+        [
+          510.5069580078125,
+          80.15089925130212
+        ],
+        [
+          152.32199096679688,
+          80.15089925130212
+        ]
+      ],
+      "page": 284
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 284,
+      "text": "MISR\n6.Expediting the processing of VO's to an agreed schedule and expediting approval for payment.\n7.F Pre-qualification of Supervision Consultants, contractors and suppliers for approval\nTendering activities including negotiated contracts with Contractors andSuppliers.\nReceive, assess and advise the Owner on all claims submitted by the contractors.\n17 Supervision Consultant (CS)\n17.1 The Supervision Consultant (CS) shall be responsible to the Contract Administrator for lechnical compliance and performance verification of the contractor's work on the project.\n17.2 He shall be responsible for thc rcvicw and clarification of design matters and addressing design related RFl's.\n17.3 In conjunction with the provisions as stipulated in the Cs Contract with the Owner, the Supervisor (CS) is delegated the following authorities and responsibilities by the Managing Director.\nThe CS shall issue all drawings, sketches, documentation, instructions, and clarifications to the Contractors, to execute the worksin accordancewith theContract Documents.\nThe CS shall deal directly with the Design Supervision Consultant (AE) on all matters relating to design and of a technical nature, including obtaining when necessary, the A/E's response to technical RFl's from contractors.\nThe CS shall supervise and inspect the works to ensure the contractors are proceeding in accordance with the contract documents.\n4)The CS shallcheck construction locations and levels established by the contractor\n5)The CS shall issue drawings arid documents for variations in the work but shall not authorize variations or issue such documents without the prior written authority of the PM and the Owner's Representative.\nThe CS shall review, check, approve and process the contractor's submittals of shop drawings, material samples and product data.\nThe CS shall process VO's to an agreed schedule, expedite current VO's and pass same to the PM, for processing to the Owner's Representative for authorization.\ncontractors to ensure that only work of acceptable quality'is included, and then forward same to the FM, for processing to.the Owner's Representative for approval and payment.\nThe CS shall review the list of pre-qualified Contractors and Suppliers produced by the PM and give to the Owner's Representative, his advice on the preferred companies from technical standpoint. Emue auiar For",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

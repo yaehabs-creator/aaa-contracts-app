@@ -1,0 +1,37 @@
+{
+  "text": "<!-- image -->\n\nenup nar Far Dewoopinent sof. C210-28208 12841 D.629.k\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "enup nar Far Dewoopinent sof. C210-28208 12841 D.629.k",
+      "confidence": 0.95,
+      "box": [
+        [
+          194.9209187825521,
+          115.82729085286462
+        ],
+        [
+          260.4583333333333,
+          115.82729085286462
+        ],
+        [
+          260.4583333333333,
+          75.95001220703125
+        ],
+        [
+          194.9209187825521,
+          75.95001220703125
+        ]
+      ],
+      "page": 566
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 566,
+      "text": "enup nar Far Dewoopinent sof. C210-28208 12841 D.629.k",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

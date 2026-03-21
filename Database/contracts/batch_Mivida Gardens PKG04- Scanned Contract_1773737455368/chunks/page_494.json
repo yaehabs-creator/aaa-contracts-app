@@ -1,0 +1,37 @@
+{
+  "text": "<!-- image -->\n\n## Introduction to Quality Control Forms\n\n| Control FormNo.   | TitleofControl Form                                            | Description ofProcess                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |\n|-------------------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| 4.01              | Material InspectionReport                                      | 1Contractor tofllthe form enclosing allrelevant technical data and submit to Consultant 2 Consultant would review,comment, and pass it to the Contractor and copy to CM. 3 If test required, the certified laboratory will perform and send test results to Consultant.                                                                                                                                                                                                                                                                                                 |\n| 4.01A             | Material Inspection Report for Epoxy Coated ReinforcementSteel | 1Contractor to fill the form enclosing allrelevant technical data and submit to Consultant 2Consultant would review,comment and pass it to Contractor and copy to CM. 3If testrequired,the certified laboratory willperform andsendtestresults to Consultant 4Consultantwouldreview thetestresult andpass comments toCM 5CMwill takefinal action andsend it toContractor andcopytoConsultant.                                                                                                                                                                           |\n| 4.02              | Material DeliveriesStorage Checklist                           | 1Contractortofilltheformandcheckthestorageofmaterialswhetherit is in order.Contractor'sQA/QCdepartment willinspectandpassit to Consultantforwitnessing thesame. 2Consultant sees the stored materials,comments and pass it to the Contractor and copy to CM.                                                                                                                                                                                                                                                                                                            |\n| 4.02A             | DeliveriesofSteel Checklist                                    | 1Contractortocheckthesteel deliveriesandfill thechecklists. Contractor'sQA/QCdepartmentwillcheck andconformtheproductsare inaccordancewithspecificationandgiveit toConsultantforinspectionof the same. 2Consultant inspect thesteel deliveriesand comments arepassed tothe Contractorand copytoCM                                                                                                                                                                                                                                                                       |\n| 4.03              | RequestforInspectionand Approval                               | Contractortocoordinatetheworkswithrelevantsubcontractorsandtrade packagecontractorspriortosendingtherequest toConsultant for inspectionof thework. 2 Minimum 24 hour notice is required. 3Contractor to filltheform, sign and send it to Consultant for inspecting the installation ofworks. 4If it is a request for concrete works, thenForms 4.05Record of Concrete Pour and 4.06Pre-Concrete InspectionRecord tobe attached alongwith therequest. 5Consultant inspects,comments and pass it to the Contractor and copy to CM. 6Over-timeworkmustbeclearlyidentified. |\n| 4.03A             | RequestforInspectionand Approval(Demolition)                   | Contractortofilltheformfordemolitionofdefectiveworkidentifiedduring inspectionandsendittoConsultantforapprovaltodemolishthe defectivework. 2 Consultant inspects, comments and pass it CM. 3CMwillreviewand advisethefinal actiontoContractorto commencethe demolition and copytoConsultant. 4Upon completion ofdemolition,ContractorrequestsConsultant toverify and sign.Consultant signed copy tobe distributed toCM and Consultant.                                                                                                                                  |\n| 4.03B             | InspectionSchedule                                             | 1Contractor to fill in the form toscheduleinspections.All inspection requestmustbemadeby3:0opmthedaybefore.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |\n| 4.04              | Field Inspection Daily Report/DailyFieldReport                 | Thisrcportwillbe filled byCM'sSuperintendent upon sitevisit and inspect tradepackage contractorsworkingeneraland comments.The reportwillbepassed tothemanagementfortakingnecessaryrequired actiontoimprove thecontractor'sperformance in allaspectsof hiswork The original report is tobe appended to the contractor's daily reports subsequenttoCMreview.                                                                                                                                                                                                              |\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Introduction to Quality Control Forms",
+      "confidence": 0.95,
+      "box": [
+        [
+          232.0108846028646,
+          718.2980448404948
+        ],
+        [
+          394.7090250651042,
+          718.2980448404948
+        ],
+        [
+          394.7090250651042,
+          707.5171305338541
+        ],
+        [
+          232.0108846028646,
+          707.5171305338541
+        ]
+      ],
+      "page": 494
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 494,
+      "text": "Introduction to Quality Control Forms",
+      "line_count": 1
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

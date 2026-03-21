@@ -1,0 +1,635 @@
+{
+  "text": "<!-- image -->\n\n- c)Name of Contractor's employee responsible for Contractor's review\n- d)Transmittal number which shall be consecutive throughout the Works\n- e) Date of submission\n- f) Number eachnewsubmissioniftemconsecutivelyprefacedwiththe appropriate Specification Section rumber in a format approved by Contract Administrator. Add a suffix (alphabetical or numerical but of consistent type throughout the work) to submission number for each resubmission. Suffixes shall be consecutive.\n- g) Number of submitted items and a description of each item, including attached technicalinformation,etc.\n- h) The Specification Section number relevant to the submission, with further reference to the paragraph number of the Section.Do not make submission of items from more than one Specification Section cn the same transmittal form.\n- i) Drawing number, title and date of each shop drawing transmitted.\n- Parts, areas, etc. of the Works to which samples pertain and date on which sampleproducts are scheduled for incorporation in theWorks.\n- K Contractor's remarks pertinent to the submission including exceptions to or deviationsfromtheContractandthereasonstherefore.Inaccordancewith Specification Section 01630, titled \"Product Options and Substitutions\", Contractorshallreferto the specific paragraph 1referenceinthe Specifications any exception or deviation may apply to.\n- 5.Provide spaces on the transmittal forms for information to be inserted as designated as follows:\n- a Datesubmissionwasreceivedby ContractAdministrator\n- b DatesubmissionisreturnedbyContractAdministrator\n- Name of Supervision Consultant to whom submission is sent for review andthedateonwhichitwassent.\n- d) Name of Supervision Consultant reviewing submission and date returned toSupervisionConsultant'sRepresentative.\n- e) Number of submitted items and a description of the item.\n- (6 Supervision Consultant's remarks including major deviations from the Contract or reasons for C ACTloN if there are no notes on the submission itself.\n- f) Action taken.\n- 6.Submissions which,in the Supervision Consultant's Representative's opinion, are incomplete, contain errors, or have not been checked or have been only checkedsuperficiallywillbereturnedforresubmissionwithoutreview.\n7. Distribute finally reviewed shop drawings and samples to the installers and provide additional submissions to the Supervision Consultant as he requests.\n\n## 1.03 SUBMISSION REVIEWANDSUBSEQUENTACTIONPROCEDURES\n\n1. following actions, in an acceptable format, when submitted to the Contract Administrator. Submissions will be returned by the Supervision Consultant's RepresentativetotheContractorthroughContractAdministratorstampedor marked by the reviewer and indicating the appropriate aetion tobe taken by the.Contractor.\n\nA ACTioN - Approved, Work may procec\n\nEmearMiy ferDevelopment\n\nSpecificationsDiv.01GeneralRequirements\n\nSubmittals\n\nBeclo01300\n\nagoNumber:2of10\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "c)Name of Contractor's employee responsible for Contractor's review",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          718.2980448404948
+        ],
+        [
+          460.2863362630208,
+          718.2980448404948
+        ],
+        [
+          460.2863362630208,
+          707.5171305338541
+        ],
+        [
+          111.64745076497395,
+          707.5171305338541
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "d)Transmittal number which shall be consecutive throughout the Works",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.23241170247395,
+          701.297373453776
+        ],
+        [
+          470.2474365234375,
+          701.297373453776
+        ],
+        [
+          470.2474365234375,
+          690.5164591471354
+        ],
+        [
+          111.23241170247395,
+          690.5164591471354
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Date of submission",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          683.8820495605469
+        ],
+        [
+          224.9550984700521,
+          683.8820495605469
+        ],
+        [
+          224.9550984700521,
+          673.1011454264323
+        ],
+        [
+          113.30763753255208,
+          673.1011454264323
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Number eachnewsubmissioniftemconsecutivelyprefacedwiththe appropriate Specification Section rumber in a format approved by Contract Administrator. Add a suffix (alphabetical or numerical but of consistent type throughout the work) to submission number for each resubmission. Suffixes shall be consecutive.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          667.2960306803385
+        ],
+        [
+          505.9414469401042,
+          667.2960306803385
+        ],
+        [
+          505.9414469401042,
+          610.0742594401041
+        ],
+        [
+          112.89258829752605,
+          610.0742594401041
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Number of submitted items and a description of each item, including attached technicalinformation,etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          605.5131022135416
+        ],
+        [
+          506.3564860026042,
+          605.5131022135416
+        ],
+        [
+          506.3564860026042,
+          570.2678019205729
+        ],
+        [
+          110.81736246744792,
+          570.2678019205729
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "The Specification Section number relevant to the submission, with further reference to the paragraph number of the Section.Do not make submission of items from more than one Specification Section cn the same transmittal form.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          564.4627075195312
+        ],
+        [
+          506.7715250651042,
+          564.4627075195312
+        ],
+        [
+          506.7715250651042,
+          518.0218505859375
+        ],
+        [
+          111.64745076497395,
+          518.0218505859375
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Drawing number, title and date of each shop drawing transmitted.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          513.460693359375
+        ],
+        [
+          452.4004720052083,
+          513.460693359375
+        ],
+        [
+          452.4004720052083,
+          502.26511637369794
+        ],
+        [
+          112.47754923502605,
+          502.26511637369794
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Parts, areas, etc. of the Works to which samples pertain and date on which sampleproducts are scheduled for incorporation in theWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.49444580078125,
+          496.46002197265625
+        ],
+        [
+          505.9414469401042,
+          496.46002197265625
+        ],
+        [
+          505.9414469401042,
+          473.65423583984375
+        ],
+        [
+          129.49444580078125,
+          473.65423583984375
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "K Contractor's remarks pertinent to the submission including exceptions to or deviationsfromtheContractandthereasonstherefore.Inaccordancewith Specification Section 01630, titled \"Product Options and Substitutions\", Contractorshallreferto the specific paragraph 1referenceinthe Specifications any exception or deviation may apply to.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.13773600260417,
+          467.84914143880206
+        ],
+        [
+          506.7715250651042,
+          467.84914143880206
+        ],
+        [
+          506.7715250651042,
+          410.21270751953125
+        ],
+        [
+          114.13773600260417,
+          410.21270751953125
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "5.Provide spaces on the transmittal forms for information to be inserted as designated as follows:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          405.23691813151044
+        ],
+        [
+          506.7715250651042,
+          405.23691813151044
+        ],
+        [
+          506.7715250651042,
+          382.01645914713544
+        ],
+        [
+          95.46065266927083,
+          382.01645914713544
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "a Datesubmissionwasreceivedby ContractAdministrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.30763753255208,
+          376.62603759765625
+        ],
+        [
+          415.4613444010417,
+          376.62603759765625
+        ],
+        [
+          415.4613444010417,
+          365.84511311848956
+        ],
+        [
+          113.30763753255208,
+          365.84511311848956
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "b DatesubmissionisreturnedbyContractAdministrator",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          365.01580810546875
+        ],
+        [
+          402.1798502604167,
+          365.01580810546875
+        ],
+        [
+          402.1798502604167,
+          354.23488362630206
+        ],
+        [
+          112.89258829752605,
+          354.23488362630206
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Name of Supervision Consultant to whom submission is sent for review andthedateonwhichitwassent.",
+      "confidence": 0.95,
+      "box": [
+        [
+          129.07939656575522,
+          353.82025146484375
+        ],
+        [
+          506.7715250651042,
+          353.82025146484375
+        ],
+        [
+          506.7715250651042,
+          331.84377034505206
+        ],
+        [
+          129.07939656575522,
+          331.84377034505206
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Name of Supervision Consultant reviewing submission and date returned toSupervisionConsultant'sRepresentative.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.55277506510417,
+          331.84377034505206
+        ],
+        [
+          506.7715250651042,
+          331.84377034505206
+        ],
+        [
+          506.7715250651042,
+          309.4526163736979
+        ],
+        [
+          114.55277506510417,
+          309.4526163736979
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Number of submitted items and a description of the item.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.55277506510417,
+          309.0379842122396
+        ],
+        [
+          415.8763834635417,
+          309.0379842122396
+        ],
+        [
+          415.8763834635417,
+          297.01312255859375
+        ],
+        [
+          114.55277506510417,
+          297.01312255859375
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "(6 Supervision Consultant's remarks including major deviations from the Contract or reasons for C ACTloN if there are no notes on the submission itself.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          285.81756591796875
+        ],
+        [
+          506.7715250651042,
+          285.81756591796875
+        ],
+        [
+          506.7715250651042,
+          251.40155029296875
+        ],
+        [
+          112.89258829752605,
+          251.40155029296875
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Action taken.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          297.4277547200521
+        ],
+        [
+          197.97709147135416,
+          297.4277547200521
+        ],
+        [
+          197.97709147135416,
+          285.40289306640625
+        ],
+        [
+          112.89258829752605,
+          285.40289306640625
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "6.Submissions which,in the Supervision Consultant's Representative's opinion, are incomplete, contain errors, or have not been checked or have been only checkedsuperficiallywillbereturnedforresubmissionwithoutreview.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          246.01108805338538
+        ],
+        [
+          506.3564860026042,
+          246.01108805338538
+        ],
+        [
+          506.3564860026042,
+          212.42441813151038
+        ],
+        [
+          96.29074096679688,
+          212.42441813151038
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Distribute finally reviewed shop drawings and samples to the installers and provide additional submissions to the Supervision Consultant as he requests.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          207.03395589192712
+        ],
+        [
+          508.0166829427083,
+          207.03395589192712
+        ],
+        [
+          508.0166829427083,
+          183.81353759765625
+        ],
+        [
+          95.46065266927083,
+          183.81353759765625
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "1.03 SUBMISSION REVIEWANDSUBSEQUENTACTIONPROCEDURES",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          172.20330810546875
+        ],
+        [
+          468.5872802734375,
+          172.20330810546875
+        ],
+        [
+          468.5872802734375,
+          160.59307861328125
+        ],
+        [
+          78.85879516601562,
+          160.59307861328125
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "following actions, in an acceptable format, when submitted to the Contract Administrator. Submissions will be returned by the Supervision Consultant's RepresentativetotheContractorthroughContractAdministratorstampedor marked by the reviewer and indicating the appropriate aetion tobe taken by the.Contractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          153.95867919921875
+        ],
+        [
+          508.4317220052083,
+          153.95867919921875
+        ],
+        [
+          508.4317220052083,
+          86.37062581380212
+        ],
+        [
+          97.12082926432292,
+          86.37062581380212
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "A ACTioN - Approved, Work may procec",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          89.68784586588538
+        ],
+        [
+          322.90602620442706,
+          89.68784586588538
+        ],
+        [
+          322.90602620442706,
+          72.68719482421875
+        ],
+        [
+          112.0625,
+          72.68719482421875
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "EmearMiy ferDevelopment",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.68888854980469,
+          54.85719807942712
+        ],
+        [
+          165.60347493489584,
+          54.85719807942712
+        ],
+        [
+          165.60347493489584,
+          46.56422932942712
+        ],
+        [
+          79.68888854980469,
+          46.56422932942712
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "SpecificationsDiv.01GeneralRequirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          47.39349365234375
+        ],
+        [
+          211.2585652669271,
+          47.39349365234375
+        ],
+        [
+          211.2585652669271,
+          39.10052490234375
+        ],
+        [
+          78.85879516601562,
+          39.10052490234375
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Submittals",
+      "confidence": 0.95,
+      "box": [
+        [
+          428.7428385416667,
+          55.68654378255212
+        ],
+        [
+          460.7013753255208,
+          55.68654378255212
+        ],
+        [
+          460.7013753255208,
+          48.22283935546875
+        ],
+        [
+          428.7428385416667,
+          48.22283935546875
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "Beclo01300",
+      "confidence": 0.95,
+      "box": [
+        [
+          429.1578776041667,
+          48.63747151692712
+        ],
+        [
+          472.3226725260417,
+          48.63747151692712
+        ],
+        [
+          472.3226725260417,
+          41.17376708984375
+        ],
+        [
+          429.1578776041667,
+          41.17376708984375
+        ]
+      ],
+      "page": 287
+    },
+    {
+      "text": "agoNumber:2of10",
+      "confidence": 0.95,
+      "box": [
+        [
+          428.3277587890625,
+          41.17376708984375
+        ],
+        [
+          495.5652669270833,
+          41.17376708984375
+        ],
+        [
+          495.5652669270833,
+          32.88071695963538
+        ],
+        [
+          428.3277587890625,
+          32.88071695963538
+        ]
+      ],
+      "page": 287
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 287,
+      "text": "c)Name of Contractor's employee responsible for Contractor's review\nd)Transmittal number which shall be consecutive throughout the Works\nDate of submission\nNumber eachnewsubmissioniftemconsecutivelyprefacedwiththe appropriate Specification Section rumber in a format approved by Contract Administrator. Add a suffix (alphabetical or numerical but of consistent type throughout the work) to submission number for each resubmission. Suffixes shall be consecutive.\nNumber of submitted items and a description of each item, including attached technicalinformation,etc.\nThe Specification Section number relevant to the submission, with further reference to the paragraph number of the Section.Do not make submission of items from more than one Specification Section cn the same transmittal form.\nDrawing number, title and date of each shop drawing transmitted.\nParts, areas, etc. of the Works to which samples pertain and date on which sampleproducts are scheduled for incorporation in theWorks.\nK Contractor's remarks pertinent to the submission including exceptions to or deviationsfromtheContractandthereasonstherefore.Inaccordancewith Specification Section 01630, titled \"Product Options and Substitutions\", Contractorshallreferto the specific paragraph 1referenceinthe Specifications any exception or deviation may apply to.\n5.Provide spaces on the transmittal forms for information to be inserted as designated as follows:\na Datesubmissionwasreceivedby ContractAdministrator\nb DatesubmissionisreturnedbyContractAdministrator\nName of Supervision Consultant to whom submission is sent for review andthedateonwhichitwassent.\nName of Supervision Consultant reviewing submission and date returned toSupervisionConsultant'sRepresentative.\nNumber of submitted items and a description of the item.\n(6 Supervision Consultant's remarks including major deviations from the Contract or reasons for C ACTloN if there are no notes on the submission itself.\nAction taken.\n6.Submissions which,in the Supervision Consultant's Representative's opinion, are incomplete, contain errors, or have not been checked or have been only checkedsuperficiallywillbereturnedforresubmissionwithoutreview.\nDistribute finally reviewed shop drawings and samples to the installers and provide additional submissions to the Supervision Consultant as he requests.\n1.03 SUBMISSION REVIEWANDSUBSEQUENTACTIONPROCEDURES\nfollowing actions, in an acceptable format, when submitted to the Contract Administrator. Submissions will be returned by the Supervision Consultant's RepresentativetotheContractorthroughContractAdministratorstampedor marked by the reviewer and indicating the appropriate aetion tobe taken by the.Contractor.\nA ACTioN - Approved, Work may procec\nEmearMiy ferDevelopment\nSpecificationsDiv.01GeneralRequirements\nSubmittals\nBeclo01300\nagoNumber:2of10",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

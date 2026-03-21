@@ -1,67 +1,114 @@
-import { Clause } from '@/types';
+import { Clause, ContractSection, SectionItem, ItemType, SectionType } from '@/types';
+import { detectClausesFromText, detectHierarchicalSectionsFromText, DetectedSection, DetectedMainClause, DetectedSubClause } from './clauseDetectionService';
 
 /**
- * Mock Service representing a PaddleOCR-based clause extraction backend.
- * In a real implementation, this would send the PDF to a Python backend running PaddleOCR,
- * run layout analysis, extract text, and use NLP/LLM to classify General vs Particular conditions.
+ * Maps AI hierarchical clauses to our app's SectionItem structure
  */
+function mapDetectedClauseToSectionItem(clause: DetectedMainClause | DetectedSubClause, idx: number, conditionType: string): SectionItem {
+  return {
+    itemType: ItemType.CLAUSE,
+    clause_number: clause.number,
+    clause_title: clause.title,
+    clause_text: clause.text,
+    general_condition: conditionType === 'General' ? clause.text : '',
+    particular_condition: conditionType === 'Particular' ? clause.text : '',
+    condition_type: (conditionType as any) || 'General',
+    orderIndex: idx,
+    children: (clause.children || []).map((child, cIdx) => 
+      mapDetectedClauseToSectionItem(child, cIdx, conditionType)
+    )
+  };
+}
+
+export async function extractHierarchicalContract(file: File): Promise<ContractSection[]> {
+  console.log(`[Hierarchical] Sending ${file.name} to PaddleOCR extraction pipeline...`);
+  
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const ocrResponse = await fetch('http://localhost:8001/paddle-ocr', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!ocrResponse.ok) {
+        const errorText = await ocrResponse.text();
+        throw new Error(`PaddleOCR backend error: ${errorText}`);
+    }
+
+    const ocrResult = await ocrResponse.json();
+    const rawText = ocrResult.text;
+
+    if (!rawText) return [];
+
+    console.log("PaddleOCR text extracted, calling AI for hierarchical structure...");
+    const sections = await detectHierarchicalSectionsFromText(rawText);
+
+    return sections.map(section => {
+      const type = section.sectionType.toLowerCase().includes('particular') ? SectionType.PARTICULAR 
+                 : section.sectionType.toLowerCase().includes('general') ? SectionType.GENERAL
+                 : section.sectionType as SectionType;
+
+      return {
+        sectionType: type,
+        title: section.sectionTitle,
+        items: section.clauses.map((c, i) => mapDetectedClauseToSectionItem(c, i, type === SectionType.PARTICULAR ? 'Particular' : 'General'))
+      };
+    });
+  } catch (error) {
+    console.error("Hierarchical extraction failed:", error);
+    throw error;
+  }
+}
+
 export async function extractClausesWithPaddleOCR(file: File): Promise<Clause[]> {
   console.log(`Sending ${file.name} to PaddleOCR extraction pipeline...`);
   
-  // Simulate network delay for OCR and layout parsing
-  await new Promise(resolve => setTimeout(resolve, 3500));
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
 
-  // Return realistic mock data demonstrating side-by-side GC and PC extracted from the PDF
-  return [
-    {
-      clause_number: "1.1",
-      clause_title: "Definitions",
-      condition_type: "Both",
-      clause_text: "In the Conditions of Contract ('these Conditions'), which include Particular Conditions and these General Conditions, the following words and expressions shall have the meanings stated.",
-      general_condition: "In the Conditions of Contract ('these Conditions'), which include Particular Conditions and these General Conditions, the following words and expressions shall have the meanings stated. Words indicating persons or parties include corporations and other legal entities.",
-      particular_condition: "Add the following to Sub-Clause 1.1: 'The Employer means the Ministry of Public Works. The Engineer means XYZ Consultants. The Time for Completion shall be strictly 24 months.'",
-      comparison: [],
-      time_frames: []
-    },
-    {
-      clause_number: "4.2",
-      clause_title: "Performance Security",
-      condition_type: "Both",
-      clause_text: "The Contractor shall obtain (at his cost) a Performance Security for proper performance, in the amount and currencies stated in the Appendix to Tender.",
-      general_condition: "The Contractor shall obtain (at his cost) a Performance Security for proper performance, in the amount and currencies stated in the Appendix to Tender. If an amount is not stated, this Sub-Clause shall not apply.",
-      particular_condition: "Override Sub-Clause 4.2 with the following: 'The Contractor shall provide a Performance Security equivalent to exactly 10% of the Accepted Contract Amount, issued by a Tier 1 Bank approved by the Employer.'",
-      comparison: [],
-      time_frames: []
-    },
-    {
-      clause_number: "8.4",
-      clause_title: "Extension of Time for Completion",
-      condition_type: "Both",
-      clause_text: "The Contractor shall be entitled subject to Sub-Clause 20.1 to an extension of the Time for Completion if and to the extent that completion is or will be delayed.",
-      general_condition: "The Contractor shall be entitled subject to Sub-Clause 20.1 to an extension of the Time for Completion if and to the extent that completion is or will be delayed by any of the following causes: a) a Variation, b) exceptionally adverse climatic conditions, c) Unforeseeable shortages.",
-      particular_condition: "Delete 'exceptionally adverse climatic conditions' from the grounds of Extension of Time. Add: 'Only delays caused strictly by the Employer's failure to provide site access within 30 days shall be considered.'",
-      comparison: [],
-      time_frames: []
-    },
-    {
-      clause_number: "14.2",
-      clause_title: "Advance Payment",
-      condition_type: "General",
-      clause_text: "The Employer shall make an advance payment, as an interest-free loan for mobilisation, when the Contractor submits a guarantee in accordance with this Sub-Clause.",
-      general_condition: "The Employer shall make an advance payment, as an interest-free loan for mobilisation, when the Contractor submits a guarantee in accordance with this Sub-Clause. The total advance payment shall be as stated in the Appendix to Tender.",
-      particular_condition: "",
-      comparison: [],
-      time_frames: []
-    },
-    {
-      clause_number: "14.2.1",
-      clause_title: "Advance Payment Limitations",
-      condition_type: "Particular",
-      clause_text: "No advance payment will be made under any circumstances for this Project Phase.",
-      general_condition: "",
-      particular_condition: "No advance payment will be made under any circumstances for this Project Phase. The Contractor is required to fully self-fund initial mobilization.",
-      comparison: [],
-      time_frames: []
+    // Call our Python PaddleOCR backend
+    const ocrResponse = await fetch('http://localhost:8001/paddle-ocr', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!ocrResponse.ok) {
+        const errorText = await ocrResponse.text();
+        throw new Error(`PaddleOCR backend error: ${errorText}`);
     }
-  ];
+
+    const ocrResult = await ocrResponse.json();
+    const rawText = ocrResult.text;
+
+    if (!rawText) {
+      console.warn("PaddleOCR returned empty text.");
+      return [];
+    }
+
+    console.log("PaddleOCR text extracted, passing to AI for hierarchical structure parsing...");
+
+    // Pass the raw text to our updated AI service which handles the hierarchical JSON mapping
+    // It automatically flattens it for the standard UI
+    const extractedClauses = await detectClausesFromText(rawText);
+
+    // Map AI DetectedClause back into the app's standard Clause format
+    const appClauses: Clause[] = extractedClauses.map(c => ({
+      clause_number: c.clause_number,
+      clause_title: c.clause_title,
+      condition_type: (c.condition_type as any) || 'General',
+      clause_text: c.general_condition || c.particular_condition || '',
+      general_condition: c.general_condition,
+      particular_condition: c.particular_condition,
+      comparison: [],
+      time_frames: []
+    }));
+
+    return appClauses;
+  } catch (error) {
+    console.error("Failed to extract clauses with PaddleOCR:", error);
+    throw error;
+  }
 }

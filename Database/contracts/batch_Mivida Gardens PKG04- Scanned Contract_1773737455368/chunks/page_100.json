@@ -1,0 +1,152 @@
+{
+  "text": "TheapplicationforthelastFinalCertificateshallbeaccompaniedbya writtendischarge，signed bytheContractor'sRepresentative,confirming thatthetotalofthefinalaccountsforallSectionsandPortionsoftheWorks representsfull and finalsettlementofallmoniesduetotheContractorunder orinconnectionwiththeContract.\n\n## Issue ofFinal Certificates\n\n26.4FollowingreceiptofeachFinalCertificateapplicationinaccordancewith prepareaFinalCertificatefortherelevantSectionorPortionoftheWorks whichshallstatetheamountsshownbythe agreed finalaccountaspayable to theContractorinrespectofthesaidSectionorPortionoftheWorks, shallshowthetotaldeductiontobemadefromthoseamountsbyvirtueof paymentsalreadymadetotheContractorpursuanttoInterimCertificates or otherwiseand amountspayabletotheEmployerfrom theContractorunder anyterm,conditionorprovisionoftheContractorotherwiseinconnection withorarisingoutoftheWorksincludingthoseamountswhichtheContract specificallyprovides shallberecoverablefromtheContractorby the EmployerasadebtduefromtheContractorormaybedeductedbythe EmployerfromanymoniesdueorwhichmaybecomeduetotheContractor, andshall showthefinal nett amountsaccordinglyremainingpayableto the ContractorortheEmployerasthecasemaybe.\n\nIf atthetimeofpreparationof anyFinal Certificatethereisunderanyterm, conditionorprovisionof theContractorotherwiseinconnectionwithor arisingoutof theWorksanyamount towhichtheProjectManager considerstheContractortobeentitledorwhichtheProjectManager considerstheEmployerortheProjectManagerentitledtodeductor otherwiserecoverfromtheContractor,andifsuchamountdoesnotinthe Project Manager'sopinionrelate specifically to anyparticularSection(s)or Portion(s) of theWorks and has not been included in anyprevious Final Certificate,theProjectManagershall include the same at the endof the Final Certificate thenbeingpreparedasanadditiontoordeductionfrom(as appropriate)the figureswhichwould otherwisebe thefinal nett amounts shownbylhatFinal Certificate.\n\n<!-- image -->\n\nWithin thirty (30) days after receipt from the Contractor of any Final Certificate application duly completed in accordance with Clause 26.3 (ApplicationforFinal Certificates)andprovidedthatalltherequirementsof Clause26.3(ApplicationforFinalCertificates)havebeenperformed in respectoftherelevantSectionorPortionof theWorks,theProjectManager shall completehispreparationof therelevantFinalCertificateindraft,and submitcopiesofthesametotheEmployerandtotheSupervision Consultant.ThereaftertheProject Manager shall consult with theEmployer, the Supervision Consultantand the Contractoras necessary,and when the Employerand theSupervisionConsultantagreewiththecontentsofthe proposed Final CertificatetheProjectManager,theEmployer and the SupervisionConsultantshallsigntheFinalCertificateand theProject Managershall issueittotheContractor.\n\nProvidedthatifintheoplnlonoftheProjectManagerand/orlheEmployer and/or theSupervisionConsultantalltherequirementsofClause26.3\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "TheapplicationforthelastFinalCertificateshallbeaccompaniedbya writtendischarge，signed bytheContractor'sRepresentative,confirming thatthetotalofthefinalaccountsforallSectionsandPortionsoftheWorks representsfull and finalsettlementofallmoniesduetotheContractorunder orinconnectionwiththeContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.13541666666666,
+          722.472157796224
+        ],
+        [
+          487.9365234375,
+          722.472157796224
+        ],
+        [
+          487.9365234375,
+          667.7468668619791
+        ],
+        [
+          158.13541666666666,
+          667.7468668619791
+        ]
+      ],
+      "page": 100
+    },
+    {
+      "text": "Issue ofFinal Certificates",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.40340169270833,
+          653.7473551432291
+        ],
+        [
+          210.9881591796875,
+          653.7473551432291
+        ],
+        [
+          210.9881591796875,
+          643.9901326497396
+        ],
+        [
+          96.40340169270833,
+          643.9901326497396
+        ]
+      ],
+      "page": 100
+    },
+    {
+      "text": "26.4FollowingreceiptofeachFinalCertificateapplicationinaccordancewith prepareaFinalCertificatefortherelevantSectionorPortionoftheWorks whichshallstatetheamountsshownbythe agreed finalaccountaspayable to theContractorinrespectofthesaidSectionorPortionoftheWorks, shallshowthetotaldeductiontobemadefromthoseamountsbyvirtueof paymentsalreadymadetotheContractorpursuanttoInterimCertificates or otherwiseand amountspayabletotheEmployerfrom theContractorunder anyterm,conditionorprovisionoftheContractorotherwiseinconnection withorarisingoutoftheWorksincludingthoseamountswhichtheContract specificallyprovides shallberecoverablefromtheContractorby the EmployerasadebtduefromtheContractorormaybedeductedbythe EmployerfromanymoniesdueorwhichmaybecomeduetotheContractor, andshall showthefinal nett amountsaccordinglyremainingpayableto the ContractorortheEmployerasthecasemaybe.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          631.2633260091146
+        ],
+        [
+          489.2049967447917,
+          631.2633260091146
+        ],
+        [
+          489.2049967447917,
+          461.99668375651044
+        ],
+        [
+          126.84658813476562,
+          461.99668375651044
+        ]
+      ],
+      "page": 100
+    },
+    {
+      "text": "If atthetimeofpreparationof anyFinal Certificatethereisunderanyterm, conditionorprovisionof theContractorotherwiseinconnectionwithor arisingoutof theWorksanyamount towhichtheProjectManager considerstheContractortobeentitledorwhichtheProjectManager considerstheEmployerortheProjectManagerentitledtodeductor otherwiserecoverfromtheContractor,andifsuchamountdoesnotinthe Project Manager'sopinionrelate specifically to anyparticularSection(s)or Portion(s) of theWorks and has not been included in anyprevious Final Certificate,theProjectManagershall include the same at the endof the Final Certificate thenbeingpreparedasanadditiontoordeductionfrom(as appropriate)the figureswhichwould otherwisebe thefinal nett amounts shownbylhatFinal Certificate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.55823771158853,
+          449.69411214192706
+        ],
+        [
+          489.2049967447917,
+          449.69411214192706
+        ],
+        [
+          489.2049967447917,
+          314.3656209309896
+        ],
+        [
+          158.55823771158853,
+          314.3656209309896
+        ]
+      ],
+      "page": 100
+    },
+    {
+      "text": "Within thirty (30) days after receipt from the Contractor of any Final Certificate application duly completed in accordance with Clause 26.3 (ApplicationforFinal Certificates)andprovidedthatalltherequirementsof Clause26.3(ApplicationforFinalCertificates)havebeenperformed in respectoftherelevantSectionorPortionof theWorks,theProjectManager shall completehispreparationof therelevantFinalCertificateindraft,and submitcopiesofthesametotheEmployerandtotheSupervision Consultant.ThereaftertheProject Manager shall consult with theEmployer, the Supervision Consultantand the Contractoras necessary,and when the Employerand theSupervisionConsultantagreewiththecontentsofthe proposed Final CertificatetheProjectManager,theEmployer and the SupervisionConsultantshallsigntheFinalCertificateand theProject Managershall issueittotheContractor.",
+      "confidence": 0.95,
+      "box": [
+        [
+          158.9810587565104,
+          303.3357137044271
+        ],
+        [
+          490.0506591796875,
+          303.3357137044271
+        ],
+        [
+          490.0506591796875,
+          155.70465087890625
+        ],
+        [
+          158.9810587565104,
+          155.70465087890625
+        ]
+      ],
+      "page": 100
+    },
+    {
+      "text": "ProvidedthatifintheoplnlonoftheProjectManagerand/orlheEmployer and/or theSupervisionConsultantalltherequirementsofClause26.3",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.24952189127603,
+          143.82631429036462
+        ],
+        [
+          489.6278483072917,
+          143.82631429036462
+        ],
+        [
+          489.6278483072917,
+          122.61496988932288
+        ],
+        [
+          160.24952189127603,
+          122.61496988932288
+        ]
+      ],
+      "page": 100
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 100,
+      "text": "TheapplicationforthelastFinalCertificateshallbeaccompaniedbya writtendischarge，signed bytheContractor'sRepresentative,confirming thatthetotalofthefinalaccountsforallSectionsandPortionsoftheWorks representsfull and finalsettlementofallmoniesduetotheContractorunder orinconnectionwiththeContract.\nIssue ofFinal Certificates\n26.4FollowingreceiptofeachFinalCertificateapplicationinaccordancewith prepareaFinalCertificatefortherelevantSectionorPortionoftheWorks whichshallstatetheamountsshownbythe agreed finalaccountaspayable to theContractorinrespectofthesaidSectionorPortionoftheWorks, shallshowthetotaldeductiontobemadefromthoseamountsbyvirtueof paymentsalreadymadetotheContractorpursuanttoInterimCertificates or otherwiseand amountspayabletotheEmployerfrom theContractorunder anyterm,conditionorprovisionoftheContractorotherwiseinconnection withorarisingoutoftheWorksincludingthoseamountswhichtheContract specificallyprovides shallberecoverablefromtheContractorby the EmployerasadebtduefromtheContractorormaybedeductedbythe EmployerfromanymoniesdueorwhichmaybecomeduetotheContractor, andshall showthefinal nett amountsaccordinglyremainingpayableto the ContractorortheEmployerasthecasemaybe.\nIf atthetimeofpreparationof anyFinal Certificatethereisunderanyterm, conditionorprovisionof theContractorotherwiseinconnectionwithor arisingoutof theWorksanyamount towhichtheProjectManager considerstheContractortobeentitledorwhichtheProjectManager considerstheEmployerortheProjectManagerentitledtodeductor otherwiserecoverfromtheContractor,andifsuchamountdoesnotinthe Project Manager'sopinionrelate specifically to anyparticularSection(s)or Portion(s) of theWorks and has not been included in anyprevious Final Certificate,theProjectManagershall include the same at the endof the Final Certificate thenbeingpreparedasanadditiontoordeductionfrom(as appropriate)the figureswhichwould otherwisebe thefinal nett amounts shownbylhatFinal Certificate.\nWithin thirty (30) days after receipt from the Contractor of any Final Certificate application duly completed in accordance with Clause 26.3 (ApplicationforFinal Certificates)andprovidedthatalltherequirementsof Clause26.3(ApplicationforFinalCertificates)havebeenperformed in respectoftherelevantSectionorPortionof theWorks,theProjectManager shall completehispreparationof therelevantFinalCertificateindraft,and submitcopiesofthesametotheEmployerandtotheSupervision Consultant.ThereaftertheProject Manager shall consult with theEmployer, the Supervision Consultantand the Contractoras necessary,and when the Employerand theSupervisionConsultantagreewiththecontentsofthe proposed Final CertificatetheProjectManager,theEmployer and the SupervisionConsultantshallsigntheFinalCertificateand theProject Managershall issueittotheContractor.\nProvidedthatifintheoplnlonoftheProjectManagerand/orlheEmployer and/or theSupervisionConsultantalltherequirementsofClause26.3",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

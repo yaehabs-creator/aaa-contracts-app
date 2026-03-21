@@ -1,0 +1,428 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- 5.1 The Employer may, at any time or timesprior to the latest time stated in paragraph 7.1 below for the delivery of Tenders, issue and despatch to all Tenderers anaddendumcontaining a variation,addition,deletion,clarification and/orrectificationto,fromorofanyoftheTenderDocumentsorofanyearlier addendum issued under this paragraph 5.1. Any such addendum (as well as AnswerstoTenderQueries)shallformpartoftheTenderandshallbevalid and bindingonallTenderers.EachTenderermustacknowledgebyreturnthe receiptofeachaddendumtotheEmployeronEmployer'saddressandmust completeItem8ofitsFormofTenderwiththereferencenumberanddateof issueofeachaddendum.\n\n## CLARIFICATIONS, INTERPRETATIONS AND EXPLANATIONS\n\n- 6.1ShouldtheTendererrequireclarification,anexplanationoraninterpretationin respectofanypartoftheTenderDocumentsorofanyaddendumissued in accordance with paragraph 5 abovc or as to any other relevant matter or thing, the Tenderer must request suchi required clarification, explanation or interpretationbye-mail to theEmployersoastobereceivedby theEmployer not less than[TheDatementioned intheTenderInvitationLetter]daysprior to thelatest timefor thedeliveryofTendersasincluded intheTenderInvitation Letter,andanyextension therelo.\n- 6.2 As soonas practicableafterreceiptofanysuchconfirmationrequest,the r la a l   a a requested details and, if the Employer thinks appropriate, rectifying the point raisedby theTenderer and,ifsuchrequesteddetailsorrectificationarein the na sns o   io so Documentsorinanyaddendaissued inaccordancewithparagraph5above,an addendumcontainingthesamewillbeissued inaccordancewiththesaid paragraph.\n- 6.3 No clarification, explanation, interpretation or rectification, shall be binding or have any legal validity whatsoever unless the same be made in writing by the Employer.\n\n## 7s SUBMISSIONOFTENDERS\n\n- 7.1 Full set of scanned stamped Tender Documents shall be addressed to the Employeremailtendersemaarmisr@emaar.eg[9:00AM] to[12:00noon],on thedatedefinedintheinvitationtoTenderletter(orsuchlatertimeasmaybe notified by an addendum issued in accordance with paragraph 5 above). Any Tenderreceivedafter suchtime(orlater time asaforesaid)maynotbe considered.\n- 7.2 initialledmanuallywhererequiredandstampedwiththeTendererofficial authorized stamp in the bottom right hand corner of each page or Drawing (as applicable).\n- 7.3 Theaddressed e-mail shallrefer to thetenderTitle（PK#O4:Constructionof TownhomesVillas inParcel 11 &amp; Parcel 12), in Mivida GardensProject.\n\n7.4No Tender once delivered to theEmployermaybe added to,amended or\n\nConstructionof TownhomesVillas inParcel 11&amp;Parcel12\n\nPage6of 14\n\nInstructiontoTenderers-Appendixes\n\n<!-- image -->\n\n170001110-205\n\n(212841\n\n1.121",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          749.198476155599
+        ],
+        [
+          165.3233846028646,
+          749.198476155599
+        ],
+        [
+          165.3233846028646,
+          733.0778401692709
+        ],
+        [
+          98.51751708984375,
+          733.0778401692709
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.19554646809895,
+          729.6840209960938
+        ],
+        [
+          143.33663940429688,
+          729.6840209960938
+        ],
+        [
+          143.33663940429688,
+          719.0783487955729
+        ],
+        [
+          122.19554646809895,
+          719.0783487955729
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "5.1 The Employer may, at any time or timesprior to the latest time stated in paragraph 7.1 below for the delivery of Tenders, issue and despatch to all Tenderers anaddendumcontaining a variation,addition,deletion,clarification and/orrectificationto,fromorofanyoftheTenderDocumentsorofanyearlier addendum issued under this paragraph 5.1. Any such addendum (as well as AnswerstoTenderQueries)shallformpartoftheTenderandshallbevalid and bindingonallTenderers.EachTenderermustacknowledgebyreturnthe receiptofeachaddendumtotheEmployeronEmployer'saddressandmust completeItem8ofitsFormofTenderwiththereferencenumberanddateof issueofeachaddendum.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.20217895507812,
+          695.3216247558594
+        ],
+        [
+          508.6548258463542,
+          695.3216247558594
+        ],
+        [
+          508.6548258463542,
+          575.6895548502605
+        ],
+        [
+          111.20217895507812,
+          575.6895548502605
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "CLARIFICATIONS, INTERPRETATIONS AND EXPLANATIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.81960042317708,
+          563.8111979166667
+        ],
+        [
+          414.3655192057292,
+          563.8111979166667
+        ],
+        [
+          414.3655192057292,
+          554.9024251302083
+        ],
+        [
+          107.81960042317708,
+          554.9024251302083
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "6.1ShouldtheTendererrequireclarification,anexplanationoraninterpretationin respectofanypartoftheTenderDocumentsorofanyaddendumissued in accordance with paragraph 5 abovc or as to any other relevant matter or thing, the Tenderer must request suchi required clarification, explanation or interpretationbye-mail to theEmployersoastobereceivedby theEmployer not less than[TheDatementioned intheTenderInvitationLetter]daysprior to thelatest timefor thedeliveryofTendersasincluded intheTenderInvitation Letter,andanyextension therelo.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.04782104492188,
+          546.8421223958333
+        ],
+        [
+          508.2319742838542,
+          546.8421223958333
+        ],
+        [
+          508.2319742838542,
+          451.81524658203125
+        ],
+        [
+          112.04782104492188,
+          451.81524658203125
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "6.2 As soonas practicableafterreceiptofanysuchconfirmationrequest,the r la a l   a a requested details and, if the Employer thinks appropriate, rectifying the point raisedby theTenderer and,ifsuchrequesteddetailsorrectificationarein the na sns o   io so Documentsorinanyaddendaissued inaccordancewithparagraph5above,an addendumcontainingthesamewillbeissued inaccordancewiththesaid paragraph.",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.16192626953125,
+          445.45184326171875
+        ],
+        [
+          509.5004475911458,
+          445.45184326171875
+        ],
+        [
+          509.5004475911458,
+          338.54656982421875
+        ],
+        [
+          114.16192626953125,
+          338.54656982421875
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "6.3 No clarification, explanation, interpretation or rectification, shall be binding or have any legal validity whatsoever unless the same be made in writing by the Employer.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.04782104492188,
+          333.45587158203125
+        ],
+        [
+          509.07763671875,
+          333.45587158203125
+        ],
+        [
+          509.07763671875,
+          296.1238810221354
+        ],
+        [
+          112.04782104492188,
+          296.1238810221354
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "7s SUBMISSIONOFTENDERS",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.78598022460938,
+          285.9424031575521
+        ],
+        [
+          249.88777669270834,
+          285.9424031575521
+        ],
+        [
+          249.88777669270834,
+          276.1852010091146
+        ],
+        [
+          99.78598022460938,
+          276.1852010091146
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "7.1 Full set of scanned stamped Tender Documents shall be addressed to the Employeremailtendersemaarmisr@emaar.eg[9:00AM] to[12:00noon],on thedatedefinedintheinvitationtoTenderletter(orsuchlatertimeasmaybe notified by an addendum issued in accordance with paragraph 5 above). Any Tenderreceivedafter suchtime(orlater time asaforesaid)maynotbe considered.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47064208984375,
+          270.2459920247396
+        ],
+        [
+          509.07763671875,
+          270.2459920247396
+        ],
+        [
+          509.07763671875,
+          198.55161539713538
+        ],
+        [
+          112.47064208984375,
+          198.55161539713538
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "7.2 initialledmanuallywhererequiredandstampedwiththeTendererofficial authorized stamp in the bottom right hand corner of each page or Drawing (as applicable).",
+      "confidence": 0.95,
+      "box": [
+        [
+          114.16192626953125,
+          191.33974202473962
+        ],
+        [
+          509.5004475911458,
+          191.33974202473962
+        ],
+        [
+          509.5004475911458,
+          145.09901936848962
+        ],
+        [
+          114.16192626953125,
+          145.09901936848962
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "7.3 Theaddressed e-mail shallrefer to thetenderTitle（PK#O4:Constructionof TownhomesVillas inParcel 11 & Parcel 12), in Mivida GardensProject.",
+      "confidence": 0.95,
+      "box": [
+        [
+          113.73910522460938,
+          139.15981038411462
+        ],
+        [
+          510.3461100260417,
+          139.15981038411462
+        ],
+        [
+          510.3461100260417,
+          116.25152587890625
+        ],
+        [
+          113.73910522460938,
+          116.25152587890625
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "7.4No Tender once delivered to theEmployermaybe added to,amended or",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89346313476562,
+          111.16078694661462
+        ],
+        [
+          509.5004475911458,
+          111.16078694661462
+        ],
+        [
+          509.5004475911458,
+          98.43398030598962
+        ],
+        [
+          112.89346313476562,
+          98.43398030598962
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "Constructionof TownhomesVillas inParcel 11&Parcel12",
+      "confidence": 0.95,
+      "box": [
+        [
+          344.5998942057292,
+          93.76747639973962
+        ],
+        [
+          505.695068359375,
+          93.76747639973962
+        ],
+        [
+          505.695068359375,
+          84.85870361328125
+        ],
+        [
+          344.5998942057292,
+          84.85870361328125
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "Page6of 14",
+      "confidence": 0.95,
+      "box": [
+        [
+          465.5269775390625,
+          78.49534098307288
+        ],
+        [
+          506.1178792317708,
+          78.49534098307288
+        ],
+        [
+          506.1178792317708,
+          69.58656819661462
+        ],
+        [
+          465.5269775390625,
+          69.58656819661462
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "InstructiontoTenderers-Appendixes",
+      "confidence": 0.95,
+      "box": [
+        [
+          394.070068359375,
+          85.70717366536462
+        ],
+        [
+          505.695068359375,
+          85.70717366536462
+        ],
+        [
+          505.695068359375,
+          76.79840087890625
+        ],
+        [
+          394.070068359375,
+          76.79840087890625
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "170001110-205",
+      "confidence": 0.95,
+      "box": [
+        [
+          219.4446004231771,
+          80.61643473307288
+        ],
+        [
+          280.7537841796875,
+          80.61643473307288
+        ],
+        [
+          280.7537841796875,
+          77.64687093098962
+        ],
+        [
+          219.4446004231771,
+          77.64687093098962
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "(212841",
+      "confidence": 0.95,
+      "box": [
+        [
+          223.25,
+          71.28350830078125
+        ],
+        [
+          248.61930338541666,
+          71.28350830078125
+        ],
+        [
+          248.61930338541666,
+          68.31386311848962
+        ],
+        [
+          223.25,
+          68.31386311848962
+        ]
+      ],
+      "page": 583
+    },
+    {
+      "text": "1.121",
+      "confidence": 0.95,
+      "box": [
+        [
+          298.0894775390625,
+          74.25307210286462
+        ],
+        [
+          320.07623291015625,
+          74.25307210286462
+        ],
+        [
+          320.07623291015625,
+          66.61700439453125
+        ],
+        [
+          298.0894775390625,
+          66.61700439453125
+        ]
+      ],
+      "page": 583
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 583,
+      "text": "EMAAR\nMISR\n5.1 The Employer may, at any time or timesprior to the latest time stated in paragraph 7.1 below for the delivery of Tenders, issue and despatch to all Tenderers anaddendumcontaining a variation,addition,deletion,clarification and/orrectificationto,fromorofanyoftheTenderDocumentsorofanyearlier addendum issued under this paragraph 5.1. Any such addendum (as well as AnswerstoTenderQueries)shallformpartoftheTenderandshallbevalid and bindingonallTenderers.EachTenderermustacknowledgebyreturnthe receiptofeachaddendumtotheEmployeronEmployer'saddressandmust completeItem8ofitsFormofTenderwiththereferencenumberanddateof issueofeachaddendum.\nCLARIFICATIONS, INTERPRETATIONS AND EXPLANATIONS\n6.1ShouldtheTendererrequireclarification,anexplanationoraninterpretationin respectofanypartoftheTenderDocumentsorofanyaddendumissued in accordance with paragraph 5 abovc or as to any other relevant matter or thing, the Tenderer must request suchi required clarification, explanation or interpretationbye-mail to theEmployersoastobereceivedby theEmployer not less than[TheDatementioned intheTenderInvitationLetter]daysprior to thelatest timefor thedeliveryofTendersasincluded intheTenderInvitation Letter,andanyextension therelo.\n6.2 As soonas practicableafterreceiptofanysuchconfirmationrequest,the r la a l   a a requested details and, if the Employer thinks appropriate, rectifying the point raisedby theTenderer and,ifsuchrequesteddetailsorrectificationarein the na sns o   io so Documentsorinanyaddendaissued inaccordancewithparagraph5above,an addendumcontainingthesamewillbeissued inaccordancewiththesaid paragraph.\n6.3 No clarification, explanation, interpretation or rectification, shall be binding or have any legal validity whatsoever unless the same be made in writing by the Employer.\n7s SUBMISSIONOFTENDERS\n7.1 Full set of scanned stamped Tender Documents shall be addressed to the Employeremailtendersemaarmisr@emaar.eg[9:00AM] to[12:00noon],on thedatedefinedintheinvitationtoTenderletter(orsuchlatertimeasmaybe notified by an addendum issued in accordance with paragraph 5 above). Any Tenderreceivedafter suchtime(orlater time asaforesaid)maynotbe considered.\n7.2 initialledmanuallywhererequiredandstampedwiththeTendererofficial authorized stamp in the bottom right hand corner of each page or Drawing (as applicable).\n7.3 Theaddressed e-mail shallrefer to thetenderTitle（PK#O4:Constructionof TownhomesVillas inParcel 11 & Parcel 12), in Mivida GardensProject.\n7.4No Tender once delivered to theEmployermaybe added to,amended or\nConstructionof TownhomesVillas inParcel 11&Parcel12\nPage6of 14\nInstructiontoTenderers-Appendixes\n170001110-205\n(212841\n1.121",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,359 @@
+{
+  "text": "<!-- image -->\n\n## 1.03FIREPROTECTIONOFSTRUCTURE\n\n1. Ensure that nothing subverts the integrity of fire protection provided for the building structure.\n\n## 1.04 FIRESEPARATIONS\n\n1. Ensure that fire separations are instailed to maintain total integrity and that they are not diminished or breached by work following their installation.\n2. Replace fire separations which have suffered a lessening of their required rating during construction.\n\n## 1.05 REQUIREMENTSOFREGULATORYAGENCIES\n\n1. Work shall include protection measures consisting of materials, constructions from harm.\n2. 2.Ensure that pollution and environmental control of construction activities are exercised as required by jurisdictional authorities during progress of the Works. Where required by national or local laws, regulations or codes, Contractor shall obtain, at Contractor's cost, permits from jurisdictional authorities\n3. 3.Site Access:\n- a) Contractor shall be responsible for making arrangements with and obtaining necessary permits from jurisdictional authorities to ensure access to the Site for construction personnel,delivery of products and construction equipment, and performance of work.' The Employer, Contract Administrator, or Supervision Consultant will not be responsible jurisdictional authoritiesfor provision of access.\n- b) Except where special permission is obtained, maintain clear access for roads and sidewalks on public property if affected by Contractor's work.\n6. 4.Maintain roads and sidewalks clear of construction materials and debris, including excavated material.Clean roads and sidewalks as frequently as required to ensure that they are cleared of materials,debris and excavated material.\n\nPART 2 - PRODUCTS (Not Used)\n\nPART 3 - EXECUTION (Not Used)\n\n<!-- image -->\n\nENDOFSECTION01060\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "1.03FIREPROTECTIONOFSTRUCTURE",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          710.419687906901
+        ],
+        [
+          305.4740804036458,
+          710.419687906901
+        ],
+        [
+          305.4740804036458,
+          698.3948262532552
+        ],
+        [
+          77.61365763346355,
+          698.3948262532552
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "Ensure that nothing subverts the integrity of fire protection provided for the building structure.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          693.4190165201823
+        ],
+        [
+          505.111328125,
+          693.4190165201823
+        ],
+        [
+          505.111328125,
+          668.5399881998698
+        ],
+        [
+          94.63055419921875,
+          668.5399881998698
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "1.04 FIRESEPARATIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          658.588368733724
+        ],
+        [
+          220.38958740234375,
+          658.588368733724
+        ],
+        [
+          220.38958740234375,
+          647.3928019205729
+        ],
+        [
+          78.44375101725261,
+          647.3928019205729
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "Ensure that fire separations are instailed to maintain total integrity and that they are not diminished or breached by work following their installation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          642.0023600260416
+        ],
+        [
+          505.9414469401042,
+          642.0023600260416
+        ],
+        [
+          505.9414469401042,
+          618.3672688802084
+        ],
+        [
+          95.87569173177083,
+          618.3672688802084
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "Replace fire separations which have suffered a lessening of their required rating during construction.",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          614.2207641601562
+        ],
+        [
+          505.5263671875,
+          614.2207641601562
+        ],
+        [
+          505.5263671875,
+          590.1710408528646
+        ],
+        [
+          96.29074096679688,
+          590.1710408528646
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "1.05 REQUIREMENTSOFREGULATORYAGENCIES",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          578.9754638671875
+        ],
+        [
+          361.9203694661458,
+          578.9754638671875
+        ],
+        [
+          361.9203694661458,
+          567.3652547200521
+        ],
+        [
+          78.02870178222656,
+          567.3652547200521
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "Work shall include protection measures consisting of materials, constructions from harm.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          562.3894449869792
+        ],
+        [
+          504.6962890625,
+          562.3894449869792
+        ],
+        [
+          504.6962890625,
+          527.1441650390625
+        ],
+        [
+          94.63055419921875,
+          527.1441650390625
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "2.Ensure that pollution and environmental control of construction activities are exercised as required by jurisdictional authorities during progress of the Works. Where required by national or local laws, regulations or codes, Contractor shall obtain, at Contractor's cost, permits from jurisdictional authorities",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          522.1683553059895
+        ],
+        [
+          505.5263671875,
+          522.1683553059895
+        ],
+        [
+          505.5263671875,
+          464.53192138671875
+        ],
+        [
+          94.2155049641927,
+          464.53192138671875
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "3.Site Access:",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          459.14145914713544
+        ],
+        [
+          175.1495361328125,
+          459.14145914713544
+        ],
+        [
+          175.1495361328125,
+          447.94590250651044
+        ],
+        [
+          95.0456034342448,
+          447.94590250651044
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "Contractor shall be responsible for making arrangements with and obtaining necessary permits from jurisdictional authorities to ensure access to the Site for construction personnel,delivery of products and construction equipment, and performance of work.' The Employer, Contract Administrator, or Supervision Consultant will not be responsible jurisdictional authoritiesfor provision of access.",
+      "confidence": 0.95,
+      "box": [
+        [
+          110.81736246744792,
+          442.97011311848956
+        ],
+        [
+          506.3564860026042,
+          442.97011311848956
+        ],
+        [
+          506.3564860026042,
+          361.69858805338544
+        ],
+        [
+          110.81736246744792,
+          361.69858805338544
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "Except where special permission is obtained, maintain clear access for roads and sidewalks on public property if affected by Contractor's work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          357.13743082682294
+        ],
+        [
+          505.5263671875,
+          357.13743082682294
+        ],
+        [
+          505.5263671875,
+          334.33168538411456
+        ],
+        [
+          111.64745076497395,
+          334.33168538411456
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "4.Maintain roads and sidewalks clear of construction materials and debris, including excavated material.Clean roads and sidewalks as frequently as required to ensure that they are cleared of materials,debris and excavated material.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          329.35585530598956
+        ],
+        [
+          505.5263671875,
+          329.35585530598956
+        ],
+        [
+          505.5263671875,
+          283.32965087890625
+        ],
+        [
+          94.63055419921875,
+          283.32965087890625
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "PART 2 - PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.61365763346355,
+          262.1824747721354
+        ],
+        [
+          250.6879679361979,
+          262.1824747721354
+        ],
+        [
+          250.6879679361979,
+          247.66969807942712
+        ],
+        [
+          77.61365763346355,
+          247.66969807942712
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "PART 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          239.37668863932288
+        ],
+        [
+          252.76318359375,
+          239.37668863932288
+        ],
+        [
+          252.76318359375,
+          224.86391194661462
+        ],
+        [
+          77.1986083984375,
+          224.86391194661462
+        ]
+      ],
+      "page": 271
+    },
+    {
+      "text": "ENDOFSECTION01060",
+      "confidence": 0.95,
+      "box": [
+        [
+          226.61527506510416,
+          203.71673583984375
+        ],
+        [
+          357.7698974609375,
+          203.71673583984375
+        ],
+        [
+          357.7698974609375,
+          192.52117919921875
+        ],
+        [
+          226.61527506510416,
+          192.52117919921875
+        ]
+      ],
+      "page": 271
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 271,
+      "text": "1.03FIREPROTECTIONOFSTRUCTURE\nEnsure that nothing subverts the integrity of fire protection provided for the building structure.\n1.04 FIRESEPARATIONS\nEnsure that fire separations are instailed to maintain total integrity and that they are not diminished or breached by work following their installation.\nReplace fire separations which have suffered a lessening of their required rating during construction.\n1.05 REQUIREMENTSOFREGULATORYAGENCIES\nWork shall include protection measures consisting of materials, constructions from harm.\n2.Ensure that pollution and environmental control of construction activities are exercised as required by jurisdictional authorities during progress of the Works. Where required by national or local laws, regulations or codes, Contractor shall obtain, at Contractor's cost, permits from jurisdictional authorities\n3.Site Access:\nContractor shall be responsible for making arrangements with and obtaining necessary permits from jurisdictional authorities to ensure access to the Site for construction personnel,delivery of products and construction equipment, and performance of work.' The Employer, Contract Administrator, or Supervision Consultant will not be responsible jurisdictional authoritiesfor provision of access.\nExcept where special permission is obtained, maintain clear access for roads and sidewalks on public property if affected by Contractor's work.\n4.Maintain roads and sidewalks clear of construction materials and debris, including excavated material.Clean roads and sidewalks as frequently as required to ensure that they are cleared of materials,debris and excavated material.\nPART 2 - PRODUCTS (Not Used)\nPART 3 - EXECUTION (Not Used)\nENDOFSECTION01060",
+      "line_count": 15
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

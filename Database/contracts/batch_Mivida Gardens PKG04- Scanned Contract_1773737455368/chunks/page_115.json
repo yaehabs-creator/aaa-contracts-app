@@ -1,0 +1,750 @@
+{
+  "text": "## EMAAR\n\nMISR\n\n- (pp) \"Effective Date\"means the earliest event of the following:\n- Sevencalendardaysfromthedateoftheofficialissuanceofthe Contract Documents by the Employer to the Contractor for signature\n- The date of the signature of theAgreement by the Employer\n- The date of signing the Letter of Acceptance (if any) by the Employer\n- (qq) \"Employer\"means EMAAR MISR FOR DEVELOPMENT,H/Q at Emaar MisrSalesCenter,P.O.Box229,MOKATTAM 11585,CAIRO,EGYPT and includes the Employer's successors and assigns.\n- (u) \"Employer's Requirements\" means the documents entitled Employer's Requirements as includedin the Contract,and anyadditions and modificationstosuchdocumentinaccordancewiththeContract.Such documentdescribesthepurpose(s)forwhichtheWorksareintended,and specify key personnel (if any), the scope, and/or design, and/or performance, technical and evaluation criteria for the Works.\n- (ss) \"Fixed fee for Overhead and Profit\"means the fixed amountfor the overheadsandprofitwhichinclude(butnotlimited toandwithoutcontradict and/orduplicatewithwhathasbeenitemizedthroughtheBOQ)theunder listed items as well as whatever necessary and required or deemed necessarytosatisfythecompletionoftheWorks:\n- Contractor's Profit\n- Taxes, and Value Added Taxes (VAT)\n- Social insurance\n- Site supervision\n- ShopDrawings\n- Purchasing and Procurement\n- Finance Cost\n- Software\n- Safetytools,and Tools\n- Staffvacation\n- Site cleaning\n- First Aid\n- Site security and guards D\n- Transportation\n- Engineering stamps and fees required by local regulations\n- Cranesandlifts\n- Labor camps,and Laboraccommodations\n- Storage\n- Siteofficesandfacilities\n- MobilizationandDemobilizationcosts\n- Hording including hording surrounding labor camp and the mobilization officesandWorkingSite.\n- Theroyalties,fees,tariff,costsandexpenses of allrequired permits underthecontract includethoserelated touill\n- \"Optional Scope\"meansworksmentioned intheFormofAgreementor the Bills of Quantities as optional scope for which the prices are agreed\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          753.0165201822916
+        ],
+        [
+          178.0080362955729,
+          753.0165201822916
+        ],
+        [
+          178.0080362955729,
+          733.0778401692709
+        ],
+        [
+          97.671875,
+          733.0778401692709
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.42376708984375,
+          729.2597961425781
+        ],
+        [
+          150.94743855794272,
+          729.2597961425781
+        ],
+        [
+          150.94743855794272,
+          718.6541137695312
+        ],
+        [
+          126.42376708984375,
+          718.6541137695312
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "(pp) \"Effective Date\"means the earliest event of the following:",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          699.1396687825521
+        ],
+        [
+          430.4327392578125,
+          699.1396687825521
+        ],
+        [
+          430.4327392578125,
+          684.2917175292969
+        ],
+        [
+          126.00094604492188,
+          684.2917175292969
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Sevencalendardaysfromthedateoftheofficialissuanceofthe Contract Documents by the Employer to the Contractor for signature",
+      "confidence": 0.95,
+      "box": [
+        [
+          176.3167521158854,
+          671.9891255696615
+        ],
+        [
+          502.3125,
+          671.9891255696615
+        ],
+        [
+          502.3125,
+          646.5355021158854
+        ],
+        [
+          176.3167521158854,
+          646.5355021158854
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "The date of the signature of theAgreement by the Employer",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.6254679361979,
+          685.5644022623698
+        ],
+        [
+          455.8020833333333,
+          685.5644022623698
+        ],
+        [
+          455.8020833333333,
+          671.1406758626302
+        ],
+        [
+          174.6254679361979,
+          671.1406758626302
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "The date of signing the Letter of Acceptance (if any) by the Employer",
+      "confidence": 0.95,
+      "box": [
+        [
+          163.20927937825522,
+          647.8081868489584
+        ],
+        [
+          495.5473225911458,
+          647.8081868489584
+        ],
+        [
+          495.5473225911458,
+          633.8086751302084
+        ],
+        [
+          163.20927937825522,
+          633.8086751302084
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "(qq) \"Employer\"means EMAAR MISR FOR DEVELOPMENT,H/Q at Emaar MisrSalesCenter,P.O.Box229,MOKATTAM 11585,CAIRO,EGYPT and includes the Employer's successors and assigns.",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          632.9602254231771
+        ],
+        [
+          503.1581217447917,
+          632.9602254231771
+        ],
+        [
+          503.1581217447917,
+          594.3555501302084
+        ],
+        [
+          125.578125,
+          594.3555501302084
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "(u) \"Employer's Requirements\" means the documents entitled Employer's Requirements as includedin the Contract,and anyadditions and modificationstosuchdocumentinaccordancewiththeContract.Such documentdescribesthepurpose(s)forwhichtheWorksareintended,and specify key personnel (if any), the scope, and/or design, and/or performance, technical and evaluation criteria for the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          593.0828857421875
+        ],
+        [
+          502.3125,
+          593.0828857421875
+        ],
+        [
+          502.3125,
+          518.8431193033855
+        ],
+        [
+          126.00094604492188,
+          518.8431193033855
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "(ss) \"Fixed fee for Overhead and Profit\"means the fixed amountfor the overheadsandprofitwhichinclude(butnotlimited toandwithoutcontradict and/orduplicatewithwhathasbeenitemizedthroughtheBOQ)theunder listed items as well as whatever necessary and required or deemed necessarytosatisfythecompletionoftheWorks:",
+      "confidence": 0.95,
+      "box": [
+        [
+          125.578125,
+          517.146219889323
+        ],
+        [
+          501.8896484375,
+          517.146219889323
+        ],
+        [
+          501.8896484375,
+          456.48175048828125
+        ],
+        [
+          125.578125,
+          456.48175048828125
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Contractor's Profit",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          456.90594482421875
+        ],
+        [
+          260.8811442057292,
+          456.90594482421875
+        ],
+        [
+          260.8811442057292,
+          444.60337320963544
+        ],
+        [
+          175.04829915364584,
+          444.60337320963544
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Taxes, and Value Added Taxes (VAT)",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.6254679361979,
+          444.17913818359375
+        ],
+        [
+          352.210693359375,
+          444.17913818359375
+        ],
+        [
+          352.210693359375,
+          430.17966715494794
+        ],
+        [
+          174.6254679361979,
+          430.17966715494794
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Social insurance",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.47111002604166,
+          431.02809651692706
+        ],
+        [
+          253.69317626953125,
+          431.02809651692706
+        ],
+        [
+          253.69317626953125,
+          418.72552490234375
+        ],
+        [
+          175.47111002604166,
+          418.72552490234375
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Site supervision",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.8939412434896,
+          417.45281982421875
+        ],
+        [
+          250.31060791015625,
+          417.45281982421875
+        ],
+        [
+          250.31060791015625,
+          405.99871826171875
+        ],
+        [
+          175.8939412434896,
+          405.99871826171875
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "ShopDrawings",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.8939412434896,
+          405.57448323567706
+        ],
+        [
+          247.3508504231771,
+          405.57448323567706
+        ],
+        [
+          247.3508504231771,
+          393.27187093098956
+        ],
+        [
+          175.8939412434896,
+          393.27187093098956
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Purchasing and Procurement",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.8939412434896,
+          392.84767659505206
+        ],
+        [
+          312.0426025390625,
+          392.84767659505206
+        ],
+        [
+          312.0426025390625,
+          380.54506429036456
+        ],
+        [
+          175.8939412434896,
+          380.54506429036456
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Finance Cost",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          380.96929931640625
+        ],
+        [
+          238.8944091796875,
+          380.96929931640625
+        ],
+        [
+          238.8944091796875,
+          368.66672770182294
+        ],
+        [
+          175.04829915364584,
+          368.66672770182294
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Software",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          367.81825764973956
+        ],
+        [
+          218.1761271158854,
+          367.81825764973956
+        ],
+        [
+          218.1761271158854,
+          355.51568603515625
+        ],
+        [
+          175.04829915364584,
+          355.51568603515625
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Safetytools,and Tools",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.47111002604166,
+          354.24298095703125
+        ],
+        [
+          282.02223714192706,
+          354.24298095703125
+        ],
+        [
+          282.02223714192706,
+          342.78883870442706
+        ],
+        [
+          175.47111002604166,
+          342.78883870442706
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Staffvacation",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          342.36464436848956
+        ],
+        [
+          239.74005126953125,
+          342.36464436848956
+        ],
+        [
+          239.74005126953125,
+          330.06203206380206
+        ],
+        [
+          175.04829915364584,
+          330.06203206380206
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Site cleaning",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          330.06203206380206
+        ],
+        [
+          235.93465169270834,
+          330.06203206380206
+        ],
+        [
+          235.93465169270834,
+          316.9109903971354
+        ],
+        [
+          175.04829915364584,
+          316.9109903971354
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "First Aid",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          316.48675537109375
+        ],
+        [
+          215.21636962890625,
+          316.48675537109375
+        ],
+        [
+          215.21636962890625,
+          305.03265380859375
+        ],
+        [
+          175.04829915364584,
+          305.03265380859375
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Site security and guards D",
+      "confidence": 0.95,
+      "box": [
+        [
+          160.6723429361979,
+          304.6084187825521
+        ],
+        [
+          287.51894124348956,
+          304.6084187825521
+        ],
+        [
+          287.51894124348956,
+          290.6089070638021
+        ],
+        [
+          160.6723429361979,
+          290.6089070638021
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Transportation",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.8939412434896,
+          291.03314208984375
+        ],
+        [
+          243.96826171875,
+          291.03314208984375
+        ],
+        [
+          243.96826171875,
+          279.1547648111979
+        ],
+        [
+          175.8939412434896,
+          279.1547648111979
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Engineering stamps and fees required by local regulations",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.47111002604166,
+          278.7305704752604
+        ],
+        [
+          443.9630533854167,
+          278.7305704752604
+        ],
+        [
+          443.9630533854167,
+          265.57952880859375
+        ],
+        [
+          175.47111002604166,
+          265.57952880859375
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Cranesandlifts",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.47111002604166,
+          265.57952880859375
+        ],
+        [
+          248.19649251302084,
+          265.57952880859375
+        ],
+        [
+          248.19649251302084,
+          254.54962158203125
+        ],
+        [
+          175.47111002604166,
+          254.54962158203125
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Labor camps,and Laboraccommodations",
+      "confidence": 0.95,
+      "box": [
+        [
+          173.77982584635416,
+          253.70115152994788
+        ],
+        [
+          370.8148600260417,
+          253.70115152994788
+        ],
+        [
+          370.8148600260417,
+          240.12587483723962
+        ],
+        [
+          173.77982584635416,
+          240.12587483723962
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Storage",
+      "confidence": 0.95,
+      "box": [
+        [
+          175.04829915364584,
+          240.55010986328125
+        ],
+        [
+          211.83380126953125,
+          240.55010986328125
+        ],
+        [
+          211.83380126953125,
+          228.24753824869788
+        ],
+        [
+          175.04829915364584,
+          228.24753824869788
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Siteofficesandfacilities",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.2026570638021,
+          227.82330322265625
+        ],
+        [
+          286.67327880859375,
+          227.82330322265625
+        ],
+        [
+          286.67327880859375,
+          215.94492594401038
+        ],
+        [
+          174.2026570638021,
+          215.94492594401038
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "MobilizationandDemobilizationcosts",
+      "confidence": 0.95,
+      "box": [
+        [
+          173.77982584635416,
+          215.09649658203125
+        ],
+        [
+          348.828125,
+          215.09649658203125
+        ],
+        [
+          348.828125,
+          203.21811930338538
+        ],
+        [
+          173.77982584635416,
+          203.21811930338538
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Hording including hording surrounding labor camp and the mobilization officesandWorkingSite.",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.2026570638021,
+          202.79388427734375
+        ],
+        [
+          500.1983642578125,
+          202.79388427734375
+        ],
+        [
+          500.1983642578125,
+          178.61293538411462
+        ],
+        [
+          174.2026570638021,
+          178.61293538411462
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "Theroyalties,fees,tariff,costsandexpenses of allrequired permits underthecontract includethoserelated touill",
+      "confidence": 0.95,
+      "box": [
+        [
+          174.2026570638021,
+          177.76450602213538
+        ],
+        [
+          498.929931640625,
+          177.76450602213538
+        ],
+        [
+          498.929931640625,
+          153.58355712890625
+        ],
+        [
+          174.2026570638021,
+          153.58355712890625
+        ]
+      ],
+      "page": 115
+    },
+    {
+      "text": "\"Optional Scope\"meansworksmentioned intheFormofAgreementor the Bills of Quantities as optional scope for which the prices are agreed",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          154.00779215494788
+        ],
+        [
+          499.7755533854167,
+          154.00779215494788
+        ],
+        [
+          499.7755533854167,
+          128.12994384765625
+        ],
+        [
+          156.866943359375,
+          128.12994384765625
+        ]
+      ],
+      "page": 115
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 115,
+      "text": "EMAAR\nMISR\n(pp) \"Effective Date\"means the earliest event of the following:\nSevencalendardaysfromthedateoftheofficialissuanceofthe Contract Documents by the Employer to the Contractor for signature\nThe date of the signature of theAgreement by the Employer\nThe date of signing the Letter of Acceptance (if any) by the Employer\n(qq) \"Employer\"means EMAAR MISR FOR DEVELOPMENT,H/Q at Emaar MisrSalesCenter,P.O.Box229,MOKATTAM 11585,CAIRO,EGYPT and includes the Employer's successors and assigns.\n(u) \"Employer's Requirements\" means the documents entitled Employer's Requirements as includedin the Contract,and anyadditions and modificationstosuchdocumentinaccordancewiththeContract.Such documentdescribesthepurpose(s)forwhichtheWorksareintended,and specify key personnel (if any), the scope, and/or design, and/or performance, technical and evaluation criteria for the Works.\n(ss) \"Fixed fee for Overhead and Profit\"means the fixed amountfor the overheadsandprofitwhichinclude(butnotlimited toandwithoutcontradict and/orduplicatewithwhathasbeenitemizedthroughtheBOQ)theunder listed items as well as whatever necessary and required or deemed necessarytosatisfythecompletionoftheWorks:\nContractor's Profit\nTaxes, and Value Added Taxes (VAT)\nSocial insurance\nSite supervision\nShopDrawings\nPurchasing and Procurement\nFinance Cost\nSoftware\nSafetytools,and Tools\nStaffvacation\nSite cleaning\nFirst Aid\nSite security and guards D\nTransportation\nEngineering stamps and fees required by local regulations\nCranesandlifts\nLabor camps,and Laboraccommodations\nStorage\nSiteofficesandfacilities\nMobilizationandDemobilizationcosts\nHording including hording surrounding labor camp and the mobilization officesandWorkingSite.\nTheroyalties,fees,tariff,costsandexpenses of allrequired permits underthecontract includethoserelated touill\n\"Optional Scope\"meansworksmentioned intheFormofAgreementor the Bills of Quantities as optional scope for which the prices are agreed",
+      "line_count": 32
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,428 @@
+{
+  "text": "## EMAAR\n\nMISR\n\nProvisional Sums, we agree to the percentage for Contractor's overheads and tobeused inthevaluationof suchpartsof theWorks.\n\n3. Tender Documents and examining and considering this Tender,we agree to abide by this Tender for a period of ninety (90) days from the latest date fixed for receiving the same as described in paragraph 7.1 of the Instructions to Tenderers and it shall remain binding upon us and may be accepted at any time before the expiration of that period.\n2. 4 Untila formalAgreement is prepared and executed in accordance with paragraph 19.5 of the Instructions to Tenderers, this Form of Tender and the accompanying documents referred to in paragraph 1 hereof together with your written acceptance thereof, shall constitute a binding contract between us, valid fromthedateofyourwrittenLetterofAcceptance.\n3. 5 words and in figures in relation to a single entry in this Form of Tender or in any of the documents referred to in paragraph 1 hereof, the amount inserted in words shallprevail andberegarded as conclusive.\n6. may receive and that you are not bound to give any reasons for non-acceptance ofanytenderyoumayreceive.\n7. InthisFormof Tenderwords andexpressionsshallhavethesamemeanings as arerespectivelyassigned to them in theConditionsofContract.\n8. We acknowledge receipt of the following addenda issued in accordance with paragraph 5 of the Instructions to Tenderers, which we have examined and agree to be binding.\n\nReference\n\nDateofIssue\n\nSigned by.\n\n.in the capacityof.\n\nDuly authorized to sign tenders for and on behalf of\n\nName\n\nDate\n\n<!-- image -->\n\nErnnar Mtsr Pur\n\n<!-- image -->\n\nCaoT",
+  "results": [
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          747.5015665690104
+        ],
+        [
+          164.47774251302084,
+          747.5015665690104
+        ],
+        [
+          164.47774251302084,
+          731.3809305826823
+        ],
+        [
+          98.51751708984375,
+          731.3809305826823
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          121.77272542317708,
+          728.4113464355469
+        ],
+        [
+          143.33663940429688,
+          728.4113464355469
+        ],
+        [
+          143.33663940429688,
+          717.8056640625
+        ],
+        [
+          121.77272542317708,
+          717.8056640625
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Provisional Sums, we agree to the percentage for Contractor's overheads and tobeused inthevaluationof suchpartsof theWorks.",
+      "confidence": 0.95,
+      "box": [
+        [
+          117.12168375651042,
+          698.7154439290365
+        ],
+        [
+          488.359375,
+          698.7154439290365
+        ],
+        [
+          488.359375,
+          663.5045776367188
+        ],
+        [
+          117.12168375651042,
+          663.5045776367188
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Tender Documents and examining and considering this Tender,we agree to abide by this Tender for a period of ninety (90) days from the latest date fixed for receiving the same as described in paragraph 7.1 of the Instructions to Tenderers and it shall remain binding upon us and may be accepted at any time before the expiration of that period.",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          655.4442749023438
+        ],
+        [
+          489.2049967447917,
+          655.4442749023438
+        ],
+        [
+          489.2049967447917,
+          585.0225626627605
+        ],
+        [
+          97.671875,
+          585.0225626627605
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "4 Untila formalAgreement is prepared and executed in accordance with paragraph 19.5 of the Instructions to Tenderers, this Form of Tender and the accompanying documents referred to in paragraph 1 hereof together with your written acceptance thereof, shall constitute a binding contract between us, valid fromthedateofyourwrittenLetterofAcceptance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          579.9318440755208
+        ],
+        [
+          489.6278483072917,
+          579.9318440755208
+        ],
+        [
+          489.6278483072917,
+          520.9642537434895
+        ],
+        [
+          98.09469604492188,
+          520.9642537434895
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "5 words and in figures in relation to a single entry in this Form of Tender or in any of the documents referred to in paragraph 1 hereof, the amount inserted in words shallprevail andberegarded as conclusive.",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          512.9039510091145
+        ],
+        [
+          490.0506591796875,
+          512.9039510091145
+        ],
+        [
+          490.0506591796875,
+          467.51165771484375
+        ],
+        [
+          98.51751708984375,
+          467.51165771484375
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "may receive and that you are not bound to give any reasons for non-acceptance ofanytenderyoumayreceive.",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          460.29978434244794
+        ],
+        [
+          489.2049967447917,
+          460.29978434244794
+        ],
+        [
+          489.2049967447917,
+          425.51316324869794
+        ],
+        [
+          98.09469604492188,
+          425.51316324869794
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "InthisFormof Tenderwords andexpressionsshallhavethesamemeanings as arerespectivelyassigned to them in theConditionsofContract.",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          419.99818929036456
+        ],
+        [
+          489.2049967447917,
+          419.99818929036456
+        ],
+        [
+          489.2049967447917,
+          398.36260986328125
+        ],
+        [
+          98.51751708984375,
+          398.36260986328125
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "We acknowledge receipt of the following addenda issued in accordance with paragraph 5 of the Instructions to Tenderers, which we have examined and agree to be binding.",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          391.15073649088544
+        ],
+        [
+          490.4734700520833,
+          391.15073649088544
+        ],
+        [
+          490.4734700520833,
+          354.24298095703125
+        ],
+        [
+          98.51751708984375,
+          354.24298095703125
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Reference",
+      "confidence": 0.95,
+      "box": [
+        [
+          128.960693359375,
+          354.24298095703125
+        ],
+        [
+          178.85369873046875,
+          354.24298095703125
+        ],
+        [
+          178.85369873046875,
+          342.78883870442706
+        ],
+        [
+          128.960693359375,
+          342.78883870442706
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "DateofIssue",
+      "confidence": 0.95,
+      "box": [
+        [
+          316.6936442057292,
+          355.93988037109375
+        ],
+        [
+          379.2712809244792,
+          355.93988037109375
+        ],
+        [
+          379.2712809244792,
+          344.48577880859375
+        ],
+        [
+          316.6936442057292,
+          344.48577880859375
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Signed by.",
+      "confidence": 0.95,
+      "box": [
+        [
+          99.3631591796875,
+          319.0321248372396
+        ],
+        [
+          148.83333333333334,
+          319.0321248372396
+        ],
+        [
+          148.83333333333334,
+          306.3053181966146
+        ],
+        [
+          99.3631591796875,
+          306.3053181966146
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": ".in the capacityof.",
+      "confidence": 0.95,
+      "box": [
+        [
+          273.1429850260417,
+          319.8805948893229
+        ],
+        [
+          358.975830078125,
+          319.8805948893229
+        ],
+        [
+          358.975830078125,
+          308.42645263671875
+        ],
+        [
+          273.1429850260417,
+          308.42645263671875
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Duly authorized to sign tenders for and on behalf of",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.51751708984375,
+          295.69964599609375
+        ],
+        [
+          336.5662841796875,
+          295.69964599609375
+        ],
+        [
+          336.5662841796875,
+          284.2455037434896
+        ],
+        [
+          98.51751708984375,
+          284.2455037434896
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Name",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.671875,
+          271.94293212890625
+        ],
+        [
+          128.11505126953125,
+          271.94293212890625
+        ],
+        [
+          128.11505126953125,
+          258.3676554361979
+        ],
+        [
+          97.671875,
+          258.3676554361979
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Date",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.09469604492188,
+          247.33774820963538
+        ],
+        [
+          122.61836751302083,
+          247.33774820963538
+        ],
+        [
+          122.61836751302083,
+          235.03517659505212
+        ],
+        [
+          98.09469604492188,
+          235.03517659505212
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "Ernnar Mtsr Pur",
+      "confidence": 0.95,
+      "box": [
+        [
+          214.3707275390625,
+          115.40313720703125
+        ],
+        [
+          266.37782796223956,
+          115.40313720703125
+        ],
+        [
+          266.37782796223956,
+          115.40313720703125
+        ],
+        [
+          214.3707275390625,
+          115.40313720703125
+        ]
+      ],
+      "page": 595
+    },
+    {
+      "text": "CaoT",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.5184529622396,
+          79.76804606119788
+        ],
+        [
+          257.07574462890625,
+          79.76804606119788
+        ],
+        [
+          257.07574462890625,
+          74.67730712890625
+        ],
+        [
+          224.5184529622396,
+          74.67730712890625
+        ]
+      ],
+      "page": 595
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 595,
+      "text": "EMAAR\nMISR\nProvisional Sums, we agree to the percentage for Contractor's overheads and tobeused inthevaluationof suchpartsof theWorks.\nTender Documents and examining and considering this Tender,we agree to abide by this Tender for a period of ninety (90) days from the latest date fixed for receiving the same as described in paragraph 7.1 of the Instructions to Tenderers and it shall remain binding upon us and may be accepted at any time before the expiration of that period.\n4 Untila formalAgreement is prepared and executed in accordance with paragraph 19.5 of the Instructions to Tenderers, this Form of Tender and the accompanying documents referred to in paragraph 1 hereof together with your written acceptance thereof, shall constitute a binding contract between us, valid fromthedateofyourwrittenLetterofAcceptance.\n5 words and in figures in relation to a single entry in this Form of Tender or in any of the documents referred to in paragraph 1 hereof, the amount inserted in words shallprevail andberegarded as conclusive.\nmay receive and that you are not bound to give any reasons for non-acceptance ofanytenderyoumayreceive.\nInthisFormof Tenderwords andexpressionsshallhavethesamemeanings as arerespectivelyassigned to them in theConditionsofContract.\nWe acknowledge receipt of the following addenda issued in accordance with paragraph 5 of the Instructions to Tenderers, which we have examined and agree to be binding.\nReference\nDateofIssue\nSigned by.\n.in the capacityof.\nDuly authorized to sign tenders for and on behalf of\nName\nDate\nErnnar Mtsr Pur\nCaoT",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

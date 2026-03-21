@@ -1,0 +1,566 @@
+{
+  "text": "of this section shall be discussed with and agreed by the Contract Administrator.\n\n## 4.3 Updated Execution Programme\n\nThe baseline Execution Programme shall be updated with actual start, progress and finish. A complete detailed break-down is to be provided along with roll-ups to higher levels. A typical updated programme shall have details of Planned Start, Planned Finish, Original duration, Update/Actual Start, Update/Actual Finish, Remaining duration and Percent complete.\n\n## 4.4 Submittal Status Report\n\nThis report shall include details of submittals such as transmittal nunber, date submitted, description and reference number of the subnnittal, date returned by the Conlract Administrator, approval code, planned submission dates, etc.\n\n## 4.5 Procurement StatusReport\n\nn s Works such as description, quantity, name of supplier, expected and required delivery time, approval status, shipment status, etc.\n\n## 4.6 Statusof Information Requests\n\nAn updated list of RFls (Requests for Information), SWls (Site Work Instructions), JSls (Job Site Instructions), NCRs (Non Conformance Reports), indicating thcir status.\n\n## 4.7 Updated Cost Loaded Proaramme\n\n\"The Contractor shall include an update of the Cost Loaded Programme as approved with the Programme of Works. This programme shall be updated with Actual Cost and presented in graphical and tabular formats.Separate Cost Loaded Programmes for procurement and coristruction activities and an overall total of both shall be provided. The details of Actual Cost shall be brought forward from the approved actual progress measured as per the monthly statements.\n\n## 4.8 Updated Schedule of Construction manpowerand Eguipment\n\nThe Schedule of Construction manpower and equipment included with theapprovedProgramme of Works shallbeupdatedwithactual utilisation.\n\n## 4.9 UpdatedCritical Indicators\n\nThe Critical Indicators identified and included in the Programme of Works shall be updatcd with actual information and presented in tabular and graphical formats.\n\n## 4.10 Progress Photographs\n\nThe Contractor shall note the requirements of Section 01380 document.\n\n## 4.11 Safety Inspection checklist\n\nDrraloprnent SAL\n\nTarCxru21-287.205\n\nCaian,Fsyp4\n\n10\n\n<!-- image -->\n\n<!-- image -->\n\nSecon01320\n\nPage Number: 4 of 5",
+  "results": [
+    {
+      "text": "of this section shall be discussed with and agreed by the Contract Administrator.",
+      "confidence": 0.95,
+      "box": [
+        [
+          143.19096883138022,
+          723.2738545735677
+        ],
+        [
+          506.7715250651042,
+          723.2738545735677
+        ],
+        [
+          506.7715250651042,
+          696.3215738932291
+        ],
+        [
+          143.19096883138022,
+          696.3215738932291
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.3 Updated Execution Programme",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          690.5164591471354
+        ],
+        [
+          303.3988444010417,
+          690.5164591471354
+        ],
+        [
+          303.3988444010417,
+          676.4183451334635
+        ],
+        [
+          109.1571756998698,
+          676.4183451334635
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "The baseline Execution Programme shall be updated with actual start, progress and finish. A complete detailed break-down is to be provided along with roll-ups to higher levels. A typical updated programme shall have details of Planned Start, Planned Finish, Original duration, Update/Actual Start, Update/Actual Finish, Remaining duration and Percent complete.",
+      "confidence": 0.95,
+      "box": [
+        [
+          142.77592976888022,
+          671.4425354003906
+        ],
+        [
+          505.111328125,
+          671.4425354003906
+        ],
+        [
+          505.111328125,
+          592.2442830403646
+        ],
+        [
+          142.77592976888022,
+          592.2442830403646
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.4 Submittal Status Report",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          587.6831258138021
+        ],
+        [
+          264.79954020182294,
+          587.6831258138021
+        ],
+        [
+          264.79954020182294,
+          573.5850219726562
+        ],
+        [
+          109.1571756998698,
+          573.5850219726562
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "This report shall include details of submittals such as transmittal nunber, date submitted, description and reference number of the subnnittal, date returned by the Conlract Administrator, approval code, planned submission dates, etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          142.77592976888022,
+          568.1945597330729
+        ],
+        [
+          505.111328125,
+          568.1945597330729
+        ],
+        [
+          505.111328125,
+          515.533935546875
+        ],
+        [
+          142.77592976888022,
+          515.533935546875
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.5 Procurement StatusReport",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          510.14349365234375
+        ],
+        [
+          282.2314860026042,
+          510.14349365234375
+        ],
+        [
+          282.2314860026042,
+          496.46002197265625
+        ],
+        [
+          108.32708740234375,
+          496.46002197265625
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "n s Works such as description, quantity, name of supplier, expected and required delivery time, approval status, shipment status, etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.94583129882812,
+          491.06955973307294
+        ],
+        [
+          504.28125,
+          491.06955973307294
+        ],
+        [
+          504.28125,
+          450.01914469401044
+        ],
+        [
+          141.94583129882812,
+          450.01914469401044
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.6 Statusof Information Requests",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          446.28729248046875
+        ],
+        [
+          299.2483723958333,
+          446.28729248046875
+        ],
+        [
+          299.2483723958333,
+          433.01849365234375
+        ],
+        [
+          108.32708740234375,
+          433.01849365234375
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "An updated list of RFls (Requests for Information), SWls (Site Work Instructions), JSls (Job Site Instructions), NCRs (Non Conformance Reports), indicating thcir status.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.94583129882812,
+          427.21339925130206
+        ],
+        [
+          503.8662109375,
+          427.21339925130206
+        ],
+        [
+          503.8662109375,
+          386.57761637369794
+        ],
+        [
+          141.94583129882812,
+          386.57761637369794
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.7 Updated Cost Loaded Proaramme",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          382.43113199869794
+        ],
+        [
+          315.85024007161456,
+          382.43113199869794
+        ],
+        [
+          315.85024007161456,
+          369.16229248046875
+        ],
+        [
+          108.32708740234375,
+          369.16229248046875
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "\"The Contractor shall include an update of the Cost Loaded Programme as approved with the Programme of Works. This programme shall be updated with Actual Cost and presented in graphical and tabular formats.Separate Cost Loaded Programmes for procurement and coristruction activities and an overall total of both shall be provided. The details of Actual Cost shall be brought forward from the approved actual progress measured as per the monthly statements.",
+      "confidence": 0.95,
+      "box": [
+        [
+          141.1157430013021,
+          364.18650309244794
+        ],
+        [
+          504.28125,
+          364.18650309244794
+        ],
+        [
+          504.28125,
+          270.8901163736979
+        ],
+        [
+          141.1157430013021,
+          270.8901163736979
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.8 Updated Schedule of Construction manpowerand Eguipment",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          266.7436319986979
+        ],
+        [
+          452.4004720052083,
+          266.7436319986979
+        ],
+        [
+          452.4004720052083,
+          252.64552815755212
+        ],
+        [
+          106.66690063476562,
+          252.64552815755212
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "The Schedule of Construction manpower and equipment included with theapprovedProgramme of Works shallbeupdatedwithactual utilisation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.70069376627603,
+          248.49900309244788
+        ],
+        [
+          503.451171875,
+          248.49900309244788
+        ],
+        [
+          503.451171875,
+          208.69256591796875
+        ],
+        [
+          140.70069376627603,
+          208.69256591796875
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.9 UpdatedCritical Indicators",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          202.88743082682288
+        ],
+        [
+          275.1756998697917,
+          202.88743082682288
+        ],
+        [
+          275.1756998697917,
+          190.44793701171875
+        ],
+        [
+          106.66690063476562,
+          190.44793701171875
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "The Critical Indicators identified and included in the Programme of Works shall be updatcd with actual information and presented in tabular and graphical formats.",
+      "confidence": 0.95,
+      "box": [
+        [
+          140.28564453125,
+          184.22816975911462
+        ],
+        [
+          503.451171875,
+          184.22816975911462
+        ],
+        [
+          503.451171875,
+          143.59242757161462
+        ],
+        [
+          140.28564453125,
+          143.59242757161462
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.10 Progress Photographs",
+      "confidence": 0.95,
+      "box": [
+        [
+          106.66690063476562,
+          139.03127034505212
+        ],
+        [
+          254.83841959635416,
+          139.03127034505212
+        ],
+        [
+          254.83841959635416,
+          125.76247151692712
+        ],
+        [
+          106.66690063476562,
+          125.76247151692712
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "The Contractor shall note the requirements of Section 01380 document.",
+      "confidence": 0.95,
+      "box": [
+        [
+          139.87060546875,
+          121.20127360026038
+        ],
+        [
+          464.4368082682292,
+          121.20127360026038
+        ],
+        [
+          464.4368082682292,
+          94.66367594401038
+        ],
+        [
+          139.87060546875,
+          94.66367594401038
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "4.11 Safety Inspection checklist",
+      "confidence": 0.95,
+      "box": [
+        [
+          107.08193969726562,
+          88.02923583984375
+        ],
+        [
+          275.5907389322917,
+          88.02923583984375
+        ],
+        [
+          275.5907389322917,
+          76.00441487630212
+        ],
+        [
+          107.08193969726562,
+          76.00441487630212
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "Drraloprnent SAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.82661946614584,
+          70.61395263671875
+        ],
+        [
+          258.9888916015625,
+          70.61395263671875
+        ],
+        [
+          258.9888916015625,
+          57.75978597005212
+        ],
+        [
+          193.82661946614584,
+          57.75978597005212
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "TarCxru21-287.205",
+      "confidence": 0.95,
+      "box": [
+        [
+          193.41158040364584,
+          61.49163818359375
+        ],
+        [
+          251.93310546875,
+          61.49163818359375
+        ],
+        [
+          251.93310546875,
+          49.05210367838538
+        ],
+        [
+          193.41158040364584,
+          49.05210367838538
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "Caian,Fsyp4",
+      "confidence": 0.95,
+      "box": [
+        [
+          192.58148193359375,
+          42.83237711588538
+        ],
+        [
+          224.125,
+          42.83237711588538
+        ],
+        [
+          224.125,
+          30.80747477213538
+        ],
+        [
+          192.58148193359375,
+          30.80747477213538
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "10",
+      "confidence": 0.95,
+      "box": [
+        [
+          191.75138346354166,
+          32.05145263671875
+        ],
+        [
+          202.5425821940104,
+          32.05145263671875
+        ],
+        [
+          202.5425821940104,
+          21.27052815755212
+        ],
+        [
+          191.75138346354166,
+          21.27052815755212
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "Secon01320",
+      "confidence": 0.95,
+      "box": [
+        [
+          397.6143391927083,
+          50.71071370442712
+        ],
+        [
+          442.0242919921875,
+          50.71071370442712
+        ],
+        [
+          442.0242919921875,
+          42.83237711588538
+        ],
+        [
+          397.6143391927083,
+          42.83237711588538
+        ]
+      ],
+      "page": 308
+    },
+    {
+      "text": "Page Number: 4 of 5",
+      "confidence": 0.95,
+      "box": [
+        [
+          397.1993001302083,
+          43.66164143880212
+        ],
+        [
+          461.1164143880208,
+          43.66164143880212
+        ],
+        [
+          461.1164143880208,
+          34.12469482421875
+        ],
+        [
+          397.1993001302083,
+          34.12469482421875
+        ]
+      ],
+      "page": 308
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 308,
+      "text": "of this section shall be discussed with and agreed by the Contract Administrator.\n4.3 Updated Execution Programme\nThe baseline Execution Programme shall be updated with actual start, progress and finish. A complete detailed break-down is to be provided along with roll-ups to higher levels. A typical updated programme shall have details of Planned Start, Planned Finish, Original duration, Update/Actual Start, Update/Actual Finish, Remaining duration and Percent complete.\n4.4 Submittal Status Report\nThis report shall include details of submittals such as transmittal nunber, date submitted, description and reference number of the subnnittal, date returned by the Conlract Administrator, approval code, planned submission dates, etc.\n4.5 Procurement StatusReport\nn s Works such as description, quantity, name of supplier, expected and required delivery time, approval status, shipment status, etc.\n4.6 Statusof Information Requests\nAn updated list of RFls (Requests for Information), SWls (Site Work Instructions), JSls (Job Site Instructions), NCRs (Non Conformance Reports), indicating thcir status.\n4.7 Updated Cost Loaded Proaramme\n\"The Contractor shall include an update of the Cost Loaded Programme as approved with the Programme of Works. This programme shall be updated with Actual Cost and presented in graphical and tabular formats.Separate Cost Loaded Programmes for procurement and coristruction activities and an overall total of both shall be provided. The details of Actual Cost shall be brought forward from the approved actual progress measured as per the monthly statements.\n4.8 Updated Schedule of Construction manpowerand Eguipment\nThe Schedule of Construction manpower and equipment included with theapprovedProgramme of Works shallbeupdatedwithactual utilisation.\n4.9 UpdatedCritical Indicators\nThe Critical Indicators identified and included in the Programme of Works shall be updatcd with actual information and presented in tabular and graphical formats.\n4.10 Progress Photographs\nThe Contractor shall note the requirements of Section 01380 document.\n4.11 Safety Inspection checklist\nDrraloprnent SAL\nTarCxru21-287.205\nCaian,Fsyp4\n10\nSecon01320\nPage Number: 4 of 5",
+      "line_count": 24
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

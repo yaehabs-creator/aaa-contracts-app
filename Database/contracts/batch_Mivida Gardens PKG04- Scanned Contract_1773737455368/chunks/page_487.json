@@ -1,0 +1,60 @@
+{
+  "text": "<!-- image -->\n\n## Payment Application for\n\nDesign contracts / Construction Supervision Contracts\n\n<!-- image -->\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Payment Application for",
+      "confidence": 0.95,
+      "box": [
+        [
+          167.26366170247397,
+          645.7342122395834
+        ],
+        [
+          400.5196940104167,
+          645.7342122395834
+        ],
+        [
+          400.5196940104167,
+          626.6602783203125
+        ],
+        [
+          167.26366170247397,
+          626.6602783203125
+        ]
+      ],
+      "page": 487
+    },
+    {
+      "text": "Design contracts / Construction Supervision Contracts",
+      "confidence": 0.95,
+      "box": [
+        [
+          134.89004516601562,
+          622.9284261067709
+        ],
+        [
+          432.4782307942708,
+          622.9284261067709
+        ],
+        [
+          432.4782307942708,
+          610.0742594401041
+        ],
+        [
+          134.89004516601562,
+          610.0742594401041
+        ]
+      ],
+      "page": 487
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 487,
+      "text": "Payment Application for\nDesign contracts / Construction Supervision Contracts",
+      "line_count": 2
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

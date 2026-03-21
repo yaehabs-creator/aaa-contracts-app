@@ -1,0 +1,543 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\n## Ref:EGY/PRJCTS/HSE/REQs\n\n- ·At thestart ofeachshift inwhich theworkis tobecarriedout\n- After any event likely to have affected the strength or stability of the excavation; and\n- After any material unintentionally falls or is dislodged\n- A copy of the completed inspection form is to be held on site and returned at the end of each day for record keeping.\n- Excavations shall be kept clean and tidy at all times. Accumulated waste and unused materials will be removedfrom excavations on a daily basis.All excavations will be thoroughly cleaned prior to any backfilling operations commencing.\n- A Excavations are to bebackfilled as soon as possible and not be left open any longer than necessary.\n- &gt; A method statement and permit to dig is required for all excavation works.\n\n## 3.10. Confined Spaces\n\n- A confined space means any placc, including any chamber, tank, vat, silo, pit, trench, pipe, culvert, sewer, flue, well or other similar space in which, by virtue of its enclosed nature, there arises a reasonablyforeseeablespecifiedrisk.\n- &gt;A specified risk means the risk of:\n- Serious injury to any person atwork arisingfrom a fire or explosion\n- The loss of consciousness of any person at work arising from an increase in body temperature\n- The loss of consciousness or asphyxiation of any person at work arising from gas,fume, vapor or the lack ofoxygen\n- The drowning of any person at work arising from an increase in the level of liquid or\n- The asphyxiation of any person arising from free flowing solid or the inability to reach a free oxygen environment due to entrapment by a free flowing solid\n- Where any one of these criteria is applicable it can be defined as a confined space, note, it is not necessary to have all criteria applicable.\n- Where working in confined spaces is unavoidable, entry will only be permitted where a risk assessment has been provided and a competent person is appointed to plan and directly supervise thework and asafesystemofworkhasbeendeveloped.\n- Any person that plans, supervises or enters a confined space is to have received formal training in the safe methods of entry and working in a confined space and the emergency and rescue\n- A competent attendant is to be at the opening to any confined space at all times personnel are inside the confined space.\n- Mechanical and electrical isolation of equipment is to be provided where there is a risk of harm.\n\n<!-- image -->\n\n## EMAAR",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          727.4203592936198
+        ],
+        [
+          339.92291259765625,
+          727.4203592936198
+        ],
+        [
+          339.92291259765625,
+          699.6387736002604
+        ],
+        [
+          190.92130533854166,
+          699.6387736002604
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          696.3215738932291
+        ],
+        [
+          217.0692138671875,
+          696.3215738932291
+        ],
+        [
+          217.0692138671875,
+          684.7113545735677
+        ],
+        [
+          75.95347086588542,
+          684.7113545735677
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "·At thestart ofeachshift inwhich theworkis tobecarriedout",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.70579020182292,
+          670.1985880533854
+        ],
+        [
+          361.9203694661458,
+          670.1985880533854
+        ],
+        [
+          361.9203694661458,
+          660.66162109375
+        ],
+        [
+          96.70579020182292,
+          660.66162109375
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "After any event likely to have affected the strength or stability of the excavation; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          97.12082926432292,
+          651.9539591471354
+        ],
+        [
+          454.8907470703125,
+          651.9539591471354
+        ],
+        [
+          454.8907470703125,
+          642.0023600260416
+        ],
+        [
+          97.12082926432292,
+          642.0023600260416
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "After any material unintentionally falls or is dislodged",
+      "confidence": 0.95,
+      "box": [
+        [
+          98.78101603190105,
+          634.1239827473959
+        ],
+        [
+          330.79189046223956,
+          634.1239827473959
+        ],
+        [
+          330.79189046223956,
+          623.3430786132812
+        ],
+        [
+          98.78101603190105,
+          623.3430786132812
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "A copy of the completed inspection form is to be held on site and returned at the end of each day for record keeping.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          610.903564453125
+        ],
+        [
+          495.9803059895833,
+          610.903564453125
+        ],
+        [
+          495.9803059895833,
+          585.1952311197916
+        ],
+        [
+          90.06504313151042,
+          585.1952311197916
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Excavations shall be kept clean and tidy at all times. Accumulated waste and unused materials will be removedfrom excavations on a daily basis.All excavations will be thoroughly cleaned prior to any backfilling operations commencing.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          580.2194213867188
+        ],
+        [
+          496.3953857421875,
+          580.2194213867188
+        ],
+        [
+          496.3953857421875,
+          542.90087890625
+        ],
+        [
+          91.72522989908855,
+          542.90087890625
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "A Excavations are to bebackfilled as soon as possible and not be left open any longer than necessary.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          536.2664591471355
+        ],
+        [
+          495.5652669270833,
+          536.2664591471355
+        ],
+        [
+          495.5652669270833,
+          526.729512532552
+        ],
+        [
+          78.44375101725261,
+          526.729512532552
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "> A method statement and permit to dig is required for all excavation works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          519.2657877604167
+        ],
+        [
+          395.9541829427083,
+          519.2657877604167
+        ],
+        [
+          395.9541829427083,
+          507.2409261067708
+        ],
+        [
+          75.53842671712239,
+          507.2409261067708
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "3.10. Confined Spaces",
+      "confidence": 0.95,
+      "box": [
+        [
+          234.50115966796875,
+          500.19187418619794
+        ],
+        [
+          350.299072265625,
+          500.19187418619794
+        ],
+        [
+          350.299072265625,
+          488.99631754557294
+        ],
+        [
+          234.50115966796875,
+          488.99631754557294
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "A confined space means any placc, including any chamber, tank, vat, silo, pit, trench, pipe, culvert, sewer, flue, well or other similar space in which, by virtue of its enclosed nature, there arises a reasonablyforeseeablespecifiedrisk.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          480.70330810546875
+        ],
+        [
+          497.6405029296875,
+          480.70330810546875
+        ],
+        [
+          497.6405029296875,
+          444.62872314453125
+        ],
+        [
+          91.3101806640625,
+          444.62872314453125
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": ">A specified risk means the risk of:",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.78356424967448,
+          437.57965087890625
+        ],
+        [
+          234.50115966796875,
+          437.57965087890625
+        ],
+        [
+          234.50115966796875,
+          426.79872639973956
+        ],
+        [
+          76.78356424967448,
+          426.79872639973956
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Serious injury to any person atwork arisingfrom a fire or explosion",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.74212646484375,
+          418.92038981119794
+        ],
+        [
+          386.4080810546875,
+          418.92038981119794
+        ],
+        [
+          386.4080810546875,
+          408.13946533203125
+        ],
+        [
+          108.74212646484375,
+          408.13946533203125
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "The loss of consciousness of any person at work arising from an increase in body temperature",
+      "confidence": 0.95,
+      "box": [
+        [
+          102.1013895670573,
+          400.67576090494794
+        ],
+        [
+          491.414794921875,
+          400.67576090494794
+        ],
+        [
+          491.414794921875,
+          390.30946858723956
+        ],
+        [
+          102.1013895670573,
+          390.30946858723956
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "The loss of consciousness or asphyxiation of any person at work arising from gas,fume, vapor or the lack ofoxygen",
+      "confidence": 0.95,
+      "box": [
+        [
+          100.02615356445312,
+          383.26043701171875
+        ],
+        [
+          509.6768391927083,
+          383.26043701171875
+        ],
+        [
+          509.6768391927083,
+          352.99094645182294
+        ],
+        [
+          100.02615356445312,
+          352.99094645182294
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "The drowning of any person at work arising from an increase in the level of liquid or",
+      "confidence": 0.95,
+      "box": [
+        [
+          108.32708740234375,
+          347.18585205078125
+        ],
+        [
+          455.3057861328125,
+          347.18585205078125
+        ],
+        [
+          455.3057861328125,
+          336.81955973307294
+        ],
+        [
+          108.32708740234375,
+          336.81955973307294
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "The asphyxiation of any person arising from free flowing solid or the inability to reach a free oxygen environment due to entrapment by a free flowing solid",
+      "confidence": 0.95,
+      "box": [
+        [
+          109.1571756998698,
+          328.52655029296875
+        ],
+        [
+          508.4317220052083,
+          328.52655029296875
+        ],
+        [
+          508.4317220052083,
+          300.7449747721354
+        ],
+        [
+          109.1571756998698,
+          300.7449747721354
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Where any one of these criteria is applicable it can be defined as a confined space, note, it is not necessary to have all criteria applicable.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          288.7201131184896
+        ],
+        [
+          498.4705810546875,
+          288.7201131184896
+        ],
+        [
+          498.4705810546875,
+          263.8410847981771
+        ],
+        [
+          92.97036743164062,
+          263.8410847981771
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Where working in confined spaces is unavoidable, entry will only be permitted where a risk assessment has been provided and a competent person is appointed to plan and directly supervise thework and asafesystemofworkhasbeendeveloped.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          257.2066853841146
+        ],
+        [
+          498.0555419921875,
+          257.2066853841146
+        ],
+        [
+          498.0555419921875,
+          221.96136474609375
+        ],
+        [
+          93.38541666666667,
+          221.96136474609375
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Any person that plans, supervises or enters a confined space is to have received formal training in the safe methods of entry and working in a confined space and the emergency and rescue",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          213.66835530598962
+        ],
+        [
+          498.4705810546875,
+          213.66835530598962
+        ],
+        [
+          498.4705810546875,
+          191.27724202473962
+        ],
+        [
+          93.38541666666667,
+          191.27724202473962
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "A competent attendant is to be at the opening to any confined space at all times personnel are inside the confined space.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          170.95937093098962
+        ],
+        [
+          498.8856608072917,
+          170.95937093098962
+        ],
+        [
+          498.8856608072917,
+          146.49497477213538
+        ],
+        [
+          91.3101806640625,
+          146.49497477213538
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "Mechanical and electrical isolation of equipment is to be provided where there is a risk of harm.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          140.27520751953125
+        ],
+        [
+          484.3590087890625,
+          140.27520751953125
+        ],
+        [
+          484.3590087890625,
+          130.32358805338538
+        ],
+        [
+          92.97036743164062,
+          130.32358805338538
+        ]
+      ],
+      "page": 435
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          452.8155110677083,
+          735.2987162272135
+        ],
+        [
+          510.0918782552083,
+          735.2987162272135
+        ],
+        [
+          510.0918782552083,
+          722.4445495605469
+        ],
+        [
+          452.8155110677083,
+          722.4445495605469
+        ]
+      ],
+      "page": 435
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 435,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n·At thestart ofeachshift inwhich theworkis tobecarriedout\nAfter any event likely to have affected the strength or stability of the excavation; and\nAfter any material unintentionally falls or is dislodged\nA copy of the completed inspection form is to be held on site and returned at the end of each day for record keeping.\nExcavations shall be kept clean and tidy at all times. Accumulated waste and unused materials will be removedfrom excavations on a daily basis.All excavations will be thoroughly cleaned prior to any backfilling operations commencing.\nA Excavations are to bebackfilled as soon as possible and not be left open any longer than necessary.\n> A method statement and permit to dig is required for all excavation works.\n3.10. Confined Spaces\nA confined space means any placc, including any chamber, tank, vat, silo, pit, trench, pipe, culvert, sewer, flue, well or other similar space in which, by virtue of its enclosed nature, there arises a reasonablyforeseeablespecifiedrisk.\n>A specified risk means the risk of:\nSerious injury to any person atwork arisingfrom a fire or explosion\nThe loss of consciousness of any person at work arising from an increase in body temperature\nThe loss of consciousness or asphyxiation of any person at work arising from gas,fume, vapor or the lack ofoxygen\nThe drowning of any person at work arising from an increase in the level of liquid or\nThe asphyxiation of any person arising from free flowing solid or the inability to reach a free oxygen environment due to entrapment by a free flowing solid\nWhere any one of these criteria is applicable it can be defined as a confined space, note, it is not necessary to have all criteria applicable.\nWhere working in confined spaces is unavoidable, entry will only be permitted where a risk assessment has been provided and a competent person is appointed to plan and directly supervise thework and asafesystemofworkhasbeendeveloped.\nAny person that plans, supervises or enters a confined space is to have received formal training in the safe methods of entry and working in a confined space and the emergency and rescue\nA competent attendant is to be at the opening to any confined space at all times personnel are inside the confined space.\nMechanical and electrical isolation of equipment is to be provided where there is a risk of harm.\nEMAAR",
+      "line_count": 23
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

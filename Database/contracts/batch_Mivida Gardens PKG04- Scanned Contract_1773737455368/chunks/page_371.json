@@ -1,0 +1,474 @@
+{
+  "text": "<!-- image -->\n\n- lil.Works have been inspected for compliance with the Contract;\n- iv. Equipment and systems have passed the Tests on Completion and are operational;\n- ili. Works hiave been completed in accordance with the Contract, including training;\n- v.Works are completed and ready for Final Acceptance.\n- d)The Employer, Contract Administrator, Supervision Consultant/Operator wil make an Inspectlon to verify status of completion.\n- e) Should the Employer, Contract Administrator ,Supervision Consultant/Operator determine that theWorks are incomplete or defective.\n- The Contract Administrator will promptly notify the Contractor, in writing, listing the incomplete or defectivework and therelated time allowed together with the estimated cost of such remedies.\n- ii. The Contractor shall remedy the defects promiptly, und notily the ContractAdministratorwhenreadyforre-inspection.\n- ii. In case the Contractorfail to complywith the requirements above the Employer shall have therightto carry outsuchworkon behalf of the Contractor and deduct the actual cost from the Contractor'sfinal payment\n- 3.Final adjustment of accounts:\n- a) The Contractor shall submit a final statement of accounting to the Contract Administrator, showing all adjustments to the total Contract Price, due to uncorrected defects.\n- b)If so required, the Contract Administrator wili prepare firial Variation showing adjustments to the total Contract Price which were not made previously by Variations.\n\n## 1.04 INSTRUCTIONS/TRAINING\n\n1. The Contractor shall provide tralnlng Instructlons to the Operator's personnel in the proper operation and maintenance of the systems, equipment, and similar items which were provided as part of the Works.\n\nPART 2 - PRODUCTS (Not Used)\n\nPART 3 - EXECUTION (Not Used)\n\nENDOFSECTION01700\n\n<!-- image -->\n\n<!-- image -->\n\nSpecificatlonsDiv.01General Requiremtnts\n\nContract Closaout\n\nSection01700 Page Number:3 of 3",
+  "results": [
+    {
+      "text": "lil.Works have been inspected for compliance with the Contract;",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.41920979817708,
+          710.0050354003906
+        ],
+        [
+          449.4951171875,
+          710.0050354003906
+        ],
+        [
+          449.4951171875,
+          697.9801737467448
+        ],
+        [
+          127.41920979817708,
+          697.9801737467448
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "Equipment and systems have passed the Tests on Completion and are operational;",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.00417073567708,
+          675.1743977864584
+        ],
+        [
+          505.111328125,
+          675.1743977864584
+        ],
+        [
+          505.111328125,
+          651.539306640625
+        ],
+        [
+          127.00417073567708,
+          651.539306640625
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "Works hiave been completed in accordance with the Contract, including training;",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          698.3948262532552
+        ],
+        [
+          504.28125,
+          698.3948262532552
+        ],
+        [
+          504.28125,
+          673.5157877604166
+        ],
+        [
+          127.83425903320312,
+          673.5157877604166
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "v.Works are completed and ready for Final Acceptance.",
+      "confidence": 0.95,
+      "box": [
+        [
+          127.83425903320312,
+          651.9539591471354
+        ],
+        [
+          412.9710693359375,
+          651.9539591471354
+        ],
+        [
+          412.9710693359375,
+          640.34375
+        ],
+        [
+          127.83425903320312,
+          640.34375
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "d)The Employer, Contract Administrator, Supervision Consultant/Operator wil make an Inspectlon to verify status of completion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          111.64745076497395,
+          634.9532877604166
+        ],
+        [
+          504.6962890625,
+          634.9532877604166
+        ],
+        [
+          504.6962890625,
+          611.7328694661459
+        ],
+        [
+          111.64745076497395,
+          611.7328694661459
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "Should the Employer, Contract Administrator ,Supervision Consultant/Operator determine that theWorks are incomplete or defective.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.89258829752605,
+          607.5863647460938
+        ],
+        [
+          505.111328125,
+          607.5863647460938
+        ],
+        [
+          505.111328125,
+          583.9512736002604
+        ],
+        [
+          112.89258829752605,
+          583.9512736002604
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "The Contract Administrator will promptly notify the Contractor, in writing, listing the incomplete or defectivework and therelated time allowed together with the estimated cost of such remedies.",
+      "confidence": 0.95,
+      "box": [
+        [
+          144.43610636393228,
+          578.5608317057291
+        ],
+        [
+          505.5263671875,
+          578.5608317057291
+        ],
+        [
+          505.5263671875,
+          543.3155314127605
+        ],
+        [
+          144.43610636393228,
+          543.3155314127605
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "The Contractor shall remedy the defects promiptly, und notily the ContractAdministratorwhenreadyforre-inspection.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.77847290039062,
+          544.5594889322917
+        ],
+        [
+          505.5263671875,
+          544.5594889322917
+        ],
+        [
+          505.5263671875,
+          521.3390502929688
+        ],
+        [
+          120.77847290039062,
+          521.3390502929688
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "In case the Contractorfail to complywith the requirements above the Employer shall have therightto carry outsuchworkon behalf of the Contractor and deduct the actual cost from the Contractor'sfinal payment",
+      "confidence": 0.95,
+      "box": [
+        [
+          118.28819783528645,
+          520.9243977864583
+        ],
+        [
+          506.3564860026042,
+          520.9243977864583
+        ],
+        [
+          506.3564860026042,
+          474.48354085286456
+        ],
+        [
+          118.28819783528645,
+          474.48354085286456
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "3.Final adjustment of accounts:",
+      "confidence": 0.95,
+      "box": [
+        [
+          96.29074096679688,
+          458.31215413411456
+        ],
+        [
+          260.64906819661456,
+          458.31215413411456
+        ],
+        [
+          260.64906819661456,
+          446.28729248046875
+        ],
+        [
+          96.29074096679688,
+          446.28729248046875
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "The Contractor shall submit a final statement of accounting to the Contract Administrator, showing all adjustments to the total Contract Price, due to uncorrected defects.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.0625,
+          441.72613525390625
+        ],
+        [
+          506.3564860026042,
+          441.72613525390625
+        ],
+        [
+          506.3564860026042,
+          406.89548746744794
+        ],
+        [
+          112.0625,
+          406.89548746744794
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "b)If so required, the Contract Administrator wili prepare firial Variation showing adjustments to the total Contract Price which were not made previously by Variations.",
+      "confidence": 0.95,
+      "box": [
+        [
+          112.47754923502605,
+          401.91969807942706
+        ],
+        [
+          505.111328125,
+          401.91969807942706
+        ],
+        [
+          505.111328125,
+          366.25974527994794
+        ],
+        [
+          112.47754923502605,
+          366.25974527994794
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "1.04 INSTRUCTIONS/TRAINING",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          355.89349365234375
+        ],
+        [
+          254.42338053385416,
+          355.89349365234375
+        ],
+        [
+          254.42338053385416,
+          344.69793701171875
+        ],
+        [
+          78.02870178222656,
+          344.69793701171875
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "The Contractor shall provide tralnlng Instructlons to the Operator's personnel in the proper operation and maintenance of the systems, equipment, and similar items which were provided as part of the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.0456034342448,
+          340.13677978515625
+        ],
+        [
+          506.7715250651042,
+          340.13677978515625
+        ],
+        [
+          506.7715250651042,
+          304.4768269856771
+        ],
+        [
+          95.0456034342448,
+          304.4768269856771
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "PART 2 - PRODUCTS (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          294.52520751953125
+        ],
+        [
+          251.5180460611979,
+          294.52520751953125
+        ],
+        [
+          251.5180460611979,
+          280.84173583984375
+        ],
+        [
+          79.27384440104167,
+          280.84173583984375
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "PART 3 - EXECUTION (Not Used)",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          270.4754842122396
+        ],
+        [
+          253.1782430013021,
+          270.4754842122396
+        ],
+        [
+          253.1782430013021,
+          258.0359903971354
+        ],
+        [
+          79.27384440104167,
+          258.0359903971354
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "ENDOFSECTION01700",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.86041259765625,
+          248.49900309244788
+        ],
+        [
+          357.3548583984375,
+          248.49900309244788
+        ],
+        [
+          357.3548583984375,
+          237.71807861328125
+        ],
+        [
+          227.86041259765625,
+          237.71807861328125
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "SpecificatlonsDiv.01General Requiremtnts",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.68888854980469,
+          49.05210367838538
+        ],
+        [
+          210.013427734375,
+          49.05210367838538
+        ],
+        [
+          210.013427734375,
+          40.75913492838538
+        ],
+        [
+          79.68888854980469,
+          40.75913492838538
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "Contract Closaout",
+      "confidence": 0.95,
+      "box": [
+        [
+          427.9127197265625,
+          58.17441813151038
+        ],
+        [
+          482.2838134765625,
+          58.17441813151038
+        ],
+        [
+          482.2838134765625,
+          49.88144938151038
+        ],
+        [
+          427.9127197265625,
+          49.88144938151038
+        ]
+      ],
+      "page": 371
+    },
+    {
+      "text": "Section01700 Page Number:3 of 3",
+      "confidence": 0.95,
+      "box": [
+        [
+          427.4976806640625,
+          50.71071370442712
+        ],
+        [
+          490.999755859375,
+          50.71071370442712
+        ],
+        [
+          490.999755859375,
+          34.12469482421875
+        ],
+        [
+          427.4976806640625,
+          34.12469482421875
+        ]
+      ],
+      "page": 371
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 371,
+      "text": "lil.Works have been inspected for compliance with the Contract;\nEquipment and systems have passed the Tests on Completion and are operational;\nWorks hiave been completed in accordance with the Contract, including training;\nv.Works are completed and ready for Final Acceptance.\nd)The Employer, Contract Administrator, Supervision Consultant/Operator wil make an Inspectlon to verify status of completion.\nShould the Employer, Contract Administrator ,Supervision Consultant/Operator determine that theWorks are incomplete or defective.\nThe Contract Administrator will promptly notify the Contractor, in writing, listing the incomplete or defectivework and therelated time allowed together with the estimated cost of such remedies.\nThe Contractor shall remedy the defects promiptly, und notily the ContractAdministratorwhenreadyforre-inspection.\nIn case the Contractorfail to complywith the requirements above the Employer shall have therightto carry outsuchworkon behalf of the Contractor and deduct the actual cost from the Contractor'sfinal payment\n3.Final adjustment of accounts:\nThe Contractor shall submit a final statement of accounting to the Contract Administrator, showing all adjustments to the total Contract Price, due to uncorrected defects.\nb)If so required, the Contract Administrator wili prepare firial Variation showing adjustments to the total Contract Price which were not made previously by Variations.\n1.04 INSTRUCTIONS/TRAINING\nThe Contractor shall provide tralnlng Instructlons to the Operator's personnel in the proper operation and maintenance of the systems, equipment, and similar items which were provided as part of the Works.\nPART 2 - PRODUCTS (Not Used)\nPART 3 - EXECUTION (Not Used)\nENDOFSECTION01700\nSpecificatlonsDiv.01General Requiremtnts\nContract Closaout\nSection01700 Page Number:3 of 3",
+      "line_count": 20
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

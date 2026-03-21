@@ -1,0 +1,428 @@
+{
+  "text": "<!-- image -->\n\nMISR\n\n## FORMOFAGREEMENT\n\nTHIS AGREEMENT is made in duplicate the day of\n\n2025\n\nBETWEEN\n\n## EMAARMISRFORDEVELOPMENT\n\nRegisteredunderno12841,withitspremiseslocated atEmaarMisrSalesCenter,P.O. Box 229, Mokattam 11571, Cairo, Egypt, herein represented by Mr. Mostafa El Kady in his capacity as Chief Executive Officer and Mr. Wael El Menoufy in his capacity as Chief\n\nAND\n\n## CSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD\n\nRegistered under no. 216604, with its premises located at 3rd floor, Nox Mall, 5th Settlement, New Cairo, Cairo, Egypt, herein rcprcsentcd by Mr. Wang Zhi in his capacity\n\nReferred to herein individually as the “Party\" and collectively as the \"Parties\".\n\n## WHEREAS\n\n- A. The Employer desires to perform the Construction of Parcel 11,Parcel 12 Townhomes &amp; Grading Works for Parcel 11, in Mivida Gardens Development (The \"Project\") as a part of the project known as Mivida Gardens, East Cairo, Cairo Arab Republic of Egypt, namely the carrying out and completion of PK#04: \"Construction of Parcel 11, Parcel 12 Townhomes &amp; Grading Works for Parcel 11\" all in accordance with the Contract Documents.\n2. B.The Contractor has been requesled to submit an offer for the performance of the worksrequiredfor theexecutionandcompletionoftheWorksincluding,butnot limited to, supply of all labour, supervision, materials, tools, construction equipment and other things necessary to perform the Works in full compliance with the Contract Documents; and\n- C. The Contractor is a professional firm qualified to execute such kind of construction worksaspertherequirementsoftheContractDocumentsandherebycovenantswith the Employer to execute and complete the Works and remedy any defects therein, in conformity,inallrespects,withtheprovisionsof theContractDocuments.\n\n## NOWTHISAGREEMENTWITNESSETHaSfollowS:\n\n1. Definitions In this Agreement, and except where otherwise is stated herein, words and expressions\n\nshall have the same meanings as are respectively assigned to them in the Conditions\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "MISR",
+      "confidence": 0.95,
+      "box": [
+        [
+          104.43702189127605,
+          732.6536153157552
+        ],
+        [
+          126.42376708984375,
+          732.6536153157552
+        ],
+        [
+          126.42376708984375,
+          721.6237080891927
+        ],
+        [
+          104.43702189127605,
+          721.6237080891927
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "FORMOFAGREEMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          230.01513671875,
+          691.9278055826823
+        ],
+        [
+          354.7476399739583,
+          691.9278055826823
+        ],
+        [
+          354.7476399739583,
+          680.8978983561198
+        ],
+        [
+          230.01513671875,
+          680.8978983561198
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "THIS AGREEMENT is made in duplicate the day of",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.95359802246094,
+          654.5958251953125
+        ],
+        [
+          328.53265380859375,
+          654.5958251953125
+        ],
+        [
+          328.53265380859375,
+          641.4447835286459
+        ],
+        [
+          76.95359802246094,
+          641.4447835286459
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "2025",
+      "confidence": 0.95,
+      "box": [
+        [
+          381.3854166666667,
+          654.1715901692709
+        ],
+        [
+          407.6003824869792,
+          654.1715901692709
+        ],
+        [
+          407.6003824869792,
+          641.8689982096354
+        ],
+        [
+          381.3854166666667,
+          641.8689982096354
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "BETWEEN",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.53077697753906,
+          628.7179565429688
+        ],
+        [
+          132.34327189127603,
+          628.7179565429688
+        ],
+        [
+          132.34327189127603,
+          617.2638346354166
+        ],
+        [
+          76.53077697753906,
+          617.2638346354166
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "EMAARMISRFORDEVELOPMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.53077697753906,
+          603.2643229166666
+        ],
+        [
+          260.8811442057292,
+          603.2643229166666
+        ],
+        [
+          260.8811442057292,
+          591.8102010091146
+        ],
+        [
+          76.53077697753906,
+          591.8102010091146
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "Registeredunderno12841,withitspremiseslocated atEmaarMisrSalesCenter,P.O. Box 229, Mokattam 11571, Cairo, Egypt, herein represented by Mr. Mostafa El Kady in his capacity as Chief Executive Officer and Mr. Wael El Menoufy in his capacity as Chief",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.10795084635417,
+          590.11328125
+        ],
+        [
+          508.2319742838542,
+          590.11328125
+        ],
+        [
+          508.2319742838542,
+          551.5086263020833
+        ],
+        [
+          76.10795084635417,
+          551.5086263020833
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "AND",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.6851298014323,
+          526.9034423828125
+        ],
+        [
+          101.054443359375,
+          526.9034423828125
+        ],
+        [
+          101.054443359375,
+          514.600850423177
+        ],
+        [
+          75.6851298014323,
+          514.600850423177
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "CSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.95359802246094,
+          501.44980875651044
+        ],
+        [
+          387.7277425130208,
+          501.44980875651044
+        ],
+        [
+          387.7277425130208,
+          489.14723714192706
+        ],
+        [
+          76.95359802246094,
+          489.14723714192706
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "Registered under no. 216604, with its premises located at 3rd floor, Nox Mall, 5th Settlement, New Cairo, Cairo, Egypt, herein rcprcsentcd by Mr. Wang Zhi in his capacity",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.6851298014323,
+          489.14723714192706
+        ],
+        [
+          508.2319742838542,
+          489.14723714192706
+        ],
+        [
+          508.2319742838542,
+          461.99668375651044
+        ],
+        [
+          75.6851298014323,
+          461.99668375651044
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "Referred to herein individually as the “Party\" and collectively as the \"Parties\".",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.6851298014323,
+          445.02760823567706
+        ],
+        [
+          444.8087158203125,
+          445.02760823567706
+        ],
+        [
+          444.8087158203125,
+          431.87656656901044
+        ],
+        [
+          75.6851298014323,
+          431.87656656901044
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "WHEREAS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.6851298014323,
+          426.36159261067706
+        ],
+        [
+          132.7660929361979,
+          426.36159261067706
+        ],
+        [
+          132.7660929361979,
+          414.90749104817706
+        ],
+        [
+          75.6851298014323,
+          414.90749104817706
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "The Employer desires to perform the Construction of Parcel 11,Parcel 12 Townhomes & Grading Works for Parcel 11, in Mivida Gardens Development (The \"Project\") as a part of the project known as Mivida Gardens, East Cairo, Cairo Arab Republic of Egypt, namely the carrying out and completion of PK#04: \"Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\" all in accordance with the Contract Documents.",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.83948771158855,
+          408.96828206380206
+        ],
+        [
+          507.8091634114583,
+          408.96828206380206
+        ],
+        [
+          507.8091634114583,
+          331.33473714192706
+        ],
+        [
+          74.83948771158855,
+          331.33473714192706
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "B.The Contractor has been requesled to submit an offer for the performance of the worksrequiredfor theexecutionandcompletionoftheWorksincluding,butnot limited to, supply of all labour, supervision, materials, tools, construction equipment and other things necessary to perform the Works in full compliance with the Contract Documents; and",
+      "confidence": 0.95,
+      "box": [
+        [
+          74.83948771158855,
+          327.09246826171875
+        ],
+        [
+          507.8091634114583,
+          327.09246826171875
+        ],
+        [
+          507.8091634114583,
+          262.60992431640625
+        ],
+        [
+          74.83948771158855,
+          262.60992431640625
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "The Contractor is a professional firm qualified to execute such kind of construction worksaspertherequirementsoftheContractDocumentsandherebycovenantswith the Employer to execute and complete the Works and remedy any defects therein, in conformity,inallrespects,withtheprovisionsof theContractDocuments.",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.79924011230469,
+          257.5191853841146
+        ],
+        [
+          506.9635416666667,
+          257.5191853841146
+        ],
+        [
+          506.9635416666667,
+          207.03615315755212
+        ],
+        [
+          77.79924011230469,
+          207.03615315755212
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "NOWTHISAGREEMENTWITNESSETHaSfollowS:",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.26230875651042,
+          193.88511149088538
+        ],
+        [
+          334.45216878255206,
+          193.88511149088538
+        ],
+        [
+          334.45216878255206,
+          181.58253987630212
+        ],
+        [
+          75.26230875651042,
+          181.58253987630212
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "Definitions In this Agreement, and except where otherwise is stated herein, words and expressions",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.79924011230469,
+          176.49180094401038
+        ],
+        [
+          507.3863525390625,
+          176.49180094401038
+        ],
+        [
+          507.3863525390625,
+          148.49281819661462
+        ],
+        [
+          77.79924011230469,
+          148.49281819661462
+        ]
+      ],
+      "page": 3
+    },
+    {
+      "text": "shall have the same meanings as are respectively assigned to them in the Conditions",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          151.03814697265625
+        ],
+        [
+          507.3863525390625,
+          151.03814697265625
+        ],
+        [
+          507.3863525390625,
+          135.76601155598962
+        ],
+        [
+          94.71211751302083,
+          135.76601155598962
+        ]
+      ],
+      "page": 3
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 3,
+      "text": "MISR\nFORMOFAGREEMENT\nTHIS AGREEMENT is made in duplicate the day of\n2025\nBETWEEN\nEMAARMISRFORDEVELOPMENT\nRegisteredunderno12841,withitspremiseslocated atEmaarMisrSalesCenter,P.O. Box 229, Mokattam 11571, Cairo, Egypt, herein represented by Mr. Mostafa El Kady in his capacity as Chief Executive Officer and Mr. Wael El Menoufy in his capacity as Chief\nAND\nCSCECINTERNATIONALCONSTRUCTIONEGYPTCO.LTD\nRegistered under no. 216604, with its premises located at 3rd floor, Nox Mall, 5th Settlement, New Cairo, Cairo, Egypt, herein rcprcsentcd by Mr. Wang Zhi in his capacity\nReferred to herein individually as the “Party\" and collectively as the \"Parties\".\nWHEREAS\nThe Employer desires to perform the Construction of Parcel 11,Parcel 12 Townhomes & Grading Works for Parcel 11, in Mivida Gardens Development (The \"Project\") as a part of the project known as Mivida Gardens, East Cairo, Cairo Arab Republic of Egypt, namely the carrying out and completion of PK#04: \"Construction of Parcel 11, Parcel 12 Townhomes & Grading Works for Parcel 11\" all in accordance with the Contract Documents.\nB.The Contractor has been requesled to submit an offer for the performance of the worksrequiredfor theexecutionandcompletionoftheWorksincluding,butnot limited to, supply of all labour, supervision, materials, tools, construction equipment and other things necessary to perform the Works in full compliance with the Contract Documents; and\nThe Contractor is a professional firm qualified to execute such kind of construction worksaspertherequirementsoftheContractDocumentsandherebycovenantswith the Employer to execute and complete the Works and remedy any defects therein, in conformity,inallrespects,withtheprovisionsof theContractDocuments.\nNOWTHISAGREEMENTWITNESSETHaSfollowS:\nDefinitions In this Agreement, and except where otherwise is stated herein, words and expressions\nshall have the same meanings as are respectively assigned to them in the Conditions",
+      "line_count": 18
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

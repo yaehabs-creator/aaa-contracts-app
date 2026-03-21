@@ -1,0 +1,382 @@
+{
+  "text": "<!-- image -->\n\nThe programme for execution of the Works (hereinafter called the \"Execution Programme\") shall be in logic linked time-scaled bar chart format with theWorkBreakdown Structure(detailed work activities in each major location of the project), to show the sequence and interdependence of activities required for complete perforrnance of all items of work under the Contract or portion thereof. Further, this Execution Programme shall reflect the Milestone Dates required by the Contract Documents. The Contractor shall use a\"Critical Path Method\" (hereinafter referred to as CPM) technique in preparing his Execution Programme. The software to be used by the Contractorfor theCPMshallbePrimaveraProjectPlanner(P6).The Contractor mayberequired toprovidea CPM networkdiagram and/or an analysisofthepredecessor/successorrelationshipstoexplainandsupport the programme bar chart if requested by the Contract Administrator. The Contractor shall detail all activities within his Scope of works by identifying thedurationsofeachofthemandrelationshipsbetweenthem.These activitiesshallbehammockedwithinthemilestoneactivitiesprovidedinthe tender documents and information.The Execution Programme shall be developedasacoordinatedprogrammewiththeprogrammesofother contractors at Site. The Execution Programme when approved shall be base lined for monitoring of progress. In preparing the Execution Programme, the Contractor shall:\n\n- a) Exercise care to produce a clear, legible, and accurate diagram. Activities related to specific areas of the Project shall be grouped on the diagram for ease, understanding, and simplification. The diagram shall show thefollowing for each activity,where applicable:\n2. Concisedescriptionofthework\n3. Planned start date (Early and Late)\n4. Planned finish date (Early and Late)\n5. Duration in working days\n6. Float\n7. b)Include any trade or material restraints to indicate the movement of trades who are performing major work.\n8. c)Activitieswith open ends are allowed.\n- d) Demonstrate work activities in the Contractor's Execution Programme with a maximum duration of 30 days, except non-construction activities (such as procurement of materials, delivery of equipment, etc.).\n10. e)Consider the physical and technical inter-dependence between the activities, which may either be a part of the Contract scope or be the scope of other contracts.\n11. Indicate the time when information is required for activities to commence orprogressasplanned.\n\n中建国际\n\n- gy Note that the submissions may not be approved at the first submission and thereforeprepare the programmewith suitable contingency.\n\n（有限费环么司）\n\n- h)Take into account shortenedworking hours and off days during theHoly Month of Ramadan, Holidays, and seasonal restrictions such as rains, duststorms etc.\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "The programme for execution of the Works (hereinafter called the \"Execution Programme\") shall be in logic linked time-scaled bar chart format with theWorkBreakdown Structure(detailed work activities in each major location of the project), to show the sequence and interdependence of activities required for complete perforrnance of all items of work under the Contract or portion thereof. Further, this Execution Programme shall reflect the Milestone Dates required by the Contract Documents. The Contractor shall use a\"Critical Path Method\" (hereinafter referred to as CPM) technique in preparing his Execution Programme. The software to be used by the Contractorfor theCPMshallbePrimaveraProjectPlanner(P6).The Contractor mayberequired toprovidea CPM networkdiagram and/or an analysisofthepredecessor/successorrelationshipstoexplainandsupport the programme bar chart if requested by the Contract Administrator. The Contractor shall detail all activities within his Scope of works by identifying thedurationsofeachofthemandrelationshipsbetweenthem.These activitiesshallbehammockedwithinthemilestoneactivitiesprovidedinthe tender documents and information.The Execution Programme shall be developedasacoordinatedprogrammewiththeprogrammesofother contractors at Site. The Execution Programme when approved shall be base lined for monitoring of progress. In preparing the Execution Programme, the Contractor shall:",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          717.8833923339844
+        ],
+        [
+          506.3564860026042,
+          717.8833923339844
+        ],
+        [
+          506.3564860026042,
+          443.79941813151044
+        ],
+        [
+          119.94837443033855,
+          443.79941813151044
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Exercise care to produce a clear, legible, and accurate diagram. Activities related to specific areas of the Project shall be grouped on the diagram for ease, understanding, and simplification. The diagram shall show thefollowing for each activity,where applicable:",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          436.75034586588544
+        ],
+        [
+          505.5263671875,
+          436.75034586588544
+        ],
+        [
+          505.5263671875,
+          384.91904703776044
+        ],
+        [
+          119.94837443033855,
+          384.91904703776044
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Concisedescriptionofthework",
+      "confidence": 0.95,
+      "box": [
+        [
+          179.30000813802084,
+          382.84576416015625
+        ],
+        [
+          350.299072265625,
+          382.84576416015625
+        ],
+        [
+          350.299072265625,
+          372.06488037109375
+        ],
+        [
+          179.30000813802084,
+          372.06488037109375
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Planned start date (Early and Late)",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          369.57696533203125
+        ],
+        [
+          368.5611165364583,
+          369.57696533203125
+        ],
+        [
+          368.5611165364583,
+          357.55210367838544
+        ],
+        [
+          190.92130533854166,
+          357.55210367838544
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Planned finish date (Early and Late)",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.5062459309896,
+          356.30812581380206
+        ],
+        [
+          372.7115885416667,
+          356.30812581380206
+        ],
+        [
+          372.7115885416667,
+          343.45395914713544
+        ],
+        [
+          190.5062459309896,
+          343.45395914713544
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Duration in working days",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.5062459309896,
+          342.62469482421875
+        ],
+        [
+          316.68031819661456,
+          342.62469482421875
+        ],
+        [
+          316.68031819661456,
+          328.94122314453125
+        ],
+        [
+          190.5062459309896,
+          328.94122314453125
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Float",
+      "confidence": 0.95,
+      "box": [
+        [
+          188.8460693359375,
+          328.11191813151044
+        ],
+        [
+          218.7293904622396,
+          328.11191813151044
+        ],
+        [
+          218.7293904622396,
+          316.50168863932294
+        ],
+        [
+          188.8460693359375,
+          316.50168863932294
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "b)Include any trade or material restraints to indicate the movement of trades who are performing major work.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          309.8672892252604
+        ],
+        [
+          506.3564860026042,
+          309.8672892252604
+        ],
+        [
+          506.3564860026042,
+          283.7442830403646
+        ],
+        [
+          120.36342366536458,
+          283.7442830403646
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "c)Activitieswith open ends are allowed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          277.5245564778646
+        ],
+        [
+          327.0564778645833,
+          277.5245564778646
+        ],
+        [
+          327.0564778645833,
+          265.9143269856771
+        ],
+        [
+          120.36342366536458,
+          265.9143269856771
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Demonstrate work activities in the Contractor's Execution Programme with a maximum duration of 30 days, except non-construction activities (such as procurement of materials, delivery of equipment, etc.).",
+      "confidence": 0.95,
+      "box": [
+        [
+          122.0236104329427,
+          259.2799275716146
+        ],
+        [
+          505.5263671875,
+          259.2799275716146
+        ],
+        [
+          505.5263671875,
+          220.71742757161462
+        ],
+        [
+          122.0236104329427,
+          220.71742757161462
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "e)Consider the physical and technical inter-dependence between the activities, which may either be a part of the Contract scope or be the scope of other contracts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          120.36342366536458,
+          214.08302815755212
+        ],
+        [
+          505.5263671875,
+          214.08302815755212
+        ],
+        [
+          505.5263671875,
+          175.93516031901038
+        ],
+        [
+          120.36342366536458,
+          175.93516031901038
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "Indicate the time when information is required for activities to commence orprogressasplanned.",
+      "confidence": 0.95,
+      "box": [
+        [
+          136.96528116861978,
+          168.88612874348962
+        ],
+        [
+          505.5263671875,
+          168.88612874348962
+        ],
+        [
+          505.5263671875,
+          144.42173258463538
+        ],
+        [
+          136.96528116861978,
+          144.42173258463538
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "中建国际",
+      "confidence": 0.95,
+      "box": [
+        [
+          63.50208536783854,
+          126.17710367838538
+        ],
+        [
+          106.25185139973958,
+          126.17710367838538
+        ],
+        [
+          106.25185139973958,
+          118.71339925130212
+        ],
+        [
+          63.50208536783854,
+          118.71339925130212
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "gy Note that the submissions may not be approved at the first submission and thereforeprepare the programmewith suitable contingency.",
+      "confidence": 0.95,
+      "box": [
+        [
+          116.62801106770833,
+          138.20200602213538
+        ],
+        [
+          506.7715250651042,
+          138.20200602213538
+        ],
+        [
+          506.7715250651042,
+          110.83506266276038
+        ],
+        [
+          116.62801106770833,
+          110.83506266276038
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "（有限费环么司）",
+      "confidence": 0.95,
+      "box": [
+        [
+          59.35161844889323,
+          108.76182047526038
+        ],
+        [
+          135.30509440104166,
+          108.76182047526038
+        ],
+        [
+          135.30509440104166,
+          107.93247477213538
+        ],
+        [
+          59.35161844889323,
+          107.93247477213538
+        ]
+      ],
+      "page": 299
+    },
+    {
+      "text": "h)Take into account shortenedworking hours and off days during theHoly Month of Ramadan, Holidays, and seasonal restrictions such as rains, duststorms etc.",
+      "confidence": 0.95,
+      "box": [
+        [
+          119.94837443033855,
+          105.85923258463538
+        ],
+        [
+          505.5263671875,
+          105.85923258463538
+        ],
+        [
+          505.5263671875,
+          67.29673258463538
+        ],
+        [
+          119.94837443033855,
+          67.29673258463538
+        ]
+      ],
+      "page": 299
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 299,
+      "text": "The programme for execution of the Works (hereinafter called the \"Execution Programme\") shall be in logic linked time-scaled bar chart format with theWorkBreakdown Structure(detailed work activities in each major location of the project), to show the sequence and interdependence of activities required for complete perforrnance of all items of work under the Contract or portion thereof. Further, this Execution Programme shall reflect the Milestone Dates required by the Contract Documents. The Contractor shall use a\"Critical Path Method\" (hereinafter referred to as CPM) technique in preparing his Execution Programme. The software to be used by the Contractorfor theCPMshallbePrimaveraProjectPlanner(P6).The Contractor mayberequired toprovidea CPM networkdiagram and/or an analysisofthepredecessor/successorrelationshipstoexplainandsupport the programme bar chart if requested by the Contract Administrator. The Contractor shall detail all activities within his Scope of works by identifying thedurationsofeachofthemandrelationshipsbetweenthem.These activitiesshallbehammockedwithinthemilestoneactivitiesprovidedinthe tender documents and information.The Execution Programme shall be developedasacoordinatedprogrammewiththeprogrammesofother contractors at Site. The Execution Programme when approved shall be base lined for monitoring of progress. In preparing the Execution Programme, the Contractor shall:\nExercise care to produce a clear, legible, and accurate diagram. Activities related to specific areas of the Project shall be grouped on the diagram for ease, understanding, and simplification. The diagram shall show thefollowing for each activity,where applicable:\nConcisedescriptionofthework\nPlanned start date (Early and Late)\nPlanned finish date (Early and Late)\nDuration in working days\nFloat\nb)Include any trade or material restraints to indicate the movement of trades who are performing major work.\nc)Activitieswith open ends are allowed.\nDemonstrate work activities in the Contractor's Execution Programme with a maximum duration of 30 days, except non-construction activities (such as procurement of materials, delivery of equipment, etc.).\ne)Consider the physical and technical inter-dependence between the activities, which may either be a part of the Contract scope or be the scope of other contracts.\nIndicate the time when information is required for activities to commence orprogressasplanned.\n中建国际\ngy Note that the submissions may not be approved at the first submission and thereforeprepare the programmewith suitable contingency.\n（有限费环么司）\nh)Take into account shortenedworking hours and off days during theHoly Month of Ramadan, Holidays, and seasonal restrictions such as rains, duststorms etc.",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

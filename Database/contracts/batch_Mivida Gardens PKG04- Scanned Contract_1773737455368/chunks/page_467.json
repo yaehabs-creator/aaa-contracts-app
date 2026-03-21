@@ -1,0 +1,382 @@
+{
+  "text": "## Projects Department Health &amp; Safety Standards\n\nRef:EGY/PRJCTS/HSE/REQs\n\n## 3.34.2. Emergency lighting\n\n- Escape lighting should come on within 5 seconds of the failure of normal lighting and provide at least 1 lux luminance at floor level\n- &gt; The area immediately outside the final exit must be illuminated.\n\n## 3.34.3. Inspection &amp; maintenance\n\n- &gt;Arrangements for installation and maintenance of lighting must be put in place to ensure that lighting is checked and maintained asadequate and ingood order\n- As theconstructionproceeds theelectrical installationswill bemoved and altered and thereforeit is usual for such installations to be subjected to thorough inspection and testing at intervals which will never exceed three months\n\n## 3.34.4. Lighting Levels\n\n- A Illumination levels are to be checked using a lux meter during the shift and records kept.\n- Metal halide and conventional tungsten or tungsten halogen lighting should be used. The use of high pressure sodium lighting should be avoided due to the potential fire risk.\n- Onlycompetent electricians are to install lighting.Personnel who arerequired to transport,position, raise and lowermobilelightingtowersaretobe trained and supervised.\n- Therecommendedminimum levelsofillumination tobeprovided areshowninTablebelow.\n\n| Purpose               | Governing Factors                                                                        | Design Value (lux)   |\n|-----------------------|------------------------------------------------------------------------------------------|----------------------|\n| Security              | Depending on the degree of risk                                                          | 5-30                 |\n| Emergeney lighting    | For escape and standby purposes                                                          | 5-70                 |\n| Movement and handling | Movement of people,machines and vehicles,handlingof materials,walkways and access routes | 20                   |\n| Stores and yards      | For stored goods and materials                                                           | 30                   |\n| Site entranees        | General access,vehicle and pedestrian                                                    | 30                   |\n| General work areas    | General rough work,site clearance                                                        | 50                   |\n| Craft Work            | Reinforcing concrete,shuttering erection, bricklaying,scaffolding                        | 100                  |\n| Site huts             | Rest rooms,locker rooms,toilets                                                          | 150                  |\n\nThe informationcontainedinthesedocumentsisconfidential,privilegedandmaynotbeused,publishedorredistributedwithout the prior written consent ofEmaar Misr S.A.E.\n\n<!-- image -->\n\nYxC0210-207-10\n\n## EMAAR\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "Projects Department Health & Safety Standards",
+      "confidence": 0.95,
+      "box": [
+        [
+          190.92130533854166,
+          729.0789591471354
+        ],
+        [
+          340.7530110677083,
+          729.0789591471354
+        ],
+        [
+          340.7530110677083,
+          700.8827209472656
+        ],
+        [
+          190.92130533854166,
+          700.8827209472656
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "Ref:EGY/PRJCTS/HSE/REQs",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          697.5655212402344
+        ],
+        [
+          217.4842529296875,
+          697.5655212402344
+        ],
+        [
+          217.4842529296875,
+          685.9553019205729
+        ],
+        [
+          75.95347086588542,
+          685.9553019205729
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "3.34.2. Emergency lighting",
+      "confidence": 0.95,
+      "box": [
+        [
+          227.86041259765625,
+          673.1011454264323
+        ],
+        [
+          355.2796223958333,
+          673.1011454264323
+        ],
+        [
+          355.2796223958333,
+          659.8323262532552
+        ],
+        [
+          227.86041259765625,
+          659.8323262532552
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "Escape lighting should come on within 5 seconds of the failure of normal lighting and provide at least 1 lux luminance at floor level",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          653.6125691731771
+        ],
+        [
+          497.2254638671875,
+          653.6125691731771
+        ],
+        [
+          497.2254638671875,
+          629.5628458658854
+        ],
+        [
+          92.14027913411458,
+          629.5628458658854
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "> The area immediately outside the final exit must be illuminated.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.85879516601562,
+          622.5137736002604
+        ],
+        [
+          352.7893473307292,
+          622.5137736002604
+        ],
+        [
+          352.7893473307292,
+          611.7328694661459
+        ],
+        [
+          78.85879516601562,
+          611.7328694661459
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "3.34.3. Inspection & maintenance",
+      "confidence": 0.95,
+      "box": [
+        [
+          212.91874186197916,
+          604.2691446940104
+        ],
+        [
+          371.4664306640625,
+          604.2691446940104
+        ],
+        [
+          371.4664306640625,
+          592.2442830403646
+        ],
+        [
+          212.91874186197916,
+          592.2442830403646
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": ">Arrangements for installation and maintenance of lighting must be put in place to ensure that lighting is checked and maintained asadequate and ingood order",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          585.1952311197916
+        ],
+        [
+          496.8104248046875,
+          585.1952311197916
+        ],
+        [
+          496.8104248046875,
+          561.5601603190105
+        ],
+        [
+          75.95347086588542,
+          561.5601603190105
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "As theconstructionproceeds theelectrical installationswill bemoved and altered and thereforeit is usual for such installations to be subjected to thorough inspection and testing at intervals which will never exceed three months",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          553.2671305338542
+        ],
+        [
+          496.8104248046875,
+          553.2671305338542
+        ],
+        [
+          496.8104248046875,
+          517.607198079427
+        ],
+        [
+          92.14027913411458,
+          517.607198079427
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "3.34.4. Lighting Levels",
+      "confidence": 0.95,
+      "box": [
+        [
+          238.651611328125,
+          510.5581461588542
+        ],
+        [
+          346.1486002604167,
+          510.5581461588542
+        ],
+        [
+          346.1486002604167,
+          498.1186116536458
+        ],
+        [
+          238.651611328125,
+          498.1186116536458
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "A Illumination levels are to be checked using a lux meter during the shift and records kept.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.44375101725261,
+          491.89886474609375
+        ],
+        [
+          451.9854329427083,
+          491.89886474609375
+        ],
+        [
+          451.9854329427083,
+          480.70330810546875
+        ],
+        [
+          78.44375101725261,
+          480.70330810546875
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "Metal halide and conventional tungsten or tungsten halogen lighting should be used. The use of high pressure sodium lighting should be avoided due to the potential fire risk.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.72522989908855,
+          473.65423583984375
+        ],
+        [
+          497.2254638671875,
+          473.65423583984375
+        ],
+        [
+          497.2254638671875,
+          450.01914469401044
+        ],
+        [
+          91.72522989908855,
+          450.01914469401044
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "Onlycompetent electricians are to install lighting.Personnel who arerequired to transport,position, raise and lowermobilelightingtowersaretobe trained and supervised.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          442.55544026692706
+        ],
+        [
+          496.3953857421875,
+          442.55544026692706
+        ],
+        [
+          496.3953857421875,
+          419.33502197265625
+        ],
+        [
+          93.38541666666667,
+          419.33502197265625
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "Therecommendedminimum levelsofillumination tobeprovided areshowninTablebelow.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          411.45664469401044
+        ],
+        [
+          472.3226725260417,
+          411.45664469401044
+        ],
+        [
+          472.3226725260417,
+          401.91969807942706
+        ],
+        [
+          93.38541666666667,
+          401.91969807942706
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "The informationcontainedinthesedocumentsisconfidential,privilegedandmaynotbeused,publishedorredistributedwithout the prior written consent ofEmaar Misr S.A.E.",
+      "confidence": 0.95,
+      "box": [
+        [
+          78.02870178222656,
+          100.46877034505212
+        ],
+        [
+          508.4317220052083,
+          100.46877034505212
+        ],
+        [
+          508.4317220052083,
+          91.76108805338538
+        ],
+        [
+          78.02870178222656,
+          91.76108805338538
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "YxC0210-207-10",
+      "confidence": 0.95,
+      "box": [
+        [
+          255.66851806640625,
+          42.83237711588538
+        ],
+        [
+          316.68031819661456,
+          42.83237711588538
+        ],
+        [
+          316.68031819661456,
+          42.83237711588538
+        ],
+        [
+          255.66851806640625,
+          42.83237711588538
+        ]
+      ],
+      "page": 467
+    },
+    {
+      "text": "EMAAR",
+      "confidence": 0.95,
+      "box": [
+        [
+          453.2305501302083,
+          736.1280212402344
+        ],
+        [
+          510.0918782552083,
+          736.1280212402344
+        ],
+        [
+          510.0918782552083,
+          723.2738545735677
+        ],
+        [
+          453.2305501302083,
+          723.2738545735677
+        ]
+      ],
+      "page": 467
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 467,
+      "text": "Projects Department Health & Safety Standards\nRef:EGY/PRJCTS/HSE/REQs\n3.34.2. Emergency lighting\nEscape lighting should come on within 5 seconds of the failure of normal lighting and provide at least 1 lux luminance at floor level\n> The area immediately outside the final exit must be illuminated.\n3.34.3. Inspection & maintenance\n>Arrangements for installation and maintenance of lighting must be put in place to ensure that lighting is checked and maintained asadequate and ingood order\nAs theconstructionproceeds theelectrical installationswill bemoved and altered and thereforeit is usual for such installations to be subjected to thorough inspection and testing at intervals which will never exceed three months\n3.34.4. Lighting Levels\nA Illumination levels are to be checked using a lux meter during the shift and records kept.\nMetal halide and conventional tungsten or tungsten halogen lighting should be used. The use of high pressure sodium lighting should be avoided due to the potential fire risk.\nOnlycompetent electricians are to install lighting.Personnel who arerequired to transport,position, raise and lowermobilelightingtowersaretobe trained and supervised.\nTherecommendedminimum levelsofillumination tobeprovided areshowninTablebelow.\nThe informationcontainedinthesedocumentsisconfidential,privilegedandmaynotbeused,publishedorredistributedwithout the prior written consent ofEmaar Misr S.A.E.\nYxC0210-207-10\nEMAAR",
+      "line_count": 16
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

@@ -1,0 +1,635 @@
+{
+  "text": "<!-- image -->\n\n## SECTION 01750\n\n## SPAREPARTSAND MAINTENANCEMATERIALS\n\n## PART 1 - GENERAL\n\n## 1.01 SECTIONINCLUDES\n\n1. . Spare parts.\n2. Maintenance materials.\n3. Special tools.\n\n## 1.02 RELATED SECTIONS\n\n1. Conditions of Contract\n2. Specification Sections, Divisions 1 through 16 inclusive\n\n## 1.03 QUALITY\n\n- 1.9 not damaged or defective, and of the same quality and manufacture as Products provided in the Works.\n2. If requested, furnish evidence as to type, source and quality of Products provided.\n3. Defective Products will be rejected, regardless of previous inspections. Replace products at the Contractor's expense.\n\n## 1.04 TRANSPORTATION\n\n1. .Pay all costs of customs and transportation.\n\n## 1.05 STORAGE, HANDLING AND PROTECTION\n\n1. Store spare parts, maintenance materials and special tools in a manner to prevent damage or deterioration or theft.\n2. 2.S Store in original and undamaged condition with manufacturer's seal and labels intact.\n3. n enclosures.\n4. Store paints in a ventilated room.\n5. Remove and replace damaged Products at Contractor's expense and to the satisfaction of Contract Administrator, Operator and SupervisionConsultant.\n\n## 1.06 SPAREPARTS\n\n1. Provide spare parts in quantities specified in individual Specification Sections.\n2. Provide items of same manufacture and quality as items in the Works.\n3. 3.Deliver to the Site, place and store as directed.\n4. Ltd.(S.s 4. Receive and catalogue all items. S Submit inventory listing to Contrael Administrator in an approved format.Include listings in the Operating and MAINTENANCE DATA AND MANUALS and provide an electroniccopy 中建国际装务\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "SECTION 01750",
+      "confidence": 0.95,
+      "box": [
+        [
+          247.78263346354166,
+          722.4445495605469
+        ],
+        [
+          334.52732340494794,
+          722.4445495605469
+        ],
+        [
+          334.52732340494794,
+          709.1757405598959
+        ],
+        [
+          247.78263346354166,
+          709.1757405598959
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "SPAREPARTSAND MAINTENANCEMATERIALS",
+      "confidence": 0.95,
+      "box": [
+        [
+          157.30254109700522,
+          699.6387736002604
+        ],
+        [
+          423.7622477213542,
+          699.6387736002604
+        ],
+        [
+          423.7622477213542,
+          686.7846069335938
+        ],
+        [
+          157.30254109700522,
+          686.7846069335938
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "PART 1 - GENERAL",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          676.0036926269531
+        ],
+        [
+          183.8654988606771,
+          676.0036926269531
+        ],
+        [
+          183.8654988606771,
+          664.8081258138021
+        ],
+        [
+          77.1986083984375,
+          664.8081258138021
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.01 SECTIONINCLUDES",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          653.1979166666666
+        ],
+        [
+          222.4648234049479,
+          653.1979166666666
+        ],
+        [
+          222.4648234049479,
+          642.0023600260416
+        ],
+        [
+          77.1986083984375,
+          642.0023600260416
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": ". Spare parts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.2155049641927,
+          636.6118977864584
+        ],
+        [
+          174.7344970703125,
+          636.6118977864584
+        ],
+        [
+          174.7344970703125,
+          622.9284261067709
+        ],
+        [
+          94.2155049641927,
+          622.9284261067709
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Maintenance materials.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          619.6112263997396
+        ],
+        [
+          228.27547200520834,
+          619.6112263997396
+        ],
+        [
+          228.27547200520834,
+          607.1717122395834
+        ],
+        [
+          92.97036743164062,
+          607.1717122395834
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Special tools.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.97036743164062,
+          602.1959025065104
+        ],
+        [
+          179.30000813802084,
+          602.1959025065104
+        ],
+        [
+          179.30000813802084,
+          589.7563883463541
+        ],
+        [
+          92.97036743164062,
+          589.7563883463541
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.02 RELATED SECTIONS",
+      "confidence": 0.95,
+      "box": [
+        [
+          77.1986083984375,
+          578.9754638671875
+        ],
+        [
+          226.20023600260416,
+          578.9754638671875
+        ],
+        [
+          226.20023600260416,
+          567.7799072265625
+        ],
+        [
+          77.1986083984375,
+          567.7799072265625
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Conditions of Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          562.8040974934895
+        ],
+        [
+          224.9550984700521,
+          562.8040974934895
+        ],
+        [
+          224.9550984700521,
+          549.120625813802
+        ],
+        [
+          94.63055419921875,
+          549.120625813802
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Specification Sections, Divisions 1 through 16 inclusive",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          544.5594889322917
+        ],
+        [
+          387.2381998697917,
+          544.5594889322917
+        ],
+        [
+          387.2381998697917,
+          532.1199544270833
+        ],
+        [
+          93.8004659016927,
+          532.1199544270833
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.03 QUALITY",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          522.5830078125
+        ],
+        [
+          161.86805216471353,
+          522.5830078125
+        ],
+        [
+          161.86805216471353,
+          510.14349365234375
+        ],
+        [
+          76.36852010091145,
+          510.14349365234375
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.9 not damaged or defective, and of the same quality and manufacture as Products provided in the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.8004659016927,
+          504.33837890625
+        ],
+        [
+          505.5263671875,
+          504.33837890625
+        ],
+        [
+          505.5263671875,
+          469.50775146484375
+        ],
+        [
+          93.8004659016927,
+          469.50775146484375
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "If requested, furnish evidence as to type, source and quality of Products provided.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.14027913411458,
+          466.19053141276044
+        ],
+        [
+          504.6962890625,
+          466.19053141276044
+        ],
+        [
+          504.6962890625,
+          441.72613525390625
+        ],
+        [
+          92.14027913411458,
+          441.72613525390625
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Defective Products will be rejected, regardless of previous inspections. Replace products at the Contractor's expense.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          437.57965087890625
+        ],
+        [
+          504.6962890625,
+          437.57965087890625
+        ],
+        [
+          504.6962890625,
+          412.28594970703125
+        ],
+        [
+          93.38541666666667,
+          412.28594970703125
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.04 TRANSPORTATION",
+      "confidence": 0.95,
+      "box": [
+        [
+          76.36852010091145,
+          402.74900309244794
+        ],
+        [
+          217.0692138671875,
+          402.74900309244794
+        ],
+        [
+          217.0692138671875,
+          391.13877360026044
+        ],
+        [
+          76.36852010091145,
+          391.13877360026044
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": ".Pay all costs of customs and transportation.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          380.35788981119794
+        ],
+        [
+          330.79189046223956,
+          380.35788981119794
+        ],
+        [
+          330.79189046223956,
+          367.08905029296875
+        ],
+        [
+          94.63055419921875,
+          367.08905029296875
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.05 STORAGE, HANDLING AND PROTECTION",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.53842671712239,
+          357.55210367838544
+        ],
+        [
+          338.6777750651042,
+          357.55210367838544
+        ],
+        [
+          338.6777750651042,
+          345.11256917317706
+        ],
+        [
+          75.53842671712239,
+          345.11256917317706
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Store spare parts, maintenance materials and special tools in a manner to prevent damage or deterioration or theft.",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.38541666666667,
+          339.72210693359375
+        ],
+        [
+          503.8662109375,
+          339.72210693359375
+        ],
+        [
+          503.8662109375,
+          316.50168863932294
+        ],
+        [
+          93.38541666666667,
+          316.50168863932294
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "2.S Store in original and undamaged condition with manufacturer's seal and labels intact.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          312.35520426432294
+        ],
+        [
+          504.6962890625,
+          312.35520426432294
+        ],
+        [
+          504.6962890625,
+          288.7201131184896
+        ],
+        [
+          92.55532836914062,
+          288.7201131184896
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "n enclosures.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          284.5735880533854
+        ],
+        [
+          505.9414469401042,
+          284.5735880533854
+        ],
+        [
+          505.9414469401042,
+          258.8652547200521
+        ],
+        [
+          90.8951416015625,
+          258.8652547200521
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Store paints in a ventilated room.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          255.13340250651038
+        ],
+        [
+          276.83587646484375,
+          255.13340250651038
+        ],
+        [
+          276.83587646484375,
+          241.86460367838538
+        ],
+        [
+          91.3101806640625,
+          241.86460367838538
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Remove and replace damaged Products at Contractor's expense and to the satisfaction of Contract Administrator, Operator and SupervisionConsultant.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          238.54738362630212
+        ],
+        [
+          504.6962890625,
+          238.54738362630212
+        ],
+        [
+          504.6962890625,
+          213.25372314453125
+        ],
+        [
+          90.8951416015625,
+          213.25372314453125
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "1.06 SPAREPARTS",
+      "confidence": 0.95,
+      "box": [
+        [
+          75.95347086588542,
+          203.30210367838538
+        ],
+        [
+          190.5062459309896,
+          203.30210367838538
+        ],
+        [
+          190.5062459309896,
+          192.10654703776038
+        ],
+        [
+          75.95347086588542,
+          192.10654703776038
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Provide spare parts in quantities specified in individual Specification Sections.",
+      "confidence": 0.95,
+      "box": [
+        [
+          92.55532836914062,
+          187.13071695963538
+        ],
+        [
+          499.7157389322917,
+          187.13071695963538
+        ],
+        [
+          499.7157389322917,
+          172.61798095703125
+        ],
+        [
+          92.55532836914062,
+          172.61798095703125
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Provide items of same manufacture and quality as items in the Works.",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.06504313151042,
+          170.54469807942712
+        ],
+        [
+          461.1164143880208,
+          170.54469807942712
+        ],
+        [
+          461.1164143880208,
+          155.61728922526038
+        ],
+        [
+          90.06504313151042,
+          155.61728922526038
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "3.Deliver to the Site, place and store as directed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          91.3101806640625,
+          152.71474202473962
+        ],
+        [
+          346.9787190755208,
+          152.71474202473962
+        ],
+        [
+          346.9787190755208,
+          139.86053466796875
+        ],
+        [
+          91.3101806640625,
+          139.86053466796875
+        ]
+      ],
+      "page": 382
+    },
+    {
+      "text": "Ltd.(S.s 4. Receive and catalogue all items. S Submit inventory listing to Contrael Administrator in an approved format.Include listings in the Operating and MAINTENANCE DATA AND MANUALS and provide an electroniccopy 中建国际装务",
+      "confidence": 0.95,
+      "box": [
+        [
+          90.8951416015625,
+          144.00705973307288
+        ],
+        [
+          508.0166829427083,
+          144.00705973307288
+        ],
+        [
+          508.0166829427083,
+          78.49228922526038
+        ],
+        [
+          90.8951416015625,
+          78.49228922526038
+        ]
+      ],
+      "page": 382
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 382,
+      "text": "SECTION 01750\nSPAREPARTSAND MAINTENANCEMATERIALS\nPART 1 - GENERAL\n1.01 SECTIONINCLUDES\n. Spare parts.\nMaintenance materials.\nSpecial tools.\n1.02 RELATED SECTIONS\nConditions of Contract\nSpecification Sections, Divisions 1 through 16 inclusive\n1.03 QUALITY\n1.9 not damaged or defective, and of the same quality and manufacture as Products provided in the Works.\nIf requested, furnish evidence as to type, source and quality of Products provided.\nDefective Products will be rejected, regardless of previous inspections. Replace products at the Contractor's expense.\n1.04 TRANSPORTATION\n.Pay all costs of customs and transportation.\n1.05 STORAGE, HANDLING AND PROTECTION\nStore spare parts, maintenance materials and special tools in a manner to prevent damage or deterioration or theft.\n2.S Store in original and undamaged condition with manufacturer's seal and labels intact.\nn enclosures.\nStore paints in a ventilated room.\nRemove and replace damaged Products at Contractor's expense and to the satisfaction of Contract Administrator, Operator and SupervisionConsultant.\n1.06 SPAREPARTS\nProvide spare parts in quantities specified in individual Specification Sections.\nProvide items of same manufacture and quality as items in the Works.\n3.Deliver to the Site, place and store as directed.\nLtd.(S.s 4. Receive and catalogue all items. S Submit inventory listing to Contrael Administrator in an approved format.Include listings in the Operating and MAINTENANCE DATA AND MANUALS and provide an electroniccopy 中建国际装务",
+      "line_count": 27
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

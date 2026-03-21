@@ -1,0 +1,152 @@
+{
+  "text": "| AR.58                                                                                                                                                               |                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                       | AR.54                                                                                                                                                                                                                                            | AR.53                                                                                                                                                                                                                                                                                                                                                                                                                          | AR.52                                                                                               |                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                      |                                                                                                                                                                      |\n|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| dimensions,location and cutsheet for thisitem. For BOQ, TH01-A Stone Flooring item 8.2 Floor as ST-03.Please provide us with type,ST-03 is not used in the project. | AR.57 thecorrecthardwaresefschedules. that HW Set 3 = HW set 3A and HW Set 4 = HW' Set 4A. If not, please provide us witi attached for reference. For BOQ,BillTH02-A,TH02-B,TH02-C Hardware HW Set 3, HW Set 4.Please confirm HW Set 3 = HW set 3a and HW Set 4 = HW Set 4b a s0, update drawings and BOQ are | AR.56 only onetype. anddetailsfordifferentGRCcornicesforfacadeelevations asthereisonlyonedetail fcr ForBOQ,Bil TH01-A GlassFiberReinforcedConcrete,pleaseprovideus with drawingsRefertodrawing (AE5-101/04). dwgbutwithoutfixingpanels 2- Type W04 (sliding panels). Please confirm that It's same unit dimensions as W04 in | AR.55 1-requested profile. us with: For BOQ,BillTH02-A,TH2-B,TH02-C SECTION H-aluminum window, please provide1-Refer to specifications division 08(section 085113 o secion 088000) and dwg (AE5-00 2-For W04 type, please refer to drawing (AE5-001). | dimensions & louvers tyoe and dimensions along with its location on plans. louvers, piease Provice us with shed canopy drawings showing shed cesign &louvers type and dimensions, please refer to drawings (AE5-201, AE5-202, AE5-203, AEs-204). | 3-W07,W08 detailed drawings. 2-Window type Wo2 and its opening's type & dimensions. 1-required profile. For BOQ,Bil TH01-A,TH01-B,SECTION H- 2iuminum window, please provide us with:&#124;1-Refer to specifications division 08(section 085113, section 088000}and dwg (AE5-001) 2- glass configuration 3-W07, refers to updated attached drawing (AE5-001), WC8 is not usd in the projeci. 2-W02 is not used in the project. | 1-requiredprofile. door, type GD01,GD02 GD03, please provide Ls with: doortype. the attached specs. | AR.51 with thecutsheetandsoecs. For BOQ, Bill THO2-A, THO2-B, THO2-C SECTION H - pitched roof, please provide us This is ccnsidered as an exterior item and is not included in the ID cut sheet please refer tc drawings.AE5-102\"ARCHITECTURAL GENERALDETAI_S 02\" Detal #02end please refertc | AR.50 with thecutsheet. For BOQ, Bill THO1-A,TH01-B, SECTION H - wood skirting (sk-08), please provide us This type has been cancelled and please refer to the attacned updated BOQ. | AR.49 provideuswiththecutsheet anddetail drawing. For BOQ,BillTH01-A,TH01-B,THO2-A,TH02-B TH02-C SECTION H-Mirrors,please Mirrors are out of the Contractor's scope. |\n\nCR12341\n\nChE\n\nMlodig\n\n<!-- image -->\n\n## PackageID:PK#04\n\n## Subject: Construction of Townhomes Villas in Parcels 11 &amp;12\n\n## Project:Mivida Gardens\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "CR12341",
+      "confidence": 0.95,
+      "box": [
+        [
+          162.69815063476562,
+          47.39349365234375
+        ],
+        [
+          188.8460693359375,
+          47.39349365234375
+        ],
+        [
+          188.8460693359375,
+          33.71006266276038
+        ],
+        [
+          162.69815063476562,
+          33.71006266276038
+        ]
+      ],
+      "page": 240
+    },
+    {
+      "text": "ChE",
+      "confidence": 0.95,
+      "box": [
+        [
+          161.86805216471353,
+          33.71006266276038
+        ],
+        [
+          185.11065673828125,
+          33.71006266276038
+        ],
+        [
+          185.11065673828125,
+          23.75840250651038
+        ],
+        [
+          161.86805216471353,
+          23.75840250651038
+        ]
+      ],
+      "page": 240
+    },
+    {
+      "text": "Mlodig",
+      "confidence": 0.95,
+      "box": [
+        [
+          196.31689453125,
+          35.78330485026038
+        ],
+        [
+          209.598388671875,
+          35.78330485026038
+        ],
+        [
+          209.598388671875,
+          29.56349690755212
+        ],
+        [
+          196.31689453125,
+          29.56349690755212
+        ]
+      ],
+      "page": 240
+    },
+    {
+      "text": "PackageID:PK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          486.8492838541667,
+          704.1999308268229
+        ],
+        [
+          498.4705810546875,
+          704.1999308268229
+        ],
+        [
+          498.4705810546875,
+          627.9042358398438
+        ],
+        [
+          486.8492838541667,
+          627.9042358398438
+        ]
+      ],
+      "page": 240
+    },
+    {
+      "text": "Subject: Construction of Townhomes Villas in Parcels 11 &12",
+      "confidence": 0.95,
+      "box": [
+        [
+          503.0360921223958,
+          704.1999308268229
+        ],
+        [
+          514.2423502604166,
+          704.1999308268229
+        ],
+        [
+          514.2423502604166,
+          472.41029866536456
+        ],
+        [
+          503.0360921223958,
+          472.41029866536456
+        ]
+      ],
+      "page": 240
+    },
+    {
+      "text": "Project:Mivida Gardens",
+      "confidence": 0.95,
+      "box": [
+        [
+          519.222900390625,
+          703.3706258138021
+        ],
+        [
+          530.0141194661459,
+          703.3706258138021
+        ],
+        [
+          530.0141194661459,
+          608.4156494140625
+        ],
+        [
+          519.222900390625,
+          608.4156494140625
+        ]
+      ],
+      "page": 240
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 240,
+      "text": "CR12341\nChE\nMlodig\nPackageID:PK#04\nSubject: Construction of Townhomes Villas in Parcels 11 &12\nProject:Mivida Gardens",
+      "line_count": 6
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

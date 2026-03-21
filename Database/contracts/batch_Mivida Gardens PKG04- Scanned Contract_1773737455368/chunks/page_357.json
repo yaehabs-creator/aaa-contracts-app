@@ -1,0 +1,405 @@
+{
+  "text": "<!-- image -->\n\n## SECTION01530 ACCESSANDSECUIRTY\n\n## 1. ACCESS AND SECURITY\n\nOnly authorised personnel, equipment and materials shall be allowed on the site. The Contractor shall be responsible for installing, controlling and monitoring site access and egress of Contraclor's slaff, labuur, vehicles etc. The requirements for identification of Contractor's equipment, vehicles, personnel, etc., shall be complied with, by the Contractor. All access and egress shall be monitored, logged and controlied by the Contractor. No additional payments shall be made, nor extra time allowed, for complying with the requirements of the security staff. The individual Contractors shali be responsible for the security and safety of his personnel, matcrials and cquipmcnt at all times.\n\n## 1.1 General Security Requirements\n\n- 1.1.1 Only legitimate visitors shall be allowed entry to site.\n\n## 1.2 Access to Site\n\n- 1.2.1 Maintain at all times, uninterrupted use of the existing roads and sidewalks around the site and the lay-down area.Provide safety barricades,as and where required.Ensure that there is no disruption due to movement of workmenor transportation of material.\n- 1.2.2 TheContractor shallcomplywithcolor-coded attire for the workers, as required by the Contract Administrator, in order to ensure proper identification and security.\n- 1.2.3 The Contractor is responsible to limit  his workmen to constructionareasonly.\n- 1.2.4 Access to site for the Contractor's workmen shall be provided through designated security points.\n- 1.2.5 Access to site for equipment and materials shall only be possible during stipulated times so as not to interfere with the passage of men on to site. Vehicles arriving un-announced, shall not be allowed on site.All drivers are to carry delivery notes one copy of which shall beheld by the security guard.\n- 1.2.6 Vehicles with goods for sites other than the Project shall not be allowed on site.\n- 1.2.7 Vehicles are to enter and leave site in an orderly manner, no speeding shiall be tolerated. Any vehicle carrying equipment or material shall need a pass out before leaving site. This passage of all vehicles shall be monitored through the gates, Includlng the number of persons in the cab. Workmen may not enter site inside a vehicle.\n\nVisitors and representatives to site-shall be issued a \"v\" for the Contract\n\nAccess arid Securily\n\nSectlon01530\n\nPage Number: 1of 2\n\n<!-- image -->\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "SECTION01530 ACCESSANDSECUIRTY",
+      "confidence": 0.95,
+      "box": [
+        [
+          224.125,
+          718.2980448404948
+        ],
+        [
+          360.2601725260417,
+          718.2980448404948
+        ],
+        [
+          360.2601725260417,
+          694.2483215332031
+        ],
+        [
+          224.125,
+          694.2483215332031
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1. ACCESS AND SECURITY",
+      "confidence": 0.95,
+      "box": [
+        [
+          79.27384440104167,
+          664.8081258138021
+        ],
+        [
+          231.5958251953125,
+          664.8081258138021
+        ],
+        [
+          231.5958251953125,
+          654.0272115071615
+        ],
+        [
+          79.27384440104167,
+          654.0272115071615
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "Only authorised personnel, equipment and materials shall be allowed on the site. The Contractor shall be responsible for installing, controlling and monitoring site access and egress of Contraclor's slaff, labuur, vehicles etc. The requirements for identification of Contractor's equipment, vehicles, personnel, etc., shall be complied with, by the Contractor. All access and egress shall be monitored, logged and controlied by the Contractor. No additional payments shall be made, nor extra time allowed, for complying with the requirements of the security staff. The individual Contractors shali be responsible for the security and safety of his personnel, matcrials and cquipmcnt at all times.",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.63055419921875,
+          646.5635172526041
+        ],
+        [
+          505.5263671875,
+          646.5635172526041
+        ],
+        [
+          505.5263671875,
+          529.632059733073
+        ],
+        [
+          94.63055419921875,
+          529.632059733073
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.1 General Security Requirements",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.46065266927083,
+          522.9976603190105
+        ],
+        [
+          295.51295979817706,
+          522.9976603190105
+        ],
+        [
+          295.51295979817706,
+          510.9727783203125
+        ],
+        [
+          95.46065266927083,
+          510.9727783203125
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.1.1 Only legitimate visitors shall be allowed entry to site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.9847208658854,
+          504.33837890625
+        ],
+        [
+          434.968505859375,
+          504.33837890625
+        ],
+        [
+          434.968505859375,
+          491.89886474609375
+        ],
+        [
+          131.9847208658854,
+          491.89886474609375
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2 Access to Site",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.87569173177083,
+          486.9230550130208
+        ],
+        [
+          214.57893880208334,
+          486.9230550130208
+        ],
+        [
+          214.57893880208334,
+          472.41029866536456
+        ],
+        [
+          95.87569173177083,
+          472.41029866536456
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.1 Maintain at all times, uninterrupted use of the existing roads and sidewalks around the site and the lay-down area.Provide safety barricades,as and where required.Ensure that there is no disruption due to movement of workmenor transportation of material.",
+      "confidence": 0.95,
+      "box": [
+        [
+          131.15463256835938,
+          467.01983642578125
+        ],
+        [
+          507.1865641276042,
+          467.01983642578125
+        ],
+        [
+          507.1865641276042,
+          401.91969807942706
+        ],
+        [
+          131.15463256835938,
+          401.91969807942706
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.2 TheContractor shallcomplywithcolor-coded attire for the workers, as required by the Contract Administrator, in order to ensure proper identification and security.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.21041870117188,
+          396.52923583984375
+        ],
+        [
+          506.7715250651042,
+          396.52923583984375
+        ],
+        [
+          506.7715250651042,
+          357.13743082682294
+        ],
+        [
+          138.21041870117188,
+          357.13743082682294
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.3 The Contractor is responsible to limit  his workmen to constructionareasonly.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.21041870117188,
+          351.33233642578125
+        ],
+        [
+          506.7715250651042,
+          351.33233642578125
+        ],
+        [
+          506.7715250651042,
+          325.20937093098956
+        ],
+        [
+          138.21041870117188,
+          325.20937093098956
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.4 Access to site for the Contractor's workmen shall be provided through designated security points.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.21041870117188,
+          319.40423583984375
+        ],
+        [
+          506.7715250651042,
+          319.40423583984375
+        ],
+        [
+          506.7715250651042,
+          293.6959025065104
+        ],
+        [
+          138.21041870117188,
+          293.6959025065104
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.5 Access to site for equipment and materials shall only be possible during stipulated times so as not to interfere with the passage of men on to site. Vehicles arriving un-announced, shall not be allowed on site.All drivers are to carry delivery notes one copy of which shall beheld by the security guard.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.62545776367188,
+          287.4761759440104
+        ],
+        [
+          507.1865641276042,
+          287.4761759440104
+        ],
+        [
+          507.1865641276042,
+          222.37603759765625
+        ],
+        [
+          138.62545776367188,
+          222.37603759765625
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.6 Vehicles with goods for sites other than the Project shall not be allowed on site.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.21041870117188,
+          216.57090250651038
+        ],
+        [
+          506.7715250651042,
+          216.57090250651038
+        ],
+        [
+          506.7715250651042,
+          190.44793701171875
+        ],
+        [
+          138.21041870117188,
+          190.44793701171875
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "1.2.7 Vehicles are to enter and leave site in an orderly manner, no speeding shiall be tolerated. Any vehicle carrying equipment or material shall need a pass out before leaving site. This passage of all vehicles shall be monitored through the gates, Includlng the number of persons in the cab. Workmen may not enter site inside a vehicle.",
+      "confidence": 0.95,
+      "box": [
+        [
+          138.62545776367188,
+          184.64284261067712
+        ],
+        [
+          508.0166829427083,
+          184.64284261067712
+        ],
+        [
+          508.0166829427083,
+          107.10321044921875
+        ],
+        [
+          138.62545776367188,
+          107.10321044921875
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "Visitors and representatives to site-shall be issued a \"v\" for the Contract",
+      "confidence": 0.95,
+      "box": [
+        [
+          178.88494873046875,
+          100.88340250651038
+        ],
+        [
+          508.8467610677083,
+          100.88340250651038
+        ],
+        [
+          508.8467610677083,
+          75.17506917317712
+        ],
+        [
+          178.88494873046875,
+          75.17506917317712
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "Access arid Securily",
+      "confidence": 0.95,
+      "box": [
+        [
+          427.4976806640625,
+          58.58905029296875
+        ],
+        [
+          489.754638671875,
+          58.58905029296875
+        ],
+        [
+          489.754638671875,
+          47.80812581380212
+        ],
+        [
+          427.4976806640625,
+          47.80812581380212
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "Sectlon01530",
+      "confidence": 0.95,
+      "box": [
+        [
+          428.3277587890625,
+          49.46673583984375
+        ],
+        [
+          472.7377115885417,
+          49.46673583984375
+        ],
+        [
+          472.7377115885417,
+          41.17376708984375
+        ],
+        [
+          428.3277587890625,
+          41.17376708984375
+        ]
+      ],
+      "page": 357
+    },
+    {
+      "text": "Page Number: 1of 2",
+      "confidence": 0.95,
+      "box": [
+        [
+          428.3277587890625,
+          42.00303141276038
+        ],
+        [
+          490.999755859375,
+          42.00303141276038
+        ],
+        [
+          490.999755859375,
+          34.12469482421875
+        ],
+        [
+          428.3277587890625,
+          34.12469482421875
+        ]
+      ],
+      "page": 357
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 357,
+      "text": "SECTION01530 ACCESSANDSECUIRTY\n1. ACCESS AND SECURITY\nOnly authorised personnel, equipment and materials shall be allowed on the site. The Contractor shall be responsible for installing, controlling and monitoring site access and egress of Contraclor's slaff, labuur, vehicles etc. The requirements for identification of Contractor's equipment, vehicles, personnel, etc., shall be complied with, by the Contractor. All access and egress shall be monitored, logged and controlied by the Contractor. No additional payments shall be made, nor extra time allowed, for complying with the requirements of the security staff. The individual Contractors shali be responsible for the security and safety of his personnel, matcrials and cquipmcnt at all times.\n1.1 General Security Requirements\n1.1.1 Only legitimate visitors shall be allowed entry to site.\n1.2 Access to Site\n1.2.1 Maintain at all times, uninterrupted use of the existing roads and sidewalks around the site and the lay-down area.Provide safety barricades,as and where required.Ensure that there is no disruption due to movement of workmenor transportation of material.\n1.2.2 TheContractor shallcomplywithcolor-coded attire for the workers, as required by the Contract Administrator, in order to ensure proper identification and security.\n1.2.3 The Contractor is responsible to limit  his workmen to constructionareasonly.\n1.2.4 Access to site for the Contractor's workmen shall be provided through designated security points.\n1.2.5 Access to site for equipment and materials shall only be possible during stipulated times so as not to interfere with the passage of men on to site. Vehicles arriving un-announced, shall not be allowed on site.All drivers are to carry delivery notes one copy of which shall beheld by the security guard.\n1.2.6 Vehicles with goods for sites other than the Project shall not be allowed on site.\n1.2.7 Vehicles are to enter and leave site in an orderly manner, no speeding shiall be tolerated. Any vehicle carrying equipment or material shall need a pass out before leaving site. This passage of all vehicles shall be monitored through the gates, Includlng the number of persons in the cab. Workmen may not enter site inside a vehicle.\nVisitors and representatives to site-shall be issued a \"v\" for the Contract\nAccess arid Securily\nSectlon01530\nPage Number: 1of 2",
+      "line_count": 17
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

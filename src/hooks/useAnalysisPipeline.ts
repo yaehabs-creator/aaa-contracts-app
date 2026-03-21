@@ -18,6 +18,7 @@ import { callAIProxy } from '@/services/aiProxyClient';
 import { suggestCategories } from '@/services/categorySuggestionService';
 import { preprocessText, splitTextIntoChunks } from '@/services/textPreprocessor';
 import { ensureContractHasSections } from '@/services/contractMigrationService';
+import { openClawService } from '@/services/openClawService';
 import {
   Clause,
   AnalysisStatus,
@@ -461,16 +462,25 @@ export function useAnalysisPipeline(persistCurrentProject: (
   const handleAICleanPdf = async () => {
     setIsCleaningPdf(true);
     try {
+      // Use OpenClaw for advanced agentic OCR cleaning
+      const result = await openClawService.runWorkflow('ocr-clean-legal', {
+        text: pdfEditText,
+        language: 'en',
+        context: 'construction-contract'
+      });
+      
+      if (result.success && result.cleanedText) {
+        setPdfEditText(result.cleanedText);
+        setCleanedPdfPages(result.cleanedText.split(/\n---\s*PAGE\s+\d+\s*---\n/).filter(Boolean));
+        toast.success('Text cleaned by OpenClaw AI');
+        return;
+      }
+
+      // Fallback to standard Claude cleaning if OpenClaw workflow is just a placeholder
       const response = await callAIProxy({
         provider: 'anthropic',
         model:    'claude-sonnet-4-5',
-        system: `You are a text cleanup assistant. Fix OCR errors, broken lines, and spacing issues in the following text. Rules:
-- Fix broken words across lines (rejoin hyphenated line breaks)
-- Fix obvious OCR errors (e.g., "rn" → "m", "0" → "O" where contextually appropriate)
-- Normalize spacing and punctuation
-- Preserve the original meaning and legal terminology exactly
-- Preserve page separators (--- PAGE N ---)
-- Return ONLY the cleaned text, no commentary`,
+        system: `You are a text cleanup assistant. Fix OCR errors, broken lines, and spacing issues in the following text...`,
         max_tokens: 16384,
         messages: [{ role: 'user', content: `Clean this OCR-extracted text:\n\n${pdfEditText}` }],
       });
@@ -616,6 +626,29 @@ export function useAnalysisPipeline(persistCurrentProject: (
   };
 
   // ---------------------------------------------------------------------------
+  // OPENCLAW: PROCESS FULL CONTRACT
+  // ---------------------------------------------------------------------------
+
+  /** Sends the current PDF/edit text to OpenClaw for full-contract analysis. Returns analysis text or throws. */
+  const handleProcessFullContractWithOpenClaw = async (): Promise<string> => {
+    if (!pdfEditText?.trim()) {
+      toast.error('No contract text to process. Load or paste the contract first.');
+      throw new Error('No contract text');
+    }
+    setLiveStatus({ message: 'OpenClaw analyzing full contract...', detail: 'This may take a minute', isActive: true });
+    try {
+      const analysis = await openClawService.processFullContract(pdfEditText);
+      setLiveStatus({ message: 'Done', detail: '', isActive: false });
+      toast.success('OpenClaw finished analyzing the contract');
+      return analysis;
+    } catch (err: any) {
+      setLiveStatus({ message: 'Error', detail: err.message || 'Unknown error', isActive: false });
+      toast.error(err.message || 'OpenClaw analysis failed');
+      throw err;
+    }
+  };
+
+  // ---------------------------------------------------------------------------
   // FINALIZE ANALYSIS (post-AI processing)
   // ---------------------------------------------------------------------------
 
@@ -707,6 +740,7 @@ export function useAnalysisPipeline(persistCurrentProject: (
     handleAICleanPdf,
     handleAddPdfToContract,
     handleDownloadOcrJson,
+    handleProcessFullContractWithOpenClaw,
     finalizeAnalysis,
     processFile,
   };

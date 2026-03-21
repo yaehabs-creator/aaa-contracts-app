@@ -1,0 +1,244 @@
+{
+  "text": "<!-- image -->\n\nAppendixB\n\nCertificateforaSectionorPortionoftheWorkshasoccurred,bysuchamountasyou state in such notice as being the proportion of the Bond amount which relates to such Section orPortion.\n\nWhen this Bond has expired, it must be returned to us for cancellation but we shall be releasedfromanyobligationhereundereven ifsuchreturnhasnottakenplace.\n\nAny payment by us hereunder shall be in immediately available and freely transferable [Currency]freeandclearofandwithoutanydeductionfororonaccountofanypresent or future taxes, levies, imposts, duties, charges, fees, deductions or withholdings of any naturewhatsoeverandbywhomsoeverimposed.\n\nOur obligations hereunder are of a continuing nature, constitute direct, primary, irrevocable and unconditional obligations which shall not require any previous notice to or claim against the Contractor or any other person, and shall not be discharged or otherwise prejudiced or adversely affected by any time, indulgence or forbearance which you may grant to the Contractor or by any unenforceability or invalidity of,or any amendment,modificationorextensionwhichmaybemadetotheContractorthework to be performed there under, or by any intermediate payment or other satisfaction made by us, or by any change in the constitution or organization of the Contractor or by any othermatterorthingwhichintheabsenceofthisprovisionwouldormighthavethateffect exceptadischargeoramendmenthereofexpresslymadeoragreedtobyyouinwriting.\n\nThis Bond shall be governed by and construed in accordance with the laws and regulationsof,andformtimetotimeapplicableinARABREPUBLICOFEGYPT.\n\nWeherebysubmittothejurisdictionof thecourtsofARABREPUBLICOFEGYPTin connectionwiththisBond,whichjurisdictionshallbeexclusivesaveinrespectofthe enforcementofanyjudgmentororderofsuchcourts.\n\nYours faithfully\n\nDulyauthorizedrepresentative For andbehalfof[Bank]\n\n<!-- image -->\n\nMivida GardensProject,EastGalroEyt ConstructionPackagePK#04\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "AppendixB",
+      "confidence": 0.95,
+      "box": [
+        [
+          393.6472574869792,
+          715.6845296223959
+        ],
+        [
+          435.0837809244792,
+          715.6845296223959
+        ],
+        [
+          435.0837809244792,
+          706.3515319824219
+        ],
+        [
+          393.6472574869792,
+          706.3515319824219
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "CertificateforaSectionorPortionoftheWorkshasoccurred,bysuchamountasyou state in such notice as being the proportion of the Bond amount which relates to such Section orPortion.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.79261271158855,
+          696.5943094889323
+        ],
+        [
+          494.7017008463542,
+          696.5943094889323
+        ],
+        [
+          494.7017008463542,
+          659.6865437825521
+        ],
+        [
+          88.79261271158855,
+          659.6865437825521
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "When this Bond has expired, it must be returned to us for cancellation but we shall be releasedfromanyobligationhereundereven ifsuchreturnhasnottakenplace.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.79261271158855,
+          648.6566365559896
+        ],
+        [
+          494.2788899739583,
+          648.6566365559896
+        ],
+        [
+          494.2788899739583,
+          622.3545532226562
+        ],
+        [
+          88.79261271158855,
+          622.3545532226562
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "Any payment by us hereunder shall be in immediately available and freely transferable [Currency]freeandclearofandwithoutanydeductionfororonaccountofanypresent or future taxes, levies, imposts, duties, charges, fees, deductions or withholdings of any naturewhatsoeverandbywhomsoeverimposed.",
+      "confidence": 0.95,
+      "box": [
+        [
+          88.36979166666667,
+          612.173095703125
+        ],
+        [
+          494.2788899739583,
+          612.173095703125
+        ],
+        [
+          494.2788899739583,
+          562.9627482096355
+        ],
+        [
+          88.36979166666667,
+          562.9627482096355
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "Our obligations hereunder are of a continuing nature, constitute direct, primary, irrevocable and unconditional obligations which shall not require any previous notice to or claim against the Contractor or any other person, and shall not be discharged or otherwise prejudiced or adversely affected by any time, indulgence or forbearance which you may grant to the Contractor or by any unenforceability or invalidity of,or any amendment,modificationorextensionwhichmaybemadetotheContractorthework to be performed there under, or by any intermediate payment or other satisfaction made by us, or by any change in the constitution or organization of the Contractor or by any othermatterorthingwhichintheabsenceofthisprovisionwouldormighthavethateffect exceptadischargeoramendmenthereofexpresslymadeoragreedtobyyouinwriting.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.10132853190105,
+          552.7812906901042
+        ],
+        [
+          494.2788899739583,
+          552.7812906901042
+        ],
+        [
+          494.2788899739583,
+          430.17966715494794
+        ],
+        [
+          87.10132853190105,
+          430.17966715494794
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "This Bond shall be governed by and construed in accordance with the laws and regulationsof,andformtimetotimeapplicableinARABREPUBLICOFEGYPT.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.10132853190105,
+          421.27089436848956
+        ],
+        [
+          494.2788899739583,
+          421.27089436848956
+        ],
+        [
+          494.2788899739583,
+          394.96881103515625
+        ],
+        [
+          87.10132853190105,
+          394.96881103515625
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "Weherebysubmittothejurisdictionof thecourtsofARABREPUBLICOFEGYPTin connectionwiththisBond,whichjurisdictionshallbeexclusivesaveinrespectofthe enforcementofanyjudgmentororderofsuchcourts.",
+      "confidence": 0.95,
+      "box": [
+        [
+          87.10132853190105,
+          383.93890380859375
+        ],
+        [
+          492.5875651041667,
+          383.93890380859375
+        ],
+        [
+          492.5875651041667,
+          347.03110758463544
+        ],
+        [
+          87.10132853190105,
+          347.03110758463544
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "Yours faithfully",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.25567626953125,
+          336.84967041015625
+        ],
+        [
+          156.866943359375,
+          336.84967041015625
+        ],
+        [
+          156.866943359375,
+          323.2743937174479
+        ],
+        [
+          86.25567626953125,
+          323.2743937174479
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "Dulyauthorizedrepresentative For andbehalfof[Bank]",
+      "confidence": 0.95,
+      "box": [
+        [
+          86.25567626953125,
+          300.36614990234375
+        ],
+        [
+          229.16949462890625,
+          300.36614990234375
+        ],
+        [
+          229.16949462890625,
+          275.7609659830729
+        ],
+        [
+          86.25567626953125,
+          275.7609659830729
+        ]
+      ],
+      "page": 153
+    },
+    {
+      "text": "Mivida GardensProject,EastGalroEyt ConstructionPackagePK#04",
+      "confidence": 0.95,
+      "box": [
+        [
+          93.86647542317708,
+          79.76804606119788
+        ],
+        [
+          217.7533162434896,
+          79.76804606119788
+        ],
+        [
+          217.7533162434896,
+          62.79897054036462
+        ],
+        [
+          93.86647542317708,
+          62.79897054036462
+        ]
+      ],
+      "page": 153
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 153,
+      "text": "AppendixB\nCertificateforaSectionorPortionoftheWorkshasoccurred,bysuchamountasyou state in such notice as being the proportion of the Bond amount which relates to such Section orPortion.\nWhen this Bond has expired, it must be returned to us for cancellation but we shall be releasedfromanyobligationhereundereven ifsuchreturnhasnottakenplace.\nAny payment by us hereunder shall be in immediately available and freely transferable [Currency]freeandclearofandwithoutanydeductionfororonaccountofanypresent or future taxes, levies, imposts, duties, charges, fees, deductions or withholdings of any naturewhatsoeverandbywhomsoeverimposed.\nOur obligations hereunder are of a continuing nature, constitute direct, primary, irrevocable and unconditional obligations which shall not require any previous notice to or claim against the Contractor or any other person, and shall not be discharged or otherwise prejudiced or adversely affected by any time, indulgence or forbearance which you may grant to the Contractor or by any unenforceability or invalidity of,or any amendment,modificationorextensionwhichmaybemadetotheContractorthework to be performed there under, or by any intermediate payment or other satisfaction made by us, or by any change in the constitution or organization of the Contractor or by any othermatterorthingwhichintheabsenceofthisprovisionwouldormighthavethateffect exceptadischargeoramendmenthereofexpresslymadeoragreedtobyyouinwriting.\nThis Bond shall be governed by and construed in accordance with the laws and regulationsof,andformtimetotimeapplicableinARABREPUBLICOFEGYPT.\nWeherebysubmittothejurisdictionof thecourtsofARABREPUBLICOFEGYPTin connectionwiththisBond,whichjurisdictionshallbeexclusivesaveinrespectofthe enforcementofanyjudgmentororderofsuchcourts.\nYours faithfully\nDulyauthorizedrepresentative For andbehalfof[Bank]\nMivida GardensProject,EastGalroEyt ConstructionPackagePK#04",
+      "line_count": 10
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}

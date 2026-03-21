@@ -1,0 +1,267 @@
+{
+  "text": "## 25.MEASUREMENT\n\n## Quantities\n\n- 25.1 ThequantitiessetoutintheBillsofQuantitiesareestimatedquantitiesand arenottobetakenastheactualandcorrectquantitiesoftheWorkswhich theContractor isrequiredtocarryoutorforthepurposesofClause25.2 (WorkstobeMeasured).\n\n## WorkstobeMeasured\n\n- 25.2 TheProject Manager shall，except as otherwise stated inthe Contract,ascertain and determinebymeasurementthevalueof the Worksinaccordancewith theContractand theContractorshall be paidthatvalueinaccordancewithClause26(InterimandFinal Certificates).\n- (b) TheProjectManagershall determinethedocumentationtobeused formeasurementpurposesprovided thatwheretheProject Manager considers it necessary to measure any part of the Works on Site, reasonable notice shall be givento theContractor,whoshall:\n- (i) promptlyeitherattendorsendanotherqualified representative toassisttheProjectManager(orapersonon his behalf) in making the measurement;and\n- (ii)\n\nIf the Contractor fails toattend or sendarepresentative,the measurement madeonSiteby(oronbehalfof)theProject Manager shallbetakenasaccurate.\n\nWherevertheProjectManagerdeterminesthatanypartofthe Works is tobe measured from records prepared bytheSupervision Consuiltant, the Contractorshali,as andwhenrequested and within the period spccificd by thc Supervision Consulitant, attend to examineandagreesuchrecordswiththeSupervisionConsultant andshall sign the samewhen agreed.If theContractor doesnot attendwithintheperiodspecifiedbytheSupervisionConsultant,the recordsshall betakenas accurate.If the Contractorexamines and disagrees therecords and/ordoesnotsignthem asagreed,thenthe Contractorshallgivenotice to theSupervisionConsultantof the respects inwhich therecordsareclaimed tobeinaccurate.After receiving thisnotice,the Supervision Consultant shallreview the recordsandeitherconfirmorvarythemandnotifytheContractor accordingly.If theContractor doesnot sogivenoticeto the SupervisionConsultantwithinthesaidperiodspecifiedbythe SupervisionConsultant,they shallbetakenasaccurate.\n\n- (c) TheProject Managershall,upon completionof themeasurementby (oronbehalfof)theProjectManagerofanypartof theWorks, delivertotheContractoracopyofsuchmeasureimentfor examinationandagreementbytheContractor.TheContractorshail\n\n<!-- image -->",
+  "results": [
+    {
+      "text": "25.MEASUREMENT",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.1349385579427,
+          726.7144368489584
+        ],
+        [
+          199.99479166666666,
+          726.7144368489584
+        ],
+        [
+          199.99479166666666,
+          715.6845296223959
+        ],
+        [
+          95.1349385579427,
+          715.6845296223959
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "Quantities",
+      "confidence": 0.95,
+      "box": [
+        [
+          95.55775960286458,
+          703.3819376627604
+        ],
+        [
+          142.06817626953125,
+          703.3819376627604
+        ],
+        [
+          142.06817626953125,
+          691.9278055826823
+        ],
+        [
+          95.55775960286458,
+          691.9278055826823
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "25.1 ThequantitiessetoutintheBillsofQuantitiesareestimatedquantitiesand arenottobetakenastheactualandcorrectquantitiesoftheWorkswhich theContractor isrequiredtocarryoutorforthepurposesofClause25.2 (WorkstobeMeasured).",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.84658813476562,
+          680.4736735026041
+        ],
+        [
+          487.9365234375,
+          680.4736735026041
+        ],
+        [
+          487.9365234375,
+          634.23291015625
+        ],
+        [
+          126.84658813476562,
+          634.23291015625
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "WorkstobeMeasured",
+      "confidence": 0.95,
+      "box": [
+        [
+          94.71211751302083,
+          624.0514526367188
+        ],
+        [
+          198.30350748697916,
+          624.0514526367188
+        ],
+        [
+          198.30350748697916,
+          611.7488810221354
+        ],
+        [
+          94.71211751302083,
+          611.7488810221354
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "25.2 TheProject Manager shall，except as otherwise stated inthe Contract,ascertain and determinebymeasurementthevalueof the Worksinaccordancewith theContractand theContractorshall be paidthatvalueinaccordancewithClause26(InterimandFinal Certificates).",
+      "confidence": 0.95,
+      "box": [
+        [
+          126.00094604492188,
+          600.2947387695312
+        ],
+        [
+          487.5137125651042,
+          600.2947387695312
+        ],
+        [
+          487.5137125651042,
+          542.599853515625
+        ],
+        [
+          126.00094604492188,
+          542.599853515625
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "(b) TheProjectManagershall determinethedocumentationtobeused formeasurementpurposesprovided thatwheretheProject Manager considers it necessary to measure any part of the Works on Site, reasonable notice shall be givento theContractor,whoshall:",
+      "confidence": 0.95,
+      "box": [
+        [
+          156.866943359375,
+          532.4183959960938
+        ],
+        [
+          487.0909016927083,
+          532.4183959960938
+        ],
+        [
+          487.0909016927083,
+          485.32916259765625
+        ],
+        [
+          156.866943359375,
+          485.32916259765625
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "(i) promptlyeitherattendorsendanotherqualified representative toassisttheProjectManager(orapersonon his behalf) in making the measurement;and",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.8873087565104,
+          475.14772542317706
+        ],
+        [
+          486.6680908203125,
+          475.14772542317706
+        ],
+        [
+          486.6680908203125,
+          439.93686930338544
+        ],
+        [
+          186.8873087565104,
+          439.93686930338544
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "(ii)",
+      "confidence": 0.95,
+      "box": [
+        [
+          187.31011962890625,
+          429.33119710286456
+        ],
+        [
+          199.99479166666666,
+          429.33119710286456
+        ],
+        [
+          199.99479166666666,
+          418.30128987630206
+        ],
+        [
+          187.31011962890625,
+          418.30128987630206
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "If the Contractor fails toattend or sendarepresentative,the measurement madeonSiteby(oronbehalfof)theProject Manager shallbetakenasaccurate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          186.04166666666666,
+          407.69561767578125
+        ],
+        [
+          485.8224283854167,
+          407.69561767578125
+        ],
+        [
+          485.8224283854167,
+          372.90899658203125
+        ],
+        [
+          186.04166666666666,
+          372.90899658203125
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "WherevertheProjectManagerdeterminesthatanypartofthe Works is tobe measured from records prepared bytheSupervision Consuiltant, the Contractorshali,as andwhenrequested and within the period spccificd by thc Supervision Consulitant, attend to examineandagreesuchrecordswiththeSupervisionConsultant andshall sign the samewhen agreed.If theContractor doesnot attendwithintheperiodspecifiedbytheSupervisionConsultant,the recordsshall betakenas accurate.If the Contractorexamines and disagrees therecords and/ordoesnotsignthem asagreed,thenthe Contractorshallgivenotice to theSupervisionConsultantof the respects inwhich therecordsareclaimed tobeinaccurate.After receiving thisnotice,the Supervision Consultant shallreview the recordsandeitherconfirmorvarythemandnotifytheContractor accordingly.If theContractor doesnot sogivenoticeto the SupervisionConsultantwithinthesaidperiodspecifiedbythe SupervisionConsultant,they shallbetakenasaccurate.",
+      "confidence": 0.95,
+      "box": [
+        [
+          185.61883544921875,
+          361.87908935546875
+        ],
+        [
+          486.6680908203125,
+          361.87908935546875
+        ],
+        [
+          486.6680908203125,
+          179.03717041015625
+        ],
+        [
+          185.61883544921875,
+          179.03717041015625
+        ]
+      ],
+      "page": 93
+    },
+    {
+      "text": "(c) TheProject Managershall,upon completionof themeasurementby (oronbehalfof)theProjectManagerofanypartof theWorks, delivertotheContractoracopyofsuchmeasureimentfor examinationandagreementbytheContractor.TheContractorshail",
+      "confidence": 0.95,
+      "box": [
+        [
+          153.90719604492188,
+          169.27992757161462
+        ],
+        [
+          485.8224283854167,
+          169.27992757161462
+        ],
+        [
+          485.8224283854167,
+          123.46343994140625
+        ],
+        [
+          153.90719604492188,
+          123.46343994140625
+        ]
+      ],
+      "page": 93
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 93,
+      "text": "25.MEASUREMENT\nQuantities\n25.1 ThequantitiessetoutintheBillsofQuantitiesareestimatedquantitiesand arenottobetakenastheactualandcorrectquantitiesoftheWorkswhich theContractor isrequiredtocarryoutorforthepurposesofClause25.2 (WorkstobeMeasured).\nWorkstobeMeasured\n25.2 TheProject Manager shall，except as otherwise stated inthe Contract,ascertain and determinebymeasurementthevalueof the Worksinaccordancewith theContractand theContractorshall be paidthatvalueinaccordancewithClause26(InterimandFinal Certificates).\n(b) TheProjectManagershall determinethedocumentationtobeused formeasurementpurposesprovided thatwheretheProject Manager considers it necessary to measure any part of the Works on Site, reasonable notice shall be givento theContractor,whoshall:\n(i) promptlyeitherattendorsendanotherqualified representative toassisttheProjectManager(orapersonon his behalf) in making the measurement;and\n(ii)\nIf the Contractor fails toattend or sendarepresentative,the measurement madeonSiteby(oronbehalfof)theProject Manager shallbetakenasaccurate.\nWherevertheProjectManagerdeterminesthatanypartofthe Works is tobe measured from records prepared bytheSupervision Consuiltant, the Contractorshali,as andwhenrequested and within the period spccificd by thc Supervision Consulitant, attend to examineandagreesuchrecordswiththeSupervisionConsultant andshall sign the samewhen agreed.If theContractor doesnot attendwithintheperiodspecifiedbytheSupervisionConsultant,the recordsshall betakenas accurate.If the Contractorexamines and disagrees therecords and/ordoesnotsignthem asagreed,thenthe Contractorshallgivenotice to theSupervisionConsultantof the respects inwhich therecordsareclaimed tobeinaccurate.After receiving thisnotice,the Supervision Consultant shallreview the recordsandeitherconfirmorvarythemandnotifytheContractor accordingly.If theContractor doesnot sogivenoticeto the SupervisionConsultantwithinthesaidperiodspecifiedbythe SupervisionConsultant,they shallbetakenasaccurate.\n(c) TheProject Managershall,upon completionof themeasurementby (oronbehalfof)theProjectManagerofanypartof theWorks, delivertotheContractoracopyofsuchmeasureimentfor examinationandagreementbytheContractor.TheContractorshail",
+      "line_count": 11
+    }
+  ],
+  "page_count": 1,
+  "engine": "docling"
+}
