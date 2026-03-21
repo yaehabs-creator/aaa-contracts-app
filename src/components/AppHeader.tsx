@@ -74,12 +74,12 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
     <header className="bg-white/80 backdrop-blur-xl border-b border-surface-border px-8 h-16 flex items-center justify-between sticky top-0 z-50">
       {/* Left: Logo & Title */}
       <div className="flex items-center gap-4">
-        <div className="w-10 h-10 bg-mac-blue rounded-mac-xs flex items-center justify-center">
-          <span className="text-white font-bold text-sm">AAA</span>
+        <div className="w-10 h-10 bg-mac-blue rounded-mac-xs flex items-center justify-center shadow-lg shadow-mac-blue/20 ring-1 ring-white/20">
+          <span className="text-white font-black text-sm tracking-tighter">AEH</span>
         </div>
         <div>
-          <h1 className="text-lg font-semibold text-mac-navy leading-none">
-            {activeView === 'chat' ? 'AI Chat' : 'Contract Intelligence'}
+          <h1 className="text-lg font-black text-mac-navy leading-none tracking-tight">
+            {activeView === 'chat' ? 'AEhab Chat' : 'AEhab Intelligence'}
           </h1>
           <div className="mt-1 flex items-center gap-2">
             {getRoleBadge()}

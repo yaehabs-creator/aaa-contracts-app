@@ -27,7 +27,7 @@ export type ChatContainerProps = {
 const ChatShell: React.FC<Omit<ChatContainerProps, 'conversationId' | 'contractClauses' | 'persist' | 'initialContextPills'>> = React.memo(({
     isOpen,
     onClose,
-    title = "AI Contract Assistant",
+    title = "AEhab Assistant",
     width = 420,
     side = "right",
     contractId = null,

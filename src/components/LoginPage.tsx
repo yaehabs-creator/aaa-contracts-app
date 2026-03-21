@@ -428,7 +428,7 @@ export const LoginPage: React.FC = () => {
               marginBottom: '0.375rem',
             }}
           >
-            AE Contract Department
+            AEhab AI Assistant
           </h1>
           <p
             style={{

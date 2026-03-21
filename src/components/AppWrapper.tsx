@@ -164,8 +164,8 @@ export const AppWrapper: React.FC<AppWrapperProps> = ({ children }) => {
                 animation: 'spin 1s linear infinite',
                 margin: '0 auto 1.5rem'
               }} />
-              <p style={{ color: '#1A2333', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em' }}>
-                Loading AE Contract Department...
+              <p style={{ color: '#1A2333', fontSize: '1.2rem', fontWeight: 900, letterSpacing: '-0.03em' }}>
+                Loading AEhab Assistant...
               </p>
               <p style={{ color: '#64748B', fontSize: '0.9rem', marginTop: '0.5rem' }}>
                 Synchronizing with local database...

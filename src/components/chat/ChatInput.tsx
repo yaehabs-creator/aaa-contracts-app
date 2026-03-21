@@ -180,7 +180,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
 
             <div className="flex justify-center">
                 <p className="text-[10px] font-bold text-black/20 uppercase tracking-[0.2em] px-4 py-1">
-                    Precision AI Assistant <span className="mx-2">•</span> v2.0 Modular
+                    AEhab Agentic AI Assistant <span className="mx-2">•</span> v2.0 Modular
                 </p>
             </div>
         </div>
