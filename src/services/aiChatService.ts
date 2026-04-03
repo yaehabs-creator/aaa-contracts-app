@@ -60,11 +60,16 @@ export async function chatWithFullContext(
   }
 
   try {
+    const lastUserMsg = messages.filter(m => m.role === 'user').pop();
+
     // Build unified context
     const { context, hasDocuments, clauseCount, chunkCount } = await buildUnifiedContractContext(
       contractId,
       clauses,
-      { includeDocumentChunks: true }
+      { 
+        includeDocumentChunks: true,
+        userQuery: lastUserMsg?.content
+      }
     );
 
     // Enhanced system instruction
@@ -141,7 +146,11 @@ export async function chatWithOpenClaw(
   let targetAgent = 'contract-analyzer';
   
   if (contractId || activeChatContextIds.length > 0) {
-    const { context } = await buildUnifiedContractContext(contractId || null, clauses, { includeDocumentChunks: true });
+    const lastUserMsg = messages.filter(m => m.role === 'user').pop();
+    const { context } = await buildUnifiedContractContext(contractId || null, clauses, { 
+      includeDocumentChunks: true,
+      userQuery: lastUserMsg?.content 
+    });
     customContext = context;
 
     try {

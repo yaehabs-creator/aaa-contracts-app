@@ -1,3 +1,4 @@
+from pathlib import Path
 import json
 import time
 import os
@@ -596,6 +597,7 @@ async def extract_identity(text: str):
         print(f"Identity Extraction Error: {e}")
     return {}
 
+
 async def background_digest_task(contract_id: str, file_path: Path):
     """Complete Neural Digestion with Identity Extraction."""
     contract_folder = file_path.parent
@@ -635,7 +637,13 @@ async def background_digest_task(contract_id: str, file_path: Path):
         db_manager.upload_file(contract_id, file_path, file_path.name)
         db_manager.sync_clauses(contract_id, clauses)
         
-        # 7. Finalize
+        # Phase 7: Chunk + Embed for semantic RAG
+        print(f"[{contract_id}] Starting RAG Embedding Phase...")
+        db_manager.save_contract({"id": contract_id, "ingestion_progress": 85})
+        
+        chunk_count = await chunk_and_embed_contract(contract_id, cleaned_md, document_group="C")
+
+        # 8. Finalize
         final_meta = {
             "id": contract_id,
             "status": "processed",
@@ -643,7 +651,9 @@ async def background_digest_task(contract_id: str, file_path: Path):
             **identity,
             "metadata": {
                 **identity,
-                "clause_count": len(clauses)
+                "clause_count": len(clauses),
+                "chunk_count": chunk_count,
+                "rag_ready": chunk_count > 0
             }
         }
         db_manager.save_contract(final_meta)
@@ -902,7 +912,7 @@ def get_embedding_func():
     if not api_key:
         return None
     client = OpenAI(api_key=api_key)
-    
+
     async def embedding_func(texts, **kwargs):
         resp = await asyncio.to_thread(
             client.embeddings.create,
@@ -911,6 +921,231 @@ def get_embedding_func():
         )
         return [d.embedding for d in resp.data]
     return embedding_func
+
+
+# --- RAG Chunking & Embedding Helpers ---
+
+CHUNK_MAX_CHARS = 1500    # ~375 tokens, safe for context windows
+CHUNK_OVERLAP_CHARS = 200 # Overlap keeps continuity across boundaries
+
+def split_text_into_chunks(text: str, max_chars: int = CHUNK_MAX_CHARS, overlap: int = CHUNK_OVERLAP_CHARS) -> list:
+    """
+    Split markdown contract text into overlapping chunks.
+    Respects clause boundaries first, then falls back to sliding window.
+    """
+    # Try to split on clause headers: "1.1 Title", "Clause 8", "Sub-Clause 20.1"
+    clause_pattern = re.compile(
+        r'(?=(?:^|\n)(?:Clause\s+|Sub-Clause\s+)?(\d+(?:\.\d+)+)\s+[A-Z])',
+        re.MULTILINE
+    )
+    boundary_positions = [m.start() for m in clause_pattern.finditer(text)]
+
+    chunks = []
+    if boundary_positions:
+        # Split text at clause boundaries
+        segments = []
+        for i, pos in enumerate(boundary_positions):
+            end = boundary_positions[i + 1] if i + 1 < len(boundary_positions) else len(text)
+            segments.append(text[pos:end])
+
+        current = ""
+        for seg in segments:
+            if len(current) + len(seg) <= max_chars:
+                current += seg
+            else:
+                if current.strip():
+                    chunks.append(current.strip())
+                # Keep overlap from the previous chunk for context continuity
+                current = current[-overlap:] + seg if overlap and current else seg
+        if current.strip():
+            chunks.append(current.strip())
+
+    # Fallback: fixed-size sliding window (used when no clause boundaries found)
+    if not chunks:
+        step = max_chars - overlap
+        for i in range(0, len(text), step):
+            chunk = text[i:i + max_chars].strip()
+            if chunk:
+                chunks.append(chunk)
+
+    return chunks
+
+
+async def chunk_and_embed_contract(contract_id: str, text: str, document_group: str = "C") -> int:
+    """
+    Split contract text into chunks, embed each with OpenAI, and store in Supabase.
+    Returns the number of chunks saved.
+    """
+    if not supabase:
+        print(f"[{contract_id}] Supabase not available — skipping chunk+embed")
+        return 0
+
+    chunks = split_text_into_chunks(text)
+    if not chunks:
+        print(f"[{contract_id}] No chunks generated from text")
+        return 0
+
+    print(f"[{contract_id}] Generated {len(chunks)} chunks. Starting embedding...")
+
+    embed_func = get_embedding_func()
+    if not embed_func:
+        print(f"[{contract_id}] OpenAI API key missing — skipping embedding")
+        return 0
+
+    # Batch embed all chunks
+    try:
+        embeddings = await embed_func(chunks)
+    except Exception as e:
+        print(f"[{contract_id}] Embedding failed: {e}")
+        return 0
+
+    # Get or create a contract_documents record for this text
+    try:
+        doc_res = supabase.table("contract_documents") \
+            .select("id") \
+            .eq("contract_id", contract_id) \
+            .eq("document_group", document_group) \
+            .execute()
+        if doc_res.data:
+            document_id = doc_res.data[0]["id"]
+        else:
+            import uuid
+            document_id = str(uuid.uuid4())
+            supabase.table("contract_documents").insert({
+                "id": document_id,
+                "contract_id": contract_id,
+                "document_group": document_group,
+                "name": f"Extracted Text ({document_group})",
+                "status": "completed",
+                "sequence_number": 1
+            }).execute()
+    except Exception as e:
+        print(f"[{contract_id}] Could not get/create document record: {e}")
+        return 0
+
+    # Build rows and batch-insert
+    batch_size = 50
+    saved = 0
+    for i in range(0, len(chunks), batch_size):
+        batch_chunks = chunks[i:i + batch_size]
+        batch_embeddings = embeddings[i:i + batch_size]
+        rows = []
+        for idx, (chunk_text, embedding) in enumerate(zip(batch_chunks, batch_embeddings)):
+            rows.append({
+                "contract_id": contract_id,
+                "document_id": document_id,
+                "chunk_index": i + idx,
+                "content": chunk_text,
+                "content_type": "text",
+                "embedding": embedding,
+                "embedding_model": "text-embedding-3-small",
+                "embedded_at": "now()",
+                "metadata": {"document_group": document_group, "chunk_total": len(chunks)}
+            })
+        try:
+            supabase.table("contract_document_chunks").upsert(rows).execute()
+            saved += len(rows)
+            print(f"[{contract_id}] Saved chunks {i+1}–{i+len(rows)}/{len(chunks)}")
+        except Exception as e:
+            print(f"[{contract_id}] Batch insert error at {i}: {e}")
+
+    print(f"[{contract_id}] Chunk+Embed complete. {saved}/{len(chunks)} chunks stored.")
+    return saved
+
+
+# --- RAG Query & Status Endpoints ---
+
+@app.post("/contracts/query/{contract_id}")
+async def semantic_query_contract(contract_id: str, req: dict):
+    """
+    Semantic RAG query: embed the question, retrieve top chunks via pgvector, answer with Claude.
+    Body: { "query": "What is the payment term?", "limit": 15, "threshold": 0.65 }
+    """
+    query = req.get("query", "").strip()
+    limit = int(req.get("limit", 15))
+    threshold = float(req.get("threshold", 0.65))
+
+    if not query:
+        raise HTTPException(status_code=400, detail="query is required")
+    if not supabase:
+        raise HTTPException(status_code=503, detail="Supabase not connected")
+
+    # 1. Embed the query
+    embed_func = get_embedding_func()
+    if not embed_func:
+        raise HTTPException(status_code=503, detail="OpenAI API key missing — cannot embed query")
+    query_embedding = (await embed_func([query]))[0]
+
+    # 2. Semantic search via Supabase RPC
+    try:
+        results = supabase.rpc("match_document_chunks", {
+            "query_embedding": query_embedding,
+            "match_contract_id": contract_id,
+            "similarity_threshold": threshold,
+            "match_count": limit
+        }).execute()
+        chunks = results.data or []
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Vector search failed: {e}")
+
+    if not chunks:
+        return {"response": "No relevant sections found for your query.", "chunks_used": 0}
+
+    # 3. Build context from top chunks
+    context = "\n\n---\n\n".join([
+        f"[Section {i+1} | Clause {c.get('clause_number') or '?'} | Similarity: {c.get('similarity', 0):.0%}]\n{c['content']}"
+        for i, c in enumerate(chunks)
+    ])
+
+    # 4. Ask Claude
+    llm = get_llm_model_func()
+    if not llm:
+        return {"response": "LLM not configured", "chunks_used": len(chunks), "context": context}
+
+    system = (
+        "You are AEhab, a FIDIC contract expert. Answer the user's question using ONLY the contract "
+        "sections provided below. Cite specific clause numbers when referencing content. "
+        "If the answer is not in the provided context, say so clearly. "
+        "Use plain text with emoji structure: 🔵 for sections, 🔹 for main points, 🔸 for details."
+    )
+    answer = await llm(
+        f"Question: {query}\n\nContract Sections:\n{context}",
+        system_prompt=system
+    )
+
+    return {
+        "response": answer,
+        "chunks_used": len(chunks),
+        "top_similarity": round(chunks[0].get("similarity", 0), 3)
+    }
+
+
+@app.get("/contracts/status/{contract_id}")
+async def get_contract_rag_status(contract_id: str):
+    """Return contract ingestion progress and RAG embedding status."""
+    meta = db_manager.get_contract(contract_id)
+    if not meta:
+        raise HTTPException(status_code=404, detail="Contract not found")
+
+    embedded_count = 0
+    if supabase:
+        try:
+            res = supabase.table("contract_document_chunks") \
+                .select("id", count="exact") \
+                .eq("contract_id", contract_id) \
+                .not_.is_("embedding", "null") \
+                .execute()
+            embedded_count = res.count or 0
+        except Exception as e:
+            print(f"Status check error: {e}")
+
+    return {
+        "id": contract_id,
+        "status": meta.get("status"),
+        "ingestion_progress": meta.get("ingestion_progress", 0),
+        "rag_ready": embedded_count > 0,
+        "embedded_chunks": embedded_count
+    }
 
 
 @app.post("/contracts/index/advanced/{contract_id}")

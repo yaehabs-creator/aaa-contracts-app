@@ -5,6 +5,7 @@ import { fetchKnowledgeContext } from './aiKnowledgeService';
 import { localKnowledgeService } from './localKnowledgeService';
 import { useAppStore } from '@/store/useAppStore';
 import { APP_CONFIG } from '@/config/appConfig';
+import { retrieveRelevantChunks } from './ragRetrievalService';
 
 // Constants for token management
 export const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters
@@ -22,6 +23,7 @@ export async function buildUnifiedContractContext(
     maxTokens?: number;
     prioritizeRecent?: boolean;
     includeDocumentChunks?: boolean;
+    userQuery?: string;
   } = {}
 ): Promise<{
   context: string;
@@ -32,7 +34,8 @@ export async function buildUnifiedContractContext(
   const {
     maxTokens = MAX_CONTEXT_TOKENS - RESERVED_RESPONSE_TOKENS,
     prioritizeRecent = true,
-    includeDocumentChunks = true
+    includeDocumentChunks = true,
+    userQuery
   } = options;
 
   const { activeChatContextIds } = useAppStore.getState();
@@ -58,6 +61,30 @@ export async function buildUnifiedContractContext(
   const header = `=== COMPLETE CONTRACT ANALYSIS CONTEXT ===\nTotal Parsed Clauses: ${parsedClauses.length}\n`;
   contextParts.push(header);
   usedChars += header.length;
+
+  // NEW: If we have a user query, do semantic retrieval first
+  if (contractId && userQuery) {
+    try {
+      const { context: ragContext, totalFound } = await retrieveRelevantChunks(
+        contractId,
+        userQuery,
+        { limit: 20, threshold: 0.60 }
+      );
+
+      if (ragContext && totalFound > 0) {
+        const ragHeader = `\n=== SEMANTICALLY RETRIEVED SECTIONS (Top ${totalFound} matches for your query) ===\n`;
+        const ragBlock = ragHeader + ragContext + '\n';
+        if (usedChars + ragBlock.length <= maxChars) {
+          contextParts.push(ragBlock);
+          usedChars += ragBlock.length;
+          hasDocuments = true;
+          chunkCount += totalFound;
+        }
+      }
+    } catch (e) {
+      console.warn('RAG retrieval failed, falling back to full context:', e);
+    }
+  }
 
   // 0. Add Document Landscape (The "Big Picture")
   if (contractId) {
