@@ -34,13 +34,13 @@ export const useChat = () => {
         const updatedMessages = [...messages, userMessage];
         setMessages(updatedMessages);
         if (conversationId) {
-            db.messages.save(conversationId, userMessage);
+            db.messages.save(contractId || '', userMessage);
             updateSessionFromMessages(conversationId, updatedMessages);
         }
         setIsThinkingOrStreaming(true);
 
         try {
-            const targetContractId = contractId || conversationId || '';
+            const targetContractId = contractId || 'pkg01';
             const response = await chatWithAntigravity(
                 targetContractId,
                 content,
@@ -62,7 +62,7 @@ export const useChat = () => {
             const finalMessages = [...updatedMessages, assistantMessage];
             setMessages(finalMessages);
             if (conversationId) {
-                db.messages.save(conversationId, assistantMessage);
+                db.messages.save(contractId || '', assistantMessage);
                 updateSessionFromMessages(conversationId, finalMessages);
             }
         } catch (error: any) {

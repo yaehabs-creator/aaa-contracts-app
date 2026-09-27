@@ -280,7 +280,7 @@ export const saveChatMessage = async (contractId: string, message: BotMessage): 
       const retryRes = await supabase.from('chat_messages').insert(insertPayload);
       error = retryRes.error;
     }
-    if (error) {
+    if (error && error.code !== '23503' && !error.message?.includes('foreign key')) {
       console.warn('chat_messages insert note (cached locally):', error.message);
     }
   } catch (err: any) {

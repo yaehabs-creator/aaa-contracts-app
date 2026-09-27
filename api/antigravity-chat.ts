@@ -352,9 +352,10 @@ export async function runAntigravityAgent(
     throw lastError || new Error('All Gemini candidate models failed.');
   };
 
-  // Multi-turn agent loop for tool calls (max 5 iterations)
-  for (let iteration = 0; iteration < 5; iteration++) {
-    const payload = {
+  // Agent loop for tool retrieval (max 2 turns: 1 for retrieval, 1 for synthesis)
+  for (let iteration = 0; iteration < 2; iteration++) {
+    const isFinalIteration = iteration === 1;
+    const payload: any = {
       contents,
       systemInstruction: {
         parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION }]
@@ -366,6 +367,14 @@ export async function runAntigravityAgent(
       }
     };
 
+    if (isFinalIteration) {
+      payload.toolConfig = {
+        functionCallingConfig: {
+          mode: 'NONE'
+        }
+      };
+    }
+
     const data = await callGeminiWithFallback(payload);
 
     const candidate = data.candidates?.[0];
@@ -376,14 +385,16 @@ export async function runAntigravityAgent(
     const parts = candidate.content?.parts || [];
     const functionCalls = parts.filter((p: any) => !!p.functionCall);
 
-    // If no function call, we have our final text response
-    if (functionCalls.length === 0) {
+    // If no function call or on final iteration, return final text response
+    if (functionCalls.length === 0 || isFinalIteration) {
       const textPart = parts.find((p: any) => !!p.text);
-      return {
-        response: textPart?.text || 'No response generated.',
-        toolsUsed,
-        citations
-      };
+      if (textPart?.text) {
+        return {
+          response: textPart.text,
+          toolsUsed,
+          citations
+        };
+      }
     }
 
     contents.push({
@@ -428,12 +439,18 @@ export async function runAntigravityAgent(
     });
   }
 
-  // If tool loop reached limit, request final answer synthesis without tools
+  // Fallback synthesis with mode: NONE
   try {
     const finalPayload = {
       contents,
       systemInstruction: {
         parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION + '\n\nSynthesize all retrieved contract provisions into a clear, direct, and complete response now.' }]
+      },
+      tools: GEMINI_TOOLS_DECLARATION,
+      toolConfig: {
+        functionCallingConfig: {
+          mode: 'NONE'
+        }
       },
       generationConfig: {
         temperature: 0.2,
