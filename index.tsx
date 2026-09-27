@@ -5,8 +5,6 @@ import App from './src/App';
 import { AuthProvider } from './src/contexts/AuthContext';
 import { AppRouter } from './src/components/AppRouter';
 import './index.css';
-import { getMissingConfig } from './src/config/validators';
-import Onboarding from './src/components/ConfigOnboarding';
 
 // Polyfill for crypto.randomUUID in insecure contexts (like accessing via IP)
 if (typeof window !== 'undefined' && !window.crypto.randomUUID) {
@@ -146,24 +144,12 @@ if (!rootElement) {
 
 const root = ReactDOM.createRoot(rootElement);
 
-// Determine config state early and render onboarding if missing
-const missing = getMissingConfig();
-
-if (missing.length > 0) {
-  root.render(
-    <React.StrictMode>
-      <Onboarding missing={missing} />
-    </React.StrictMode>
-  );
-} else {
-  // Wrap in error boundary and render app as usual
-  root.render(
-    <React.StrictMode>
-      <ErrorBoundary>
-        <AuthProvider>
-          <App />
-        </AuthProvider>
-      </ErrorBoundary>
-    </React.StrictMode>
-  );
-}
+root.render(
+  <React.StrictMode>
+    <ErrorBoundary>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </ErrorBoundary>
+  </React.StrictMode>
+);

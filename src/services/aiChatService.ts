@@ -1,6 +1,5 @@
 import { createAIProvider } from './aiProvider';
 import { Clause, BotMessage } from '@/types';
-import { openClawService } from './openClawService';
 import { useAppStore } from '@/store/useAppStore';
 import { buildUnifiedContractContext } from './aiContextBuilder';
 import { getContractById } from './dbService';
@@ -159,7 +158,6 @@ export async function chatWithOpenClaw(
           }
 
           if ((meta.status as string) === 'agentic_ready') {
-              targetAgent = 'senior-engineer';
               customContext = `[SENIOR AGENT PROTOCOL ACTIVE]\nUsing Neural RAG Index for contract: ${meta.name}\n\n` + customContext;
               break; 
           }
@@ -170,5 +168,5 @@ export async function chatWithOpenClaw(
     }
   }
 
-  return await openClawService.chatWithAgent(targetAgent, messages, enrichedClauses, contractId, customContext);
+  return await chatWithFullContext(messages, contractId, enrichedClauses);
 }

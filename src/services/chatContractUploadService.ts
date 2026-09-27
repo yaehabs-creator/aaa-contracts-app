@@ -4,7 +4,7 @@
  * and returns extracted text + analysis for persistence in chat context.
  */
 
-import { openClawService } from './openClawService';
+import { callAIProxy } from './aiProxyClient';
 import type { UploadedContract } from '@/contexts/ChatContext';
 import { APP_CONFIG } from '@/config/appConfig';
 
@@ -109,8 +109,20 @@ export async function processUploadedContract(
     throw new Error('File is empty or no text could be extracted. Use a .txt file or a PDF with selectable text.');
   }
 
-  onProgress({ phase: 'analyzing', message: 'Analyzing with OpenClaw…' });
-  const openClawAnalysis = await openClawService.processFullContract(extractedText);
+  onProgress({ phase: 'analyzing', message: 'Analyzing contract structure…' });
+  const aiRes = await callAIProxy({
+    provider: 'gemini',
+    model: 'gemini-flash-latest',
+    system: `You are an expert Contract Administrator. Analyze the contract document provided below. Produce a structured analysis that includes:
+1. Parties & contract type
+2. Key commercial terms (sum, currency, duration)
+3. Main obligations & milestones
+4. Risk allocation (delay damages, liability, termination)
+5. Executive summary`,
+    messages: [{ role: 'user', content: `Analyze this full contract:\n\n${extractedText.slice(0, 50000)}` }],
+    max_tokens: 4096,
+  });
+  const openClawAnalysis = aiRes.content.find(c => c.type === 'text')?.text || 'Analysis complete.';
 
   return {
     name,

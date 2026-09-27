@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDebounce } from '../hooks/useDebounce';
 import { useAuth } from '../contexts/AuthContext';
 import { useAppStore } from '../store/useAppStore';
-import { AnalysisStatus } from '../types';
-import { OpenClawProcessModal } from './OpenClawProcessModal';
 
 interface AppHeaderProps {
   onShowUserManagement?: () => void;
@@ -15,25 +13,12 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
   showingUserManagement
 }) => {
   const { user, signOut, isAdmin } = useAuth();
-  const [showOpenClawModal, setShowOpenClawModal] = useState(false);
   const {
-    status,
-    setStatus,
-    isSidebarOpen,
-    setIsSidebarOpen,
     smartSearchQuery,
     setSmartSearchQuery,
-    library,
-    activeContractId,
-    setActiveContractId,
-    setClauses,
     isSearching,
     smartSearchClauses,
-    isBotOpen,
-    toggleBot,
-    activeView,
-    setActiveView,
-    isOpenClawActive
+    activeView
   } = useAppStore();
 
   const debouncedSearchQuery = useDebounce(smartSearchQuery, 500);
@@ -60,16 +45,6 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
     );
   };
 
-  const goBackToLibrary = () => {
-    setStatus(AnalysisStatus.LIBRARY);
-    setClauses([]);
-    setActiveContractId(null);
-  };
-
-  const handleSmartSearch = () => {
-    smartSearchClauses(smartSearchQuery);
-  };
-
   return (
     <header className="bg-white/80 backdrop-blur-xl border-b border-surface-border px-8 h-16 flex items-center justify-between sticky top-0 z-50">
       {/* Left: Logo & Title */}
@@ -86,7 +61,6 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
           </div>
         </div>
       </div>
-
 
       {/* Center Right: Smart Search */}
       <div className="flex-1 max-w-md mx-6">
@@ -113,6 +87,18 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
 
       {/* Right: User Section */}
       <div className="flex items-center gap-6">
+        {isAdmin() && onShowUserManagement && (
+          <button
+            onClick={onShowUserManagement}
+            className={`px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
+              showingUserManagement
+                ? 'bg-mac-blue text-white shadow-sm'
+                : 'bg-black/5 text-mac-navy hover:bg-black/10'
+            }`}
+          >
+            {showingUserManagement ? 'Back to App' : '⚙️ Users & Access'}
+          </button>
+        )}
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-end">
             <span className="text-sm font-semibold text-mac-navy leading-none">

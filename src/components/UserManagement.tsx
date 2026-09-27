@@ -3,9 +3,8 @@ import { useAuth } from '../contexts/AuthContext';
 import { getAllUsers, createUser, updateUserRole, deleteUser, getActiveUsersCount, isUserActive } from '@/services/userService';
 import { UserProfile, UserRole } from '../types/user';
 import { BackupManager } from './BackupManager';
-import { ContractBuilder } from './ContractBuilder';
 
-type AdminTab = 'users' | 'backup' | 'contract-builder';
+type AdminTab = 'users' | 'backup';
 
 export const UserManagement: React.FC = () => {
   const { user: currentUser, isAdmin, loginRequired, setLoginRequired } = useAuth();
@@ -185,28 +184,10 @@ export const UserManagement: React.FC = () => {
         >
           💾 Backup & Restore
         </button>
-        <button
-          onClick={() => setActiveTab('contract-builder')}
-          style={{
-            padding: '0.75rem 1.5rem',
-            background: 'transparent',
-            border: 'none',
-            borderBottom: activeTab === 'contract-builder' ? '3px solid #0F2E6B' : '3px solid transparent',
-            color: activeTab === 'contract-builder' ? '#0F2E6B' : '#64748B',
-            fontSize: '0.9375rem',
-            fontWeight: activeTab === 'contract-builder' ? '700' : '500',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease'
-          }}
-        >
-          📄 Contract Builder
-        </button>
       </div>
 
       {activeTab === 'backup' ? (
         <BackupManager />
-      ) : activeTab === 'contract-builder' ? (
-        <ContractBuilder />
       ) : (
         <>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
