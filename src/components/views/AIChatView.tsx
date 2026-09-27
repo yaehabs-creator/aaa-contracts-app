@@ -98,6 +98,10 @@ export const AIChatView: React.FC = () => {
     try {
       const data = await getAllContracts();
       setContracts(data as any);
+      if (data && data.length > 0 && activeChatContextIds.length === 0) {
+        setActiveChatContextIds([data[0].id]);
+        setSelectedContractId(data[0].id);
+      }
     } catch { /* silent */ }
   };
 
@@ -145,6 +149,7 @@ export const AIChatView: React.FC = () => {
       // Refresh list & select the new contract
       await fetchContracts();
       setSelectedContractId(result.id);
+      setActiveChatContextIds([result.id]);
 
       setTimeout(() => setUploadProgress(''), 2000);
     } catch (err) {
@@ -157,7 +162,8 @@ export const AIChatView: React.FC = () => {
 
   // Select a contract
   const handleSelectContract = (contractId: string) => {
-    toggleKnowledgeItem(contractId);
+    setSelectedContractId(contractId);
+    setActiveChatContextIds([contractId]);
   };
 
   // Delete a contract
@@ -191,12 +197,15 @@ export const AIChatView: React.FC = () => {
     k.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const activeContractId = activeChatContextIds[0] || selectedContractId || contracts[0]?.id;
+
   const providerConfig = useMemo(() => ({
     persist: true,
+    conversationId: activeContractId || undefined,
     initialContextPills: []
-  }), []);
+  }), [activeContractId]);
 
-  const activeContract = contracts.find(c => activeChatContextIds.includes(c.id));
+  const activeContract = contracts.find(c => c.id === activeContractId) || contracts[0];
   const isSeniorActive = activeContract?.status === 'agentic_ready';
 
   return (
@@ -218,7 +227,7 @@ export const AIChatView: React.FC = () => {
                   sidebarTab === 'contracts' ? 'bg-mac-blue text-white shadow-lg' : 'text-mac-navy/40 hover:bg-black/5'
                 }`}
               >
-                Contracts
+                Contracts ({contracts.length})
               </button>
               <button
                 onClick={() => setSidebarTab('knowledge')}
@@ -233,27 +242,41 @@ export const AIChatView: React.FC = () => {
             {/* Sidebar Content */}
             <div className="flex-1 overflow-y-auto p-4 space-y-2">
               {sidebarTab === 'contracts' ? (
-                filteredContracts.map(c => (
-                  <button
-                    key={c.id}
-                    onClick={() => toggleKnowledgeItem(c.id)}
-                    className={`w-full text-left p-4 rounded-2xl border transition-all ${
-                      activeChatContextIds.includes(c.id)
-                        ? 'bg-mac-blue/10 border-mac-blue/20 shadow-sm'
-                        : 'bg-white/50 border-black/[0.03] hover:border-mac-blue/30'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-[9px] font-black text-mac-blue uppercase tracking-widest">
-                        {c.status === 'agentic_ready' ? 'Neural RAG' : 'OCR Digested'}
-                      </span>
-                      {activeChatContextIds.includes(c.id) && (
-                        <div className="w-2 h-2 rounded-full bg-mac-blue shadow-[0_0_8px_rgba(4,106,255,0.5)]" />
-                      )}
-                    </div>
-                    <div className="text-sm font-black text-mac-navy truncate">{c.name}</div>
-                  </button>
-                ))
+                filteredContracts.length === 0 ? (
+                  <div className="p-4 text-center text-xs text-black/40">
+                    No contracts loaded yet
+                  </div>
+                ) : (
+                  filteredContracts.map(c => {
+                    const isSelected = (activeContractId === c.id) || activeChatContextIds.includes(c.id);
+                    return (
+                      <button
+                        key={c.id}
+                        onClick={() => handleSelectContract(c.id)}
+                        className={`w-full text-left p-4 rounded-2xl border transition-all ${
+                          isSelected
+                            ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm'
+                            : 'bg-white/50 border-black/[0.03] hover:border-mac-blue/30'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-[9px] font-black text-mac-blue uppercase tracking-widest">
+                            {c.metadata?.package || 'PKG Contract'}
+                          </span>
+                          {isSelected && (
+                            <div className="w-2 h-2 rounded-full bg-mac-blue shadow-[0_0_8px_rgba(4,106,255,0.5)]" />
+                          )}
+                        </div>
+                        <div className="text-sm font-black text-mac-navy truncate">{c.name}</div>
+                        {c.metadata?.total_documents ? (
+                          <div className="text-[10px] text-black/40 font-medium mt-1">
+                            {c.metadata.total_documents} documents indexed
+                          </div>
+                        ) : null}
+                      </button>
+                    );
+                  })
+                )
               ) : (
                 filteredKnowledge.map(k => (
                   <button
@@ -288,9 +311,14 @@ export const AIChatView: React.FC = () => {
             </button>
             <div className="flex items-center gap-3">
               <div className={`w-2 h-2 rounded-full ${isSeniorActive ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'}`} />
-              <span className="text-[11px] font-black text-black/50 uppercase tracking-widest">
+              <span className="text-[11px] font-black text-black/60 uppercase tracking-widest">
                 {isSeniorActive ? 'AEhab Senior Engineer active' : 'AEhab AI Agent'}
               </span>
+              {activeContract && (
+                <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-mac-blue/10 text-mac-blue border border-mac-blue/20">
+                  {activeContract.name}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-4">

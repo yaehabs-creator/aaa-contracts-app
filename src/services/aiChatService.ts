@@ -145,9 +145,11 @@ export async function chatWithOpenClaw(
   let customContext = '';
   let targetAgent = 'contract-analyzer';
   
-  if (contractId || activeChatContextIds.length > 0) {
+  const effectiveContractId = contractId || (activeChatContextIds.length > 0 ? activeChatContextIds[0] : null);
+
+  if (effectiveContractId || activeChatContextIds.length > 0) {
     const lastUserMsg = messages.filter(m => m.role === 'user').pop();
-    const { context } = await buildUnifiedContractContext(contractId || null, clauses, { 
+    const { context } = await buildUnifiedContractContext(effectiveContractId, clauses, { 
       includeDocumentChunks: true,
       userQuery: lastUserMsg?.content 
     });

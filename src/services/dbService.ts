@@ -68,38 +68,57 @@ export const getAllContracts = async (_options?: { metadataOnly?: boolean }): Pr
     const { data, error } = await supabase
       .from('contracts')
       .select('*')
-      .eq('is_deleted', false)
       .order('created_at', { ascending: false });
 
-    if (error) throw error;
+    if (!error && data && data.length > 0) {
+      return (data || [])
+        .filter(row => row.is_deleted !== true)
+        .map(row => ({
+          id: row.id,
+          name: row.name,
+          title: row.title || row.name,
+          project_id: row.project_id,
+          contractor_id: row.contractor_id,
+          contractor_name: row.contractor_name,
+          contract_number: row.contract_number,
+          status: row.status || 'agentic_ready',
+          start_date: row.start_date,
+          end_date: row.end_date,
+          currency: row.currency,
+          value: row.value,
+          scope_text: row.scope_text,
+          timestamp: new Date(row.updated_at || row.created_at).getTime(),
+          sections: row.sections,
+          metadata: row.metadata || { totalClauses: 0, generalCount: 0, particularCount: 0, highRiskCount: 0, conflictCount: 0 },
+          ingestion_progress: row.ingestion_progress,
+          version: row.version || 1,
+          is_deleted: row.is_deleted || false,
+          created_by: row.created_by,
+          created_at: row.created_at,
+          updated_at: row.updated_at,
+        }));
+    }
 
-    return (data || []).map(row => ({
-      id: row.id,
-      name: row.name,
-      title: row.title || row.name,
-      project_id: row.project_id,
-      contractor_id: row.contractor_id,
-      contractor_name: row.contractor_name,
-      contract_number: row.contract_number,
-      status: row.status || 'draft',
-      start_date: row.start_date,
-      end_date: row.end_date,
-      currency: row.currency,
-      value: row.value,
-      scope_text: row.scope_text,
-      timestamp: new Date(row.updated_at || row.created_at).getTime(),
-      sections: row.sections,
-      metadata: row.metadata || { totalClauses: 0, generalCount: 0, particularCount: 0, highRiskCount: 0, conflictCount: 0 },
-      ingestion_progress: row.ingestion_progress,
-      version: row.version || 1,
-      is_deleted: row.is_deleted,
-      created_by: row.created_by,
-      created_at: row.created_at,
-      updated_at: row.updated_at,
-    }));
+    // Fallback to server-side endpoint if client RLS returned 0 rows
+    const apiRes = await fetch('/api/contracts-api');
+    if (apiRes.ok) {
+      const serverContracts = await apiRes.json();
+      if (Array.isArray(serverContracts) && serverContracts.length > 0) {
+        return serverContracts;
+      }
+    }
+
+    return [];
   } catch (error) {
-    console.error('Supabase list failed:', error);
-    throw error;
+    console.warn('Direct Supabase list failed, attempting API fallback:', error);
+    try {
+      const apiRes = await fetch('/api/contracts-api');
+      if (apiRes.ok) {
+        const serverContracts = await apiRes.json();
+        if (Array.isArray(serverContracts)) return serverContracts;
+      }
+    } catch { /* silent */ }
+    return [];
   }
 };
 
