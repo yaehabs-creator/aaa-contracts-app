@@ -70,7 +70,7 @@ export async function callClaude(options: {
         model: options.model || 'claude-sonnet-4-5',
         system: options.system,
         messages: options.messages,
-        max_tokens: options.max_tokens || 4096,
+        max_tokens: options.max_tokens || 16000,
     });
 
     const textBlock = response.content.find(c => c.type === 'text');
@@ -91,7 +91,7 @@ export async function callOpenAI(options: {
         model: options.model || 'gpt-4o',
         system: options.system,
         messages: options.messages,
-        max_tokens: options.max_tokens || 4096,
+        max_tokens: options.max_tokens || 16000,
     });
 
     const textBlock = response.content.find(c => c.type === 'text');

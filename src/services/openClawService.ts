@@ -68,7 +68,8 @@ class OpenClawService {
                 provider: 'anthropic', // OpenClaw often uses Anthropic/OpenAI under the hood
                 model: 'claude-sonnet-4-5',
                 messages: messages.map(m => ({ role: m.role, content: m.content })),
-                system: this.getAgentSystemPrompt(agentId, context, contractId, customContext)
+                system: this.getAgentSystemPrompt(agentId, context, contractId, customContext),
+                max_tokens: 16000
             });
 
             const text = response.content.find(c => c.type === 'text')?.text || '';

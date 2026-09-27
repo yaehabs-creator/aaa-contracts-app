@@ -90,7 +90,7 @@ async function handleAnthropic(body: ProxyRequest, res: VercelResponse) {
   }
 
   const model = body.model || CLAUDE_MODELS[0];
-  const maxTokens = body.max_tokens || 4096;
+  const maxTokens = body.max_tokens || 16000;
 
   // Build the Anthropic API request
   const anthropicBody: any = {
@@ -149,7 +149,7 @@ async function handleOpenAI(body: ProxyRequest, res: VercelResponse) {
   }
 
   const model = body.model || 'gpt-4o';
-  const maxTokens = body.max_tokens || 4096;
+  const maxTokens = body.max_tokens || 16000;
 
   const openaiMessages: any[] = [];
   if (body.system) {
@@ -242,8 +242,8 @@ async function handleGemini(body: ProxyRequest, res: VercelResponse) {
   const payload: any = {
     contents,
     generationConfig: {
-      maxOutputTokens: body.max_tokens || 4096,
-      temperature: 0.2
+      maxOutputTokens: body.max_tokens || 16000,
+      temperature: 0.1
     }
   };
 
