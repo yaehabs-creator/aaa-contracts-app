@@ -57,20 +57,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // ── PRIMARY PROVIDER: Gemini ──────────────────────────────────────────────
     // Always use Gemini first if key is available. This is the primary AI engine.
     const geminiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+    let geminiError: string | null = null;
     if (geminiKey) {
-      return await handleGemini(req.body, res);
+      const result = await handleGemini(req.body, res);
+      if (result.success) return;
+      geminiError = result.error;
+      console.warn('[AI Proxy] Gemini failed or rate-limited:', geminiError, 'Attempting fallback providers...');
     }
 
     // ── FALLBACK: Anthropic ───────────────────────────────────────────────────
-    if (provider === 'anthropic' || provider === 'gemini') {
-      const anthropicKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
-      if (anthropicKey) return await handleAnthropic(req.body, res);
+    const anthropicKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
+    if (anthropicKey) {
+      return await handleAnthropic(req.body, res);
     }
 
     // ── FALLBACK: OpenAI ──────────────────────────────────────────────────────
-    if (provider === 'openai') {
-      const openaiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
-      if (openaiKey) return await handleOpenAI(req.body, res);
+    const openaiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+    if (openaiKey) {
+      return await handleOpenAI(req.body, res);
+    }
+
+    if (geminiError) {
+      const isQuota = geminiError.toLowerCase().includes('quota') || geminiError.toLowerCase().includes('rate');
+      return res.status(isQuota ? 429 : 500).json({ error: geminiError });
     }
 
     return res.status(500).json({ error: 'No AI provider is configured. Please add GEMINI_API_KEY to your environment.' });
@@ -224,10 +233,10 @@ async function fetchWithRetry(url: string, options: RequestInit, maxAttempts = 3
 /**
  * Handle Google Gemini requests
  */
-async function handleGemini(body: ProxyRequest, res: VercelResponse) {
+async function handleGemini(body: ProxyRequest, res: VercelResponse): Promise<{ success: boolean; error: string }> {
   const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'VITE_GEMINI_API_KEY not configured on server' });
+    return { success: false, error: 'GEMINI_API_KEY not configured on server' };
   }
 
   const contents = body.messages.map(m => ({
@@ -253,14 +262,18 @@ async function handleGemini(body: ProxyRequest, res: VercelResponse) {
     };
   }
 
-  const candidateModels = [
-    body.model && body.model !== 'gemini-flash-latest' ? body.model : null,
+  const requestedModel = body.model && !body.model.includes('claude') && !body.model.includes('gpt') ? body.model : null;
+  const candidateModels = Array.from(new Set([
+    requestedModel,
     process.env.VITE_GEMINI_MODEL || null,
-    'gemini-2.5-flash',       // Best quality — primary choice
-    'gemini-2.0-flash',       // Fallback
-    'gemini-1.5-flash',       // Stable fallback
-    'gemini-flash-latest',    // Alias fallback
-  ].filter(Boolean) as string[];
+    'gemini-3.8-flash',
+    'gemini-3.7-flash',
+    'gemini-3.5-flash',
+    'gemini-3.5-flash-lite',
+    'gemini-3.1-flash-lite',
+    'gemini-flash-lite-latest',
+    'gemini-flash-latest'
+  ].filter(Boolean) as string[]));
 
   let lastError = 'No model succeeded';
 
@@ -275,18 +288,21 @@ async function handleGemini(body: ProxyRequest, res: VercelResponse) {
       const data = await response.json();
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
       if (text) {
-        return res.status(200).json({
+        res.status(200).json({
           content: [{ type: 'text', text }],
           model: m,
           usage: data.usageMetadata
         });
+        return { success: true, error: '' };
       }
       lastError = data.error?.message || 'Empty model response';
+      console.warn(`[Gemini Proxy] Model ${m} returned error: ${lastError}, trying fallback candidate...`);
     } catch (err: any) {
       lastError = err.message;
+      console.warn(`[Gemini Proxy] Model ${m} fetch failed: ${lastError}, trying fallback candidate...`);
     }
   }
 
-  return res.status(500).json({ error: lastError });
+  return { success: false, error: lastError };
 }
 
