@@ -104,11 +104,7 @@ export class OpenAIProvider {
     this.maxTokens = config.maxTokens || 4096;
     this.temperature = config.temperature || 0.3; // Lower temperature for more precise analysis
 
-    if (this.apiKey) {
-      console.log('OpenAI Provider initialized (key length:', this.apiKey.length, ')');
-    } else {
-      console.warn('OpenAI API key not found. Document specialist will not be available.');
-    }
+    console.log('Document Specialist initialized (using server-side AI proxy backed by Gemini)');
   }
 
   /**

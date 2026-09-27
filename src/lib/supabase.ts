@@ -17,8 +17,10 @@ export const supabase = createClient(
       autoRefreshToken: true,
       persistSession: true,
       detectSessionInUrl: true,
-      // @ts-ignore - Supabase gotrue lock override to avoid navigator.locks contention
-      lock: false,
+      // Provide no-op lock function to bypass navigator.locks contention in browsers
+      lock: async (_name: string, _acquireTimeout: number, fn: () => Promise<any>) => {
+        return await fn();
+      },
     },
   }
 );

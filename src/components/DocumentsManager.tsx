@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
 import {
   ContractDocument,
   DocumentGroup,
@@ -19,11 +19,6 @@ import { extractTextFromPdf, isScannedPdf } from '@/utils/pdfUtils';
 import { getEmbeddingService } from '@/services/embeddingService';
 import { DoclingService } from '@/services/doclingService';
 import { getDocumentReaderService } from '@/services/documentReaderService';
-
-// Initialize Supabase client
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
-const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 // Storage bucket name
 const STORAGE_BUCKET = 'contract-docs';

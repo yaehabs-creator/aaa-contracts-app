@@ -50,18 +50,19 @@ export interface ClauseMatchResult {
   mismatchReason?: string;
 }
 
+import { supabase as sharedSupabase } from '@/lib/supabase';
+
 export class IngestionValidationService {
   private supabase: SupabaseClient;
 
   constructor(supabaseUrl?: string, supabaseKey?: string) {
-    const url = supabaseUrl || process.env.VITE_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const key = supabaseKey || process.env.VITE_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!url || !key) {
-      throw new Error('Supabase URL and key are required');
+    if (supabaseUrl && supabaseKey) {
+      this.supabase = createClient(supabaseUrl, supabaseKey, {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+      });
+    } else {
+      this.supabase = sharedSupabase as any;
     }
-
-    this.supabase = createClient(url, key);
   }
 
   /**
