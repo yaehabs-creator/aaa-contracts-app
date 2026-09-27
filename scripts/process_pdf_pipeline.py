@@ -3,8 +3,8 @@ import json
 import requests
 from pathlib import Path
 
-# Anthropic API Key from .env.local
-ANTHROPIC_API_KEY = "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"
+# Anthropic API Key from environment
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 PADDLE_URL = "http://localhost:8001/paddle-ocr"
 
 PDF_PATH = r"c:\Users\hp\Desktop\Coding\aaa1.02\Mivida Gardens PKG#04- Scanned Contract.pdf"
