@@ -54,26 +54,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    if (provider === 'gemini') {
+    // ── PRIMARY PROVIDER: Gemini ──────────────────────────────────────────────
+    // Always use Gemini first if key is available. This is the primary AI engine.
+    const geminiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+    if (geminiKey) {
       return await handleGemini(req.body, res);
-    } else if (provider === 'anthropic') {
-      const apiKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
-      if (!apiKey && (process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY)) {
-        return await handleGemini(req.body, res);
-      }
-      return await handleAnthropic(req.body, res);
-    } else if (provider === 'openai') {
-      const apiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
-      if (!apiKey && (process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY)) {
-        return await handleGemini(req.body, res);
-      }
-      return await handleOpenAI(req.body, res);
-    } else {
-      if (process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY) {
-        return await handleGemini(req.body, res);
-      }
-      return res.status(400).json({ error: `Unknown provider: ${provider}` });
     }
+
+    // ── FALLBACK: Anthropic ───────────────────────────────────────────────────
+    if (provider === 'anthropic' || provider === 'gemini') {
+      const anthropicKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
+      if (anthropicKey) return await handleAnthropic(req.body, res);
+    }
+
+    // ── FALLBACK: OpenAI ──────────────────────────────────────────────────────
+    if (provider === 'openai') {
+      const openaiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+      if (openaiKey) return await handleOpenAI(req.body, res);
+    }
+
+    return res.status(500).json({ error: 'No AI provider is configured. Please add GEMINI_API_KEY to your environment.' });
   } catch (error: any) {
     console.error('AI Proxy Error:', error);
     return res.status(error.status || 500).json({
@@ -254,10 +254,13 @@ async function handleGemini(body: ProxyRequest, res: VercelResponse) {
   }
 
   const candidateModels = [
-    body.model || process.env.VITE_GEMINI_MODEL || 'gemini-3.5-flash',
-    'gemini-flash-latest',
-    'gemini-flash-lite-latest'
-  ];
+    body.model && body.model !== 'gemini-flash-latest' ? body.model : null,
+    process.env.VITE_GEMINI_MODEL || null,
+    'gemini-2.5-flash',       // Best quality — primary choice
+    'gemini-2.0-flash',       // Fallback
+    'gemini-1.5-flash',       // Stable fallback
+    'gemini-flash-latest',    // Alias fallback
+  ].filter(Boolean) as string[];
 
   let lastError = 'No model succeeded';
 

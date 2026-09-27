@@ -66,8 +66,8 @@ export async function callClaude(options: {
     max_tokens?: number;
 }): Promise<string> {
     const response = await callAIProxy({
-        provider: 'anthropic',
-        model: options.model || 'claude-sonnet-4-5',
+        provider: 'gemini',
+        model: options.model,
         system: options.system,
         messages: options.messages,
         max_tokens: options.max_tokens || 16000,
@@ -78,7 +78,7 @@ export async function callClaude(options: {
 }
 
 /**
- * Helper: Call OpenAI through the proxy
+ * Helper: Call OpenAI through the proxy (routes to Gemini)
  */
 export async function callOpenAI(options: {
     model?: string;
@@ -87,8 +87,8 @@ export async function callOpenAI(options: {
     max_tokens?: number;
 }): Promise<string> {
     const response = await callAIProxy({
-        provider: 'openai',
-        model: options.model || 'gpt-4o',
+        provider: 'gemini',
+        model: options.model,
         system: options.system,
         messages: options.messages,
         max_tokens: options.max_tokens || 16000,

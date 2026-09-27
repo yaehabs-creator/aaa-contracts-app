@@ -186,7 +186,7 @@ async function callClaudeViaProxy(
   model: string,
   system: string,
   messages: Array<{ role: string; content: string }>,
-  maxTokens: number = 4096,
+  maxTokens: number = 16000,
   maxAttempts: number = 5
 ): Promise<{ content: Array<{ type: string; text: string }> }> {
   let attempt = 0;
@@ -195,7 +195,7 @@ async function callClaudeViaProxy(
   while (attempt < maxAttempts) {
     try {
       const response = await callAIProxy({
-        provider: 'anthropic',
+        provider: 'gemini',
         model,
         system,
         messages,

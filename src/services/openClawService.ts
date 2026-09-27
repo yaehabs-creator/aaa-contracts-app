@@ -65,8 +65,8 @@ class OpenClawService {
             // For now, we route through our AI proxy with a specialized OpenClaw header/provider
             
             const response = await callAIProxy({
-                provider: 'anthropic', // OpenClaw often uses Anthropic/OpenAI under the hood
-                model: 'claude-sonnet-4-5',
+                provider: 'gemini',
+                model: 'gemini-flash-latest',
                 messages: messages.map(m => ({ role: m.role, content: m.content })),
                 system: this.getAgentSystemPrompt(agentId, context, contractId, customContext),
                 max_tokens: 16000
@@ -258,8 +258,8 @@ TASK: Analyze the ENTIRE contract document provided below. Produce a structured 
 Be concise but thorough. Use clear headings and bullet points. Focus on what a contract manager or legal reviewer would need.`;
 
         const response = await callAIProxy({
-            provider: 'anthropic',
-            model: 'claude-sonnet-4-5',
+            provider: 'gemini',
+            model: 'gemini-flash-latest',
             system: systemPrompt,
             messages: [{ role: 'user', content: `Analyze this full contract:\n\n${fullText}` }],
             max_tokens: 16384,
