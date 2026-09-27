@@ -64,7 +64,7 @@ export function deleteChatSession(sessionId: string): void {
  */
 export function createNewSession(contractId: string, contractName: string): ChatSession {
   const newSession: ChatSession = {
-    id: `chat_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
+    id: crypto.randomUUID(),
     title: 'New Conversation',
     contractId,
     contractName,

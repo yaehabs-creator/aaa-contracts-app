@@ -263,10 +263,12 @@ export const saveChatMessage = async (contractId: string, message: BotMessage): 
     } catch { /* unauthenticated */ }
 
     const insertPayload: any = {
-      contract_id: contractId ? String(contractId) : 'default',
       role: message.role,
       content: message.content,
     };
+    if (contractId && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(contractId)) {
+      insertPayload.contract_id = contractId;
+    }
     if (userId) insertPayload.user_id = userId;
     if (message.suggestions && message.suggestions.length > 0) {
       insertPayload.suggestions = message.suggestions;

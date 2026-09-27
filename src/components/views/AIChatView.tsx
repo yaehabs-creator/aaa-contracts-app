@@ -94,7 +94,7 @@ export const AIChatView: React.FC = () => {
   const [sessions, setSessions] = useState<ChatSession[]>(() => getChatSessions());
   const [currentSessionId, setCurrentSessionId] = useState<string>(() => {
     const existing = getChatSessions();
-    return existing[0]?.id || `chat_${Date.now()}`;
+    return existing[0]?.id || crypto.randomUUID();
   });
 
   const [sidebarTab, setSidebarTab] = useState<'chats' | 'contracts' | 'knowledge'>('chats');
