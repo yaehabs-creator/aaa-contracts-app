@@ -246,12 +246,12 @@ export const AIChatView: React.FC = () => {
     k.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const activeContractId = activeChatContextIds[0] || selectedContractId || contracts[0]?.id;
+  const activeContractId = selectedContractId ? selectedContractId : (activeChatContextIds[0] || 'all');
 
   const providerConfig = useMemo(() => ({
     persist: true,
     conversationId: currentSessionId,
-    contractId: activeContractId || undefined,
+    contractId: activeContractId || 'all',
     initialContextPills: []
   }), [currentSessionId, activeContractId]);
 
@@ -364,41 +364,73 @@ export const AIChatView: React.FC = () => {
               )}
 
               {sidebarTab === 'contracts' && (
-                filteredContracts.length === 0 ? (
-                  <div className="p-4 text-center text-xs text-black/40">
-                    No contracts loaded yet
-                  </div>
-                ) : (
-                  filteredContracts.map(c => {
-                    const isSelected = (activeContractId === c.id) || activeChatContextIds.includes(c.id);
-                    return (
-                      <button
-                        key={c.id}
-                        onClick={() => handleSelectContract(c.id)}
-                        className={`w-full text-left p-3.5 rounded-2xl border transition-all cursor-pointer ${
-                          isSelected
-                            ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm'
-                            : 'bg-white/50 border-black/[0.03] hover:border-mac-blue/30'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="text-[9px] font-black text-mac-blue uppercase tracking-widest">
-                            {c.metadata?.package || 'PKG Contract'}
-                          </span>
-                          {isSelected && (
-                            <div className="w-2 h-2 rounded-full bg-mac-blue shadow-[0_0_8px_rgba(4,106,255,0.5)]" />
-                          )}
-                        </div>
-                        <div className="text-sm font-black text-mac-navy truncate">{c.name}</div>
-                        {c.metadata?.total_documents ? (
-                          <div className="text-[10px] text-black/40 font-medium mt-1">
-                            {c.metadata.total_documents} documents indexed
+                <div className="space-y-2">
+                  <button
+                    onClick={() => {
+                      setSelectedContractId(null);
+                      setActiveChatContextIds([]);
+                    }}
+                    className={`w-full text-left p-3 rounded-2xl border transition-all cursor-pointer ${
+                      !selectedContractId && activeChatContextIds.length === 0
+                        ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm ring-1 ring-mac-blue/30'
+                        : 'bg-white/50 border-black/[0.03] hover:border-mac-blue/30'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[9px] font-black text-mac-blue uppercase tracking-widest">
+                        ✨ Cross-Package
+                      </span>
+                      {(!selectedContractId && activeChatContextIds.length === 0) && (
+                        <div className="w-2 h-2 rounded-full bg-mac-blue shadow-[0_0_8px_rgba(4,106,255,0.5)]" />
+                      )}
+                    </div>
+                    <div className="text-sm font-black text-mac-navy">All 8 Contract Packages</div>
+                    <div className="text-[10px] text-black/45 font-medium mt-0.5">
+                      Unified search across PKG01 - PKG15
+                    </div>
+                  </button>
+
+                  {filteredContracts.length === 0 ? (
+                    <div className="p-4 text-center text-xs text-black/40">
+                      No contracts loaded yet
+                    </div>
+                  ) : (
+                    filteredContracts.map(c => {
+                      const isSelected = selectedContractId === c.id;
+                      const parties = c.metadata?.parties || [];
+                      return (
+                        <button
+                          key={c.id}
+                          onClick={() => handleSelectContract(c.id)}
+                          className={`w-full text-left p-3 rounded-2xl border transition-all cursor-pointer ${
+                            isSelected
+                              ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm ring-1 ring-mac-blue/30'
+                              : 'bg-white/50 border-black/[0.03] hover:border-mac-blue/30'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-[9px] font-black px-1.5 py-0.5 rounded bg-mac-blue/10 text-mac-blue uppercase tracking-widest">
+                              {c.metadata?.package || 'PKG'}
+                            </span>
+                            {isSelected && (
+                              <div className="w-2 h-2 rounded-full bg-mac-blue shadow-[0_0_8px_rgba(4,106,255,0.5)]" />
+                            )}
                           </div>
-                        ) : null}
-                      </button>
-                    );
-                  })
-                )
+                          <div className="text-xs font-black text-mac-navy truncate">{c.name}</div>
+                          {parties.length > 0 && (
+                            <div className="text-[10px] text-black/55 font-medium truncate mt-0.5">
+                              {parties.filter((p: string) => !p.includes('Emaar') && !p.includes('Employer')).join(', ') || parties[0]}
+                            </div>
+                          )}
+                          <div className="flex items-center gap-2 text-[9px] text-black/40 mt-1 font-medium">
+                            {c.metadata?.total_documents ? <span>{c.metadata.total_documents} docs</span> : null}
+                            {c.metadata?.total_clauses ? <span>• {c.metadata.total_clauses.toLocaleString()} clauses</span> : null}
+                          </div>
+                        </button>
+                      );
+                    })
+                  )}
+                </div>
               )}
 
               {sidebarTab === 'knowledge' && (
@@ -435,14 +467,33 @@ export const AIChatView: React.FC = () => {
             </button>
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-              <span className="text-[11px] font-black text-black/80 uppercase tracking-widest">
-                AEHab | Mivida Gardens Contract Administrator
+              <span className="text-[11px] font-black text-black/80 uppercase tracking-widest hidden sm:inline">
+                AEHab | Contract Administrator
               </span>
-              {activeContract && (
-                <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-mac-blue/10 text-mac-blue border border-mac-blue/20">
-                  {activeContract.name}
-                </span>
-              )}
+              
+              <div className="relative">
+                <select
+                  value={selectedContractId || 'all'}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (val === 'all') {
+                      setSelectedContractId(null);
+                      setActiveChatContextIds([]);
+                    } else {
+                      setSelectedContractId(val);
+                      setActiveChatContextIds([val]);
+                    }
+                  }}
+                  className="text-xs font-extrabold px-3 py-1 rounded-full bg-white/95 border border-mac-blue/30 text-mac-navy shadow-sm cursor-pointer hover:border-mac-blue focus:outline-none focus:ring-2 focus:ring-mac-blue/20"
+                >
+                  <option value="all">✨ All Packages (Cross-Contract Analysis)</option>
+                  {contracts.map(c => (
+                    <option key={c.id} value={c.id}>
+                      📁 {c.metadata?.package || c.name} — {c.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-4">
