@@ -1,13 +1,174 @@
 /**
- * Serverless / Backend Route: Antigravity Contract Administrator Agent
+ * Serverless Route: Antigravity Contract Administrator Agent
  * 
- * Communicates with the Google Gemini API using native Function Calling / Tools
- * to query the Supabase contract database directly on the server.
- * 
- * Never exposes API keys or service role keys to the browser.
+ * 100% Self-Contained Vercel Serverless Function.
+ * Communicates with Google Gemini API using native Tool / Function Calling
+ * to query Supabase contract documents and Particular Conditions on the server.
  */
 
-import { searchContract, getClause, getRelatedClauses, searchContractDocuments } from '../src/services/contractRetrievalTools';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize server-side Supabase client with service role key if available
+function getSupabase() {
+  const url = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+// Format chunk records from database
+function formatChunks(rawList: any[]) {
+  return rawList.map(item => ({
+    chunk_id: item.id,
+    document_id: item.document_id,
+    document_name: item.contract_documents?.name || item.metadata?.document_type || undefined,
+    document_group: item.contract_documents?.document_group || item.metadata?.group || undefined,
+    clause_number: item.clause_number,
+    clause_title: item.clause_title,
+    page_number: item.page_number,
+    content: item.content,
+    metadata: item.metadata
+  }));
+}
+
+// 1. searchContract
+async function searchContract(contractId: string, searchQuery: string) {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const cleanQuery = (searchQuery || '').trim();
+  if (!cleanQuery) return [];
+
+  try {
+    const { data: exactMatches, error: exactError } = await supabase
+      .from('contract_document_chunks')
+      .select(`
+        id, document_id, chunk_index, clause_number, clause_title, page_number, content, metadata,
+        contract_documents:document_id ( name, document_group )
+      `)
+      .eq('contract_id', contractId)
+      .or(`content.ilike.%${cleanQuery}%,clause_title.ilike.%${cleanQuery}%`)
+      .limit(6);
+
+    if (!exactError && exactMatches && exactMatches.length > 0) {
+      return formatChunks(exactMatches);
+    }
+
+    const words = cleanQuery.split(/\s+/).filter(w => w.length > 3);
+    if (words.length === 0) return [];
+
+    const orFilter = words.map(w => `content.ilike.%${w}%,clause_title.ilike.%${w}%`).join(',');
+    const { data: keywordMatches } = await supabase
+      .from('contract_document_chunks')
+      .select(`
+        id, document_id, chunk_index, clause_number, clause_title, page_number, content, metadata,
+        contract_documents:document_id ( name, document_group )
+      `)
+      .eq('contract_id', contractId)
+      .or(orFilter)
+      .limit(6);
+
+    return formatChunks(keywordMatches || []);
+  } catch (err) {
+    console.warn('[searchContract error]:', err);
+    return [];
+  }
+}
+
+// 2. getClause
+async function getClause(contractId: string, clauseRef: string) {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const cleanRef = (clauseRef || '').replace(/^(clause|sub-clause|subclause)\s+/i, '').trim();
+  if (!cleanRef) return [];
+
+  try {
+    const { data, error } = await supabase
+      .from('contract_document_chunks')
+      .select(`
+        id, document_id, chunk_index, clause_number, clause_title, page_number, content, metadata,
+        contract_documents:document_id ( name, document_group )
+      `)
+      .eq('contract_id', contractId)
+      .or(`clause_number.eq.${cleanRef},content.ilike.%Clause ${cleanRef}%,content.ilike.%Sub-Clause ${cleanRef}%,content.ilike.%${cleanRef}.%`)
+      .limit(8);
+
+    if (error || !data) return [];
+
+    return data.map((item: any) => {
+      const docName = item.contract_documents?.name || item.metadata?.document_type || '';
+      const docGroup = item.contract_documents?.document_group || item.metadata?.group || '';
+      const isParticular = docGroup === 'C' && (docName.toLowerCase().includes('particular') || item.content.toLowerCase().includes('appendix a'));
+
+      return {
+        clause_reference: item.clause_number || cleanRef,
+        clause_title: item.clause_title || undefined,
+        content: item.content,
+        document_name: docName,
+        document_group: docGroup,
+        page_number: item.page_number,
+        particular_condition_override: isParticular ? item.content : null
+      };
+    });
+  } catch (err) {
+    console.warn('[getClause error]:', err);
+    return [];
+  }
+}
+
+// 3. getRelatedClauses
+async function getRelatedClauses(contractId: string, clauseRef: string) {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const cleanRef = (clauseRef || '').replace(/^(clause|sub-clause)\s+/i, '').trim();
+
+  try {
+    const { data } = await supabase
+      .from('contract_document_chunks')
+      .select(`
+        id, document_id, chunk_index, clause_number, clause_title, page_number, content, metadata,
+        contract_documents:document_id ( name, document_group )
+      `)
+      .eq('contract_id', contractId)
+      .or(`content.ilike.%Clause ${cleanRef}%,content.ilike.%Sub-Clause ${cleanRef}%`)
+      .limit(5);
+
+    return formatChunks(data || []);
+  } catch (err) {
+    console.warn('[getRelatedClauses error]:', err);
+    return [];
+  }
+}
+
+// 4. searchContractDocuments
+async function searchContractDocuments(contractId: string, searchQuery: string) {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const cleanQuery = (searchQuery || '').trim();
+
+  try {
+    let query = supabase
+      .from('contract_documents')
+      .select('id, name, document_group, page_count')
+      .eq('contract_id', contractId);
+
+    if (cleanQuery) {
+      query = query.ilike('name', `%${cleanQuery}%`);
+    }
+
+    const { data, error } = await query.limit(10);
+    if (error || !data) return [];
+
+    return data.map((d: any) => ({
+      id: d.id,
+      name: d.name,
+      group: d.document_group,
+      page_count: d.page_count
+    }));
+  } catch (err) {
+    console.warn('[searchContractDocuments error]:', err);
+    return [];
+  }
+}
 
 export const GEMINI_TOOLS_DECLARATION = [
   {
@@ -91,39 +252,40 @@ OPERATIONAL RULES:
  * Serverless / Express-style Handler
  */
 export default async function handler(req: any, res: any) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).json({ ok: true });
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  const { contractId, message, conversationHistory = [] } = req.body;
-
-  if (!contractId || !message) {
-    return res.status(400).json({ error: 'Missing contractId or message' });
-  }
-
-  const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
-  if (!apiKey) {
-    return res.status(500).json({
-      error: 'GEMINI_API_KEY is not configured on the server. Please add your Gemini API key to .env.local'
-    });
-  }
-
   try {
-    const result = await runAntigravityAgent(apiKey, contractId, message, conversationHistory);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    if (req.method === 'OPTIONS') {
+      return res.status(200).json({ ok: true });
+    }
+
+    if (req.method !== 'POST') {
+      return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
+    const { contractId, message, conversationHistory = [] } = body;
+
+    if (!message) {
+      return res.status(400).json({ error: 'Missing message parameter' });
+    }
+
+    const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({
+        error: 'GEMINI_API_KEY is not configured on the server. Please add GEMINI_API_KEY to your Vercel Project Settings > Environment Variables.'
+      });
+    }
+
+    const targetContract = contractId || 'pkg01';
+    const result = await runAntigravityAgent(apiKey, targetContract, message, conversationHistory);
     return res.status(200).json(result);
   } catch (error: any) {
-    console.error('[Antigravity Agent Error]:', error);
+    console.error('[Antigravity Agent Fatal Error]:', error);
     return res.status(500).json({
-      error: error.message || 'An error occurred during agent execution',
-      details: error.details
+      error: error.message || 'An error occurred during agent execution'
     });
   }
 }
@@ -140,7 +302,6 @@ export async function runAntigravityAgent(
   const toolsUsed: string[] = [];
   const citations: any[] = [];
 
-  // Build message history
   const contents: any[] = [];
 
   for (const m of conversationHistory) {
@@ -225,13 +386,11 @@ export async function runAntigravityAgent(
       };
     }
 
-    // Add assistant's tool-call request to contents
     contents.push({
       role: 'model',
       parts
     });
 
-    // Execute each function call against Supabase
     const toolResponses: any[] = [];
     for (const fc of functionCalls) {
       const toolName = fc.functionCall.name;
@@ -263,7 +422,6 @@ export async function runAntigravityAgent(
       });
     }
 
-    // Add tool responses as user turn
     contents.push({
       role: 'user',
       parts: toolResponses

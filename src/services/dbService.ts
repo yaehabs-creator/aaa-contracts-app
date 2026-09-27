@@ -274,7 +274,12 @@ export const saveChatMessage = async (contractId: string, message: BotMessage): 
       insertPayload.suggestions = message.suggestions;
     }
 
-    const { error } = await supabase.from('chat_messages').insert(insertPayload);
+    let { error } = await supabase.from('chat_messages').insert(insertPayload);
+    if (error && (error.code === '23503' || error.message?.includes('foreign key'))) {
+      delete insertPayload.contract_id;
+      const retryRes = await supabase.from('chat_messages').insert(insertPayload);
+      error = retryRes.error;
+    }
     if (error) {
       console.warn('chat_messages insert note (cached locally):', error.message);
     }
