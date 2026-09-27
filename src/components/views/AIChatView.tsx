@@ -310,9 +310,9 @@ export const AIChatView: React.FC = () => {
               <Database className="w-5 h-5" />
             </button>
             <div className="flex items-center gap-3">
-              <div className={`w-2 h-2 rounded-full ${isSeniorActive ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'}`} />
-              <span className="text-[11px] font-black text-black/60 uppercase tracking-widest">
-                {isSeniorActive ? 'AEhab Senior Engineer active' : 'AEhab AI Agent'}
+              <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+              <span className="text-[11px] font-black text-black/80 uppercase tracking-widest">
+                AEHab | Mivida Gardens Contract Administrator
               </span>
               {activeContract && (
                 <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-mac-blue/10 text-mac-blue border border-mac-blue/20">
@@ -322,14 +322,8 @@ export const AIChatView: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            {isSeniorActive && (
-               <div className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center gap-2">
-                 <Zap className="w-3 h-3 text-amber-500" />
-                 <span className="text-[9px] font-black text-amber-600 uppercase tracking-widest">Neural RAG Protocol</span>
-               </div>
-            )}
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-bold text-black/25 uppercase tracking-widest">OpenClaw</span>
+              <span className="text-[10px] font-bold text-black/35 uppercase tracking-widest">AEHab Engine</span>
               <div className="w-2 h-2 rounded-full bg-mac-blue animate-pulse" />
             </div>
           </div>

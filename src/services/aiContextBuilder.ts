@@ -62,27 +62,32 @@ export async function buildUnifiedContractContext(
   contextParts.push(header);
   usedChars += header.length;
 
-  // NEW: If we have a user query, do semantic retrieval first
+  // Search relevant contract sections for user query
   if (contractId && userQuery) {
     try {
-      const { context: ragContext, totalFound } = await retrieveRelevantChunks(
-        contractId,
-        userQuery,
-        { limit: 20, threshold: 0.60 }
-      );
+      const readerService = getDocumentReaderService();
+      // First try keyword & text search across chunks in Supabase
+      const textChunks = await readerService.searchDocuments(contractId, userQuery, { limit: 25 });
+      
+      if (textChunks && textChunks.length > 0) {
+        let chunkBlock = `\n=== MIVIDA GARDENS CONTRACT SECTIONS MATCHING QUERY ("${userQuery}") ===\n`;
+        chunkBlock += `Found ${textChunks.length} relevant sections directly from the contract documents:\n\n`;
 
-      if (ragContext && totalFound > 0) {
-        const ragHeader = `\n=== SEMANTICALLY RETRIEVED SECTIONS (Top ${totalFound} matches for your query) ===\n`;
-        const ragBlock = ragHeader + ragContext + '\n';
-        if (usedChars + ragBlock.length <= maxChars) {
-          contextParts.push(ragBlock);
-          usedChars += ragBlock.length;
+        for (const c of textChunks) {
+          const clauseRef = c.clauseNumber ? `[Clause ${c.clauseNumber}: ${c.clauseTitle || ''}]` : '[Contract Section]';
+          const pageRef = c.pageNumber ? ` (Page ${c.pageNumber})` : '';
+          chunkBlock += `${clauseRef}${pageRef}\n${c.content}\n\n---\n\n`;
+        }
+
+        if (usedChars + chunkBlock.length <= maxChars) {
+          contextParts.push(chunkBlock);
+          usedChars += chunkBlock.length;
           hasDocuments = true;
-          chunkCount += totalFound;
+          chunkCount += textChunks.length;
         }
       }
     } catch (e) {
-      console.warn('RAG retrieval failed, falling back to full context:', e);
+      console.warn('Text search retrieval in context builder failed:', e);
     }
   }
 
