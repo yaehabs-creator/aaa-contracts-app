@@ -3,6 +3,7 @@ import { useChatContext } from '../contexts/ChatContext';
 import { chatWithSmartRouting } from '@/services/aiBotService';
 import { BotMessage, ContextPill } from '@/types';
 import { db } from '@/services/dbService';
+import { updateSessionFromMessages } from '@/services/chatHistoryService';
 
 export const useChat = () => {
     const {
@@ -15,6 +16,7 @@ export const useChat = () => {
         atBottom,
         setAtBottom,
         conversationId,
+        contractId,
         contractClauses,
         uploadedContract
     } = useChatContext();
@@ -29,19 +31,19 @@ export const useChat = () => {
             timestamp: Date.now()
         };
 
-        setMessages(prev => [...prev, userMessage]);
+        const updatedMessages = [...messages, userMessage];
+        setMessages(updatedMessages);
         if (conversationId) {
             db.messages.save(conversationId, userMessage);
+            updateSessionFromMessages(conversationId, updatedMessages);
         }
         setIsThinkingOrStreaming(true);
 
         try {
-            // In a real implementation, we would pass clauses and contractId from a higher context or prop
-            // For now, we assume these are available or handled by the service
             const response = await chatWithSmartRouting(
-                [...messages, userMessage],
+                updatedMessages,
                 contractClauses,
-                conversationId,
+                contractId || conversationId,
                 uploadedContract ?? undefined
             );
 
@@ -55,9 +57,11 @@ export const useChat = () => {
                 isDualMode: response.mode === 'dual'
             };
 
-            setMessages(prev => [...prev, assistantMessage]);
+            const finalMessages = [...updatedMessages, assistantMessage];
+            setMessages(finalMessages);
             if (conversationId) {
                 db.messages.save(conversationId, assistantMessage);
+                updateSessionFromMessages(conversationId, finalMessages);
             }
         } catch (error) {
             console.error('Chat error:', error);

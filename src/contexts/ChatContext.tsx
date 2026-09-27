@@ -50,6 +50,7 @@ interface ChatContextValue {
     atBottom: boolean;
     setAtBottom: (val: boolean) => void;
     conversationId: string | null;
+    contractId: string | null;
     contractClauses: any[];
     uploadedContract: UploadedContract | null;
     setUploadedContract: (data: UploadedContract | null) => void;
@@ -62,12 +63,14 @@ export const ChatProvider: React.FC<{
     children: ReactNode;
     config: {
         conversationId?: string;
+        contractId?: string;
         contractClauses?: any[];
         persist?: boolean;
         initialContextPills?: ContextPill[];
     };
 }> = ({ children, config }) => {
     const conversationId = config.conversationId || null;
+    const contractId = config.contractId || null;
     const persist = config.persist !== false;
 
     const [messages, setMessages] = useState<BotMessage[]>([]);
@@ -119,11 +122,12 @@ export const ChatProvider: React.FC<{
         atBottom,
         setAtBottom,
         conversationId,
+        contractId,
         contractClauses: config.contractClauses || [],
         uploadedContract,
         setUploadedContract,
         clearUploadedContract
-    }), [messages, isThinkingOrStreaming, contextPills, atBottom, conversationId, config.contractClauses, uploadedContract, setUploadedContract, clearUploadedContract]);
+    }), [messages, isThinkingOrStreaming, contextPills, atBottom, conversationId, contractId, config.contractClauses, uploadedContract, setUploadedContract, clearUploadedContract]);
 
     return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 };

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Database, Zap } from 'lucide-react';
+import { Database, Zap, Plus, MessageSquare, Trash2, Clock } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
 import { ChatProvider } from '@/contexts/ChatContext';
 import { useChat } from '@/hooks/useChat';
@@ -11,6 +11,7 @@ import TypingIndicator from '@/components/chat/TypingIndicator';
 import { AnalysisStatus } from '@/types';
 import { APP_CONFIG } from '@/config/appConfig';
 import { getAllContracts, listKnowledgeItems } from '@/services/dbService';
+import { getChatSessions, deleteChatSession, createNewSession, ChatSession } from '@/services/chatHistoryService';
 
 const BACKEND = APP_CONFIG.BACKEND_URL;
 
@@ -23,6 +24,7 @@ interface ContractItem {
   text_length: number;
   size: number;
   status: string;
+  metadata?: any;
 }
 
 interface KnowledgeItem {
@@ -87,20 +89,43 @@ export const AIChatView: React.FC = () => {
   const [knowledgeItems, setKnowledgeItems] = useState<KnowledgeItem[]>([]);
   const [selectedContractId, setSelectedContractId] = useState<string | null>(null);
   const [selectedContractText, setSelectedContractText] = useState<string>('');
-  const [sidebarTab, setSidebarTab] = useState<'contracts' | 'knowledge'>('contracts');
+  
+  // Chat Sessions History State
+  const [sessions, setSessions] = useState<ChatSession[]>(() => getChatSessions());
+  const [currentSessionId, setCurrentSessionId] = useState<string>(() => {
+    const existing = getChatSessions();
+    return existing[0]?.id || `chat_${Date.now()}`;
+  });
+
+  const [sidebarTab, setSidebarTab] = useState<'chats' | 'contracts' | 'knowledge'>('chats');
   const [searchQuery, setSearchQuery] = useState('');
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Refresh sessions list
+  const refreshSessions = () => {
+    setSessions(getChatSessions());
+  };
 
   // Fetch contracts from Supabase
   const fetchContracts = async () => {
     try {
       const data = await getAllContracts();
       setContracts(data as any);
-      if (data && data.length > 0 && activeChatContextIds.length === 0) {
-        setActiveChatContextIds([data[0].id]);
-        setSelectedContractId(data[0].id);
+      if (data && data.length > 0) {
+        const first = data[0];
+        if (activeChatContextIds.length === 0) {
+          setActiveChatContextIds([first.id]);
+          setSelectedContractId(first.id);
+        }
+        // Auto-seed initial session if none exist
+        const existing = getChatSessions();
+        if (existing.length === 0) {
+          const initial = createNewSession(first.id, first.name);
+          setSessions([initial]);
+          setCurrentSessionId(initial.id);
+        }
       }
     } catch { /* silent */ }
   };
@@ -118,6 +143,45 @@ export const AIChatView: React.FC = () => {
     fetchContracts();
     fetchKnowledge();
   }, []);
+
+  // Create a brand new chat session
+  const handleNewChat = () => {
+    const activeContract = contracts.find(c => c.id === activeContractId) || contracts[0];
+    const newSession = createNewSession(
+      activeContract?.id || '',
+      activeContract?.name || 'Mivida Gardens Contract'
+    );
+    setCurrentSessionId(newSession.id);
+    refreshSessions();
+    setSidebarTab('chats');
+  };
+
+  // Select an existing chat session from history
+  const handleSelectSession = (s: ChatSession) => {
+    setCurrentSessionId(s.id);
+    if (s.contractId) {
+      setSelectedContractId(s.contractId);
+      setActiveChatContextIds([s.contractId]);
+    }
+  };
+
+  // Delete a chat session
+  const handleDeleteSession = (e: React.MouseEvent, sessionId: string) => {
+    e.stopPropagation();
+    deleteChatSession(sessionId);
+    const updated = getChatSessions();
+    setSessions(updated);
+    if (currentSessionId === sessionId) {
+      if (updated.length > 0) {
+        handleSelectSession(updated[0]);
+      } else {
+        const activeContract = contracts.find(c => c.id === activeContractId) || contracts[0];
+        const newSession = createNewSession(activeContract?.id || '', activeContract?.name || 'Mivida Gardens');
+        setSessions([newSession]);
+        setCurrentSessionId(newSession.id);
+      }
+    }
+  };
 
   // Upload & process a contract PDF
   const handleUploadContract = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -146,7 +210,6 @@ export const AIChatView: React.FC = () => {
       const result = await res.json();
       setUploadProgress(`Done! ${result.page_count} pages extracted.`);
 
-      // Refresh list & select the new contract
       await fetchContracts();
       setSelectedContractId(result.id);
       setActiveChatContextIds([result.id]);
@@ -160,22 +223,10 @@ export const AIChatView: React.FC = () => {
     }
   };
 
-  // Select a contract
+  // Select a contract package
   const handleSelectContract = (contractId: string) => {
     setSelectedContractId(contractId);
     setActiveChatContextIds([contractId]);
-  };
-
-  // Delete a contract
-  const handleDeleteContract = async (contractId: string) => {
-    try {
-      await fetch(`${BACKEND}/contracts/delete/${contractId}`, { method: 'DELETE' });
-      if (selectedContractId === contractId) {
-        setSelectedContractId(null);
-        setSelectedContractText('');
-      }
-      await fetchContracts();
-    } catch { /* silent */ }
   };
 
   // Toggle knowledge items
@@ -186,8 +237,6 @@ export const AIChatView: React.FC = () => {
       setActiveChatContextIds([...activeChatContextIds, id]);
     }
   };
-
-  const selectedContract = contracts.find(c => c.id === selectedContractId);
 
   const filteredContracts = contracts.filter(c =>
     c.name?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -201,9 +250,10 @@ export const AIChatView: React.FC = () => {
 
   const providerConfig = useMemo(() => ({
     persist: true,
-    conversationId: activeContractId || undefined,
+    conversationId: currentSessionId,
+    contractId: activeContractId || undefined,
     initialContextPills: []
-  }), [activeContractId]);
+  }), [currentSessionId, activeContractId]);
 
   const activeContract = contracts.find(c => c.id === activeContractId) || contracts[0];
   const isSeniorActive = activeContract?.status === 'agentic_ready';
@@ -215,24 +265,43 @@ export const AIChatView: React.FC = () => {
         {sidebarOpen && (
           <motion.aside
             initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 320, opacity: 1 }}
+            animate={{ width: 330, opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
-            className="flex-shrink-0 border-r border-black/[0.04] bg-white/40 backdrop-blur-xl flex flex-col overflow-hidden"
+            className="flex-shrink-0 border-r border-black/[0.04] bg-white/50 backdrop-blur-xl flex flex-col overflow-hidden"
           >
-            {/* Sidebar Tabs */}
-            <div className="p-4 flex gap-2 border-b border-black/[0.04]">
+            {/* New Chat Button */}
+            <div className="p-3 border-b border-black/[0.04]">
               <button
-                onClick={() => setSidebarTab('contracts')}
-                className={`flex-1 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${
-                  sidebarTab === 'contracts' ? 'bg-mac-blue text-white shadow-lg' : 'text-mac-navy/40 hover:bg-black/5'
+                onClick={handleNewChat}
+                className="w-full py-2.5 px-4 rounded-xl bg-mac-blue text-white font-black text-xs flex items-center justify-center gap-2 shadow-sm hover:opacity-90 transition-all cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>New Chat with AEHab</span>
+              </button>
+            </div>
+
+            {/* Sidebar Tabs */}
+            <div className="p-2 flex gap-1 border-b border-black/[0.04]">
+              <button
+                onClick={() => { setSidebarTab('chats'); refreshSessions(); }}
+                className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  sidebarTab === 'chats' ? 'bg-mac-blue text-white shadow-sm' : 'text-mac-navy/50 hover:bg-black/5'
                 }`}
               >
-                Contracts ({contracts.length})
+                Chats ({sessions.length})
+              </button>
+              <button
+                onClick={() => setSidebarTab('contracts')}
+                className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  sidebarTab === 'contracts' ? 'bg-mac-blue text-white shadow-sm' : 'text-mac-navy/50 hover:bg-black/5'
+                }`}
+              >
+                Packages ({contracts.length})
               </button>
               <button
                 onClick={() => setSidebarTab('knowledge')}
-                className={`flex-1 py-2 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${
-                  sidebarTab === 'knowledge' ? 'bg-mac-blue text-white shadow-lg' : 'text-mac-navy/40 hover:bg-black/5'
+                className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  sidebarTab === 'knowledge' ? 'bg-mac-blue text-white shadow-sm' : 'text-mac-navy/50 hover:bg-black/5'
                 }`}
               >
                 Knowledge
@@ -240,8 +309,61 @@ export const AIChatView: React.FC = () => {
             </div>
 
             {/* Sidebar Content */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-2">
-              {sidebarTab === 'contracts' ? (
+            <div className="flex-1 overflow-y-auto p-3 space-y-2">
+              {sidebarTab === 'chats' && (
+                <div className="space-y-1.5">
+                  {sessions.length === 0 ? (
+                    <div className="p-8 text-center text-xs text-black/40">
+                      No chat history yet.<br />Click <strong>"+ New Chat"</strong> above to start!
+                    </div>
+                  ) : (
+                    sessions.map(s => {
+                      const isSelected = s.id === currentSessionId;
+                      return (
+                        <div
+                          key={s.id}
+                          onClick={() => handleSelectSession(s)}
+                          className={`group relative p-3 rounded-xl border transition-all cursor-pointer ${
+                            isSelected
+                              ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm'
+                              : 'bg-white/60 border-black/[0.04] hover:bg-white hover:border-black/[0.08]'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between gap-1 mb-1">
+                            <div className="flex items-center gap-1.5 min-w-0">
+                              <MessageSquare className={`w-3.5 h-3.5 flex-shrink-0 ${isSelected ? 'text-mac-blue' : 'text-black/40'}`} />
+                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-black/5 text-black/60 truncate">
+                                {s.contractName?.replace(' Contract', '') || 'Mivida'}
+                              </span>
+                            </div>
+                            <button
+                              onClick={(e) => handleDeleteSession(e, s.id)}
+                              className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-red-50 text-red-400 hover:text-red-600 transition-all"
+                              title="Delete conversation"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                          <div className="text-xs font-bold text-mac-navy truncate">
+                            {s.title}
+                          </div>
+                          {s.preview && (
+                            <div className="text-[10px] text-black/40 truncate mt-0.5">
+                              {s.preview}
+                            </div>
+                          )}
+                          <div className="flex items-center justify-between text-[9px] text-black/35 mt-1.5 font-medium">
+                            <span>{new Date(s.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                            <span>{s.messageCount} msg{s.messageCount === 1 ? '' : 's'}</span>
+                          </div>
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              )}
+
+              {sidebarTab === 'contracts' && (
                 filteredContracts.length === 0 ? (
                   <div className="p-4 text-center text-xs text-black/40">
                     No contracts loaded yet
@@ -253,7 +375,7 @@ export const AIChatView: React.FC = () => {
                       <button
                         key={c.id}
                         onClick={() => handleSelectContract(c.id)}
-                        className={`w-full text-left p-4 rounded-2xl border transition-all ${
+                        className={`w-full text-left p-3.5 rounded-2xl border transition-all cursor-pointer ${
                           isSelected
                             ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm'
                             : 'bg-white/50 border-black/[0.03] hover:border-mac-blue/30'
@@ -277,12 +399,14 @@ export const AIChatView: React.FC = () => {
                     );
                   })
                 )
-              ) : (
+              )}
+
+              {sidebarTab === 'knowledge' && (
                 filteredKnowledge.map(k => (
                   <button
                     key={k.id}
                     onClick={() => toggleKnowledgeItem(k.id)}
-                    className={`w-full text-left p-4 rounded-2xl border transition-all ${
+                    className={`w-full text-left p-3.5 rounded-2xl border transition-all cursor-pointer ${
                       activeChatContextIds.includes(k.id)
                         ? 'bg-purple-500/10 border-purple-500/20 shadow-sm'
                         : 'bg-white/50 border-black/[0.03] hover:border-purple-500/30'
