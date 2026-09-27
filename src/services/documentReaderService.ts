@@ -4,15 +4,12 @@
  * and make it available to the AI bot for contract analysis
  */
 
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
+import { SupabaseClient } from '@supabase/supabase-js';
 import { ContractDocument, DocumentGroup, DocumentChunk } from '@/types';
 import { extractTextFromPdf, isScannedPdf } from '@/utils/pdfUtils';
 import { getEmbeddingService } from '@/services/embeddingService';
 import { DoclingService } from './doclingService';
-
-// Initialize Supabase client
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_URL || '';
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY || '';
 
 const STORAGE_BUCKET = 'contract-docs';
 
@@ -58,10 +55,7 @@ export class DocumentReaderService {
   private supabase: SupabaseClient;
 
   constructor() {
-    if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Supabase URL and key are required');
-    }
-    this.supabase = createClient(supabaseUrl, supabaseKey);
+    this.supabase = supabase as any;
   }
 
   /**
@@ -142,18 +136,18 @@ export class DocumentReaderService {
    * Get all extracted data from the organizer for a contract
    */
   async getContractExtractedData(contractId: string): Promise<any[]> {
-    const { data, error } = await this.supabase
-      .from('contract_extracted_data')
-      .select('*')
-      .eq('contract_id', contractId)
-      .order('created_at');
+    try {
+      const { data, error } = await this.supabase
+        .from('contract_extracted_data')
+        .select('*')
+        .eq('contract_id', contractId)
+        .order('created_at');
 
-    if (error) {
-      console.error('Error fetching extracted data:', error);
-      throw error;
+      if (error) return [];
+      return data || [];
+    } catch {
+      return [];
     }
-
-    return data || [];
   }
 
   /**

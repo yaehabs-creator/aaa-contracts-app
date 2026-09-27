@@ -46,14 +46,19 @@ export async function retrieveRelevantChunks(
   const limit = options.limit ?? 15;
   const threshold = options.threshold ?? 0.65;
 
+  const openaiKey = import.meta.env.VITE_OPENAI_API_KEY || (typeof process !== 'undefined' ? process.env?.VITE_OPENAI_API_KEY : '');
+  if (!openaiKey) {
+    // OpenAI is not configured, silently skip vector embeddings so text search is used
+    return { chunks: [], context: '', totalFound: 0 };
+  }
+
   // 1. Generate query embedding using existing EmbeddingService
   const embeddingService = getEmbeddingService();
   let queryEmbedding: number[];
   try {
     const embeddings = await embeddingService.generateEmbeddings(query);
     queryEmbedding = embeddings[0];
-  } catch (e) {
-    console.warn('RAG: embedding generation failed:', e);
+  } catch {
     return { chunks: [], context: '', totalFound: 0 };
   }
 

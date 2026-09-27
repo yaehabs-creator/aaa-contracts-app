@@ -301,8 +301,9 @@ export async function buildUnifiedContractContext(
     }
   }
 
-  // 2.7. Add Neural RAG Content from Local Database
-  if (activeChatContextIds.length > 0) {
+  // 2.7. Add Neural RAG Content from Local Database (only when running locally)
+  const isLocalDev = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  if (isLocalDev && activeChatContextIds.length > 0) {
     const BACKEND = APP_CONFIG.BACKEND_URL;
     for (const id of activeChatContextIds) {
       try {
@@ -319,8 +320,8 @@ export async function buildUnifiedContractContext(
              }
           }
         }
-      } catch (e) {
-        console.warn(`Failed to fetch neural context for ${id}:`, e);
+      } catch {
+        // Local backend not reachable, silent
       }
     }
   }

@@ -17,6 +17,8 @@ export const supabase = createClient(
       autoRefreshToken: true,
       persistSession: true,
       detectSessionInUrl: true,
+      // @ts-ignore - Supabase gotrue lock override to avoid navigator.locks contention
+      lock: false,
     },
   }
 );

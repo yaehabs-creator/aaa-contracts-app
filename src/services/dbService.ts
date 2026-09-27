@@ -248,6 +248,14 @@ function mapClauseFromDB(row: any): Clause {
 
 export const saveChatMessage = async (contractId: string, message: BotMessage): Promise<void> => {
   try {
+    // Save to localStorage as immediate offline cache
+    try {
+      const key = `chat_history_${contractId}`;
+      const existing = JSON.parse(localStorage.getItem(key) || '[]');
+      existing.push(message);
+      localStorage.setItem(key, JSON.stringify(existing.slice(-100)));
+    } catch { /* silent */ }
+
     const { data: { user } } = await supabase.auth.getUser();
 
     await supabase.from('chat_messages').insert({
@@ -257,8 +265,8 @@ export const saveChatMessage = async (contractId: string, message: BotMessage): 
       content: message.content,
       suggestions: message.suggestions,
     });
-  } catch (error) {
-    console.error('Failed to save chat message:', error);
+  } catch {
+    // Table may not exist yet, fallback already saved to localStorage
   }
 };
 
@@ -270,19 +278,24 @@ export const getChatHistory = async (contractId: string): Promise<BotMessage[]> 
       .eq('contract_id', contractId)
       .order('created_at', { ascending: true });
 
-    if (error) throw error;
+    if (!error && data && data.length > 0) {
+      return data.map(row => ({
+        id: row.id,
+        role: row.role as 'user' | 'assistant',
+        content: row.content,
+        timestamp: new Date(row.created_at).getTime(),
+        suggestions: row.suggestions,
+      }));
+    }
+  } catch { /* silent */ }
 
-    return (data || []).map(row => ({
-      id: row.id,
-      role: row.role as 'user' | 'assistant',
-      content: row.content,
-      timestamp: new Date(row.created_at).getTime(),
-      suggestions: row.suggestions,
-    }));
-  } catch (error) {
-    console.error('Failed to fetch chat history:', error);
-    return [];
-  }
+  // Fallback to localStorage if table doesn't exist
+  try {
+    const local = localStorage.getItem(`chat_history_${contractId}`);
+    if (local) return JSON.parse(local);
+  } catch { /* silent */ }
+
+  return [];
 };
 
 // ==========================================
