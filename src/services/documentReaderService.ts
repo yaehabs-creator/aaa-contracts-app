@@ -260,18 +260,8 @@ export class DocumentReaderService {
   ): Promise<DocumentChunkContent[]> {
     const { limit = 20, documentGroups } = options;
 
-    let queryBuilder = this.supabase
-      .from('contract_document_chunks')
-      .select(`
-        *,
-        document:contract_documents(name, document_group)
-      `)
-      .eq('contract_id', contractId)
-      .ilike('content', `%${query}%`)
-      .limit(limit);
-
+    let docIdsFilter: string[] | null = null;
     if (documentGroups && documentGroups.length > 0) {
-      // Filter by document group through the join
       const { data: docIds } = await this.supabase
         .from('contract_documents')
         .select('id')
@@ -279,15 +269,95 @@ export class DocumentReaderService {
         .in('document_group', documentGroups);
 
       if (docIds && docIds.length > 0) {
-        queryBuilder = queryBuilder.in('document_id', docIds.map(d => d.id));
+        docIdsFilter = docIds.map(d => d.id);
       }
     }
 
-    const { data, error } = await queryBuilder;
+    const runSearch = async (pattern: string, useDocFilter = true) => {
+      let q = this.supabase
+        .from('contract_document_chunks')
+        .select(`
+          *,
+          document:contract_documents(name, document_group)
+        `)
+        .eq('contract_id', contractId)
+        .ilike('content', `%${pattern}%`)
+        .limit(limit);
 
-    if (error) {
-      console.error('Error searching documents:', error);
-      throw error;
+      if (useDocFilter && docIdsFilter && docIdsFilter.length > 0) {
+        q = q.in('document_id', docIdsFilter);
+      }
+
+      const { data } = await q;
+      return data || [];
+    };
+
+    // 1. Try exact query
+    let data = await runSearch(query.trim());
+
+    // 2. Keyword-based search if exact search found nothing
+    if (data.length === 0) {
+      const stopWords = new Set([
+        'what', 'is', 'are', 'the', 'for', 'and', 'in', 'of', 'to', 'a', 'an',
+        'about', 'how', 'much', 'many', 'tell', 'me', 'does', 'do', 'can',
+        'with', 'from', 'this', 'that', 'pkg01', 'pkg02', 'pkg03', 'pkg04',
+        'pkg07', 'pkg12', 'pkg14', 'pkg15', 'contract', 'contracts'
+      ]);
+
+      const words = query
+        .replace(/[^\w\s]/g, ' ')
+        .split(/\s+/)
+        .map(w => w.trim())
+        .filter(w => w.length >= 3 && !stopWords.has(w.toLowerCase()));
+
+      const seen = new Set<string>();
+
+      for (const word of words.slice(0, 5)) {
+        const results = await runSearch(word, true);
+        for (const r of results) {
+          if (!seen.has(r.id)) {
+            data.push(r);
+            seen.add(r.id);
+          }
+        }
+        if (data.length >= limit) break;
+      }
+
+      // If still no results, search across all documents without group filter
+      if (data.length === 0 && words.length > 0) {
+        for (const word of words.slice(0, 4)) {
+          const results = await runSearch(word, false);
+          for (const r of results) {
+            if (!seen.has(r.id)) {
+              data.push(r);
+              seen.add(r.id);
+            }
+          }
+          if (data.length >= limit) break;
+        }
+      }
+    }
+
+    // 3. Fallback: If still nothing, return introductory chunks from primary documents
+    if (data.length === 0) {
+      let fallbackQuery = this.supabase
+        .from('contract_document_chunks')
+        .select(`
+          *,
+          document:contract_documents(name, document_group)
+        `)
+        .eq('contract_id', contractId)
+        .order('chunk_index', { ascending: true })
+        .limit(limit);
+
+      if (docIdsFilter && docIdsFilter.length > 0) {
+        fallbackQuery = fallbackQuery.in('document_id', docIdsFilter);
+      }
+
+      const { data: fallbackData } = await fallbackQuery;
+      if (fallbackData && fallbackData.length > 0) {
+        data = fallbackData;
+      }
     }
 
     return (data || []).map(chunk => ({

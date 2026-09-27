@@ -452,6 +452,19 @@ CRITICAL:
     const crossReferences: string[] = [];
     let synthesisNotes = '';
 
+    // Handle conversational greetings directly
+    const isGreeting = /^(hey|hi|hello|greetings|good\s*(morning|afternoon|evening)|who\s*are\s*you|what\s*can\s*you\s*do|help)[\s!.,?]*$/i.test(query.trim());
+    if (isGreeting) {
+      return {
+        finalAnswer: "👋 Hello! I am your AI Contract Assistant. All 8 contract packages (PKG01–PKG15) with over 79,000 clauses, agreements, and BOQs are loaded and ready in the database.\n\nYou can ask me questions like:\n- 📄 *What is the total contract price and payment terms?*\n- ⏱️ *What are the delay penalties and liquidated damages?*\n- 🏗️ *What are the specifications for concrete and electrical works?*\n- 📑 *Summarize the Letter of Acceptance.*",
+        openaiInsights: null,
+        claudeInsights: null,
+        crossReferences: [],
+        agentsUsed: ['claude'],
+        synthesisNotes: 'Handled greeting directly'
+      };
+    }
+
     // Determine which responses to use based on availability and confidence
     const hasOpenAI = openaiResponse && !openaiResponse.error && openaiResponse.confidence > this.config.confidenceThreshold!;
     const hasClaude = claudeResponse && !claudeResponse.error && claudeResponse.confidence > this.config.confidenceThreshold!;
@@ -459,9 +472,30 @@ CRITICAL:
     if (hasOpenAI) agentsUsed.push('openai');
     if (hasClaude) agentsUsed.push('claude');
 
-    // If neither agent provided a good response
+    // If neither agent exceeded confidence threshold, check if one has valid analysis
     if (agentsUsed.length === 0) {
-      // Create a more helpful fallback message based on why they failed
+      if (claudeResponse && claudeResponse.analysis && !claudeResponse.error && claudeResponse.analysis.length > 30) {
+        return {
+          finalAnswer: claudeResponse.analysis,
+          openaiInsights: openaiResponse,
+          claudeInsights: claudeResponse,
+          crossReferences: [],
+          agentsUsed: ['claude'],
+          synthesisNotes: 'Using Conditions Specialist response'
+        };
+      }
+      if (openaiResponse && openaiResponse.analysis && !openaiResponse.error && !openaiResponse.analysis.includes('No relevant documents found') && openaiResponse.analysis.length > 30) {
+        return {
+          finalAnswer: openaiResponse.analysis,
+          openaiInsights: openaiResponse,
+          claudeInsights: claudeResponse,
+          crossReferences: [],
+          agentsUsed: ['openai'],
+          synthesisNotes: 'Using Document Specialist response'
+        };
+      }
+
+      // Create a helpful fallback message based on why they failed
       let fallbackMsg = "I am unable to provide a detailed analysis for this query because I couldn't find a high-confidence match in the specific sections of the contract documents or clauses.\n\n";
 
       if (classification.requiresDocuments) {

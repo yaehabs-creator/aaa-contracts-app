@@ -6,7 +6,7 @@
  */
 
 interface AIProxyRequest {
-    provider: 'anthropic' | 'openai';
+    provider: 'anthropic' | 'openai' | 'gemini';
     model?: string;
     messages: Array<{ role: string; content: string }>;
     system?: string;

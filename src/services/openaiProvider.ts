@@ -13,6 +13,7 @@
 import { BotMessage, DocumentGroup } from '@/types';
 import { getDocumentReaderService, DocumentChunkContent } from './documentReaderService';
 import { getEmbeddingService } from './embeddingService';
+import { callAIProxy } from './aiProxyClient';
 
 // OpenAI configuration
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
@@ -111,10 +112,10 @@ export class OpenAIProvider {
   }
 
   /**
-   * Check if the OpenAI provider is available
+   * Check if the Document Specialist provider is available (backed by Gemini)
    */
   isAvailable(): boolean {
-    return !!this.apiKey;
+    return true;
   }
 
   /**
@@ -252,10 +253,6 @@ export class OpenAIProvider {
     documentContext: string,
     customSystemPrompt?: string
   ): Promise<string> {
-    if (!this.apiKey) {
-      throw new Error('OpenAI API key is not configured');
-    }
-
     const systemPrompt = customSystemPrompt || DOCUMENT_SPECIALIST_SYSTEM_PROMPT;
 
     // Build the full system message with document context
@@ -263,43 +260,22 @@ export class OpenAIProvider {
       ? `${systemPrompt}\n\n${documentContext}`
       : systemPrompt;
 
-    // Convert messages to OpenAI format
-    const openaiMessages = [
-      { role: 'system', content: fullSystemMessage },
-      ...messages.map(msg => ({
-        role: msg.role as 'user' | 'assistant',
-        content: msg.content
-      }))
-    ];
-
     try {
-      const response = await fetch(OPENAI_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${this.apiKey}`
-        },
-        body: JSON.stringify({
-          model: this.model,
-          messages: openaiMessages,
-          max_tokens: this.maxTokens,
-          temperature: this.temperature
-        })
+      const response = await callAIProxy({
+        provider: 'gemini',
+        model: 'gemini-flash-latest',
+        system: fullSystemMessage,
+        messages: messages.map(msg => ({
+          role: msg.role === 'user' ? 'user' : 'assistant',
+          content: msg.content
+        })),
+        max_tokens: this.maxTokens
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(
-          errorData.error?.message ||
-          `OpenAI API error: ${response.status} ${response.statusText}`
-        );
-      }
-
-      const data = await response.json();
-      return data.choices?.[0]?.message?.content || 'No response received from OpenAI';
+      return response.content?.[0]?.text || 'No response received from AI';
     } catch (error: any) {
-      console.error('OpenAI chat error:', error);
-      throw new Error(`OpenAI API error: ${error.message}`);
+      console.error('Document Specialist chat error:', error);
+      throw new Error(`AI error: ${error.message}`);
     }
   }
 

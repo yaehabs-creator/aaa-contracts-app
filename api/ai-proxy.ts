@@ -54,11 +54,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    if (provider === 'anthropic') {
+    if (provider === 'gemini') {
+      return await handleGemini(req.body, res);
+    } else if (provider === 'anthropic') {
+      const apiKey = process.env.ANTHROPIC_API_KEY || process.env.VITE_ANTHROPIC_API_KEY;
+      if (!apiKey && (process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY)) {
+        return await handleGemini(req.body, res);
+      }
       return await handleAnthropic(req.body, res);
     } else if (provider === 'openai') {
+      const apiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+      if (!apiKey && (process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY)) {
+        return await handleGemini(req.body, res);
+      }
       return await handleOpenAI(req.body, res);
     } else {
+      if (process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY) {
+        return await handleGemini(req.body, res);
+      }
       return res.status(400).json({ error: `Unknown provider: ${provider}` });
     }
   } catch (error: any) {
@@ -207,3 +220,47 @@ async function fetchWithRetry(url: string, options: RequestInit, maxAttempts = 3
 
   throw { status: 429, message: 'Rate limited after max retries' };
 }
+
+/**
+ * Handle Google Gemini requests
+ */
+async function handleGemini(body: ProxyRequest, res: VercelResponse) {
+  const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: 'VITE_GEMINI_API_KEY not configured on server' });
+  }
+
+  const candidateModels = [
+    body.model || process.env.VITE_GEMINI_MODEL || 'gemini-3.5-flash',
+    'gemini-flash-latest',
+    'gemini-flash-lite-latest'
+  ];
+
+  let lastError = 'No model succeeded';
+
+  for (const m of candidateModels) {
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (text) {
+        return res.status(200).json({
+          content: [{ type: 'text', text }],
+          model: m,
+          usage: data.usageMetadata
+        });
+      }
+      lastError = data.error?.message || 'Empty model response';
+    } catch (err: any) {
+      lastError = err.message;
+    }
+  }
+
+  return res.status(500).json({ error: lastError });
+}
+

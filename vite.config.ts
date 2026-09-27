@@ -118,32 +118,131 @@ function localAIProxy(env: Record<string, string>): Plugin {
 }
 
 /**
- * Handle standard AI Proxy (Claude/OpenAI)
+ * Call Google Gemini API
+ */
+async function callGemini(env: Record<string, string>, messages: any[], system?: string, max_tokens?: number) {
+  const apiKey = env.VITE_GEMINI_API_KEY || env.GEMINI_API_KEY;
+  if (!apiKey) return { status: 500, data: { error: 'VITE_GEMINI_API_KEY not set' } };
+
+  const contents: any[] = [];
+  for (const m of messages) {
+    const role = (m.role === 'assistant' || m.role === 'model') ? 'model' : 'user';
+    contents.push({
+      role,
+      parts: [{ text: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) }]
+    });
+  }
+
+  if (contents.length > 0 && contents[0].role !== 'user') {
+    contents.unshift({ role: 'user', parts: [{ text: 'Hello' }] });
+  }
+
+  const payload: any = {
+    contents,
+    generationConfig: {
+      maxOutputTokens: max_tokens || 4096,
+      temperature: 0.2
+    }
+  };
+
+  if (system) {
+    payload.systemInstruction = {
+      parts: [{ text: system }]
+    };
+  }
+
+  const candidateModels = [
+    env.VITE_GEMINI_MODEL || 'gemini-3.5-flash',
+    'gemini-flash-latest',
+    'gemini-flash-lite-latest'
+  ];
+
+  let lastError = 'No model succeeded';
+
+  for (const model of candidateModels) {
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (text) {
+        return {
+          status: 200,
+          data: {
+            content: [{ type: 'text', text }],
+            model,
+            usage: data.usageMetadata
+          }
+        };
+      }
+      lastError = data.error?.message || 'Empty response from model';
+      console.warn(`[Gemini Proxy] Model ${model} returned error: ${lastError}, trying fallback...`);
+    } catch (err: any) {
+      lastError = err.message;
+      console.warn(`[Gemini Proxy] Model ${model} fetch failed: ${lastError}, trying fallback...`);
+    }
+  }
+
+  return { status: 500, data: { error: lastError } };
+}
+
+/**
+ * Handle standard AI Proxy (Gemini/Claude/OpenAI)
  */
 async function handleAIRequest(env: Record<string, string>, provider: string, model: string, messages: any[], system?: string, max_tokens?: number) {
-  if (provider === 'anthropic') {
+  if (provider === 'gemini') {
+    return await callGemini(env, messages, system, max_tokens);
+  } else if (provider === 'anthropic') {
     const apiKey = env.ANTHROPIC_API_KEY || env.VITE_ANTHROPIC_API_KEY;
-    if (!apiKey) return { status: 500, data: { error: 'ANTHROPIC_API_KEY not set' } };
+    if (!apiKey) {
+      if (env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY) {
+        return await callGemini(env, messages, system, max_tokens);
+      }
+      return { status: 500, data: { error: 'ANTHROPIC_API_KEY not set' } };
+    }
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: model || 'claude-3-7-sonnet-latest',
-        max_tokens: max_tokens || 4096,
-        messages,
-        system,
-      }),
-    });
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: model || 'claude-3-7-sonnet-latest',
+          max_tokens: max_tokens || 4096,
+          messages,
+          system,
+        }),
+      });
 
-    return { status: response.status, data: await response.json() };
+      const data = await response.json();
+      if (!response.ok && (data.error?.message?.includes('credit') || data.error?.message?.includes('balance') || response.status === 400 || response.status === 401)) {
+        if (env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY) {
+          console.log('[AI Proxy] Anthropic failed (credits/auth), automatically routing to Gemini...');
+          return await callGemini(env, messages, system, max_tokens);
+        }
+      }
+      return { status: response.status, data };
+    } catch (e: any) {
+      if (env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY) {
+        return await callGemini(env, messages, system, max_tokens);
+      }
+      return { status: 500, data: { error: e.message } };
+    }
   } else if (provider === 'openai') {
     const apiKey = env.OPENAI_API_KEY || env.VITE_OPENAI_API_KEY;
-    if (!apiKey) return { status: 500, data: { error: 'OPENAI_API_KEY not set' } };
+    if (!apiKey) {
+      if (env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY) {
+        return await callGemini(env, messages, system, max_tokens);
+      }
+      return { status: 500, data: { error: 'OPENAI_API_KEY not set' } };
+    }
 
     const openaiMessages: any[] = [];
     if (system) openaiMessages.push({ role: 'system', content: system });
@@ -163,12 +262,23 @@ async function handleAIRequest(env: Record<string, string>, provider: string, mo
     });
 
     const data = await response.json();
+    if (!response.ok) {
+      if (env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY) {
+        console.log('[AI Proxy] OpenAI failed, automatically routing to Gemini...');
+        return await callGemini(env, messages, system, max_tokens);
+      }
+    }
     const normalized = {
       content: [{ type: 'text', text: data.choices?.[0]?.message?.content || '' }],
       model: data.model,
       usage: data.usage,
     };
     return { status: response.status, data: normalized };
+  }
+  
+  // Default to Gemini if unknown or fallback
+  if (env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY) {
+    return await callGemini(env, messages, system, max_tokens);
   }
   return { status: 400, data: { error: `Unknown provider: ${provider}` } };
 }
@@ -232,38 +342,9 @@ export default defineConfig(({ mode }) => {
   const isCI = process.env.CI === 'true' || process.env.VERCEL === '1' || process.env.VERCEL_ENV;
 
   // Validate required environment variables in production build
-  if (mode === 'production' && !isCI) {
-    const requiredVars = [
-      'VITE_ANTHROPIC_API_KEY'
-    ];
-
-    const missingVars = requiredVars.filter(varName => !env[varName]);
-
-    if (missingVars.length > 0) {
-      console.error('\n❌ Missing required environment variables for production build:');
-      missingVars.forEach(varName => console.error(`   - ${varName}`));
-      console.error('\n💡 Please ensure .env.local exists and contains all required variables.');
-      console.error('   See DEPLOYMENT_GUIDE.md for setup instructions.\n');
-      throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
-    }
-
-    console.log('✅ All required environment variables are present');
-  } else if (mode === 'production' && isCI) {
-    // In CI, just warn but don't fail - env vars will be injected by the platform
-    const requiredVars = [
-      'VITE_ANTHROPIC_API_KEY'
-    ];
-
-    const missingVars = requiredVars.filter(varName => !env[varName]);
-
-    if (missingVars.length > 0) {
-      console.warn('\n⚠️  Missing environment variables in CI environment:');
-      missingVars.forEach(varName => console.warn(`   - ${varName}`));
-      console.warn('\n💡 These should be set in your Vercel project settings.');
-      console.warn('   The build will continue, but the app may not work correctly until variables are added.\n');
-    } else {
-      console.log('✅ All required environment variables are present');
-    }
+  const hasAIKey = env.VITE_GEMINI_API_KEY || env.GEMINI_API_KEY || env.VITE_ANTHROPIC_API_KEY || env.VITE_OPENAI_API_KEY;
+  if (mode === 'production' && !isCI && !hasAIKey) {
+    console.warn('⚠️  No AI API key found (VITE_GEMINI_API_KEY, VITE_ANTHROPIC_API_KEY, or VITE_OPENAI_API_KEY). AI features may be disabled.');
   }
 
   return {
