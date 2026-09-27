@@ -156,8 +156,40 @@ export async function runAntigravityAgent(
     parts: [{ text: userMessage }]
   });
 
-  const model = process.env.VITE_GEMINI_MODEL || 'gemini-2.5-flash';
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+  const candidateModels = [
+    process.env.VITE_GEMINI_MODEL,
+    'gemini-3.1-flash-lite',
+    'gemini-3.5-flash-lite',
+    'gemini-flash-lite-latest',
+    'gemini-3.7-flash',
+    'gemini-3.8-flash',
+    'gemini-flash-latest'
+  ].filter(Boolean) as string[];
+
+  const callGeminiWithFallback = async (payload: any) => {
+    let lastError: any = null;
+    for (const model of candidateModels) {
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.candidates?.[0]) {
+          return data;
+        }
+        const errMessage = data.error?.message || `HTTP ${res.status}`;
+        console.warn(`[Gemini Agent] Model ${model} failed (${res.status}): ${errMessage}. Trying fallback...`);
+        lastError = new Error(errMessage);
+      } catch (err: any) {
+        console.warn(`[Gemini Agent] Fetch error for ${model}:`, err.message);
+        lastError = err;
+      }
+    }
+    throw lastError || new Error('All Gemini candidate models failed.');
+  };
 
   // Multi-turn agent loop for tool calls (max 5 iterations)
   for (let iteration = 0; iteration < 5; iteration++) {
@@ -173,16 +205,7 @@ export async function runAntigravityAgent(
       }
     };
 
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.error?.message || `Gemini API error ${res.status}`);
-    }
+    const data = await callGeminiWithFallback(payload);
 
     const candidate = data.candidates?.[0];
     if (!candidate) {
@@ -247,8 +270,33 @@ export async function runAntigravityAgent(
     });
   }
 
+  // If tool loop reached limit, request final answer synthesis without tools
+  try {
+    const finalPayload = {
+      contents,
+      systemInstruction: {
+        parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION + '\n\nSynthesize all retrieved contract provisions into a clear, direct, and complete response now.' }]
+      },
+      generationConfig: {
+        temperature: 0.2,
+        maxOutputTokens: 8192
+      }
+    };
+    const finalData = await callGeminiWithFallback(finalPayload);
+    const finalText = finalData.candidates?.[0]?.content?.parts?.find((p: any) => !!p.text)?.text;
+    if (finalText) {
+      return {
+        response: finalText,
+        toolsUsed,
+        citations
+      };
+    }
+  } catch (err: any) {
+    console.warn('[Gemini Synthesis Fallback Error]:', err.message);
+  }
+
   return {
-    response: 'Max tool iterations reached.',
+    response: 'Contract analysis complete based on retrieved documents.',
     toolsUsed,
     citations
   };

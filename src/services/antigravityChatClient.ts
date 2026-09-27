@@ -36,8 +36,14 @@ export async function chatWithAntigravity(
   });
 
   if (!res.ok) {
-    const errorData = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
-    throw new Error(errorData.error || `Server error: ${res.status}`);
+    let errorDetail = '';
+    try {
+      const data = await res.json();
+      errorDetail = data.error || data.message || JSON.stringify(data);
+    } catch {
+      errorDetail = await res.text().catch(() => '');
+    }
+    throw new Error(errorDetail || `Server returned error (${res.status})`);
   }
 
   return await res.json();
