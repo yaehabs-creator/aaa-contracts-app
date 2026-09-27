@@ -230,6 +230,29 @@ async function handleGemini(body: ProxyRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'VITE_GEMINI_API_KEY not configured on server' });
   }
 
+  const contents = body.messages.map(m => ({
+    role: (m.role === 'assistant' || m.role === 'model') ? 'model' : 'user',
+    parts: [{ text: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) }]
+  }));
+
+  if (contents.length > 0 && contents[0].role !== 'user') {
+    contents.unshift({ role: 'user', parts: [{ text: 'Hello' }] });
+  }
+
+  const payload: any = {
+    contents,
+    generationConfig: {
+      maxOutputTokens: body.max_tokens || 4096,
+      temperature: 0.2
+    }
+  };
+
+  if (body.system) {
+    payload.systemInstruction = {
+      parts: [{ text: body.system }]
+    };
+  }
+
   const candidateModels = [
     body.model || process.env.VITE_GEMINI_MODEL || 'gemini-3.5-flash',
     'gemini-flash-latest',
