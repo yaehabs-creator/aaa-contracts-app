@@ -244,9 +244,10 @@ COMMUNICATION STYLE:
 - If a specific figure (such as a daily penalty rate or cap) is stated in an appendix or particular condition that is not in the current package, simply explain that in a natural, helpful sentence.
 
 OPERATIONAL RULES:
-1. Always use your retrieval tools (search_contract, get_clause, etc.) to look up contract provisions and Particular Conditions from the database.
-2. Particular Conditions (Appendix A) override General Conditions in case of conflict.
-3. Keep your answers direct, practical, and easy to read.`;
+1. Use your retrieval tools (search_contract, get_clause, etc.) to look up contract provisions and Particular Conditions from the database.
+2. Once relevant clauses or provisions are retrieved (or if no further documents are needed), provide a comprehensive, direct, and well-structured answer.
+3. Particular Conditions (Appendix A) override General Conditions in case of conflict.
+4. Keep your answers direct, practical, authoritative, and easy to read.`;
 
 /**
  * Serverless / Express-style Handler
@@ -352,63 +353,50 @@ export async function runAntigravityAgent(
     throw lastError || new Error('All Gemini candidate models failed.');
   };
 
-  // Agent loop for tool retrieval (max 2 turns: 1 for retrieval, 1 for synthesis)
-  for (let iteration = 0; iteration < 2; iteration++) {
-    const isFinalIteration = iteration === 1;
-    const payload: any = {
-      contents,
-      systemInstruction: {
-        parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION }]
-      },
-      tools: GEMINI_TOOLS_DECLARATION,
-      generationConfig: {
-        temperature: 0.1,
-        maxOutputTokens: 8192
-      }
-    };
+  // 1. Initial invocation: Ask Gemini with retrieval tools enabled
+  const initialPayload: any = {
+    contents,
+    systemInstruction: {
+      parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION }]
+    },
+    tools: GEMINI_TOOLS_DECLARATION,
+    generationConfig: {
+      temperature: 0.1,
+      maxOutputTokens: 8192
+    }
+  };
 
-    if (isFinalIteration) {
-      payload.toolConfig = {
-        functionCallingConfig: {
-          mode: 'NONE'
-        }
+  const initialData = await callGeminiWithFallback(initialPayload);
+  const candidate = initialData.candidates?.[0];
+  if (!candidate) {
+    throw new Error('No candidate returned from Gemini model');
+  }
+
+  const parts = candidate.content?.parts || [];
+  const functionCalls = parts.filter((p: any) => !!p.functionCall);
+
+  // If Gemini answered directly without tools (e.g. greetings or general queries)
+  if (functionCalls.length === 0) {
+    const directText = parts.map((p: any) => p.text || '').filter(Boolean).join('\n\n').trim();
+    if (directText) {
+      return {
+        response: directText,
+        toolsUsed,
+        citations
       };
     }
+  }
 
-    const data = await callGeminiWithFallback(payload);
+  // 2. Execute all retrieval tools returned by Gemini
+  const evidenceItems: string[] = [];
 
-    const candidate = data.candidates?.[0];
-    if (!candidate) {
-      throw new Error('No candidate returned from Gemini model');
-    }
+  for (const fc of functionCalls) {
+    const toolName = fc.functionCall.name;
+    const args = fc.functionCall.args || {};
+    toolsUsed.push(toolName);
 
-    const parts = candidate.content?.parts || [];
-    const functionCalls = parts.filter((p: any) => !!p.functionCall);
-
-    // If no function call or on final iteration, return final text response
-    if (functionCalls.length === 0 || isFinalIteration) {
-      const textPart = parts.find((p: any) => !!p.text);
-      if (textPart?.text) {
-        return {
-          response: textPart.text,
-          toolsUsed,
-          citations
-        };
-      }
-    }
-
-    contents.push({
-      role: 'model',
-      parts
-    });
-
-    const toolResponses: any[] = [];
-    for (const fc of functionCalls) {
-      const toolName = fc.functionCall.name;
-      const args = fc.functionCall.args || {};
-      toolsUsed.push(toolName);
-
-      let toolOutput: any = null;
+    let toolOutput: any = null;
+    try {
       if (toolName === 'search_contract') {
         toolOutput = await searchContract(contractId, args.query);
       } else if (toolName === 'get_clause') {
@@ -417,61 +405,52 @@ export async function runAntigravityAgent(
         toolOutput = await getRelatedClauses(contractId, args.clauseRef);
       } else if (toolName === 'search_contract_documents') {
         toolOutput = await searchContractDocuments(contractId, args.query);
-      } else {
-        toolOutput = { error: `Unknown tool: ${toolName}` };
       }
-
-      if (Array.isArray(toolOutput)) {
-        citations.push(...toolOutput.slice(0, 3));
-      }
-
-      toolResponses.push({
-        functionResponse: {
-          name: toolName,
-          response: { output: toolOutput }
-        }
-      });
+    } catch (err: any) {
+      console.warn(`[Tool ${toolName} execution error]:`, err.message);
     }
 
-    contents.push({
+    if (Array.isArray(toolOutput) && toolOutput.length > 0) {
+      citations.push(...toolOutput.slice(0, 4));
+      for (const item of toolOutput) {
+        const title = item.clause_title || item.name || item.clause_reference || 'Contract Provision';
+        const doc = item.document_name ? ` (${item.document_name})` : '';
+        const body = item.content || JSON.stringify(item);
+        evidenceItems.push(`### ${title}${doc}\n${body}`);
+      }
+    }
+  }
+
+  // 3. Synthesize the final answer using the retrieved contract evidence
+  const evidenceText = evidenceItems.length > 0
+    ? `\n\n[VERIFIED CONTRACT EVIDENCE RETRIEVED FROM DATABASE]:\n${evidenceItems.join('\n\n')}\n\nBased strictly on the verified contract documents and evidence above, provide your clear, authoritative, and direct response now.`
+    : `\n\n[DATABASE SEARCH NOTE]: No specific clauses matching the query were found in package ${contractId}. Explain this clearly and guide the user on which document or appendix to reference.`;
+
+  const synthesisContents = [
+    ...contents.slice(0, -1),
+    {
       role: 'user',
-      parts: toolResponses
-    });
-  }
-
-  // Fallback synthesis with mode: NONE
-  try {
-    const finalPayload = {
-      contents,
-      systemInstruction: {
-        parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION + '\n\nSynthesize all retrieved contract provisions into a clear, direct, and complete response now.' }]
-      },
-      tools: GEMINI_TOOLS_DECLARATION,
-      toolConfig: {
-        functionCallingConfig: {
-          mode: 'NONE'
-        }
-      },
-      generationConfig: {
-        temperature: 0.2,
-        maxOutputTokens: 8192
-      }
-    };
-    const finalData = await callGeminiWithFallback(finalPayload);
-    const finalText = finalData.candidates?.[0]?.content?.parts?.find((p: any) => !!p.text)?.text;
-    if (finalText) {
-      return {
-        response: finalText,
-        toolsUsed,
-        citations
-      };
+      parts: [{ text: userMessage + evidenceText }]
     }
-  } catch (err: any) {
-    console.warn('[Gemini Synthesis Fallback Error]:', err.message);
-  }
+  ];
+
+  const synthesisPayload = {
+    contents: synthesisContents,
+    systemInstruction: {
+      parts: [{ text: ANTIGRAVITY_CA_SYSTEM_INSTRUCTION }]
+    },
+    generationConfig: {
+      temperature: 0.1,
+      maxOutputTokens: 8192
+    }
+  };
+
+  const synthesisData = await callGeminiWithFallback(synthesisPayload);
+  const synthParts = synthesisData.candidates?.[0]?.content?.parts || [];
+  const finalText = synthParts.map((p: any) => p.text || '').filter(Boolean).join('\n\n').trim();
 
   return {
-    response: 'Contract analysis complete based on retrieved documents.',
+    response: finalText || 'Contract analysis complete based on retrieved documents.',
     toolsUsed,
     citations
   };
