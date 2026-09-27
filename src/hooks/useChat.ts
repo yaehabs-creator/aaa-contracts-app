@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useChatContext } from '../contexts/ChatContext';
-import { chatWithSmartRouting } from '@/services/aiBotService';
+import { chatWithAntigravity } from '@/services/antigravityChatClient';
 import { BotMessage, ContextPill } from '@/types';
 import { db } from '@/services/dbService';
 import { updateSessionFromMessages } from '@/services/chatHistoryService';
@@ -40,11 +40,11 @@ export const useChat = () => {
         setIsThinkingOrStreaming(true);
 
         try {
-            const response = await chatWithSmartRouting(
-                updatedMessages,
-                contractClauses,
-                contractId || conversationId,
-                uploadedContract ?? undefined
+            const targetContractId = contractId || conversationId || '';
+            const response = await chatWithAntigravity(
+                targetContractId,
+                content,
+                messages
             );
 
             const assistantMessage: BotMessage = {
@@ -52,9 +52,11 @@ export const useChat = () => {
                 role: 'assistant',
                 content: response.response,
                 timestamp: Date.now(),
-                // @ts-ignore - Adding extended fields for the new UI
-                agentsUsed: response.agentsUsed,
-                isDualMode: response.mode === 'dual'
+                // @ts-ignore - Display Antigravity agent & tools used
+                agentsUsed: response.toolsUsed && response.toolsUsed.length > 0 
+                    ? ['antigravity', ...response.toolsUsed] 
+                    : ['antigravity'],
+                isDualMode: false
             };
 
             const finalMessages = [...updatedMessages, assistantMessage];
@@ -63,12 +65,14 @@ export const useChat = () => {
                 db.messages.save(conversationId, assistantMessage);
                 updateSessionFromMessages(conversationId, finalMessages);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error('Chat error:', error);
             const errorMessage: BotMessage = {
                 id: crypto.randomUUID(),
                 role: 'assistant',
-                content: "I encountered an error while processing your request. Please try again.",
+                content: error.message 
+                    ? `⚠️ **Contract Administration Notice**: ${error.message}`
+                    : "I encountered an issue retrieving verified contract data. Please verify your connection and try again.",
                 timestamp: Date.now()
             };
             setMessages(prev => [...prev, errorMessage]);

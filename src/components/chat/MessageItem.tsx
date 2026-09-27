@@ -44,14 +44,18 @@ const MessageItem: React.FC<MessageItemProps> = ({ message, isLast }) => {
 
                 {isAssistant && agentsUsed && agentsUsed.length > 0 && (
                     <div className="flex items-center gap-3 mt-3 px-2">
-                        {agentsUsed.map(agent => (
-                            <div key={agent} className="flex items-center gap-1.5 opacity-40 hover:opacity-100 transition-opacity cursor-default">
-                                <div className={`w-1.5 h-1.5 rounded-full ${agent === 'openai' ? 'bg-aaa-blue' : 'bg-orange-500'}`} />
-                                <span className="text-[9px] font-black uppercase tracking-widest text-black">
-                                    {agent === 'openai' ? 'Document Specialist' : 'Conditions Specialist'}
-                                </span>
-                            </div>
-                        ))}
+                        {agentsUsed.map((agent, idx) => {
+                            const isAntigravity = agent.toLowerCase().includes('antigravity');
+                            const label = isAntigravity ? 'Antigravity CA' : agent.replace(/_/g, ' ');
+                            return (
+                                <div key={idx} className="flex items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity cursor-default">
+                                    <div className={`w-1.5 h-1.5 rounded-full ${isAntigravity ? 'bg-mac-blue' : 'bg-emerald-500'}`} />
+                                    <span className="text-[9px] font-black uppercase tracking-widest text-black">
+                                        {label}
+                                    </span>
+                                </div>
+                            );
+                        })}
                         <div className="h-2 w-[1px] bg-black/10 mx-1" />
                         <span className="text-[9px] font-bold text-black/30 uppercase tracking-widest">
                             {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}

@@ -84,7 +84,7 @@ CREATE POLICY "Allow public access contract_extracted_data"
 -- 4. CHAT MESSAGES TABLE
 CREATE TABLE IF NOT EXISTS public.chat_messages (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  contract_id UUID REFERENCES public.contracts(id) ON DELETE CASCADE,
+  contract_id TEXT,
   user_id UUID,
   role TEXT NOT NULL,
   content TEXT NOT NULL,

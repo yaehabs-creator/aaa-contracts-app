@@ -256,17 +256,28 @@ export const saveChatMessage = async (contractId: string, message: BotMessage): 
       localStorage.setItem(key, JSON.stringify(existing.slice(-100)));
     } catch { /* silent */ }
 
-    const { data: { user } } = await supabase.auth.getUser();
+    let userId: string | null = null;
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user?.id) userId = user.id;
+    } catch { /* unauthenticated */ }
 
-    await supabase.from('chat_messages').insert({
-      contract_id: contractId,
-      user_id: user?.id,
+    const insertPayload: any = {
+      contract_id: contractId ? String(contractId) : 'default',
       role: message.role,
       content: message.content,
-      suggestions: message.suggestions,
-    });
-  } catch {
-    // Table may not exist yet, fallback already saved to localStorage
+    };
+    if (userId) insertPayload.user_id = userId;
+    if (message.suggestions && message.suggestions.length > 0) {
+      insertPayload.suggestions = message.suggestions;
+    }
+
+    const { error } = await supabase.from('chat_messages').insert(insertPayload);
+    if (error) {
+      console.warn('chat_messages insert note (cached locally):', error.message);
+    }
+  } catch (err: any) {
+    console.warn('saveChatMessage error:', err?.message || err);
   }
 };
 

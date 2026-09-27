@@ -34,6 +34,38 @@ function localAIProxy(env: Record<string, string>): Plugin {
 
         const path = req.url.split('?')[0];
 
+        // Route: /api/antigravity-chat (Antigravity Agent)
+        if (path === '/api/antigravity-chat') {
+          if (req.method !== 'POST') {
+            res.statusCode = 405;
+            res.end(JSON.stringify({ error: 'Method not allowed' }));
+            return;
+          }
+
+          let body = '';
+          req.on('data', (chunk: Buffer) => { body += chunk.toString(); });
+          req.on('end', async () => {
+            try {
+              const { contractId, message, conversationHistory } = JSON.parse(body);
+              const apiKey = env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY;
+              if (!apiKey) {
+                res.statusCode = 500;
+                res.end(JSON.stringify({ error: 'GEMINI_API_KEY is not configured in .env.local on the server.' }));
+                return;
+              }
+              const { runAntigravityAgent } = await import('./api/antigravity-chat');
+              const result = await runAntigravityAgent(apiKey, contractId, message, conversationHistory);
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify(result));
+            } catch (err: any) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ error: err.message || 'Antigravity execution failed' }));
+            }
+          });
+          return;
+        }
+
         // Route: /api/ai-proxy
         if (path === '/api/ai-proxy') {
           if (req.method !== 'POST') {

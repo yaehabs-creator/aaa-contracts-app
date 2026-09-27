@@ -5,7 +5,6 @@ import { fetchKnowledgeContext } from './aiKnowledgeService';
 import { localKnowledgeService } from './localKnowledgeService';
 import { useAppStore } from '@/store/useAppStore';
 import { APP_CONFIG } from '@/config/appConfig';
-import { retrieveRelevantChunks } from './ragRetrievalService';
 
 // Constants for token management
 export const MAX_CONTEXT_TOKENS = 80000;  // ~320,000 characters

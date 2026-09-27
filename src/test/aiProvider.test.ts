@@ -39,7 +39,7 @@ describe('ClaudeProvider', () => {
     
     expect(response).toBe('Hello from Claude');
     expect(callAIProxy).toHaveBeenCalledWith(expect.objectContaining({
-      provider: 'anthropic',
+      provider: 'gemini',
       system: 'Direct instruction',
       messages: [{ role: 'user', content: 'Hello' }]
     }));

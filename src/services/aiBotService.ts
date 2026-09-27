@@ -9,7 +9,7 @@ export * from './aiContextBuilder';
 export * from './aiChatService';
 export * from './aiSuggestionService';
 export * from './aiDocumentService';
-export * from './aiOrchestrationService';
+export * from './antigravityChatClient';
 
 // Re-exports from Provider (maintained for compatibility)
 export { getRateLimitStatus, isRequestInFlight } from './aiProvider';
