@@ -39,18 +39,35 @@ export const useChat = () => {
         }
         setIsThinkingOrStreaming(true);
 
+        const assistantId = crypto.randomUUID();
+        // @ts-ignore
+        const placeholderAssistant: BotMessage = {
+            id: assistantId,
+            role: 'assistant',
+            content: '',
+            timestamp: Date.now(),
+            agentsUsed: ['antigravity'],
+            isDualMode: false
+        };
+        setMessages([...updatedMessages, placeholderAssistant]);
+
         try {
             const targetContractId = contractId || 'pkg01';
+            let accumulated = '';
             const response = await chatWithAntigravity(
                 targetContractId,
                 content,
-                messages
+                messages,
+                (chunk: string) => {
+                    accumulated += chunk;
+                    setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content: accumulated } : m));
+                }
             );
 
-            const assistantMessage: BotMessage = {
-                id: crypto.randomUUID(),
+            const finalAssistantMessage: BotMessage = {
+                id: assistantId,
                 role: 'assistant',
-                content: response.response,
+                content: response.response || accumulated,
                 timestamp: Date.now(),
                 // @ts-ignore - Display Antigravity agent & tools used
                 agentsUsed: response.toolsUsed && response.toolsUsed.length > 0 
@@ -59,23 +76,23 @@ export const useChat = () => {
                 isDualMode: false
             };
 
-            const finalMessages = [...updatedMessages, assistantMessage];
+            const finalMessages = [...updatedMessages, finalAssistantMessage];
             setMessages(finalMessages);
             if (conversationId) {
-                db.messages.save(contractId || '', assistantMessage);
+                db.messages.save(contractId || '', finalAssistantMessage);
                 updateSessionFromMessages(conversationId, finalMessages);
             }
         } catch (error: any) {
             console.error('Chat error:', error);
             const errorMessage: BotMessage = {
-                id: crypto.randomUUID(),
+                id: assistantId,
                 role: 'assistant',
                 content: error.message 
                     ? `⚠️ **Contract Administration Notice**: ${error.message}`
                     : "I encountered an issue retrieving verified contract data. Please verify your connection and try again.",
                 timestamp: Date.now()
             };
-            setMessages(prev => [...prev, errorMessage]);
+            setMessages(prev => prev.map(m => m.id === assistantId ? errorMessage : m));
         } finally {
             setIsThinkingOrStreaming(false);
         }

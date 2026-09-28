@@ -266,13 +266,12 @@ async function handleGemini(body: ProxyRequest, res: VercelResponse): Promise<{ 
   const candidateModels = Array.from(new Set([
     requestedModel,
     process.env.VITE_GEMINI_MODEL || null,
-    'gemini-3.8-flash',
-    'gemini-3.7-flash',
-    'gemini-3.5-flash',
-    'gemini-3.5-flash-lite',
-    'gemini-3.1-flash-lite',
     'gemini-flash-lite-latest',
-    'gemini-flash-latest'
+    'gemini-3.1-flash-lite',
+    'gemini-flash-latest',
+    'gemini-3.5-flash-lite',
+    'gemini-3.8-flash',
+    'gemini-3.7-flash'
   ].filter(Boolean) as string[]));
 
   let lastError = 'No model succeeded';

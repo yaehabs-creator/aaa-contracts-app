@@ -17,7 +17,8 @@ export interface AntigravityChatResponse {
 export async function chatWithAntigravity(
   contractId: string,
   userMessage: string,
-  conversationHistory: BotMessage[] = []
+  conversationHistory: BotMessage[] = [],
+  onChunk?: (chunk: string) => void
 ): Promise<AntigravityChatResponse> {
   const formattedHistory = conversationHistory.map(m => ({
     role: m.role,
@@ -33,11 +34,49 @@ export async function chatWithAntigravity(
       body: JSON.stringify({
         contractId,
         message: userMessage,
-        conversationHistory: formattedHistory
+        conversationHistory: formattedHistory,
+        stream: !!onChunk
       })
     });
 
     if (res.ok) {
+      if (onChunk && res.body) {
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let fullText = '';
+        let toolsUsed: string[] = [];
+        let citations: any[] = [];
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              try {
+                const data = JSON.parse(line.slice(6));
+                if (data.chunk) {
+                  fullText += data.chunk;
+                  onChunk(data.chunk);
+                }
+                if (data.done) {
+                  if (data.toolsUsed) toolsUsed = data.toolsUsed;
+                  if (data.citations) citations = data.citations;
+                }
+              } catch {}
+            }
+          }
+        }
+
+        if (fullText) {
+          return { response: fullText, toolsUsed, citations };
+        }
+      }
+
       return await res.json();
     }
 

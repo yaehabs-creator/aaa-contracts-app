@@ -101,12 +101,36 @@ async function resolveContractIds(targetIdOrPackage?: string, queryOrText?: stri
   return targetIdOrPackage && targetIdOrPackage !== 'all' ? [targetIdOrPackage] : all.map(c => c.id);
 }
 
+// In-memory query cache (TTL: 2 minutes) to ensure 0ms latency for repeating queries
+const queryCache = new Map<string, { data: any[]; timestamp: number }>();
+const QUERY_CACHE_TTL = 120 * 1000;
+
+function getCached(key: string): any[] | null {
+  const cached = queryCache.get(key);
+  if (cached && (Date.now() - cached.timestamp < QUERY_CACHE_TTL)) {
+    return cached.data;
+  }
+  return null;
+}
+
+function setCache(key: string, data: any[]) {
+  queryCache.set(key, { data, timestamp: Date.now() });
+  if (queryCache.size > 200) {
+    const oldestKey = queryCache.keys().next().value;
+    if (oldestKey) queryCache.delete(oldestKey);
+  }
+}
+
 // 1. searchContract
 async function searchContract(contractId: string, searchQuery: string, packageHint?: string) {
   const supabase = getSupabase();
   if (!supabase) return [];
   const cleanQuery = (searchQuery || '').trim();
   if (!cleanQuery) return [];
+
+  const cacheKey = `search:${contractId}:${packageHint || ''}:${cleanQuery}`;
+  const hit = getCached(cacheKey);
+  if (hit) return hit;
 
   const targetIds = await resolveContractIds(packageHint || contractId, `${cleanQuery} ${packageHint || ''}`);
   if (targetIds.length === 0) return [];
@@ -130,13 +154,16 @@ async function searchContract(contractId: string, searchQuery: string, packageHi
       .limit(8);
 
     if (!exactError && exactMatches && exactMatches.length > 0) {
-      return formatChunks(exactMatches);
+      const res = formatChunks(exactMatches);
+      setCache(cacheKey, res);
+      return res;
     }
 
-    const words = cleanQuery.split(/\s+/).filter(w => w.length > 3);
+    const STOP_WORDS = new Set(['what', 'which', 'where', 'when', 'about', 'contract', 'package', 'does', 'have', 'with', 'this', 'that', 'from', 'tell', 'show', 'list', 'please', 'give', 'under', 'clause', 'terms', 'conditions']);
+    const words = cleanQuery.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9]/g, '')).filter(w => w.length > 3 && !STOP_WORDS.has(w.toLowerCase()));
     if (words.length === 0) return [];
 
-    const orFilter = words.map(w => `content.ilike.%${w}%,clause_title.ilike.%${w}%`).join(',');
+    const orFilter = words.slice(0, 3).map(w => `content.ilike.%${w}%,clause_title.ilike.%${w}%`).join(',');
     let kwQuery = supabase
       .from('contract_document_chunks')
       .select(`
@@ -151,7 +178,9 @@ async function searchContract(contractId: string, searchQuery: string, packageHi
     }
 
     const { data: keywordMatches } = await kwQuery.or(orFilter).limit(8);
-    return formatChunks(keywordMatches || []);
+    const res = formatChunks(keywordMatches || []);
+    setCache(cacheKey, res);
+    return res;
   } catch (err) {
     console.warn('[searchContract error]:', err);
     return [];
@@ -165,10 +194,52 @@ async function getClause(contractId: string, clauseRef: string, packageHint?: st
   const cleanRef = (clauseRef || '').replace(/^(clause|sub-clause|subclause)\s+/i, '').trim();
   if (!cleanRef) return [];
 
+  const cacheKey = `clause:${contractId}:${packageHint || ''}:${cleanRef}`;
+  const hit = getCached(cacheKey);
+  if (hit) return hit;
+
   const targetIds = await resolveContractIds(packageHint || contractId, `${cleanRef} ${packageHint || ''}`);
   if (targetIds.length === 0) return [];
 
   try {
+    // FAST PATH: Exact index match on (contract_id, clause_number) (~100ms)
+    let fastQuery = supabase
+      .from('contract_document_chunks')
+      .select(`
+        id, contract_id, document_id, chunk_index, clause_number, clause_title, page_number, content, metadata,
+        contract_documents:document_id ( name, document_group )
+      `);
+
+    if (targetIds.length === 1) {
+      fastQuery = fastQuery.eq('contract_id', targetIds[0]);
+    } else {
+      fastQuery = fastQuery.in('contract_id', targetIds);
+    }
+
+    const { data: exactIndexed, error: exactErr } = await fastQuery
+      .eq('clause_number', cleanRef)
+      .limit(8);
+
+    if (!exactErr && exactIndexed && exactIndexed.length > 0) {
+      const formatted = exactIndexed.map((item: any) => {
+        const docName = item.contract_documents?.name || item.metadata?.document_type || '';
+        const docGroup = item.contract_documents?.document_group || item.metadata?.group || '';
+        const isParticular = docGroup === 'C' && (docName.toLowerCase().includes('particular') || item.content.toLowerCase().includes('appendix a'));
+        return {
+          clause_reference: item.clause_number || cleanRef,
+          clause_title: item.clause_title || undefined,
+          content: item.content,
+          document_name: docName,
+          document_group: docGroup,
+          page_number: item.page_number,
+          particular_condition_override: isParticular ? item.content : null
+        };
+      });
+      setCache(cacheKey, formatted);
+      return formatted;
+    }
+
+    // FALLBACK: Slower text scan if clause_number wasn't explicitly populated
     let queryBuilder = supabase
       .from('contract_document_chunks')
       .select(`
@@ -183,12 +254,12 @@ async function getClause(contractId: string, clauseRef: string, packageHint?: st
     }
 
     const { data, error } = await queryBuilder
-      .or(`clause_number.eq.${cleanRef},content.ilike.%Clause ${cleanRef}%,content.ilike.%Sub-Clause ${cleanRef}%,content.ilike.%${cleanRef}.%`)
+      .or(`content.ilike.%Clause ${cleanRef}%,content.ilike.%Sub-Clause ${cleanRef}%,content.ilike.%${cleanRef}.%`)
       .limit(8);
 
     if (error || !data) return [];
 
-    return data.map((item: any) => {
+    const fallbackFormatted = data.map((item: any) => {
       const docName = item.contract_documents?.name || item.metadata?.document_type || '';
       const docGroup = item.contract_documents?.document_group || item.metadata?.group || '';
       const isParticular = docGroup === 'C' && (docName.toLowerCase().includes('particular') || item.content.toLowerCase().includes('appendix a'));
@@ -203,6 +274,8 @@ async function getClause(contractId: string, clauseRef: string, packageHint?: st
         particular_condition_override: isParticular ? item.content : null
       };
     });
+    setCache(cacheKey, fallbackFormatted);
+    return fallbackFormatted;
   } catch (err) {
     console.warn('[getClause error]:', err);
     return [];
@@ -384,14 +457,15 @@ export const GEMINI_TOOLS_DECLARATION = [
 export const ANTIGRAVITY_CA_SYSTEM_INSTRUCTION = `You are AEhab, an intelligent, authoritative, and professional Contract Administrator for the Mivida Gardens project (Employer: Emaar Misr).
 
 PROJECT OVERVIEW & CONTRACT PACKAGES MANIFEST:
-You have complete access to the verified contract database for all 8 packages in Mivida Gardens:
+You have complete access to the verified contract database for all 9 packages in Mivida Gardens (Employer: Emaar Misr):
 - **PKG01**: Infrastructure & Buildings (Contractors: CCC, CRC, Capital) — 904 documents, 53,251 clauses.
 - **PKG02**: Packages (Contractors: Hassan Allam, Orascom, Rowad, Capital) — 67 documents, 93,242 clauses.
-- **PKG03**: Packages (Contractors: Innovo, Orascom, Rowad) — 35 documents, 4,356 clauses.
-- **PKG04**: Packages (Contractor: Emaar Misr Developments) — 6 documents, 29,216 clauses.
-- **PKG07**: Packages (Contractor: Capital) — 2 documents, 3,498 clauses.
-- **PKG12**: Packages (Contractor: Innovo Build S) — 1 document, 15 clauses.
-- **PKG14**: Packages (Contractor: Innovo Build S) — 2 documents, 2,188 clauses.
+- **PKG03**: Packages (Contractors: Innovo, Orascom, Rowad, Consultant, Contractor) — 35 documents, 4,356 clauses.
+- **PKG04**: Packages (Contractors: Capital, Consultant, Contractor, Innovo, Orascom, Rowad) — 62 documents, 105,658 clauses.
+- **PKG05**: Packages (Contractors: Innovo, Orascom, Rowad, Consultant, Contractor) — 37 documents, 3,440 clauses.
+- **PKG07**: Packages (Contractors: Capital, Consultant, Contractor, Engineer) — 2 documents, 3,498 clauses.
+- **PKG12**: Packages (Contractors: Innovo Build S, Contractor) — 1 document, 15 clauses.
+- **PKG14**: Packages (Contractors: Innovo Build S, Contractor) — 2 documents, 2,188 clauses.
 - **PKG15**: Secondary Gates Buildings and Fences Walls (Contractor: Capital for Construction) — 1 document (LoA dated 31 August 2026):
   * Contract Sum: EGP 116,357,194.00 (Re-measured)
   * Time for Completion: 240 Calendar Days from Commencement Date
@@ -400,16 +474,18 @@ You have complete access to the verified contract database for all 8 packages in
   * Retention: 5% of Interim Payment Certificates
   * Price Adjustment Base Rates: Diesel = 20.50 L.E./L, USD = 50.00 L.E./USD, Cement = 3,500 L.E./Ton, Rebar = 35,000 L.E./Ton
 
-COMMUNICATION STYLE:
+COMMUNICATION STYLE & SPEED RULES:
+- Provide the direct contractual conclusion in the first 1-2 sentences (Bottom Line Up Front / BLUF).
 - Answer naturally, intelligently, and directly, just like Google Gemini.
 - NEVER use rigid, robotic step-by-step templates such as "7-STEP CONTRACTUAL INTERPRETATION SEQUENCE", "STEP 1 — FACTS", etc.
 - Answer the user's inquiry directly using clean markdown formatting (bullet points, clear paragraphs, bold clause references and figures).
 - Seamlessly integrate clause references and contractual provisions (e.g. Sub-Clause 8.7 Delay Damages, Appendix to Tender, LoA provisions).
 - Quote figures, percentages, timeframes, and caps accurately from the verified database.
-- If the user asks about a specific package (e.g. PKG15, PKG02) or compares packages, use your retrieval tools or project manifest to provide precise answers.
+- If a figure or rate is specified in another document not currently loaded, explain that in a natural, helpful sentence.
+- Eliminate filler openings ("I hope this helps", "As an AI...").
 
 OPERATIONAL RULES:
-1. Use your retrieval tools (search_contract, get_clause, list_all_contracts, etc.) to look up contract provisions and Particular Conditions from the database.
+1. Use your retrieval tools (search_contract, get_clause, list_all_contracts, etc.) or pre-fetched database clauses to look up contract provisions and Particular Conditions.
 2. Particular Conditions (Appendix A) and Letter of Acceptance (LoA) override General Conditions in case of conflict.
 3. Keep your answers direct, practical, authoritative, and easy to read.`;
 
@@ -431,7 +507,7 @@ export default async function handler(req: any, res: any) {
     }
 
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
-    const { contractId, message, conversationHistory = [] } = body;
+    const { contractId, message, conversationHistory = [], stream = false } = body;
 
     if (!message) {
       return res.status(400).json({ error: 'Missing message parameter' });
@@ -445,6 +521,24 @@ export default async function handler(req: any, res: any) {
     }
 
     const targetContract = contractId || 'pkg01';
+
+    if (stream) {
+      res.setHeader('Content-Type', 'text/event-stream');
+      res.setHeader('Cache-Control', 'no-cache');
+      res.setHeader('Connection', 'keep-alive');
+      const result = await runAntigravityAgent(
+        apiKey,
+        targetContract,
+        message,
+        conversationHistory,
+        (chunk: string) => {
+          res.write(`data: ${JSON.stringify({ chunk })}\n\n`);
+        }
+      );
+      res.write(`data: ${JSON.stringify({ done: true, ...result })}\n\n`);
+      return res.end();
+    }
+
     const result = await runAntigravityAgent(apiKey, targetContract, message, conversationHistory);
     return res.status(200).json(result);
   } catch (error: any) {
@@ -462,7 +556,8 @@ export async function runAntigravityAgent(
   apiKey: string,
   contractId: string,
   userMessage: string,
-  conversationHistory: any[] = []
+  conversationHistory: any[] = [],
+  onChunk?: (chunk: string) => void
 ): Promise<{ response: string; toolsUsed: string[]; citations: any[] }> {
   const toolsUsed: string[] = [];
   const citations: any[] = [];
@@ -477,20 +572,41 @@ export async function runAntigravityAgent(
     });
   }
 
+  // Fast Pre-fetch RAG: Check if user query has specific clause or keyword match in Supabase
+  let prefetchEvidence = '';
+  try {
+    const clauseMatch = userMessage.match(/(?:clause|sub-clause|subclause)\s*([0-9]+(?:\.[0-9]+)*)/i);
+    let chunks: any[] = [];
+    if (clauseMatch) {
+      chunks = await getClause(contractId, clauseMatch[1]);
+    }
+    if (chunks.length === 0 && userMessage.trim().length > 5) {
+      chunks = await searchContract(contractId, userMessage);
+    }
+    if (chunks && chunks.length > 0) {
+      const topChunks = chunks.slice(0, 5);
+      prefetchEvidence = '\n\n[RELEVANT CONTRACT CLAUSES RETRIEVED FROM DATABASE]:\n' + 
+        topChunks.map(c => `• [${c.document_name || 'Document'} | Clause ${c.clause_reference || c.clause_number || ''}]: ${c.content}`).join('\n\n');
+      toolsUsed.push('database_prefetch_rag');
+    }
+  } catch (prefetchErr) {
+    // Non-blocking prefetch failure
+  }
+
   contents.push({
     role: 'user',
-    parts: [{ text: userMessage }]
+    parts: [{ text: userMessage + prefetchEvidence }]
   });
 
-  const candidateModels = [
-    process.env.VITE_GEMINI_MODEL,
-    'gemini-3.1-flash-lite',
-    'gemini-3.5-flash-lite',
+  const candidateModels = Array.from(new Set([
+    process.env.VITE_GEMINI_MODEL || 'gemini-flash-lite-latest',
     'gemini-flash-lite-latest',
-    'gemini-3.7-flash',
+    'gemini-3.1-flash-lite',
+    'gemini-flash-latest',
+    'gemini-3.5-flash-lite',
     'gemini-3.8-flash',
-    'gemini-flash-latest'
-  ].filter(Boolean) as string[];
+    'gemini-3.7-flash'
+  ].filter(Boolean) as string[]));
 
   const callGeminiWithFallback = async (payload: any) => {
     let lastError: any = null;
@@ -517,6 +633,49 @@ export async function runAntigravityAgent(
     throw lastError || new Error('All Gemini candidate models failed.');
   };
 
+  const callGeminiStreamWithFallback = async (payload: any, chunkCb: (chunk: string) => void) => {
+    for (const model of candidateModels) {
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${apiKey}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok || !res.body) continue;
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let fullText = '';
+        let buffer = '';
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              const jsonStr = line.slice(6).trim();
+              if (jsonStr === '[DONE]') continue;
+              try {
+                const parsed = JSON.parse(jsonStr);
+                const text = parsed.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                  fullText += text;
+                  chunkCb(text);
+                }
+              } catch {}
+            }
+          }
+        }
+        if (fullText) return fullText;
+      } catch (err: any) {
+        console.warn(`[Gemini Stream] Error for ${model}:`, err.message);
+      }
+    }
+    return null;
+  };
+
   // 1. Initial invocation: Ask Gemini with retrieval tools enabled
   const initialPayload: any = {
     contents,
@@ -526,7 +685,7 @@ export async function runAntigravityAgent(
     tools: GEMINI_TOOLS_DECLARATION,
     generationConfig: {
       temperature: 0.1,
-      maxOutputTokens: 8192
+      maxOutputTokens: 3072
     }
   };
 
@@ -543,6 +702,7 @@ export async function runAntigravityAgent(
   if (functionCalls.length === 0) {
     const directText = parts.map((p: any) => p.text || '').filter(Boolean).join('\n\n').trim();
     if (directText) {
+      if (onChunk) onChunk(directText);
       return {
         response: directText,
         toolsUsed,
@@ -608,13 +768,24 @@ export async function runAntigravityAgent(
     },
     generationConfig: {
       temperature: 0.1,
-      maxOutputTokens: 8192
+      maxOutputTokens: 3072
     }
   };
 
-  const synthesisData = await callGeminiWithFallback(synthesisPayload);
-  const synthParts = synthesisData.candidates?.[0]?.content?.parts || [];
-  const finalText = synthParts.map((p: any) => p.text || '').filter(Boolean).join('\n\n').trim();
+  let finalText = '';
+  if (onChunk) {
+    const streamedText = await callGeminiStreamWithFallback(synthesisPayload, onChunk);
+    if (streamedText) {
+      finalText = streamedText;
+    }
+  }
+
+  if (!finalText) {
+    const synthesisData = await callGeminiWithFallback(synthesisPayload);
+    const synthParts = synthesisData.candidates?.[0]?.content?.parts || [];
+    finalText = synthParts.map((p: any) => p.text || '').filter(Boolean).join('\n\n').trim();
+    if (onChunk && finalText) onChunk(finalText);
+  }
 
   return {
     response: finalText || 'Contract analysis complete based on retrieved documents.',

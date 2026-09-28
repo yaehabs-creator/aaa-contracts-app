@@ -46,7 +46,7 @@ function localAIProxy(env: Record<string, string>): Plugin {
           req.on('data', (chunk: Buffer) => { body += chunk.toString(); });
           req.on('end', async () => {
             try {
-              const { contractId, message, conversationHistory } = JSON.parse(body);
+              const { contractId, message, conversationHistory, stream = false } = JSON.parse(body);
               const apiKey = env.GEMINI_API_KEY || env.VITE_GEMINI_API_KEY;
               if (!apiKey) {
                 res.statusCode = 500;
@@ -54,6 +54,25 @@ function localAIProxy(env: Record<string, string>): Plugin {
                 return;
               }
               const { runAntigravityAgent } = await import('./api/antigravity-chat');
+              
+              if (stream) {
+                res.setHeader('Content-Type', 'text/event-stream');
+                res.setHeader('Cache-Control', 'no-cache');
+                res.setHeader('Connection', 'keep-alive');
+                const result = await runAntigravityAgent(
+                  apiKey,
+                  contractId,
+                  message,
+                  conversationHistory,
+                  (chunk: string) => {
+                    res.write(`data: ${JSON.stringify({ chunk })}\n\n`);
+                  }
+                );
+                res.write(`data: ${JSON.stringify({ done: true, ...result })}\n\n`);
+                res.end();
+                return;
+              }
+
               const result = await runAntigravityAgent(apiKey, contractId, message, conversationHistory);
               res.statusCode = 200;
               res.setHeader('Content-Type', 'application/json');

@@ -287,11 +287,13 @@ async function main() {
   console.log(`📁 Reading from: ${CONTRACTS_FOLDER}`);
   console.log(`🌐 Supabase: ${SUPABASE_URL}\n`);
 
-  // Get all PKG*.json files
+  // Get all PKG*.json files (or specific target package if passed via CLI)
+  const targetPkg = process.argv[2] ? process.argv[2].toUpperCase().trim() : null;
   let files;
   try {
     files = fs.readdirSync(CONTRACTS_FOLDER)
       .filter(f => f.startsWith('PKG') && f.endsWith('.json'))
+      .filter(f => !targetPkg || f.toUpperCase().includes(targetPkg))
       .map(f => path.join(CONTRACTS_FOLDER, f));
   } catch (err) {
     console.error(`❌ Cannot read folder: ${err.message}`);
