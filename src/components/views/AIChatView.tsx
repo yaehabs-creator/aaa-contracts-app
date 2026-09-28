@@ -97,7 +97,7 @@ export const AIChatView: React.FC = () => {
     return existing[0]?.id || crypto.randomUUID();
   });
 
-  const [sidebarTab, setSidebarTab] = useState<'chats' | 'contracts' | 'knowledge'>('chats');
+  const [sidebarTab, setSidebarTab] = useState<'contracts' | 'knowledge'>('contracts');
   const [searchQuery, setSearchQuery] = useState('');
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState('');
@@ -153,7 +153,6 @@ export const AIChatView: React.FC = () => {
     );
     setCurrentSessionId(newSession.id);
     refreshSessions();
-    setSidebarTab('chats');
   };
 
   // Select an existing chat session from history
@@ -283,14 +282,6 @@ export const AIChatView: React.FC = () => {
             {/* Sidebar Tabs */}
             <div className="p-2 flex gap-1 border-b border-black/[0.04]">
               <button
-                onClick={() => { setSidebarTab('chats'); refreshSessions(); }}
-                className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer ${
-                  sidebarTab === 'chats' ? 'bg-mac-blue text-white shadow-sm' : 'text-mac-navy/50 hover:bg-black/5'
-                }`}
-              >
-                Chats ({sessions.length})
-              </button>
-              <button
                 onClick={() => setSidebarTab('contracts')}
                 className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer ${
                   sidebarTab === 'contracts' ? 'bg-mac-blue text-white shadow-sm' : 'text-mac-navy/50 hover:bg-black/5'
@@ -310,58 +301,6 @@ export const AIChatView: React.FC = () => {
 
             {/* Sidebar Content */}
             <div className="flex-1 overflow-y-auto p-3 space-y-2">
-              {sidebarTab === 'chats' && (
-                <div className="space-y-1.5">
-                  {sessions.length === 0 ? (
-                    <div className="p-8 text-center text-xs text-black/40">
-                      No chat history yet.<br />Click <strong>"+ New Chat"</strong> above to start!
-                    </div>
-                  ) : (
-                    sessions.map(s => {
-                      const isSelected = s.id === currentSessionId;
-                      return (
-                        <div
-                          key={s.id}
-                          onClick={() => handleSelectSession(s)}
-                          className={`group relative p-3 rounded-xl border transition-all cursor-pointer ${
-                            isSelected
-                              ? 'bg-mac-blue/10 border-mac-blue/40 shadow-sm'
-                              : 'bg-white/60 border-black/[0.04] hover:bg-white hover:border-black/[0.08]'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between gap-1 mb-1">
-                            <div className="flex items-center gap-1.5 min-w-0">
-                              <MessageSquare className={`w-3.5 h-3.5 flex-shrink-0 ${isSelected ? 'text-mac-blue' : 'text-black/40'}`} />
-                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-black/5 text-black/60 truncate">
-                                {s.contractName?.replace(' Contract', '') || 'Mivida'}
-                              </span>
-                            </div>
-                            <button
-                              onClick={(e) => handleDeleteSession(e, s.id)}
-                              className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-red-50 text-red-400 hover:text-red-600 transition-all"
-                              title="Delete conversation"
-                            >
-                              <Trash2 className="w-3.5 h-3.5" />
-                            </button>
-                          </div>
-                          <div className="text-xs font-bold text-mac-navy truncate">
-                            {s.title}
-                          </div>
-                          {s.preview && (
-                            <div className="text-[10px] text-black/40 truncate mt-0.5">
-                              {s.preview}
-                            </div>
-                          )}
-                          <div className="flex items-center justify-between text-[9px] text-black/35 mt-1.5 font-medium">
-                            <span>{new Date(s.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-                            <span>{s.messageCount} msg{s.messageCount === 1 ? '' : 's'}</span>
-                          </div>
-                        </div>
-                      );
-                    })
-                  )}
-                </div>
-              )}
 
               {sidebarTab === 'contracts' && (
                 <div className="space-y-2">
