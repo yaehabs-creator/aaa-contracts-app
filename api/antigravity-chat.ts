@@ -16,19 +16,58 @@ function getSupabase() {
   return createClient(url, key, { auth: { persistSession: false } });
 }
 
-// Format chunk records from database
+// Document Group Precedence Weights (Agreements & Conditions > Specs)
+const GROUP_WEIGHTS: Record<string, number> = {
+  'A': 100, // Form of Agreement
+  'B': 90,  // Letter of Acceptance (LoA)
+  'C': 85,  // Particular & General Conditions (Appendix A, FIDIC)
+  'D': 75,  // Post-Tender Addenda
+  'I': 50,  // BOQ & Appendix to Tender
+  'N': 10   // General Specifications, Soil Reports, Calculations
+};
+
+// Clean OCR scan noise (single character lines like l, |, i, t)
+function cleanOcrText(text: string): string {
+  if (!text) return '';
+  return text
+    .split('\n')
+    .filter(line => {
+      const trimmed = line.trim();
+      return !(/^[l|itI\.\-_/\\]{1,4}$/.test(trimmed));
+    })
+    .join('\n')
+    .trim();
+}
+
+// Format chunk records from database with legal precedence sorting
 function formatChunks(rawList: any[]) {
-  return rawList.map(item => ({
-    chunk_id: item.id,
-    document_id: item.document_id,
-    document_name: item.contract_documents?.name || item.metadata?.document_type || undefined,
-    document_group: item.contract_documents?.document_group || item.metadata?.group || undefined,
-    clause_number: item.clause_number,
-    clause_title: item.clause_title,
-    page_number: item.page_number,
-    content: item.content,
-    metadata: item.metadata
-  }));
+  const formatted = rawList.map(item => {
+    const docName = item.contract_documents?.name || item.metadata?.document_type || '';
+    let group = item.contract_documents?.document_group || item.metadata?.group || 'N';
+    
+    // Auto-detect group if N but name indicates conditions or agreement
+    const lowerName = docName.toLowerCase();
+    if (lowerName.includes('particular condition') || lowerName.includes('conditions of contract')) group = 'C';
+    else if (lowerName.includes('agreement') || lowerName.includes('form of')) group = 'A';
+    else if (lowerName.includes('acceptance') || lowerName.includes('loa')) group = 'B';
+    else if (lowerName.includes('addend')) group = 'D';
+
+    return {
+      chunk_id: item.id,
+      document_id: item.document_id,
+      document_name: docName,
+      document_group: group,
+      clause_number: item.clause_number,
+      clause_title: item.clause_title,
+      page_number: item.page_number,
+      content: cleanOcrText(item.content),
+      metadata: item.metadata,
+      weight: GROUP_WEIGHTS[group] || 10
+    };
+  });
+
+  // Sort strictly by legal priority: Conditions & Agreements first!
+  return formatted.sort((a, b) => b.weight - a.weight);
 }
 
 interface ContractRecord {
@@ -454,14 +493,17 @@ export const GEMINI_TOOLS_DECLARATION = [
   }
 ];
 
-export const ANTIGRAVITY_CA_SYSTEM_INSTRUCTION = `You are AEhab, an intelligent, authoritative, and professional Contract Administrator for the Mivida Gardens project (Employer: Emaar Misr).
+export const ANTIGRAVITY_CA_SYSTEM_INSTRUCTION = `You are AEhab, Senior Contract Administrator for the Mivida Gardens Project (Employer: Emaar Misr), operating under the FIDIC Conditions of Contract for Construction (Red Book 1999) as amended by project-specific Particular Conditions.
 
-PROJECT OVERVIEW & CONTRACT PACKAGES MANIFEST:
-You have complete access to the verified contract database for all 9 packages in Mivida Gardens (Employer: Emaar Misr):
+YOUR ROLE & PROFESSIONAL STANDARD:
+You provide authoritative, legally grounded, and practical contract administration advice. You never give vague, generic, or robotic responses. You combine deep contractual analysis, FIDIC standard provisions, project Particular Conditions, and practical administration procedures.
+
+PROJECT OVERVIEW & VERIFIED PACKAGES MANIFEST:
+You have complete access to the verified contract database for all 9 packages in Mivida Gardens:
 - **PKG01**: Infrastructure & Buildings (Contractors: CCC, CRC, Capital) — 904 documents, 53,251 clauses.
 - **PKG02**: Packages (Contractors: Hassan Allam, Orascom, Rowad, Capital) — 67 documents, 93,242 clauses.
 - **PKG03**: Packages (Contractors: Innovo, Orascom, Rowad, Consultant, Contractor) — 35 documents, 4,356 clauses.
-- **PKG04**: Packages (Contractors: Capital, Consultant, Contractor, Innovo, Orascom, Rowad) — 62 documents, 105,658 clauses.
+- **PKG04**: Townhomes Parcels 11 & 12 (Contractors: Capital, Consultant, Contractor, Innovo, Orascom, Rowad) — 62 documents, 105,658 clauses.
 - **PKG05**: Packages (Contractors: Innovo, Orascom, Rowad, Consultant, Contractor) — 37 documents, 3,440 clauses.
 - **PKG07**: Packages (Contractors: Capital, Consultant, Contractor, Engineer) — 2 documents, 3,498 clauses.
 - **PKG12**: Packages (Contractors: Innovo Build S, Contractor) — 1 document, 15 clauses.
@@ -474,20 +516,20 @@ You have complete access to the verified contract database for all 9 packages in
   * Retention: 5% of Interim Payment Certificates
   * Price Adjustment Base Rates: Diesel = 20.50 L.E./L, USD = 50.00 L.E./USD, Cement = 3,500 L.E./Ton, Rebar = 35,000 L.E./Ton
 
-COMMUNICATION STYLE & SPEED RULES:
-- Provide the direct contractual conclusion in the first 1-2 sentences (Bottom Line Up Front / BLUF).
-- Answer naturally, intelligently, and directly, just like Google Gemini.
-- NEVER use rigid, robotic step-by-step templates such as "7-STEP CONTRACTUAL INTERPRETATION SEQUENCE", "STEP 1 — FACTS", etc.
-- Answer the user's inquiry directly using clean markdown formatting (bullet points, clear paragraphs, bold clause references and figures).
-- Seamlessly integrate clause references and contractual provisions (e.g. Sub-Clause 8.7 Delay Damages, Appendix to Tender, LoA provisions).
-- Quote figures, percentages, timeframes, and caps accurately from the verified database.
-- If a figure or rate is specified in another document not currently loaded, explain that in a natural, helpful sentence.
-- Eliminate filler openings ("I hope this helps", "As an AI...").
+STRUCTURE YOUR RESPONSES USING THIS 4-PART FRAMEWORK:
+1. **Executive Conclusion (Bottom Line Up Front / BLUF)**:
+   Deliver the direct contractual position in the first 2-3 sentences.
+2. **Governing Contractual Provisions**:
+   Cite the exact Sub-Clause numbers (e.g. Sub-Clause 8.7 Delay Damages, Sub-Clause 20.1 Contractor's Claims, Sub-Clause 14.6 Interim Payments). Quote exact timeframes, percentages, and formulas from the verified documents.
+3. **Particular Conditions Overrides & Precedence**:
+   Highlight how project Particular Conditions (Appendix A) or the Letter of Acceptance (LoA) amend the standard FIDIC baseline (e.g. higher caps, strict 28-day notice time-bars, modified dispute mechanisms).
+4. **Contract Administrator Actionable Checklist**:
+   Provide bullet points on concrete operational steps for the Contract Administrator (e.g. required formal notices, engineer determination, payment deductions, logs to maintain).
 
 OPERATIONAL RULES:
-1. Use your retrieval tools (search_contract, get_clause, list_all_contracts, etc.) or pre-fetched database clauses to look up contract provisions and Particular Conditions.
-2. Particular Conditions (Appendix A) and Letter of Acceptance (LoA) override General Conditions in case of conflict.
-3. Keep your answers direct, practical, authoritative, and easy to read.`;
+- Always enforce the Order of Precedence: Form of Agreement & LoA > Post-Tender Addenda > Particular Conditions (Appendix A) > General Conditions (FIDIC) > Specifications > BOQ.
+- If a rate or cap is contained in a document not currently loaded (such as Appendix to Tender), explicitly identify where it is located.
+- Maintain an authoritative, professional, and clear tone.`;
 
 /**
  * Serverless / Express-style Handler
@@ -584,8 +626,8 @@ export async function runAntigravityAgent(
       chunks = await searchContract(contractId, userMessage);
     }
     if (chunks && chunks.length > 0) {
-      const topChunks = chunks.slice(0, 5);
-      prefetchEvidence = '\n\n[RELEVANT CONTRACT CLAUSES RETRIEVED FROM DATABASE]:\n' + 
+      const topChunks = chunks.slice(0, 10);
+      prefetchEvidence = '\n\n[VERIFIED GOVERNING CONTRACT CLAUSES & CONDITIONS RETRIEVED FROM DATABASE]:\n' + 
         topChunks.map(c => `• [${c.document_name || 'Document'} | Clause ${c.clause_reference || c.clause_number || ''}]: ${c.content}`).join('\n\n');
       toolsUsed.push('database_prefetch_rag');
     }
@@ -599,13 +641,11 @@ export async function runAntigravityAgent(
   });
 
   const candidateModels = Array.from(new Set([
-    process.env.VITE_GEMINI_MODEL || 'gemini-flash-lite-latest',
+    process.env.VITE_GEMINI_MODEL || 'gemini-3.8-flash',
+    'gemini-3.8-flash',
     'gemini-flash-lite-latest',
     'gemini-3.1-flash-lite',
-    'gemini-flash-latest',
-    'gemini-3.5-flash-lite',
-    'gemini-3.8-flash',
-    'gemini-3.7-flash'
+    'gemini-flash-latest'
   ].filter(Boolean) as string[]));
 
   const callGeminiWithFallback = async (payload: any) => {
@@ -685,7 +725,7 @@ export async function runAntigravityAgent(
     tools: GEMINI_TOOLS_DECLARATION,
     generationConfig: {
       temperature: 0.1,
-      maxOutputTokens: 3072
+      maxOutputTokens: 4096
     }
   };
 
@@ -768,7 +808,7 @@ export async function runAntigravityAgent(
     },
     generationConfig: {
       temperature: 0.1,
-      maxOutputTokens: 3072
+      maxOutputTokens: 4096
     }
   };
 
