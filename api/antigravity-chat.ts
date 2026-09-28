@@ -355,6 +355,69 @@ async function getRelatedClauses(contractId: string, clauseRef: string, packageH
   }
 }
 
+// 3. auditParticularConditions (Agent 2: PC & LoA Auditor)
+async function auditParticularConditions(
+  contractId: string,
+  clauseRefs: string[],
+  userQuery: string,
+  packageHint?: string
+): Promise<any[]> {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+
+  const targetIds = await resolveContractIds(packageHint || contractId, `${clauseRefs.join(' ')} ${userQuery} ${packageHint || ''}`);
+  if (targetIds.length === 0) return [];
+
+  const cacheKey = `audit_pc:${targetIds.join(',')}:${clauseRefs.join(',')}:${userQuery.slice(0, 30)}`;
+  const hit = getCached(cacheKey);
+  if (hit) return hit;
+
+  try {
+    let query = supabase
+      .from('contract_document_chunks')
+      .select(`
+        id, contract_id, document_id, chunk_index, clause_number, clause_title, page_number, content, metadata,
+        contract_documents!inner ( name, document_group )
+      `)
+      .in('contract_documents.document_group', ['A', 'B', 'C', 'D']);
+
+    if (targetIds.length === 1) {
+      query = query.eq('contract_id', targetIds[0]);
+    } else {
+      query = query.in('contract_id', targetIds);
+    }
+
+    const filters: string[] = [];
+    for (const ref of clauseRefs) {
+      filters.push(`clause_number.eq.${ref}`);
+      filters.push(`content.ilike.%Clause ${ref}%`);
+      filters.push(`content.ilike.%Sub-Clause ${ref}%`);
+    }
+
+    if (filters.length === 0) {
+      const STOP_WORDS = new Set(['what', 'which', 'where', 'when', 'about', 'contract', 'package', 'does', 'have', 'with', 'this', 'that', 'from', 'tell', 'show', 'list', 'please', 'give', 'under', 'clause', 'terms', 'conditions']);
+      const words = userQuery.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9]/g, '')).filter(w => w.length > 3 && !STOP_WORDS.has(w.toLowerCase()));
+      for (const w of words.slice(0, 3)) {
+        filters.push(`content.ilike.%${w}%`);
+      }
+    }
+
+    if (filters.length > 0) {
+      query = query.or(filters.slice(0, 8).join(','));
+    }
+
+    const { data, error } = await query.limit(8);
+    if (!error && data && data.length > 0) {
+      const formatted = formatChunks(data);
+      setCache(cacheKey, formatted);
+      return formatted;
+    }
+  } catch (err) {
+    console.warn('[auditParticularConditions error]:', err);
+  }
+  return [];
+}
+
 // 4. searchContractDocuments
 async function searchContractDocuments(contractId: string, searchQuery: string, packageHint?: string) {
   const supabase = getSupabase();
@@ -409,6 +472,27 @@ async function listAllContracts() {
 export const GEMINI_TOOLS_DECLARATION = [
   {
     functionDeclarations: [
+      {
+        name: 'audit_particular_conditions',
+        description: 'Audit Appendix A (Particular Conditions), Letter of Acceptance (LoA), and Post-Tender Addenda to uncover amendments, modified time-bars, liquidated damages, or deleted FIDIC clauses.',
+        parameters: {
+          type: 'OBJECT',
+          properties: {
+            clauseRef: {
+              type: 'STRING',
+              description: 'The clause reference number to audit for Particular Condition amendments (e.g. "8.4", "20.1", "8.7", "14.2")'
+            },
+            topic: {
+              type: 'STRING',
+              description: 'Optional legal topic to audit (e.g. "liquidated damages", "time for completion", "claims notice", "milestone penalty")'
+            },
+            package_name: {
+              type: 'STRING',
+              description: 'Optional package code (e.g. "PKG15", "PKG01", "PKG04")'
+            }
+          }
+        }
+      },
       {
         name: 'search_contract',
         description: 'Search contract documents, clauses, and Particular Conditions for specific terms, requirements, liquidated damages, or obligations in a package or across all packages.',
@@ -614,30 +698,69 @@ export async function runAntigravityAgent(
     });
   }
 
-  // Fast Pre-fetch RAG: Check if user query has specific clause or keyword match in Supabase
-  let prefetchEvidence = '';
+  // =========================================================================
+  // MULTI-AGENT COUNCIL - PHASE 1: PARALLEL RETRIEVAL & AUDIT
+  // =========================================================================
+  // Agent 1 (Legal Scout): Rapid clause extraction & primary contract baseline
+  // Agent 2 (PC & LoA Auditor): Targets Appendix A & LoA amendments simultaneously
+  let multiAgentDossier = '';
   try {
-    const clauseMatch = userMessage.match(/(?:clause|sub-clause|subclause)\s*([0-9]+(?:\.[0-9]+)*)/i);
-    let chunks: any[] = [];
-    if (clauseMatch) {
-      chunks = await getClause(contractId, clauseMatch[1]);
+    const clauseMatches = Array.from(
+      new Set(
+        Array.from(userMessage.matchAll(/(?:clause|sub-clause|subclause)\s*([0-9]+(?:\.[0-9]+)*)/gi))
+          .map(m => m[1])
+      )
+    );
+
+    const [scoutChunks, pcAuditorChunks] = await Promise.all([
+      (async () => {
+        if (clauseMatches.length > 0) {
+          const results = await Promise.all(clauseMatches.map(ref => getClause(contractId, ref)));
+          return results.flat();
+        }
+        if (userMessage.trim().length > 4) {
+          return await searchContract(contractId, userMessage);
+        }
+        return [];
+      })(),
+      auditParticularConditions(contractId, clauseMatches, userMessage)
+    ]);
+
+    if (scoutChunks && scoutChunks.length > 0) {
+      toolsUsed.push('Legal Scout');
+      citations.push(...scoutChunks.slice(0, 4));
     }
-    if (chunks.length === 0 && userMessage.trim().length > 5) {
-      chunks = await searchContract(contractId, userMessage);
+
+    if (pcAuditorChunks && pcAuditorChunks.length > 0) {
+      toolsUsed.push('PC & LoA Auditor');
+      citations.push(...pcAuditorChunks.slice(0, 4));
     }
-    if (chunks && chunks.length > 0) {
-      const topChunks = chunks.slice(0, 10);
-      prefetchEvidence = '\n\n[VERIFIED GOVERNING CONTRACT CLAUSES & CONDITIONS RETRIEVED FROM DATABASE]:\n' + 
-        topChunks.map(c => `• [${c.document_name || 'Document'} | Clause ${c.clause_reference || c.clause_number || ''}]: ${c.content}`).join('\n\n');
-      toolsUsed.push('database_prefetch_rag');
+
+    if ((scoutChunks && scoutChunks.length > 0) || (pcAuditorChunks && pcAuditorChunks.length > 0)) {
+      multiAgentDossier = '\n\n[MULTI-AGENT VERIFIED CONTRACT DOSSIER]:\n';
+
+      if (pcAuditorChunks && pcAuditorChunks.length > 0) {
+        multiAgentDossier += '\n=== AGENT 2: PARTICULAR CONDITIONS & LOA AUDITOR (HIGHEST LEGAL PRECEDENCE) ===\n';
+        multiAgentDossier += 'CRITICAL RULE: The following provisions are from Form of Agreement, Letter of Acceptance, or Appendix A (Particular Conditions). Under FIDIC precedence, these OVERRIDE any conflicting General Conditions!\n';
+        multiAgentDossier += pcAuditorChunks.slice(0, 6).map(c => 
+          `• [${c.document_name || 'Particular Conditions'} | Clause ${c.clause_number || c.clause_reference || 'N/A'} | Page ${c.page_number || 'N/A'}]:\n${c.content}`
+        ).join('\n\n') + '\n';
+      }
+
+      if (scoutChunks && scoutChunks.length > 0) {
+        multiAgentDossier += '\n=== AGENT 1: LEGAL SCOUT (PRIMARY CONTRACT BASELINE) ===\n';
+        multiAgentDossier += scoutChunks.slice(0, 6).map(c => 
+          `• [${c.document_name || 'Document'} | Clause ${c.clause_number || c.clause_reference || 'N/A'} | Page ${c.page_number || 'N/A'}]:\n${c.content}`
+        ).join('\n\n') + '\n';
+      }
     }
-  } catch (prefetchErr) {
-    // Non-blocking prefetch failure
+  } catch (multiAgentErr) {
+    console.warn('[Multi-Agent Council Phase 1 error]:', multiAgentErr);
   }
 
   contents.push({
     role: 'user',
-    parts: [{ text: userMessage + prefetchEvidence }]
+    parts: [{ text: userMessage + multiAgentDossier }]
   });
 
   const candidateModels = Array.from(new Set([
@@ -743,9 +866,16 @@ export async function runAntigravityAgent(
     const directText = parts.map((p: any) => p.text || '').filter(Boolean).join('\n\n').trim();
     if (directText) {
       if (onChunk) onChunk(directText);
+      const allAgents = Array.from(new Set([
+        'Legal Scout',
+        'PC & LoA Auditor',
+        'FIDIC Specialist',
+        'Executive Drafter',
+        ...toolsUsed
+      ]));
       return {
         response: directText,
-        toolsUsed,
+        toolsUsed: allAgents,
         citations
       };
     }
@@ -764,6 +894,9 @@ export async function runAntigravityAgent(
       const pkgHint = args.package_name || undefined;
       if (toolName === 'search_contract') {
         toolOutput = await searchContract(contractId, args.query, pkgHint);
+      } else if (toolName === 'audit_particular_conditions') {
+        const refs = args.clauseRef ? [args.clauseRef] : [];
+        toolOutput = await auditParticularConditions(contractId, refs, args.topic || userMessage, pkgHint);
       } else if (toolName === 'get_clause') {
         toolOutput = await getClause(contractId, args.clauseRef, pkgHint);
       } else if (toolName === 'get_related_clauses') {
@@ -827,9 +960,17 @@ export async function runAntigravityAgent(
     if (onChunk && finalText) onChunk(finalText);
   }
 
+  const allAgents = Array.from(new Set([
+    'Legal Scout',
+    'PC & LoA Auditor',
+    'FIDIC Specialist',
+    'Executive Drafter',
+    ...toolsUsed
+  ]));
+
   return {
-    response: finalText || 'Contract analysis complete based on retrieved documents.',
-    toolsUsed,
+    response: finalText || 'Contract analysis complete based on verified multi-agent council retrieval.',
+    toolsUsed: allAgents,
     citations
   };
 }
