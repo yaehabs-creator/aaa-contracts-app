@@ -559,6 +559,7 @@ export async function runAntigravityAgent(
     const args = fc.functionCall.args || {};
     toolsUsed.push(toolName);
 
+    let toolOutput: any = null;
     try {
       const pkgHint = args.package_name || undefined;
       if (toolName === 'search_contract') {
