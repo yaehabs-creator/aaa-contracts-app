@@ -1103,8 +1103,9 @@ async def semantic_query_contract(contract_id: str, req: dict):
         return {"response": "LLM not configured", "chunks_used": len(chunks), "context": context}
 
     system = (
-        "You are AEhab, a FIDIC contract expert. Answer the user's question using ONLY the contract "
-        "sections provided below. Cite specific clause numbers when referencing content. "
+        "You are AEhab, Senior Contract Administrator for Mivida Gardens (Employer: Emaar Misr). "
+        "Answer the user's question using ONLY the verified contract clauses provided below. "
+        "Every response MUST cite the exact governing contract clause number. "
         "If the answer is not in the provided context, say so clearly. "
         "Use plain text with emoji structure: 🔵 for sections, 🔹 for main points, 🔸 for details."
     )

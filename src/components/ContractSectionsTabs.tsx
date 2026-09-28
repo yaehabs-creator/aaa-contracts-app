@@ -211,7 +211,7 @@ export const ContractSectionsTabs: React.FC<ContractSectionsTabsProps> = ({
     };
   }, [activeTab, generalSection, particularSection, sortMode, categories]);
 
-  // Grouping logic for FIDIC Folders - NOW DYNAMIC BASED ON ORGANIZER LAYOUT
+  // Grouping logic for Contract Folders - NOW DYNAMIC BASED ON ORGANIZER LAYOUT
   const folderGroups = useMemo(() => {
     // Current layout from store or default
     const currentLayout = organizerLayout.length > 0 ? organizerLayout : buildDefaultLayout();

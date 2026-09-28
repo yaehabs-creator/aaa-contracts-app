@@ -275,7 +275,7 @@ export interface ContextPill {
 // ============================================
 
 /**
- * Document groups following FIDIC contract structure
+ * Document groups following project contract structure
  * A = Form of Agreement & Annexes
  * B = Letter of Acceptance
  * C = Conditions of Contract (GC/PC)

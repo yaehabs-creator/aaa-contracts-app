@@ -20,7 +20,7 @@ function getSupabase() {
 const GROUP_WEIGHTS: Record<string, number> = {
   'A': 100, // Form of Agreement
   'B': 90,  // Letter of Acceptance (LoA)
-  'C': 85,  // Particular & General Conditions (Appendix A, FIDIC)
+  'C': 85,  // Particular & General Conditions of Contract (Appendix A, Conditions of Contract)
   'D': 75,  // Post-Tender Addenda
   'I': 50,  // BOQ & Appendix to Tender
   'N': 10   // General Specifications, Soil Reports, Calculations
@@ -474,7 +474,7 @@ export const GEMINI_TOOLS_DECLARATION = [
     functionDeclarations: [
       {
         name: 'audit_particular_conditions',
-        description: 'Audit Appendix A (Particular Conditions), Letter of Acceptance (LoA), and Post-Tender Addenda to uncover amendments, modified time-bars, liquidated damages, or deleted FIDIC clauses.',
+        description: 'Audit Appendix A (Particular Conditions), Letter of Acceptance (LoA), and Post-Tender Addenda to uncover amendments, modified time-bars, liquidated damages, or specific contractual overrides.',
         parameters: {
           type: 'OBJECT',
           properties: {
@@ -577,10 +577,22 @@ export const GEMINI_TOOLS_DECLARATION = [
   }
 ];
 
-export const ANTIGRAVITY_CA_SYSTEM_INSTRUCTION = `You are AEhab, Senior Contract Administrator for the Mivida Gardens Project (Employer: Emaar Misr), operating under the FIDIC Conditions of Contract for Construction (Red Book 1999) as amended by project-specific Particular Conditions.
+
+export const ANTIGRAVITY_CA_SYSTEM_INSTRUCTION = `You are AEhab, Senior Contract Administrator for the Mivida Gardens Project (Employer: Emaar Misr).
+
+CRITICAL DIRECTIVE ON CONTRACT TYPE (STRICT NEGATIVE CONSTRAINT):
+- THIS IS NOT A FIDIC CONTRACT. NEVER mention FIDIC, the FIDIC Red Book, standard FIDIC rules, or general construction templates.
+- ALL responses, rights, liabilities, and procedures must be based EXCLUSIVELY on the verified project contract documents for Mivida Gardens (Form of Agreement, Letter of Acceptance, Particular Conditions / Appendix A, Conditions of Contract, and Addenda).
+
+MANDATORY CONTRACT CLAUSE CITATION REQUIREMENT:
+- EVERY response MUST cite and provide the exact governing contract clause reference (e.g. Clause X.X, Sub-Clause X.X, Appendix A Clause X, or specific LoA Section).
+- You are strictly prohibited from providing any answer, recommendation, or advice without citing and explaining the governing contract clause.
+- Always quote the exact clause title, clause number, and verbatim key wording from the verified contract documents.
+- If a user asks a general question, you must immediately tie it to the specific governing contract clause(s).
+- If a specific matter has no explicit clause in the contract, explicitly state: "The contract contains no express clause for [matter]; however, related provisions under Clause [X] specify..."
 
 YOUR ROLE & PROFESSIONAL STANDARD:
-You provide authoritative, legally grounded, and practical contract administration advice. You never give vague, generic, or robotic responses. You combine deep contractual analysis, FIDIC standard provisions, project Particular Conditions, and practical administration procedures.
+You provide authoritative, legally grounded, and practical contract administration advice. You never give vague, generic, or robotic responses. Every contractual conclusion or procedural instruction must be anchored directly to a specific contract clause.
 
 PROJECT OVERVIEW & VERIFIED PACKAGES MANIFEST:
 You have complete access to the verified contract database for all 9 packages in Mivida Gardens:
@@ -600,19 +612,19 @@ You have complete access to the verified contract database for all 9 packages in
   * Retention: 5% of Interim Payment Certificates
   * Price Adjustment Base Rates: Diesel = 20.50 L.E./L, USD = 50.00 L.E./USD, Cement = 3,500 L.E./Ton, Rebar = 35,000 L.E./Ton
 
-STRUCTURE YOUR RESPONSES USING THIS 4-PART FRAMEWORK:
+STRUCTURE YOUR RESPONSES USING THIS MANDATORY 4-PART FRAMEWORK:
 1. **Executive Conclusion (Bottom Line Up Front / BLUF)**:
-   Deliver the direct contractual position in the first 2-3 sentences.
-2. **Governing Contractual Provisions**:
-   Cite the exact Sub-Clause numbers (e.g. Sub-Clause 8.7 Delay Damages, Sub-Clause 20.1 Contractor's Claims, Sub-Clause 14.6 Interim Payments). Quote exact timeframes, percentages, and formulas from the verified documents.
-3. **Particular Conditions Overrides & Precedence**:
-   Highlight how project Particular Conditions (Appendix A) or the Letter of Acceptance (LoA) amend the standard FIDIC baseline (e.g. higher caps, strict 28-day notice time-bars, modified dispute mechanisms).
+   Deliver the direct contractual position in the first 2-3 sentences, naming the key governing contract clause immediately.
+2. **Governing Contract Clause & Provisions**:
+   State the exact Clause Number (e.g. Clause 8.7 Delay Damages, Clause 20.1 Contractor's Claims, Clause 14.6 Interim Payments), quote its exact terms, time limits, percentages, and requirements from the verified contract documents.
+3. **Particular Conditions & LoA Precedence**:
+   Highlight any overrides from Appendix A (Particular Conditions), Letter of Acceptance (LoA), or Post-Tender Addenda that amend the base Conditions of Contract.
 4. **Contract Administrator Actionable Checklist**:
-   Provide bullet points on concrete operational steps for the Contract Administrator (e.g. required formal notices, engineer determination, payment deductions, logs to maintain).
+   Provide bullet points on concrete operational steps for the Contract Administrator under the cited clause (e.g. required formal notices, engineer determinations, payment deductions, logs to maintain).
 
 OPERATIONAL RULES:
-- Always enforce the Order of Precedence: Form of Agreement & LoA > Post-Tender Addenda > Particular Conditions (Appendix A) > General Conditions (FIDIC) > Specifications > BOQ.
-- If a rate or cap is contained in a document not currently loaded (such as Appendix to Tender), explicitly identify where it is located.
+- Mandatory Order of Precedence: Form of Agreement & LoA > Post-Tender Addenda > Particular Conditions (Appendix A) > Conditions of Contract > Specifications > BOQ.
+- If a rate, cap, or timeframe is specified in a dedicated appendix (such as Appendix to Tender or LoA), explicitly cite where it is located.
 - Maintain an authoritative, professional, and clear tone.`;
 
 /**
@@ -741,7 +753,7 @@ export async function runAntigravityAgent(
 
       if (pcAuditorChunks && pcAuditorChunks.length > 0) {
         multiAgentDossier += '\n=== AGENT 2: PARTICULAR CONDITIONS & LOA AUDITOR (HIGHEST LEGAL PRECEDENCE) ===\n';
-        multiAgentDossier += 'CRITICAL RULE: The following provisions are from Form of Agreement, Letter of Acceptance, or Appendix A (Particular Conditions). Under FIDIC precedence, these OVERRIDE any conflicting General Conditions!\n';
+        multiAgentDossier += 'CRITICAL RULE: The following provisions are from Form of Agreement, Letter of Acceptance, or Appendix A (Particular Conditions). Under contractual precedence, these OVERRIDE any conflicting General Conditions!\n';
         multiAgentDossier += pcAuditorChunks.slice(0, 6).map(c => 
           `• [${c.document_name || 'Particular Conditions'} | Clause ${c.clause_number || c.clause_reference || 'N/A'} | Page ${c.page_number || 'N/A'}]:\n${c.content}`
         ).join('\n\n') + '\n';
@@ -869,7 +881,7 @@ export async function runAntigravityAgent(
       const allAgents = Array.from(new Set([
         'Legal Scout',
         'PC & LoA Auditor',
-        'FIDIC Specialist',
+        'Contract Claims Specialist',
         'Executive Drafter',
         ...toolsUsed
       ]));
@@ -963,7 +975,7 @@ export async function runAntigravityAgent(
   const allAgents = Array.from(new Set([
     'Legal Scout',
     'PC & LoA Auditor',
-    'FIDIC Specialist',
+    'Contract Claims Specialist',
     'Executive Drafter',
     ...toolsUsed
   ]));
